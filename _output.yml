@@ -1,0 +1,21 @@
+bookdown::gitbook:
+  css: style/style.css
+  config:
+    toc:
+      before: |
+        <li><a href="./">My Minimal Book Example</a></li>
+      after: |
+        <li><a href="https://nowosad.github.io/">Jakub Nowosad</a></li>
+    edit: https://github.com/Nowosad/my-minimal-bookdown/edit/master/%s
+    download: ["pdf", "epub"]
+    includes:
+        in_header: ga.html
+bookdown::pdf_book:
+  includes:
+    in_header: style/preamble.tex
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: yes
+  dev: "cairo_pdf"
+  template: null
+bookdown::epub_book: default
