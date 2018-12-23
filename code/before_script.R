@@ -13,5 +13,11 @@ knitr::opts_chunk$set(
   fig.show = "hold"
 )
 
+if(!knitr:::is_html_output()){
+  options("width" = 56)
+  knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 56, indent = 2),
+                        tidy = TRUE)
+}
+
 set.seed(2018-12-22)
 options(digits = 3)
