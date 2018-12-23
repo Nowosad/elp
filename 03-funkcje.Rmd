@@ -1,0 +1,9 @@
+# Funkcje {#ergosum}
+
+<!-- - wbudowane funkcje -->
+<!-- - użycie przypisania z funkcjami -->
+<!-- - konwersja pomiędzy typami -->
+<!-- - użycie dokumentacji -->
+<!-- - tworzenie funkcji -->
+
+## Zadania

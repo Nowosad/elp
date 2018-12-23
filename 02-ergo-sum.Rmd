@@ -1,0 +1,13 @@
+# R ergo sum {#ergosum}
+
+<!-- - wyrażenia (e.g. 2 + 2) -->
+<!-- - typy -->
+<!-- - integer diision, modulo, exponentiation -->
+<!-- - obiekty (zmienne) -->
+<!-- - działania na obiektach -->
+<!-- - operator przypisania + działanie w pamięci -->
+<!-- - błędy/ostrzeżenia -->
+<!-- - komentarze -->
+<!-- - czytelność kodu/ styl -->
+
+## Zadania

@@ -1,0 +1,3 @@
+# Klasy obiektów {#obiekty}
+
+## Zadania

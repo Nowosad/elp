@@ -1,0 +1,25 @@
+
+```{block2 type="rmdinfo"}
+folder roboczy
+```
+
+```{block2 type="rmdinfo"}
+typing
+https://www.typingclub.com/
+```
+
+```{block2 type="rmdinfo"}
+naming files
+```
+
+```{block2 type="rmdinfo"}
+encodings
+```
+
+```{block2 type="rmdinfo"}
+software documentation
+```
+
+```{block2 type="rmdinfo"}
+software promotion
+```

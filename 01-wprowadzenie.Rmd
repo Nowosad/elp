@@ -2,10 +2,12 @@
 
 <!-- akapit o złożoności -->
 
+<!-- gdzie zdobyć wiedzę (online resources) -->
+
 <!-- akapit o inspiracjach -->
 https://rstudio-education.github.io/hopr/
 https://www.datacamp.com/courses/free-introduction-to-r
 https://csgillespie.github.io/efficientR/
 http://jarekj.home.amu.edu.pl/?page_id=36
 
-<!-- gdzie zdobyć wiedzę (online resources) -->
+## Zadania
