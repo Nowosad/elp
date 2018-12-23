@@ -1,3 +1,5 @@
 # Kontrola wersji {kontrola-wersji}
 
+<!-- https://swcarpentry.github.io/git-novice/ -->
+
 ## Zadania

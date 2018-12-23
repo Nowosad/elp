@@ -23,3 +23,27 @@ software documentation
 ```{block2 type="rmdinfo"}
 software promotion
 ```
+
+```{block2 type="rmdinfo"}
+do not save a workspace
+```
+
+```{block2 type="rmdinfo"}
+use r projects
+```
+
+```{block2 type="rmdinfo"}
+sourcecode vs binary packages
+```
+
+```{block2 type="rmdinfo"}
+relative vs absolute filepaths
+```
+
+```{block2 type="rmdinfo"}
+functions naming
+```
+
+```{block2 type="rmdinfo"}
+Continuous Integration
+```

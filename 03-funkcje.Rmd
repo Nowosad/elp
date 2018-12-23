@@ -3,7 +3,11 @@
 <!-- - wbudowane funkcje -->
 <!-- - użycie przypisania z funkcjami -->
 <!-- - konwersja pomiędzy typami -->
+<!-- - pakiety -->
 <!-- - użycie dokumentacji -->
 <!-- - tworzenie funkcji -->
+<!-- scripts vs functions? -->
+<!-- when to write a function? -->
+<!-- more than two repetition -->
 
 ## Zadania

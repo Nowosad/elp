@@ -1,3 +1,5 @@
 # Wczytywanie i zapisywanie plików {#io}
 
+<!-- csv better than many! -->
+
 ## Zadania

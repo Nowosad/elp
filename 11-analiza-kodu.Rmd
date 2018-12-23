@@ -1,3 +1,5 @@
 # Analiza kodu {#analiza-kodu}
 
+<!-- vectorized vs not-vectorized -->
+
 ## Zadanie
