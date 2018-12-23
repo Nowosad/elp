@@ -8,7 +8,7 @@ documentclass: scrbook
 classoption: "paper=6in:9in,pagesize=pdftex,headinclude=on,footinclude=on,10pt"
 geometry: "top=1.6cm, bottom=2cm, left=2cm, right=2cm"
 monofont: "Source Code Pro"
-monofontoptions: "Scale=0.6"
+monofontoptions: "Scale=0.7"
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
@@ -32,8 +32,14 @@ knitr::write_bib(c(
 ), 'packages.bib')
 ```
 
-
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licencja Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />Ta książka jest dostępna na <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">licencji Creative Commons Uznanie autorstwa - Użycie niekomercyjne - Bez utworów zależnych 4.0 Międzynarodowe</a>.
+
+# Wymagania wstępne {-}
+
+<!-- r -->
+<!-- rstudio -->
+<!-- packages? -->
+
 
 # Podziękowania {-}
 
