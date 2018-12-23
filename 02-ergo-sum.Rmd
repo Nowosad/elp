@@ -9,5 +9,6 @@
 <!-- - błędy/ostrzeżenia -->
 <!-- - komentarze -->
 <!-- - czytelność kodu/ styl -->
+<!-- wersje R -->
 
 ## Zadania

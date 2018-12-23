@@ -5,7 +5,18 @@
 <!-- why we code? -->
 <!-- reproducibility -->
 
+<!-- https://csgillespie.github.io/efficientR/collaboration.html#coding-style -->
+<!-- There are, however, general principles that most programmers agree on, such as: -->
+
+<!--     Use modular code; -->
+<!--     Comment your code; -->
+<!--     Don’t Repeat Yourself (DRY); -->
+<!--     Be concise, clear and consistent. -->
+
+
 <!-- why r -->
+
+
 
 <!-- gdzie zdobyć wiedzę (online resources) -->
 

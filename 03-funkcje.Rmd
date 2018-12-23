@@ -1,4 +1,4 @@
-# Funkcje {#ergosum}
+# Funkcje {#funkcje}
 
 <!-- - wbudowane funkcje -->
 <!-- - użycie przypisania z funkcjami -->

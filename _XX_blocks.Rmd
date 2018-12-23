@@ -47,3 +47,7 @@ functions naming
 ```{block2 type="rmdinfo"}
 Continuous Integration
 ```
+
+```{block2 type="rmdinfo"}
+keyboard shortcuts
+```

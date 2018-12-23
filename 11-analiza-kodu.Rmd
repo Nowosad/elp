@@ -1,5 +1,7 @@
 # Analiza kodu {#analiza-kodu}
 
 <!-- vectorized vs not-vectorized -->
+<!-- benchmarking-->
+<!-- profiling -->
 
 ## Zadanie
