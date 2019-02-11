@@ -3,7 +3,10 @@
 <!-- akapit o złożoności -->
 
 <!-- why we code? -->
+<!-- money, money, money -->
 <!-- reproducibility -->
+
+<!-- group work -->
 
 <!-- https://csgillespie.github.io/efficientR/collaboration.html#coding-style -->
 <!-- There are, however, general principles that most programmers agree on, such as: -->
@@ -12,7 +15,6 @@
 <!--     Comment your code; -->
 <!--     Don’t Repeat Yourself (DRY); -->
 <!--     Be concise, clear and consistent. -->
-
 
 <!-- why r -->
 
