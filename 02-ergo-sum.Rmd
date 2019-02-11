@@ -1,11 +1,153 @@
 # R ergo sum {#ergosum}
 
+<!-- kod nie przyjmuje literówek -->
+
+## Wyrażenia
+
 <!-- - wyrażenia (e.g. 2 + 2) -->
-<!-- - typy -->
-<!-- - integer diision, modulo, exponentiation -->
+
+```{r}
+2 + 2
+```
+
+```{r}
+1 - 3
+```
+
+```{r}
+5 * 5
+```
+
+```{r}
+42 / 5
+```
+
+## Obiekty
+
 <!-- - obiekty (zmienne) -->
-<!-- - działania na obiektach -->
+```{r, echo=FALSE}
+knitr::include_graphics("images/obiekty.png")
+```
+
+### Operator przypisania
+
+Operator przypisania służy do nadania wartości do obiektu.
+R posiada trzy operatory przypisania, które mają niemal identyczne działanie^[footnote]: `=`, `<-`, `->`.
+
+```{r}
+x = 7
+```
+
+```{r}
+x
+```
+
+```{r}
+y = x
+```
+
+```{r}
+y
+```
+
 <!-- - operator przypisania + działanie w pamięci -->
+
+### Działania na obiektach
+
+<!-- - działania na obiektach -->
+
+```{r}
+z1 = x + 3
+z1
+```
+
+```{r}
+z2 = x - 5
+z2
+```
+
+```{r}
+z3 = x * 2
+z3
+```
+
+```{r}
+z4 = x / 4.4
+z4
+```
+
+```{r}
+z5 = x %% 3
+z5
+```
+
+```{r}
+z6 = x %/% 3
+z6
+```
+
+```{r}
+z7 = x ^ 2
+z7
+```
+
+```{r}
+z8 = sqrt(x)
+z8
+```
+
+```{r}
+z9 = c(z2, z4, z8)
+z9
+```
+
+### Typy obiektów
+
+Proste (homogeniczne) i złożone (heterogeniczne). <!-- ref to ch05)-->
+
+Podstawową strukturą danych w R jest wektor.
+Może się on przyjmować jeden z czterech typów^[Do sprawdzania jakiego typu jest wektor służy funkcja `typeof()`.]:
+
+1. liczba zmiennoprzecinkowa (ang. *double*)
+
+```{r}
+wek_zmi = c(5.3, -7.1)
+wek_zmi
+```
+
+2. liczba całkowita (ang. *interger*)
+
+```{r}
+wek_cal = c(5L, -7L)
+wek_cal
+```
+
+3. logiczny (ang. *logical*)
+
+```{r}
+wek_log = c(TRUE, FALSE)
+wek_log
+```
+
+4. znakowy (ang. *character*)
+
+```{r}
+wek_zna = c("kot", "pies")
+wek_zna
+```
+
+Typ znakowy jest określany poprzez użycie cudzysłowia `"` (`"kot"`) lub `'` (`'pies'`). <!--ref to style-->
+
+<!-- Zmienna skalarna -->
+
+<!-- Brakujące wartości `NA` -->
+
+<!-- coercion -->
+
+<!-- integer division block -->
+
+### Komunikaty
+
 <!-- - błędy/ostrzeżenia -->
 <!-- - komentarze -->
 <!-- - czytelność kodu/ styl -->
