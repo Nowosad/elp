@@ -2,6 +2,7 @@ bookdown::gitbook:
   css: style/style.css
   config:
     toc:
+      collapse: section
       before: |
         <li><a href="./">Wstęp do programowania w R</a></li>
       after: |
