@@ -1,5 +1,6 @@
 # Funkcje {#funkcje}
 
+<!-- intro (co to) -->
 <!-- - wbudowane funkcje -->
 <!-- - użycie przypisania z funkcjami -->
 <!-- - konwersja pomiędzy typami -->
