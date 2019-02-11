@@ -36,12 +36,25 @@ knitr::write_bib(c(
 
 ## Wymagania wstępne {-}
 
+- R - https://cloud.r-project.org/
+- RStudio - https://www.rstudio.com/products/rstudio/download/#download
 
+Git:
 
-<!-- r -->
-<!-- rstudio -->
-<!-- packages? -->
+- [Windows](https://gitforwindows.org/)
+- Linux:
 
+```
+sudo apt install git
+```
+
+```
+sudo dnf install git
+```
+
+- [macOS](https://happygitwithr.com/install-git.html#macos)
+
+<!--pakiety-->
 
 ## Podziękowania {-}
 
