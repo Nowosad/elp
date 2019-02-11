@@ -36,8 +36,14 @@ knitr::write_bib(c(
 
 ## Wymagania wstępne {-}
 
+```{r, echo=FALSE}
+knitr::include_graphics("images/Rlogo.png")
+```
+
 - R - https://cloud.r-project.org/
 - RStudio - https://www.rstudio.com/products/rstudio/download/#download
+
+<!--pakiety-->
 
 Git:
 
@@ -54,7 +60,13 @@ sudo dnf install git
 
 - [macOS](https://happygitwithr.com/install-git.html#macos)
 
-<!--pakiety-->
+GitHub
+
+https://github.com/join
+
+<!-- jak czytać skrypt -->
+<!-- blocks, chunks, etc -->
+<!-- Throughout this book I use f() to refer to functions, g to refer to variables and function parameters, and h/ to paths. -->
 
 ## Podziękowania {-}
 
