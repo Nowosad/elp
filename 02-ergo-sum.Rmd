@@ -219,6 +219,10 @@ as.double(c(3L, 2L)) # liczba całkowita na liczba zmiennoprzecinkowa
 as.character(c(3L, 2L)) # liczba całkowita na znakowy
 ```
 
+## Wydzielanie 
+
+<!--subsetting-->
+
 ## Zadania
 
 <!-- może użycie podstawowych funkcji na wektorach i co to znaczy - length, paste, etc.? -->
