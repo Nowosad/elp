@@ -1,3 +1,76 @@
 # Wyrażenia warunkowe {#warunki}
 
+Języki programowania opierają się o dwa podstawowe narzędzia pozwalające na sterowanie przepływem operacji.
+Są to wyrażenia warunkowe oraz pętle.
+Wyrażenia warunkowe są głównym tematem tego rozdziału, natomiast pętle są omówione w rozdziale \ref(petle).
+
+Celem wyrażeń warunkowych jest wykonywanie różnego kodu w zależności od danych wejściowych.
+
+## if
+
+Wyrażenie `if` opiera się o spełnienie (lub niespełnienie) danego warunku.
+
+```{r}
+temperatura = 5.4
+if (temperatura > 0) {
+  "Dodatnia"
+}
+```
+
+```{r}
+temperatura = -11
+if (temperatura > 0) {
+  "Dodatnia"
+}
+```
+
+```{block2, type='rmdinfo'}
+Warunek `if` można też tworzyć w uproszczonej formie:
+
+`if (warunek) spelniony else niespelniony`
+```
+
+## else if
+
+Działanie wyrażenia `if` może być połączone z dodatkowymi wyrażeniami `else if` oraz `else`.
+
+```{r}
+temperatura = 8.8
+if (temperatura > 0) {
+  "Dodatnia"
+} else if (temperatura < 0) {
+  "Ujemna"
+} else {
+  "Zero"
+}
+```
+
+<!-- explain -->
+
+## Operatory porównania
+
+```{r operators, echo=FALSE}
+library(tibble)
+operators = c("`==`", "`!=`", "`>`, `<`", "`>=`, `<=`", "`!`")
+operators_exp = c("Równy", "Nie równy", "Większy/Mniejszy niż",
+                  "Większy/Mniejszy niż lub równy")
+knitr::kable(tibble(Operator = operators, Wyjaśnienie = operators_exp), 
+             caption = "Operatory porównania",
+             booktabs = TRUE)
+```
+
+```{r operators2, echo=FALSE}
+operators2 = c("`!`", "&&", "||")
+operators_exp2 = c("Negacja (nie)", "Koniunkcja (i)", "Alternatywa (lub)")
+knitr::kable(tibble(Operator = operators2, Wyjaśnienie = operators_exp2), 
+             caption = "Operatory porównania",
+             booktabs = TRUE)
+```
+
+<!-- block about & and | -->
+<!-- https://stackoverflow.com/questions/6558921/boolean-operators-and -->
+
+## Wyrażenia warunkowe w funkcjach
+
+
 ## Zadania
