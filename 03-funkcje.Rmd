@@ -1,14 +1,84 @@
 # Funkcje {#funkcje}
 
 <!-- intro (co to) -->
-<!-- - wbudowane funkcje -->
-<!-- - użycie przypisania z funkcjami -->
-<!-- - konwersja pomiędzy typami -->
-<!-- - pakiety -->
+
+## Struktura funkcji
+
+```{r, echo=FALSE}
+knitr::include_graphics("images/funkcje.png")
+```
+
+## Wbudowane funkcje
+
+```{r}
+x = c(8.2, 10.3, 12.0)
+```
+
+```{r}
+mean(x)
+```
+
+```{r}
+(8.2 + 10.3 + 12.0) / 3
+```
+
+```{r}
+sum(x) / length(x)
+```
+
+```{r}
+y = mean(x)
+```
+
+## Dokumentacja
+
 <!-- - użycie dokumentacji -->
+F1
+
+```{r}
+?mean
+```
+
+Dokumentacja każdej funkcji, zwana inaczej plikiem pomocy, ma zazwyczaj podobną strukturę.
+
+- W lewym górnym rogu znajduje się nazwa funkcji (`mean`) oraz nazwa pakietu z którego dana funkcja pochodzi (`base`)
+- Poniżej znajduje się tytuł funkcji oraz jej krótki opis
+- Kolejnym elementem jest budowa funkcji (*Usage*), która skrótowo opisuje z jakich argumentów składa się dana funkcja.
+Np. funkcja `mean()` przyjmuje argument `x`, `trim`, oraz `na.rm`. 
+Dla argumentów `trim` oraz `na.rm` są także ustalone ich domyślne wartości.
+Dodatkowo, widoczny jest argument w postaci wielokropka (`...`). 
+<!--!?-->
+- Argumenty funkcji są również wypisane oraz skrótowo wyjaśnione. 
+Przykładowo, `x` musi być obiektem R o typie numerycznym (który łączy typ liczb całkowitych i zmiennoprzecinkowych<!--ref-->), logicznym, `date`, `date-time`, lub `time interval`.
+- Część *Value* (lub *Details*) opisuje szczegóły wykonywanej funkcji
+- Inne możliwe elementy to np. *References* odnoszący się do artykułu czy książki opisującej daną funkcję lub metodę, czy też *See also* zawierający odnośniki do innych, podobnych funkcji
+- Jeden z najważniejszych elementów pliku pomocy znajduje się na samym końcu - są to przykłady (*Examples*).
+Jeżeli nie jesteśmy pewni jak dana funkcja działa warto zacząć od skopiowania przykładów a następnie ich wykonania.
+
+<!-- block - nie bój się szukać online -->
+
+## Pakiety
+
+<!-- - pakiety -->
+
+## Tworzenie skryptów
+
+## Budowanie funkcji
+
 <!-- - tworzenie funkcji -->
 <!-- scripts vs functions? -->
 <!-- when to write a function? -->
 <!-- more than two repetition -->
 
+### Komunikaty
+
+Oprócz wyniku danej operacji R może wyświetlić kilka rodzajów wiadomości.
+<!-- with examples-->
+<!-- - błędy/ostrzeżenia -->
+<!-- - komentarze -->
+<!-- - czytelność kodu/ styl -->
+<!-- wersje R -->
+
 ## Zadania
+
+1. Zobacz jak wygląda dokumentacja funkcji `mean()`.
