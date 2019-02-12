@@ -152,15 +152,15 @@ Typ znakowy jest określany poprzez użycie cudzysłowia `"` (`"kot"`) lub `'` (
 logiczny -> liczba całkowita -> liczba zmiennoprzecinkowa -> znakowy
 
 ```{r}
+FALSE
+```
+
+```{r}
 c(FALSE, 0L)
 ```
 
 ```{r}
-c(0L, 3.1)
-```
-
-```{r}
-c(3.1, "kot")
+c(FALSE, 0L, 3.1)
 ```
 
 ```{r}
