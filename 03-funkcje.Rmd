@@ -35,7 +35,7 @@ y = mean(x)
 <!-- - użycie dokumentacji -->
 F1
 
-```{r}
+```{r, eval=FALSE}
 ?mean
 ```
 
@@ -65,7 +65,6 @@ Jeżeli nie jesteśmy pewni jak dana funkcja działa warto zacząć od skopiowan
 
 ## Budowanie funkcji
 
-<!-- - tworzenie funkcji -->
 <!-- scripts vs functions? -->
 <!-- when to write a function? -->
 <!-- more than two repetition -->
@@ -81,4 +80,7 @@ Oprócz wyniku danej operacji R może wyświetlić kilka rodzajów wiadomości.
 
 ## Zadania
 
-1. Zobacz jak wygląda dokumentacja funkcji `mean()`.
+1. Zobacz jak wygląda plik pomocy funkcji `mean()`.
+Wykonaj zawarte w nim przykłady.
+Co zostało w nich wykonane?
+<!-- zadania w stylu - skąd error? -->
