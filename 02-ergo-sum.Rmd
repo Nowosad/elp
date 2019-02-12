@@ -138,7 +138,7 @@ wek_zna
 
 Typ znakowy jest określany poprzez użycie cudzysłowia `"` (`"kot"`) lub `'` (`'pies'`). <!--ref to style-->
 
-<!-- Zmienna skalarna -->
+<!-- Zmienna skalarna (block) -->
 
 <!-- Brakujące wartości `NA` -->
 
@@ -148,9 +148,12 @@ Typ znakowy jest określany poprzez użycie cudzysłowia `"` (`"kot"`) lub `'` (
 
 ### Komunikaty
 
+<!-- with examples-->
 <!-- - błędy/ostrzeżenia -->
 <!-- - komentarze -->
 <!-- - czytelność kodu/ styl -->
 <!-- wersje R -->
 
 ## Zadania
+
+<!-- może użycie podstawowych funkcji na wektorach i co to znaczy - length, paste, etc.? -->

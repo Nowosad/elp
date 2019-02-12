@@ -29,5 +29,6 @@ https://rstudio.cloud/learn/primers
 https://csgillespie.github.io/efficientR/
 http://jarekj.home.amu.edu.pl/?page_id=36
 https://speakerdeck.com/jennybc/zen-and-the-art-of-workflow-maintenance
+http://adv-r.hadley.nz/
 
 ## Zadania
