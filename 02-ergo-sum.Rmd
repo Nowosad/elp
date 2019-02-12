@@ -101,6 +101,8 @@ z9 = c(z2, z4, z8)
 z9
 ```
 
+<!-- integer division block -->
+
 ### Typy obiektów
 
 Proste (homogeniczne) i złożone (heterogeniczne). <!-- ref to ch05)-->
@@ -142,9 +144,28 @@ Typ znakowy jest określany poprzez użycie cudzysłowia `"` (`"kot"`) lub `'` (
 
 <!-- Brakujące wartości `NA` -->
 
+
+### Łączenie podstawowych typów obiektów
+
 <!-- coercion -->
 
-<!-- integer division block -->
+logiczny -> liczba całkowita -> liczba zmiennoprzecinkowa -> znakowy
+
+```{r}
+c(FALSE, 0L)
+```
+
+```{r}
+c(0L, 3.1)
+```
+
+```{r}
+c(3.1, "kot")
+```
+
+```{r}
+c(FALSE, 0L, 3.1, "kot")
+```
 
 ### Komunikaty
 
@@ -153,6 +174,8 @@ Typ znakowy jest określany poprzez użycie cudzysłowia `"` (`"kot"`) lub `'` (
 <!-- - komentarze -->
 <!-- - czytelność kodu/ styl -->
 <!-- wersje R -->
+
+Więcej informacji na temat podstawowych typów obiektów można znaleźć w rozdziale ["Vectors"](https://adv-r.hadley.nz/vectors-chap.html) książki Advanced R [@wickham2014advanced].
 
 ## Zadania
 

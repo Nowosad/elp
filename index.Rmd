@@ -9,7 +9,7 @@ classoption: "paper=6in:9in,pagesize=pdftex,headinclude=on,footinclude=on,10pt"
 geometry: "top=1.6cm, bottom=2cm, left=2cm, right=2cm"
 monofont: "Source Code Pro"
 monofontoptions: "Scale=0.7"
-bibliography: [book.bib, packages.bib]
+bibliography: [references.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: nowosad/my-minimal-bookdown
