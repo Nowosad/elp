@@ -3,6 +3,7 @@
 <!-- akapit o złożoności -->
 
 <!-- why we code? -->
+<!-- cost of reproduction! (economy) -->
 <!-- money, money, money -->
 <!-- reproducibility -->
 
