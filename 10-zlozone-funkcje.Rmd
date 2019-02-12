@@ -1,5 +1,7 @@
 # Złożone funkcje {#zlozone-funkcje}
 
 <!-- + examples -->
+<!-- tworzenie wiadomości, warnings, errors -->
+
 
 ## Zadania
