@@ -110,8 +110,6 @@ z9
 
 <!-- Zmienna skalarna (block) -->
 
-
-
 ### Typy obiektów
 
 Proste (homogeniczne) i złożone (heterogeniczne). <!-- ref to ch05)-->
@@ -148,6 +146,7 @@ wek_zna
 ```
 
 Typ znakowy jest określany poprzez użycie cudzysłowia `"` (`"kot"`) lub `'` (`'pies'`). <!--ref to style-->
+<!-- Typ numeryczny -->
 
 ## Brakujące wartości
 
