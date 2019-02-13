@@ -1,3 +1,104 @@
 # Złożone obiekty {#zlozone-obiekty}
 
+## Macierze
+
+Macierze (ang. *matrix*), podobnie jak wektory, są obiektami homogenicznymi - jedna macierz może przyjmować dane tylko jednego typu.
+
+### Tworzenie
+
+```{r}
+macierz = matrix(1:9, ncol = 3, nrow = 3)
+macierz
+```
+
+<!-- Macierze używane są ... zastosowania. -->
+<!-- ref to arrays -->
+<!-- ref to rasters -->
+
+### ...
+
+<!-- `nrow()` -->
+<!-- `ncol()` -->
+
+### Łączenie
+
+<!-- `cbind()` -->
+<!-- `rbind()` -->
+
+### Wydzielanie
+
+<!-- subsetting -->
+
+## Ramki danych
+
+Ramki danych (ang. *data frame*) mają dużo podobieństw z macierzami. 
+Są to obiekty dwuwymiarowe, składające się z kolumn i wierszy. 
+Główną różnicą pomiędzy macierzą a ramką danych jest to, że pierwsza z nich przyjmuje tylko dane jednego typu, podczas gdy druga może się składać z danych róznych typów.
+
+Ramka danych jest zbudowana z kolumn (wektorów) o równej długości.
+<!-- a data frame is a list of equal-length vectors -->
+<!-- nested data frames footnote -->
+
+### Tworzenie
+
+```{r}
+ramka = data.frame(wek_log = c(TRUE, FALSE),
+                   wek_cal = c(5L, -7L), 
+                   wek_zmi = c(5.3, -7.1), 
+                   wek_zna = c("kot", "pies"),
+                   stringsAsFactors = FALSE)
+ramka
+```
+
+<!-- problem z `stringsAsFactors` -->
+
+
+### ...
+
+```{r}
+class(ramka)
+```
+
+### Łączenie
+
+`cbind()`, `rbind()`
+
+### Wydzielanie
+
+Do wydzielania elementów z ramki danych może służyć, między innymi, operator `[]`, operator `$` oraz funkcja `subset()`.
+
+Operator `$` pozwala na wybranie zmiennej (kolumny) na podstawie jej nazwy.
+
+W przypadku ramek danych operator `[]` wymaga podania dwóch argumentów - jednego dla wierszy (obserwacji) oraz jednego dla kolumn (zmiennych) - `[wiersze, kolumny]`.
+
+Do wydzielania można wykorzystać operatory logiczne: ==, !=, >, >=, <, <=, &, |.
+
+## Listy
+
+### Tworzenie
+
+```{r}
+lista = list(c(TRUE, FALSE), c(5L, -7L), c(5.3), c("kot", "pies", "nosorożec"))
+lista
+```
+
+<!-- wielopoziomowe listy -->
+
+### ...
+
+```{r}
+str(lista)
+```
+
+### Łączenie
+
+### Wydzielanie
+
+## Własne klasy
+
+<!-- ... -->
+<!-- Istnieje ogromna liczba klas obiektów w R -->
+<!-- Każdy może stworzyć swoją własną klasę! -->
+<!-- Różne funkcje wymagają różnych klas obiektów -->
+
 ## Zadania
