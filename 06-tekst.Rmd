@@ -56,6 +56,27 @@ toupper(tekst1)
 tolower(tekst1)
 ```
 
+```{r}
+tekst2 = c("chronologia", "alfabet", "hałas")
+```
+
+```{r}
+str_sort(tekst2, locale = "pl")
+str_sort(tekst2, locale = "cs")
+```
+
+
+```{r}
+tekst3 = c("chronologia ", "alfabet", " hałas")
+str_sort(tekst3, locale = "pl")
+```
+
+```{r}
+tekst3 = str_trim(tekst3)
+tekst3
+str_sort(tekst3, locale = "pl")
+```
+
 ## Wydzielanie tekstu
 
 ```{r}
@@ -75,6 +96,109 @@ str_sub(tekst1, start = -6, -1)
 ```
 
 ## Wyrażenia regularne
+
+Wyrażenia regularne (ang. *regular expressions*), często określane jako *regex* to sposób opisywanie wzorców tekstu. 
+Używając wyrażeń regularnych możliwe jest, między innymi, znajdowanie tekstu lub zamienienie, który spełnia wymagane warunki.
+Wyrażenia regularne są powszechnie używane w wyszukiwarkach internetowych, edytorach tekstu, oraz wielu językach programowania.
+
+<!-- basic stuff -->
+
+
+```{r}
+tekst4 = c("Magdalena", "Lena", "1Lena.csv", "LLena", "Helena", "Anna", 99)
+```
+
+```{r}
+str_detect(tekst4, "Lena")
+```
+
+```{r}
+str_detect(tekst4, "lena")
+```
+
+```{r regexoperators, echo=FALSE}
+library(tibble)
+roperators = c("`^`", 
+               "`$`", "`()`", 
+               "`|`", "`[]`", 
+               "`[^]`",
+               "`*`", "`.`", 
+               "`{n}`", "`?`",
+               "`+`", "`\\\\`",
+               "\\\\d", "\\\\s"
+               )
+
+roperators_exp = c("Określa początek tekstu/linii",
+                   "Określa koniec testu/linii", "Grupowanie",
+                   "Alternatywa (lub)", "Wymienia dozwolone znaki",
+                   "Wymienia niedozwolone znaki",
+                   "Poprzedni znak zostanie wybrany zero lub więcej razy", "Poprzedni znak zostanie wybrany jeden raz",
+                   "Poprzedni znak zostanie wybrany n razy", "Poprzedni znak zostanie wybrany zero lub jeden raz", 
+                   "Poprzedni znak zostanie wybrany jeden lub więcej razy", "Pozwala na użycie specjalnych znaków",
+                   "Dopasowuje się do każdego znaku",
+                   "Dopasowuje się do tzw. znaków niedrukowalnych, np. spacji, tabulatora, nowej linii")
+knitr::kable(tibble(Operator = roperators, Wyjaśnienie = roperators_exp), 
+             caption = "Operatory porównania",
+             booktabs = TRUE)
+```
+
+Wymienione powyżej znaki (np. `^` czy `.`) mają specjalne znaczenie.
+W związku z tym, jeżeli chcemy wyszukać tekstu zawierającego specjalny znak, musimy użyć ukośnik wsteczny (`\`, ang. *backslash*).
+Istnieje wiele dodatkowych specjalne znaków, np. `\n` - nowa linia, `\t` - tabulator.
+<!-- link to the cheetsheet -->
+
+```{r}
+str_detect(tekst4, pattern = "^L")
+```
+
+```{r}
+str_detect(tekst4, pattern = "ena$")
+```
+
+```{r}
+str_detect(tekst4, pattern = "(ena|nna)$")
+```
+
+```{r}
+str_detect(tekst4, pattern = "[a-zA-Z]")
+```
+
+```{r}
+str_detect(tekst4, pattern = "[0-9]")
+```
+
+```{r}
+str_detect(tekst4, pattern = "L+")
+```
+
+```{r}
+str_detect(tekst4, pattern = "^[^L]+")
+```
+
+```{r, eval=FALSE}
+>str_detect(tekst4, pattern = "\.")
+#> Error: '\.' is an unrecognized escape in character string starting ""\."
+```
+
+```{r}
+str_detect(tekst4, pattern = "\\.")
+```
+
+```{r}
+# str_detect(tekst4, pattern = "")
+```
+
+```{r}
+# str_extract()
+```
+
+```{r}
+# str_replace()
+```
+
+Umiejętności używania wyrażeń regularnych można trenować używając różnych zasobów internetowych, np. strony https://regexr.com/ lub https://regex101.com/.
+<!-- https://regexcrossword.com/ -->
+<!-- https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124/ref=sr_1_1?ie=UTF8&qid=1464113797&sr=8-1&keywords=mastering+regular+expressions -->
 
 
 ## Zadania
