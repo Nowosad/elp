@@ -1,3 +1,9 @@
 # Powtarzanie {#petle}
 
+## Pętle
+
+## Programowanie funkcyjne
+
+<!-- *apply -->
+
 ## Zadania
