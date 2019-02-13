@@ -3,8 +3,6 @@
 <!-- kod nie przyjmuje literówek -->
 
 
-
-
 ## Wyrażenia
 
 <!-- - wyrażenia (e.g. 2 + 2) -->
@@ -107,6 +105,34 @@ z9
 <!-- integer division block -->
 
 ## IDE
+
+Rstudio to zintegorwane środowsko programistyczne (ang. *Integrated Development Environment*, IDE) dla R.
+<!-- wyjaśnienie -->
+Zawiera ono bardzo wiele użytecznych funkcjonalności, tj. wbudowany edytor, podświetlanie składni, automatyczne uzupełnianie kodu i wiele innych.
+
+```{r, echo=FALSE, out.width='\\textwidth'}
+# knitr::include_graphics("images/rstudio.png", dpi = NA)
+```
+
+<!-- block - RStudio to nie R!! -->
+
+```{r regexoperators, echo=FALSE}
+library(tibble)
+sk = tribble(
+  ~`Skrót`, ~`Wyjaśnienie`,
+  "Ctrl+Enter", "wykonuje wybraną linię kodu w skrypcie R",
+  "Tab", "uzupełnia kod (podaje pasujące mozliwości)",
+  "F1", "wyświetla plik pomocy dla wybranej funkcji",
+  "Ctrl+Shift+C", "ustawia wybrane linie jako komentarz/odkomentuj fragment kodu",
+  "strzałka Góra/Dół (w oknie konsoli)", "wybiera wcześniej wpisany kod",
+  "Esc", "przerwya niedokończoną operację"
+)
+knitr::kable(sk, 
+             caption = "Podstawowe skróty klawiaturowe w RStudio",
+             booktabs = TRUE)
+```
+
+## Pomoc
 
 ## Zadania
 
