@@ -33,22 +33,46 @@ paste("t", "o", " ", "k", "o", "t")
 paste0("t", "o", " ", "k", "o", "t")
 ```
 
-<!-- ^[funkcja `paste()`] -->
-
-```{r}
-tekst1 = c("t", "o", " ", "k", "o", "t")
-tekst1
-```
+<!-- ^[funkcja `str_c()`] -->
 
 ```{r}
 imie = "Olek"
 wiek = 7
-tekst2 = paste(imie, "ma", wiek, "lat.")
-tekst2
+tekst1 = paste(imie, "ma", wiek, "lat.")
+tekst1
 ```
 
+## Postawowe operacje na tekście
 
-## 
+```{r}
+library(stringr)
+```
+
+```{r}
+toupper(tekst1)
+```
+
+```{r}
+tolower(tekst1)
+```
+
+## Wydzielanie tekstu
+
+```{r}
+str_sub(tekst1, start = 1, 4)
+```
+
+```{r}
+str_sub(tekst1, start = 9, 14)
+```
+
+```{r}
+str_sub(tekst1, start = 9, -1)
+```
+
+```{r}
+str_sub(tekst1, start = -6, -1)
+```
 
 ## Wyrażenia regularne
 
