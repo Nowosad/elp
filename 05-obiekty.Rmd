@@ -8,10 +8,12 @@ Więcej informacji na temat podstawowych typów obiektów można znaleźć w ro
 
 ### Typy obiektów
 
-Proste (homogeniczne) i złożone (heterogeniczne). <!-- ref to ch05)-->
+Obiekty w R można podzielić na proste (homogeniczne) i złożone (heterogeniczne). 
+Do podstawowych prostych obiektów należą wektory (ang. *vector*) i macierze (ang. *matrix*), natomiast listy (ang. *list*) i ramki danych (ang. *data frame*) to obiekty złożone.
 
-Podstawową strukturą danych w R jest wektor.
-Może się on przyjmować jeden z czterech typów^[Do sprawdzania jakiego typu jest wektor służy funkcja `typeof()`.]:
+W tym rozdziale skupimy się na wektorach.
+Pozostałe podstawowe typy obiektów są omówione w rozdziale \@ref(zlozone-obiekty).
+Wektor może przyjmować jeden z czterech typów^[Do sprawdzania jakiego typu jest wektor służy funkcja `typeof()`.]:
 
 1. logiczny (ang. *logical*)
 
@@ -117,6 +119,13 @@ as.character(c(3L, 2L)) # liczba całkowita na znakowy
 
 ## Wydzielanie 
 
+<!-- indeksowanie -->
+Do wydzielania elementów z wektora w R służy operator `[]`.
+
 <!--subsetting-->
+
+## ...
+
+<!-- factor i date -->
 
 ## Zadania
