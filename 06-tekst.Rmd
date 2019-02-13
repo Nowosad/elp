@@ -1,3 +1,56 @@
 # Tekst {#tekst}
 
+Więcej na temat przetwarzania tekstu można znaleźć w rozdziale ["Strings"](https://r4ds.had.co.nz/strings.html) książki R for Data Science [@grolemund_r_2016].
+
+Typ znakowy jest określany poprzez użycie cudzysłowia `"` lub `'`.
+Ważne tutaj jest, aby rozpoczynać i kończyć tekst tym samym cudzysłowiem.
+
+```{r}
+t1 = "kot"
+t2 = 'pies'
+t3 = "kot, 'pies'"
+```
+
+W momencie, gdy tekst nie będzie kończył się cudzysłowiem, wykonanie kodu jest niemożliwe.
+Wówczas zamiast znaku `>`, oznaczającego nową linię wykonywanego kodu, pojawi się znak `+`.
+Oznacza on, że wykonanie kodu nie może zostać zakończone.
+
+```{r, eval=FALSE}
+> "Mój pierwszy alfabet
++
++
+```
+
+W takiej sytuacji należy nacisnąć klawisz Esc, aby przerwać wykonywanie operacji, a następnie poprawić wpisany kod.
+
+## Łączenie tekstu
+
+```{r}
+paste("t", "o", " ", "k", "o", "t")
+```
+
+```{r}
+paste0("t", "o", " ", "k", "o", "t")
+```
+
+<!-- ^[funkcja `paste()`] -->
+
+```{r}
+tekst1 = c("t", "o", " ", "k", "o", "t")
+tekst1
+```
+
+```{r}
+imie = "Olek"
+wiek = 7
+tekst2 = paste(imie, "ma", wiek, "lat.")
+tekst2
+```
+
+
+## 
+
+## Wyrażenia regularne
+
+
 ## Zadania
