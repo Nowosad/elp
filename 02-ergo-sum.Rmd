@@ -110,14 +110,15 @@ Rstudio to zintegorwane środowsko programistyczne (ang. *Integrated Development
 <!-- wyjaśnienie -->
 Zawiera ono bardzo wiele użytecznych funkcjonalności, tj. wbudowany edytor, podświetlanie składni, automatyczne uzupełnianie kodu i wiele innych.
 
-```{r, echo=FALSE, out.width='\\textwidth'}
-# knitr::include_graphics("images/rstudio.png", dpi = NA)
+```{r, echo=FALSE}
+knitr::include_graphics("images/rstudio.png")
 ```
 
 <!-- block - RStudio to nie R!! -->
 
-```{r regexoperators, echo=FALSE}
+```{r rstudiosk, echo=FALSE, message=FALSE}
 library(tibble)
+library(magrittr)
 sk = tribble(
   ~`Skrót`, ~`Wyjaśnienie`,
   "Ctrl+Enter", "wykonuje wybraną linię kodu w skrypcie R",
@@ -129,7 +130,9 @@ sk = tribble(
 )
 knitr::kable(sk, 
              caption = "Podstawowe skróty klawiaturowe w RStudio",
-             booktabs = TRUE)
+             booktabs = TRUE) %>% 
+  kableExtra::column_spec(1, width = "12em") %>% 
+  kableExtra::column_spec(2, width = "18em")
 ```
 
 ## Pomoc
