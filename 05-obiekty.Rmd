@@ -1,3 +1,122 @@
-# Klasy obiektów {#klasy-obiektow}
+# Typy obiektów {#typy-obiektow}
+
+Więcej informacji na temat podstawowych typów obiektów można znaleźć w rozdziale ["Vectors"](https://adv-r.hadley.nz/vectors-chap.html) książki Advanced R [@wickham2014advanced].
+
+### Działania na obiektach (wektoryzacja)
+
+<!-- Zmienna skalarna (block) -->
+
+### Typy obiektów
+
+Proste (homogeniczne) i złożone (heterogeniczne). <!-- ref to ch05)-->
+
+Podstawową strukturą danych w R jest wektor.
+Może się on przyjmować jeden z czterech typów^[Do sprawdzania jakiego typu jest wektor służy funkcja `typeof()`.]:
+
+1. logiczny (ang. *logical*)
+
+```{r}
+wek_log = c(TRUE, FALSE)
+wek_log
+```
+
+2. liczba całkowita (ang. *interger*)
+
+```{r}
+wek_cal = c(5L, -7L)
+wek_cal
+```
+
+3. liczba zmiennoprzecinkowa (ang. *double*)^[Liczby zmiennoprzecinkowe mogą być też reprezentowane poprzez notację naukową, np. 11111.2 może być zapisane jako 1.11112e4, a 0.00021 jako 2.1e-4.]
+
+```{r}
+wek_zmi = c(5.3, -7.1)
+wek_zmi
+```
+
+4. znakowy (ang. *character*)
+
+```{r}
+wek_zna = c("kot", "pies")
+wek_zna
+```
+
+<!--ref to style-->
+<!-- Typ numeryczny -->
+
+## Brakujące wartości
+
+Wyobraź sobie, że wykonujesz codziennie o 12:00 pomiar temperatury.
+
+```{r}
+temperatura = c(8.2, 10.3, 12.0)
+```
+
+Czwartego dnia twój termometr się popsuł i nie można było wykonać pomiaru.
+Co należałoby w takim razie zrobić?
+
+- Możnaby pominąć ten pomiar, naprawić termometr i wykonać pomiar kolejnego dnia. 
+Wówczas jednak mielibyśmy cztery wartości dla pięciu dni.
+- Inną możliwą opcją byłoby użycie wartości, która stałaby się kodem wartości brakujących, np. 999.
+Problemem tego rozwiązania jest to w jaki sposób należałoby, np. wyliczyć średnią w tym obiekcie.
+
+```{r}
+temperatura = c(8.2, 10.3, 12.0, 999)
+```
+
+- Najlepszą opcją byłoby wykorzystanie wbudowanego oznaczenia wartości brakujących w R - `NA`.
+
+```{r}
+temperatura = c(8.2, 10.3, 12.0, NA)
+```
+
+<!-- operacje na NA -->
+
+
+### Łączenie podstawowych typów obiektów
+
+Właściwością wektora jest to, że może on przyjmować tylko jeden typ.
+Próba stworzenia obiektu składającego się z wielu typów spowoduje wymuszenie (ang. *coercion*) do najbliższego możliwego typu.
+Odbywa się to zgodnie z zasadą: logiczny → liczba całkowita → liczba zmiennoprzecinkowa → znakowy.
+
+```{r}
+FALSE
+```
+
+```{r}
+c(FALSE, 0L)
+```
+
+```{r}
+c(FALSE, 0L, 3.1)
+```
+
+```{r}
+c(FALSE, 0L, 3.1, "kot")
+```
+
+### Zmiana typów obiektów
+
+Do zmiany typu obiektu służą funkcje `as.logical()`, `as.integer()`, `as.double()`, oraz `as.character()`^[Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje `is.logical()`, `is.integer()`,`is.double()`,  oraz `is.character()`.].
+
+```{r}
+as.logical(c("FALSE", "TRUE")) # znakowy na logiczny
+```
+
+```{r}
+as.integer(c("3", "2")) # znakowy na liczba całkowita 
+```
+
+```{r}
+as.double(c(3L, 2L)) # liczba całkowita na liczba zmiennoprzecinkowa
+```
+
+```{r}
+as.character(c(3L, 2L)) # liczba całkowita na znakowy
+```
+
+## Wydzielanie 
+
+<!--subsetting-->
 
 ## Zadania
