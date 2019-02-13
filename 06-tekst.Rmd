@@ -95,7 +95,13 @@ str_sub(tekst1, start = 9, -1)
 str_sub(tekst1, start = -6, -1)
 ```
 
-## Wyrażenia regularne
+## Wyrażenia regularne 
+
+```{r, echo=FALSE, eval=FALSE}
+x = c("Regular expression", "Regexp", "Regex")
+str_detect(x, "^Reg(exp?|ular expression)$")
+```
+
 
 Wyrażenia regularne (ang. *regular expressions*), często określane jako *regex* to sposób opisywanie wzorców tekstu. 
 Używając wyrażeń regularnych możliwe jest, między innymi, znajdowanie tekstu lub zamienienie, który spełnia wymagane warunki.
@@ -122,29 +128,30 @@ roperators = c("`^`",
                "`$`", "`()`", 
                "`|`", "`[]`", 
                "`[^]`",
-               "`*`", "`.`", 
-               "`{n}`", "`?`",
-               "`+`", "`\\\\`",
-               "\\\\d", "\\\\s"
+               "`*`", "`+`", 
+               "`?`", "`{n}`", 
+               "`.`", "`\\\\`"
                )
 
 roperators_exp = c("Określa początek tekstu/linii",
                    "Określa koniec testu/linii", "Grupowanie",
                    "Alternatywa (lub)", "Wymienia dozwolone znaki",
                    "Wymienia niedozwolone znaki",
-                   "Poprzedni znak zostanie wybrany zero lub więcej razy", "Poprzedni znak zostanie wybrany jeden raz",
-                   "Poprzedni znak zostanie wybrany n razy", "Poprzedni znak zostanie wybrany zero lub jeden raz", 
-                   "Poprzedni znak zostanie wybrany jeden lub więcej razy", "Pozwala na użycie specjalnych znaków",
-                   "Dopasowuje się do każdego znaku",
-                   "Dopasowuje się do tzw. znaków niedrukowalnych, np. spacji, tabulatora, nowej linii")
+                   "Poprzedni znak zostanie wybrany zero lub więcej razy", 
+                   "Poprzedni znak zostanie wybrany jeden lub więcej razy", 
+                   "Poprzedni znak zostanie wybrany zero lub jeden raz", 
+                   "Poprzedni znak zostanie wybrany n razy", 
+                   "Jakikolwiek znak oprócz nowej linii (\\n)",
+                   "Pozwala na użycie specjalnych znaków")
 knitr::kable(tibble(Operator = roperators, Wyjaśnienie = roperators_exp), 
-             caption = "Operatory porównania",
+             caption = "Metaznaki w wyrażeniach regularnych",
              booktabs = TRUE)
 ```
 
-Wymienione powyżej znaki (np. `^` czy `.`) mają specjalne znaczenie.
+Wymienione powyżej znaki (np. `^`<!--Kareta--> czy `.`) określane są jako metaznaki (ang. *metacharacters*) i mają one specjalne znaczenie.
 W związku z tym, jeżeli chcemy wyszukać tekstu zawierającego specjalny znak, musimy użyć ukośnik wsteczny (`\`, ang. *backslash*).
-Istnieje wiele dodatkowych specjalne znaków, np. `\n` - nowa linia, `\t` - tabulator.
+Istnieje wiele dodatkowych znaków specjalnych, np. `\n` - nowa linia, `\t` - tabulator, `\d` - każdy znak numeryczny (stałoprzecinkowy), `\s` - znak niedrukowalny, np. spacja, tabulator, nowa linia.
+<!-- ranges [a-z0-9] -->
 <!-- link to the cheetsheet -->
 
 ```{r}
@@ -188,9 +195,21 @@ str_detect(tekst4, pattern = "\\.")
 # str_detect(tekst4, pattern = "")
 ```
 
+<!-- block z popularnymi regex -->
+
+```{r, eval=FALSE}
+y = c("kołdra", "kordła", "pościel")
+str_detect(y, pattern = "ko(łdr|rdł)a")
+```
+
+
+## Wyrażenia regularne (wydzielanie tekstu)
+
 ```{r}
 # str_extract()
 ```
+
+## Wyrażenia regularne (zamiana tekstu)
 
 ```{r}
 # str_replace()
@@ -199,6 +218,13 @@ str_detect(tekst4, pattern = "\\.")
 Umiejętności używania wyrażeń regularnych można trenować używając różnych zasobów internetowych, np. strony https://regexr.com/ lub https://regex101.com/.
 <!-- https://regexcrossword.com/ -->
 <!-- https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124/ref=sr_1_1?ie=UTF8&qid=1464113797&sr=8-1&keywords=mastering+regular+expressions -->
+<!-- Lea Verou [Best of Fluent 2012: /Reg(exp){2}lained/: Demystifying Regular Expressions](https://www.youtube.com/watch?v=EkluES9Rvak) -->
+
+## Wyszukiwanie plików
 
 
 ## Zadania
+
+<!-- match hex colors, examples :#abs, #f0, #BADA55, #COFFEE https://www.youtube.com/watch?v=EkluES9Rvak -->
+<!-- match coordinates -->
+<!-- match dates -->
