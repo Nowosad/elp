@@ -51,7 +51,7 @@ if (temperatura > 0) {
 
 ```{r operators, echo=FALSE}
 library(tibble)
-operators = c("`==`", "`!=`", "`>`, `<`", "`>=`, `<=`")
+operators = c("==", "!=", ">, <", ">=, <=")
 operators_exp = c("Równy", "Nie równy", "Większy/Mniejszy niż",
                   "Większy/Mniejszy niż lub równy")
 knitr::kable(tibble(Operator = operators, Wyjaśnienie = operators_exp), 
@@ -60,7 +60,7 @@ knitr::kable(tibble(Operator = operators, Wyjaśnienie = operators_exp),
 ```
 
 ```{r operators2, echo=FALSE}
-operators2 = c("`!`", "&&", "||")
+operators2 = c("!", "&&", "||")
 operators_exp2 = c("Negacja (nie)", "Koniunkcja (i)", "Alternatywa (lub)")
 knitr::kable(tibble(Operator = operators2, Wyjaśnienie = operators_exp2), 
              caption = "Operatory porównania",

@@ -124,13 +124,13 @@ str_detect(tekst4, "lena")
 
 ```{r regexoperators, echo=FALSE}
 library(tibble)
-roperators = c("`^`", 
-               "`$`", "`()`", 
-               "`|`", "`[]`", 
-               "`[^]`",
-               "`*`", "`+`", 
-               "`?`", "`{n}`", 
-               "`.`", "`\\\\`"
+roperators = c("^", 
+               "$", "()", 
+               "|", "[]", 
+               "[^]",
+               "*", "+", 
+               "?", "{n}", 
+               ".", "\\\\"
                )
 
 roperators_exp = c("Określa początek tekstu/linii",

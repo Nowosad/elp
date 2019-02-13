@@ -4,7 +4,7 @@
 
 ## Struktura funkcji
 
-```{r, echo=FALSE, eval=FALSE}
+```{r, echo=FALSE}
 knitr::include_graphics("images/funkcje.png")
 ```
 
