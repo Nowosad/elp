@@ -59,9 +59,27 @@ Jeżeli nie jesteśmy pewni jak dana funkcja działa warto zacząć od skopiowan
 
 ## Pakiety
 
+Pakiet to zorganizowany zbiór funkcji, który rozszerza możliwości R.
+<!-- przykłady -->
+Pakiety oprócz kodu zawierają szereg dodatkowych istotnych elementów, takich jak:
+
+- Informacje o twórcach, zależnościach, licencji
+- Dokumentację
+- Przykładowe dane
+- Testy kodu
+
 <!-- - pakiety -->
 <!-- co to -->
 <!-- jak zainstalować -->
+
+Do instalacji pakietu w R służy funkcja `install.packages()`, np:
+
+Podobnie jak instalowanie programów na komputerze - robimy to tylko jeden raz.
+
+Użycie wybranego pakietu wymaga dołączenia go do R za pomocą funkcji `library()`.
+Dołączenie wybranych pakietów do R robimy po każdym uruchomieniu R.
+<!-- Oficjalne repo -->
+<!-- info o github + przykład -->
 
 ## Tworzenie skryptów
 
