@@ -245,6 +245,14 @@ names(lista)
 
 ### Łączenie
 
+```{r}
+c(lista, lista)
+```
+
+```{r}
+list(lista, lista)
+```
+
 ### Wydzielanie
 
 ## Zamiany klas
