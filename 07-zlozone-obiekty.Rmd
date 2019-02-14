@@ -3,27 +3,64 @@
 ## Macierze
 
 Macierze (ang. *matrix*), podobnie jak wektory, są obiektami homogenicznymi - jedna macierz może przyjmować dane tylko jednego typu.
+<!-- ref to arrays -->
 
 ### Tworzenie
 
 ```{r}
-macierz = matrix(1:9, ncol = 3, nrow = 3)
-macierz
+macierz1 = matrix(1:12, ncol = 3, nrow = 4)
+macierz1
+```
+
+```{r}
+macierz2 = matrix(1:12, ncol = 3, nrow = 4, byrow = TRUE)
+macierz2
 ```
 
 <!-- Macierze używane są ... zastosowania. -->
-<!-- ref to arrays -->
 <!-- ref to rasters -->
 
-### ...
+### Podstawowe funkcje
 
-<!-- `nrow()` -->
-<!-- `ncol()` -->
+```{r}
+str(macierz2)
+```
+
+```{r}
+typeof(macierz2)
+```
+
+```{r}
+ncol(macierz2)
+```
+
+```{r}
+nrow(macierz2)
+```
+
+```{r}
+colnames(macierz2)
+```
+
+```{r}
+colnames(macierz2) = c("a", "b", "c")
+macierz2
+colnames(macierz2)
+```
+
+<!-- `rownames()` - info about problems with rownames (block) -->
 
 ### Łączenie
 
-<!-- `cbind()` -->
-<!-- `rbind()` -->
+```{r}
+macierz3 = cbind(macierz1, macierz2)
+macierz3
+```
+
+```{r}
+macierz4 = rbind(macierz1, macierz2)
+macierz4
+```
 
 ### Wydzielanie
 
@@ -53,7 +90,7 @@ ramka
 <!-- problem z `stringsAsFactors` -->
 
 
-### ...
+### Podstawowe funkcje
 
 ```{r}
 class(ramka)
@@ -84,7 +121,7 @@ lista
 
 <!-- wielopoziomowe listy -->
 
-### ...
+### Podstawowe funkcje
 
 ```{r}
 str(lista)
