@@ -72,5 +72,44 @@ knitr::kable(tibble(Operator = operators2, Wyjaśnienie = operators_exp2),
 
 ## Wyrażenia warunkowe w funkcjach
 
+```{r}
+pogoda = function(temperatura){
+  if (is.numeric(temperatura)){
+    cat(paste("Dzisiaj jest", temperatura, "stopni Celsjusza."))
+  }
+}
+pogoda(10)
+pogoda(-20)
+pogoda(NA)
+```
+
+```{r}
+pogoda = function(temperatura){
+  if (is.numeric(temperatura)){
+    cat(paste("Dzisiaj jest", temperatura, "stopni Celsjusza."))
+  } else {
+    cat("Dzisiaj nie mamy pomiarów temperatury.")
+  }
+}
+pogoda(10)
+pogoda(-20)
+pogoda(NA)
+```
+
+```{r}
+pogoda = function(temperatura){
+  if (is.numeric(temperatura)){
+    cat(paste("Dzisiaj jest", temperatura, "stopni Celsjusza.\n"))
+    if (temperatura < 5){
+      cat("Ubierz się ciepło!")
+    }
+  } else {
+    cat("Dzisiaj nie mamy pomiarów temperatury.")
+  }
+}
+pogoda(10)
+pogoda(-20)
+pogoda(NA)
+```
 
 ## Zadania
