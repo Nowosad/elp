@@ -64,7 +64,31 @@ macierz4
 
 ### Wydzielanie
 
-<!-- subsetting -->
+Podobnie jak w przypadku wektorów (\@ref(proste-obiekty)), macierze można wydzielać używając operatora `[]`.
+W tym wypadku odbywa się to jednak na w oparciu o dwa indeksy - jeden dla wiersza, drugi dla kolumny - `[wiersz, kolumna]`.
+
+```{r}
+macierz4[c(1, 8), c(1, 3)]
+```
+
+```{r}
+macierz4[c(1, 8), ]
+```
+
+```{r}
+macierz4[, c(1, 3)]
+```
+
+```{r}
+macierz4[, c(TRUE, FALSE, TRUE)]
+```
+
+```{r}
+macierz4[, c("a", "c")]
+```
+
+<!-- ref to wektory -->
+<!-- block - też prosty wektor i macierz -->
 
 ## Ramki danych
 
