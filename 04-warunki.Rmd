@@ -8,9 +8,16 @@ Wyrażenia warunkowe są głównym tematem tego rozdziału, natomiast pętle są
 
 Celem wyrażeń warunkowych jest wykonywanie różnego kodu w zależności od danych wejściowych.
 
-## if
+## Warunki
 
 Wyrażenie `if` opiera się o spełnienie (lub niespełnienie) danego warunku.
+
+```{r, eval=FALSE}
+if (warunek){
+  jeżeli warunek spełniony to wykonaj operację
+}
+```
+
 
 ```{r}
 temperatura = 5.4
@@ -32,7 +39,7 @@ Warunek `if` można też tworzyć w uproszczonej formie:
 `if (warunek) spelniony else niespelniony`
 ```
 
-## else if
+## Warunki zagnieżdzone
 
 Działanie wyrażenia `if` może być połączone z dodatkowymi wyrażeniami `else if` oraz `else`.
 
