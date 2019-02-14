@@ -109,54 +109,6 @@ temperatura = c(8.2, 10.3, 12.0, NA)
 <!-- operacje na NA -->
 <!-- `is.na()` -->
 
-### Łączenie podstawowych typów obiektów
-
-<!-- tekst -->
-
-```{r}
-c(temperatura, temperatura)
-```
-
-Właściwością wektora jest to, że może on przyjmować tylko jeden typ.
-Próba stworzenia obiektu składającego się z wielu typów spowoduje wymuszenie (ang. *coercion*) do najbliższego możliwego typu.
-Odbywa się to zgodnie z zasadą: logiczny -> liczba całkowita -> liczba zmiennoprzecinkowa -> znakowy.
-
-```{r}
-FALSE
-```
-
-```{r}
-c(FALSE, 0L)
-```
-
-```{r}
-c(FALSE, 0L, 3.1)
-```
-
-```{r}
-c(FALSE, 0L, 3.1, "kot")
-```
-
-### Zmiana typów obiektów
-
-Do zmiany typu obiektu służą funkcje `as.logical()`, `as.integer()`, `as.double()`, oraz `as.character()`^[Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje `is.logical()`, `is.integer()`,`is.double()`,  oraz `is.character()`.].
-
-```{r}
-as.logical(c("FALSE", "TRUE")) # znakowy na logiczny
-```
-
-```{r}
-as.integer(c("3", "2")) # znakowy na liczba całkowita 
-```
-
-```{r}
-as.double(c(3L, 2L)) # liczba całkowita na liczba zmiennoprzecinkowa
-```
-
-```{r}
-as.character(c(3L, 2L)) # liczba całkowita na znakowy
-```
-
 ## Wydzielanie 
 
 R posiada trzy podstawowe operatory wydzielania (ang. *subsetting*) - `[]`, `[[]]` oraz `$`, które działają w różny sposób w zależności od tego czy wydzielamy wektory, macierze, ramki danych czy listy.
@@ -214,8 +166,57 @@ temperatura[0]
 ```
 
 
+### Łączenie podstawowych typów obiektów
+
+<!-- tekst -->
+
+```{r}
+c(temperatura, temperatura)
+```
+
+Właściwością wektora jest to, że może on przyjmować tylko jeden typ.
+Próba stworzenia obiektu składającego się z wielu typów spowoduje wymuszenie (ang. *coercion*) do najbliższego możliwego typu.
+Odbywa się to zgodnie z zasadą: logiczny -> liczba całkowita -> liczba zmiennoprzecinkowa -> znakowy.
+
+```{r}
+FALSE
+```
+
+```{r}
+c(FALSE, 0L)
+```
+
+```{r}
+c(FALSE, 0L, 3.1)
+```
+
+```{r}
+c(FALSE, 0L, 3.1, "kot")
+```
+
 ## ...
 
 <!-- factor i date -->
+
+### Zmiana typów obiektów
+
+Do zmiany typu obiektu służą funkcje `as.logical()`, `as.integer()`, `as.double()`, oraz `as.character()`^[Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje `is.logical()`, `is.integer()`,`is.double()`,  oraz `is.character()`.].
+
+```{r}
+as.logical(c("FALSE", "TRUE")) # znakowy na logiczny
+```
+
+```{r}
+as.integer(c("3", "2")) # znakowy na liczba całkowita 
+```
+
+```{r}
+as.double(c(3L, 2L)) # liczba całkowita na liczba zmiennoprzecinkowa
+```
+
+```{r}
+as.character(c(3L, 2L)) # liczba całkowita na znakowy
+```
+
 
 ## Zadania
