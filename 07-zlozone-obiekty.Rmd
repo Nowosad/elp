@@ -23,6 +23,10 @@ macierz2
 ### Podstawowe funkcje
 
 ```{r}
+class(macierz)
+```
+
+```{r}
 str(macierz2)
 ```
 
@@ -49,18 +53,6 @@ colnames(macierz2)
 ```
 
 <!-- `rownames()` - info about problems with rownames (block) -->
-
-### Łączenie
-
-```{r}
-macierz3 = cbind(macierz1, macierz2)
-macierz3
-```
-
-```{r}
-macierz4 = rbind(macierz1, macierz2)
-macierz4
-```
 
 ### Wydzielanie
 
@@ -90,6 +82,18 @@ macierz4[, c("a", "c")]
 <!-- ref to wektory -->
 <!-- block - też prosty wektor i macierz -->
 
+### Łączenie
+
+```{r}
+macierz3 = cbind(macierz1, macierz2)
+macierz3
+```
+
+```{r}
+macierz4 = rbind(macierz1, macierz2)
+macierz4
+```
+
 ## Ramki danych
 
 Ramki danych (ang. *data frame*) mają dużo podobieństw z macierzami. 
@@ -103,36 +107,111 @@ Ramka danych jest zbudowana z kolumn (wektorów) o równej długości.
 ### Tworzenie
 
 ```{r}
-ramka = data.frame(wek_log = c(TRUE, FALSE),
-                   wek_cal = c(5L, -7L), 
-                   wek_zmi = c(5.3, -7.1), 
-                   wek_zna = c("kot", "pies"),
+ramka1 = data.frame(wek_log = c(TRUE, FALSE, FALSE),
+                   wek_cal = c(5L, -7L, 12L), 
+                   wek_zmi = c(5.3, -7.1, 1.1), 
+                   wek_zna = c("kot", "pies", "nosorożec"),
                    stringsAsFactors = FALSE)
-ramka
+ramka1
 ```
 
 <!-- problem z `stringsAsFactors` -->
 
-
 ### Podstawowe funkcje
 
 ```{r}
-class(ramka)
+class(ramka1)
 ```
 
-### Łączenie
+```{r}
+str(ramka1)
+```
 
-`cbind()`, `rbind()`
+```{r}
+typeof(ramka1)
+```
+
+```{r}
+ncol(ramka1)
+```
+
+```{r}
+nrow(ramka1)
+```
+
+```{r}
+colnames(ramka1)
+```
+
+```{r}
+colnames(ramka1) = c("log", "cal", "zmi", "zna")
+ramka1
+colnames(ramka1)
+```
+
+<!-- `rownames()` - info about problems with rownames (block) -->
 
 ### Wydzielanie
 
-Do wydzielania elementów z ramki danych może służyć, między innymi, operator `[]`, operator `$` oraz funkcja `subset()`.
+Do wydzielania elementów z ramki danych może służyć, między innymi, operator `$`, operator `[]`  oraz funkcja `subset()`.
 
 Operator `$` pozwala na wybranie zmiennej (kolumny) na podstawie jej nazwy.
 
+```{r}
+ramka1$zmi
+ramka1$zna
+```
+
 W przypadku ramek danych operator `[]` wymaga podania dwóch argumentów - jednego dla wierszy (obserwacji) oraz jednego dla kolumn (zmiennych) - `[wiersze, kolumny]`.
 
-Do wydzielania można wykorzystać operatory logiczne: ==, !=, >, >=, <, <=, &, |.
+```{r}
+ramka1[c(1, 3), c(1, 2)]
+```
+
+Do wydzielania można też wykorzystać operatory logiczne: `==`, `%in%`, `!=`, `>`, `>=`, `<`, `<=`, `&`, `|`.
+
+```{r}
+ramka1[c(1, 3), ramka1$zmi > 0]
+```
+
+```{r}
+ramka1[ramka1$zna == "kot", ]
+```
+
+<!-- block == vs = -->
+
+```{r}
+ramka1[ramka1$zna %in% c("kot", "pies"), ]
+```
+
+```{r}
+ramka1[ramka1$cal > 6 | ramka1$cal < -6, ]
+```
+
+<!-- ref to wektor and matrix -->
+
+### Łączenie
+
+```{r}
+ramka2 = data.frame(zmi2 = c(4.3, 2.6, 7.4))
+ramka2
+```
+
+```{r}
+cbind(ramka1, ramka2)
+```
+
+```{r}
+ramka3 = data.frame(log = TRUE, cal = 2L, zmi = 2.3, zna = "żółw")
+ramka3
+```
+
+```{r}
+rbind(ramka1, ramka3)
+```
+
+<!-- info about joins -->
+<!-- ref to joins -->
 
 ## Listy
 
