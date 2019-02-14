@@ -214,11 +214,11 @@ rbind(ramka1, ramka3)
 ### Tworzenie
 
 ```{r}
-lista = list(c(TRUE, FALSE), 
+lista1 = list(c(TRUE, FALSE), 
              c(5L, -7L),
              c(5.3), 
              c("kot", "pies", "nosorożec"))
-lista
+lista1
 ```
 
 <!-- wielopoziomowe listy -->
@@ -226,34 +226,55 @@ lista
 ### Podstawowe funkcje
 
 ```{r}
-class(lista)
+class(lista1)
 ```
 
 ```{r}
-str(lista)
+str(lista1)
 ```
 
 ```{r}
-length(lista)
+length(lista1)
 ```
 
 ```{r}
-names(lista) = c("log", "cal", "zmi", "zna")
-lista
-names(lista)
+names(lista1) = c("log", "cal", "zmi", "zna")
+lista1
+names(lista1)
 ```
 
 ### Łączenie
 
 ```{r}
-c(lista, lista)
+lista2 = c(lista1, lista1)
+lista2
 ```
 
 ```{r}
-list(lista, lista)
+lista3 = list(lista1, lista1)
+lista3
 ```
 
 ### Wydzielanie
+
+```{r}
+lista4 = lista1[c(1, 2)]
+str(lista4)
+```
+
+```{r}
+lista5 = lista1[[c(4)]]
+str(lista5)
+```
+
+```{r}
+lista6 = lista3[[c(2)]]
+str(lista6)
+```
+
+```{r}
+lista1[c("zmi", "zna")]
+```
 
 ## Zamiany klas
 
