@@ -1,6 +1,6 @@
 # Powtarzanie {#petle}
 
-## Pętle
+## Pętla for
 
 ```{r, eval=FALSE}
 for (element in wektor) {
@@ -66,9 +66,16 @@ for (i in odl_mile_l) {
 odl_km
 ```
 
+## Pętla while
+
+<!-- https://rstudio-education.github.io/hopr/loops.html#while-loops -->
+
 <!-- `next`, `break` -
 https://adv-r.hadley.nz/control-flow.html#loops -->
 <!-- `while`, `repeat` -->
+<!--     pętla for stosowana w sytuacji, gdy ilość wykonań kodu jest znana przed rozpoczęciem działania pętli -->
+<!--     pętla while stosowana gdy ilość wykonań nie jest znana przed zakończeniem działania pętli -->
+
 
 ## Programowanie funkcyjne
 
