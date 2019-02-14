@@ -11,6 +11,8 @@ Więcej informacji na temat podstawowych typów obiektów można znaleźć w ro
 Obiekty w R można podzielić na proste (homogeniczne) i złożone (heterogeniczne). 
 Do podstawowych prostych obiektów należą wektory (ang. *vector*) i macierze (ang. *matrix*), natomiast listy (ang. *list*) i ramki danych (ang. *data frame*) to obiekty złożone.
 
+<!-- `str()` -->
+
 W tym rozdziale skupimy się na wektorach.
 Pozostałe podstawowe typy obiektów są omówione w rozdziale \@ref(zlozone-obiekty).
 Wektor może przyjmować jeden z czterech typów^[Do sprawdzania jakiego typu jest wektor służy funkcja `typeof()`.]:
@@ -45,6 +47,37 @@ wek_zna
 
 <!--ref to style-->
 <!-- Typ numeryczny -->
+<!-- block factor -->
+
+### Podstawowe funkcje
+
+```{r}
+str(wek_zmi)
+```
+
+```{r}
+typeof(wek_zmi)
+```
+
+```{r}
+length(wek_zmi)
+```
+
+```{r}
+names(wek_zmi)
+```
+
+```{r}
+names(wek_zmi) = c("a", "b")
+wek_zmi
+```
+
+```{r}
+names(wek_zmi)
+```
+
+<!-- `names()` -->
+<!-- operatory statytyczne -->
 
 ## Brakujące wartości
 
@@ -73,9 +106,15 @@ temperatura = c(8.2, 10.3, 12.0, NA)
 ```
 
 <!-- operacje na NA -->
-
+<!-- `is.na()` -->
 
 ### Łączenie podstawowych typów obiektów
+
+<!-- tekst -->
+
+```{r}
+c(temperatura, temperatura)
+```
 
 Właściwością wektora jest to, że może on przyjmować tylko jeden typ.
 Próba stworzenia obiektu składającego się z wielu typów spowoduje wymuszenie (ang. *coercion*) do najbliższego możliwego typu.
@@ -119,10 +158,52 @@ as.character(c(3L, 2L)) # liczba całkowita na znakowy
 
 ## Wydzielanie 
 
-<!-- indeksowanie -->
-Do wydzielania elementów z wektora w R służy operator `[]`.
+R posiada trzy podstawowe operatory wydzielania (ang. *subsetting*) - `[]`, `[[]]` oraz `$`, które działają w różny sposób w zależności od tego czy wydzielamy wektory, macierze, ramki danych czy listy.
+W tym rozdziale skupimy się na wydzielaniu elementów z wektora przy użyciu operatora `[]`.
+Więcej na temat wydzielania innych obiektów można znaleźć w rozdziale \@ref(zlozone-obiekty).
 
-<!--subsetting-->
+<!-- na podstawie pozycji -->
+
+```{r}
+temperatura[c(1, 3)]
+```
+
+```{r}
+temperatura[-c(2, 4)]
+```
+
+<!-- na podstawie wektora logicznego -->
+
+```{r}
+temperatura[c(TRUE, FALSE, TRUE, FALSE)]
+```
+
+```{r}
+temperatura[temperatura > 10]
+```
+
+<!-- na podstawie nazwy -->
+```{r}
+names(temperatura) = c("Poniedziałek", "Wtorek", "Środa", "Czwartek")
+temperatura
+```
+
+```{r}
+temperatura[c("Wtorek", "Czwartek")]
+```
+
+<!-- nic -->
+
+```{r}
+temperatura[]
+```
+
+<!-- zero -->
+
+```{r}
+temperatura[0]
+```
+
 
 ## ...
 
