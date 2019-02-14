@@ -1,6 +1,7 @@
 # Wprowadzenie {#wprowadzenie}
 
 <!-- akapit o złożoności -->
+<!-- historia (języki ewoluują) -->
 
 <!-- why we code? -->
 <!-- cost of reproduction! (economy) -->
