@@ -143,11 +143,6 @@ knitr::kable(sk,
 
 ## Pomoc
 
-fora
-https://stat.ethz.ch/mailman/listinfo/r-help
-https://stat.ethz.ch/mailman/listinfo/r-sig-geo
-https://community.rstudio.com/
-
 polskie książki
 http://www.biecek.pl/R/
 http://www.gagolewski.com/publications/programowanier/
@@ -167,6 +162,24 @@ https://www.r-bloggers.com/
 http://smarterpoland.pl/
 http://szychtawdanych.pl/
 
+kursy
+https://www.datacamp.com/search?q=r
+https://www.datacamp.com/courses/free-introduction-to-r
+https://github.com/dabrze/swirl
+https://www.coursera.org/courses?query=r&
+https://www.edx.org/course?search_query=r
+
+fora
+https://stat.ethz.ch/mailman/listinfo/r-help
+https://stat.ethz.ch/mailman/listinfo/r-sig-geo
+https://community.rstudio.com/
+
+stackoverflow
+https://stackoverflow.com/questions/tagged/r
+https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example
+
+twitter (#rstats)
+
 meetups
 https://www.meetup.com/pl-PL/Poznan-R-User-Group-PAZUR/
 https://www.meetup.com/pl-PL/Spotkania-Entuzjastow-R-Warsaw-R-Users-Group-Meetup/
@@ -176,19 +189,6 @@ https://www.meetup.com/Trojmiejska-Grupa-Entuzjastow-R/
 
 wyszukiwarka (rstats)
 wyszukiwarki internetowe Rseek, Duckduckgo, Google, Bing, itd.
-
-stackoverflow
-https://stackoverflow.com/questions/tagged/r
-https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example
-
-kursy
-https://www.datacamp.com/search?q=r
-https://www.datacamp.com/courses/free-introduction-to-r
-https://github.com/dabrze/swirl
-https://www.coursera.org/courses?query=r&
-https://www.edx.org/course?search_query=r
-
-twitter (#rstats)
 
 ## Styl
 
