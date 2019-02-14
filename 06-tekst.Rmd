@@ -8,7 +8,7 @@ Ważne tutaj jest, aby rozpoczynać i kończyć tekst tym samym cudzysłowiem.
 ```{r}
 t1 = "kot"
 t2 = 'pies'
-t3 = "'W teorii, teoria i praktyka są tym samym. W praktyce, nie są.' - Yogi Berra"
+t3 = '"W teorii, teoria i praktyka są tym samym. W praktyce, nie są." - Yogi Berra'
 ```
 
 W momencie, gdy tekst nie będzie kończył się cudzysłowiem, wykonanie kodu jest niemożliwe.

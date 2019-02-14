@@ -211,6 +211,8 @@ c(FALSE, 0L, 3.1, "kot")
 
 ### Zmiana typów obiektów
 
+<!--rzutowanie??-->
+
 Do zmiany typu obiektu służą funkcje `as.logical()`, `as.integer()`, `as.double()`, oraz `as.character()`^[Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje `is.logical()`, `is.integer()`,`is.double()`,  oraz `is.character()`.].
 
 ```{r}

@@ -71,6 +71,7 @@ Pakiety oprócz kodu zawierają szereg dodatkowych istotnych elementów, takich 
 <!-- - pakiety -->
 <!-- co to -->
 <!-- jak zainstalować -->
+<!-- przykłady -->
 
 Do instalacji pakietu w R służy funkcja `install.packages()`, np:
 
@@ -133,6 +134,7 @@ pogoda(0)
 Oprócz wyniku danej operacji R może wyświetlić kilka rodzajów wiadomości.
 <!-- with examples-->
 <!-- - błędy/ostrzeżenia -->
+<!-- rodzaje błędów - http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/10/006_wyjatki.html -->
 <!-- - komentarze -->
 <!-- - czytelność kodu/ styl -->
 <!-- wersje R -->

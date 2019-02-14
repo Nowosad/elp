@@ -7,3 +7,4 @@
 - when to introduce reprex?
 - when to introduce algorithms, scripts, functions?
 - mention opensource!
+- mention pipes?
