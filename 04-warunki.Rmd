@@ -4,6 +4,8 @@ Języki programowania opierają się o dwa podstawowe narzędzia pozwalające na
 Są to wyrażenia warunkowe oraz pętle.
 Wyrażenia warunkowe są głównym tematem tego rozdziału, natomiast pętle są omówione w rozdziale \@ref(petle).
 
+<!-- `switch` https://adv-r.hadley.nz/control-flow.html#loops -->
+
 Celem wyrażeń warunkowych jest wykonywanie różnego kodu w zależności od danych wejściowych.
 
 ## if
