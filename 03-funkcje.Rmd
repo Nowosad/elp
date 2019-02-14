@@ -81,9 +81,48 @@ Dołączenie wybranych pakietów do R robimy po każdym uruchomieniu R.
 <!-- Oficjalne repo -->
 <!-- info o github + przykład -->
 
+<!-- block - inaczej biblioteki, moduły, etc -->
+
 ## Tworzenie skryptów
 
 ## Budowanie funkcji
+
+Formalnie funkcja składa się z trzech elementów: listy argumentów (ang. *formals*), ciała funkcji (ang. *body*) oraz środowiska (ang. *environment*).
+Pierwsze dwa elementy ustala twórca funkcji, natomiast środowisko jest określane na podstawie tego, gdzie dana funkcja została zdefiniowana^[footnote o environment]<!--https://rstudio-education.github.io/hopr/environments.html-->.
+Dodatkowo funkcja ma swoją nazwę.
+
+```{r}
+moja_funkcja = function(x, y, z){
+  pod = y / z
+  wynik = x * pod
+  wynik
+}
+```
+
+<!-- wynik vs return(wynik) -->
+
+```{r}
+formals(moja_funkcja)
+```
+
+```{r}
+body(moja_funkcja)
+```
+
+```{r}
+environment(moja_funkcja)
+```
+
+<!-- F - 32 / 1.8000 -->
+
+```{r}
+pogoda = function(temperatura_f){
+    (temperatura_f - 32) / 1.8
+}
+pogoda(75)
+pogoda(110)
+pogoda(0)
+```
 
 <!-- scripts vs functions? -->
 <!-- when to write a function? -->
