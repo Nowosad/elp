@@ -128,10 +128,6 @@ str(ramka1)
 ```
 
 ```{r}
-typeof(ramka1)
-```
-
-```{r}
 ncol(ramka1)
 ```
 
@@ -218,7 +214,10 @@ rbind(ramka1, ramka3)
 ### Tworzenie
 
 ```{r}
-lista = list(c(TRUE, FALSE), c(5L, -7L), c(5.3), c("kot", "pies", "nosorożec"))
+lista = list(c(TRUE, FALSE), 
+             c(5L, -7L),
+             c(5.3), 
+             c("kot", "pies", "nosorożec"))
 lista
 ```
 
@@ -227,12 +226,28 @@ lista
 ### Podstawowe funkcje
 
 ```{r}
+class(lista)
+```
+
+```{r}
 str(lista)
+```
+
+```{r}
+length(lista)
+```
+
+```{r}
+names(lista) = c("log", "cal", "zmi", "zna")
+lista
+names(lista)
 ```
 
 ### Łączenie
 
 ### Wydzielanie
+
+## Zamiany klas
 
 ## Własne klasy
 
