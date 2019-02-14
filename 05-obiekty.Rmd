@@ -76,7 +76,8 @@ wek_zmi
 names(wek_zmi)
 ```
 
-<!-- `names()` -->
+<!-- block - nazwa tekstem -->
+
 <!-- operatory statytyczne -->
 
 ## Brakujące wartości
