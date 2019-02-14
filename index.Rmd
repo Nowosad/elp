@@ -42,6 +42,7 @@ knitr::include_graphics("images/Rlogo.png")
 
 - R - https://cloud.r-project.org/
 - RStudio - https://www.rstudio.com/products/rstudio/download/#download
+<!-- https://rstudio-education.github.io/hopr/starting.html -->
 
 <!--pakiety-->
 

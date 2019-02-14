@@ -1,7 +1,18 @@
 # Analiza kodu {#analiza-kodu}
 
-<!-- vectorized vs not-vectorized -->
+## Benchmarking
+
 <!-- benchmarking-->
+
+## Profiling
+
+
 <!-- profiling -->
+
+## Wektoryzacja kodu
+
+<!-- vectorized vs not-vectorized -->
+<!-- https://rstudio-education.github.io/hopr/speed.html -->
+
 
 ## Zadanie
