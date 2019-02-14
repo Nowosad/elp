@@ -165,6 +165,9 @@ temperatura[]
 temperatura[0]
 ```
 
+## Wydzielanie i przypisanie
+
+<!-- ... -->
 
 ### Łączenie podstawowych typów obiektów
 

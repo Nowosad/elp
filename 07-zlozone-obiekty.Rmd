@@ -257,10 +257,14 @@ lista3
 
 ### Wydzielanie
 
+<!-- `[]` - zawsze lista -->
+
 ```{r}
 lista4 = lista1[c(1, 2)]
 str(lista4)
 ```
+
+<!-- `[[]]` oraz `$` wyciąganie elementów -->
 
 ```{r}
 lista5 = lista1[[c(4)]]
@@ -275,6 +279,12 @@ str(lista6)
 ```{r}
 lista1[c("zmi", "zna")]
 ```
+
+```{r}
+lista1$zna
+```
+
+<!-- https://adv-r.hadley.nz/subsetting.html#lists-1 -->
 
 ## Zamiany klas
 
