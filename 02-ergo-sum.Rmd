@@ -2,7 +2,6 @@
 
 <!-- kod nie przyjmuje literówek -->
 
-
 ## Wyrażenia
 
 <!-- - wyrażenia (e.g. 2 + 2) -->
@@ -32,7 +31,7 @@ knitr::include_graphics("images/obiekty.png")
 
 ### Operator przypisania
 
-Operator przypisania służy do nadania wartości do obiektu.
+Operator przypisania służy do nadania wartości do obiektu<!--^[uproszczenie - https://adv-r.hadley.nz/names-values.html#binding-basics]-->.
 R posiada trzy operatory przypisania, które mają niemal identyczne działanie^[footnote]: `=`, `<-`, `->`.
 
 ```{r}
@@ -52,6 +51,10 @@ y
 ```
 
 <!-- - operator przypisania + działanie w pamięci -->
+
+<!-- block - nazywanie obiektów -->
+<!-- nie może się zaczynać numerem -->
+<!-- nie może używać specjalnych symbolii ^, !, $, @, +, -, /, lub * -->
 
 ### Działania na obiektach
 
@@ -140,9 +143,69 @@ knitr::kable(sk,
 
 ## Pomoc
 
+fora
+https://stat.ethz.ch/mailman/listinfo/r-help
+https://stat.ethz.ch/mailman/listinfo/r-sig-geo
+https://community.rstudio.com/
+
+polskie książki
+http://www.biecek.pl/R/
+http://www.gagolewski.com/publications/programowanier/
+https://bookdown.org/nowosad/Geostatystyka/
+https://helion.pl/ksiazki/jezyk-r-kompletny-zestaw-narzedzi-dla-analitykow-danych-hadley-wickham-garrett-grolemund,jezrko.htm#format/d
+https://helion.pl/ksiazki/wydajne-programowanie-w-r-praktyczny-przewodnik-po-lepszym-programowaniu-gillespie-colin-lovelace-robin,a_0491.htm#format/d
+
+angielskie książki
+https://rstudio-education.github.io/hopr/
+https://r4ds.had.co.nz/
+https://csgillespie.github.io/efficientR/
+https://adv-r.hadley.nz
+https://geocompr.robinlovelace.net/
+
+blogi
+https://www.r-bloggers.com/
+http://smarterpoland.pl/
+http://szychtawdanych.pl/
+
+meetups
+https://www.meetup.com/pl-PL/Poznan-R-User-Group-PAZUR/
+https://www.meetup.com/pl-PL/Spotkania-Entuzjastow-R-Warsaw-R-Users-Group-Meetup/
+https://www.meetup.com/Wroclaw-R-Users-Group/
+https://www.meetup.com/erkakrakow/
+https://www.meetup.com/Trojmiejska-Grupa-Entuzjastow-R/
+
+wyszukiwarka (rstats)
+wyszukiwarki internetowe Rseek, Duckduckgo, Google, Bing, itd.
+
+stackoverflow
+https://stackoverflow.com/questions/tagged/r
+https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example
+
+kursy
+https://www.datacamp.com/search?q=r
+https://www.datacamp.com/courses/free-introduction-to-r
+https://github.com/dabrze/swirl
+https://www.coursera.org/courses?query=r&
+https://www.edx.org/course?search_query=r
+
+twitter (#rstats)
+
 ## Styl
 
+<!-- https://style.tidyverse.org/ -->
+<!-- https://google.github.io/styleguide/Rguide.xml -->
+
+### Nazwy obiektów
+
+### Odstępy
+
+<!-- kod musi oddychać -->
+<!-- tab vs spaces -->
+
+### Komentarze
 <!-- komentarze -->
+
+### Nazwy plików
 
 ## Zadania
 
