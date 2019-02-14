@@ -1,4 +1,4 @@
-# Typy obiektów {#proste-obiekty}
+# Proste obiekty {#proste-obiekty}
 
 Więcej informacji na temat podstawowych typów obiektów można znaleźć w rozdziale ["Vectors"](https://adv-r.hadley.nz/vectors-chap.html) książki Advanced R [@wickham2014advanced].
 

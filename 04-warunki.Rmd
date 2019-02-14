@@ -2,7 +2,7 @@
 
 Języki programowania opierają się o dwa podstawowe narzędzia pozwalające na sterowanie przepływem operacji.
 Są to wyrażenia warunkowe oraz pętle.
-Wyrażenia warunkowe są głównym tematem tego rozdziału, natomiast pętle są omówione w rozdziale \ref(petle).
+Wyrażenia warunkowe są głównym tematem tego rozdziału, natomiast pętle są omówione w rozdziale \@ref(petle).
 
 Celem wyrażeń warunkowych jest wykonywanie różnego kodu w zależności od danych wejściowych.
 
@@ -51,8 +51,8 @@ if (temperatura > 0) {
 
 ```{r operators, echo=FALSE}
 library(tibble)
-operators = c("==", "!=", ">, <", ">=, <=")
-operators_exp = c("Równy", "Nie równy", "Większy/Mniejszy niż",
+operators = c("==", "!=", "%in%", ">, <", ">=, <=")
+operators_exp = c("Równy", "Nie równy", "Zawiera się w", "Większy/Mniejszy niż",
                   "Większy/Mniejszy niż lub równy")
 knitr::kable(tibble(Operator = operators, Wyjaśnienie = operators_exp), 
              caption = "Operatory porównania",

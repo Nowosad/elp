@@ -116,7 +116,7 @@ knitr::include_graphics("images/rstudio.png")
 
 <!-- block - RStudio to nie R!! -->
 
-```{r rstudiosk, echo=FALSE, message=FALSE}
+```{r rstudiosk, echo=FALSE, warning=FALSE}
 library(tibble)
 library(magrittr)
 sk = tribble(
