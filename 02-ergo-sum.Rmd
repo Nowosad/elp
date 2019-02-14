@@ -103,6 +103,9 @@ z9
 ```
 
 <!-- integer division block -->
+<!-- floating-point errors, -->
+<!-- floating-point arithmetic.  -->
+<!-- Floating-point arithmetic is a feature of computer programming.  -->
 
 ## IDE
 
@@ -136,6 +139,10 @@ knitr::kable(sk,
 ```
 
 ## Pomoc
+
+## Styl
+
+<!-- komentarze -->
 
 ## Zadania
 
