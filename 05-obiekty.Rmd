@@ -1,4 +1,4 @@
-# Typy obiektów {#typy-obiektow}
+# Typy obiektów {#proste-obiekty}
 
 Więcej informacji na temat podstawowych typów obiektów można znaleźć w rozdziale ["Vectors"](https://adv-r.hadley.nz/vectors-chap.html) książki Advanced R [@wickham2014advanced].
 
@@ -118,7 +118,7 @@ c(temperatura, temperatura)
 
 Właściwością wektora jest to, że może on przyjmować tylko jeden typ.
 Próba stworzenia obiektu składającego się z wielu typów spowoduje wymuszenie (ang. *coercion*) do najbliższego możliwego typu.
-Odbywa się to zgodnie z zasadą: logiczny → liczba całkowita → liczba zmiennoprzecinkowa → znakowy.
+Odbywa się to zgodnie z zasadą: logiczny -> liczba całkowita -> liczba zmiennoprzecinkowa -> znakowy.
 
 ```{r}
 FALSE
@@ -161,6 +161,14 @@ as.character(c(3L, 2L)) # liczba całkowita na znakowy
 R posiada trzy podstawowe operatory wydzielania (ang. *subsetting*) - `[]`, `[[]]` oraz `$`, które działają w różny sposób w zależności od tego czy wydzielamy wektory, macierze, ramki danych czy listy.
 W tym rozdziale skupimy się na wydzielaniu elementów z wektora przy użyciu operatora `[]`.
 Więcej na temat wydzielania innych obiektów można znaleźć w rozdziale \@ref(zlozone-obiekty).
+
+Wydzielanie wektorów używając operatora `[]` może odbywać się używając jednego z poniższych zapytań:
+
+1. Na podstawie pozycji
+2. Na podstawie wektora logicznego
+3. Na podstawie nazwy
+4. Używając elementu pustego
+5. Używając zera
 
 <!-- na podstawie pozycji -->
 
