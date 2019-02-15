@@ -9,7 +9,8 @@ knitr::opts_chunk$set(
   fig.path = "figures/",
   fig.align = "center",
   fig.width = 6,
-  fig.asp = 0.618,  # 1 / phi
+  # fig.asp = 0.618,  # 1 / pi (golden ratio)
+  fig.asp = 0.7072136,  # 1 / 1.414 (silver ratio)
   fig.show = "hold",
   out.width = "100%"
 )
