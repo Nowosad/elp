@@ -215,6 +215,7 @@ str_detect(y, pattern = "ko(łdr|rdł)a")
 # str_replace()
 ```
 
+<!-- https://stringr.tidyverse.org/articles/regular-expressions.html -->
 Umiejętności używania wyrażeń regularnych można trenować używając różnych zasobów internetowych, np. strony https://regexr.com/ lub https://regex101.com/.
 <!-- https://regexcrossword.com/ -->
 <!-- https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124/ref=sr_1_1?ie=UTF8&qid=1464113797&sr=8-1&keywords=mastering+regular+expressions -->
