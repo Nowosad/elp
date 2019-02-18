@@ -194,18 +194,97 @@ Meetups (spotkania początkujących i zaawansowanych użytkowników R):
 
 ## Styl
 
-<!-- https://style.tidyverse.org/ -->
-<!-- https://google.github.io/styleguide/Rguide.xml -->
+- https://style.tidyverse.org/
+- https://google.github.io/styleguide/Rguide.xml
+
+<!-- be consistent! -->
 
 ### Nazwy obiektów
 
+Istnieje wiele konwencji nazywania obiektów^[https://en.wikipedia.org/wiki/Naming_convention_(programming)]. 
+Najczęściej używaną konwencją w R jest tzw. ["snake case"](https://en.wikipedia.org/wiki/Snake_case).
+Polega ona na tworzeniu nazw obiektów składających się ze słów połączonych znakiem podkreślenia (`_`), np.
+<!-- obiekty rzeczowniki, funkcje czasowniki -->
+
+```{r}
+
+
+```
+
+Ważne, żeby nazwy obiektów ułatwiały zrozumienie ich zawartości.
+
+```{r}
+# obiekt
+bok_a
+bok_b
+
+# funkcja
+pole_prostokata
+```
+
+Dodatkowo należy uważać, żeby nowa nazwa obiektu nie nadpisała istniejącego obiektu lub funkcji.
+Nie powinno nazywać się obiektów, np. `c`, `t`, `table`, itd.
+
 ### Odstępy
 
-<!-- kod musi oddychać -->
-<!-- tab vs spaces -->
+Odstępy pełnią bardzo ważną funkcję przy pisaniu kodu, podobnie jak odstępy przy pisaniu tekstu.
+Wyobraź sobie czytanie powieści, w której nie ma żadnych odstępów między słowami czy rozdziałami.
+<!-- indentation python -->
+Często mówi się, że "kod musi oddychać" - odstępy zwiększają czytelność kodu i pozwalają na jego szybsze zrozumienie oraz ułatwiają naprawienie występujących błędów.
+
+Odstępy można uzyskać poprzez użycie spacji.
+Spacje powinny być użyte po przecinkach, ale nigdy przed nimi. Dodatkowo, większość operatorów (np. `=`, `+`, `-`, `==`) powinna być otoczona przez spacje.
+
+```{r}
+# Zalecane
+srednia = mean(wartosc, na.rm = TRUE)
+pole = bok_a * bok_b
+
+# Niewskazane
+srednia=mean ( wartosc,na.rm=TRUE ) 
+pole=bok_a*bok_b
+```
+
+Spacje należy również używać do tworzenia wcięć - każde z nich powinno się składać z dwóch spacji.
+<!-- tab space war -->
+
+```{r}
+# Zalecane
+moja_funkcja = function(x, y, z){
+  pod = y / z
+  wynik = x * pod
+  wynik
+}
+
+# Niewskazane
+moja_funkcja = function(x, y, z){
+pod = y / z
+wynik = x * pod
+wynik
+}
+```
+
+Warto także ograniczać długość każdej linii kodu, żeby nie przekraczała ona ok. 80 znaków.
+Dzięki temu możliwe jest szybkie przeczytanie kodu czy też jego wydrukowanie.
+
+```{r}
+# Zalecane
+bardzo_wazny_wynik = moja_bardzo_wazna_funkcja("pierwszy argument",
+                                               b = "drugi argument", 
+                                               c = "trzeci argument")
+
+# Niewskazane
+bardzo_wazny_wynik = moja_bardzo_wazna_funkcja("pierwszy argument", "drugi argument", "trzeci argument")
+```
 
 ### Komentarze
-<!-- komentarze -->
+
+Komentarze służą do wyjaśniania istotnych elementów kodu.
+Do komentowania w języku R służy operator `#`.
+
+```{r}
+# Mój komentarz
+```
 
 ### Nazwy plików
 
