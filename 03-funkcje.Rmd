@@ -15,10 +15,6 @@ x = c(8.2, 10.3, 12.0)
 ```
 
 ```{r}
-mean(x)
-```
-
-```{r}
 (8.2 + 10.3 + 12.0) / 3
 ```
 
@@ -27,12 +23,16 @@ sum(x) / length(x)
 ```
 
 ```{r}
+mean(x)
+```
+
+```{r}
 y = mean(x)
 ```
 
-## Dokumentacja
+## Dokumentacja funkcji
 
-Każda wbudowana funkcja w R posiada swoją dokumentację.
+Każda wbudowana funkcja w R posiada swoją dokumentację^[Niektóre zbiory danych również posiadają swoje pliki pomocy.].
 Można ją wyświetlić poprzez dodanie znaku zapytania przed nazwą funkcji, a następnie wykonanie tej linii kodu.
 
 ```{r, eval=FALSE}
@@ -66,15 +66,10 @@ Pakiet to zorganizowany zbiór funkcji, który rozszerza możliwości R.
 <!-- przykłady -->
 Pakiety oprócz kodu zawierają szereg dodatkowych istotnych elementów, takich jak:
 
-- Informacje o twórcach, zależnościach, licencji
+- Informacja o wersji pakietu, jego twórcach, zależnościach, czy licencji
 - Dokumentację
 - Przykładowe dane
 - Testy kodu
-
-<!-- - pakiety -->
-<!-- co to -->
-<!-- jak zainstalować -->
-<!-- przykłady -->
 
 Do instalacji pakietu w R służy funkcja `install.packages()`, np:
 
