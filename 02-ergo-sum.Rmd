@@ -194,10 +194,10 @@ Meetups (spotkania początkujących i zaawansowanych użytkowników R):
 
 ## Styl
 
-- https://style.tidyverse.org/
-- https://google.github.io/styleguide/Rguide.xml
-
-<!-- be consistent! -->
+Poniżej znajdują się podstawowe porady dotyczące stylu pisania kodu. 
+Więcej wskazówek można znaleźć na w [poradniku stylu RStudio](https://style.tidyverse.org/) oraz [poradniku stylu Google](https://google.github.io/styleguide/Rguide.xml).
+Oba te poradniki nie są identyczne i czasami zawierają sprzeczne porady. 
+Najważniejsze jest, aby wybrać jeden odpowiadający piszącemu kod styl i się go konsekwentnie trzymać. 
 
 ### Nazwy obiektów
 
@@ -205,12 +205,6 @@ Istnieje wiele konwencji nazywania obiektów^[https://en.wikipedia.org/wiki/Nami
 Najczęściej używaną konwencją w R jest tzw. ["snake case"](https://en.wikipedia.org/wiki/Snake_case).
 Polega ona na tworzeniu nazw obiektów składających się ze słów połączonych znakiem podkreślenia (`_`), np.
 <!-- obiekty rzeczowniki, funkcje czasowniki -->
-
-```{r}
-
-
-```
-
 Ważne, żeby nazwy obiektów ułatwiały zrozumienie ich zawartości.
 
 ```{r}
@@ -287,6 +281,22 @@ Do komentowania w języku R służy operator `#`.
 ```
 
 ### Nazwy plików
+
+Podobnie jak nazwy obiektów, również nazwy plików powinny mieć nazwy opisujące ich zawartość.
+
+```{r}
+# Zalecane
+obliczanie-sredniej.R
+pomiary-temperatury.csv
+
+# Niewskazane
+kod.R
+dane.csv
+```
+
+Dodatkowo nazwy plików nie powinny zawierać spacji, znaków specjalnych (np. !, %, *), znaków diakrytycznych (np. ć, Ł, ź).
+Warto też aby nazwy plików składały się tylko z małych liter.
+<!--^[kodowanie znaków]-->
 
 ## Zadania
 
