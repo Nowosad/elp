@@ -80,19 +80,19 @@ str_sort(tekst3, locale = "pl")
 ## Wydzielanie tekstu
 
 ```{r}
-str_sub(tekst1, start = 1, 4)
+str_sub(tekst1, start = 1, end = 4)
 ```
 
 ```{r}
-str_sub(tekst1, start = 9, 14)
+str_sub(tekst1, start = 9, end = 14)
 ```
 
 ```{r}
-str_sub(tekst1, start = 9, -1)
+str_sub(tekst1, start = 9, end = -1)
 ```
 
 ```{r}
-str_sub(tekst1, start = -6, -1)
+str_sub(tekst1, start = -6, end = -1)
 ```
 
 ## Wyrażenia regularne 
