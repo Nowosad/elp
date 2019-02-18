@@ -67,18 +67,31 @@ Pakiet to zorganizowany zbiór funkcji, który rozszerza możliwości R.
 Pakiety oprócz kodu zawierają szereg dodatkowych istotnych elementów, takich jak:
 
 - Informacja o wersji pakietu, jego twórcach, zależnościach, czy licencji
-- Dokumentację
+- Dokumentacja
 - Przykładowe dane
 - Testy kodu
 
-Do instalacji pakietu w R służy funkcja `install.packages()`, np:
+Pakiety R mogą być przechowywane i instalowane z wielu miejsc w internecie. 
+Istnieje jednak jedno centralne repozytorium (CRAN, ang. *the Comprehensive R Archive Network*), które zawiera oficjalne wersje pakietów R. 
+Wersje deweloperskie (rozwojowe) często można znaleźć na platformie [GitHub](https://github.com/)
 
-Podobnie jak instalowanie programów na komputerze - robimy to tylko jeden raz.
+Do instalacji pakietu w R z repozytorium CRAN służy wbudowana funkcja `install.packages()`, np:
+
+```{r, eval=FALSE}
+install.packages("stringr") #instalacja pakietu stringr
+```
+
+Zainstalowanie pakietu w R z platformy GitHub jest możliwe używając, np. funkcji `install_github()` z pakietu **remotes**.
+
+```{r}
+# install.packages("remotes")
+remotes::install_github("r-lib/remotes")
+```
+
+Podobnie jak instalowanie programów na komputerze - zainstalowanie pakietu odbywa się tylko jeden raz.
 
 Użycie wybranego pakietu wymaga dołączenia go do R za pomocą funkcji `library()`.
 Dołączenie wybranych pakietów do R robimy po każdym uruchomieniu R.
-<!-- Oficjalne repo -->
-<!-- info o github + przykład -->
 
 <!-- block - inaczej biblioteki, moduły, etc -->
 
