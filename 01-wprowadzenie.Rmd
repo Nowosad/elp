@@ -26,12 +26,12 @@
 <!-- everything takes time -->
 
 <!-- akapit o inspiracjach -->
-https://rstudio-education.github.io/hopr/
-https://www.datacamp.com/courses/free-introduction-to-r
-https://rstudio.cloud/learn/primers
-https://csgillespie.github.io/efficientR/
-http://jarekj.home.amu.edu.pl/?page_id=36
-https://speakerdeck.com/jennybc/zen-and-the-art-of-workflow-maintenance
-http://adv-r.hadley.nz/
+<!-- https://rstudio-education.github.io/hopr/ -->
+<!-- https://www.datacamp.com/courses/free-introduction-to-r -->
+<!-- https://rstudio.cloud/learn/primers -->
+<!-- https://csgillespie.github.io/efficientR/ -->
+<!-- http://jarekj.home.amu.edu.pl/?page_id=36 -->
+<!-- https://speakerdeck.com/jennybc/zen-and-the-art-of-workflow-maintenance -->
+<!-- http://adv-r.hadley.nz/ -->
 
 ## Zadania
