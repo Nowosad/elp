@@ -73,7 +73,7 @@ Pakiety oprócz kodu zawierają szereg dodatkowych istotnych elementów, takich 
 
 Pakiety R mogą być przechowywane i instalowane z wielu miejsc w internecie. 
 Istnieje jednak jedno centralne repozytorium (CRAN, ang. *the Comprehensive R Archive Network*), które zawiera oficjalne wersje pakietów R. 
-Wersje deweloperskie (rozwojowe) często można znaleźć na platformie [GitHub](https://github.com/)
+Wersje deweloperskie (rozwojowe) często można znaleźć na platformie [GitHub](https://github.com/).
 
 Do instalacji pakietu w R z repozytorium CRAN służy wbudowana funkcja `install.packages()`, np:
 
@@ -83,7 +83,7 @@ install.packages("stringr") #instalacja pakietu stringr
 
 Zainstalowanie pakietu w R z platformy GitHub jest możliwe używając, np. funkcji `install_github()` z pakietu **remotes**.
 
-```{r}
+```{r, eval=FALSE}
 # install.packages("remotes")
 remotes::install_github("r-lib/remotes")
 ```
@@ -93,15 +93,81 @@ Podobnie jak instalowanie programów na komputerze - zainstalowanie pakietu odby
 Użycie wybranego pakietu wymaga dołączenia go do R za pomocą funkcji `library()`.
 Dołączenie wybranych pakietów do R robimy po każdym uruchomieniu R.
 
+```{r}
+library(stringr)
+```
+
+<!-- stringr::str_sub() -->
+
+```{r, eval=FALSE}
+str_sub("chronologia", start = 1, end = 6)
+#> Error in str_sub("chronologia", start = 1, end = 6) : 
+#>  could not find function "str_sub"
+```
 <!-- block - inaczej biblioteki, moduły, etc -->
 
 ## Tworzenie skryptów
 
+<!--kodowanie tekstu-->
+Skrypt w R to plik testowy z rozszerzeniem `.R`, który zawiera szereg linii kodu w celu uzyskania konkretnego efektu.
+Może on zawierać zaledwie kilka jak i setki linii kodu w zależności od złożoności postawionego problemu.
+Zobaczmy jak wyglądają skrypty na prostym przykładzie - przeliczania wartości ze skali Fahrenheita na skalę Celsjusza.
+Otrzymaliśmy informację, że w "mieście A" temperatura w stopniach Fahrenheita wynosi 75.
+
+```{r}
+miasto_a = 75
+```
+
+Pierwszym naszym krokiem powinno być dowiedzenie się jaka jest relacja pomiędzy skalą Fahrenheita na skalą Celsjusza.
+
+$$T_{Celsjusz} = \frac{T_{Fahrenheit} - 32}{1.8}$$
+
+Następnie powyższy wzór można przepisać do postaci kodu w języku R oraz podstawić do niego wartość temperatury w stopniach Fahrenheita w mieście A.
+Ostatnim etapem jest wyświetlenie uzyskanego wyniku - temperatura w mieście A wynosi ok. 24 stopnie Celsjusza.
+
+```{r}
+miasto_a_c = (miasto_a - 32) / 1.8
+miasto_a_c
+```
+
+Powyższe kroki można również zapisać do pliku tekstowego. 
+
+```{r}
+# plik przeliczanie-temp.R
+miasto_a = 75
+miasto_a_c = (miasto_a - 32) / 1.8
+miasto_a_c
+```
+
+Co można zrobić jeżeli mamy więcej podobnych pomiarów, które chcemy wykonać?
+Najprostszą opcją jest użycie kopiuj/wklej i powielenie tego samego kodu, a później naniesienie małych zmian, np. nazw obiektów.
+<!-- ^[o wekrtoryzacji] -->
+<!-- or use data.frame? -->
+
+```{r}
+miasto_a = 75
+miasto_b = 110
+miasto_c = 0
+miasto_a_c = (miasto_a - 32) / 1.8
+miasto_b_c = (miasto_b - 32) / 1.8
+miasto_c_c = (miasto_c - 32) / 1.8
+```
+
+Powyższe podejście jest poprawne, ale ma ono kilka wad:
+
+* Łatwo jest o popełnie jakiegoś prostego błędu lub literówki podczas adaptacji kodu (np. można zapomnieć zmienić nazwę jakiejś zmiennej)
+* Jeżeli obliczenia zajmują więcej niż kilka linii kodu - wówczas kopiowanie go znacznie powiększa tworzony skrypt i utrudnia jego czytelność
+* Poprawienie kodu w przypadku zauważenia błędu w procedurze obliczeniowej jest czasochłonne
+
+To podejście jest też niezgodne z jedną z najważniejszych reguł w programowaniu - regułą DRY (Nie powtarzaj się, ang. *Don't Repeat Yourself*).
+Zamiast tworzenia skryptu w oparciu o kopiuj/wklej lepiej pomyśleć nad zbudowaniem odpowiedniej funkcji^[@grolemund_r_2016 radzą używać funkcje, gdy ten sam kod potwarza się co najmniej trzy razy.].
+
 ## Budowanie funkcji
 
-Formalnie funkcja składa się z trzech elementów: listy argumentów (ang. *formals*), ciała funkcji (ang. *body*) oraz środowiska (ang. *environment*).
-Pierwsze dwa elementy ustala twórca funkcji, natomiast środowisko jest określane na podstawie tego, gdzie dana funkcja została zdefiniowana^[footnote o environment]<!--https://rstudio-education.github.io/hopr/environments.html-->.
-Dodatkowo funkcja ma swoją nazwę.
+Funkcje pozwalają na automatyzację często używanych obliczeń.
+Formalnie funkcje składają się z trzech elementów: listy argumentów (ang. *formals*), ciała funkcji (ang. *body*) oraz środowiska (ang. *environment*).
+Pierwsze dwa elementy ustala twórca funkcji, natomiast środowisko jest określane na podstawie tego, gdzie dana funkcja została zdefiniowana<!--^[footnote o environment]https://rstudio-education.github.io/hopr/environments.html-->.
+Dodatkowo każda funkcja ma swoją nazwę.
 
 ```{r}
 moja_funkcja = function(x, y, z){
@@ -125,20 +191,17 @@ body(moja_funkcja)
 environment(moja_funkcja)
 ```
 
-<!-- F - 32 / 1.8000 -->
+
 
 ```{r}
-pogoda = function(temperatura_f){
+konwersja_temp = function(temperatura_f){
     (temperatura_f - 32) / 1.8
 }
-pogoda(75)
-pogoda(110)
-pogoda(0)
+konwersja_temp(75)
+konwersja_temp(110)
+konwersja_temp(0)
+konwersja_temp(c(0, 75, 110))
 ```
-
-<!-- scripts vs functions? -->
-<!-- when to write a function? -->
-<!-- more than two repetition -->
 
 ### Komunikaty
 
