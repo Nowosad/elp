@@ -32,12 +32,14 @@ y = mean(x)
 
 ## Dokumentacja
 
-<!-- - użycie dokumentacji -->
-F1
+Każda wbudowana funkcja w R posiada swoją dokumentację.
+Można ją wyświetlić poprzez dodanie znaku zapytania przed nazwą funkcji, a następnie wykonanie tej linii kodu.
 
 ```{r, eval=FALSE}
 ?mean
 ```
+
+Alternatywnie, w RStudio możliwe jest użycie skrótu F1 gdy kursor znajduje się na nazwie funkcji.
 
 Dokumentacja każdej funkcji, zwana inaczej plikiem pomocy, ma zazwyczaj podobną strukturę.
 
@@ -55,7 +57,8 @@ Przykładowo, `x` musi być obiektem R o typie numerycznym (który łączy typ 
 - Jeden z najważniejszych elementów pliku pomocy znajduje się na samym końcu - są to przykłady (*Examples*).
 Jeżeli nie jesteśmy pewni jak dana funkcja działa warto zacząć od skopiowania przykładów a następnie ich wykonania.
 
-<!-- block - nie bój się szukać online -->
+Czytanie dokumentacji wymaga pewnej wprawy i doświadczenia. 
+Nie bój się używać innych źródeł pomocy (zobacz sekcję \@ref(pomoc)), jeżli potrzebujesz zrozumieć działanie danej funkcji.
 
 ## Pakiety
 
