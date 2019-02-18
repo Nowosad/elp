@@ -176,27 +176,41 @@ moja_funkcja = function(x, y, z){
   wynik
 }
 ```
-
 <!-- wynik vs return(wynik) -->
+
+Lista argumentów wymienia obiekty wejściowe funkcji.
 
 ```{r}
 formals(moja_funkcja)
 ```
 
+Ciało zawiera kod danej funkcji.
+
 ```{r}
 body(moja_funkcja)
 ```
+
+Środowisko określa, gdzie dana funkcja jest zlokalizowana.
 
 ```{r}
 environment(moja_funkcja)
 ```
 
-
+Przykładowa funkcja odpowiadająca problemowi z poprzedniej sekcji może wyglądać w poniższy sposób:
 
 ```{r}
 konwersja_temp = function(temperatura_f){
     (temperatura_f - 32) / 1.8
 }
+```
+
+Nowa funkcja nazywa się `konwersja_temp()` oraz posiada tylko jeden argument `temperatura_f`.
+Ciało funkcji zawiera natomiast wzór potrzebny do obliczeń przepisany do R.
+Ważne jest to, że obiekt użyty wewnątrz funkcji (`temperatura_f`) jest taki sam jak wejściowy argument.
+
+Po stworzeniu funkcji warto sprawdzić czy jej działanie odpowiada naszym oczekiwaniom.
+
+```{r}
 konwersja_temp(75)
 konwersja_temp(110)
 konwersja_temp(0)
