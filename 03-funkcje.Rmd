@@ -2,6 +2,10 @@
 
 <!-- intro (co to) -->
 
+## Algorytmy
+
+<!-- przepis kucharski -->
+
 ## Struktura funkcji
 
 ```{r, echo=FALSE}
