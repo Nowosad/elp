@@ -3,6 +3,10 @@
 
 <!-- intro (co to) -->
 
+## Algorytmy
+
+<!-- przepis kucharski -->
+
 ## Struktura funkcji
 
 <img src="images/funkcje.png" width="100%" style="display: block; margin: auto;" />

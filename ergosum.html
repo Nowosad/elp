@@ -157,15 +157,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="ergosum.html"><a href="ergosum.html#zadania-1"><i class="fa fa-check"></i><b>2.6</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a><ul>
-<li class="chapter" data-level="3.1" data-path="funkcje.html"><a href="funkcje.html#struktura-funkcji"><i class="fa fa-check"></i><b>3.1</b> Struktura funkcji</a></li>
-<li class="chapter" data-level="3.2" data-path="funkcje.html"><a href="funkcje.html#wbudowane-funkcje"><i class="fa fa-check"></i><b>3.2</b> Wbudowane funkcje</a></li>
-<li class="chapter" data-level="3.3" data-path="funkcje.html"><a href="funkcje.html#dokumentacja-funkcji"><i class="fa fa-check"></i><b>3.3</b> Dokumentacja funkcji</a></li>
-<li class="chapter" data-level="3.4" data-path="funkcje.html"><a href="funkcje.html#pakiety"><i class="fa fa-check"></i><b>3.4</b> Pakiety</a></li>
-<li class="chapter" data-level="3.5" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptow"><i class="fa fa-check"></i><b>3.5</b> Tworzenie skryptów</a></li>
-<li class="chapter" data-level="3.6" data-path="funkcje.html"><a href="funkcje.html#budowanie-funkcji"><i class="fa fa-check"></i><b>3.6</b> Budowanie funkcji</a><ul>
-<li class="chapter" data-level="3.6.1" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.6.1</b> Komunikaty</a></li>
+<li class="chapter" data-level="3.1" data-path="funkcje.html"><a href="funkcje.html#algorytmy"><i class="fa fa-check"></i><b>3.1</b> Algorytmy</a></li>
+<li class="chapter" data-level="3.2" data-path="funkcje.html"><a href="funkcje.html#struktura-funkcji"><i class="fa fa-check"></i><b>3.2</b> Struktura funkcji</a></li>
+<li class="chapter" data-level="3.3" data-path="funkcje.html"><a href="funkcje.html#wbudowane-funkcje"><i class="fa fa-check"></i><b>3.3</b> Wbudowane funkcje</a></li>
+<li class="chapter" data-level="3.4" data-path="funkcje.html"><a href="funkcje.html#dokumentacja-funkcji"><i class="fa fa-check"></i><b>3.4</b> Dokumentacja funkcji</a></li>
+<li class="chapter" data-level="3.5" data-path="funkcje.html"><a href="funkcje.html#pakiety"><i class="fa fa-check"></i><b>3.5</b> Pakiety</a></li>
+<li class="chapter" data-level="3.6" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptow"><i class="fa fa-check"></i><b>3.6</b> Tworzenie skryptów</a></li>
+<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#budowanie-funkcji"><i class="fa fa-check"></i><b>3.7</b> Budowanie funkcji</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.7.1</b> Komunikaty</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#zadania-2"><i class="fa fa-check"></i><b>3.7</b> Zadania</a></li>
+<li class="chapter" data-level="3.8" data-path="funkcje.html"><a href="funkcje.html#zadania-2"><i class="fa fa-check"></i><b>3.8</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a><ul>
 <li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
@@ -297,7 +298,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="operator-przypisania" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Operator przypisania</h3>
 <p>Operator przypisania służy do nadania wartości do obiektu<!--^[uproszczenie - https://adv-r.hadley.nz/names-values.html#binding-basics]-->.
-R posiada trzy operatory przypisania, które mają niemal identyczne działanie<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>: <code>=</code>, <code>&lt;-</code>, <code>-&gt;</code>.</p>
+R posiada trzy operatory przypisania, które mają niemal identyczne działanie<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>: <code>=</code>, <code>&lt;-</code>, <code>-&gt;</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="dv">7</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">x
 <span class="co">#&gt; [1] 7</span></code></pre>
@@ -448,7 +449,7 @@ Oba te poradniki nie są identyczne i czasami zawierają sprzeczne porady.
 Najważniejsze jest, aby wybrać jeden odpowiadający piszącemu kod styl i się go konsekwentnie trzymać.</p>
 <div id="nazwy-obiektow" class="section level3">
 <h3><span class="header-section-number">2.5.1</span> Nazwy obiektów</h3>
-<p>Istnieje wiele konwencji nazywania obiektów<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.
+<p>Istnieje wiele konwencji nazywania obiektów<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>.
 Najczęściej używaną konwencją w R jest tzw. <a href="https://en.wikipedia.org/wiki/Snake_case">“snake case”</a>.
 Polega ona na tworzeniu nazw obiektów składających się ze słów połączonych znakiem podkreślenia (<code>_</code>), np.
 <!-- obiekty rzeczowniki, funkcje czasowniki -->
@@ -558,9 +559,9 @@ Warto też aby nazwy plików składały się tylko z małych liter.
 </div>
 <div class="footnotes">
 <hr />
-<ol start="2">
-<li id="fn2"><p>footnote<a href="ergosum.html#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p><a href="https://en.wikipedia.org/wiki/Naming_convention_(programming)" class="uri">https://en.wikipedia.org/wiki/Naming_convention_(programming)</a><a href="ergosum.html#fnref3" class="footnote-back">↩</a></p></li>
+<ol start="3">
+<li id="fn3"><p>footnote<a href="ergosum.html#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p><a href="https://en.wikipedia.org/wiki/Naming_convention_(programming)" class="uri">https://en.wikipedia.org/wiki/Naming_convention_(programming)</a><a href="ergosum.html#fnref4" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

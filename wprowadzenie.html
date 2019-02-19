@@ -157,15 +157,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.6" data-path="ergosum.html"><a href="ergosum.html#zadania-1"><i class="fa fa-check"></i><b>2.6</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a><ul>
-<li class="chapter" data-level="3.1" data-path="funkcje.html"><a href="funkcje.html#struktura-funkcji"><i class="fa fa-check"></i><b>3.1</b> Struktura funkcji</a></li>
-<li class="chapter" data-level="3.2" data-path="funkcje.html"><a href="funkcje.html#wbudowane-funkcje"><i class="fa fa-check"></i><b>3.2</b> Wbudowane funkcje</a></li>
-<li class="chapter" data-level="3.3" data-path="funkcje.html"><a href="funkcje.html#dokumentacja-funkcji"><i class="fa fa-check"></i><b>3.3</b> Dokumentacja funkcji</a></li>
-<li class="chapter" data-level="3.4" data-path="funkcje.html"><a href="funkcje.html#pakiety"><i class="fa fa-check"></i><b>3.4</b> Pakiety</a></li>
-<li class="chapter" data-level="3.5" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptow"><i class="fa fa-check"></i><b>3.5</b> Tworzenie skryptów</a></li>
-<li class="chapter" data-level="3.6" data-path="funkcje.html"><a href="funkcje.html#budowanie-funkcji"><i class="fa fa-check"></i><b>3.6</b> Budowanie funkcji</a><ul>
-<li class="chapter" data-level="3.6.1" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.6.1</b> Komunikaty</a></li>
+<li class="chapter" data-level="3.1" data-path="funkcje.html"><a href="funkcje.html#algorytmy"><i class="fa fa-check"></i><b>3.1</b> Algorytmy</a></li>
+<li class="chapter" data-level="3.2" data-path="funkcje.html"><a href="funkcje.html#struktura-funkcji"><i class="fa fa-check"></i><b>3.2</b> Struktura funkcji</a></li>
+<li class="chapter" data-level="3.3" data-path="funkcje.html"><a href="funkcje.html#wbudowane-funkcje"><i class="fa fa-check"></i><b>3.3</b> Wbudowane funkcje</a></li>
+<li class="chapter" data-level="3.4" data-path="funkcje.html"><a href="funkcje.html#dokumentacja-funkcji"><i class="fa fa-check"></i><b>3.4</b> Dokumentacja funkcji</a></li>
+<li class="chapter" data-level="3.5" data-path="funkcje.html"><a href="funkcje.html#pakiety"><i class="fa fa-check"></i><b>3.5</b> Pakiety</a></li>
+<li class="chapter" data-level="3.6" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptow"><i class="fa fa-check"></i><b>3.6</b> Tworzenie skryptów</a></li>
+<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#budowanie-funkcji"><i class="fa fa-check"></i><b>3.7</b> Budowanie funkcji</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.7.1</b> Komunikaty</a></li>
 </ul></li>
-<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#zadania-2"><i class="fa fa-check"></i><b>3.7</b> Zadania</a></li>
+<li class="chapter" data-level="3.8" data-path="funkcje.html"><a href="funkcje.html#zadania-2"><i class="fa fa-check"></i><b>3.8</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a><ul>
 <li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
@@ -277,11 +278,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="wprowadzenie" class="section level1">
 <h1><span class="header-section-number">1</span> Wprowadzenie</h1>
-<p>Programowanie komputerowe ma obecnie już długą historię<!--^[footnote o programowaniu niekomputerowym-https://en.wikipedia.org/wiki/History_of_programming_languages]--> - pierwszy język programowania Plankalkül powstał mniej więcej w latach 1943-1945.
-Fortran stworzony w roku 1957 jest nadal używany współcześnie do wielu celów, między innymi wymagających dużej wydajności obliczeń astronomicznych, hydrologicznych, prognozowania pogody czy modelowania klimatu.
-Programowanie ewoluowało (i nadal ewoluuje) wraz z rozwojem dostępności i możliwości komputerów.
+<p>Programowanie komputerowe ma obecnie już długą historię<!--^[footnote o programowaniu niekomputerowym-https://en.wikipedia.org/wiki/History_of_programming_languages]--> - pierwszy język programowania Plankalkül powstał w latach 1943-1945<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.
+Fortran, stworzony w roku 1957, jest nadal używany współcześnie do wielu celów, między innymi wymagających dużej wydajności obliczeń hydrologicznych, prognozowania pogody czy modelowania klimatu.
+Programowanie ewoluowało i nadal ewoluuje wraz z rozwojem dostępności i możliwości komputerów.
 Pojawiły się nowe pradygmaty<!--^[wyjaśnij]--> programowania oraz wiele nowych języków.
-W tym samym czasie narosło również wiele mitów dotyczących programowania<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+W tym samym czasie narosło również wiele mitów dotyczących programowania<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
+<!-- mit samotnego programisty -->
+<!-- mit wielkiego produktu -->
+<!-- mit tego, że programują tylko programiści (aka domain knowladge) -->
+<!-- mit, że programiśći są dobrzy z matematyki/być geniuszem (I don’t mind failing repeatedly, and learning from my mistakes) -->
+<!-- mit, że trzeba zapamiętać kod, etc -->
+<!-- mit, You Can Master a Language in a Few Weeks -->
+<!-- mit, Coding is Simply the Act of Writing Code -->
+<!-- mit, Coding Starts and Ends With a Computer -->
+<!-- mit, there is only one good solution -->
+<!-- mit, Learning ends after the course completion -->
+<!-- mit, że to męska praca -->
+<!-- mit, programista = haker -->
+<!-- mit czarnego ekranu -->
+<!-- impostor syndrome -->
 <!-- akapit o złożoności -->
 <!-- historia (języki ewoluują) -->
 <!-- + many ways to solve the same problem -->
@@ -325,7 +340,8 @@ Rycina 1.1: Logo języka programowania R.
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>Zobacz porównanie oczekiwań i rzeczywistej pracy programisty na <a href="https://www.youtube.com/watch?v=HluANRwPyNo" class="uri">https://www.youtube.com/watch?v=HluANRwPyNo</a>.<a href="wprowadzenie.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1"><p><a href="https://en.wikipedia.org/wiki/Plankalk%C3%BCl">https://en.wikipedia.org/wiki/Plankalk%C3%BCl</a><a href="wprowadzenie.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Zobacz porównanie oczekiwań i rzeczywistej pracy programisty na <a href="https://www.youtube.com/watch?v=HluANRwPyNo" class="uri">https://www.youtube.com/watch?v=HluANRwPyNo</a>.<a href="wprowadzenie.html#fnref2" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
