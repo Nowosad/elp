@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>12 Kontrola wersji | Elementarz programisty</title>
+  <meta name="description" content="12 Kontrola wersji | Elementarz programisty">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="12 Kontrola wersji | Elementarz programisty" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="nowosad/my-minimal-bookdown" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="12 Kontrola wersji | Elementarz programisty" />
+  
+  
+  
+
+<meta name="author" content="Jakub Nowosad">
+
+
+<meta name="date" content="2019-02-19">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="analiza-kodu.html">
+<link rel="next" href="tworzenie-pakietow.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Wstęp do programowania w R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#wymagania-wstepne"><i class="fa fa-check"></i>Wymagania wstępne</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#styl-ksiazki"><i class="fa fa-check"></i>Styl książki</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#podziekowania"><i class="fa fa-check"></i>Podziękowania</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a><ul>
+<li class="chapter" data-level="1.1" data-path="wprowadzenie.html"><a href="wprowadzenie.html#zadania"><i class="fa fa-check"></i><b>1.1</b> Zadania</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> R ergo sum</a><ul>
+<li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrazenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia</a></li>
+<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="ergosum.html"><a href="ergosum.html#operator-przypisania"><i class="fa fa-check"></i><b>2.2.1</b> Operator przypisania</a></li>
+<li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dziaania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="ergosum.html"><a href="ergosum.html#ide"><i class="fa fa-check"></i><b>2.3</b> IDE</a></li>
+<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#pomoc"><i class="fa fa-check"></i><b>2.4</b> Pomoc</a></li>
+<li class="chapter" data-level="2.5" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.5</b> Styl</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="ergosum.html"><a href="ergosum.html#nazwy-obiektow"><i class="fa fa-check"></i><b>2.5.1</b> Nazwy obiektów</a></li>
+<li class="chapter" data-level="2.5.2" data-path="ergosum.html"><a href="ergosum.html#odstepy"><i class="fa fa-check"></i><b>2.5.2</b> Odstępy</a></li>
+<li class="chapter" data-level="2.5.3" data-path="ergosum.html"><a href="ergosum.html#komentarze"><i class="fa fa-check"></i><b>2.5.3</b> Komentarze</a></li>
+<li class="chapter" data-level="2.5.4" data-path="ergosum.html"><a href="ergosum.html#nazwy-plikow"><i class="fa fa-check"></i><b>2.5.4</b> Nazwy plików</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="ergosum.html"><a href="ergosum.html#zadania-1"><i class="fa fa-check"></i><b>2.6</b> Zadania</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a><ul>
+<li class="chapter" data-level="3.1" data-path="funkcje.html"><a href="funkcje.html#struktura-funkcji"><i class="fa fa-check"></i><b>3.1</b> Struktura funkcji</a></li>
+<li class="chapter" data-level="3.2" data-path="funkcje.html"><a href="funkcje.html#wbudowane-funkcje"><i class="fa fa-check"></i><b>3.2</b> Wbudowane funkcje</a></li>
+<li class="chapter" data-level="3.3" data-path="funkcje.html"><a href="funkcje.html#dokumentacja-funkcji"><i class="fa fa-check"></i><b>3.3</b> Dokumentacja funkcji</a></li>
+<li class="chapter" data-level="3.4" data-path="funkcje.html"><a href="funkcje.html#pakiety"><i class="fa fa-check"></i><b>3.4</b> Pakiety</a></li>
+<li class="chapter" data-level="3.5" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptow"><i class="fa fa-check"></i><b>3.5</b> Tworzenie skryptów</a></li>
+<li class="chapter" data-level="3.6" data-path="funkcje.html"><a href="funkcje.html#budowanie-funkcji"><i class="fa fa-check"></i><b>3.6</b> Budowanie funkcji</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.6.1</b> Komunikaty</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#zadania-2"><i class="fa fa-check"></i><b>3.7</b> Zadania</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a><ul>
+<li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
+<li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagniezdzone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdzone</a></li>
+<li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porownania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
+<li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wyrazenia-warunkowe-w-funkcjach"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach</a></li>
+<li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zadania-3"><i class="fa fa-check"></i><b>4.5</b> Zadania</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a><ul>
+<li class="chapter" data-level="5.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#dziaania-na-obiektach-wektoryzacja"><i class="fa fa-check"></i><b>5.1</b> Działania na obiektach (wektoryzacja)</a></li>
+<li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#typy-obiektow"><i class="fa fa-check"></i><b>5.2</b> Typy obiektów</a></li>
+<li class="chapter" data-level="5.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#podstawowe-funkcje"><i class="fa fa-check"></i><b>5.3</b> Podstawowe funkcje</a></li>
+<li class="chapter" data-level="5.4" data-path="proste-obiekty.html"><a href="proste-obiekty.html#brakujace-wartosci"><i class="fa fa-check"></i><b>5.4</b> Brakujące wartości</a></li>
+<li class="chapter" data-level="5.5" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie"><i class="fa fa-check"></i><b>5.5</b> Wydzielanie</a></li>
+<li class="chapter" data-level="5.6" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie-i-przypisanie"><i class="fa fa-check"></i><b>5.6</b> Wydzielanie i przypisanie</a></li>
+<li class="chapter" data-level="5.7" data-path="proste-obiekty.html"><a href="proste-obiekty.html#modyfikowanie-obiektow"><i class="fa fa-check"></i><b>5.7</b> Modyfikowanie obiektów</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#aczenie-podstawowych-typow-obiektow"><i class="fa fa-check"></i><b>5.7.1</b> Łączenie podstawowych typów obiektów</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="proste-obiekty.html"><a href="proste-obiekty.html#section"><i class="fa fa-check"></i><b>5.8</b> …</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zmiana-typow-obiektow"><i class="fa fa-check"></i><b>5.8.1</b> Zmiana typów obiektów</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zadania-4"><i class="fa fa-check"></i><b>5.9</b> Zadania</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a><ul>
+<li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#aczenie-tekstu"><i class="fa fa-check"></i><b>6.1</b> Łączenie tekstu</a></li>
+<li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#postawowe-operacje-na-tekscie"><i class="fa fa-check"></i><b>6.2</b> Postawowe operacje na tekście</a></li>
+<li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wydzielanie-tekstu"><i class="fa fa-check"></i><b>6.3</b> Wydzielanie tekstu</a></li>
+<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wyrazenia-regularne"><i class="fa fa-check"></i><b>6.4</b> Wyrażenia regularne</a></li>
+<li class="chapter" data-level="6.5" data-path="tekst.html"><a href="tekst.html#wyrazenia-regularne-wydzielanie-tekstu"><i class="fa fa-check"></i><b>6.5</b> Wyrażenia regularne (wydzielanie tekstu)</a></li>
+<li class="chapter" data-level="6.6" data-path="tekst.html"><a href="tekst.html#wyrazenia-regularne-zamiana-tekstu"><i class="fa fa-check"></i><b>6.6</b> Wyrażenia regularne (zamiana tekstu)</a></li>
+<li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plikow"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików</a></li>
+<li class="chapter" data-level="6.8" data-path="tekst.html"><a href="tekst.html#zadania-5"><i class="fa fa-check"></i><b>6.8</b> Zadania</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a><ul>
+<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie"><i class="fa fa-check"></i><b>7.1.1</b> Tworzenie</a></li>
+<li class="chapter" data-level="7.1.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-1"><i class="fa fa-check"></i><b>7.1.2</b> Podstawowe funkcje</a></li>
+<li class="chapter" data-level="7.1.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-1"><i class="fa fa-check"></i><b>7.1.3</b> Wydzielanie</a></li>
+<li class="chapter" data-level="7.1.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#aczenie"><i class="fa fa-check"></i><b>7.1.4</b> Łączenie</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#ramki-danych"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-1"><i class="fa fa-check"></i><b>7.2.1</b> Tworzenie</a></li>
+<li class="chapter" data-level="7.2.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-2"><i class="fa fa-check"></i><b>7.2.2</b> Podstawowe funkcje</a></li>
+<li class="chapter" data-level="7.2.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-2"><i class="fa fa-check"></i><b>7.2.3</b> Wydzielanie</a></li>
+<li class="chapter" data-level="7.2.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#aczenie-1"><i class="fa fa-check"></i><b>7.2.4</b> Łączenie</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-2"><i class="fa fa-check"></i><b>7.3.1</b> Tworzenie</a></li>
+<li class="chapter" data-level="7.3.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-3"><i class="fa fa-check"></i><b>7.3.2</b> Podstawowe funkcje</a></li>
+<li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#aczenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie</a></li>
+<li class="chapter" data-level="7.3.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-3"><i class="fa fa-check"></i><b>7.3.4</b> Wydzielanie</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zamiany-klas"><i class="fa fa-check"></i><b>7.4</b> Zamiany klas</a></li>
+<li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wasne-klasy"><i class="fa fa-check"></i><b>7.5</b> Własne klasy</a></li>
+<li class="chapter" data-level="7.6" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zadania-6"><i class="fa fa-check"></i><b>7.6</b> Zadania</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a><ul>
+<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a></li>
+<li class="chapter" data-level="8.2" data-path="petle.html"><a href="petle.html#petla-while"><i class="fa fa-check"></i><b>8.2</b> Pętla while</a></li>
+<li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#programowanie-funkcyjne"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne</a></li>
+<li class="chapter" data-level="8.4" data-path="petle.html"><a href="petle.html#zadania-7"><i class="fa fa-check"></i><b>8.4</b> Zadania</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a><ul>
+<li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy</a></li>
+<li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#zadania-8"><i class="fa fa-check"></i><b>9.2</b> Zadania</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a><ul>
+<li class="chapter" data-level="10.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>10.1</b> Zadania</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu</a><ul>
+<li class="chapter" data-level="11.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>11.1</b> Benchmarking</a></li>
+<li class="chapter" data-level="11.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>11.2</b> Profiling</a></li>
+<li class="chapter" data-level="11.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#wektoryzacja-kodu"><i class="fa fa-check"></i><b>11.3</b> Wektoryzacja kodu</a></li>
+<li class="chapter" data-level="11.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zadanie"><i class="fa fa-check"></i><b>11.4</b> Zadanie</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>12</b> Kontrola wersji</a><ul>
+<li class="chapter" data-level="12.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zadania-10"><i class="fa fa-check"></i><b>12.1</b> Zadania</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>13</b> Tworzenie pakietów</a><ul>
+<li class="chapter" data-level="13.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zadania-11"><i class="fa fa-check"></i><b>13.1</b> Zadania</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>14</b> Łącznik</a><ul>
+<li class="chapter" data-level="14.1" data-path="lacznik.html"><a href="lacznik.html#zadania-12"><i class="fa fa-check"></i><b>14.1</b> Zadania</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>15</b> Debugowanie</a><ul>
+<li class="chapter" data-level="15.1" data-path="debugging.html"><a href="debugging.html#zadania-13"><i class="fa fa-check"></i><b>15.1</b> Zadania</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie</a></li>
+<li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
+<li class="divider"></li>
+<li><a href="https://nowosad.github.io/">Jakub Nowosad</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Elementarz programisty</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="kontrola-wersji" class="section level1">
+<h1><span class="header-section-number">12</span> Kontrola wersji</h1>
+<!-- https://swcarpentry.github.io/git-novice/ -->
+<!-- https://arxiv.org/pdf/1811.02021.pdf -->
+<!-- http://happygitwithr.com/ -->
+<div id="zadania-10" class="section level2">
+<h2><span class="header-section-number">12.1</span> Zadania</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="analiza-kodu.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tworzenie-pakietow.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/Nowosad/my-minimal-bookdown/edit/master/12-kontrola-wersji.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["wstep_do_progr_w_r_nowosad_2019.pdf", "wstep_do_progr_w_r_nowosad_2019.epub"],
+"toc": {
+"collapse": "section"
+},
+"includes": {
+"in_header": "ga.html"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
