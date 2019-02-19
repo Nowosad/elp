@@ -2,3 +2,7 @@ book_filename: "wstep_do_progr_w_r_nowosad_2019"
 new_session: yes
 before_chapter_script: ["code/before_script.R"]
 delete_merged_file: true
+language:
+  label:
+    fig: 'Rycina '
+    tab: 'Tabela '
