@@ -1,18 +1,13 @@
 
 # Wprowadzenie {#wprowadzenie}
 
-Programowanie komputerowe ma obecnie już długą historię<!--^[footnote o programowaniu niekomputerowym-https://en.wikipedia.org/wiki/History_of_programming_languages]-->.
-Pierwszy język programowania Plankalkül powstał mniej więcej w latach 1943-1945, 
+Programowanie komputerowe ma obecnie już długą historię<!--^[footnote o programowaniu niekomputerowym-https://en.wikipedia.org/wiki/History_of_programming_languages]--> - pierwszy język programowania Plankalkül powstał mniej więcej w latach 1943-1945.
+Fortran stworzony w roku 1957 jest nadal używany współcześnie do wielu celów, między innymi wymagających dużej wydajności obliczeń astronomicznych, hydrologicznych, prognozowania pogody czy modelowania klimatu.
+Programowanie ewoluowało (i nadal ewoluuje) wraz z rozwojem dostępności i możliwości komputerów.
+Pojawiły się nowe pradygmaty<!--^[wyjaśnij]--> programowania oraz wiele nowych języków.
+W tym samym czasie narosło również wiele mitów dotyczących programowania^[Zobacz porównanie oczekiwań i rzeczywistej pracy programisty na https://www.youtube.com/watch?v=HluANRwPyNo.]
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/HluANRwPyNo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HluANRwPyNo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-
-<div class="figure" style="text-align: center">
-<iframe src="https://www.youtube.com/watch?v=HluANRwPyNo?rel=0" width="100%" height="400px"></iframe>
-<p class="caption">(\#fig:exp-vs-real)Porównanie oczekiwań i rzeczywistej pracy programisty. Źródło: https://www.youtube.com/watch?v=HluANRwPyNo.</p>
-</div>
 
 <!-- akapit o złożoności -->
 <!-- historia (języki ewoluują) -->
