@@ -1,7 +1,13 @@
 
 # Wprowadzenie {#wprowadzenie}
 
+Programowanie komputerowe ma obecnie już długą historię<!--^[footnote o programowaniu niekomputerowym-https://en.wikipedia.org/wiki/History_of_programming_languages]-->.
+Pierwszy język programowania Plankalkül powstał mniej więcej w latach 1943-1945, 
+
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/HluANRwPyNo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HluANRwPyNo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 
 <div class="figure" style="text-align: center">
 <iframe src="https://www.youtube.com/watch?v=HluANRwPyNo?rel=0" width="100%" height="400px"></iframe>
