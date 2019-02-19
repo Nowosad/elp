@@ -1,5 +1,9 @@
 # Wprowadzenie {#wprowadzenie}
 
+```{r exp-vs-real, echo=FALSE, fig.cap="Porównanie oczekiwań i rzeczywistej pracy programisty. Źródło: https://www.youtube.com/watch?v=HluANRwPyNo."}
+knitr::include_graphics("images/exp-vs-real.gif")
+```
+
 <!-- akapit o złożoności -->
 <!-- historia (języki ewoluują) -->
 <!-- + many ways to solve the same problem -->
