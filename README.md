@@ -8,3 +8,7 @@
 - when to introduce algorithms, scripts, functions?
 - mention opensource!
 - mention pipes?
+
+## Ideas
+
+- https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1006023
