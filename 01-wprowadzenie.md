@@ -1,10 +1,10 @@
 
 # Wprowadzenie {#wprowadzenie}
 
-
 <!-- akapit o złożoności -->
 <!-- historia (języki ewoluują) -->
 <!-- + many ways to solve the same problem -->
+<!-- geoinformacyjne przykłady -->
 
 <!-- why we code? -->
 <!-- cost of reproduction! (economy) -->
@@ -21,6 +21,7 @@
 <!--     Don’t Repeat Yourself (DRY); -->
 <!--     Be concise, clear and consistent. -->
 
+<!-- lista języków -->
 <!-- why r (https://adv-r.hadley.nz/introduction.html)-->
 
 <!-- (\@ref(fig:rlogo)).  -->
