@@ -2,7 +2,7 @@
 # Wprowadzenie {#wprowadzenie}
 
 <div class="figure" style="text-align: center">
-<img src="images/exp-vs-real.gif" alt="Porównanie oczekiwań i rzeczywistej pracy programisty. Źródło: https://www.youtube.com/watch?v=HluANRwPyNo." width="100%" />
+<iframe src="https://www.youtube.com/watch?v=HluANRwPyNo" width="100%" height="400px"></iframe>
 <p class="caption">(\#fig:exp-vs-real)Porównanie oczekiwań i rzeczywistej pracy programisty. Źródło: https://www.youtube.com/watch?v=HluANRwPyNo.</p>
 </div>
 
