@@ -78,6 +78,14 @@ wek_zmi
 names(wek_zmi)
 ```
 
+```{r}
+rep(wek_zmi, 4)
+```
+
+```{r}
+seq(1, 12, by = 2)
+```
+
 <!-- block - nazwa tekstem -->
 
 <!-- operatory statytyczne -->
@@ -111,6 +119,7 @@ temperatura = c(8.2, 10.3, 12.0, NA)
 <!-- operacje na NA -->
 <!-- `is.na()` -->
 <!-- na.rm -->
+<!-- NULL -->
 
 ## Wydzielanie 
 
