@@ -1,8 +1,10 @@
 
 # Wprowadzenie {#wprowadzenie}
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/HluANRwPyNo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 <div class="figure" style="text-align: center">
-<iframe src="https://www.youtube.com/watch?v=HluANRwPyNo" width="100%" height="400px"></iframe>
+<iframe src="https://www.youtube.com/watch?v=HluANRwPyNo?rel=0" width="100%" height="400px"></iframe>
 <p class="caption">(\#fig:exp-vs-real)Porównanie oczekiwań i rzeczywistej pracy programisty. Źródło: https://www.youtube.com/watch?v=HluANRwPyNo.</p>
 </div>
 
