@@ -22,3 +22,8 @@ pre code {
 .rmdinfo {
   background-image: url("../images/compass.png");
 }
+
+/*change subtitle*/
+h2.subtitle {
+  color:gray;
+}
