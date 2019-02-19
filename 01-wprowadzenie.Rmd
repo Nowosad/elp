@@ -1,7 +1,7 @@
 # Wprowadzenie {#wprowadzenie}
 
 ```{r exp-vs-real, echo=FALSE, fig.cap="Porównanie oczekiwań i rzeczywistej pracy programisty. Źródło: https://www.youtube.com/watch?v=HluANRwPyNo."}
-knitr::include_graphics("images/exp-vs-real.gif")
+knitr::include_url("https://www.youtube.com/watch?v=HluANRwPyNo")
 ```
 
 <!-- akapit o złożoności -->
