@@ -64,13 +64,25 @@ sudo dnf install git
 Dodatkowo, warto stworzyć konto na stronie **GitHub** poprzez adres https://github.com/join. 
 GitHub jest serwisem internetowym wspierającym tworzenie oraz współpracę przy tworzeniu programów komputerowych.
 
-## Styl
+## Styl książki {-}
 
+W całej książce stosowana jest konwencja, w której `fun()` oznacza funkcje, `obi` oznacza nazwy obiektów, nazwy zmiennych oraz argumentów funkcji, a `sci/` oznacza ścieżki do plików.
+Wszystkie pakiety użyte w tej książce oznaczane są pogrubioną czcionką - **pak**.
 
+Tekst na szarym tle przedstawia blok kodu.
+Może on zawierać komentarze (rozpoczynające się of znaku `#`), kod oraz wynik jego użycia (rozpoczynające się od znaków `#>`).
 
-<!-- jak czytać skrypt -->
-<!-- blocks, chunks, etc -->
-<!-- Throughout this book I use f() to refer to functions, g to refer to variables and function parameters, and h/ to paths. -->
+```{r, eval=FALSE}
+# komentarz
+kod
+#> wynik użycia kodu
+```
+
+Dodatkowo, ikona kompasu na szarym tle przedstawia dodatkowe informacje, alternatywne sposoby użycia funkcji, czy też wskazówki.
+
+```{block2, type='rmdinfo'}
+Tutaj może znaleźć się dodatkowa informacja, alternatywny sposób użycia funkcji, czy też wskazówka.
+```
 
 ## Podziękowania {-}
 
