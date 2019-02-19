@@ -1,6 +1,11 @@
 
 # Wprowadzenie {#wprowadzenie}
 
+<div class="figure" style="text-align: center">
+<img src="images/exp-vs-real.gif" alt="Porównanie oczekiwań i rzeczywistej pracy programisty. Źródło: https://www.youtube.com/watch?v=HluANRwPyNo." width="100%" />
+<p class="caption">(\#fig:exp-vs-real)Porównanie oczekiwań i rzeczywistej pracy programisty. Źródło: https://www.youtube.com/watch?v=HluANRwPyNo.</p>
+</div>
+
 <!-- akapit o złożoności -->
 <!-- historia (języki ewoluują) -->
 <!-- + many ways to solve the same problem -->
