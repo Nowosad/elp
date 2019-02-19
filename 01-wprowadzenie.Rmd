@@ -1,7 +1,9 @@
 # Wprowadzenie {#wprowadzenie}
 
+
 <!-- akapit o złożoności -->
 <!-- historia (języki ewoluują) -->
+<!-- + many ways to solve the same problem -->
 
 <!-- why we code? -->
 <!-- cost of reproduction! (economy) -->
@@ -20,7 +22,11 @@
 
 <!-- why r (https://adv-r.hadley.nz/introduction.html)-->
 
+<!-- (\@ref(fig:rlogo)).  -->
 
+```{r rlogo, echo=FALSE, out.width="25%", fig.cap="Logo języka programowania R."}
+knitr::include_graphics("images/Rlogo.png")
+```
 
 <!-- gdzie zdobyć wiedzę (online resources) -->
 <!-- everything takes time -->
