@@ -4,7 +4,9 @@ Programowanie komputerowe ma obecnie już długą historię<!--^[footnote o pro
 Fortran stworzony w roku 1957 jest nadal używany współcześnie do wielu celów, między innymi wymagających dużej wydajności obliczeń astronomicznych, hydrologicznych, prognozowania pogody czy modelowania klimatu.
 Programowanie ewoluowało (i nadal ewoluuje) wraz z rozwojem dostępności i możliwości komputerów.
 Pojawiły się nowe pradygmaty<!--^[wyjaśnij]--> programowania oraz wiele nowych języków.
-W tym samym czasie narosło również wiele mitów dotyczących programowania^[Zobacz porównanie oczekiwań i rzeczywistej pracy programisty na https://www.youtube.com/watch?v=HluANRwPyNo.]
+W tym samym czasie narosło również wiele mitów dotyczących programowania^[Zobacz porównanie oczekiwań i rzeczywistej pracy programisty na https://www.youtube.com/watch?v=HluANRwPyNo.].
+
+
 
 
 
@@ -29,6 +31,7 @@ W tym samym czasie narosło również wiele mitów dotyczących programowania^[Z
 <!--     Be concise, clear and consistent. -->
 
 <!-- lista języków -->
+<!-- Java, C, Python, C++, Visual Basic .NET, JavaScript, C#, PHP, SQL, Objective-C, Assembly, Perl -->
 <!-- why r (https://adv-r.hadley.nz/introduction.html)-->
 
 <!-- (\@ref(fig:rlogo)).  -->
