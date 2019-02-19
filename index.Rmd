@@ -20,7 +20,7 @@ links-as-notes: true
 ---
 
 ```{r, echo=FALSE}
-is_online = curl::has_internet()
+# is_online = curl::has_internet()
 is_html = knitr::is_html_output()
 ```
 
