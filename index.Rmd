@@ -33,6 +33,13 @@ knitr::write_bib(c(
 ), "packages.bib")
 ```
 
+Aktualna wersja książki znajduje się pod adresem https://nowosad.github.io/elp/. 
+Jeżeli używasz tej książki, zacytuj ją jako:
+
+- Nowosad, J., (2019). Elementarz programisty: wstęp do programowania używając R. Poznań: Space A. Online: https://nowosad.github.io/elp/
+
+Zachęcam również do zgłaszania wszelkich uwag, błędów, pomysłów oraz komentarzy na stronie https://github.com/nowosad/elp/issues.
+
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licencja Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />Ta książka jest dostępna na <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">licencji Creative Commons Uznanie autorstwa - Użycie niekomercyjne - Bez utworów zależnych 4.0 Międzynarodowe</a>.
 
 ## Wymagania wstępne {-}
@@ -87,12 +94,5 @@ Tutaj może znaleźć się dodatkowa informacja, alternatywny sposób użycia 
 ## Podziękowania {-}
 
 Książka została stworzona w R [@R-base] z wykorzystaniem pakietów **bookdown** [@R-bookdown], **rmarkdown** [@R-rmarkdown], **knitr** [@R-knitr] oraz programu [Pandoc](http://pandoc.org/). 
-Aktualna wersja książki znajduje się pod adresem https://nowosad.github.io/elp/. 
-
-Jeżeli używasz tej książki, zacytuj ją jako:
-
-- Nowosad, J., (2019). Elementarz programisty: wstęp do programowania używając R. Poznań: Space A. Online: https://nowosad.github.io/elp/
-
-Zachęcam również do zgłaszania wszelkich uwag, błędów, pomysłów oraz komentarzy na stronie https://github.com/nowosad/elp/issues.
 
 <div>Użyte ikony zostały stworzone przez <a href="https://www.freepik.com/" title="Freepik">Freepik</a> z <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> na licencji <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0." target="_blank">CC 3.0 BY</a>.</div>
