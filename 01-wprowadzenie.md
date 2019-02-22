@@ -114,5 +114,9 @@ Tutaj również można użyć materiałów z kursu [Software Carpentry](https://
 
 ## Zadania
 
-1. Zastanów się nad mitami związanymi z programowaniem.
+1. Pomyśl do czego jesteś w stanie wykorzystać programowanie w swoim codziennym życiu lub życiu zawodowym?
+2. Zastanów się nad mitami związanymi z programowaniem.
 Czy jesteś w stanie wskazać jakieś mity nie wymienione powyżej?
+3. Wybierz trzy języki programowania z listy wymienionej w tym rozdziale i poszukaj informacji o nich.
+Do czego są one stosowane?
+Jakie mają wady i zalety?
