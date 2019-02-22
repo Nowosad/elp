@@ -6,8 +6,8 @@ Programowanie, w znacznym uproszczeniu, to proces tworzenia serii instrukcji, kt
 <!-- cost of reproduction! (economy) -->
 <!-- money, money, money -->
 <!-- reproducibility -->
+<!-- geoinformacyjne przykłady -->
 
- 
 Programowanie komputerowe ma obecnie już długą historię<!--^[footnote o programowaniu niekomputerowym-https://en.wikipedia.org/wiki/History_of_programming_languages]--> - pierwszy język programowania Plankalkül powstał w latach 1943-1945^[https://en.wikipedia.org/wiki/Plankalk%C3%BCl].
 Fortran, stworzony w roku 1957, jest nadal używany współcześnie do wielu celów, między innymi wymagających dużej wydajności obliczeń hydrologicznych, prognozowania pogody czy modelowania klimatu.
 Programowanie ewoluowało i nadal ewoluuje wraz z rozwojem dostępności i możliwości komputerów.
@@ -27,101 +27,79 @@ Dokumentacja jest też cenna dla twórców programu, szczególnie kiedy konieczn
 Programy komputerowe są też zazwyczaj w dużej sieci powiązań z już istniejącymi bibliotekami czy oprogramowaniem.
 Zmiana w tych bibliotekach czy oprogramowaniu może skutkować nie zawsze oczekiwanymi zmianami w stworzonym programie.
 Częścią programowania jest też utrzymywanie istniejącego kodu źródłowego oraz jego ulepszanie.
+Programiści do swojej pracy wykorzystują też odpowiednie wspierające ich narzędzia, takie jak edytory kodu źródłowego, debugery, zintegrowane środowska programistyczne czy systemy kontroli wersji.
 
 Mitem również jest przekonanie, że programowanie to męskie zajęcie.
-Bierze się ono z obecnej na rynku pracy struktury, w której około 75% programistów to mężczyźni a tylko 25% to kobiety. ^[http://www.smbc-comics.com/?id=1883].
+Bierze się ono z obecnej na rynku pracy struktury, w której około 75% programistów to mężczyźni a tylko 25% to kobiety.
 Ta struktura jednak nie jest odzwierciedleniem jakichś wrodzonych umiejętności.
 Za pierwszego programistę często uważa się Adę Lovelace, angielskego matematyka i poetkę^[https://en.wikipedia.org/wiki/Ada_Lovelace].
 To ona w 1843 opublikowała pierwszy program komputerowy.
-Jej algorytm do obliczenia liczb Bernoulliego nie został jednak przetestowany, ponieważ urządzenie do tych obliczeń (zwane maszyną analityczną) nie zostało skonstruowane.
-<!-- https://www.smithsonianmag.com/smart-news/computer-programming-used-to-be-womens-work-718061/ -->
-<!-- https://www.history.com/news/coding-used-to-be-a-womans-job-so-it-was-paid-less-and-undervalued -->
-<!-- https://www.bbc.com/news/technology-35559439 -->
-Tem mit jest też powiązany z wymienionym kilka akapitów niżej mitem samotnego programisty.
-<!-- rladies -->
+Jej algorytm do obliczenia liczb Bernoulliego nie został jednak przetestowany, ponieważ urządzenie do tych obliczeń (zwane maszyną analityczną^[https://pl.wikipedia.org/wiki/Maszyna_analityczna]) nie zostało skonstruowane.
+Ponad wiek później, gdy istniały już techniczne możliwości tworzenia komputerów, programowanie było uważane za kobiecy zawód^[https://www.history.com/news/coding-used-to-be-a-womans-job-so-it-was-paid-less-and-undervalued].
+Z uwagi na szereg czynników społecznych i historycznych^[http://www.smbc-comics.com/?id=1883], w latach 1970 nastąpiło odwrócenie proporcji w tym zawodzie.
+Obecnie podejmowanych jest szereg inicjatyw, które mają na celu zachęcić kobiety do programowania.
+Wsród nich można wymienić działania organizacji [R-Ladies](https://rladies.org/), [PyLadies](https://www.pyladies.com/), czy [girls.js](https://girlsjs.pl/).
+Mit programisty mężczyzny jest też powiązany z wymienionym kilka akapitów niżej mitem samotnego programisty.
+
+<div class="figure" style="text-align: center">
+<img src="images/margaret-hamilton.jpg" alt="Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które on i jej zespół stworzył na potrzeby misji Apollo." width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-2)Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które on i jej zespół stworzył na potrzeby misji Apollo.</p>
+</div>
 
 Kolejny jest mit wielkiego produktu.
-Oznacza on, że po nauczeniu się podstaw danego języka programowanie, jest się w stanie stworzyć bardzo złożony program (np. nowy system operacyjny, skomplikowaną aplikację na telefon, czy grę komputerową).
+Oznacza on, że po nauczeniu się podstaw danego języka programowanie, jest się od razu w stanie stworzyć bardzo złożony program, np. nowy system operacyjny, skomplikowaną aplikację na telefon, czy grę komputerową.
+W rzeczywistości takie produkty opierają się o tysiące godzin pracy wielu programistów.
+Dodatkowo, nie są one tworzone od podstaw, ale używając szeregu dostępnych narzędzi, bibliotek i innych rozwiązań.
+Celem pisania kodu, więc nie powinno być stworzenie od zera bardzo złożonej aplikacji, lecz odpowiednie użycie istniejących rozwiązań.
+Jednocześnie pisanie złożonego oprogramowania wymaga uzyskania niezbędnego doświadczenia.
+Mit wielkiego produktu wiąże się również z wynienionym w kolejnym akapicie mitem samotnego programisty.
 
-Ten mit wiąże się również z wynienionym w kolejnym akapicie mitem samotnego programisty.
-
-<!-- mit, You Can Master a Language in a Few Weeks -->
-
-W popkulturze osoba, która potrafi programować spędza czas samotnie, gwałtownie wpisując kolejne linie kodu 
-
-<!-- mit, że trzeba zapamiętać kod, etc -->
-<!-- mit, there is only one good solution -->
-<!-- mit, Learning ends after the course completion -->
-Wiele aspektów programowania może być też znacznie ułatwionych wykorzystując odpowiednie wspierające narzędzia, takie jak edytory kodu źródłowego, debugery, zintegrowane środowska programistyczne czy systemy kontroli wersji.
-
-
-
+W popkulturze osoba, która potrafi programować spędza czas samotnie, gwałtownie wpisując kolejne linie kodu do komputera w ciemnym pokoju.
+W rzeczywistości jednak większość profesjonalnych programistów pracuje w zespołach, których członkowie pracują nad różnymi aspektami tego samego problemu.
+Pisanie programów często wymaga współpracy różnych osób, dlatego też umiejętność pracy w grupie jest coraz istotniejsza.
+Warto dodać, że współpraca nad pisaniem programów nie musi odbywać się w jednym pokoju czy budynku.
+Ze względu na charakter takiej pracy i możliwości technologiczne, wiele formalnych i nieformalnych grup pracuje zdalnie nad projektami. 
+Wiele przykładów takich zachowań można znaleźć przyglądając się otwartemu oprogramowaniu (ang. *open-source software*) na platformie GitHub (np. https://github.com/trending/r).
 
 W poprzednim akapicie celowo użyłem stwierdzenia "osoba, która potrafi programować" zamiast "programista".
 Jest to kolejny powszechny mit, że każda osoba która potrafi stworzyć program musi od razu zostać pełnoetatowym programistą.
 Pisanie programów jest narzędziem, które ma wspomóc twórcę w pewnym celu.
-<!-- data science -->
-<!-- mit, że programiśći są dobrzy z matematyki/być geniuszem (I don’t mind failing repeatedly, and learning from my mistakes) -->
+Jednym z celów może być zostanie profesjonalnym deweloperem stron internetowych, aplikacji mobilnych, gier komputerowych, itd.
+Nie jest to jednak jedyny cel - programowanie może być, na przykład przydatnym narzędziem w analizie danych^[Wiąże się to z popularnym na Zachodzie terminem [data science](https://en.wikipedia.org/wiki/Data_science), który łączy programowanie, analizę danych i wiedzę dziedzinową.].
+<!--more-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Kolejny mitem jest mit programisty geniusza.
+W tym micie programują tylko osoby, która ma nadludzką pamięć oraz wyróżniającą wiedzę matematyczną.
+Oczywiście, takie cechy przydają się w programowaniu, ale nie są one wymagane do programowania.
+W programowaniu częściej od dobrej pamięci przydaje się umiejętność szybkiego znalezienia rozwiązania czy odpowiedzi na problem w internecie. 
+Programista nie musi znać na pamięć setek różnych poleceń i funkcji, ważne że umie je zidentyfikować.
+Natomiast zamiast głębokiej wiedzy matematycznej do większości zadań programistycznych wystarczy podstawowa znajomość algebry<!---->.
+Z tym mitem wiąże się też inna kwestia - założenia że ten programista geniusz posiadł całą wiedzę programistyczną.
+Podobnie jak nauka języka obcego, nauka języka programowania wymaga dużo pracy i czasu. 
+Dodatkowo, języki programowania czy techniki programowania zmieniają się znacznie częściej niż języki naturalne.
+Dlatego też częścią programowania jest ciągłe uczenie się.
 
 <!-- impostor syndrome -->
-
-<!-- akapit o złożoności -->
-<!-- historia (języki ewoluują) -->
-<!-- + many ways to solve the same problem -->
-<!-- geoinformacyjne przykłady -->
-
-
-
-<!-- group work -->
-
-<!-- https://csgillespie.github.io/efficientR/collaboration.html#coding-style -->
-<!-- There are, however, general principles that most programmers agree on, such as: -->
-
-<!--     Use modular code; -->
-<!--     Comment your code; -->
-<!--     Don’t Repeat Yourself (DRY); -->
-<!--     Be concise, clear and consistent. -->
+Ostatni mit natomiast mówi o tym, że dla każdego problemu programistycznego istnieje tylko jedno najlepsze rozwiązanie.
+Jeden problem można zazwyczaj rozwiązać na dziesiątki różnych sposobów.
+Wynika to z tego, że wiele aspektów programowania opiera się o personalne preferencje, np. wybór danego języka programowania, używanych bibliotek, czy stylu pisania kodu.
+W efekcie zazwyczaj nie możliwe jest jednoznaczne określenie, które rozwiązanie jest lepsze, szczególnie jeżeli wiele rozwiązań ma podobną wydajność.
+Istnieje jednak kilka reguł, z którymi zgadza się większość programistów. 
+Pierwsza z nich mówi, że wolny działający kod jest lepszy niż szybki niedziałający kod^[Parafrazując Donalda Kuntha "We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil. Yet we should not pass up our opportunities in that critical 3%."].
+Kolejna opiera się o zasadę DRY (nie powtarzaj się, ang. *Don't Repeat Yourself*), zalecającą unikanie różnego rodzaju powtórzeń wykonywanych przy programowaniu, np. używania tych samych fragmentów kodu w wielu miejscach.
+Ostatnia reguła mówi, żeby tworzyć pisać programy w sposób modularny, czyli taki w którym każda funkcja spełnia tylko jedno i nie więcej zadanie, a złożone funkcje składają się z szeregu prostych funkcji.
 
 <!-- lista języków -->
 <!-- Java, C, Python, C++, Visual Basic .NET, JavaScript, C#, PHP, SQL, Objective-C, Assembly, Perl -->
 <!-- why r (https://adv-r.hadley.nz/introduction.html)-->
 
+<!-- domain knowladge -->
 <!-- (\@ref(fig:rlogo)).  -->
-
+<!-- whyr -->
 <div class="figure" style="text-align: center">
 <img src="images/Rlogo.png" alt="Logo języka programowania R." width="25%" />
 <p class="caption">(\#fig:rlogo)Logo języka programowania R.</p>
 </div>
-
-<!-- gdzie zdobyć wiedzę (online resources) -->
-<!-- everything takes time -->
-
-
-
-<!-- domain knowladge -->
-
-<!-- whyr -->
 
 Ta książka skupia się na prezentacji głównym konceptów programistycznych używając języka R. 
 W sekcji \@ref(resources) można znaleźć listę różnorodnych materiałów, książek, blogów, kursów, czy serwisów ułatwiających i wspomagających naukę R.
