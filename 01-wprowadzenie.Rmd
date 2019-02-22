@@ -1,5 +1,12 @@
 # Wprowadzenie {#wprowadzenie}
 
+
+
+<!-- why we code? -->
+<!-- cost of reproduction! (economy) -->
+<!-- money, money, money -->
+<!-- reproducibility -->
+
 Programowanie komputerowe ma obecnie już długą historię<!--^[footnote o programowaniu niekomputerowym-https://en.wikipedia.org/wiki/History_of_programming_languages]--> - pierwszy język programowania Plankalkül powstał w latach 1943-1945^[https://en.wikipedia.org/wiki/Plankalk%C3%BCl].
 Fortran, stworzony w roku 1957, jest nadal używany współcześnie do wielu celów, między innymi wymagających dużej wydajności obliczeń hydrologicznych, prognozowania pogody czy modelowania klimatu.
 Programowanie ewoluowało i nadal ewoluuje wraz z rozwojem dostępności i możliwości komputerów.
@@ -27,10 +34,7 @@ W tym samym czasie narosło również wiele mitów dotyczących programowania^[Z
 <!-- + many ways to solve the same problem -->
 <!-- geoinformacyjne przykłady -->
 
-<!-- why we code? -->
-<!-- cost of reproduction! (economy) -->
-<!-- money, money, money -->
-<!-- reproducibility -->
+
 
 <!-- group work -->
 
@@ -55,13 +59,25 @@ knitr::include_graphics("images/Rlogo.png")
 <!-- gdzie zdobyć wiedzę (online resources) -->
 <!-- everything takes time -->
 
-<!-- akapit o inspiracjach -->
-<!-- https://rstudio-education.github.io/hopr/ -->
-<!-- https://www.datacamp.com/courses/free-introduction-to-r -->
+Programowanie nie polega tylko na wpisaniu kodu i jego wykonywaniu. 
+Wcześniej konieczne jest zastanowienie się jaki problem rozwiązujemy oraz zaprojektowanie możliwego rozwiązania tego problemu.
+Stworzony kod może okazać się być nieprzystępny dla użytkownika, słabo zoptymalizowany, lub nawet błędny. 
+Dlatego też innym ważnym elementem jest testowanie kodu w celu wyłapania potencjalnych problemów.
+Wiele aspektów programowania może być też znacznie ułatwionych wykorzystując odpowiednie wspierające narzędzia, takie jak zintegrowane środowska programistyczne czy kontrola wersji.
+
+<!-- domain knowladge -->
+
+<!-- whyr -->
+
+Ta książka skupia się na prezentacji głównym konceptów programistycznych używając języka R. 
+W sekcji \@ref(resources) można znaleźć listę różnorodnych materiałów, książek, blogów, kursów, czy serwisów ułatwiających i wspomagających naukę R.
+Istnieje także wiele wprowadzających materiałów do nauki innych języków.
+Przykładowo, osoby zainteresowane nauką Pythona mogą skorzystać z książek @gries2017practical oraz @guzdial2016introduction, czy też kursów http://swcarpentry.github.io/python-novice-inflammation/oraz https://www.python-course.eu/python3_course.php. 
+W pracy programistycznej przydaje się również często znajomość linii komend.
+Tutaj również można użyć materiałów z kursu [Software Carpentry](https://swcarpentry.github.io/shell-novice/) lub książki [The Unix Workbench ](https://seankross.com/the-unix-workbench/) [@krossseanUnixWorkbench2017].
+
 <!-- https://rstudio.cloud/learn/primers -->
-<!-- https://csgillespie.github.io/efficientR/ -->
 <!-- http://jarekj.home.amu.edu.pl/?page_id=36 -->
 <!-- https://speakerdeck.com/jennybc/zen-and-the-art-of-workflow-maintenance -->
-<!-- http://adv-r.hadley.nz/ -->
 
 ## Zadania
