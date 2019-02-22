@@ -141,7 +141,7 @@ knitr::kable(sk,
   kableExtra::column_spec(2, width = "18em")
 ```
 
-## Pomoc
+## Pomoc {#resources}
 
 Polskie książki:
 
