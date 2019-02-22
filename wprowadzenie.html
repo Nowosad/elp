@@ -25,7 +25,7 @@
 <meta name="author" content="Jakub Nowosad">
 
 
-<meta name="date" content="2019-02-19">
+<meta name="date" content="2019-02-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -147,7 +147,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dziaania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="ergosum.html"><a href="ergosum.html#ide"><i class="fa fa-check"></i><b>2.3</b> IDE</a></li>
-<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#pomoc"><i class="fa fa-check"></i><b>2.4</b> Pomoc</a></li>
+<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#resources"><i class="fa fa-check"></i><b>2.4</b> Pomoc</a></li>
 <li class="chapter" data-level="2.5" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.5</b> Styl</a><ul>
 <li class="chapter" data-level="2.5.1" data-path="ergosum.html"><a href="ergosum.html#nazwy-obiektow"><i class="fa fa-check"></i><b>2.5.1</b> Nazwy obiektów</a></li>
 <li class="chapter" data-level="2.5.2" data-path="ergosum.html"><a href="ergosum.html#odstepy"><i class="fa fa-check"></i><b>2.5.2</b> Odstępy</a></li>
@@ -278,33 +278,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="wprowadzenie" class="section level1">
 <h1><span class="header-section-number">1</span> Wprowadzenie</h1>
+<p>Programowanie, w znacznym uproszczeniu, to proces tworzenia serii instrukcji, które informują komputer jak wykonać pewne zadanie.
+<!-- why we code? -->
+<!-- cost of reproduction! (economy) -->
+<!-- money, money, money -->
+<!-- reproducibility --></p>
 <p>Programowanie komputerowe ma obecnie już długą historię<!--^[footnote o programowaniu niekomputerowym-https://en.wikipedia.org/wiki/History_of_programming_languages]--> - pierwszy język programowania Plankalkül powstał w latach 1943-1945<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.
 Fortran, stworzony w roku 1957, jest nadal używany współcześnie do wielu celów, między innymi wymagających dużej wydajności obliczeń hydrologicznych, prognozowania pogody czy modelowania klimatu.
 Programowanie ewoluowało i nadal ewoluuje wraz z rozwojem dostępności i możliwości komputerów.
 Pojawiły się nowe pradygmaty<!--^[wyjaśnij]--> programowania oraz wiele nowych języków.
 W tym samym czasie narosło również wiele mitów dotyczących programowania<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
-<!-- mit samotnego programisty -->
-<!-- mit wielkiego produktu -->
-<!-- mit tego, że programują tylko programiści (aka domain knowladge) -->
-<!-- mit, że programiśći są dobrzy z matematyki/być geniuszem (I don’t mind failing repeatedly, and learning from my mistakes) -->
-<!-- mit, że trzeba zapamiętać kod, etc -->
-<!-- mit, You Can Master a Language in a Few Weeks -->
+<p>Jednym z mitów jest to, że programowanie polega tylko siedzeniu przed ekranem komputera i wpisywaniu do niego kolejnych linii kodu.
 <!-- mit, Coding is Simply the Act of Writing Code -->
 <!-- mit, Coding Starts and Ends With a Computer -->
+Jest to oczywiście istotna część pracy programistycznej, ale prawdopodobnie nie jest ona nawet dominująca w przeciętym dniu programisty.
+Wcześniej konieczne jest zastanowienie się jaki problem rozwiązujemy oraz zaprojektowanie możliwego rozwiązania tego problemu.
+Stworzony kod może okazać się być nieprzystępny dla użytkownika, słabo zoptymalizowany, lub nawet błędny.
+Dlatego też innym ważnym elementem jest testowanie kodu w celu wyłapania potencjalnych problemów.
+Innym aspektem programowania jest tworzenie dokumentacji.
+Żaden program nie może zachęcić do siebie użytkowników, jeżeli nie będą oni w stanie zrozumieć jak on działa.
+Dokumentacja jest też cenna dla twórców programu, szczególnie kiedy konieczne jest użycie czy modyfikacja programu kilka miesięcy po jego ostatnim użyciu.
+Programy komputerowe są też zazwyczaj w dużej sieci powiązań z już istniejącymi bibliotekami czy oprogramowaniem.
+Zmiana w tych bibliotekach czy oprogramowaniu może skutkować nie zawsze oczekiwanymi zmianami w stworzonym programie.
+Częścią programowania jest też utrzymywanie istniejącego kodu źródłowego oraz jego ulepszanie.</p>
+<p>Mitem również jest przekonanie, że programowanie to męskie zajęcie.
+Bierze się ono z obecnej na rynku pracy struktury, w której około 75% programistów to mężczyźni a tylko 25% to kobiety..<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>
+Ta struktura jednak nie jest odzwierciedleniem jakichś wrodzonych umiejętności.
+Za pierwszego programistę często uważa się Adę Lovelace, angielskego matematyka i poetkę<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>.
+To ona w 1843 opublikowała pierwszy program komputerowy.
+Jej algorytm do obliczenia liczb Bernoulliego nie został jednak przetestowany, ponieważ urządzenie do tych obliczeń (zwane maszyną analityczną) nie zostało skonstruowane.
+<!-- https://www.smithsonianmag.com/smart-news/computer-programming-used-to-be-womens-work-718061/ -->
+<!-- https://www.history.com/news/coding-used-to-be-a-womans-job-so-it-was-paid-less-and-undervalued -->
+<!-- https://www.bbc.com/news/technology-35559439 -->
+Tem mit jest też powiązany z wymienionym kilka akapitów niżej mitem samotnego programisty.
+<!-- rladies --></p>
+<p>Kolejny jest mit wielkiego produktu.
+Oznacza on, że po nauczeniu się podstaw danego języka programowanie, jest się w stanie stworzyć bardzo złożony program (np. nowy system operacyjny, skomplikowaną aplikację na telefon, czy grę komputerową).</p>
+<p>Ten mit wiąże się również z wynienionym w kolejnym akapicie mitem samotnego programisty.</p>
+<!-- mit, You Can Master a Language in a Few Weeks -->
+<p>W popkulturze osoba, która potrafi programować spędza czas samotnie, gwałtownie wpisując kolejne linie kodu</p>
+<!-- mit, że trzeba zapamiętać kod, etc -->
 <!-- mit, there is only one good solution -->
 <!-- mit, Learning ends after the course completion -->
-<!-- mit, że to męska praca -->
-<!-- mit, programista = haker -->
-<!-- mit czarnego ekranu -->
+<p>Wiele aspektów programowania może być też znacznie ułatwionych wykorzystując odpowiednie wspierające narzędzia, takie jak edytory kodu źródłowego, debugery, zintegrowane środowska programistyczne czy systemy kontroli wersji.</p>
+<p>W poprzednim akapicie celowo użyłem stwierdzenia “osoba, która potrafi programować” zamiast “programista”.
+Jest to kolejny powszechny mit, że każda osoba która potrafi stworzyć program musi od razu zostać pełnoetatowym programistą.
+Pisanie programów jest narzędziem, które ma wspomóc twórcę w pewnym celu.
+<!-- data science -->
+<!-- mit, że programiśći są dobrzy z matematyki/być geniuszem (I don’t mind failing repeatedly, and learning from my mistakes) --></p>
 <!-- impostor syndrome -->
 <!-- akapit o złożoności -->
 <!-- historia (języki ewoluują) -->
 <!-- + many ways to solve the same problem -->
 <!-- geoinformacyjne przykłady -->
-<!-- why we code? -->
-<!-- cost of reproduction! (economy) -->
-<!-- money, money, money -->
-<!-- reproducibility -->
 <!-- group work -->
 <!-- https://csgillespie.github.io/efficientR/collaboration.html#coding-style -->
 <!-- There are, however, general principles that most programmers agree on, such as: -->
@@ -324,16 +350,23 @@ Rycina 1.1: Logo języka programowania R.
 </div>
 <!-- gdzie zdobyć wiedzę (online resources) -->
 <!-- everything takes time -->
-<!-- akapit o inspiracjach -->
-<!-- https://rstudio-education.github.io/hopr/ -->
-<!-- https://www.datacamp.com/courses/free-introduction-to-r -->
+<!-- domain knowladge -->
+<!-- whyr -->
+<p>Ta książka skupia się na prezentacji głównym konceptów programistycznych używając języka R.
+W sekcji <a href="ergosum.html#resources">2.4</a> można znaleźć listę różnorodnych materiałów, książek, blogów, kursów, czy serwisów ułatwiających i wspomagających naukę R.
+Istnieje także wiele wprowadzających materiałów do nauki innych języków.
+Przykładowo, osoby zainteresowane nauką Pythona mogą skorzystać z książek <span class="citation">(<span class="citeproc-not-found" data-reference-id="gries2017practical"><strong>???</strong></span>)</span> oraz <span class="citation">(<span class="citeproc-not-found" data-reference-id="guzdial2016introduction"><strong>???</strong></span>)</span>, czy też kursów <a href="http://swcarpentry.github.io/python-novice-inflammation/oraz" class="uri">http://swcarpentry.github.io/python-novice-inflammation/oraz</a> <a href="https://www.python-course.eu/python3_course.php" class="uri">https://www.python-course.eu/python3_course.php</a>.
+W pracy programistycznej przydaje się również często znajomość linii komend.
+Tutaj również można użyć materiałów z kursu <a href="https://swcarpentry.github.io/shell-novice/">Software Carpentry</a> lub książki <a href="https://seankross.com/the-unix-workbench/">The Unix Workbench</a> <span class="citation">(<span class="citeproc-not-found" data-reference-id="krossseanUnixWorkbench2017"><strong>???</strong></span>)</span>.</p>
 <!-- https://rstudio.cloud/learn/primers -->
-<!-- https://csgillespie.github.io/efficientR/ -->
 <!-- http://jarekj.home.amu.edu.pl/?page_id=36 -->
 <!-- https://speakerdeck.com/jennybc/zen-and-the-art-of-workflow-maintenance -->
-<!-- http://adv-r.hadley.nz/ -->
 <div id="zadania" class="section level2">
 <h2><span class="header-section-number">1.1</span> Zadania</h2>
+<ol style="list-style-type: decimal">
+<li>Zastanów się nad mitami związanymi z programowaniem.
+Czy jesteś w stanie wskazać jakieś mity nie wymienione powyżej?</li>
+</ol>
 
 </div>
 </div>
@@ -342,6 +375,8 @@ Rycina 1.1: Logo języka programowania R.
 <ol start="1">
 <li id="fn1"><p><a href="https://en.wikipedia.org/wiki/Plankalk%C3%BCl">https://en.wikipedia.org/wiki/Plankalk%C3%BCl</a><a href="wprowadzenie.html#fnref1" class="footnote-back">↩</a></p></li>
 <li id="fn2"><p>Zobacz porównanie oczekiwań i rzeczywistej pracy programisty na <a href="https://www.youtube.com/watch?v=HluANRwPyNo" class="uri">https://www.youtube.com/watch?v=HluANRwPyNo</a>.<a href="wprowadzenie.html#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p><a href="http://www.smbc-comics.com/?id=1883" class="uri">http://www.smbc-comics.com/?id=1883</a><a href="wprowadzenie.html#fnref3" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p><a href="https://en.wikipedia.org/wiki/Ada_Lovelace" class="uri">https://en.wikipedia.org/wiki/Ada_Lovelace</a><a href="wprowadzenie.html#fnref4" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

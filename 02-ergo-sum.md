@@ -163,7 +163,7 @@ Ctrl+Shift+C                          ustawia wybrane linie jako komentarz/odkom
 strzałka Góra/Dół (w oknie konsoli)   wybiera wcześniej wpisany kod                                 
 Esc                                   przerwya niedokończoną operację                               
 
-## Pomoc
+## Pomoc {#resources}
 
 Polskie książki:
 
