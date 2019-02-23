@@ -2,8 +2,6 @@
 
 Programowanie, w znacznym uproszczeniu, to proces tworzenia serii instrukcji, które informują komputer jak wykonać pewne zadanie.
 Ta seria instrukcji jest zazwyczaj zapisywana na komputerze w postaci tekstu w wybranym języku programowania.
-
-
 <!-- why we code? -->
 <!-- cost of reproduction! (economy) -->
 <!-- money, money, money -->
@@ -135,6 +133,7 @@ W skład tej grupy wchodzi, między innymi, programowanie funkcyjne czy matematy
 Niektóre języki mogą być zaklasyfikowane do kilku paradygmatów.
 Przykładowo R wspiera zarówno paradygmat funkcyjny, ale zawiera też możliwości programowania obiektowego.
 <!-- S3, S4, ... -->
+<!-- what for? -->
 
 W tej książce wprowadzenie do programowania opiera się o język [R](https://www.r-project.org/) (Rycina \@ref(fig:rlogo)).
 Wynika to z szeregu zalet tego języka:
