@@ -124,7 +124,7 @@ Pozwala to na relatywnie szybkie osiąganie wymiernych efektów z korzystania z 
 Oficjalnym portalem zawierajacym dodatkowe pakiety R jest [CRAN](https://cran.r-project.org/).
 * R ma przyjazną społeczność użytkowników tego języka, zarówno online jak i spotykających się na żywo na tzw. meetupach.
 * W celu ułatwienia pracy z R powstało również zintegrowane środowisko programistyczne RStudio, które wspomaga pisanie i analizę kodu w R.
-* R został zaprojektowany jako narzędzie ułatwiające komunikację między różnymi językami programowania, głównie C oraz Fortran.
+* R został zaprojektowany jako narzędzie ułatwiające komunikację między różnymi językami programowania, głównie C oraz Fortran^[https://www.youtube.com/watch?v=_hcpuRB5nGs].
 Obecnie R pozwala na łatwe łączenie kodu pochodzącego również z takich języków jak C++, Python, JavaScript, itd.
 * R jest używany przez wiele małych firm, jak i wielkich korporacji, wliczając w to BBC, Facebook, Google, Microsoft, Mozilla, Netflix, T-Mobile, czy Uber^[https://github.com/ThinkR-open/companies-using-r.].
 
