@@ -1,6 +1,9 @@
 # Wprowadzenie {#wprowadzenie}
 
 Programowanie, w znacznym uproszczeniu, to proces tworzenia serii instrukcji, które informują komputer jak wykonać pewne zadanie.
+Ta seria instrukcji jest zazwyczaj zapisywana na komputerze w postaci tekstu w wybranym języku programowania.
+
+
 <!-- why we code? -->
 <!-- cost of reproduction! (economy) -->
 <!-- money, money, money -->
@@ -65,6 +68,7 @@ Pisanie programów jest narzędziem, które ma wspomóc twórcę w pewnym celu.
 Jednym z celów może być zostanie profesjonalnym deweloperem stron internetowych, aplikacji mobilnych, gier komputerowych, itd.
 Nie jest to jednak jedyny cel - programowanie może być, na przykład przydatnym narzędziem w analizie danych^[Wiąże się to z popularnym na Zachodzie terminem [data science](https://en.wikipedia.org/wiki/Data_science), który łączy programowanie, analizę danych i wiedzę dziedzinową.].
 Umiejętności programistyczne są wykorzystywane przez ekonomistów, biologów, geografów i osób z wielu innych dziedzin.
+Dodatkowo, podstawowe aspekty programowania są bardzo cenne w zawodach, w których ważna jest częsta współpraca z programistami.
 <!--more-->
 
 Kolejny mitem jest mit programisty geniusza.
@@ -75,8 +79,7 @@ Programista nie musi znać na pamięć setek różnych poleceń i funkcji, ważn
 Natomiast zamiast głębokiej wiedzy matematycznej do większości zadań programistycznych wystarczy podstawowa znajomość algebry<!---->.
 Z tym mitem wiąże się też inna kwestia - założenia że ten programista geniusz posiadł całą wiedzę programistyczną.
 Podobnie jak nauka języka obcego, nauka języka programowania wymaga dużo pracy i czasu. 
-Dodatkowo, języki programowania czy techniki programowania zmieniają się znacznie częściej niż języki naturalne.
-Dlatego też częścią programowania jest ciągłe uczenie się.
+Dodatkowo, języki programowania czy techniki programowania zmieniają się znacznie częściej niż języki naturalne, dlatego też częścią programowania jest ciągłe uczenie się.
 
 <!-- impostor syndrome -->
 Ostatni mit natomiast mówi o tym, że dla każdego problemu programistycznego istnieje tylko jedno najlepsze rozwiązanie.
@@ -88,7 +91,7 @@ Pierwsza z nich mówi, że wolny działający kod jest lepszy niż szybki niedzi
 Kolejna opiera się o zasadę DRY (nie powtarzaj się, ang. *Don't Repeat Yourself*), zalecającą unikanie różnego rodzaju powtórzeń wykonywanych przy programowaniu, np. używania tych samych fragmentów kodu w wielu miejscach.
 Ostatnia reguła mówi, żeby tworzyć pisać programy w sposób modularny, czyli taki w którym każda funkcja spełnia tylko jedno i nie więcej zadanie, a złożone funkcje składają się z szeregu prostych funkcji.
 
-Głównym sposobem przekazywania instrukcji do komputera są języki programowania. 
+Głównym sposobem przekazywania instrukcji do komputera jest użycie języków programowania. 
 Pozwalają one na precyzyjny zapis zadań, które następnie mają zostać wykonane przez komputer.
 Języki programowania składają się ze zbioru reguł synktatycznych (składni) oraz semantyki.
 Składnia (forma) mówi o tym jakie symbole są dostępne w danym języku oraz jak te symbole mogą być łączone w większe struktury.
@@ -105,6 +108,7 @@ Do tego dochodzą również rózne kwestie historyczne i społeczne, jak na przy
 Obecnie wśród najpopularniejszych języków programowania można wymienić takie języki jak Java, C, Python, C++, Visual Basic .NET, JavaScript, C#, PHP, SQL, Objective-C, język asemblera, Perl, czy R.
 Języki programowania można podzielić na wiele różnych grup w zależności od przyjętych kryteriów.
 Poniżej wyjaśnionych jest kilka możliwych podziałów jęzków programowania.
+<!-- Static versus dynamic typing -->
 
 Jednym z nich jest sposób wykonywania kodu - to czy kod w danym języku jest kompilowany czy też interpretowany.
 Kompilacja kodu (np. C czy Java) polega na jego tłumaczeniu do postaci języka maszynowego.
