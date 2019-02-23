@@ -4,6 +4,7 @@
 
 ## Algorytmy
 
+Algorytm to opis procedery prowadzącej do uzyskania określonego celu.
 <!-- przepis kucharski -->
 
 ## Struktura funkcji
