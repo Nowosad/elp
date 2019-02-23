@@ -132,7 +132,6 @@ Niektóre języki mogą być zaklasyfikowane do kilku paradygmatów.
 Przykładowo R wspiera zarówno paradygmat funkcyjny, ale zawiera też możliwości programowania obiektowego.
 <!-- S3, S4, ... -->
 
-<!-- why r (https://adv-r.hadley.nz/introduction.html)-->
 W tej książce wprowadzenie do programowania opiera się o język [R](https://www.r-project.org/) (Rycina \@ref(fig:rlogo)).
 Wynika to z szeregu zalet tego języka:
 
