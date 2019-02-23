@@ -163,7 +163,10 @@ Ctrl+Shift+C                          ustawia wybrane linie jako komentarz/odkom
 strzałka Góra/Dół (w oknie konsoli)   wybiera wcześniej wpisany kod                                 
 Esc                                   przerwya niedokończoną operację                               
 
-## Pomoc {#resources}
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">use r projects</div>\EndKnitrBlock{rmdinfo}
+
+## Dodatkowe materiały {#resources}
 
 Polskie książki:
 
@@ -193,6 +196,9 @@ Kursy:
 - Polskie tłumaczenie pakietu R służącego do nauki tego języka - https://github.com/dabrze/swirl
 - Lista kursów dotyczących R na platformie Coursera - https://www.coursera.org/courses?query=r
 - Lista kursów dotyczących R na platformie edX - https://www.edx.org/course?search_query=r
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">typing
+https://www.typingclub.com/</div>\EndKnitrBlock{rmdinfo}
 
 Serwisy internetowe:
 
@@ -325,6 +331,9 @@ dane.csv
 
 Dodatkowo nazwy plików nie powinny zawierać spacji, znaków specjalnych (np. !, %, *), znaków diakrytycznych (np. ć, Ł, ź).
 Warto też aby nazwy plików składały się tylko z małych liter.
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">encodings</div>\EndKnitrBlock{rmdinfo}
+
 <!--^[kodowanie znaków]-->
 
 ## Zadania
