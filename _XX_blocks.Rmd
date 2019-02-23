@@ -1,19 +1,6 @@
 
 ```{block2 type="rmdinfo"}
-folder roboczy
-```
-
-```{block2 type="rmdinfo"}
-typing
-https://www.typingclub.com/
-```
-
-```{block2 type="rmdinfo"}
 naming files
-```
-
-```{block2 type="rmdinfo"}
-encodings
 ```
 
 ```{block2 type="rmdinfo"}
@@ -29,25 +16,9 @@ do not save a workspace
 ```
 
 ```{block2 type="rmdinfo"}
-use r projects
-```
-
-```{block2 type="rmdinfo"}
 sourcecode vs binary packages
 ```
 
 ```{block2 type="rmdinfo"}
-relative vs absolute filepaths
-```
-
-```{block2 type="rmdinfo"}
-functions naming
-```
-
-```{block2 type="rmdinfo"}
 Continuous Integration
-```
-
-```{block2 type="rmdinfo"}
-keyboard shortcuts
 ```
