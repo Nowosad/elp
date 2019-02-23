@@ -118,20 +118,24 @@ W efekcie nie ma on finansowej bariery rozpoczęcia pracy, a kod napisany na jed
 <!-- Dodatkowo  -->
 * R jest językiem interpretowalnym, czyli wykonanie w nim komend nie wymaga kompilacji.
 Ten aspekt ułatwia szybsze zrozumienie działania tego języka.
-<!-- * analiza danych -->
-<!-- * łącznik -->
-<!-- * cran Cutting edge tools. -->
-<!-- * rstudio -->
-<!-- * community -->
+* R posiada wiele wbudowanych narzędzi analizy i wizualizacji danych.
+Pozwala to na relatywnie szybkie osiąganie wymiernych efektów z korzystania z tego języka.
+* R posiada tysiące dodatkowych rozszerzeń (zwanych pakietami) pozwalających na, między innymi, przetwarzanie różnorodnych danych, ich wizualizację, czy zaawansowane modelowanie. 
+Oficjalnym portalem zawierajacym dodatkowe pakiety R jest [CRAN](https://cran.r-project.org/).
+* R ma przyjazną społeczność użytkowników tego języka, zarówno online jak i spotykających się na żywo na tzw. meetupach.
+* W celu ułatwienia pracy z R powstało również zintegrowane środowisko programistyczne RStudio, które wspomaga pisanie i analizę kodu w R.
+* R został zaprojektowany jako narzędzie ułatwiające komunikację między różnymi językami programowania, głównie C oraz Fortran.
+Obecnie R pozwala na łatwe łączenie kodu pochodzącego również z takich języków jak C++, Python, JavaScript, itd.
+* R jest używany przez wiele małych firm, jak i wielkich korporacji, wliczając w to BBC, Facebook, Google, Microsoft, Mozilla, Netflix, T-Mobile, czy Uber^[https://github.com/ThinkR-open/companies-using-r.].
 
-<!-- wady R -->
-<!-- * nie najszybszy -->
-<!-- * nie zawsze konsekwentny -->
-<!-- * analiza danych -->
+Oczywiście, uniweralny i idealny język nie istnieje.
+R posiada szereg słabości:
 
-<!-- domain knowladge -->
-<!-- (\@ref(fig:rlogo)).  -->
-<!-- whyr -->
+* R jest językiem interpretowalnym, czyli wykonanie w nim komend nie wymaga kompilacji.
+W efekcie R nie jest najszybszym językiem programowania. 
+* Podobnie jak wiele innych języków, również R zawiera wiele niekonsekwencji, wynikającej z wieloletniej ewolucji tego języka.
+W konsekwencji istnieje wiele specjalnych przypadków czy wyjątków, które warto znać [@burns2012r].
+
 ```{r rlogo, echo=FALSE, out.width="25%", fig.cap="Logo języka programowania R."}
 knitr::include_graphics("images/Rlogo.png")
 ```
