@@ -180,6 +180,7 @@ Pytania dotyczące R można znaleźć pod adresem https://stackoverflow.com/que
 Przed zadaniem nowego pytania warto wyszukać czy nie zostało ono zadane wcześniej a następnie przeczytać wątek dotyczący tworzenia nowych pytań - https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example
 - Twitter jest miejscem, w którym można znaleźć zarówno nowości z języka R, jak również odpowiedzi na pytania dotyczące tego języka - https://twitter.com/. 
 Kwestie związane z R są opatrzone hasztagiem `#rstats`, natomiast kwestie przestrzenne w R są opisywane hasztagami `#rspatial` oraz `#geocompr`
+- Elektroniczny biuletyn R Weekly zbierający co tydzień nowości związane z r - https://rweekly.org/
 - Lista emailowa dotycząca R - https://stat.ethz.ch/mailman/listinfo/r-help
 - Lista emailowa dotycząca kwestii przestrzennych w R - https://stat.ethz.ch/mailman/listinfo/r-sig-geo
 - Forum dotyczące kwestii R i RStudio - https://community.rstudio.com/
