@@ -104,15 +104,38 @@ Nie ma wśród nich jednego najlepszego, uniwersalnego języka programowania i w
 Jest to związane z bardzo szerokim zastosowaniem programowania w wielu dziedzinach czy problemach, które mają od siebie zupełnie różne wymagania.
 Przykładowe wymagania mogą dotyczyć np. szybkości wykonywanych obliczeń, łatwości pisania kodu, stabilności języka programowania, czy celu obliczeń.
 Do tego dochodzą również rózne kwestie historyczne i społeczne, jak na przykład preferowanie danego języka programowania przez osoby w danej branży.
-
 Obecnie wśród najpopularniejszych języków programowania można wymienić takie języki jak Java, C, Python, C++, Visual Basic .NET, JavaScript, C#, PHP, SQL, Objective-C, język asemblera, Perl, czy R.
-<!--klasyfikacje języków-->
-<!--etc-->
+Języki programowania można podzielić na wiele różnych grup w zależności od przyjętych kryteriów.
+Poniżej wyjaśnionych jest kilka możliwych podziałów jęzków programowania.
 
+Jednym z nich jest sposób wykonywania kodu - to czy kod w danym języku jest kompilowany czy też interpretowany.
+Kompilacja kodu (np. C czy Java) polega na jego tłumaczeniu do postaci języka maszynowego.
+W efekcie zapewnia to wysoką wydajność programu, ale za to kod jest ściśle powiązany z daną platformą sprzętową.
+Programowanie w językach kompilowanych jest zazwyczaj bardziej złożone i trudniejsze w nich jest odnajdywanie błędów (tzw. debugging).
+Interpretowane języki programowania, często również nazywane językami skryptowymi, (np. R czy Python) charakteryzuje to,
+że w momencie uruchomienia kod jest zamieniany na postać zrozumiałą dla komputera i od razu wykonywany.
+W efekcie można szybko zobaczyć efekt zmian. 
+Wadą tego typu języków jest ich zmniejszona wydajność w porównany do języków kompilowanych.
 
+Innym powszechnym podziałem języków programowania jest ich rozróżnianie na podstawie poziomu.
+Tutaj można wyróznić języki od niskiego poziomu do wysokiego poziomu.
+Na najniższym poziomie jest język maszynowy, czyli taki w którym zapis programu wyrażony jest w postaci liczb binarnych.
+Powyżej są umieszczony jest język asemblera, w którym program jest zapisany poprzez serię instrukcji.
+Na najwyższym poziomie stawia się języki, które są wspomagane przez kompilator albo interpretor.
+
+Języki programowania można też rozróżnić ze względu na pradygmat programowania.
+Definiuje on w jaki sposób w danym języku wykonywany jest przepływ sterowania czy też jak kod jest organizowany.
+Dwa podstawowe paradygmary programowania to programowanie imperatywne i deklaratywne.
+Programowanie imperatywne (np. Fortran, C) opisuje proces wykonywania kodu jako sekwencję instrukcji zmieniających stan programu.
+Obejmuje ono inne paradygmaty, jak na przykład programowanie proceduralne czy obiektowe .
+Programowanie deklaratywne skupia się natomiast na warunkach jakie musi spełniać końcowe rozwiązanie, a nie na sekwencji kroków do jego stworzenia.
+W skład tej grupy wchodzi, między innymi, programowanie funkcyjne czy matematyczne.
+Niektóre języki mogą być zaklasyfikowane do kilku paradygmatów.
+Przykładowo R wspiera zarówno paradygmat funkcyjny, ale zawiera też możliwości programowania obiektowego.
+<!-- S3, S4, ... -->
 
 <!-- why r (https://adv-r.hadley.nz/introduction.html)-->
-W tej książce wprowadzenie do programowania będzie oparte o język [R](https://www.r-project.org/) (Rycina \@ref(fig:rlogo)).
+W tej książce wprowadzenie do programowania opiera się o język [R](https://www.r-project.org/) (Rycina \@ref(fig:rlogo)).
 Wynika to z szeregu zalet tego języka:
 
 * R jest bezpłatnym, otwartym oprogramowaniem, który można uruchomić na różnych systemach operacyjnych (Windows, Mac OS i Linux), zarówno na komputerach osobistych jak i na dużych klastrach obliczeniowych.
@@ -120,20 +143,24 @@ W efekcie nie ma on finansowej bariery rozpoczęcia pracy, a kod napisany na jed
 <!-- Dodatkowo  -->
 * R jest językiem interpretowalnym, czyli wykonanie w nim komend nie wymaga kompilacji.
 Ten aspekt ułatwia szybsze zrozumienie działania tego języka.
-<!-- * analiza danych -->
-<!-- * łącznik -->
-<!-- * cran Cutting edge tools. -->
-<!-- * rstudio -->
-<!-- * community -->
+* R posiada wiele wbudowanych narzędzi analizy i wizualizacji danych.
+Pozwala to na relatywnie szybkie osiąganie wymiernych efektów z korzystania z tego języka.
+* R posiada tysiące dodatkowych rozszerzeń (zwanych pakietami) pozwalających na, między innymi, przetwarzanie różnorodnych danych, ich wizualizację, czy zaawansowane modelowanie. 
+Oficjalnym portalem zawierajacym dodatkowe pakiety R jest [CRAN](https://cran.r-project.org/).
+* R ma przyjazną społeczność użytkowników tego języka, zarówno online jak i spotykających się na żywo na tzw. meetupach.
+* W celu ułatwienia pracy z R powstało również zintegrowane środowisko programistyczne RStudio, które wspomaga pisanie i analizę kodu w R.
+* R został zaprojektowany jako narzędzie ułatwiające komunikację między różnymi językami programowania, głównie C oraz Fortran^[https://www.youtube.com/watch?v=_hcpuRB5nGs].
+Obecnie R pozwala na łatwe łączenie kodu pochodzącego również z takich języków jak C++, Python, JavaScript, itd.
+* R jest używany przez wiele małych firm, jak i wielkich korporacji, wliczając w to BBC, Facebook, Google, Microsoft, Mozilla, Netflix, T-Mobile, czy Uber^[https://github.com/ThinkR-open/companies-using-r.].
 
-<!-- wady R -->
-<!-- * nie najszybszy -->
-<!-- * nie zawsze konsekwentny -->
-<!-- * analiza danych -->
+Oczywiście, uniweralny i idealny język nie istnieje.
+R posiada szereg słabości:
 
-<!-- domain knowladge -->
-<!-- (\@ref(fig:rlogo)).  -->
-<!-- whyr -->
+* R jest językiem interpretowalnym, czyli wykonanie w nim komend nie wymaga kompilacji.
+W efekcie R nie jest najszybszym językiem programowania. 
+* Podobnie jak wiele innych języków, również R zawiera wiele niekonsekwencji, wynikającej z wieloletniej ewolucji tego języka.
+W konsekwencji istnieje wiele specjalnych przypadków czy wyjątków, które warto znać [@burns2012r].
+
 <div class="figure" style="text-align: center">
 <img src="images/Rlogo.png" alt="Logo języka programowania R." width="25%" />
 <p class="caption">(\#fig:rlogo)Logo języka programowania R.</p>
