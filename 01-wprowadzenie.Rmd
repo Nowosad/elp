@@ -135,6 +135,10 @@ Przykładowo R wspiera zarówno paradygmat funkcyjny, ale zawiera też możliwo�
 <!-- S3, S4, ... -->
 <!-- what for? -->
 
+```{r rlogo, echo=FALSE, out.width="25%", fig.cap="Logo języka programowania R."}
+knitr::include_graphics("images/Rlogo.png")
+```
+
 W tej książce wprowadzenie do programowania opiera się o język [R](https://www.r-project.org/) (Rycina \@ref(fig:rlogo)).
 Wynika to z szeregu zalet tego języka:
 
@@ -160,10 +164,6 @@ R posiada szereg słabości:
 W efekcie R nie jest najszybszym językiem programowania. 
 * Podobnie jak wiele innych języków, również R zawiera wiele niekonsekwencji, wynikającej z wieloletniej ewolucji tego języka.
 W konsekwencji istnieje wiele specjalnych przypadków czy wyjątków, które warto znać [@burns2012r].
-
-```{r rlogo, echo=FALSE, out.width="25%", fig.cap="Logo języka programowania R."}
-knitr::include_graphics("images/Rlogo.png")
-```
 
 Ta książka skupia się na prezentacji głównym konceptów programistycznych używając języka R. 
 W sekcji \@ref(resources) można znaleźć listę różnorodnych materiałów, książek, blogów, kursów, czy serwisów ułatwiających i wspomagających naukę R.
