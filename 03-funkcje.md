@@ -71,7 +71,7 @@ Przykładowo, `x` musi być obiektem R o typie numerycznym (który łączy typ 
 Jeżeli nie jesteśmy pewni jak dana funkcja działa warto zacząć od skopiowania przykładów a następnie ich wykonania.
 
 Czytanie dokumentacji wymaga pewnej wprawy i doświadczenia. 
-Nie bój się używać innych źródeł pomocy (zobacz sekcję \@ref(pomoc)), jeżli potrzebujesz zrozumieć działanie danej funkcji.
+Nie bój się używać innych źródeł pomocy (zobacz sekcję \@ref(resources)), jeżli potrzebujesz zrozumieć działanie danej funkcji.
 
 ## Pakiety
 
