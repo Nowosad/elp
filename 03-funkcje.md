@@ -123,6 +123,9 @@ str_sub("chronologia", start = 1, end = 6)
 ```
 <!-- block - inaczej biblioteki, moduły, etc -->
 
+<!-- overwhelmed by the number! -->
+<!-- https://juliasilge.com/blog/r-journal-navigating/ -->
+
 ## Tworzenie skryptów
 
 <!--kodowanie tekstu-->
