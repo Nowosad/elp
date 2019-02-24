@@ -1,12 +1,37 @@
 
 # Wprowadzenie {#wprowadzenie}
 
+Żyjemy obecnie w epoce trzeciej rewolucji przemysłowej^[Niektórzy wydzielają już nawet obecny czas jako czwartą rewolucję przemysłową - https://en.wikipedia.org/wiki/Industry_4.0.], zwanej inaczej rewolucją cyfrową.
+Jest ona powiązana z przejściem z technologii mechanicznych i analogowych na technologie elektroniczne i cyfrowe.
+W tej epoce nastąpiło stworzenie i rozpowszechnieniem się komputerów, co w efekcie spowodowało szerokie zmiany społeczno-ekonomiczne.
+Wiele z tych zmian jest pozytywnych, ale istnieją również zmiany negatywne, bądź też takie które trudno jednoznacznie ocenić.
+Przykładowo, wyraźną korzyścią społeczną jest znacznie ułatwiony dostęp do informacji.
+Jednocześnie taki dostęp powoduje sytuację określaną jako przeciążenie informacją (ang. *information overload*), w której występuje zbyt wielka ilość informacji aby podjąć właściwą decyzję lub zrozumieć sens danego tematu.
+
+Rozwój technologiczny spowodował też transformację produkcji przemysłowej i zmiany gospodarcze.
+<!---->
+Firmy zajmujące się technologiami informacyjnymi, tj. Microsoft, Apple, czy Google, są obecnie jednymi z najbardziej dochodowych przedsiębiorstw, a twórca platformy Amazon, Jeff Bezos, jest najbogatszym człowiekiem świata^[https://en.wikipedia.org/wiki/The_World%27s_Billionaires#2018].
+Wiele z tych technologii nie byłoby możliwych bez programowania.
 Programowanie, w znacznym uproszczeniu, to proces tworzenia serii instrukcji, które informują komputer jak wykonać pewne zadanie.
 Ta seria instrukcji jest zazwyczaj zapisywana na komputerze w postaci tekstu w wybranym języku programowania.
-<!-- why we code? -->
-<!-- cost of reproduction! (economy) -->
-<!-- money, money, money -->
-<!-- reproducibility -->
+Co w takim razie powoduje, że programowanie ma tak istotny wpływ na wiele elementów codziennego życia?
+
+Programowanie cechuje kilka unikatowych możliwości.
+Po pierwsze, programowanie i jego efekty można w prosty sposób powielać niemal w nieskończoność.
+Wcześniej stworzenie pewnego towaru opierało się o ograniczone zasoby, np. ziemia czy surowce naturalne.
+Nie możliwe było wykucie zbroi raz, a następnie natychmiastowe powielenie jej wiele razy i sprzedanie jej wielu kopii.
+We współczesnym świecie, jedna aplikacja może być sprzedana (lub rozpowszechniona) wiele razy, a często większy nacisk kładzie się na rozbudowę i ulepszanie istniejących popularnych aplikacji niż tworzenie nowych^[Efektem tego jest też coraz większa popularność modeli subskrypcyjnych - https://en.wikipedia.org/wiki/Subscription_business_model.].
+Ułatwia to też budowę nowych rozwiązań na podstawie już istniejących ^[https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants.].
+Współcześnie programowanie pozwala na wykonywanie trylionów (10^18^) operacji arytmetycznych na sekundę^[Przecięty człowiek jest w stanie wykonać około pół operacji na sekundę - https://en.wikipedia.org/wiki/Computer_performance_by_orders_of_magnitude.].
+Pozwala to na znaczne zwiększenie wydajności dostępnych rozwiązań<!--księgowość-->, otwiera możliwość praktycznego wykorzystania istniejących idei<!--modele klimatu-->, lub też tworzenia nowych pomysłów<!--internet,sztucznainteligencja-->.
+Inną cechą programowania jest też jego prosta możliwość automatyzacji powtarzanych czynnośći oraz ułatwiona powtarzalność (ang. *reproducibility*)
+Posiadając kod źródłowy danego oprogramowania lub skrypt wykonujący analizę danych, możliwe jest odtworzenie tego wyniku przez inną osobę na drugim końcu świata<!--pod pewnymi warunkami-->, lub też przez siebie samego po paru miesiącach.
+<!--...-->
+Ostatnią cechą programowania jest jego uniwersalność.
+Jest ono wykorzystywane w transporcie, przemyśle, nauce, rozrywce i wielu innych strefach życia.
+W efekcie zrozumienie i znajomość języków programowania jest cenną umiejętnością we współczesnym świecie.
+
+<!-- Współcześnie również programowanie - dostępność -->
 <!-- geoinformacyjne przykłady -->
 
 ## Mity programistyczne
@@ -37,7 +62,7 @@ Bierze się ono z obecnej na rynku pracy struktury, w której około 75% program
 Ta struktura jednak nie jest odzwierciedleniem jakichś wrodzonych umiejętności.
 Za pierwszego programistę często uważa się Adę Lovelace, angielskiego matematyka i poetkę^[https://en.wikipedia.org/wiki/Ada_Lovelace].
 To ona w 1843 opublikowała pierwszy program komputerowy.
-Jej algorytm do obliczenia liczb Bernoulliego nie został jednak przetestowany, ponieważ urządzenie do tych obliczeń (zwane maszyną analityczną^[https://pl.wikipedia.org/wiki/Maszyna_analityczna]) nie zostało skonstruowane.
+Jej algorytm do obliczenia liczb Bernoulliego nie został jednak przetestowany, ponieważ urządzenie do tych obliczeń (zwane maszyną analityczną^[https://en.wikipedia.org/wiki/Analytical_Engine]) nie zostało skonstruowane.
 Ponad wiek później, gdy istniały już techniczne możliwości tworzenia komputerów, programowanie było uważane za kobiecy zawód^[https://www.history.com/news/coding-used-to-be-a-womans-job-so-it-was-paid-less-and-undervalued] (Rycina \@ref(fig:marghamil)).
 Z uwagi na szereg czynników społecznych i historycznych^[http://www.smbc-comics.com/?id=1883], w latach 1970 nastąpiło odwrócenie proporcji w tym zawodzie.
 Obecnie podejmowanych jest szereg inicjatyw, które mają na celu zachęcić kobiety do programowania.
@@ -186,7 +211,7 @@ Tutaj również można użyć materiałów z kursu [Software Carpentry](https://
 
 ## Zadania
 
-1. Pomyśl do czego jesteś w stanie wykorzystać programowanie w swoim codziennym życiu lub życiu zawodowym?
+1. Pomyśl do czego jesteś w stanie wykorzystać programowanie w swoim życiu zawodowym lub prywatnym?
 2. Zastanów się nad mitami związanymi z programowaniem.
 Czy jesteś w stanie wskazać jakieś mity nie wymienione powyżej?
 3. Wybierz trzy języki programowania z listy wymienionej w tym rozdziale i poszukaj informacji o nich.
