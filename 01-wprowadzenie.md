@@ -9,6 +9,8 @@ Ta seria instrukcji jest zazwyczaj zapisywana na komputerze w postaci tekstu w w
 <!-- reproducibility -->
 <!-- geoinformacyjne przykłady -->
 
+## Mity programistyczne
+
 Programowanie komputerowe ma obecnie już długą historię<!--^[footnote o programowaniu niekomputerowym-https://en.wikipedia.org/wiki/History_of_programming_languages]--> - pierwszy język programowania Plankalkül powstał w latach 1943-1945^[https://en.wikipedia.org/wiki/Plankalk%C3%BCl].
 Fortran, stworzony w roku 1957, jest nadal używany współcześnie do wielu celów, między innymi wymagających dużej wydajności obliczeń hydrologicznych, prognozowania pogody czy modelowania klimatu.
 Programowanie ewoluowało i nadal ewoluuje wraz z rozwojem dostępności i możliwości komputerów.
@@ -28,12 +30,12 @@ Dokumentacja jest też cenna dla twórców programu, szczególnie kiedy konieczn
 Programy komputerowe są też zazwyczaj w dużej sieci powiązań z już istniejącymi bibliotekami czy oprogramowaniem.
 Zmiana w tych bibliotekach czy oprogramowaniu może skutkować nie zawsze oczekiwanymi zmianami w stworzonym programie.
 Częścią programowania jest też utrzymywanie istniejącego kodu źródłowego oraz jego ulepszanie.
-Programiści do swojej pracy wykorzystują też odpowiednie wspierające ich narzędzia, takie jak edytory kodu źródłowego, debugery, zintegrowane środowska programistyczne czy systemy kontroli wersji.
+Programiści do swojej pracy wykorzystują też odpowiednie wspierające ich narzędzia, takie jak edytory kodu źródłowego, debugery, zintegrowane środowiska programistyczne czy systemy kontroli wersji.
 
 Mitem również jest przekonanie, że programowanie to męskie zajęcie.
 Bierze się ono z obecnej na rynku pracy struktury, w której około 75% programistów to mężczyźni a tylko 25% to kobiety.
 Ta struktura jednak nie jest odzwierciedleniem jakichś wrodzonych umiejętności.
-Za pierwszego programistę często uważa się Adę Lovelace, angielskego matematyka i poetkę^[https://en.wikipedia.org/wiki/Ada_Lovelace].
+Za pierwszego programistę często uważa się Adę Lovelace, angielskiego matematyka i poetkę^[https://en.wikipedia.org/wiki/Ada_Lovelace].
 To ona w 1843 opublikowała pierwszy program komputerowy.
 Jej algorytm do obliczenia liczb Bernoulliego nie został jednak przetestowany, ponieważ urządzenie do tych obliczeń (zwane maszyną analityczną^[https://pl.wikipedia.org/wiki/Maszyna_analityczna]) nie zostało skonstruowane.
 Ponad wiek później, gdy istniały już techniczne możliwości tworzenia komputerów, programowanie było uważane za kobiecy zawód^[https://www.history.com/news/coding-used-to-be-a-womans-job-so-it-was-paid-less-and-undervalued] (Rycina \@ref(fig:marghamil)).
@@ -53,7 +55,7 @@ W rzeczywistości takie produkty opierają się o tysiące godzin pracy wielu pr
 Dodatkowo, nie są one tworzone od podstaw, ale używając szeregu dostępnych narzędzi, bibliotek i innych rozwiązań.
 Celem pisania kodu, więc nie powinno być stworzenie od zera bardzo złożonej aplikacji, lecz odpowiednie użycie istniejących rozwiązań.
 Jednocześnie pisanie złożonego oprogramowania wymaga uzyskania niezbędnego doświadczenia.
-Mit wielkiego produktu wiąże się również z wynienionym w kolejnym akapicie mitem samotnego programisty.
+Mit wielkiego produktu wiąże się również z wymienionym w kolejnym akapicie mitem samotnego programisty.
 
 W popkulturze osoba, która potrafi programować spędza czas samotnie, gwałtownie wpisując kolejne linie kodu do komputera w ciemnym pokoju.
 W rzeczywistości jednak większość profesjonalnych programistów pracuje w zespołach, których członkowie pracują nad różnymi aspektami tego samego problemu.
@@ -91,9 +93,11 @@ Pierwsza z nich mówi, że wolny działający kod jest lepszy niż szybki niedzi
 Kolejna opiera się o zasadę DRY (nie powtarzaj się, ang. *Don't Repeat Yourself*), zalecającą unikanie różnego rodzaju powtórzeń wykonywanych przy programowaniu, np. używania tych samych fragmentów kodu w wielu miejscach.
 Ostatnia reguła mówi, żeby tworzyć pisać programy w sposób modularny, czyli taki w którym każda funkcja spełnia tylko jedno i nie więcej zadanie, a złożone funkcje składają się z szeregu prostych funkcji.
 
+## Języki programowania
+
 Głównym sposobem przekazywania instrukcji do komputera jest użycie języków programowania. 
 Pozwalają one na precyzyjny zapis zadań, które następnie mają zostać wykonane przez komputer.
-Języki programowania składają się ze zbioru reguł synktatycznych (składni) oraz semantyki.
+Języki programowania składają się ze zbioru reguł syntaktycznych (składni) oraz semantyki.
 Składnia (forma) mówi o tym jakie symbole są dostępne w danym języku oraz jak te symbole mogą być łączone w większe struktury.
 Semantyka (treść) natomiast definiuje znaczenie poszczególnych symboli.
 <!--przykłady-->
@@ -104,10 +108,10 @@ Obecnie istnieją tysiące^[http://codelani.com/lists/languages.html] języków 
 Nie ma wśród nich jednego najlepszego, uniwersalnego języka programowania i w najbliższej przyszłości ten stan się nie zmieni.
 Jest to związane z bardzo szerokim zastosowaniem programowania w wielu dziedzinach czy problemach, które mają od siebie zupełnie różne wymagania.
 Przykładowe wymagania mogą dotyczyć np. szybkości wykonywanych obliczeń, łatwości pisania kodu, stabilności języka programowania, czy celu obliczeń.
-Do tego dochodzą również rózne kwestie historyczne i społeczne, jak na przykład preferowanie danego języka programowania przez osoby w danej branży.
+Do tego dochodzą również rożne kwestie historyczne i społeczne, jak na przykład preferowanie danego języka programowania przez osoby w danej branży.
 Obecnie wśród najpopularniejszych języków programowania można wymienić takie języki jak Java, C, Python, C++, Visual Basic .NET, JavaScript, C#, PHP, SQL, Objective-C, język asemblera, Perl, czy R.
 Języki programowania można podzielić na wiele różnych grup w zależności od przyjętych kryteriów.
-Poniżej wyjaśnionych jest kilka możliwych podziałów jęzków programowania.
+Poniżej wyjaśnionych jest kilka możliwych podziałów języków programowania.
 <!-- Static versus dynamic typing -->
 
 Jednym z nich jest sposób wykonywania kodu - to czy kod w danym języku jest kompilowany czy też interpretowany.
@@ -120,14 +124,14 @@ W efekcie można szybko zobaczyć efekt zmian.
 Wadą tego typu języków jest ich zmniejszona wydajność w porównany do języków kompilowanych.
 
 Innym powszechnym podziałem języków programowania jest ich rozróżnianie na podstawie poziomu.
-Tutaj można wyróznić języki od niskiego poziomu do wysokiego poziomu.
+Tutaj można wyróżnić języki od niskiego poziomu do wysokiego poziomu.
 Na najniższym poziomie jest język maszynowy, czyli taki w którym zapis programu wyrażony jest w postaci liczb binarnych.
 Powyżej są umieszczony jest język asemblera, w którym program jest zapisany poprzez serię instrukcji.
-Na najwyższym poziomie stawia się języki, które są wspomagane przez kompilator albo interpretor.
+Na najwyższym poziomie stawia się języki, które są wspomagane przez kompilator albo interpreter.
 
-Języki programowania można też rozróżnić ze względu na pradygmat programowania.
+Języki programowania można też rozróżnić ze względu na paradygmat programowania.
 Definiuje on w jaki sposób w danym języku wykonywany jest przepływ sterowania czy też jak kod jest organizowany.
-Dwa podstawowe paradygmary programowania to programowanie imperatywne i deklaratywne.
+Dwa podstawowe paradygmaty programowania to programowanie imperatywne i deklaratywne.
 Programowanie imperatywne (np. Fortran, C) opisuje proces wykonywania kodu jako sekwencję instrukcji zmieniających stan programu.
 Obejmuje ono inne paradygmaty, jak na przykład programowanie proceduralne czy obiektowe .
 Programowanie deklaratywne skupia się natomiast na warunkach jakie musi spełniać końcowe rozwiązanie, a nie na sekwencji kroków do jego stworzenia.
@@ -136,6 +140,8 @@ Niektóre języki mogą być zaklasyfikowane do kilku paradygmatów.
 Przykładowo R wspiera zarówno paradygmat funkcyjny, ale zawiera też możliwości programowania obiektowego.
 <!-- S3, S4, ... -->
 <!-- what for? -->
+
+## R
 
 <div class="figure" style="text-align: center">
 <img src="images/Rlogo.png" alt="Logo języka programowania R." width="25%" />
@@ -146,21 +152,21 @@ W tej książce wprowadzenie do programowania opiera się o język [R](https://w
 Wynika to z szeregu zalet tego języka:
 
 * R jest bezpłatnym, otwartym oprogramowaniem, który można uruchomić na różnych systemach operacyjnych (Windows, Mac OS i Linux), zarówno na komputerach osobistych jak i na dużych klastrach obliczeniowych.
-W efekcie nie ma on finansowej bariery rozpoczęcia pracy, a kod napisany na jednym komputerze można również przenieść i uruchmić na innym sprzęcie.
+W efekcie nie ma on finansowej bariery rozpoczęcia pracy, a kod napisany na jednym komputerze można również przenieść i uruchomić na innym sprzęcie.
 <!-- Dodatkowo  -->
 * R jest językiem interpretowalnym, czyli wykonanie w nim komend nie wymaga kompilacji.
 Ten aspekt ułatwia szybsze zrozumienie działania tego języka.
 * R posiada wiele wbudowanych narzędzi analizy i wizualizacji danych.
 Pozwala to na relatywnie szybkie osiąganie wymiernych efektów z korzystania z tego języka.
 * R posiada tysiące dodatkowych rozszerzeń (zwanych pakietami) pozwalających na, między innymi, przetwarzanie różnorodnych danych, ich wizualizację, czy zaawansowane modelowanie. 
-Oficjalnym portalem zawierajacym dodatkowe pakiety R jest [CRAN](https://cran.r-project.org/).
+Oficjalnym portalem zawierającym dodatkowe pakiety R jest [CRAN](https://cran.r-project.org/).
 * R ma przyjazną społeczność użytkowników tego języka, zarówno online jak i spotykających się na żywo na tzw. meetupach.
 * W celu ułatwienia pracy z R powstało również zintegrowane środowisko programistyczne RStudio, które wspomaga pisanie i analizę kodu w R.
 * R został zaprojektowany jako narzędzie ułatwiające komunikację między różnymi językami programowania, głównie C oraz Fortran^[https://www.youtube.com/watch?v=_hcpuRB5nGs].
 Obecnie R pozwala na łatwe łączenie kodu pochodzącego również z takich języków jak C++, Python, JavaScript, itd.
 * R jest używany przez wiele małych firm, jak i wielkich korporacji, wliczając w to BBC, Facebook, Google, Microsoft, Mozilla, Netflix, T-Mobile, czy Uber^[https://github.com/ThinkR-open/companies-using-r.].
 
-Oczywiście, uniweralny i idealny język nie istnieje:
+Oczywiście, uniwersalny i idealny język nie istnieje:
 
 * R jest językiem interpretowalnym, czyli wykonanie w nim komend nie wymaga kompilacji.
 W efekcie R nie jest najszybszym językiem programowania. 
