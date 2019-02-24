@@ -166,11 +166,12 @@ Przykładowo R wspiera zarówno paradygmat funkcyjny, ale zawiera też możliwo�
 
 ## R
 
+W tej książce wprowadzenie do programowania opiera się o język [R](https://www.r-project.org/) (Rycina \@ref(fig:rlogo)).
+
 ```{r rlogo, echo=FALSE, out.width="25%", fig.cap="Logo języka programowania R."}
 knitr::include_graphics("images/Rlogo.png")
 ```
 
-W tej książce wprowadzenie do programowania opiera się o język [R](https://www.r-project.org/) (Rycina \@ref(fig:rlogo)).
 Wynika to z szeregu zalet tego języka:
 
 * R jest bezpłatnym, otwartym oprogramowaniem, który można uruchomić na różnych systemach operacyjnych (Windows, Mac OS i Linux), zarówno na komputerach osobistych jak i na dużych klastrach obliczeniowych.
