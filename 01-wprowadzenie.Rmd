@@ -8,6 +8,8 @@ Ta seria instrukcji jest zazwyczaj zapisywana na komputerze w postaci tekstu w w
 <!-- reproducibility -->
 <!-- geoinformacyjne przykłady -->
 
+## Mity programistyczne
+
 Programowanie komputerowe ma obecnie już długą historię<!--^[footnote o programowaniu niekomputerowym-https://en.wikipedia.org/wiki/History_of_programming_languages]--> - pierwszy język programowania Plankalkül powstał w latach 1943-1945^[https://en.wikipedia.org/wiki/Plankalk%C3%BCl].
 Fortran, stworzony w roku 1957, jest nadal używany współcześnie do wielu celów, między innymi wymagających dużej wydajności obliczeń hydrologicznych, prognozowania pogody czy modelowania klimatu.
 Programowanie ewoluowało i nadal ewoluuje wraz z rozwojem dostępności i możliwości komputerów.
@@ -89,6 +91,8 @@ Pierwsza z nich mówi, że wolny działający kod jest lepszy niż szybki niedzi
 Kolejna opiera się o zasadę DRY (nie powtarzaj się, ang. *Don't Repeat Yourself*), zalecającą unikanie różnego rodzaju powtórzeń wykonywanych przy programowaniu, np. używania tych samych fragmentów kodu w wielu miejscach.
 Ostatnia reguła mówi, żeby tworzyć pisać programy w sposób modularny, czyli taki w którym każda funkcja spełnia tylko jedno i nie więcej zadanie, a złożone funkcje składają się z szeregu prostych funkcji.
 
+## Języki programowania
+
 Głównym sposobem przekazywania instrukcji do komputera jest użycie języków programowania. 
 Pozwalają one na precyzyjny zapis zadań, które następnie mają zostać wykonane przez komputer.
 Języki programowania składają się ze zbioru reguł syntaktycznych (składni) oraz semantyki.
@@ -134,6 +138,8 @@ Niektóre języki mogą być zaklasyfikowane do kilku paradygmatów.
 Przykładowo R wspiera zarówno paradygmat funkcyjny, ale zawiera też możliwości programowania obiektowego.
 <!-- S3, S4, ... -->
 <!-- what for? -->
+
+## R
 
 ```{r rlogo, echo=FALSE, out.width="25%", fig.cap="Logo języka programowania R."}
 knitr::include_graphics("images/Rlogo.png")
