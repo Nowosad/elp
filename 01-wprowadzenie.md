@@ -160,13 +160,12 @@ Oficjalnym portalem zawierajacym dodatkowe pakiety R jest [CRAN](https://cran.r-
 Obecnie R pozwala na łatwe łączenie kodu pochodzącego również z takich języków jak C++, Python, JavaScript, itd.
 * R jest używany przez wiele małych firm, jak i wielkich korporacji, wliczając w to BBC, Facebook, Google, Microsoft, Mozilla, Netflix, T-Mobile, czy Uber^[https://github.com/ThinkR-open/companies-using-r.].
 
-Oczywiście, uniweralny i idealny język nie istnieje.
-R posiada szereg słabości:
+Oczywiście, uniweralny i idealny język nie istnieje:
 
 * R jest językiem interpretowalnym, czyli wykonanie w nim komend nie wymaga kompilacji.
 W efekcie R nie jest najszybszym językiem programowania. 
-* Podobnie jak wiele innych języków, również R zawiera wiele niekonsekwencji, wynikającej z wieloletniej ewolucji tego języka.
-W konsekwencji istnieje wiele specjalnych przypadków czy wyjątków, które warto znać [@burns2012r].
+* Podobnie jak wiele innych języków, również R zawiera wiele niekonsekwencji, wynikających z wieloletniej ewolucji tego języka.
+W efekcie istnieje wiele specjalnych przypadków czy wyjątków, które warto znać [@burns2012r].
 
 Ta książka skupia się na prezentacji głównym konceptów programistycznych używając języka R. 
 W sekcji \@ref(resources) można znaleźć listę różnorodnych materiałów, książek, blogów, kursów, czy serwisów ułatwiających i wspomagających naukę R.
