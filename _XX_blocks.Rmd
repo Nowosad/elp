@@ -15,9 +15,6 @@ software promotion
 do not save a workspace
 ```
 
-```{block2 type="rmdinfo"}
-sourcecode vs binary packages
-```
 
 ```{block2 type="rmdinfo"}
 Continuous Integration
