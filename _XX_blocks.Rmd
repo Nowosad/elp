@@ -1,21 +1,4 @@
-
-```{block2 type="rmdinfo"}
-naming files
-```
-
-```{block2 type="rmdinfo"}
-software documentation
-```
-
-```{block2 type="rmdinfo"}
-software promotion
-```
-
 ```{block2 type="rmdinfo"}
 do not save a workspace
 ```
 
-
-```{block2 type="rmdinfo"}
-Continuous Integration
-```
