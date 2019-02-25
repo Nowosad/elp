@@ -161,7 +161,8 @@ Tab                                   uzupełnia kod (podaje pasujące mozliwoś
 F1                                    wyświetla plik pomocy dla wybranej funkcji                    
 Ctrl+Shift+C                          ustawia wybrane linie jako komentarz/odkomentuj fragment kodu 
 strzałka Góra/Dół (w oknie konsoli)   wybiera wcześniej wpisany kod                                 
-Esc                                   przerwya niedokończoną operację                               
+Esc                                   przerywa niedokończoną operację                               
+Shift+Alt+K                           wyświetla listę skrótów klawiaturowych                        
 
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">use r projects</div>\EndKnitrBlock{rmdinfo}

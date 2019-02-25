@@ -13,3 +13,9 @@
 <!-- graphics -->
 
 <!-- maps -->
+
+<!-- pipe %>%  -->
+
+<!-- functional programming - 05 -->
+
+<!-- tidy eval -->

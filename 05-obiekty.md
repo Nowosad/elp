@@ -16,7 +16,10 @@ Do podstawowych prostych obiektów należą wektory (ang. *vector*) i macierze (
 
 W tym rozdziale skupimy się na wektorach.
 Pozostałe podstawowe typy obiektów są omówione w rozdziale \@ref(zlozone-obiekty).
-Wektor może przyjmować jeden z czterech typów^[Do sprawdzania jakiego typu jest wektor służy funkcja `typeof()`.]:
+
+## Wektory
+
+Wektor może przyjmować jeden z czterech podstawowych typów^[Do sprawdzania jakiego typu jest wektor służy funkcja `typeof()`.]:
 
 1. logiczny (ang. *logical*)
 
@@ -55,8 +58,27 @@ wek_zna
 ```
 
 <!--ref to style-->
-<!-- Typ numeryczny -->
-<!-- block factor -->
+Dodatkowo, istnieją dwa dodatkowe, rzadziej spotykane typy wektorów - czynnikowy (ang. *factor*) i dat (ang. *date*).
+<!--ref-->
+
+## Właściwości wektorów
+
+Każdy wektor ma trzy właściwości - typ, długość i atrybuty.
+
+
+```r
+# typ
+typeof(wek_zmi)
+#> [1] "double"
+
+# długość
+length(wek_zmi)
+#> [1] 2
+
+# atrybuty
+attributes(wek_zmi)
+#> NULL
+```
 
 ## Podstawowe funkcje
 
@@ -66,18 +88,6 @@ wek_zna
 ```r
 str(wek_zmi)
 #>  num [1:2] 5.3 -7.1
-```
-
-
-```r
-typeof(wek_zmi)
-#> [1] "double"
-```
-
-
-```r
-length(wek_zmi)
-#> [1] 2
 ```
 
 
