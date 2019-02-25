@@ -132,7 +132,8 @@ sk = tribble(
   "F1", "wyświetla plik pomocy dla wybranej funkcji",
   "Ctrl+Shift+C", "ustawia wybrane linie jako komentarz/odkomentuj fragment kodu",
   "strzałka Góra/Dół (w oknie konsoli)", "wybiera wcześniej wpisany kod",
-  "Esc", "przerwya niedokończoną operację"
+  "Esc", "przerywa niedokończoną operację",
+  "Shift+Alt+K", "wyświetla listę skrótów klawiaturowych"
 )
 knitr::kable(sk, 
              caption = "Podstawowe skróty klawiaturowe w RStudio",
