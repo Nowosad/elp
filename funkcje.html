@@ -25,7 +25,7 @@
 <meta name="author" content="Jakub Nowosad">
 
 
-<meta name="date" content="2019-02-24">
+<meta name="date" content="2019-02-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -156,6 +156,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5.2" data-path="ergosum.html"><a href="ergosum.html#odstepy"><i class="fa fa-check"></i><b>2.5.2</b> Odstępy</a></li>
 <li class="chapter" data-level="2.5.3" data-path="ergosum.html"><a href="ergosum.html#komentarze"><i class="fa fa-check"></i><b>2.5.3</b> Komentarze</a></li>
 <li class="chapter" data-level="2.5.4" data-path="ergosum.html"><a href="ergosum.html#nazwy-plikow"><i class="fa fa-check"></i><b>2.5.4</b> Nazwy plików</a></li>
+<li class="chapter" data-level="2.5.5" data-path="ergosum.html"><a href="ergosum.html#daty"><i class="fa fa-check"></i><b>2.5.5</b> Daty</a></li>
 </ul></li>
 <li class="chapter" data-level="2.6" data-path="ergosum.html"><a href="ergosum.html#zadania-1"><i class="fa fa-check"></i><b>2.6</b> Zadania</a></li>
 </ul></li>
@@ -246,7 +247,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zadanie"><i class="fa fa-check"></i><b>11.4</b> Zadanie</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>12</b> Kontrola wersji</a><ul>
-<li class="chapter" data-level="12.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zadania-10"><i class="fa fa-check"></i><b>12.1</b> Zadania</a></li>
+<li class="chapter" data-level="12.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>12.1</b> Git</a></li>
+<li class="chapter" data-level="12.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git-w-rstudio"><i class="fa fa-check"></i><b>12.2</b> Git w RStudio</a></li>
+<li class="chapter" data-level="12.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>12.3</b> GitHub</a></li>
+<li class="chapter" data-level="12.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zadania-10"><i class="fa fa-check"></i><b>12.4</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>13</b> Tworzenie pakietów</a><ul>
 <li class="chapter" data-level="13.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zadania-11"><i class="fa fa-check"></i><b>13.1</b> Zadania</a></li>
@@ -282,6 +286,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="funkcje" class="section level1">
 <h1><span class="header-section-number">3</span> Funkcje</h1>
 <!-- intro (co to) -->
+<!-- https://blog.rstudio.com/2019/02/06/rstudio-conf-2019-workshops/ -->
 <div id="algorytmy" class="section level2">
 <h2><span class="header-section-number">3.1</span> Algorytmy</h2>
 <p>Algorytm to opis procedery prowadzącej do uzyskania określonego celu.
@@ -304,7 +309,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="dokumentacja-funkcji" class="section level2">
 <h2><span class="header-section-number">3.4</span> Dokumentacja funkcji</h2>
-<p>Każda wbudowana funkcja w R posiada swoją dokumentację<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>.
+<p>Każda wbudowana funkcja w R posiada swoją dokumentację<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>.
 Można ją wyświetlić poprzez dodanie znaku zapytania przed nazwą funkcji, a następnie wykonanie tej linii kodu.</p>
 <pre class="sourceCode r"><code class="sourceCode r">?mean</code></pre>
 <p>Alternatywnie, w RStudio możliwe jest użycie skrótu F1 gdy kursor znajduje się na nazwie funkcji.</p>
@@ -347,6 +352,17 @@ Wersje deweloperskie (rozwojowe) często można znaleźć na platformie <a href
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages(&quot;remotes&quot;)</span>
 remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;r-lib/remotes&quot;</span>)</code></pre>
 <p>Podobnie jak instalowanie programów na komputerze - zainstalowanie pakietu odbywa się tylko jeden raz.</p>
+
+<div class="rmdinfo">
+Istnieją dwa główne formy, w których rozpowszechniane są pakiety R - postać źródłowa (ang. <em>source packages</em>) i postać binarna (ang. <em>binary packages</em>).
+Postać źródłowa zawiera kod źródłowy pakietu, który musi zostać następnie skompilowany na komputerze użytkownika.
+Skompilowanie pakietu na podstawie kodu źródłowego może wymagać posiadania odpowiednich bibliotek na komputerze, np. <a href="https://cran.r-project.org/bin/windows/Rtools/">Rtools</a> dla systemu Windows czy też narzędzia Xcode dla Mac OS.
+Dodatkowo, instalacja w ten sposób zabiera więcej czasu.
+Postać binarna została już wcześniej skompilowana na zewnętrznym komputerze (np. w repozytorium CRAN)
+Jest ona dostępna dla systemów Windows i Mac OS.
+Niestety, nie wszystkie pakiety (lub ich wersje) posiadają postać binarną i wymagana jest ich kompilacja.
+</div>
+
 <p>Użycie wybranego pakietu wymaga dołączenia go do R za pomocą funkcji <code>library()</code>.
 Dołączenie wybranych pakietów do R robimy po każdym uruchomieniu R.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(stringr)</code></pre>
@@ -396,7 +412,7 @@ miasto_c_c =<span class="st"> </span>(miasto_c <span class="op">-</span><span cl
 <li>Poprawienie kodu w przypadku zauważenia błędu w procedurze obliczeniowej jest czasochłonne</li>
 </ul>
 <p>To podejście jest też niezgodne z jedną z najważniejszych reguł w programowaniu - regułą DRY (Nie powtarzaj się, ang. <em>Don’t Repeat Yourself</em>).
-Zamiast tworzenia skryptu w oparciu o kopiuj/wklej lepiej pomyśleć nad zbudowaniem odpowiedniej funkcji<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>.</p>
+Zamiast tworzenia skryptu w oparciu o kopiuj/wklej lepiej pomyśleć nad zbudowaniem odpowiedniej funkcji<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>.</p>
 </div>
 <div id="budowanie-funkcji" class="section level2">
 <h2><span class="header-section-number">3.7</span> Budowanie funkcji</h2>
@@ -469,9 +485,9 @@ Co zostało w nich wykonane?
 </div>
 <div class="footnotes">
 <hr />
-<ol start="19">
-<li id="fn19"><p>Niektóre zbiory danych również posiadają swoje pliki pomocy.<a href="funkcje.html#fnref19" class="footnote-back">↩</a></p></li>
-<li id="fn20"><p><span class="citation">Grolemund and Wickham (<a href="#ref-grolemund_r_2016">2016</a>)</span> radzą używać funkcje, gdy ten sam kod potwarza się co najmniej trzy razy.<a href="funkcje.html#fnref20" class="footnote-back">↩</a></p></li>
+<ol start="20">
+<li id="fn20"><p>Niektóre zbiory danych również posiadają swoje pliki pomocy.<a href="funkcje.html#fnref20" class="footnote-back">↩</a></p></li>
+<li id="fn21"><p><span class="citation">Grolemund and Wickham (<a href="#ref-grolemund_r_2016">2016</a>)</span> radzą używać funkcje, gdy ten sam kod potwarza się co najmniej trzy razy.<a href="funkcje.html#fnref21" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

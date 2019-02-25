@@ -316,7 +316,23 @@ Do komentowania w języku R służy operator `#`.
 
 ### Nazwy plików
 
-Podobnie jak nazwy obiektów, również nazwy plików powinny mieć nazwy opisujące ich zawartość.
+Nazwy plików powinny spełniać trzy wymagania - być łatwe  (i) do odczytania przez komputer, (ii) do odczytania przez człowieka, (iii) do posortowania.
+
+Nazwy plików nie powinny zawierać spacji, znaków specjalnych (np. !, %, *), znaków diakrytycznych (np. ć, Ł, ź).
+Warto też aby nazwy plików składały się tylko z małych liter.
+
+
+```r
+# Zalecane
+obliczanie-sredniej.R
+pomiary-temperatury.csv
+
+# Niewskazane
+Obliczanie Średniej.R
+pomiaryTemperatury!.csv
+```
+
+Podobnie jak nazwy obiektów, również nazwy plików powinny opisywać ich zawartość.
 
 
 ```r
@@ -329,12 +345,36 @@ kod.R
 dane.csv
 ```
 
-Dodatkowo nazwy plików nie powinny zawierać spacji, znaków specjalnych (np. !, %, *), znaków diakrytycznych (np. ć, Ł, ź).
-Warto też aby nazwy plików składały się tylko z małych liter.
+Dodatkowo wskazane jest dodanie wartości numerycznych przed nazwą pliku, jeżeli pliki mają jakąś kolejność.
+
+
+```r
+# Zalecane
+01_przygotowanie-danych.R
+02_obliczanie-sredniej.R
+
+# Niewskazane
+przygotowanie-danych.R
+obliczanie-sredniej.R
+```
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">encodings</div>\EndKnitrBlock{rmdinfo}
 
 <!--^[kodowanie znaków]-->
+
+### Daty
+
+Istnieje wiele sposóbów zapisu dat^[https://xkcd.com/1179/], co może powodować różnorodne problemy przy programowaniu oraz analizie danych.
+Z ratunkiem w tej kwestii przychodzi norma [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), która definiuje daty kalendarzowe jako $YYYY-MM-DD$, czyli $ROK-MIESIĄC-DZIEŃ$.
+
+
+```r
+# Zalecane
+2019-06-02
+
+# Niewskazane
+wszelkie inne
+```
 
 ## Zadania
 

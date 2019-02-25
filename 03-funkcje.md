@@ -2,6 +2,7 @@
 # Funkcje {#funkcje}
 
 <!-- intro (co to) -->
+<!-- https://blog.rstudio.com/2019/02/06/rstudio-conf-2019-workshops/ -->
 
 ## Algorytmy
 
@@ -104,6 +105,14 @@ remotes::install_github("r-lib/remotes")
 ```
 
 Podobnie jak instalowanie programów na komputerze - zainstalowanie pakietu odbywa się tylko jeden raz.
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Istnieją dwa główne formy, w których rozpowszechniane są pakiety R - postać źródłowa (ang. *source packages*) i postać binarna (ang. *binary packages*).
+Postać źródłowa zawiera kod źródłowy pakietu, który musi zostać następnie skompilowany na komputerze użytkownika.
+Skompilowanie pakietu na podstawie kodu źródłowego może wymagać posiadania odpowiednich bibliotek na komputerze, np. [Rtools](https://cran.r-project.org/bin/windows/Rtools/) dla systemu Windows czy też narzędzia Xcode dla Mac OS.
+Dodatkowo, instalacja w ten sposób zabiera więcej czasu.
+Postać binarna została już wcześniej skompilowana na zewnętrznym komputerze (np. w repozytorium CRAN)
+Jest ona dostępna dla systemów Windows i Mac OS.
+Niestety, nie wszystkie pakiety (lub ich wersje) posiadają postać binarną i wymagana jest ich kompilacja.</div>\EndKnitrBlock{rmdinfo}
 
 Użycie wybranego pakietu wymaga dołączenia go do R za pomocą funkcji `library()`.
 Dołączenie wybranych pakietów do R robimy po każdym uruchomieniu R.
