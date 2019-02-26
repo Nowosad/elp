@@ -210,6 +210,8 @@ Kursy:
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Pisanie kodu oraz jego dokumentowanie opiera się w znacznym stopniu na wprowadzaniu znaków na klawiaturze do komputera.
 Warto jest więc aby robić to w sposób [efektywny](https://csgillespie.github.io/efficientR/introduction.html#touch-typing), czyli taki w którym używamy wszystkich palców u rąk a nasz wzrok nie jest skupiony na klawiaturze.
+![](images/typing.png)
+<!--https://commons.wikimedia.org/wiki/File:QWERTY-home-keys-position.svg-->
 Takie pisanie nazwa się pisaniem bezwzrokowym (ang. *touch typing*).
 Pisanie bezwzrokowe ma szereg reguł, które wymagają przestawienia się ze starych nawyków oraz pewnego treningu. 
 Na szczęście istnieje wiele internetowych zasobów, które ułatwiają naukę takiego pisania, między innymi strona [TypingClub](https://www.typingclub.com/).</div>\EndKnitrBlock{rmdinfo}
@@ -373,9 +375,15 @@ przygotowanie-danych.R
 obliczanie-sredniej.R
 ```
 
-\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">encodings</div>\EndKnitrBlock{rmdinfo}
-
-<!--^[kodowanie znaków]-->
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Kodowanie znaków (ang. *character encodings*) jest to sposób sposób prezentacji znaków.
+Istnieje szereg różnych standardów kodowania znaków.
+Standard ASCII przyporządkowuje liczbom z zakresu 0−127 litery alfabetu angielskiego, cyfry, znaki przestankowe i inne symbole oraz polecenia.
+Firma Microsoft stworzyła dodatkowo cały szereg standardów dla różnych języków. 
+Przykładowo do obsługi języków środkowoeuropejskich istnieje wersja oznaczona jako Windows-1250 (lub CP1250).
+Alternatywnie do systemu Microsoftu powstał też zbiór standardów ISO, przykładowo ISO-8859-2 dla języków środkowoeuropejskich.
+W efekcie oznacza to, że otworzenie tekstu z innego komputera, na komputerze z "polskim" kodowaniem znaków może spowodować pojawienie się tzw. "krzaczków".
+Aby uniknąć takiej sytuacji powstał system kodowania UTF-8, który zawiera w sobie ponad milion różnych znaków.
+Jest on obecnie zalecanym standardem na całym świecie.</div>\EndKnitrBlock{rmdinfo}
 
 ### Daty
 

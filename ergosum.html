@@ -459,6 +459,8 @@ Ułatwia on przenoszenie kodu pomiędzy różnymi komputerami, a także daje dos
 <div class="rmdinfo">
 Pisanie kodu oraz jego dokumentowanie opiera się w znacznym stopniu na wprowadzaniu znaków na klawiaturze do komputera.
 Warto jest więc aby robić to w sposób <a href="https://csgillespie.github.io/efficientR/introduction.html#touch-typing">efektywny</a>, czyli taki w którym używamy wszystkich palców u rąk a nasz wzrok nie jest skupiony na klawiaturze.
+<img src="images/typing.png" />
+<!--https://commons.wikimedia.org/wiki/File:QWERTY-home-keys-position.svg-->
 Takie pisanie nazwa się pisaniem bezwzrokowym (ang. <em>touch typing</em>).
 Pisanie bezwzrokowe ma szereg reguł, które wymagają przestawienia się ze starych nawyków oraz pewnego treningu.
 Na szczęście istnieje wiele internetowych zasobów, które ułatwiają naukę takiego pisania, między innymi strona <a href="https://www.typingclub.com/">TypingClub</a>.
@@ -585,10 +587,17 @@ przygotowanie<span class="op">-</span>danych.R
 obliczanie<span class="op">-</span>sredniej.R</code></pre>
 
 <div class="rmdinfo">
-encodings
+Kodowanie znaków (ang. <em>character encodings</em>) jest to sposób sposób prezentacji znaków.
+Istnieje szereg różnych standardów kodowania znaków.
+Standard ASCII przyporządkowuje liczbom z zakresu 0−127 litery alfabetu angielskiego, cyfry, znaki przestankowe i inne symbole oraz polecenia.
+Firma Microsoft stworzyła dodatkowo cały szereg standardów dla różnych języków.
+Przykładowo do obsługi języków środkowoeuropejskich istnieje wersja oznaczona jako Windows-1250 (lub CP1250).
+Alternatywnie do systemu Microsoftu powstał też zbiór standardów ISO, przykładowo ISO-8859-2 dla języków środkowoeuropejskich.
+W efekcie oznacza to, że otworzenie tekstu z innego komputera, na komputerze z “polskim” kodowaniem znaków może spowodować pojawienie się tzw. “krzaczków”.
+Aby uniknąć takiej sytuacji powstał system kodowania UTF-8, który zawiera w sobie ponad milion różnych znaków.
+Jest on obecnie zalecanym standardem na całym świecie.
 </div>
 
-<!--^[kodowanie znaków]-->
 </div>
 <div id="daty" class="section level3">
 <h3><span class="header-section-number">2.5.5</span> Daty</h3>
