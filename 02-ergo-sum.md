@@ -6,6 +6,7 @@
 ## Wyrażenia
 
 <!-- - wyrażenia (e.g. 2 + 2) -->
+<!-- Natomiast zamiast głębokiej wiedzy matematycznej do większości zadań programistycznych wystarczy podstawowa znajomość algebry -->
 
 
 ```r
@@ -38,8 +39,8 @@
 
 ### Operator przypisania
 
-Operator przypisania służy do nadania wartości do obiektu<!--^[uproszczenie - https://adv-r.hadley.nz/names-values.html#binding-basics]-->.
-R posiada trzy operatory przypisania, które mają niemal identyczne działanie^[footnote]: `=`, `<-`, `->`.
+Operator przypisania służy do nadania wartości do obiektu^[Jest to pewne uproszczenie - https://adv-r.hadley.nz/names-values.html#binding-basics.].
+R posiada trzy operatory przypisania, które mają niemal identyczne działanie^[Więcej informacji na temat różnic w działaniu tych operatorów można znaleźć na stronie https://stackoverflow.com/questions/1741820/what-are-the-differences-between-and-in-r.]: `=`, `<-`, `->`.
 
 
 ```r
@@ -65,9 +66,7 @@ y
 
 <!-- - operator przypisania + działanie w pamięci -->
 
-<!-- block - nazywanie obiektów -->
-<!-- nie może się zaczynać numerem -->
-<!-- nie może używać specjalnych symbolii ^, !, $, @, +, -, /, lub * -->
+
 
 ### Działania na obiektach
 
@@ -165,7 +164,17 @@ Esc                                   przerywa niedokończoną operację
 Shift+Alt+K                           wyświetla listę skrótów klawiaturowych                        
 
 
-\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">use r projects</div>\EndKnitrBlock{rmdinfo}
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Dobrą praktyką pracy z R w RStudio jest używanie projektów RStudio (ang. *RStudio projects*).
+Projekt jest to folder zawierający wszystkie skrypty i pozostałe pliki powiązane z jakimś zadaniem (np. analizą danych, czy stworzeniem nowego pakietu R).
+Ułatwia on przenoszenie kodu pomiędzy różnymi komputerami, a także daje dostęp do szeregu dodatkowych możliwości w RStudio.
+
+Aby stworzyć pierwszy projekt RStudio, należy:
+1. Kliknąć `File -> New Project`.
+2. Wybrać `New Directory`.
+3. Wybrać `New Project`.
+4. Podać nazwę nowego projektu, np. "programowanie1" oraz wybrać miejsce na dysku, gdzie ma się nowy projekt znajdować.
+5. Jeżeli możliwe, to wybrać też opcję `Create a git repository`.
+6. Kliknąć `Create Project`.</div>\EndKnitrBlock{rmdinfo}
 
 ## Dodatkowe materiały {#resources}
 
@@ -233,7 +242,7 @@ Najważniejsze jest, aby wybrać jeden odpowiadający piszącemu kod styl i się
 
 Istnieje wiele konwencji nazywania obiektów^[https://en.wikipedia.org/wiki/Naming_convention_(programming)]. 
 Najczęściej używaną konwencją w R jest tzw. ["snake case"](https://en.wikipedia.org/wiki/Snake_case).
-Polega ona na tworzeniu nazw obiektów składających się ze słów połączonych znakiem podkreślenia (`_`), np.
+Polega ona na tworzeniu nazw obiektów składających się ze słów połączonych znakiem podkreślenia (`_`).
 <!-- obiekty rzeczowniki, funkcje czasowniki -->
 Ważne, żeby nazwy obiektów ułatwiały zrozumienie ich zawartości.
 
@@ -247,8 +256,9 @@ bok_b
 pole_prostokata
 ```
 
+Nazwa obiektu nie może zaczynać się od liczby, ani nie może używać specjalnych symbolii, tj. `^`, `!`, `$`, `@`, `+`, `-`, `/`, czy `*`.
 Dodatkowo należy uważać, żeby nowa nazwa obiektu nie nadpisała istniejącego obiektu lub funkcji.
-Nie powinno nazywać się obiektów, np. `c`, `t`, `table`, itd.
+Nie powinno nazywać się obiektów tak jak istniejące funkcje, np. `c`, `t`, `table`, itd.
 
 ### Odstępy
 
@@ -366,7 +376,7 @@ obliczanie-sredniej.R
 ### Daty
 
 Istnieje wiele sposóbów zapisu dat^[https://xkcd.com/1179/], co może powodować różnorodne problemy przy programowaniu oraz analizie danych.
-Z ratunkiem w tej kwestii przychodzi norma [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), która definiuje daty kalendarzowe jako $YYYY-MM-DD$, czyli $ROK-MIESIĄC-DZIEŃ$.
+Z ratunkiem w tej kwestii przychodzi norma [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), która definiuje daty kalendarzowe jako *YYYY-MM-DD*, czyli *ROK-MIESIĄC-DZIEŃ*.
 
 
 ```r

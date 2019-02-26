@@ -311,7 +311,7 @@ Pozostałe podstawowe typy obiektów są omówione w rozdziale <a href="zlozone-
 </div>
 <div id="wektory" class="section level2">
 <h2><span class="header-section-number">5.3</span> Wektory</h2>
-<p>Wektor może przyjmować jeden z czterech podstawowych typów<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>:</p>
+<p>Wektor może przyjmować jeden z czterech podstawowych typów<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>:</p>
 <ol style="list-style-type: decimal">
 <li>logiczny (ang. <em>logical</em>)</li>
 </ol>
@@ -325,7 +325,7 @@ wek_log
 wek_cal
 <span class="co">#&gt; [1]  5 -7</span></code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>liczba zmiennoprzecinkowa (ang. <em>double</em>)<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a></li>
+<li>liczba zmiennoprzecinkowa (ang. <em>double</em>)<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a></li>
 </ol>
 <pre class="sourceCode r"><code class="sourceCode r">wek_zmi =<span class="st"> </span><span class="kw">c</span>(<span class="fl">5.3</span>, <span class="fl">-7.1</span>)
 wek_zmi
@@ -472,7 +472,7 @@ Odbywa się to zgodnie z zasadą: logiczny -&gt; liczba całkowita -&gt; liczba 
 <div id="zmiana-typow-obiektow" class="section level3">
 <h3><span class="header-section-number">5.10.1</span> Zmiana typów obiektów</h3>
 <!--rzutowanie??-->
-<p>Do zmiany typu obiektu służą funkcje <code>as.logical()</code>, <code>as.integer()</code>, <code>as.double()</code>, oraz <code>as.character()</code><a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>.</p>
+<p>Do zmiany typu obiektu służą funkcje <code>as.logical()</code>, <code>as.integer()</code>, <code>as.double()</code>, oraz <code>as.character()</code><a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.logical</span>(<span class="kw">c</span>(<span class="st">&quot;FALSE&quot;</span>, <span class="st">&quot;TRUE&quot;</span>)) <span class="co"># znakowy na logiczny</span>
 <span class="co">#&gt; [1] FALSE  TRUE</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.integer</span>(<span class="kw">c</span>(<span class="st">&quot;3&quot;</span>, <span class="st">&quot;2&quot;</span>)) <span class="co"># znakowy na liczba całkowita </span>
@@ -496,10 +496,10 @@ Odbywa się to zgodnie z zasadą: logiczny -&gt; liczba całkowita -&gt; liczba 
 </div>
 <div class="footnotes">
 <hr />
-<ol start="22">
-<li id="fn22"><p>Do sprawdzania jakiego typu jest wektor służy funkcja <code>typeof()</code>.<a href="proste-obiekty.html#fnref22" class="footnote-back">↩</a></p></li>
-<li id="fn23"><p>Liczby zmiennoprzecinkowe mogą być też reprezentowane poprzez notację naukową, np. 11111.2 może być zapisane jako 1.11112e4, a 0.00021 jako 2.1e-4.<a href="proste-obiekty.html#fnref23" class="footnote-back">↩</a></p></li>
-<li id="fn24"><p>Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje <code>is.logical()</code>, <code>is.integer()</code>,<code>is.double()</code>, oraz <code>is.character()</code>.<a href="proste-obiekty.html#fnref24" class="footnote-back">↩</a></p></li>
+<ol start="23">
+<li id="fn23"><p>Do sprawdzania jakiego typu jest wektor służy funkcja <code>typeof()</code>.<a href="proste-obiekty.html#fnref23" class="footnote-back">↩</a></p></li>
+<li id="fn24"><p>Liczby zmiennoprzecinkowe mogą być też reprezentowane poprzez notację naukową, np. 11111.2 może być zapisane jako 1.11112e4, a 0.00021 jako 2.1e-4.<a href="proste-obiekty.html#fnref24" class="footnote-back">↩</a></p></li>
+<li id="fn25"><p>Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje <code>is.logical()</code>, <code>is.integer()</code>,<code>is.double()</code>, oraz <code>is.character()</code>.<a href="proste-obiekty.html#fnref25" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

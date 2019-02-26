@@ -300,6 +300,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="wyrazenia" class="section level2">
 <h2><span class="header-section-number">2.1</span> Wyrażenia</h2>
 <!-- - wyrażenia (e.g. 2 + 2) -->
+<!-- Natomiast zamiast głębokiej wiedzy matematycznej do większości zadań programistycznych wystarczy podstawowa znajomość algebry -->
 <pre class="sourceCode r"><code class="sourceCode r"><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span>
 <span class="co">#&gt; [1] 4</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="dv">3</span>
@@ -315,8 +316,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="images/obiekty.png" width="100%" style="display: block; margin: auto;" /></p>
 <div id="operator-przypisania" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Operator przypisania</h3>
-<p>Operator przypisania służy do nadania wartości do obiektu<!--^[uproszczenie - https://adv-r.hadley.nz/names-values.html#binding-basics]-->.
-R posiada trzy operatory przypisania, które mają niemal identyczne działanie<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a>: <code>=</code>, <code>&lt;-</code>, <code>-&gt;</code>.</p>
+<p>Operator przypisania służy do nadania wartości do obiektu<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a>.
+R posiada trzy operatory przypisania, które mają niemal identyczne działanie<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a>: <code>=</code>, <code>&lt;-</code>, <code>-&gt;</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="dv">7</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">x
 <span class="co">#&gt; [1] 7</span></code></pre>
@@ -324,9 +325,6 @@ R posiada trzy operatory przypisania, które mają niemal identyczne działanie<
 <pre class="sourceCode r"><code class="sourceCode r">y
 <span class="co">#&gt; [1] 7</span></code></pre>
 <!-- - operator przypisania + działanie w pamięci -->
-<!-- block - nazywanie obiektów -->
-<!-- nie może się zaczynać numerem -->
-<!-- nie może używać specjalnych symbolii ^, !, $, @, +, -, /, lub * -->
 </div>
 <div id="dziaania-na-obiektach" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Działania na obiektach</h3>
@@ -412,7 +410,16 @@ Zawiera ono bardzo wiele użytecznych funkcjonalności, tj. wbudowany edytor, po
 </table>
 
 <div class="rmdinfo">
-use r projects
+<p>Dobrą praktyką pracy z R w RStudio jest używanie projektów RStudio (ang. <em>RStudio projects</em>).
+Projekt jest to folder zawierający wszystkie skrypty i pozostałe pliki powiązane z jakimś zadaniem (np. analizą danych, czy stworzeniem nowego pakietu R).
+Ułatwia on przenoszenie kodu pomiędzy różnymi komputerami, a także daje dostęp do szeregu dodatkowych możliwości w RStudio.</p>
+Aby stworzyć pierwszy projekt RStudio, należy:
+1. Kliknąć <code>File -&gt; New Project</code>.
+2. Wybrać <code>New Directory</code>.
+3. Wybrać <code>New Project</code>.
+4. Podać nazwę nowego projektu, np. “programowanie1” oraz wybrać miejsce na dysku, gdzie ma się nowy projekt znajdować.
+5. Jeżeli możliwe, to wybrać też opcję <code>Create a git repository</code>.
+6. Kliknąć <code>Create Project</code>.
 </div>
 
 </div>
@@ -483,9 +490,9 @@ Oba te poradniki nie są identyczne i czasami zawierają sprzeczne porady.
 Najważniejsze jest, aby wybrać jeden odpowiadający piszącemu kod styl i się go konsekwentnie trzymać.</p>
 <div id="nazwy-obiektow" class="section level3">
 <h3><span class="header-section-number">2.5.1</span> Nazwy obiektów</h3>
-<p>Istnieje wiele konwencji nazywania obiektów<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a>.
+<p>Istnieje wiele konwencji nazywania obiektów<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>.
 Najczęściej używaną konwencją w R jest tzw. <a href="https://en.wikipedia.org/wiki/Snake_case">“snake case”</a>.
-Polega ona na tworzeniu nazw obiektów składających się ze słów połączonych znakiem podkreślenia (<code>_</code>), np.
+Polega ona na tworzeniu nazw obiektów składających się ze słów połączonych znakiem podkreślenia (<code>_</code>).
 <!-- obiekty rzeczowniki, funkcje czasowniki -->
 Ważne, żeby nazwy obiektów ułatwiały zrozumienie ich zawartości.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># obiekt</span>
@@ -494,8 +501,9 @@ bok_b
 
 <span class="co"># funkcja</span>
 pole_prostokata</code></pre>
-<p>Dodatkowo należy uważać, żeby nowa nazwa obiektu nie nadpisała istniejącego obiektu lub funkcji.
-Nie powinno nazywać się obiektów, np. <code>c</code>, <code>t</code>, <code>table</code>, itd.</p>
+<p>Nazwa obiektu nie może zaczynać się od liczby, ani nie może używać specjalnych symbolii, tj. <code>^</code>, <code>!</code>, <code>$</code>, <code>@</code>, <code>+</code>, <code>-</code>, <code>/</code>, czy <code>*</code>.
+Dodatkowo należy uważać, żeby nowa nazwa obiektu nie nadpisała istniejącego obiektu lub funkcji.
+Nie powinno nazywać się obiektów tak jak istniejące funkcje, np. <code>c</code>, <code>t</code>, <code>table</code>, itd.</p>
 </div>
 <div id="odstepy" class="section level3">
 <h3><span class="header-section-number">2.5.2</span> Odstępy</h3>
@@ -580,8 +588,8 @@ encodings
 </div>
 <div id="daty" class="section level3">
 <h3><span class="header-section-number">2.5.5</span> Daty</h3>
-<p>Istnieje wiele sposóbów zapisu dat<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>, co może powodować różnorodne problemy przy programowaniu oraz analizie danych.
-Z ratunkiem w tej kwestii przychodzi norma <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>, która definiuje daty kalendarzowe jako <span class="math inline">\(YYYY-MM-DD\)</span>, czyli <span class="math inline">\(ROK-MIESIĄC-DZIEŃ\)</span>.</p>
+<p>Istnieje wiele sposóbów zapisu dat<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>, co może powodować różnorodne problemy przy programowaniu oraz analizie danych.
+Z ratunkiem w tej kwestii przychodzi norma <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>, która definiuje daty kalendarzowe jako <em>YYYY-MM-DD</em>, czyli <em>ROK-MIESIĄC-DZIEŃ</em>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Zalecane</span>
 <span class="dv">2019-06-02</span>
 
@@ -625,9 +633,10 @@ wszelkie inne</code></pre>
 <div class="footnotes">
 <hr />
 <ol start="17">
-<li id="fn17"><p>footnote<a href="ergosum.html#fnref17" class="footnote-back">↩</a></p></li>
-<li id="fn18"><p><a href="https://en.wikipedia.org/wiki/Naming_convention_(programming)" class="uri">https://en.wikipedia.org/wiki/Naming_convention_(programming)</a><a href="ergosum.html#fnref18" class="footnote-back">↩</a></p></li>
-<li id="fn19"><p><a href="https://xkcd.com/1179/" class="uri">https://xkcd.com/1179/</a><a href="ergosum.html#fnref19" class="footnote-back">↩</a></p></li>
+<li id="fn17"><p>Jest to pewne uproszczenie - <a href="https://adv-r.hadley.nz/names-values.html#binding-basics" class="uri">https://adv-r.hadley.nz/names-values.html#binding-basics</a>.<a href="ergosum.html#fnref17" class="footnote-back">↩</a></p></li>
+<li id="fn18"><p>Więcej informacji na temat różnic w działaniu tych operatorów można znaleźć na stronie <a href="https://stackoverflow.com/questions/1741820/what-are-the-differences-between-and-in-r" class="uri">https://stackoverflow.com/questions/1741820/what-are-the-differences-between-and-in-r</a>.<a href="ergosum.html#fnref18" class="footnote-back">↩</a></p></li>
+<li id="fn19"><p><a href="https://en.wikipedia.org/wiki/Naming_convention_(programming)" class="uri">https://en.wikipedia.org/wiki/Naming_convention_(programming)</a><a href="ergosum.html#fnref19" class="footnote-back">↩</a></p></li>
+<li id="fn20"><p><a href="https://xkcd.com/1179/" class="uri">https://xkcd.com/1179/</a><a href="ergosum.html#fnref20" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

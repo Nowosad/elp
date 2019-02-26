@@ -202,7 +202,7 @@ W efekcie istnieje wiele specjalnych przypadków czy wyjątków, które warto zn
 Ta książka skupia się na prezentacji głównym konceptów programistycznych używając języka R. 
 W sekcji \@ref(resources) można znaleźć listę różnorodnych materiałów, książek, blogów, kursów, czy serwisów ułatwiających i wspomagających naukę R.
 Istnieje także wiele wprowadzających materiałów do nauki innych języków.
-Przykładowo, osoby zainteresowane nauką Pythona mogą skorzystać z książek @gries2017practical oraz @guzdial2016introduction, czy też kursów [Software Carpentry](http://swcarpentry.github.io/python-novice-inflammation/) oraz [Python Course](https://www.python-course.eu/python3_course.php). 
+Przykładowo, osoby zainteresowane nauką Pythona mogą skorzystać z istniejących książek (@gries2017practical oraz @guzdial2016introduction), czy też kursów [Software Carpentry](http://swcarpentry.github.io/python-novice-inflammation/) oraz [Python Course](https://www.python-course.eu/python3_course.php). 
 W pracy programistycznej przydaje się również często znajomość linii komend.
 Tutaj również można użyć materiałów z kursu [Software Carpentry](https://swcarpentry.github.io/shell-novice/) lub książki [The Unix Workbench ](https://seankross.com/the-unix-workbench/) [@krossUnixWorkbench2017].
 
