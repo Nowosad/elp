@@ -20,7 +20,7 @@ Po pierwsze, programowanie i jego efekty można w prosty sposób powielać niema
 Wcześniej stworzenie pewnego towaru opierało się o ograniczone zasoby, np. ziemia czy surowce naturalne.
 Nie możliwe było wykucie zbroi raz, a następnie natychmiastowe powielenie jej wiele razy i sprzedanie jej wielu kopii.
 We współczesnym świecie, jedna aplikacja może być sprzedana (lub rozpowszechniona) wiele razy, a często większy nacisk kładzie się na rozbudowę i ulepszanie istniejących popularnych aplikacji niż tworzenie nowych^[Efektem tego jest też coraz większa popularność modeli subskrypcyjnych - https://en.wikipedia.org/wiki/Subscription_business_model.].
-Ułatwia to też budowę nowych rozwiązań na podstawie już istniejących^[https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants.].
+Ułatwia to też budowę nowych rozwiązań na podstawie już istniejących^[https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants].
 Współcześnie programowanie pozwala na wykonywanie trylionów (10^18^) operacji arytmetycznych na sekundę^[Przecięty człowiek jest w stanie wykonać około pół operacji na sekundę - https://en.wikipedia.org/wiki/Computer_performance_by_orders_of_magnitude.].
 Pozwala to na znaczne zwiększenie wydajności dostępnych rozwiązań<!--księgowość-->, otwiera możliwość praktycznego wykorzystania istniejących idei<!--modele klimatu-->, lub też tworzenia nowych pomysłów<!--internet,sztucznainteligencja-->.
 Inną cechą programowania jest też jego prosta możliwość automatyzacji powtarzanych czynnośći oraz ułatwiona powtarzalność (ang. *reproducibility*)
@@ -187,7 +187,7 @@ Oficjalnym portalem zawierającym dodatkowe pakiety R jest [CRAN](https://cran.r
 * W celu ułatwienia pracy z R powstało również zintegrowane środowisko programistyczne RStudio, które wspomaga pisanie i analizę kodu w R.
 * R został zaprojektowany jako narzędzie ułatwiające komunikację między różnymi językami programowania, głównie C oraz Fortran^[https://www.youtube.com/watch?v=_hcpuRB5nGs].
 Obecnie R pozwala na łatwe łączenie kodu pochodzącego również z takich języków jak C++, Python, JavaScript, itd.
-* R jest używany przez wiele małych firm, jak i wielkich korporacji, wliczając w to BBC, Facebook, Google, Microsoft, Mozilla, Netflix, T-Mobile, czy Uber^[https://github.com/ThinkR-open/companies-using-r.].
+* R jest używany przez wiele małych firm, jak i wielkich korporacji, wliczając w to BBC, Facebook, Google, Microsoft, Mozilla, Netflix, T-Mobile, czy Uber^[https://github.com/ThinkR-open/companies-using-r].
 
 Oczywiście, uniwersalny i idealny język nie istnieje:
 
