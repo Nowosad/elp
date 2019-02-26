@@ -350,10 +350,16 @@ obliczanie-sredniej.R
 ```
 
 ```{block2 type="rmdinfo"}
-encodings
+Kodowanie znaków (ang. *character encodings*) jest to sposób sposób prezentacji znaków.
+Istnieje szereg różnych standardów kodowania znaków.
+Standard ASCII przyporządkowuje liczbom z zakresu 0−127 litery alfabetu angielskiego, cyfry, znaki przestankowe i inne symbole oraz polecenia.
+Firma Microsoft stworzyła dodatkowo cały szereg standardów dla różnych języków. 
+Przykładowo do obsługi języków środkowoeuropejskich istnieje wersja oznaczona jako Windows-1250 (lub CP1250).
+Alternatywnie do systemu Microsoftu powstał też zbiór standardów ISO, przykładowo ISO-8859-2 dla języków środkowoeuropejskich.
+W efekcie oznacza to, że otworzenie tekstu z innego komputera, na komputerze z "polskim" kodowaniem znaków może spowodować pojawienie się tzw. "krzaczków".
+Aby uniknąć takiej sytuacji powstał system kodowania UTF-8, który zawiera w sobie ponad milion różnych znaków.
+Jest on obecnie zalecanym standardem na całym świecie.
 ```
-
-<!--^[kodowanie znaków]-->
 
 ### Daty
 
