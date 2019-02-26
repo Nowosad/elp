@@ -207,8 +207,11 @@ Kursy:
 - Lista kursów dotyczących R na platformie Coursera - https://www.coursera.org/courses?query=r
 - Lista kursów dotyczących R na platformie edX - https://www.edx.org/course?search_query=r
 
-\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">typing
-https://www.typingclub.com/</div>\EndKnitrBlock{rmdinfo}
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Pisanie kodu oraz jego dokumentowanie opiera się w znacznym stopniu na wprowadzaniu znaków na klawiaturze do komputera.
+Warto jest więc aby robić to w sposób [efektywny](https://csgillespie.github.io/efficientR/introduction.html#touch-typing), czyli taki w którym używamy wszystkich palców u rąk a nasz wzrok nie jest skupiony na klawiaturze.
+Takie pisanie nazwa się pisaniem bezwzrokowym (ang. *touch typing*).
+Pisanie bezwzrokowe ma szereg reguł, które wymagają przestawienia się ze starych nawyków oraz pewnego treningu. 
+Na szczęście istnieje wiele internetowych zasobów, które ułatwiają naukę takiego pisania, między innymi strona [TypingClub](https://www.typingclub.com/).</div>\EndKnitrBlock{rmdinfo}
 
 Serwisy internetowe:
 
