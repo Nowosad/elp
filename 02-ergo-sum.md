@@ -401,7 +401,7 @@ wszelkie inne
 
 Rozwiązując poniższe zadania oraz pozostałe zadania z tej książki staraj się stosować do stylu podanego w sekcji \@ref(styl).
 
-1. Wyobraź sobie, że jedziesz na krótkie wakacje i planujesz na nie zabrać 500 EUR.
+1. Jedziesz na krótkie wakacje i planujesz na nie zabrać 500 EUR.
 Aktualny kurs kupna EUR wynosi 4.31.
 Ile PLN musisz wydać?
 Wylicz to w R.
