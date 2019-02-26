@@ -142,7 +142,7 @@ z9
 
 ## IDE
 
-Rstudio to zintegorwane środowsko programistyczne (ang. *Integrated Development Environment*, IDE) dla R.
+RStudio to zintegrowane środowisko programistyczne (ang. *Integrated Development Environment*, IDE) dla R.
 <!-- wyjaśnienie -->
 Zawiera ono bardzo wiele użytecznych funkcjonalności, tj. wbudowany edytor, podświetlanie składni, automatyczne uzupełnianie kodu i wiele innych.
 
@@ -156,7 +156,7 @@ Table: (\#tab:rstudiosk)Podstawowe skróty klawiaturowe w RStudio
 Skrót                                 Wyjaśnienie                                                   
 ------------------------------------  --------------------------------------------------------------
 Ctrl+Enter                            wykonuje wybraną linię kodu w skrypcie R                      
-Tab                                   uzupełnia kod (podaje pasujące mozliwości)                    
+Tab                                   uzupełnia kod (podaje pasujące możliwości)                    
 F1                                    wyświetla plik pomocy dla wybranej funkcji                    
 Ctrl+Shift+C                          ustawia wybrane linie jako komentarz/odkomentuj fragment kodu 
 strzałka Góra/Dół (w oknie konsoli)   wybiera wcześniej wpisany kod                                 
@@ -169,6 +169,7 @@ Projekt jest to folder zawierający wszystkie skrypty i pozostałe pliki powiąz
 Ułatwia on przenoszenie kodu pomiędzy różnymi komputerami, a także daje dostęp do szeregu dodatkowych możliwości w RStudio.
 
 Aby stworzyć pierwszy projekt RStudio, należy:
+
 1. Kliknąć `File -> New Project`.
 2. Wybrać `New Directory`.
 3. Wybrać `New Project`.
@@ -259,7 +260,7 @@ bok_b
 pole_prostokata
 ```
 
-Nazwa obiektu nie może zaczynać się od liczby, ani nie może używać specjalnych symbolii, tj. `^`, `!`, `$`, `@`, `+`, `-`, `/`, czy `*`.
+Nazwa obiektu nie może zaczynać się od liczby, ani nie może używać specjalnych symboli, tj. `^`, `!`, `$`, `@`, `+`, `-`, `/`, czy `*`.
 Dodatkowo należy uważać, żeby nowa nazwa obiektu nie nadpisała istniejącego obiektu lub funkcji.
 Nie powinno nazywać się obiektów tak jak istniejące funkcje, np. `c`, `t`, `table`, itd.
 
@@ -378,7 +379,7 @@ obliczanie-sredniej.R
 
 ### Daty
 
-Istnieje wiele sposóbów zapisu dat^[https://xkcd.com/1179/], co może powodować różnorodne problemy przy programowaniu oraz analizie danych.
+Istnieje wiele sposobów zapisu dat^[https://xkcd.com/1179/], co może powodować różnorodne problemy przy programowaniu oraz analizie danych.
 Z ratunkiem w tej kwestii przychodzi norma [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), która definiuje daty kalendarzowe jako *YYYY-MM-DD*, czyli *ROK-MIESIĄC-DZIEŃ*.
 
 
