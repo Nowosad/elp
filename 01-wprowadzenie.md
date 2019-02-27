@@ -9,7 +9,7 @@ Przykładowo, wyraźną korzyścią społeczną jest znacznie ułatwiony dostęp
 Jednocześnie taki dostęp powoduje sytuację określaną jako przeciążenie informacją (ang. *information overload*), w której występuje zbyt wielka ilość informacji aby podjąć właściwą decyzję lub zrozumieć sens danego tematu.
 
 Rozwój technologiczny spowodował też transformację produkcji przemysłowej i zmiany gospodarcze.
-<!---->
+<!--DODAJ PRZYKŁADY!!-->
 Firmy zajmujące się technologiami informacyjnymi, tj. Microsoft, Apple, czy Google, są obecnie jednymi z najbardziej dochodowych przedsiębiorstw, a twórca platformy Amazon, Jeff Bezos, jest najbogatszym człowiekiem świata^[https://en.wikipedia.org/wiki/The_World%27s_Billionaires#2018].
 Wiele z tych technologii nie byłoby możliwych bez programowania.
 Programowanie, w znacznym uproszczeniu, to proces tworzenia serii instrukcji, które informują komputer jak wykonać pewne zadanie.
