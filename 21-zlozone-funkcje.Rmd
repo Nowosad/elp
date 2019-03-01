@@ -1,4 +1,4 @@
-# (PART) ... {-}
+# (PART) Narzędzia {-}
 
 # Złożone funkcje {#zlozone-funkcje}
 
