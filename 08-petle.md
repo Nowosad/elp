@@ -1,6 +1,9 @@
 
 # Powtarzanie {#petle}
 
+## Wektoryzacja
+
+
 ## Pętla for
 
 

@@ -143,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3" data-path="wprowadzenie.html"><a href="wprowadzenie.html#r"><i class="fa fa-check"></i><b>1.3</b> R</a></li>
 <li class="chapter" data-level="1.4" data-path="wprowadzenie.html"><a href="wprowadzenie.html#zadania"><i class="fa fa-check"></i><b>1.4</b> Zadania</a></li>
 </ul></li>
+<li class="part"><span><b>I Podstawy</b></span></li>
 <li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a><ul>
 <li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrazenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia</a></li>
 <li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a><ul>
@@ -230,15 +231,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.6" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zadania-6"><i class="fa fa-check"></i><b>7.6</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a><ul>
-<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a></li>
-<li class="chapter" data-level="8.2" data-path="petle.html"><a href="petle.html#petla-while"><i class="fa fa-check"></i><b>8.2</b> Pętla while</a></li>
-<li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#programowanie-funkcyjne"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne</a></li>
-<li class="chapter" data-level="8.4" data-path="petle.html"><a href="petle.html#zadania-7"><i class="fa fa-check"></i><b>8.4</b> Zadania</a></li>
+<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#wektoryzacja"><i class="fa fa-check"></i><b>8.1</b> Wektoryzacja</a></li>
+<li class="chapter" data-level="8.2" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.2</b> Pętla for</a></li>
+<li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#petla-while"><i class="fa fa-check"></i><b>8.3</b> Pętla while</a></li>
+<li class="chapter" data-level="8.4" data-path="petle.html"><a href="petle.html#programowanie-funkcyjne"><i class="fa fa-check"></i><b>8.4</b> Programowanie funkcyjne</a></li>
+<li class="chapter" data-level="8.5" data-path="petle.html"><a href="petle.html#zadania-7"><i class="fa fa-check"></i><b>8.5</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a><ul>
 <li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy</a></li>
 <li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#zadania-8"><i class="fa fa-check"></i><b>9.2</b> Zadania</a></li>
 </ul></li>
+<li class="part"><span><b>II Przykłady</b></span></li>
+<li class="part"><span><b>III Narzędzia</b></span></li>
 <li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a><ul>
 <li class="chapter" data-level="10.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>10.1</b> API</a></li>
 <li class="chapter" data-level="10.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsuga-bedow"><i class="fa fa-check"></i><b>10.2</b> Obsługa błędów</a></li>
@@ -296,8 +300,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="petle" class="section level1">
 <h1><span class="header-section-number">8</span> Powtarzanie</h1>
+<div id="wektoryzacja" class="section level2">
+<h2><span class="header-section-number">8.1</span> Wektoryzacja</h2>
+</div>
 <div id="petla-for" class="section level2">
-<h2><span class="header-section-number">8.1</span> Pętla for</h2>
+<h2><span class="header-section-number">8.2</span> Pętla for</h2>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (element <span class="cf">in</span> wektor) {
   przetwarzanie elementu
 }</code></pre>
@@ -346,7 +353,7 @@ odl_km
 <span class="co">#&gt; [1] 228 101 195</span></code></pre>
 </div>
 <div id="petla-while" class="section level2">
-<h2><span class="header-section-number">8.2</span> Pętla while</h2>
+<h2><span class="header-section-number">8.3</span> Pętla while</h2>
 <!-- https://rstudio-education.github.io/hopr/loops.html#while-loops -->
 <!-- `next`, `break` -
 https://adv-r.hadley.nz/control-flow.html#loops -->
@@ -355,11 +362,11 @@ https://adv-r.hadley.nz/control-flow.html#loops -->
 <!--     pętla while stosowana gdy ilość wykonań nie jest znana przed zakończeniem działania pętli -->
 </div>
 <div id="programowanie-funkcyjne" class="section level2">
-<h2><span class="header-section-number">8.3</span> Programowanie funkcyjne</h2>
+<h2><span class="header-section-number">8.4</span> Programowanie funkcyjne</h2>
 <!-- *apply -->
 </div>
 <div id="zadania-7" class="section level2">
-<h2><span class="header-section-number">8.4</span> Zadania</h2>
+<h2><span class="header-section-number">8.5</span> Zadania</h2>
 
 </div>
 </div>

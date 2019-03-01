@@ -1,4 +1,6 @@
 
+# (PART) Podstawy {-}
+
 # Start R {#ergosum}
 
 <!-- kod nie przyjmuje literówek -->
