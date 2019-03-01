@@ -125,7 +125,12 @@ Zawiera ono bardzo wiele użytecznych funkcjonalności, tj. wbudowany edytor, po
 knitr::include_graphics("images/rstudio.png")
 ```
 
-<!-- block - RStudio to nie R!! -->
+```{block2 type="rmdinfo"}
+RStudio to nie jest to samo co R. 
+R jest językiem programowania, podczas gdy RStudio to aplikacja ułatwiająca pisanie kodu.
+Możliwe jest używanie R bez RStudio, ale RStudio bez R nie pełni już swojej roli.
+Częstą analogią jest porównanie samochodowe, w którym R jest opisywany jako silnik a RStudio jako deska rozdzielcza.
+```
 
 ```{r rstudiosk, echo=FALSE, warning=FALSE}
 library(tibble)
