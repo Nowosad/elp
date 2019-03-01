@@ -371,32 +371,32 @@ Opis tworzenia komunikatów błędu, ostrzeżenia i wiadomości można znaleźć
 
 ## Zadania
 
-1. Zobacz jak wygląda plik pomocy funkcji `mean()`.
+1) Zobacz jak wygląda plik pomocy funkcji `mean()`.
 Wykonaj zawarte w nim przykłady.
 Co przedstawiają uzyskane wyniki?
-1. Zainstaluj pakiet **magrittr**. 
+2) Zainstaluj pakiet **magrittr**. 
 Spróbuj użyć operatora `%>%` z tego pakietu na przykładzie z sekcji \@ref(kolejnosc-funkcji) dotyczącym wyliczania przekątnej prostokąta.
-1. Stwórz nowy plik skryptu R nazywający się `01_zadania-funkcje.R`.
+3) Stwórz nowy plik skryptu R nazywający się `01_zadania-funkcje.R`.
 W tym pliku, stwórz nowy obiekt `poznan`, który przyjmuje wartość `8.4`, napisz przeliczenie wartości tego obiektu ze stopnii Celsjusza na stopnie Fahrenheita, a następnie wyświetl uzyskany wynik.
 Uwaga: pamiętaj o ustawieniu odpowiedniego kodowania znaków dla tego nowego pliku.
-1. Stwórz nową funkcję, która służy do przeliczania wartości ze stopnii Celsjusza na stopnie Fahrenheita.
+4) Stwórz nową funkcję, która służy do przeliczania wartości ze stopnii Celsjusza na stopnie Fahrenheita.
 Jak nazwiesz taką funkcję?
-1. Stwórz nową funkcję, która służy do przeliczania wartości z mil lądowych na kilometry.
+5) Stwórz nową funkcję, która służy do przeliczania wartości z mil lądowych na kilometry.
 Jak nazwiesz taką funkcję?
-1. Stwórz nową funkcję, która służy do przeliczania wartości z metrów na sekundę na kilometry na godzinę.
+6) Stwórz nową funkcję, która służy do przeliczania wartości z metrów na sekundę na kilometry na godzinę.
 Jak nazwiesz taką funkcję?
-1. Stwórz nową funkcję, która służy do przeliczania wartości z metrów na sekundę na mile lądowe na godzinę.
+7) Stwórz nową funkcję, która służy do przeliczania wartości z metrów na sekundę na mile lądowe na godzinę.
 Jak nazwiesz taką funkcję?
-1. Stwórz nową funkcję, która służy do wyliczania pola trapezu na podstawie długości podstaw oraz wysokości trapezu.
+8) Stwórz nową funkcję, która służy do wyliczania pola trapezu na podstawie długości podstaw oraz wysokości trapezu.
 Jak nazwiesz taką funkcję?
-1. Wykonaj poniższy kod. 
+9) Wykonaj poniższy kod. 
 Co oznacza uzyskany wynik?
 
 ```r
 mean()
 #> Error in mean.default(): argument "x" is missing, with no default
 ```
-1. Wykonaj poniższy kod. 
+10) Wykonaj poniższy kod. 
 Co oznacza uzyskany wynik?
 
 ```r
@@ -405,21 +405,21 @@ mean("abecadło")
 #> returning NA
 #> [1] NA
 ```
-1. Wykonaj poniższy kod. 
+11) Wykonaj poniższy kod. 
 Co oznacza uzyskany wynik?
 
 ```r
 mean(sqrt())
 #> Error in sqrt(): 0 arguments passed to 'sqrt' which requires 1
 ```
-1. Wykonaj poniższy kod. 
+12) Wykonaj poniższy kod. 
 Co oznacza uzyskany wynik?
 
 ```r
 str_length("abecadło")
 #> [1] 8
 ```
-1. Wykonaj poniższy kod. 
+13) Wykonaj poniższy kod. 
 Co oznacza uzyskany wynik?
 
 ```r
