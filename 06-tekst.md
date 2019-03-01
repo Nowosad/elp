@@ -53,6 +53,8 @@ tekst1
 
 ## Postawowe operacje na tekście
 
+[@R-stringr]
+
 
 ```r
 library(stringr)

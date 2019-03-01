@@ -49,15 +49,36 @@ y
 
 ## Kolejność wykonywania funkcji
 
+Wykonywanie funkcji w R odbywa się linia po linii, od góry do dołu.
 
 
+```r
+a = 4
+b = 5
+a2 = a^2
+b2 = b^2
+```
 
-R pozwala na dwa podstawowe sposoby
+R pozwala na dwa podstawowe sposoby łączenia działania wielu funkcji^[Istnieje też szereg dodatkowych sposobów, wśród których najpopularniejszy polega na używaniu operatora `%>%` z pakietu magrittr [@R-magrittr].].
+Pierwszy z nich polega na tworzeniu pośrednich obiektow jako wyników działania pojedynczych funkcji.
 
 
+```r
+suma_a2b2 = sum(a2, b2)
+przekatna = sqrt(suma_a2b2)
+przekatna
+#> [1] 6.4
+```
+
+Drugi sposób opiera się o zagnieżdzanie funkcji. 
+W tej sytuacji najpierw wykonywana jest funkcja w środku, na następnie kolejne funkcje coraz bliżej brzegu.
 
 
-
+```r
+przekatna = sqrt(sum(a2, b2))
+przekatna
+#> [1] 6.4
+```
 
 ## Dokumentacja funkcji
 
@@ -353,5 +374,6 @@ Opis tworzenia komunikatów błędu, ostrzeżenia i wiadomości można znaleźć
 1. Zobacz jak wygląda plik pomocy funkcji `mean()`.
 Wykonaj zawarte w nim przykłady.
 Co zostało w nich wykonane?
+<!-- operator magrittr -->
 <!-- zadania o stworzenie funkcji -->
 <!-- zadania w stylu - skąd error? -->

@@ -328,11 +328,26 @@ y
 </div>
 <div id="kolejnosc-wykonywania-funkcji" class="section level2">
 <h2><span class="header-section-number">3.4</span> Kolejność wykonywania funkcji</h2>
-<p>R pozwala na dwa podstawowe sposoby</p>
+<p>Wykonywanie funkcji w R odbywa się linia po linii, od góry do dołu.</p>
+<pre class="sourceCode r"><code class="sourceCode r">a =<span class="st"> </span><span class="dv">4</span>
+b =<span class="st"> </span><span class="dv">5</span>
+a2 =<span class="st"> </span>a<span class="op">^</span><span class="dv">2</span>
+b2 =<span class="st"> </span>b<span class="op">^</span><span class="dv">2</span></code></pre>
+<p>R pozwala na dwa podstawowe sposoby łączenia działania wielu funkcji<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>.
+Pierwszy z nich polega na tworzeniu pośrednich obiektow jako wyników działania pojedynczych funkcji.</p>
+<pre class="sourceCode r"><code class="sourceCode r">suma_a2b2 =<span class="st"> </span><span class="kw">sum</span>(a2, b2)
+przekatna =<span class="st"> </span><span class="kw">sqrt</span>(suma_a2b2)
+przekatna
+<span class="co">#&gt; [1] 6.4</span></code></pre>
+<p>Drugi sposób opiera się o zagnieżdzanie funkcji.
+W tej sytuacji najpierw wykonywana jest funkcja w środku, na następnie kolejne funkcje coraz bliżej brzegu.</p>
+<pre class="sourceCode r"><code class="sourceCode r">przekatna =<span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">sum</span>(a2, b2))
+przekatna
+<span class="co">#&gt; [1] 6.4</span></code></pre>
 </div>
 <div id="dokumentacja-funkcji" class="section level2">
 <h2><span class="header-section-number">3.5</span> Dokumentacja funkcji</h2>
-<p>Każda wbudowana funkcja w R posiada swoją dokumentację<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>.
+<p>Każda wbudowana funkcja w R posiada swoją dokumentację<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>.
 Można ją wyświetlić poprzez dodanie znaku zapytania przed nazwą funkcji, a następnie wykonanie tej linii kodu.</p>
 <pre class="sourceCode r"><code class="sourceCode r">?mean</code></pre>
 <p>Alternatywnie, w RStudio możliwe jest użycie skrótu F1 gdy kursor znajduje się na nazwie funkcji.</p>
@@ -440,7 +455,7 @@ miasto_c_c =<span class="st"> </span>(miasto_c <span class="op">-</span><span cl
 <li>Poprawienie kodu w przypadku zauważenia błędu w procedurze obliczeniowej jest czasochłonne</li>
 </ul>
 <p>To podejście jest też niezgodne z jedną z najważniejszych reguł w programowaniu - regułą DRY (Nie powtarzaj się, ang. <em>Don’t Repeat Yourself</em>).
-Zamiast tworzenia skryptu w oparciu o kopiuj/wklej lepiej pomyśleć nad zbudowaniem odpowiedniej funkcji<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>.</p>
+Zamiast tworzenia skryptu w oparciu o kopiuj/wklej lepiej pomyśleć nad zbudowaniem odpowiedniej funkcji<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>.</p>
 </div>
 <div id="budowanie-funkcji" class="section level2">
 <h2><span class="header-section-number">3.8</span> Budowanie funkcji</h2>
@@ -524,6 +539,7 @@ W efekcie pojawił się komunikat błędu, który mówi, że w wyniku zostały s
 <li>Zobacz jak wygląda plik pomocy funkcji <code>mean()</code>.
 Wykonaj zawarte w nim przykłady.
 Co zostało w nich wykonane?
+<!-- operator magrittr -->
 <!-- zadania o stworzenie funkcji -->
 <!-- zadania w stylu - skąd error? --></li>
 </ol>
@@ -533,8 +549,9 @@ Co zostało w nich wykonane?
 <div class="footnotes">
 <hr />
 <ol start="21">
-<li id="fn21"><p>Niektóre zbiory danych również posiadają swoje pliki pomocy.<a href="funkcje.html#fnref21" class="footnote-back">↩</a></p></li>
-<li id="fn22"><p><span class="citation">Grolemund and Wickham (<a href="#ref-grolemund_r_2016">2016</a>)</span> radzą tworzyć nowe funkcje, gdy ten sam kod potwarza się co najmniej trzy razy.<a href="funkcje.html#fnref22" class="footnote-back">↩</a></p></li>
+<li id="fn21"><p>Istnieje też szereg dodatkowych sposobów, wśród których najpopularniejszy polega na używaniu operatora <code>%&gt;%</code> z pakietu magrittr <span class="citation">(Bache and Wickham <a href="#ref-R-magrittr">2014</a>)</span>.<a href="funkcje.html#fnref21" class="footnote-back">↩</a></p></li>
+<li id="fn22"><p>Niektóre zbiory danych również posiadają swoje pliki pomocy.<a href="funkcje.html#fnref22" class="footnote-back">↩</a></p></li>
+<li id="fn23"><p><span class="citation">Grolemund and Wickham (<a href="#ref-grolemund_r_2016">2016</a>)</span> radzą tworzyć nowe funkcje, gdy ten sam kod potwarza się co najmniej trzy razy.<a href="funkcje.html#fnref23" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
