@@ -25,8 +25,9 @@
 
 ## Obiekty
 
-> To understand computations in R, two slogans are helpful: 1. Everything that exists is an object. 2. Everything that happens is a function call.
-John Chambers
+> "To understand computations in R, two slogans are helpful: 1. Everything that exists is an object. 2. Everything that happens is a function call."
+>
+> --- John Chambers
 
 <!-- - obiekty (zmienne) -->
 ```{r, echo=FALSE}
