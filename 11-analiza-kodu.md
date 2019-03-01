@@ -7,8 +7,8 @@
 
 ## Profiling
 
-
 <!-- profiling -->
+<!-- https://r-prof.github.io/jointprof/articles/proposal.html -->
 
 ## Wektoryzacja kodu
 

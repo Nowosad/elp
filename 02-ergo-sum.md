@@ -1,5 +1,5 @@
 
-# R ergo sum {#ergosum}
+# Start R {#ergosum}
 
 <!-- kod nie przyjmuje literówek -->
 
