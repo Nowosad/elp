@@ -47,6 +47,18 @@ y
 #> [1] 10.2
 ```
 
+## Kolejność wykonywania funkcji
+
+
+
+
+R pozwala na dwa podstawowe sposoby
+
+
+
+
+
+
 ## Dokumentacja funkcji
 
 Każda wbudowana funkcja w R posiada swoją dokumentację^[Niektóre zbiory danych również posiadają swoje pliki pomocy.].
@@ -291,19 +303,55 @@ konwersja_temp(c(0, 75, 110))
 #> [1] -17.8  23.9  43.3
 ```
 
-### Komunikaty
+## Komunikaty
 
-Oprócz wyniku danej operacji R może wyświetlić kilka rodzajów wiadomości.
-<!-- with examples-->
-<!-- - błędy/ostrzeżenia -->
-<!-- rodzaje błędów - http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/10/006_wyjatki.html -->
-<!-- - komentarze -->
-<!-- - czytelność kodu/ styl -->
-<!-- wersje R -->
+Oprócz wyniku danej operacji R może wyświetlić kilka rodzajów komunikatów.
+Trzy podstawowe z nich to:
+
+1. Błędy (ang. *errors*)
+2. Ostrzeżenia (ang. *warnings*)
+3. Wiadomości (ang. *messages*) 
+
+Błedy oznaczają, że wykonanie danej funkcji nie może być kontynuowane i przerwane jest jej działanie.
+Przykładowo, w poniższym kodzie podjęta została próba wyliczenia logarytmu naturalnego z tekstu `"abecadło"`.
+Takie obliczenie nie jest możliwe, w efekcie pojawił się komunikat błędu a kod nie został wykonany.
+
+
+```r
+log("abecadło")
+#> Error in log("abecadło"): non-numeric argument to mathematical function
+```
+
+Ostrzeżenia zazwyczaj występują kiedy nastąpił jakiś problem z wykonaniem funkcji, ale jej działanie mogło być dokończone.
+Często sugerują one użytkownikowi, aby dokładnie przyjrzał się wykonywanej funkcji i upewnił się czy na pewno ustala on odpowiednie wartości dla argumentów funkcji.
+Poniżej została podjęta próba wyliczenia logarytmu naturalnego dla wartości ujemnej.
+W efekcie pojawił się komunikat błędu, który mówi, że w wyniku zostały stworzone wartości `NaN` (ang. *Not a Number*).
+
+
+```r
+log(-1)
+#> Warning in log(-1): NaNs produced
+#> [1] NaN
+```
+
+Wiadomości pojawiają się, aby przekazać użytkownikowi jakąś informację.
+<!-- Może to dotyczyć np.  -->
+
+
+
+
+```r
+inna_funkcja(15)
+#> Chcę ciebie o czymś poinformować.
+#> [1] 2.71
+```
+
+Opis tworzenia komunikatów błędu, ostrzeżenia i wiadomości można znaleźć w rozdziale \@ref(zlozone-funkcje).
 
 ## Zadania
 
 1. Zobacz jak wygląda plik pomocy funkcji `mean()`.
 Wykonaj zawarte w nim przykłady.
 Co zostało w nich wykonane?
+<!-- zadania o stworzenie funkcji -->
 <!-- zadania w stylu - skąd error? -->

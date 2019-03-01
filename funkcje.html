@@ -165,13 +165,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="funkcje.html"><a href="funkcje.html#algorytmy"><i class="fa fa-check"></i><b>3.1</b> Algorytmy</a></li>
 <li class="chapter" data-level="3.2" data-path="funkcje.html"><a href="funkcje.html#struktura-funkcji"><i class="fa fa-check"></i><b>3.2</b> Struktura funkcji</a></li>
 <li class="chapter" data-level="3.3" data-path="funkcje.html"><a href="funkcje.html#wbudowane-funkcje"><i class="fa fa-check"></i><b>3.3</b> Wbudowane funkcje</a></li>
-<li class="chapter" data-level="3.4" data-path="funkcje.html"><a href="funkcje.html#dokumentacja-funkcji"><i class="fa fa-check"></i><b>3.4</b> Dokumentacja funkcji</a></li>
-<li class="chapter" data-level="3.5" data-path="funkcje.html"><a href="funkcje.html#pakiety"><i class="fa fa-check"></i><b>3.5</b> Pakiety</a></li>
-<li class="chapter" data-level="3.6" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptow"><i class="fa fa-check"></i><b>3.6</b> Tworzenie skryptów</a></li>
-<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#budowanie-funkcji"><i class="fa fa-check"></i><b>3.7</b> Budowanie funkcji</a><ul>
-<li class="chapter" data-level="3.7.1" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.7.1</b> Komunikaty</a></li>
-</ul></li>
-<li class="chapter" data-level="3.8" data-path="funkcje.html"><a href="funkcje.html#zadania-2"><i class="fa fa-check"></i><b>3.8</b> Zadania</a></li>
+<li class="chapter" data-level="3.4" data-path="funkcje.html"><a href="funkcje.html#kolejnosc-wykonywania-funkcji"><i class="fa fa-check"></i><b>3.4</b> Kolejność wykonywania funkcji</a></li>
+<li class="chapter" data-level="3.5" data-path="funkcje.html"><a href="funkcje.html#dokumentacja-funkcji"><i class="fa fa-check"></i><b>3.5</b> Dokumentacja funkcji</a></li>
+<li class="chapter" data-level="3.6" data-path="funkcje.html"><a href="funkcje.html#pakiety"><i class="fa fa-check"></i><b>3.6</b> Pakiety</a></li>
+<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptow"><i class="fa fa-check"></i><b>3.7</b> Tworzenie skryptów</a></li>
+<li class="chapter" data-level="3.8" data-path="funkcje.html"><a href="funkcje.html#budowanie-funkcji"><i class="fa fa-check"></i><b>3.8</b> Budowanie funkcji</a></li>
+<li class="chapter" data-level="3.9" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.9</b> Komunikaty</a></li>
+<li class="chapter" data-level="3.10" data-path="funkcje.html"><a href="funkcje.html#zadania-2"><i class="fa fa-check"></i><b>3.10</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a><ul>
 <li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
@@ -326,8 +326,12 @@ x
 y
 <span class="co">#&gt; [1] 10.2</span></code></pre>
 </div>
+<div id="kolejnosc-wykonywania-funkcji" class="section level2">
+<h2><span class="header-section-number">3.4</span> Kolejność wykonywania funkcji</h2>
+<p>R pozwala na dwa podstawowe sposoby</p>
+</div>
 <div id="dokumentacja-funkcji" class="section level2">
-<h2><span class="header-section-number">3.4</span> Dokumentacja funkcji</h2>
+<h2><span class="header-section-number">3.5</span> Dokumentacja funkcji</h2>
 <p>Każda wbudowana funkcja w R posiada swoją dokumentację<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>.
 Można ją wyświetlić poprzez dodanie znaku zapytania przed nazwą funkcji, a następnie wykonanie tej linii kodu.</p>
 <pre class="sourceCode r"><code class="sourceCode r">?mean</code></pre>
@@ -352,7 +356,7 @@ Jeżeli nie jesteśmy pewni jak dana funkcja działa warto zacząć od skopiowan
 Nie bój się używać innych źródeł pomocy (zobacz sekcję <a href="ergosum.html#resources">2.4</a>), jeżli potrzebujesz zrozumieć działanie danej funkcji.</p>
 </div>
 <div id="pakiety" class="section level2">
-<h2><span class="header-section-number">3.5</span> Pakiety</h2>
+<h2><span class="header-section-number">3.6</span> Pakiety</h2>
 <p>Pakiet to zorganizowany zbiór funkcji, który rozszerza możliwości R.
 <!-- przykłady -->
 Pakiety oprócz kodu zawierają szereg dodatkowych istotnych elementów, takich jak:</p>
@@ -400,7 +404,7 @@ Po drugie można bezpośrednio zdefiniować z jakiego pakietu pochodzi konkretna
 <!-- https://juliasilge.com/blog/r-journal-navigating/ -->
 </div>
 <div id="tworzenie-skryptow" class="section level2">
-<h2><span class="header-section-number">3.6</span> Tworzenie skryptów</h2>
+<h2><span class="header-section-number">3.7</span> Tworzenie skryptów</h2>
 <!--kodowanie tekstu-->
 <p>Skrypt w R to plik testowy z rozszerzeniem <code>.R</code>, który zawiera szereg linii kodu w celu uzyskania konkretnego efektu.
 Może on zawierać zaledwie kilka jak i setki linii kodu w zależności od złożoności postawionego problemu.
@@ -439,7 +443,7 @@ miasto_c_c =<span class="st"> </span>(miasto_c <span class="op">-</span><span cl
 Zamiast tworzenia skryptu w oparciu o kopiuj/wklej lepiej pomyśleć nad zbudowaniem odpowiedniej funkcji<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>.</p>
 </div>
 <div id="budowanie-funkcji" class="section level2">
-<h2><span class="header-section-number">3.7</span> Budowanie funkcji</h2>
+<h2><span class="header-section-number">3.8</span> Budowanie funkcji</h2>
 <p>Funkcje pozwalają na automatyzację często używanych obliczeń.
 Formalnie funkcje składają się z trzech elementów: listy argumentów (ang. <em>formals</em>), ciała funkcji (ang. <em>body</em>) oraz środowiska (ang. <em>environment</em>).
 Pierwsze dwa elementy ustala twórca funkcji, natomiast środowisko jest określane na podstawie tego, gdzie dana funkcja została zdefiniowana<!--^[footnote o environment]https://rstudio-education.github.io/hopr/environments.html-->.
@@ -485,23 +489,42 @@ Ważne jest to, że obiekt użyty wewnątrz funkcji (<code>temperatura_f</code>)
 <span class="co">#&gt; [1] -17.8</span>
 <span class="kw">konwersja_temp</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">75</span>, <span class="dv">110</span>))
 <span class="co">#&gt; [1] -17.8  23.9  43.3</span></code></pre>
-<div id="komunikaty" class="section level3">
-<h3><span class="header-section-number">3.7.1</span> Komunikaty</h3>
-<p>Oprócz wyniku danej operacji R może wyświetlić kilka rodzajów wiadomości.
-<!-- with examples-->
-<!-- - błędy/ostrzeżenia -->
-<!-- rodzaje błędów - http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/10/006_wyjatki.html -->
-<!-- - komentarze -->
-<!-- - czytelność kodu/ styl -->
-<!-- wersje R --></p>
 </div>
+<div id="komunikaty" class="section level2">
+<h2><span class="header-section-number">3.9</span> Komunikaty</h2>
+<p>Oprócz wyniku danej operacji R może wyświetlić kilka rodzajów komunikatów.
+Trzy podstawowe z nich to:</p>
+<ol style="list-style-type: decimal">
+<li>Błędy (ang. <em>errors</em>)</li>
+<li>Ostrzeżenia (ang. <em>warnings</em>)</li>
+<li>Wiadomości (ang. <em>messages</em>)</li>
+</ol>
+<p>Błedy oznaczają, że wykonanie danej funkcji nie może być kontynuowane i przerwane jest jej działanie.
+Przykładowo, w poniższym kodzie podjęta została próba wyliczenia logarytmu naturalnego z tekstu <code>&quot;abecadło&quot;</code>.
+Takie obliczenie nie jest możliwe, w efekcie pojawił się komunikat błędu a kod nie został wykonany.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(<span class="st">&quot;abecadło&quot;</span>)
+<span class="co">#&gt; Error in log(&quot;abecadło&quot;): non-numeric argument to mathematical function</span></code></pre>
+<p>Ostrzeżenia zazwyczaj występują kiedy nastąpił jakiś problem z wykonaniem funkcji, ale jej działanie mogło być dokończone.
+Często sugerują one użytkownikowi, aby dokładnie przyjrzał się wykonywanej funkcji i upewnił się czy na pewno ustala on odpowiednie wartości dla argumentów funkcji.
+Poniżej została podjęta próba wyliczenia logarytmu naturalnego dla wartości ujemnej.
+W efekcie pojawił się komunikat błędu, który mówi, że w wyniku zostały stworzone wartości <code>NaN</code> (ang. <em>Not a Number</em>).</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(<span class="op">-</span><span class="dv">1</span>)
+<span class="co">#&gt; Warning in log(-1): NaNs produced</span>
+<span class="co">#&gt; [1] NaN</span></code></pre>
+<p>Wiadomości pojawiają się, aby przekazać użytkownikowi jakąś informację.
+<!-- Może to dotyczyć np.  --></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">inna_funkcja</span>(<span class="dv">15</span>)
+<span class="co">#&gt; Chcę ciebie o czymś poinformować.</span>
+<span class="co">#&gt; [1] 2.71</span></code></pre>
+<p>Opis tworzenia komunikatów błędu, ostrzeżenia i wiadomości można znaleźć w rozdziale <a href="zlozone-funkcje.html#zlozone-funkcje">10</a>.</p>
 </div>
 <div id="zadania-2" class="section level2">
-<h2><span class="header-section-number">3.8</span> Zadania</h2>
+<h2><span class="header-section-number">3.10</span> Zadania</h2>
 <ol style="list-style-type: decimal">
 <li>Zobacz jak wygląda plik pomocy funkcji <code>mean()</code>.
 Wykonaj zawarte w nim przykłady.
 Co zostało w nich wykonane?
+<!-- zadania o stworzenie funkcji -->
 <!-- zadania w stylu - skąd error? --></li>
 </ol>
 
