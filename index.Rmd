@@ -28,9 +28,10 @@ is_html = knitr::is_html_output()
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), "bookdown", "knitr", "rmarkdown"
-), "packages.bib")
+knitr::write_bib(c(.packages(),
+                   "bookdown", "knitr", "rmarkdown",
+                   "magrittr"),
+                   "packages.bib")
 ```
 
 Aktualna wersja książki znajduje się pod adresem https://nowosad.github.io/elp/. 
