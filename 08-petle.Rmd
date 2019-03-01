@@ -1,5 +1,8 @@
 # Powtarzanie {#petle}
 
+## Wektoryzacja
+
+
 ## Pętla for
 
 ```{r, eval=FALSE}

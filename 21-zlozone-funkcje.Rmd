@@ -1,3 +1,5 @@
+# (PART) ... {-}
+
 # Złożone funkcje {#zlozone-funkcje}
 
 <!-- + examples -->
