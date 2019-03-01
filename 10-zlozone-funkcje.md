@@ -13,6 +13,8 @@
 
 <!-- 07-oo https://blog.rstudio.com/2019/02/06/rstudio-conf-2019-workshops/ -->
 
+<!-- https://arxiv.org/pdf/1409.3531.pdf -->
+
 ## API
 
 <!-- 04 in tidytools https://blog.rstudio.com/2019/02/06/rstudio-conf-2019-workshops/ -->

@@ -27,3 +27,11 @@ pre code {
 h2.subtitle {
   color:gray;
 }
+
+/*improves quotes style*/
+blockquote > p:last-child {
+  text-align: right;
+}
+blockquote > p:first-child {
+  text-align: inherit;
+}
