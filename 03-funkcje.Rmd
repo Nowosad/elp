@@ -42,6 +42,16 @@ y
 
 
 
+
+R pozwala na dwa podstawowe sposoby
+
+```{r}
+
+```
+
+
+
+
 ## Dokumentacja funkcji
 
 Każda wbudowana funkcja w R posiada swoją dokumentację^[Niektóre zbiory danych również posiadają swoje pliki pomocy.].
@@ -266,7 +276,7 @@ Błedy oznaczają, że wykonanie danej funkcji nie może być kontynuowane i prz
 Przykładowo, w poniższym kodzie podjęta została próba wyliczenia logarytmu naturalnego z tekstu `"abecadło"`.
 Takie obliczenie nie jest możliwe, w efekcie pojawił się komunikat błędu a kod nie został wykonany.
 
-```{r}
+```{r, error=TRUE}
 log("abecadło")
 ```
 
