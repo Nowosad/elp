@@ -18,6 +18,8 @@ Algorytm to opis procedery prowadzącej do uzyskania określonego celu.
 
 ```r
 x = c(8.2, 10.3, 12.0)
+x
+#> [1]  8.2 10.3 12.0
 ```
 
 
@@ -41,6 +43,8 @@ mean(x)
 
 ```r
 y = mean(x)
+y
+#> [1] 10.2
 ```
 
 ## Dokumentacja funkcji
@@ -57,8 +61,8 @@ Alternatywnie, w RStudio możliwe jest użycie skrótu F1 gdy kursor znajduje si
 
 Dokumentacja każdej funkcji, zwana inaczej plikiem pomocy, ma zazwyczaj podobną strukturę.
 
-- W lewym górnym rogu znajduje się nazwa funkcji (`mean`) oraz nazwa pakietu z którego dana funkcja pochodzi (`base`)
-- Poniżej znajduje się tytuł funkcji oraz jej krótki opis
+- W lewym górnym rogu znajduje się nazwa funkcji (`mean`) oraz nazwa pakietu z którego dana funkcja pochodzi (`base`).
+- Poniżej znajduje się tytuł funkcji oraz jej krótki opis.
 - Kolejnym elementem jest budowa funkcji (*Usage*), która skrótowo opisuje z jakich argumentów składa się dana funkcja.
 Np. funkcja `mean()` przyjmuje argument `x`, `trim`, oraz `na.rm`. 
 Dla argumentów `trim` oraz `na.rm` są także ustalone ich domyślne wartości.
@@ -66,8 +70,8 @@ Dodatkowo, widoczny jest argument w postaci wielokropka (`...`).
 <!--!?-->
 - Argumenty funkcji są również wypisane oraz skrótowo wyjaśnione. 
 Przykładowo, `x` musi być obiektem R o typie numerycznym (który łączy typ liczb całkowitych i zmiennoprzecinkowych<!--ref-->), logicznym, `date`, `date-time`, lub `time interval`.
-- Część *Value* (lub *Details*) opisuje szczegóły wykonywanej funkcji
-- Inne możliwe elementy to np. *References* odnoszący się do artykułu czy książki opisującej daną funkcję lub metodę, czy też *See also* zawierający odnośniki do innych, podobnych funkcji
+- Część *Value* (lub *Details*) opisuje szczegóły wykonywanej funkcji.
+- Inne możliwe elementy to np. *References* odnoszący się do artykułu czy książki opisującej daną funkcję lub metodę, czy też *See also* zawierający odnośniki do innych, podobnych funkcji.
 - Jeden z najważniejszych elementów pliku pomocy znajduje się na samym końcu - są to przykłady (*Examples*).
 Jeżeli nie jesteśmy pewni jak dana funkcja działa warto zacząć od skopiowania przykładów a następnie ich wykonania.
 
@@ -101,8 +105,10 @@ Zainstalowanie pakietu w R z platformy GitHub jest możliwe używając, np. funk
 
 ```r
 # install.packages("remotes")
-remotes::install_github("r-lib/remotes")
+remotes::install_github("tidyverse/stringr")
 ```
+
+W przypadku instalacji pakietu w R z platformy GitHub należy podać nazwę użytkownika lub organizacji, która tworzy ten pakiet (np. powyżej `tidyverse`) oraz nazwę pakietu (np. powyżej `stringr`) oddzielone znakiem `/`.
 
 Podobnie jak instalowanie programów na komputerze - zainstalowanie pakietu odbywa się tylko jeden raz.
 
@@ -122,7 +128,7 @@ Dołączenie wybranych pakietów do R robimy po każdym uruchomieniu R.
 library(stringr)
 ```
 
-<!-- stringr::str_sub() -->
+W przypadku, gdy chcemy użyć zewnętrznej funkcji, ale nie dołączyliśmy odpowiedniego pakietu, pojawi się błąd o treści `could not find function "nazwa_funkcji"`.
 
 
 ```r
@@ -130,6 +136,17 @@ str_sub("chronologia", start = 1, end = 6)
 #> Error in str_sub("chronologia", start = 1, end = 6) : 
 #>  could not find function "str_sub"
 ```
+
+Istnieją dwa możliwe rozwiązania powyższego problemu.
+Po pierwsze możliwe jest dołączenie pakietu poprzez  `library(stringr)`.
+Po drugie można bezpośrednio zdefiniować z jakiego pakietu pochodzi konkretna funkcja używając nazwy pakietu i operatora `::`.
+
+
+```r
+stringr::str_sub("chronologia", start = 1, end = 6)
+#> [1] "chrono"
+```
+
 <!-- block - inaczej biblioteki, moduły, etc -->
 
 <!-- overwhelmed by the number! -->
@@ -170,7 +187,6 @@ Powyższe kroki można również zapisać do pliku tekstowego.
 miasto_a = 75
 miasto_a_c = (miasto_a - 32) / 1.8
 miasto_a_c
-#> [1] 23.9
 ```
 
 Co można zrobić jeżeli mamy więcej podobnych pomiarów, które chcemy wykonać?
@@ -195,7 +211,7 @@ Powyższe podejście jest poprawne, ale ma ono kilka wad:
 * Poprawienie kodu w przypadku zauważenia błędu w procedurze obliczeniowej jest czasochłonne
 
 To podejście jest też niezgodne z jedną z najważniejszych reguł w programowaniu - regułą DRY (Nie powtarzaj się, ang. *Don't Repeat Yourself*).
-Zamiast tworzenia skryptu w oparciu o kopiuj/wklej lepiej pomyśleć nad zbudowaniem odpowiedniej funkcji^[@grolemund_r_2016 radzą używać funkcje, gdy ten sam kod potwarza się co najmniej trzy razy.].
+Zamiast tworzenia skryptu w oparciu o kopiuj/wklej lepiej pomyśleć nad zbudowaniem odpowiedniej funkcji^[@grolemund_r_2016 radzą tworzyć nowe funkcje, gdy ten sam kod potwarza się co najmniej trzy razy.].
 
 ## Budowanie funkcji
 

@@ -313,14 +313,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="wbudowane-funkcje" class="section level2">
 <h2><span class="header-section-number">3.3</span> Wbudowane funkcje</h2>
-<pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">c</span>(<span class="fl">8.2</span>, <span class="fl">10.3</span>, <span class="fl">12.0</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">c</span>(<span class="fl">8.2</span>, <span class="fl">10.3</span>, <span class="fl">12.0</span>)
+x
+<span class="co">#&gt; [1]  8.2 10.3 12.0</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">(<span class="fl">8.2</span> <span class="op">+</span><span class="st"> </span><span class="fl">10.3</span> <span class="op">+</span><span class="st"> </span><span class="fl">12.0</span>) <span class="op">/</span><span class="st"> </span><span class="dv">3</span>
 <span class="co">#&gt; [1] 10.2</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(x) <span class="op">/</span><span class="st"> </span><span class="kw">length</span>(x)
 <span class="co">#&gt; [1] 10.2</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(x)
 <span class="co">#&gt; [1] 10.2</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">y =<span class="st"> </span><span class="kw">mean</span>(x)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">y =<span class="st"> </span><span class="kw">mean</span>(x)
+y
+<span class="co">#&gt; [1] 10.2</span></code></pre>
 </div>
 <div id="dokumentacja-funkcji" class="section level2">
 <h2><span class="header-section-number">3.4</span> Dokumentacja funkcji</h2>
@@ -330,8 +334,8 @@ Można ją wyświetlić poprzez dodanie znaku zapytania przed nazwą funkcji, a 
 <p>Alternatywnie, w RStudio możliwe jest użycie skrótu F1 gdy kursor znajduje się na nazwie funkcji.</p>
 <p>Dokumentacja każdej funkcji, zwana inaczej plikiem pomocy, ma zazwyczaj podobną strukturę.</p>
 <ul>
-<li>W lewym górnym rogu znajduje się nazwa funkcji (<code>mean</code>) oraz nazwa pakietu z którego dana funkcja pochodzi (<code>base</code>)</li>
-<li>Poniżej znajduje się tytuł funkcji oraz jej krótki opis</li>
+<li>W lewym górnym rogu znajduje się nazwa funkcji (<code>mean</code>) oraz nazwa pakietu z którego dana funkcja pochodzi (<code>base</code>).</li>
+<li>Poniżej znajduje się tytuł funkcji oraz jej krótki opis.</li>
 <li>Kolejnym elementem jest budowa funkcji (<em>Usage</em>), która skrótowo opisuje z jakich argumentów składa się dana funkcja.
 Np. funkcja <code>mean()</code> przyjmuje argument <code>x</code>, <code>trim</code>, oraz <code>na.rm</code>.
 Dla argumentów <code>trim</code> oraz <code>na.rm</code> są także ustalone ich domyślne wartości.
@@ -339,8 +343,8 @@ Dodatkowo, widoczny jest argument w postaci wielokropka (<code>...</code>).
 <!--!?--></li>
 <li>Argumenty funkcji są również wypisane oraz skrótowo wyjaśnione.
 Przykładowo, <code>x</code> musi być obiektem R o typie numerycznym (który łączy typ liczb całkowitych i zmiennoprzecinkowych<!--ref-->), logicznym, <code>date</code>, <code>date-time</code>, lub <code>time interval</code>.</li>
-<li>Część <em>Value</em> (lub <em>Details</em>) opisuje szczegóły wykonywanej funkcji</li>
-<li>Inne możliwe elementy to np. <em>References</em> odnoszący się do artykułu czy książki opisującej daną funkcję lub metodę, czy też <em>See also</em> zawierający odnośniki do innych, podobnych funkcji</li>
+<li>Część <em>Value</em> (lub <em>Details</em>) opisuje szczegóły wykonywanej funkcji.</li>
+<li>Inne możliwe elementy to np. <em>References</em> odnoszący się do artykułu czy książki opisującej daną funkcję lub metodę, czy też <em>See also</em> zawierający odnośniki do innych, podobnych funkcji.</li>
 <li>Jeden z najważniejszych elementów pliku pomocy znajduje się na samym końcu - są to przykłady (<em>Examples</em>).
 Jeżeli nie jesteśmy pewni jak dana funkcja działa warto zacząć od skopiowania przykładów a następnie ich wykonania.</li>
 </ul>
@@ -365,7 +369,8 @@ Wersje deweloperskie (rozwojowe) często można znaleźć na platformie <a href
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;stringr&quot;</span>) <span class="co">#instalacja pakietu stringr</span></code></pre>
 <p>Zainstalowanie pakietu w R z platformy GitHub jest możliwe używając, np. funkcji <code>install_github()</code> z pakietu <strong>remotes</strong>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install.packages(&quot;remotes&quot;)</span>
-remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;r-lib/remotes&quot;</span>)</code></pre>
+remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;tidyverse/stringr&quot;</span>)</code></pre>
+<p>W przypadku instalacji pakietu w R z platformy GitHub należy podać nazwę użytkownika lub organizacji, która tworzy ten pakiet (np. powyżej <code>tidyverse</code>) oraz nazwę pakietu (np. powyżej <code>stringr</code>) oddzielone znakiem <code>/</code>.</p>
 <p>Podobnie jak instalowanie programów na komputerze - zainstalowanie pakietu odbywa się tylko jeden raz.</p>
 
 <div class="rmdinfo">
@@ -381,10 +386,15 @@ Niestety, nie wszystkie pakiety (lub ich wersje) posiadają postać binarną i w
 <p>Użycie wybranego pakietu wymaga dołączenia go do R za pomocą funkcji <code>library()</code>.
 Dołączenie wybranych pakietów do R robimy po każdym uruchomieniu R.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(stringr)</code></pre>
-<!-- stringr::str_sub() -->
+<p>W przypadku, gdy chcemy użyć zewnętrznej funkcji, ale nie dołączyliśmy odpowiedniego pakietu, pojawi się błąd o treści <code>could not find function &quot;nazwa_funkcji&quot;</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sub</span>(<span class="st">&quot;chronologia&quot;</span>, <span class="dt">start =</span> <span class="dv">1</span>, <span class="dt">end =</span> <span class="dv">6</span>)
 <span class="co">#&gt; Error in str_sub(&quot;chronologia&quot;, start = 1, end = 6) : </span>
 <span class="co">#&gt;  could not find function &quot;str_sub&quot;</span></code></pre>
+<p>Istnieją dwa możliwe rozwiązania powyższego problemu.
+Po pierwsze możliwe jest dołączenie pakietu poprzez <code>library(stringr)</code>.
+Po drugie można bezpośrednio zdefiniować z jakiego pakietu pochodzi konkretna funkcja używając nazwy pakietu i operatora <code>::</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">stringr<span class="op">::</span><span class="kw">str_sub</span>(<span class="st">&quot;chronologia&quot;</span>, <span class="dt">start =</span> <span class="dv">1</span>, <span class="dt">end =</span> <span class="dv">6</span>)
+<span class="co">#&gt; [1] &quot;chrono&quot;</span></code></pre>
 <!-- block - inaczej biblioteki, moduły, etc -->
 <!-- overwhelmed by the number! -->
 <!-- https://juliasilge.com/blog/r-journal-navigating/ -->
@@ -408,8 +418,7 @@ miasto_a_c
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># plik przeliczanie-temp.R</span>
 miasto_a =<span class="st"> </span><span class="dv">75</span>
 miasto_a_c =<span class="st"> </span>(miasto_a <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span>
-miasto_a_c
-<span class="co">#&gt; [1] 23.9</span></code></pre>
+miasto_a_c</code></pre>
 <p>Co można zrobić jeżeli mamy więcej podobnych pomiarów, które chcemy wykonać?
 Najprostszą opcją jest użycie kopiuj/wklej i powielenie tego samego kodu, a później naniesienie małych zmian, np. nazw obiektów.
 <!-- ^[o wekrtoryzacji] -->
@@ -502,7 +511,7 @@ Co zostało w nich wykonane?
 <hr />
 <ol start="21">
 <li id="fn21"><p>Niektóre zbiory danych również posiadają swoje pliki pomocy.<a href="funkcje.html#fnref21" class="footnote-back">↩</a></p></li>
-<li id="fn22"><p><span class="citation">Grolemund and Wickham (<a href="#ref-grolemund_r_2016">2016</a>)</span> radzą używać funkcje, gdy ten sam kod potwarza się co najmniej trzy razy.<a href="funkcje.html#fnref22" class="footnote-back">↩</a></p></li>
+<li id="fn22"><p><span class="citation">Grolemund and Wickham (<a href="#ref-grolemund_r_2016">2016</a>)</span> radzą tworzyć nowe funkcje, gdy ten sam kod potwarza się co najmniej trzy razy.<a href="funkcje.html#fnref22" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

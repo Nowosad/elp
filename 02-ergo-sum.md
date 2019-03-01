@@ -7,7 +7,6 @@
 
 ## Wyrażenia
 
-<!-- - wyrażenia (e.g. 2 + 2) -->
 <!-- Natomiast zamiast głębokiej wiedzy matematycznej do większości zadań programistycznych wystarczy podstawowa znajomość algebry -->
 
 
@@ -71,8 +70,6 @@ y
 ```
 
 <!-- - operator przypisania + działanie w pamięci -->
-
-
 
 ### Działania na obiektach
 
@@ -154,7 +151,10 @@ Zawiera ono bardzo wiele użytecznych funkcjonalności, tj. wbudowany edytor, po
 
 <img src="images/rstudio.png" width="100%" style="display: block; margin: auto;" />
 
-<!-- block - RStudio to nie R!! -->
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">RStudio to nie jest to samo co R. 
+R jest językiem programowania, podczas gdy RStudio to aplikacja ułatwiająca pisanie kodu.
+Możliwe jest używanie R bez RStudio, ale RStudio bez R nie pełni już swojej roli.
+Częstą analogią jest porównanie samochodowe, w którym R jest opisywany jako silnik a RStudio jako deska rozdzielcza.</div>\EndKnitrBlock{rmdinfo}
 
 
 Table: (\#tab:rstudiosk)Podstawowe skróty klawiaturowe w RStudio
@@ -416,4 +416,3 @@ Stwórz nowy obiekt `pole_trapezu`, który zawiera obliczone pole tego trapezu.
 3. Wraz z grupą znajomych planujesz zamówić pizzę z dostawą i macie na to przeznaczonych 50 PLN. 
 Pizza o średnicy 30 cm kosztuje 23,5 PLN, a pizza o średniczy 50 cm kosztuje 50 PLN.
 Wylicz w R, czy bardziej opłaca się kupno dwóch małych pizz czy jednej dużej.
-
