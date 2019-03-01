@@ -3,6 +3,9 @@
 # Start R {#ergosum}
 
 <!-- kod nie przyjmuje literówek -->
+<!-- zamykanie nawiasów -->
+<!-- zamykanie cudzysłowiów -->
+<!-- etc -->
 
 ## Wyrażenia
 
