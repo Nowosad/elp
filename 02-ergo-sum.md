@@ -410,7 +410,7 @@ wszelkie inne
 
 Rozwiązując poniższe zadania oraz pozostałe zadania z tej książki staraj się stosować do stylu podanego w sekcji \@ref(styl).
 
-1. Przejrzyj poniższą listę poleceń.
+1) Przejrzyj poniższą listę poleceń.
 Spróbuj określić uzyskane wyniki bez wykonywania kodu w R.
 
 ```r
@@ -425,12 +425,12 @@ x %/% 3
 y ^ 2
 y ^ x
 ```
-1. Jedziesz na krótkie wakacje i planujesz na nie zabrać 500 EUR.
+2) Jedziesz na krótkie wakacje i planujesz na nie zabrać 500 EUR.
 Aktualny kurs kupna EUR wynosi 4,31.
 Ile PLN musisz wydać?
 Wylicz to w R.
-1. Masz trapez o długości podstaw `a = 5` i `b = 6` oraz wysokości `h = 3`.
+3) Masz trapez o długości podstaw `a = 5` i `b = 6` oraz wysokości `h = 3`.
 Stwórz nowy obiekt `pole_trapezu`, który zawiera obliczone pole tego trapezu.
-1. Wraz z grupą znajomych planujesz zamówić pizzę z dostawą i macie na to przeznaczonych 50 PLN. 
+4) Wraz z grupą znajomych planujesz zamówić pizzę z dostawą i macie na to przeznaczonych 50 PLN. 
 Pizza o średnicy 30 cm kosztuje 23,5 PLN, a pizza o średniczy 50 cm kosztuje 50 PLN.
 Wylicz w R, czy bardziej opłaca się kupno dwóch małych pizz czy jednej dużej.
