@@ -31,6 +31,7 @@ Funkcja `create_packages()` tworzy cztery pliki:
 <!-- rstudio helper -->
 <!-- pkgdown -->
 <!-- readme -->
+<!-- news -->
 
 ## Testy jednostkowe
 
@@ -39,10 +40,7 @@ Funkcja `create_packages()` tworzy cztery pliki:
 <!-- devtools::test() -->
 <!-- devtools::test_coverage() -->
 
-
 ## Licencje
-
-
 
 ## Publikowanie pakietów
 
