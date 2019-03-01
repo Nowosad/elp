@@ -165,7 +165,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="funkcje.html"><a href="funkcje.html#algorytmy"><i class="fa fa-check"></i><b>3.1</b> Algorytmy</a></li>
 <li class="chapter" data-level="3.2" data-path="funkcje.html"><a href="funkcje.html#struktura-funkcji"><i class="fa fa-check"></i><b>3.2</b> Struktura funkcji</a></li>
 <li class="chapter" data-level="3.3" data-path="funkcje.html"><a href="funkcje.html#wbudowane-funkcje"><i class="fa fa-check"></i><b>3.3</b> Wbudowane funkcje</a></li>
-<li class="chapter" data-level="3.4" data-path="funkcje.html"><a href="funkcje.html#kolejnosc-wykonywania-funkcji"><i class="fa fa-check"></i><b>3.4</b> Kolejność wykonywania funkcji</a></li>
+<li class="chapter" data-level="3.4" data-path="funkcje.html"><a href="funkcje.html#kolejnosc-funkcji"><i class="fa fa-check"></i><b>3.4</b> Kolejność wykonywania funkcji</a></li>
 <li class="chapter" data-level="3.5" data-path="funkcje.html"><a href="funkcje.html#dokumentacja-funkcji"><i class="fa fa-check"></i><b>3.5</b> Dokumentacja funkcji</a></li>
 <li class="chapter" data-level="3.6" data-path="funkcje.html"><a href="funkcje.html#pakiety"><i class="fa fa-check"></i><b>3.6</b> Pakiety</a></li>
 <li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptow"><i class="fa fa-check"></i><b>3.7</b> Tworzenie skryptów</a></li>
@@ -326,7 +326,7 @@ x
 y
 <span class="co">#&gt; [1] 10.2</span></code></pre>
 </div>
-<div id="kolejnosc-wykonywania-funkcji" class="section level2">
+<div id="kolejnosc-funkcji" class="section level2">
 <h2><span class="header-section-number">3.4</span> Kolejność wykonywania funkcji</h2>
 <p>Wykonywanie funkcji w R odbywa się linia po linii, od góry do dołu.</p>
 <pre class="sourceCode r"><code class="sourceCode r">a =<span class="st"> </span><span class="dv">4</span>
@@ -538,18 +538,62 @@ W efekcie pojawił się komunikat błędu, który mówi, że w wyniku zostały s
 <ol style="list-style-type: decimal">
 <li>Zobacz jak wygląda plik pomocy funkcji <code>mean()</code>.
 Wykonaj zawarte w nim przykłady.
-Co zostało w nich wykonane?
-<!-- operator magrittr -->
-<!-- zadania o stworzenie funkcji -->
-<!-- zadania w stylu - skąd error? --></li>
+Co przedstawiają uzyskane wyniki?</li>
+<li>Zainstaluj pakiet <strong>magrittr</strong>.
+Spróbuj użyć operatora <code>%&gt;%</code> z tego pakietu na przykładzie z sekcji <a href="funkcje.html#kolejnosc-funkcji">3.4</a> dotyczącym wyliczania przekątnej prostokąta.</li>
+<li>Stwórz nowy plik skryptu R nazywający się <code>01_zadania-funkcje.R</code>.
+W tym pliku, stwórz nowy obiekt <code>poznan</code>, który przyjmuje wartość <code>8.4</code>, napisz przeliczenie wartości tego obiektu ze stopnii Celsjusza na stopnie Fahrenheita, a następnie wyświetl uzyskany wynik.
+Uwaga: pamiętaj o ustawieniu odpowiedniego kodowania znaków dla tego nowego pliku.</li>
+<li>Stwórz nową funkcję, która służy do przeliczania wartości ze stopnii Celsjusza na stopnie Fahrenheita.
+Jak nazwiesz taką funkcję?</li>
+<li>Stwórz nową funkcję, która służy do przeliczania wartości z mil lądowych na kilometry.
+Jak nazwiesz taką funkcję?</li>
+<li>Stwórz nową funkcję, która służy do przeliczania wartości z metrów na sekundę na kilometry na godzinę.
+Jak nazwiesz taką funkcję?</li>
+<li>Stwórz nową funkcję, która służy do przeliczania wartości z metrów na sekundę na mile lądowe na godzinę.
+Jak nazwiesz taką funkcję?</li>
+<li>Stwórz nową funkcję, która służy do wyliczania pola trapezu na podstawie długości podstaw oraz wysokości trapezu.
+Jak nazwiesz taką funkcję?</li>
+<li>Wykonaj poniższy kod.
+Co oznacza uzyskany wynik?</li>
 </ol>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>()
+<span class="co">#&gt; Error in mean.default(): argument &quot;x&quot; is missing, with no default</span></code></pre>
+<ol style="list-style-type: decimal">
+<li>Wykonaj poniższy kod.
+Co oznacza uzyskany wynik?</li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(<span class="st">&quot;abecadło&quot;</span>)
+<span class="co">#&gt; Warning in mean.default(&quot;abecadło&quot;): argument is not numeric or logical:</span>
+<span class="co">#&gt; returning NA</span>
+<span class="co">#&gt; [1] NA</span></code></pre>
+<ol style="list-style-type: decimal">
+<li>Wykonaj poniższy kod.
+Co oznacza uzyskany wynik?</li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(<span class="kw">sqrt</span>())
+<span class="co">#&gt; Error in sqrt(): 0 arguments passed to &#39;sqrt&#39; which requires 1</span></code></pre>
+<ol style="list-style-type: decimal">
+<li>Wykonaj poniższy kod.
+Co oznacza uzyskany wynik?</li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_length</span>(<span class="st">&quot;abecadło&quot;</span>)
+<span class="co">#&gt; [1] 8</span></code></pre>
+<ol style="list-style-type: decimal">
+<li>Wykonaj poniższy kod.
+Co oznacza uzyskany wynik?</li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r">u =<span class="st"> </span><span class="dv">2</span>
+z =<span class="st"> </span><span class="dv">3</span> <span class="op">+</span><span class="st"> </span>v
+<span class="co">#&gt; Error in eval(expr, envir, enclos): object &#39;v&#39; not found</span>
+v =<span class="st"> </span><span class="dv">7</span></code></pre>
 
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="21">
-<li id="fn21"><p>Istnieje też szereg dodatkowych sposobów, wśród których najpopularniejszy polega na używaniu operatora <code>%&gt;%</code> z pakietu magrittr <span class="citation">(Bache and Wickham <a href="#ref-R-magrittr">2014</a>)</span>.<a href="funkcje.html#fnref21" class="footnote-back">↩</a></p></li>
+<li id="fn21"><p>Istnieje też szereg dodatkowych sposobów, wśród których najpopularniejszy polega na używaniu operatora <code>%&gt;%</code> z pakietu <strong>magrittr</strong> <span class="citation">(Bache and Wickham <a href="#ref-R-magrittr">2014</a>)</span>.<a href="funkcje.html#fnref21" class="footnote-back">↩</a></p></li>
 <li id="fn22"><p>Niektóre zbiory danych również posiadają swoje pliki pomocy.<a href="funkcje.html#fnref22" class="footnote-back">↩</a></p></li>
 <li id="fn23"><p><span class="citation">Grolemund and Wickham (<a href="#ref-grolemund_r_2016">2016</a>)</span> radzą tworzyć nowe funkcje, gdy ten sam kod potwarza się co najmniej trzy razy.<a href="funkcje.html#fnref23" class="footnote-back">↩</a></p></li>
 </ol>

@@ -47,7 +47,7 @@ y
 #> [1] 10.2
 ```
 
-## Kolejność wykonywania funkcji
+## Kolejność wykonywania funkcji {#kolejnosc-funkcji}
 
 Wykonywanie funkcji w R odbywa się linia po linii, od góry do dołu.
 
@@ -59,7 +59,7 @@ a2 = a^2
 b2 = b^2
 ```
 
-R pozwala na dwa podstawowe sposoby łączenia działania wielu funkcji^[Istnieje też szereg dodatkowych sposobów, wśród których najpopularniejszy polega na używaniu operatora `%>%` z pakietu magrittr [@R-magrittr].].
+R pozwala na dwa podstawowe sposoby łączenia działania wielu funkcji^[Istnieje też szereg dodatkowych sposobów, wśród których najpopularniejszy polega na używaniu operatora `%>%` z pakietu **magrittr** [@R-magrittr].].
 Pierwszy z nich polega na tworzeniu pośrednich obiektow jako wyników działania pojedynczych funkcji.
 
 
@@ -373,7 +373,58 @@ Opis tworzenia komunikatów błędu, ostrzeżenia i wiadomości można znaleźć
 
 1. Zobacz jak wygląda plik pomocy funkcji `mean()`.
 Wykonaj zawarte w nim przykłady.
-Co zostało w nich wykonane?
-<!-- operator magrittr -->
-<!-- zadania o stworzenie funkcji -->
-<!-- zadania w stylu - skąd error? -->
+Co przedstawiają uzyskane wyniki?
+1. Zainstaluj pakiet **magrittr**. 
+Spróbuj użyć operatora `%>%` z tego pakietu na przykładzie z sekcji \@ref(kolejnosc-funkcji) dotyczącym wyliczania przekątnej prostokąta.
+1. Stwórz nowy plik skryptu R nazywający się `01_zadania-funkcje.R`.
+W tym pliku, stwórz nowy obiekt `poznan`, który przyjmuje wartość `8.4`, napisz przeliczenie wartości tego obiektu ze stopnii Celsjusza na stopnie Fahrenheita, a następnie wyświetl uzyskany wynik.
+Uwaga: pamiętaj o ustawieniu odpowiedniego kodowania znaków dla tego nowego pliku.
+1. Stwórz nową funkcję, która służy do przeliczania wartości ze stopnii Celsjusza na stopnie Fahrenheita.
+Jak nazwiesz taką funkcję?
+1. Stwórz nową funkcję, która służy do przeliczania wartości z mil lądowych na kilometry.
+Jak nazwiesz taką funkcję?
+1. Stwórz nową funkcję, która służy do przeliczania wartości z metrów na sekundę na kilometry na godzinę.
+Jak nazwiesz taką funkcję?
+1. Stwórz nową funkcję, która służy do przeliczania wartości z metrów na sekundę na mile lądowe na godzinę.
+Jak nazwiesz taką funkcję?
+1. Stwórz nową funkcję, która służy do wyliczania pola trapezu na podstawie długości podstaw oraz wysokości trapezu.
+Jak nazwiesz taką funkcję?
+1. Wykonaj poniższy kod. 
+Co oznacza uzyskany wynik?
+
+```r
+mean()
+#> Error in mean.default(): argument "x" is missing, with no default
+```
+1. Wykonaj poniższy kod. 
+Co oznacza uzyskany wynik?
+
+```r
+mean("abecadło")
+#> Warning in mean.default("abecadło"): argument is not numeric or logical:
+#> returning NA
+#> [1] NA
+```
+1. Wykonaj poniższy kod. 
+Co oznacza uzyskany wynik?
+
+```r
+mean(sqrt())
+#> Error in sqrt(): 0 arguments passed to 'sqrt' which requires 1
+```
+1. Wykonaj poniższy kod. 
+Co oznacza uzyskany wynik?
+
+```r
+str_length("abecadło")
+#> [1] 8
+```
+1. Wykonaj poniższy kod. 
+Co oznacza uzyskany wynik?
+
+```r
+u = 2
+z = 3 + v
+#> Error in eval(expr, envir, enclos): object 'v' not found
+v = 7
+```
