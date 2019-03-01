@@ -4,6 +4,7 @@
 
 <!-- + examples -->
 <!-- tworzenie wiadomości, warnings, errors -->
+<!-- http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/10/006_wyjatki.html --> -->
 <!-- s3 s4 etc -->
 <!-- methods -->
 <!-- scope - http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/11/005_funkcje.html -->
