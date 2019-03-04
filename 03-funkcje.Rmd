@@ -345,27 +345,27 @@ Jak nazwiesz taką funkcję?
 Jak nazwiesz taką funkcję?
 9) Wykonaj poniższy kod. 
 Co oznacza uzyskany wynik?
-```{r, error=TRUE}
+```{r, error=TRUE, eval=FALSE}
 mean()
 ```
 10) Wykonaj poniższy kod. 
 Co oznacza uzyskany wynik?
-```{r, error=TRUE}
+```{r, error=TRUE, eval=FALSE}
 mean("abecadło")
 ```
 11) Wykonaj poniższy kod. 
 Co oznacza uzyskany wynik?
-```{r, error=TRUE}
+```{r, error=TRUE, eval=FALSE}
 mean(sqrt())
 ```
 12) Wykonaj poniższy kod. 
 Co oznacza uzyskany wynik?
-```{r, error=TRUE}
+```{r, error=TRUE, eval=FALSE}
 str_length("abecadło")
 ```
 13) Wykonaj poniższy kod. 
 Co oznacza uzyskany wynik?
-```{r, error=TRUE}
+```{r, error=TRUE, eval=FALSE}
 u = 2
 z = 3 + v
 v = 7
