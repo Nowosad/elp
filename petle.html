@@ -367,6 +367,95 @@ https://adv-r.hadley.nz/control-flow.html#loops -->
 </div>
 <div id="zadania-7" class="section level2">
 <h2><span class="header-section-number">8.5</span> Zadania</h2>
+<!-- peer instruction - https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1006023&type=printable -->
+<ol style="list-style-type: decimal">
+<li>Spójrz na poniższy kod, ale nie wykonuj go.
+Ile razy zostanie wyświetlony tekst <code>&quot;Działa!&quot;</code>?</li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)){
+    <span class="cf">if</span> (i <span class="op">&lt;</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span>i <span class="op">&gt;=</span><span class="st"> </span><span class="dv">5</span>)
+      <span class="kw">print</span>(<span class="st">&quot;Działa!&quot;</span>)
+}
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span></code></pre>
+<ol style="list-style-type: decimal">
+<li>Spójrz na poniższy kod, ale nie wykonuj go.
+Ile razy zostanie wyświetlony tekst <code>&quot;Działa!&quot;</code>?</li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)){
+  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">6</span><span class="op">:</span><span class="dv">3</span>){
+    <span class="cf">if</span> (i <span class="op">&lt;</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span>i <span class="op">&gt;=</span><span class="st"> </span><span class="dv">5</span>)
+      <span class="kw">print</span>(<span class="st">&quot;Działa!&quot;</span>)
+  }
+}
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span></code></pre>
+<ol style="list-style-type: decimal">
+<li>Spójrz na poniższy kod, ale nie wykonuj go.
+Ile razy zostanie wyświetlony tekst <code>&quot;Działa!&quot;</code>?</li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)){
+  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">6</span><span class="op">:</span><span class="dv">3</span>){
+    <span class="cf">if</span> (i <span class="op">&lt;</span><span class="st"> </span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span>j <span class="op">&gt;=</span><span class="st"> </span><span class="dv">5</span>)
+      <span class="kw">print</span>(<span class="st">&quot;Działa!&quot;</span>)
+  }
+}
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span></code></pre>
+<ol style="list-style-type: decimal">
+<li>Spójrz na poniższy kod, ale nie wykonuj go.
+Ile razy zostanie wyświetlony tekst <code>&quot;Działa!&quot;</code>?</li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)){
+  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">6</span><span class="op">:</span><span class="dv">3</span>){
+    <span class="cf">if</span> (i <span class="op">&lt;</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span>j <span class="op">&gt;=</span><span class="st"> </span><span class="dv">5</span>)
+      <span class="kw">print</span>(<span class="st">&quot;Działa!&quot;</span>)
+  }
+}
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span></code></pre>
+<ol style="list-style-type: decimal">
+<li>Spójrz na poniższy kod, ale nie wykonuj go.
+Ile razy zostanie wyświetlony tekst <code>&quot;Działa!&quot;</code>?</li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)){
+  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">6</span><span class="op">:</span><span class="dv">3</span>){
+    i =<span class="st"> </span>i <span class="op">+</span><span class="st"> </span>j
+    <span class="cf">if</span> (i <span class="op">&lt;</span><span class="st"> </span><span class="dv">4</span> <span class="op">|</span><span class="st"> </span>i <span class="op">&gt;=</span><span class="st"> </span><span class="dv">9</span>)
+      <span class="kw">print</span>(<span class="st">&quot;Działa!&quot;</span>)
+  }
+}
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span>
+<span class="co">#&gt; [1] &quot;Działa!&quot;</span></code></pre>
 
 </div>
 </div>
