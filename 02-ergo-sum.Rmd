@@ -264,7 +264,8 @@ Wyobraź sobie czytanie powieści, w której nie ma żadnych odstępów między 
 Często mówi się, że "kod musi oddychać" - odstępy zwiększają czytelność kodu i pozwalają na jego szybsze zrozumienie oraz ułatwiają naprawienie występujących błędów.
 
 Odstępy można uzyskać poprzez użycie spacji.
-Spacje powinny być użyte po przecinkach, ale nigdy przed nimi. Dodatkowo, większość operatorów (np. `=`, `+`, `-`, `==`) powinna być otoczona przez spacje.
+Spacje powinny być użyte po przecinkach, ale nigdy przed nimi. 
+Dodatkowo, większość operatorów (np. `=`, `+`, `-`, `==`) powinna być otoczona przez spacje.
 
 ```{r, eval=FALSE}
 # Zalecane
