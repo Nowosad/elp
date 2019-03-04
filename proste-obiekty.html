@@ -189,13 +189,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.6" data-path="proste-obiekty.html"><a href="proste-obiekty.html#brakujace-wartosci"><i class="fa fa-check"></i><b>5.6</b> Brakujące wartości</a></li>
 <li class="chapter" data-level="5.7" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie"><i class="fa fa-check"></i><b>5.7</b> Wydzielanie</a></li>
 <li class="chapter" data-level="5.8" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie-i-przypisanie"><i class="fa fa-check"></i><b>5.8</b> Wydzielanie i przypisanie</a></li>
-<li class="chapter" data-level="5.9" data-path="proste-obiekty.html"><a href="proste-obiekty.html#modyfikowanie-obiektow"><i class="fa fa-check"></i><b>5.9</b> Modyfikowanie obiektów</a><ul>
-<li class="chapter" data-level="5.9.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#aczenie-podstawowych-typow-obiektow"><i class="fa fa-check"></i><b>5.9.1</b> Łączenie podstawowych typów obiektów</a></li>
-</ul></li>
-<li class="chapter" data-level="5.10" data-path="proste-obiekty.html"><a href="proste-obiekty.html#section"><i class="fa fa-check"></i><b>5.10</b> …</a><ul>
-<li class="chapter" data-level="5.10.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zmiana-typow-obiektow"><i class="fa fa-check"></i><b>5.10.1</b> Zmiana typów obiektów</a></li>
-</ul></li>
-<li class="chapter" data-level="5.11" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zadania-4"><i class="fa fa-check"></i><b>5.11</b> Zadania</a></li>
+<li class="chapter" data-level="5.9" data-path="proste-obiekty.html"><a href="proste-obiekty.html#modyfikowanie-obiektow"><i class="fa fa-check"></i><b>5.9</b> Modyfikowanie obiektów</a></li>
+<li class="chapter" data-level="5.10" data-path="proste-obiekty.html"><a href="proste-obiekty.html#aczenie-podstawowych-typow-obiektow"><i class="fa fa-check"></i><b>5.10</b> Łączenie podstawowych typów obiektów</a></li>
+<li class="chapter" data-level="5.11" data-path="proste-obiekty.html"><a href="proste-obiekty.html#section"><i class="fa fa-check"></i><b>5.11</b> …</a></li>
+<li class="chapter" data-level="5.12" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zmiana-typow-obiektow"><i class="fa fa-check"></i><b>5.12</b> Zmiana typów obiektów</a></li>
+<li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zadania-4"><i class="fa fa-check"></i><b>5.13</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a><ul>
 <li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#aczenie-tekstu"><i class="fa fa-check"></i><b>6.1</b> Łączenie tekstu</a></li>
@@ -448,8 +446,9 @@ temperatura
 <div id="modyfikowanie-obiektow" class="section level2">
 <h2><span class="header-section-number">5.9</span> Modyfikowanie obiektów</h2>
 <!-- ... -->
-<div id="aczenie-podstawowych-typow-obiektow" class="section level3">
-<h3><span class="header-section-number">5.9.1</span> Łączenie podstawowych typów obiektów</h3>
+</div>
+<div id="aczenie-podstawowych-typow-obiektow" class="section level2">
+<h2><span class="header-section-number">5.10</span> Łączenie podstawowych typów obiektów</h2>
 <!-- tekst -->
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(temperatura, temperatura)
 <span class="co">#&gt; Poniedziałek       Wtorek        Środa     Czwartek Poniedziałek </span>
@@ -468,13 +467,13 @@ Odbywa się to zgodnie z zasadą: logiczny -&gt; liczba całkowita -&gt; liczba 
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(<span class="ot">FALSE</span>, 0L, <span class="fl">3.1</span>, <span class="st">&quot;kot&quot;</span>)
 <span class="co">#&gt; [1] &quot;FALSE&quot; &quot;0&quot;     &quot;3.1&quot;   &quot;kot&quot;</span></code></pre>
 </div>
-</div>
 <div id="section" class="section level2">
-<h2><span class="header-section-number">5.10</span> …</h2>
+<h2><span class="header-section-number">5.11</span> …</h2>
 <!-- factor i date -->
 <!-- https://rstudio-education.github.io/hopr/r-objects.html -->
-<div id="zmiana-typow-obiektow" class="section level3">
-<h3><span class="header-section-number">5.10.1</span> Zmiana typów obiektów</h3>
+</div>
+<div id="zmiana-typow-obiektow" class="section level2">
+<h2><span class="header-section-number">5.12</span> Zmiana typów obiektów</h2>
 <!--rzutowanie??-->
 <p>Do zmiany typu obiektu służą funkcje <code>as.logical()</code>, <code>as.integer()</code>, <code>as.double()</code>, oraz <code>as.character()</code><a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.logical</span>(<span class="kw">c</span>(<span class="st">&quot;FALSE&quot;</span>, <span class="st">&quot;TRUE&quot;</span>)) <span class="co"># znakowy na logiczny</span>
@@ -486,9 +485,8 @@ Odbywa się to zgodnie z zasadą: logiczny -&gt; liczba całkowita -&gt; liczba 
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.character</span>(<span class="kw">c</span>(3L, 2L)) <span class="co"># liczba całkowita na znakowy</span>
 <span class="co">#&gt; [1] &quot;3&quot; &quot;2&quot;</span></code></pre>
 </div>
-</div>
 <div id="zadania-4" class="section level2">
-<h2><span class="header-section-number">5.11</span> Zadania</h2>
+<h2><span class="header-section-number">5.13</span> Zadania</h2>
 
 </div>
 </div>

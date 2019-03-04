@@ -244,7 +244,7 @@ temperatura[0]
 
 <!-- ... -->
 
-### Łączenie podstawowych typów obiektów
+## Łączenie podstawowych typów obiektów
 
 <!-- tekst -->
 
@@ -290,7 +290,7 @@ c(FALSE, 0L, 3.1, "kot")
 <!-- factor i date -->
 <!-- https://rstudio-education.github.io/hopr/r-objects.html -->
 
-### Zmiana typów obiektów
+## Zmiana typów obiektów
 
 <!--rzutowanie??-->
 
