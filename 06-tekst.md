@@ -130,6 +130,10 @@ str_sub(tekst1, start = -6, end = -1)
 
 ## Wyrażenia regularne 
 
+<!-- https://github.com/VerbalExpressions/JSVerbalExpressions -->
+<!-- https://github.com/richierocks/rebus/blob/master/README.md -->
+<!-- https://www.garrickadenbuie.com/project/regexplain/ -->
+<!-- https://github.com/kevinushey/rex -->
 
 
 
