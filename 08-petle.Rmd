@@ -91,7 +91,7 @@ https://adv-r.hadley.nz/control-flow.html#loops -->
 1) Spójrz na poniższy kod, ale nie wykonuj go.
 Ile razy zostanie wyświetlony tekst `"Działa!"`?
 
-```{r}
+```{r, eval=FALSE}
 for (i in c(1, 2, 4, 5, 6)){
     if (i < 2 | i >= 5)
       print("Działa!")
@@ -101,7 +101,7 @@ for (i in c(1, 2, 4, 5, 6)){
 1) Spójrz na poniższy kod, ale nie wykonuj go.
 Ile razy zostanie wyświetlony tekst `"Działa!"`?
 
-```{r}
+```{r, eval=FALSE}
 for (i in c(1, 2, 4, 5, 6)){
   for (j in 6:3){
     if (i < 2 | i >= 5)
@@ -113,7 +113,7 @@ for (i in c(1, 2, 4, 5, 6)){
 1) Spójrz na poniższy kod, ale nie wykonuj go.
 Ile razy zostanie wyświetlony tekst `"Działa!"`?
 
-```{r}
+```{r, eval=FALSE}
 for (i in c(1, 2, 4, 5, 6)){
   for (j in 6:3){
     if (i < 2 & j >= 5)
@@ -125,7 +125,7 @@ for (i in c(1, 2, 4, 5, 6)){
 1) Spójrz na poniższy kod, ale nie wykonuj go.
 Ile razy zostanie wyświetlony tekst `"Działa!"`?
 
-```{r}
+```{r, eval=FALSE}
 for (i in c(1, 2, 4, 5, 6)){
   for (j in 6:3){
     if (i < 2 | j >= 5)
@@ -137,7 +137,7 @@ for (i in c(1, 2, 4, 5, 6)){
 1) Spójrz na poniższy kod, ale nie wykonuj go.
 Ile razy zostanie wyświetlony tekst `"Działa!"`?
 
-```{r}
+```{r, eval=FALSE}
 for (i in c(1, 2, 3)){
   for (j in 6:3){
     i = i + j
