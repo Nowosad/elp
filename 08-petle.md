@@ -119,9 +119,6 @@ for (i in c(1, 2, 4, 5, 6)){
     if (i < 2 | i >= 5)
       print("Działa!")
 }
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
 ```
 
 1) Spójrz na poniższy kod, ale nie wykonuj go.
@@ -135,18 +132,6 @@ for (i in c(1, 2, 4, 5, 6)){
       print("Działa!")
   }
 }
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
 ```
 
 1) Spójrz na poniższy kod, ale nie wykonuj go.
@@ -160,8 +145,6 @@ for (i in c(1, 2, 4, 5, 6)){
       print("Działa!")
   }
 }
-#> [1] "Działa!"
-#> [1] "Działa!"
 ```
 
 1) Spójrz na poniższy kod, ale nie wykonuj go.
@@ -175,18 +158,6 @@ for (i in c(1, 2, 4, 5, 6)){
       print("Działa!")
   }
 }
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
 ```
 
 1) Spójrz na poniższy kod, ale nie wykonuj go.
@@ -201,14 +172,4 @@ for (i in c(1, 2, 3)){
       print("Działa!")
   }
 }
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
-#> [1] "Działa!"
 ```
