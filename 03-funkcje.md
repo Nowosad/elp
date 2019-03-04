@@ -398,30 +398,24 @@ Co oznacza uzyskany wynik?
 
 ```r
 mean()
-#> Error in mean.default(): argument "x" is missing, with no default
 ```
 10) Wykonaj poniższy kod. 
 Co oznacza uzyskany wynik?
 
 ```r
 mean("abecadło")
-#> Warning in mean.default("abecadło"): argument is not numeric or logical:
-#> returning NA
-#> [1] NA
 ```
 11) Wykonaj poniższy kod. 
 Co oznacza uzyskany wynik?
 
 ```r
 mean(sqrt())
-#> Error in sqrt(): 0 arguments passed to 'sqrt' which requires 1
 ```
 12) Wykonaj poniższy kod. 
 Co oznacza uzyskany wynik?
 
 ```r
 str_length("abecadło")
-#> [1] 8
 ```
 13) Wykonaj poniższy kod. 
 Co oznacza uzyskany wynik?
@@ -429,6 +423,5 @@ Co oznacza uzyskany wynik?
 ```r
 u = 2
 z = 3 + v
-#> Error in eval(expr, envir, enclos): object 'v' not found
 v = 7
 ```

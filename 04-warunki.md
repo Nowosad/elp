@@ -146,6 +146,19 @@ pogoda(NA)
 
 ## Zadania
 
+1) Spójrz na poniższe przykłady, ale ich nie wykonuj.
+Co będzie wynikiem działania każdego z tych przykładów?
+
+
+```r
+liczby = c(1, 2)
+liczby == 1          #1
+liczby != 1          #2
+liczby %in% 1        #3
+all(liczby %in% 1)   #4
+any(liczby %in% 1)   #5
+```
+
 1) Spójrz na cztery poniższe przykłady, ale ich nie wykonuj.
 Co będzie wynikiem działania każdego z tych przykładów?
 
@@ -157,3 +170,9 @@ Co będzie wynikiem działania każdego z tych przykładów?
 (c(1, 2) > 0) || (c(-1, 2) > 0) #4
 ```
 
+1) Napisz funkcję, która przyjmuje trzy zmienne logiczne `x`, `y` i `z`.
+Jeżeli tylko jedna lub trzy ze zmiennych ma wartość `TRUE` wyświetl tekst `"Nieparzysta liczba."`, natomiast jeżeli dwie zmienne mają wartość `TRUE` wyświetl tekst `"Parzysta liczba."`
+1) Napisz funkcję, która przyjmuje dwie zmienne numeryczne `x` i `y`.
+Jeżeli wszystkie wartości zmiennej `x` są większe od `y` wyświetl tekst `"Zwycięstwo."`, a w przeciwnym razie wyświetl tekst `"Porażka."`.
+1) Napisz funkcję, która przyjmuje dwie zmienne numeryczne `populacja` i `powierzchnia`.
+Jeżeli wartości gęstości zaludnienia (liczba osób na jednostkę powierchni) jest wyższa niż 123 wyświetl tekst `"Wartość powyżej średniej dla Polski."`
