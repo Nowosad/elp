@@ -3,10 +3,8 @@
 Języki programowania opierają się o dwa podstawowe narzędzia pozwalające na sterowanie przepływem operacji.
 Są to wyrażenia warunkowe oraz pętle.
 Wyrażenia warunkowe są głównym tematem tego rozdziału, natomiast pętle są omówione w rozdziale \@ref(petle).
-
 <!-- `switch` https://adv-r.hadley.nz/control-flow.html#loops -->
-
-Celem wyrażeń warunkowych jest wykonywanie różnego kodu w zależności od danych wejściowych.
+Celem wyrażeń warunkowych jest wykonywanie różnego zadania w zależności od danych wejściowych.
 
 ## Warunki
 
@@ -17,7 +15,6 @@ if (warunek){
   jeżeli warunek spełniony to wykonaj operację
 }
 ```
-
 
 ```{r}
 temperatura = 5.4
@@ -64,20 +61,27 @@ operators = c("==", "!=", "%in%", ">, <", ">=, <=")
 operators_exp = c("Równy", "Nie równy", "Zawiera się w", "Większy/Mniejszy niż",
                   "Większy/Mniejszy niż lub równy")
 knitr::kable(tibble(Operator = operators, Wyjaśnienie = operators_exp), 
-             caption = "Operatory porównania",
+             caption = "Operatory porównania.",
              booktabs = TRUE)
 ```
 
 ```{r operators2, echo=FALSE}
-operators2 = c("!", "&&", "||")
-operators_exp2 = c("Negacja (nie)", "Koniunkcja (i)", "Alternatywa (lub)")
+operators2 = c("!", "&&", "||", "all", "any")
+operators_exp2 = c("Negacja (nie)", "Koniunkcja (i)", "Alternatywa (lub)", "Wszystkie", "Którykolwiek")
 knitr::kable(tibble(Operator = operators2, Wyjaśnienie = operators_exp2), 
-             caption = "Operatory porównania",
+             caption = "Operatory logiczne i funkcje pomocniczne.",
              booktabs = TRUE)
 ```
 
 <!-- block about & and | -->
 <!-- https://stackoverflow.com/questions/6558921/boolean-operators-and -->
+
+```{block2 type="rmdinfo"}
+W R istnieją dwa dodatkowe operatory logiczne `&` i `|`, które są zwektoryzowaną wersją operatorów `&&` i `||`.
+Pierwsze dwa porównują wszystkie elementy zadanych wektorów i ich wynikiem może być wektor o długości większej niż 1.
+Operatory `&&` i `||` porównują tylko pierwszy element każdego wektora, a w efekcie zawsze zwracają tylko jedną wartość.
+Dodatkowo, to one są zazwyczaj używane w wyrażeniach warunkowych.
+```
 
 ## Wyrażenia warunkowe w funkcjach
 
@@ -122,3 +126,14 @@ pogoda(NA)
 ```
 
 ## Zadania
+
+1) Spójrz na cztery poniższe przykłady, ale ich nie wykonuj.
+Co będzie wynikiem działania każdego z tych przykładów?
+
+```{r, eval=FALSE}
+(c(1, 2) > 0) &  (c(-1, 2) > 0) #1
+(c(1, 2) > 0) && (c(-1, 2) > 0) #2
+(c(1, 2) > 0) |  (c(-1, 2) > 0) #3
+(c(1, 2) > 0) || (c(-1, 2) > 0) #4
+```
+
