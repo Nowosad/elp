@@ -85,3 +85,64 @@ https://adv-r.hadley.nz/control-flow.html#loops -->
 <!-- *apply -->
 
 ## Zadania
+
+<!-- peer instruction - https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1006023&type=printable -->
+
+1) Spójrz na poniższy kod, ale nie wykonuj go.
+Ile razy zostanie wyświetlony tekst `"Działa!"`?
+
+```{r}
+for (i in c(1, 2, 4, 5, 6)){
+    if (i < 2 | i >= 5)
+      print("Działa!")
+}
+```
+
+1) Spójrz na poniższy kod, ale nie wykonuj go.
+Ile razy zostanie wyświetlony tekst `"Działa!"`?
+
+```{r}
+for (i in c(1, 2, 4, 5, 6)){
+  for (j in 6:3){
+    if (i < 2 | i >= 5)
+      print("Działa!")
+  }
+}
+```
+
+1) Spójrz na poniższy kod, ale nie wykonuj go.
+Ile razy zostanie wyświetlony tekst `"Działa!"`?
+
+```{r}
+for (i in c(1, 2, 4, 5, 6)){
+  for (j in 6:3){
+    if (i < 2 & j >= 5)
+      print("Działa!")
+  }
+}
+```
+
+1) Spójrz na poniższy kod, ale nie wykonuj go.
+Ile razy zostanie wyświetlony tekst `"Działa!"`?
+
+```{r}
+for (i in c(1, 2, 4, 5, 6)){
+  for (j in 6:3){
+    if (i < 2 | j >= 5)
+      print("Działa!")
+  }
+}
+```
+
+1) Spójrz na poniższy kod, ale nie wykonuj go.
+Ile razy zostanie wyświetlony tekst `"Działa!"`?
+
+```{r}
+for (i in c(1, 2, 3)){
+  for (j in 6:3){
+    i = i + j
+    if (i < 4 | i >= 9)
+      print("Działa!")
+  }
+}
+```
