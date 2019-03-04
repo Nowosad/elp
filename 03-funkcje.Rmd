@@ -5,8 +5,12 @@
 
 ## Algorytmy
 
-Algorytm to opis procedery prowadzącej do uzyskania określonego celu.
-<!-- przepis kucharski -->
+Algorytm to zbiór kroków powadzących do uzyskania określonego celu.
+Algorytmy można porównać do przepisu kucharskiego, w którym opisany jest szereg czynności aby uzyskać konkretną potrawę.
+Podobnie jak w przepisie kucharskim, algorytmy wymagają posiadania odpowiednich składników - danych wejściowych w o pewnej strukturze.
+
+Tworzenie nowych algorytmów często zaczyna się od narysowania schematu procedury działania lub też pseudokodu. 
+Kolejnym krokiem jest zapisanie tego algorytmu w wybranym języku lub językach programowania^[Łączenie różnych języków programowania jest wyjaśnione w rozdziale \@ref(lacznik)] w formie skryptu (sekcja \@ref(tworzenie-skryptow)) lub funkcji (sekcja \@ref(budowanie-funkcji)).
 
 ## Struktura funkcji
 
@@ -215,9 +219,9 @@ miasto_c_c = (miasto_c - 32) / 1.8
 
 Powyższe podejście jest poprawne, ale ma ono kilka wad:
 
-* Łatwo jest o popełnie jakiegoś prostego błędu lub literówki podczas adaptacji kodu (np. można zapomnieć zmienić nazwę jakiejś zmiennej)
-* Jeżeli obliczenia zajmują więcej niż kilka linii kodu - wówczas kopiowanie go znacznie powiększa tworzony skrypt i utrudnia jego czytelność
-* Poprawienie kodu w przypadku zauważenia błędu w procedurze obliczeniowej jest czasochłonne
+* Łatwo jest o popełnie jakiegoś prostego błędu lub literówki podczas adaptacji kodu (np. można zapomnieć zmienić nazwę jakiejś zmiennej).
+* Jeżeli obliczenia zajmują więcej niż kilka linii kodu - wówczas kopiowanie go znacznie powiększa tworzony skrypt i utrudnia jego czytelność.
+* Poprawienie kodu w przypadku zauważenia błędu w procedurze obliczeniowej jest czasochłonne.
 
 To podejście jest też niezgodne z jedną z najważniejszych reguł w programowaniu - regułą DRY (Nie powtarzaj się, ang. *Don't Repeat Yourself*).
 Zamiast tworzenia skryptu w oparciu o kopiuj/wklej lepiej pomyśleć nad zbudowaniem odpowiedniej funkcji^[@grolemund_r_2016 radzą tworzyć nowe funkcje, gdy ten sam kod potwarza się co najmniej trzy razy.].
