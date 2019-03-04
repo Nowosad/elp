@@ -4,10 +4,8 @@
 Języki programowania opierają się o dwa podstawowe narzędzia pozwalające na sterowanie przepływem operacji.
 Są to wyrażenia warunkowe oraz pętle.
 Wyrażenia warunkowe są głównym tematem tego rozdziału, natomiast pętle są omówione w rozdziale \@ref(petle).
-
 <!-- `switch` https://adv-r.hadley.nz/control-flow.html#loops -->
-
-Celem wyrażeń warunkowych jest wykonywanie różnego kodu w zależności od danych wejściowych.
+Celem wyrażeń warunkowych jest wykonywanie różnego zadania w zależności od danych wejściowych.
 
 ## Warunki
 
@@ -19,7 +17,6 @@ if (warunek){
   jeżeli warunek spełniony to wykonaj operację
 }
 ```
-
 
 
 ```r
@@ -64,7 +61,7 @@ if (temperatura > 0) {
 ## Operatory porównania
 
 
-Table: (\#tab:operators)Operatory porównania
+Table: (\#tab:operators)Operatory porównania.
 
 Operator   Wyjaśnienie                    
 ---------  -------------------------------
@@ -75,16 +72,23 @@ Operator   Wyjaśnienie
 >=, <=     Większy/Mniejszy niż lub równy 
 
 
-Table: (\#tab:operators2)Operatory porównania
+Table: (\#tab:operators2)Operatory logiczne i funkcje pomocniczne.
 
 Operator   Wyjaśnienie       
 ---------  ------------------
 !          Negacja (nie)     
 &&         Koniunkcja (i)    
 ||         Alternatywa (lub) 
+all        Wszystkie         
+any        Którykolwiek      
 
 <!-- block about & and | -->
 <!-- https://stackoverflow.com/questions/6558921/boolean-operators-and -->
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">W R istnieją dwa dodatkowe operatory logiczne `&` i `|`, które są zwektoryzowaną wersją operatorów `&&` i `||`.
+Pierwsze dwa porównują wszystkie elementy zadanych wektorów i ich wynikiem może być wektor o długości większej niż 1.
+Operatory `&&` i `||` porównują tylko pierwszy element każdego wektora, a w efekcie zawsze zwracają tylko jedną wartość.
+Dodatkowo, to one są zazwyczaj używane w wyrażeniach warunkowych.</div>\EndKnitrBlock{rmdinfo}
 
 ## Wyrażenia warunkowe w funkcjach
 
@@ -141,3 +145,15 @@ pogoda(NA)
 ```
 
 ## Zadania
+
+1) Spójrz na cztery poniższe przykłady, ale ich nie wykonuj.
+Co będzie wynikiem działania każdego z tych przykładów?
+
+
+```r
+(c(1, 2) > 0) &  (c(-1, 2) > 0) #1
+(c(1, 2) > 0) && (c(-1, 2) > 0) #2
+(c(1, 2) > 0) |  (c(-1, 2) > 0) #3
+(c(1, 2) > 0) || (c(-1, 2) > 0) #4
+```
+

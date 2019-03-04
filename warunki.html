@@ -302,9 +302,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">4</span> Wyrażenia warunkowe</h1>
 <p>Języki programowania opierają się o dwa podstawowe narzędzia pozwalające na sterowanie przepływem operacji.
 Są to wyrażenia warunkowe oraz pętle.
-Wyrażenia warunkowe są głównym tematem tego rozdziału, natomiast pętle są omówione w rozdziale <a href="petle.html#petle">8</a>.</p>
+Wyrażenia warunkowe są głównym tematem tego rozdziału, natomiast pętle są omówione w rozdziale <a href="petle.html#petle">8</a>.
 <!-- `switch` https://adv-r.hadley.nz/control-flow.html#loops -->
-<p>Celem wyrażeń warunkowych jest wykonywanie różnego kodu w zależności od danych wejściowych.</p>
+Celem wyrażeń warunkowych jest wykonywanie różnego zadania w zależności od danych wejściowych.</p>
 <div id="warunki-1" class="section level2">
 <h2><span class="header-section-number">4.1</span> Warunki</h2>
 <p>Wyrażenie <code>if</code> opiera się o spełnienie (lub niespełnienie) danego warunku.</p>
@@ -344,7 +344,7 @@ Wyrażenia warunkowe są głównym tematem tego rozdziału, natomiast pętle są
 <div id="operatory-porownania" class="section level2">
 <h2><span class="header-section-number">4.3</span> Operatory porównania</h2>
 <table>
-<caption><span id="tab:operators">Tabela 4.1: </span>Operatory porównania</caption>
+<caption><span id="tab:operators">Tabela 4.1: </span>Operatory porównania.</caption>
 <thead>
 <tr class="header">
 <th align="left">Operator</th>
@@ -375,7 +375,7 @@ Wyrażenia warunkowe są głównym tematem tego rozdziału, natomiast pętle są
 </tbody>
 </table>
 <table>
-<caption><span id="tab:operators2">Tabela 4.2: </span>Operatory porównania</caption>
+<caption><span id="tab:operators2">Tabela 4.2: </span>Operatory logiczne i funkcje pomocniczne.</caption>
 <thead>
 <tr class="header">
 <th align="left">Operator</th>
@@ -395,10 +395,26 @@ Wyrażenia warunkowe są głównym tematem tego rozdziału, natomiast pętle są
 <td align="left">||</td>
 <td align="left">Alternatywa (lub)</td>
 </tr>
+<tr class="even">
+<td align="left">all</td>
+<td align="left">Wszystkie</td>
+</tr>
+<tr class="odd">
+<td align="left">any</td>
+<td align="left">Którykolwiek</td>
+</tr>
 </tbody>
 </table>
 <!-- block about & and | -->
 <!-- https://stackoverflow.com/questions/6558921/boolean-operators-and -->
+
+<div class="rmdinfo">
+W R istnieją dwa dodatkowe operatory logiczne <code>&amp;</code> i <code>|</code>, które są zwektoryzowaną wersją operatorów <code>&amp;&amp;</code> i <code>||</code>.
+Pierwsze dwa porównują wszystkie elementy zadanych wektorów i ich wynikiem może być wektor o długości większej niż 1.
+Operatory <code>&amp;&amp;</code> i <code>||</code> porównują tylko pierwszy element każdego wektora, a w efekcie zawsze zwracają tylko jedną wartość.
+Dodatkowo, to one są zazwyczaj używane w wyrażeniach warunkowych.
+</div>
+
 </div>
 <div id="wyrazenia-warunkowe-w-funkcjach" class="section level2">
 <h2><span class="header-section-number">4.4</span> Wyrażenia warunkowe w funkcjach</h2>
@@ -445,6 +461,14 @@ Wyrażenia warunkowe są głównym tematem tego rozdziału, natomiast pętle są
 </div>
 <div id="zadania-3" class="section level2">
 <h2><span class="header-section-number">4.5</span> Zadania</h2>
+<ol style="list-style-type: decimal">
+<li>Spójrz na cztery poniższe przykłady, ale ich nie wykonuj.
+Co będzie wynikiem działania każdego z tych przykładów?</li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r">(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">&amp;</span><span class="st">  </span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="co">#1</span>
+(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">&amp;&amp;</span><span class="st"> </span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="co">#2</span>
+(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">|</span><span class="st">  </span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="co">#3</span>
+(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">||</span><span class="st"> </span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="co">#4</span></code></pre>
 
 </div>
 </div>
