@@ -11,7 +11,9 @@ Języki programowania są w tym aspekcie bardziej bezwzględne niż języki natu
 
 ## Wyrażenia
 
-<!-- Natomiast zamiast głębokiej wiedzy matematycznej do większości zadań programistycznych wystarczy podstawowa znajomość algebry -->
+Podstawowe działania arytmetyczne, dodawanie, odejmowane, mnożenie i dzielenie, są również często używane w wielu językach programowania.
+Dla każdej z tych operacji istnieje odpowiedni operator w R.
+Operatorem dodawania jest `+`.
 
 
 ```r
@@ -19,17 +21,23 @@ Języki programowania są w tym aspekcie bardziej bezwzględne niż języki natu
 #> [1] 4
 ```
 
+Operatorem odejmowania jest `-`.
+
 
 ```r
 1 - 3
 #> [1] -2
 ```
 
+Operatorem mnożenia jest `*`.
+
 
 ```r
 5 * 5
 #> [1] 25
 ```
+
+Operatorem mnożenia jest `/`.
 
 
 ```r
@@ -147,8 +155,8 @@ z9
 <!-- floating-point arithmetic.  -->
 <!-- Floating-point arithmetic is a feature of computer programming.  -->
 
-\BeginKnitrBlock{rmdinfo}<div class="rmdinfo"></div>\EndKnitrBlock{rmdinfo}
-
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Operatory użyte w tym rozdziale, np. `+`, `*`, `^`, `%%` to też są funkcje, ale zapisane w skrótowej formie ułatwiającej z nimi pracę.
+Te operatory można też użyć jako normalne funkcje poprzez dodanie znaku zwanego grawisem - "`", np. `2 + 2` można też zapisać jako ``+`(2, 2)`.</div>\EndKnitrBlock{rmdinfo}
 
 ## IDE
 
