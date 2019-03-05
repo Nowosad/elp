@@ -54,28 +54,35 @@ Zrozumienie w jaki sposób się je tworzy i zmienia będzie w związku z tym, ko
 
 ### Operator przypisania
 
-Nadania wartości do obiektu wykonuje się używając operatora przypisania^[Jest to pewne uproszczenie - https://adv-r.hadley.nz/names-values.html#binding-basics.].
+Nadanie wartości do obiektu wykonuje się używając operatora przypisania^[Jest to pewne uproszczenie - https://adv-r.hadley.nz/names-values.html#binding-basics.].
 R posiada trzy operatory przypisania, które mają niemal identyczne działanie^[Więcej informacji na temat różnic w działaniu tych operatorów można znaleźć na stronie https://stackoverflow.com/questions/1741820/what-are-the-differences-between-and-in-r.]: `=`, `<-`, `->`.
 Warto wybrać jeden z tych operatorów i konsekwentnie używać go pisząc kod.
 W tej książce jako główny operator przypisania będzie używany znak `=`.
+
+W poniższej linii stworzony jest nowy obiekt, o nazwie `x`, który zawiera wartość `7`.
 
 ```{r}
 x = 7
 ```
 
+Można to sprawdzić wpisując nazwę tego obiektu.
+
 ```{r}
 x
 ```
 
-```{r}
-y = x
-```
+Operatory przypisania może również posłużyć do nadania wartości z jednego obiektu do drugiego.
+Poniżej nowy obiekt `y` przyjmuje wartość od obiektu `x`.
 
 ```{r}
+y = x
 y
 ```
 
-<!-- - operator przypisania + działanie w pamięci -->
+Język R przechowuje i przetwarza wszystkie obiekty w pamięci komputera (RAM).
+Wpływa to na zwiększoną wydajność i elastyczność obliczeń, ale jednocześnie powoduje to ograniczenie wielkości obiektów na jakich można pracować.
+Istnieje równocześnie [szereg strategii](https://bookdown.org/rdpeng/RProgDA/working-with-large-datasets.html) jak postępować z większymi zbiorami danych, które nie mieszczą się w RAMie.
+<!-- add reference -->
 
 ### Działania na obiektach
 
@@ -139,7 +146,7 @@ z9
 
 ```{block2 type="rmdinfo"}
 Operatory użyte w tym rozdziale, np. `+`, `*`, `^`, `%%` to też są funkcje, ale zapisane w skrótowej formie ułatwiającej z nimi pracę.
-Te operatory można też użyć jako normalne funkcje poprzez dodanie znaku zwanego grawisem - "`", np. `2 + 2` można też zapisać jako ``+`(2, 2)`.
+Te operatory można też użyć jako normalne funkcje poprzez dodanie znaku zwanego grawisem - "`", np. `2 + 2` można też zapisać jako `\`+\`(2, 2)`.
 ```
 
 ## IDE
