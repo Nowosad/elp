@@ -354,8 +354,7 @@ Istnieje równocześnie <a href="https://bookdown.org/rdpeng/RProgDA/working-wit
 <div id="dziaania-na-obiektach" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Działania na obiektach</h3>
 <p>Każdy stworzony obiekt w R może być następnie używany do kolejnych operacji, a w efekcie też tworzenia nowych obiektów.
-W poniższych czterech przypadkach obiekt <code>x</code> został przetworzony używając operatorów dodawania, odejmowania, mnożenia oraz dzielenia, a nowe obiekty powstały jako wyniki tych obliczeń.
-<!-- - działania na obiektach --></p>
+W poniższych czterech przypadkach obiekt <code>x</code> został przetworzony używając operatorów dodawania, odejmowania, mnożenia oraz dzielenia, a nowe obiekty powstały jako wyniki tych obliczeń.</p>
 <pre class="sourceCode r"><code class="sourceCode r">z1 =<span class="st"> </span>x <span class="op">+</span><span class="st"> </span><span class="dv">3</span>
 z1
 <span class="co">#&gt; [1] 10</span>
@@ -375,18 +374,26 @@ Wybór typu zmiennej w tych językach może mieć widoczne konsekwencje.
 Przykładowo, jeżeli obiekt <code>x</code> zostanie zadeklarowany jako liczba całkowita (integer), wynikiem dzielenia <code>x / 4</code> będzie <code>1</code> zamiast <code>1.75</code>.
 </div>
 
+<p>Działania na obiektach mogą też się odbywać używając innych operatorów oraz różnorodnych funkcji.
+Przykładowo, operator zapisywany jako <code>%%</code> to modulo, którego celem jest określanie reszty z dzielenia.</p>
 <pre class="sourceCode r"><code class="sourceCode r">z5 =<span class="st"> </span>x <span class="op">%%</span><span class="st"> </span><span class="dv">3</span>
 z5
 <span class="co">#&gt; [1] 1</span></code></pre>
+<p>Operator <code>%/%</code> przestawia dzielenie całkowite.</p>
 <pre class="sourceCode r"><code class="sourceCode r">z6 =<span class="st"> </span>x <span class="op">%/%</span><span class="st"> </span><span class="dv">3</span>
 z6
 <span class="co">#&gt; [1] 2</span></code></pre>
+<p>Operator <code>^</code> natomiast wykonuje podniesienie wartości obiektu do wybranej potęgi.</p>
 <pre class="sourceCode r"><code class="sourceCode r">z7 =<span class="st"> </span>x<span class="op">^</span><span class="dv">2</span>
 z7
 <span class="co">#&gt; [1] 49</span></code></pre>
+<p>Odwrotnością potęgowania jest pierwiastkowanie.
+W R nie istnieje do tego celu specjalny operator, ale zawiera on specjalną funkcję <code>sqrt()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">z8 =<span class="st"> </span><span class="kw">sqrt</span>(x)
 z8
 <span class="co">#&gt; [1] 2.65</span></code></pre>
+<p>Często używaną funkcją w R jest też <code>c()</code>.
+Ta funkcja łączy krótsze wektory w dłuższe wektory.</p>
 <pre class="sourceCode r"><code class="sourceCode r">z9 =<span class="st"> </span><span class="kw">c</span>(z2, z4, z8)
 z9
 <span class="co">#&gt; [1] 2.00 1.75 2.65</span></code></pre>

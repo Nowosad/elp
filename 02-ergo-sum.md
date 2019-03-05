@@ -100,7 +100,6 @@ Istnieje równocześnie [szereg strategii](https://bookdown.org/rdpeng/RProgDA/w
 
 Każdy stworzony obiekt w R może być następnie używany do kolejnych operacji, a w efekcie też tworzenia nowych obiektów. 
 W poniższych czterech przypadkach obiekt `x` został przetworzony używając operatorów dodawania, odejmowania, mnożenia oraz dzielenia, a nowe obiekty powstały jako wyniki tych obliczeń.
-<!-- - działania na obiektach -->
 
 
 ```r
@@ -118,10 +117,12 @@ z4
 #> [1] 1.75
 ```
 
-
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Część języków programowania, np. C, wymaga zadeklarowania zmiennej przed jej użyciem poprzez podanie jej nazwy i typu.
 Wybór typu zmiennej w tych językach może mieć widoczne konsekwencje.
 Przykładowo, jeżeli obiekt `x` zostanie zadeklarowany jako liczba całkowita (integer), wynikiem dzielenia `x / 4` będzie `1` zamiast `1.75`.</div>\EndKnitrBlock{rmdinfo}
+
+Działania na obiektach mogą też się odbywać używając innych operatorów oraz różnorodnych funkcji.
+Przykładowo, operator zapisywany jako `%%` to modulo, którego celem jest określanie reszty z dzielenia.
 
 
 ```r
@@ -130,12 +131,16 @@ z5
 #> [1] 1
 ```
 
+Operator `%/%` przestawia dzielenie całkowite.
+
 
 ```r
 z6 = x %/% 3
 z6
 #> [1] 2
 ```
+
+Operator `^` natomiast wykonuje podniesienie wartości obiektu do wybranej potęgi.
 
 
 ```r
@@ -144,12 +149,18 @@ z7
 #> [1] 49
 ```
 
+Odwrotnością potęgowania jest pierwiastkowanie. 
+W R nie istnieje do tego celu specjalny operator, ale zawiera on specjalną funkcję `sqrt()`.
+
 
 ```r
 z8 = sqrt(x)
 z8
 #> [1] 2.65
 ```
+
+Często używaną funkcją w R jest też `c()`.
+Ta funkcja łączy krótsze wektory w dłuższe wektory.
 
 
 ```r
