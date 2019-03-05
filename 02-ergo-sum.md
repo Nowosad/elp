@@ -45,9 +45,11 @@ Operatorem mnożenia jest `/`.
 #> [1] 8.4
 ```
 
+
+
 ## Obiekty
 
-> "To understand computations in R, two slogans are helpful: 1. Everything that exists is an object. 2. Everything that happens is a function call."
+> "Dwa slogany są pomocne w zrozumieniu obliczeń w R: 1. Wszystko co istnieje jest obiektem. 2. Wszystko co się dzieje jest wywołaniem funkcji."
 >
 > --- John Chambers
 
