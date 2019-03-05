@@ -3,10 +3,11 @@
 
 # Start R {#ergosum}
 
-<!-- kod nie przyjmuje literówek -->
-<!-- zamykanie nawiasów -->
-<!-- zamykanie cudzysłowiów -->
-<!-- etc -->
+Wykonywanie kodu w języku interpretowalnym, jakim jest R, może odbywać się poprzez wpisanie polecenia w oknie konsoli (zwanej też terminalem) i jego uruchomienie^[To jest tzw. tryb interaktywny. 
+Isnieje również tryb skryptowy, o którym więcej informacji można znaleźć w kolejnym rozdziale.].
+Komendy są najpierw sprawdzanie pod kontekstem ich poprawności.
+Polega to na określeniu, np. czy podana funkcja lub inny obiekt istnieje, czy nie zostały użyte niedozwolone znaki, lub czy wszystkie nazwiasy czy cudzysłowia zostały zamknięte.
+Języki programowania są w tym aspekcie bardziej bezwzględne niż języki naturalne - nie potrafią one zrozumieć wyrażeń zawierających nawet niewielkie błędy takie jak, np. użycie dużej litery zamiast małej.
 
 ## Wyrażenia
 
@@ -122,7 +123,7 @@ z6
 
 
 ```r
-z7 = x ^ 2
+z7 = x^2
 z7
 #> [1] 49
 ```
@@ -145,6 +146,9 @@ z9
 <!-- floating-point errors, -->
 <!-- floating-point arithmetic.  -->
 <!-- Floating-point arithmetic is a feature of computer programming.  -->
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo"></div>\EndKnitrBlock{rmdinfo}
+
 
 ## IDE
 

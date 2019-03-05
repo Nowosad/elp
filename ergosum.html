@@ -25,7 +25,7 @@
 <meta name="author" content="Jakub Nowosad">
 
 
-<meta name="date" content="2019-03-04">
+<meta name="date" content="2019-03-05">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -298,10 +298,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="ergosum" class="section level1">
 <h1><span class="header-section-number">2</span> Start R</h1>
-<!-- kod nie przyjmuje literówek -->
-<!-- zamykanie nawiasów -->
-<!-- zamykanie cudzysłowiów -->
-<!-- etc -->
+<p>Wykonywanie kodu w języku interpretowalnym, jakim jest R, może odbywać się poprzez wpisanie polecenia w oknie konsoli (zwanej też terminalem) i jego uruchomienie<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a>.
+Komendy są najpierw sprawdzanie pod kontekstem ich poprawności.
+Polega to na określeniu, np. czy podana funkcja lub inny obiekt istnieje, czy nie zostały użyte niedozwolone znaki, lub czy wszystkie nazwiasy czy cudzysłowia zostały zamknięte.
+Języki programowania są w tym aspekcie bardziej bezwzględne niż języki naturalne - nie potrafią one zrozumieć wyrażeń zawierających nawet niewielkie błędy takie jak, np. użycie dużej litery zamiast małej.</p>
 <div id="wyrazenia" class="section level2">
 <h2><span class="header-section-number">2.1</span> Wyrażenia</h2>
 <!-- Natomiast zamiast głębokiej wiedzy matematycznej do większości zadań programistycznych wystarczy podstawowa znajomość algebry -->
@@ -324,8 +324,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="images/obiekty.png" width="100%" style="display: block; margin: auto;" /></p>
 <div id="operator-przypisania" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Operator przypisania</h3>
-<p>Operator przypisania służy do nadania wartości do obiektu<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a>.
-R posiada trzy operatory przypisania, które mają niemal identyczne działanie<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a>: <code>=</code>, <code>&lt;-</code>, <code>-&gt;</code>.</p>
+<p>Operator przypisania służy do nadania wartości do obiektu<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a>.
+R posiada trzy operatory przypisania, które mają niemal identyczne działanie<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>: <code>=</code>, <code>&lt;-</code>, <code>-&gt;</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="dv">7</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">x
 <span class="co">#&gt; [1] 7</span></code></pre>
@@ -355,7 +355,7 @@ z5
 <pre class="sourceCode r"><code class="sourceCode r">z6 =<span class="st"> </span>x <span class="op">%/%</span><span class="st"> </span><span class="dv">3</span>
 z6
 <span class="co">#&gt; [1] 2</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">z7 =<span class="st"> </span>x <span class="op">^</span><span class="st"> </span><span class="dv">2</span>
+<pre class="sourceCode r"><code class="sourceCode r">z7 =<span class="st"> </span>x<span class="op">^</span><span class="dv">2</span>
 z7
 <span class="co">#&gt; [1] 49</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">z8 =<span class="st"> </span><span class="kw">sqrt</span>(x)
@@ -368,6 +368,11 @@ z9
 <!-- floating-point errors, -->
 <!-- floating-point arithmetic.  -->
 <!-- Floating-point arithmetic is a feature of computer programming.  -->
+
+<div class="rmdinfo">
+
+</div>
+
 </div>
 </div>
 <div id="ide" class="section level2">
@@ -509,7 +514,7 @@ Oba te poradniki nie są identyczne i czasami zawierają sprzeczne porady.
 Najważniejsze jest, aby wybrać jeden odpowiadający piszącemu kod styl i się go konsekwentnie trzymać.</p>
 <div id="nazwy-obiektow" class="section level3">
 <h3><span class="header-section-number">2.5.1</span> Nazwy obiektów</h3>
-<p>Istnieje wiele konwencji nazywania obiektów<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>.
+<p>Istnieje wiele konwencji nazywania obiektów<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>.
 Najczęściej używaną konwencją w R jest tzw. <a href="https://en.wikipedia.org/wiki/Snake_case">“snake case”</a>.
 Polega ona na tworzeniu nazw obiektów składających się ze słów połączonych znakiem podkreślenia (<code>_</code>).
 <!-- obiekty rzeczowniki, funkcje czasowniki -->
@@ -615,7 +620,7 @@ Jest on obecnie zalecanym standardem na całym świecie.
 </div>
 <div id="daty" class="section level3">
 <h3><span class="header-section-number">2.5.5</span> Daty</h3>
-<p>Istnieje wiele sposobów zapisu dat<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>, co może powodować różnorodne problemy przy programowaniu oraz analizie danych.
+<p>Istnieje wiele sposobów zapisu dat<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>, co może powodować różnorodne problemy przy programowaniu oraz analizie danych.
 Z ratunkiem w tej kwestii przychodzi norma <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>, która definiuje daty kalendarzowe jako <em>YYYY-MM-DD</em>, czyli <em>ROK-MIESIĄC-DZIEŃ</em>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Zalecane</span>
 <span class="dv">2019-06-02</span>
@@ -686,10 +691,12 @@ Wylicz w R, czy bardziej opłaca się kupno dwóch małych pizz czy jednej duże
 <div class="footnotes">
 <hr />
 <ol start="17">
-<li id="fn17"><p>Jest to pewne uproszczenie - <a href="https://adv-r.hadley.nz/names-values.html#binding-basics" class="uri">https://adv-r.hadley.nz/names-values.html#binding-basics</a>.<a href="ergosum.html#fnref17" class="footnote-back">↩</a></p></li>
-<li id="fn18"><p>Więcej informacji na temat różnic w działaniu tych operatorów można znaleźć na stronie <a href="https://stackoverflow.com/questions/1741820/what-are-the-differences-between-and-in-r" class="uri">https://stackoverflow.com/questions/1741820/what-are-the-differences-between-and-in-r</a>.<a href="ergosum.html#fnref18" class="footnote-back">↩</a></p></li>
-<li id="fn19"><p><a href="https://en.wikipedia.org/wiki/Naming_convention_(programming)" class="uri">https://en.wikipedia.org/wiki/Naming_convention_(programming)</a><a href="ergosum.html#fnref19" class="footnote-back">↩</a></p></li>
-<li id="fn20"><p><a href="https://xkcd.com/1179/" class="uri">https://xkcd.com/1179/</a><a href="ergosum.html#fnref20" class="footnote-back">↩</a></p></li>
+<li id="fn17"><p>To jest tzw. tryb interaktywny.
+Isnieje również tryb skryptowy, o którym więcej informacji można znaleźć w kolejnym rozdziale.<a href="ergosum.html#fnref17" class="footnote-back">↩</a></p></li>
+<li id="fn18"><p>Jest to pewne uproszczenie - <a href="https://adv-r.hadley.nz/names-values.html#binding-basics" class="uri">https://adv-r.hadley.nz/names-values.html#binding-basics</a>.<a href="ergosum.html#fnref18" class="footnote-back">↩</a></p></li>
+<li id="fn19"><p>Więcej informacji na temat różnic w działaniu tych operatorów można znaleźć na stronie <a href="https://stackoverflow.com/questions/1741820/what-are-the-differences-between-and-in-r" class="uri">https://stackoverflow.com/questions/1741820/what-are-the-differences-between-and-in-r</a>.<a href="ergosum.html#fnref19" class="footnote-back">↩</a></p></li>
+<li id="fn20"><p><a href="https://en.wikipedia.org/wiki/Naming_convention_(programming)" class="uri">https://en.wikipedia.org/wiki/Naming_convention_(programming)</a><a href="ergosum.html#fnref20" class="footnote-back">↩</a></p></li>
+<li id="fn21"><p><a href="https://xkcd.com/1179/" class="uri">https://xkcd.com/1179/</a><a href="ergosum.html#fnref21" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
