@@ -45,7 +45,7 @@ Operatorem mnożenia jest `/`.
 #> [1] 8.4
 ```
 
-
+Wszystkie powyższe operacje można wykonać poprzez ich wpisanie w oknie konsoli R i naciśnięcie klawisza Enter.
 
 ## Obiekty
 
@@ -56,10 +56,15 @@ Operatorem mnożenia jest `/`.
 <!-- - obiekty (zmienne) -->
 <img src="images/obiekty.png" width="100%" style="display: block; margin: auto;" />
 
+Powyższy cytat sugeruje dwa najważniejsze elementy języka R: obiekty i funkcje.
+Zrozumienie w jaki sposób się je tworzy i zmienia będzie w związku z tym, konieczną wiedzą osób piszących w tym języku.
+
 ### Operator przypisania
 
-Operator przypisania służy do nadania wartości do obiektu^[Jest to pewne uproszczenie - https://adv-r.hadley.nz/names-values.html#binding-basics.].
+Nadania wartości do obiektu wykonuje się używając operatora przypisania^[Jest to pewne uproszczenie - https://adv-r.hadley.nz/names-values.html#binding-basics.].
 R posiada trzy operatory przypisania, które mają niemal identyczne działanie^[Więcej informacji na temat różnic w działaniu tych operatorów można znaleźć na stronie https://stackoverflow.com/questions/1741820/what-are-the-differences-between-and-in-r.]: `=`, `<-`, `->`.
+Warto wybrać jeden z tych operatorów i konsekwentnie używać go pisząc kod.
+W tej książce jako główny operator przypisania będzie używany znak `=`.
 
 
 ```r
@@ -112,10 +117,15 @@ z3
 
 
 ```r
-z4 = x / 4.4
+z4 = x / 4
 z4
-#> [1] 1.59
+#> [1] 1.75
 ```
+
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Część języków programowania, np. C, wymaga zadeklarowania zmiennej przed jej użyciem poprzez podanie jej nazwy i typu.
+Wybór typu zmiennej w tych językach może mieć widoczne konsekwencje.
+Przykładowo, jeżeli obiekt `x` zostanie zadeklarowany jako liczba całkowita (integer), wynikiem dzielenia `x / 4` będzie `1` zamiast `1.75`.</div>\EndKnitrBlock{rmdinfo}
 
 
 ```r
@@ -149,10 +159,9 @@ z8
 ```r
 z9 = c(z2, z4, z8)
 z9
-#> [1] 2.00 1.59 2.65
+#> [1] 2.00 1.75 2.65
 ```
 
-<!-- integer division block -->
 <!-- floating-point errors, -->
 <!-- floating-point arithmetic.  -->
 <!-- Floating-point arithmetic is a feature of computer programming.  -->

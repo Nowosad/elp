@@ -318,6 +318,7 @@ Operatorem dodawania jest <code>+</code>.</p>
 <p>Operatorem mnożenia jest <code>/</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="dv">42</span> <span class="op">/</span><span class="st"> </span><span class="dv">5</span>
 <span class="co">#&gt; [1] 8.4</span></code></pre>
+<p>Wszystkie powyższe operacje można wykonać poprzez ich wpisanie w oknie konsoli R i naciśnięcie klawisza Enter.</p>
 </div>
 <div id="obiekty" class="section level2">
 <h2><span class="header-section-number">2.2</span> Obiekty</h2>
@@ -327,10 +328,14 @@ Operatorem dodawania jest <code>+</code>.</p>
 </blockquote>
 <!-- - obiekty (zmienne) -->
 <p><img src="images/obiekty.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>Powyższy cytat sugeruje dwa najważniejsze elementy języka R: obiekty i funkcje.
+Zrozumienie w jaki sposób się je tworzy i zmienia będzie w związku z tym, konieczną wiedzą osób piszących w tym języku.</p>
 <div id="operator-przypisania" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Operator przypisania</h3>
-<p>Operator przypisania służy do nadania wartości do obiektu<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a>.
-R posiada trzy operatory przypisania, które mają niemal identyczne działanie<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>: <code>=</code>, <code>&lt;-</code>, <code>-&gt;</code>.</p>
+<p>Nadania wartości do obiektu wykonuje się używając operatora przypisania<a href="#fn18" class="footnote-ref" id="fnref18"><sup>18</sup></a>.
+R posiada trzy operatory przypisania, które mają niemal identyczne działanie<a href="#fn19" class="footnote-ref" id="fnref19"><sup>19</sup></a>: <code>=</code>, <code>&lt;-</code>, <code>-&gt;</code>.
+Warto wybrać jeden z tych operatorów i konsekwentnie używać go pisząc kod.
+W tej książce jako główny operator przypisania będzie używany znak <code>=</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="dv">7</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">x
 <span class="co">#&gt; [1] 7</span></code></pre>
@@ -351,9 +356,16 @@ z2
 <pre class="sourceCode r"><code class="sourceCode r">z3 =<span class="st"> </span>x <span class="op">*</span><span class="st"> </span><span class="dv">2</span>
 z3
 <span class="co">#&gt; [1] 14</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">z4 =<span class="st"> </span>x <span class="op">/</span><span class="st"> </span><span class="fl">4.4</span>
+<pre class="sourceCode r"><code class="sourceCode r">z4 =<span class="st"> </span>x <span class="op">/</span><span class="st"> </span><span class="dv">4</span>
 z4
-<span class="co">#&gt; [1] 1.59</span></code></pre>
+<span class="co">#&gt; [1] 1.75</span></code></pre>
+
+<div class="rmdinfo">
+Część języków programowania, np. C, wymaga zadeklarowania zmiennej przed jej użyciem poprzez podanie jej nazwy i typu.
+Wybór typu zmiennej w tych językach może mieć widoczne konsekwencje.
+Przykładowo, jeżeli obiekt <code>x</code> zostanie zadeklarowany jako liczba całkowita (integer), wynikiem dzielenia <code>x / 4</code> będzie <code>1</code> zamiast <code>1.75</code>.
+</div>
+
 <pre class="sourceCode r"><code class="sourceCode r">z5 =<span class="st"> </span>x <span class="op">%%</span><span class="st"> </span><span class="dv">3</span>
 z5
 <span class="co">#&gt; [1] 1</span></code></pre>
@@ -368,8 +380,7 @@ z8
 <span class="co">#&gt; [1] 2.65</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">z9 =<span class="st"> </span><span class="kw">c</span>(z2, z4, z8)
 z9
-<span class="co">#&gt; [1] 2.00 1.59 2.65</span></code></pre>
-<!-- integer division block -->
+<span class="co">#&gt; [1] 2.00 1.75 2.65</span></code></pre>
 <!-- floating-point errors, -->
 <!-- floating-point arithmetic.  -->
 <!-- Floating-point arithmetic is a feature of computer programming.  -->
