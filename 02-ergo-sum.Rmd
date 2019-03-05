@@ -36,7 +36,7 @@ Operatorem mnożenia jest `/`.
 42 / 5
 ```
 
-
+Wszystkie powyższe operacje można wykonać poprzez ich wpisanie w oknie konsoli R i naciśnięcie klawisza Enter.
 
 ## Obiekty
 
@@ -92,8 +92,15 @@ z3
 ```
 
 ```{r}
-z4 = x / 4.4
+z4 = x / 4
 z4
+```
+
+
+```{block2 type="rmdinfo"}
+Część języków programowania, np. C, wymaga zadeklarowania zmiennej przed jej użyciem poprzez podanie jej nazwy i typu.
+Wybór typu zmiennej w tych językach może mieć widoczne konsekwencje.
+Przykładowo, jeżeli obiekt `x` zostanie zadeklarowany jako liczba całkowita (integer), wynikiem dzielenia `x / 4` będzie `1` zamiast `1.75`.
 ```
 
 ```{r}
@@ -121,7 +128,6 @@ z9 = c(z2, z4, z8)
 z9
 ```
 
-<!-- integer division block -->
 <!-- floating-point errors, -->
 <!-- floating-point arithmetic.  -->
 <!-- Floating-point arithmetic is a feature of computer programming.  -->
