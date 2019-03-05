@@ -98,6 +98,8 @@ Istnieje równocześnie [szereg strategii](https://bookdown.org/rdpeng/RProgDA/w
 
 ### Działania na obiektach
 
+Każdy stworzony obiekt w R może być następnie używany do kolejnych operacji, a w efekcie też tworzenia nowych obiektów. 
+W poniższych czterech przypadkach obiekt `x` został przetworzony używając operatorów dodawania, odejmowania, mnożenia oraz dzielenia, a nowe obiekty powstały jako wyniki tych obliczeń.
 <!-- - działania na obiektach -->
 
 
@@ -105,24 +107,12 @@ Istnieje równocześnie [szereg strategii](https://bookdown.org/rdpeng/RProgDA/w
 z1 = x + 3
 z1
 #> [1] 10
-```
-
-
-```r
 z2 = x - 5
 z2
 #> [1] 2
-```
-
-
-```r
 z3 = x * 2
 z3
 #> [1] 14
-```
-
-
-```r
 z4 = x / 4
 z4
 #> [1] 1.75
