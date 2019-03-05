@@ -49,10 +49,15 @@ Wszystkie powyższe operacje można wykonać poprzez ich wpisanie w oknie konsol
 knitr::include_graphics("images/obiekty.png")
 ```
 
+Powyższy cytat sugeruje dwa najważniejsze elementy języka R: obiekty i funkcje.
+Zrozumienie w jaki sposób się je tworzy i zmienia będzie w związku z tym, konieczną wiedzą osób piszących w tym języku.
+
 ### Operator przypisania
 
-Operator przypisania służy do nadania wartości do obiektu^[Jest to pewne uproszczenie - https://adv-r.hadley.nz/names-values.html#binding-basics.].
+Nadania wartości do obiektu wykonuje się używając operatora przypisania^[Jest to pewne uproszczenie - https://adv-r.hadley.nz/names-values.html#binding-basics.].
 R posiada trzy operatory przypisania, które mają niemal identyczne działanie^[Więcej informacji na temat różnic w działaniu tych operatorów można znaleźć na stronie https://stackoverflow.com/questions/1741820/what-are-the-differences-between-and-in-r.]: `=`, `<-`, `->`.
+Warto wybrać jeden z tych operatorów i konsekwentnie używać go pisząc kod.
+W tej książce jako główny operator przypisania będzie używany znak `=`.
 
 ```{r}
 x = 7
