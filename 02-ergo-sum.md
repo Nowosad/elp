@@ -182,12 +182,32 @@ RStudio to zintegrowane środowisko programistyczne (ang. *Integrated Developmen
 <!-- wyjaśnienie -->
 Zawiera ono bardzo wiele użytecznych funkcjonalności, tj. wbudowany edytor, podświetlanie składni, automatyczne uzupełnianie kodu i wiele innych.
 
-<img src="images/rstudio.png" width="100%" style="display: block; margin: auto;" />
-
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">RStudio to nie jest to samo co R. 
 R jest językiem programowania, podczas gdy RStudio to aplikacja ułatwiająca pisanie kodu.
 Możliwe jest używanie R bez RStudio, ale RStudio bez R nie pełni już swojej roli.
 Częstą analogią jest porównanie samochodowe, w którym R jest opisywany jako silnik a RStudio jako deska rozdzielcza.</div>\EndKnitrBlock{rmdinfo}
+
+<div class="figure" style="text-align: center">
+<img src="images/rstudio.png" alt="Okno RStudio z opisaną funkcjonalnością każdej z jego części." width="100%" />
+<p class="caption">(\#fig:rstudioimage)Okno RStudio z opisaną funkcjonalnością każdej z jego części.</p>
+</div>
+
+Typowa praca w RStudio często polega na wpisywaniu poleceń do pliku tekstowego widocznego w części skryptowej (Rycina \@ref(fig:rstudioimage)), a następnie wykonywaniu kolejnych linii kodu w oknie konsoli używając skrótu klawiaturowego CTRL+ENTER (więcej przydatnych skrótów klawiaturowych można znaleźć w tabeli \@ref(tab:rstudiosk)).
+Efektem wykonywania funkcji może być powstanie nowych obiektów, które można zobaczyć w oknie "środowiska" lub też wyświetlenie grafik, które można zobaczyć w oknie "wykresu".
+
+Dobrą praktyką pracy z R w RStudio jest też używanie projektów RStudio (ang. *RStudio projects*).
+Projekt jest to folder zawierający wszystkie skrypty i pozostałe pliki powiązane z jakimś zadaniem (np. analizą danych, czy stworzeniem nowego pakietu R).
+Ułatwia on przenoszenie kodu pomiędzy różnymi komputerami, a także daje dostęp do szeregu dodatkowych możliwości w RStudio.
+
+Aby stworzyć pierwszy projekt RStudio, należy:
+
+1. Kliknąć `File -> New Project`.
+2. Wybrać `New Directory`.
+3. Wybrać `New Project`.
+4. Podać nazwę nowego projektu, np. "programowanie1" oraz wybrać miejsce na dysku, gdzie ma się nowy projekt znajdować.
+5. Jeżeli możliwe, to wybrać też opcję `Create a git repository`.
+6. Kliknąć `Create Project`.
+
 
 
 Table: (\#tab:rstudiosk)Podstawowe skróty klawiaturowe w RStudio
@@ -201,20 +221,6 @@ Ctrl+Shift+C                          ustawia wybrane linie jako komentarz/odkom
 strzałka Góra/Dół (w oknie konsoli)   wybiera wcześniej wpisany kod                                 
 Esc                                   przerywa niedokończoną operację                               
 Shift+Alt+K                           wyświetla listę skrótów klawiaturowych                        
-
-
-\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Dobrą praktyką pracy z R w RStudio jest używanie projektów RStudio (ang. *RStudio projects*).
-Projekt jest to folder zawierający wszystkie skrypty i pozostałe pliki powiązane z jakimś zadaniem (np. analizą danych, czy stworzeniem nowego pakietu R).
-Ułatwia on przenoszenie kodu pomiędzy różnymi komputerami, a także daje dostęp do szeregu dodatkowych możliwości w RStudio.
-
-Aby stworzyć pierwszy projekt RStudio, należy:
-
-1. Kliknąć `File -> New Project`.
-2. Wybrać `New Directory`.
-3. Wybrać `New Project`.
-4. Podać nazwę nowego projektu, np. "programowanie1" oraz wybrać miejsce na dysku, gdzie ma się nowy projekt znajdować.
-5. Jeżeli możliwe, to wybrać też opcję `Create a git repository`.
-6. Kliknąć `Create Project`.</div>\EndKnitrBlock{rmdinfo}
 
 ## Dodatkowe materiały {#resources}
 

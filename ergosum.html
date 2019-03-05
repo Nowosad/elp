@@ -413,7 +413,6 @@ Te operatory można też użyć jako normalne funkcje poprzez dodanie znaku zwan
 <p>RStudio to zintegrowane środowisko programistyczne (ang. <em>Integrated Development Environment</em>, IDE) dla R.
 <!-- wyjaśnienie -->
 Zawiera ono bardzo wiele użytecznych funkcjonalności, tj. wbudowany edytor, podświetlanie składni, automatyczne uzupełnianie kodu i wiele innych.</p>
-<p><img src="images/rstudio.png" width="100%" style="display: block; margin: auto;" /></p>
 
 <div class="rmdinfo">
 RStudio to nie jest to samo co R.
@@ -422,6 +421,26 @@ Możliwe jest używanie R bez RStudio, ale RStudio bez R nie pełni już swojej
 Częstą analogią jest porównanie samochodowe, w którym R jest opisywany jako silnik a RStudio jako deska rozdzielcza.
 </div>
 
+<div class="figure" style="text-align: center"><span id="fig:rstudioimage"></span>
+<img src="images/rstudio.png" alt="Okno RStudio z opisaną funkcjonalnością każdej z jego części." width="100%" />
+<p class="caption">
+Rycina 2.1: Okno RStudio z opisaną funkcjonalnością każdej z jego części.
+</p>
+</div>
+<p>Typowa praca w RStudio często polega na wpisywaniu poleceń do pliku tekstowego widocznego w części skryptowej (Rycina <a href="ergosum.html#fig:rstudioimage">2.1</a>), a następnie wykonywaniu kolejnych linii kodu w oknie konsoli używając skrótu klawiaturowego CTRL+ENTER (więcej przydatnych skrótów klawiaturowych można znaleźć w tabeli <a href="ergosum.html#tab:rstudiosk">2.1</a>).
+Efektem wykonywania funkcji może być powstanie nowych obiektów, które można zobaczyć w oknie “środowiska” lub też wyświetlenie grafik, które można zobaczyć w oknie “wykresu”.</p>
+<p>Dobrą praktyką pracy z R w RStudio jest też używanie projektów RStudio (ang. <em>RStudio projects</em>).
+Projekt jest to folder zawierający wszystkie skrypty i pozostałe pliki powiązane z jakimś zadaniem (np. analizą danych, czy stworzeniem nowego pakietu R).
+Ułatwia on przenoszenie kodu pomiędzy różnymi komputerami, a także daje dostęp do szeregu dodatkowych możliwości w RStudio.</p>
+<p>Aby stworzyć pierwszy projekt RStudio, należy:</p>
+<ol style="list-style-type: decimal">
+<li>Kliknąć <code>File -&gt; New Project</code>.</li>
+<li>Wybrać <code>New Directory</code>.</li>
+<li>Wybrać <code>New Project</code>.</li>
+<li>Podać nazwę nowego projektu, np. “programowanie1” oraz wybrać miejsce na dysku, gdzie ma się nowy projekt znajdować.</li>
+<li>Jeżeli możliwe, to wybrać też opcję <code>Create a git repository</code>.</li>
+<li>Kliknąć <code>Create Project</code>.</li>
+</ol>
 <table>
 <caption><span id="tab:rstudiosk">Tabela 2.1: </span>Podstawowe skróty klawiaturowe w RStudio</caption>
 <thead>
@@ -461,21 +480,6 @@ Częstą analogią jest porównanie samochodowe, w którym R jest opisywany jak
 </tr>
 </tbody>
 </table>
-
-<div class="rmdinfo">
-<p>Dobrą praktyką pracy z R w RStudio jest używanie projektów RStudio (ang. <em>RStudio projects</em>).
-Projekt jest to folder zawierający wszystkie skrypty i pozostałe pliki powiązane z jakimś zadaniem (np. analizą danych, czy stworzeniem nowego pakietu R).
-Ułatwia on przenoszenie kodu pomiędzy różnymi komputerami, a także daje dostęp do szeregu dodatkowych możliwości w RStudio.</p>
-<p>Aby stworzyć pierwszy projekt RStudio, należy:</p>
-<ol style="list-style-type: decimal">
-<li>Kliknąć <code>File -&gt; New Project</code>.</li>
-<li>Wybrać <code>New Directory</code>.</li>
-<li>Wybrać <code>New Project</code>.</li>
-<li>Podać nazwę nowego projektu, np. “programowanie1” oraz wybrać miejsce na dysku, gdzie ma się nowy projekt znajdować.</li>
-<li>Jeżeli możliwe, to wybrać też opcję <code>Create a git repository</code>.</li>
-<li>Kliknąć <code>Create Project</code>.
-</div></li>
-</ol>
 </div>
 <div id="resources" class="section level2">
 <h2><span class="header-section-number">2.4</span> Dodatkowe materiały</h2>
