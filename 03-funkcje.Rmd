@@ -1,9 +1,14 @@
 # Funkcje {#funkcje}
 
-<!-- intro (co to) -->
-<!-- https://blog.rstudio.com/2019/02/06/rstudio-conf-2019-workshops/ -->
+Funkcje w R to obiekty, który przyjmują pewne argumenty, przetwarzają je i zwracają jakiś wynik.
+Są one zbudowane z dostępnych elementów języka programowania jak i też z innych dostępnych funkcji.
+Funkcje mogą służyć do wielu celów, od prostych odliczeń arytmetycznych, poprzez przetwarzanie tekstu, tworzenie wykresów i map, aż do bardziej złożonych i specjalistycznych procedur. 
+Ich celem jest ułatwienie pracy programistycznej.
+Zamiast wielokrotnie powtarzać te same linie kodu, możliwe jest napisanie funkcji raz, a następnie użycie jej wiele razy.
 
 ## Struktura funkcji
+
+
 
 ```{r, echo=FALSE}
 knitr::include_graphics("images/funkcje.png")
