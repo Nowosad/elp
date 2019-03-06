@@ -453,6 +453,9 @@ Dodatkowo, to one są zazwyczaj używane w wyrażeniach warunkowych.
 <h2><span class="header-section-number">4.4</span> Wyrażenia warunkowe w funkcjach</h2>
 <p>Wyrażenia warunkowe są często używanym elementem przy tworzeniu funkcji.
 Pozwalają one na nie tylko na określanie tego w jaki sposób dana funkcja zadziała, ale też pełnią rolę w sprawdzaniu czy do funkcji zostały wprowadzone poprawne argumenty.</p>
+<p>Celem poniższej funkcji <code>pogoda()</code> jest wyświetlenie pewnego tekstu w zależności od podanej wartości argumentu <code>temperatura</code>.
+Pierwszym warunkiem, który można sprawdzić jest określenie czy użytkownik wprowadził do funkcji w postaci argumentu oczekiwany typ danych (więcej o typach danych można dowiedzieć się w rozdziale <a href="proste-obiekty.html#proste-obiekty">5</a>).
+W tym przypadku typ numeryczny jest oczekiwany, co można sprawdzić używając funkcji <code>is.numeric()</code>, która zwraca <code>TRUE</code> dla danych numerycznych i <code>FALSE</code> dla każdych innych.</p>
 <pre class="sourceCode r"><code class="sourceCode r">pogoda =<span class="st"> </span><span class="cf">function</span>(temperatura){
   <span class="cf">if</span> (<span class="kw">is.numeric</span>(temperatura)){
     <span class="kw">cat</span>(<span class="kw">paste</span>(<span class="st">&quot;Dzisiaj jest&quot;</span>, temperatura, <span class="st">&quot;stopni Celsjusza.&quot;</span>))
@@ -462,7 +465,10 @@ Pozwalają one na nie tylko na określanie tego w jaki sposób dana funkcja zadz
 <span class="co">#&gt; Dzisiaj jest 10 stopni Celsjusza.</span>
 <span class="kw">pogoda</span>(<span class="op">-</span><span class="dv">20</span>)
 <span class="co">#&gt; Dzisiaj jest -20 stopni Celsjusza.</span>
-<span class="kw">pogoda</span>(<span class="ot">NA</span>)</code></pre>
+<span class="kw">pogoda</span>(<span class="st">&quot;nie wiem&quot;</span>)</code></pre>
+<p>Efekt działania powyższej funkcji jest teraz zależy od wejściowego typu danych - jeżeli podana jest wartość numeryczna zwracany jest tekst, a jeżeli ten warunek nie jest spełniony to nic się nie dzieje.</p>
+<p>Warto, aby tworzona funkcja obsługiwała najczęściej potencjalnie używane rodzaje danych wejściowych.
+W tym przypadku, warto dodać wyrażenie <code>else</code>, którego efektem jest kolejny tekst sugerujący, że funkcja została wykonana, ale w inny sposób.</p>
 <pre class="sourceCode r"><code class="sourceCode r">pogoda =<span class="st"> </span><span class="cf">function</span>(temperatura){
   <span class="cf">if</span> (<span class="kw">is.numeric</span>(temperatura)){
     <span class="kw">cat</span>(<span class="kw">paste</span>(<span class="st">&quot;Dzisiaj jest&quot;</span>, temperatura, <span class="st">&quot;stopni Celsjusza.&quot;</span>))
@@ -474,8 +480,9 @@ Pozwalają one na nie tylko na określanie tego w jaki sposób dana funkcja zadz
 <span class="co">#&gt; Dzisiaj jest 10 stopni Celsjusza.</span>
 <span class="kw">pogoda</span>(<span class="op">-</span><span class="dv">20</span>)
 <span class="co">#&gt; Dzisiaj jest -20 stopni Celsjusza.</span>
-<span class="kw">pogoda</span>(<span class="ot">NA</span>)
+<span class="kw">pogoda</span>(<span class="st">&quot;nie wiem&quot;</span>)
 <span class="co">#&gt; Dzisiaj nie mamy pomiarów temperatury.</span></code></pre>
+<p>Wyrażenia warunkowe można też wielokrotnie zagnieżdzać wewnątrz zdefiniowanej funkcji.</p>
 <pre class="sourceCode r"><code class="sourceCode r">pogoda =<span class="st"> </span><span class="cf">function</span>(temperatura){
   <span class="cf">if</span> (<span class="kw">is.numeric</span>(temperatura)){
     <span class="kw">cat</span>(<span class="kw">paste</span>(<span class="st">&quot;Dzisiaj jest&quot;</span>, temperatura, <span class="st">&quot;stopni Celsjusza.</span><span class="ch">\n</span><span class="st">&quot;</span>))
@@ -491,8 +498,9 @@ Pozwalają one na nie tylko na określanie tego w jaki sposób dana funkcja zadz
 <span class="kw">pogoda</span>(<span class="op">-</span><span class="dv">20</span>)
 <span class="co">#&gt; Dzisiaj jest -20 stopni Celsjusza.</span>
 <span class="co">#&gt; Ubierz się ciepło!</span>
-<span class="kw">pogoda</span>(<span class="ot">NA</span>)
+<span class="kw">pogoda</span>(<span class="st">&quot;nie wiem&quot;</span>)
 <span class="co">#&gt; Dzisiaj nie mamy pomiarów temperatury.</span></code></pre>
+<p>Przykładowo, powyżej komunikat <code>&quot;Ubierz się ciepło!&quot;</code> jest wyświetlany w momencie, gdy spełnione zostaną dwa warunki - najpierw wejściowy obiekt <code>temperatura</code> musi być typu numerycznego, a następnie wartość tego obiektu musi być niższa niż 5.</p>
 </div>
 <div id="zadania-3" class="section level2">
 <h2><span class="header-section-number">4.5</span> Zadania</h2>

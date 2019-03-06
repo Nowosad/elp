@@ -150,7 +150,9 @@ Dodatkowo, to one są zazwyczaj używane w wyrażeniach warunkowych.</div>\EndKn
 Wyrażenia warunkowe są często używanym elementem przy tworzeniu funkcji.
 Pozwalają one na nie tylko na określanie tego w jaki sposób dana funkcja zadziała, ale też pełnią rolę w sprawdzaniu czy do funkcji zostały wprowadzone poprawne argumenty.
 
-
+Celem poniższej funkcji `pogoda()` jest wyświetlenie pewnego tekstu w zależności od podanej wartości argumentu `temperatura`.
+Pierwszym warunkiem, który można sprawdzić jest określenie czy użytkownik wprowadził do funkcji w postaci argumentu oczekiwany typ danych (więcej o typach danych można dowiedzieć się w rozdziale \@ref(proste-obiekty)).
+W tym przypadku typ numeryczny jest oczekiwany, co można sprawdzić używając funkcji `is.numeric()`, która zwraca `TRUE` dla danych numerycznych i `FALSE` dla każdych innych.
 
 
 ```r
@@ -163,8 +165,13 @@ pogoda(10)
 #> Dzisiaj jest 10 stopni Celsjusza.
 pogoda(-20)
 #> Dzisiaj jest -20 stopni Celsjusza.
-pogoda(NA)
+pogoda("nie wiem")
 ```
+
+Efekt działania powyższej funkcji jest teraz zależy od wejściowego typu danych - jeżeli podana jest wartość numeryczna zwracany jest tekst, a jeżeli ten warunek nie jest spełniony to nic się nie dzieje.
+
+Warto, aby tworzona funkcja obsługiwała najczęściej potencjalnie używane rodzaje danych wejściowych.
+W tym przypadku, warto dodać wyrażenie `else`, którego efektem jest kolejny tekst sugerujący, że funkcja została wykonana, ale w inny sposób.
 
 
 ```r
@@ -179,9 +186,11 @@ pogoda(10)
 #> Dzisiaj jest 10 stopni Celsjusza.
 pogoda(-20)
 #> Dzisiaj jest -20 stopni Celsjusza.
-pogoda(NA)
+pogoda("nie wiem")
 #> Dzisiaj nie mamy pomiarów temperatury.
 ```
+
+Wyrażenia warunkowe można też wielokrotnie zagnieżdzać wewnątrz zdefiniowanej funkcji.
 
 
 ```r
@@ -200,9 +209,11 @@ pogoda(10)
 pogoda(-20)
 #> Dzisiaj jest -20 stopni Celsjusza.
 #> Ubierz się ciepło!
-pogoda(NA)
+pogoda("nie wiem")
 #> Dzisiaj nie mamy pomiarów temperatury.
 ```
+
+Przykładowo, powyżej komunikat `"Ubierz się ciepło!"` jest wyświetlany w momencie, gdy spełnione zostaną dwa warunki - najpierw wejściowy obiekt `temperatura` musi być typu numerycznego, a następnie wartość tego obiektu musi być niższa niż 5.
 
 ## Zadania
 
