@@ -351,6 +351,8 @@ W przypadku <code>else</code> wyliczane są wszystkie przypadki, które nie spe�
 </div>
 <div id="operatory-porownania" class="section level2">
 <h2><span class="header-section-number">4.3</span> Operatory porównania</h2>
+<p>W tabeli <a href="warunki.html#tab:operators">4.1</a> można znaleźć listę podstawowych operatorów porównania.
+Ich celem jest sprawdzanie pewnego warunku i zwrócenie wartości <code>TRUE</code> lub <code>FALSE</code>.</p>
 <table>
 <caption><span id="tab:operators">Tabela 4.1: </span>Operatory porównania.</caption>
 <thead>
@@ -382,6 +384,16 @@ W przypadku <code>else</code> wyliczane są wszystkie przypadki, które nie spe�
 </tr>
 </tbody>
 </table>
+<p>Wyrażenie <code>if()</code> oczekuje wektora logiczego o długości jeden.
+Często jednak efektem porównania może być wektor o większej długości.
+Przykładowo, porównanie operatorem <code>==</code> daje w wyniku wektor o długości trzy, a porówanie z użyciem <code>%in%</code> skutkuje wektorem o długości jeden.</p>
+<pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="dv">1</span>
+y =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)
+x <span class="op">==</span><span class="st"> </span>y
+<span class="co">#&gt; [1]  TRUE FALSE FALSE</span>
+x <span class="op">%in%</span><span class="st"> </span>y
+<span class="co">#&gt; [1] TRUE</span></code></pre>
+<p>Sterowanie tym, żeby uzyskany wynik miał oczekiwaną długość jeden może się odbywać też z pomocą operatorów logicznych i funkcji pomocniczych (tabela <a href="warunki.html#tab:operators2">4.2</a>).</p>
 <table>
 <caption><span id="tab:operators2">Tabela 4.2: </span>Operatory logiczne i funkcje pomocniczne.</caption>
 <thead>
@@ -413,8 +425,21 @@ W przypadku <code>else</code> wyliczane są wszystkie przypadki, które nie spe�
 </tr>
 </tbody>
 </table>
-<!-- block about & and | -->
-<!-- https://stackoverflow.com/questions/6558921/boolean-operators-and -->
+<p>Pozwalają one na sprawdzenie czy wszystkie (<code>all()</code>) lub którykolwiek (<code>any()</code>) z elementów obiektu przyjmuje wartość <code>TRUE</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="dv">1</span>
+y =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)
+<span class="kw">all</span>(x <span class="op">==</span><span class="st"> </span>y)
+<span class="co">#&gt; [1] FALSE</span>
+<span class="kw">any</span>(x <span class="op">==</span><span class="st"> </span>y)
+<span class="co">#&gt; [1] TRUE</span></code></pre>
+<p>Możliwe jest też łączenie bardziej złożonych zapytań używając operatora “i” (<code>&amp;&amp;</code>) oraz operatora “lub” (<code>||</code>).</p>
+<pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="dv">1</span>
+y =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)
+z =<span class="st"> </span><span class="dv">4</span>
+(x <span class="op">%in%</span><span class="st"> </span>y) <span class="op">||</span><span class="st"> </span><span class="op">!</span>(z <span class="op">%in%</span><span class="st"> </span>y)
+<span class="co">#&gt; [1] TRUE</span></code></pre>
+<p>Powyżej nastąpiło sprawdzenie czy element z obiektu <code>x</code> znajduje się w obiekcie <code>y</code>, a następnie czy element z obiektu <code>z</code> nie znajduje się w obiekcie <code>y</code>.
+Po wykonaniu ich sprawdzeń nastąpiło ich połączenie używając operatora <code>||</code>, który daje wartość <code>TRUE</code>, gdy chociaż jedno z zapytań jest prawdziwe.</p>
 
 <div class="rmdinfo">
 W R istnieją dwa dodatkowe operatory logiczne <code>&amp;</code> i <code>|</code>, które są zwektoryzowaną wersją operatorów <code>&amp;&amp;</code> i <code>||</code>.
@@ -426,6 +451,8 @@ Dodatkowo, to one są zazwyczaj używane w wyrażeniach warunkowych.
 </div>
 <div id="wyrazenia-warunkowe-w-funkcjach" class="section level2">
 <h2><span class="header-section-number">4.4</span> Wyrażenia warunkowe w funkcjach</h2>
+<p>Wyrażenia warunkowe są często używanym elementem przy tworzeniu funkcji.
+Pozwalają one na nie tylko na określanie tego w jaki sposób dana funkcja zadziała, ale też pełnią rolę w sprawdzaniu czy do funkcji zostały wprowadzone poprawne argumenty.</p>
 <pre class="sourceCode r"><code class="sourceCode r">pogoda =<span class="st"> </span><span class="cf">function</span>(temperatura){
   <span class="cf">if</span> (<span class="kw">is.numeric</span>(temperatura)){
     <span class="kw">cat</span>(<span class="kw">paste</span>(<span class="st">&quot;Dzisiaj jest&quot;</span>, temperatura, <span class="st">&quot;stopni Celsjusza.&quot;</span>))

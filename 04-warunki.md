@@ -73,6 +73,9 @@ W przypadku `else` wyliczane są wszystkie przypadki, które nie spełniają wcz
 
 ## Operatory porównania
 
+W tabeli \@ref(tab:operators) można znaleźć listę podstawowych operatorów porównania.
+Ich celem jest sprawdzanie pewnego warunku i zwrócenie wartości `TRUE` lub `FALSE`.
+
 
 Table: (\#tab:operators)Operatory porównania.
 
@@ -83,6 +86,22 @@ Operator   Wyjaśnienie
 %in%       Zawiera się w                  
 >, <       Większy/Mniejszy niż           
 >=, <=     Większy/Mniejszy niż lub równy 
+
+Wyrażenie `if()` oczekuje wektora logiczego o długości jeden. 
+Często jednak efektem porównania może być wektor o większej długości.
+Przykładowo, porównanie operatorem `==` daje w wyniku wektor o długości trzy, a porówanie z użyciem `%in%` skutkuje wektorem o długości jeden.
+
+
+```r
+x = 1
+y = c(1, 2, 3)
+x == y
+#> [1]  TRUE FALSE FALSE
+x %in% y
+#> [1] TRUE
+```
+
+Sterowanie tym, żeby uzyskany wynik miał oczekiwaną długość jeden może się odbywać też z pomocą operatorów logicznych i funkcji pomocniczych (tabela \@ref(tab:operators2)).
 
 
 Table: (\#tab:operators2)Operatory logiczne i funkcje pomocniczne.
@@ -95,8 +114,31 @@ Operator   Wyjaśnienie
 all        Wszystkie         
 any        Którykolwiek      
 
-<!-- block about & and | -->
-<!-- https://stackoverflow.com/questions/6558921/boolean-operators-and -->
+Pozwalają one na sprawdzenie czy wszystkie (`all()`) lub którykolwiek (`any()`) z elementów obiektu przyjmuje wartość `TRUE`.
+
+
+```r
+x = 1
+y = c(1, 2, 3)
+all(x == y)
+#> [1] FALSE
+any(x == y)
+#> [1] TRUE
+```
+
+Możliwe jest też łączenie bardziej złożonych zapytań używając operatora "i" (`&&`) oraz operatora "lub" (`||`).
+
+
+```r
+x = 1
+y = c(1, 2, 3)
+z = 4
+(x %in% y) || !(z %in% y)
+#> [1] TRUE
+```
+
+Powyżej nastąpiło sprawdzenie czy element z obiektu `x` znajduje się w obiekcie `y`, a następnie czy element z obiektu `z` nie znajduje się w obiekcie `y`.
+Po wykonaniu ich sprawdzeń nastąpiło ich połączenie używając operatora `||`, który daje wartość `TRUE`, gdy chociaż jedno z zapytań jest prawdziwe.
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">W R istnieją dwa dodatkowe operatory logiczne `&` i `|`, które są zwektoryzowaną wersją operatorów `&&` i `||`.
 Pierwsze dwa porównują wszystkie elementy zadanych wektorów i ich wynikiem może być wektor o długości większej niż 1.
@@ -104,6 +146,11 @@ Operatory `&&` i `||` porównują tylko pierwszy element każdego wektora, a w e
 Dodatkowo, to one są zazwyczaj używane w wyrażeniach warunkowych.</div>\EndKnitrBlock{rmdinfo}
 
 ## Wyrażenia warunkowe w funkcjach
+
+Wyrażenia warunkowe są często używanym elementem przy tworzeniu funkcji.
+Pozwalają one na nie tylko na określanie tego w jaki sposób dana funkcja zadziała, ale też pełnią rolę w sprawdzaniu czy do funkcji zostały wprowadzone poprawne argumenty.
+
+
 
 
 ```r
