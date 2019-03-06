@@ -428,6 +428,12 @@ Po pierwsze możliwe jest dołączenie pakietu poprzez <code>library(stringr)</c
 Po drugie można bezpośrednio zdefiniować z jakiego pakietu pochodzi konkretna funkcja używając nazwy pakietu i operatora <code>::</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">stringr<span class="op">::</span><span class="kw">str_sub</span>(<span class="st">&quot;chronologia&quot;</span>, <span class="dt">start =</span> <span class="dv">1</span>, <span class="dt">end =</span> <span class="dv">6</span>)
 <span class="co">#&gt; [1] &quot;chrono&quot;</span></code></pre>
+
+<div class="rmdinfo">
+Operator <code>::</code> może być też pomocny w przypadku, gdy kilka pakietów ma funkcję o tej samej nazwie.
+Wówczas, aby kod został poprawnie wykonany, warto podać nie tylko nazwę funkcji ale też nazwę pakietu z jakiego ona pochodzi.
+</div>
+
 <!-- block - inaczej biblioteki, moduły, etc -->
 <!-- overwhelmed by the number! -->
 <!-- https://juliasilge.com/blog/r-journal-navigating/ -->

@@ -205,6 +205,9 @@ stringr::str_sub("chronologia", start = 1, end = 6)
 #> [1] "chrono"
 ```
 
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Operator `::` może być też pomocny w przypadku, gdy kilka pakietów ma funkcję o tej samej nazwie.
+Wówczas, aby kod został poprawnie wykonany, warto podać nie tylko nazwę funkcji ale też nazwę pakietu z jakiego ona pochodzi.</div>\EndKnitrBlock{rmdinfo}
+
 <!-- block - inaczej biblioteki, moduły, etc -->
 
 <!-- overwhelmed by the number! -->
