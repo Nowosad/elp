@@ -1,12 +1,23 @@
 
 # Funkcje {#funkcje}
 
-<!-- intro (co to) -->
-<!-- https://blog.rstudio.com/2019/02/06/rstudio-conf-2019-workshops/ -->
+Funkcje to programy, który przyjmują pewne argumenty, przetwarzają je i zwracają jakiś wynik.
+Są one zbudowane z dostępnych elementów języka programowania jak i też z innych dostępnych funkcji.
+Funkcje mogą służyć do wielu celów, od prostych odliczeń arytmetycznych, poprzez przetwarzanie tekstu, tworzenie wykresów i map, aż do bardziej złożonych i specjalistycznych procedur. 
+Ich celem jest ułatwienie pracy programistycznej i zwiększenie czytelności kodu. 
+Zamiast wielokrotnie powtarzać te same linie kodu, możliwe jest napisanie funkcji raz, a następnie użycie jej wiele razy.
 
 ## Struktura funkcji
 
+Funkcje są reprezentowane w R jako specjalne obiekty, które można uruchomić poprzez dodanie do ich nazwy nawiasów okrągłych.
+Przykładowo, funkcja `mean()` wylicza średnią.
+Może ona przyjąć kilka różnych argumentów, czyli pewnych obiektów lub parametrów wejściowych.
+W poniższym przykładzie do funkcji `mean()` zostały podane dwa argumenty.
+Pierwszy argument nazywa się `x` i przyjmuje on wektor numeryczny `economics$pop`, drugi argument nazywa się `na.rm` i został on ustalony na `TRUE`.
+
 <img src="images/funkcje.png" width="100%" style="display: block; margin: auto;" />
+
+W efekcie działania funkcji otrzymano wynik - `246348.9` - który jest średnią wartością w zadanym wektorze.
 
 ## Wbudowane funkcje
 
