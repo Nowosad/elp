@@ -3,13 +3,14 @@
 
 Języki programowania opierają się o dwa podstawowe narzędzia pozwalające na sterowanie przepływem operacji.
 Są to wyrażenia warunkowe oraz pętle.
-Wyrażenia warunkowe są głównym tematem tego rozdziału, natomiast pętle są omówione w rozdziale \@ref(petle).
+Wyrażenia warunkowe są głównym tematem tego rozdziału, natomiast pętle oraz ich alternatywy są omówione w rozdziale \@ref(petle).
 <!-- `switch` https://adv-r.hadley.nz/control-flow.html#loops -->
 Celem wyrażeń warunkowych jest wykonywanie różnego zadania w zależności od danych wejściowych.
 
 ## Warunki
 
 Wyrażenie `if` opiera się o spełnienie (lub niespełnienie) danego warunku.
+Jeżeli dany warunek jest spełniony, kod wewnątrz wyrażenia `if()` jest wykonywany.
 
 
 ```r
@@ -17,6 +18,12 @@ if (warunek){
   jeżeli warunek spełniony to wykonaj operację
 }
 ```
+
+Wyrażenie `if` oczekuje, że warunek jest wektorem logicznym o długości jeden, tj. takim który przyjmuje wartość `TRUE` lub `FALSE`.
+Istnieje szereg sposób uzyskania wektora logicznego w R, jednym z nich jest zastosowanie porównania wartości.
+
+W poniższym przykładzie wyrażenie `if()` sprawdza czy wartość obiektu `temperatura` jest wyższa niż 0.
+W przypadku, gdy ten warunek jest spełniony (czyli jest `TRUE`), wyświetlany jest tekst `"Dodatnia"`.
 
 
 ```r
@@ -26,6 +33,8 @@ if (temperatura > 0) {
 }
 #> [1] "Dodatnia"
 ```
+
+W przeciwnym razie, gdy warunek nie jest spełniony (czyli ma wartość `FALSE`), kod wewnątrz warunku nie jest wykonywany.
 
 
 ```r
@@ -42,6 +51,9 @@ if (temperatura > 0) {
 ## Warunki zagnieżdzone
 
 Działanie wyrażenia `if` może być połączone z dodatkowymi wyrażeniami `else if` oraz `else`.
+Te dwa wyrażenia wymagają najpierw wywołania wyrażenia `if()`. 
+Jeżeli warunek w wyrażeniu `if()` jest równy `TRUE` to wykonywany jest kod w nim zawarty, a następnie obliczenie jest kończone.
+W przypadku, gdy wyrażenie `if()` otrzyma wartość `FALSE`, to kod w nim zawarty nie jest wykonywany, a następuje przejście do kolejnego wyrażenia, np. `else if()` w poniższym przypadku.
 
 
 ```r
@@ -56,7 +68,8 @@ if (temperatura > 0) {
 #> [1] "Dodatnia"
 ```
 
-<!-- explain -->
+Wyrażenie `else if()` różni się od `else` tym, że wymaga ono określenia jaki warunek ma być spełniony.
+W przypadku `else` wyliczane są wszystkie przypadki, które nie spełniają wcześniejszych warunków.
 
 ## Operatory porównania
 

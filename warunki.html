@@ -300,20 +300,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">4</span> Wyrażenia warunkowe</h1>
 <p>Języki programowania opierają się o dwa podstawowe narzędzia pozwalające na sterowanie przepływem operacji.
 Są to wyrażenia warunkowe oraz pętle.
-Wyrażenia warunkowe są głównym tematem tego rozdziału, natomiast pętle są omówione w rozdziale <a href="petle.html#petle">8</a>.
+Wyrażenia warunkowe są głównym tematem tego rozdziału, natomiast pętle oraz ich alternatywy są omówione w rozdziale <a href="petle.html#petle">8</a>.
 <!-- `switch` https://adv-r.hadley.nz/control-flow.html#loops -->
 Celem wyrażeń warunkowych jest wykonywanie różnego zadania w zależności od danych wejściowych.</p>
 <div id="warunki-1" class="section level2">
 <h2><span class="header-section-number">4.1</span> Warunki</h2>
-<p>Wyrażenie <code>if</code> opiera się o spełnienie (lub niespełnienie) danego warunku.</p>
+<p>Wyrażenie <code>if</code> opiera się o spełnienie (lub niespełnienie) danego warunku.
+Jeżeli dany warunek jest spełniony, kod wewnątrz wyrażenia <code>if()</code> jest wykonywany.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="cf">if</span> (warunek){
   jeżeli warunek spełniony to wykonaj operację
 }</code></pre>
+<p>Wyrażenie <code>if</code> oczekuje, że warunek jest wektorem logicznym o długości jeden, tj. takim który przyjmuje wartość <code>TRUE</code> lub <code>FALSE</code>.
+Istnieje szereg sposób uzyskania wektora logicznego w R, jednym z nich jest zastosowanie porównania wartości.</p>
+<p>W poniższym przykładzie wyrażenie <code>if()</code> sprawdza czy wartość obiektu <code>temperatura</code> jest wyższa niż 0.
+W przypadku, gdy ten warunek jest spełniony (czyli jest <code>TRUE</code>), wyświetlany jest tekst <code>&quot;Dodatnia&quot;</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">temperatura =<span class="st"> </span><span class="fl">5.4</span>
 <span class="cf">if</span> (temperatura <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {
   <span class="st">&quot;Dodatnia&quot;</span>
 }
 <span class="co">#&gt; [1] &quot;Dodatnia&quot;</span></code></pre>
+<p>W przeciwnym razie, gdy warunek nie jest spełniony (czyli ma wartość <code>FALSE</code>), kod wewnątrz warunku nie jest wykonywany.</p>
 <pre class="sourceCode r"><code class="sourceCode r">temperatura =<span class="st"> </span><span class="dv">-11</span>
 <span class="cf">if</span> (temperatura <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {
   <span class="st">&quot;Dodatnia&quot;</span>
@@ -327,7 +333,10 @@ Celem wyrażeń warunkowych jest wykonywanie różnego zadania w zależności od
 </div>
 <div id="warunki-zagniezdzone" class="section level2">
 <h2><span class="header-section-number">4.2</span> Warunki zagnieżdzone</h2>
-<p>Działanie wyrażenia <code>if</code> może być połączone z dodatkowymi wyrażeniami <code>else if</code> oraz <code>else</code>.</p>
+<p>Działanie wyrażenia <code>if</code> może być połączone z dodatkowymi wyrażeniami <code>else if</code> oraz <code>else</code>.
+Te dwa wyrażenia wymagają najpierw wywołania wyrażenia <code>if()</code>.
+Jeżeli warunek w wyrażeniu <code>if()</code> jest równy <code>TRUE</code> to wykonywany jest kod w nim zawarty, a następnie obliczenie jest kończone.
+W przypadku, gdy wyrażenie <code>if()</code> otrzyma wartość <code>FALSE</code>, to kod w nim zawarty nie jest wykonywany, a następuje przejście do kolejnego wyrażenia, np. <code>else if()</code> w poniższym przypadku.</p>
 <pre class="sourceCode r"><code class="sourceCode r">temperatura =<span class="st"> </span><span class="fl">8.8</span>
 <span class="cf">if</span> (temperatura <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {
   <span class="st">&quot;Dodatnia&quot;</span>
@@ -337,7 +346,8 @@ Celem wyrażeń warunkowych jest wykonywanie różnego zadania w zależności od
   <span class="st">&quot;Zero&quot;</span>
 }
 <span class="co">#&gt; [1] &quot;Dodatnia&quot;</span></code></pre>
-<!-- explain -->
+<p>Wyrażenie <code>else if()</code> różni się od <code>else</code> tym, że wymaga ono określenia jaki warunek ma być spełniony.
+W przypadku <code>else</code> wyliczane są wszystkie przypadki, które nie spełniają wcześniejszych warunków.</p>
 </div>
 <div id="operatory-porownania" class="section level2">
 <h2><span class="header-section-number">4.3</span> Operatory porównania</h2>
