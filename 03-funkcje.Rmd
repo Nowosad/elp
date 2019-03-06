@@ -3,15 +3,6 @@
 <!-- intro (co to) -->
 <!-- https://blog.rstudio.com/2019/02/06/rstudio-conf-2019-workshops/ -->
 
-## Algorytmy
-
-Algorytm to zbiór kroków powadzących do uzyskania określonego celu.
-Algorytmy można porównać do przepisu kucharskiego, w którym opisany jest szereg czynności aby uzyskać konkretną potrawę.
-Podobnie jak w przepisie kucharskim, algorytmy wymagają posiadania odpowiednich składników - danych wejściowych w o pewnej strukturze.
-
-Tworzenie nowych algorytmów często zaczyna się od narysowania schematu procedury działania lub też pseudokodu. 
-Kolejnym krokiem jest zapisanie tego algorytmu w wybranym języku lub językach programowania^[Łączenie różnych języków programowania jest wyjaśnione w rozdziale \@ref(lacznik)] w formie skryptu (sekcja \@ref(tworzenie-skryptow)) lub funkcji (sekcja \@ref(budowanie-funkcji)).
-
 ## Struktura funkcji
 
 ```{r, echo=FALSE}
@@ -169,6 +160,15 @@ stringr::str_sub("chronologia", start = 1, end = 6)
 
 <!-- overwhelmed by the number! -->
 <!-- https://juliasilge.com/blog/r-journal-navigating/ -->
+
+## Algorytmy
+
+Algorytm to zbiór kroków powadzących do uzyskania określonego celu.
+Algorytmy można porównać do przepisu kucharskiego, w którym opisany jest szereg czynności aby uzyskać konkretną potrawę.
+Podobnie jak w przepisie kucharskim, algorytmy wymagają posiadania odpowiednich składników - danych wejściowych w o pewnej strukturze.
+
+Tworzenie nowych algorytmów często zaczyna się od narysowania schematu procedury działania lub też pseudokodu. 
+Kolejnym krokiem jest zapisanie tego algorytmu w wybranym języku lub językach programowania^[Łączenie różnych języków programowania jest wyjaśnione w rozdziale \@ref(lacznik)] w formie skryptu (sekcja \@ref(tworzenie-skryptow)) lub funkcji (sekcja \@ref(budowanie-funkcji)).
 
 ## Tworzenie skryptów
 
