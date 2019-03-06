@@ -186,6 +186,11 @@ Po drugie można bezpośrednio zdefiniować z jakiego pakietu pochodzi konkretna
 stringr::str_sub("chronologia", start = 1, end = 6)
 ```
 
+```{block2 type="rmdinfo"}
+Operator `::` może być też pomocny w przypadku, gdy kilka pakietów ma funkcję o tej samej nazwie.
+Wówczas, aby kod został poprawnie wykonany, warto podać nie tylko nazwę funkcji ale też nazwę pakietu z jakiego ona pochodzi.
+```
+
 <!-- block - inaczej biblioteki, moduły, etc -->
 
 <!-- overwhelmed by the number! -->
