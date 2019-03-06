@@ -22,22 +22,41 @@ W efekcie działania funkcji otrzymano wynik - `246348.9` - który jest średni�
 
 ## Wbudowane funkcje
 
+R posiada wiele wbudowanych funkcji, które znacznie ułatwiają wykonywanie bardziej złożonych operacji.
+Pierwsze z funkcji, w tym `c()` zostały już poznane w sekcji \@ref(dzialania-na-obiektach).
+Ta funkcja pozwala na łączenie kolejnych obiektów rozdzielonych przecinkami.
+Poniższy obiekt, `x` jest w efekcie wektorem zawierającym trzy wartości `8.2`, `10.3` oraz `12.0`.
+
 ```{r}
 x = c(8.2, 10.3, 12.0)
 x
 ```
 
+Wyliczenie średniej z tych trzech wartości wymaga ich zsumowania, a następnie podzielenia uzyskanej wartości przez liczbę wartości.
+
 ```{r}
 (8.2 + 10.3 + 12.0) / 3
 ```
+
+W przypadku jednak, gdy chcemy dodać czwartą, piątą, itd. wartość należy zmieniać kod w co najmniej dwóch miejscach.
+Konieczne jest dodanie nowej wartości do zsumowania, a następnie zmianę wartości określającej liczbę elementów.
+
+Zamiast tych dwóch operacji, można wykonać tylko jedną zmianę w obiekcie `x`, a następnie przetworzyć go używając funkcji wbudowanych w R - `sum()` oraz `length()`.
+Pierwsza z nich sumuje wartości z wektora, druga natomiast zwraca liczbę elementów w wektorze.
 
 ```{r}
 sum(x) / length(x)
 ```
 
+Powyższy kod można też dalej uprościć, poprzez użycie wbudowanej w R funkcji do liczenia średniej - `mean()`.
+
 ```{r}
 mean(x)
 ```
+
+Jej użycie powoduje, że wystarczy wykonać tylko jedną zmianę w obiekcie `x`, aby uzyskać poprawny wynik, a dodatkowo napisanie tego obliczenia wymaga napisania znacznie krótszego kodu.
+
+Funkcje można używać w celu wyświetlenia oczekiwanego rezultatu, ale także, aby na podstawie wyniku funkcji tworzyć nowe obiekty, takie jak `y` poniżej.
 
 ```{r}
 y = mean(x)
