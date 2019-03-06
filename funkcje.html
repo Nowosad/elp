@@ -315,15 +315,27 @@ Pierwszy argument nazywa się <code>x</code> i przyjmuje on wektor numeryczny <c
 </div>
 <div id="wbudowane-funkcje" class="section level2">
 <h2><span class="header-section-number">3.2</span> Wbudowane funkcje</h2>
+<p>R posiada wiele wbudowanych funkcji, które znacznie ułatwiają wykonywanie bardziej złożonych operacji.
+Pierwsze z funkcji, w tym <code>c()</code> zostały już poznane w sekcji <a href="#dzialania-na-obiektach"><strong>??</strong></a>.
+Ta funkcja pozwala na łączenie kolejnych obiektów rozdzielonych przecinkami.
+Poniższy obiekt, <code>x</code> jest w efekcie wektorem zawierającym trzy wartości <code>8.2</code>, <code>10.3</code> oraz <code>12.0</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">c</span>(<span class="fl">8.2</span>, <span class="fl">10.3</span>, <span class="fl">12.0</span>)
 x
 <span class="co">#&gt; [1]  8.2 10.3 12.0</span></code></pre>
+<p>Wyliczenie średniej z tych trzech wartości wymaga ich zsumowania, a następnie podzielenia uzyskanej wartości przez liczbę wartości.</p>
 <pre class="sourceCode r"><code class="sourceCode r">(<span class="fl">8.2</span> <span class="op">+</span><span class="st"> </span><span class="fl">10.3</span> <span class="op">+</span><span class="st"> </span><span class="fl">12.0</span>) <span class="op">/</span><span class="st"> </span><span class="dv">3</span>
 <span class="co">#&gt; [1] 10.2</span></code></pre>
+<p>W przypadku jednak, gdy chcemy dodać czwartą, piątą, itd. wartość należy zmieniać kod w co najmniej dwóch miejscach.
+Konieczne jest dodanie nowej wartości do zsumowania, a następnie zmianę wartości określającej liczbę elementów.</p>
+<p>Zamiast tych dwóch operacji, można wykonać tylko jedną zmianę w obiekcie <code>x</code>, a następnie przetworzyć go używając funkcji wbudowanych w R - <code>sum()</code> oraz <code>length()</code>.
+Pierwsza z nich sumuje wartości z wektora, druga natomiast zwraca liczbę elementów w wektorze.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(x) <span class="op">/</span><span class="st"> </span><span class="kw">length</span>(x)
 <span class="co">#&gt; [1] 10.2</span></code></pre>
+<p>Powyższy kod można też dalej uprościć, poprzez użycie wbudowanej w R funkcji do liczenia średniej - <code>mean()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(x)
 <span class="co">#&gt; [1] 10.2</span></code></pre>
+<p>Jej użycie powoduje, że wystarczy wykonać tylko jedną zmianę w obiekcie <code>x</code>, aby uzyskać poprawny wynik, a dodatkowo napisanie tego obliczenia wymaga napisania znacznie krótszego kodu.</p>
+<p>Funkcje można używać w celu wyświetlenia oczekiwanego rezultatu, ale także, aby na podstawie wyniku funkcji tworzyć nowe obiekty, takie jak <code>y</code> poniżej.</p>
 <pre class="sourceCode r"><code class="sourceCode r">y =<span class="st"> </span><span class="kw">mean</span>(x)
 y
 <span class="co">#&gt; [1] 10.2</span></code></pre>
