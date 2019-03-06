@@ -216,6 +216,7 @@ Polskie książki:
 - https://helion.pl/ksiazki/jezyk-r-kompletny-zestaw-narzedzi-dla-analitykow-danych-hadley-wickham-garrett-grolemund,jezrko.htm#format/d [@wickham2016r]
 - https://helion.pl/ksiazki/wydajne-programowanie-w-r-praktyczny-przewodnik-po-lepszym-programowaniu-gillespie-colin-lovelace-robin,a_0491.htm#format/d [@gillespie2016efficient]
 - https://bookdown.org/nowosad/Geostatystyka/ [@nowosadjakubGeostatystyka2019]
+- http://www.enwo.pl/przetwarzanie/index.html [@czerneckiMetodyPrzetwarzaniaDanych2018]
 
 Angielskie książki:
 
