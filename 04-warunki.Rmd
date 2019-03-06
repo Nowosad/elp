@@ -68,6 +68,9 @@ W przypadku `else` wyliczane są wszystkie przypadki, które nie spełniają wcz
 
 ## Operatory porównania
 
+W tabeli \@ref(tab:operators) można znaleźć listę podstawowych operatorów porównania.
+Ich celem jest sprawdzanie pewnego warunku i zwrócenie wartości `TRUE` lub `FALSE`.
+
 ```{r operators, echo=FALSE}
 library(tibble)
 operators = c("==", "!=", "%in%", ">, <", ">=, <=")
@@ -78,6 +81,19 @@ knitr::kable(tibble(Operator = operators, Wyjaśnienie = operators_exp),
              booktabs = TRUE)
 ```
 
+Wyrażenie `if()` oczekuje wektora logiczego o długości jeden. 
+Często jednak efektem porównania może być wektor o większej długości.
+Przykładowo, porównanie operatorem `==` daje w wyniku wektor o długości trzy, a porówanie z użyciem `%in%` skutkuje wektorem o długości jeden.
+
+```{r}
+x = 1
+y = c(1, 2, 3)
+x == y
+x %in% y
+```
+
+Sterowanie tym, żeby uzyskany wynik miał oczekiwaną długość jeden może się odbywać też z pomocą operatorów logicznych i funkcji pomocniczych (tabela \@ref(tab:operators2)).
+
 ```{r operators2, echo=FALSE}
 operators2 = c("!", "&&", "||", "all", "any")
 operators_exp2 = c("Negacja (nie)", "Koniunkcja (i)", "Alternatywa (lub)", "Wszystkie", "Którykolwiek")
@@ -86,8 +102,26 @@ knitr::kable(tibble(Operator = operators2, Wyjaśnienie = operators_exp2),
              booktabs = TRUE)
 ```
 
-<!-- block about & and | -->
-<!-- https://stackoverflow.com/questions/6558921/boolean-operators-and -->
+Pozwalają one na sprawdzenie czy wszystkie (`all()`) lub którykolwiek (`any()`) z elementów obiektu przyjmuje wartość `TRUE`.
+
+```{r}
+x = 1
+y = c(1, 2, 3)
+all(x == y)
+any(x == y)
+```
+
+Możliwe jest też łączenie bardziej złożonych zapytań używając operatora "i" (`&&`) oraz operatora "lub" (`||`).
+
+```{r}
+x = 1
+y = c(1, 2, 3)
+z = 4
+(x %in% y) || !(z %in% y)
+```
+
+Powyżej nastąpiło sprawdzenie czy element z obiektu `x` znajduje się w obiekcie `y`, a następnie czy element z obiektu `z` nie znajduje się w obiekcie `y`.
+Po wykonaniu ich sprawdzeń nastąpiło ich połączenie używając operatora `||`, który daje wartość `TRUE`, gdy chociaż jedno z zapytań jest prawdziwe.
 
 ```{block2 type="rmdinfo"}
 W R istnieją dwa dodatkowe operatory logiczne `&` i `|`, które są zwektoryzowaną wersją operatorów `&&` i `||`.
@@ -97,6 +131,11 @@ Dodatkowo, to one są zazwyczaj używane w wyrażeniach warunkowych.
 ```
 
 ## Wyrażenia warunkowe w funkcjach
+
+Wyrażenia warunkowe są często używanym elementem przy tworzeniu funkcji.
+Pozwalają one na nie tylko na określanie tego w jaki sposób dana funkcja zadziała, ale też pełnią rolę w sprawdzaniu czy do funkcji zostały wprowadzone poprawne argumenty.
+
+
 
 ```{r}
 pogoda = function(temperatura){
