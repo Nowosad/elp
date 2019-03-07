@@ -118,8 +118,6 @@ seq(1, 12, by = 2)
 #> [1]  1  3  5  7  9 11
 ```
 
-<!-- block - nazwa tekstem -->
-
 <!-- operatory statytyczne -->
 
 ## Działania na wektorach
@@ -184,10 +182,9 @@ temperatura = c(8.2, 10.3, 12.0)
 
 Czwartego dnia twój termometr się popsuł i nie można było wykonać pomiaru.
 Co należałoby w takim razie zrobić?
-
-- Możnaby pominąć ten pomiar, naprawić termometr i wykonać pomiar kolejnego dnia. 
+Możnaby pominąć ten pomiar, naprawić termometr i wykonać pomiar kolejnego dnia. 
 Wówczas jednak mielibyśmy cztery wartości dla pięciu dni.
-- Inną możliwą opcją byłoby użycie wartości, która stałaby się kodem wartości brakujących, np. 999.
+Inną możliwą opcją byłoby użycie wartości, która stałaby się kodem wartości brakujących, np. 999.
 Problemem tego rozwiązania jest to w jaki sposób należałoby, np. wyliczyć średnią w tym obiekcie.
 
 
@@ -195,17 +192,54 @@ Problemem tego rozwiązania jest to w jaki sposób należałoby, np. wyliczyć �
 temperatura = c(8.2, 10.3, 12.0, 999)
 ```
 
-- Najlepszą opcją byłoby wykorzystanie wbudowanego oznaczenia wartości brakujących w R - `NA`.
+Najlepszą opcją byłoby wykorzystanie wbudowanego oznaczenia wartości brakujących w R - `NA`.
 
 
 ```r
 temperatura = c(8.2, 10.3, 12.0, NA)
 ```
 
-<!-- operacje na NA -->
-<!-- `is.na()` -->
-<!-- na.rm -->
+Zachowanie zmiennej `NA` (ang. *Not Available*) jest bardzo intuicyjne.
+Przykładowo, jeżeli nie znamy jakiejś wartości to jeżeli dodamy do niej 2 to również nie wiemy jaki mamy wynik.
+
+
+```r
+NA + 2
+#> [1] NA
+5 * NA
+#> [1] NA
+```
+
+Podobnie będzie w sytuacji, gdy chcemy wyliczyć średnią na podstawie wektora, który zawiera wartość `NA`.
+
+
+```r
+mean(temperatura)
+#> [1] NA
+```
+
+W takich przypadkach najpierw należałoby usunąć wartość `NA` a następnie wyliczyć średnią z pozostałych wartości w tym wektorze.
+Aby ułatwić taką operację w wielu funkcjach istnieje argument `na.rm`.
+W momencie, gdy jest on ustalony na `TRUE`, to wszystkie przypadki `NA` są usuwane na potrzeby wyliczania średniej.
+
+
+```r
+mean(temperatura, na.rm = TRUE)
+#> [1] 10.2
+```
+
+Do sprawdzenia czy w wektorze znajduje się wartość `NA` służy funkcja `is.na()`.
+
+
+```r
+is.na(temperatura)
+#> [1] FALSE FALSE FALSE  TRUE
+```
+
 <!-- NULL -->
+<!-- inf -->
+<!-- NaN -->
+
 
 ## Wydzielanie 
 
