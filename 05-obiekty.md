@@ -51,10 +51,10 @@ wek_zna
 #> [1] "kot"  "pies"
 ```
 
-<!--ref to style-->
 Dodatkowo, istnieją dwa dodatkowe, rzadziej spotykane typy wektorów - czynnikowy (ang. *factor*) i dat (ang. *date*) (sekcja \@ref(facate)).
-<!--ref-->
 
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Wiele języków programowania posiada zmienne skalarne (tzw. skalary), czyli takie które mogą przyjmować tylko jedną wartość.
+W R one nie występują, zamiast nich stosowane są wektory o długości jeden.</div>\EndKnitrBlock{rmdinfo}
 
 ## Właściwości wektorów
 
