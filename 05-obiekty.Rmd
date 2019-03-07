@@ -7,8 +7,6 @@ Więcej informacji na temat podstawowych typów obiektów można znaleźć w ro
 Obiekty w R można podzielić na proste (homogeniczne) i złożone (heterogeniczne). 
 Do podstawowych prostych obiektów należą wektory (ang. *vector*) i macierze (ang. *matrix*), natomiast listy (ang. *list*) i ramki danych (ang. *data frame*) to obiekty złożone.
 
-<!-- `str()` -->
-
 W tym rozdziale skupimy się na wektorach.
 Pozostałe podstawowe typy obiektów są omówione w rozdziale \@ref(zlozone-obiekty).
 
@@ -45,12 +43,9 @@ wek_zna
 ```
 
 <!--ref to style-->
-Dodatkowo, istnieją dwa dodatkowe, rzadziej spotykane typy wektorów - czynnikowy (ang. *factor*) i dat (ang. *date*).
+Dodatkowo, istnieją dwa dodatkowe, rzadziej spotykane typy wektorów - czynnikowy (ang. *factor*) i dat (ang. *date*) (sekcja \@ref(facate)).
 <!--ref-->
 
-## Działania na obiektach (wektoryzacja)
-
-<!-- Zmienna skalarna (block) -->
 
 ## Właściwości wektorów
 
@@ -99,6 +94,49 @@ seq(1, 12, by = 2)
 <!-- block - nazwa tekstem -->
 
 <!-- operatory statytyczne -->
+
+## Działania na wektorach
+
+Wiele podstawowych operacji w R jest zwektoryzowana. 
+Przykładowo, możliwe jest pomnożenie kolejnych elementów jednego wektora przez kolejne elementy drugiego wektora.
+
+```{r}
+a = c(1, 2, 3)
+b = c(3, 5, 10)
+a * b
+```
+
+Kod zapisany w powyższy sposób zajmuje niewiele miejsca i jest łatwy do odczytania.
+Alternatywnie możnaby ten problem rozbić na podelementy i je wymnożyć.
+
+```{r}
+a1 = 1
+a2 = 2
+a3 = 3
+b1 = 3
+b2 = 5
+b3 = 10
+a1 * b1
+a2 * b2
+a3 * b3
+```
+
+Jak można szybko zaobserwować, mnożenie kolejnych elementów w ten sposób wymaga zapisania znacznie więcej kodu i jest trudniejsze do odczytania.
+Jest jeszcze trzecia możliwość użycie pętli (rozdział \@ref(petle)).
+
+```{r}
+y = numeric(length = 3)
+for (i in 1:3){
+  y[i] = a[i] * b[i]
+}
+y
+```
+
+Stworzony kod zajmuje mniej miejsca, ale nadal nie jest on bardzo łatwy do szybkiego zrozumienia.
+
+Wektoryzacja ma też inną zaletę - obliczenia wykonywane w ten sposób są szybkie.
+W przypadku stosowania niektórych operacji, np. mnożenia czy dodawania, R wykorzystuje w tle (bez wiedzy użytkownika) zoptymalizowane funkcje zapisane w języku C lub Fortran.
+Więcej informacji na temat wektoryzowania kodu można znaleźć w rozdziale \@ref(petle).
 
 ## Brakujące wartości
 
@@ -223,7 +261,7 @@ c(FALSE, 0L, 3.1)
 c(FALSE, 0L, 3.1, "kot")
 ```
 
-## ...
+## ... {#facate}
 
 <!-- factor i date -->
 <!-- https://rstudio-education.github.io/hopr/r-objects.html -->
