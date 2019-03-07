@@ -3,10 +3,6 @@
 
 Więcej informacji na temat podstawowych typów obiektów można znaleźć w rozdziale ["Vectors"](https://adv-r.hadley.nz/vectors-chap.html) książki Advanced R [@wickham2014advanced].
 
-## Działania na obiektach (wektoryzacja)
-
-<!-- Zmienna skalarna (block) -->
-
 ## Typy obiektów
 
 Obiekty w R można podzielić na proste (homogeniczne) i złożone (heterogeniczne). 
@@ -60,6 +56,10 @@ wek_zna
 <!--ref to style-->
 Dodatkowo, istnieją dwa dodatkowe, rzadziej spotykane typy wektorów - czynnikowy (ang. *factor*) i dat (ang. *date*).
 <!--ref-->
+
+## Działania na obiektach (wektoryzacja)
+
+<!-- Zmienna skalarna (block) -->
 
 ## Właściwości wektorów
 
