@@ -501,6 +501,11 @@ temperatura
 <div id="aczenie-podstawowych-typow-obiektow" class="section level2">
 <h2><span class="header-section-number">5.10</span> Łączenie podstawowych typów obiektów</h2>
 <!-- tekst -->
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(temperatura, temperatura)
+<span class="co">#&gt; Poniedziałek       Wtorek        Środa     Czwartek Poniedziałek </span>
+<span class="co">#&gt;          8.2         10.3         12.0           NA          8.2 </span>
+<span class="co">#&gt;       Wtorek        Środa     Czwartek </span>
+<span class="co">#&gt;         10.3         12.0           NA</span></code></pre>
 <p>Właściwością wektora jest to, że może on przyjmować tylko jeden typ.
 Próba stworzenia obiektu składającego się z wielu typów spowoduje wymuszenie (ang. <em>coercion</em>) do najbliższego możliwego typu.
 Odbywa się to zgodnie z zasadą: logiczny -&gt; liczba całkowita -&gt; liczba zmiennoprzecinkowa -&gt; znakowy.</p>
