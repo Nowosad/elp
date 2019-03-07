@@ -266,11 +266,6 @@ temperatura[0]
 ## Łączenie podstawowych typów obiektów
 
 <!-- tekst -->
-
-```{r}
-c(temperatura, temperatura)
-```
-
 Właściwością wektora jest to, że może on przyjmować tylko jeden typ.
 Próba stworzenia obiektu składającego się z wielu typów spowoduje wymuszenie (ang. *coercion*) do najbliższego możliwego typu.
 Odbywa się to zgodnie z zasadą: logiczny -> liczba całkowita -> liczba zmiennoprzecinkowa -> znakowy.
