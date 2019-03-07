@@ -82,7 +82,6 @@ y
 Język R przechowuje i przetwarza wszystkie obiekty w pamięci komputera (RAM).
 Wpływa to na zwiększoną wydajność i elastyczność obliczeń, ale jednocześnie powoduje to ograniczenie wielkości obiektów na jakich można pracować.
 Istnieje równocześnie [szereg strategii](https://bookdown.org/rdpeng/RProgDA/working-with-large-datasets.html) jak postępować z większymi zbiorami danych, które nie mieszczą się w RAMie [@pengMasteringSoftwareDevelopment2017].
-<!-- add reference -->
 
 ### Działania na obiektach
 
