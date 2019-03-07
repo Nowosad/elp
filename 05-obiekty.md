@@ -206,7 +206,7 @@ Przykładowo, jeżeli nie znamy jakiejś wartości to jeżeli dodamy do niej 2 t
 ```r
 NA + 2
 #> [1] NA
-5 * NA
+5 > NA
 #> [1] NA
 ```
 
@@ -236,10 +236,11 @@ is.na(temperatura)
 #> [1] FALSE FALSE FALSE  TRUE
 ```
 
-<!-- NULL -->
-<!-- inf -->
-<!-- NaN -->
-
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">R posiada też kilka dodatkowych specjalnych obiektów, takich jak `NULL`, `NaN`, `Inf` oraz `-Inf`.
+`NULL` ma długość zero i nie posiada żadnych atrybutów. 
+Może on posłużyć np. do usuwania kolumn w ramkach danych.
+`NaN` (ang. *Not a Number*) oznacza wartość, która nie jest zdefiniowaną lub nie może być reprezentowana w inny sposób, przykładowo `0/0`.
+`Inf` i `-Inf` (ang. *Infinity*) jest wynikiem obliczeń, które dały bardzo dużą wartość dodatną lub ujemną, przykładowo `9^999`.</div>\EndKnitrBlock{rmdinfo}
 
 ## Wydzielanie 
 
@@ -249,11 +250,11 @@ Więcej na temat wydzielania innych obiektów można znaleźć w rozdziale \@re
 
 Wydzielanie wektorów używając operatora `[]` może odbywać się używając jednego z poniższych zapytań:
 
-1. Na podstawie pozycji
-2. Na podstawie wektora logicznego
-3. Na podstawie nazwy
-4. Używając elementu pustego
-5. Używając zera
+1. Na podstawie pozycji.
+2. Na podstawie wektora logicznego.
+3. Na podstawie nazwy.
+4. Używając elementu pustego.
+5. Używając zera.
 
 <!-- na podstawie pozycji -->
 
@@ -327,16 +328,6 @@ temperatura[0]
 ## Łączenie podstawowych typów obiektów
 
 <!-- tekst -->
-
-
-```r
-c(temperatura, temperatura)
-#> Poniedziałek       Wtorek        Środa     Czwartek Poniedziałek 
-#>          8.2         10.3         12.0           NA          8.2 
-#>       Wtorek        Środa     Czwartek 
-#>         10.3         12.0           NA
-```
-
 Właściwością wektora jest to, że może on przyjmować tylko jeden typ.
 Próba stworzenia obiektu składającego się z wielu typów spowoduje wymuszenie (ang. *coercion*) do najbliższego możliwego typu.
 Odbywa się to zgodnie z zasadą: logiczny -> liczba całkowita -> liczba zmiennoprzecinkowa -> znakowy.
@@ -365,7 +356,9 @@ c(FALSE, 0L, 3.1, "kot")
 #> [1] "FALSE" "0"     "3.1"   "kot"
 ```
 
-## ... {#facate}
+## Wektory czynnikowe {#facate}
+
+## Wektory dat
 
 <!-- factor i date -->
 <!-- https://rstudio-education.github.io/hopr/r-objects.html -->
