@@ -1,9 +1,6 @@
 
 # Powtarzanie {#petle}
 
-## Wektoryzacja
-
-
 ## Pętla for
 
 
@@ -101,9 +98,10 @@ https://adv-r.hadley.nz/control-flow.html#loops -->
 <!--     pętla for stosowana w sytuacji, gdy ilość wykonań kodu jest znana przed rozpoczęciem działania pętli -->
 <!--     pętla while stosowana gdy ilość wykonań nie jest znana przed zakończeniem działania pętli -->
 
-
 ## Programowanie funkcyjne
 
+<!-- wektoryzacja-->
+<!-- http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html -->
 <!-- *apply -->
 
 ## Zadania
