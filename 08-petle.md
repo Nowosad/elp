@@ -3,6 +3,8 @@
 
 ## Pętla for
 
+<!-- https://rpubs.com/daspringate/vectorisation -->
+
 
 ```r
 for (element in wektor) {
@@ -102,6 +104,7 @@ https://adv-r.hadley.nz/control-flow.html#loops -->
 
 <!-- wektoryzacja-->
 <!-- http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html -->
+<!-- http://alyssafrazee.com/2014/01/29/vectorization.html -->
 <!-- *apply -->
 
 ## Zadania
