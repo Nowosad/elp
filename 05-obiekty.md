@@ -500,7 +500,7 @@ unclass(stara_data)
 ```
 
 W R istnieją również wbudowane reprezentacje dat i godzin (inaczej zwane data-czas, ang. *date-times*).
-Najczęściej używaną jest klasa `POSIXct`, która jest wektorem przedstawiającym liczbę sekund of 1970-01-01.
+Najczęściej używaną jest klasa `POSIXct`, która jest wektorem przedstawiającym liczbę sekund of 1970-01-01.^[Wyświetlenie aktualnego czasu jest możliwe używając funkcji `Sys.time()`.]
 
 
 ```r

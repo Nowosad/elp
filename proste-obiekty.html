@@ -592,7 +592,7 @@ daty
 <span class="kw">unclass</span>(stara_data)
 <span class="co">#&gt; [1] -21082</span></code></pre>
 <p>W R istnieją również wbudowane reprezentacje dat i godzin (inaczej zwane data-czas, ang. <em>date-times</em>).
-Najczęściej używaną jest klasa <code>POSIXct</code>, która jest wektorem przedstawiającym liczbę sekund of 1970-01-01.</p>
+Najczęściej używaną jest klasa <code>POSIXct</code>, która jest wektorem przedstawiającym liczbę sekund of 1970-01-01.<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a></p>
 <pre class="sourceCode r"><code class="sourceCode r">czas =<span class="st"> </span><span class="kw">as.POSIXct</span>(<span class="st">&quot;2011-02-02 10:33&quot;</span>, <span class="dt">tz =</span> <span class="st">&quot;CET&quot;</span>)
 czas
 <span class="co">#&gt; [1] &quot;2011-02-02 10:33:00 CET&quot;</span></code></pre>
@@ -625,7 +625,7 @@ R posiada też dodatkowe klasy specjalne, np:
 <div id="zmiana-typow-obiektow" class="section level2">
 <h2><span class="header-section-number">5.13</span> Zmiana typów obiektów</h2>
 <!--rzutowanie??-->
-<p>Do zmiany typu obiektu służą funkcje <code>as.logical()</code>, <code>as.integer()</code>, <code>as.double()</code>, oraz <code>as.character()</code><a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>.</p>
+<p>Do zmiany typu obiektu służą funkcje <code>as.logical()</code>, <code>as.integer()</code>, <code>as.double()</code>, oraz <code>as.character()</code><a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.logical</span>(<span class="kw">c</span>(<span class="st">&quot;FALSE&quot;</span>, <span class="st">&quot;TRUE&quot;</span>)) <span class="co"># znakowy na logiczny</span>
 <span class="co">#&gt; [1] FALSE  TRUE</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.integer</span>(<span class="kw">c</span>(<span class="st">&quot;3&quot;</span>, <span class="st">&quot;2&quot;</span>)) <span class="co"># znakowy na liczba całkowita </span>
@@ -652,7 +652,8 @@ R posiada też dodatkowe klasy specjalne, np:
 <li id="fn26"><p>Do sprawdzania jakiego typu jest wektor służy funkcja <code>typeof()</code>.<a href="proste-obiekty.html#fnref26" class="footnote-back">↩</a></p></li>
 <li id="fn27"><p>Liczby zmiennoprzecinkowe mogą być też reprezentowane poprzez notację naukową, np. 11111.2 może być zapisane jako 1.11112e4, a 0.00021 jako 2.1e-4.<a href="proste-obiekty.html#fnref27" class="footnote-back">↩</a></p></li>
 <li id="fn28"><p><a href="https://en.wikipedia.org/wiki/Unix_time" class="uri">https://en.wikipedia.org/wiki/Unix_time</a><a href="proste-obiekty.html#fnref28" class="footnote-back">↩</a></p></li>
-<li id="fn29"><p>Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje <code>is.logical()</code>, <code>is.integer()</code>,<code>is.double()</code>, oraz <code>is.character()</code>.<a href="proste-obiekty.html#fnref29" class="footnote-back">↩</a></p></li>
+<li id="fn29"><p>Wyświetlenie aktualnego czasu jest możliwe używając funkcji <code>Sys.time()</code>.<a href="proste-obiekty.html#fnref29" class="footnote-back">↩</a></p></li>
+<li id="fn30"><p>Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje <code>is.logical()</code>, <code>is.integer()</code>,<code>is.double()</code>, oraz <code>is.character()</code>.<a href="proste-obiekty.html#fnref30" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
