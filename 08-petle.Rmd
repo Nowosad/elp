@@ -99,7 +99,7 @@ odleglosci_mile = c(0, 1, 10, 55, 160)
 mile_na_km(odleglosci_mile)
 ```
 
-## Pętle while i repeat
+## Pętla while 
 
 <!--     pętla for stosowana w sytuacji, gdy ilość wykonań kodu jest znana przed rozpoczęciem działania pętli -->
 <!--     pętle while i repeat są stosowana gdy ilość wykonań nie jest znana przed zakończeniem działania pętli -->
@@ -121,13 +121,9 @@ while (warunek){
 }
 ```
 
-```{r, eval=FALSE}
-
-
-```
-
-
 ### Przykład działania
+
+
 
 ### Zastosowanie w funkcjach
 
