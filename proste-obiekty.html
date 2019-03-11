@@ -191,9 +191,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.8" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie-i-przypisanie"><i class="fa fa-check"></i><b>5.8</b> Wydzielanie i przypisanie</a></li>
 <li class="chapter" data-level="5.9" data-path="proste-obiekty.html"><a href="proste-obiekty.html#modyfikowanie-obiektow"><i class="fa fa-check"></i><b>5.9</b> Modyfikowanie obiektów</a></li>
 <li class="chapter" data-level="5.10" data-path="proste-obiekty.html"><a href="proste-obiekty.html#aczenie-podstawowych-typow-obiektow"><i class="fa fa-check"></i><b>5.10</b> Łączenie podstawowych typów obiektów</a></li>
-<li class="chapter" data-level="5.11" data-path="proste-obiekty.html"><a href="proste-obiekty.html#fac"><i class="fa fa-check"></i><b>5.11</b> Wektory czynnikowe</a></li>
-<li class="chapter" data-level="5.12" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ate"><i class="fa fa-check"></i><b>5.12</b> Wektory dat</a></li>
-<li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zmiana-typow-obiektow"><i class="fa fa-check"></i><b>5.13</b> Zmiana typów obiektów</a></li>
+<li class="chapter" data-level="5.11" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zmiana-typow-obiektow"><i class="fa fa-check"></i><b>5.11</b> Zmiana typów obiektów</a></li>
+<li class="chapter" data-level="5.12" data-path="proste-obiekty.html"><a href="proste-obiekty.html#fac"><i class="fa fa-check"></i><b>5.12</b> Wektory czynnikowe</a></li>
+<li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ate"><i class="fa fa-check"></i><b>5.13</b> Wektory dat</a></li>
 <li class="chapter" data-level="5.14" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zadania-4"><i class="fa fa-check"></i><b>5.14</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a><ul>
@@ -333,7 +333,7 @@ wek_zmi
 <pre class="sourceCode r"><code class="sourceCode r">wek_zna =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>)
 wek_zna
 <span class="co">#&gt; [1] &quot;kot&quot;  &quot;pies&quot;</span></code></pre>
-<p>Dodatkowo, istnieją dwa dodatkowe, rzadziej spotykane typy wektorów - czynnikowy (ang. <em>factor</em>) i dat (ang. <em>date</em>) (sekcje <a href="proste-obiekty.html#fac">5.11</a> i <a href="proste-obiekty.html#ate">5.12</a>).</p>
+<p>Dodatkowo, istnieją dwa dodatkowe, rzadziej spotykane typy wektorów - czynnikowy (ang. <em>factor</em>) i dat (ang. <em>date</em>) (sekcje <a href="proste-obiekty.html#fac">5.12</a> i <a href="proste-obiekty.html#ate">5.13</a>).</p>
 
 <div class="rmdinfo">
 Wiele języków programowania posiada zmienne skalarne (tzw. skalary), czyli takie które mogą przyjmować tylko jedną wartość.
@@ -531,8 +531,21 @@ Odbywa się to zgodnie z zasadą: logiczny -&gt; liczba całkowita -&gt; liczba 
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(<span class="ot">FALSE</span>, 0L, <span class="fl">3.1</span>, <span class="st">&quot;kot&quot;</span>)
 <span class="co">#&gt; [1] &quot;FALSE&quot; &quot;0&quot;     &quot;3.1&quot;   &quot;kot&quot;</span></code></pre>
 </div>
+<div id="zmiana-typow-obiektow" class="section level2">
+<h2><span class="header-section-number">5.11</span> Zmiana typów obiektów</h2>
+<!--rzutowanie??-->
+<p>Do zmiany typu obiektu służą funkcje <code>as.logical()</code>, <code>as.integer()</code>, <code>as.double()</code>, oraz <code>as.character()</code><a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.logical</span>(<span class="kw">c</span>(<span class="st">&quot;FALSE&quot;</span>, <span class="st">&quot;TRUE&quot;</span>)) <span class="co"># znakowy na logiczny</span>
+<span class="co">#&gt; [1] FALSE  TRUE</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.integer</span>(<span class="kw">c</span>(<span class="st">&quot;3&quot;</span>, <span class="st">&quot;2&quot;</span>)) <span class="co"># znakowy na liczba całkowita </span>
+<span class="co">#&gt; [1] 3 2</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.double</span>(<span class="kw">c</span>(3L, 2L)) <span class="co"># liczba całkowita na liczba zmiennoprzecinkowa</span>
+<span class="co">#&gt; [1] 3 2</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.character</span>(<span class="kw">c</span>(3L, 2L)) <span class="co"># liczba całkowita na znakowy</span>
+<span class="co">#&gt; [1] &quot;3&quot; &quot;2&quot;</span></code></pre>
+</div>
 <div id="fac" class="section level2">
-<h2><span class="header-section-number">5.11</span> Wektory czynnikowe</h2>
+<h2><span class="header-section-number">5.12</span> Wektory czynnikowe</h2>
 <!-- factor i date -->
 <!-- https://rstudio-education.github.io/hopr/r-objects.html -->
 <pre class="sourceCode r"><code class="sourceCode r">tekst =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Poznań&quot;</span>, <span class="st">&quot;Kraków&quot;, &quot;</span>Warszawa<span class="st">&quot;, &quot;</span>Poznań<span class="st">&quot;)</span>
@@ -567,7 +580,7 @@ tekst2
 <span class="co">#&gt; [1] &quot;Poznań&quot;   &quot;Kraków&quot;   &quot;Warszawa&quot; &quot;Poznań&quot;</span></code></pre>
 </div>
 <div id="ate" class="section level2">
-<h2><span class="header-section-number">5.12</span> Wektory dat</h2>
+<h2><span class="header-section-number">5.13</span> Wektory dat</h2>
 <p>R ma wbudowaną reprezentację dat w postaci klasy <code>Date</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">dzis =<span class="st"> </span><span class="kw">Sys.Date</span>()
 dzis
@@ -582,7 +595,7 @@ dzis
 <span class="co">#&gt; [1] &quot;Date&quot;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unclass</span>(dzis)
 <span class="co">#&gt; [1] 17966</span></code></pre>
-<p>Powyższa wartość, 1.79710^{4}, oznacza liczbę dni od 1970-01-01.<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a></p>
+<p>Powyższa wartość, 1.79710^{4}, oznacza liczbę dni od 1970-01-01.<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a></p>
 <p>Tworzenie wektora dat odbywa się używając funkcji <code>as.Date()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">daty =<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">c</span>(<span class="st">&quot;2011-02-02&quot;</span>, <span class="st">&quot;2011-02-03&quot;</span>))
 daty
@@ -592,7 +605,7 @@ daty
 <span class="kw">unclass</span>(stara_data)
 <span class="co">#&gt; [1] -21082</span></code></pre>
 <p>W R istnieją również wbudowane reprezentacje dat i godzin (inaczej zwane data-czas, ang. <em>date-times</em>).
-Najczęściej używaną jest klasa <code>POSIXct</code>, która jest wektorem przedstawiającym liczbę sekund of 1970-01-01.<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a></p>
+Najczęściej używaną jest klasa <code>POSIXct</code>, która jest wektorem przedstawiającym liczbę sekund of 1970-01-01.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a></p>
 <pre class="sourceCode r"><code class="sourceCode r">czas =<span class="st"> </span><span class="kw">as.POSIXct</span>(<span class="st">&quot;2011-02-02 10:33&quot;</span>, <span class="dt">tz =</span> <span class="st">&quot;CET&quot;</span>)
 czas
 <span class="co">#&gt; [1] &quot;2011-02-02 10:33:00 CET&quot;</span></code></pre>
@@ -622,21 +635,60 @@ R posiada też dodatkowe klasy specjalne, np:
 </div>
 
 </div>
-<div id="zmiana-typow-obiektow" class="section level2">
-<h2><span class="header-section-number">5.13</span> Zmiana typów obiektów</h2>
-<!--rzutowanie??-->
-<p>Do zmiany typu obiektu służą funkcje <code>as.logical()</code>, <code>as.integer()</code>, <code>as.double()</code>, oraz <code>as.character()</code><a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.logical</span>(<span class="kw">c</span>(<span class="st">&quot;FALSE&quot;</span>, <span class="st">&quot;TRUE&quot;</span>)) <span class="co"># znakowy na logiczny</span>
-<span class="co">#&gt; [1] FALSE  TRUE</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.integer</span>(<span class="kw">c</span>(<span class="st">&quot;3&quot;</span>, <span class="st">&quot;2&quot;</span>)) <span class="co"># znakowy na liczba całkowita </span>
-<span class="co">#&gt; [1] 3 2</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.double</span>(<span class="kw">c</span>(3L, 2L)) <span class="co"># liczba całkowita na liczba zmiennoprzecinkowa</span>
-<span class="co">#&gt; [1] 3 2</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.character</span>(<span class="kw">c</span>(3L, 2L)) <span class="co"># liczba całkowita na znakowy</span>
-<span class="co">#&gt; [1] &quot;3&quot; &quot;2&quot;</span></code></pre>
-</div>
 <div id="zadania-4" class="section level2">
 <h2><span class="header-section-number">5.14</span> Zadania</h2>
+<ol style="list-style-type: decimal">
+<li>Wykonujesz trzy razy dziennie (o godzinie 7:00, 15:00 i 23:00) pomiar temperatury.
+W ostatnich dwóch dniach (2019-03-11 i 2019-03-12) pomierzone wartości to 0, 5,2, 3,9, 4,1, 8,7, 5,3 stopni Celsjusza.
+Stwórz nowy wektor <code>pomiary</code> zawierający te wartości.</li>
+<li>Nazwij kolejne elementy tego wektora używając kolejnych liter alfabetu.</li>
+<li>Pomyśl jakie właściwości ma wektor <code>pomiary</code> - jaki ma typ, jaką ma długość, jakie ma atrybuty?
+Jeżeli jesteś przekonany co do odpowiedzi to sprawdź to pisząc odpowiedni kod.</li>
+<li>Znajdź i wyświetl wartość <code>4.1</code> w wektorze <code>pomiary</code> używając kilku różnych sposobów wydzielania.
+Ile możliwości udało się Tobie znaleźć?</li>
+<li>Znajdź automatycznie położenie najwyższej wartości wektora <code>pomiary</code> i na jej podstawie stwórz nowy obiekt <code>pomiary_max</code>.</li>
+<li>Wydziel wszystkie pomiary równe i niższe niż 5 stopni Celsjusza. Na ich podstawie stwórz nowy obiekt <code>pomiary_n5</code>.
+<!-- 7) przeskaluj wartosci --></li>
+<li>Inna osoba również wykonywała pomiary temperatury w tym samym czasie.
+Jej pomierzone wartości to -1.1, 4,2, 2,4, 3,1, 7,1, 4,2 stopni Celsjusza.
+Dodaj te wartości do obiektu <code>pomiary</code>.</li>
+<li>Stwórz nowy wektor <code>nazwy_stacji</code> zawierający nazwę Twojej stacji pomiarowej (<code>&quot;Punkt 31&quot;</code>) oraz stacji drugiej osoby (<code>&quot;Stacja Thule&quot;</code>), którego długość ma być równa długości wektora <code>pomiary</code>.
+Wektor <code>nazwy_stacji</code> powinien być klasy czynnikowej.</li>
+<li>Stwórz nowy wektor <code>daty_pomiarow</code> zawierający rok, miesiąc i dzień pomiarów w wektorze <code>pomiary</code>.</li>
+<li>Stwórz nowy wektor <code>czas_pomiarow</code> zawierający datę i czas pomiarów w wektorze <code>pomiary</code>.
+Zdefiniuj też odpowiednią strefę czasową.</li>
+<li>Stwórz nowy wektor <code>id_pomiarow</code> zawierający kolejne liczby całkowite od 1 do liczby pomiarów w wektorze <code>pomiary</code>.</li>
+<li>Zastanów się (bez wykonywania) co jest efektem działania poniższego kodu.
+Kiedy taka operacja mogłaby być konieczna?</li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r">pomiary[<span class="dv">3</span>] =<span class="st"> </span><span class="fl">3.3</span></code></pre>
+<ol start="13" style="list-style-type: decimal">
+<li>Zastanów się (bez wykonywania) co jest efektem działania poniższego kodu.
+Kiedy taka operacja mogłaby być konieczna?</li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r">pomiary[pomiary <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span>] =<span class="st"> </span><span class="ot">NA</span></code></pre>
+<ol start="14" style="list-style-type: decimal">
+<li>Zastanów się (bez wykonywania) co jest efektem działania poniższego kodu.</li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r">wartosci1 =<span class="st"> </span><span class="kw">as.character</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>))
+<span class="kw">mean</span>(wartosci1)</code></pre>
+<ol start="15" style="list-style-type: decimal">
+<li>Zastanów się (bez wykonywania) co jest efektem działania poniższego kodu.</li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r">wartosci2 =<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="st">&quot;trzy&quot;</span>, <span class="dv">5</span>))
+wartosci2
+<span class="kw">mean</span>(wartosci2)</code></pre>
+<ol start="16" style="list-style-type: decimal">
+<li>Wykonaj poniższą funkcję.
+Następnie wydziel nowy wektor <code>pomiary2</code>, który nie zawiera wartości <code>NA</code>.</li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r">pomiary[pomiary <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span>] =<span class="st"> </span><span class="ot">NA</span></code></pre>
+<ol start="17" style="list-style-type: decimal">
+<li>Trzecia osoba również wykonywała pomiary temperatury w tym samym czasie.
+Przesłała ona Tobie taki wektor - <code>c(-5.2, 3.0, 1.1, &quot;zaspałem&quot;, 6.4, 2.2)</code>.
+Jakiej klasy jest ten wektor a jaka powinna być jego klasa, aby możliwe było wykonywanie na niej obliczeń, np. wyliczanie średniej?
+Jak to można uzyskać?</li>
+</ol>
 
 </div>
 </div>
@@ -651,9 +703,9 @@ R posiada też dodatkowe klasy specjalne, np:
 <ol start="26">
 <li id="fn26"><p>Do sprawdzania jakiego typu jest wektor służy funkcja <code>typeof()</code>.<a href="proste-obiekty.html#fnref26" class="footnote-back">↩</a></p></li>
 <li id="fn27"><p>Liczby zmiennoprzecinkowe mogą być też reprezentowane poprzez notację naukową, np. 11111.2 może być zapisane jako 1.11112e4, a 0.00021 jako 2.1e-4.<a href="proste-obiekty.html#fnref27" class="footnote-back">↩</a></p></li>
-<li id="fn28"><p><a href="https://en.wikipedia.org/wiki/Unix_time" class="uri">https://en.wikipedia.org/wiki/Unix_time</a><a href="proste-obiekty.html#fnref28" class="footnote-back">↩</a></p></li>
-<li id="fn29"><p>Wyświetlenie aktualnego czasu jest możliwe używając funkcji <code>Sys.time()</code>.<a href="proste-obiekty.html#fnref29" class="footnote-back">↩</a></p></li>
-<li id="fn30"><p>Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje <code>is.logical()</code>, <code>is.integer()</code>,<code>is.double()</code>, oraz <code>is.character()</code>.<a href="proste-obiekty.html#fnref30" class="footnote-back">↩</a></p></li>
+<li id="fn28"><p>Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje <code>is.logical()</code>, <code>is.integer()</code>,<code>is.double()</code>, oraz <code>is.character()</code>.<a href="proste-obiekty.html#fnref28" class="footnote-back">↩</a></p></li>
+<li id="fn29"><p><a href="https://en.wikipedia.org/wiki/Unix_time" class="uri">https://en.wikipedia.org/wiki/Unix_time</a><a href="proste-obiekty.html#fnref29" class="footnote-back">↩</a></p></li>
+<li id="fn30"><p>Wyświetlenie aktualnego czasu jest możliwe używając funkcji <code>Sys.time()</code>.<a href="proste-obiekty.html#fnref30" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

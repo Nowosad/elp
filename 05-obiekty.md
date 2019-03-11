@@ -393,6 +393,36 @@ c(FALSE, 0L, 3.1, "kot")
 #> [1] "FALSE" "0"     "3.1"   "kot"
 ```
 
+## Zmiana typów obiektów
+
+<!--rzutowanie??-->
+
+Do zmiany typu obiektu służą funkcje `as.logical()`, `as.integer()`, `as.double()`, oraz `as.character()`^[Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje `is.logical()`, `is.integer()`,`is.double()`,  oraz `is.character()`.].
+
+
+```r
+as.logical(c("FALSE", "TRUE")) # znakowy na logiczny
+#> [1] FALSE  TRUE
+```
+
+
+```r
+as.integer(c("3", "2")) # znakowy na liczba całkowita 
+#> [1] 3 2
+```
+
+
+```r
+as.double(c(3L, 2L)) # liczba całkowita na liczba zmiennoprzecinkowa
+#> [1] 3 2
+```
+
+
+```r
+as.character(c(3L, 2L)) # liczba całkowita na znakowy
+#> [1] "3" "2"
+```
+
 ## Wektory czynnikowe {#fac}
 
 <!-- factor i date -->
@@ -544,35 +574,60 @@ czas
 - `POSIXlt` przechowująca informacje o dacie w postaci listy
 - `difftime` reprezentująca czas trwania</div>\EndKnitrBlock{rmdinfo}
 
-## Zmiana typów obiektów
-
-<!--rzutowanie??-->
-
-Do zmiany typu obiektu służą funkcje `as.logical()`, `as.integer()`, `as.double()`, oraz `as.character()`^[Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje `is.logical()`, `is.integer()`,`is.double()`,  oraz `is.character()`.].
-
-
-```r
-as.logical(c("FALSE", "TRUE")) # znakowy na logiczny
-#> [1] FALSE  TRUE
-```
-
-
-```r
-as.integer(c("3", "2")) # znakowy na liczba całkowita 
-#> [1] 3 2
-```
-
-
-```r
-as.double(c(3L, 2L)) # liczba całkowita na liczba zmiennoprzecinkowa
-#> [1] 3 2
-```
-
-
-```r
-as.character(c(3L, 2L)) # liczba całkowita na znakowy
-#> [1] "3" "2"
-```
-
-
 ## Zadania
+
+1) Wykonujesz trzy razy dziennie (o godzinie 7:00, 15:00 i 23:00) pomiar temperatury.
+W ostatnich dwóch dniach (2019-03-11 i 2019-03-12) pomierzone wartości to 0, 5,2, 3,9, 4,1, 8,7, 5,3 stopni Celsjusza.
+Stwórz nowy wektor `pomiary` zawierający te wartości.
+2) Nazwij kolejne elementy tego wektora używając kolejnych liter alfabetu.
+3) Pomyśl jakie właściwości ma wektor `pomiary` - jaki ma typ, jaką ma długość, jakie ma atrybuty?
+Jeżeli jesteś przekonany co do odpowiedzi to sprawdź to pisząc odpowiedni kod.
+4) Znajdź i wyświetl wartość `4.1` w wektorze `pomiary` używając kilku różnych sposobów wydzielania.
+Ile możliwości udało się Tobie znaleźć?
+5) Znajdź automatycznie położenie najwyższej wartości wektora `pomiary` i na jej podstawie stwórz nowy obiekt `pomiary_max`.
+6) Wydziel wszystkie pomiary równe i niższe niż 5 stopni Celsjusza. Na ich podstawie stwórz nowy obiekt `pomiary_n5`.
+<!-- 7) przeskaluj wartosci -->
+7) Inna osoba również wykonywała pomiary temperatury w tym samym czasie.
+Jej pomierzone wartości to -1.1, 4,2, 2,4, 3,1, 7,1, 4,2 stopni Celsjusza.
+Dodaj te wartości do obiektu `pomiary`.
+8) Stwórz nowy wektor `nazwy_stacji` zawierający nazwę Twojej stacji pomiarowej (`"Punkt 31"`) oraz stacji drugiej osoby (`"Stacja Thule"`), którego długość ma być równa długości wektora `pomiary`. 
+Wektor `nazwy_stacji` powinien być klasy czynnikowej.
+9) Stwórz nowy wektor `daty_pomiarow` zawierający rok, miesiąc i dzień pomiarów w wektorze `pomiary`.
+10) Stwórz nowy wektor `czas_pomiarow` zawierający datę i czas pomiarów w wektorze `pomiary`.
+Zdefiniuj też odpowiednią strefę czasową.
+11) Stwórz nowy wektor `id_pomiarow` zawierający kolejne liczby całkowite od 1 do liczby pomiarów w wektorze `pomiary`.
+12) Zastanów się (bez wykonywania) co jest efektem działania poniższego kodu.
+Kiedy taka operacja mogłaby być konieczna?
+
+```r
+pomiary[3] = 3.3
+```
+13) Zastanów się (bez wykonywania) co jest efektem działania poniższego kodu.
+Kiedy taka operacja mogłaby być konieczna?
+
+```r
+pomiary[pomiary <= 0] = NA
+```
+14) Zastanów się (bez wykonywania) co jest efektem działania poniższego kodu.
+
+```r
+wartosci1 = as.character(c(1, 3, 5))
+mean(wartosci1)
+```
+15) Zastanów się (bez wykonywania) co jest efektem działania poniższego kodu.
+
+```r
+wartosci2 = as.numeric(c(1, "trzy", 5))
+wartosci2
+mean(wartosci2)
+```
+16) Wykonaj poniższą funkcję. 
+Następnie wydziel nowy wektor `pomiary2`, który nie zawiera wartości `NA`.
+
+```r
+pomiary[pomiary <= 0] = NA
+```
+17) Trzecia osoba również wykonywała pomiary temperatury w tym samym czasie.
+Przesłała ona Tobie taki wektor - `c(-5.2, 3.0, 1.1, "zaspałem", 6.4, 2.2)`.
+Jakiej klasy jest ten wektor a jaka powinna być jego klasa, aby możliwe było wykonywanie na niej obliczeń, np. wyliczanie średniej?
+Jak to można uzyskać?
