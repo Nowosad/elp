@@ -147,6 +147,7 @@ liczba_dni
 
 ## Programowanie funkcyjne
 
+\@ref(dzialania-na-wektorach)
 <!-- wektoryzacja-->
 <!-- http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html -->
 <!-- http://alyssafrazee.com/2014/01/29/vectorization.html -->
