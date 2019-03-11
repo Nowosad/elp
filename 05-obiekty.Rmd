@@ -308,6 +308,28 @@ c(FALSE, 0L, 3.1)
 c(FALSE, 0L, 3.1, "kot")
 ```
 
+## Zmiana typów obiektów
+
+<!--rzutowanie??-->
+
+Do zmiany typu obiektu służą funkcje `as.logical()`, `as.integer()`, `as.double()`, oraz `as.character()`^[Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje `is.logical()`, `is.integer()`,`is.double()`,  oraz `is.character()`.].
+
+```{r}
+as.logical(c("FALSE", "TRUE")) # znakowy na logiczny
+```
+
+```{r}
+as.integer(c("3", "2")) # znakowy na liczba całkowita 
+```
+
+```{r}
+as.double(c(3L, 2L)) # liczba całkowita na liczba zmiennoprzecinkowa
+```
+
+```{r}
+as.character(c(3L, 2L)) # liczba całkowita na znakowy
+```
+
 ## Wektory czynnikowe {#fac}
 
 <!-- factor i date -->
@@ -412,27 +434,15 @@ R posiada też dodatkowe klasy specjalne, np:
 - `difftime` reprezentująca czas trwania
 ```
 
-## Zmiana typów obiektów
-
-<!--rzutowanie??-->
-
-Do zmiany typu obiektu służą funkcje `as.logical()`, `as.integer()`, `as.double()`, oraz `as.character()`^[Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje `is.logical()`, `is.integer()`,`is.double()`,  oraz `is.character()`.].
-
-```{r}
-as.logical(c("FALSE", "TRUE")) # znakowy na logiczny
-```
-
-```{r}
-as.integer(c("3", "2")) # znakowy na liczba całkowita 
-```
-
-```{r}
-as.double(c(3L, 2L)) # liczba całkowita na liczba zmiennoprzecinkowa
-```
-
-```{r}
-as.character(c(3L, 2L)) # liczba całkowita na znakowy
-```
-
-
 ## Zadania
+
+1) stworz wektor
+2) dodaj do wektora nazwy
+3) sprawdź atrubuty
+4) dodaj nowe elementy do wektora (seq)
+5) przeskaluj wartosci
+6) wydziel tylko wartosc nieNA
+7) dla zamien wartosci wieksze niz X na Y
+8) dodaj tekst to obiektu; wylicz srednia; jaki jest problem, jak go rozwiazac?
+9) factory (nazwy stacji) - dodaj
+10) dodaj daty + czas
