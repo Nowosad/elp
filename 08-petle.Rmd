@@ -132,15 +132,11 @@ https://adv-r.hadley.nz/control-flow.html#loops -->
 
 <!-- block - R nie ma do {action} while (condition) -->
 
-### Składnia
-
 ```{r, eval=FALSE}
 while (warunek){
     wykonuj operację tak długo jak warunek jest spełniony
 }
 ```
-
-### Przykład działania
 
 ```{r, eval=FALSE, echo=FALSE}
 woda = 20
@@ -162,18 +158,45 @@ while(budzet > 0 && budzet < 200){
 liczba_dni
 ```
 
-### Zastosowanie w funkcjach
-
 ## Programowanie funkcyjne
 
-\@ref(dzialania-na-wektorach)
+<!-- \@ref(dzialania-na-wektorach) -->
 <!-- wektoryzacja-->
 <!-- http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html -->
 <!-- http://alyssafrazee.com/2014/01/29/vectorization.html -->
 <!-- *apply -->
 
+```{r}
+pomiary = data.frame(
+  miastoA = c(6.1, 1.4, -2.1),
+  miastoB = c(4.3, 5.2, 3.0),
+  miastoC = c(4.1, 4.2, 3.3)
+  )
+```
 
+```{r}
+sr_miasto = vector("numeric", length = ncol(pomiary))
+for(i in seq_len(ncol(pomiary))){
+  sr_miasto[i] = mean(pomiary[, i])
+}
+sr_miasto
+```
 
+```{r}
+sr_dzien = vector("numeric", length = nrow(pomiary))
+for(i in seq_len(nrow(pomiary))){
+  sr_dzien[i] = mean(unlist(pomiary[i, ]))
+}
+sr_dzien
+```
+
+```{r}
+apply(pomiary, 1, mean)
+```
+
+```{r}
+apply(pomiary, 2, mean)
+```
 
 ## Zadania
 
