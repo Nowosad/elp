@@ -230,8 +230,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.6" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zadania-6"><i class="fa fa-check"></i><b>7.6</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a><ul>
-<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a></li>
-<li class="chapter" data-level="8.2" data-path="petle.html"><a href="petle.html#petla-while"><i class="fa fa-check"></i><b>8.2</b> Pętla while</a></li>
+<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#skadnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia</a></li>
+<li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#przykad-dziaania"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
+<li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="petle.html"><a href="petle.html#petla-while"><i class="fa fa-check"></i><b>8.2</b> Pętla while</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="petle.html"><a href="petle.html#skadnia-1"><i class="fa fa-check"></i><b>8.2.1</b> Składnia</a></li>
+<li class="chapter" data-level="8.2.2" data-path="petle.html"><a href="petle.html#przykad-dziaania-1"><i class="fa fa-check"></i><b>8.2.2</b> Przykład działania</a></li>
+<li class="chapter" data-level="8.2.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach-1"><i class="fa fa-check"></i><b>8.2.3</b> Zastosowanie w funkcjach</a></li>
+</ul></li>
 <li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#programowanie-funkcyjne"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne</a></li>
 <li class="chapter" data-level="8.4" data-path="petle.html"><a href="petle.html#zadania-7"><i class="fa fa-check"></i><b>8.4</b> Zadania</a></li>
 </ul></li>
@@ -303,10 +311,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- intro -->
 <div id="petla-for" class="section level2">
 <h2><span class="header-section-number">8.1</span> Pętla for</h2>
+<div id="skadnia" class="section level3">
+<h3><span class="header-section-number">8.1.1</span> Składnia</h3>
 <!-- https://rpubs.com/daspringate/vectorisation -->
 <pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (element <span class="cf">in</span> wektor) {
   przetwarzanie elementu
 }</code></pre>
+</div>
+<div id="przykad-dziaania" class="section level3">
+<h3><span class="header-section-number">8.1.2</span> Przykład działania</h3>
 <!-- mila lądowa = 1,609 km -->
 <pre class="sourceCode r"><code class="sourceCode r">odl_mile =<span class="st"> </span><span class="kw">c</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (i <span class="cf">in</span> odl_mile) {
@@ -351,14 +364,27 @@ odl_mile_l =<span class="st"> </span><span class="kw">seq_along</span>(odl_mile)
 odl_km
 <span class="co">#&gt; [1] 228 101 195</span></code></pre>
 </div>
+<div id="zastosowanie-w-funkcjach" class="section level3">
+<h3><span class="header-section-number">8.1.3</span> Zastosowanie w funkcjach</h3>
+</div>
+</div>
 <div id="petla-while" class="section level2">
 <h2><span class="header-section-number">8.2</span> Pętla while</h2>
+<div id="skadnia-1" class="section level3">
+<h3><span class="header-section-number">8.2.1</span> Składnia</h3>
+</div>
+<div id="przykad-dziaania-1" class="section level3">
+<h3><span class="header-section-number">8.2.2</span> Przykład działania</h3>
+</div>
+<div id="zastosowanie-w-funkcjach-1" class="section level3">
+<h3><span class="header-section-number">8.2.3</span> Zastosowanie w funkcjach</h3>
 <!-- https://rstudio-education.github.io/hopr/loops.html#while-loops -->
 <!-- `next`, `break` -
 https://adv-r.hadley.nz/control-flow.html#loops -->
 <!-- `while`, `repeat` -->
 <!--     pętla for stosowana w sytuacji, gdy ilość wykonań kodu jest znana przed rozpoczęciem działania pętli -->
 <!--     pętla while stosowana gdy ilość wykonań nie jest znana przed zakończeniem działania pętli -->
+</div>
 </div>
 <div id="programowanie-funkcyjne" class="section level2">
 <h2><span class="header-section-number">8.3</span> Programowanie funkcyjne</h2>
