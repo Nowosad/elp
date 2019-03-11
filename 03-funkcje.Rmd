@@ -23,7 +23,7 @@ W efekcie działania funkcji otrzymano wynik - `246348.9` - który jest średni�
 ## Wbudowane funkcje
 
 R posiada wiele wbudowanych funkcji, które znacznie ułatwiają wykonywanie bardziej złożonych operacji.
-Pierwsze z funkcji, w tym `c()` zostały już poznane w sekcji \@ref(dzialania-na-obiektach).
+Pierwsze z funkcji, w tym `c()`, zostały już poznane w sekcji \@ref(dzialania-na-obiektach).
 Ta funkcja pozwala na łączenie kolejnych obiektów rozdzielonych przecinkami.
 Poniższy obiekt, `x` jest w efekcie wektorem zawierającym trzy wartości `8.2`, `10.3` oraz `12.0`.
 

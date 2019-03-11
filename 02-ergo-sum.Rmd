@@ -83,7 +83,7 @@ Język R przechowuje i przetwarza wszystkie obiekty w pamięci komputera (RAM).
 Wpływa to na zwiększoną wydajność i elastyczność obliczeń, ale jednocześnie powoduje to ograniczenie wielkości obiektów na jakich można pracować.
 Istnieje równocześnie [szereg strategii](https://bookdown.org/rdpeng/RProgDA/working-with-large-datasets.html) jak postępować z większymi zbiorami danych, które nie mieszczą się w RAMie [@pengMasteringSoftwareDevelopment2017].
 
-### Działania na obiektach
+### Działania na obiektach {#dzialania-na-obiektach}
 
 Każdy stworzony obiekt w R może być następnie używany do kolejnych operacji, a w efekcie też tworzenia nowych obiektów. 
 W poniższych czterech przypadkach obiekt `x` został przetworzony używając operatorów dodawania, odejmowania, mnożenia oraz dzielenia, a nowe obiekty powstały jako wyniki tych obliczeń.
