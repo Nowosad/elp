@@ -226,7 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-3"><i class="fa fa-check"></i><b>7.3.4</b> Wydzielanie</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zamiany-klas"><i class="fa fa-check"></i><b>7.4</b> Zamiany klas</a></li>
-<li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wasne-klasy"><i class="fa fa-check"></i><b>7.5</b> Własne klasy</a></li>
+<li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#inne-klasy-obiektow"><i class="fa fa-check"></i><b>7.5</b> Inne klasy obiektów</a></li>
 <li class="chapter" data-level="7.6" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zadania-6"><i class="fa fa-check"></i><b>7.6</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a><ul>
@@ -714,8 +714,23 @@ lista_z_r1
 <span class="co">#&gt; $V3</span>
 <span class="co">#&gt; [1]  9 10 11 12</span></code></pre>
 </div>
-<div id="wasne-klasy" class="section level2">
-<h2><span class="header-section-number">7.5</span> Własne klasy</h2>
+<div id="inne-klasy-obiektow" class="section level2">
+<h2><span class="header-section-number">7.5</span> Inne klasy obiektów</h2>
+<pre class="sourceCode r"><code class="sourceCode r">wek_num =<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">wek_dat =<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">c</span>(<span class="st">&quot;2019-04-10&quot;</span>, <span class="st">&quot;2019-04-12&quot;</span>, <span class="st">&quot;2019-04-14&quot;</span>))</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">wek_tkt =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>, <span class="st">&quot;nosorożec&quot;)</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(wek_num)
+<span class="co">#&gt; [1] 6</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(wek_dat)
+<span class="co">#&gt; [1] &quot;2019-04-12&quot;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(wek_tkt)
+<span class="co">#&gt; Warning in mean.default(wek_tkt): argument is not numeric or logical:</span>
+<span class="co">#&gt; returning NA</span>
+<span class="co">#&gt; [1] NA</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">methods</span>(mean)
+<span class="co">#&gt; [1] mean.Date     mean.default  mean.difftime mean.POSIXct  mean.POSIXlt </span>
+<span class="co">#&gt; see &#39;?methods&#39; for accessing help and source code</span></code></pre>
+<!-- https://www.njtierney.com/post/2016/11/06/simple-s3-post/ -->
 <!-- ... -->
 <!-- Istnieje ogromna liczba klas obiektów w R -->
 <!-- Każdy może stworzyć swoją własną klasę! -->

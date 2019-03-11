@@ -619,8 +619,51 @@ lista_z_r1
 #> [1]  9 10 11 12
 ```
 
-## Własne klasy
+## Inne klasy obiektów
 
+
+```r
+wek_num = c(4, 6, 8)
+```
+
+
+```r
+wek_dat = as.Date(c("2019-04-10", "2019-04-12", "2019-04-14"))
+```
+
+
+```r
+wek_tkt = c("kot", "pies", "nosorożec")
+```
+
+
+```r
+mean(wek_num)
+#> [1] 6
+```
+
+
+```r
+mean(wek_dat)
+#> [1] "2019-04-12"
+```
+
+
+```r
+mean(wek_tkt)
+#> Warning in mean.default(wek_tkt): argument is not numeric or logical:
+#> returning NA
+#> [1] NA
+```
+
+
+```r
+methods(mean)
+#> [1] mean.Date     mean.default  mean.difftime mean.POSIXct  mean.POSIXlt 
+#> see '?methods' for accessing help and source code
+```
+
+<!-- https://www.njtierney.com/post/2016/11/06/simple-s3-post/ -->
 <!-- ... -->
 <!-- Istnieje ogromna liczba klas obiektów w R -->
 <!-- Każdy może stworzyć swoją własną klasę! -->
