@@ -201,15 +201,15 @@ sr_dzien
 
 
 ```r
-apply(pomiary, 1, mean)
-#> [1] 4.83 3.60 1.40
+apply(pomiary, MARGIN = 2, FUN = mean)
+#> miastoA miastoB miastoC 
+#>    1.80    4.17    3.87
 ```
 
 
 ```r
-apply(pomiary, 2, mean)
-#> miastoA miastoB miastoC 
-#>    1.80    4.17    3.87
+apply(pomiary, MARGIN = 1, FUN = mean)
+#> [1] 4.83 3.60 1.40
 ```
 
 ## Zadania

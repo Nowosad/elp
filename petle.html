@@ -425,11 +425,11 @@ sr_miasto
 }
 sr_dzien
 <span class="co">#&gt; [1] 4.83 3.60 1.40</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">apply</span>(pomiary, <span class="dv">1</span>, mean)
-<span class="co">#&gt; [1] 4.83 3.60 1.40</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">apply</span>(pomiary, <span class="dv">2</span>, mean)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">apply</span>(pomiary, <span class="dt">MARGIN =</span> <span class="dv">2</span>, <span class="dt">FUN =</span> mean)
 <span class="co">#&gt; miastoA miastoB miastoC </span>
 <span class="co">#&gt;    1.80    4.17    3.87</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">apply</span>(pomiary, <span class="dt">MARGIN =</span> <span class="dv">1</span>, <span class="dt">FUN =</span> mean)
+<span class="co">#&gt; [1] 4.83 3.60 1.40</span></code></pre>
 </div>
 <div id="zadania-7" class="section level2">
 <h2><span class="header-section-number">8.4</span> Zadania</h2>
