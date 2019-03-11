@@ -42,7 +42,7 @@ wek_zna = c("kot", "pies")
 wek_zna
 ```
 
-Dodatkowo, istnieją dwa dodatkowe, rzadziej spotykane typy wektorów - czynnikowy (ang. *factor*) i dat (ang. *date*) (sekcja \@ref(facate)).
+Dodatkowo, istnieją dwa dodatkowe, rzadziej spotykane typy wektorów - czynnikowy (ang. *factor*) i dat (ang. *date*) (sekcje \@ref(fac) i \@ref(ate)).
 
 ```{block2 type="rmdinfo"}
 Wiele języków programowania posiada zmienne skalarne (tzw. skalary), czyli takie które mogą przyjmować tylko jedną wartość.
@@ -308,12 +308,109 @@ c(FALSE, 0L, 3.1)
 c(FALSE, 0L, 3.1, "kot")
 ```
 
-## Wektory czynnikowe {#facate}
-
-## Wektory dat
+## Wektory czynnikowe {#fac}
 
 <!-- factor i date -->
 <!-- https://rstudio-education.github.io/hopr/r-objects.html -->
+
+```{r}
+tekst = c("Poznań", "Kraków", "Warszawa", "Poznań")
+tekst
+attributes(tekst)
+```
+
+```{r}
+typeof(tekst)
+length(tekst)
+attributes(tekst)
+```
+
+<!-- Having a class attribute turns an object into an S3 object, which means it will behave differently from a regular vector when passed to a generic function.  -->
+<!-- ref to ate -->
+
+```{r}
+czynn = as.factor(tekst)
+czynn
+```
+
+```{r}
+typeof(czynn)
+length(czynn)
+attributes(czynn)
+```
+
+```{r}
+tekst2 = as.character(czynn)
+tekst2
+```
+
+## Wektory dat {#ate}
+
+R ma wbudowaną reprezentację dat w postaci klasy `Date`.
+
+```{r}
+dzis = Sys.Date()
+dzis
+```
+
+Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowia), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.
+
+```{r}
+typeof(dzis)
+length(dzis)
+attributes(dzis)
+```
+
+```{r}
+unclass(dzis)
+```
+
+Powyższa wartość, `r unclass(dzis)`, oznacza liczbę dni od 1970-01-01.^[https://en.wikipedia.org/wiki/Unix_time]
+
+Tworzenie wektora dat odbywa się używając funkcji `as.Date()`.
+
+```{r}
+daty = as.Date(c("2011-02-02", "2011-02-03"))
+daty
+```
+
+<!-- argument format -->
+
+```{r}
+stara_data = as.Date("1912-04-13")
+unclass(stara_data)
+```
+
+W R istnieją również wbudowane reprezentacje dat i godzin (inaczej zwane data-czas, ang. *date-times*).
+Najczęściej używaną jest klasa `POSIXct`, która jest wektorem przedstawiającym liczbę sekund of 1970-01-01.
+
+```{r}
+czas = as.POSIXct("2011-02-02 10:33", tz = "CET")
+czas
+```
+
+```{r}
+typeof(czas)
+length(czas)
+attributes(czas)
+```
+
+```{r}
+unclass(czas)
+```
+
+```{r}
+attributes(czas)$tzone = "America/Los_Angeles"
+czas
+```
+
+`?timezones`
+
+```{block2 type="rmdinfo"}
+R posiada też dodatkowe klasy specjalne, np:
+- `POSIXlt` przechowująca informacje o dacie w postaci listy
+- `difftime` reprezentująca czas trwania
+```
 
 ## Zmiana typów obiektów
 
