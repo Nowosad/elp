@@ -313,8 +313,37 @@ lista_z_r1 = as.list(ramka_z_m1)
 lista_z_r1
 ```
 
-## Własne klasy
+## Inne klasy obiektów
 
+```{r}
+wek_num = c(4, 6, 8)
+```
+
+```{r}
+wek_dat = as.Date(c("2019-04-10", "2019-04-12", "2019-04-14"))
+```
+
+```{r}
+wek_tkt = c("kot", "pies", "nosorożec")
+```
+
+```{r}
+mean(wek_num)
+```
+
+```{r}
+mean(wek_dat)
+```
+
+```{r}
+mean(wek_tkt)
+```
+
+```{r}
+methods(mean)
+```
+
+<!-- https://www.njtierney.com/post/2016/11/06/simple-s3-post/ -->
 <!-- ... -->
 <!-- Istnieje ogromna liczba klas obiektów w R -->
 <!-- Każdy może stworzyć swoją własną klasę! -->
