@@ -13,7 +13,7 @@
 ["analiza-kodu.html", "11 Analiza kodu 11.1 Benchmarking 11.2 Profiling 11.3 Wektoryzacja kodu 11.4 Zadanie", " 11 Analiza kodu 11.1 Benchmarking 11.2 Profiling 11.3 Wektoryzacja kodu 11.4 Zadanie "],
 ["kontrola-wersji.html", "12 Kontrola wersji 12.1 Git 12.2 Git w RStudio 12.3 GitHub 12.4 Zadania", " 12 Kontrola wersji 12.1 Git 12.2 Git w RStudio 12.3 GitHub 12.4 Zadania "],
 ["tworzenie-pakietow.html", "13 Tworzenie pakietów 13.1 Rozwijanie pakietu 13.2 Dokumentacja funkcji 13.3 Zależności 13.4 Dokumentacja pakietu 13.5 Testy jednostkowe 13.6 Licencje 13.7 Publikowanie pakietów 13.8 Zadania", " 13 Tworzenie pakietów Funkcja create_packages() tworzy cztery pliki: .Rproj R/ DESCRIPTION NAMESPACE 13.1 Rozwijanie pakietu 13.2 Dokumentacja funkcji 13.3 Zależności 13.4 Dokumentacja pakietu 13.5 Testy jednostkowe 13.6 Licencje 13.7 Publikowanie pakietów software documentation software promotion Continuous Integration 13.8 Zadania "],
-["lacznik.html", "14 Łącznik 14.1 Zadania", " 14 Łącznik 14.1 Zadania "],
+["lacznik.html", "14 Łącznik 14.1 C++ 14.2 Python 14.3 Zadania", " 14 Łącznik 14.1 C++ 14.2 Python 14.3 Zadania "],
 ["debugging.html", "15 Debugowanie 15.1 Zadania", " 15 Debugowanie 15.1 Zadania "],
 ["podsumowanie.html", "16 Podsumowanie", " 16 Podsumowanie "],
 ["bibliografia.html", "Bibliografia", " Bibliografia "]
