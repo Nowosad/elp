@@ -435,9 +435,7 @@ Wyrażenia regularne są powszechnie używane w wyszukiwarkach internetowych, ed
 </table>
 <p>Wymienione powyżej znaki (np. <code>^</code><!--Kareta--> czy <code>.</code>) określane są jako metaznaki (ang. <em>metacharacters</em>) i mają one specjalne znaczenie.
 W związku z tym, jeżeli chcemy wyszukać tekstu zawierającego specjalny znak, musimy użyć ukośnik wsteczny (<code>\</code>, ang. <em>backslash</em>).
-Istnieje wiele dodatkowych znaków specjalnych, np. <code>\n</code> - nowa linia, <code>\t</code> - tabulator, <code>\d</code> - każdy znak numeryczny (stałoprzecinkowy), <code>\s</code> - znak niedrukowalny, np. spacja, tabulator, nowa linia.
-<!-- ranges [a-z0-9] -->
-<!-- link to the cheetsheet --></p>
+Istnieje wiele dodatkowych znaków specjalnych, np. <code>\n</code> - nowa linia, <code>\t</code> - tabulator, <code>\d</code> - każdy znak numeryczny (stałoprzecinkowy), <code>\s</code> - znak niedrukowalny, np. spacja, tabulator, nowa linia.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;^L&quot;</span>)
 <span class="co">#&gt; [1] FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;ena$&quot;</span>)
@@ -460,10 +458,10 @@ Istnieje wiele dodatkowych znaków specjalnych, np. <code>\n</code> - nowa linia
 <pre class="sourceCode r"><code class="sourceCode r">y =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kołdra&quot;</span>, <span class="st">&quot;kordła&quot;</span>, <span class="st">&quot;pościel&quot;</span>)
 <span class="kw">str_detect</span>(y, <span class="dt">pattern =</span> <span class="st">&quot;ko(łdr|rdł)a&quot;</span>)</code></pre>
 <!-- https://stringr.tidyverse.org/articles/regular-expressions.html -->
-<p>Umiejętności używania wyrażeń regularnych można trenować używając różnych zasobów internetowych, np. strony <a href="https://regexr.com/" class="uri">https://regexr.com/</a> lub <a href="https://regex101.com/" class="uri">https://regex101.com/</a>.
-<!-- https://regexcrossword.com/ -->
+<p>Umiejętności używania wyrażeń regularnych można trenować używając różnych zasobów internetowych, np. strony <a href="https://regexr.com/" class="uri">https://regexr.com/</a>, <a href="https://regex101.com/" class="uri">https://regex101.com/</a>, czy <a href="https://regexcrossword.com/" class="uri">https://regexcrossword.com/</a>.
+Pomocne w zrozumieniu bardziej zaawansowanych elementów wyrażeń regularncych może być też prezentacja <a href="https://www.youtube.com/watch?v=EkluES9Rvak">Best of Fluent 2012: /Reg(exp){2}lained/: Demystifying Regular Expressions</a> oraz książka Mastering Regular Expressions <span class="citation">(<span class="citeproc-not-found" data-reference-id="ref"><strong>???</strong></span>)</span>.
 <!-- https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124/ref=sr_1_1?ie=UTF8&qid=1464113797&sr=8-1&keywords=mastering+regular+expressions -->
-<!-- Lea Verou [Best of Fluent 2012: /Reg(exp){2}lained/: Demystifying Regular Expressions](https://www.youtube.com/watch?v=EkluES9Rvak) --></p>
+<!-- https://www.rstudio.com/resources/cheatsheets/#stringr --></p>
 </div>
 <div id="wydzielanie-tekstu---regex" class="section level2">
 <h2><span class="header-section-number">6.5</span> Wydzielanie tekstu - regex</h2>
@@ -518,7 +516,16 @@ miasta_pomiary2
 </div>
 <div id="wyszukiwanie-plikow" class="section level2">
 <h2><span class="header-section-number">6.7</span> Wyszukiwanie plików</h2>
-<!-- `dir()` -->
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>)
+<span class="co">#&gt; [1] &quot;dokument.docx&quot; &quot;kod.R&quot;         &quot;mapa.png&quot;      &quot;obrazek.png&quot;  </span>
+<span class="co">#&gt; [5] &quot;zdjęcie.jpg&quot;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.png$&quot;</span>)
+<span class="co">#&gt; [1] &quot;mapa.png&quot;    &quot;obrazek.png&quot;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.(png|jpg)$&quot;</span>)
+<span class="co">#&gt; [1] &quot;mapa.png&quot;    &quot;obrazek.png&quot; &quot;zdjęcie.jpg&quot;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.(png|jpg)$&quot;</span>, <span class="dt">full.names =</span> <span class="ot">TRUE</span>)
+<span class="co">#&gt; [1] &quot;pliki/mapa.png&quot;    &quot;pliki/obrazek.png&quot; &quot;pliki/zdjęcie.jpg&quot;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">moje_pliki =<span class="st"> </span><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.(png|jpg)$&quot;</span>, <span class="dt">full.names =</span> <span class="ot">TRUE</span>)</code></pre>
 </div>
 <div id="zadania-5" class="section level2">
 <h2><span class="header-section-number">6.8</span> Zadania</h2>

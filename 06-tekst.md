@@ -144,7 +144,6 @@ Wyrażenia regularne są powszechnie używane w wyszukiwarkach internetowych, ed
 <!-- basic stuff -->
 
 
-
 ```r
 tekst4 = c("Magdalena", "Lena", "1Lena.csv", "LLena", "Helena", "Anna", 99)
 ```
@@ -182,8 +181,6 @@ $          Określa koniec testu/linii
 Wymienione powyżej znaki (np. `^`<!--Kareta--> czy `.`) określane są jako metaznaki (ang. *metacharacters*) i mają one specjalne znaczenie.
 W związku z tym, jeżeli chcemy wyszukać tekstu zawierającego specjalny znak, musimy użyć ukośnik wsteczny (`\`, ang. *backslash*).
 Istnieje wiele dodatkowych znaków specjalnych, np. `\n` - nowa linia, `\t` - tabulator, `\d` - każdy znak numeryczny (stałoprzecinkowy), `\s` - znak niedrukowalny, np. spacja, tabulator, nowa linia.
-<!-- ranges [a-z0-9] -->
-<!-- link to the cheetsheet -->
 
 
 ```r
@@ -248,10 +245,10 @@ str_detect(y, pattern = "ko(łdr|rdł)a")
 ```
 
 <!-- https://stringr.tidyverse.org/articles/regular-expressions.html -->
-Umiejętności używania wyrażeń regularnych można trenować używając różnych zasobów internetowych, np. strony https://regexr.com/ lub https://regex101.com/.
-<!-- https://regexcrossword.com/ -->
+Umiejętności używania wyrażeń regularnych można trenować używając różnych zasobów internetowych, np. strony https://regexr.com/, https://regex101.com/, czy https://regexcrossword.com/.
+Pomocne w zrozumieniu bardziej zaawansowanych elementów wyrażeń regularncych może być też prezentacja [Best of Fluent 2012: /Reg(exp){2}lained/: Demystifying Regular Expressions](https://www.youtube.com/watch?v=EkluES9Rvak) oraz książka Mastering Regular Expressions [@ref].
 <!-- https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124/ref=sr_1_1?ie=UTF8&qid=1464113797&sr=8-1&keywords=mastering+regular+expressions -->
-<!-- Lea Verou [Best of Fluent 2012: /Reg(exp){2}lained/: Demystifying Regular Expressions](https://www.youtube.com/watch?v=EkluES9Rvak) -->
+<!-- https://www.rstudio.com/resources/cheatsheets/#stringr -->
 
 ## Wydzielanie tekstu - regex
 
@@ -370,9 +367,38 @@ str_replace_all(tekst_pomiary4, pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓ
 
 ## Wyszukiwanie plików
 
-<!-- `dir()` -->
+
+```r
+dir("pliki")
+#> [1] "dokument.docx" "kod.R"         "mapa.png"      "obrazek.png"  
+#> [5] "zdjęcie.jpg"
+```
+
+
+```r
+dir("pliki", pattern = "*\\.png$")
+#> [1] "mapa.png"    "obrazek.png"
+```
+
+
+```r
+dir("pliki", pattern = "*\\.(png|jpg)$")
+#> [1] "mapa.png"    "obrazek.png" "zdjęcie.jpg"
+```
+
+
+```r
+dir("pliki", pattern = "*\\.(png|jpg)$", full.names = TRUE)
+#> [1] "pliki/mapa.png"    "pliki/obrazek.png" "pliki/zdjęcie.jpg"
+```
+
+
+```r
+moje_pliki = dir("pliki", pattern = "*\\.(png|jpg)$", full.names = TRUE)
+```
 
 ## Zadania
+
 
 <!-- match hex colors, examples :#abs, #f0, #BADA55, #COFFEE https://www.youtube.com/watch?v=EkluES9Rvak -->
 <!-- match coordinates -->
