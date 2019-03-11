@@ -313,6 +313,8 @@ lista_z_r1 = as.list(ramka_z_m1)
 lista_z_r1
 ```
 
+`as.vector()`, `as.matrix()`, `as.data.frame()`, `as.list()`
+
 ## Inne klasy obiektów
 
 ```{r}
