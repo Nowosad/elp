@@ -151,14 +151,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dzialania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="ergosum.html"><a href="ergosum.html#ide"><i class="fa fa-check"></i><b>2.3</b> IDE</a></li>
-<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#resources"><i class="fa fa-check"></i><b>2.4</b> Dodatkowe materiały</a></li>
-<li class="chapter" data-level="2.5" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.5</b> Styl</a><ul>
-<li class="chapter" data-level="2.5.1" data-path="ergosum.html"><a href="ergosum.html#nazwy-obiektow"><i class="fa fa-check"></i><b>2.5.1</b> Nazwy obiektów</a></li>
-<li class="chapter" data-level="2.5.2" data-path="ergosum.html"><a href="ergosum.html#odstepy"><i class="fa fa-check"></i><b>2.5.2</b> Odstępy</a></li>
-<li class="chapter" data-level="2.5.3" data-path="ergosum.html"><a href="ergosum.html#komentarze"><i class="fa fa-check"></i><b>2.5.3</b> Komentarze</a></li>
-<li class="chapter" data-level="2.5.4" data-path="ergosum.html"><a href="ergosum.html#nazwy-plikow"><i class="fa fa-check"></i><b>2.5.4</b> Nazwy plików</a></li>
-<li class="chapter" data-level="2.5.5" data-path="ergosum.html"><a href="ergosum.html#daty"><i class="fa fa-check"></i><b>2.5.5</b> Daty</a></li>
+<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="ergosum.html"><a href="ergosum.html#nazwy-obiektow"><i class="fa fa-check"></i><b>2.4.1</b> Nazwy obiektów</a></li>
+<li class="chapter" data-level="2.4.2" data-path="ergosum.html"><a href="ergosum.html#odstepy"><i class="fa fa-check"></i><b>2.4.2</b> Odstępy</a></li>
+<li class="chapter" data-level="2.4.3" data-path="ergosum.html"><a href="ergosum.html#komentarze"><i class="fa fa-check"></i><b>2.4.3</b> Komentarze</a></li>
+<li class="chapter" data-level="2.4.4" data-path="ergosum.html"><a href="ergosum.html#nazwy-plikow"><i class="fa fa-check"></i><b>2.4.4</b> Nazwy plików</a></li>
+<li class="chapter" data-level="2.4.5" data-path="ergosum.html"><a href="ergosum.html#daty"><i class="fa fa-check"></i><b>2.4.5</b> Daty</a></li>
 </ul></li>
+<li class="chapter" data-level="2.5" data-path="ergosum.html"><a href="ergosum.html#resources"><i class="fa fa-check"></i><b>2.5</b> Dodatkowe materiały</a></li>
 <li class="chapter" data-level="2.6" data-path="ergosum.html"><a href="ergosum.html#zadania-1"><i class="fa fa-check"></i><b>2.6</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a><ul>
@@ -482,8 +482,131 @@ Ułatwia on przenoszenie kodu pomiędzy różnymi komputerami, a także daje dos
 </tbody>
 </table>
 </div>
+<div id="styl" class="section level2">
+<h2><span class="header-section-number">2.4</span> Styl</h2>
+<p>Poniżej znajdują się podstawowe porady dotyczące stylu pisania kodu.
+Więcej wskazówek można znaleźć na w <a href="https://style.tidyverse.org/">poradniku stylu RStudio</a> oraz <a href="https://google.github.io/styleguide/Rguide.xml">poradniku stylu Google</a>.
+Oba te poradniki nie są identyczne i czasami zawierają sprzeczne porady.
+Najważniejsze jest, aby wybrać jeden odpowiadający piszącemu kod styl i się go konsekwentnie trzymać.</p>
+<div id="nazwy-obiektow" class="section level3">
+<h3><span class="header-section-number">2.4.1</span> Nazwy obiektów</h3>
+<p>Istnieje wiele konwencji nazywania obiektów<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>.
+Najczęściej używaną konwencją w R jest tzw. <a href="https://en.wikipedia.org/wiki/Snake_case">“snake case”</a>.
+Polega ona na tworzeniu nazw obiektów składających się ze słów połączonych znakiem podkreślenia (<code>_</code>).
+<!-- obiekty rzeczowniki, funkcje czasowniki -->
+Ważne, żeby nazwy obiektów ułatwiały zrozumienie ich zawartości.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># obiekt</span>
+bok_a
+bok_b
+
+<span class="co"># funkcja</span>
+pole_prostokata</code></pre>
+<p>Nazwa obiektu nie może zaczynać się od liczby, ani nie może używać specjalnych symboli, tj. <code>^</code>, <code>!</code>, <code>$</code>, <code>@</code>, <code>+</code>, <code>-</code>, <code>/</code>, czy <code>*</code>.
+Dodatkowo należy uważać, żeby nowa nazwa obiektu nie nadpisała istniejącego obiektu lub funkcji.
+Nie powinno nazywać się obiektów tak jak istniejące funkcje, np. <code>c</code>, <code>t</code>, <code>table</code>, itd.</p>
+</div>
+<div id="odstepy" class="section level3">
+<h3><span class="header-section-number">2.4.2</span> Odstępy</h3>
+<p>Odstępy pełnią bardzo ważną funkcję przy pisaniu kodu, podobnie jak odstępy przy pisaniu tekstu.
+Wyobraź sobie czytanie powieści, w której nie ma żadnych odstępów między słowami czy rozdziałami.
+<!-- indentation python -->
+Często mówi się, że “kod musi oddychać” - odstępy zwiększają czytelność kodu i pozwalają na jego szybsze zrozumienie oraz ułatwiają naprawienie występujących błędów.</p>
+<p>Odstępy można uzyskać poprzez użycie spacji.
+Spacje powinny być użyte po przecinkach, ale nigdy przed nimi.
+Dodatkowo, większość operatorów (np. <code>=</code>, <code>+</code>, <code>-</code>, <code>==</code>) powinna być otoczona przez spacje.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Zalecane</span>
+srednia =<span class="st"> </span><span class="kw">mean</span>(wartosc, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)
+pole =<span class="st"> </span>bok_a <span class="op">*</span><span class="st"> </span>bok_b
+
+<span class="co"># Niewskazane</span>
+srednia=<span class="kw">mean</span> ( wartosc,<span class="dt">na.rm=</span><span class="ot">TRUE</span> ) 
+pole=bok_a<span class="op">*</span>bok_b</code></pre>
+<p>Spacje należy również używać do tworzenia wcięć - każde z nich powinno się składać z dwóch spacji.
+<!-- tab space war --></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Zalecane</span>
+moja_funkcja =<span class="st"> </span><span class="cf">function</span>(x, y, z){
+  pod =<span class="st"> </span>y <span class="op">/</span><span class="st"> </span>z
+  wynik =<span class="st"> </span>x <span class="op">*</span><span class="st"> </span>pod
+  wynik
+}
+
+<span class="co"># Niewskazane</span>
+moja_funkcja =<span class="st"> </span><span class="cf">function</span>(x, y, z){
+pod =<span class="st"> </span>y <span class="op">/</span><span class="st"> </span>z
+wynik =<span class="st"> </span>x <span class="op">*</span><span class="st"> </span>pod
+wynik
+}</code></pre>
+<p>Warto także ograniczać długość każdej linii kodu, żeby nie przekraczała ona ok. 80 znaków.
+Dzięki temu możliwe jest szybkie przeczytanie kodu czy też jego wydrukowanie.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Zalecane</span>
+bardzo_wazny_wynik =<span class="st"> </span><span class="kw">moja_bardzo_wazna_funkcja</span>(<span class="st">&quot;pierwszy argument&quot;</span>,
+                                               <span class="dt">b =</span> <span class="st">&quot;drugi argument&quot;</span>, 
+                                               <span class="dt">c =</span> <span class="st">&quot;trzeci argument&quot;</span>)
+
+<span class="co"># Niewskazane</span>
+bardzo_wazny_wynik =<span class="st"> </span><span class="kw">moja_bardzo_wazna_funkcja</span>(<span class="st">&quot;pierwszy argument&quot;</span>, <span class="st">&quot;drugi argument&quot;</span>, <span class="st">&quot;trzeci argument&quot;</span>)</code></pre>
+</div>
+<div id="komentarze" class="section level3">
+<h3><span class="header-section-number">2.4.3</span> Komentarze</h3>
+<p>Komentarze służą do wyjaśniania istotnych elementów kodu.
+Do komentowania w języku R służy operator <code>#</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Mój komentarz</span></code></pre>
+</div>
+<div id="nazwy-plikow" class="section level3">
+<h3><span class="header-section-number">2.4.4</span> Nazwy plików</h3>
+<p>Nazwy plików powinny spełniać trzy wymagania - być łatwe (i) do odczytania przez komputer, (ii) do odczytania przez człowieka, (iii) do posortowania.</p>
+<p>Nazwy plików nie powinny zawierać spacji, znaków specjalnych (np. !, %, *), znaków diakrytycznych (np. ć, Ł, ź).
+Warto też aby nazwy plików składały się tylko z małych liter.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Zalecane</span>
+obliczanie<span class="op">-</span>sredniej.R
+pomiary<span class="op">-</span>temperatury.csv
+
+<span class="co"># Niewskazane</span>
+Obliczanie Średniej.R
+pomiaryTemperatury<span class="op">!</span>.csv</code></pre>
+<p>Podobnie jak nazwy obiektów, również nazwy plików powinny opisywać ich zawartość.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Zalecane</span>
+obliczanie<span class="op">-</span>sredniej.R
+pomiary<span class="op">-</span>temperatury.csv
+
+<span class="co"># Niewskazane</span>
+kod.R
+dane.csv</code></pre>
+<p>Dodatkowo wskazane jest dodanie wartości numerycznych przed nazwą pliku, jeżeli pliki mają jakąś kolejność.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Zalecane</span>
+<span class="dv">01</span>_przygotowanie<span class="op">-</span>danych.R
+<span class="dv">02</span>_obliczanie<span class="op">-</span>sredniej.R
+
+<span class="co"># Niewskazane</span>
+przygotowanie<span class="op">-</span>danych.R
+obliczanie<span class="op">-</span>sredniej.R</code></pre>
+
+<div class="rmdinfo">
+Kodowanie znaków (ang. <em>character encodings</em>) jest to sposób sposób prezentacji znaków.
+Istnieje szereg różnych standardów kodowania znaków.
+Standard ASCII przyporządkowuje liczbom z zakresu 0−127 litery alfabetu angielskiego, cyfry, znaki przestankowe i inne symbole oraz polecenia.
+Firma Microsoft stworzyła dodatkowo cały szereg standardów dla różnych języków.
+Przykładowo do obsługi języków środkowoeuropejskich istnieje wersja oznaczona jako Windows-1250 (lub CP1250).
+Alternatywnie do systemu Microsoftu powstał też zbiór standardów ISO, przykładowo ISO-8859-2 dla języków środkowoeuropejskich.
+W efekcie oznacza to, że otworzenie tekstu z innego komputera, na komputerze z “polskim” kodowaniem znaków może spowodować pojawienie się tzw. “krzaczków”.
+Aby uniknąć takiej sytuacji powstał system kodowania UTF-8, który zawiera w sobie ponad milion różnych znaków.
+Jest on obecnie zalecanym standardem na całym świecie.
+</div>
+
+</div>
+<div id="daty" class="section level3">
+<h3><span class="header-section-number">2.4.5</span> Daty</h3>
+<p>Istnieje wiele sposobów zapisu dat<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>, co może powodować różnorodne problemy przy programowaniu oraz analizie danych.
+Z ratunkiem w tej kwestii przychodzi norma <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>, która definiuje daty kalendarzowe jako <em>YYYY-MM-DD</em>, czyli <em>ROK-MIESIĄC-DZIEŃ</em>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Zalecane</span>
+<span class="dv">2019-06-02</span>
+
+<span class="co"># Niewskazane</span>
+wszelkie inne</code></pre>
+</div>
+</div>
 <div id="resources" class="section level2">
-<h2><span class="header-section-number">2.4</span> Dodatkowe materiały</h2>
+<h2><span class="header-section-number">2.5</span> Dodatkowe materiały</h2>
 <p>Polskie książki:</p>
 <ul>
 <li><a href="http://www.biecek.pl/R/" class="uri">http://www.biecek.pl/R/</a> <span class="citation">(Biecek <a href="#ref-biecekPrzewodnikPoPakiecie2014">2014</a>)</span></li>
@@ -545,132 +668,9 @@ Kwestie związane z R są opatrzone hasztagiem <code>#rstats</code>, natomiast k
 <li>Trójmiasto - <a href="https://www.meetup.com/Trojmiejska-Grupa-Entuzjastow-R/" class="uri">https://www.meetup.com/Trojmiejska-Grupa-Entuzjastow-R/</a></li>
 </ul>
 </div>
-<div id="styl" class="section level2">
-<h2><span class="header-section-number">2.5</span> Styl</h2>
-<p>Poniżej znajdują się podstawowe porady dotyczące stylu pisania kodu.
-Więcej wskazówek można znaleźć na w <a href="https://style.tidyverse.org/">poradniku stylu RStudio</a> oraz <a href="https://google.github.io/styleguide/Rguide.xml">poradniku stylu Google</a>.
-Oba te poradniki nie są identyczne i czasami zawierają sprzeczne porady.
-Najważniejsze jest, aby wybrać jeden odpowiadający piszącemu kod styl i się go konsekwentnie trzymać.</p>
-<div id="nazwy-obiektow" class="section level3">
-<h3><span class="header-section-number">2.5.1</span> Nazwy obiektów</h3>
-<p>Istnieje wiele konwencji nazywania obiektów<a href="#fn20" class="footnote-ref" id="fnref20"><sup>20</sup></a>.
-Najczęściej używaną konwencją w R jest tzw. <a href="https://en.wikipedia.org/wiki/Snake_case">“snake case”</a>.
-Polega ona na tworzeniu nazw obiektów składających się ze słów połączonych znakiem podkreślenia (<code>_</code>).
-<!-- obiekty rzeczowniki, funkcje czasowniki -->
-Ważne, żeby nazwy obiektów ułatwiały zrozumienie ich zawartości.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># obiekt</span>
-bok_a
-bok_b
-
-<span class="co"># funkcja</span>
-pole_prostokata</code></pre>
-<p>Nazwa obiektu nie może zaczynać się od liczby, ani nie może używać specjalnych symboli, tj. <code>^</code>, <code>!</code>, <code>$</code>, <code>@</code>, <code>+</code>, <code>-</code>, <code>/</code>, czy <code>*</code>.
-Dodatkowo należy uważać, żeby nowa nazwa obiektu nie nadpisała istniejącego obiektu lub funkcji.
-Nie powinno nazywać się obiektów tak jak istniejące funkcje, np. <code>c</code>, <code>t</code>, <code>table</code>, itd.</p>
-</div>
-<div id="odstepy" class="section level3">
-<h3><span class="header-section-number">2.5.2</span> Odstępy</h3>
-<p>Odstępy pełnią bardzo ważną funkcję przy pisaniu kodu, podobnie jak odstępy przy pisaniu tekstu.
-Wyobraź sobie czytanie powieści, w której nie ma żadnych odstępów między słowami czy rozdziałami.
-<!-- indentation python -->
-Często mówi się, że “kod musi oddychać” - odstępy zwiększają czytelność kodu i pozwalają na jego szybsze zrozumienie oraz ułatwiają naprawienie występujących błędów.</p>
-<p>Odstępy można uzyskać poprzez użycie spacji.
-Spacje powinny być użyte po przecinkach, ale nigdy przed nimi.
-Dodatkowo, większość operatorów (np. <code>=</code>, <code>+</code>, <code>-</code>, <code>==</code>) powinna być otoczona przez spacje.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Zalecane</span>
-srednia =<span class="st"> </span><span class="kw">mean</span>(wartosc, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)
-pole =<span class="st"> </span>bok_a <span class="op">*</span><span class="st"> </span>bok_b
-
-<span class="co"># Niewskazane</span>
-srednia=<span class="kw">mean</span> ( wartosc,<span class="dt">na.rm=</span><span class="ot">TRUE</span> ) 
-pole=bok_a<span class="op">*</span>bok_b</code></pre>
-<p>Spacje należy również używać do tworzenia wcięć - każde z nich powinno się składać z dwóch spacji.
-<!-- tab space war --></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Zalecane</span>
-moja_funkcja =<span class="st"> </span><span class="cf">function</span>(x, y, z){
-  pod =<span class="st"> </span>y <span class="op">/</span><span class="st"> </span>z
-  wynik =<span class="st"> </span>x <span class="op">*</span><span class="st"> </span>pod
-  wynik
-}
-
-<span class="co"># Niewskazane</span>
-moja_funkcja =<span class="st"> </span><span class="cf">function</span>(x, y, z){
-pod =<span class="st"> </span>y <span class="op">/</span><span class="st"> </span>z
-wynik =<span class="st"> </span>x <span class="op">*</span><span class="st"> </span>pod
-wynik
-}</code></pre>
-<p>Warto także ograniczać długość każdej linii kodu, żeby nie przekraczała ona ok. 80 znaków.
-Dzięki temu możliwe jest szybkie przeczytanie kodu czy też jego wydrukowanie.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Zalecane</span>
-bardzo_wazny_wynik =<span class="st"> </span><span class="kw">moja_bardzo_wazna_funkcja</span>(<span class="st">&quot;pierwszy argument&quot;</span>,
-                                               <span class="dt">b =</span> <span class="st">&quot;drugi argument&quot;</span>, 
-                                               <span class="dt">c =</span> <span class="st">&quot;trzeci argument&quot;</span>)
-
-<span class="co"># Niewskazane</span>
-bardzo_wazny_wynik =<span class="st"> </span><span class="kw">moja_bardzo_wazna_funkcja</span>(<span class="st">&quot;pierwszy argument&quot;</span>, <span class="st">&quot;drugi argument&quot;</span>, <span class="st">&quot;trzeci argument&quot;</span>)</code></pre>
-</div>
-<div id="komentarze" class="section level3">
-<h3><span class="header-section-number">2.5.3</span> Komentarze</h3>
-<p>Komentarze służą do wyjaśniania istotnych elementów kodu.
-Do komentowania w języku R służy operator <code>#</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Mój komentarz</span></code></pre>
-</div>
-<div id="nazwy-plikow" class="section level3">
-<h3><span class="header-section-number">2.5.4</span> Nazwy plików</h3>
-<p>Nazwy plików powinny spełniać trzy wymagania - być łatwe (i) do odczytania przez komputer, (ii) do odczytania przez człowieka, (iii) do posortowania.</p>
-<p>Nazwy plików nie powinny zawierać spacji, znaków specjalnych (np. !, %, *), znaków diakrytycznych (np. ć, Ł, ź).
-Warto też aby nazwy plików składały się tylko z małych liter.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Zalecane</span>
-obliczanie<span class="op">-</span>sredniej.R
-pomiary<span class="op">-</span>temperatury.csv
-
-<span class="co"># Niewskazane</span>
-Obliczanie Średniej.R
-pomiaryTemperatury<span class="op">!</span>.csv</code></pre>
-<p>Podobnie jak nazwy obiektów, również nazwy plików powinny opisywać ich zawartość.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Zalecane</span>
-obliczanie<span class="op">-</span>sredniej.R
-pomiary<span class="op">-</span>temperatury.csv
-
-<span class="co"># Niewskazane</span>
-kod.R
-dane.csv</code></pre>
-<p>Dodatkowo wskazane jest dodanie wartości numerycznych przed nazwą pliku, jeżeli pliki mają jakąś kolejność.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Zalecane</span>
-<span class="dv">01</span>_przygotowanie<span class="op">-</span>danych.R
-<span class="dv">02</span>_obliczanie<span class="op">-</span>sredniej.R
-
-<span class="co"># Niewskazane</span>
-przygotowanie<span class="op">-</span>danych.R
-obliczanie<span class="op">-</span>sredniej.R</code></pre>
-
-<div class="rmdinfo">
-Kodowanie znaków (ang. <em>character encodings</em>) jest to sposób sposób prezentacji znaków.
-Istnieje szereg różnych standardów kodowania znaków.
-Standard ASCII przyporządkowuje liczbom z zakresu 0−127 litery alfabetu angielskiego, cyfry, znaki przestankowe i inne symbole oraz polecenia.
-Firma Microsoft stworzyła dodatkowo cały szereg standardów dla różnych języków.
-Przykładowo do obsługi języków środkowoeuropejskich istnieje wersja oznaczona jako Windows-1250 (lub CP1250).
-Alternatywnie do systemu Microsoftu powstał też zbiór standardów ISO, przykładowo ISO-8859-2 dla języków środkowoeuropejskich.
-W efekcie oznacza to, że otworzenie tekstu z innego komputera, na komputerze z “polskim” kodowaniem znaków może spowodować pojawienie się tzw. “krzaczków”.
-Aby uniknąć takiej sytuacji powstał system kodowania UTF-8, który zawiera w sobie ponad milion różnych znaków.
-Jest on obecnie zalecanym standardem na całym świecie.
-</div>
-
-</div>
-<div id="daty" class="section level3">
-<h3><span class="header-section-number">2.5.5</span> Daty</h3>
-<p>Istnieje wiele sposobów zapisu dat<a href="#fn21" class="footnote-ref" id="fnref21"><sup>21</sup></a>, co może powodować różnorodne problemy przy programowaniu oraz analizie danych.
-Z ratunkiem w tej kwestii przychodzi norma <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>, która definiuje daty kalendarzowe jako <em>YYYY-MM-DD</em>, czyli <em>ROK-MIESIĄC-DZIEŃ</em>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Zalecane</span>
-<span class="dv">2019-06-02</span>
-
-<span class="co"># Niewskazane</span>
-wszelkie inne</code></pre>
-</div>
-</div>
 <div id="zadania-1" class="section level2">
 <h2><span class="header-section-number">2.6</span> Zadania</h2>
-<p>Rozwiązując poniższe zadania oraz pozostałe zadania z tej książki staraj się stosować do stylu podanego w sekcji <a href="ergosum.html#styl">2.5</a>.</p>
+<p>Rozwiązując poniższe zadania oraz pozostałe zadania z tej książki staraj się stosować do stylu podanego w sekcji <a href="ergosum.html#styl">2.4</a>.</p>
 <ol style="list-style-type: decimal">
 <li>Przejrzyj poniższą listę poleceń.
 Spróbuj określić uzyskane wyniki bez wykonywania kodu w R.</li>

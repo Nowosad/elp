@@ -221,65 +221,6 @@ strzałka Góra/Dół (w oknie konsoli)   wybiera wcześniej wpisany kod
 Esc                                   przerywa niedokończoną operację                               
 Shift+Alt+K                           wyświetla listę skrótów klawiaturowych                        
 
-## Dodatkowe materiały {#resources}
-
-Polskie książki:
-
-- http://www.biecek.pl/R/ [@biecekPrzewodnikPoPakiecie2014]
-- http://www.gagolewski.com/publications/programowanier/ [@gagolewski2016programowanie]
-- https://helion.pl/ksiazki/jezyk-r-kompletny-zestaw-narzedzi-dla-analitykow-danych-hadley-wickham-garrett-grolemund,jezrko.htm#format/d [@wickham2016r]
-- https://helion.pl/ksiazki/wydajne-programowanie-w-r-praktyczny-przewodnik-po-lepszym-programowaniu-gillespie-colin-lovelace-robin,a_0491.htm#format/d [@gillespie2016efficient]
-- https://bookdown.org/nowosad/Geostatystyka/ [@nowosadjakubGeostatystyka2019]
-- http://www.enwo.pl/przetwarzanie/index.html [@czerneckiMetodyPrzetwarzaniaDanych2018]
-
-Angielskie książki:
-
-- https://rstudio-education.github.io/hopr/ [@grolemund2014hands]
-- https://r4ds.had.co.nz/ [@wickham2016r]
-- https://csgillespie.github.io/efficientR/ [@gillespie2016efficient]
-- https://adv-r.hadley.nz [@wickham2014advanced]
-- https://geocompr.robinlovelace.net/ [@lovelace_geocomputation_2019]
-
-Blogi:
-
-- Agregator blogów dotyczących R - https://www.r-bloggers.com/
-- Polski blog opisujący kwestie analizy danych w R, wizualizacji, oraz edukacji - http://smarterpoland.pl/
-- Polski blog pokazujący zastosowanie R do analizy i wizualizacji danych - http://szychtawdanych.pl/
-
-Kursy:
-
-- Lista kursów dotyczących R na platformie DataCamp (część z nich jest dostępna bezpłatnie) - https://www.datacamp.com/search?q=r
-- Polskie tłumaczenie pakietu R służącego do nauki tego języka - https://github.com/dabrze/swirl
-- Lista kursów dotyczących R na platformie Coursera - https://www.coursera.org/courses?query=r
-- Lista kursów dotyczących R na platformie edX - https://www.edx.org/course?search_query=r
-
-\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Pisanie kodu oraz jego dokumentowanie opiera się w znacznym stopniu na wprowadzaniu znaków na klawiaturze do komputera.
-Warto jest więc aby robić to w sposób [efektywny](https://csgillespie.github.io/efficientR/introduction.html#touch-typing), czyli taki w którym używamy wszystkich palców u rąk a nasz wzrok nie jest skupiony na klawiaturze.
-Takie pisanie nazwa się pisaniem bezwzrokowym (ang. *touch typing*).
-Pisanie bezwzrokowe ma szereg reguł, które wymagają przestawienia się ze starych nawyków oraz pewnego treningu. 
-Na szczęście istnieje wiele internetowych zasobów, które ułatwiają naukę takiego pisania, między innymi strona [TypingClub](https://www.typingclub.com/).</div>\EndKnitrBlock{rmdinfo}
-
-Serwisy internetowe:
-
-- Wyszukiwarki internetowe są nieocenionym narzędziem wspierającym programowanie - https://rseek.org/, https://duckduckgo.com/, https://www.google.com/, https://www.bing.com/, itd.
-- Serwis społecznościowy zawierający pytania i odpowiedzi dotyczące różnych języków programowania w tym R - https://stackoverflow.com.
-Pytania dotyczące R można znaleźć pod adresem https://stackoverflow.com/questions/tagged/r. 
-Przed zadaniem nowego pytania warto wyszukać czy nie zostało ono zadane wcześniej a następnie przeczytać wątek dotyczący tworzenia nowych pytań - https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example
-- Twitter jest miejscem, w którym można znaleźć zarówno nowości z języka R, jak również odpowiedzi na pytania dotyczące tego języka - https://twitter.com/. 
-Kwestie związane z R są opatrzone hasztagiem `#rstats`, natomiast kwestie przestrzenne w R są opisywane hasztagami `#rspatial` oraz `#geocompr`
-- Elektroniczny biuletyn R Weekly zbierający co tydzień nowości związane z r - https://rweekly.org/
-- Lista emailowa dotycząca R - https://stat.ethz.ch/mailman/listinfo/r-help
-- Lista emailowa dotycząca kwestii przestrzennych w R - https://stat.ethz.ch/mailman/listinfo/r-sig-geo
-- Forum dotyczące kwestii R i RStudio - https://community.rstudio.com/
-
-Meetups (spotkania początkujących i zaawansowanych użytkowników R):
-
-- Poznań - https://www.meetup.com/pl-PL/Poznan-R-User-Group-PAZUR/
-- Warszawa - https://www.meetup.com/pl-PL/Spotkania-Entuzjastow-R-Warsaw-R-Users-Group-Meetup/
-- Wrocław - https://www.meetup.com/Wroclaw-R-Users-Group/
-- Kraków - https://www.meetup.com/erkakrakow/
-- Trójmiasto - https://www.meetup.com/Trojmiejska-Grupa-Entuzjastow-R/
-
 ## Styl
 
 Poniżej znajdują się podstawowe porady dotyczące stylu pisania kodu. 
@@ -442,6 +383,66 @@ Z ratunkiem w tej kwestii przychodzi norma [ISO 8601](https://en.wikipedia.org/w
 # Niewskazane
 wszelkie inne
 ```
+
+## Dodatkowe materiały {#resources}
+
+Polskie książki:
+
+- http://www.biecek.pl/R/ [@biecekPrzewodnikPoPakiecie2014]
+- http://www.gagolewski.com/publications/programowanier/ [@gagolewski2016programowanie]
+- https://helion.pl/ksiazki/jezyk-r-kompletny-zestaw-narzedzi-dla-analitykow-danych-hadley-wickham-garrett-grolemund,jezrko.htm#format/d [@wickham2016r]
+- https://helion.pl/ksiazki/wydajne-programowanie-w-r-praktyczny-przewodnik-po-lepszym-programowaniu-gillespie-colin-lovelace-robin,a_0491.htm#format/d [@gillespie2016efficient]
+- https://bookdown.org/nowosad/Geostatystyka/ [@nowosadjakubGeostatystyka2019]
+- http://www.enwo.pl/przetwarzanie/index.html [@czerneckiMetodyPrzetwarzaniaDanych2018]
+
+Angielskie książki:
+
+- https://rstudio-education.github.io/hopr/ [@grolemund2014hands]
+- https://r4ds.had.co.nz/ [@wickham2016r]
+- https://csgillespie.github.io/efficientR/ [@gillespie2016efficient]
+- https://adv-r.hadley.nz [@wickham2014advanced]
+- https://geocompr.robinlovelace.net/ [@lovelace_geocomputation_2019]
+
+Blogi:
+
+- Agregator blogów dotyczących R - https://www.r-bloggers.com/
+- Polski blog opisujący kwestie analizy danych w R, wizualizacji, oraz edukacji - http://smarterpoland.pl/
+- Polski blog pokazujący zastosowanie R do analizy i wizualizacji danych - http://szychtawdanych.pl/
+
+Kursy:
+
+- Lista kursów dotyczących R na platformie DataCamp (część z nich jest dostępna bezpłatnie) - https://www.datacamp.com/search?q=r
+- Polskie tłumaczenie pakietu R służącego do nauki tego języka - https://github.com/dabrze/swirl
+- Lista kursów dotyczących R na platformie Coursera - https://www.coursera.org/courses?query=r
+- Lista kursów dotyczących R na platformie edX - https://www.edx.org/course?search_query=r
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Pisanie kodu oraz jego dokumentowanie opiera się w znacznym stopniu na wprowadzaniu znaków na klawiaturze do komputera.
+Warto jest więc aby robić to w sposób [efektywny](https://csgillespie.github.io/efficientR/introduction.html#touch-typing), czyli taki w którym używamy wszystkich palców u rąk a nasz wzrok nie jest skupiony na klawiaturze.
+Takie pisanie nazwa się pisaniem bezwzrokowym (ang. *touch typing*).
+Pisanie bezwzrokowe ma szereg reguł, które wymagają przestawienia się ze starych nawyków oraz pewnego treningu. 
+Na szczęście istnieje wiele internetowych zasobów, które ułatwiają naukę takiego pisania, między innymi strona [TypingClub](https://www.typingclub.com/).</div>\EndKnitrBlock{rmdinfo}
+
+Serwisy internetowe:
+
+- Wyszukiwarki internetowe są nieocenionym narzędziem wspierającym programowanie - https://rseek.org/, https://duckduckgo.com/, https://www.google.com/, https://www.bing.com/, itd.
+- Serwis społecznościowy zawierający pytania i odpowiedzi dotyczące różnych języków programowania w tym R - https://stackoverflow.com.
+Pytania dotyczące R można znaleźć pod adresem https://stackoverflow.com/questions/tagged/r. 
+Przed zadaniem nowego pytania warto wyszukać czy nie zostało ono zadane wcześniej a następnie przeczytać wątek dotyczący tworzenia nowych pytań - https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example
+- Twitter jest miejscem, w którym można znaleźć zarówno nowości z języka R, jak również odpowiedzi na pytania dotyczące tego języka - https://twitter.com/. 
+Kwestie związane z R są opatrzone hasztagiem `#rstats`, natomiast kwestie przestrzenne w R są opisywane hasztagami `#rspatial` oraz `#geocompr`
+- Elektroniczny biuletyn R Weekly zbierający co tydzień nowości związane z r - https://rweekly.org/
+- Lista emailowa dotycząca R - https://stat.ethz.ch/mailman/listinfo/r-help
+- Lista emailowa dotycząca kwestii przestrzennych w R - https://stat.ethz.ch/mailman/listinfo/r-sig-geo
+- Forum dotyczące kwestii R i RStudio - https://community.rstudio.com/
+
+Meetups (spotkania początkujących i zaawansowanych użytkowników R):
+
+- Poznań - https://www.meetup.com/pl-PL/Poznan-R-User-Group-PAZUR/
+- Warszawa - https://www.meetup.com/pl-PL/Spotkania-Entuzjastow-R-Warsaw-R-Users-Group-Meetup/
+- Wrocław - https://www.meetup.com/Wroclaw-R-Users-Group/
+- Kraków - https://www.meetup.com/erkakrakow/
+- Trójmiasto - https://www.meetup.com/Trojmiejska-Grupa-Entuzjastow-R/
+
 
 ## Zadania
 
