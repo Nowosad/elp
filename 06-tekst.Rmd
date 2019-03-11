@@ -208,14 +208,13 @@ y = c("kołdra", "kordła", "pościel")
 str_detect(y, pattern = "ko(łdr|rdł)a")
 ```
 
-
-## Wyrażenia regularne (wydzielanie tekstu)
+## Wydzielanie tekstu - wyrażenia regularne 
 
 ```{r}
 # str_extract()
 ```
 
-## Wyrażenia regularne (zamiana tekstu)
+## Zamiana tekstu - wyrażenia regularne
 
 ```{r}
 # str_replace()
