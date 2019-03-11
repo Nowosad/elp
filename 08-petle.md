@@ -70,13 +70,18 @@ odl_mile
 
 
 ```r
+odl_mile = c(142, 63, 121)
+```
+
+
+```r
 odl_km = vector("numeric", length = 0)
 odl_mile_l = seq_along(odl_mile)
 for (i in odl_mile_l) {
   odl_km = c(odl_km, odl_mile[i] * 1.609)
 }
 odl_km
-#> [1] 368 163 313
+#> [1] 228 101 195
 ```
 
 

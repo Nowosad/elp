@@ -348,13 +348,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 }
 odl_mile
 <span class="co">#&gt; [1] 228 101 195</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">odl_mile =<span class="st"> </span><span class="kw">c</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="dt">length =</span> <span class="dv">0</span>)
 odl_mile_l =<span class="st"> </span><span class="kw">seq_along</span>(odl_mile)
 <span class="cf">for</span> (i <span class="cf">in</span> odl_mile_l) {
   odl_km =<span class="st"> </span><span class="kw">c</span>(odl_km, odl_mile[i] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)
 }
 odl_km
-<span class="co">#&gt; [1] 368 163 313</span></code></pre>
+<span class="co">#&gt; [1] 228 101 195</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">odl_mile =<span class="st"> </span><span class="kw">c</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))
 odl_mile_l =<span class="st"> </span><span class="kw">seq_along</span>(odl_mile)
