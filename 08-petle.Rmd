@@ -99,6 +99,25 @@ odleglosci_mile = c(0, 1, 10, 55, 160)
 mile_na_km(odleglosci_mile)
 ```
 
+```{r, echo=FALSE, eval=FALSE}
+mile_na_kilometry = function(mile){
+  mile * 1.609
+}
+
+mile_na_km = function(odl_mile){
+  odl_km = vector("numeric", length = length(odl_mile))
+  odl_mile_l = seq_along(odl_mile)
+  for (i in odl_mile_l) {
+    odl_km[i] = odl_mile[i] * 1.609
+  }
+  odl_km
+}
+
+x = sample(1:100, size = 99999, replace = TRUE)
+bench::mark(mile_na_kilometry(x),
+            mile_na_km(x))
+```
+
 ## Pętla while 
 
 <!--     pętla for stosowana w sytuacji, gdy ilość wykonań kodu jest znana przed rozpoczęciem działania pętli -->
@@ -152,6 +171,9 @@ liczba_dni
 <!-- http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html -->
 <!-- http://alyssafrazee.com/2014/01/29/vectorization.html -->
 <!-- *apply -->
+
+
+
 
 ## Zadania
 
