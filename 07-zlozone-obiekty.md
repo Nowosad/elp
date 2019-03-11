@@ -619,6 +619,8 @@ lista_z_r1
 #> [1]  9 10 11 12
 ```
 
+`as.vector()`, `as.matrix()`, `as.data.frame()`, `as.list()`
+
 ## Inne klasy obiektów
 
 
