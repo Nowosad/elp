@@ -95,7 +95,7 @@ seq(1, 12, by = 2)
 
 <!-- operatory statytyczne -->
 
-## Działania na wektorach
+## Działania na wektorach {#dzialania-na-wektorach}
 
 Wiele podstawowych operacji w R jest zwektoryzowana. 
 Przykładowo, możliwe jest pomnożenie kolejnych elementów jednego wektora przez kolejne elementy drugiego wektora.
@@ -195,15 +195,15 @@ is.na(temperatura)
 R posiada też kilka dodatkowych specjalnych obiektów, takich jak `NULL`, `NaN`, `Inf` oraz `-Inf`.
 `NULL` ma długość zero i nie posiada żadnych atrybutów. 
 Może on posłużyć np. do usuwania kolumn w ramkach danych.
-`NaN` (ang. *Not a Number*) oznacza wartość, która nie jest zdefiniowaną lub nie może być reprezentowana w inny sposób, przykładowo `0/0`.
+`NaN` (ang. *Not a Number*) oznacza wartość, która nie jest zdefiniowaną lub nie może być reprezentowana w inny sposób, przykładowo `0/0`.
 `Inf` i `-Inf` (ang. *Infinity*) jest wynikiem obliczeń, które dały bardzo dużą wartość dodatną lub ujemną, przykładowo `9^999`.
 ```
 
 ## Wydzielanie 
 
 R posiada trzy podstawowe operatory wydzielania (ang. *subsetting*) - `[]`, `[[]]` oraz `$`, które działają w różny sposób w zależności od tego czy wydzielamy wektory, macierze, ramki danych czy listy.
-W tym rozdziale skupimy się na wydzielaniu elementów z wektora przy użyciu operatora `[]`.
-Więcej na temat wydzielania innych obiektów można znaleźć w rozdziale \@ref(zlozone-obiekty).
+W tym rozdziale skupimy się na wydzielaniu elementów z wektora przy użyciu operatora `[]`.
+Więcej na temat wydzielania innych obiektów można znaleźć w rozdziale \@ref(zlozone-obiekty).
 
 Wydzielanie wektorów używając operatora `[]` może odbywać się używając jednego z poniższych zapytań:
 
