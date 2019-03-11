@@ -335,6 +335,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="co">#&gt; [1] 228</span>
 <span class="co">#&gt; [1] 101</span>
 <span class="co">#&gt; [1] 195</span></code></pre>
+<!-- block -->
+<!-- uzywaj seq_along(old_mile) zamiast 1:length(old_mile), bo -->
+<!-- 1:lenght(0) -->
 <pre class="sourceCode r"><code class="sourceCode r">odl_mile_l =<span class="st"> </span><span class="kw">seq_along</span>(odl_mile)
 <span class="cf">for</span> (i <span class="cf">in</span> odl_mile_l) {
   <span class="kw">print</span>(odl_mile[i] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)
@@ -382,6 +385,12 @@ odl_km
 </div>
 <div id="petla-while" class="section level2">
 <h2><span class="header-section-number">8.2</span> Pętla while</h2>
+<!--     pętla for stosowana w sytuacji, gdy ilość wykonań kodu jest znana przed rozpoczęciem działania pętli -->
+<!--     pętla while stosowana gdy ilość wykonań nie jest znana przed zakończeniem działania pętli -->
+<!-- https://rstudio-education.github.io/hopr/loops.html#while-loops -->
+<!-- `next`, `break` -
+https://adv-r.hadley.nz/control-flow.html#loops -->
+<!-- `while`, `repeat` -->
 <div id="skadnia-1" class="section level3">
 <h3><span class="header-section-number">8.2.1</span> Składnia</h3>
 </div>
@@ -390,12 +399,6 @@ odl_km
 </div>
 <div id="zastosowanie-w-funkcjach-1" class="section level3">
 <h3><span class="header-section-number">8.2.3</span> Zastosowanie w funkcjach</h3>
-<!-- https://rstudio-education.github.io/hopr/loops.html#while-loops -->
-<!-- `next`, `break` -
-https://adv-r.hadley.nz/control-flow.html#loops -->
-<!-- `while`, `repeat` -->
-<!--     pętla for stosowana w sytuacji, gdy ilość wykonań kodu jest znana przed rozpoczęciem działania pętli -->
-<!--     pętla while stosowana gdy ilość wykonań nie jest znana przed zakończeniem działania pętli -->
 </div>
 </div>
 <div id="programowanie-funkcyjne" class="section level2">
