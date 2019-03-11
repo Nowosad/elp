@@ -4,6 +4,8 @@
 
 ## Pętla for
 
+### Składnia
+
 <!-- https://rpubs.com/daspringate/vectorisation -->
 
 ```{r, eval=FALSE}
@@ -11,6 +13,8 @@ for (element in wektor) {
   przetwarzanie elementu
 }
 ```
+
+### Przykład działania
 
 <!-- mila lądowa = 1,609 km -->
 
@@ -70,7 +74,15 @@ for (i in odl_mile_l) {
 odl_km
 ```
 
+### Zastosowanie w funkcjach
+
 ## Pętla while
+
+### Składnia
+
+### Przykład działania
+
+### Zastosowanie w funkcjach
 
 <!-- https://rstudio-education.github.io/hopr/loops.html#while-loops -->
 
