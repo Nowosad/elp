@@ -509,7 +509,7 @@ unclass(dzis)
 #> [1] 17966
 ```
 
-Powyższa wartość, 1.797\times 10^{4}, oznacza liczbę dni od 1970-01-01.^[https://en.wikipedia.org/wiki/Unix_time]
+Powyższa wartość, 17966, oznacza liczbę dni od 1970-01-01.^[https://en.wikipedia.org/wiki/Unix_time]
 
 Tworzenie wektora dat odbywa się używając funkcji `as.Date()`.
 
