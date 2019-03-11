@@ -123,11 +123,27 @@ while (warunek){
 
 ### Przykład działania
 
+```{r, eval=FALSE, echo=FALSE}
+woda = 20
+szklanka = 0
+while(woda > 0){
+  szklanka = szklanka +1
+  woda = woda - 0.5
+  print(szklanka)
+}
+```
 
+```{r}
+budzet = 100
+liczba_dni = 0
+while(budzet > 0 && budzet < 200){
+  budzet = budzet + sample(-10:10, size = 1)
+  liczba_dni = liczba_dni + 1
+}
+liczba_dni
+```
 
 ### Zastosowanie w funkcjach
-
-
 
 ## Programowanie funkcyjne
 
