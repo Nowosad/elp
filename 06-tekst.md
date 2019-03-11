@@ -239,11 +239,6 @@ str_detect(tekst4, pattern = "\\.")
 #> [1] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE
 ```
 
-
-```r
-# str_detect(tekst4, pattern = "")
-```
-
 <!-- block z popularnymi regex -->
 
 

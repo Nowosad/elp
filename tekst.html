@@ -456,7 +456,6 @@ Istnieje wiele dodatkowych znaków specjalnych, np. <code>\n</code> - nowa linia
 <span class="co">#&gt; Error: &#39;\.&#39; is an unrecognized escape in character string starting &quot;&quot;\.&quot;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>)
 <span class="co">#&gt; [1] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># str_detect(tekst4, pattern = &quot;&quot;)</span></code></pre>
 <!-- block z popularnymi regex -->
 <pre class="sourceCode r"><code class="sourceCode r">y =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kołdra&quot;</span>, <span class="st">&quot;kordła&quot;</span>, <span class="st">&quot;pościel&quot;</span>)
 <span class="kw">str_detect</span>(y, <span class="dt">pattern =</span> <span class="st">&quot;ko(łdr|rdł)a&quot;</span>)</code></pre>
