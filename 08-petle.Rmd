@@ -36,6 +36,10 @@ for (i in 1:3) {
 }
 ```
 
+<!-- block -->
+<!-- uzywaj seq_along(old_mile) zamiast 1:length(old_mile), bo -->
+<!-- 1:lenght(0) -->
+
 ```{r}
 odl_mile_l = seq_along(odl_mile)
 for (i in odl_mile_l) {
@@ -97,19 +101,22 @@ mile_na_km(odleglosci_mile)
 
 ## Pętla while
 
-### Składnia
-
-### Przykład działania
-
-### Zastosowanie w funkcjach
+<!--     pętla for stosowana w sytuacji, gdy ilość wykonań kodu jest znana przed rozpoczęciem działania pętli -->
+<!--     pętla while stosowana gdy ilość wykonań nie jest znana przed zakończeniem działania pętli -->
 
 <!-- https://rstudio-education.github.io/hopr/loops.html#while-loops -->
 
 <!-- `next`, `break` -
 https://adv-r.hadley.nz/control-flow.html#loops -->
 <!-- `while`, `repeat` -->
-<!--     pętla for stosowana w sytuacji, gdy ilość wykonań kodu jest znana przed rozpoczęciem działania pętli -->
-<!--     pętla while stosowana gdy ilość wykonań nie jest znana przed zakończeniem działania pętli -->
+
+### Składnia
+
+### Przykład działania
+
+### Zastosowanie w funkcjach
+
+
 
 ## Programowanie funkcyjne
 
