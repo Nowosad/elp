@@ -191,11 +191,11 @@ sr_dzien
 ```
 
 ```{r}
-apply(pomiary, 1, mean)
+apply(pomiary, MARGIN = 2, FUN = mean)
 ```
 
 ```{r}
-apply(pomiary, 2, mean)
+apply(pomiary, MARGIN = 1, FUN = mean)
 ```
 
 ## Zadania
