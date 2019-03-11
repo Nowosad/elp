@@ -134,7 +134,7 @@ a * b
 ```
 
 Kod zapisany w powyższy sposób zajmuje niewiele miejsca i jest łatwy do odczytania.
-Alternatywnie możnaby ten problem rozbić na podelementy i je wymnożyć.
+Alternatywnie można by ten problem rozbić na podelementy i je wymnożyć.
 
 
 ```r
@@ -182,7 +182,7 @@ temperatura = c(8.2, 10.3, 12.0)
 
 Czwartego dnia twój termometr się popsuł i nie można było wykonać pomiaru.
 Co należałoby w takim razie zrobić?
-Możnaby pominąć ten pomiar, naprawić termometr i wykonać pomiar kolejnego dnia. 
+Można by pominąć ten pomiar, naprawić termometr i wykonać pomiar kolejnego dnia. 
 Wówczas jednak mielibyśmy cztery wartości dla pięciu dni.
 Inną możliwą opcją byłoby użycie wartości, która stałaby się kodem wartości brakujących, np. 999.
 Problemem tego rozwiązania jest to w jaki sposób należałoby, np. wyliczyć średnią w tym obiekcie.
