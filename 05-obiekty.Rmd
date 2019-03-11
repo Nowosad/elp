@@ -257,11 +257,33 @@ temperatura[0]
 
 ## Wydzielanie i przypisanie
 
-<!-- ... -->
+Wydzielanie elementów może mieć kilka dodatkowych zastosowań oprócz wyświetlania wybranych wartości.
+Kolejną możliwością jest tworzenie nowych obiektów na podstawie wydzieleń.
+
+```{r}
+temperatura_pon = temperatura["Poniedziałek"]
+temperatura_pon
+```
+
+```{r}
+temparatura_10 = temperatura[temperatura > 10 & !is.na(temperatura)]
+temparatura_10
+```
 
 ## Modyfikowanie obiektów
 
-<!-- ... -->
+```{r}
+temperatura
+```
+
+```{r}
+temperatura["Czwartek"]
+```
+
+```{r}
+temperatura["Czwartek"] = 9.1
+temperatura["Czwartek"]
+```
 
 ## Łączenie podstawowych typów obiektów
 
