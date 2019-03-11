@@ -387,7 +387,7 @@ attributes(dzis)
 unclass(dzis)
 ```
 
-Powyższa wartość, `r unclass(dzis)`, oznacza liczbę dni od 1970-01-01.^[https://en.wikipedia.org/wiki/Unix_time]
+Powyższa wartość, `r format(unclass(dzis))`, oznacza liczbę dni od 1970-01-01.^[https://en.wikipedia.org/wiki/Unix_time]
 
 Tworzenie wektora dat odbywa się używając funkcji `as.Date()`.
 
