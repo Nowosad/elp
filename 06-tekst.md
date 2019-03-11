@@ -254,6 +254,7 @@ str_detect(y, pattern = "ko(łdr|rdł)a")
 
 ## Wydzielanie tekstu - wyrażenia regularne 
 
+<!-- https://r4ds.had.co.nz/strings.html#extract-matches -->
 
 ```r
 # str_extract()
@@ -261,6 +262,7 @@ str_detect(y, pattern = "ko(łdr|rdł)a")
 
 ## Zamiana tekstu - wyrażenia regularne
 
+<!-- https://r4ds.had.co.nz/strings.html#replacing-matches -->
 
 ```r
 # str_replace()
@@ -274,6 +276,7 @@ Umiejętności używania wyrażeń regularnych można trenować używając róż
 
 ## Wyszukiwanie plików
 
+<!-- `dir()` -->
 
 ## Zadania
 
