@@ -1,6 +1,8 @@
 
 # Powtarzanie {#petle}
 
+<!-- intro -->
+
 ## Pętla for
 
 <!-- https://rpubs.com/daspringate/vectorisation -->
