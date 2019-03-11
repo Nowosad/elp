@@ -122,7 +122,7 @@ for (i in c(1, 2, 4, 5, 6)){
 }
 ```
 
-1) Spójrz na poniższy kod, ale nie wykonuj go.
+2) Spójrz na poniższy kod, ale nie wykonuj go.
 Ile razy zostanie wyświetlony tekst `"Działa!"`?
 
 
@@ -135,7 +135,7 @@ for (i in c(1, 2, 4, 5, 6)){
 }
 ```
 
-1) Spójrz na poniższy kod, ale nie wykonuj go.
+3) Spójrz na poniższy kod, ale nie wykonuj go.
 Ile razy zostanie wyświetlony tekst `"Działa!"`?
 
 
@@ -148,7 +148,7 @@ for (i in c(1, 2, 4, 5, 6)){
 }
 ```
 
-1) Spójrz na poniższy kod, ale nie wykonuj go.
+4) Spójrz na poniższy kod, ale nie wykonuj go.
 Ile razy zostanie wyświetlony tekst `"Działa!"`?
 
 
@@ -161,7 +161,7 @@ for (i in c(1, 2, 4, 5, 6)){
 }
 ```
 
-1) Spójrz na poniższy kod, ale nie wykonuj go.
+5) Spójrz na poniższy kod, ale nie wykonuj go.
 Ile razy zostanie wyświetlony tekst `"Działa!"`?
 
 
