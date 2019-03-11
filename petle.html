@@ -366,6 +366,17 @@ odl_km
 </div>
 <div id="zastosowanie-w-funkcjach" class="section level3">
 <h3><span class="header-section-number">8.1.3</span> Zastosowanie w funkcjach</h3>
+<pre class="sourceCode r"><code class="sourceCode r">mile_na_km =<span class="st"> </span><span class="cf">function</span>(odl_mile){
+  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))
+  odl_mile_l =<span class="st"> </span><span class="kw">seq_along</span>(odl_mile)
+  <span class="cf">for</span> (i <span class="cf">in</span> odl_mile_l) {
+    odl_km[i] =<span class="st"> </span>odl_mile[i] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>
+  }
+  odl_km
+}</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">odleglosci_mile =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">55</span>, <span class="dv">160</span>)
+<span class="kw">mile_na_km</span>(odleglosci_mile)
+<span class="co">#&gt; [1]   0.00   1.61  16.09  88.50 257.44</span></code></pre>
 </div>
 </div>
 <div id="petla-while" class="section level2">

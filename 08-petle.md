@@ -48,7 +48,6 @@ for (i in 1:3) {
 ```
 
 
-
 ```r
 odl_mile_l = seq_along(odl_mile)
 for (i in odl_mile_l) {
@@ -97,6 +96,25 @@ odl_km
 ```
 
 ### Zastosowanie w funkcjach
+
+
+```r
+mile_na_km = function(odl_mile){
+  odl_km = vector("numeric", length = length(odl_mile))
+  odl_mile_l = seq_along(odl_mile)
+  for (i in odl_mile_l) {
+    odl_km[i] = odl_mile[i] * 1.609
+  }
+  odl_km
+}
+```
+
+
+```r
+odleglosci_mile = c(0, 1, 10, 55, 160)
+mile_na_km(odleglosci_mile)
+#> [1]   0.00   1.61  16.09  88.50 257.44
+```
 
 ## Pętla while
 
