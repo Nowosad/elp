@@ -25,7 +25,7 @@
 <meta name="author" content="Jakub Nowosad">
 
 
-<meta name="date" content="2019-03-07">
+<meta name="date" content="2019-03-11">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -148,7 +148,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrazenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia</a></li>
 <li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="ergosum.html"><a href="ergosum.html#operator-przypisania"><i class="fa fa-check"></i><b>2.2.1</b> Operator przypisania</a></li>
-<li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dziaania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach</a></li>
+<li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dzialania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="ergosum.html"><a href="ergosum.html#ide"><i class="fa fa-check"></i><b>2.3</b> IDE</a></li>
 <li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#resources"><i class="fa fa-check"></i><b>2.4</b> Dodatkowe materiały</a></li>
@@ -492,20 +492,33 @@ temperatura
 </div>
 <div id="wydzielanie-i-przypisanie" class="section level2">
 <h2><span class="header-section-number">5.8</span> Wydzielanie i przypisanie</h2>
-<!-- ... -->
+<p>Wydzielanie elementów może mieć kilka dodatkowych zastosowań oprócz wyświetlania wybranych wartości.
+Kolejną możliwością jest tworzenie nowych obiektów na podstawie wydzieleń.</p>
+<pre class="sourceCode r"><code class="sourceCode r">temperatura_pon =<span class="st"> </span>temperatura[<span class="st">&quot;Poniedziałek&quot;</span>]
+temperatura_pon
+<span class="co">#&gt; Poniedziałek </span>
+<span class="co">#&gt;          8.2</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">temparatura_<span class="dv">10</span> =<span class="st"> </span>temperatura[temperatura <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span> <span class="op">&amp;</span><span class="st"> </span><span class="op">!</span><span class="kw">is.na</span>(temperatura)]
+temparatura_<span class="dv">10</span>
+<span class="co">#&gt; Wtorek  Środa </span>
+<span class="co">#&gt;   10.3   12.0</span></code></pre>
 </div>
 <div id="modyfikowanie-obiektow" class="section level2">
 <h2><span class="header-section-number">5.9</span> Modyfikowanie obiektów</h2>
-<!-- ... -->
+<pre class="sourceCode r"><code class="sourceCode r">temperatura
+<span class="co">#&gt; Poniedziałek       Wtorek        Środa     Czwartek </span>
+<span class="co">#&gt;          8.2         10.3         12.0           NA</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">temperatura[<span class="st">&quot;Czwartek&quot;</span>]
+<span class="co">#&gt; Czwartek </span>
+<span class="co">#&gt;       NA</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">temperatura[<span class="st">&quot;Czwartek&quot;</span>] =<span class="st"> </span><span class="fl">9.1</span>
+temperatura[<span class="st">&quot;Czwartek&quot;</span>]
+<span class="co">#&gt; Czwartek </span>
+<span class="co">#&gt;      9.1</span></code></pre>
 </div>
 <div id="aczenie-podstawowych-typow-obiektow" class="section level2">
 <h2><span class="header-section-number">5.10</span> Łączenie podstawowych typów obiektów</h2>
 <!-- tekst -->
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(temperatura, temperatura)
-<span class="co">#&gt; Poniedziałek       Wtorek        Środa     Czwartek Poniedziałek </span>
-<span class="co">#&gt;          8.2         10.3         12.0           NA          8.2 </span>
-<span class="co">#&gt;       Wtorek        Środa     Czwartek </span>
-<span class="co">#&gt;         10.3         12.0           NA</span></code></pre>
 <p>Właściwością wektora jest to, że może on przyjmować tylko jeden typ.
 Próba stworzenia obiektu składającego się z wielu typów spowoduje wymuszenie (ang. <em>coercion</em>) do najbliższego możliwego typu.
 Odbywa się to zgodnie z zasadą: logiczny -&gt; liczba całkowita -&gt; liczba zmiennoprzecinkowa -&gt; znakowy.</p>

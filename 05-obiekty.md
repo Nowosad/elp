@@ -319,25 +319,52 @@ temperatura[0]
 
 ## Wydzielanie i przypisanie
 
-<!-- ... -->
+Wydzielanie elementów może mieć kilka dodatkowych zastosowań oprócz wyświetlania wybranych wartości.
+Kolejną możliwością jest tworzenie nowych obiektów na podstawie wydzieleń.
+
+
+```r
+temperatura_pon = temperatura["Poniedziałek"]
+temperatura_pon
+#> Poniedziałek 
+#>          8.2
+```
+
+
+```r
+temparatura_10 = temperatura[temperatura > 10 & !is.na(temperatura)]
+temparatura_10
+#> Wtorek  Środa 
+#>   10.3   12.0
+```
 
 ## Modyfikowanie obiektów
 
-<!-- ... -->
+
+```r
+temperatura
+#> Poniedziałek       Wtorek        Środa     Czwartek 
+#>          8.2         10.3         12.0           NA
+```
+
+
+```r
+temperatura["Czwartek"]
+#> Czwartek 
+#>       NA
+```
+
+
+```r
+temperatura["Czwartek"] = 9.1
+temperatura["Czwartek"]
+#> Czwartek 
+#>      9.1
+```
 
 ## Łączenie podstawowych typów obiektów
 
 <!-- tekst -->
-
-
-```r
-c(temperatura, temperatura)
-#> Poniedziałek       Wtorek        Środa     Czwartek Poniedziałek 
-#>          8.2         10.3         12.0           NA          8.2 
-#>       Wtorek        Środa     Czwartek 
-#>         10.3         12.0           NA
-```
-
 Właściwością wektora jest to, że może on przyjmować tylko jeden typ.
 Próba stworzenia obiektu składającego się z wielu typów spowoduje wymuszenie (ang. *coercion*) do najbliższego możliwego typu.
 Odbywa się to zgodnie z zasadą: logiczny -> liczba całkowita -> liczba zmiennoprzecinkowa -> znakowy.
