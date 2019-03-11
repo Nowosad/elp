@@ -191,8 +191,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.8" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie-i-przypisanie"><i class="fa fa-check"></i><b>5.8</b> Wydzielanie i przypisanie</a></li>
 <li class="chapter" data-level="5.9" data-path="proste-obiekty.html"><a href="proste-obiekty.html#modyfikowanie-obiektow"><i class="fa fa-check"></i><b>5.9</b> Modyfikowanie obiektów</a></li>
 <li class="chapter" data-level="5.10" data-path="proste-obiekty.html"><a href="proste-obiekty.html#aczenie-podstawowych-typow-obiektow"><i class="fa fa-check"></i><b>5.10</b> Łączenie podstawowych typów obiektów</a></li>
-<li class="chapter" data-level="5.11" data-path="proste-obiekty.html"><a href="proste-obiekty.html#facate"><i class="fa fa-check"></i><b>5.11</b> Wektory czynnikowe</a></li>
-<li class="chapter" data-level="5.12" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wektory-dat"><i class="fa fa-check"></i><b>5.12</b> Wektory dat</a></li>
+<li class="chapter" data-level="5.11" data-path="proste-obiekty.html"><a href="proste-obiekty.html#fac"><i class="fa fa-check"></i><b>5.11</b> Wektory czynnikowe</a></li>
+<li class="chapter" data-level="5.12" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ate"><i class="fa fa-check"></i><b>5.12</b> Wektory dat</a></li>
 <li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zmiana-typow-obiektow"><i class="fa fa-check"></i><b>5.13</b> Zmiana typów obiektów</a></li>
 <li class="chapter" data-level="5.14" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zadania-4"><i class="fa fa-check"></i><b>5.14</b> Zadania</a></li>
 </ul></li>
@@ -333,7 +333,7 @@ wek_zmi
 <pre class="sourceCode r"><code class="sourceCode r">wek_zna =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>)
 wek_zna
 <span class="co">#&gt; [1] &quot;kot&quot;  &quot;pies&quot;</span></code></pre>
-<p>Dodatkowo, istnieją dwa dodatkowe, rzadziej spotykane typy wektorów - czynnikowy (ang. <em>factor</em>) i dat (ang. <em>date</em>) (sekcja <a href="proste-obiekty.html#facate">5.11</a>).</p>
+<p>Dodatkowo, istnieją dwa dodatkowe, rzadziej spotykane typy wektorów - czynnikowy (ang. <em>factor</em>) i dat (ang. <em>date</em>) (sekcje <a href="proste-obiekty.html#fac">5.11</a> i <a href="proste-obiekty.html#ate">5.12</a>).</p>
 
 <div class="rmdinfo">
 Wiele języków programowania posiada zmienne skalarne (tzw. skalary), czyli takie które mogą przyjmować tylko jedną wartość.
@@ -531,18 +531,101 @@ Odbywa się to zgodnie z zasadą: logiczny -&gt; liczba całkowita -&gt; liczba 
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>(<span class="ot">FALSE</span>, 0L, <span class="fl">3.1</span>, <span class="st">&quot;kot&quot;</span>)
 <span class="co">#&gt; [1] &quot;FALSE&quot; &quot;0&quot;     &quot;3.1&quot;   &quot;kot&quot;</span></code></pre>
 </div>
-<div id="facate" class="section level2">
+<div id="fac" class="section level2">
 <h2><span class="header-section-number">5.11</span> Wektory czynnikowe</h2>
-</div>
-<div id="wektory-dat" class="section level2">
-<h2><span class="header-section-number">5.12</span> Wektory dat</h2>
 <!-- factor i date -->
 <!-- https://rstudio-education.github.io/hopr/r-objects.html -->
+<pre class="sourceCode r"><code class="sourceCode r">tekst =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Poznań&quot;</span>, <span class="st">&quot;Kraków&quot;, &quot;</span>Warszawa<span class="st">&quot;, &quot;</span>Poznań<span class="st">&quot;)</span>
+<span class="st">tekst</span>
+<span class="st">#&gt; [1] &quot;</span>Poznań<span class="st">&quot;   &quot;</span>Kraków&quot;   <span class="st">&quot;Warszawa&quot;</span> <span class="st">&quot;Poznań&quot;</span>
+<span class="kw">attributes</span>(tekst)
+<span class="co">#&gt; NULL</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(tekst)
+<span class="co">#&gt; [1] &quot;character&quot;</span>
+<span class="kw">length</span>(tekst)
+<span class="co">#&gt; [1] 4</span>
+<span class="kw">attributes</span>(tekst)
+<span class="co">#&gt; NULL</span></code></pre>
+<!-- Having a class attribute turns an object into an S3 object, which means it will behave differently from a regular vector when passed to a generic function.  -->
+<!-- ref to ate -->
+<pre class="sourceCode r"><code class="sourceCode r">czynn =<span class="st"> </span><span class="kw">as.factor</span>(tekst)
+czynn
+<span class="co">#&gt; [1] Poznań   Kraków   Warszawa Poznań  </span>
+<span class="co">#&gt; Levels: Kraków Poznań Warszawa</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(czynn)
+<span class="co">#&gt; [1] &quot;integer&quot;</span>
+<span class="kw">length</span>(czynn)
+<span class="co">#&gt; [1] 4</span>
+<span class="kw">attributes</span>(czynn)
+<span class="co">#&gt; $levels</span>
+<span class="co">#&gt; [1] &quot;Kraków&quot;   &quot;Poznań&quot;   &quot;Warszawa&quot;</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $class</span>
+<span class="co">#&gt; [1] &quot;factor&quot;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">tekst2 =<span class="st"> </span><span class="kw">as.character</span>(czynn)
+tekst2
+<span class="co">#&gt; [1] &quot;Poznań&quot;   &quot;Kraków&quot;   &quot;Warszawa&quot; &quot;Poznań&quot;</span></code></pre>
+</div>
+<div id="ate" class="section level2">
+<h2><span class="header-section-number">5.12</span> Wektory dat</h2>
+<p>R ma wbudowaną reprezentację dat w postaci klasy <code>Date</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">dzis =<span class="st"> </span><span class="kw">Sys.Date</span>()
+dzis
+<span class="co">#&gt; [1] &quot;2019-03-11&quot;</span></code></pre>
+<p>Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowia), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(dzis)
+<span class="co">#&gt; [1] &quot;double&quot;</span>
+<span class="kw">length</span>(dzis)
+<span class="co">#&gt; [1] 1</span>
+<span class="kw">attributes</span>(dzis)
+<span class="co">#&gt; $class</span>
+<span class="co">#&gt; [1] &quot;Date&quot;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unclass</span>(dzis)
+<span class="co">#&gt; [1] 17966</span></code></pre>
+<p>Powyższa wartość, 1.79710^{4}, oznacza liczbę dni od 1970-01-01.<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a></p>
+<p>Tworzenie wektora dat odbywa się używając funkcji <code>as.Date()</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">daty =<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">c</span>(<span class="st">&quot;2011-02-02&quot;</span>, <span class="st">&quot;2011-02-03&quot;</span>))
+daty
+<span class="co">#&gt; [1] &quot;2011-02-02&quot; &quot;2011-02-03&quot;</span></code></pre>
+<!-- argument format -->
+<pre class="sourceCode r"><code class="sourceCode r">stara_data =<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;1912-04-13&quot;</span>)
+<span class="kw">unclass</span>(stara_data)
+<span class="co">#&gt; [1] -21082</span></code></pre>
+<p>W R istnieją również wbudowane reprezentacje dat i godzin (inaczej zwane data-czas, ang. <em>date-times</em>).
+Najczęściej używaną jest klasa <code>POSIXct</code>, która jest wektorem przedstawiającym liczbę sekund of 1970-01-01.</p>
+<pre class="sourceCode r"><code class="sourceCode r">czas =<span class="st"> </span><span class="kw">as.POSIXct</span>(<span class="st">&quot;2011-02-02 10:33&quot;</span>, <span class="dt">tz =</span> <span class="st">&quot;CET&quot;</span>)
+czas
+<span class="co">#&gt; [1] &quot;2011-02-02 10:33:00 CET&quot;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(czas)
+<span class="co">#&gt; [1] &quot;double&quot;</span>
+<span class="kw">length</span>(czas)
+<span class="co">#&gt; [1] 1</span>
+<span class="kw">attributes</span>(czas)
+<span class="co">#&gt; $class</span>
+<span class="co">#&gt; [1] &quot;POSIXct&quot; &quot;POSIXt&quot; </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $tzone</span>
+<span class="co">#&gt; [1] &quot;CET&quot;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unclass</span>(czas)
+<span class="co">#&gt; [1] 1.3e+09</span>
+<span class="co">#&gt; attr(,&quot;tzone&quot;)</span>
+<span class="co">#&gt; [1] &quot;CET&quot;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attributes</span>(czas)<span class="op">$</span>tzone =<span class="st"> &quot;America/Los_Angeles&quot;</span>
+czas
+<span class="co">#&gt; [1] &quot;2011-02-02 01:33:00 PST&quot;</span></code></pre>
+<p><code>?timezones</code></p>
+
+<div class="rmdinfo">
+R posiada też dodatkowe klasy specjalne, np:
+- <code>POSIXlt</code> przechowująca informacje o dacie w postaci listy
+- <code>difftime</code> reprezentująca czas trwania
+</div>
+
 </div>
 <div id="zmiana-typow-obiektow" class="section level2">
 <h2><span class="header-section-number">5.13</span> Zmiana typów obiektów</h2>
 <!--rzutowanie??-->
-<p>Do zmiany typu obiektu służą funkcje <code>as.logical()</code>, <code>as.integer()</code>, <code>as.double()</code>, oraz <code>as.character()</code><a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a>.</p>
+<p>Do zmiany typu obiektu służą funkcje <code>as.logical()</code>, <code>as.integer()</code>, <code>as.double()</code>, oraz <code>as.character()</code><a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.logical</span>(<span class="kw">c</span>(<span class="st">&quot;FALSE&quot;</span>, <span class="st">&quot;TRUE&quot;</span>)) <span class="co"># znakowy na logiczny</span>
 <span class="co">#&gt; [1] FALSE  TRUE</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.integer</span>(<span class="kw">c</span>(<span class="st">&quot;3&quot;</span>, <span class="st">&quot;2&quot;</span>)) <span class="co"># znakowy na liczba całkowita </span>
@@ -568,7 +651,8 @@ Odbywa się to zgodnie z zasadą: logiczny -&gt; liczba całkowita -&gt; liczba 
 <ol start="26">
 <li id="fn26"><p>Do sprawdzania jakiego typu jest wektor służy funkcja <code>typeof()</code>.<a href="proste-obiekty.html#fnref26" class="footnote-back">↩</a></p></li>
 <li id="fn27"><p>Liczby zmiennoprzecinkowe mogą być też reprezentowane poprzez notację naukową, np. 11111.2 może być zapisane jako 1.11112e4, a 0.00021 jako 2.1e-4.<a href="proste-obiekty.html#fnref27" class="footnote-back">↩</a></p></li>
-<li id="fn28"><p>Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje <code>is.logical()</code>, <code>is.integer()</code>,<code>is.double()</code>, oraz <code>is.character()</code>.<a href="proste-obiekty.html#fnref28" class="footnote-back">↩</a></p></li>
+<li id="fn28"><p><a href="https://en.wikipedia.org/wiki/Unix_time" class="uri">https://en.wikipedia.org/wiki/Unix_time</a><a href="proste-obiekty.html#fnref28" class="footnote-back">↩</a></p></li>
+<li id="fn29"><p>Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje <code>is.logical()</code>, <code>is.integer()</code>,<code>is.double()</code>, oraz <code>is.character()</code>.<a href="proste-obiekty.html#fnref29" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

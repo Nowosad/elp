@@ -51,7 +51,7 @@ wek_zna
 #> [1] "kot"  "pies"
 ```
 
-Dodatkowo, istnieją dwa dodatkowe, rzadziej spotykane typy wektorów - czynnikowy (ang. *factor*) i dat (ang. *date*) (sekcja \@ref(facate)).
+Dodatkowo, istnieją dwa dodatkowe, rzadziej spotykane typy wektorów - czynnikowy (ang. *factor*) i dat (ang. *date*) (sekcje \@ref(fac) i \@ref(ate)).
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Wiele języków programowania posiada zmienne skalarne (tzw. skalary), czyli takie które mogą przyjmować tylko jedną wartość.
 W R one nie występują, zamiast nich stosowane są wektory o długości jeden.</div>\EndKnitrBlock{rmdinfo}
@@ -393,12 +393,156 @@ c(FALSE, 0L, 3.1, "kot")
 #> [1] "FALSE" "0"     "3.1"   "kot"
 ```
 
-## Wektory czynnikowe {#facate}
-
-## Wektory dat
+## Wektory czynnikowe {#fac}
 
 <!-- factor i date -->
 <!-- https://rstudio-education.github.io/hopr/r-objects.html -->
+
+
+```r
+tekst = c("Poznań", "Kraków", "Warszawa", "Poznań")
+tekst
+#> [1] "Poznań"   "Kraków"   "Warszawa" "Poznań"
+attributes(tekst)
+#> NULL
+```
+
+
+```r
+typeof(tekst)
+#> [1] "character"
+length(tekst)
+#> [1] 4
+attributes(tekst)
+#> NULL
+```
+
+<!-- Having a class attribute turns an object into an S3 object, which means it will behave differently from a regular vector when passed to a generic function.  -->
+<!-- ref to ate -->
+
+
+```r
+czynn = as.factor(tekst)
+czynn
+#> [1] Poznań   Kraków   Warszawa Poznań  
+#> Levels: Kraków Poznań Warszawa
+```
+
+
+```r
+typeof(czynn)
+#> [1] "integer"
+length(czynn)
+#> [1] 4
+attributes(czynn)
+#> $levels
+#> [1] "Kraków"   "Poznań"   "Warszawa"
+#> 
+#> $class
+#> [1] "factor"
+```
+
+
+```r
+tekst2 = as.character(czynn)
+tekst2
+#> [1] "Poznań"   "Kraków"   "Warszawa" "Poznań"
+```
+
+## Wektory dat {#ate}
+
+R ma wbudowaną reprezentację dat w postaci klasy `Date`.
+
+
+```r
+dzis = Sys.Date()
+dzis
+#> [1] "2019-03-11"
+```
+
+Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowia), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.
+
+
+```r
+typeof(dzis)
+#> [1] "double"
+length(dzis)
+#> [1] 1
+attributes(dzis)
+#> $class
+#> [1] "Date"
+```
+
+
+```r
+unclass(dzis)
+#> [1] 17966
+```
+
+Powyższa wartość, 1.797\times 10^{4}, oznacza liczbę dni od 1970-01-01.^[https://en.wikipedia.org/wiki/Unix_time]
+
+Tworzenie wektora dat odbywa się używając funkcji `as.Date()`.
+
+
+```r
+daty = as.Date(c("2011-02-02", "2011-02-03"))
+daty
+#> [1] "2011-02-02" "2011-02-03"
+```
+
+<!-- argument format -->
+
+
+```r
+stara_data = as.Date("1912-04-13")
+unclass(stara_data)
+#> [1] -21082
+```
+
+W R istnieją również wbudowane reprezentacje dat i godzin (inaczej zwane data-czas, ang. *date-times*).
+Najczęściej używaną jest klasa `POSIXct`, która jest wektorem przedstawiającym liczbę sekund of 1970-01-01.
+
+
+```r
+czas = as.POSIXct("2011-02-02 10:33", tz = "CET")
+czas
+#> [1] "2011-02-02 10:33:00 CET"
+```
+
+
+```r
+typeof(czas)
+#> [1] "double"
+length(czas)
+#> [1] 1
+attributes(czas)
+#> $class
+#> [1] "POSIXct" "POSIXt" 
+#> 
+#> $tzone
+#> [1] "CET"
+```
+
+
+```r
+unclass(czas)
+#> [1] 1.3e+09
+#> attr(,"tzone")
+#> [1] "CET"
+```
+
+
+```r
+attributes(czas)$tzone = "America/Los_Angeles"
+czas
+#> [1] "2011-02-02 01:33:00 PST"
+```
+
+`?timezones`
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">R posiada też dodatkowe klasy specjalne, np:
+- `POSIXlt` przechowująca informacje o dacie w postaci listy
+- `difftime` reprezentująca czas trwania</div>\EndKnitrBlock{rmdinfo}
 
 ## Zmiana typów obiektów
 
