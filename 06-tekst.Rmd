@@ -197,10 +197,6 @@ str_detect(tekst4, pattern = "^[^L]+")
 str_detect(tekst4, pattern = "\\.")
 ```
 
-```{r}
-# str_detect(tekst4, pattern = "")
-```
-
 <!-- block z popularnymi regex -->
 
 ```{r, eval=FALSE}
