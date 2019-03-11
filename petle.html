@@ -386,16 +386,29 @@ odl_km
 <div id="petla-while" class="section level2">
 <h2><span class="header-section-number">8.2</span> Pętla while</h2>
 <!--     pętla for stosowana w sytuacji, gdy ilość wykonań kodu jest znana przed rozpoczęciem działania pętli -->
-<!--     pętla while stosowana gdy ilość wykonań nie jest znana przed zakończeniem działania pętli -->
+<!--     pętle while i repeat są stosowana gdy ilość wykonań nie jest znana przed zakończeniem działania pętli -->
+<!-- są one bardziej elastyczne, ale też rzadziej używane -->
 <!-- https://rstudio-education.github.io/hopr/loops.html#while-loops -->
 <!-- `next`, `break` -
 https://adv-r.hadley.nz/control-flow.html#loops -->
 <!-- `while`, `repeat` -->
+<!-- block - R nie ma do {action} while (condition) -->
 <div id="skadnia-1" class="section level3">
 <h3><span class="header-section-number">8.2.1</span> Składnia</h3>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="cf">while</span> (warunek){
+    wykonuj operację tak długo jak warunek jest spełniony
+}</code></pre>
 </div>
 <div id="przykad-dziaania-1" class="section level3">
 <h3><span class="header-section-number">8.2.2</span> Przykład działania</h3>
+<pre class="sourceCode r"><code class="sourceCode r">budzet =<span class="st"> </span><span class="dv">100</span>
+liczba_dni =<span class="st"> </span><span class="dv">0</span>
+<span class="cf">while</span>(budzet <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;&amp;</span><span class="st"> </span>budzet <span class="op">&lt;</span><span class="st"> </span><span class="dv">200</span>){
+  budzet =<span class="st"> </span>budzet <span class="op">+</span><span class="st"> </span><span class="kw">sample</span>(<span class="op">-</span><span class="dv">10</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">size =</span> <span class="dv">1</span>)
+  liczba_dni =<span class="st"> </span>liczba_dni <span class="op">+</span><span class="st"> </span><span class="dv">1</span>
+}
+liczba_dni
+<span class="co">#&gt; [1] 535</span></code></pre>
 </div>
 <div id="zastosowanie-w-funkcjach-1" class="section level3">
 <h3><span class="header-section-number">8.2.3</span> Zastosowanie w funkcjach</h3>

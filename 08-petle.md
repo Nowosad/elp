@@ -125,10 +125,11 @@ mile_na_km(odleglosci_mile)
 #> [1]   0.00   1.61  16.09  88.50 257.44
 ```
 
-## Pętla while
+## Pętla while 
 
 <!--     pętla for stosowana w sytuacji, gdy ilość wykonań kodu jest znana przed rozpoczęciem działania pętli -->
-<!--     pętla while stosowana gdy ilość wykonań nie jest znana przed zakończeniem działania pętli -->
+<!--     pętle while i repeat są stosowana gdy ilość wykonań nie jest znana przed zakończeniem działania pętli -->
+<!-- są one bardziej elastyczne, ale też rzadziej używane -->
 
 <!-- https://rstudio-education.github.io/hopr/loops.html#while-loops -->
 
@@ -136,13 +137,34 @@ mile_na_km(odleglosci_mile)
 https://adv-r.hadley.nz/control-flow.html#loops -->
 <!-- `while`, `repeat` -->
 
+<!-- block - R nie ma do {action} while (condition) -->
+
 ### Składnia
+
+
+```r
+while (warunek){
+    wykonuj operację tak długo jak warunek jest spełniony
+}
+```
 
 ### Przykład działania
 
+
+
+
+```r
+budzet = 100
+liczba_dni = 0
+while(budzet > 0 && budzet < 200){
+  budzet = budzet + sample(-10:10, size = 1)
+  liczba_dni = liczba_dni + 1
+}
+liczba_dni
+#> [1] 535
+```
+
 ### Zastosowanie w funkcjach
-
-
 
 ## Programowanie funkcyjne
 
