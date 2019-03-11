@@ -125,6 +125,8 @@ mile_na_km(odleglosci_mile)
 #> [1]   0.00   1.61  16.09  88.50 257.44
 ```
 
+
+
 ## Pętla while 
 
 <!--     pętla for stosowana w sytuacji, gdy ilość wykonań kodu jest znana przed rozpoczęciem działania pętli -->
@@ -139,16 +141,12 @@ https://adv-r.hadley.nz/control-flow.html#loops -->
 
 <!-- block - R nie ma do {action} while (condition) -->
 
-### Składnia
-
 
 ```r
 while (warunek){
     wykonuj operację tak długo jak warunek jest spełniony
 }
 ```
-
-### Przykład działania
 
 
 
@@ -164,14 +162,55 @@ liczba_dni
 #> [1] 535
 ```
 
-### Zastosowanie w funkcjach
-
 ## Programowanie funkcyjne
 
+<!-- \@ref(dzialania-na-wektorach) -->
 <!-- wektoryzacja-->
 <!-- http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html -->
 <!-- http://alyssafrazee.com/2014/01/29/vectorization.html -->
 <!-- *apply -->
+
+
+```r
+pomiary = data.frame(
+  miastoA = c(6.1, 1.4, -2.1),
+  miastoB = c(4.3, 5.2, 3.0),
+  miastoC = c(4.1, 4.2, 3.3)
+  )
+```
+
+
+```r
+sr_miasto = vector("numeric", length = ncol(pomiary))
+for(i in seq_len(ncol(pomiary))){
+  sr_miasto[i] = mean(pomiary[, i])
+}
+sr_miasto
+#> [1] 1.80 4.17 3.87
+```
+
+
+```r
+sr_dzien = vector("numeric", length = nrow(pomiary))
+for(i in seq_len(nrow(pomiary))){
+  sr_dzien[i] = mean(unlist(pomiary[i, ]))
+}
+sr_dzien
+#> [1] 4.83 3.60 1.40
+```
+
+
+```r
+apply(pomiary, 1, mean)
+#> [1] 4.83 3.60 1.40
+```
+
+
+```r
+apply(pomiary, 2, mean)
+#> miastoA miastoB miastoC 
+#>    1.80    4.17    3.87
+```
 
 ## Zadania
 

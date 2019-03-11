@@ -185,7 +185,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wektory"><i class="fa fa-check"></i><b>5.2</b> Wektory</a></li>
 <li class="chapter" data-level="5.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wasciwosci-wektorow"><i class="fa fa-check"></i><b>5.3</b> Właściwości wektorów</a></li>
 <li class="chapter" data-level="5.4" data-path="proste-obiekty.html"><a href="proste-obiekty.html#podstawowe-funkcje"><i class="fa fa-check"></i><b>5.4</b> Podstawowe funkcje</a></li>
-<li class="chapter" data-level="5.5" data-path="proste-obiekty.html"><a href="proste-obiekty.html#dziaania-na-wektorach"><i class="fa fa-check"></i><b>5.5</b> Działania na wektorach</a></li>
+<li class="chapter" data-level="5.5" data-path="proste-obiekty.html"><a href="proste-obiekty.html#dzialania-na-wektorach"><i class="fa fa-check"></i><b>5.5</b> Działania na wektorach</a></li>
 <li class="chapter" data-level="5.6" data-path="proste-obiekty.html"><a href="proste-obiekty.html#brakujace-wartosci"><i class="fa fa-check"></i><b>5.6</b> Brakujące wartości</a></li>
 <li class="chapter" data-level="5.7" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie"><i class="fa fa-check"></i><b>5.7</b> Wydzielanie</a></li>
 <li class="chapter" data-level="5.8" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie-i-przypisanie"><i class="fa fa-check"></i><b>5.8</b> Wydzielanie i przypisanie</a></li>
@@ -235,11 +235,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#przykad-dziaania"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
 <li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="petle.html"><a href="petle.html#petla-while"><i class="fa fa-check"></i><b>8.2</b> Pętla while</a><ul>
-<li class="chapter" data-level="8.2.1" data-path="petle.html"><a href="petle.html#skadnia-1"><i class="fa fa-check"></i><b>8.2.1</b> Składnia</a></li>
-<li class="chapter" data-level="8.2.2" data-path="petle.html"><a href="petle.html#przykad-dziaania-1"><i class="fa fa-check"></i><b>8.2.2</b> Przykład działania</a></li>
-<li class="chapter" data-level="8.2.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach-1"><i class="fa fa-check"></i><b>8.2.3</b> Zastosowanie w funkcjach</a></li>
-</ul></li>
+<li class="chapter" data-level="8.2" data-path="petle.html"><a href="petle.html#petla-while"><i class="fa fa-check"></i><b>8.2</b> Pętla while</a></li>
 <li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#programowanie-funkcyjne"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne</a></li>
 <li class="chapter" data-level="8.4" data-path="petle.html"><a href="petle.html#zadania-7"><i class="fa fa-check"></i><b>8.4</b> Zadania</a></li>
 </ul></li>
@@ -393,14 +389,9 @@ odl_km
 https://adv-r.hadley.nz/control-flow.html#loops -->
 <!-- `while`, `repeat` -->
 <!-- block - R nie ma do {action} while (condition) -->
-<div id="skadnia-1" class="section level3">
-<h3><span class="header-section-number">8.2.1</span> Składnia</h3>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="cf">while</span> (warunek){
     wykonuj operację tak długo jak warunek jest spełniony
 }</code></pre>
-</div>
-<div id="przykad-dziaania-1" class="section level3">
-<h3><span class="header-section-number">8.2.2</span> Przykład działania</h3>
 <pre class="sourceCode r"><code class="sourceCode r">budzet =<span class="st"> </span><span class="dv">100</span>
 liczba_dni =<span class="st"> </span><span class="dv">0</span>
 <span class="cf">while</span>(budzet <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;&amp;</span><span class="st"> </span>budzet <span class="op">&lt;</span><span class="st"> </span><span class="dv">200</span>){
@@ -410,16 +401,35 @@ liczba_dni =<span class="st"> </span><span class="dv">0</span>
 liczba_dni
 <span class="co">#&gt; [1] 535</span></code></pre>
 </div>
-<div id="zastosowanie-w-funkcjach-1" class="section level3">
-<h3><span class="header-section-number">8.2.3</span> Zastosowanie w funkcjach</h3>
-</div>
-</div>
 <div id="programowanie-funkcyjne" class="section level2">
 <h2><span class="header-section-number">8.3</span> Programowanie funkcyjne</h2>
+<!-- \@ref(dzialania-na-wektorach) -->
 <!-- wektoryzacja-->
 <!-- http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html -->
 <!-- http://alyssafrazee.com/2014/01/29/vectorization.html -->
 <!-- *apply -->
+<pre class="sourceCode r"><code class="sourceCode r">pomiary =<span class="st"> </span><span class="kw">data.frame</span>(
+  <span class="dt">miastoA =</span> <span class="kw">c</span>(<span class="fl">6.1</span>, <span class="fl">1.4</span>, <span class="fl">-2.1</span>),
+  <span class="dt">miastoB =</span> <span class="kw">c</span>(<span class="fl">4.3</span>, <span class="fl">5.2</span>, <span class="fl">3.0</span>),
+  <span class="dt">miastoC =</span> <span class="kw">c</span>(<span class="fl">4.1</span>, <span class="fl">4.2</span>, <span class="fl">3.3</span>)
+  )</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">sr_miasto =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="dt">length =</span> <span class="kw">ncol</span>(pomiary))
+<span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_len</span>(<span class="kw">ncol</span>(pomiary))){
+  sr_miasto[i] =<span class="st"> </span><span class="kw">mean</span>(pomiary[, i])
+}
+sr_miasto
+<span class="co">#&gt; [1] 1.80 4.17 3.87</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">sr_dzien =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="dt">length =</span> <span class="kw">nrow</span>(pomiary))
+<span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_len</span>(<span class="kw">nrow</span>(pomiary))){
+  sr_dzien[i] =<span class="st"> </span><span class="kw">mean</span>(<span class="kw">unlist</span>(pomiary[i, ]))
+}
+sr_dzien
+<span class="co">#&gt; [1] 4.83 3.60 1.40</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">apply</span>(pomiary, <span class="dv">1</span>, mean)
+<span class="co">#&gt; [1] 4.83 3.60 1.40</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">apply</span>(pomiary, <span class="dv">2</span>, mean)
+<span class="co">#&gt; miastoA miastoB miastoC </span>
+<span class="co">#&gt;    1.80    4.17    3.87</span></code></pre>
 </div>
 <div id="zadania-7" class="section level2">
 <h2><span class="header-section-number">8.4</span> Zadania</h2>
