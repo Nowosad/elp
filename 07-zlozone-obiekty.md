@@ -10,7 +10,7 @@ Macierze (ang. *matrix*), podobnie jak wektory, są obiektami homogenicznymi - j
 
 
 ```r
-macierz1 = matrix(1:12, ncol = 3, nrow = 4)
+macierz1 = matrix(1:12, nrow = 4, ncol = 3)
 macierz1
 #>      [,1] [,2] [,3]
 #> [1,]    1    5    9
@@ -21,7 +21,7 @@ macierz1
 
 
 ```r
-macierz2 = matrix(1:12, ncol = 3, nrow = 4, byrow = TRUE)
+macierz2 = matrix(1:12, nrow = 4, ncol = 3, byrow = TRUE)
 macierz2
 #>      [,1] [,2] [,3]
 #> [1,]    1    2    3
@@ -88,8 +88,8 @@ colnames(macierz2)
 
 ### Wydzielanie
 
-Podobnie jak w przypadku wektorów (\@ref(proste-obiekty)), macierze można wydzielać używając operatora `[]`.
-W tym wypadku odbywa się to jednak na w oparciu o dwa indeksy - jeden dla wiersza, drugi dla kolumny - `[wiersz, kolumna]`.
+Podobnie jak w przypadku wektorów (rozdział \@ref(proste-obiekty)), macierze można wydzielać używając operatora `[]`.
+W tym wypadku odbywa się to jednak w oparciu o dwa indeksy - jeden dla wiersza, drugi dla kolumny - `[wiersz, kolumna]`.
 
 
 ```r
@@ -306,6 +306,7 @@ ramka1[ramka1$cal > 6 | ramka1$cal < -6, ]
 ```
 
 <!-- ref to wektor and matrix -->
+<!-- wydzielanie i tworzenie -->
 
 ### Łączenie
 
@@ -534,11 +535,119 @@ lista1$zna
 
 ## Zamiany klas
 
+
+```r
+macierz1
+#>      [,1] [,2] [,3]
+#> [1,]    1    5    9
+#> [2,]    2    6   10
+#> [3,]    3    7   11
+#> [4,]    4    8   12
+```
+
+
+```r
+ramka_z_m1 = as.data.frame(macierz1)
+ramka_z_m1
+#>   V1 V2 V3
+#> 1  1  5  9
+#> 2  2  6 10
+#> 3  3  7 11
+#> 4  4  8 12
+```
+
+
+```r
+class(macierz1)
+#> [1] "matrix"
+```
+
+
+```r
+class(ramka_z_m1)
+#> [1] "data.frame"
+```
+
+
+```r
+lista_z_m1 = as.list(macierz1)
+lista_z_m1
+#> [[1]]
+#> [1] 1
+#> 
+#> [[2]]
+#> [1] 2
+#> 
+#> [[3]]
+#> [1] 3
+#> 
+#> [[4]]
+#> [1] 4
+#> 
+#> [[5]]
+#> [1] 5
+#> 
+#> [[6]]
+#> [1] 6
+#> 
+#> [[7]]
+#> [1] 7
+#> 
+#> [[8]]
+#> [1] 8
+#> 
+#> [[9]]
+#> [1] 9
+#> 
+#> [[10]]
+#> [1] 10
+#> 
+#> [[11]]
+#> [1] 11
+#> 
+#> [[12]]
+#> [1] 12
+lista_z_r1 = as.list(ramka_z_m1)
+lista_z_r1
+#> $V1
+#> [1] 1 2 3 4
+#> 
+#> $V2
+#> [1] 5 6 7 8
+#> 
+#> $V3
+#> [1]  9 10 11 12
+```
+
 ## Własne klasy
 
 <!-- ... -->
 <!-- Istnieje ogromna liczba klas obiektów w R -->
 <!-- Każdy może stworzyć swoją własną klasę! -->
 <!-- Różne funkcje wymagają różnych klas obiektów -->
+<!-- reference?? -->
 
 ## Zadania
+
+1) Stwórz trzy nowe macierze - `ma1`, `ma2`, `ma3` - składające się z trzech wierszy i czterech kolumn.
+Macierz `ma1` powinna zawierać wartości od 0 do 11, cała macierz `ma2` powinna składać się tylko z wartości 2, a macierz `ma3` powinna zawierać losowe wartości od 1 do 3 (w stworzeniu losowych wartości może pomóc funkcja `sample()`).
+2) Wykonaj podstawowe operacje, takie jak dodawanie, odejmowanie, mnożenie i dzielenie używając macierzy `ma1` oraz `ma2`, a następnie macierzy `ma1` i `ma3`.
+Co jest efektem tych obliczeń? 
+W jaki sposób działania arytmetyczne są wykonywane na macierzach w R?
+3) Wydziel tylko pierwszy wiersz i ostatnią kolumnę macierzy `ma1`.
+4) Znajdź wartości macierzy `ma3`, które są większe niż 2.
+5) Połącz kolumnami macierz `ma1` i macierz `ma3` tworząc nowy obiekt `ma4`
+6) Stwórz nową ramkę danych, `ra1`, która składa się z dwóch kolumn i trzech wierszy.
+Pierwsza kolumna `data` zawiera datę z dziś, wczoraj i przedwczoraj, a kolumna `miasto` zawiera nazwę miasta w którym się właśnie znajdujesz.
+7) Stwórz nową ramkę danych, `ra2`, która również składa się z dwóch kolumn i trzech wierszy.
+Kolumna `tmin` zawiera wartości `5.3`, `4.6`, `2.9`, a kolumna `tmax` zawiera wartości `11.1`, `14.6`, `9`.
+8) Połącz dwie stworzone ramki danych `ra1` i `ra2` tworząc obiekt `ra3`. 
+Używając obiektu `ra3` wylicz średnią temperaturę dla każdego wiersza i wpisz ją w nową kolumnę `tmean`.
+9) Zmień nazwę drugiej kolumny w obiekcie `ra3` na `"tmaks"`, a trzeciej na `"tsr"`.
+10) Wyświetl tylko te daty dla których średnia temperatura była wyższa niż 8.
+11) Stwórz nową listę, `li1`, która zawiera trzy elementy.
+Pierwszy element to wektor liczb od 10 do 0, drugi element to obiekt `ma4`, a trzeci element to obiekt `ra3`.
+12) Wydziel z tej listy pierwszy element i nazwij go `wektor_l`.
+13) Wylicz średnią wartość z kolumny `"tsr"` z trzeciego elementu listy.
+14) Zamień obiekt `ramka1` utworzony w tym rozdziale na macierz. 
+Co jest efektem zamiany klasy?

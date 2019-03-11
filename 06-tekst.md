@@ -408,7 +408,6 @@ moje_pliki = dir("pliki", pattern = "*\\.(png|jpg)$", full.names = TRUE)
 "TERYT 22; pomorskie;	Gdańsk; 12 C ; B"
 ```
 Napisz kod, który będzie wydział symbole chemiczne pomierzonych pierwiastków.
-<!-- 1) ... -->
 1) Napisz funkcję nazywającą się `horoskop`, która przyjmuje dwa argumenty `imie` (pierwsze imię, tekst) oraz `miesiac` (miesiąc urodzin, liczba).
 Funkcja ma zwrócić tekst "Osoba o imieniu 'imie' będzie miała jutro szczęście." w przypadku, gdy argument `miesiac` jest liczbą parzystą oraz "Osoba o imieniu 'imie' będzie miała jutro nieszczęście." jeżeli argument `miesiac` jest liczbą nieparzystą.
 1) Rozbuduj funkcję `horoskop` poprzez sprawdzenie pierwszej litery podanego imienia. Jeżeli pierwsza litera imienia to `K`, `M`, lub `Z` wówczas wyświetli się zawsze tekst "Osoba o imieniu 'imie' będzie miała jutro szczęście.", bez względu na podany miesiąc.
