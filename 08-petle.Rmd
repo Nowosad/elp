@@ -1,6 +1,7 @@
 # Powtarzanie {#petle}
 
 <!-- intro -->
+<!-- https://recology.info/2019/03/control-flow-exceptions/ -->
 
 ## Pętla for
 
