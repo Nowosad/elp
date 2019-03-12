@@ -487,7 +487,7 @@ R ma wbudowaną reprezentację dat w postaci klasy `Date`.
 ```r
 dzis = Sys.Date()
 dzis
-#> [1] "2019-03-11"
+#> [1] "2019-03-12"
 ```
 
 Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowia), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.
@@ -506,10 +506,10 @@ attributes(dzis)
 
 ```r
 unclass(dzis)
-#> [1] 17966
+#> [1] 17967
 ```
 
-Powyższa wartość, 17966, oznacza liczbę dni od 1970-01-01.^[https://en.wikipedia.org/wiki/Unix_time]
+Powyższa wartość, 17967, oznacza liczbę dni od 1970-01-01.^[https://en.wikipedia.org/wiki/Unix_time]
 
 Tworzenie wektora dat odbywa się używając funkcji `as.Date()`.
 
