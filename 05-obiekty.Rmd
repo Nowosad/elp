@@ -396,23 +396,16 @@ c(FALSE, 2L, 3.1, "kot")
 ## Zmiana typów obiektów
 
 <!--rzutowanie??-->
-Do zmiany typu obiektu^[Taka operacja często jest określana jako rzutowanie.] służą funkcje `as.logical()`, `as.integer()`, `as.double()`, oraz `as.character()`^[Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje `is.logical()`, `is.integer()`,`is.double()`,  oraz `is.character()`.].
+Do zmiany typu obiektu^[Taka operacja często jest określana jako rzutowanie.] służą funkcje `as.logical()`, `as.integer()`, `as.double()`, oraz `as.character()`.
 
 ```{r}
 as.logical(c("FALSE", "TRUE")) # znakowy na logiczny
-```
-
-```{r}
 as.integer(c("3", "2")) # znakowy na liczba całkowita 
-```
-
-```{r}
 as.double(c(3L, 2L)) # liczba całkowita na liczba zmiennoprzecinkowa
-```
-
-```{r}
 as.character(c(3L, 2L)) # liczba całkowita na znakowy
 ```
+
+Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje `is.logical()`, `is.integer()`,`is.double()`,  oraz `is.character()`.
 
 ## Wektory czynnikowe {#fac}
 
