@@ -144,13 +144,23 @@ seq(1, 365, length.out = 10)
 #>  [1]   1.0  41.4  81.9 122.3 162.8 203.2 243.7 284.1 324.6 365.0
 ```
 
+Funkcja `rep` służy powielaniu zadanej wartości podaną liczbę razy.
+W poniższym przykładzie, wartość 11 jest powielona 4 razy.
+
+
+```r
+rep(11, 4)
+#> [1] 11 11 11 11
+```
+
+Ta funkcja działa też na różnego typu wektorach - logicznych, numerycznych, czy tekstowych.
+
 
 ```r
 rep(wek_zna, 4)
 #>      a      b      a      b      a      b      a      b 
 #>  "kot" "pies"  "kot" "pies"  "kot" "pies"  "kot" "pies"
 ```
-
 
 <!-- operatory statytyczne -->
 
