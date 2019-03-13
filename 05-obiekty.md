@@ -124,6 +124,7 @@ names(wek_zna)
 
 Funkcja `seq` ma na celu generowanie ciągów liczbowych^[Uproszczeniem funkcji `seq` jest operator `:` (np. `1:10`). W jego przypadku wartości zawsze zmieniają się o jeden.].
 Pierwszym jego argumentem jest `from` czyli początkowa liczba w ciągu a drugi argument `to` oznacza maksymalną możliwą liczbę w ciągu.
+Obie te liczby mogą być wektorami o długości jeden.
 Dodatkowo ta funkcja wymaga zdefiniowania jeszcze jednego argumentu, np. `by` lub `length.out`.
 Argument `by` określa co ile wartości w ciągu mają rosnąć od wartości początkowej.
 
@@ -213,6 +214,20 @@ Stworzony kod zajmuje mniej miejsca, ale nadal nie jest on bardzo łatwy do szyb
 
 Wektoryzacja ma też inną zaletę - obliczenia wykonywane w ten sposób są szybkie.
 W przypadku stosowania niektórych operacji, np. mnożenia czy dodawania, R wykorzystuje w tle (bez wiedzy użytkownika) zoptymalizowane funkcje zapisane w języku C lub Fortran.
+
+W przypadku, gdy dwa wektory mają różną długość, wówczas następuje proces nazwany recyklingiem (ang. *recycling*) - elementy krótszego wektora są powtarzane aż do momentu gdy osiągnie on taką samą długość jak ten dłuższy, a dopiero później następuje wykonanie wybranego działania.
+W takiej sytuacji pojawi się też poniższy komunikat ostrzeżenia.
+
+
+```r
+a = c(1, 2, 3)
+d = c(3, 5)
+a * d
+#> Warning in a * d: longer object length is not a multiple of shorter object
+#> length
+#> [1]  3 10  9
+```
+
 Więcej informacji na temat wektoryzowania kodu można znaleźć w rozdziale \@ref(petle).
 
 ## Brakujące wartości {#na}

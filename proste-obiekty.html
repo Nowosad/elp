@@ -384,6 +384,7 @@ wek_zna
 <span class="co">#&gt; [1] &quot;a&quot; &quot;b&quot;</span></code></pre>
 <p>Funkcja <code>seq</code> ma na celu generowanie ciągów liczbowych<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a>.
 Pierwszym jego argumentem jest <code>from</code> czyli początkowa liczba w ciągu a drugi argument <code>to</code> oznacza maksymalną możliwą liczbę w ciągu.
+Obie te liczby mogą być wektorami o długości jeden.
 Dodatkowo ta funkcja wymaga zdefiniowania jeszcze jednego argumentu, np. <code>by</code> lub <code>length.out</code>.
 Argument <code>by</code> określa co ile wartości w ciągu mają rosnąć od wartości początkowej.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">365</span>, <span class="dt">by =</span> <span class="dv">7</span>)
@@ -436,8 +437,16 @@ y
 <span class="co">#&gt; [1]  3 10 30</span></code></pre>
 <p>Stworzony kod zajmuje mniej miejsca, ale nadal nie jest on bardzo łatwy do szybkiego zrozumienia.</p>
 <p>Wektoryzacja ma też inną zaletę - obliczenia wykonywane w ten sposób są szybkie.
-W przypadku stosowania niektórych operacji, np. mnożenia czy dodawania, R wykorzystuje w tle (bez wiedzy użytkownika) zoptymalizowane funkcje zapisane w języku C lub Fortran.
-Więcej informacji na temat wektoryzowania kodu można znaleźć w rozdziale <a href="petle.html#petle">8</a>.</p>
+W przypadku stosowania niektórych operacji, np. mnożenia czy dodawania, R wykorzystuje w tle (bez wiedzy użytkownika) zoptymalizowane funkcje zapisane w języku C lub Fortran.</p>
+<p>W przypadku, gdy dwa wektory mają różną długość, wówczas następuje proces nazwany recyklingiem (ang. <em>recycling</em>) - elementy krótszego wektora są powtarzane aż do momentu gdy osiągnie on taką samą długość jak ten dłuższy, a dopiero później następuje wykonanie wybranego działania.
+W takiej sytuacji pojawi się też poniższy komunikat ostrzeżenia.</p>
+<pre class="sourceCode r"><code class="sourceCode r">a =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)
+d =<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>)
+a <span class="op">*</span><span class="st"> </span>d
+<span class="co">#&gt; Warning in a * d: longer object length is not a multiple of shorter object</span>
+<span class="co">#&gt; length</span>
+<span class="co">#&gt; [1]  3 10  9</span></code></pre>
+<p>Więcej informacji na temat wektoryzowania kodu można znaleźć w rozdziale <a href="petle.html#petle">8</a>.</p>
 </div>
 <div id="na" class="section level2">
 <h2><span class="header-section-number">5.5</span> Brakujące wartości</h2>
