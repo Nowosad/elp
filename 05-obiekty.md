@@ -399,6 +399,7 @@ temperatura[0]
 
 Wydzielanie elementów może mieć kilka dodatkowych zastosowań oprócz wyświetlania wybranych wartości.
 Kolejną możliwością jest tworzenie nowych obiektów na podstawie wydzieleń.
+W takich sytuacjach działa każda z metod wyjaśnionych w powyższej sekcji, np. wydzielenie przez nazwę.
 
 
 ```r
@@ -408,29 +409,36 @@ temperatura_pon
 #>          8.2
 ```
 
+Dodatkowo, wydzielanie może przyjmować bardziej złożoną postać.
+Poniżej nastąpiło stworzenie nowego obiektu `temperatura_10` składającego się z wszystkich elementów wektora `temperatura`, których wartość jest wyższa od 10 i nie jest `NA`.
+
 
 ```r
-temparatura_10 = temperatura[temperatura > 10 & !is.na(temperatura)]
-temparatura_10
+temperatura_10 = temperatura[temperatura > 10 & !is.na(temperatura)]
+temperatura_10
 #> Wtorek  Środa 
 #>   10.3   12.0
 ```
 
 ## Modyfikowanie obiektów
 
+Trzecim zastosowaniem wydzielania jest modyfikowanie obiektów.
+Poprzez wydzielenie możliwe jest wskazanie, które elementy wektora mają być zamienione i na jakie wartości.
+Przykładowo, wektor `temperatura` zawiera cztery wartości nazwane kolejnymi dniami tygodnia.
+W tym wektorze `"Czwartek"` posiada wartość brakującą `NA`.
+
 
 ```r
 temperatura
 #> Poniedziałek       Wtorek        Środa     Czwartek 
 #>          8.2         10.3         12.0           NA
-```
-
-
-```r
 temperatura["Czwartek"]
 #> Czwartek 
 #>       NA
 ```
+
+Aby zamienić wartość tego elementu należy go wydzielić a następnie przypisać temu elementowi nową wartość.
+Efektem jest trwała zmiana obiektu `temperatura`.
 
 
 ```r
@@ -438,68 +446,69 @@ temperatura["Czwartek"] = 9.1
 temperatura["Czwartek"]
 #> Czwartek 
 #>      9.1
+temperatura
+#> Poniedziałek       Wtorek        Środa     Czwartek 
+#>          8.2         10.3         12.0          9.1
 ```
 
 ## Łączenie podstawowych typów obiektów
 
 <!-- tekst -->
 Właściwością wektora jest to, że może on przyjmować tylko jeden typ.
-Próba stworzenia obiektu składającego się z wielu typów spowoduje wymuszenie (ang. *coercion*) do najbliższego możliwego typu.
-Odbywa się to zgodnie z zasadą: logiczny -> liczba całkowita -> liczba zmiennoprzecinkowa -> znakowy.
+Przykładowo poniżej wyświetlony jest wektor logiczny przyjmujący wartość `FALSE`.
 
 
 ```r
-FALSE
+c(FALSE)
 #> [1] FALSE
 ```
 
+Co stanie się, gdy będziemy chcieli taki wektor połączyć z wektorem innego typu, np. numerycznego czy tekstowego?
+Próba stworzenia obiektu składającego się z wielu typów spowoduje wymuszenie (ang. *coercion*) do najbliższego możliwego typu.
+Odbywa się to zgodnie z zasadą: logiczny -> liczba całkowita -> liczba zmiennoprzecinkowa -> znakowy.
+
+Łącząc wektor logiczny i liczby całkowitej otrzyma się wektor składający się z liczb całkowitych, gdzie `FALSE` zostanie zamienione na `0`.
+
 
 ```r
-c(FALSE, 0L)
-#> [1] 0 0
+c(FALSE, 2L)
+#> [1] 0 2
 ```
 
+Łączenie wektorów logicznego, liczby całkowitej i liczby zmiennoprzecinkowej w efekcie da wektor zmiennoprzecinkowy.
+
 
 ```r
-c(FALSE, 0L, 3.1)
-#> [1] 0.0 0.0 3.1
+c(FALSE, 2L, 3.1)
+#> [1] 0.0 2.0 3.1
 ```
 
+W sytuacji, gdy którykolwiek element będzie tekstem, cały wektor zostaje zamieniony na tekst.
+
 
 ```r
-c(FALSE, 0L, 3.1, "kot")
-#> [1] "FALSE" "0"     "3.1"   "kot"
+c(FALSE, 2L, 3.1, "kot")
+#> [1] "FALSE" "2"     "3.1"   "kot"
 ```
 
 ## Zmiana typów obiektów
 
 <!--rzutowanie??-->
-
-Do zmiany typu obiektu służą funkcje `as.logical()`, `as.integer()`, `as.double()`, oraz `as.character()`^[Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje `is.logical()`, `is.integer()`,`is.double()`,  oraz `is.character()`.].
+Do zmiany typu obiektu^[Taka operacja często jest określana jako rzutowanie.] służą funkcje `as.logical()`, `as.integer()`, `as.double()`, oraz `as.character()`.
 
 
 ```r
 as.logical(c("FALSE", "TRUE")) # znakowy na logiczny
 #> [1] FALSE  TRUE
-```
-
-
-```r
 as.integer(c("3", "2")) # znakowy na liczba całkowita 
 #> [1] 3 2
-```
-
-
-```r
 as.double(c(3L, 2L)) # liczba całkowita na liczba zmiennoprzecinkowa
 #> [1] 3 2
-```
-
-
-```r
 as.character(c(3L, 2L)) # liczba całkowita na znakowy
 #> [1] "3" "2"
 ```
+
+Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje `is.logical()`, `is.integer()`,`is.double()`,  oraz `is.character()`.
 
 ## Wektory czynnikowe {#fac}
 
