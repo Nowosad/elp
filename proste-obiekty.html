@@ -461,7 +461,7 @@ Problemem tego rozwiązania jest to w jaki sposób należałoby, np. wyliczyć �
 <pre class="sourceCode r"><code class="sourceCode r">temperatura =<span class="st"> </span><span class="kw">c</span>(<span class="fl">8.2</span>, <span class="fl">10.3</span>, <span class="fl">12.0</span>, <span class="dv">999</span>)</code></pre>
 <p>Najlepszą opcją byłoby wykorzystanie wbudowanego oznaczenia wartości brakujących w R - <code>NA</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">temperatura =<span class="st"> </span><span class="kw">c</span>(<span class="fl">8.2</span>, <span class="fl">10.3</span>, <span class="fl">12.0</span>, <span class="ot">NA</span>)</code></pre>
-<p>Zachowanie zmiennej <code>NA</code> (ang. <em>Not Available</em>) jest bardzo intuicyjne.
+<p>Zachowanie wartości <code>NA</code> (ang. <em>Not Available</em>) jest bardzo intuicyjne.
 Przykładowo, jeżeli nie znamy jakiejś wartości to jeżeli dodamy do niej 2 to również nie wiemy jaki mamy wynik.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="ot">NA</span> <span class="op">+</span><span class="st"> </span><span class="dv">2</span>
 <span class="co">#&gt; [1] NA</span>
@@ -502,28 +502,43 @@ Więcej na temat wydzielania innych obiektów można znaleźć w rozdziale <a hr
 <li>Używając zera.</li>
 </ol>
 <!-- na podstawie pozycji -->
+<p>W przypadku wydzielania na podstawie pozycji konieczne jest podanie wektora, który wskazuje numer elementów, które mają zostać wybrane.</p>
 <pre class="sourceCode r"><code class="sourceCode r">temperatura[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]
 <span class="co">#&gt; [1]  8.2 12.0</span></code></pre>
+<p>Alternatywnie, możliwe jest też użycie znaku minus (<code>-</code>) przed definicją pozycji.
+Wówczas wybrane zostaną wszystkie elementy wektora oprócz tych w podanych pozycjach.</p>
 <pre class="sourceCode r"><code class="sourceCode r">temperatura[<span class="op">-</span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>)]
 <span class="co">#&gt; [1]  8.2 12.0</span></code></pre>
 <!-- na podstawie wektora logicznego -->
+<p>Drugim sposobem jest użycie wektora logicznego.
+W takim przypadku elementy określone jako prawda (<code>TRUE</code>) zostają wybrane.</p>
 <pre class="sourceCode r"><code class="sourceCode r">temperatura[<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)]
 <span class="co">#&gt; [1]  8.2 12.0</span></code></pre>
+<p>Możliwe jest też stworzenie wektora logicznego poprzez wykonanie prostego zapytania.
+Poniżej wybrano tylko te elementy wektora <code>temperatura</code>, gdzie wartość w wektorze <code>temperatura</code> była wyższa niż 10.</p>
 <pre class="sourceCode r"><code class="sourceCode r">temperatura[temperatura <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>]
 <span class="co">#&gt; [1] 10.3 12.0   NA</span></code></pre>
 <!-- na podstawie nazwy -->
+<p>Wydzielanie na podstawie nazwy wymaga aby elementy w wektorze były nazwane.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(temperatura) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Poniedziałek&quot;</span>, <span class="st">&quot;Wtorek&quot;</span>, <span class="st">&quot;Środa&quot;</span>, <span class="st">&quot;Czwartek&quot;</span>)
 temperatura
 <span class="co">#&gt; Poniedziałek       Wtorek        Środa     Czwartek </span>
 <span class="co">#&gt;          8.2         10.3         12.0           NA</span></code></pre>
+<p>Następnie wybór elementów odbywa się poprzez podanie nazw wybranych elementów.</p>
 <pre class="sourceCode r"><code class="sourceCode r">temperatura[<span class="kw">c</span>(<span class="st">&quot;Wtorek&quot;</span>, <span class="st">&quot;Czwartek&quot;</span>)]
 <span class="co">#&gt;   Wtorek Czwartek </span>
 <span class="co">#&gt;     10.3       NA</span></code></pre>
 <!-- nic -->
+<p>Czwartą metodą jest zapytanie w oparciu o pusty element.
+W przypadku prostych obiektów, efektem takiego wydzielania jest oryginalny wektor.
+Ta metoda jest jednak bardzo użyteczna dla obiektów złożonych, takich jak macierze czy ramki danych (rozdział <a href="zlozone-obiekty.html#zlozone-obiekty">7</a>).</p>
 <pre class="sourceCode r"><code class="sourceCode r">temperatura[]
 <span class="co">#&gt; Poniedziałek       Wtorek        Środa     Czwartek </span>
 <span class="co">#&gt;          8.2         10.3         12.0           NA</span></code></pre>
 <!-- zero -->
+<p>Ostatnią metodą jest użycie zera.
+W efekcie zostanie zwrócony wektor o długości zero, ale zachowujący oryginalne właściwości, jak np. bycie wektorem numerycznym (<code>numeric</code>) poniżej.
+Takie zachowanie może być przydatne podczas tworzenia nowych obiektów w oparciu o już istniejące.</p>
 <pre class="sourceCode r"><code class="sourceCode r">temperatura[<span class="dv">0</span>]
 <span class="co">#&gt; named numeric(0)</span></code></pre>
 </div>
