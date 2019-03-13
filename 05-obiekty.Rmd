@@ -1,16 +1,15 @@
 # Proste obiekty {#proste-obiekty}
 
 Obiekty w R można podzielić na proste (homogeniczne) i złożone (heterogeniczne). 
-Do podstawowych prostych obiektów należą wektory (ang. *vector*) i macierze (ang. *matrix*), natomiast listy (ang. *list*) i ramki danych (ang. *data frame*) to obiekty złożone.
+Do podstawowych prostych obiektów należą wektory atomowe (ang. *vector*) i macierze (ang. *matrix*), natomiast listy (ang. *list*) i ramki danych (ang. *data frame*) to obiekty złożone.
 
-W tym rozdziale skupimy się na wektorach.
-<!-- wektory atomowe -->
+W tym rozdziale skupimy się na wektorach atomowych, dla uproszczenia nazywanych dalej po prostu wektorami.
 Pozostałe podstawowe typy obiektów są omówione w rozdziale \@ref(zlozone-obiekty).
 Więcej informacji na temat podstawowych typów obiektów można znaleźć w rozdziale ["Vectors"](https://adv-r.hadley.nz/vectors-chap.html) książki Advanced R [@wickham2014advanced].
 
 ## Wektory 
 
-Wektor może przyjmować jeden z czterech podstawowych typów:
+Wektor może przyjmować jeden z czterech podstawowych typów^[Istnieją też dwa kolejne podstawowe typy wektorów, złożone (ang. *complex*) oraz surowe (ang. *raw*) ale są one bardzo rzadko używane.]:
 
 1. logiczny (ang. *logical*)
 
@@ -40,13 +39,14 @@ wek_zna = c("kot", "pies")
 wek_zna
 ```
 
-<!-- integer i double tworzy numeric -->
-Dodatkowo, istnieją dwa dodatkowe, rzadziej spotykane typy wektorów - czynnikowy (ang. *factor*), dat (ang. *date*) i czasu (ang. *date-time*) (sekcje \@ref(fac), \@ref(ate) i \@ref(ime)).
+Wektory przedstawiające liczby stałoprzecinkowe i zmiennoprzecinkowe są często łączone i wspólnie określane jako wektory numeryczne (ang. *numeric*).
 
 ```{block2 type="rmdinfo"}
 Wiele języków programowania posiada zmienne skalarne (tzw. skalary), czyli takie które mogą przyjmować tylko jedną wartość.
 W R one nie występują, zamiast nich stosowane są wektory o długości jeden.
 ```
+
+Dodatkowo, istnieje wiele dodatkowych, rzadziej spotykane typów wektorów - czynnikowy (ang. *factor*), dat (ang. *date*) i czasu (ang. *date-time*) (sekcje \@ref(fac), \@ref(ate) i \@ref(ime)).
 
 ## Właściwości wektorów
 
