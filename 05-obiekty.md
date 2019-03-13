@@ -5,12 +5,13 @@ Obiekty w R można podzielić na proste (homogeniczne) i złożone (heterogenicz
 Do podstawowych prostych obiektów należą wektory (ang. *vector*) i macierze (ang. *matrix*), natomiast listy (ang. *list*) i ramki danych (ang. *data frame*) to obiekty złożone.
 
 W tym rozdziale skupimy się na wektorach.
+<!-- wektory atomowe -->
 Pozostałe podstawowe typy obiektów są omówione w rozdziale \@ref(zlozone-obiekty).
 Więcej informacji na temat podstawowych typów obiektów można znaleźć w rozdziale ["Vectors"](https://adv-r.hadley.nz/vectors-chap.html) książki Advanced R [@wickham2014advanced].
 
-## Wektory
+## Wektory 
 
-Wektor może przyjmować jeden z czterech podstawowych typów^[Do sprawdzania jakiego typu jest wektor służy funkcja `typeof()`.]:
+Wektor może przyjmować jeden z czterech podstawowych typów:
 
 1. logiczny (ang. *logical*)
 
@@ -48,7 +49,8 @@ wek_zna
 #> [1] "kot"  "pies"
 ```
 
-Dodatkowo, istnieją dwa dodatkowe, rzadziej spotykane typy wektorów - czynnikowy (ang. *factor*) i dat (ang. *date*) (sekcje \@ref(fac) i \@ref(ate)).
+<!-- integer i double tworzy numeric -->
+Dodatkowo, istnieją dwa dodatkowe, rzadziej spotykane typy wektorów - czynnikowy (ang. *factor*), dat (ang. *date*) i czasu (ang. *date-time*) (sekcje \@ref(fac), \@ref(ate) i \@ref(ime)).
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Wiele języków programowania posiada zmienne skalarne (tzw. skalary), czyli takie które mogą przyjmować tylko jedną wartość.
 W R one nie występują, zamiast nich stosowane są wektory o długości jeden.</div>\EndKnitrBlock{rmdinfo}
@@ -525,6 +527,8 @@ stara_data = as.Date("1912-04-13")
 unclass(stara_data)
 #> [1] -21082
 ```
+
+## Wektory czasu {#ime} 
 
 W R istnieją również wbudowane reprezentacje dat i godzin (inaczej zwane data-czas, ang. *date-times*).
 Najczęściej używaną jest klasa `POSIXct`, która jest wektorem przedstawiającym liczbę sekund of 1970-01-01.^[Wyświetlenie aktualnego czasu jest możliwe używając funkcji `Sys.time()`.]

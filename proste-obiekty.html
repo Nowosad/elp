@@ -193,7 +193,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.10" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zmiana-typow-obiektow"><i class="fa fa-check"></i><b>5.10</b> Zmiana typów obiektów</a></li>
 <li class="chapter" data-level="5.11" data-path="proste-obiekty.html"><a href="proste-obiekty.html#fac"><i class="fa fa-check"></i><b>5.11</b> Wektory czynnikowe</a></li>
 <li class="chapter" data-level="5.12" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ate"><i class="fa fa-check"></i><b>5.12</b> Wektory dat</a></li>
-<li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zadania-4"><i class="fa fa-check"></i><b>5.13</b> Zadania</a></li>
+<li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ime"><i class="fa fa-check"></i><b>5.13</b> Wektory czasu</a></li>
+<li class="chapter" data-level="5.14" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zadania-4"><i class="fa fa-check"></i><b>5.14</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a><ul>
 <li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#aczenie-tekstu"><i class="fa fa-check"></i><b>6.1</b> Łączenie tekstu</a></li>
@@ -306,11 +307,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Obiekty w R można podzielić na proste (homogeniczne) i złożone (heterogeniczne).
 Do podstawowych prostych obiektów należą wektory (ang. <em>vector</em>) i macierze (ang. <em>matrix</em>), natomiast listy (ang. <em>list</em>) i ramki danych (ang. <em>data frame</em>) to obiekty złożone.</p>
 <p>W tym rozdziale skupimy się na wektorach.
+<!-- wektory atomowe -->
 Pozostałe podstawowe typy obiektów są omówione w rozdziale <a href="zlozone-obiekty.html#zlozone-obiekty">7</a>.
 Więcej informacji na temat podstawowych typów obiektów można znaleźć w rozdziale <a href="https://adv-r.hadley.nz/vectors-chap.html">“Vectors”</a> książki Advanced R <span class="citation">(Wickham <a href="#ref-wickham2014advanced">2014</a>)</span>.</p>
 <div id="wektory" class="section level2">
 <h2><span class="header-section-number">5.1</span> Wektory</h2>
-<p>Wektor może przyjmować jeden z czterech podstawowych typów<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a>:</p>
+<p>Wektor może przyjmować jeden z czterech podstawowych typów:</p>
 <ol style="list-style-type: decimal">
 <li>logiczny (ang. <em>logical</em>)</li>
 </ol>
@@ -324,7 +326,7 @@ wek_log
 wek_cal
 <span class="co">#&gt; [1]  5 -7</span></code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>liczba zmiennoprzecinkowa (ang. <em>double</em>)<a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a></li>
+<li>liczba zmiennoprzecinkowa (ang. <em>double</em>)<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a></li>
 </ol>
 <pre class="sourceCode r"><code class="sourceCode r">wek_zmi =<span class="st"> </span><span class="kw">c</span>(<span class="fl">5.3</span>, <span class="fl">-7.1</span>)
 wek_zmi
@@ -335,7 +337,8 @@ wek_zmi
 <pre class="sourceCode r"><code class="sourceCode r">wek_zna =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>)
 wek_zna
 <span class="co">#&gt; [1] &quot;kot&quot;  &quot;pies&quot;</span></code></pre>
-<p>Dodatkowo, istnieją dwa dodatkowe, rzadziej spotykane typy wektorów - czynnikowy (ang. <em>factor</em>) i dat (ang. <em>date</em>) (sekcje <a href="proste-obiekty.html#fac">5.11</a> i <a href="proste-obiekty.html#ate">5.12</a>).</p>
+<!-- integer i double tworzy numeric -->
+<p>Dodatkowo, istnieją dwa dodatkowe, rzadziej spotykane typy wektorów - czynnikowy (ang. <em>factor</em>), dat (ang. <em>date</em>) i czasu (ang. <em>date-time</em>) (sekcje <a href="proste-obiekty.html#fac">5.11</a>, <a href="proste-obiekty.html#ate">5.12</a> i <a href="proste-obiekty.html#ime">5.13</a>).</p>
 
 <div class="rmdinfo">
 Wiele języków programowania posiada zmienne skalarne (tzw. skalary), czyli takie które mogą przyjmować tylko jedną wartość.
@@ -536,7 +539,7 @@ Odbywa się to zgodnie z zasadą: logiczny -&gt; liczba całkowita -&gt; liczba 
 <div id="zmiana-typow-obiektow" class="section level2">
 <h2><span class="header-section-number">5.10</span> Zmiana typów obiektów</h2>
 <!--rzutowanie??-->
-<p>Do zmiany typu obiektu służą funkcje <code>as.logical()</code>, <code>as.integer()</code>, <code>as.double()</code>, oraz <code>as.character()</code><a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a>.</p>
+<p>Do zmiany typu obiektu służą funkcje <code>as.logical()</code>, <code>as.integer()</code>, <code>as.double()</code>, oraz <code>as.character()</code><a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.logical</span>(<span class="kw">c</span>(<span class="st">&quot;FALSE&quot;</span>, <span class="st">&quot;TRUE&quot;</span>)) <span class="co"># znakowy na logiczny</span>
 <span class="co">#&gt; [1] FALSE  TRUE</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.integer</span>(<span class="kw">c</span>(<span class="st">&quot;3&quot;</span>, <span class="st">&quot;2&quot;</span>)) <span class="co"># znakowy na liczba całkowita </span>
@@ -597,7 +600,7 @@ dzis
 <span class="co">#&gt; [1] &quot;Date&quot;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unclass</span>(dzis)
 <span class="co">#&gt; [1] 17968</span></code></pre>
-<p>Powyższa wartość, 17968, oznacza liczbę dni od 1970-01-01.<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a></p>
+<p>Powyższa wartość, 17968, oznacza liczbę dni od 1970-01-01.<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a></p>
 <p>Tworzenie wektora dat odbywa się używając funkcji <code>as.Date()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">daty =<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">c</span>(<span class="st">&quot;2011-02-02&quot;</span>, <span class="st">&quot;2011-02-03&quot;</span>))
 daty
@@ -606,8 +609,11 @@ daty
 <pre class="sourceCode r"><code class="sourceCode r">stara_data =<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;1912-04-13&quot;</span>)
 <span class="kw">unclass</span>(stara_data)
 <span class="co">#&gt; [1] -21082</span></code></pre>
+</div>
+<div id="ime" class="section level2">
+<h2><span class="header-section-number">5.13</span> Wektory czasu</h2>
 <p>W R istnieją również wbudowane reprezentacje dat i godzin (inaczej zwane data-czas, ang. <em>date-times</em>).
-Najczęściej używaną jest klasa <code>POSIXct</code>, która jest wektorem przedstawiającym liczbę sekund of 1970-01-01.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a></p>
+Najczęściej używaną jest klasa <code>POSIXct</code>, która jest wektorem przedstawiającym liczbę sekund of 1970-01-01.<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a></p>
 <pre class="sourceCode r"><code class="sourceCode r">czas =<span class="st"> </span><span class="kw">as.POSIXct</span>(<span class="st">&quot;2011-02-02 10:33&quot;</span>, <span class="dt">tz =</span> <span class="st">&quot;CET&quot;</span>)
 czas
 <span class="co">#&gt; [1] &quot;2011-02-02 10:33:00 CET&quot;</span></code></pre>
@@ -638,7 +644,7 @@ R posiada też dodatkowe klasy specjalne, np:
 
 </div>
 <div id="zadania-4" class="section level2">
-<h2><span class="header-section-number">5.13</span> Zadania</h2>
+<h2><span class="header-section-number">5.14</span> Zadania</h2>
 <ol style="list-style-type: decimal">
 <li>Wykonujesz trzy razy dziennie (o godzinie 7:00, 15:00 i 23:00) pomiar temperatury.
 W ostatnich dwóch dniach (2019-03-11 i 2019-03-12) pomierzone wartości to 0, 5,2, 3,9, 4,1, 8,7, 5,3 stopni Celsjusza.
@@ -703,11 +709,10 @@ Jak to można uzyskać?</li>
 <div class="footnotes">
 <hr />
 <ol start="26">
-<li id="fn26"><p>Do sprawdzania jakiego typu jest wektor służy funkcja <code>typeof()</code>.<a href="proste-obiekty.html#fnref26" class="footnote-back">↩</a></p></li>
-<li id="fn27"><p>Liczby zmiennoprzecinkowe mogą być też reprezentowane poprzez notację naukową, np. 11111.2 może być zapisane jako 1.11112e4, a 0.00021 jako 2.1e-4.<a href="proste-obiekty.html#fnref27" class="footnote-back">↩</a></p></li>
-<li id="fn28"><p>Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje <code>is.logical()</code>, <code>is.integer()</code>,<code>is.double()</code>, oraz <code>is.character()</code>.<a href="proste-obiekty.html#fnref28" class="footnote-back">↩</a></p></li>
-<li id="fn29"><p><a href="https://en.wikipedia.org/wiki/Unix_time" class="uri">https://en.wikipedia.org/wiki/Unix_time</a><a href="proste-obiekty.html#fnref29" class="footnote-back">↩</a></p></li>
-<li id="fn30"><p>Wyświetlenie aktualnego czasu jest możliwe używając funkcji <code>Sys.time()</code>.<a href="proste-obiekty.html#fnref30" class="footnote-back">↩</a></p></li>
+<li id="fn26"><p>Liczby zmiennoprzecinkowe mogą być też reprezentowane poprzez notację naukową, np. 11111.2 może być zapisane jako 1.11112e4, a 0.00021 jako 2.1e-4.<a href="proste-obiekty.html#fnref26" class="footnote-back">↩</a></p></li>
+<li id="fn27"><p>Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje <code>is.logical()</code>, <code>is.integer()</code>,<code>is.double()</code>, oraz <code>is.character()</code>.<a href="proste-obiekty.html#fnref27" class="footnote-back">↩</a></p></li>
+<li id="fn28"><p><a href="https://en.wikipedia.org/wiki/Unix_time" class="uri">https://en.wikipedia.org/wiki/Unix_time</a><a href="proste-obiekty.html#fnref28" class="footnote-back">↩</a></p></li>
+<li id="fn29"><p>Wyświetlenie aktualnego czasu jest możliwe używając funkcji <code>Sys.time()</code>.<a href="proste-obiekty.html#fnref29" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
