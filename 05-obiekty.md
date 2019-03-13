@@ -590,13 +590,23 @@ attributes(dzis)
 #> [1] "Date"
 ```
 
+Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji `unclass()`.
+
 
 ```r
 unclass(dzis)
 #> [1] 17968
 ```
 
-Powyższa wartość, 17968, oznacza liczbę dni od 1970-01-01.^[https://en.wikipedia.org/wiki/Unix_time]
+Wynik, 17968, oznacza liczbę dni od 1970-01-01.^[https://en.wikipedia.org/wiki/Unix_time]
+W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
+
+
+```r
+stara_data = as.Date("1912-04-13")
+unclass(stara_data)
+#> [1] -21082
+```
 
 Tworzenie wektora dat odbywa się używając funkcji `as.Date()`.
 
@@ -607,14 +617,7 @@ daty
 #> [1] "2011-02-02" "2011-02-03"
 ```
 
-<!-- argument format -->
-
-
-```r
-stara_data = as.Date("1912-04-13")
-unclass(stara_data)
-#> [1] -21082
-```
+Funkcja `as.Date()` oczekuje podanych wartość w postaci *YYYY-MM-DD* (wyjaśnienie można znaleźć w sekcji \@ref(daty)), ale możliwe jest również wymuszenie innej postaci danych wejściowych poprzez użycie argumentu `format`.
 
 ## Wektory czasu {#ime} 
 

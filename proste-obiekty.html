@@ -663,17 +663,19 @@ dzis
 <span class="kw">attributes</span>(dzis)
 <span class="co">#&gt; $class</span>
 <span class="co">#&gt; [1] &quot;Date&quot;</span></code></pre>
+<p>Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji <code>unclass()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unclass</span>(dzis)
 <span class="co">#&gt; [1] 17968</span></code></pre>
-<p>Powyższa wartość, 17968, oznacza liczbę dni od 1970-01-01.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a></p>
+<p>Wynik, 17968, oznacza liczbę dni od 1970-01-01.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>
+W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.</p>
+<pre class="sourceCode r"><code class="sourceCode r">stara_data =<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;1912-04-13&quot;</span>)
+<span class="kw">unclass</span>(stara_data)
+<span class="co">#&gt; [1] -21082</span></code></pre>
 <p>Tworzenie wektora dat odbywa się używając funkcji <code>as.Date()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">daty =<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">c</span>(<span class="st">&quot;2011-02-02&quot;</span>, <span class="st">&quot;2011-02-03&quot;</span>))
 daty
 <span class="co">#&gt; [1] &quot;2011-02-02&quot; &quot;2011-02-03&quot;</span></code></pre>
-<!-- argument format -->
-<pre class="sourceCode r"><code class="sourceCode r">stara_data =<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;1912-04-13&quot;</span>)
-<span class="kw">unclass</span>(stara_data)
-<span class="co">#&gt; [1] -21082</span></code></pre>
+<p>Funkcja <code>as.Date()</code> oczekuje podanych wartość w postaci <em>YYYY-MM-DD</em> (wyjaśnienie można znaleźć w sekcji <a href="ergosum.html#daty">2.4.5</a>), ale możliwe jest również wymuszenie innej postaci danych wejściowych poprzez użycie argumentu <code>format</code>.</p>
 </div>
 <div id="ime" class="section level2">
 <h2><span class="header-section-number">5.13</span> Wektory czasu</h2>
