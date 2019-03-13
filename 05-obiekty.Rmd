@@ -86,21 +86,34 @@ W przypadku wektorów oznacza to skrót od nazwy typu danych (`logi` - logiczny,
 str(wek_cal)
 ```
 
+Funkcja `names()` wyświetla nazwy przypisane kolejnym elementom wektora.
+
 ```{r}
 names(wek_zna)
 ```
+
+W powyższym przypadku wektor `wek_zna` nie miał żadnych nazw, w efekcie funkcja `names()` zwróciła `NULL` (więcej informacji na temat `NULL` można znaleźć w sekcji \@ref(na)).
+Oprócz wyświetlania nazw, funkcja `names()` daje też możliwość ich nadania.
 
 ```{r}
 names(wek_zna) = c("a", "b")
 wek_zna
-```
-
-```{r}
 names(wek_zna)
 ```
 
+Funkcja `seq` ma na celu generowanie ciągów liczbowych^[Uproszczeniem funkcji `seq` jest operator `:` (np. `1:10`). W jego przypadku wartości zawsze zmieniają się o jeden.].
+Pierwszym jego argumentem jest `from` czyli początkowa liczba w ciągu a drugi argument `to` oznacza maksymalną możliwą liczbę w ciągu.
+Dodatkowo ta funkcja wymaga zdefiniowania jeszcze jednego argumentu, np. `by` lub `length.out`.
+Argument `by` określa co ile wartości w ciągu mają rosnąć od wartości początkowej.
+
 ```{r}
-seq(1, 12, by = 2)
+seq(1, 365, by = 7)
+```
+
+Alternatywnie, argument `length.out` ustala jakiej długości ma być wynikowy ciąg, a na podstawie tego tworzone są wartości w równych odstępach.
+
+```{r}
+seq(1, 365, length.out = 10)
 ```
 
 ```{r}
@@ -153,7 +166,7 @@ Wektoryzacja ma też inną zaletę - obliczenia wykonywane w ten sposób są sz
 W przypadku stosowania niektórych operacji, np. mnożenia czy dodawania, R wykorzystuje w tle (bez wiedzy użytkownika) zoptymalizowane funkcje zapisane w języku C lub Fortran.
 Więcej informacji na temat wektoryzowania kodu można znaleźć w rozdziale \@ref(petle).
 
-## Brakujące wartości
+## Brakujące wartości {#na}
 
 Wyobraź sobie, że wykonujesz codziennie o 12:00 pomiar temperatury.
 
