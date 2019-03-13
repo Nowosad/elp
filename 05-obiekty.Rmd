@@ -75,32 +75,38 @@ attributes(wek_zmi)
 
 ## Podstawowe funkcje
 
+Z racji bycia podstawowym typem obiektu w R, wektory są używane w bardzo dużej liczbie funkcji.
+Kilka z podstawowych, często przydatnych funkcji jest podana i wyjaśniona poniżej.
+
+Funkcja `str()` ma na celu wyświetlenie **str**uktury danych.
+W przypadku wektorów oznacza to skrót od nazwy typu danych (`logi` - logiczny, `int` - stałoprzecinkowy, `num` - zmiennoprzecinkowy (numeryczny), `chr` - tekstowy), jego długość (np. `[1:2]` oznacza, że wektor ma dwa elementy), oraz kilka przykładowych wartości tego wektora.
 <!-- metody -->
 
 ```{r}
-str(wek_zmi)
+str(wek_cal)
 ```
 
 ```{r}
-names(wek_zmi)
+names(wek_zna)
 ```
 
 ```{r}
-names(wek_zmi) = c("a", "b")
-wek_zmi
+names(wek_zna) = c("a", "b")
+wek_zna
 ```
 
 ```{r}
-names(wek_zmi)
-```
-
-```{r}
-rep(wek_zmi, 4)
+names(wek_zna)
 ```
 
 ```{r}
 seq(1, 12, by = 2)
 ```
+
+```{r}
+rep(wek_zna, 4)
+```
+
 
 <!-- operatory statytyczne -->
 
