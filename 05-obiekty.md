@@ -1,15 +1,12 @@
 
 # Proste obiekty {#proste-obiekty}
 
-Więcej informacji na temat podstawowych typów obiektów można znaleźć w rozdziale ["Vectors"](https://adv-r.hadley.nz/vectors-chap.html) książki Advanced R [@wickham2014advanced].
-
-## Typy obiektów
-
 Obiekty w R można podzielić na proste (homogeniczne) i złożone (heterogeniczne). 
 Do podstawowych prostych obiektów należą wektory (ang. *vector*) i macierze (ang. *matrix*), natomiast listy (ang. *list*) i ramki danych (ang. *data frame*) to obiekty złożone.
 
 W tym rozdziale skupimy się na wektorach.
 Pozostałe podstawowe typy obiektów są omówione w rozdziale \@ref(zlozone-obiekty).
+Więcej informacji na temat podstawowych typów obiektów można znaleźć w rozdziale ["Vectors"](https://adv-r.hadley.nz/vectors-chap.html) książki Advanced R [@wickham2014advanced].
 
 ## Wektory
 
@@ -487,7 +484,7 @@ R ma wbudowaną reprezentację dat w postaci klasy `Date`.
 ```r
 dzis = Sys.Date()
 dzis
-#> [1] "2019-03-12"
+#> [1] "2019-03-13"
 ```
 
 Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowia), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.
@@ -506,10 +503,10 @@ attributes(dzis)
 
 ```r
 unclass(dzis)
-#> [1] 17967
+#> [1] 17968
 ```
 
-Powyższa wartość, 17967, oznacza liczbę dni od 1970-01-01.^[https://en.wikipedia.org/wiki/Unix_time]
+Powyższa wartość, 17968, oznacza liczbę dni od 1970-01-01.^[https://en.wikipedia.org/wiki/Unix_time]
 
 Tworzenie wektora dat odbywa się używając funkcji `as.Date()`.
 
