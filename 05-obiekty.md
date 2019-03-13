@@ -631,6 +631,8 @@ czas
 #> [1] "2011-02-02 10:33:00 CET"
 ```
 
+Wewnętrznie w R jest ona również reprezentowana jako wartość zmiennoprzecinkowa.
+
 
 ```r
 typeof(czas)
@@ -645,6 +647,8 @@ attributes(czas)
 #> [1] "CET"
 ```
 
+Przykładowo, `"2011-02-02 10:33"` miało miejsce 1.3e+09 sekund od 1970-01-01.
+
 
 ```r
 unclass(czas)
@@ -653,6 +657,10 @@ unclass(czas)
 #> [1] "CET"
 ```
 
+Ważnym elementem reprezentacji czasu jest określenie strefy czasowej. 
+Można ją zdefiniować w funkcji `as.POSIXct()` używając argumentu `tz`, ale też można zmienić strefę czasową istniejącego wektora poprzez modyfikację jego atrybutów.
+W poniższym przykładzie nastąpiła zmiana strefy czasowej z czasu środkowoeuropejskiego (`"CET"`) na czas pacyficzny ^[https://en.wikipedia.org/wiki/List_of_tz_database_time_zones].
+
 
 ```r
 attributes(czas)$tzone = "America/Los_Angeles"
@@ -660,7 +668,7 @@ czas
 #> [1] "2011-02-02 01:33:00 PST"
 ```
 
-`?timezones`
+Więcej informacji na temat stref czasowych używanych w R można znaleźć w pliku pomocy `?timezones`.
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">R posiada też dodatkowe klasy specjalne, np:
 - `POSIXlt` przechowująca informacje o dacie w postaci listy

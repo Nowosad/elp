@@ -684,6 +684,7 @@ Najczęściej używaną jest klasa <code>POSIXct</code>, która jest wektorem pr
 <pre class="sourceCode r"><code class="sourceCode r">czas =<span class="st"> </span><span class="kw">as.POSIXct</span>(<span class="st">&quot;2011-02-02 10:33&quot;</span>, <span class="dt">tz =</span> <span class="st">&quot;CET&quot;</span>)
 czas
 <span class="co">#&gt; [1] &quot;2011-02-02 10:33:00 CET&quot;</span></code></pre>
+<p>Wewnętrznie w R jest ona również reprezentowana jako wartość zmiennoprzecinkowa.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(czas)
 <span class="co">#&gt; [1] &quot;double&quot;</span>
 <span class="kw">length</span>(czas)
@@ -694,14 +695,18 @@ czas
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $tzone</span>
 <span class="co">#&gt; [1] &quot;CET&quot;</span></code></pre>
+<p>Przykładowo, <code>&quot;2011-02-02 10:33&quot;</code> miało miejsce 1.3e+09 sekund od 1970-01-01.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unclass</span>(czas)
 <span class="co">#&gt; [1] 1.3e+09</span>
 <span class="co">#&gt; attr(,&quot;tzone&quot;)</span>
 <span class="co">#&gt; [1] &quot;CET&quot;</span></code></pre>
+<p>Ważnym elementem reprezentacji czasu jest określenie strefy czasowej.
+Można ją zdefiniować w funkcji <code>as.POSIXct()</code> używając argumentu <code>tz</code>, ale też można zmienić strefę czasową istniejącego wektora poprzez modyfikację jego atrybutów.
+W poniższym przykładzie nastąpiła zmiana strefy czasowej z czasu środkowoeuropejskiego (<code>&quot;CET&quot;</code>) na czas pacyficzny.<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attributes</span>(czas)<span class="op">$</span>tzone =<span class="st"> &quot;America/Los_Angeles&quot;</span>
 czas
 <span class="co">#&gt; [1] &quot;2011-02-02 01:33:00 PST&quot;</span></code></pre>
-<p><code>?timezones</code></p>
+<p>Więcej informacji na temat stref czasowych używanych w R można znaleźć w pliku pomocy <code>?timezones</code>.</p>
 
 <div class="rmdinfo">
 R posiada też dodatkowe klasy specjalne, np:
@@ -782,6 +787,7 @@ Jak to można uzyskać?</li>
 <li id="fn29"><p>Taka operacja często jest określana jako rzutowanie.<a href="proste-obiekty.html#fnref29" class="footnote-back">↩</a></p></li>
 <li id="fn30"><p><a href="https://en.wikipedia.org/wiki/Unix_time" class="uri">https://en.wikipedia.org/wiki/Unix_time</a><a href="proste-obiekty.html#fnref30" class="footnote-back">↩</a></p></li>
 <li id="fn31"><p>Wyświetlenie aktualnego czasu jest możliwe używając funkcji <code>Sys.time()</code>.<a href="proste-obiekty.html#fnref31" class="footnote-back">↩</a></p></li>
+<li id="fn32"><p><a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" class="uri">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a><a href="proste-obiekty.html#fnref32" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
