@@ -116,10 +116,18 @@ Alternatywnie, argument `length.out` ustala jakiej długości ma być wynikowy 
 seq(1, 365, length.out = 10)
 ```
 
+Funkcja `rep` służy powielaniu zadanej wartości podaną liczbę razy.
+W poniższym przykładzie, wartość 11 jest powielona 4 razy.
+
+```{r}
+rep(11, 4)
+```
+
+Ta funkcja działa też na różnego typu wektorach - logicznych, numerycznych, czy tekstowych.
+
 ```{r}
 rep(wek_zna, 4)
 ```
-
 
 <!-- operatory statytyczne -->
 
