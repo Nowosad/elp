@@ -1,14 +1,11 @@
 # Proste obiekty {#proste-obiekty}
 
-Więcej informacji na temat podstawowych typów obiektów można znaleźć w rozdziale ["Vectors"](https://adv-r.hadley.nz/vectors-chap.html) książki Advanced R [@wickham2014advanced].
-
-## Typy obiektów
-
 Obiekty w R można podzielić na proste (homogeniczne) i złożone (heterogeniczne). 
 Do podstawowych prostych obiektów należą wektory (ang. *vector*) i macierze (ang. *matrix*), natomiast listy (ang. *list*) i ramki danych (ang. *data frame*) to obiekty złożone.
 
 W tym rozdziale skupimy się na wektorach.
 Pozostałe podstawowe typy obiektów są omówione w rozdziale \@ref(zlozone-obiekty).
+Więcej informacji na temat podstawowych typów obiektów można znaleźć w rozdziale ["Vectors"](https://adv-r.hadley.nz/vectors-chap.html) książki Advanced R [@wickham2014advanced].
 
 ## Wektory
 
