@@ -185,7 +185,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wasciwosci-wektorow"><i class="fa fa-check"></i><b>5.2</b> Właściwości wektorów</a></li>
 <li class="chapter" data-level="5.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#podstawowe-funkcje"><i class="fa fa-check"></i><b>5.3</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="5.4" data-path="proste-obiekty.html"><a href="proste-obiekty.html#dzialania-na-wektorach"><i class="fa fa-check"></i><b>5.4</b> Działania na wektorach</a></li>
-<li class="chapter" data-level="5.5" data-path="proste-obiekty.html"><a href="proste-obiekty.html#brakujace-wartosci"><i class="fa fa-check"></i><b>5.5</b> Brakujące wartości</a></li>
+<li class="chapter" data-level="5.5" data-path="proste-obiekty.html"><a href="proste-obiekty.html#na"><i class="fa fa-check"></i><b>5.5</b> Brakujące wartości</a></li>
 <li class="chapter" data-level="5.6" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie"><i class="fa fa-check"></i><b>5.6</b> Wydzielanie</a></li>
 <li class="chapter" data-level="5.7" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie-i-przypisanie"><i class="fa fa-check"></i><b>5.7</b> Wydzielanie i przypisanie</a></li>
 <li class="chapter" data-level="5.8" data-path="proste-obiekty.html"><a href="proste-obiekty.html#modyfikowanie-obiektow"><i class="fa fa-check"></i><b>5.8</b> Modyfikowanie obiektów</a></li>
@@ -371,16 +371,29 @@ W przypadku wektorów oznacza to skrót od nazwy typu danych (<code>logi</code> 
 <!-- metody --></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(wek_cal)
 <span class="co">#&gt;  int [1:2] 5 -7</span></code></pre>
+<p>Funkcja <code>names()</code> wyświetla nazwy przypisane kolejnym elementom wektora.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(wek_zna)
 <span class="co">#&gt; NULL</span></code></pre>
+<p>W powyższym przypadku wektor <code>wek_zna</code> nie miał żadnych nazw, w efekcie funkcja <code>names()</code> zwróciła <code>NULL</code> (więcej informacji na temat <code>NULL</code> można znaleźć w sekcji <a href="proste-obiekty.html#na">5.5</a>).
+Oprócz wyświetlania nazw, funkcja <code>names()</code> daje też możliwość ich nadania.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(wek_zna) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>)
 wek_zna
 <span class="co">#&gt;      a      b </span>
-<span class="co">#&gt;  &quot;kot&quot; &quot;pies&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(wek_zna)
+<span class="co">#&gt;  &quot;kot&quot; &quot;pies&quot;</span>
+<span class="kw">names</span>(wek_zna)
 <span class="co">#&gt; [1] &quot;a&quot; &quot;b&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">12</span>, <span class="dt">by =</span> <span class="dv">2</span>)
-<span class="co">#&gt; [1]  1  3  5  7  9 11</span></code></pre>
+<p>Funkcja <code>seq</code> ma na celu generowanie ciągów liczbowych<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a>.
+Pierwszym jego argumentem jest <code>from</code> czyli początkowa liczba w ciągu a drugi argument <code>to</code> oznacza maksymalną możliwą liczbę w ciągu.
+Dodatkowo ta funkcja wymaga zdefiniowania jeszcze jednego argumentu, np. <code>by</code> lub <code>length.out</code>.
+Argument <code>by</code> określa co ile wartości w ciągu mają rosnąć od wartości początkowej.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">365</span>, <span class="dt">by =</span> <span class="dv">7</span>)
+<span class="co">#&gt;  [1]   1   8  15  22  29  36  43  50  57  64  71  78  85  92  99 106 113</span>
+<span class="co">#&gt; [18] 120 127 134 141 148 155 162 169 176 183 190 197 204 211 218 225 232</span>
+<span class="co">#&gt; [35] 239 246 253 260 267 274 281 288 295 302 309 316 323 330 337 344 351</span>
+<span class="co">#&gt; [52] 358 365</span></code></pre>
+<p>Alternatywnie, argument <code>length.out</code> ustala jakiej długości ma być wynikowy ciąg, a na podstawie tego tworzone są wartości w równych odstępach.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">365</span>, <span class="dt">length.out =</span> <span class="dv">10</span>)
+<span class="co">#&gt;  [1]   1.0  41.4  81.9 122.3 162.8 203.2 243.7 284.1 324.6 365.0</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rep</span>(wek_zna, <span class="dv">4</span>)
 <span class="co">#&gt;      a      b      a      b      a      b      a      b </span>
 <span class="co">#&gt;  &quot;kot&quot; &quot;pies&quot;  &quot;kot&quot; &quot;pies&quot;  &quot;kot&quot; &quot;pies&quot;  &quot;kot&quot; &quot;pies&quot;</span></code></pre>
@@ -421,7 +434,7 @@ y
 W przypadku stosowania niektórych operacji, np. mnożenia czy dodawania, R wykorzystuje w tle (bez wiedzy użytkownika) zoptymalizowane funkcje zapisane w języku C lub Fortran.
 Więcej informacji na temat wektoryzowania kodu można znaleźć w rozdziale <a href="petle.html#petle">8</a>.</p>
 </div>
-<div id="brakujace-wartosci" class="section level2">
+<div id="na" class="section level2">
 <h2><span class="header-section-number">5.5</span> Brakujące wartości</h2>
 <p>Wyobraź sobie, że wykonujesz codziennie o 12:00 pomiar temperatury.</p>
 <pre class="sourceCode r"><code class="sourceCode r">temperatura =<span class="st"> </span><span class="kw">c</span>(<span class="fl">8.2</span>, <span class="fl">10.3</span>, <span class="fl">12.0</span>)</code></pre>
@@ -544,7 +557,7 @@ Odbywa się to zgodnie z zasadą: logiczny -&gt; liczba całkowita -&gt; liczba 
 <div id="zmiana-typow-obiektow" class="section level2">
 <h2><span class="header-section-number">5.10</span> Zmiana typów obiektów</h2>
 <!--rzutowanie??-->
-<p>Do zmiany typu obiektu służą funkcje <code>as.logical()</code>, <code>as.integer()</code>, <code>as.double()</code>, oraz <code>as.character()</code><a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a>.</p>
+<p>Do zmiany typu obiektu służą funkcje <code>as.logical()</code>, <code>as.integer()</code>, <code>as.double()</code>, oraz <code>as.character()</code><a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.logical</span>(<span class="kw">c</span>(<span class="st">&quot;FALSE&quot;</span>, <span class="st">&quot;TRUE&quot;</span>)) <span class="co"># znakowy na logiczny</span>
 <span class="co">#&gt; [1] FALSE  TRUE</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.integer</span>(<span class="kw">c</span>(<span class="st">&quot;3&quot;</span>, <span class="st">&quot;2&quot;</span>)) <span class="co"># znakowy na liczba całkowita </span>
@@ -605,7 +618,7 @@ dzis
 <span class="co">#&gt; [1] &quot;Date&quot;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unclass</span>(dzis)
 <span class="co">#&gt; [1] 17968</span></code></pre>
-<p>Powyższa wartość, 17968, oznacza liczbę dni od 1970-01-01.<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a></p>
+<p>Powyższa wartość, 17968, oznacza liczbę dni od 1970-01-01.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a></p>
 <p>Tworzenie wektora dat odbywa się używając funkcji <code>as.Date()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">daty =<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">c</span>(<span class="st">&quot;2011-02-02&quot;</span>, <span class="st">&quot;2011-02-03&quot;</span>))
 daty
@@ -618,7 +631,7 @@ daty
 <div id="ime" class="section level2">
 <h2><span class="header-section-number">5.13</span> Wektory czasu</h2>
 <p>W R istnieją również wbudowane reprezentacje dat i godzin (inaczej zwane data-czas, ang. <em>date-times</em>).
-Najczęściej używaną jest klasa <code>POSIXct</code>, która jest wektorem przedstawiającym liczbę sekund of 1970-01-01.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a></p>
+Najczęściej używaną jest klasa <code>POSIXct</code>, która jest wektorem przedstawiającym liczbę sekund of 1970-01-01.<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a></p>
 <pre class="sourceCode r"><code class="sourceCode r">czas =<span class="st"> </span><span class="kw">as.POSIXct</span>(<span class="st">&quot;2011-02-02 10:33&quot;</span>, <span class="dt">tz =</span> <span class="st">&quot;CET&quot;</span>)
 czas
 <span class="co">#&gt; [1] &quot;2011-02-02 10:33:00 CET&quot;</span></code></pre>
@@ -716,9 +729,10 @@ Jak to można uzyskać?</li>
 <ol start="26">
 <li id="fn26"><p>Istnieją też dwa kolejne podstawowe typy wektorów, złożone (ang. <em>complex</em>) oraz surowe (ang. <em>raw</em>) ale są one bardzo rzadko używane.<a href="proste-obiekty.html#fnref26" class="footnote-back">↩</a></p></li>
 <li id="fn27"><p>Liczby zmiennoprzecinkowe mogą być też reprezentowane poprzez notację naukową, np. 11111.2 może być zapisane jako 1.11112e4, a 0.00021 jako 2.1e-4.<a href="proste-obiekty.html#fnref27" class="footnote-back">↩</a></p></li>
-<li id="fn28"><p>Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje <code>is.logical()</code>, <code>is.integer()</code>,<code>is.double()</code>, oraz <code>is.character()</code>.<a href="proste-obiekty.html#fnref28" class="footnote-back">↩</a></p></li>
-<li id="fn29"><p><a href="https://en.wikipedia.org/wiki/Unix_time" class="uri">https://en.wikipedia.org/wiki/Unix_time</a><a href="proste-obiekty.html#fnref29" class="footnote-back">↩</a></p></li>
-<li id="fn30"><p>Wyświetlenie aktualnego czasu jest możliwe używając funkcji <code>Sys.time()</code>.<a href="proste-obiekty.html#fnref30" class="footnote-back">↩</a></p></li>
+<li id="fn28"><p>Uproszczeniem funkcji <code>seq</code> jest operator <code>:</code> (np. <code>1:10</code>). W jego przypadku wartości zawsze zmieniają się o jeden.<a href="proste-obiekty.html#fnref28" class="footnote-back">↩</a></p></li>
+<li id="fn29"><p>Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje <code>is.logical()</code>, <code>is.integer()</code>,<code>is.double()</code>, oraz <code>is.character()</code>.<a href="proste-obiekty.html#fnref29" class="footnote-back">↩</a></p></li>
+<li id="fn30"><p><a href="https://en.wikipedia.org/wiki/Unix_time" class="uri">https://en.wikipedia.org/wiki/Unix_time</a><a href="proste-obiekty.html#fnref30" class="footnote-back">↩</a></p></li>
+<li id="fn31"><p>Wyświetlenie aktualnego czasu jest możliwe używając funkcji <code>Sys.time()</code>.<a href="proste-obiekty.html#fnref31" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

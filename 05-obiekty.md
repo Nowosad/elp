@@ -101,11 +101,16 @@ str(wek_cal)
 #>  int [1:2] 5 -7
 ```
 
+Funkcja `names()` wyświetla nazwy przypisane kolejnym elementom wektora.
+
 
 ```r
 names(wek_zna)
 #> NULL
 ```
+
+W powyższym przypadku wektor `wek_zna` nie miał żadnych nazw, w efekcie funkcja `names()` zwróciła `NULL` (więcej informacji na temat `NULL` można znaleźć w sekcji \@ref(na)).
+Oprócz wyświetlania nazw, funkcja `names()` daje też możliwość ich nadania.
 
 
 ```r
@@ -113,18 +118,30 @@ names(wek_zna) = c("a", "b")
 wek_zna
 #>      a      b 
 #>  "kot" "pies"
-```
-
-
-```r
 names(wek_zna)
 #> [1] "a" "b"
 ```
 
+Funkcja `seq` ma na celu generowanie ciągów liczbowych^[Uproszczeniem funkcji `seq` jest operator `:` (np. `1:10`). W jego przypadku wartości zawsze zmieniają się o jeden.].
+Pierwszym jego argumentem jest `from` czyli początkowa liczba w ciągu a drugi argument `to` oznacza maksymalną możliwą liczbę w ciągu.
+Dodatkowo ta funkcja wymaga zdefiniowania jeszcze jednego argumentu, np. `by` lub `length.out`.
+Argument `by` określa co ile wartości w ciągu mają rosnąć od wartości początkowej.
+
 
 ```r
-seq(1, 12, by = 2)
-#> [1]  1  3  5  7  9 11
+seq(1, 365, by = 7)
+#>  [1]   1   8  15  22  29  36  43  50  57  64  71  78  85  92  99 106 113
+#> [18] 120 127 134 141 148 155 162 169 176 183 190 197 204 211 218 225 232
+#> [35] 239 246 253 260 267 274 281 288 295 302 309 316 323 330 337 344 351
+#> [52] 358 365
+```
+
+Alternatywnie, argument `length.out` ustala jakiej długości ma być wynikowy ciąg, a na podstawie tego tworzone są wartości w równych odstępach.
+
+
+```r
+seq(1, 365, length.out = 10)
+#>  [1]   1.0  41.4  81.9 122.3 162.8 203.2 243.7 284.1 324.6 365.0
 ```
 
 
@@ -188,7 +205,7 @@ Wektoryzacja ma też inną zaletę - obliczenia wykonywane w ten sposób są sz
 W przypadku stosowania niektórych operacji, np. mnożenia czy dodawania, R wykorzystuje w tle (bez wiedzy użytkownika) zoptymalizowane funkcje zapisane w języku C lub Fortran.
 Więcej informacji na temat wektoryzowania kodu można znaleźć w rozdziale \@ref(petle).
 
-## Brakujące wartości
+## Brakujące wartości {#na}
 
 Wyobraź sobie, że wykonujesz codziennie o 12:00 pomiar temperatury.
 
