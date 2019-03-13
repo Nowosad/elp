@@ -2,16 +2,16 @@
 # Proste obiekty {#proste-obiekty}
 
 Obiekty w R można podzielić na proste (homogeniczne) i złożone (heterogeniczne). 
-Do podstawowych prostych obiektów należą wektory (ang. *vector*) i macierze (ang. *matrix*), natomiast listy (ang. *list*) i ramki danych (ang. *data frame*) to obiekty złożone.
+Do podstawowych prostych obiektów należą wektory atomowe (ang. *vector*) i macierze (ang. *matrix*), natomiast listy (ang. *list*) i ramki danych (ang. *data frame*) to obiekty złożone.
 
-W tym rozdziale skupimy się na wektorach.
-<!-- wektory atomowe -->
+W tym rozdziale skupimy się na wektorach atomowych, dla uproszczenia nazywanych dalej po prostu wektorami.
 Pozostałe podstawowe typy obiektów są omówione w rozdziale \@ref(zlozone-obiekty).
 Więcej informacji na temat podstawowych typów obiektów można znaleźć w rozdziale ["Vectors"](https://adv-r.hadley.nz/vectors-chap.html) książki Advanced R [@wickham2014advanced].
 
 ## Wektory 
 
-Wektor może przyjmować jeden z czterech podstawowych typów:
+Wektory są podstawowymi elementami, które pozwalają na budowanie bardziej złożonych rodzajów obiektów.
+Wektor może przyjmować jeden z czterech podstawowych typów^[Istnieją też dwa kolejne podstawowe typy wektorów, złożone (ang. *complex*) oraz surowe (ang. *raw*) ale są one bardzo rzadko używane.]:
 
 1. logiczny (ang. *logical*)
 
@@ -49,26 +49,38 @@ wek_zna
 #> [1] "kot"  "pies"
 ```
 
-<!-- integer i double tworzy numeric -->
-Dodatkowo, istnieją dwa dodatkowe, rzadziej spotykane typy wektorów - czynnikowy (ang. *factor*), dat (ang. *date*) i czasu (ang. *date-time*) (sekcje \@ref(fac), \@ref(ate) i \@ref(ime)).
+Wektory przedstawiające liczby stałoprzecinkowe i zmiennoprzecinkowe są często łączone i wspólnie określane jako wektory numeryczne (ang. *numeric*).
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Wiele języków programowania posiada zmienne skalarne (tzw. skalary), czyli takie które mogą przyjmować tylko jedną wartość.
 W R one nie występują, zamiast nich stosowane są wektory o długości jeden.</div>\EndKnitrBlock{rmdinfo}
 
+Dodatkowo, istnieje wiele dodatkowych, rzadziej spotykane typów wektorów - czynnikowy (ang. *factor*), dat (ang. *date*) i czasu (ang. *date-time*) (sekcje \@ref(fac), \@ref(ate) i \@ref(ime)).
+
 ## Właściwości wektorów
 
 Każdy wektor ma trzy właściwości - typ, długość i atrybuty.
+Typ może być sprawdzony używając funkcji `typeof()`.
 
 
 ```r
 # typ
 typeof(wek_zmi)
 #> [1] "double"
+```
 
+Celem funkcji `length()` jest sprawdzenie długości wektora, czyli tego z ilu wartości (elementów) się on składa.
+
+
+```r
 # długość
 length(wek_zmi)
 #> [1] 2
+```
 
+Atrybuty pozwalają na dodawanie nowych informacji do wektorów atomowych, a w efekcie dają też możliwość tworzenia bardziej złożonych struktur (rozdział \@ref(zlozone-obiekty)).
+
+
+```r
 # atrybuty
 attributes(wek_zmi)
 #> NULL
