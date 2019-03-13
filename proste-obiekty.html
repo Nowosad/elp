@@ -616,25 +616,17 @@ Odbywa się to zgodnie z zasadą: logiczny -&gt; liczba całkowita -&gt; liczba 
 </div>
 <div id="fac" class="section level2">
 <h2><span class="header-section-number">5.11</span> Wektory czynnikowe</h2>
-<!-- factor i date -->
-<!-- https://rstudio-education.github.io/hopr/r-objects.html -->
-<pre class="sourceCode r"><code class="sourceCode r">tekst =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Poznań&quot;</span>, <span class="st">&quot;Kraków&quot;, &quot;</span>Warszawa<span class="st">&quot;, &quot;</span>Poznań<span class="st">&quot;)</span>
-<span class="st">tekst</span>
-<span class="st">#&gt; [1] &quot;</span>Poznań<span class="st">&quot;   &quot;</span>Kraków&quot;   <span class="st">&quot;Warszawa&quot;</span> <span class="st">&quot;Poznań&quot;</span>
-<span class="kw">attributes</span>(tekst)
-<span class="co">#&gt; NULL</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(tekst)
-<span class="co">#&gt; [1] &quot;character&quot;</span>
-<span class="kw">length</span>(tekst)
-<span class="co">#&gt; [1] 4</span>
-<span class="kw">attributes</span>(tekst)
-<span class="co">#&gt; NULL</span></code></pre>
-<!-- Having a class attribute turns an object into an S3 object, which means it will behave differently from a regular vector when passed to a generic function.  -->
-<!-- ref to ate -->
+<p>Wektory czynnikowe służą do przechowywania informacji o pewnych kategoriach.
+Mogą to być, na przykład, wielokrotnie powtórzone nazwy miast czy krajów, czy też określenia płci w danych statystycznych.
+Wektory czynnikowe wspomagają określanie wartości dla kolejnych grup o tej samej nazwie.</p>
+<pre class="sourceCode r"><code class="sourceCode r">tekst =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Poznań&quot;</span>, <span class="st">&quot;Kraków&quot;, &quot;</span>Warszawa<span class="st">&quot;, &quot;</span>Poznań<span class="st">&quot;)</span></code></pre>
+<p>Zamiana wektora tekstowego na czynnikowy odbywa się z użyciem funkcji <code>as.factor()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">czynn =<span class="st"> </span><span class="kw">as.factor</span>(tekst)
 czynn
 <span class="co">#&gt; [1] Poznań   Kraków   Warszawa Poznań  </span>
 <span class="co">#&gt; Levels: Kraków Poznań Warszawa</span></code></pre>
+<p>Wektory czynnikowe są wewnętrznie w R reprezentowane jako wartości stałoprzecinkowe.
+Dodatkowo, posiadają one pewne informacje zaszyte w atrybutach, w tym wartości wszystkich kategorii oraz stwierdzenie posiadanej klasy [^Posiadanie attubutu <code>class</code> zamienia je w tak zwane obiekty S3, które zachowują się inaczej niż normalne wektory atomowe.].</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(czynn)
 <span class="co">#&gt; [1] &quot;integer&quot;</span>
 <span class="kw">length</span>(czynn)
@@ -645,6 +637,7 @@ czynn
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $class</span>
 <span class="co">#&gt; [1] &quot;factor&quot;</span></code></pre>
+<p>Możliwa jest również zamiana w drugą stronę - z wektora czynnikowego na wektor tekstowy używając funkcji <code>as.character()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">tekst2 =<span class="st"> </span><span class="kw">as.character</span>(czynn)
 tekst2
 <span class="co">#&gt; [1] &quot;Poznań&quot;   &quot;Kraków&quot;   &quot;Warszawa&quot; &quot;Poznań&quot;</span></code></pre>

@@ -512,30 +512,16 @@ Do sprawdzenia czy dany obiekt należy do wybranego typu służą funkcje `is.lo
 
 ## Wektory czynnikowe {#fac}
 
-<!-- factor i date -->
-<!-- https://rstudio-education.github.io/hopr/r-objects.html -->
+Wektory czynnikowe służą do przechowywania informacji o pewnych kategoriach. 
+Mogą to być, na przykład, wielokrotnie powtórzone nazwy miast czy krajów, czy też określenia płci w danych statystycznych.
+Wektory czynnikowe wspomagają określanie wartości dla kolejnych grup o tej samej nazwie.
 
 
 ```r
 tekst = c("Poznań", "Kraków", "Warszawa", "Poznań")
-tekst
-#> [1] "Poznań"   "Kraków"   "Warszawa" "Poznań"
-attributes(tekst)
-#> NULL
 ```
 
-
-```r
-typeof(tekst)
-#> [1] "character"
-length(tekst)
-#> [1] 4
-attributes(tekst)
-#> NULL
-```
-
-<!-- Having a class attribute turns an object into an S3 object, which means it will behave differently from a regular vector when passed to a generic function.  -->
-<!-- ref to ate -->
+Zamiana wektora tekstowego na czynnikowy odbywa się z użyciem funkcji `as.factor()`.
 
 
 ```r
@@ -544,6 +530,9 @@ czynn
 #> [1] Poznań   Kraków   Warszawa Poznań  
 #> Levels: Kraków Poznań Warszawa
 ```
+
+Wektory czynnikowe są wewnętrznie w R reprezentowane jako wartości stałoprzecinkowe.
+Dodatkowo, posiadają one pewne informacje zaszyte w atrybutach, w tym wartości wszystkich kategorii oraz stwierdzenie posiadanej klasy [^Posiadanie attubutu `class` zamienia je w tak zwane obiekty S3, które zachowują się inaczej niż normalne wektory atomowe.].
 
 
 ```r
@@ -558,6 +547,8 @@ attributes(czynn)
 #> $class
 #> [1] "factor"
 ```
+
+Możliwa jest również zamiana w drugą stronę - z wektora czynnikowego na wektor tekstowy używając funkcji `as.character()`.
 
 
 ```r
