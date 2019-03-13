@@ -9,6 +9,7 @@ Więcej informacji na temat podstawowych typów obiektów można znaleźć w ro
 
 ## Wektory 
 
+Wektory są podstawowymi elementami, które pozwalają na budowanie bardziej złożonych rodzajów obiektów.
 Wektor może przyjmować jeden z czterech podstawowych typów^[Istnieją też dwa kolejne podstawowe typy wektorów, złożone (ang. *complex*) oraz surowe (ang. *raw*) ale są one bardzo rzadko używane.]:
 
 1. logiczny (ang. *logical*)
@@ -51,14 +52,23 @@ Dodatkowo, istnieje wiele dodatkowych, rzadziej spotykane typów wektorów - czy
 ## Właściwości wektorów
 
 Każdy wektor ma trzy właściwości - typ, długość i atrybuty.
+Typ może być sprawdzony używając funkcji `typeof()`.
 
 ```{r}
 # typ
 typeof(wek_zmi)
+```
 
+Celem funkcji `length()` jest sprawdzenie długości wektora, czyli tego z ilu wartości (elementów) się on składa.
+
+```{r}
 # długość
 length(wek_zmi)
+```
 
+Atrybuty pozwalają na dodawanie nowych informacji do wektorów atomowych, a w efekcie dają też możliwość tworzenia bardziej złożonych struktur (rozdział \@ref(zlozone-obiekty)).
+
+```{r}
 # atrybuty
 attributes(wek_zmi)
 ```
