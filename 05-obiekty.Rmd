@@ -325,15 +325,19 @@ temperatura[0]
 
 Wydzielanie elementów może mieć kilka dodatkowych zastosowań oprócz wyświetlania wybranych wartości.
 Kolejną możliwością jest tworzenie nowych obiektów na podstawie wydzieleń.
+W takich sytuacjach działa każda z metod wyjaśnionych w powyższej sekcji, np. wydzielenie przez nazwę.
 
 ```{r}
 temperatura_pon = temperatura["Poniedziałek"]
 temperatura_pon
 ```
 
+Dodatkowo, wydzielanie może przyjmować bardziej złożoną postać.
+Poniżej nastąpiło stworzenie nowego obiektu `temperatura_10` składającego się z wszystkich elementów wektora `temperatura`, których wartość jest wyższa od 10 i nie jest `NA`.
+
 ```{r}
-temparatura_10 = temperatura[temperatura > 10 & !is.na(temperatura)]
-temparatura_10
+temperatura_10 = temperatura[temperatura > 10 & !is.na(temperatura)]
+temperatura_10
 ```
 
 ## Modyfikowanie obiektów
