@@ -210,7 +210,7 @@ Najlepszą opcją byłoby wykorzystanie wbudowanego oznaczenia wartości brakuj�
 temperatura = c(8.2, 10.3, 12.0, NA)
 ```
 
-Zachowanie zmiennej `NA` (ang. *Not Available*) jest bardzo intuicyjne.
+Zachowanie wartości `NA` (ang. *Not Available*) jest bardzo intuicyjne.
 Przykładowo, jeżeli nie znamy jakiejś wartości to jeżeli dodamy do niej 2 to również nie wiemy jaki mamy wynik.
 
 ```{r}
@@ -261,42 +261,61 @@ Wydzielanie wektorów używając operatora `[]` może odbywać się używając j
 5. Używając zera.
 
 <!-- na podstawie pozycji -->
+W przypadku wydzielania na podstawie pozycji konieczne jest podanie wektora, który wskazuje numer elementów, które mają zostać wybrane.
 
 ```{r}
 temperatura[c(1, 3)]
 ```
+
+Alternatywnie, możliwe jest też użycie znaku minus (`-`) przed definicją pozycji. 
+Wówczas wybrane zostaną wszystkie elementy wektora oprócz tych w podanych pozycjach.
 
 ```{r}
 temperatura[-c(2, 4)]
 ```
 
 <!-- na podstawie wektora logicznego -->
+Drugim sposobem jest użycie wektora logicznego.
+W takim przypadku elementy określone jako prawda (`TRUE`) zostają wybrane.
 
 ```{r}
 temperatura[c(TRUE, FALSE, TRUE, FALSE)]
 ```
+
+Możliwe jest też stworzenie wektora logicznego poprzez wykonanie prostego zapytania.
+Poniżej wybrano tylko te elementy wektora `temperatura`, gdzie wartość w wektorze `temperatura` była wyższa niż 10.
 
 ```{r}
 temperatura[temperatura > 10]
 ```
 
 <!-- na podstawie nazwy -->
+Wydzielanie na podstawie nazwy wymaga aby elementy w wektorze były nazwane.
+
 ```{r}
 names(temperatura) = c("Poniedziałek", "Wtorek", "Środa", "Czwartek")
 temperatura
 ```
+
+Następnie wybór elementów odbywa się poprzez podanie nazw wybranych elementów.
 
 ```{r}
 temperatura[c("Wtorek", "Czwartek")]
 ```
 
 <!-- nic -->
+Czwartą metodą jest zapytanie w oparciu o pusty element.
+W przypadku prostych obiektów, efektem takiego wydzielania jest oryginalny wektor.
+Ta metoda jest jednak bardzo użyteczna dla obiektów złożonych, takich jak macierze czy ramki danych (rozdział \@ref(zlozone-obiekty)).
 
 ```{r}
 temperatura[]
 ```
 
 <!-- zero -->
+Ostatnią metodą jest użycie zera. 
+W efekcie zostanie zwrócony wektor o długości zero, ale zachowujący oryginalne właściwości, jak np. bycie wektorem numerycznym (`numeric`) poniżej.
+Takie zachowanie może być przydatne podczas tworzenia nowych obiektów w oparciu o już istniejące.
 
 ```{r}
 temperatura[0]
