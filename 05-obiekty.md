@@ -638,7 +638,7 @@ attributes(czas)
 #> [1] "CET"
 ```
 
-Przykładowo, `"2011-02-02 10:33"` miało miejsce 1.3e+09 sekund od 1970-01-01.
+Przykładowo, `"2011-02-02 10:33"` miało miejsce 1296639180 sekund od 1970-01-01.
 
 
 ```r
@@ -662,6 +662,7 @@ czas
 Więcej informacji na temat stref czasowych używanych w R można znaleźć w pliku pomocy `?timezones`.
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">R posiada też dodatkowe klasy specjalne, np:
+
 - `POSIXlt` przechowująca informacje o dacie w postaci listy
 - `difftime` reprezentująca czas trwania</div>\EndKnitrBlock{rmdinfo}
 

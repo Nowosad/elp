@@ -688,7 +688,7 @@ czas
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $tzone</span>
 <span class="co">#&gt; [1] &quot;CET&quot;</span></code></pre>
-<p>Przykładowo, <code>&quot;2011-02-02 10:33&quot;</code> miało miejsce 1.3e+09 sekund od 1970-01-01.</p>
+<p>Przykładowo, <code>&quot;2011-02-02 10:33&quot;</code> miało miejsce 1296639180 sekund od 1970-01-01.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unclass</span>(czas)
 <span class="co">#&gt; [1] 1.3e+09</span>
 <span class="co">#&gt; attr(,&quot;tzone&quot;)</span>
@@ -702,11 +702,12 @@ czas
 <p>Więcej informacji na temat stref czasowych używanych w R można znaleźć w pliku pomocy <code>?timezones</code>.</p>
 
 <div class="rmdinfo">
-R posiada też dodatkowe klasy specjalne, np:
-- <code>POSIXlt</code> przechowująca informacje o dacie w postaci listy
-- <code>difftime</code> reprezentująca czas trwania
-</div>
-
+<p>R posiada też dodatkowe klasy specjalne, np:</p>
+<ul>
+<li><code>POSIXlt</code> przechowująca informacje o dacie w postaci listy</li>
+<li><code>difftime</code> reprezentująca czas trwania
+</div></li>
+</ul>
 </div>
 <div id="zadania-4" class="section level2">
 <h2><span class="header-section-number">5.14</span> Zadania</h2>
