@@ -210,7 +210,7 @@ colnames(ramka1)
 
 ### Wydzielanie
 
-Do wydzielania elementów z ramki danych może służyć, między innymi, operator `$`, operator `[]`  oraz funkcja `subset()`.
+Do wydzielania elementów z ramki danych może służyć kilka narzędzi, między innymi, operator `$`, operator `[]`  oraz funkcja `subset()`.
 
 Operator `$` pozwala na wybranie zmiennej (kolumny) na podstawie jej nazwy.
 
@@ -218,6 +218,8 @@ Operator `$` pozwala na wybranie zmiennej (kolumny) na podstawie jej nazwy.
 ramka1$zmi
 ramka1$zna
 ```
+
+W efekcie otrzymywany jest jednak inna klasa - w powyższych przykładzach są to wektory.
 
 W przypadku ramek danych operator `[]` wymaga podania dwóch argumentów - jednego dla wierszy (obserwacji) oraz jednego dla kolumn (zmiennych) - `[wiersze, kolumny]`.
 
@@ -228,25 +230,39 @@ ramka1[c(1, 3), c(1, 2)]
 Do wydzielania można też wykorzystać operatory logiczne: `==`, `%in%`, `!=`, `>`, `>=`, `<`, `<=`, `&`, `|`.
 
 ```{r}
-ramka1[c(1, 3), ramka1$zmi > 0]
+ramka1[ramka1$zmi > 0, c(1, 3)]
 ```
 
-```{r}
-ramka1[ramka1$zna == "kot", ]
-```
+Powyżej wybrano tylko pierwszą i trzecią kolumnę oraz wiersze, dla których kolumna `zmi` miała wartość wyższą niż 0.
 
-<!-- block == vs = -->
-
-```{r}
-ramka1[ramka1$zna %in% c("kot", "pies"), ]
-```
+Zapytania też można łączyć, np. wybierając tylko te wiersze gdzie wartość `cal` jest wyższa niż 6 lub niższa niż -6.
 
 ```{r}
 ramka1[ramka1$cal > 6 | ramka1$cal < -6, ]
 ```
 
-<!-- ref to wektor and matrix -->
-<!-- wydzielanie i tworzenie -->
+Poniżej wybrano natomiast wszystkie kolumny, ale tylko wiersz gdzie zmienna `zna` przyjęła wartość `"kot"`.
+
+```{r}
+ramka1[ramka1$zna == "kot", ]
+```
+
+Aby wybrać więcej niż jedną zmienną należy użyć funkcji `%in%`.
+
+```{r}
+ramka1[ramka1$zna %in% c("kot", "pies"), ]
+```
+
+Alternatywą do wydzielania ramek danych na podstawie zapytania logicznego jest użycie funkcji `subset()`.
+Używając tej funkcji powyższe zapytanie można przestawić jako:
+
+```{r}
+subset(ramka1, zna %in% c("kot", "pies"))
+```
+
+```{block2 type="rmdinfo"}
+Podobnie jak w przypadku wektorów (sekcje \@ref(wip-vector) i \@ref(mo-vector)), wydzielanie ramek danych może służyć do wyświetlenia wybranych wartości, ale też ich wydzielenia i przypisania oraz modyfikowania.
+```
 
 ### Łączenie
 
