@@ -171,25 +171,34 @@ Więcej informacji na ten temat można znaleźć w rozdziale \@ref(io).
 
 ### Podstawowe funkcje
 
+Oficjalnie klasa ramki danych jest określana jako `data.frame`.
+
 ```{r}
 class(ramka1)
 ```
+
+Sprawdzenie struktury ramki danych pozwala na szybkie poznanie kilku róznych cech wejściowego obiektu.
+Pierwszą informacją jest klasa obiektu (`data.frame`), liczba wierszy (`3 obs.` - trzy obserwacje) i liczba kolumn (`4 variables` - cztery zmienne).
+Następnie, dla kolejnych kolumn są określane ich nazwy, typy danych oraz przykładowe wartości.
 
 ```{r}
 str(ramka1)
 ```
 
-```{r}
-ncol(ramka1)
-```
+Podobnie jak w przypadku macierzy, ramki danych mają dwa wymiary, których długość można sprawdzić używając funkcji `nrow` i `ncol`.
 
 ```{r}
 nrow(ramka1)
+ncol(ramka1)
 ```
+
+W przeciwieństwie jednak do macierzy, ramki danych zawsze posiadają nazwy kolumn.
 
 ```{r}
 colnames(ramka1)
 ```
+
+Ich zmiana również jest możliwa używając funkcji `colnames()`.
 
 ```{r}
 colnames(ramka1) = c("log", "cal", "zmi", "zna")
