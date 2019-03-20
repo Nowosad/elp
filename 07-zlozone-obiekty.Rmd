@@ -142,6 +142,8 @@ Główną różnicą pomiędzy macierzą a ramką danych jest to, że pierwsza z
 
 Ramka danych jest zbudowana z kolumn (wektorów) o równej długości.
 <!-- a data frame is a list of equal-length vectors -->
+Ten typ obiektu jest głównie wykorzystywany do różnorodnej analizy danych. 
+Ramki danych przypominają w swojej strukturze arkusze kalkulacyjne czy bazy danych.
 <!-- nested data frames footnote -->
 
 ### Tworzenie
