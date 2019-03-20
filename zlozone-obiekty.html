@@ -225,7 +225,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#aczenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie</a></li>
 <li class="chapter" data-level="7.3.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-3"><i class="fa fa-check"></i><b>7.3.4</b> Wydzielanie</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zamiany-klas"><i class="fa fa-check"></i><b>7.4</b> Zamiany klas</a></li>
+<li class="chapter" data-level="7.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zmiany-klas"><i class="fa fa-check"></i><b>7.4</b> Zmiany klas</a></li>
 <li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#inne-klasy-obiektow"><i class="fa fa-check"></i><b>7.5</b> Inne klasy obiektów</a></li>
 <li class="chapter" data-level="7.6" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zadania-6"><i class="fa fa-check"></i><b>7.6</b> Zadania</a></li>
 </ul></li>
@@ -744,73 +744,56 @@ lista6
 <span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span></code></pre>
 </div>
 </div>
-<div id="zamiany-klas" class="section level2">
-<h2><span class="header-section-number">7.4</span> Zamiany klas</h2>
+<div id="zmiany-klas" class="section level2">
+<h2><span class="header-section-number">7.4</span> Zmiany klas</h2>
+<p>R ma też szereg pomocnicznych służących do zmian istniejących klas.
+Te funcje rozpoczynają się od <code>as.</code> a następnie zawierają nazwę klasy do której chcemy przetworzyć wejściowy obiekt, np. <code>as.vector()</code>, <code>as.matrix()</code>, <code>as.data.frame()</code>, <code>as.list()</code>.</p>
+<p>Działanie tych funkcji jednak jest bardzo różne w zależności o klasy wejściowego obiektu.
+Zobaczmy to na przykładzie obiektu <code>macierz1</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">macierz1
 <span class="co">#&gt;      [,1] [,2] [,3]</span>
 <span class="co">#&gt; [1,]    1    5    9</span>
 <span class="co">#&gt; [2,]    2    6   10</span>
 <span class="co">#&gt; [3,]    3    7   11</span>
-<span class="co">#&gt; [4,]    4    8   12</span></code></pre>
+<span class="co">#&gt; [4,]    4    8   12</span>
+<span class="kw">class</span>(macierz1)
+<span class="co">#&gt; [1] &quot;matrix&quot;</span></code></pre>
+<p>Jego zamiana na ramkę danych odbywa się używając funkcji <code>as.data.frame()</code>.
+W efekcie nowy obiekt ma takie same wymiary (cztery wiersze i trzy kolumny) oraz te same wartości.
+Zauważalną zmianą jest jednak automatyczne dodane nazw wierszy (<code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>) i nazw kolumn (<code>V1</code>, <code>V2</code>, <code>V3</code>).</p>
 <pre class="sourceCode r"><code class="sourceCode r">ramka_z_m1 =<span class="st"> </span><span class="kw">as.data.frame</span>(macierz1)
 ramka_z_m1
 <span class="co">#&gt;   V1 V2 V3</span>
 <span class="co">#&gt; 1  1  5  9</span>
 <span class="co">#&gt; 2  2  6 10</span>
 <span class="co">#&gt; 3  3  7 11</span>
-<span class="co">#&gt; 4  4  8 12</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(macierz1)
-<span class="co">#&gt; [1] &quot;matrix&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(ramka_z_m1)
+<span class="co">#&gt; 4  4  8 12</span>
+<span class="kw">class</span>(ramka_z_m1)
 <span class="co">#&gt; [1] &quot;data.frame&quot;</span></code></pre>
+<p>Zupełnie inny efekt będzie miało natomiast zamienienie macierzy i ramki danych na listy.</p>
 <pre class="sourceCode r"><code class="sourceCode r">lista_z_m1 =<span class="st"> </span><span class="kw">as.list</span>(macierz1)
-lista_z_m1
-<span class="co">#&gt; [[1]]</span>
-<span class="co">#&gt; [1] 1</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[2]]</span>
-<span class="co">#&gt; [1] 2</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[3]]</span>
-<span class="co">#&gt; [1] 3</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[4]]</span>
-<span class="co">#&gt; [1] 4</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[5]]</span>
-<span class="co">#&gt; [1] 5</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[6]]</span>
-<span class="co">#&gt; [1] 6</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[7]]</span>
-<span class="co">#&gt; [1] 7</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[8]]</span>
-<span class="co">#&gt; [1] 8</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[9]]</span>
-<span class="co">#&gt; [1] 9</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[10]]</span>
-<span class="co">#&gt; [1] 10</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[11]]</span>
-<span class="co">#&gt; [1] 11</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[12]]</span>
-<span class="co">#&gt; [1] 12</span>
-lista_z_r1 =<span class="st"> </span><span class="kw">as.list</span>(ramka_z_m1)
-lista_z_r1
-<span class="co">#&gt; $V1</span>
-<span class="co">#&gt; [1] 1 2 3 4</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $V2</span>
-<span class="co">#&gt; [1] 5 6 7 8</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $V3</span>
-<span class="co">#&gt; [1]  9 10 11 12</span></code></pre>
-<p><code>as.vector()</code>, <code>as.matrix()</code>, <code>as.data.frame()</code>, <code>as.list()</code></p>
+lista_z_r1 =<span class="st"> </span><span class="kw">as.list</span>(ramka_z_m1)</code></pre>
+<p>W pierwszym przypadku powstanie lista zawierająca dwanaście elementów.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(lista_z_m1)
+<span class="co">#&gt; List of 12</span>
+<span class="co">#&gt;  $ : int 1</span>
+<span class="co">#&gt;  $ : int 2</span>
+<span class="co">#&gt;  $ : int 3</span>
+<span class="co">#&gt;  $ : int 4</span>
+<span class="co">#&gt;  $ : int 5</span>
+<span class="co">#&gt;  $ : int 6</span>
+<span class="co">#&gt;  $ : int 7</span>
+<span class="co">#&gt;  $ : int 8</span>
+<span class="co">#&gt;  $ : int 9</span>
+<span class="co">#&gt;  $ : int 10</span>
+<span class="co">#&gt;  $ : int 11</span>
+<span class="co">#&gt;  $ : int 12</span></code></pre>
+<p>W drugim przypadku efektem będzie lista składająca się z trzech wektorów, które reprezentują kolejne kolumny z poprzedniej ramki danych.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(lista_z_r1)
+<span class="co">#&gt; List of 3</span>
+<span class="co">#&gt;  $ V1: int [1:4] 1 2 3 4</span>
+<span class="co">#&gt;  $ V2: int [1:4] 5 6 7 8</span>
+<span class="co">#&gt;  $ V3: int [1:4] 9 10 11 12</span></code></pre>
 </div>
 <div id="inne-klasy-obiektow" class="section level2">
 <h2><span class="header-section-number">7.5</span> Inne klasy obiektów</h2>

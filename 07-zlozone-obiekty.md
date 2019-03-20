@@ -634,7 +634,13 @@ lista1$zna
 #> [1] "kot"       "pies"      "nosorożec"
 ```
 
-## Zamiany klas
+## Zmiany klas
+
+R ma też szereg pomocnicznych służących do zmian istniejących klas. 
+Te funcje rozpoczynają się od `as.` a następnie zawierają nazwę klasy do której chcemy przetworzyć wejściowy obiekt, np. `as.vector()`, `as.matrix()`, `as.data.frame()`, `as.list()`.
+
+Działanie tych funkcji jednak jest bardzo różne w zależności o klasy wejściowego obiektu.
+Zobaczmy to na przykładzie obiektu `macierz1`.
 
 
 ```r
@@ -644,7 +650,13 @@ macierz1
 #> [2,]    2    6   10
 #> [3,]    3    7   11
 #> [4,]    4    8   12
+class(macierz1)
+#> [1] "matrix"
 ```
+
+Jego zamiana na ramkę danych odbywa się używając funkcji `as.data.frame()`.
+W efekcie nowy obiekt ma takie same wymiary (cztery wiersze i trzy kolumny) oraz te same wartości.
+Zauważalną zmianą jest jednak automatyczne dodane nazw wierszy (`1`, `2`, `3`, `4`) i nazw kolumn (`V1`, `V2`, `V3`).
 
 
 ```r
@@ -655,72 +667,48 @@ ramka_z_m1
 #> 2  2  6 10
 #> 3  3  7 11
 #> 4  4  8 12
-```
-
-
-```r
-class(macierz1)
-#> [1] "matrix"
-```
-
-
-```r
 class(ramka_z_m1)
 #> [1] "data.frame"
 ```
 
+Zupełnie inny efekt będzie miało natomiast zamienienie macierzy i ramki danych na listy.
+
 
 ```r
 lista_z_m1 = as.list(macierz1)
-lista_z_m1
-#> [[1]]
-#> [1] 1
-#> 
-#> [[2]]
-#> [1] 2
-#> 
-#> [[3]]
-#> [1] 3
-#> 
-#> [[4]]
-#> [1] 4
-#> 
-#> [[5]]
-#> [1] 5
-#> 
-#> [[6]]
-#> [1] 6
-#> 
-#> [[7]]
-#> [1] 7
-#> 
-#> [[8]]
-#> [1] 8
-#> 
-#> [[9]]
-#> [1] 9
-#> 
-#> [[10]]
-#> [1] 10
-#> 
-#> [[11]]
-#> [1] 11
-#> 
-#> [[12]]
-#> [1] 12
 lista_z_r1 = as.list(ramka_z_m1)
-lista_z_r1
-#> $V1
-#> [1] 1 2 3 4
-#> 
-#> $V2
-#> [1] 5 6 7 8
-#> 
-#> $V3
-#> [1]  9 10 11 12
 ```
 
-`as.vector()`, `as.matrix()`, `as.data.frame()`, `as.list()`
+W pierwszym przypadku powstanie lista zawierająca dwanaście elementów.
+
+
+```r
+str(lista_z_m1)
+#> List of 12
+#>  $ : int 1
+#>  $ : int 2
+#>  $ : int 3
+#>  $ : int 4
+#>  $ : int 5
+#>  $ : int 6
+#>  $ : int 7
+#>  $ : int 8
+#>  $ : int 9
+#>  $ : int 10
+#>  $ : int 11
+#>  $ : int 12
+```
+
+W drugim przypadku efektem będzie lista składająca się z trzech wektorów, które reprezentują kolejne kolumny z poprzedniej ramki danych.
+
+
+```r
+str(lista_z_r1)
+#> List of 3
+#>  $ V1: int [1:4] 1 2 3 4
+#>  $ V2: int [1:4] 5 6 7 8
+#>  $ V3: int [1:4] 9 10 11 12
+```
 
 ## Inne klasy obiektów
 
