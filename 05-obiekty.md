@@ -86,7 +86,7 @@ attributes(wek_zmi)
 #> NULL
 ```
 
-## Podstawowe funkcje
+## Podstawowe funkcje {#pf-vector}
 
 Z racji bycia podstawowym typem obiektu w R, wektory są używane w bardzo dużej liczbie funkcji.
 Kilka z podstawowych, często przydatnych funkcji jest podana i wyjaśniona poniżej.
@@ -451,7 +451,7 @@ temperatura
 #>          8.2         10.3         12.0          9.1
 ```
 
-## Łączenie podstawowych typów obiektów
+## Łączenie podstawowych typów obiektów {#lpto-vector}
 
 <!-- tekst -->
 Właściwością wektora jest to, że może on przyjmować tylko jeden typ.

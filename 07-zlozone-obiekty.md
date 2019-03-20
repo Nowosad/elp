@@ -44,11 +44,16 @@ macierz2
 
 ### Podstawowe funkcje
 
+Sprawdzenie jakiej klasy jest podany obiekt odbywa się używając funkcji `class()`.
+
 
 ```r
 class(macierz2)
 #> [1] "matrix"
 ```
+
+Więcej informacji na temat obiektu można poznać używając funkcji `str()`. 
+Jej działanie na macierzy jest bardzo podobne do wyniku na wektorach (zobacz sekcję \@ref(pf-vector)) - wyświetlony zostaje typ obiektu (np. `int`), jego wymiary (np. `[1:4, 1:3]`) i kilka przykładowych wartości (np. `1 4 7 10 2 5 8 11 3 6`).
 
 
 ```r
@@ -56,29 +61,35 @@ str(macierz2)
 #>  int [1:4, 1:3] 1 4 7 10 2 5 8 11 3 6 ...
 ```
 
+Macierz może przyjmować tylko jeden typ obiektów, co można sprawdzić używając funkcji `typeof()`.
+
 
 ```r
 typeof(macierz2)
 #> [1] "integer"
 ```
 
-
-```r
-ncol(macierz2)
-#> [1] 3
-```
+Wektory atomowe mają tylko jeden wymiar więc ich długość oznacza liczbę elementów i może być sprawdzona używając funkcji `length()`.
+W przypadku macierzy możliwe jest dodatowo sprawdzenie liczby występujących wierszy (`nrow`) i kolumn (`ncol`).
 
 
 ```r
 nrow(macierz2)
 #> [1] 4
+ncol(macierz2)
+#> [1] 3
 ```
+
+Domyślnie macierze nie zawierają nazw kolumn ani wierszy.
 
 
 ```r
 colnames(macierz2)
 #> NULL
 ```
+
+Sprawdzenie czy dodanie nazw kolumn jest jednak możliwe używając funkcji `colnames()`.
+Może to pozwolić w przyszłości na wydzielanie konkretnych wartości na podstawie nazw kolumn.
 
 
 ```r
@@ -176,6 +187,9 @@ macierz4
 #> [7,]  7  8  9
 #> [8,] 10 11 12
 ```
+
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">W przypadku, gdy chcemy połączyć kilka wektorów różnych typów działają dokładnie takie same reguły jak w przypadku wektorów atomowych (sekcja \@ref(lpto-vector)).</div>\EndKnitrBlock{rmdinfo}
 
 ## Ramki danych {#df}
 
