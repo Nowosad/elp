@@ -469,11 +469,15 @@ str(zlozona_lista1)
 
 ### Podstawowe funkcje
 
+Listy są przedstawane jako klasa `list`.
+
 
 ```r
 class(lista1)
 #> [1] "list"
 ```
+
+W ich wypadku funkcja `str()` wyświetla klasę (`List`), liczbę elementów w liście (`4`) oraz wypisuje kolejne elementy listy, ich typy, wymiary i przykładowe wartości.
 
 
 ```r
@@ -485,11 +489,16 @@ str(lista1)
 #>  $ : chr [1:3] "kot" "pies" "nosorożec"
 ```
 
+Listy nie zawierają wierszy czy kolumn, dlatego do sprawdzenia liczby elementów w liście służy tylko funkcja `length()`.
+
 
 ```r
 length(lista1)
 #> [1] 4
 ```
+
+Kolejne elementy znajdujące się w liście mogą przyjmować wbrane nazwy.
+Można je sprawdzić czy zmienić używając funkcji `names()`.
 
 
 ```r
