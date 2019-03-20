@@ -111,6 +111,8 @@ colnames(macierz2)
 Podobnie jak w przypadku wektorów (rozdział \@ref(proste-obiekty)), macierze można wydzielać używając operatora `[]`.
 W tym wypadku odbywa się to jednak w oparciu o dwa indeksy - jeden dla wiersza, drugi dla kolumny - `[wiersz, kolumna]`.
 
+Przykładowo, poniżej zostaną wybrane tylko wartości znajdujące się w pierwszy i drugim wierszy oraz pierwszej i trzeciej kolumnie.
+
 
 ```r
 macierz2[c(1, 2), c(1, 3)]
@@ -119,6 +121,10 @@ macierz2[c(1, 2), c(1, 3)]
 #> [2,] 4 6
 ```
 
+Do wydzielania macierzy czy ramek danych też często przydatne jest używanie elementu pustego.
+Pozwala on na wybór wszystkich wartości w danym wymiarze.
+Na poniższy przykładzie zostały wybrane wiersze jeden i dwa oraz, z uwagi na element pusty, wszystkie kolumny.
+
 
 ```r
 macierz2[c(1, 2), ]
@@ -126,6 +132,8 @@ macierz2[c(1, 2), ]
 #> [1,] 1 2 3
 #> [2,] 4 5 6
 ```
+
+Element pusty można też zastosować do wybrania wszystkich wierszy.
 
 
 ```r
@@ -137,6 +145,9 @@ macierz2[, c(1, 3)]
 #> [4,] 10 12
 ```
 
+Wszystkie pozostałe sposoby wydzielania opisane dla wektorów w sekcji \@ref() działają również na macierzach.
+Możeliwe jest więc używanie wektora logicznego czy nazw kolumn.
+
 
 ```r
 macierz2[, c(TRUE, FALSE, TRUE)]
@@ -145,10 +156,6 @@ macierz2[, c(TRUE, FALSE, TRUE)]
 #> [2,]  4  6
 #> [3,]  7  9
 #> [4,] 10 12
-```
-
-
-```r
 macierz2[, c("a", "c")]
 #>       a  c
 #> [1,]  1  3
@@ -156,9 +163,6 @@ macierz2[, c("a", "c")]
 #> [3,]  7  9
 #> [4,] 10 12
 ```
-
-<!-- ref to wektory -->
-<!-- block - też prosty wektor i macierz -->
 
 ### Łączenie
 

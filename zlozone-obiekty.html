@@ -375,34 +375,39 @@ macierz2
 <h3><span class="header-section-number">7.1.3</span> Wydzielanie</h3>
 <p>Podobnie jak w przypadku wektorów (rozdział <a href="proste-obiekty.html#proste-obiekty">5</a>), macierze można wydzielać używając operatora <code>[]</code>.
 W tym wypadku odbywa się to jednak w oparciu o dwa indeksy - jeden dla wiersza, drugi dla kolumny - <code>[wiersz, kolumna]</code>.</p>
+<p>Przykładowo, poniżej zostaną wybrane tylko wartości znajdujące się w pierwszy i drugim wierszy oraz pierwszej i trzeciej kolumnie.</p>
 <pre class="sourceCode r"><code class="sourceCode r">macierz2[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]
 <span class="co">#&gt;      a c</span>
 <span class="co">#&gt; [1,] 1 3</span>
 <span class="co">#&gt; [2,] 4 6</span></code></pre>
+<p>Do wydzielania macierzy czy ramek danych też często przydatne jest używanie elementu pustego.
+Pozwala on na wybór wszystkich wartości w danym wymiarze.
+Na poniższy przykładzie zostały wybrane wiersze jeden i dwa oraz, z uwagi na element pusty, wszystkie kolumny.</p>
 <pre class="sourceCode r"><code class="sourceCode r">macierz2[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), ]
 <span class="co">#&gt;      a b c</span>
 <span class="co">#&gt; [1,] 1 2 3</span>
 <span class="co">#&gt; [2,] 4 5 6</span></code></pre>
+<p>Element pusty można też zastosować do wybrania wszystkich wierszy.</p>
 <pre class="sourceCode r"><code class="sourceCode r">macierz2[, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]
 <span class="co">#&gt;       a  c</span>
 <span class="co">#&gt; [1,]  1  3</span>
 <span class="co">#&gt; [2,]  4  6</span>
 <span class="co">#&gt; [3,]  7  9</span>
 <span class="co">#&gt; [4,] 10 12</span></code></pre>
+<p>Wszystkie pozostałe sposoby wydzielania opisane dla wektorów w sekcji @ref() działają również na macierzach.
+Możeliwe jest więc używanie wektora logicznego czy nazw kolumn.</p>
 <pre class="sourceCode r"><code class="sourceCode r">macierz2[, <span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)]
 <span class="co">#&gt;       a  c</span>
 <span class="co">#&gt; [1,]  1  3</span>
 <span class="co">#&gt; [2,]  4  6</span>
 <span class="co">#&gt; [3,]  7  9</span>
-<span class="co">#&gt; [4,] 10 12</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">macierz2[, <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;c&quot;</span>)]
+<span class="co">#&gt; [4,] 10 12</span>
+macierz2[, <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;c&quot;</span>)]
 <span class="co">#&gt;       a  c</span>
 <span class="co">#&gt; [1,]  1  3</span>
 <span class="co">#&gt; [2,]  4  6</span>
 <span class="co">#&gt; [3,]  7  9</span>
 <span class="co">#&gt; [4,] 10 12</span></code></pre>
-<!-- ref to wektory -->
-<!-- block - też prosty wektor i macierz -->
 </div>
 <div id="aczenie" class="section level3">
 <h3><span class="header-section-number">7.1.4</span> Łączenie</h3>
