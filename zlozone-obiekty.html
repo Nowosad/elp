@@ -187,8 +187,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.4" data-path="proste-obiekty.html"><a href="proste-obiekty.html#dzialania-na-wektorach"><i class="fa fa-check"></i><b>5.4</b> Działania na wektorach</a></li>
 <li class="chapter" data-level="5.5" data-path="proste-obiekty.html"><a href="proste-obiekty.html#na"><i class="fa fa-check"></i><b>5.5</b> Brakujące wartości</a></li>
 <li class="chapter" data-level="5.6" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie"><i class="fa fa-check"></i><b>5.6</b> Wydzielanie</a></li>
-<li class="chapter" data-level="5.7" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie-i-przypisanie"><i class="fa fa-check"></i><b>5.7</b> Wydzielanie i przypisanie</a></li>
-<li class="chapter" data-level="5.8" data-path="proste-obiekty.html"><a href="proste-obiekty.html#modyfikowanie-obiektow"><i class="fa fa-check"></i><b>5.8</b> Modyfikowanie obiektów</a></li>
+<li class="chapter" data-level="5.7" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wip-vector"><i class="fa fa-check"></i><b>5.7</b> Wydzielanie i przypisanie</a></li>
+<li class="chapter" data-level="5.8" data-path="proste-obiekty.html"><a href="proste-obiekty.html#mo-vector"><i class="fa fa-check"></i><b>5.8</b> Modyfikowanie obiektów</a></li>
 <li class="chapter" data-level="5.9" data-path="proste-obiekty.html"><a href="proste-obiekty.html#lpto-vector"><i class="fa fa-check"></i><b>5.9</b> Łączenie podstawowych typów obiektów</a></li>
 <li class="chapter" data-level="5.10" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zmiana-typow-obiektow"><i class="fa fa-check"></i><b>5.10</b> Zmiana typów obiektów</a></li>
 <li class="chapter" data-level="5.11" data-path="proste-obiekty.html"><a href="proste-obiekty.html#fac"><i class="fa fa-check"></i><b>5.11</b> Wektory czynnikowe</a></li>
@@ -510,36 +510,49 @@ ramka1
 </div>
 <div id="wydzielanie-2" class="section level3">
 <h3><span class="header-section-number">7.2.3</span> Wydzielanie</h3>
-<p>Do wydzielania elementów z ramki danych może służyć, między innymi, operator <code>$</code>, operator <code>[]</code> oraz funkcja <code>subset()</code>.</p>
+<p>Do wydzielania elementów z ramki danych może służyć kilka narzędzi, między innymi, operator <code>$</code>, operator <code>[]</code> oraz funkcja <code>subset()</code>.</p>
 <p>Operator <code>$</code> pozwala na wybranie zmiennej (kolumny) na podstawie jej nazwy.</p>
 <pre class="sourceCode r"><code class="sourceCode r">ramka1<span class="op">$</span>zmi
 <span class="co">#&gt; [1]  5.3 -7.1  1.1</span>
 ramka1<span class="op">$</span>zna
 <span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span></code></pre>
+<p>W efekcie otrzymywany jest jednak inna klasa - w powyższych przykładzach są to wektory.</p>
 <p>W przypadku ramek danych operator <code>[]</code> wymaga podania dwóch argumentów - jednego dla wierszy (obserwacji) oraz jednego dla kolumn (zmiennych) - <code>[wiersze, kolumny]</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">ramka1[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)]
 <span class="co">#&gt;     log cal</span>
 <span class="co">#&gt; 1  TRUE   5</span>
 <span class="co">#&gt; 3 FALSE  12</span></code></pre>
 <p>Do wydzielania można też wykorzystać operatory logiczne: <code>==</code>, <code>%in%</code>, <code>!=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&amp;</code>, <code>|</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">ramka1[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), ramka1<span class="op">$</span>zmi <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>]
-<span class="co">#&gt;     log zmi       zna</span>
-<span class="co">#&gt; 1  TRUE 5.3       kot</span>
-<span class="co">#&gt; 3 FALSE 1.1 nosorożec</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">ramka1[ramka1<span class="op">$</span>zna <span class="op">==</span><span class="st"> &quot;kot&quot;</span>, ]
-<span class="co">#&gt;    log cal zmi zna</span>
-<span class="co">#&gt; 1 TRUE   5 5.3 kot</span></code></pre>
-<!-- block == vs = -->
-<pre class="sourceCode r"><code class="sourceCode r">ramka1[ramka1<span class="op">$</span>zna <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>), ]
-<span class="co">#&gt;     log cal  zmi  zna</span>
-<span class="co">#&gt; 1  TRUE   5  5.3  kot</span>
-<span class="co">#&gt; 2 FALSE  -7 -7.1 pies</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">ramka1[ramka1<span class="op">$</span>zmi <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]
+<span class="co">#&gt;     log zmi</span>
+<span class="co">#&gt; 1  TRUE 5.3</span>
+<span class="co">#&gt; 3 FALSE 1.1</span></code></pre>
+<p>Powyżej wybrano tylko pierwszą i trzecią kolumnę oraz wiersze, dla których kolumna <code>zmi</code> miała wartość wyższą niż 0.</p>
+<p>Zapytania też można łączyć, np. wybierając tylko te wiersze gdzie wartość <code>cal</code> jest wyższa niż 6 lub niższa niż -6.</p>
 <pre class="sourceCode r"><code class="sourceCode r">ramka1[ramka1<span class="op">$</span>cal <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span> <span class="op">|</span><span class="st"> </span>ramka1<span class="op">$</span>cal <span class="op">&lt;</span><span class="st"> </span><span class="dv">-6</span>, ]
 <span class="co">#&gt;     log cal  zmi       zna</span>
 <span class="co">#&gt; 2 FALSE  -7 -7.1      pies</span>
 <span class="co">#&gt; 3 FALSE  12  1.1 nosorożec</span></code></pre>
-<!-- ref to wektor and matrix -->
-<!-- wydzielanie i tworzenie -->
+<p>Poniżej wybrano natomiast wszystkie kolumny, ale tylko wiersz gdzie zmienna <code>zna</code> przyjęła wartość <code>&quot;kot&quot;</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">ramka1[ramka1<span class="op">$</span>zna <span class="op">==</span><span class="st"> &quot;kot&quot;</span>, ]
+<span class="co">#&gt;    log cal zmi zna</span>
+<span class="co">#&gt; 1 TRUE   5 5.3 kot</span></code></pre>
+<p>Aby wybrać więcej niż jedną zmienną należy użyć funkcji <code>%in%</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">ramka1[ramka1<span class="op">$</span>zna <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>), ]
+<span class="co">#&gt;     log cal  zmi  zna</span>
+<span class="co">#&gt; 1  TRUE   5  5.3  kot</span>
+<span class="co">#&gt; 2 FALSE  -7 -7.1 pies</span></code></pre>
+<p>Alternatywą do wydzielania ramek danych na podstawie zapytania logicznego jest użycie funkcji <code>subset()</code>.
+Używając tej funkcji powyższe zapytanie można przestawić jako:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">subset</span>(ramka1, zna <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>))
+<span class="co">#&gt;     log cal  zmi  zna</span>
+<span class="co">#&gt; 1  TRUE   5  5.3  kot</span>
+<span class="co">#&gt; 2 FALSE  -7 -7.1 pies</span></code></pre>
+
+<div class="rmdinfo">
+Podobnie jak w przypadku wektorów (sekcje <a href="proste-obiekty.html#wip-vector">5.7</a> i <a href="proste-obiekty.html#mo-vector">5.8</a>), wydzielanie ramek danych może służyć do wyświetlenia wybranych wartości, ale też ich wydzielenia i przypisania oraz modyfikowania.
+</div>
+
 </div>
 <div id="aczenie-1" class="section level3">
 <h3><span class="header-section-number">7.2.4</span> Łączenie</h3>

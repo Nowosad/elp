@@ -300,7 +300,7 @@ colnames(ramka1)
 
 ### Wydzielanie
 
-Do wydzielania elementów z ramki danych może służyć, między innymi, operator `$`, operator `[]`  oraz funkcja `subset()`.
+Do wydzielania elementów z ramki danych może służyć kilka narzędzi, między innymi, operator `$`, operator `[]`  oraz funkcja `subset()`.
 
 Operator `$` pozwala na wybranie zmiennej (kolumny) na podstawie jej nazwy.
 
@@ -311,6 +311,8 @@ ramka1$zmi
 ramka1$zna
 #> [1] "kot"       "pies"      "nosorożec"
 ```
+
+W efekcie otrzymywany jest jednak inna klasa - w powyższych przykładzach są to wektory.
 
 W przypadku ramek danych operator `[]` wymaga podania dwóch argumentów - jednego dla wierszy (obserwacji) oraz jednego dla kolumn (zmiennych) - `[wiersze, kolumny]`.
 
@@ -326,28 +328,15 @@ Do wydzielania można też wykorzystać operatory logiczne: `==`, `%in%`, `!=`, 
 
 
 ```r
-ramka1[c(1, 3), ramka1$zmi > 0]
-#>     log zmi       zna
-#> 1  TRUE 5.3       kot
-#> 3 FALSE 1.1 nosorożec
+ramka1[ramka1$zmi > 0, c(1, 3)]
+#>     log zmi
+#> 1  TRUE 5.3
+#> 3 FALSE 1.1
 ```
 
+Powyżej wybrano tylko pierwszą i trzecią kolumnę oraz wiersze, dla których kolumna `zmi` miała wartość wyższą niż 0.
 
-```r
-ramka1[ramka1$zna == "kot", ]
-#>    log cal zmi zna
-#> 1 TRUE   5 5.3 kot
-```
-
-<!-- block == vs = -->
-
-
-```r
-ramka1[ramka1$zna %in% c("kot", "pies"), ]
-#>     log cal  zmi  zna
-#> 1  TRUE   5  5.3  kot
-#> 2 FALSE  -7 -7.1 pies
-```
+Zapytania też można łączyć, np. wybierając tylko te wiersze gdzie wartość `cal` jest wyższa niż 6 lub niższa niż -6.
 
 
 ```r
@@ -357,8 +346,37 @@ ramka1[ramka1$cal > 6 | ramka1$cal < -6, ]
 #> 3 FALSE  12  1.1 nosorożec
 ```
 
-<!-- ref to wektor and matrix -->
-<!-- wydzielanie i tworzenie -->
+Poniżej wybrano natomiast wszystkie kolumny, ale tylko wiersz gdzie zmienna `zna` przyjęła wartość `"kot"`.
+
+
+```r
+ramka1[ramka1$zna == "kot", ]
+#>    log cal zmi zna
+#> 1 TRUE   5 5.3 kot
+```
+
+Aby wybrać więcej niż jedną zmienną należy użyć funkcji `%in%`.
+
+
+```r
+ramka1[ramka1$zna %in% c("kot", "pies"), ]
+#>     log cal  zmi  zna
+#> 1  TRUE   5  5.3  kot
+#> 2 FALSE  -7 -7.1 pies
+```
+
+Alternatywą do wydzielania ramek danych na podstawie zapytania logicznego jest użycie funkcji `subset()`.
+Używając tej funkcji powyższe zapytanie można przestawić jako:
+
+
+```r
+subset(ramka1, zna %in% c("kot", "pies"))
+#>     log cal  zmi  zna
+#> 1  TRUE   5  5.3  kot
+#> 2 FALSE  -7 -7.1 pies
+```
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Podobnie jak w przypadku wektorów (sekcje \@ref(wip-vector) i \@ref(mo-vector)), wydzielanie ramek danych może służyć do wyświetlenia wybranych wartości, ale też ich wydzielenia i przypisania oraz modyfikowania.</div>\EndKnitrBlock{rmdinfo}
 
 ### Łączenie
 

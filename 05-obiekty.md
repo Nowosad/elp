@@ -395,7 +395,7 @@ temperatura[0]
 #> named numeric(0)
 ```
 
-## Wydzielanie i przypisanie
+## Wydzielanie i przypisanie {#wip-vector}
 
 Wydzielanie elementów może mieć kilka dodatkowych zastosowań oprócz wyświetlania wybranych wartości.
 Kolejną możliwością jest tworzenie nowych obiektów na podstawie wydzieleń.
@@ -420,7 +420,7 @@ temperatura_10
 #>   10.3   12.0
 ```
 
-## Modyfikowanie obiektów
+## Modyfikowanie obiektów {#mo-vector}
 
 Trzecim zastosowaniem wydzielania jest modyfikowanie obiektów.
 Poprzez wydzielenie możliwe jest wskazanie, które elementy wektora mają być zamienione i na jakie wartości.
