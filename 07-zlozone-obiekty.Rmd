@@ -410,33 +410,47 @@ Ostatni operator, `$`, wydziela wartości na podstawie ich nazw.
 lista1$zna
 ```
 
-## Zamiany klas
+## Zmiany klas
+
+R ma też szereg pomocnicznych służących do zmian istniejących klas. 
+Te funcje rozpoczynają się od `as.` a następnie zawierają nazwę klasy do której chcemy przetworzyć wejściowy obiekt, np. `as.vector()`, `as.matrix()`, `as.data.frame()`, `as.list()`.
+
+Działanie tych funkcji jednak jest bardzo różne w zależności o klasy wejściowego obiektu.
+Zobaczmy to na przykładzie obiektu `macierz1`.
 
 ```{r}
 macierz1
+class(macierz1)
 ```
+
+Jego zamiana na ramkę danych odbywa się używając funkcji `as.data.frame()`.
+W efekcie nowy obiekt ma takie same wymiary (cztery wiersze i trzy kolumny) oraz te same wartości.
+Zauważalną zmianą jest jednak automatyczne dodane nazw wierszy (`1`, `2`, `3`, `4`) i nazw kolumn (`V1`, `V2`, `V3`).
 
 ```{r}
 ramka_z_m1 = as.data.frame(macierz1)
 ramka_z_m1
-```
-
-```{r}
-class(macierz1)
-```
-
-```{r}
 class(ramka_z_m1)
 ```
 
+Zupełnie inny efekt będzie miało natomiast zamienienie macierzy i ramki danych na listy.
+
 ```{r}
 lista_z_m1 = as.list(macierz1)
-lista_z_m1
 lista_z_r1 = as.list(ramka_z_m1)
-lista_z_r1
 ```
 
-`as.vector()`, `as.matrix()`, `as.data.frame()`, `as.list()`
+W pierwszym przypadku powstanie lista zawierająca dwanaście elementów.
+
+```{r}
+str(lista_z_m1)
+```
+
+W drugim przypadku efektem będzie lista składająca się z trzech wektorów, które reprezentują kolejne kolumny z poprzedniej ramki danych.
+
+```{r}
+str(lista_z_r1)
+```
 
 ## Inne klasy obiektów
 
