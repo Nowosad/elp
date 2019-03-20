@@ -73,7 +73,7 @@ Atrybuty pozwalają na dodawanie nowych informacji do wektorów atomowych, a w e
 attributes(wek_zmi)
 ```
 
-## Podstawowe funkcje
+## Podstawowe funkcje {#pf-vector}
 
 Z racji bycia podstawowym typem obiektu w R, wektory są używane w bardzo dużej liczbie funkcji.
 Kilka z podstawowych, często przydatnych funkcji jest podana i wyjaśniona poniżej.
@@ -361,7 +361,7 @@ temperatura["Czwartek"]
 temperatura
 ```
 
-## Łączenie podstawowych typów obiektów
+## Łączenie podstawowych typów obiektów {#lpto-vector}
 
 <!-- tekst -->
 Właściwością wektora jest to, że może on przyjmować tylko jeden typ.
