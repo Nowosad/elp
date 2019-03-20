@@ -797,25 +797,39 @@ lista_z_r1 =<span class="st"> </span><span class="kw">as.list</span>(ramka_z_m1)
 </div>
 <div id="inne-klasy-obiektow" class="section level2">
 <h2><span class="header-section-number">7.5</span> Inne klasy obiektów</h2>
-<pre class="sourceCode r"><code class="sourceCode r">wek_num =<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>)</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">wek_dat =<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">c</span>(<span class="st">&quot;2019-04-10&quot;</span>, <span class="st">&quot;2019-04-12&quot;</span>, <span class="st">&quot;2019-04-14&quot;</span>))</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">wek_tkt =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>, <span class="st">&quot;nosorożec&quot;)</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(wek_num)
-<span class="co">#&gt; [1] 6</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(wek_dat)
-<span class="co">#&gt; [1] &quot;2019-04-12&quot;</span></code></pre>
+<p>W tym oraz <a href="proste-obiekty.html#proste-obiekty">5</a> rozdziale zostały wymienione i opisane cztery podstawowe klasy obiektów w R - wektory atomowe, macierze, natomiast listy i ramki danych.
+R zawiera jednak znacznie więcej klas obiektów, a co więcej - każda osoba może stworzyć swoją własną klasę obiektów.
+<!-- ref to tworzenie klas? --></p>
+<p>Poniżej zostały stworzone trzy nowe wektory - znakowy (<code>wek_tkt</code>), numeryczny (<code>wek_num</code>) i dat (<code>wek_dat</code>).</p>
+<pre class="sourceCode r"><code class="sourceCode r">wek_tkt =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>, <span class="st">&quot;nosorożec&quot;)</span>
+<span class="st">wek_num = c(4, 6, 8)</span>
+<span class="st">wek_dat = as.Date(c(&quot;</span><span class="dv">2019-04-10</span><span class="st">&quot;, &quot;</span><span class="dv">2019-04-12</span><span class="st">&quot;, &quot;</span><span class="dv">2019-04-14</span><span class="st">&quot;))</span></code></pre>
+<p>Czy można na nich wyliczyć średnią w ten sam sposób?
+Raczej nie - wyliczenie średniej z tekstu nie jest jednoznacznie możliwe, wyliczenie średniej z wartości numerycznych powinno dać wartość numeryczną, a wyliczenie średniej z dat - również datę.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(wek_tkt)
 <span class="co">#&gt; Warning in mean.default(wek_tkt): argument is not numeric or logical:</span>
 <span class="co">#&gt; returning NA</span>
-<span class="co">#&gt; [1] NA</span></code></pre>
+<span class="co">#&gt; [1] NA</span>
+<span class="kw">mean</span>(wek_num)
+<span class="co">#&gt; [1] 6</span>
+<span class="kw">mean</span>(wek_dat)
+<span class="co">#&gt; [1] &quot;2019-04-12&quot;</span></code></pre>
+<p>Powyższe wyniki są poprawne, ale każdy z nich zwraca inny rodzaj wyniku.
+Jest to możliwe dzięki tzw. metodom (ang. <em>methods</em>).
+Metoda to sposób w jaki zachowuje się funkcja w zależności od tego jakiej klasy będzie obiekt wejściowy.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">methods</span>(mean)
 <span class="co">#&gt; [1] mean.Date     mean.default  mean.difftime mean.POSIXct  mean.POSIXlt </span>
 <span class="co">#&gt; see &#39;?methods&#39; for accessing help and source code</span></code></pre>
+<p>Przykładowo, funkcja <code>mean()</code> ma pięć metod:
+- <code>.Date</code> - obsługującą daty
+- <code>.difftime</code> - obsługującą czas trwania
+- <code>.POSIXct</code> oraz <code>.POSIXlt</code> - obsługujące czas
+- <code>.default</code> - domyślna metoda</p>
+<p>W momencie, gdy funkcja otrzyma jakiś obiekt, sprawdzana jest jego klasa i jeżeli istnieje metoda dla tego obiektu to wówczas jest ona używana.
+Natomiat w sytuacji, gdy dla danej klasy obiektu nie ma istniejącej metody, używana jest domyślna metoda (<code>.default</code>).</p>
+<p>Jak widać w powyższym przykładzie, nowe klasy obiektów oraz nowe metody są tworzone, aby ułatwić pracę na innych niż domyślne strukturach danych.</p>
 <!-- https://www.njtierney.com/post/2016/11/06/simple-s3-post/ -->
 <!-- ... -->
-<!-- Istnieje ogromna liczba klas obiektów w R -->
-<!-- Każdy może stworzyć swoją własną klasę! -->
-<!-- Różne funkcje wymagają różnych klas obiektów -->
 <!-- reference?? -->
 </div>
 <div id="zadania-6" class="section level2">
