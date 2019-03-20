@@ -348,14 +348,22 @@ names(lista1)
 
 ### Łączenie
 
+Łączenie list może odbywać się na dwa postawowe sposoby.
+W pierwszym, używając funkcji `c()` następuje dołączenie elementów jednej listy do drugiej.
+
 ```{r}
 lista2 = c(lista1, lista1)
-lista2
+str(lista2)
 ```
+
+Efektem nadal jest jedna lista, ale składająca się z większej liczby elementów.
+
+Drugim sposobem jest użycie funkcji `list()`.
+W tym przypadku tworzona jest nowa, nadrzędna lista, która zawiera dwie wcześniejsze listy.
 
 ```{r}
 lista3 = list(lista1, lista1)
-lista3
+str(lista3)
 ```
 
 ### Wydzielanie
