@@ -507,16 +507,28 @@ miasta_pomiary2
 <h2><span class="header-section-number">6.6</span> Zamiana tekstu - regex</h2>
 <!-- https://r4ds.had.co.nz/strings.html#replacing-matches -->
 <pre class="sourceCode r"><code class="sourceCode r">tekst_pomiary3 =<span class="st"> &quot;Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace</span>(tekst_pomiary3, <span class="dt">pattern =</span> <span class="st">&quot;.&quot;</span>, <span class="st">&quot;,&quot;</span>)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace</span>(tekst_pomiary3, 
+            <span class="dt">pattern =</span> <span class="st">&quot;.&quot;</span>, 
+            <span class="dt">replacement =</span> <span class="st">&quot;,&quot;</span>)
 <span class="co">#&gt; [1] &quot;,rocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace</span>(tekst_pomiary3, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace</span>(tekst_pomiary3, 
+            <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>, 
+            <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>)
 <span class="co">#&gt; [1] &quot;Wrocław: 23,5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace_all</span>(tekst_pomiary3, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace_all</span>(tekst_pomiary3, 
+                <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>, 
+                <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>)
 <span class="co">#&gt; [1] &quot;Wrocław: 23,5, Bydgoszcz: 12,7, Toruń: 11,1, Lublin: 14,3&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">tekst_pomiary4 =<span class="st"> </span><span class="kw">str_replace_all</span>(tekst_pomiary3, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">;&quot;</span>)</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace_all</span>(tekst_pomiary4, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>)
+<pre class="sourceCode r"><code class="sourceCode r">tekst_pomiary4 =<span class="st"> </span><span class="kw">str_replace_all</span>(tekst_pomiary3,
+                                 <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>,
+                                 <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">;&quot;</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace_all</span>(tekst_pomiary4, 
+                <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>, 
+                <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>)
 <span class="co">#&gt; [1] &quot;Wrocław: 23,5; Bydgoszcz: 12,7; Toruń: 11,1; Lublin: 14,3&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace_all</span>(tekst_pomiary4, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+&quot;</span>, <span class="st">&quot;&quot;</span>)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace_all</span>(tekst_pomiary4, 
+                <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+&quot;</span>,
+                <span class="dt">replacement =</span> <span class="st">&quot;&quot;</span>)
 <span class="co">#&gt; [1] &quot;: 23.5; : 12.7; : 11.1; : 14.3&quot;</span></code></pre>
 </div>
 <div id="wyszukiwanie-plikow" class="section level2">

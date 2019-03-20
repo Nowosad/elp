@@ -334,36 +334,48 @@ tekst_pomiary3 = "Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3"
 
 
 ```r
-str_replace(tekst_pomiary3, pattern = ".", ",")
+str_replace(tekst_pomiary3, 
+            pattern = ".", 
+            replacement = ",")
 #> [1] ",rocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3"
 ```
 
 
 ```r
-str_replace(tekst_pomiary3, pattern = "\\.", "\\,")
+str_replace(tekst_pomiary3, 
+            pattern = "\\.", 
+            replacement = "\\,")
 #> [1] "Wrocław: 23,5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3"
 ```
 
 
 ```r
-str_replace_all(tekst_pomiary3, pattern = "\\.", "\\,")
+str_replace_all(tekst_pomiary3, 
+                pattern = "\\.", 
+                replacement = "\\,")
 #> [1] "Wrocław: 23,5, Bydgoszcz: 12,7, Toruń: 11,1, Lublin: 14,3"
 ```
 
 
 ```r
-tekst_pomiary4 = str_replace_all(tekst_pomiary3, pattern = "\\,", "\\;")
+tekst_pomiary4 = str_replace_all(tekst_pomiary3,
+                                 pattern = "\\,",
+                                 replacement = "\\;")
 ```
 
 
 ```r
-str_replace_all(tekst_pomiary4, pattern = "\\.", "\\,")
+str_replace_all(tekst_pomiary4, 
+                pattern = "\\.", 
+                replacement = "\\,")
 #> [1] "Wrocław: 23,5; Bydgoszcz: 12,7; Toruń: 11,1; Lublin: 14,3"
 ```
 
 
 ```r
-str_replace_all(tekst_pomiary4, pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+", "")
+str_replace_all(tekst_pomiary4, 
+                pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+",
+                replacement = "")
 #> [1] ": 23.5; : 12.7; : 11.1; : 14.3"
 ```
 
