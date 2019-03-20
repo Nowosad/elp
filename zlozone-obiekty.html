@@ -694,32 +694,54 @@ W tym przypadku tworzona jest nowa, nadrzędna lista, która zawiera dwie wcześ
 </div>
 <div id="wydzielanie-3" class="section level3">
 <h3><span class="header-section-number">7.3.4</span> Wydzielanie</h3>
-<!-- `[]` - zawsze lista -->
+<p>Wydzielanie list może mieć miejsce używając jednego z trzech operatorów - <code>[]</code>, <code>[[]]</code>, oraz <code>$</code>.</p>
+<p>Operator <code>[]</code> wydziela wybrane elementy z listy, ale jednocześnie dalej zwraca w wyniku obiekt klasy lista.
+Wyobraź sobie, że masz torbę zawierający cztery przedmioty (<em>listę zawierającą cztery elementy</em>) i chcesz zostawić w plecaku tylko pierwszy i drugi z nich.</p>
 <pre class="sourceCode r"><code class="sourceCode r">lista4 =<span class="st"> </span>lista1[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)]
+lista4
+<span class="co">#&gt; $log</span>
+<span class="co">#&gt; [1]  TRUE FALSE</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $cal</span>
+<span class="co">#&gt; [1]  5 -7</span>
 <span class="kw">str</span>(lista4)
 <span class="co">#&gt; List of 2</span>
 <span class="co">#&gt;  $ log: logi [1:2] TRUE FALSE</span>
 <span class="co">#&gt;  $ cal: int [1:2] 5 -7</span></code></pre>
-<!-- `[[]]` oraz `$` wyciąganie elementów -->
-<pre class="sourceCode r"><code class="sourceCode r">lista5 =<span class="st"> </span>lista1[[<span class="kw">c</span>(<span class="dv">4</span>)]]
+<p>W efekcie wynikowy obiekt nadal jest listą, ale z mniejszą liczbą elementów.</p>
+<p>Do wydobycia wartości z listy służą operatory <code>[[]]</code> oraz <code>$</code>.
+Pierwszy z nich wydobywa wartości na podstawie ich położenia i w efekcie otrzymywany jest obiekt znajdujący się wewnątrz listy.
+W poniższym przykładzie, wydzielany jest czwarty element z obiektu <code>lista1</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">lista5 =<span class="st"> </span>lista1[[<span class="dv">4</span>]]
+lista5
+<span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span>
 <span class="kw">str</span>(lista5)
 <span class="co">#&gt;  chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">lista6 =<span class="st"> </span>lista3[[<span class="kw">c</span>(<span class="dv">2</span>)]]
+<p>Czwarty element w <code>lista1</code> jest wektorem znakowym o długości trzy.
+W przypadku, gdy wybrany element listy jest innej klasy to jest on również zwracany.
+Poniżej drugi element <code>listy3</code> jest również listą - wyobraź to sobie jako wyciągnięcie jednej torby, która znajduje się wewnątrz innej.</p>
+<pre class="sourceCode r"><code class="sourceCode r">lista6 =<span class="st"> </span>lista3[[<span class="dv">2</span>]]
+lista6
+<span class="co">#&gt; $log</span>
+<span class="co">#&gt; [1]  TRUE FALSE</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $cal</span>
+<span class="co">#&gt; [1]  5 -7</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $zmi</span>
+<span class="co">#&gt; [1] 5.3</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $zna</span>
+<span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span>
 <span class="kw">str</span>(lista6)
 <span class="co">#&gt; List of 4</span>
 <span class="co">#&gt;  $ log: logi [1:2] TRUE FALSE</span>
 <span class="co">#&gt;  $ cal: int [1:2] 5 -7</span>
 <span class="co">#&gt;  $ zmi: num 5.3</span>
 <span class="co">#&gt;  $ zna: chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">lista1[<span class="kw">c</span>(<span class="st">&quot;zmi&quot;</span>, <span class="st">&quot;zna&quot;</span>)]
-<span class="co">#&gt; $zmi</span>
-<span class="co">#&gt; [1] 5.3</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $zna</span>
-<span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span></code></pre>
+<p>Ostatni operator, <code>$</code>, wydziela wartości na podstawie ich nazw.</p>
 <pre class="sourceCode r"><code class="sourceCode r">lista1<span class="op">$</span>zna
 <span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span></code></pre>
-<!-- https://adv-r.hadley.nz/subsetting.html#lists-1 -->
 </div>
 </div>
 <div id="zamiany-klas" class="section level2">

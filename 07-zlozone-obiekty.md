@@ -563,29 +563,61 @@ str(lista3)
 
 ### Wydzielanie
 
-<!-- `[]` - zawsze lista -->
+Wydzielanie list może mieć miejsce używając jednego z trzech operatorów - `[]`, `[[]]`, oraz `$`.
+
+Operator `[]` wydziela wybrane elementy z listy, ale jednocześnie dalej zwraca w wyniku obiekt klasy lista.
+Wyobraź sobie, że masz torbę zawierający cztery przedmioty (*listę zawierającą cztery elementy*) i chcesz zostawić w plecaku tylko pierwszy i drugi z nich.
 
 
 ```r
 lista4 = lista1[c(1, 2)]
+lista4
+#> $log
+#> [1]  TRUE FALSE
+#> 
+#> $cal
+#> [1]  5 -7
 str(lista4)
 #> List of 2
 #>  $ log: logi [1:2] TRUE FALSE
 #>  $ cal: int [1:2] 5 -7
 ```
 
-<!-- `[[]]` oraz `$` wyciąganie elementów -->
+
+W efekcie wynikowy obiekt nadal jest listą, ale z mniejszą liczbą elementów.
+
+Do wydobycia wartości z listy służą operatory `[[]]` oraz `$`.
+Pierwszy z nich wydobywa wartości na podstawie ich położenia i w efekcie otrzymywany jest obiekt znajdujący się wewnątrz listy. 
+W poniższym przykładzie, wydzielany jest czwarty element z obiektu `lista1`.
 
 
 ```r
-lista5 = lista1[[c(4)]]
+lista5 = lista1[[4]]
+lista5
+#> [1] "kot"       "pies"      "nosorożec"
 str(lista5)
 #>  chr [1:3] "kot" "pies" "nosorożec"
 ```
 
+Czwarty element w `lista1` jest wektorem znakowym o długości trzy.
+W przypadku, gdy wybrany element listy jest innej klasy to jest on również zwracany.
+Poniżej drugi element `listy3` jest również listą - wyobraź to sobie jako wyciągnięcie jednej torby, która znajduje się wewnątrz innej.
+
 
 ```r
-lista6 = lista3[[c(2)]]
+lista6 = lista3[[2]]
+lista6
+#> $log
+#> [1]  TRUE FALSE
+#> 
+#> $cal
+#> [1]  5 -7
+#> 
+#> $zmi
+#> [1] 5.3
+#> 
+#> $zna
+#> [1] "kot"       "pies"      "nosorożec"
 str(lista6)
 #> List of 4
 #>  $ log: logi [1:2] TRUE FALSE
@@ -594,23 +626,13 @@ str(lista6)
 #>  $ zna: chr [1:3] "kot" "pies" "nosorożec"
 ```
 
-
-```r
-lista1[c("zmi", "zna")]
-#> $zmi
-#> [1] 5.3
-#> 
-#> $zna
-#> [1] "kot"       "pies"      "nosorożec"
-```
+Ostatni operator, `$`, wydziela wartości na podstawie ich nazw.
 
 
 ```r
 lista1$zna
 #> [1] "kot"       "pies"      "nosorożec"
 ```
-
-<!-- https://adv-r.hadley.nz/subsetting.html#lists-1 -->
 
 ## Zamiany klas
 
