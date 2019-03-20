@@ -521,65 +521,44 @@ names(lista1)
 
 ### Łączenie
 
+Łączenie list może odbywać się na dwa postawowe sposoby.
+W pierwszym, używając funkcji `c()` następuje dołączenie elementów jednej listy do drugiej.
+
 
 ```r
 lista2 = c(lista1, lista1)
-lista2
-#> $log
-#> [1]  TRUE FALSE
-#> 
-#> $cal
-#> [1]  5 -7
-#> 
-#> $zmi
-#> [1] 5.3
-#> 
-#> $zna
-#> [1] "kot"       "pies"      "nosorożec"
-#> 
-#> $log
-#> [1]  TRUE FALSE
-#> 
-#> $cal
-#> [1]  5 -7
-#> 
-#> $zmi
-#> [1] 5.3
-#> 
-#> $zna
-#> [1] "kot"       "pies"      "nosorożec"
+str(lista2)
+#> List of 8
+#>  $ log: logi [1:2] TRUE FALSE
+#>  $ cal: int [1:2] 5 -7
+#>  $ zmi: num 5.3
+#>  $ zna: chr [1:3] "kot" "pies" "nosorożec"
+#>  $ log: logi [1:2] TRUE FALSE
+#>  $ cal: int [1:2] 5 -7
+#>  $ zmi: num 5.3
+#>  $ zna: chr [1:3] "kot" "pies" "nosorożec"
 ```
+
+Efektem nadal jest jedna lista, ale składająca się z większej liczby elementów.
+
+Drugim sposobem jest użycie funkcji `list()`.
+W tym przypadku tworzona jest nowa, nadrzędna lista, która zawiera dwie wcześniejsze listy.
 
 
 ```r
 lista3 = list(lista1, lista1)
-lista3
-#> [[1]]
-#> [[1]]$log
-#> [1]  TRUE FALSE
-#> 
-#> [[1]]$cal
-#> [1]  5 -7
-#> 
-#> [[1]]$zmi
-#> [1] 5.3
-#> 
-#> [[1]]$zna
-#> [1] "kot"       "pies"      "nosorożec"
-#> 
-#> 
-#> [[2]]
-#> [[2]]$log
-#> [1]  TRUE FALSE
-#> 
-#> [[2]]$cal
-#> [1]  5 -7
-#> 
-#> [[2]]$zmi
-#> [1] 5.3
-#> 
-#> [[2]]$zna
-#> [1] "kot"       "pies"      "nosorożec"
+str(lista3)
+#> List of 2
+#>  $ :List of 4
+#>   ..$ log: logi [1:2] TRUE FALSE
+#>   ..$ cal: int [1:2] 5 -7
+#>   ..$ zmi: num 5.3
+#>   ..$ zna: chr [1:3] "kot" "pies" "nosorożec"
+#>  $ :List of 4
+#>   ..$ log: logi [1:2] TRUE FALSE
+#>   ..$ cal: int [1:2] 5 -7
+#>   ..$ zmi: num 5.3
+#>   ..$ zna: chr [1:3] "kot" "pies" "nosorożec"
 ```
 
 ### Wydzielanie

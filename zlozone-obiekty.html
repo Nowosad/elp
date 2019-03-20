@@ -662,59 +662,35 @@ lista1
 </div>
 <div id="aczenie-2" class="section level3">
 <h3><span class="header-section-number">7.3.3</span> Łączenie</h3>
+<p>Łączenie list może odbywać się na dwa postawowe sposoby.
+W pierwszym, używając funkcji <code>c()</code> następuje dołączenie elementów jednej listy do drugiej.</p>
 <pre class="sourceCode r"><code class="sourceCode r">lista2 =<span class="st"> </span><span class="kw">c</span>(lista1, lista1)
-lista2
-<span class="co">#&gt; $log</span>
-<span class="co">#&gt; [1]  TRUE FALSE</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $cal</span>
-<span class="co">#&gt; [1]  5 -7</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $zmi</span>
-<span class="co">#&gt; [1] 5.3</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $zna</span>
-<span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $log</span>
-<span class="co">#&gt; [1]  TRUE FALSE</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $cal</span>
-<span class="co">#&gt; [1]  5 -7</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $zmi</span>
-<span class="co">#&gt; [1] 5.3</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $zna</span>
-<span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span></code></pre>
+<span class="kw">str</span>(lista2)
+<span class="co">#&gt; List of 8</span>
+<span class="co">#&gt;  $ log: logi [1:2] TRUE FALSE</span>
+<span class="co">#&gt;  $ cal: int [1:2] 5 -7</span>
+<span class="co">#&gt;  $ zmi: num 5.3</span>
+<span class="co">#&gt;  $ zna: chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span>
+<span class="co">#&gt;  $ log: logi [1:2] TRUE FALSE</span>
+<span class="co">#&gt;  $ cal: int [1:2] 5 -7</span>
+<span class="co">#&gt;  $ zmi: num 5.3</span>
+<span class="co">#&gt;  $ zna: chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></code></pre>
+<p>Efektem nadal jest jedna lista, ale składająca się z większej liczby elementów.</p>
+<p>Drugim sposobem jest użycie funkcji <code>list()</code>.
+W tym przypadku tworzona jest nowa, nadrzędna lista, która zawiera dwie wcześniejsze listy.</p>
 <pre class="sourceCode r"><code class="sourceCode r">lista3 =<span class="st"> </span><span class="kw">list</span>(lista1, lista1)
-lista3
-<span class="co">#&gt; [[1]]</span>
-<span class="co">#&gt; [[1]]$log</span>
-<span class="co">#&gt; [1]  TRUE FALSE</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[1]]$cal</span>
-<span class="co">#&gt; [1]  5 -7</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[1]]$zmi</span>
-<span class="co">#&gt; [1] 5.3</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[1]]$zna</span>
-<span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[2]]</span>
-<span class="co">#&gt; [[2]]$log</span>
-<span class="co">#&gt; [1]  TRUE FALSE</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[2]]$cal</span>
-<span class="co">#&gt; [1]  5 -7</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[2]]$zmi</span>
-<span class="co">#&gt; [1] 5.3</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; [[2]]$zna</span>
-<span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span></code></pre>
+<span class="kw">str</span>(lista3)
+<span class="co">#&gt; List of 2</span>
+<span class="co">#&gt;  $ :List of 4</span>
+<span class="co">#&gt;   ..$ log: logi [1:2] TRUE FALSE</span>
+<span class="co">#&gt;   ..$ cal: int [1:2] 5 -7</span>
+<span class="co">#&gt;   ..$ zmi: num 5.3</span>
+<span class="co">#&gt;   ..$ zna: chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span>
+<span class="co">#&gt;  $ :List of 4</span>
+<span class="co">#&gt;   ..$ log: logi [1:2] TRUE FALSE</span>
+<span class="co">#&gt;   ..$ cal: int [1:2] 5 -7</span>
+<span class="co">#&gt;   ..$ zmi: num 5.3</span>
+<span class="co">#&gt;   ..$ zna: chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></code></pre>
 </div>
 <div id="wydzielanie-3" class="section level3">
 <h3><span class="header-section-number">7.3.4</span> Wydzielanie</h3>
