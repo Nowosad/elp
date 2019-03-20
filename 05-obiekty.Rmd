@@ -516,10 +516,7 @@ czas
 Więcej informacji na temat stref czasowych używanych w R można znaleźć w pliku pomocy `?timezones`.
 
 ```{block2 type="rmdinfo"}
-R posiada też dodatkowe klasy specjalne, np:
-
-- `POSIXlt` przechowująca informacje o dacie w postaci listy
-- `difftime` reprezentująca czas trwania
+R posiada też dodatkowe klasy specjalne, np `POSIXlt` przechowująca informacje o dacie w postaci listy oraz `difftime` reprezentująca czas trwania.
 ```
 
 ## Zadania
