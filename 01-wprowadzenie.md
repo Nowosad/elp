@@ -70,7 +70,7 @@ Wsród nich można wymienić działania organizacji [R-Ladies](https://rladies.o
 Mit programisty mężczyzny jest też powiązany z wymienionym kilka akapitów niżej mitem samotnego programisty.
 
 <div class="figure" style="text-align: center">
-<img src="images/margaret-hamilton.jpg" alt="Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które on i jej zespół stworzył na potrzeby misji Apollo. Źródło: [Wikipedia](https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg)." width="100%" />
+<img src="images/margaret-hamilton.png" alt="Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które on i jej zespół stworzył na potrzeby misji Apollo. Źródło: [Wikipedia](https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg)." width="100%" />
 <p class="caption">(\#fig:marghamil)Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które on i jej zespół stworzył na potrzeby misji Apollo. Źródło: [Wikipedia](https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg).</p>
 </div>
 

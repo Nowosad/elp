@@ -661,10 +661,7 @@ czas
 
 Więcej informacji na temat stref czasowych używanych w R można znaleźć w pliku pomocy `?timezones`.
 
-\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">R posiada też dodatkowe klasy specjalne, np:
-
-- `POSIXlt` przechowująca informacje o dacie w postaci listy
-- `difftime` reprezentująca czas trwania</div>\EndKnitrBlock{rmdinfo}
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">R posiada też dodatkowe klasy specjalne, np `POSIXlt` przechowująca informacje o dacie w postaci listy oraz `difftime` reprezentująca czas trwania.</div>\EndKnitrBlock{rmdinfo}
 
 ## Zadania
 
