@@ -166,21 +166,16 @@ macierz2[, c("a", "c")]
 
 ### Łączenie
 
+Łączenie wektorów odbywa się używając jednej funkcji `c()`. 
+W przypadku macierzy występują jednak dwa wymiary - możliwe jest połączenie macierzy wierszami lub kolumnami.
+W efekcie istnieją do tego dwie oddzielne funkcje `rbind()` i `cbind()`.
+
+Pierwsza z nich łączy macierze wierszami.
+
 
 ```r
-macierz3 = cbind(macierz1, macierz2)
+macierz3 = rbind(macierz1, macierz2)
 macierz3
-#>              a  b  c
-#> [1,] 1 5  9  1  2  3
-#> [2,] 2 6 10  4  5  6
-#> [3,] 3 7 11  7  8  9
-#> [4,] 4 8 12 10 11 12
-```
-
-
-```r
-macierz4 = rbind(macierz1, macierz2)
-macierz4
 #>       a  b  c
 #> [1,]  1  5  9
 #> [2,]  2  6 10
@@ -192,6 +187,18 @@ macierz4
 #> [8,] 10 11 12
 ```
 
+Druga dokleja obiekty kolumnami.
+
+
+```r
+macierz4 = cbind(macierz1, macierz2)
+macierz4
+#>              a  b  c
+#> [1,] 1 5  9  1  2  3
+#> [2,] 2 6 10  4  5  6
+#> [3,] 3 7 11  7  8  9
+#> [4,] 4 8 12 10 11 12
+```
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">W przypadku, gdy chcemy połączyć kilka wektorów różnych typów działają dokładnie takie same reguły jak w przypadku wektorów atomowych (sekcja \@ref(lpto-vector)).</div>\EndKnitrBlock{rmdinfo}
 
@@ -203,6 +210,8 @@ Główną różnicą pomiędzy macierzą a ramką danych jest to, że pierwsza z
 
 Ramka danych jest zbudowana z kolumn (wektorów) o równej długości.
 <!-- a data frame is a list of equal-length vectors -->
+Ten typ obiektu jest głównie wykorzystywany do różnorodnej analizy danych. 
+Ramki danych przypominają w swojej strukturze arkusze kalkulacyjne czy bazy danych.
 <!-- nested data frames footnote -->
 
 ### Tworzenie
