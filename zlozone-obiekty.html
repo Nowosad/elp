@@ -453,17 +453,27 @@ Ramki danych przypominają w swojej strukturze arkusze kalkulacyjne czy bazy dan
 <!-- nested data frames footnote --></p>
 <div id="tworzenie-1" class="section level3">
 <h3><span class="header-section-number">7.2.1</span> Tworzenie</h3>
+<p>Stworzenie nowej ramki danych możliwe jest używając funkcji <code>data.frame()</code>, w której podawane są nazwy kolejnych kolumn (np. <code>wek_log</code>) oraz ich wartości (np. <code>c(TRUE, FALSE, FALSE)</code>).</p>
 <pre class="sourceCode r"><code class="sourceCode r">ramka1 =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">wek_log =</span> <span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>),
-                   <span class="dt">wek_cal =</span> <span class="kw">c</span>(5L, <span class="op">-</span>7L, 12L), 
-                   <span class="dt">wek_zmi =</span> <span class="kw">c</span>(<span class="fl">5.3</span>, <span class="fl">-7.1</span>, <span class="fl">1.1</span>), 
-                   <span class="dt">wek_zna =</span> <span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>, <span class="st">&quot;nosorożec&quot;),</span>
-<span class="st">                   stringsAsFactors = FALSE)</span>
+                    <span class="dt">wek_cal =</span> <span class="kw">c</span>(5L, <span class="op">-</span>7L, 12L), 
+                    <span class="dt">wek_zmi =</span> <span class="kw">c</span>(<span class="fl">5.3</span>, <span class="fl">-7.1</span>, <span class="fl">1.1</span>), 
+                    <span class="dt">wek_zna =</span> <span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>, <span class="st">&quot;nosorożec&quot;),</span>
+<span class="st">                    stringsAsFactors = FALSE)</span>
 <span class="st">ramka1</span>
 <span class="st">#&gt;   wek_log wek_cal wek_zmi   wek_zna</span>
 <span class="st">#&gt; 1    TRUE       5     5.3       kot</span>
 <span class="st">#&gt; 2   FALSE      -7    -7.1      pies</span>
 <span class="st">#&gt; 3   FALSE      12     1.1 nosorożec</span></code></pre>
-<!-- problem z `stringsAsFactors` -->
+<p>W powyższym przykładzie, <code>ramka1</code> składa się z czterech kolumn o długości trzy.
+Każda z tych kolumn ma inny typ - logiczny, liczby całkowitej, liczby zmiennoprzecinkowej oraz znakowy.
+Domyślnie funkcja <code>data.frame</code> wykonuje jeszcze jedną operację w tle - zamienia ona wszystkie dane o type znakowym na typ czynnikowy (sekcja <a href="proste-obiekty.html#fac">5.11</a>).
+W większości przypadków nie jest to porządane działanie - dlatego też warto wyłączyć tę konwersję używając argumentu <code>stringsAsFactors = FALSE</code>.</p>
+
+<div class="rmdinfo">
+Obiekty klasy ramka danych są też zazwyczaj wynikiem wczytywania zewnętrznych plików do R, np. w formacie <code>.csv</code> czy <code>.xlsx</code>.
+Więcej informacji na ten temat można znaleźć w rozdziale <a href="io.html#io">9</a>.
+</div>
+
 </div>
 <div id="podstawowe-funkcje-1" class="section level3">
 <h3><span class="header-section-number">7.2.2</span> Podstawowe funkcje</h3>

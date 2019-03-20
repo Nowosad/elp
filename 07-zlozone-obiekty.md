@@ -216,13 +216,15 @@ Ramki danych przypominają w swojej strukturze arkusze kalkulacyjne czy bazy dan
 
 ### Tworzenie
 
+Stworzenie nowej ramki danych możliwe jest używając funkcji `data.frame()`, w której podawane są nazwy kolejnych kolumn (np. `wek_log`) oraz ich wartości (np. `c(TRUE, FALSE, FALSE)`).
+
 
 ```r
 ramka1 = data.frame(wek_log = c(TRUE, FALSE, FALSE),
-                   wek_cal = c(5L, -7L, 12L), 
-                   wek_zmi = c(5.3, -7.1, 1.1), 
-                   wek_zna = c("kot", "pies", "nosorożec"),
-                   stringsAsFactors = FALSE)
+                    wek_cal = c(5L, -7L, 12L), 
+                    wek_zmi = c(5.3, -7.1, 1.1), 
+                    wek_zna = c("kot", "pies", "nosorożec"),
+                    stringsAsFactors = FALSE)
 ramka1
 #>   wek_log wek_cal wek_zmi   wek_zna
 #> 1    TRUE       5     5.3       kot
@@ -230,7 +232,13 @@ ramka1
 #> 3   FALSE      12     1.1 nosorożec
 ```
 
-<!-- problem z `stringsAsFactors` -->
+W powyższym przykładzie, `ramka1` składa się z czterech kolumn o długości trzy. 
+Każda z tych kolumn ma inny typ - logiczny, liczby całkowitej, liczby zmiennoprzecinkowej oraz znakowy.
+Domyślnie funkcja `data.frame` wykonuje jeszcze jedną operację w tle - zamienia ona wszystkie dane o type znakowym na typ czynnikowy (sekcja \@ref(fac)).
+W większości przypadków nie jest to porządane działanie - dlatego też warto wyłączyć tę konwersję używając argumentu `stringsAsFactors = FALSE`.
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Obiekty klasy ramka danych są też zazwyczaj wynikiem wczytywania zewnętrznych plików do R, np. w formacie `.csv` czy `.xlsx`.
+Więcej informacji na ten temat można znaleźć w rozdziale \@ref(io).</div>\EndKnitrBlock{rmdinfo}
 
 ### Podstawowe funkcje
 
