@@ -380,36 +380,17 @@ subset(ramka1, zna %in% c("kot", "pies"))
 
 ### Łączenie
 
+Łączenie ramek danych przypomina łączenie macierzy używając funkcji `rbind()` i `cbind()`.
+Jednocześnie należy pamiętać, że łączenie wierszy (`rbind()`) wymaga posiadania kolumn o tych samych nazwach w obu obiektach.
+
 
 ```r
-ramka2 = data.frame(zmi2 = c(4.3, 2.6, 7.4))
+ramka2 = data.frame(log = TRUE, cal = 2L, zmi = 2.3, zna = "żółw")
 ramka2
-#>   zmi2
-#> 1  4.3
-#> 2  2.6
-#> 3  7.4
-```
-
-
-```r
-cbind(ramka1, ramka2)
-#>     log cal  zmi       zna zmi2
-#> 1  TRUE   5  5.3       kot  4.3
-#> 2 FALSE  -7 -7.1      pies  2.6
-#> 3 FALSE  12  1.1 nosorożec  7.4
-```
-
-
-```r
-ramka3 = data.frame(log = TRUE, cal = 2L, zmi = 2.3, zna = "żółw")
-ramka3
 #>    log cal zmi  zna
 #> 1 TRUE   2 2.3 żółw
-```
 
-
-```r
-rbind(ramka1, ramka3)
+rbind(ramka1, ramka2)
 #>     log cal  zmi       zna
 #> 1  TRUE   5  5.3       kot
 #> 2 FALSE  -7 -7.1      pies
@@ -417,8 +398,27 @@ rbind(ramka1, ramka3)
 #> 4  TRUE   2  2.3      żółw
 ```
 
-<!-- info about joins -->
-<!-- ref to joins -->
+Ograniczeniem łącznia kolumn jest posiadanie tej samej długości każdej kolumny.
+
+
+```r
+ramka3 = data.frame(zmi2 = c(4.3, 2.6, 7.4))
+ramka3
+#>   zmi2
+#> 1  4.3
+#> 2  2.6
+#> 3  7.4
+
+cbind(ramka1, ramka3)
+#>     log cal  zmi       zna zmi2
+#> 1  TRUE   5  5.3       kot  4.3
+#> 2 FALSE  -7 -7.1      pies  2.6
+#> 3 FALSE  12  1.1 nosorożec  7.4
+```
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Funkcje `rbind()` i `cbind()` łączą obiekty nie zmieniając kolejności występujących w nich wartości.
+Bardziej zaawansowanymi sposobami łączenia ramek danych są różnorodne operacje łączenia (ang. *joins*), np. `left_join()` czy `inner_join()` z pakietu **dplyr**.
+Więcej na ten temat można znaleźć w rozdziale ["Relational data"](https://r4ds.had.co.nz/relational-data.html) książki Advanced R [@wickham2014advanced].</div>\EndKnitrBlock{rmdinfo}
 
 ## Listy
 

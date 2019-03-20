@@ -556,29 +556,39 @@ Podobnie jak w przypadku wektorów (sekcje <a href="proste-obiekty.html#wip-vect
 </div>
 <div id="aczenie-1" class="section level3">
 <h3><span class="header-section-number">7.2.4</span> Łączenie</h3>
-<pre class="sourceCode r"><code class="sourceCode r">ramka2 =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">zmi2 =</span> <span class="kw">c</span>(<span class="fl">4.3</span>, <span class="fl">2.6</span>, <span class="fl">7.4</span>))
+<p>Łączenie ramek danych przypomina łączenie macierzy używając funkcji <code>rbind()</code> i <code>cbind()</code>.
+Jednocześnie należy pamiętać, że łączenie wierszy (<code>rbind()</code>) wymaga posiadania kolumn o tych samych nazwach w obu obiektach.</p>
+<pre class="sourceCode r"><code class="sourceCode r">ramka2 =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">log =</span> <span class="ot">TRUE</span>, <span class="dt">cal =</span> 2L, <span class="dt">zmi =</span> <span class="fl">2.3</span>, <span class="dt">zna =</span> <span class="st">&quot;żółw&quot;</span>)
 ramka2
-<span class="co">#&gt;   zmi2</span>
-<span class="co">#&gt; 1  4.3</span>
-<span class="co">#&gt; 2  2.6</span>
-<span class="co">#&gt; 3  7.4</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cbind</span>(ramka1, ramka2)
-<span class="co">#&gt;     log cal  zmi       zna zmi2</span>
-<span class="co">#&gt; 1  TRUE   5  5.3       kot  4.3</span>
-<span class="co">#&gt; 2 FALSE  -7 -7.1      pies  2.6</span>
-<span class="co">#&gt; 3 FALSE  12  1.1 nosorożec  7.4</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">ramka3 =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">log =</span> <span class="ot">TRUE</span>, <span class="dt">cal =</span> 2L, <span class="dt">zmi =</span> <span class="fl">2.3</span>, <span class="dt">zna =</span> <span class="st">&quot;żółw&quot;</span>)
-ramka3
 <span class="co">#&gt;    log cal zmi  zna</span>
-<span class="co">#&gt; 1 TRUE   2 2.3 żółw</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rbind</span>(ramka1, ramka3)
+<span class="co">#&gt; 1 TRUE   2 2.3 żółw</span>
+
+<span class="kw">rbind</span>(ramka1, ramka2)
 <span class="co">#&gt;     log cal  zmi       zna</span>
 <span class="co">#&gt; 1  TRUE   5  5.3       kot</span>
 <span class="co">#&gt; 2 FALSE  -7 -7.1      pies</span>
 <span class="co">#&gt; 3 FALSE  12  1.1 nosorożec</span>
 <span class="co">#&gt; 4  TRUE   2  2.3      żółw</span></code></pre>
-<!-- info about joins -->
-<!-- ref to joins -->
+<p>Ograniczeniem łącznia kolumn jest posiadanie tej samej długości każdej kolumny.</p>
+<pre class="sourceCode r"><code class="sourceCode r">ramka3 =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">zmi2 =</span> <span class="kw">c</span>(<span class="fl">4.3</span>, <span class="fl">2.6</span>, <span class="fl">7.4</span>))
+ramka3
+<span class="co">#&gt;   zmi2</span>
+<span class="co">#&gt; 1  4.3</span>
+<span class="co">#&gt; 2  2.6</span>
+<span class="co">#&gt; 3  7.4</span>
+
+<span class="kw">cbind</span>(ramka1, ramka3)
+<span class="co">#&gt;     log cal  zmi       zna zmi2</span>
+<span class="co">#&gt; 1  TRUE   5  5.3       kot  4.3</span>
+<span class="co">#&gt; 2 FALSE  -7 -7.1      pies  2.6</span>
+<span class="co">#&gt; 3 FALSE  12  1.1 nosorożec  7.4</span></code></pre>
+
+<div class="rmdinfo">
+Funkcje <code>rbind()</code> i <code>cbind()</code> łączą obiekty nie zmieniając kolejności występujących w nich wartości.
+Bardziej zaawansowanymi sposobami łączenia ramek danych są różnorodne operacje łączenia (ang. <em>joins</em>), np. <code>left_join()</code> czy <code>inner_join()</code> z pakietu <strong>dplyr</strong>.
+Więcej na ten temat można znaleźć w rozdziale <a href="https://r4ds.had.co.nz/relational-data.html">“Relational data”</a> książki Advanced R <span class="citation">(Wickham <a href="#ref-wickham2014advanced">2014</a>)</span>.
+</div>
+
 </div>
 </div>
 <div id="listy" class="section level2">
@@ -835,6 +845,12 @@ Pierwszy element to wektor liczb od 10 do 0, drugi element to obiekt <code>ma4</
 Co jest efektem zamiany klasy?</li>
 </ol>
 
+</div>
+</div>
+<h3>Bibliografia</h3>
+<div id="refs" class="references">
+<div id="ref-wickham2014advanced">
+<p>Wickham, Hadley. 2014. <em>Advanced R</em>. Chapman and Hall/CRC.</p>
 </div>
 </div>
             </section>
