@@ -7,7 +7,11 @@ Ten rozdział jest poświęcony pozostałymi trzema podstawowymi klasami obiekt�
 ## Macierze
 
 Macierze (ang. *matrix*), podobnie jak wektory, są obiektami homogenicznymi - jedna macierz może przyjmować dane tylko jednego typu.
-<!-- ref to arrays -->
+Od wektorów różnią się jednak tym, że są dwuwymiarowe - wartości ułożone są w kolejnych wierszach i kolumnach.
+Macierze są używane do różnorodnych obliczeń matematycznych i statystycznych.
+W uproszczeniu można o nich myśleć jako o reprezentacji komputerowej zdjęcia lub mapy.
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">W R istnieją też wielowiarowe obiekty podobne do macierzy zwane matrycami (ang. *array*).</div>\EndKnitrBlock{rmdinfo}
 
 ### Tworzenie
 
