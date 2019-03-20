@@ -293,17 +293,29 @@ Więcej na ten temat można znaleźć w rozdziale ["Relational data"](https://r
 
 ## Listy
 
+Ostatnią podstawową klasą obiektów w R są listy (ang. *list*).
+Ta klasa pozwala na przechowywanie obiektów o różnych typach i różnej długości.
+
 ### Tworzenie
+
+Do tworzenia list służy funkcja `list()`, która przyjmuje jako argumenty kolejne obiekty, które mają się w niej znaleźć.
 
 ```{r}
 lista1 = list(c(TRUE, FALSE), 
-             c(5L, -7L),
-             c(5.3), 
-             c("kot", "pies", "nosorożec"))
+              c(5L, -7L),
+              c(5.3), 
+              c("kot", "pies", "nosorożec"))
 lista1
 ```
 
-<!-- wielopoziomowe listy -->
+Przykładowa powyższa lista składa się z czterech elementów, o długości jeden, dwa lub trzy,  i o różnorodnych typach danych.
+
+Inną ważną właściwością list jest możliwość ich zagnieżdzania - jedna lista może przechowywać kolejną, która jest w stanie przechowywać następną... Z tego powodu listy są czasami nazywane wektorami rekurencyjnymi.
+
+```{r}
+zlozona_lista1 = list(list(list(lista1)))
+str(zlozona_lista1)
+```
 
 ### Podstawowe funkcje
 
@@ -434,6 +446,8 @@ methods(mean)
 <!-- reference?? -->
 
 ## Zadania
+
+<!-- dodaj zadania data science (aka dataset) -->
 
 1) Stwórz trzy nowe macierze - `ma1`, `ma2`, `ma3` - składające się z trzech wierszy i czterech kolumn.
 Macierz `ma1` powinna zawierać wartości od 0 do 11, cała macierz `ma2` powinna składać się tylko z wartości 2, a macierz `ma3` powinna zawierać losowe wartości od 1 do 3 (w stworzeniu losowych wartości może pomóc funkcja `sample()`).
