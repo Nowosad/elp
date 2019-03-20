@@ -1,6 +1,9 @@
 
 # Złożone obiekty {#zlozone-obiekty}
 
+W rozdziale \@ref(proste-obiekty) omówiono wektory atomowe, które są obiektami jednowymiarowymi zawierającymi tylko jeden typ danych.
+Ten rozdział jest poświęcony pozostałymi trzema podstawowymi klasami obiektów w R - macierzami, ramkami danych i listami (sekcje \@ref(macierze), \@ref(df), i \@ref(listy)).
+
 ## Macierze
 
 Macierze (ang. *matrix*), podobnie jak wektory, są obiektami homogenicznymi - jedna macierz może przyjmować dane tylko jednego typu.
@@ -168,7 +171,7 @@ macierz4
 #> [8,] 10 11 12
 ```
 
-## Ramki danych
+## Ramki danych {#df}
 
 Ramki danych (ang. *data frame*) mają dużo podobieństw z macierzami. 
 Są to obiekty dwuwymiarowe, składające się z kolumn i wierszy. 
