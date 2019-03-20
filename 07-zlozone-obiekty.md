@@ -15,6 +15,8 @@ W uproszczeniu można o nich myśleć jako o reprezentacji komputerowej zdjęcia
 
 ### Tworzenie
 
+Tworzenie macierzy odbywa się poprzez użycie funkcji `matrix()`, która przyjmuje wartości wektora jako pierwszy argument, a następnie informacje o wymiarach w postaci liczby wierszy (`nrow`) i liczby kolumn (`ncol`).
+
 
 ```r
 macierz1 = matrix(1:12, nrow = 4, ncol = 3)
@@ -26,6 +28,9 @@ macierz1
 #> [4,]    4    8   12
 ```
 
+Domyślnie w R wartości wpisywane są do macierzy do kolejnych kolumn startując od lewej strony.
+Możliwe jest jednak ustawienie argumentu `byrow = TRUE` co powoduje wpisywanie podanych wartości dla kolejnych wierszy zamiast kolejnych kolumn.
+
 
 ```r
 macierz2 = matrix(1:12, nrow = 4, ncol = 3, byrow = TRUE)
@@ -36,9 +41,6 @@ macierz2
 #> [3,]    7    8    9
 #> [4,]   10   11   12
 ```
-
-<!-- Macierze używane są ... zastosowania. -->
-<!-- ref to rasters -->
 
 ### Podstawowe funkcje
 

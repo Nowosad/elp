@@ -319,6 +319,7 @@ W R istnieją też wielowiarowe obiekty podobne do macierzy zwane matrycami (ang
 
 <div id="tworzenie" class="section level3">
 <h3><span class="header-section-number">7.1.1</span> Tworzenie</h3>
+<p>Tworzenie macierzy odbywa się poprzez użycie funkcji <code>matrix()</code>, która przyjmuje wartości wektora jako pierwszy argument, a następnie informacje o wymiarach w postaci liczby wierszy (<code>nrow</code>) i liczby kolumn (<code>ncol</code>).</p>
 <pre class="sourceCode r"><code class="sourceCode r">macierz1 =<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">12</span>, <span class="dt">nrow =</span> <span class="dv">4</span>, <span class="dt">ncol =</span> <span class="dv">3</span>)
 macierz1
 <span class="co">#&gt;      [,1] [,2] [,3]</span>
@@ -326,6 +327,8 @@ macierz1
 <span class="co">#&gt; [2,]    2    6   10</span>
 <span class="co">#&gt; [3,]    3    7   11</span>
 <span class="co">#&gt; [4,]    4    8   12</span></code></pre>
+<p>Domyślnie w R wartości wpisywane są do macierzy do kolejnych kolumn startując od lewej strony.
+Możliwe jest jednak ustawienie argumentu <code>byrow = TRUE</code> co powoduje wpisywanie podanych wartości dla kolejnych wierszy zamiast kolejnych kolumn.</p>
 <pre class="sourceCode r"><code class="sourceCode r">macierz2 =<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">12</span>, <span class="dt">nrow =</span> <span class="dv">4</span>, <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)
 macierz2
 <span class="co">#&gt;      [,1] [,2] [,3]</span>
@@ -333,8 +336,6 @@ macierz2
 <span class="co">#&gt; [2,]    4    5    6</span>
 <span class="co">#&gt; [3,]    7    8    9</span>
 <span class="co">#&gt; [4,]   10   11   12</span></code></pre>
-<!-- Macierze używane są ... zastosowania. -->
-<!-- ref to rasters -->
 </div>
 <div id="podstawowe-funkcje-1" class="section level3">
 <h3><span class="header-section-number">7.1.2</span> Podstawowe funkcje</h3>
