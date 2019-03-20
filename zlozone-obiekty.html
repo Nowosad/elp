@@ -477,20 +477,27 @@ Więcej informacji na ten temat można znaleźć w rozdziale <a href="io.html#i
 </div>
 <div id="podstawowe-funkcje-1" class="section level3">
 <h3><span class="header-section-number">7.2.2</span> Podstawowe funkcje</h3>
+<p>Oficjalnie klasa ramki danych jest określana jako <code>data.frame</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(ramka1)
 <span class="co">#&gt; [1] &quot;data.frame&quot;</span></code></pre>
+<p>Sprawdzenie struktury ramki danych pozwala na szybkie poznanie kilku róznych cech wejściowego obiektu.
+Pierwszą informacją jest klasa obiektu (<code>data.frame</code>), liczba wierszy (<code>3 obs.</code> - trzy obserwacje) i liczba kolumn (<code>4 variables</code> - cztery zmienne).
+Następnie, dla kolejnych kolumn są określane ich nazwy, typy danych oraz przykładowe wartości.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(ramka1)
 <span class="co">#&gt; &#39;data.frame&#39;:    3 obs. of  4 variables:</span>
 <span class="co">#&gt;  $ wek_log: logi  TRUE FALSE FALSE</span>
 <span class="co">#&gt;  $ wek_cal: int  5 -7 12</span>
 <span class="co">#&gt;  $ wek_zmi: num  5.3 -7.1 1.1</span>
 <span class="co">#&gt;  $ wek_zna: chr  &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ncol</span>(ramka1)
-<span class="co">#&gt; [1] 4</span></code></pre>
+<p>Podobnie jak w przypadku macierzy, ramki danych mają dwa wymiary, których długość można sprawdzić używając funkcji <code>nrow</code> i <code>ncol</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">nrow</span>(ramka1)
-<span class="co">#&gt; [1] 3</span></code></pre>
+<span class="co">#&gt; [1] 3</span>
+<span class="kw">ncol</span>(ramka1)
+<span class="co">#&gt; [1] 4</span></code></pre>
+<p>W przeciwieństwie jednak do macierzy, ramki danych zawsze posiadają nazwy kolumn.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colnames</span>(ramka1)
 <span class="co">#&gt; [1] &quot;wek_log&quot; &quot;wek_cal&quot; &quot;wek_zmi&quot; &quot;wek_zna&quot;</span></code></pre>
+<p>Ich zmiana również jest możliwa używając funkcji <code>colnames()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colnames</span>(ramka1) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;log&quot;</span>, <span class="st">&quot;cal&quot;</span>, <span class="st">&quot;zmi&quot;</span>, <span class="st">&quot;zna&quot;</span>)
 ramka1
 <span class="co">#&gt;     log cal  zmi       zna</span>
