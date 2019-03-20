@@ -454,39 +454,48 @@ str(lista_z_r1)
 
 ## Inne klasy obiektów
 
-```{r}
-wek_num = c(4, 6, 8)
-```
+W tym oraz \@ref(proste-obiekty) rozdziale zostały wymienione i opisane cztery podstawowe klasy obiektów w R - wektory atomowe, macierze, natomiast listy i ramki danych.
+R zawiera jednak znacznie więcej klas obiektów, a co więcej - każda osoba może stworzyć swoją własną klasę obiektów.
+<!-- ref to tworzenie klas? -->
 
-```{r}
-wek_dat = as.Date(c("2019-04-10", "2019-04-12", "2019-04-14"))
-```
+Poniżej zostały stworzone trzy nowe wektory - znakowy (`wek_tkt`), numeryczny (`wek_num`) i dat (`wek_dat`).
 
 ```{r}
 wek_tkt = c("kot", "pies", "nosorożec")
+wek_num = c(4, 6, 8)
+wek_dat = as.Date(c("2019-04-10", "2019-04-12", "2019-04-14"))
 ```
 
-```{r}
-mean(wek_num)
-```
-
-```{r}
-mean(wek_dat)
-```
+Czy można na nich wyliczyć średnią w ten sam sposób?
+Raczej nie - wyliczenie średniej z tekstu nie jest jednoznacznie możliwe, wyliczenie średniej z wartości numerycznych powinno dać wartość numeryczną, a wyliczenie średniej z dat - również datę.
 
 ```{r}
 mean(wek_tkt)
+mean(wek_num)
+mean(wek_dat)
 ```
+
+Powyższe wyniki są poprawne, ale każdy z nich zwraca inny rodzaj wyniku. 
+Jest to możliwe dzięki tzw. metodom (ang. *methods*).
+Metoda to sposób w jaki zachowuje się funkcja w zależności od tego jakiej klasy będzie obiekt wejściowy.
 
 ```{r}
 methods(mean)
 ```
 
+Przykładowo, funkcja `mean()` ma pięć metod:
+- `.Date` - obsługującą daty
+- `.difftime` - obsługującą czas trwania
+- `.POSIXct` oraz `.POSIXlt` - obsługujące czas
+- `.default` - domyślna metoda
+
+W momencie, gdy funkcja otrzyma jakiś obiekt, sprawdzana jest jego klasa i jeżeli istnieje metoda dla tego obiektu to wówczas jest ona używana.
+Natomiat w sytuacji, gdy dla danej klasy obiektu nie ma istniejącej metody, używana jest domyślna metoda (`.default`).
+
+Jak widać w powyższym przykładzie, nowe klasy obiektów oraz nowe metody są tworzone, aby ułatwić pracę na innych niż domyślne strukturach danych.
+
 <!-- https://www.njtierney.com/post/2016/11/06/simple-s3-post/ -->
 <!-- ... -->
-<!-- Istnieje ogromna liczba klas obiektów w R -->
-<!-- Każdy może stworzyć swoją własną klasę! -->
-<!-- Różne funkcje wymagają różnych klas obiektów -->
 <!-- reference?? -->
 
 ## Zadania
