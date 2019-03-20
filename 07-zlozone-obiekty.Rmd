@@ -266,26 +266,30 @@ Podobnie jak w przypadku wektorów (sekcje \@ref(wip-vector) i \@ref(mo-vector))
 
 ### Łączenie
 
+Łączenie ramek danych przypomina łączenie macierzy używając funkcji `rbind()` i `cbind()`.
+Jednocześnie należy pamiętać, że łączenie wierszy (`rbind()`) wymaga posiadania kolumn o tych samych nazwach w obu obiektach.
+
 ```{r}
-ramka2 = data.frame(zmi2 = c(4.3, 2.6, 7.4))
+ramka2 = data.frame(log = TRUE, cal = 2L, zmi = 2.3, zna = "żółw")
 ramka2
+
+rbind(ramka1, ramka2)
 ```
 
-```{r}
-cbind(ramka1, ramka2)
-```
+Ograniczeniem łącznia kolumn jest posiadanie tej samej długości każdej kolumny.
 
 ```{r}
-ramka3 = data.frame(log = TRUE, cal = 2L, zmi = 2.3, zna = "żółw")
+ramka3 = data.frame(zmi2 = c(4.3, 2.6, 7.4))
 ramka3
+
+cbind(ramka1, ramka3)
 ```
 
-```{r}
-rbind(ramka1, ramka3)
+```{block2 type="rmdinfo"}
+Funkcje `rbind()` i `cbind()` łączą obiekty nie zmieniając kolejności występujących w nich wartości.
+Bardziej zaawansowanymi sposobami łączenia ramek danych są różnorodne operacje łączenia (ang. *joins*), np. `left_join()` czy `inner_join()` z pakietu **dplyr**.
+Więcej na ten temat można znaleźć w rozdziale ["Relational data"](https://r4ds.had.co.nz/relational-data.html) książki Advanced R [@wickham2014advanced].
 ```
-
-<!-- info about joins -->
-<!-- ref to joins -->
 
 ## Listy
 
