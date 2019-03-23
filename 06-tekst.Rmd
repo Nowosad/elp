@@ -326,17 +326,17 @@ moje_pliki = dir("pliki", pattern = "*\\.(png|jpg)$", full.names = TRUE)
 ```
 Napisz kod, który będzie wydział symbole chemiczne pomierzonych pierwiastków.
 
-1) Napisz funkcję nazywającą się `horoskop`, która przyjmuje dwa argumenty `imie` (pierwsze imię, tekst) oraz `miesiac` (miesiąc urodzin, liczba).
+2) Napisz funkcję nazywającą się `horoskop`, która przyjmuje dwa argumenty `imie` (pierwsze imię, tekst) oraz `miesiac` (miesiąc urodzin, liczba).
 Funkcja ma zwrócić tekst "Osoba o imieniu 'imie' będzie miała jutro szczęście." w przypadku, gdy argument `miesiac` jest liczbą parzystą oraz "Osoba o imieniu 'imie' będzie miała jutro nieszczęście." jeżeli argument `miesiac` jest liczbą nieparzystą.
-1) Rozbuduj funkcję `horoskop` poprzez sprawdzenie pierwszej litery podanego imienia. Jeżeli pierwsza litera imienia to `K`, `M`, lub `Z` wówczas wyświetli się zawsze tekst "Osoba o imieniu 'imie' będzie miała jutro szczęście.", bez względu na podany miesiąc.
-1) Efektem zbierania pomiarów temperatury okazał być się plik tekstowy, który zawiera datę pomiaru oraz wartość.
+3) Rozbuduj funkcję `horoskop` poprzez sprawdzenie pierwszej litery podanego imienia. Jeżeli pierwsza litera imienia to `K`, `M`, lub `Z` wówczas wyświetli się zawsze tekst "Osoba o imieniu 'imie' będzie miała jutro szczęście.", bez względu na podany miesiąc.
+4) Efektem zbierania pomiarów temperatury okazał być się plik tekstowy, który zawiera datę pomiaru oraz wartość.
 W jaki sposób możliwe jest wydzielenie tylko dat w takiej sytuacji?
 Poniżej znajduje się fragment przykładowych danych wejściowych.
 ```{r, eval=FALSE}
 "2019-03-11: 23.5, 19/03/12: 12.7, 2019.03.13: 11.1, 2019-marzec-14: 14.3"
 ```
 
-1) Co należałoby zrobić, aby wydzielić tylko wartości pomiarów w powyższym przypadku?
+5) Co należałoby zrobić, aby wydzielić tylko wartości pomiarów w powyższym przypadku?
 Stwórz nowy obiekt "wartosci" zawierający te pomiary.
 Jakiej klasy powinien być wyjściowy obiekt?
 <!-- match hex colors, examples :#abs, #f0, #BADA55, #COFFEE https://www.youtube.com/watch?v=EkluES9Rvak -->
