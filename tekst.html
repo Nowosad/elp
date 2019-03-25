@@ -241,7 +241,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a><ul>
 <li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy</a></li>
-<li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#zadania-8"><i class="fa fa-check"></i><b>9.2</b> Zadania</a></li>
+<li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#wczytywanie-plikow-tekstowych"><i class="fa fa-check"></i><b>9.2</b> Wczytywanie plików tekstowych</a></li>
+<li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#zapisywanie-plikow-tekstowych"><i class="fa fa-check"></i><b>9.3</b> Zapisywanie plików tekstowych</a></li>
+<li class="chapter" data-level="9.4" data-path="io.html"><a href="io.html#inne-formaty"><i class="fa fa-check"></i><b>9.4</b> Inne formaty</a></li>
+<li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#zadania-8"><i class="fa fa-check"></i><b>9.5</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>II Przykłady</b></span></li>
 <li class="part"><span><b>III Narzędzia</b></span></li>
@@ -534,8 +537,8 @@ miasta_pomiary2
 <div id="wyszukiwanie-plikow" class="section level2">
 <h2><span class="header-section-number">6.7</span> Wyszukiwanie plików</h2>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>)
-<span class="co">#&gt; [1] &quot;dokument.docx&quot; &quot;kod.R&quot;         &quot;mapa.png&quot;      &quot;obrazek.png&quot;  </span>
-<span class="co">#&gt; [5] &quot;zdjęcie.jpg&quot;</span></code></pre>
+<span class="co">#&gt; [1] &quot;dane_meteo.csv&quot; &quot;dokument.docx&quot;  &quot;kod.R&quot;          &quot;mapa.png&quot;      </span>
+<span class="co">#&gt; [5] &quot;obrazek.png&quot;    &quot;zdjęcie.jpg&quot;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.png$&quot;</span>)
 <span class="co">#&gt; [1] &quot;mapa.png&quot;    &quot;obrazek.png&quot;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.(png|jpg)$&quot;</span>)

@@ -241,7 +241,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a><ul>
 <li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy</a></li>
-<li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#zadania-8"><i class="fa fa-check"></i><b>9.2</b> Zadania</a></li>
+<li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#wczytywanie-plikow-tekstowych"><i class="fa fa-check"></i><b>9.2</b> Wczytywanie plików tekstowych</a></li>
+<li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#zapisywanie-plikow-tekstowych"><i class="fa fa-check"></i><b>9.3</b> Zapisywanie plików tekstowych</a></li>
+<li class="chapter" data-level="9.4" data-path="io.html"><a href="io.html#inne-formaty"><i class="fa fa-check"></i><b>9.4</b> Inne formaty</a></li>
+<li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#zadania-8"><i class="fa fa-check"></i><b>9.5</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>II Przykłady</b></span></li>
 <li class="part"><span><b>III Narzędzia</b></span></li>
@@ -334,8 +337,70 @@ Używanie ścieżek względnych jest rekomendowane, ponieważ znacząco upraszcz
 <!-- + use a blank slate, restart often -->
 <!-- footnote with fs and here pacakges -->
 </div>
+<div id="wczytywanie-plikow-tekstowych" class="section level2">
+<h2><span class="header-section-number">9.2</span> Wczytywanie plików tekstowych</h2>
+<p><code>&quot;pliki/dane_meteo.csv&quot;</code></p>
+<pre><code>#&gt; [1] &quot;kod_stacji,nazwa_stacji,rok,miesiac,dzien,tavg,precip,humidity,pressure&quot;
+#&gt; [2] &quot;352160330,POZNAŃ,2017,1,1,1.4,0,78,1017.9&quot;                              
+#&gt; [3] &quot;352160330,POZNAŃ,2017,1,2,0.1,0,84,1013.1&quot;                              
+#&gt; [4] &quot;352160330,POZNAŃ,2017,1,3,0.5,4.8,91.1,1012.1&quot;                          
+#&gt; [5] &quot;352160330,POZNAŃ,2017,1,4,1.5,2.3,84.9,996.1&quot;</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">meteo =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;pliki/dane_meteo.csv&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
+<span class="kw">str</span>(meteo)
+<span class="co">#&gt; &#39;data.frame&#39;:    730 obs. of  9 variables:</span>
+<span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span>
+<span class="co">#&gt;  $ nazwa_stacji: chr  &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; ...</span>
+<span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span>
+<span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span>
+<span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span>
+<span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span>
+<span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span>
+<span class="co">#&gt;  $ humidity    : num  78 84 91.1 84.9 68.3 78.6 82.5 78.5 88.6 75.3 ...</span>
+<span class="co">#&gt;  $ pressure    : num  1018 1013 1012 996 1021 ...</span></code></pre>
+<p><code>read.csv()</code> <code>read.csv2()</code></p>
+<pre class="sourceCode r"><code class="sourceCode r">meteo =<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;pliki/dane_meteo.csv&quot;</span>, 
+                   <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>,
+                   <span class="dt">header =</span> <span class="ot">TRUE</span>)
+<span class="kw">str</span>(meteo)
+<span class="co">#&gt; &#39;data.frame&#39;:    730 obs. of  9 variables:</span>
+<span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span>
+<span class="co">#&gt;  $ nazwa_stacji: Factor w/ 2 levels &quot;POZNAŃ&quot;,&quot;ZAKOPANE&quot;: 1 1 1 1 1 1 1 1 1 1 ...</span>
+<span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span>
+<span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span>
+<span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span>
+<span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span>
+<span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span>
+<span class="co">#&gt;  $ humidity    : num  78 84 91.1 84.9 68.3 78.6 82.5 78.5 88.6 75.3 ...</span>
+<span class="co">#&gt;  $ pressure    : num  1018 1013 1012 996 1021 ...</span></code></pre>
+</div>
+<div id="zapisywanie-plikow-tekstowych" class="section level2">
+<h2><span class="header-section-number">9.3</span> Zapisywanie plików tekstowych</h2>
+<pre class="sourceCode r"><code class="sourceCode r">meteo_pzn =<span class="st"> </span><span class="kw">subset</span>(meteo, nazwa_stacji <span class="op">==</span><span class="st"> &quot;POZNAŃ&quot;</span>)
+<span class="kw">str</span>(meteo_pzn)
+<span class="co">#&gt; &#39;data.frame&#39;:    365 obs. of  9 variables:</span>
+<span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span>
+<span class="co">#&gt;  $ nazwa_stacji: Factor w/ 2 levels &quot;POZNAŃ&quot;,&quot;ZAKOPANE&quot;: 1 1 1 1 1 1 1 1 1 1 ...</span>
+<span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span>
+<span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span>
+<span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span>
+<span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span>
+<span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span>
+<span class="co">#&gt;  $ humidity    : num  78 84 91.1 84.9 68.3 78.6 82.5 78.5 88.6 75.3 ...</span>
+<span class="co">#&gt;  $ pressure    : num  1018 1013 1012 996 1021 ...</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">write.csv</span>(meteo, <span class="st">&quot;pliki/dane_meteo_pzn.csv&quot;</span>, <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</code></pre>
+
+<div class="rmdinfo">
+Funkcje <code>read.csv()</code> czy <code>write.csv()</code> są domyślnie dostępne w języku R.
+Ich wydajność nie jest niestety najlepsza w przypadku plików tekstowych o dużej wielkości.
+W takich przypadkach warto użyć alternatywnych funkcji, np. <code>read_csv()</code> i <code>write_csv()</code> z pakietu <strong>readr</strong> lub <code>fread()</code> i <code>fwrite()</code> z pakietu <strong>data.table</strong>.
+</div>
+
+</div>
+<div id="inne-formaty" class="section level2">
+<h2><span class="header-section-number">9.4</span> Inne formaty</h2>
+</div>
 <div id="zadania-8" class="section level2">
-<h2><span class="header-section-number">9.2</span> Zadania</h2>
+<h2><span class="header-section-number">9.5</span> Zadania</h2>
 
 </div>
 </div>
