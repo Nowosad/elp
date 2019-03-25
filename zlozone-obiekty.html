@@ -823,11 +823,13 @@ Metoda to sposób w jaki zachowuje się funkcja w zależności od tego jakiej kl
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">methods</span>(mean)
 <span class="co">#&gt; [1] mean.Date     mean.default  mean.difftime mean.POSIXct  mean.POSIXlt </span>
 <span class="co">#&gt; see &#39;?methods&#39; for accessing help and source code</span></code></pre>
-<p>Przykładowo, funkcja <code>mean()</code> ma pięć metod:
-- <code>.Date</code> - obsługującą daty
-- <code>.difftime</code> - obsługującą czas trwania
-- <code>.POSIXct</code> oraz <code>.POSIXlt</code> - obsługujące czas
-- <code>.default</code> - domyślna metoda</p>
+<p>Przykładowo, funkcja <code>mean()</code> ma pięć metod:</p>
+<ul>
+<li><code>.Date</code> - obsługującą daty</li>
+<li><code>.difftime</code> - obsługującą czas trwania</li>
+<li><code>.POSIXct</code> oraz <code>.POSIXlt</code> - obsługujące czas</li>
+<li><code>.default</code> - domyślna metoda</li>
+</ul>
 <p>W momencie, gdy funkcja otrzyma jakiś obiekt, sprawdzana jest jego klasa i jeżeli istnieje metoda dla tego obiektu to wówczas jest ona używana.
 Natomiat w sytuacji, gdy dla danej klasy obiektu nie ma istniejącej metody, używana jest domyślna metoda (<code>.default</code>).</p>
 <p>Jak widać w powyższym przykładzie, nowe klasy obiektów oraz nowe metody są tworzone, aby ułatwić pracę na innych niż domyślne strukturach danych.</p>

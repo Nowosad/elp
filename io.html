@@ -346,7 +346,8 @@ Używanie ścieżek względnych jest rekomendowane, ponieważ znacząco upraszcz
 #&gt; [3] &quot;352160330,POZNAŃ,2017,1,2,0.1,0,84,1013.1&quot;                              
 #&gt; [4] &quot;352160330,POZNAŃ,2017,1,3,0.5,4.8,91.1,1012.1&quot;                          
 #&gt; [5] &quot;352160330,POZNAŃ,2017,1,4,1.5,2.3,84.9,996.1&quot;</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">meteo =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;pliki/dane_meteo.csv&quot;</span>, <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
+<pre class="sourceCode r"><code class="sourceCode r">meteo =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;pliki/dane_meteo.csv&quot;</span>, 
+                 <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
 <span class="kw">str</span>(meteo)
 <span class="co">#&gt; &#39;data.frame&#39;:    730 obs. of  9 variables:</span>
 <span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span>
@@ -393,7 +394,8 @@ Używanie ścieżek względnych jest rekomendowane, ponieważ znacząco upraszcz
 <span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span>
 <span class="co">#&gt;  $ humidity    : num  78 84 91.1 84.9 68.3 78.6 82.5 78.5 88.6 75.3 ...</span>
 <span class="co">#&gt;  $ pressure    : num  1018 1013 1012 996 1021 ...</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">write.csv</span>(meteo, <span class="st">&quot;pliki/dane_meteo_pzn.csv&quot;</span>, <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">write.csv</span>(meteo, <span class="st">&quot;pliki/dane_meteo_pzn.csv&quot;</span>,
+          <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</code></pre>
 
 <div class="rmdinfo">
 Funkcje <code>read.csv()</code> czy <code>write.csv()</code> są domyślnie dostępne w języku R.

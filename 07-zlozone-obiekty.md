@@ -752,6 +752,7 @@ methods(mean)
 ```
 
 Przykładowo, funkcja `mean()` ma pięć metod:
+
 - `.Date` - obsługującą daty
 - `.difftime` - obsługującą czas trwania
 - `.POSIXct` oraz `.POSIXlt` - obsługujące czas
