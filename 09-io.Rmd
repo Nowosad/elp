@@ -49,7 +49,8 @@ m
 ```
 
 ```{r}
-meteo = read.csv("pliki/dane_meteo.csv", stringsAsFactors = FALSE)
+meteo = read.csv("pliki/dane_meteo.csv", 
+                 stringsAsFactors = FALSE)
 str(meteo)
 ```
 
@@ -74,7 +75,8 @@ str(meteo_pzn)
 ```
 
 ```{r, eval=FALSE}
-write.csv(meteo, "pliki/dane_meteo_pzn.csv", row.names = FALSE)
+write.csv(meteo, "pliki/dane_meteo_pzn.csv",
+          row.names = FALSE)
 ```
 
 ```{block2 type="rmdinfo"}
