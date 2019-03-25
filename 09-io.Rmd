@@ -1,5 +1,6 @@
 # Wczytywanie i zapisywanie plików {#io}
 
+<!-- A flat file can be a plain text file or a binary file. In the former case, the files usually contain one record per line -->
 <!-- csv better than many! -->
 <!-- folder roboczy -->
 
@@ -90,6 +91,7 @@ W takich przypadkach warto użyć alternatywnych funkcji, np. `read_csv()` i `wr
 <!-- - dane w pakietach -->
 <!-- - bazy danych -->
 <!-- - pliki przestrzenne -->
+<!-- - json -->
 
 ## Zadania
 
