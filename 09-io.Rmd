@@ -38,4 +38,46 @@ Używanie ścieżek względnych jest rekomendowane, ponieważ znacząco upraszcz
 <!-- + use a blank slate, restart often -->
 <!-- footnote with fs and here pacakges -->
 
+## Wczytywanie plików tekstowych
+
+`"pliki/dane_meteo.csv"`
+
+```{r, echo=FALSE}
+m = readLines("pliki/dane_meteo.csv", n = 5)
+m
+```
+
+```{r}
+meteo = read.csv("pliki/dane_meteo.csv", stringsAsFactors = FALSE)
+str(meteo)
+```
+
+`read.csv()` `read.csv2()`
+
+```{r}
+meteo = read.table("pliki/dane_meteo.csv", 
+                   sep = ",",
+                   header = TRUE)
+str(meteo)
+```
+
+```{r}
+meteo_pzn = subset(meteo, nazwa_stacji == "POZNAŃ")
+str(meteo_pzn)
+```
+
+```{r, eval=FALSE}
+write.csv(meteo, "pliki/dane_meteo_pzn.csv", row.names = FALSE)
+```
+
+```{block2 type="rmdinfo"}
+Funkcje `read.csv()` czy `write.csv()` są domyślnie dostępne w języku R.
+Ich wydajność nie jest niestety najlepsza w przypadku plików tekstowych o dużej wielkości.
+W takich przypadkach warto użyć alternatywnych funkcji, np. `read_csv()` i `write_csv()` z pakietu **readr** lub `fread()` i `fwrite()` z pakietu **data.table**.
+```
+
+## Zapisywanie plików tekstowych
+
+## Inne formaty
+
 ## Zadania
