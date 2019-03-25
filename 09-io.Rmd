@@ -61,6 +61,10 @@ meteo = read.table("pliki/dane_meteo.csv",
 str(meteo)
 ```
 
+```{block2 type="rmdinfo"}
+`read.delim()`, `read.delim2()`, `readLines()`, `read.fwf()`
+```
+
 ## Zapisywanie plików tekstowych
 
 ```{r}
@@ -84,5 +88,7 @@ W takich przypadkach warto użyć alternatywnych funkcji, np. `read_csv()` i `wr
 <!-- - Excel -->
 <!-- - Internet -->
 <!-- - dane w pakietach -->
+<!-- - bazy danych -->
+<!-- - pliki przestrzenne -->
 
 ## Zadania
