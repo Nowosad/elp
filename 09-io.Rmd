@@ -61,6 +61,8 @@ meteo = read.table("pliki/dane_meteo.csv",
 str(meteo)
 ```
 
+## Zapisywanie plików tekstowych
+
 ```{r}
 meteo_pzn = subset(meteo, nazwa_stacji == "POZNAŃ")
 str(meteo_pzn)
@@ -75,8 +77,6 @@ Funkcje `read.csv()` czy `write.csv()` są domyślnie dostępne w języku R.
 Ich wydajność nie jest niestety najlepsza w przypadku plików tekstowych o dużej wielkości.
 W takich przypadkach warto użyć alternatywnych funkcji, np. `read_csv()` i `write_csv()` z pakietu **readr** lub `fread()` i `fwrite()` z pakietu **data.table**.
 ```
-
-## Zapisywanie plików tekstowych
 
 ## Inne formaty
 
