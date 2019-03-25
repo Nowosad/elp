@@ -25,7 +25,7 @@
 <meta name="author" content="Jakub Nowosad">
 
 
-<meta name="date" content="2019-03-23">
+<meta name="date" content="2019-03-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -313,12 +313,18 @@ Folder roboczy można sprawdzić korzystając z funkcji <code>getwd()</code>:</p
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">getwd</span>()
 <span class="co">#&gt; [1] &quot;/home/travis/build/Nowosad/elp&quot;</span></code></pre>
 <p>Zmienić folder roboczy można za pomocą skrótu <em>Ctrl+Shift+H</em> w RStudio (inaczej <em>Session -&gt; Set Working Directory -&gt; Choose Directory..</em>) lub też funkcji <code>setwd()</code>:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(<span class="st">&quot;home/jakub/Documents/progr/&quot;</span>) <span class="co">#unix</span>
-<span class="kw">setwd</span>(<span class="st">&quot;C:/Users/jakub/Documenty/progr/&quot;</span>) <span class="co">#windows</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(<span class="st">&quot;home/jakub/Documents/elp/&quot;</span>) <span class="co">#unix</span>
+<span class="kw">setwd</span>(<span class="st">&quot;C:/Users/jakub/Documenty/elp/&quot;</span>) <span class="co">#windows</span></code></pre>
+
+<div class="rmdinfo">
+Ustawienie folderu roboczego ma też miejsce przy tworzeniu nowego lub otwieraniu istniejącego projektu RStudio.
+</div>
+
 <p>Folder roboczy jest ważny ponieważ pozwala na korzystanie z względnej ścieżki.
-Znacząco upraszcza pracę, gdy dane/obliczenia przenosi się pomiędzy różnymi komputerami lub gdy współpracuje się z innymi osobami.</p>
-<p>Ścieżka względna …</p>
-<p>Ścieżka bezwzględna …</p>
+Ścieżka względna oznacza określanie ścieżki pliku w odniesieniu do istniejącego folderu roboczego, podczas, gdy ścieżka bezwzględna opisuje pełne położenie pliku.
+Przykładowo, mamy plik <code>dane_meteo.csv</code>, którego pełna ścieżka to <code>home/jakub/Documents/elp/pliki/dane_meteo.csv</code>.
+Z poziomu R ten plik jest widoczny zarówno jako <code>home/jakub/Documents/elp/pliki/dane_meteo.csv</code>, ale też w postaci <code>pliki/dane_meteo.csv</code><a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>.
+Używanie ścieżek względnych jest rekomendowane, ponieważ znacząco upraszcza pracę, gdy dane/obliczenia przenosi się pomiędzy różnymi komputerami lub gdy współpracuje się z innymi osobami.</p>
 <!--project-oriented workflow -->
 <!-- Adopt a project-oriented workflow -->
 <!-- How? -->
@@ -344,6 +350,12 @@ Znacząco upraszcza pracę, gdy dane/obliczenia przenosi się pomiędzy różnym
 
 
 
+<div class="footnotes">
+<hr />
+<ol start="33">
+<li id="fn33"><p>Jeżeli poprawnie ustawiliśmy folder roboczy.<a href="io.html#fnref33" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
