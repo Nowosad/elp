@@ -80,4 +80,9 @@ W takich przypadkach warto użyć alternatywnych funkcji, np. `read_csv()` i `wr
 
 ## Inne formaty
 
+<!-- - RDS -->
+<!-- - Excel -->
+<!-- - Internet -->
+<!-- - dane w pakietach -->
+
 ## Zadania
