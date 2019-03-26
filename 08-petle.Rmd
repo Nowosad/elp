@@ -224,6 +224,9 @@ apply(pomiary, MARGIN = 2, FUN = mean)
 apply(pomiary, MARGIN = 1, FUN = mean)
 ```
 
+<!-- other (vapply, etc) -->
+<!-- purrr -->
+
 ## Zadania
 
 <!-- peer instruction - https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1006023&type=printable -->
