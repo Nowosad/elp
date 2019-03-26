@@ -88,13 +88,21 @@ Ich wydajność nie jest niestety najlepsza w przypadku plików tekstowych o du�
 W takich przypadkach warto użyć alternatywnych funkcji, np. `read_csv()` i `write_csv()` z pakietu **readr** lub `fread()` i `fwrite()` z pakietu **data.table**.
 ```
 
+## Formaty R
+
+<!-- rda -->
+<!-- RDS -->
+<!-- dane z pakietów -->
+
+## Arkusze kalkulacyjne
+
+
+
+## Dane internetowe
+
 ## Inne formaty
 
 <!-- serializacja? -->
-<!-- - RDS -->
-<!-- - Excel -->
-<!-- - Internet -->
-<!-- - dane w pakietach -->
 <!-- - bazy danych -->
 <!-- - pliki przestrzenne -->
 <!-- - json -->
