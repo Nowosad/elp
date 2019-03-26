@@ -135,8 +135,9 @@ writexl::write_xlsx(meteo, "pliki/dane_meteo.xlsx")
 
 ## Dane internetowe
 
-```{r}
-download.file("", destfile = "")
+```{r, eval=FALSE}
+download.file("https://raw.githubusercontent.com/Nowosad/elp/master/pliki/dane_meteo.csv", 
+              destfile = "dane_meteo.csv")
 ```
 
 ```{block2 type="rmdinfo"}
@@ -155,6 +156,11 @@ download.file("", destfile = "")
 
 Z poziomu R możliwe jest również zarządzanie plikami i folderami na dysku.
 Do tworzenia nowych folderów służy funkcja `dir.create()`, np. `dir.create("dane")` stworzy nowy podfolder o nazwie `"dane"`.
+Sprawdzenie czy folder już istnieje możliwe jest używając funkcji `dir.exists()`, np. `dir.exists("dane")`, która zwraca wartość `TRUE` gdy folder o tej nazwie istnieje lub `FALSE` gdy takiego folderu nie ma.
+Do usuwania istniejących folderów służy funkcja `unlink()`.
+W jej przypadku konieczne jest podanie, oprócz nazwy folder do usunięcia, argumentu `recursive = TRUE`.
+Przykładowo, aby usunąć folder `"dane"` należy wpisać `unlink("dane", recursive = TRUE)`.
+
 
 
 `dir.exists("dane")`, `unlink("dane", recursive = TRUE)`
