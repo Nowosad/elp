@@ -242,6 +242,8 @@ Przykładowo, odpowiednikiem funkcji `lapply()` w pakiecie **purrr** jest funkcj
 Ma ona dodatkowo kilka kolejnych wariantów, np. `map_df()` - która przyjmuje jako wejście listy, ale zwraca ramki danych, czy `map_dbl()` - która również przyjmuje listy, ale zwraca wartości zmiennoprzecinkowe.
 ```
 
+<!-- link to purrr -->
+
 ## Zadania
 
 <!-- peer instruction - https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1006023&type=printable -->
