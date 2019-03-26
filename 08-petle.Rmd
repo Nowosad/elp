@@ -126,8 +126,6 @@ bench::mark(mile_na_kilometry(x),
 
 ## Pętla while
 
-
-
 <!--     pętla for stosowana w sytuacji, gdy ilość wykonań kodu jest znana przed rozpoczęciem działania pętli -->
 <!--     pętle while i repeat są stosowana gdy ilość wykonań nie jest znana przed zakończeniem działania pętli -->
 <!-- są one bardziej elastyczne, ale też rzadziej używane -->
@@ -138,7 +136,7 @@ bench::mark(mile_na_kilometry(x),
 https://adv-r.hadley.nz/control-flow.html#loops -->
 <!-- `while`, `repeat` -->
 
-<!-- block - R nie ma do {action} while (condition) -->
+
 
 ```{r, eval=FALSE}
 while (warunek){
@@ -165,6 +163,14 @@ while(budzet > 0 && budzet < 200){
 }
 liczba_dni
 ```
+
+
+```{block2 type="rmdinfo"}
+W wielu językach występuje również pętla do, której działanie wygląda w ten sposób:
+`do {wykonuj operację} while (warunek)`.
+Tego typu pętli nie ma w R.
+```
+
 
 ## Programowanie funkcyjne
 
