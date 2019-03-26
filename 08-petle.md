@@ -272,7 +272,7 @@ apply(pomiary, MARGIN = 1, FUN = mean)
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">W R istnieje cała rodzina funkcji poświęcona programowaniu funkcyjnemu.
 Oprócz najczęściej używanych wymienionych powyżej, `lapply()` i `apply()`, istnieją również takie funkcje jak `sapply()`, `vapply()`, `tapply()`, `mapply()` i inne.</div>\EndKnitrBlock{rmdinfo}
 
-\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Pakiet **purrr** oferuje ulepszone i rozszerzone narzędzia do programowania funkcyjnego.
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Pakiet **purrr** oferuje ulepszone i rozszerzone narzędzia do programowania funkcyjnego [@R-purrr].
 Przykładowo, odpowiednikiem funkcji `lapply()` w pakiecie **purrr** jest funkcja `map()`.
 Ma ona dodatkowo kilka kolejnych wariantów, np. `map_df()` - która przyjmuje jako wejście listy, ale zwraca ramki danych, czy `map_dbl()` - która również przyjmuje listy, ale zwraca wartości zmiennoprzecinkowe.</div>\EndKnitrBlock{rmdinfo}
 
