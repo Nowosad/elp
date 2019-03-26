@@ -63,7 +63,11 @@ str(meteo)
 ```
 
 ```{block2 type="rmdinfo"}
-`read.delim()`, `read.delim2()`, `readLines()`, `read.fwf()`
+R posiada kilka dodatkowych funkcji pozwalających na odczytywanie plików tekstowych, tj. `read.delim()`, `read.delim2()`, `read.fwf()`, czy `readLines()`.
+Funkcje `read.delim()` oraz `read.delim2()` są odpowiednikami `read.csv()` i `read.csv2()` dla plików, gdzie kolejne zmienne są oddzielane tabulatorami.
+Funkcja `read.fwf()` służy do odczytywania danych o ustalonej długości kolejnych zmiennych.
+Funkcja `readLines()` wczytuje kolejne linie z pliku tekstowego.
+Efektem jej działania w przeciwieństwie do poprzednich funkcji nie jest ramka danych, ale wektor tekstowy, gdzie każdy kolejny element wektora to tekst z kolejnych linii.
 ```
 
 ## Zapisywanie plików tekstowych
