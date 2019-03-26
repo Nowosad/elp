@@ -30,6 +30,11 @@ Przykładowo, mamy plik `dane_meteo.csv`, którego pełna ścieżka to `home/jak
 Z poziomu R ten plik jest widoczny zarówno jako `home/jakub/Documents/elp/pliki/dane_meteo.csv`, ale też w postaci `pliki/dane_meteo.csv`^[Jeżeli poprawnie ustawiliśmy folder roboczy.].
 Używanie ścieżek względnych jest rekomendowane, ponieważ znacząco upraszcza pracę, gdy dane/obliczenia przenosi się pomiędzy różnymi komputerami lub gdy współpracuje się z innymi osobami.
 
+```{block2 type="rmdinfo"}
+# Windows - \
+# Unix - /
+```
+
 <!--project-oriented workflow -->
 <!-- Adopt a project-oriented workflow -->
 <!-- How? -->
@@ -87,6 +92,7 @@ W takich przypadkach warto użyć alternatywnych funkcji, np. `read_csv()` i `wr
 
 ## Inne formaty
 
+<!-- serializacja? -->
 <!-- - RDS -->
 <!-- - Excel -->
 <!-- - Internet -->
@@ -94,6 +100,13 @@ W takich przypadkach warto użyć alternatywnych funkcji, np. `read_csv()` i `wr
 <!-- - bazy danych -->
 <!-- - pliki przestrzenne -->
 <!-- - json -->
+<!-- tworzenie polaczen -->
+
+## Działania na plikach i folderach
+
+<!-- dir.create() -->
+<!-- file.remove() -->
+<!-- remove folder -->
 
 ## Zadania
 
