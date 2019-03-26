@@ -329,21 +329,14 @@ Ustawienie folderu roboczego ma też miejsce przy tworzeniu nowego lub otwierani
 Ścieżka względna oznacza określanie ścieżki pliku w odniesieniu do istniejącego folderu roboczego, podczas, gdy ścieżka bezwzględna opisuje pełne położenie pliku.
 Przykładowo, mamy plik <code>dane_meteo.csv</code>, którego pełna ścieżka to <code>home/jakub/Documents/elp/pliki/dane_meteo.csv</code>.
 Z poziomu R ten plik jest widoczny zarówno jako <code>home/jakub/Documents/elp/pliki/dane_meteo.csv</code>, ale też w postaci <code>pliki/dane_meteo.csv</code><a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>.
-Używanie ścieżek względnych jest rekomendowane, ponieważ znacząco upraszcza pracę, gdy dane/obliczenia przenosi się pomiędzy różnymi komputerami lub gdy współpracuje się z innymi osobami.</p>
+Używanie ścieżek względnych jest rekomendowane, ponieważ znacząco upraszcza pracę, gdy dane/obliczenia przenosi się pomiędzy różnymi komputerami lub gdy współpracuje się z innymi osobami.
+Ścieżki względne są też używane w połączeniu z systemami kontroli wersji (rozdział <a href="kontrola-wersji.html#kontrola-wersji">12</a>).</p>
 
 <div class="rmdinfo">
-<h1 id="windows--"><span class="header-section-number">9.1</span> Windows -<br />
-</h1>
-# Unix - /
+Ścieżki folderów w systemach Windows są domyślnie rozdzielane ukośnikiem wstecznym (<code>\</code>, ang. <em>backslash</em>), jednak R pozwala także na użycie prawego ukośnika (<code>/</code>, ang. <em>slash</em>).
+Prawy ukośnik jest rekomendowany, ponieważ działa on zarówno na Windowsach, jak i komputerach z systemami MacOS czy Linux.
 </div>
 
-<!--project-oriented workflow -->
-<!-- Adopt a project-oriented workflow -->
-<!-- How? -->
-<!-- • dedicated directory -->
-<!-- • RStudio Project -->
-<!-- • Git repo, probably syncing to a remote -->
-<!-- + use a blank slate, restart often -->
 <!-- footnote with fs and here pacakges -->
 </div>
 <div id="wczytywanie-plikow-tekstowych" class="section level2">
@@ -428,6 +421,7 @@ W takich przypadkach warto użyć alternatywnych funkcji, np. <code>read_csv()</
 <h2><span class="header-section-number">9.5</span> Działania na plikach i folderach</h2>
 <!-- dir.create() -->
 <!-- file.remove() -->
+<!-- unlink -->
 <!-- remove folder -->
 </div>
 <div id="zadania-8" class="section level2">
