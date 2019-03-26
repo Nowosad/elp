@@ -167,9 +167,11 @@ liczba_dni
 ```
 
 
-\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">W wielu językach występuje również pętla do, której działanie wygląda w ten sposób:
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Inne rodzaje pętli to pętla repeat oraz pętla do.
+Pętla repeat powtarza pewnien kod aż do momentu przerwania go przez użytkownika (np. użycie klawisza Esc) lub do pojawienia się komendy `break`.
+Działanie pętli do natomiast wygląda w następujący sposób:
 `do {wykonuj operację} while (warunek)`.
-Tego typu pętli nie ma w R.</div>\EndKnitrBlock{rmdinfo}
+Pętla do nie występuje w R.</div>\EndKnitrBlock{rmdinfo}
 
 
 ## Programowanie funkcyjne
