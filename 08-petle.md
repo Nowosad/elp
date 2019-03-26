@@ -144,8 +144,6 @@ https://adv-r.hadley.nz/control-flow.html#loops -->
 <!-- `while`, `repeat` -->
 
 
-
-
 ```r
 while (warunek){
     wykonuj operację tak długo jak warunek jest spełniony
@@ -172,7 +170,6 @@ Pętla repeat powtarza pewnien kod aż do momentu przerwania go przez użytkowni
 Działanie pętli do natomiast wygląda w następujący sposób:
 `do {wykonuj operację} while (warunek)`.
 Pętla do nie występuje w R.</div>\EndKnitrBlock{rmdinfo}
-
 
 ## Programowanie funkcyjne
 
