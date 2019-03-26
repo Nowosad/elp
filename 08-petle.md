@@ -165,6 +165,7 @@ liczba_dni
 
 ## Programowanie funkcyjne
 
+<!-- lapply -->
 <!-- \@ref(dzialania-na-wektorach) -->
 <!-- wektoryzacja-->
 <!-- http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html -->
