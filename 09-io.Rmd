@@ -153,7 +153,9 @@ download.file("", destfile = "")
 
 ## Działania na plikach i folderach
 
-`dir.create("dane")`
+Z poziomu R możliwe jest również zarządzanie plikami i folderami na dysku.
+Do tworzenia nowych folderów służy funkcja `dir.create()`, np. `dir.create("dane")` stworzy nowy podfolder o nazwie `"dane"`.
+
 
 `dir.exists("dane")`, `unlink("dane", recursive = TRUE)`
 
