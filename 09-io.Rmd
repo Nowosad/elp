@@ -90,6 +90,8 @@ W takich przypadkach warto użyć alternatywnych funkcji, np. `read_csv()` i `wr
 
 ## Formaty R
 
+<!-- info about binary -->
+
 ```{r}
 meteo$nazwa_stacji = as.factor(meteo$nazwa_stacji)
 str(meteo)
@@ -105,7 +107,7 @@ str(meteo_rds)
 ```
 
 ```{block2 type="rmdinfo"}
-`load()` i `save()
+Dodatkowo możliwe jest zapisywanie wielu obiektów do jednego pliku w formacie `.rda` a następnie ich odczytanie używając wbudowanych funkcji `save()` i `load()`.
 ```
 
 ```{r, eval=FALSE}
