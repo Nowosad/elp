@@ -124,7 +124,9 @@ bench::mark(mile_na_kilometry(x),
             mile_na_km(x))
 ```
 
-## Pętla while 
+## Pętla while
+
+
 
 <!--     pętla for stosowana w sytuacji, gdy ilość wykonań kodu jest znana przed rozpoczęciem działania pętli -->
 <!--     pętle while i repeat są stosowana gdy ilość wykonań nie jest znana przed zakończeniem działania pętli -->
@@ -229,8 +231,16 @@ apply(pomiary, MARGIN = 2, FUN = mean)
 apply(pomiary, MARGIN = 1, FUN = mean)
 ```
 
-<!-- other (vapply, etc) -->
-<!-- purrr -->
+```{block2 type="rmdinfo"}
+W R istnieje cała rodzina funkcji poświęcona programowaniu funkcyjnemu.
+Oprócz najczęściej używanych wymienionych powyżej, `lapply()` i `apply()`, istnieją również takie funkcje jak `sapply()`, `vapply()`, `tapply()`, `mapply()` i inne.
+```
+
+```{block2 type="rmdinfo"}
+Pakiet **purrr** oferuje ulepszone i rozszerzone narzędzia do programowania funkcyjnego.
+Przykładowo, odpowiednikiem funkcji `lapply()` w pakiecie **purrr** jest funkcja `map()`.
+Ma ona dodatkowo kilka kolejnych wariantów, np. `map_df()` - która przyjmuje jako wejście listy, ale zwraca ramki danych, czy `map_dbl()` - która również przyjmuje listy, ale zwraca wartości zmiennoprzecinkowe.
+```
 
 ## Zadania
 
