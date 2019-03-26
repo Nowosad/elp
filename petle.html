@@ -408,6 +408,35 @@ liczba_dni
 </div>
 <div id="programowanie-funkcyjne" class="section level2">
 <h2><span class="header-section-number">8.3</span> Programowanie funkcyjne</h2>
+<pre class="sourceCode r"><code class="sourceCode r">konwersja_temp =<span class="st"> </span><span class="cf">function</span>(temperatura_f){
+    (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span>
+}</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">pomiary_f_lista =<span class="st"> </span><span class="kw">list</span>(
+  <span class="dt">miastoA =</span> <span class="kw">c</span>(<span class="dv">61</span>, <span class="dv">14</span>, <span class="dv">21</span>),
+  <span class="dt">miastoB =</span> <span class="kw">c</span>(<span class="dv">43</span>, <span class="dv">52</span>, <span class="dv">30</span>),
+  <span class="dt">miastoC =</span> <span class="kw">c</span>(<span class="dv">41</span>, <span class="dv">42</span>, <span class="dv">33</span>)
+)
+pomiary_f_lista
+<span class="co">#&gt; $miastoA</span>
+<span class="co">#&gt; [1] 61 14 21</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $miastoB</span>
+<span class="co">#&gt; [1] 43 52 30</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $miastoC</span>
+<span class="co">#&gt; [1] 41 42 33</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">konwersja_temp</span>(pomiary_f_lista)
+<span class="co">#&gt; Error in temperatura_f - 32: non-numeric argument to binary operator</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">pomiary_c_lista =<span class="st"> </span><span class="kw">lapply</span>(pomiary_f_lista, <span class="dt">FUN =</span> konwersja_temp)
+pomiary_c_lista
+<span class="co">#&gt; $miastoA</span>
+<span class="co">#&gt; [1]  16.11 -10.00  -6.11</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $miastoB</span>
+<span class="co">#&gt; [1]  6.11 11.11 -1.11</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $miastoC</span>
+<span class="co">#&gt; [1] 5.000 5.556 0.556</span></code></pre>
 <!-- lapply -->
 <!-- \@ref(dzialania-na-wektorach) -->
 <!-- wektoryzacja-->
@@ -436,6 +465,8 @@ sr_dzien
 <span class="co">#&gt;    1.80    4.17    3.87</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">apply</span>(pomiary, <span class="dt">MARGIN =</span> <span class="dv">1</span>, <span class="dt">FUN =</span> mean)
 <span class="co">#&gt; [1] 4.83 3.60 1.40</span></code></pre>
+<!-- other (vapply, etc) -->
+<!-- purrr -->
 </div>
 <div id="zadania-7" class="section level2">
 <h2><span class="header-section-number">8.4</span> Zadania</h2>

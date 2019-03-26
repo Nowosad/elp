@@ -165,6 +165,51 @@ liczba_dni
 
 ## Programowanie funkcyjne
 
+
+```r
+konwersja_temp = function(temperatura_f){
+    (temperatura_f - 32) / 1.8
+}
+```
+
+
+```r
+pomiary_f_lista = list(
+  miastoA = c(61, 14, 21),
+  miastoB = c(43, 52, 30),
+  miastoC = c(41, 42, 33)
+)
+pomiary_f_lista
+#> $miastoA
+#> [1] 61 14 21
+#> 
+#> $miastoB
+#> [1] 43 52 30
+#> 
+#> $miastoC
+#> [1] 41 42 33
+```
+
+
+```r
+konwersja_temp(pomiary_f_lista)
+#> Error in temperatura_f - 32: non-numeric argument to binary operator
+```
+
+
+```r
+pomiary_c_lista = lapply(pomiary_f_lista, FUN = konwersja_temp)
+pomiary_c_lista
+#> $miastoA
+#> [1]  16.11 -10.00  -6.11
+#> 
+#> $miastoB
+#> [1]  6.11 11.11 -1.11
+#> 
+#> $miastoC
+#> [1] 5.000 5.556 0.556
+```
+
 <!-- lapply -->
 <!-- \@ref(dzialania-na-wektorach) -->
 <!-- wektoryzacja-->
@@ -213,6 +258,9 @@ apply(pomiary, MARGIN = 2, FUN = mean)
 apply(pomiary, MARGIN = 1, FUN = mean)
 #> [1] 4.83 3.60 1.40
 ```
+
+<!-- other (vapply, etc) -->
+<!-- purrr -->
 
 ## Zadania
 
