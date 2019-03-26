@@ -130,15 +130,13 @@ bench::mark(mile_na_kilometry(x),
 
 ## Pętla while
 
-<!--     pętla for stosowana w sytuacji, gdy ilość wykonań kodu jest znana przed rozpoczęciem działania pętli -->
-<!--     pętle while i repeat są stosowana gdy ilość wykonań nie jest znana przed zakończeniem działania pętli -->
-<!-- są one bardziej elastyczne, ale też rzadziej używane -->
+W przypadku pętli for znana jest liczba powtórzeń przed rozpoczęciem jej działania.
+Inny rodzaj pętli, while, jest natomiast stosowany gdy nie wiadomo ile potwórzeń jest koniecznych.
+W efekcie pętla while jest bardziej elastyczna, co jest zarazem jej atutem, ale też wadą.
+Bardziej elastyczne metody charakteryzuje również większa liczba potencjalnych sytuacji, a w efekcie problemów.
 
 <!-- https://rstudio-education.github.io/hopr/loops.html#while-loops -->
-
-<!-- `next`, `break` -
 https://adv-r.hadley.nz/control-flow.html#loops -->
-<!-- `while`, `repeat` -->
 
 ```{r, eval=FALSE}
 while (warunek){
@@ -174,6 +172,8 @@ Działanie pętli do natomiast wygląda w następujący sposób:
 `do {wykonuj operację} while (warunek)`.
 Pętla do nie występuje w R.
 ```
+
+Dodatkowe informacje na temat pętli for and while można znaleźć w sekcji [Loops](https://adv-r.hadley.nz/control-flow.html#loops) książki Advanced R [@wickham2014advanced]
 
 ## Programowanie funkcyjne
 
