@@ -29,10 +29,11 @@ Folder roboczy jest ważny ponieważ pozwala na korzystanie z względnej ścież
 Przykładowo, mamy plik `dane_meteo.csv`, którego pełna ścieżka to `home/jakub/Documents/elp/pliki/dane_meteo.csv`.
 Z poziomu R ten plik jest widoczny zarówno jako `home/jakub/Documents/elp/pliki/dane_meteo.csv`, ale też w postaci `pliki/dane_meteo.csv`^[Jeżeli poprawnie ustawiliśmy folder roboczy.].
 Używanie ścieżek względnych jest rekomendowane, ponieważ znacząco upraszcza pracę, gdy dane/obliczenia przenosi się pomiędzy różnymi komputerami lub gdy współpracuje się z innymi osobami.
+Ścieżki względne są też używane w połączeniu z systemami kontroli wersji (rozdział \@ref(kontrola-wersji)).
 
 ```{block2 type="rmdinfo"}
-# Windows - \
-# Unix - /
+Ścieżki folderów w systemach Windows są domyślnie rozdzielane ukośnikiem wstecznym (`\`, ang. *backslash*), jednak R pozwala także na użycie prawego ukośnika (`/`, ang. *slash*).
+Prawy ukośnik jest rekomendowany, ponieważ działa on zarówno na Windowsach, jak i komputerach z systemami MacOS czy Linux.
 ```
 
 <!--project-oriented workflow -->
@@ -106,6 +107,7 @@ W takich przypadkach warto użyć alternatywnych funkcji, np. `read_csv()` i `wr
 
 <!-- dir.create() -->
 <!-- file.remove() -->
+<!-- unlink -->
 <!-- remove folder -->
 
 ## Zadania
