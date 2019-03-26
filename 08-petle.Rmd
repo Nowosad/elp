@@ -29,7 +29,11 @@ for (i in odl_mile) {
 }
 ```
 
-<!-- i block -->
+```{block2 type="rmdinfo"}
+Tradycyjnie zmienna w pętli for nazywana jest `i`, a w przypadku zagnieżdzonych pętli druga zmienna nazywana jest `j`.
+Nazywanie zmiennych w ten sposób nie jest jednak obowiązkowe.
+W powyższym przypadku możliwe byłoby nazwanie zmiennej, np. `pomiar`: `for (pomiar in odl_mile)...`
+```
 
 ```{r}
 for (i in 1:3) {
