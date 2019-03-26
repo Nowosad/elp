@@ -243,9 +243,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy</a></li>
 <li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#wczytywanie-plikow-tekstowych"><i class="fa fa-check"></i><b>9.2</b> Wczytywanie plików tekstowych</a></li>
 <li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#zapisywanie-plikow-tekstowych"><i class="fa fa-check"></i><b>9.3</b> Zapisywanie plików tekstowych</a></li>
-<li class="chapter" data-level="9.4" data-path="io.html"><a href="io.html#inne-formaty"><i class="fa fa-check"></i><b>9.4</b> Inne formaty</a></li>
-<li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#dziaania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.5</b> Działania na plikach i folderach</a></li>
-<li class="chapter" data-level="9.6" data-path="io.html"><a href="io.html#zadania-8"><i class="fa fa-check"></i><b>9.6</b> Zadania</a></li>
+<li class="chapter" data-level="9.4" data-path="io.html"><a href="io.html#formaty-r"><i class="fa fa-check"></i><b>9.4</b> Formaty R</a></li>
+<li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#arkusze-kalkulacyjne"><i class="fa fa-check"></i><b>9.5</b> Arkusze kalkulacyjne</a></li>
+<li class="chapter" data-level="9.6" data-path="io.html"><a href="io.html#dane-internetowe"><i class="fa fa-check"></i><b>9.6</b> Dane internetowe</a></li>
+<li class="chapter" data-level="9.7" data-path="io.html"><a href="io.html#inne-formaty"><i class="fa fa-check"></i><b>9.7</b> Inne formaty</a></li>
+<li class="chapter" data-level="9.8" data-path="io.html"><a href="io.html#dziaania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.8</b> Działania na plikach i folderach</a></li>
+<li class="chapter" data-level="9.9" data-path="io.html"><a href="io.html#zadania-8"><i class="fa fa-check"></i><b>9.9</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>II Przykłady</b></span></li>
 <li class="part"><span><b>III Narzędzia</b></span></li>
@@ -377,7 +380,11 @@ Prawy ukośnik jest rekomendowany, ponieważ działa on zarówno na Windowsach, 
 <span class="co">#&gt;  $ pressure    : num  1018 1013 1012 996 1021 ...</span></code></pre>
 
 <div class="rmdinfo">
-<code>read.delim()</code>, <code>read.delim2()</code>, <code>readLines()</code>, <code>read.fwf()</code>
+R posiada kilka dodatkowych funkcji pozwalających na odczytywanie plików tekstowych, tj. <code>read.delim()</code>, <code>read.delim2()</code>, <code>read.fwf()</code>, czy <code>readLines()</code>.
+Funkcje <code>read.delim()</code> oraz <code>read.delim2()</code> są odpowiednikami <code>read.csv()</code> i <code>read.csv2()</code> dla plików, gdzie kolejne zmienne są oddzielane tabulatorami.
+Funkcja <code>read.fwf()</code> służy do odczytywania danych o ustalonej długości kolejnych zmiennych.
+Funkcja <code>readLines()</code> wczytuje kolejne linie z pliku tekstowego.
+Efektem jej działania w przeciwieństwie do poprzednich funkcji nie jest ramka danych, ale wektor tekstowy, gdzie każdy kolejny element wektora to tekst z kolejnych linii.
 </div>
 
 </div>
@@ -405,27 +412,103 @@ W takich przypadkach warto użyć alternatywnych funkcji, np. <code>read_csv()</
 </div>
 
 </div>
+<div id="formaty-r" class="section level2">
+<h2><span class="header-section-number">9.4</span> Formaty R</h2>
+<!-- info about binary -->
+<pre class="sourceCode r"><code class="sourceCode r">meteo<span class="op">$</span>nazwa_stacji =<span class="st"> </span><span class="kw">as.factor</span>(meteo<span class="op">$</span>nazwa_stacji)
+<span class="kw">str</span>(meteo)
+<span class="co">#&gt; &#39;data.frame&#39;:    730 obs. of  9 variables:</span>
+<span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span>
+<span class="co">#&gt;  $ nazwa_stacji: Factor w/ 2 levels &quot;POZNAŃ&quot;,&quot;ZAKOPANE&quot;: 1 1 1 1 1 1 1 1 1 1 ...</span>
+<span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span>
+<span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span>
+<span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span>
+<span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span>
+<span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span>
+<span class="co">#&gt;  $ humidity    : num  78 84 91.1 84.9 68.3 78.6 82.5 78.5 88.6 75.3 ...</span>
+<span class="co">#&gt;  $ pressure    : num  1018 1013 1012 996 1021 ...</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">saveRDS</span>(meteo, <span class="st">&quot;pliki/dane_meteo.rds&quot;</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">meteo_rds =<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;pliki/dane_meteo.rds&quot;</span>)
+<span class="kw">str</span>(meteo_rds)
+<span class="co">#&gt; &#39;data.frame&#39;:    730 obs. of  9 variables:</span>
+<span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span>
+<span class="co">#&gt;  $ nazwa_stacji: Factor w/ 2 levels &quot;POZNAŃ&quot;,&quot;ZAKOPANE&quot;: 1 1 1 1 1 1 1 1 1 1 ...</span>
+<span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span>
+<span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span>
+<span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span>
+<span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span>
+<span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span>
+<span class="co">#&gt;  $ humidity    : num  78 84 91.1 84.9 68.3 78.6 82.5 78.5 88.6 75.3 ...</span>
+<span class="co">#&gt;  $ pressure    : num  1018 1013 1012 996 1021 ...</span></code></pre>
+
+<div class="rmdinfo">
+Dodatkowo możliwe jest zapisywanie wielu obiektów do jednego pliku w formacie <code>.rda</code> a następnie ich odczytanie używając wbudowanych funkcji <code>save()</code> i <code>load()</code>.
+</div>
+
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="dt">package =</span> <span class="st">&quot;datasets&quot;</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="st">&quot;faithful&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;datasets&quot;</span>)
+<span class="kw">head</span>(faithful)
+<span class="co">#&gt;   eruptions waiting</span>
+<span class="co">#&gt; 1      3.60      79</span>
+<span class="co">#&gt; 2      1.80      54</span>
+<span class="co">#&gt; 3      3.33      74</span>
+<span class="co">#&gt; 4      2.28      62</span>
+<span class="co">#&gt; 5      4.53      85</span>
+<span class="co">#&gt; 6      2.88      55</span></code></pre>
+</div>
+<div id="arkusze-kalkulacyjne" class="section level2">
+<h2><span class="header-section-number">9.5</span> Arkusze kalkulacyjne</h2>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readxl)
+meteo_z_xl =<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;pliki/dane_meteo.xlsx&quot;</span>)
+meteo_z_xl
+<span class="co">#&gt; # A tibble: 730 x 9</span>
+<span class="co">#&gt;    kod_stacji nazwa_stacji   rok miesiac dzien  tavg precip humidity</span>
+<span class="co">#&gt;         &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;</span>
+<span class="co">#&gt;  1  352160330 POZNAŃ        2017       1     1   1.4    0       78  </span>
+<span class="co">#&gt;  2  352160330 POZNAŃ        2017       1     2   0.1    0       84  </span>
+<span class="co">#&gt;  3  352160330 POZNAŃ        2017       1     3   0.5    4.8     91.1</span>
+<span class="co">#&gt;  4  352160330 POZNAŃ        2017       1     4   1.5    2.3     84.9</span>
+<span class="co">#&gt;  5  352160330 POZNAŃ        2017       1     5  -3.5    0       68.3</span>
+<span class="co">#&gt;  6  352160330 POZNAŃ        2017       1     6  -8.4    0       78.6</span>
+<span class="co">#&gt;  7  352160330 POZNAŃ        2017       1     7  -7.9    2.1     82.5</span>
+<span class="co">#&gt;  8  352160330 POZNAŃ        2017       1     8  -7.7    0       78.5</span>
+<span class="co">#&gt;  9  352160330 POZNAŃ        2017       1     9  -5.8    0       88.6</span>
+<span class="co">#&gt; 10  352160330 POZNAŃ        2017       1    10  -5      0       75.3</span>
+<span class="co">#&gt; # … with 720 more rows, and 1 more variable: pressure &lt;dbl&gt;</span></code></pre>
+<p><code>write_xlsx()</code> z pakietu <strong>writexl</strong></p>
+</div>
+<div id="dane-internetowe" class="section level2">
+<h2><span class="header-section-number">9.6</span> Dane internetowe</h2>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">download.file</span>(<span class="st">&quot;https://raw.githubusercontent.com/Nowosad/elp/master/pliki/dane_meteo.csv&quot;</span>, 
+              <span class="dt">destfile =</span> <span class="st">&quot;dane_meteo.csv&quot;</span>)</code></pre>
+
+<div class="rmdinfo">
+<code>download.file()</code> <code>mode</code>
+</div>
+
+</div>
 <div id="inne-formaty" class="section level2">
-<h2><span class="header-section-number">9.4</span> Inne formaty</h2>
+<h2><span class="header-section-number">9.7</span> Inne formaty</h2>
 <!-- serializacja? -->
-<!-- - RDS -->
-<!-- - Excel -->
-<!-- - Internet -->
-<!-- - dane w pakietach -->
-<!-- - bazy danych -->
-<!-- - pliki przestrzenne -->
-<!-- - json -->
+<!-- bazy danych -->
+<!-- pliki przestrzenne -->
+<!-- json -->
 <!-- tworzenie polaczen -->
 </div>
 <div id="dziaania-na-plikach-i-folderach" class="section level2">
-<h2><span class="header-section-number">9.5</span> Działania na plikach i folderach</h2>
-<!-- dir.create() -->
-<!-- file.remove() -->
-<!-- unlink -->
-<!-- remove folder -->
+<h2><span class="header-section-number">9.8</span> Działania na plikach i folderach</h2>
+<p>Z poziomu R możliwe jest również zarządzanie plikami i folderami na dysku.
+Do tworzenia nowych folderów służy funkcja <code>dir.create()</code>, np. <code>dir.create(&quot;dane&quot;)</code> stworzy nowy podfolder o nazwie <code>&quot;dane&quot;</code>.
+Sprawdzenie czy folder już istnieje możliwe jest używając funkcji <code>dir.exists()</code>, np. <code>dir.exists(&quot;dane&quot;)</code>, która zwraca wartość <code>TRUE</code> gdy folder o tej nazwie istnieje lub <code>FALSE</code> gdy takiego folderu nie ma.
+Do usuwania istniejących folderów służy funkcja <code>unlink()</code>.
+W jej przypadku konieczne jest podanie, oprócz nazwy folder do usunięcia, argumentu <code>recursive = TRUE</code>.
+Przykładowo, aby usunąć folder <code>&quot;dane&quot;</code> należy wpisać <code>unlink(&quot;dane&quot;, recursive = TRUE)</code>.</p>
+<p><code>dir.exists(&quot;dane&quot;)</code>, <code>unlink(&quot;dane&quot;, recursive = TRUE)</code></p>
+<p><code>zip()</code>, <code>unzip()</code></p>
+<p><code>file.exist()</code>, <code>file.remove()</code></p>
 </div>
 <div id="zadania-8" class="section level2">
-<h2><span class="header-section-number">9.6</span> Zadania</h2>
+<h2><span class="header-section-number">9.9</span> Zadania</h2>
 <!-- wczytaj jeden format, zapisz inny -->
 <!-- automatycznie wczytaj dwa pliki -->
 <!-- wczytaj, zamien, zapisz -->

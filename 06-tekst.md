@@ -384,8 +384,8 @@ str_replace_all(tekst_pomiary4,
 
 ```r
 dir("pliki")
-#> [1] "dane_meteo.csv" "dokument.docx"  "kod.R"          "mapa.png"      
-#> [5] "obrazek.png"    "zdjęcie.jpg"
+#> [1] "dane_meteo.csv"  "dane_meteo.rds"  "dane_meteo.xlsx" "dokument.docx"  
+#> [5] "kod.R"           "mapa.png"        "obrazek.png"     "zdjęcie.jpg"
 ```
 
 

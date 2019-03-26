@@ -105,6 +105,9 @@ odl_km
 #> [1] 228 101 195
 ```
 
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Wiele funkcji w R jest zwektoryzowanych, w efekcie powyższy przykład możnaby zastąpić kodem `odl_km = odl_mile * 1.609`. 
+Jest to jednak możliwe w ten sposób, ponieważ mnożenie jest w niewidzialny sposób dla użytkownika rozpisane jako pętla for.</div>\EndKnitrBlock{rmdinfo}
+
 ### Zastosowanie w funkcjach
 
 
@@ -128,7 +131,9 @@ mile_na_km(odleglosci_mile)
 
 
 
-## Pętla while 
+## Pętla while
+
+
 
 <!--     pętla for stosowana w sytuacji, gdy ilość wykonań kodu jest znana przed rozpoczęciem działania pętli -->
 <!--     pętle while i repeat są stosowana gdy ilość wykonań nie jest znana przed zakończeniem działania pętli -->
@@ -259,8 +264,14 @@ apply(pomiary, MARGIN = 1, FUN = mean)
 #> [1] 4.83 3.60 1.40
 ```
 
-<!-- other (vapply, etc) -->
-<!-- purrr -->
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">W R istnieje cała rodzina funkcji poświęcona programowaniu funkcyjnemu.
+Oprócz najczęściej używanych wymienionych powyżej, `lapply()` i `apply()`, istnieją również takie funkcje jak `sapply()`, `vapply()`, `tapply()`, `mapply()` i inne.</div>\EndKnitrBlock{rmdinfo}
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Pakiet **purrr** oferuje ulepszone i rozszerzone narzędzia do programowania funkcyjnego.
+Przykładowo, odpowiednikiem funkcji `lapply()` w pakiecie **purrr** jest funkcja `map()`.
+Ma ona dodatkowo kilka kolejnych wariantów, np. `map_df()` - która przyjmuje jako wejście listy, ale zwraca ramki danych, czy `map_dbl()` - która również przyjmuje listy, ale zwraca wartości zmiennoprzecinkowe.</div>\EndKnitrBlock{rmdinfo}
+
+<!-- link to purrr -->
 
 ## Zadania
 
@@ -329,3 +340,10 @@ for (i in c(1, 2, 3)){
   }
 }
 ```
+
+<!-- stworz for 1 -->
+<!-- stworz for 2 -->
+<!-- stworz while 1 -->
+<!-- lapply 1 -->
+<!-- lapply 2 -->
+<!-- apply 1 -->

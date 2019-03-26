@@ -243,9 +243,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy</a></li>
 <li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#wczytywanie-plikow-tekstowych"><i class="fa fa-check"></i><b>9.2</b> Wczytywanie plików tekstowych</a></li>
 <li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#zapisywanie-plikow-tekstowych"><i class="fa fa-check"></i><b>9.3</b> Zapisywanie plików tekstowych</a></li>
-<li class="chapter" data-level="9.4" data-path="io.html"><a href="io.html#inne-formaty"><i class="fa fa-check"></i><b>9.4</b> Inne formaty</a></li>
-<li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#dziaania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.5</b> Działania na plikach i folderach</a></li>
-<li class="chapter" data-level="9.6" data-path="io.html"><a href="io.html#zadania-8"><i class="fa fa-check"></i><b>9.6</b> Zadania</a></li>
+<li class="chapter" data-level="9.4" data-path="io.html"><a href="io.html#formaty-r"><i class="fa fa-check"></i><b>9.4</b> Formaty R</a></li>
+<li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#arkusze-kalkulacyjne"><i class="fa fa-check"></i><b>9.5</b> Arkusze kalkulacyjne</a></li>
+<li class="chapter" data-level="9.6" data-path="io.html"><a href="io.html#dane-internetowe"><i class="fa fa-check"></i><b>9.6</b> Dane internetowe</a></li>
+<li class="chapter" data-level="9.7" data-path="io.html"><a href="io.html#inne-formaty"><i class="fa fa-check"></i><b>9.7</b> Inne formaty</a></li>
+<li class="chapter" data-level="9.8" data-path="io.html"><a href="io.html#dziaania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.8</b> Działania na plikach i folderach</a></li>
+<li class="chapter" data-level="9.9" data-path="io.html"><a href="io.html#zadania-8"><i class="fa fa-check"></i><b>9.9</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>II Przykłady</b></span></li>
 <li class="part"><span><b>III Narzędzia</b></span></li>
@@ -368,6 +371,12 @@ odl_mile_l =<span class="st"> </span><span class="kw">seq_along</span>(odl_mile)
 }
 odl_km
 <span class="co">#&gt; [1] 228 101 195</span></code></pre>
+
+<div class="rmdinfo">
+Wiele funkcji w R jest zwektoryzowanych, w efekcie powyższy przykład możnaby zastąpić kodem <code>odl_km = odl_mile * 1.609</code>.
+Jest to jednak możliwe w ten sposób, ponieważ mnożenie jest w niewidzialny sposób dla użytkownika rozpisane jako pętla for.
+</div>
+
 </div>
 <div id="zastosowanie-w-funkcjach" class="section level3">
 <h3><span class="header-section-number">8.1.3</span> Zastosowanie w funkcjach</h3>
@@ -465,8 +474,20 @@ sr_dzien
 <span class="co">#&gt;    1.80    4.17    3.87</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">apply</span>(pomiary, <span class="dt">MARGIN =</span> <span class="dv">1</span>, <span class="dt">FUN =</span> mean)
 <span class="co">#&gt; [1] 4.83 3.60 1.40</span></code></pre>
-<!-- other (vapply, etc) -->
-<!-- purrr -->
+
+<div class="rmdinfo">
+W R istnieje cała rodzina funkcji poświęcona programowaniu funkcyjnemu.
+Oprócz najczęściej używanych wymienionych powyżej, <code>lapply()</code> i <code>apply()</code>, istnieją również takie funkcje jak <code>sapply()</code>, <code>vapply()</code>, <code>tapply()</code>, <code>mapply()</code> i inne.
+</div>
+
+
+<div class="rmdinfo">
+Pakiet <strong>purrr</strong> oferuje ulepszone i rozszerzone narzędzia do programowania funkcyjnego.
+Przykładowo, odpowiednikiem funkcji <code>lapply()</code> w pakiecie <strong>purrr</strong> jest funkcja <code>map()</code>.
+Ma ona dodatkowo kilka kolejnych wariantów, np. <code>map_df()</code> - która przyjmuje jako wejście listy, ale zwraca ramki danych, czy <code>map_dbl()</code> - która również przyjmuje listy, ale zwraca wartości zmiennoprzecinkowe.
+</div>
+
+<!-- link to purrr -->
 </div>
 <div id="zadania-7" class="section level2">
 <h2><span class="header-section-number">8.4</span> Zadania</h2>
@@ -520,6 +541,12 @@ Ile razy zostanie wyświetlony tekst <code>&quot;Działa!&quot;</code>?</li>
       <span class="kw">print</span>(<span class="st">&quot;Działa!&quot;</span>)
   }
 }</code></pre>
+<!-- stworz for 1 -->
+<!-- stworz for 2 -->
+<!-- stworz while 1 -->
+<!-- lapply 1 -->
+<!-- lapply 2 -->
+<!-- apply 1 -->
 
 </div>
 </div>
