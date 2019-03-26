@@ -25,7 +25,7 @@
 <meta name="author" content="Jakub Nowosad">
 
 
-<meta name="date" content="2019-03-25">
+<meta name="date" content="2019-03-26">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -244,7 +244,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#wczytywanie-plikow-tekstowych"><i class="fa fa-check"></i><b>9.2</b> Wczytywanie plików tekstowych</a></li>
 <li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#zapisywanie-plikow-tekstowych"><i class="fa fa-check"></i><b>9.3</b> Zapisywanie plików tekstowych</a></li>
 <li class="chapter" data-level="9.4" data-path="io.html"><a href="io.html#inne-formaty"><i class="fa fa-check"></i><b>9.4</b> Inne formaty</a></li>
-<li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#zadania-8"><i class="fa fa-check"></i><b>9.5</b> Zadania</a></li>
+<li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#dziaania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.5</b> Działania na plikach i folderach</a></li>
+<li class="chapter" data-level="9.6" data-path="io.html"><a href="io.html#zadania-8"><i class="fa fa-check"></i><b>9.6</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>II Przykłady</b></span></li>
 <li class="part"><span><b>III Narzędzia</b></span></li>
@@ -329,6 +330,13 @@ Ustawienie folderu roboczego ma też miejsce przy tworzeniu nowego lub otwierani
 Przykładowo, mamy plik <code>dane_meteo.csv</code>, którego pełna ścieżka to <code>home/jakub/Documents/elp/pliki/dane_meteo.csv</code>.
 Z poziomu R ten plik jest widoczny zarówno jako <code>home/jakub/Documents/elp/pliki/dane_meteo.csv</code>, ale też w postaci <code>pliki/dane_meteo.csv</code><a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>.
 Używanie ścieżek względnych jest rekomendowane, ponieważ znacząco upraszcza pracę, gdy dane/obliczenia przenosi się pomiędzy różnymi komputerami lub gdy współpracuje się z innymi osobami.</p>
+
+<div class="rmdinfo">
+<h1 id="windows--"><span class="header-section-number">9.1</span> Windows -<br />
+</h1>
+# Unix - /
+</div>
+
 <!--project-oriented workflow -->
 <!-- Adopt a project-oriented workflow -->
 <!-- How? -->
@@ -406,6 +414,7 @@ W takich przypadkach warto użyć alternatywnych funkcji, np. <code>read_csv()</
 </div>
 <div id="inne-formaty" class="section level2">
 <h2><span class="header-section-number">9.4</span> Inne formaty</h2>
+<!-- serializacja? -->
 <!-- - RDS -->
 <!-- - Excel -->
 <!-- - Internet -->
@@ -413,9 +422,16 @@ W takich przypadkach warto użyć alternatywnych funkcji, np. <code>read_csv()</
 <!-- - bazy danych -->
 <!-- - pliki przestrzenne -->
 <!-- - json -->
+<!-- tworzenie polaczen -->
+</div>
+<div id="dziaania-na-plikach-i-folderach" class="section level2">
+<h2><span class="header-section-number">9.5</span> Działania na plikach i folderach</h2>
+<!-- dir.create() -->
+<!-- file.remove() -->
+<!-- remove folder -->
 </div>
 <div id="zadania-8" class="section level2">
-<h2><span class="header-section-number">9.5</span> Zadania</h2>
+<h2><span class="header-section-number">9.6</span> Zadania</h2>
 <!-- wczytaj jeden format, zapisz inny -->
 <!-- automatycznie wczytaj dwa pliki -->
 <!-- wczytaj, zamien, zapisz -->
