@@ -175,4 +175,4 @@ W przypadkach, gdy konieczne jest stworzenie nowego archiwum ZIP lub rozpakowani
 <!-- automatycznie wczytaj dwa pliki -->
 <!-- wczytaj, zamien, zapisz -->
 <!-- napisz funkcje do zamiany -->
-
+<!-- pobierz, zamien, zapisz, usun stary plik -->
