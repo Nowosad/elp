@@ -1,7 +1,7 @@
 
 # Tekst {#tekst}
 
-Więcej na temat przetwarzania tekstu można znaleźć w rozdziale ["Strings"](https://r4ds.had.co.nz/strings.html) książki R for Data Science [@grolemund_r_2016].
+Więcej na temat przetwarzania tekstu można znaleźć w rozdziale ["Strings"](https://r4ds.had.co.nz/strings.html) książki R for Data Science [@wickham2016r].
 
 Typ znakowy jest określany poprzez użycie cudzysłowia `"` lub `'`.
 Ważne tutaj jest, aby rozpoczynać i kończyć tekst tym samym cudzysłowiem.
