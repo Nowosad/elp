@@ -136,23 +136,30 @@ writexl::write_xlsx(meteo, "pliki/dane_meteo.xlsx")
 ## Dane internetowe
 
 ```{r}
-# download.file()
+download.file("", destfile = "")
+```
+
+```{block2 type="rmdinfo"}
+`download.file()` `mode`
 ```
 
 ## Inne formaty
 
 <!-- serializacja? -->
-<!-- - bazy danych -->
-<!-- - pliki przestrzenne -->
-<!-- - json -->
+<!-- bazy danych -->
+<!-- pliki przestrzenne -->
+<!-- json -->
 <!-- tworzenie polaczen -->
 
 ## Działania na plikach i folderach
 
-<!-- dir.create() -->
-<!-- file.remove() -->
-<!-- unlink -->
-<!-- remove folder -->
+`dir.create("dane")`
+
+`dir.exists("dane")`, `unlink("dane", recursive = TRUE)`
+
+`zip()`, `unzip()`
+
+`file.exist()`, `file.remove()`
 
 ## Zadania
 
