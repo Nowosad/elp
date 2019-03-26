@@ -36,13 +36,6 @@ Używanie ścieżek względnych jest rekomendowane, ponieważ znacząco upraszcz
 Prawy ukośnik jest rekomendowany, ponieważ działa on zarówno na Windowsach, jak i komputerach z systemami MacOS czy Linux.
 ```
 
-<!--project-oriented workflow -->
-<!-- Adopt a project-oriented workflow -->
-<!-- How? -->
-<!-- • dedicated directory -->
-<!-- • RStudio Project -->
-<!-- • Git repo, probably syncing to a remote -->
-<!-- + use a blank slate, restart often -->
 <!-- footnote with fs and here pacakges -->
 
 ## Wczytywanie plików tekstowych
