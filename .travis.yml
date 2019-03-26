@@ -15,6 +15,7 @@ install:
   - R -e "install.packages('tinytex')"
   - R -e "install.packages('tibble')"
   - R -e "install.packages('kableExtra')"
+  - R -e "install.packages('readxl')"
   - R -e "tinytex::install_tinytex()"
 
 script:
