@@ -402,7 +402,6 @@ Jest to jednak możliwe w ten sposób, ponieważ mnożenie jest w niewidzialny s
 <!-- `next`, `break` -
 https://adv-r.hadley.nz/control-flow.html#loops -->
 <!-- `while`, `repeat` -->
-<!-- block - R nie ma do {action} while (condition) -->
 <pre class="sourceCode r"><code class="sourceCode r"><span class="cf">while</span> (warunek){
     wykonuj operację tak długo jak warunek jest spełniony
 }</code></pre>
@@ -414,6 +413,13 @@ liczba_dni =<span class="st"> </span><span class="dv">0</span>
 }
 liczba_dni
 <span class="co">#&gt; [1] 535</span></code></pre>
+
+<div class="rmdinfo">
+W wielu językach występuje również pętla do, której działanie wygląda w ten sposób:
+<code>do {wykonuj operację} while (warunek)</code>.
+Tego typu pętli nie ma w R.
+</div>
+
 </div>
 <div id="programowanie-funkcyjne" class="section level2">
 <h2><span class="header-section-number">8.3</span> Programowanie funkcyjne</h2>

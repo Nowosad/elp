@@ -133,8 +133,6 @@ mile_na_km(odleglosci_mile)
 
 ## Pętla while
 
-
-
 <!--     pętla for stosowana w sytuacji, gdy ilość wykonań kodu jest znana przed rozpoczęciem działania pętli -->
 <!--     pętle while i repeat są stosowana gdy ilość wykonań nie jest znana przed zakończeniem działania pętli -->
 <!-- są one bardziej elastyczne, ale też rzadziej używane -->
@@ -145,7 +143,7 @@ mile_na_km(odleglosci_mile)
 https://adv-r.hadley.nz/control-flow.html#loops -->
 <!-- `while`, `repeat` -->
 
-<!-- block - R nie ma do {action} while (condition) -->
+
 
 
 ```r
@@ -167,6 +165,12 @@ while(budzet > 0 && budzet < 200){
 liczba_dni
 #> [1] 535
 ```
+
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">W wielu językach występuje również pętla do, której działanie wygląda w ten sposób:
+`do {wykonuj operację} while (warunek)`.
+Tego typu pętli nie ma w R.</div>\EndKnitrBlock{rmdinfo}
+
 
 ## Programowanie funkcyjne
 
