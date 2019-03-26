@@ -161,6 +161,30 @@ liczba_dni
 
 ## Programowanie funkcyjne
 
+```{r}
+konwersja_temp = function(temperatura_f){
+    (temperatura_f - 32) / 1.8
+}
+```
+
+```{r}
+pomiary_f_lista = list(
+  miastoA = c(61, 14, 21),
+  miastoB = c(43, 52, 30),
+  miastoC = c(41, 42, 33)
+)
+pomiary_f_lista
+```
+
+```{r, error=TRUE}
+konwersja_temp(pomiary_f_lista)
+```
+
+```{r}
+pomiary_c_lista = lapply(pomiary_f_lista, FUN = konwersja_temp)
+pomiary_c_lista
+```
+
 <!-- lapply -->
 <!-- \@ref(dzialania-na-wektorach) -->
 <!-- wektoryzacja-->
