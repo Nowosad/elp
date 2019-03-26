@@ -248,7 +248,7 @@ str_detect(y, pattern = "ko(łdr|rdł)a")
 
 <!-- https://stringr.tidyverse.org/articles/regular-expressions.html -->
 Umiejętności używania wyrażeń regularnych można trenować używając różnych zasobów internetowych, np. strony https://regexr.com/, https://regex101.com/, czy https://regexcrossword.com/.
-Pomocne w zrozumieniu bardziej zaawansowanych elementów wyrażeń regularncych może być też prezentacja [Best of Fluent 2012: /Reg(exp){2}lained/: Demystifying Regular Expressions](https://www.youtube.com/watch?v=EkluES9Rvak) oraz książka Mastering Regular Expressions [@ref].
+Pomocne w zrozumieniu bardziej zaawansowanych elementów wyrażeń regularncych może być też prezentacja [Best of Fluent 2012: /Reg(exp){2}lained/: Demystifying Regular Expressions](https://www.youtube.com/watch?v=EkluES9Rvak) oraz książka Mastering Regular Expressions [@friedl2006mastering].
 <!-- https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124/ref=sr_1_1?ie=UTF8&qid=1464113797&sr=8-1&keywords=mastering+regular+expressions -->
 <!-- https://www.rstudio.com/resources/cheatsheets/#stringr -->
 
