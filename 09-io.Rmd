@@ -90,15 +90,52 @@ W takich przypadkach warto użyć alternatywnych funkcji, np. `read_csv()` i `wr
 
 ## Formaty R
 
-<!-- rda -->
-<!-- RDS -->
-<!-- dane z pakietów -->
+```{r}
+meteo$nazwa_stacji = as.factor(meteo$nazwa_stacji)
+str(meteo)
+```
+
+```{r, eval=FALSE}
+saveRDS(meteo, "pliki/dane_meteo.rds")
+```
+
+```{r}
+meteo_rds = readRDS("pliki/dane_meteo.rds")
+str(meteo_rds)
+```
+
+```{block2 type="rmdinfo"}
+`load()` i `save()
+```
+
+```{r, eval=FALSE}
+data(package = "datasets")
+```
+
+```{r}
+data("faithful", package = "datasets")
+head(faithful)
+```
 
 ## Arkusze kalkulacyjne
 
+```{r}
+library(readxl)
+meteo_z_xl = read_excel("pliki/dane_meteo.xlsx")
+meteo_z_xl
+```
 
+```{r, echo=FALSE, eval=FALSE}
+writexl::write_xlsx(meteo, "pliki/dane_meteo.xlsx")
+```
+
+`write_xlsx()` z pakietu **writexl**
 
 ## Dane internetowe
+
+```{r}
+# download.file()
+```
 
 ## Inne formaty
 
