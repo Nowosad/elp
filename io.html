@@ -497,15 +497,15 @@ meteo_z_xl
 </div>
 <div id="dziaania-na-plikach-i-folderach" class="section level2">
 <h2><span class="header-section-number">9.8</span> Działania na plikach i folderach</h2>
-<p>Z poziomu R możliwe jest również zarządzanie plikami i folderami na dysku.
+<p>Z poziomu R możliwe jest również zarządzanie folderami i plikami na dysku.
 Do tworzenia nowych folderów służy funkcja <code>dir.create()</code>, np. <code>dir.create(&quot;dane&quot;)</code> stworzy nowy podfolder o nazwie <code>&quot;dane&quot;</code>.
 Sprawdzenie czy folder już istnieje możliwe jest używając funkcji <code>dir.exists()</code>, np. <code>dir.exists(&quot;dane&quot;)</code>, która zwraca wartość <code>TRUE</code> gdy folder o tej nazwie istnieje lub <code>FALSE</code> gdy takiego folderu nie ma.
 Do usuwania istniejących folderów służy funkcja <code>unlink()</code>.
 W jej przypadku konieczne jest podanie, oprócz nazwy folder do usunięcia, argumentu <code>recursive = TRUE</code>.
 Przykładowo, aby usunąć folder <code>&quot;dane&quot;</code> należy wpisać <code>unlink(&quot;dane&quot;, recursive = TRUE)</code>.</p>
-<p><code>dir.exists(&quot;dane&quot;)</code>, <code>unlink(&quot;dane&quot;, recursive = TRUE)</code></p>
-<p><code>zip()</code>, <code>unzip()</code></p>
-<p><code>file.exist()</code>, <code>file.remove()</code></p>
+<p>Sprawdzenie czy plik istnieje na dysku można wykonać używając <code>file.exist()</code>, a usunąć go za pomocą <code>file.remove()</code>.
+Obie funkcje przyjmują jako wejście wektor znakowy zawierający nazwy plików do sprawdzenia czy usunięcia.</p>
+<p>W przypadkach, gdy konieczne jest stworzenie nowego archiwum ZIP lub rozpakowanie istniejącego pliku w tym formacie można użyć funkcji <code>zip()</code> oraz <code>unzip()</code>.<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a></p>
 </div>
 <div id="zadania-8" class="section level2">
 <h2><span class="header-section-number">9.9</span> Zadania</h2>
@@ -531,6 +531,7 @@ Przykładowo, aby usunąć folder <code>&quot;dane&quot;</code> należy wpisać 
 <hr />
 <ol start="33">
 <li id="fn33"><p>Jeżeli poprawnie ustawiliśmy folder roboczy.<a href="io.html#fnref33" class="footnote-back">↩</a></p></li>
+<li id="fn34"><p>Na komputerach z systemem Windows wymagane jest posiadanie zainstalowanego programu do rozpakowywania plików ZIP.<a href="io.html#fnref34" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
