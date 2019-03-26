@@ -36,7 +36,9 @@ for (i in odl_mile) {
 #> [1] 195
 ```
 
-<!-- i block -->
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Tradycyjnie zmienna w pętli for nazywana jest `i`, a w przypadku zagnieżdzonych pętli druga zmienna nazywana jest `j`.
+Nazywanie zmiennych w ten sposób nie jest jednak obowiązkowe.
+W powyższym przypadku możliwe byłoby nazwanie zmiennej, np. `pomiar`: `for (pomiar in odl_mile)...`</div>\EndKnitrBlock{rmdinfo}
 
 
 ```r
@@ -106,7 +108,7 @@ odl_km
 ```
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Wiele funkcji w R jest zwektoryzowanych, w efekcie powyższy przykład możnaby zastąpić kodem `odl_km = odl_mile * 1.609`. 
-Jest to jednak możliwe w ten sposób, ponieważ mnożenie jest w niewidzialny sposób dla użytkownika rozpisane jako pętla for.</div>\EndKnitrBlock{rmdinfo}
+Taka zamiana jest jednak możliwa w ten sposób, ponieważ mnożenie jest w niewidzialny sposób dla użytkownika rozpisane jako pętla for.</div>\EndKnitrBlock{rmdinfo}
 
 ### Zastosowanie w funkcjach
 
@@ -133,15 +135,13 @@ mile_na_km(odleglosci_mile)
 
 ## Pętla while
 
-<!--     pętla for stosowana w sytuacji, gdy ilość wykonań kodu jest znana przed rozpoczęciem działania pętli -->
-<!--     pętle while i repeat są stosowana gdy ilość wykonań nie jest znana przed zakończeniem działania pętli -->
-<!-- są one bardziej elastyczne, ale też rzadziej używane -->
+W przypadku pętli for znana jest liczba powtórzeń przed rozpoczęciem jej działania.
+Inny rodzaj pętli, while, jest natomiast stosowany gdy nie wiadomo ile potwórzeń jest koniecznych.
+W efekcie pętla while jest bardziej elastyczna, co jest zarazem jej atutem, ale też wadą.
+Bardziej elastyczne metody charakteryzuje również większa liczba potencjalnych sytuacji, a w efekcie problemów.
 
 <!-- https://rstudio-education.github.io/hopr/loops.html#while-loops -->
-
-<!-- `next`, `break` -
 https://adv-r.hadley.nz/control-flow.html#loops -->
-<!-- `while`, `repeat` -->
 
 
 ```r
@@ -170,6 +170,8 @@ Pętla repeat powtarza pewnien kod aż do momentu przerwania go przez użytkowni
 Działanie pętli do natomiast wygląda w następujący sposób:
 `do {wykonuj operację} while (warunek)`.
 Pętla do nie występuje w R.</div>\EndKnitrBlock{rmdinfo}
+
+Dodatkowe informacje na temat pętli for and while można znaleźć w sekcji [Loops](https://adv-r.hadley.nz/control-flow.html#loops) książki Advanced R [@wickham2014advanced]
 
 ## Programowanie funkcyjne
 
@@ -274,6 +276,7 @@ Oprócz najczęściej używanych wymienionych powyżej, `lapply()` i `apply()`, 
 Przykładowo, odpowiednikiem funkcji `lapply()` w pakiecie **purrr** jest funkcja `map()`.
 Ma ona dodatkowo kilka kolejnych wariantów, np. `map_df()` - która przyjmuje jako wejście listy, ale zwraca ramki danych, czy `map_dbl()` - która również przyjmuje listy, ale zwraca wartości zmiennoprzecinkowe.</div>\EndKnitrBlock{rmdinfo}
 
+<!-- https://r4ds.had.co.nz/iteration.html#the-map-functions -->
 <!-- link to purrr -->
 
 ## Zadania

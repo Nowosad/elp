@@ -332,7 +332,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="co">#&gt; [1] 228</span>
 <span class="co">#&gt; [1] 101</span>
 <span class="co">#&gt; [1] 195</span></code></pre>
-<!-- i block -->
+
+<div class="rmdinfo">
+Tradycyjnie zmienna w pętli for nazywana jest <code>i</code>, a w przypadku zagnieżdzonych pętli druga zmienna nazywana jest <code>j</code>.
+Nazywanie zmiennych w ten sposób nie jest jednak obowiązkowe.
+W powyższym przypadku możliwe byłoby nazwanie zmiennej, np. <code>pomiar</code>: <code>for (pomiar in odl_mile)...</code>
+</div>
+
 <pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) {
   <span class="kw">print</span>(odl_mile[i] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)
 }
@@ -374,7 +380,7 @@ odl_km
 
 <div class="rmdinfo">
 Wiele funkcji w R jest zwektoryzowanych, w efekcie powyższy przykład możnaby zastąpić kodem <code>odl_km = odl_mile * 1.609</code>.
-Jest to jednak możliwe w ten sposób, ponieważ mnożenie jest w niewidzialny sposób dla użytkownika rozpisane jako pętla for.
+Taka zamiana jest jednak możliwa w ten sposób, ponieważ mnożenie jest w niewidzialny sposób dla użytkownika rozpisane jako pętla for.
 </div>
 
 </div>
@@ -395,13 +401,12 @@ Jest to jednak możliwe w ten sposób, ponieważ mnożenie jest w niewidzialny s
 </div>
 <div id="petla-while" class="section level2">
 <h2><span class="header-section-number">8.2</span> Pętla while</h2>
-<!--     pętla for stosowana w sytuacji, gdy ilość wykonań kodu jest znana przed rozpoczęciem działania pętli -->
-<!--     pętle while i repeat są stosowana gdy ilość wykonań nie jest znana przed zakończeniem działania pętli -->
-<!-- są one bardziej elastyczne, ale też rzadziej używane -->
+<p>W przypadku pętli for znana jest liczba powtórzeń przed rozpoczęciem jej działania.
+Inny rodzaj pętli, while, jest natomiast stosowany gdy nie wiadomo ile potwórzeń jest koniecznych.
+W efekcie pętla while jest bardziej elastyczna, co jest zarazem jej atutem, ale też wadą.
+Bardziej elastyczne metody charakteryzuje również większa liczba potencjalnych sytuacji, a w efekcie problemów.</p>
 <!-- https://rstudio-education.github.io/hopr/loops.html#while-loops -->
-<!-- `next`, `break` -
-https://adv-r.hadley.nz/control-flow.html#loops -->
-<!-- `while`, `repeat` -->
+<p><a href="https://adv-r.hadley.nz/control-flow.html#loops" class="uri">https://adv-r.hadley.nz/control-flow.html#loops</a> –&gt;</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="cf">while</span> (warunek){
     wykonuj operację tak długo jak warunek jest spełniony
 }</code></pre>
@@ -422,6 +427,7 @@ Działanie pętli do natomiast wygląda w następujący sposób:
 Pętla do nie występuje w R.
 </div>
 
+<p>Dodatkowe informacje na temat pętli for and while można znaleźć w sekcji <a href="https://adv-r.hadley.nz/control-flow.html#loops">Loops</a> książki Advanced R <span class="citation">(Wickham <a href="#ref-wickham2014advanced">2014</a>)</span></p>
 </div>
 <div id="programowanie-funkcyjne" class="section level2">
 <h2><span class="header-section-number">8.3</span> Programowanie funkcyjne</h2>
@@ -495,6 +501,7 @@ Przykładowo, odpowiednikiem funkcji <code>lapply()</code> w pakiecie <strong>pu
 Ma ona dodatkowo kilka kolejnych wariantów, np. <code>map_df()</code> - która przyjmuje jako wejście listy, ale zwraca ramki danych, czy <code>map_dbl()</code> - która również przyjmuje listy, ale zwraca wartości zmiennoprzecinkowe.
 </div>
 
+<!-- https://r4ds.had.co.nz/iteration.html#the-map-functions -->
 <!-- link to purrr -->
 </div>
 <div id="zadania-7" class="section level2">
@@ -556,6 +563,12 @@ Ile razy zostanie wyświetlony tekst <code>&quot;Działa!&quot;</code>?</li>
 <!-- lapply 2 -->
 <!-- apply 1 -->
 
+</div>
+</div>
+<h3>Bibliografia</h3>
+<div id="refs" class="references">
+<div id="ref-wickham2014advanced">
+<p>Wickham, Hadley. 2014. <em>Advanced R</em>. Chapman and Hall/CRC.</p>
 </div>
 </div>
             </section>
