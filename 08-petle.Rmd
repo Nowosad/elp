@@ -136,8 +136,6 @@ bench::mark(mile_na_kilometry(x),
 https://adv-r.hadley.nz/control-flow.html#loops -->
 <!-- `while`, `repeat` -->
 
-
-
 ```{r, eval=FALSE}
 while (warunek){
     wykonuj operację tak długo jak warunek jest spełniony
@@ -172,7 +170,6 @@ Działanie pętli do natomiast wygląda w następujący sposób:
 `do {wykonuj operację} while (warunek)`.
 Pętla do nie występuje w R.
 ```
-
 
 ## Programowanie funkcyjne
 
