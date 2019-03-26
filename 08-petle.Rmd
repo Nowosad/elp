@@ -304,3 +304,10 @@ for (i in c(1, 2, 3)){
   }
 }
 ```
+
+<!-- stworz for 1 -->
+<!-- stworz for 2 -->
+<!-- stworz while 1 -->
+<!-- lapply 1 -->
+<!-- lapply 2 -->
+<!-- apply 1 -->
