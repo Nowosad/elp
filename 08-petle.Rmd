@@ -82,6 +82,11 @@ for (i in odl_mile_l) {
 odl_km
 ```
 
+```{block2 type="rmdinfo"}
+Wiele funkcji w R jest zwektoryzowanych, w efekcie powyższy przykład możnaby zastąpić kodem `odl_km = odl_mile * 1.609`. 
+Jest to jednak możliwe w ten sposób, ponieważ mnożenie jest w niewidzialny sposób dla użytkownika rozpisane jako pętla for.
+```
+
 ### Zastosowanie w funkcjach
 
 ```{r}
