@@ -299,6 +299,12 @@ konwersja_f_to_c(pomiary_f_lista)
 
 Języki obsługujące programowanie funkcyjne posiadają jednak szereg narzędzi do przetwarzania funkcji, które zbiorczo są nazywane funkcjonałami (ang. *functional*).
 Funkcjonały to funkcje, które przyjmują inne funkcje jako argumenty.
+
+```{block2 type="rmdinfo"}
+W R istnieje cała rodzina funkcji poświęcona programowaniu funkcyjnemu.
+Oprócz najczęściej używanych, `lapply()` i `apply()`, istnieją również takie funkcje jak `sapply()`, `vapply()`, `tapply()`, `mapply()` i inne.
+```
+
 Jednym z podstawowych funkcjonałów w R jest `lapply()`.
 Funkcjonał `lapply()` przyjmuje jako pierwszy arugment wektor atomowy lub listę, a następnie przetwarza go używając funkcji podanej jako drugi argument `FUN`.
 
@@ -316,13 +322,22 @@ pomiary_c_lista
 <!-- http://alyssafrazee.com/2014/01/29/vectorization.html -->
 <!-- *apply -->
 
+Programowanie funkcyjne można też stosować do innych klas obiektów.
+Poniższa ramka danych `pomiary` zawiera trzy kolumny z pomiarami temperatury dla kolejnych miast. 
+Dla każdego miasta wykonano jeden pomiar dziennie.
+
 ```{r}
 pomiary = data.frame(
   miastoA = c(6.1, 1.4, -2.1),
   miastoB = c(4.3, 5.2, 3.0),
   miastoC = c(4.1, 4.2, 3.3)
-  )
+)
+pomiary
 ```
+
+Naszym celem jest wyliczenie średnich - zarówno średniej wartości dla każdego miasta (kolumny) oraz średniej wartości dla każdego dnia (wiersze).
+Możemy to zrobić używając pętli `for`.
+Najpierw tworzymy pusty wektor `sr_miasto` o długości oczekiwanego wyniku, a następnie wyliczamy średnią dla kolejnych kolumn i dodajemy ją do tego wektora.
 
 ```{r}
 sr_miasto = vector("numeric", length = ncol(pomiary))
@@ -332,6 +347,8 @@ for(i in seq_len(ncol(pomiary))){
 sr_miasto
 ```
 
+W kolejnym kroku tworzymy pusty wektor `sr_dzien` również o długości oczekiwanego wyniku, a następnie wyliczamy średnią dla kolejnych wierszy i dodajemy ją do tego wektora.
+
 ```{r}
 sr_dzien = vector("numeric", length = nrow(pomiary))
 for(i in seq_len(nrow(pomiary))){
@@ -340,17 +357,19 @@ for(i in seq_len(nrow(pomiary))){
 sr_dzien
 ```
 
+Alternatywą w takich przypadkach jest użycie programowania funkcyjnego, a w szczególności funkcjonału `apply()`.
+Oczekuje on co najmniej trzech argumentów, `X` - obiektu wejściowego którym mogą być między innymi ramki danych czy macierze, `MARGIN` określającego czy wartości będą grupowane po wierszach czy kolumnach, oraz `FUN` zawierającego używaną funkcję.
+
+W poniższym przypadku obiektem wejściowym jest ramka danych `pomiary`, `MARGIN = 2` oznacza wyliczanie oddzielnie dla kolejnych kolumn przy użyciu zdefiniowanej funkcji `mean()`.
+
 ```{r}
 apply(pomiary, MARGIN = 2, FUN = mean)
 ```
 
+Podobne obliczenie, ale dla kolejnych wierszy można uzyskać zamieniając argument `MARGIN` na `1`.
+
 ```{r}
 apply(pomiary, MARGIN = 1, FUN = mean)
-```
-
-```{block2 type="rmdinfo"}
-W R istnieje cała rodzina funkcji poświęcona programowaniu funkcyjnemu.
-Oprócz najczęściej używanych wymienionych powyżej, `lapply()` i `apply()`, istnieją również takie funkcje jak `sapply()`, `vapply()`, `tapply()`, `mapply()` i inne.
 ```
 
 ```{block2 type="rmdinfo"}
