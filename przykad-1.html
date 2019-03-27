@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>6 Tekst | Elementarz programisty</title>
-  <meta name="description" content="6 Tekst | Elementarz programisty">
+  <title>10 Przykład 1 | Elementarz programisty</title>
+  <meta name="description" content="10 Przykład 1 | Elementarz programisty">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="6 Tekst | Elementarz programisty" />
+  <meta property="og:title" content="10 Przykład 1 | Elementarz programisty" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="nowosad/my-minimal-bookdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Tekst | Elementarz programisty" />
+  <meta name="twitter:title" content="10 Przykład 1 | Elementarz programisty" />
   
   
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="proste-obiekty.html">
-<link rel="next" href="zlozone-obiekty.html">
+<link rel="prev" href="io.html">
+<link rel="next" href="zlozone-funkcje.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -310,292 +310,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tekst" class="section level1">
-<h1><span class="header-section-number">6</span> Tekst</h1>
-<p>Więcej na temat przetwarzania tekstu można znaleźć w rozdziale <a href="https://r4ds.had.co.nz/strings.html">“Strings”</a> książki R for Data Science <span class="citation">(Wickham and Grolemund <a href="#ref-wickham2016r">2016</a>)</span>.</p>
-<p>Typ znakowy jest określany poprzez użycie cudzysłowia <code>&quot;</code> lub <code>'</code>.
-Ważne tutaj jest, aby rozpoczynać i kończyć tekst tym samym cudzysłowiem.</p>
-<pre class="sourceCode r"><code class="sourceCode r">t1 =<span class="st"> &quot;kot&quot;</span>
-t2 =<span class="st"> &#39;pies&#39;</span>
-t3 =<span class="st"> &#39;&quot;W teorii, teoria i praktyka są tym samym. W praktyce, nie są.&quot; - Yogi Berra&#39;</span></code></pre>
-<p>W momencie, gdy tekst nie będzie kończył się cudzysłowiem, wykonanie kodu jest niemożliwe.
-Wówczas zamiast znaku <code>&gt;</code>, oznaczającego nową linię wykonywanego kodu, pojawi się znak <code>+</code>.
-Oznacza on, że wykonanie kodu nie może zostać zakończone.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> &quot;Mój pierwszy alfabet</span>
-<span class="st">+</span>
-<span class="st">+</span></code></pre>
-<p>W takiej sytuacji należy nacisnąć klawisz Esc, aby przerwać wykonywanie operacji, a następnie poprawić wpisany kod.</p>
-<div id="aczenie-tekstu" class="section level2">
-<h2><span class="header-section-number">6.1</span> Łączenie tekstu</h2>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">paste</span>(<span class="st">&quot;t&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot; &quot;</span>, <span class="st">&quot;k&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot;t&quot;</span>)
-<span class="co">#&gt; [1] &quot;t o   k o t&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">paste0</span>(<span class="st">&quot;t&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot; &quot;</span>, <span class="st">&quot;k&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot;t&quot;</span>)
-<span class="co">#&gt; [1] &quot;to kot&quot;</span></code></pre>
-<!-- ^[funkcja `str_c()`] -->
-<pre class="sourceCode r"><code class="sourceCode r">imie =<span class="st"> &quot;Olek&quot;</span>
-wiek =<span class="st"> </span><span class="dv">7</span>
-tekst1 =<span class="st"> </span><span class="kw">paste</span>(imie, <span class="st">&quot;ma&quot;</span>, wiek, <span class="st">&quot;lat.&quot;</span>)
-tekst1
-<span class="co">#&gt; [1] &quot;Olek ma 7 lat.&quot;</span></code></pre>
-<!-- sekcja o wyswietlaniu tekstu?? -->
-</div>
-<div id="postawowe-operacje-na-tekscie" class="section level2">
-<h2><span class="header-section-number">6.2</span> Postawowe operacje na tekście</h2>
-<p><span class="citation">(<span class="citeproc-not-found" data-reference-id="R-stringr"><strong>???</strong></span>)</span></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(stringr)</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">toupper</span>(tekst1)
-<span class="co">#&gt; [1] &quot;OLEK MA 7 LAT.&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tolower</span>(tekst1)
-<span class="co">#&gt; [1] &quot;olek ma 7 lat.&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">tekst2 =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;chronologia&quot;</span>, <span class="st">&quot;alfabet&quot;</span>, <span class="st">&quot;hałas&quot;</span>)</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sort</span>(tekst2, <span class="dt">locale =</span> <span class="st">&quot;pl&quot;</span>)
-<span class="co">#&gt; [1] &quot;alfabet&quot;     &quot;chronologia&quot; &quot;hałas&quot;</span>
-<span class="kw">str_sort</span>(tekst2, <span class="dt">locale =</span> <span class="st">&quot;cs&quot;</span>)
-<span class="co">#&gt; [1] &quot;alfabet&quot;     &quot;hałas&quot;       &quot;chronologia&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">tekst3 =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;chronologia &quot;</span>, <span class="st">&quot;alfabet&quot;</span>, <span class="st">&quot; hałas&quot;</span>)
-<span class="kw">str_sort</span>(tekst3, <span class="dt">locale =</span> <span class="st">&quot;pl&quot;</span>)
-<span class="co">#&gt; [1] &quot; hałas&quot;       &quot;alfabet&quot;      &quot;chronologia &quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">tekst3 =<span class="st"> </span><span class="kw">str_trim</span>(tekst3)
-tekst3
-<span class="co">#&gt; [1] &quot;chronologia&quot; &quot;alfabet&quot;     &quot;hałas&quot;</span>
-<span class="kw">str_sort</span>(tekst3, <span class="dt">locale =</span> <span class="st">&quot;pl&quot;</span>)
-<span class="co">#&gt; [1] &quot;alfabet&quot;     &quot;chronologia&quot; &quot;hałas&quot;</span></code></pre>
-</div>
-<div id="wydzielanie-tekstu" class="section level2">
-<h2><span class="header-section-number">6.3</span> Wydzielanie tekstu</h2>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">1</span>, <span class="dt">end =</span> <span class="dv">4</span>)
-<span class="co">#&gt; [1] &quot;Olek&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">9</span>, <span class="dt">end =</span> <span class="dv">14</span>)
-<span class="co">#&gt; [1] &quot;7 lat.&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">9</span>, <span class="dt">end =</span> <span class="dv">-1</span>)
-<span class="co">#&gt; [1] &quot;7 lat.&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">-6</span>, <span class="dt">end =</span> <span class="dv">-1</span>)
-<span class="co">#&gt; [1] &quot;7 lat.&quot;</span></code></pre>
-</div>
-<div id="wyrazenia-regularne" class="section level2">
-<h2><span class="header-section-number">6.4</span> Wyrażenia regularne</h2>
-<!-- https://github.com/VerbalExpressions/JSVerbalExpressions -->
-<!-- https://github.com/richierocks/rebus/blob/master/README.md -->
-<!-- https://www.garrickadenbuie.com/project/regexplain/ -->
-<!-- https://github.com/kevinushey/rex -->
-<p>Wyrażenia regularne (ang. <em>regular expressions</em>), często określane jako <em>regex</em> to sposób opisywanie wzorców tekstu.
-Używając wyrażeń regularnych możliwe jest, między innymi, znajdowanie tekstu lub zamienienie, który spełnia wymagane warunki.
-Wyrażenia regularne są powszechnie używane w wyszukiwarkach internetowych, edytorach tekstu, oraz wielu językach programowania.</p>
-<!-- basic stuff -->
-<pre class="sourceCode r"><code class="sourceCode r">tekst4 =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Magdalena&quot;</span>, <span class="st">&quot;Lena&quot;</span>, <span class="st">&quot;1Lena.csv&quot;</span>, <span class="st">&quot;LLena&quot;</span>, <span class="st">&quot;Helena&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="dv">99</span>)</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="st">&quot;Lena&quot;</span>)
-<span class="co">#&gt; [1] FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="st">&quot;lena&quot;</span>)
-<span class="co">#&gt; [1]  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE</span></code></pre>
-<table>
-<caption><span id="tab:regexoperators">Tabela 6.1: </span>Metaznaki w wyrażeniach regularnych</caption>
-<thead>
-<tr class="header">
-<th align="left">Operator</th>
-<th align="left">Wyjaśnienie</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">^</td>
-<td align="left">Określa początek tekstu/linii</td>
-</tr>
-<tr class="even">
-<td align="left">$</td>
-<td align="left">Określa koniec testu/linii</td>
-</tr>
-<tr class="odd">
-<td align="left">()</td>
-<td align="left">Grupowanie</td>
-</tr>
-<tr class="even">
-<td align="left">|</td>
-<td align="left">Alternatywa (lub)</td>
-</tr>
-<tr class="odd">
-<td align="left">[]</td>
-<td align="left">Wymienia dozwolone znaki</td>
-</tr>
-<tr class="even">
-<td align="left">[^]</td>
-<td align="left">Wymienia niedozwolone znaki</td>
-</tr>
-<tr class="odd">
-<td align="left">*</td>
-<td align="left">Poprzedni znak zostanie wybrany zero lub więcej razy</td>
-</tr>
-<tr class="even">
-<td align="left">+</td>
-<td align="left">Poprzedni znak zostanie wybrany jeden lub więcej razy</td>
-</tr>
-<tr class="odd">
-<td align="left">?</td>
-<td align="left">Poprzedni znak zostanie wybrany zero lub jeden raz</td>
-</tr>
-<tr class="even">
-<td align="left">{n}</td>
-<td align="left">Poprzedni znak zostanie wybrany n razy</td>
-</tr>
-<tr class="odd">
-<td align="left">.</td>
-<td align="left">Jakikolwiek znak oprócz nowej linii ()</td>
-</tr>
-<tr class="even">
-<td align="left">\</td>
-<td align="left">Pozwala na użycie specjalnych znaków</td>
-</tr>
-</tbody>
-</table>
-<p>Wymienione powyżej znaki (np. <code>^</code><!--Kareta--> czy <code>.</code>) określane są jako metaznaki (ang. <em>metacharacters</em>) i mają one specjalne znaczenie.
-W związku z tym, jeżeli chcemy wyszukać tekstu zawierającego specjalny znak, musimy użyć ukośnik wsteczny (<code>\</code>, ang. <em>backslash</em>).
-Istnieje wiele dodatkowych znaków specjalnych, np. <code>\n</code> - nowa linia, <code>\t</code> - tabulator, <code>\d</code> - każdy znak numeryczny (stałoprzecinkowy), <code>\s</code> - znak niedrukowalny, np. spacja, tabulator, nowa linia.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;^L&quot;</span>)
-<span class="co">#&gt; [1] FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;ena$&quot;</span>)
-<span class="co">#&gt; [1]  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;(ena|nna)$&quot;</span>)
-<span class="co">#&gt; [1]  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-Z]&quot;</span>)
-<span class="co">#&gt; [1]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;[0-9]&quot;</span>)
-<span class="co">#&gt; [1] FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;L+&quot;</span>)
-<span class="co">#&gt; [1] FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;^[^L]+&quot;</span>)
-<span class="co">#&gt; [1]  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;\.&quot;</span>)
-<span class="co">#&gt; Error: &#39;\.&#39; is an unrecognized escape in character string starting &quot;&quot;\.&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>)
-<span class="co">#&gt; [1] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE</span></code></pre>
-<!-- block z popularnymi regex -->
-<pre class="sourceCode r"><code class="sourceCode r">y =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kołdra&quot;</span>, <span class="st">&quot;kordła&quot;</span>, <span class="st">&quot;pościel&quot;</span>)
-<span class="kw">str_detect</span>(y, <span class="dt">pattern =</span> <span class="st">&quot;ko(łdr|rdł)a&quot;</span>)</code></pre>
-<!-- https://stringr.tidyverse.org/articles/regular-expressions.html -->
-<p>Umiejętności używania wyrażeń regularnych można trenować używając różnych zasobów internetowych, np. strony <a href="https://regexr.com/" class="uri">https://regexr.com/</a>, <a href="https://regex101.com/" class="uri">https://regex101.com/</a>, czy <a href="https://regexcrossword.com/" class="uri">https://regexcrossword.com/</a>.
-Pomocne w zrozumieniu bardziej zaawansowanych elementów wyrażeń regularncych może być też prezentacja <a href="https://www.youtube.com/watch?v=EkluES9Rvak">Best of Fluent 2012: /Reg(exp){2}lained/: Demystifying Regular Expressions</a> oraz książka Mastering Regular Expressions <span class="citation">(Friedl <a href="#ref-friedl2006mastering">2006</a>)</span>.
-<!-- https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124/ref=sr_1_1?ie=UTF8&qid=1464113797&sr=8-1&keywords=mastering+regular+expressions -->
-<!-- https://www.rstudio.com/resources/cheatsheets/#stringr --></p>
-</div>
-<div id="wydzielanie-tekstu---regex" class="section level2">
-<h2><span class="header-section-number">6.5</span> Wydzielanie tekstu - regex</h2>
-<!-- https://r4ds.had.co.nz/strings.html#extract-matches -->
-<pre class="sourceCode r"><code class="sourceCode r">tekst_pomiary =<span class="st"> &quot;Wrocław: 23, Bydgoszcz: 12, Toruń: 11, Lublin: 14&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_extract</span>(tekst_pomiary, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-Z]*&quot;</span>)
-<span class="co">#&gt; [1] &quot;Wroc&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_extract</span>(tekst_pomiary, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)
-<span class="co">#&gt; [1] &quot;Wrocław&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_extract_all</span>(tekst_pomiary, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)
-<span class="co">#&gt; [[1]]</span>
-<span class="co">#&gt;  [1] &quot;Wrocław&quot;   &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span>
-<span class="co">#&gt;  [6] &quot;&quot;          &quot;&quot;          &quot;Bydgoszcz&quot; &quot;&quot;          &quot;&quot;         </span>
-<span class="co">#&gt; [11] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;Toruń&quot;    </span>
-<span class="co">#&gt; [16] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span>
-<span class="co">#&gt; [21] &quot;&quot;          &quot;Lublin&quot;    &quot;&quot;          &quot;&quot;          &quot;&quot;         </span>
-<span class="co">#&gt; [26] &quot;&quot;          &quot;&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_extract_all</span>(tekst_pomiary, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+&quot;</span>)
-<span class="co">#&gt; [[1]]</span>
-<span class="co">#&gt; [1] &quot;Wrocław&quot;   &quot;Bydgoszcz&quot; &quot;Toruń&quot;     &quot;Lublin&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">tekst_pomiary2 =<span class="st"> &quot;Wrocław: 23, Bydgoszcz: 12, Toruń: 11, Lublin: 14, Gorzów Wielkopolski: 20, Zielona Góra: 19&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_extract_all</span>(tekst_pomiary2, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+&quot;</span>)
-<span class="co">#&gt; [[1]]</span>
-<span class="co">#&gt; [1] &quot;Wrocław&quot;      &quot;Bydgoszcz&quot;    &quot;Toruń&quot;        &quot;Lublin&quot;      </span>
-<span class="co">#&gt; [5] &quot;Gorzów&quot;       &quot;Wielkopolski&quot; &quot;Zielona&quot;      &quot;Góra&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_extract_all</span>(tekst_pomiary2, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[</span><span class="ch">\\</span><span class="st">s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)
-<span class="co">#&gt; [[1]]</span>
-<span class="co">#&gt; [1] &quot;Wrocław&quot;             &quot;Bydgoszcz&quot;           &quot;Toruń&quot;              </span>
-<span class="co">#&gt; [4] &quot;Lublin&quot;              &quot;Gorzów Wielkopolski&quot; &quot;Zielona Góra&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">miasta_pomiary2 =<span class="st"> </span><span class="kw">str_extract_all</span>(tekst_pomiary2,
-                                  <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[</span><span class="ch">\\</span><span class="st">s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)
-miasta_pomiary2
-<span class="co">#&gt; [[1]]</span>
-<span class="co">#&gt; [1] &quot;Wrocław&quot;             &quot;Bydgoszcz&quot;           &quot;Toruń&quot;              </span>
-<span class="co">#&gt; [4] &quot;Lublin&quot;              &quot;Gorzów Wielkopolski&quot; &quot;Zielona Góra&quot;</span></code></pre>
-</div>
-<div id="zamiana-tekstu---regex" class="section level2">
-<h2><span class="header-section-number">6.6</span> Zamiana tekstu - regex</h2>
-<!-- https://r4ds.had.co.nz/strings.html#replacing-matches -->
-<pre class="sourceCode r"><code class="sourceCode r">tekst_pomiary3 =<span class="st"> &quot;Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace</span>(tekst_pomiary3, 
-            <span class="dt">pattern =</span> <span class="st">&quot;.&quot;</span>, 
-            <span class="dt">replacement =</span> <span class="st">&quot;,&quot;</span>)
-<span class="co">#&gt; [1] &quot;,rocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace</span>(tekst_pomiary3, 
-            <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>, 
-            <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>)
-<span class="co">#&gt; [1] &quot;Wrocław: 23,5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace_all</span>(tekst_pomiary3, 
-                <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>, 
-                <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>)
-<span class="co">#&gt; [1] &quot;Wrocław: 23,5, Bydgoszcz: 12,7, Toruń: 11,1, Lublin: 14,3&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">tekst_pomiary4 =<span class="st"> </span><span class="kw">str_replace_all</span>(tekst_pomiary3,
-                                 <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>,
-                                 <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">;&quot;</span>)</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace_all</span>(tekst_pomiary4, 
-                <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>, 
-                <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>)
-<span class="co">#&gt; [1] &quot;Wrocław: 23,5; Bydgoszcz: 12,7; Toruń: 11,1; Lublin: 14,3&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace_all</span>(tekst_pomiary4, 
-                <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+&quot;</span>,
-                <span class="dt">replacement =</span> <span class="st">&quot;&quot;</span>)
-<span class="co">#&gt; [1] &quot;: 23.5; : 12.7; : 11.1; : 14.3&quot;</span></code></pre>
-</div>
-<div id="wyszukiwanie-plikow" class="section level2">
-<h2><span class="header-section-number">6.7</span> Wyszukiwanie plików</h2>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>)
-<span class="co">#&gt; [1] &quot;dane_meteo.csv&quot;  &quot;dane_meteo.rds&quot;  &quot;dane_meteo.xlsx&quot; &quot;dokument.docx&quot;  </span>
-<span class="co">#&gt; [5] &quot;kod.R&quot;           &quot;mapa.png&quot;        &quot;obrazek.png&quot;     &quot;zdjęcie.jpg&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.png$&quot;</span>)
-<span class="co">#&gt; [1] &quot;mapa.png&quot;    &quot;obrazek.png&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.(png|jpg)$&quot;</span>)
-<span class="co">#&gt; [1] &quot;mapa.png&quot;    &quot;obrazek.png&quot; &quot;zdjęcie.jpg&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.(png|jpg)$&quot;</span>, <span class="dt">full.names =</span> <span class="ot">TRUE</span>)
-<span class="co">#&gt; [1] &quot;pliki/mapa.png&quot;    &quot;pliki/obrazek.png&quot; &quot;pliki/zdjęcie.jpg&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">moje_pliki =<span class="st"> </span><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.(png|jpg)$&quot;</span>, <span class="dt">full.names =</span> <span class="ot">TRUE</span>)</code></pre>
-</div>
-<div id="zadania-5" class="section level2">
-<h2><span class="header-section-number">6.8</span> Zadania</h2>
-<ol style="list-style-type: decimal">
-<li>Plik tekstowy zawiera listę pomiarów, w której piąty i czwarty znak od końca oznacza symbol chemiczny pomierzonego pierwiastka, przykładowo:</li>
-</ol>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="st">&quot;TERYT 18; podkarpackie; Rzeszów; 0.2 He; A&quot;</span>
-<span class="st">&quot;TERYT 22; pomorskie;   Gdańsk; 12 C ; B&quot;</span></code></pre>
-<p>Napisz kod, który będzie wydział symbole chemiczne pomierzonych pierwiastków.</p>
-<ol start="2" style="list-style-type: decimal">
-<li>Napisz funkcję nazywającą się <code>horoskop</code>, która przyjmuje dwa argumenty <code>imie</code> (pierwsze imię, tekst) oraz <code>miesiac</code> (miesiąc urodzin, liczba).
-Funkcja ma zwrócić tekst “Osoba o imieniu ‘imie’ będzie miała jutro szczęście.” w przypadku, gdy argument <code>miesiac</code> jest liczbą parzystą oraz “Osoba o imieniu ‘imie’ będzie miała jutro nieszczęście.” jeżeli argument <code>miesiac</code> jest liczbą nieparzystą.</li>
-<li>Rozbuduj funkcję <code>horoskop</code> poprzez sprawdzenie pierwszej litery podanego imienia. Jeżeli pierwsza litera imienia to <code>K</code>, <code>M</code>, lub <code>Z</code> wówczas wyświetli się zawsze tekst “Osoba o imieniu ‘imie’ będzie miała jutro szczęście.”, bez względu na podany miesiąc.</li>
-<li>Efektem zbierania pomiarów temperatury okazał być się plik tekstowy, który zawiera datę pomiaru oraz wartość.
-W jaki sposób możliwe jest wydzielenie tylko dat w takiej sytuacji?
-Poniżej znajduje się fragment przykładowych danych wejściowych.</li>
-</ol>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="st">&quot;2019-03-11: 23.5, 19/03/12: 12.7, 2019.03.13: 11.1, 2019-marzec-14: 14.3&quot;</span></code></pre>
-<ol start="5" style="list-style-type: decimal">
-<li>Co należałoby zrobić, aby wydzielić tylko wartości pomiarów w powyższym przypadku?
-Stwórz nowy obiekt “wartosci” zawierający te pomiary.
-Jakiej klasy powinien być wyjściowy obiekt?
-<!-- match hex colors, examples :#abs, #f0, #BADA55, #COFFEE https://www.youtube.com/watch?v=EkluES9Rvak -->
-<!-- match coordinates -->
-<!-- match dates --></li>
-</ol>
+<div id="przykad-1" class="section level1">
+<h1><span class="header-section-number">10</span> Przykład 1</h1>
+<!-- 1. analiza danych1 -->
+<!-- 2. analiza danych2 -->
+<!-- 3. stworzenie zbioru funkcji -->
+<!-- 4. stworzenie zbioru funkcji -->
 
 </div>
-</div>
-<h3>Bibliografia</h3>
-<div id="refs" class="references">
-<div id="ref-wickham2016r">
-<p>Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. &quot; O’Reilly Media, Inc.&quot;.</p>
-</div>
-<div id="ref-friedl2006mastering">
-<p>Friedl, Jeffrey EF. 2006. <em>Mastering Regular Expressions</em>. &quot; O’Reilly Media, Inc.&quot;.</p>
-</div>
-</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="proste-obiekty.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="zlozone-obiekty.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="io.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="zlozone-funkcje.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -625,7 +357,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Nowosad/my-minimal-bookdown/edit/master/06-tekst.Rmd",
+"link": "https://github.com/Nowosad/my-minimal-bookdown/edit/master/11-example1.Rmd",
 "text": "Edit"
 },
 "history": {

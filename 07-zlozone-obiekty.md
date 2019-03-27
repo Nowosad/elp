@@ -298,7 +298,7 @@ colnames(ramka1)
 
 <!-- `rownames()` - info about problems with rownames (block) -->
 
-### Wydzielanie
+### Wydzielanie {#wydzielanie-df}
 
 Do wydzielania elementów z ramki danych może służyć kilka narzędzi, między innymi, operator `$`, operator `[]`  oraz funkcja `subset()`.
 
