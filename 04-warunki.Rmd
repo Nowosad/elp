@@ -130,7 +130,7 @@ Operatory `&&` i `||` porównują tylko pierwszy element każdego wektora, a w e
 Dodatkowo, to one są zazwyczaj używane w wyrażeniach warunkowych.
 ```
 
-## Wyrażenia warunkowe w funkcjach
+## Wyrażenia warunkowe w funkcjach {#wwwf}
 
 Wyrażenia warunkowe są często używanym elementem przy tworzeniu funkcji.
 Pozwalają one na nie tylko na określanie tego w jaki sposób dana funkcja zadziała, ale też pełnią rolę w sprawdzaniu czy do funkcji zostały wprowadzone poprawne argumenty.
