@@ -165,13 +165,13 @@ data("faithful", package = "datasets")
 ```
 
 Po wykonaniu tej funkcji zbiór danych jest dostępny z poziomu R.
-Zawiera on ramkę danych z dwoma kolumnami opisującymi gejzer Old Faithful: `eruptions` - czas erupcji oraz `waiting` - czas oczekiwania na kolejną erupcję.
+Zawiera on ramkę danych z dwoma kolumnami opisującymi gejzer Old Faithful (rycina \@ref(fig:faithful)): `eruptions` - czas erupcji oraz `waiting` - czas oczekiwania na kolejną erupcję.
 
 ```{r}
 head(faithful)
 ```
 
-```{r marghamil, echo=FALSE, fig.cap="Obraz Alberta Bierstadta przedstawiający gejzer Old Faithful około roku 1881. Źródło: [Wikipedia](https://commons.wikimedia.org/wiki/File:Bierstadt_Albert_Old_Faithful.jpg)."}
+```{r faithful, echo=FALSE, fig.cap="Obraz Alberta Bierstadta przedstawiający gejzer Old Faithful około roku 1881. Źródło: [Wikipedia](https://commons.wikimedia.org/wiki/File:Bierstadt_Albert_Old_Faithful.jpg)."}
 knitr::include_graphics("images/old-faithful.jpg")
 ```
 
