@@ -383,7 +383,12 @@ Konstrukcja <code>1:length()</code> może wywołać problemy w kodzie, gdy wejś
 Funkcja <code>seq_along()</code> jest odporna na ten problem - <code>seq_along(NULL)</code> nie wykona pętli ani razu.
 </div>
 
-<pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (i <span class="cf">in</span>  <span class="kw">seq_along</span>(odl_mile)) {
+<p>Wcześniejsze przykłady wyświetlały przeliczone na kilometry kolejne elementy listy <code>odl_mile</code>.
+Możliwe było zobaczenie nowych wartości, ale nie zostawały one w pamięci komputera - w efekcie nie można było wykorzystać wyników działania pętli <code>for</code> w przyszłości.
+Co w takim razie należy zrobić, aby wynik dało się użyć dalej?
+Jednym z podejść jest modyfikacja istniejącej list <code>odl_mile</code>.
+Poniższa pętla <code>for</code> zastępuje kolejne wartości z obiektu <code>odl_mile</code> na kilometry.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
   odl_mile[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>
 }
 odl_mile
@@ -395,28 +400,44 @@ odl_mile
 <span class="co">#&gt; </span>
 <span class="co">#&gt; [[3]]</span>
 <span class="co">#&gt; [1] 195</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">odl_mile =<span class="st"> </span><span class="kw">c</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="dt">length =</span> <span class="dv">0</span>)
-odl_mile_l =<span class="st"> </span><span class="kw">seq_along</span>(odl_mile)
-<span class="cf">for</span> (i <span class="cf">in</span> odl_mile_l) {
-  odl_km =<span class="st"> </span><span class="kw">c</span>(odl_km, odl_mile[i] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)
+<p>Niestety, w efekcie stracone zostały oryginalne wartości w milach lądowych.</p>
+<pre class="sourceCode r"><code class="sourceCode r">odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</code></pre>
+<p>Aby zostawić oryginalne wartości w milach lądowych, ale też stworzyć nowy obiekt określony w kilometrach musimy stworzyć nowy, pusty obiekt, a następnie wypełnić go wartościami.
+Poniżej nazwany on został <code>odl_km</code> - jest to pusta lista.
+Następnie kolejne wykonania pętli <code>for</code> doklejają kolejne elementy do tej listy.</p>
+<pre class="sourceCode r"><code class="sourceCode r">odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="dv">0</span>)
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
+  odl_km =<span class="st"> </span><span class="kw">c</span>(odl_km, odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)
 }
 odl_km
-<span class="co">#&gt; [1] 228 101 195</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">odl_mile =<span class="st"> </span><span class="kw">c</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))
-odl_mile_l =<span class="st"> </span><span class="kw">seq_along</span>(odl_mile)
-<span class="cf">for</span> (i <span class="cf">in</span> odl_mile_l) {
-  odl_km[i] =<span class="st"> </span>odl_mile[i] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>
+<span class="co">#&gt; [[1]]</span>
+<span class="co">#&gt; [1] 228</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[2]]</span>
+<span class="co">#&gt; [1] 101</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[3]]</span>
+<span class="co">#&gt; [1] 195</span></code></pre>
+<p>Efektem jest poprawne rozwiązanie naszego problemu, ale niestety posiada ono istotną wadę - to rozwiązanie nie jest bardzo wydajne.
+Za każdym przejściem pętli następuje bowiem alokacja pamięci, co zabiera niepotrzebnie czas.
+Więcej informacji na ten temat można znaleźć w rozdziale <a href="analiza-kodu.html#analiza-kodu">11</a>.</p>
+<p>Lepszym rozwiązaniem w takiej sytuacji jest od razu stworzenie listy, o długości zgodnej z naszym oczekiwaniem.
+Następnie kolejne elementy stworzonej listy są zamieniane na oczekiwane przez nas wartości.</p>
+<pre class="sourceCode r"><code class="sourceCode r">odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
+  odl_km[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>
 }
 odl_km
-<span class="co">#&gt; [1] 228 101 195</span></code></pre>
-
-<div class="rmdinfo">
-Wiele funkcji w R jest zwektoryzowanych, w efekcie powyższy przykład możnaby zastąpić kodem <code>odl_km = odl_mile * 1.609</code>.
-Taka zamiana jest jednak możliwa w ten sposób, ponieważ mnożenie jest w niewidzialny sposób dla użytkownika rozpisane jako pętla for.
-</div>
-
+<span class="co">#&gt; [[1]]</span>
+<span class="co">#&gt; [1] 228</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[2]]</span>
+<span class="co">#&gt; [1] 101</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[3]]</span>
+<span class="co">#&gt; [1] 195</span></code></pre>
+<!-- Wiele funkcji w R jest zwektoryzowanych, w efekcie powyższy przykład możnaby zastąpić kodem `odl_km = odl_mile * 1.609`.  -->
+<!-- Taka zamiana jest jednak możliwa w ten sposób, ponieważ mnożenie jest w niewidzialny sposób dla użytkownika rozpisane jako pętla for. -->
 </div>
 <div id="zastosowanie-w-funkcjach" class="section level3">
 <h3><span class="header-section-number">8.1.3</span> Zastosowanie w funkcjach</h3>
