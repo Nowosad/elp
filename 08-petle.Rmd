@@ -93,45 +93,54 @@ Konstrukcja `1:length()` może wywołać problemy w kodzie, gdy wejściowy obiek
 Funkcja `seq_along()` jest odporna na ten problem - `seq_along(NULL)` nie wykona pętli ani razu.
 ```
 
-
+Wcześniejsze przykłady wyświetlały przeliczone na kilometry kolejne elementy listy `odl_mile`.
+Możliwe było zobaczenie nowych wartości, ale nie zostawały one w pamięci komputera - w efekcie nie można było wykorzystać wyników działania pętli `for` w przyszłości.
+Co w takim razie należy zrobić, aby wynik dało się użyć dalej?
+Jednym z podejść jest modyfikacja istniejącej list `odl_mile`.
+Poniższa pętla `for` zastępuje kolejne wartości z obiektu `odl_mile` na kilometry.
 
 ```{r}
-for (i in  seq_along(odl_mile)) {
+for (i in seq_along(odl_mile)) {
   odl_mile[[i]] = odl_mile[[i]] * 1.609
 }
 odl_mile
 ```
 
-```{r}
-odl_mile = c(142, 63, 121)
-```
+Niestety, w efekcie stracone zostały oryginalne wartości w milach lądowych. 
 
 ```{r}
-odl_km = vector("numeric", length = 0)
-odl_mile_l = seq_along(odl_mile)
-for (i in odl_mile_l) {
-  odl_km = c(odl_km, odl_mile[i] * 1.609)
+odl_mile = list(142, 63, 121)
+```
+
+Aby zostawić oryginalne wartości w milach lądowych, ale też stworzyć nowy obiekt określony w kilometrach musimy stworzyć nowy, pusty obiekt, a następnie wypełnić go wartościami.
+Poniżej nazwany on został `odl_km` - jest to pusta lista.
+Następnie kolejne wykonania pętli `for` doklejają kolejne elementy do tej listy.
+
+```{r}
+odl_km = vector("list", length = 0)
+for (i in seq_along(odl_mile)) {
+  odl_km = c(odl_km, odl_mile[[i]] * 1.609)
 }
 odl_km
 ```
 
-```{r}
-odl_mile = c(142, 63, 121)
-```
+Efektem jest poprawne rozwiązanie naszego problemu, ale niestety posiada ono istotną wadę - to rozwiązanie nie jest bardzo wydajne.
+Za każdym przejściem pętli następuje bowiem alokacja pamięci, co zabiera niepotrzebnie czas.
+Więcej informacji na ten temat można znaleźć w rozdziale \@ref(analiza-kodu).
+
+Lepszym rozwiązaniem w takiej sytuacji jest od razu stworzenie listy, o długości zgodnej z naszym oczekiwaniem.
+Następnie kolejne elementy stworzonej listy są zamieniane na oczekiwane przez nas wartości.
 
 ```{r}
-odl_km = vector("numeric", length = length(odl_mile))
-odl_mile_l = seq_along(odl_mile)
-for (i in odl_mile_l) {
-  odl_km[i] = odl_mile[i] * 1.609
+odl_km = vector("list", length = length(odl_mile))
+for (i in seq_along(odl_mile)) {
+  odl_km[[i]] = odl_mile[[i]] * 1.609
 }
 odl_km
 ```
 
-```{block2 type="rmdinfo"}
-Wiele funkcji w R jest zwektoryzowanych, w efekcie powyższy przykład możnaby zastąpić kodem `odl_km = odl_mile * 1.609`. 
-Taka zamiana jest jednak możliwa w ten sposób, ponieważ mnożenie jest w niewidzialny sposób dla użytkownika rozpisane jako pętla for.
-```
+<!-- Wiele funkcji w R jest zwektoryzowanych, w efekcie powyższy przykład możnaby zastąpić kodem `odl_km = odl_mile * 1.609`.  -->
+<!-- Taka zamiana jest jednak możliwa w ten sposób, ponieważ mnożenie jest w niewidzialny sposób dla użytkownika rozpisane jako pętla for. -->
 
 ### Zastosowanie w funkcjach
 
