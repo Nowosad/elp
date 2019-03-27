@@ -113,20 +113,34 @@ W takich przypadkach warto użyć alternatywnych funkcji, np. `read_csv()` i `wr
 ## Formaty R
 
 <!-- info about binary -->
+Formaty tekstowe są bardzo uniwersalne pozwalając na odczyt, zapis czy przenoszenie danych pomiędzy różnymi komputerami, programami czy językami programowania.
+Mają one jednak pewne ograniczenia.
+Wielkość pliku tekstowego rośnie bardzo szybko wraz z liczbą elementów, a dodatkowo plik tekstowy nie przechowuje dodatkowych informacji specyficznych dla języków programowania.
+
+Przykładowo, chcemy aby kolumna `nazwa_stacji` była reprezentowana jako wektor czynnikowy.
 
 ```{r}
 meteo$nazwa_stacji = as.factor(meteo$nazwa_stacji)
 str(meteo)
 ```
 
+W przypadku zapisania nowego obiektu do pliku tekstowego ta informacja zostanie utracona.
+Alternatywnie, jeżeli chcemy używać tych danych tylko w języku R możemy zapisać je do pliku w formacie RDS. 
+Taki zapis można wykonać używając funkcji `saveRDS()` podając nazwę obiektu do zapisu oraz ścieżkę do nowego pliku.
+
 ```{r, eval=FALSE}
-saveRDS(meteo, "pliki/dane_meteo.rds")
+saveRDS(meteo, file = "pliki/dane_meteo.rds")
 ```
+
+Taki plik będzie domyślnie mniejszy (nastąpi jego kompresja przy zapisie) niż tekstowy i będzie posiadał on wszelkie informacje o klasie tego obiektu.
+Ponowne wczytanie obiektu można wykonać używając funkcji `readRDS()`.
 
 ```{r}
 meteo_rds = readRDS("pliki/dane_meteo.rds")
 str(meteo_rds)
 ```
+
+Powyżej można zobaczyć, że została zachowana wcześniejsza zmiana - kolumna `nazwa_stacji` nadal jest reprezentowana poprzez wektor czynnikowy.
 
 ```{block2 type="rmdinfo"}
 Dodatkowo możliwe jest zapisywanie wielu obiektów do jednego pliku w formacie `.rda` a następnie ich odczytanie używając wbudowanych funkcji `save()` i `load()`.
