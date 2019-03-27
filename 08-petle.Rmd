@@ -255,11 +255,14 @@ Dodatkowe informacje na temat pętli for and while można znaleźć w sekcji [L
 
 ## Programowanie funkcyjne
 
-```{r}
-konwersja_temp = function(temperatura_f){
-    (temperatura_f - 32) / 1.8
-}
-```
+W rozdziale \@ref(jezyki-programowania) zostały wspomniane różne istniejące paradygmaty programowania.
+Pętle `for` czy `while` są przykładami programowania imperatywnego, gdzie program komputerowy postrzegany jest jako ciąg poleceń dla komputera.
+Alternatywą do tego sposobu działania jest programowanie funkcyjne, w którym rozwiązanie pewnego problemu jest oparte o użycie lub stworzenie odpowiedniej funkcji.
+
+Język R pozwala na stosowanie zarówno paradygmatu imperatywnego jak i paradygmatu funkcyjnego^[R również obsługuje paradygmat obiektowy.].
+
+Sprawdźmy działanie programowania funkcyjnego na dwóch przykładach.
+W pierwszym posiadamy listę `pomiary_f_lista` składającą się z trzech elementów - każdy z nich to wektor z trzema pomiarami temperatury w stopniach Fahrenheita. 
 
 ```{r}
 pomiary_f_lista = list(
@@ -270,12 +273,39 @@ pomiary_f_lista = list(
 pomiary_f_lista
 ```
 
-```{r, error=TRUE}
-konwersja_temp(pomiary_f_lista)
-```
+Naszym celem jest zamiana tych wartości na stopnie Celsjusza.
+Używając paradygmatu imperatywnego, moglibyśmy zastosować pętlę `for` i zastosować przeliczenie wartości dla kolejnych elementów listy.
+W paradygmacie funkcyjnym natomiast naszym pierwszym krokiem jest stworzenie funkcji wykonującej podstawową operację:
 
 ```{r}
-pomiary_c_lista = lapply(pomiary_f_lista, FUN = konwersja_temp)
+konwersja_f_to_c = function(temperatura_f){
+    (temperatura_f - 32) / 1.8
+}
+```
+
+```{block2 type="rmdinfo"}
+Funkcje użyte w programowaniu funkcyjnym muszą spełniać dwa warunki:
+  
+1. Wynik działania funkcji musi zależeć od obiektu wejściowego, czyli gdy dwa razy uruchomimy tą samą funkcję na tych samych danych musimy dostać ten sam wynik.
+Taka funkcja nie może mieć w sobie, np. elementu losowego.
+2. Funkcja nie może mieć efektów ubocznych (ang. *side-effects*), czyli wykonywać jakiegoś działania w tle, jak np. wyświetlanie czy zapisywanie na dysk.
+```
+
+Powyższa funkcja `konwersja_f_to_c()` działa poprawnie na wektorach wartości, ale niestety nie jest w stanie zwrócić wyniku w przypadku listy, co obrazuje komunikat błędu.
+
+```{r, error=TRUE}
+konwersja_f_to_c(pomiary_f_lista)
+```
+
+Języki obsługujące programowanie funkcyjne posiadają jednak szereg narzędzi do przetwarzania funkcji, które zbiorczo są nazywane funkcjonałami (ang. *functional*).
+Funkcjonały to funkcje, które przyjmują inne funkcje jako argumenty.
+Jednym z podstawowych funkcjonałów w R jest `lapply()`.
+Funkcjonał `lapply()` przyjmuje jako pierwszy arugment wektor atomowy lub listę, a następnie przetwarza go używając funkcji podanej jako drugi argument `FUN`.
+
+Poniżej, `lapply()` wykonuje funkcję `konwersja_f_to_c()` na kolejnych elementach listy `pomiary_f_lista` i zwraca nową listę zawierającą wyniki
+
+```{r}
+pomiary_c_lista = lapply(pomiary_f_lista, FUN = konwersja_f_to_c)
 pomiary_c_lista
 ```
 
@@ -330,6 +360,7 @@ Ma ona dodatkowo kilka kolejnych wariantów, np. `map_df()` - która przyjmuje j
 ```
 
 <!-- https://stackoverflow.com/questions/7142767/why-are-loops-slow-in-r -->
+<!-- https://adv-r.hadley.nz/functionals.html -->
 
 ## Zadania
 
@@ -397,6 +428,7 @@ for (i in c(1, 2, 3)){
 <!-- stworz for 1 -->
 <!-- stworz for 2 -->
 <!-- stworz while 1 -->
+<!-- stworz for dla pierwszego przypadku funkcyjnego -->
 <!-- lapply 1 -->
 <!-- lapply 2 -->
 <!-- apply 1 -->
