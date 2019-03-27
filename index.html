@@ -245,8 +245,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#zapisywanie-plikow-tekstowych"><i class="fa fa-check"></i><b>9.3</b> Zapisywanie plików tekstowych</a></li>
 <li class="chapter" data-level="9.4" data-path="io.html"><a href="io.html#formaty-r"><i class="fa fa-check"></i><b>9.4</b> Formaty R</a></li>
 <li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#arkusze-kalkulacyjne"><i class="fa fa-check"></i><b>9.5</b> Arkusze kalkulacyjne</a></li>
-<li class="chapter" data-level="9.6" data-path="io.html"><a href="io.html#dane-internetowe"><i class="fa fa-check"></i><b>9.6</b> Dane internetowe</a></li>
-<li class="chapter" data-level="9.7" data-path="io.html"><a href="io.html#inne-formaty"><i class="fa fa-check"></i><b>9.7</b> Inne formaty</a></li>
+<li class="chapter" data-level="9.6" data-path="io.html"><a href="io.html#inne-formaty"><i class="fa fa-check"></i><b>9.6</b> Inne formaty</a></li>
+<li class="chapter" data-level="9.7" data-path="io.html"><a href="io.html#dane-internetowe"><i class="fa fa-check"></i><b>9.7</b> Dane internetowe</a></li>
 <li class="chapter" data-level="9.8" data-path="io.html"><a href="io.html#dziaania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.8</b> Działania na plikach i folderach</a></li>
 <li class="chapter" data-level="9.9" data-path="io.html"><a href="io.html#zadania-8"><i class="fa fa-check"></i><b>9.9</b> Zadania</a></li>
 </ul></li>
@@ -318,15 +318,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="o-ksiazce" class="section level1 unnumbered">
 <h1>O książce</h1>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># automatically create a bib database for R packages</span>
-knitr<span class="op">::</span><span class="kw">write_bib</span>(<span class="kw">c</span>(<span class="kw">.packages</span>(),
-                   <span class="st">&quot;bookdown&quot;</span>, <span class="st">&quot;knitr&quot;</span>, <span class="st">&quot;rmarkdown&quot;</span>,
-                   <span class="st">&quot;magrittr&quot;</span>, <span class="st">&quot;stringr&quot;</span>, <span class="st">&quot;readxl&quot;</span>,
-                   <span class="st">&quot;purrr&quot;</span>, <span class="st">&quot;data.table&quot;</span>, <span class="st">&quot;readr&quot;</span>,
-                   <span class="st">&quot;readxl&quot;</span>, <span class="st">&quot;writexl&quot;</span>, <span class="st">&quot;jsonlite&quot;</span>, 
-                   <span class="st">&quot;xml2&quot;</span>, <span class="st">&quot;sf&quot;</span>, <span class="st">&quot;raster&quot;</span>, 
-                   <span class="st">&quot;RSQLite&quot;</span>, <span class="st">&quot;RPostgreSQL&quot;</span>, <span class="st">&quot;DBI&quot;</span>),
-                   <span class="st">&quot;packages.bib&quot;</span>)</code></pre>
 <p>Aktualna wersja książki znajduje się pod adresem <a href="https://nowosad.github.io/elp/" class="uri">https://nowosad.github.io/elp/</a>.
 Jeżeli używasz tej książki, zacytuj ją jako:</p>
 <ul>
@@ -372,7 +363,7 @@ Tutaj może znaleźć się dodatkowa informacja, alternatywny sposób użycia 
 </div>
 <div id="podziekowania" class="section level2 unnumbered">
 <h2>Podziękowania</h2>
-<p>Książka została stworzona w R <span class="citation">(R Core Team <a href="#ref-R-base">2018</a>)</span> z wykorzystaniem pakietów <strong>bookdown</strong> <span class="citation">(Xie <a href="#ref-R-bookdown">2018</a>)</span>, <strong>rmarkdown</strong> <span class="citation">(Allaire et al. <a href="#ref-R-rmarkdown">2019</a>)</span>, <strong>knitr</strong> <span class="citation">(Xie <a href="#ref-R-knitr">2019</a>)</span> oraz programu <a href="http://pandoc.org/">Pandoc</a>.</p>
+<p>Książka została stworzona w R <span class="citation">(R Core Team <a href="#ref-R-base">2017</a>)</span> z wykorzystaniem pakietów <strong>bookdown</strong> <span class="citation">(Xie <a href="#ref-R-bookdown">2018</a><a href="#ref-R-bookdown">a</a>)</span>, <strong>rmarkdown</strong> <span class="citation">(Allaire et al. <a href="#ref-R-rmarkdown">2018</a>)</span>, <strong>knitr</strong> <span class="citation">(Xie <a href="#ref-R-knitr">2018</a><a href="#ref-R-knitr">b</a>)</span> oraz programu <a href="http://pandoc.org/">Pandoc</a>.</p>
 <div>
 Użyte ikony zostały stworzone przez <a href="https://www.freepik.com/" title="Freepik">Freepik</a> z <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> na licencji <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0." target="_blank">CC 3.0 BY</a>.
 </div>
@@ -390,16 +381,16 @@ Użyte ikony zostały stworzone przez <a href="https://www.freepik.com/" title="
 <h3>Bibliografia</h3>
 <div id="refs" class="references">
 <div id="ref-R-base">
-<p>R Core Team. 2018. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
+<p>R Core Team. 2017. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/" class="uri">https://www.R-project.org/</a>.</p>
 </div>
 <div id="ref-R-bookdown">
-<p>Xie, Yihui. 2018. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown" class="uri">https://CRAN.R-project.org/package=bookdown</a>.</p>
+<p>Xie, Yihui. 2018a. <em>Bookdown: Authoring Books and Technical Documents with R Markdown</em>. <a href="https://CRAN.R-project.org/package=bookdown" class="uri">https://CRAN.R-project.org/package=bookdown</a>.</p>
 </div>
 <div id="ref-R-rmarkdown">
-<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2019. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
+<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2018. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown" class="uri">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
 </div>
 <div id="ref-R-knitr">
-<p>Xie, Yihui. 2019. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a>.</p>
+<p>Xie, Yihui. 2018b. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr" class="uri">https://CRAN.R-project.org/package=knitr</a>.</p>
 </div>
 </div>
             </section>

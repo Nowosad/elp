@@ -281,7 +281,7 @@ Powyższe podejście jest poprawne, ale ma ono kilka wad:
 * Poprawienie kodu w przypadku zauważenia błędu w procedurze obliczeniowej jest czasochłonne.
 
 To podejście jest też niezgodne z jedną z najważniejszych reguł w programowaniu - regułą DRY (Nie powtarzaj się, ang. *Don't Repeat Yourself*).
-Zamiast tworzenia skryptu w oparciu o kopiuj/wklej lepiej pomyśleć nad zbudowaniem odpowiedniej funkcji^[@grolemund_r_2016 radzą tworzyć nowe funkcje, gdy ten sam kod potwarza się co najmniej trzy razy.].
+Zamiast tworzenia skryptu w oparciu o kopiuj/wklej lepiej pomyśleć nad zbudowaniem odpowiedniej funkcji^[@wickham2016r radzą tworzyć nowe funkcje, gdy ten sam kod potwarza się co najmniej trzy razy.].
 
 ## Budowanie funkcji
 

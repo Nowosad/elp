@@ -392,7 +392,7 @@ Polskie książki:
 - http://www.gagolewski.com/publications/programowanier/ [@gagolewski2016programowanie]
 - https://helion.pl/ksiazki/jezyk-r-kompletny-zestaw-narzedzi-dla-analitykow-danych-hadley-wickham-garrett-grolemund,jezrko.htm#format/d [@wickham2016r]
 - https://helion.pl/ksiazki/wydajne-programowanie-w-r-praktyczny-przewodnik-po-lepszym-programowaniu-gillespie-colin-lovelace-robin,a_0491.htm#format/d [@gillespie2016efficient]
-- https://bookdown.org/nowosad/Geostatystyka/ [@nowosadjakubGeostatystyka2019]
+- https://bookdown.org/nowosad/Geostatystyka/ [@nowosadGeostatystyka2019]
 - http://www.enwo.pl/przetwarzanie/index.html [@czerneckiMetodyPrzetwarzaniaDanych2018]
 
 Angielskie książki:
@@ -401,7 +401,7 @@ Angielskie książki:
 - https://r4ds.had.co.nz/ [@wickham2016r]
 - https://csgillespie.github.io/efficientR/ [@gillespie2016efficient]
 - https://adv-r.hadley.nz [@wickham2014advanced]
-- https://geocompr.robinlovelace.net/ [@lovelace_geocomputation_2019]
+- https://geocompr.robinlovelace.net/ [@lovelace2019geocomputation]
 
 Blogi:
 

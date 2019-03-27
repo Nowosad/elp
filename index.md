@@ -25,17 +25,6 @@ links-as-notes: true
 # O książce {-}
 
 
-```r
-# automatically create a bib database for R packages
-knitr::write_bib(c(.packages(),
-                   "bookdown", "knitr", "rmarkdown",
-                   "magrittr", "stringr", "readxl",
-                   "purrr", "data.table", "readr",
-                   "readxl", "writexl", "jsonlite", 
-                   "xml2", "sf", "raster", 
-                   "RSQLite", "RPostgreSQL", "DBI"),
-                   "packages.bib")
-```
 
 Aktualna wersja książki znajduje się pod adresem https://nowosad.github.io/elp/. 
 Jeżeli używasz tej książki, zacytuj ją jako:
