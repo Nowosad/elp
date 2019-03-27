@@ -344,12 +344,20 @@ Prawy ukośnik jest rekomendowany, ponieważ działa on zarówno na Windowsach, 
 </div>
 <div id="wczytywanie-plikow-tekstowych" class="section level2">
 <h2><span class="header-section-number">9.2</span> Wczytywanie plików tekstowych</h2>
-<p><code>&quot;pliki/dane_meteo.csv&quot;</code></p>
+<p>Podstawowym sposobem przechowywania informacji są pliki tekstowe.
+Przykładowo, mogą one przechowywać dane w postaci tabelarycznej.
+Jednym z najczęściej używanych formatów tekstowych jest CSV (ang. <em>comma-separated values</em>).</p>
+<p>Wyobraźmy sobie, że otrzymaliśmy plik tekstowy zawierający wybrane pomiary meteorologiczne dla Poznania oraz Zakopanego w roku 2017.</p>
 <pre><code>#&gt; [1] &quot;kod_stacji,nazwa_stacji,rok,miesiac,dzien,tavg,precip,humidity,pressure&quot;
 #&gt; [2] &quot;352160330,POZNAŃ,2017,1,1,1.4,0,78,1017.9&quot;                              
 #&gt; [3] &quot;352160330,POZNAŃ,2017,1,2,0.1,0,84,1013.1&quot;                              
 #&gt; [4] &quot;352160330,POZNAŃ,2017,1,3,0.5,4.8,91.1,1012.1&quot;                          
 #&gt; [5] &quot;352160330,POZNAŃ,2017,1,4,1.5,2.3,84.9,996.1&quot;</code></pre>
+<p>Zapisaliśmy ten plik jako <code>dane_meteo.csv</code> w podfolderze <code>pliki</code>, więc jego ścieżka względna to <code>&quot;pliki/dane_meteo.csv&quot;</code>.
+Po otworzeniu tego pliku w edytorze tekstu widzimy, że pierwszy jego wiersz zawiera nazwy kolumn, a następne wiersze to kolejne obserwacje.
+Dodatkowo można zobaczyć, że kolumny rozdzielane są przecinkami (<code>,</code>), natomiast wartości zmiennoprzecinkowe kropkami (<code>.</code>).</p>
+<p>Do wczytania tego pliku możemy użyć wbudowanej w R funkcji <code>read.csv()</code>, podając w niej bezwzględną lub względną ścieżkę do pliku.
+W poniższych przykładzie dodatkowo ustalono argument <code>stringsAsFactors</code> na <code>FALSE</code>, dzięki czemu kolumny z tekstem nie będą zamieniane na klasę czynnikową<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">meteo =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;pliki/dane_meteo.csv&quot;</span>, 
                  <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
 <span class="kw">str</span>(meteo)
@@ -363,7 +371,8 @@ Prawy ukośnik jest rekomendowany, ponieważ działa on zarówno na Windowsach, 
 <span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span>
 <span class="co">#&gt;  $ humidity    : num  78 84 91.1 84.9 68.3 78.6 82.5 78.5 88.6 75.3 ...</span>
 <span class="co">#&gt;  $ pressure    : num  1018 1013 1012 996 1021 ...</span></code></pre>
-<p><code>read.csv()</code> <code>read.csv2()</code></p>
+<p>Oprócz funkcji <code>read.csv()</code> istnieje również funkcja o nazwie <code>read.csv2()</code>.
+Pierwsza z nich jest przystosowana do wczytania danych dla których separator kolumn to <code>,</code> a separator dziesiętny to <code>.</code>, druga natomiast jest używana gdy wejściowe dane mają <code>;</code> jak separator kolumn i <code>,</code> jako separator dziesiętny.</p>
 <pre class="sourceCode r"><code class="sourceCode r">meteo =<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;pliki/dane_meteo.csv&quot;</span>, 
                    <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>,
                    <span class="dt">header =</span> <span class="ot">TRUE</span>)
@@ -496,7 +505,7 @@ Przykładowo, hierarchiczne formaty danych można wczytać używając pakietu <s
 Zestawienie zawierające dodatkowe przykłady można znaleźć pod adresem <a href="https://github.com/leeper/rio" class="uri">https://github.com/leeper/rio</a>.</p>
 <p>Powszechną sytuacją jest przechowywanie danych w różnego rodzaju bazach danych.
 Ma to miejsce, kiedy dane są znacznej wielkości, mają złożone relacje, czy też muszą być jednocześnie dostępne dla wielu osób.
-Dostęp do baz danych w R możliwy jest używając pakietu <strong>DBI</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-DBI"><strong>???</strong></span>)</span> wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. <strong>RPostgreSQL</strong> dla baz PostgreSQL <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-RPostgreSQL"><strong>???</strong></span>)</span> czy <strong>RSQLite</strong> dla baz SQLite <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-RSQLite"><strong>???</strong></span>)</span>).<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a></p>
+Dostęp do baz danych w R możliwy jest używając pakietu <strong>DBI</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-DBI"><strong>???</strong></span>)</span> wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. <strong>RPostgreSQL</strong> dla baz PostgreSQL <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-RPostgreSQL"><strong>???</strong></span>)</span> czy <strong>RSQLite</strong> dla baz SQLite <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-RSQLite"><strong>???</strong></span>)</span>).<a href="#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a></p>
 </div>
 <div id="dziaania-na-plikach-i-folderach" class="section level2">
 <h2><span class="header-section-number">9.8</span> Działania na plikach i folderach</h2>
@@ -508,7 +517,7 @@ W jej przypadku konieczne jest podanie, oprócz nazwy folder do usunięcia, argu
 Przykładowo, aby usunąć folder <code>&quot;dane&quot;</code> należy wpisać <code>unlink(&quot;dane&quot;, recursive = TRUE)</code>.</p>
 <p>Sprawdzenie czy plik istnieje na dysku można wykonać używając <code>file.exist()</code>, a usunąć go za pomocą <code>file.remove()</code>.
 Obie funkcje przyjmują jako wejście wektor znakowy zawierający nazwy plików do sprawdzenia czy usunięcia.</p>
-<p>W przypadkach, gdy konieczne jest stworzenie nowego archiwum ZIP lub rozpakowanie istniejącego pliku w tym formacie można użyć funkcji <code>zip()</code> oraz <code>unzip()</code>.<a href="#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a></p>
+<p>W przypadkach, gdy konieczne jest stworzenie nowego archiwum ZIP lub rozpakowanie istniejącego pliku w tym formacie można użyć funkcji <code>zip()</code> oraz <code>unzip()</code><a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a>.</p>
 </div>
 <div id="zadania-8" class="section level2">
 <h2><span class="header-section-number">9.9</span> Zadania</h2>
@@ -535,8 +544,9 @@ Obie funkcje przyjmują jako wejście wektor znakowy zawierający nazwy plików 
 <hr />
 <ol start="35">
 <li id="fn35"><p>Jeżeli poprawnie ustawiliśmy folder roboczy.<a href="io.html#fnref35" class="footnote-back">↩</a></p></li>
-<li id="fn36"><p>Więcej informacji o łączeniu się z bazami danych można znaleść na stronie <a href="https://db.rstudio.com/getting-started/connect-to-database" class="uri">https://db.rstudio.com/getting-started/connect-to-database</a>.<a href="io.html#fnref36" class="footnote-back">↩</a></p></li>
-<li id="fn37"><p>Na komputerach z systemem Windows wymagane jest posiadanie zainstalowanego programu do rozpakowywania plików ZIP.<a href="io.html#fnref37" class="footnote-back">↩</a></p></li>
+<li id="fn36"><p>Takie defensywne zachowanie może oszczędzić pewnych problemów w przyszłości.<a href="io.html#fnref36" class="footnote-back">↩</a></p></li>
+<li id="fn37"><p>Więcej informacji o łączeniu się z bazami danych można znaleść na stronie <a href="https://db.rstudio.com/getting-started/connect-to-database" class="uri">https://db.rstudio.com/getting-started/connect-to-database</a>.<a href="io.html#fnref37" class="footnote-back">↩</a></p></li>
+<li id="fn38"><p>Na komputerach z systemem Windows wymagane jest posiadanie zainstalowanego programu do rozpakowywania plików ZIP.<a href="io.html#fnref38" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
