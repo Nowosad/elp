@@ -116,7 +116,7 @@ Pierwsza z nich mówi, że wolny działający kod jest lepszy niż szybki niedzi
 Kolejna opiera się o zasadę DRY (nie powtarzaj się, ang. *Don't Repeat Yourself*), zalecającą unikanie różnego rodzaju powtórzeń wykonywanych przy programowaniu, np. używania tych samych fragmentów kodu w wielu miejscach.
 Ostatnia reguła mówi, żeby tworzyć pisać programy w sposób modularny, czyli taki w którym każda funkcja spełnia tylko jedno i nie więcej zadanie, a złożone funkcje składają się z szeregu prostych funkcji.
 
-## Języki programowania
+## Języki programowania {#jezyki-programowania}
 
 Głównym sposobem przekazywania instrukcji do komputera jest użycie języków programowania. 
 Pozwalają one na precyzyjny zapis zadań, które następnie mają zostać wykonane przez komputer.
@@ -156,7 +156,7 @@ Języki programowania można też rozróżnić ze względu na paradygmat program
 Definiuje on w jaki sposób w danym języku wykonywany jest przepływ sterowania czy też jak kod jest organizowany.
 Dwa podstawowe paradygmaty programowania to programowanie imperatywne i deklaratywne.
 Programowanie imperatywne (np. Fortran, C) opisuje proces wykonywania kodu jako sekwencję instrukcji zmieniających stan programu.
-Obejmuje ono inne paradygmaty, jak na przykład programowanie proceduralne czy obiektowe .
+Obejmuje ono inne paradygmaty, jak na przykład programowanie proceduralne czy obiektowe.
 Programowanie deklaratywne skupia się natomiast na warunkach jakie musi spełniać końcowe rozwiązanie, a nie na sekwencji kroków do jego stworzenia.
 W skład tej grupy wchodzi, między innymi, programowanie funkcyjne czy matematyczne.
 Niektóre języki mogą być zaklasyfikowane do kilku paradygmatów.
