@@ -176,19 +176,22 @@ knitr::include_graphics("images/old-faithful.jpg")
 
 ## Arkusze kalkulacyjne
 
-[@R-readxl]
+Powszechnym sposobem przechowywania danych tabelarycznych są arkusze kalkulacyjne tworzone w programie Microsoft Excel.
+Tego typu dane można wczytać do R używając pakietu **readxl** [@R-readxl].
+Główną funkcją tego pakietu jest `read_excel()`, przyjmująca ścieżkę pliku do wczytania.
+Dodatkowe argumenty tej funkcji pozwalają, np. na zdefiniowanie arkusza do wczytania (`sheet`) czy zasięgu komórek (`range`).
 
 ```{r}
 library(readxl)
 meteo_z_xl = read_excel("pliki/dane_meteo.xlsx")
-meteo_z_xl
+head(meteo_z_xl)
 ```
+
+Do zapisania ramki danych do formatu Excel można użyć funkcji `write_xlsx()` z pakietu **writexl** [@R-writexl]^[Po więcej informacji otwórz plik pomocy tej funkcji `?write_xlsx()`.].
 
 ```{r, echo=FALSE, eval=FALSE}
-writexl::write_xlsx(meteo, "pliki/dane_meteo.xlsx")
+writexl::write_xlsx(meteo_z_xl, "pliki/dane_meteo.xlsx")
 ```
-
-`write_xlsx()` z pakietu **writexl** [@R-writexl]
 
 ## Dane internetowe
 
