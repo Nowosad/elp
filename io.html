@@ -425,7 +425,7 @@ Dodatkowo możliwe jest pominięcie zapisania nazw wierszy (<code>row.names = FA
 <div class="rmdinfo">
 Funkcje <code>read.csv()</code> czy <code>write.csv()</code> są domyślnie dostępne w języku R.
 Ich wydajność nie jest niestety najlepsza w przypadku plików tekstowych o dużej wielkości.
-W takich przypadkach warto użyć alternatywnych funkcji, np. <code>read_csv()</code> i <code>write_csv()</code> z pakietu <strong>readr</strong> <span class="citation">(Wickham, Hester, and Francois <a href="#ref-R-readr">2018</a>)</span> lub <code>fread()</code> i <code>fwrite()</code> z pakietu <strong>data.table</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-data.table"><strong>???</strong></span>)</span>.
+W takich przypadkach warto użyć alternatywnych funkcji, np. <code>read_csv()</code> i <code>write_csv()</code> z pakietu <strong>readr</strong> <span class="citation">(Wickham, Hester, and Francois <a href="#ref-R-readr">2018</a>)</span> lub <code>fread()</code> i <code>fwrite()</code> z pakietu <strong>data.table</strong> <span class="citation">(Dowle and Srinivasan <a href="#ref-R-data.table">2019</a>)</span>.
 </div>
 
 </div>
@@ -517,18 +517,18 @@ meteo_z_xl =<span class="st"> </span><span class="kw">read_excel</span>(<span cl
 <span class="co">#&gt; 5  352160330 POZNAŃ        2017       1     5  -3.5    0       68.3</span>
 <span class="co">#&gt; 6  352160330 POZNAŃ        2017       1     6  -8.4    0       78.6</span>
 <span class="co">#&gt; # … with 1 more variable: pressure &lt;dbl&gt;</span></code></pre>
-<p>Do zapisania ramki danych do formatu Excel można użyć funkcji <code>write_xlsx()</code> z pakietu <strong>writexl</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-writexl"><strong>???</strong></span>)</span><a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a>.</p>
+<p>Do zapisania ramki danych do formatu Excel można użyć funkcji <code>write_xlsx()</code> z pakietu <strong>writexl</strong> <span class="citation">(Ooms <a href="#ref-R-writexl">2018</a>)</span><a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a>.</p>
 <!-- block problemy z excelem jak daty -->
 </div>
 <div id="inne-formaty" class="section level2">
 <h2><span class="header-section-number">9.6</span> Inne formaty</h2>
 <p>Powyżej można było zobaczyć jaki sposób można wczytać dane z różnorodnych plików tekstowych, R, czy arkuszy kalkulacyjnych.
 R pozwala jednocześnie na otworzenie wielu innych formatów plików używając dodatkowych pakietów.
-Przykładowo, hierarchiczne formaty danych można wczytać używając pakietu <strong>jsonline</strong> (format <code>.json</code>) <span class="citation">(Ooms, Temple Lang, and Hilaiel <a href="#ref-R-jsonlite">2018</a>)</span> czy <strong>xml2</strong> (format <code>.xml</code>) <span class="citation">(Wickham, Hester, and Ooms <a href="#ref-R-xml2">2018</a>)</span>, a formaty danych przestrzennych używając pakietu <strong>sf</strong> (dane wektorowe) <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-sf"><strong>???</strong></span>)</span> czy <strong>raster</strong> (dane rastrowe) <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-raster"><strong>???</strong></span>)</span>.
+Przykładowo, hierarchiczne formaty danych można wczytać używając pakietu <strong>jsonline</strong> (format <code>.json</code>) <span class="citation">(Ooms, Temple Lang, and Hilaiel <a href="#ref-R-jsonlite">2018</a>)</span> czy <strong>xml2</strong> (format <code>.xml</code>) <span class="citation">(Wickham, Hester, and Ooms <a href="#ref-R-xml2">2018</a>)</span>, a formaty danych przestrzennych używając pakietu <strong>sf</strong> (dane wektorowe) <span class="citation">(Pebesma <a href="#ref-R-sf">2019</a>)</span> czy <strong>raster</strong> (dane rastrowe) <span class="citation">(Hijmans <a href="#ref-R-raster">2019</a>)</span>.
 Zestawienie zawierające dodatkowe przykłady można znaleźć pod adresem <a href="https://github.com/leeper/rio" class="uri">https://github.com/leeper/rio</a>.</p>
 <p>Powszechną sytuacją jest przechowywanie danych w różnego rodzaju bazach danych.
 Ma to miejsce, kiedy dane są znacznej wielkości, mają złożone relacje, czy też muszą być jednocześnie dostępne dla wielu osób.
-Dostęp do baz danych w R możliwy jest używając pakietu <strong>DBI</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-DBI"><strong>???</strong></span>)</span> wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. <strong>RPostgreSQL</strong> dla baz PostgreSQL <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-RPostgreSQL"><strong>???</strong></span>)</span> czy <strong>RSQLite</strong> dla baz SQLite <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-RSQLite"><strong>???</strong></span>)</span>).<a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a></p>
+Dostęp do baz danych w R możliwy jest używając pakietu <strong>DBI</strong> <span class="citation">(R Special Interest Group on Databases (R-SIG-DB), Wickham, and Müller <a href="#ref-R-DBI">2018</a>)</span> wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. <strong>RPostgreSQL</strong> dla baz PostgreSQL <span class="citation">(Conway et al. <a href="#ref-R-RPostgreSQL">2017</a>)</span> czy <strong>RSQLite</strong> dla baz SQLite <span class="citation">(Müller et al. <a href="#ref-R-RSQLite">2018</a>)</span>).<a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a></p>
 </div>
 <div id="dane-internetowe" class="section level2">
 <h2><span class="header-section-number">9.7</span> Dane internetowe</h2>
@@ -570,14 +570,35 @@ Obie funkcje przyjmują jako wejście wektor znakowy zawierający nazwy plików 
 <div id="ref-R-readr">
 <p>Wickham, Hadley, Jim Hester, and Romain Francois. 2018. <em>Readr: Read Rectangular Text Data</em>. <a href="https://CRAN.R-project.org/package=readr" class="uri">https://CRAN.R-project.org/package=readr</a>.</p>
 </div>
+<div id="ref-R-data.table">
+<p>Dowle, Matt, and Arun Srinivasan. 2019. <em>Data.table: Extension of ‘Data.frame‘</em>. <a href="https://CRAN.R-project.org/package=data.table" class="uri">https://CRAN.R-project.org/package=data.table</a>.</p>
+</div>
 <div id="ref-R-readxl">
 <p>Wickham, Hadley, and Jennifer Bryan. 2019. <em>Readxl: Read Excel Files</em>. <a href="https://CRAN.R-project.org/package=readxl" class="uri">https://CRAN.R-project.org/package=readxl</a>.</p>
+</div>
+<div id="ref-R-writexl">
+<p>Ooms, Jeroen. 2018. <em>Writexl: Export Data Frames to Excel ’Xlsx’ Format</em>. <a href="https://CRAN.R-project.org/package=writexl" class="uri">https://CRAN.R-project.org/package=writexl</a>.</p>
 </div>
 <div id="ref-R-jsonlite">
 <p>Ooms, Jeroen, Duncan Temple Lang, and Lloyd Hilaiel. 2018. <em>Jsonlite: A Robust, High Performance Json Parser and Generator for R</em>. <a href="https://CRAN.R-project.org/package=jsonlite" class="uri">https://CRAN.R-project.org/package=jsonlite</a>.</p>
 </div>
 <div id="ref-R-xml2">
 <p>Wickham, Hadley, James Hester, and Jeroen Ooms. 2018. <em>Xml2: Parse Xml</em>. <a href="https://CRAN.R-project.org/package=xml2" class="uri">https://CRAN.R-project.org/package=xml2</a>.</p>
+</div>
+<div id="ref-R-sf">
+<p>Pebesma, Edzer. 2019. <em>Sf: Simple Features for R</em>. <a href="https://CRAN.R-project.org/package=sf" class="uri">https://CRAN.R-project.org/package=sf</a>.</p>
+</div>
+<div id="ref-R-raster">
+<p>Hijmans, Robert J. 2019. <em>Raster: Geographic Data Analysis and Modeling</em>. <a href="https://www.rspatial.org/" class="uri">https://www.rspatial.org/</a>.</p>
+</div>
+<div id="ref-R-DBI">
+<p>R Special Interest Group on Databases (R-SIG-DB), Hadley Wickham, and Kirill Müller. 2018. <em>DBI: R Database Interface</em>. <a href="https://CRAN.R-project.org/package=DBI" class="uri">https://CRAN.R-project.org/package=DBI</a>.</p>
+</div>
+<div id="ref-R-RPostgreSQL">
+<p>Conway, Joe, Dirk Eddelbuettel, Tomoaki Nishiyama, Sameer Kumar Prayaga, and Neil Tiffin. 2017. <em>RPostgreSQL: R Interface to the ’Postgresql’ Database System</em>. <a href="https://CRAN.R-project.org/package=RPostgreSQL" class="uri">https://CRAN.R-project.org/package=RPostgreSQL</a>.</p>
+</div>
+<div id="ref-R-RSQLite">
+<p>Müller, Kirill, Hadley Wickham, David A. James, and Seth Falcon. 2018. <em>RSQLite: ’SQLite’ Interface for R</em>. <a href="https://CRAN.R-project.org/package=RSQLite" class="uri">https://CRAN.R-project.org/package=RSQLite</a>.</p>
 </div>
 </div>
 <div class="footnotes">
