@@ -1,14 +1,18 @@
 
 # Powtarzanie {#petle}
 
+
+
 <!-- intro -->
 <!-- https://recology.info/2019/03/control-flow-exceptions/ -->
 
 ## Pętla for
 
+Pęlta `for` jest jednym z najczęściej używanych wyrażeń w językach programowania^[https://en.wikipedia.org/wiki/For_loop], którego celem jest powtórzenie pewnej operacji o znaną liczbę razy.
+
 ### Składnia
 
-<!-- https://rpubs.com/daspringate/vectorisation -->
+Pęlta `for` jest zbudowana z dwóch elementów: nagłówka określającego powtórzenia, oraz ciała zawierającego obliczenia.
 
 
 ```r
@@ -19,46 +23,78 @@ for (element in wektor) {
 
 ### Przykład działania
 
-<!-- mila lądowa = 1,609 km -->
+Zobaczmy jak działa pętla `for` na uproszczonym przykładzie zamiany wartości odległości z mil lądowych na kilometry.
+Nasze dane wejściowe to lista składająca się z trzech wartości - 142, 63, oraz 121.
+Wiemy też, że jedna mila lądowa to 1,609 kilometra.
 
 
 ```r
-odl_mile = c(142, 63, 121)
+odl_mile = list(142, 63, 121)
 ```
 
+Pętla `for` może być użyta w tym przypadku na kilka sposobów. 
+Na początku warto zastanowić się w jaki sposób można zamienić tylko jedną wartość z powyższej listy.
+Wiemy, że do wybrania jednego elementu z listy służy operator `[[]]` (sekcja \@ref(wydzielanie-list)), więc przeliczenie i wyświetlenie tylko pierwszego elementu można wykonać poprzez:
+
 
 ```r
-for (i in odl_mile) {
-  print(i * 1.609)
-}
+print(odl_mile[[1]] * 1.609)
 #> [1] 228
+```
+
+Teraz naszym celem jest potwórzenie tej operacji dla każdego elementu.
+
+
+```r
+print(odl_mile[[1]] * 1.609)
+#> [1] 228
+print(odl_mile[[2]] * 1.609)
 #> [1] 101
+print(odl_mile[[3]] * 1.609)
 #> [1] 195
 ```
 
-\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Tradycyjnie zmienna w pętli for nazywana jest `i`, a w przypadku zagnieżdzonych pętli druga zmienna nazywana jest `j`.
-Nazywanie zmiennych w ten sposób nie jest jednak obowiązkowe.
-W powyższym przypadku możliwe byłoby nazwanie zmiennej, np. `pomiar`: `for (pomiar in odl_mile)...`</div>\EndKnitrBlock{rmdinfo}
+W powyższym przypadku mamy tylko trzy elementy, ale jeżeli mielibyśmy takich elementów 1000 musielibyśmy powtórzyć niemal tą samą linię kodu tysiąc razy jedynie zamieniając numer elementu.
+
+Jednym z celów programowania jest ułatwienie szybkiej powtarzalności pewnych czynności.
+Dlatego w tym przypadku moglibyśmy uniknąć wieloktornego pisania podobnego kodu używając pętli `for`.
+Ciałem tej pętli będzie sposób przeliczania i wyświetlania wartości na kilometry, ale zamiast wydzielać kolejne elementy listy (`[[1]]`, `[[2]]`, `[[3]]`), użyjemy nowego obiektu `i`.
+W efekcie nowe ciało pętli `for` będzie przedstawiać się jako `print(odl_mile[[i]] * 1.609)`.
+Kolejnym krokiem jest odpowiednie ustawienie jakie wartości będzie przyjmować `i` w kolejnych powtórzeniach.
 
 
 ```r
 for (i in 1:3) {
-  print(odl_mile[i] * 1.609)
+  print(odl_mile[[i]] * 1.609)
 }
 #> [1] 228
 #> [1] 101
 #> [1] 195
 ```
 
-<!-- block -->
-<!-- uzywaj seq_along(old_mile) zamiast 1:length(old_mile), bo -->
-<!-- 1:lenght(0) -->
+Powyższy nagłówek pętli `for`, `for (i in 1:3)`, określa, że nasz obiekt `i` przyjmie najpierw wartość 1, wykona obliczenie wewnątrz pętli, następnie `i` przyjmie wartość 2, znów wykona obliczenie, a na końcu `i` przyjmie wartość 3 i obliczenie zostanie wykonane po raz ostatni.
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Tradycyjnie zmienna w pętli `for` nazywana jest `i`, a w przypadku zagnieżdzonych pętli druga zmienna nazywana jest `j`.
+Nazywanie zmiennych w ten sposób nie jest jednak obowiązkowe.
+W powyższym przypadku możliwe byłoby nazwanie zmiennej, np. `pomiar`: `for (pomiar in odl_mile) {...}`.</div>\EndKnitrBlock{rmdinfo}
+
+Użyty wyżej kod wykonuje nasz cel, ale wymaga od nas zawsze deklaracji dotyczącej tego jakie wartości ma przyjąć obiekt `i`. 
+W przypadku, gdy obiekt wejściowy `odl_mile` będzie krótszy lub dłuższy niż trzy elementy, będziemy musieli ręcznie zmienić nagłówek pętli `for`.
+Aby tego uniknąć możemy automatycznie określić wszystkie pozycje elementów w liście `odl_mile` używając funkcji `seq_along()`.
+Ta funkcja zawsze wyświetli numery położenia kolejnych elementów danego wektora lub listy.
 
 
 ```r
-odl_mile_l = seq_along(odl_mile)
-for (i in odl_mile_l) {
-  print(odl_mile[i] * 1.609)
+seq_along(odl_mile)
+#> [1] 1 2 3
+```
+
+Poniższy kod nie wymaga już od nas ręcznego wprowadzania kolejnych położeń elementów wejściowej listy.
+
+
+```r
+for (i in seq_along(odl_mile)) {
+  print(odl_mile[[i]] * 1.609)
 }
 #> [1] 228
 #> [1] 101
@@ -66,13 +102,28 @@ for (i in odl_mile_l) {
 ```
 
 
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Często w takich sytuacjach używana jest konstrukcja `1:length()`, np. `1:length(old_mile)`. 
+Zadziała ona poprawnie w powyższym przypadku, ale nie jest ona uniwersalna.
+Konstrukcja `1:length()` może wywołać problemy w kodzie, gdy wejściowy obiekt jest pusty.
+`for (i in 1:length(NULL)){...}` wykona pętlę `for` dwa razy, podczas gdy w rzeczywistości nie powinna ona zostać w ogóle wykonana.
+Funkcja `seq_along()` jest odporna na ten problem - `seq_along(NULL)` nie wykona pętli ani razu.</div>\EndKnitrBlock{rmdinfo}
+
+
+
+
 ```r
-odl_mile_l = seq_along(odl_mile)
-for (i in odl_mile_l) {
-  odl_mile[i] = odl_mile[i] * 1.609
+for (i in  seq_along(odl_mile)) {
+  odl_mile[[i]] = odl_mile[[i]] * 1.609
 }
 odl_mile
-#> [1] 228 101 195
+#> [[1]]
+#> [1] 228
+#> 
+#> [[2]]
+#> [1] 101
+#> 
+#> [[3]]
+#> [1] 195
 ```
 
 
@@ -133,6 +184,8 @@ mile_na_km(odleglosci_mile)
 
 
 
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">recursive</div>\EndKnitrBlock{rmdinfo}
+
 ## Pętla while
 
 W przypadku pętli for znana jest liczba powtórzeń przed rozpoczęciem jej działania.
@@ -141,7 +194,7 @@ W efekcie pętla while jest bardziej elastyczna, co jest zarazem jej atutem, ale
 Bardziej elastyczne metody charakteryzuje również większa liczba potencjalnych sytuacji, a w efekcie problemów.
 
 <!-- https://rstudio-education.github.io/hopr/loops.html#while-loops -->
-https://adv-r.hadley.nz/control-flow.html#loops -->
+<!--https://adv-r.hadley.nz/control-flow.html#loops -->
 
 
 ```r

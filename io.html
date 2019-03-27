@@ -223,7 +223,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-2"><i class="fa fa-check"></i><b>7.3.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.3.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-2"><i class="fa fa-check"></i><b>7.3.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#aczenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie</a></li>
-<li class="chapter" data-level="7.3.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-3"><i class="fa fa-check"></i><b>7.3.4</b> Wydzielanie</a></li>
+<li class="chapter" data-level="7.3.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-list"><i class="fa fa-check"></i><b>7.3.4</b> Wydzielanie</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zmiany-klas"><i class="fa fa-check"></i><b>7.4</b> Zmiany klas</a></li>
 <li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#inne-klasy-obiektow"><i class="fa fa-check"></i><b>7.5</b> Inne klasy obiektów</a></li>
@@ -331,7 +331,7 @@ Ustawienie folderu roboczego ma też miejsce przy tworzeniu nowego lub otwierani
 <p>Folder roboczy jest ważny ponieważ pozwala na korzystanie z względnej ścieżki.
 Ścieżka względna oznacza określanie ścieżki pliku w odniesieniu do istniejącego folderu roboczego, podczas, gdy ścieżka bezwzględna opisuje pełne położenie pliku.
 Przykładowo, mamy plik <code>dane_meteo.csv</code>, którego pełna ścieżka to <code>home/jakub/Documents/elp/pliki/dane_meteo.csv</code>.
-Z poziomu R ten plik jest widoczny zarówno jako <code>home/jakub/Documents/elp/pliki/dane_meteo.csv</code>, ale też w postaci <code>pliki/dane_meteo.csv</code><a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>.
+Z poziomu R ten plik jest widoczny zarówno jako <code>home/jakub/Documents/elp/pliki/dane_meteo.csv</code>, ale też w postaci <code>pliki/dane_meteo.csv</code><a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>.
 Używanie ścieżek względnych jest rekomendowane, ponieważ znacząco upraszcza pracę, gdy dane/obliczenia przenosi się pomiędzy różnymi komputerami lub gdy współpracuje się z innymi osobami.
 Ścieżki względne są też używane w połączeniu z systemami kontroli wersji (rozdział <a href="kontrola-wersji.html#kontrola-wersji">12</a>).</p>
 
@@ -496,7 +496,7 @@ Przykładowo, hierarchiczne formaty danych można wczytać używając pakietu <s
 Zestawienie zawierające dodatkowe przykłady można znaleźć pod adresem <a href="https://github.com/leeper/rio" class="uri">https://github.com/leeper/rio</a>.</p>
 <p>Powszechną sytuacją jest przechowywanie danych w różnego rodzaju bazach danych.
 Ma to miejsce, kiedy dane są znacznej wielkości, mają złożone relacje, czy też muszą być jednocześnie dostępne dla wielu osób.
-Dostęp do baz danych w R możliwy jest używając pakietu <strong>DBI</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-DBI"><strong>???</strong></span>)</span> wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. <strong>RPostgreSQL</strong> dla baz PostgreSQL <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-RPostgreSQL"><strong>???</strong></span>)</span> czy <strong>RSQLite</strong> dla baz SQLite <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-RSQLite"><strong>???</strong></span>)</span>).<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a></p>
+Dostęp do baz danych w R możliwy jest używając pakietu <strong>DBI</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-DBI"><strong>???</strong></span>)</span> wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. <strong>RPostgreSQL</strong> dla baz PostgreSQL <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-RPostgreSQL"><strong>???</strong></span>)</span> czy <strong>RSQLite</strong> dla baz SQLite <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-RSQLite"><strong>???</strong></span>)</span>).<a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a></p>
 </div>
 <div id="dziaania-na-plikach-i-folderach" class="section level2">
 <h2><span class="header-section-number">9.8</span> Działania na plikach i folderach</h2>
@@ -508,7 +508,7 @@ W jej przypadku konieczne jest podanie, oprócz nazwy folder do usunięcia, argu
 Przykładowo, aby usunąć folder <code>&quot;dane&quot;</code> należy wpisać <code>unlink(&quot;dane&quot;, recursive = TRUE)</code>.</p>
 <p>Sprawdzenie czy plik istnieje na dysku można wykonać używając <code>file.exist()</code>, a usunąć go za pomocą <code>file.remove()</code>.
 Obie funkcje przyjmują jako wejście wektor znakowy zawierający nazwy plików do sprawdzenia czy usunięcia.</p>
-<p>W przypadkach, gdy konieczne jest stworzenie nowego archiwum ZIP lub rozpakowanie istniejącego pliku w tym formacie można użyć funkcji <code>zip()</code> oraz <code>unzip()</code>.<a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a></p>
+<p>W przypadkach, gdy konieczne jest stworzenie nowego archiwum ZIP lub rozpakowanie istniejącego pliku w tym formacie można użyć funkcji <code>zip()</code> oraz <code>unzip()</code>.<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a></p>
 </div>
 <div id="zadania-8" class="section level2">
 <h2><span class="header-section-number">9.9</span> Zadania</h2>
@@ -548,10 +548,10 @@ Obie funkcje przyjmują jako wejście wektor znakowy zawierający nazwy plików 
 </div>
 <div class="footnotes">
 <hr />
-<ol start="33">
-<li id="fn33"><p>Jeżeli poprawnie ustawiliśmy folder roboczy.<a href="io.html#fnref33" class="footnote-back">↩</a></p></li>
-<li id="fn34"><p>Więcej informacji o łączeniu się z bazami danych można znaleść na stronie <a href="https://db.rstudio.com/getting-started/connect-to-database" class="uri">https://db.rstudio.com/getting-started/connect-to-database</a>.<a href="io.html#fnref34" class="footnote-back">↩</a></p></li>
-<li id="fn35"><p>Na komputerach z systemem Windows wymagane jest posiadanie zainstalowanego programu do rozpakowywania plików ZIP.<a href="io.html#fnref35" class="footnote-back">↩</a></p></li>
+<ol start="34">
+<li id="fn34"><p>Jeżeli poprawnie ustawiliśmy folder roboczy.<a href="io.html#fnref34" class="footnote-back">↩</a></p></li>
+<li id="fn35"><p>Więcej informacji o łączeniu się z bazami danych można znaleść na stronie <a href="https://db.rstudio.com/getting-started/connect-to-database" class="uri">https://db.rstudio.com/getting-started/connect-to-database</a>.<a href="io.html#fnref35" class="footnote-back">↩</a></p></li>
+<li id="fn36"><p>Na komputerach z systemem Windows wymagane jest posiadanie zainstalowanego programu do rozpakowywania plików ZIP.<a href="io.html#fnref36" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

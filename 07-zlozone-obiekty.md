@@ -561,7 +561,7 @@ str(lista3)
 #>   ..$ zna: chr [1:3] "kot" "pies" "nosorożec"
 ```
 
-### Wydzielanie
+### Wydzielanie {#wydzielanie-list}
 
 Wydzielanie list może mieć miejsce używając jednego z trzech operatorów - `[]`, `[[]]`, oraz `$`.
 

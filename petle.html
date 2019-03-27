@@ -223,7 +223,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-2"><i class="fa fa-check"></i><b>7.3.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.3.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-2"><i class="fa fa-check"></i><b>7.3.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#aczenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie</a></li>
-<li class="chapter" data-level="7.3.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-3"><i class="fa fa-check"></i><b>7.3.4</b> Wydzielanie</a></li>
+<li class="chapter" data-level="7.3.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-list"><i class="fa fa-check"></i><b>7.3.4</b> Wydzielanie</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zmiany-klas"><i class="fa fa-check"></i><b>7.4</b> Zmiany klas</a></li>
 <li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#inne-klasy-obiektow"><i class="fa fa-check"></i><b>7.5</b> Inne klasy obiektów</a></li>
@@ -315,52 +315,86 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- https://recology.info/2019/03/control-flow-exceptions/ -->
 <div id="petla-for" class="section level2">
 <h2><span class="header-section-number">8.1</span> Pętla for</h2>
+<p>Pęlta <code>for</code> jest jednym z najczęściej używanych wyrażeń w językach programowania<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>, którego celem jest powtórzenie pewnej operacji o znaną liczbę razy.</p>
 <div id="skadnia" class="section level3">
 <h3><span class="header-section-number">8.1.1</span> Składnia</h3>
-<!-- https://rpubs.com/daspringate/vectorisation -->
+<p>Pęlta <code>for</code> jest zbudowana z dwóch elementów: nagłówka określającego powtórzenia, oraz ciała zawierającego obliczenia.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (element <span class="cf">in</span> wektor) {
   przetwarzanie elementu
 }</code></pre>
 </div>
 <div id="przykad-dziaania" class="section level3">
 <h3><span class="header-section-number">8.1.2</span> Przykład działania</h3>
-<!-- mila lądowa = 1,609 km -->
-<pre class="sourceCode r"><code class="sourceCode r">odl_mile =<span class="st"> </span><span class="kw">c</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (i <span class="cf">in</span> odl_mile) {
-  <span class="kw">print</span>(i <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)
+<p>Zobaczmy jak działa pętla <code>for</code> na uproszczonym przykładzie zamiany wartości odległości z mil lądowych na kilometry.
+Nasze dane wejściowe to lista składająca się z trzech wartości - 142, 63, oraz 121.
+Wiemy też, że jedna mila lądowa to 1,609 kilometra.</p>
+<pre class="sourceCode r"><code class="sourceCode r">odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</code></pre>
+<p>Pętla <code>for</code> może być użyta w tym przypadku na kilka sposobów.
+Na początku warto zastanowić się w jaki sposób można zamienić tylko jedną wartość z powyższej listy.
+Wiemy, że do wybrania jednego elementu z listy służy operator <code>[[]]</code> (sekcja <a href="zlozone-obiekty.html#wydzielanie-list">7.3.4</a>), więc przeliczenie i wyświetlenie tylko pierwszego elementu można wykonać poprzez:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(odl_mile[[<span class="dv">1</span>]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)
+<span class="co">#&gt; [1] 228</span></code></pre>
+<p>Teraz naszym celem jest potwórzenie tej operacji dla każdego elementu.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(odl_mile[[<span class="dv">1</span>]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)
+<span class="co">#&gt; [1] 228</span>
+<span class="kw">print</span>(odl_mile[[<span class="dv">2</span>]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)
+<span class="co">#&gt; [1] 101</span>
+<span class="kw">print</span>(odl_mile[[<span class="dv">3</span>]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)
+<span class="co">#&gt; [1] 195</span></code></pre>
+<p>W powyższym przypadku mamy tylko trzy elementy, ale jeżeli mielibyśmy takich elementów 1000 musielibyśmy powtórzyć niemal tą samą linię kodu tysiąc razy jedynie zamieniając numer elementu.</p>
+<p>Jednym z celów programowania jest ułatwienie szybkiej powtarzalności pewnych czynności.
+Dlatego w tym przypadku moglibyśmy uniknąć wieloktornego pisania podobnego kodu używając pętli <code>for</code>.
+Ciałem tej pętli będzie sposób przeliczania i wyświetlania wartości na kilometry, ale zamiast wydzielać kolejne elementy listy (<code>[[1]]</code>, <code>[[2]]</code>, <code>[[3]]</code>), użyjemy nowego obiektu <code>i</code>.
+W efekcie nowe ciało pętli <code>for</code> będzie przedstawiać się jako <code>print(odl_mile[[i]] * 1.609)</code>.
+Kolejnym krokiem jest odpowiednie ustawienie jakie wartości będzie przyjmować <code>i</code> w kolejnych powtórzeniach.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) {
+  <span class="kw">print</span>(odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)
+}
+<span class="co">#&gt; [1] 228</span>
+<span class="co">#&gt; [1] 101</span>
+<span class="co">#&gt; [1] 195</span></code></pre>
+<p>Powyższy nagłówek pętli <code>for</code>, <code>for (i in 1:3)</code>, określa, że nasz obiekt <code>i</code> przyjmie najpierw wartość 1, wykona obliczenie wewnątrz pętli, następnie <code>i</code> przyjmie wartość 2, znów wykona obliczenie, a na końcu <code>i</code> przyjmie wartość 3 i obliczenie zostanie wykonane po raz ostatni.</p>
+
+<div class="rmdinfo">
+Tradycyjnie zmienna w pętli <code>for</code> nazywana jest <code>i</code>, a w przypadku zagnieżdzonych pętli druga zmienna nazywana jest <code>j</code>.
+Nazywanie zmiennych w ten sposób nie jest jednak obowiązkowe.
+W powyższym przypadku możliwe byłoby nazwanie zmiennej, np. <code>pomiar</code>: <code>for (pomiar in odl_mile) {...}</code>.
+</div>
+
+<p>Użyty wyżej kod wykonuje nasz cel, ale wymaga od nas zawsze deklaracji dotyczącej tego jakie wartości ma przyjąć obiekt <code>i</code>.
+W przypadku, gdy obiekt wejściowy <code>odl_mile</code> będzie krótszy lub dłuższy niż trzy elementy, będziemy musieli ręcznie zmienić nagłówek pętli <code>for</code>.
+Aby tego uniknąć możemy automatycznie określić wszystkie pozycje elementów w liście <code>odl_mile</code> używając funkcji <code>seq_along()</code>.
+Ta funkcja zawsze wyświetli numery położenia kolejnych elementów danego wektora lub listy.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq_along</span>(odl_mile)
+<span class="co">#&gt; [1] 1 2 3</span></code></pre>
+<p>Poniższy kod nie wymaga już od nas ręcznego wprowadzania kolejnych położeń elementów wejściowej listy.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
+  <span class="kw">print</span>(odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)
 }
 <span class="co">#&gt; [1] 228</span>
 <span class="co">#&gt; [1] 101</span>
 <span class="co">#&gt; [1] 195</span></code></pre>
 
 <div class="rmdinfo">
-Tradycyjnie zmienna w pętli for nazywana jest <code>i</code>, a w przypadku zagnieżdzonych pętli druga zmienna nazywana jest <code>j</code>.
-Nazywanie zmiennych w ten sposób nie jest jednak obowiązkowe.
-W powyższym przypadku możliwe byłoby nazwanie zmiennej, np. <code>pomiar</code>: <code>for (pomiar in odl_mile)...</code>
+Często w takich sytuacjach używana jest konstrukcja <code>1:length()</code>, np. <code>1:length(old_mile)</code>.
+Zadziała ona poprawnie w powyższym przypadku, ale nie jest ona uniwersalna.
+Konstrukcja <code>1:length()</code> może wywołać problemy w kodzie, gdy wejściowy obiekt jest pusty.
+<code>for (i in 1:length(NULL)){...}</code> wykona pętlę <code>for</code> dwa razy, podczas gdy w rzeczywistości nie powinna ona zostać w ogóle wykonana.
+Funkcja <code>seq_along()</code> jest odporna na ten problem - <code>seq_along(NULL)</code> nie wykona pętli ani razu.
 </div>
 
-<pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) {
-  <span class="kw">print</span>(odl_mile[i] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)
-}
-<span class="co">#&gt; [1] 228</span>
-<span class="co">#&gt; [1] 101</span>
-<span class="co">#&gt; [1] 195</span></code></pre>
-<!-- block -->
-<!-- uzywaj seq_along(old_mile) zamiast 1:length(old_mile), bo -->
-<!-- 1:lenght(0) -->
-<pre class="sourceCode r"><code class="sourceCode r">odl_mile_l =<span class="st"> </span><span class="kw">seq_along</span>(odl_mile)
-<span class="cf">for</span> (i <span class="cf">in</span> odl_mile_l) {
-  <span class="kw">print</span>(odl_mile[i] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)
-}
-<span class="co">#&gt; [1] 228</span>
-<span class="co">#&gt; [1] 101</span>
-<span class="co">#&gt; [1] 195</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">odl_mile_l =<span class="st"> </span><span class="kw">seq_along</span>(odl_mile)
-<span class="cf">for</span> (i <span class="cf">in</span> odl_mile_l) {
-  odl_mile[i] =<span class="st"> </span>odl_mile[i] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span> (i <span class="cf">in</span>  <span class="kw">seq_along</span>(odl_mile)) {
+  odl_mile[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>
 }
 odl_mile
-<span class="co">#&gt; [1] 228 101 195</span></code></pre>
+<span class="co">#&gt; [[1]]</span>
+<span class="co">#&gt; [1] 228</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[2]]</span>
+<span class="co">#&gt; [1] 101</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[3]]</span>
+<span class="co">#&gt; [1] 195</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">odl_mile =<span class="st"> </span><span class="kw">c</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="dt">length =</span> <span class="dv">0</span>)
 odl_mile_l =<span class="st"> </span><span class="kw">seq_along</span>(odl_mile)
@@ -397,6 +431,11 @@ Taka zamiana jest jednak możliwa w ten sposób, ponieważ mnożenie jest w niew
 <pre class="sourceCode r"><code class="sourceCode r">odleglosci_mile =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">55</span>, <span class="dv">160</span>)
 <span class="kw">mile_na_km</span>(odleglosci_mile)
 <span class="co">#&gt; [1]   0.00   1.61  16.09  88.50 257.44</span></code></pre>
+
+<div class="rmdinfo">
+recursive
+</div>
+
 </div>
 </div>
 <div id="petla-while" class="section level2">
@@ -406,7 +445,7 @@ Inny rodzaj pętli, while, jest natomiast stosowany gdy nie wiadomo ile potwórz
 W efekcie pętla while jest bardziej elastyczna, co jest zarazem jej atutem, ale też wadą.
 Bardziej elastyczne metody charakteryzuje również większa liczba potencjalnych sytuacji, a w efekcie problemów.</p>
 <!-- https://rstudio-education.github.io/hopr/loops.html#while-loops -->
-<p><a href="https://adv-r.hadley.nz/control-flow.html#loops" class="uri">https://adv-r.hadley.nz/control-flow.html#loops</a> –&gt;</p>
+<!--https://adv-r.hadley.nz/control-flow.html#loops -->
 <pre class="sourceCode r"><code class="sourceCode r"><span class="cf">while</span> (warunek){
     wykonuj operację tak długo jak warunek jest spełniony
 }</code></pre>
@@ -570,6 +609,12 @@ Ile razy zostanie wyświetlony tekst <code>&quot;Działa!&quot;</code>?</li>
 <div id="ref-wickham2014advanced">
 <p>Wickham, Hadley. 2014. <em>Advanced R</em>. Chapman and Hall/CRC.</p>
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="33">
+<li id="fn33"><p><a href="https://en.wikipedia.org/wiki/For_loop" class="uri">https://en.wikipedia.org/wiki/For_loop</a><a href="petle.html#fnref33" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 
