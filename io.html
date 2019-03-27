@@ -373,6 +373,8 @@ W poniższych przykładzie dodatkowo ustalono argument <code>stringsAsFactors</c
 <span class="co">#&gt;  $ pressure    : num  1018 1013 1012 996 1021 ...</span></code></pre>
 <p>Oprócz funkcji <code>read.csv()</code> istnieje również funkcja o nazwie <code>read.csv2()</code>.
 Pierwsza z nich jest przystosowana do wczytania danych dla których separator kolumn to <code>,</code> a separator dziesiętny to <code>.</code>, druga natomiast jest używana gdy wejściowe dane mają <code>;</code> jak separator kolumn i <code>,</code> jako separator dziesiętny.</p>
+<p>Czasem dane tekstowe posiadają inne znaki służące jako separatory, czy też nie posiadają nazw kolumn.
+W takich sytuacjach można użyć funkcji <code>read.table()</code>, która zawiera cały szereg argumentów, które można dopasować, aby poprawnie wczytać dane tekstowe.</p>
 <pre class="sourceCode r"><code class="sourceCode r">meteo =<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;pliki/dane_meteo.csv&quot;</span>, 
                    <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>,
                    <span class="dt">header =</span> <span class="ot">TRUE</span>)
