@@ -177,7 +177,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
 <li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagniezdzone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdzone</a></li>
 <li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porownania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
-<li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wyrazenia-warunkowe-w-funkcjach"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach</a></li>
+<li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wwwf"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach</a></li>
 <li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zadania-3"><i class="fa fa-check"></i><b>4.5</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a><ul>
@@ -236,7 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="petle.html"><a href="petle.html#petla-while"><i class="fa fa-check"></i><b>8.2</b> Pętla while</a></li>
-<li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#programowanie-funkcyjne"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne</a></li>
+<li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#prog-fun"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne</a></li>
 <li class="chapter" data-level="8.4" data-path="petle.html"><a href="petle.html#zadania-7"><i class="fa fa-check"></i><b>8.4</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a><ul>
@@ -311,11 +311,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="petle" class="section level1">
 <h1><span class="header-section-number">8</span> Powtarzanie</h1>
+<p>W rozdziale <a href="wprowadzenie.html#jezyki-programowania">1.2</a> zostały wspomniane różne istniejące paradygmaty programowania.
+Pętle <code>for</code> czy <code>while</code> (sekcje <a href="petle.html#petla-for">8.1</a> i <a href="petle.html#petla-while">8.2</a>) są przykładami programowania imperatywnego, gdzie program komputerowy postrzegany jest jako ciąg poleceń dla komputera.
+Alternatywą do tego sposobu działania jest programowanie funkcyjne, w którym rozwiązanie pewnego problemu jest oparte o użycie lub stworzenie odpowiedniej funkcji (sekcja <a href="petle.html#prog-fun">8.3</a>).
+Język R pozwala na stosowanie zarówno paradygmatu imperatywnego jak i paradygmatu funkcyjnego<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>.</p>
 <!-- intro -->
 <!-- https://recology.info/2019/03/control-flow-exceptions/ -->
 <div id="petla-for" class="section level2">
 <h2><span class="header-section-number">8.1</span> Pętla for</h2>
-<p>Pęlta <code>for</code> jest jednym z najczęściej używanych wyrażeń w językach programowania<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>, którego celem jest powtórzenie pewnej operacji o znaną liczbę razy.</p>
+<p>Pęlta <code>for</code> jest jednym z najczęściej używanych wyrażeń w językach programowania<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>, którego celem jest powtórzenie pewnej operacji o znaną liczbę razy.</p>
 <div id="skadnia" class="section level3">
 <h3><span class="header-section-number">8.1.1</span> Składnia</h3>
 <p>Pęlta <code>for</code> jest zbudowana z dwóch elementów: nagłówka określającego powtórzenia, oraz ciała zawierającego obliczenia.</p>
@@ -441,59 +445,81 @@ odl_km
 </div>
 <div id="zastosowanie-w-funkcjach" class="section level3">
 <h3><span class="header-section-number">8.1.3</span> Zastosowanie w funkcjach</h3>
-<pre class="sourceCode r"><code class="sourceCode r">mile_na_km =<span class="st"> </span><span class="cf">function</span>(odl_mile){
-  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))
-  odl_mile_l =<span class="st"> </span><span class="kw">seq_along</span>(odl_mile)
-  <span class="cf">for</span> (i <span class="cf">in</span> odl_mile_l) {
-    odl_km[i] =<span class="st"> </span>odl_mile[i] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>
+<p>Pętle <code>for</code>, podobnie jak wyrażenia warunkowe (sekcja <a href="warunki.html#wwwf">4.4</a>), w naturalny sposób są stosowane w funkcjach.
+Przykładowo, możemy stworzyć nową funkcję <code>mile_na_km()</code>, która przyjmuje listę z wartościami w milach lądowych jako obiekt wejściowy, a później zwraca listę z wartościami w kilometrach.</p>
+<pre class="sourceCode r"><code class="sourceCode r">mile_na_km =<span class="st"> </span><span class="cf">function</span>(odl_mile) {
+  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))
+  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
+    odl_km[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>
   }
   odl_km
 }</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">odleglosci_mile =<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">55</span>, <span class="dv">160</span>)
+<p>Sprawdźmy działanie funkcji na prostym przykładzie listy z pięcioma elementami.</p>
+<pre class="sourceCode r"><code class="sourceCode r">odleglosci_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">55</span>, <span class="dv">160</span>)
 <span class="kw">mile_na_km</span>(odleglosci_mile)
-<span class="co">#&gt; [1]   0.00   1.61  16.09  88.50 257.44</span></code></pre>
-
-<div class="rmdinfo">
-recursive
-</div>
-
+<span class="co">#&gt; [[1]]</span>
+<span class="co">#&gt; [1] 0</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[2]]</span>
+<span class="co">#&gt; [1] 1.61</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[3]]</span>
+<span class="co">#&gt; [1] 16.1</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[4]]</span>
+<span class="co">#&gt; [1] 88.5</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[5]]</span>
+<span class="co">#&gt; [1] 257</span></code></pre>
+<p>Zgodnie z oczekiwaniami zero mil lądowych to również zero kilometrów, a jedna mila lądowa to 1,609 kilometra.</p>
 </div>
 </div>
 <div id="petla-while" class="section level2">
 <h2><span class="header-section-number">8.2</span> Pętla while</h2>
-<p>W przypadku pętli for znana jest liczba powtórzeń przed rozpoczęciem jej działania.
-Inny rodzaj pętli, while, jest natomiast stosowany gdy nie wiadomo ile potwórzeń jest koniecznych.
-W efekcie pętla while jest bardziej elastyczna, co jest zarazem jej atutem, ale też wadą.
-Bardziej elastyczne metody charakteryzuje również większa liczba potencjalnych sytuacji, a w efekcie problemów.</p>
+<p>W przypadku pętli <code>for</code> znana jest liczba powtórzeń przed rozpoczęciem jej działania.
+Inny rodzaj pętli, pętla <code>while</code>, jest natomiast stosowany gdy nie wiadomo ile potwórzeń jest koniecznych.
+W efekcie pętla <code>while</code> jest bardziej elastyczna, co jest zarazem jej atutem i wadą.
+Bardziej elastyczne metody charakteryzuje większa liczba potencjalnych sytuacji do których mogą zostać użyte, ale w efekcie też więcej potencjalnych problemów.
+Pętla <code>while</code> powinna być używana tylko gdy rozwiązanie z użyciem pętli <code>for</code> nie jest możliwe.</p>
 <!-- https://rstudio-education.github.io/hopr/loops.html#while-loops -->
 <!--https://adv-r.hadley.nz/control-flow.html#loops -->
+<p>Pętla <code>while</code> składa się z nagłówka definującego pewien warunek oraz ciała określającego operację do wykonania.
+Pętla ta będzie tak długo powtarzana jak długo warunek będzie spełniony - dlatego też w ciale pętli musi być jakiś mechanizm zmieniający wartość wpływającą na warunek.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="cf">while</span> (warunek){
     wykonuj operację tak długo jak warunek jest spełniony
 }</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">budzet =<span class="st"> </span><span class="dv">100</span>
+<p>Wyobraźmy sobie poniższą sytuację.
+Mamy 1000 zł (obiekt <code>budzet</code>) i chcemy zainwestować te pieniądze na giełdzie w celu ich pomnożenia.
+Interesują nas tylko dwa scenariusze - jeden w którym tracimy całą kwotę, oraz drugi w którym udaje się nam podwoić tę kwotę.
+Wiemy też jedną dodatkową rzecz - losowe wahania na giełdzie mogą pozwolić nam na stratę maksymalnie 100 zł aż do zysku 100 zł każdego dnia.
+Poniższy kod wykonuje pętlę <code>while</code> tak długo jak obiekt <code>budzet</code> ma wartość większą od zera i mniejszą od 2000.</p>
+<pre class="sourceCode r"><code class="sourceCode r">budzet =<span class="st"> </span><span class="dv">1000</span>
 liczba_dni =<span class="st"> </span><span class="dv">0</span>
-<span class="cf">while</span>(budzet <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;&amp;</span><span class="st"> </span>budzet <span class="op">&lt;</span><span class="st"> </span><span class="dv">200</span>){
-  budzet =<span class="st"> </span>budzet <span class="op">+</span><span class="st"> </span><span class="kw">sample</span>(<span class="op">-</span><span class="dv">10</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">size =</span> <span class="dv">1</span>)
+<span class="cf">while</span>(budzet <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;&amp;</span><span class="st"> </span>budzet <span class="op">&lt;</span><span class="st"> </span><span class="dv">2000</span>){
+  budzet =<span class="st"> </span>budzet <span class="op">+</span><span class="st"> </span><span class="kw">sample</span>(<span class="op">-</span><span class="dv">100</span><span class="op">:</span><span class="dv">100</span>, <span class="dt">size =</span> <span class="dv">1</span>) <span class="co"># losowa strata lub zysk</span>
   liczba_dni =<span class="st"> </span>liczba_dni <span class="op">+</span><span class="st"> </span><span class="dv">1</span>
-}
+}</code></pre>
+<p>Po jego wykonaniu możemy dowiedzieć się czy udało się nam zarobić czy też stracić całe pieniądze.
+Dodatkowo możemy sprawdzić ile zajęło to dni.</p>
+<pre class="sourceCode r"><code class="sourceCode r">budzet
+<span class="co">#&gt; [1] 2009</span>
 liczba_dni
-<span class="co">#&gt; [1] 535</span></code></pre>
+<span class="co">#&gt; [1] 531</span></code></pre>
 
 <div class="rmdinfo">
-Inne rodzaje pętli to pętla repeat oraz pętla do.
-Pętla repeat powtarza pewnien kod aż do momentu przerwania go przez użytkownika (np. użycie klawisza Esc) lub do pojawienia się komendy <code>break</code>.
-Działanie pętli do natomiast wygląda w następujący sposób:
+Inne istniejące rodzaje pętli to pętla <code>repeat</code> oraz pętla <code>do</code>.
+Pętla <code>repeat</code> powtarza pewnien kod aż do momentu przerwania go przez użytkownika (np. użycie klawisza Esc) lub do pojawienia się komendy <code>break</code>.
+Działanie pętli <code>do</code> natomiast wygląda w następujący sposób:
 <code>do {wykonuj operację} while (warunek)</code>.
-Pętla do nie występuje w R.
+Pętla <code>do</code> nie występuje w R.
 </div>
 
 <p>Dodatkowe informacje na temat pętli for and while można znaleźć w sekcji <a href="https://adv-r.hadley.nz/control-flow.html#loops">Loops</a> książki Advanced R <span class="citation">(Wickham <a href="#ref-wickham2014advanced">2014</a>)</span></p>
 </div>
-<div id="programowanie-funkcyjne" class="section level2">
+<div id="prog-fun" class="section level2">
 <h2><span class="header-section-number">8.3</span> Programowanie funkcyjne</h2>
-<pre class="sourceCode r"><code class="sourceCode r">konwersja_temp =<span class="st"> </span><span class="cf">function</span>(temperatura_f){
-    (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span>
-}</code></pre>
+<p>Sprawdźmy działanie programowania funkcyjnego na dwóch przykładach.
+W pierwszym posiadamy listę <code>pomiary_f_lista</code> składającą się z trzech elementów - każdy z nich to wektor z trzema pomiarami temperatury w stopniach Fahrenheita.</p>
 <pre class="sourceCode r"><code class="sourceCode r">pomiary_f_lista =<span class="st"> </span><span class="kw">list</span>(
   <span class="dt">miastoA =</span> <span class="kw">c</span>(<span class="dv">61</span>, <span class="dv">14</span>, <span class="dv">21</span>),
   <span class="dt">miastoB =</span> <span class="kw">c</span>(<span class="dv">43</span>, <span class="dv">52</span>, <span class="dv">30</span>),
@@ -508,9 +534,36 @@ pomiary_f_lista
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $miastoC</span>
 <span class="co">#&gt; [1] 41 42 33</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">konwersja_temp</span>(pomiary_f_lista)
+<p>Naszym celem jest zamiana tych wartości na stopnie Celsjusza.
+Używając paradygmatu imperatywnego, moglibyśmy zastosować pętlę <code>for</code> i zastosować przeliczenie wartości dla kolejnych elementów listy.
+W paradygmacie funkcyjnym natomiast naszym pierwszym krokiem jest stworzenie funkcji wykonującej podstawową operację:</p>
+<pre class="sourceCode r"><code class="sourceCode r">konwersja_f_to_c =<span class="st"> </span><span class="cf">function</span>(temperatura_f){
+    (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span>
+}</code></pre>
+
+<div class="rmdinfo">
+<p>Funkcje użyte w programowaniu funkcyjnym muszą spełniać dwa warunki:</p>
+<ol style="list-style-type: decimal">
+<li>Wynik działania funkcji musi zależeć od obiektu wejściowego, czyli gdy dwa razy uruchomimy tą samą funkcję na tych samych danych musimy dostać ten sam wynik.
+Taka funkcja nie może mieć w sobie, np. elementu losowego.</li>
+<li>Funkcja nie może mieć efektów ubocznych (ang. <em>side-effects</em>), czyli wykonywać jakiegoś działania w tle, jak np. wyświetlanie czy zapisywanie na dysk.
+</div></li>
+</ol>
+<p>Powyższa funkcja <code>konwersja_f_to_c()</code> działa poprawnie na wektorach wartości, ale niestety nie jest w stanie zwrócić wyniku w przypadku listy, co obrazuje komunikat błędu.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">konwersja_f_to_c</span>(pomiary_f_lista)
 <span class="co">#&gt; Error in temperatura_f - 32: non-numeric argument to binary operator</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">pomiary_c_lista =<span class="st"> </span><span class="kw">lapply</span>(pomiary_f_lista, <span class="dt">FUN =</span> konwersja_temp)
+<p>Języki obsługujące programowanie funkcyjne posiadają jednak szereg narzędzi do przetwarzania funkcji, które zbiorczo są nazywane funkcjonałami (ang. <em>functional</em>).
+Funkcjonały to funkcje, które przyjmują inne funkcje jako argumenty.</p>
+
+<div class="rmdinfo">
+W R istnieje cała rodzina funkcji poświęcona programowaniu funkcyjnemu.
+Oprócz najczęściej używanych, <code>lapply()</code> i <code>apply()</code>, istnieją również takie funkcje jak <code>sapply()</code>, <code>vapply()</code>, <code>tapply()</code>, <code>mapply()</code> i inne.
+</div>
+
+<p>Jednym z podstawowych funkcjonałów w R jest <code>lapply()</code>.
+Funkcjonał <code>lapply()</code> przyjmuje jako pierwszy arugment wektor atomowy lub listę, a następnie przetwarza go używając funkcji podanej jako drugi argument <code>FUN</code>.</p>
+<p>Poniżej, <code>lapply()</code> wykonuje funkcję <code>konwersja_f_to_c()</code> na kolejnych elementach listy <code>pomiary_f_lista</code> i zwraca nową listę zawierającą wyniki</p>
+<pre class="sourceCode r"><code class="sourceCode r">pomiary_c_lista =<span class="st"> </span><span class="kw">lapply</span>(pomiary_f_lista, <span class="dt">FUN =</span> konwersja_f_to_c)
 pomiary_c_lista
 <span class="co">#&gt; $miastoA</span>
 <span class="co">#&gt; [1]  16.11 -10.00  -6.11</span>
@@ -526,43 +579,53 @@ pomiary_c_lista
 <!-- http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html -->
 <!-- http://alyssafrazee.com/2014/01/29/vectorization.html -->
 <!-- *apply -->
+<p>Programowanie funkcyjne można też stosować do innych klas obiektów.
+Poniższa ramka danych <code>pomiary</code> zawiera trzy kolumny z pomiarami temperatury dla kolejnych miast.
+Dla każdego miasta wykonano jeden pomiar dziennie.</p>
 <pre class="sourceCode r"><code class="sourceCode r">pomiary =<span class="st"> </span><span class="kw">data.frame</span>(
   <span class="dt">miastoA =</span> <span class="kw">c</span>(<span class="fl">6.1</span>, <span class="fl">1.4</span>, <span class="fl">-2.1</span>),
   <span class="dt">miastoB =</span> <span class="kw">c</span>(<span class="fl">4.3</span>, <span class="fl">5.2</span>, <span class="fl">3.0</span>),
   <span class="dt">miastoC =</span> <span class="kw">c</span>(<span class="fl">4.1</span>, <span class="fl">4.2</span>, <span class="fl">3.3</span>)
-  )</code></pre>
+)
+pomiary
+<span class="co">#&gt;   miastoA miastoB miastoC</span>
+<span class="co">#&gt; 1     6.1     4.3     4.1</span>
+<span class="co">#&gt; 2     1.4     5.2     4.2</span>
+<span class="co">#&gt; 3    -2.1     3.0     3.3</span></code></pre>
+<p>Naszym celem jest wyliczenie średnich - zarówno średniej wartości dla każdego miasta (kolumny) oraz średniej wartości dla każdego dnia (wiersze).
+Możemy to zrobić używając pętli <code>for</code>.
+Najpierw tworzymy pusty wektor <code>sr_miasto</code> o długości oczekiwanego wyniku, a następnie wyliczamy średnią dla kolejnych kolumn i dodajemy ją do tego wektora.</p>
 <pre class="sourceCode r"><code class="sourceCode r">sr_miasto =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="dt">length =</span> <span class="kw">ncol</span>(pomiary))
 <span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_len</span>(<span class="kw">ncol</span>(pomiary))){
   sr_miasto[i] =<span class="st"> </span><span class="kw">mean</span>(pomiary[, i])
 }
 sr_miasto
 <span class="co">#&gt; [1] 1.80 4.17 3.87</span></code></pre>
+<p>W kolejnym kroku tworzymy pusty wektor <code>sr_dzien</code> również o długości oczekiwanego wyniku, a następnie wyliczamy średnią dla kolejnych wierszy i dodajemy ją do tego wektora.</p>
 <pre class="sourceCode r"><code class="sourceCode r">sr_dzien =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="dt">length =</span> <span class="kw">nrow</span>(pomiary))
 <span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_len</span>(<span class="kw">nrow</span>(pomiary))){
   sr_dzien[i] =<span class="st"> </span><span class="kw">mean</span>(<span class="kw">unlist</span>(pomiary[i, ]))
 }
 sr_dzien
 <span class="co">#&gt; [1] 4.83 3.60 1.40</span></code></pre>
+<p>Alternatywą w takich przypadkach jest użycie programowania funkcyjnego, a w szczególności funkcjonału <code>apply()</code>.
+Oczekuje on co najmniej trzech argumentów, <code>X</code> - obiektu wejściowego którym mogą być między innymi ramki danych czy macierze, <code>MARGIN</code> określającego czy wartości będą grupowane po wierszach czy kolumnach, oraz <code>FUN</code> zawierającego używaną funkcję.</p>
+<p>W poniższym przypadku obiektem wejściowym jest ramka danych <code>pomiary</code>, <code>MARGIN = 2</code> oznacza wyliczanie oddzielnie dla kolejnych kolumn przy użyciu zdefiniowanej funkcji <code>mean()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">apply</span>(pomiary, <span class="dt">MARGIN =</span> <span class="dv">2</span>, <span class="dt">FUN =</span> mean)
 <span class="co">#&gt; miastoA miastoB miastoC </span>
 <span class="co">#&gt;    1.80    4.17    3.87</span></code></pre>
+<p>Podobne obliczenie, ale dla kolejnych wierszy można uzyskać zamieniając argument <code>MARGIN</code> na <code>1</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">apply</span>(pomiary, <span class="dt">MARGIN =</span> <span class="dv">1</span>, <span class="dt">FUN =</span> mean)
 <span class="co">#&gt; [1] 4.83 3.60 1.40</span></code></pre>
 
 <div class="rmdinfo">
-W R istnieje cała rodzina funkcji poświęcona programowaniu funkcyjnemu.
-Oprócz najczęściej używanych wymienionych powyżej, <code>lapply()</code> i <code>apply()</code>, istnieją również takie funkcje jak <code>sapply()</code>, <code>vapply()</code>, <code>tapply()</code>, <code>mapply()</code> i inne.
-</div>
-
-
-<div class="rmdinfo">
-Pakiet <strong>purrr</strong> oferuje ulepszone i rozszerzone narzędzia do programowania funkcyjnego <span class="citation">(Henry and Wickham <a href="#ref-R-purrr">2019</a>)</span>.
+Pakiet <strong>purrr</strong> oferuje ulepszone i rozszerzone narzędzia do programowania funkcyjnego <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-purrr"><strong>???</strong></span>)</span>.
 Przykładowo, odpowiednikiem funkcji <code>lapply()</code> w pakiecie <strong>purrr</strong> jest funkcja <code>map()</code>.
 Ma ona dodatkowo kilka kolejnych wariantów, np. <code>map_df()</code> - która przyjmuje jako wejście listy, ale zwraca ramki danych, czy <code>map_dbl()</code> - która również przyjmuje listy, ale zwraca wartości zmiennoprzecinkowe.
 </div>
 
-<!-- https://r4ds.had.co.nz/iteration.html#the-map-functions -->
-<!-- link to purrr -->
+<!-- https://stackoverflow.com/questions/7142767/why-are-loops-slow-in-r -->
+<!-- https://adv-r.hadley.nz/functionals.html -->
 </div>
 <div id="zadania-7" class="section level2">
 <h2><span class="header-section-number">8.4</span> Zadania</h2>
@@ -619,6 +682,7 @@ Ile razy zostanie wyświetlony tekst <code>&quot;Działa!&quot;</code>?</li>
 <!-- stworz for 1 -->
 <!-- stworz for 2 -->
 <!-- stworz while 1 -->
+<!-- stworz for dla pierwszego przypadku funkcyjnego -->
 <!-- lapply 1 -->
 <!-- lapply 2 -->
 <!-- apply 1 -->
@@ -630,14 +694,12 @@ Ile razy zostanie wyświetlony tekst <code>&quot;Działa!&quot;</code>?</li>
 <div id="ref-wickham2014advanced">
 <p>Wickham, Hadley. 2014. <em>Advanced R</em>. Chapman and Hall/CRC.</p>
 </div>
-<div id="ref-R-purrr">
-<p>Henry, Lionel, and Hadley Wickham. 2019. <em>Purrr: Functional Programming Tools</em>. <a href="https://CRAN.R-project.org/package=purrr" class="uri">https://CRAN.R-project.org/package=purrr</a>.</p>
-</div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="33">
-<li id="fn33"><p><a href="https://en.wikipedia.org/wiki/For_loop" class="uri">https://en.wikipedia.org/wiki/For_loop</a><a href="petle.html#fnref33" class="footnote-back">↩</a></p></li>
+<li id="fn33"><p>R również obsługuje paradygmat obiektowy.<a href="petle.html#fnref33" class="footnote-back">↩</a></p></li>
+<li id="fn34"><p><a href="https://en.wikipedia.org/wiki/For_loop" class="uri">https://en.wikipedia.org/wiki/For_loop</a><a href="petle.html#fnref34" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

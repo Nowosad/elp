@@ -1,12 +1,15 @@
 
 # Powtarzanie {#petle}
 
-
+W rozdziale \@ref(jezyki-programowania) zostały wspomniane różne istniejące paradygmaty programowania.
+Pętle `for` czy `while` (sekcje \@ref(petla-for) i \@ref(petla-while)) są przykładami programowania imperatywnego, gdzie program komputerowy postrzegany jest jako ciąg poleceń dla komputera.
+Alternatywą do tego sposobu działania jest programowanie funkcyjne, w którym rozwiązanie pewnego problemu jest oparte o użycie lub stworzenie odpowiedniej funkcji (sekcja \@ref(prog-fun)).
+Język R pozwala na stosowanie zarówno paradygmatu imperatywnego jak i paradygmatu funkcyjnego^[R również obsługuje paradygmat obiektowy.].
 
 <!-- intro -->
 <!-- https://recology.info/2019/03/control-flow-exceptions/ -->
 
-## Pętla for
+## Pętla for {#petla-for}
 
 Pęlta `for` jest jednym z najczęściej używanych wyrażeń w językach programowania^[https://en.wikipedia.org/wiki/For_loop], którego celem jest powtórzenie pewnej operacji o znaną liczbę razy.
 
@@ -187,38 +190,59 @@ odl_km
 
 ### Zastosowanie w funkcjach
 
+Pętle `for`, podobnie jak wyrażenia warunkowe (sekcja \@ref(wwwf)), w naturalny sposób są stosowane w funkcjach.
+Przykładowo, możemy stworzyć nową funkcję `mile_na_km()`, która przyjmuje listę z wartościami w milach lądowych jako obiekt wejściowy, a później zwraca listę z wartościami w kilometrach.
+
 
 ```r
-mile_na_km = function(odl_mile){
-  odl_km = vector("numeric", length = length(odl_mile))
-  odl_mile_l = seq_along(odl_mile)
-  for (i in odl_mile_l) {
-    odl_km[i] = odl_mile[i] * 1.609
+mile_na_km = function(odl_mile) {
+  odl_km = vector("list", length = length(odl_mile))
+  for (i in seq_along(odl_mile)) {
+    odl_km[[i]] = odl_mile[[i]] * 1.609
   }
   odl_km
 }
 ```
 
+Sprawdźmy działanie funkcji na prostym przykładzie listy z pięcioma elementami.
+
 
 ```r
-odleglosci_mile = c(0, 1, 10, 55, 160)
+odleglosci_mile = list(0, 1, 10, 55, 160)
 mile_na_km(odleglosci_mile)
-#> [1]   0.00   1.61  16.09  88.50 257.44
+#> [[1]]
+#> [1] 0
+#> 
+#> [[2]]
+#> [1] 1.61
+#> 
+#> [[3]]
+#> [1] 16.1
+#> 
+#> [[4]]
+#> [1] 88.5
+#> 
+#> [[5]]
+#> [1] 257
 ```
 
+Zgodnie z oczekiwaniami zero mil lądowych to również zero kilometrów, a jedna mila lądowa to 1,609 kilometra.
 
 
-\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">recursive</div>\EndKnitrBlock{rmdinfo}
 
-## Pętla while
+## Pętla while {#petla-while}
 
-W przypadku pętli for znana jest liczba powtórzeń przed rozpoczęciem jej działania.
-Inny rodzaj pętli, while, jest natomiast stosowany gdy nie wiadomo ile potwórzeń jest koniecznych.
-W efekcie pętla while jest bardziej elastyczna, co jest zarazem jej atutem, ale też wadą.
-Bardziej elastyczne metody charakteryzuje również większa liczba potencjalnych sytuacji, a w efekcie problemów.
+W przypadku pętli `for` znana jest liczba powtórzeń przed rozpoczęciem jej działania.
+Inny rodzaj pętli, pętla `while`, jest natomiast stosowany gdy nie wiadomo ile potwórzeń jest koniecznych.
+W efekcie pętla `while` jest bardziej elastyczna, co jest zarazem jej atutem i wadą.
+Bardziej elastyczne metody charakteryzuje większa liczba potencjalnych sytuacji do których mogą zostać użyte, ale w efekcie też więcej potencjalnych problemów.
+Pętla `while` powinna być używana tylko gdy rozwiązanie z użyciem pętli `for` nie jest możliwe. 
 
 <!-- https://rstudio-education.github.io/hopr/loops.html#while-loops -->
 <!--https://adv-r.hadley.nz/control-flow.html#loops -->
+
+Pętla `while` składa się z nagłówka definującego pewien warunek oraz ciała określającego operację do wykonania.
+Pętla ta będzie tak długo powtarzana jak długo warunek będzie spełniony - dlatego też w ciale pętli musi być jakiś mechanizm zmieniający wartość wpływającą na warunek.
 
 
 ```r
@@ -230,34 +254,47 @@ while (warunek){
 
 
 
+
+
+Wyobraźmy sobie poniższą sytuację.
+Mamy 1000 zł (obiekt `budzet`) i chcemy zainwestować te pieniądze na giełdzie w celu ich pomnożenia.
+Interesują nas tylko dwa scenariusze - jeden w którym tracimy całą kwotę, oraz drugi w którym udaje się nam podwoić tę kwotę.
+Wiemy też jedną dodatkową rzecz - losowe wahania na giełdzie mogą pozwolić nam na stratę maksymalnie 100 zł aż do zysku 100 zł każdego dnia.
+Poniższy kod wykonuje pętlę `while` tak długo jak obiekt `budzet` ma wartość większą od zera i mniejszą od 2000.
+
+
 ```r
-budzet = 100
+budzet = 1000
 liczba_dni = 0
-while(budzet > 0 && budzet < 200){
-  budzet = budzet + sample(-10:10, size = 1)
+while(budzet > 0 && budzet < 2000){
+  budzet = budzet + sample(-100:100, size = 1) # losowa strata lub zysk
   liczba_dni = liczba_dni + 1
 }
-liczba_dni
-#> [1] 535
 ```
 
+Po jego wykonaniu możemy dowiedzieć się czy udało się nam zarobić czy też stracić całe pieniądze.
+Dodatkowo możemy sprawdzić ile zajęło to dni.
 
-\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Inne rodzaje pętli to pętla repeat oraz pętla do.
-Pętla repeat powtarza pewnien kod aż do momentu przerwania go przez użytkownika (np. użycie klawisza Esc) lub do pojawienia się komendy `break`.
-Działanie pętli do natomiast wygląda w następujący sposób:
+
+```r
+budzet
+#> [1] 2009
+liczba_dni
+#> [1] 531
+```
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Inne istniejące rodzaje pętli to pętla `repeat` oraz pętla `do`.
+Pętla `repeat` powtarza pewnien kod aż do momentu przerwania go przez użytkownika (np. użycie klawisza Esc) lub do pojawienia się komendy `break`.
+Działanie pętli `do` natomiast wygląda w następujący sposób:
 `do {wykonuj operację} while (warunek)`.
-Pętla do nie występuje w R.</div>\EndKnitrBlock{rmdinfo}
+Pętla `do` nie występuje w R.</div>\EndKnitrBlock{rmdinfo}
 
 Dodatkowe informacje na temat pętli for and while można znaleźć w sekcji [Loops](https://adv-r.hadley.nz/control-flow.html#loops) książki Advanced R [@wickham2014advanced]
 
-## Programowanie funkcyjne
+## Programowanie funkcyjne {#prog-fun}
 
-
-```r
-konwersja_temp = function(temperatura_f){
-    (temperatura_f - 32) / 1.8
-}
-```
+Sprawdźmy działanie programowania funkcyjnego na dwóch przykładach.
+W pierwszym posiadamy listę `pomiary_f_lista` składającą się z trzech elementów - każdy z nich to wektor z trzema pomiarami temperatury w stopniach Fahrenheita. 
 
 
 ```r
@@ -277,15 +314,45 @@ pomiary_f_lista
 #> [1] 41 42 33
 ```
 
+Naszym celem jest zamiana tych wartości na stopnie Celsjusza.
+Używając paradygmatu imperatywnego, moglibyśmy zastosować pętlę `for` i zastosować przeliczenie wartości dla kolejnych elementów listy.
+W paradygmacie funkcyjnym natomiast naszym pierwszym krokiem jest stworzenie funkcji wykonującej podstawową operację:
+
 
 ```r
-konwersja_temp(pomiary_f_lista)
+konwersja_f_to_c = function(temperatura_f){
+    (temperatura_f - 32) / 1.8
+}
+```
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Funkcje użyte w programowaniu funkcyjnym muszą spełniać dwa warunki:
+  
+1. Wynik działania funkcji musi zależeć od obiektu wejściowego, czyli gdy dwa razy uruchomimy tą samą funkcję na tych samych danych musimy dostać ten sam wynik.
+Taka funkcja nie może mieć w sobie, np. elementu losowego.
+2. Funkcja nie może mieć efektów ubocznych (ang. *side-effects*), czyli wykonywać jakiegoś działania w tle, jak np. wyświetlanie czy zapisywanie na dysk.</div>\EndKnitrBlock{rmdinfo}
+
+Powyższa funkcja `konwersja_f_to_c()` działa poprawnie na wektorach wartości, ale niestety nie jest w stanie zwrócić wyniku w przypadku listy, co obrazuje komunikat błędu.
+
+
+```r
+konwersja_f_to_c(pomiary_f_lista)
 #> Error in temperatura_f - 32: non-numeric argument to binary operator
 ```
 
+Języki obsługujące programowanie funkcyjne posiadają jednak szereg narzędzi do przetwarzania funkcji, które zbiorczo są nazywane funkcjonałami (ang. *functional*).
+Funkcjonały to funkcje, które przyjmują inne funkcje jako argumenty.
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">W R istnieje cała rodzina funkcji poświęcona programowaniu funkcyjnemu.
+Oprócz najczęściej używanych, `lapply()` i `apply()`, istnieją również takie funkcje jak `sapply()`, `vapply()`, `tapply()`, `mapply()` i inne.</div>\EndKnitrBlock{rmdinfo}
+
+Jednym z podstawowych funkcjonałów w R jest `lapply()`.
+Funkcjonał `lapply()` przyjmuje jako pierwszy arugment wektor atomowy lub listę, a następnie przetwarza go używając funkcji podanej jako drugi argument `FUN`.
+
+Poniżej, `lapply()` wykonuje funkcję `konwersja_f_to_c()` na kolejnych elementach listy `pomiary_f_lista` i zwraca nową listę zawierającą wyniki
+
 
 ```r
-pomiary_c_lista = lapply(pomiary_f_lista, FUN = konwersja_temp)
+pomiary_c_lista = lapply(pomiary_f_lista, FUN = konwersja_f_to_c)
 pomiary_c_lista
 #> $miastoA
 #> [1]  16.11 -10.00  -6.11
@@ -304,14 +371,27 @@ pomiary_c_lista
 <!-- http://alyssafrazee.com/2014/01/29/vectorization.html -->
 <!-- *apply -->
 
+Programowanie funkcyjne można też stosować do innych klas obiektów.
+Poniższa ramka danych `pomiary` zawiera trzy kolumny z pomiarami temperatury dla kolejnych miast. 
+Dla każdego miasta wykonano jeden pomiar dziennie.
+
 
 ```r
 pomiary = data.frame(
   miastoA = c(6.1, 1.4, -2.1),
   miastoB = c(4.3, 5.2, 3.0),
   miastoC = c(4.1, 4.2, 3.3)
-  )
+)
+pomiary
+#>   miastoA miastoB miastoC
+#> 1     6.1     4.3     4.1
+#> 2     1.4     5.2     4.2
+#> 3    -2.1     3.0     3.3
 ```
+
+Naszym celem jest wyliczenie średnich - zarówno średniej wartości dla każdego miasta (kolumny) oraz średniej wartości dla każdego dnia (wiersze).
+Możemy to zrobić używając pętli `for`.
+Najpierw tworzymy pusty wektor `sr_miasto` o długości oczekiwanego wyniku, a następnie wyliczamy średnią dla kolejnych kolumn i dodajemy ją do tego wektora.
 
 
 ```r
@@ -323,6 +403,8 @@ sr_miasto
 #> [1] 1.80 4.17 3.87
 ```
 
+W kolejnym kroku tworzymy pusty wektor `sr_dzien` również o długości oczekiwanego wyniku, a następnie wyliczamy średnią dla kolejnych wierszy i dodajemy ją do tego wektora.
+
 
 ```r
 sr_dzien = vector("numeric", length = nrow(pomiary))
@@ -333,6 +415,11 @@ sr_dzien
 #> [1] 4.83 3.60 1.40
 ```
 
+Alternatywą w takich przypadkach jest użycie programowania funkcyjnego, a w szczególności funkcjonału `apply()`.
+Oczekuje on co najmniej trzech argumentów, `X` - obiektu wejściowego którym mogą być między innymi ramki danych czy macierze, `MARGIN` określającego czy wartości będą grupowane po wierszach czy kolumnach, oraz `FUN` zawierającego używaną funkcję.
+
+W poniższym przypadku obiektem wejściowym jest ramka danych `pomiary`, `MARGIN = 2` oznacza wyliczanie oddzielnie dla kolejnych kolumn przy użyciu zdefiniowanej funkcji `mean()`.
+
 
 ```r
 apply(pomiary, MARGIN = 2, FUN = mean)
@@ -340,21 +427,20 @@ apply(pomiary, MARGIN = 2, FUN = mean)
 #>    1.80    4.17    3.87
 ```
 
+Podobne obliczenie, ale dla kolejnych wierszy można uzyskać zamieniając argument `MARGIN` na `1`.
+
 
 ```r
 apply(pomiary, MARGIN = 1, FUN = mean)
 #> [1] 4.83 3.60 1.40
 ```
 
-\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">W R istnieje cała rodzina funkcji poświęcona programowaniu funkcyjnemu.
-Oprócz najczęściej używanych wymienionych powyżej, `lapply()` i `apply()`, istnieją również takie funkcje jak `sapply()`, `vapply()`, `tapply()`, `mapply()` i inne.</div>\EndKnitrBlock{rmdinfo}
-
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Pakiet **purrr** oferuje ulepszone i rozszerzone narzędzia do programowania funkcyjnego [@R-purrr].
 Przykładowo, odpowiednikiem funkcji `lapply()` w pakiecie **purrr** jest funkcja `map()`.
 Ma ona dodatkowo kilka kolejnych wariantów, np. `map_df()` - która przyjmuje jako wejście listy, ale zwraca ramki danych, czy `map_dbl()` - która również przyjmuje listy, ale zwraca wartości zmiennoprzecinkowe.</div>\EndKnitrBlock{rmdinfo}
 
-<!-- https://r4ds.had.co.nz/iteration.html#the-map-functions -->
-<!-- link to purrr -->
+<!-- https://stackoverflow.com/questions/7142767/why-are-loops-slow-in-r -->
+<!-- https://adv-r.hadley.nz/functionals.html -->
 
 ## Zadania
 
@@ -427,6 +513,7 @@ for (i in c(1, 2, 3)){
 <!-- stworz for 1 -->
 <!-- stworz for 2 -->
 <!-- stworz while 1 -->
+<!-- stworz for dla pierwszego przypadku funkcyjnego -->
 <!-- lapply 1 -->
 <!-- lapply 2 -->
 <!-- apply 1 -->

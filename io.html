@@ -177,7 +177,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
 <li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagniezdzone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdzone</a></li>
 <li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porownania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
-<li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wyrazenia-warunkowe-w-funkcjach"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach</a></li>
+<li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wwwf"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach</a></li>
 <li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zadania-3"><i class="fa fa-check"></i><b>4.5</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a><ul>
@@ -236,7 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="petle.html"><a href="petle.html#petla-while"><i class="fa fa-check"></i><b>8.2</b> Pętla while</a></li>
-<li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#programowanie-funkcyjne"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne</a></li>
+<li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#prog-fun"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne</a></li>
 <li class="chapter" data-level="8.4" data-path="petle.html"><a href="petle.html#zadania-7"><i class="fa fa-check"></i><b>8.4</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a><ul>
@@ -331,7 +331,7 @@ Ustawienie folderu roboczego ma też miejsce przy tworzeniu nowego lub otwierani
 <p>Folder roboczy jest ważny ponieważ pozwala na korzystanie z względnej ścieżki.
 Ścieżka względna oznacza określanie ścieżki pliku w odniesieniu do istniejącego folderu roboczego, podczas, gdy ścieżka bezwzględna opisuje pełne położenie pliku.
 Przykładowo, mamy plik <code>dane_meteo.csv</code>, którego pełna ścieżka to <code>home/jakub/Documents/elp/pliki/dane_meteo.csv</code>.
-Z poziomu R ten plik jest widoczny zarówno jako <code>home/jakub/Documents/elp/pliki/dane_meteo.csv</code>, ale też w postaci <code>pliki/dane_meteo.csv</code><a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>.
+Z poziomu R ten plik jest widoczny zarówno jako <code>home/jakub/Documents/elp/pliki/dane_meteo.csv</code>, ale też w postaci <code>pliki/dane_meteo.csv</code><a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>.
 Używanie ścieżek względnych jest rekomendowane, ponieważ znacząco upraszcza pracę, gdy dane/obliczenia przenosi się pomiędzy różnymi komputerami lub gdy współpracuje się z innymi osobami.
 Ścieżki względne są też używane w połączeniu z systemami kontroli wersji (rozdział <a href="kontrola-wersji.html#kontrola-wersji">12</a>).</p>
 
@@ -408,7 +408,7 @@ Efektem jej działania w przeciwieństwie do poprzednich funkcji nie jest ramka 
 <div class="rmdinfo">
 Funkcje <code>read.csv()</code> czy <code>write.csv()</code> są domyślnie dostępne w języku R.
 Ich wydajność nie jest niestety najlepsza w przypadku plików tekstowych o dużej wielkości.
-W takich przypadkach warto użyć alternatywnych funkcji, np. <code>read_csv()</code> i <code>write_csv()</code> z pakietu <strong>readr</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-readr"><strong>???</strong></span>)</span> lub <code>fread()</code> i <code>fwrite()</code> z pakietu <strong>data.table</strong> <span class="citation">(Dowle and Srinivasan <a href="#ref-R-data.table">2019</a>)</span>.
+W takich przypadkach warto użyć alternatywnych funkcji, np. <code>read_csv()</code> i <code>write_csv()</code> z pakietu <strong>readr</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-readr"><strong>???</strong></span>)</span> lub <code>fread()</code> i <code>fwrite()</code> z pakietu <strong>data.table</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-data.table"><strong>???</strong></span>)</span>.
 </div>
 
 </div>
@@ -476,7 +476,7 @@ meteo_z_xl
 <span class="co">#&gt;  9  352160330 POZNAŃ        2017       1     9  -5.8    0       88.6</span>
 <span class="co">#&gt; 10  352160330 POZNAŃ        2017       1    10  -5      0       75.3</span>
 <span class="co">#&gt; # … with 720 more rows, and 1 more variable: pressure &lt;dbl&gt;</span></code></pre>
-<p><code>write_xlsx()</code> z pakietu <strong>writexl</strong> <span class="citation">(Ooms <a href="#ref-R-writexl">2018</a>)</span></p>
+<p><code>write_xlsx()</code> z pakietu <strong>writexl</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-writexl"><strong>???</strong></span>)</span></p>
 </div>
 <div id="dane-internetowe" class="section level2">
 <h2><span class="header-section-number">9.6</span> Dane internetowe</h2>
@@ -492,11 +492,11 @@ meteo_z_xl
 <h2><span class="header-section-number">9.7</span> Inne formaty</h2>
 <p>Powyżej można było zobaczyć jaki sposób można wczytać dane z różnorodnych plików tekstowych, R, czy arkuszy kalkulacyjnych.
 R pozwala jednocześnie na otworzenie wielu innych formatów plików używając dodatkowych pakietów.
-Przykładowo, hierarchiczne formaty danych można wczytać używając pakietu <strong>jsonline</strong> (format <code>.json</code>) <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-jsonlite"><strong>???</strong></span>)</span> czy <strong>xml2</strong> (format <code>.xml</code>) <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-xml2"><strong>???</strong></span>)</span>, a formaty danych przestrzennych używając pakietu <strong>sf</strong> (dane wektorowe) <span class="citation">(Pebesma <a href="#ref-R-sf">2019</a>)</span> czy <strong>raster</strong> (dane rastrowe) <span class="citation">(Hijmans <a href="#ref-R-raster">2019</a>)</span>.
+Przykładowo, hierarchiczne formaty danych można wczytać używając pakietu <strong>jsonline</strong> (format <code>.json</code>) <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-jsonlite"><strong>???</strong></span>)</span> czy <strong>xml2</strong> (format <code>.xml</code>) <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-xml2"><strong>???</strong></span>)</span>, a formaty danych przestrzennych używając pakietu <strong>sf</strong> (dane wektorowe) <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-sf"><strong>???</strong></span>)</span> czy <strong>raster</strong> (dane rastrowe) <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-raster"><strong>???</strong></span>)</span>.
 Zestawienie zawierające dodatkowe przykłady można znaleźć pod adresem <a href="https://github.com/leeper/rio" class="uri">https://github.com/leeper/rio</a>.</p>
 <p>Powszechną sytuacją jest przechowywanie danych w różnego rodzaju bazach danych.
 Ma to miejsce, kiedy dane są znacznej wielkości, mają złożone relacje, czy też muszą być jednocześnie dostępne dla wielu osób.
-Dostęp do baz danych w R możliwy jest używając pakietu <strong>DBI</strong> <span class="citation">(R Special Interest Group on Databases (R-SIG-DB), Wickham, and Müller <a href="#ref-R-DBI">2018</a>)</span> wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. <strong>RPostgreSQL</strong> dla baz PostgreSQL <span class="citation">(Conway et al. <a href="#ref-R-RPostgreSQL">2017</a>)</span> czy <strong>RSQLite</strong> dla baz SQLite <span class="citation">(Müller et al. <a href="#ref-R-RSQLite">2018</a>)</span>).<a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a></p>
+Dostęp do baz danych w R możliwy jest używając pakietu <strong>DBI</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-DBI"><strong>???</strong></span>)</span> wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. <strong>RPostgreSQL</strong> dla baz PostgreSQL <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-RPostgreSQL"><strong>???</strong></span>)</span> czy <strong>RSQLite</strong> dla baz SQLite <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-RSQLite"><strong>???</strong></span>)</span>).<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a></p>
 </div>
 <div id="dziaania-na-plikach-i-folderach" class="section level2">
 <h2><span class="header-section-number">9.8</span> Działania na plikach i folderach</h2>
@@ -508,7 +508,7 @@ W jej przypadku konieczne jest podanie, oprócz nazwy folder do usunięcia, argu
 Przykładowo, aby usunąć folder <code>&quot;dane&quot;</code> należy wpisać <code>unlink(&quot;dane&quot;, recursive = TRUE)</code>.</p>
 <p>Sprawdzenie czy plik istnieje na dysku można wykonać używając <code>file.exist()</code>, a usunąć go za pomocą <code>file.remove()</code>.
 Obie funkcje przyjmują jako wejście wektor znakowy zawierający nazwy plików do sprawdzenia czy usunięcia.</p>
-<p>W przypadkach, gdy konieczne jest stworzenie nowego archiwum ZIP lub rozpakowanie istniejącego pliku w tym formacie można użyć funkcji <code>zip()</code> oraz <code>unzip()</code>.<a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a></p>
+<p>W przypadkach, gdy konieczne jest stworzenie nowego archiwum ZIP lub rozpakowanie istniejącego pliku w tym formacie można użyć funkcji <code>zip()</code> oraz <code>unzip()</code>.<a href="#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a></p>
 </div>
 <div id="zadania-8" class="section level2">
 <h2><span class="header-section-number">9.9</span> Zadania</h2>
@@ -531,36 +531,12 @@ Obie funkcje przyjmują jako wejście wektor znakowy zawierający nazwy plików 
 
 
 
-<h3>Bibliografia</h3>
-<div id="refs" class="references">
-<div id="ref-R-data.table">
-<p>Dowle, Matt, and Arun Srinivasan. 2019. <em>Data.table: Extension of ‘Data.frame‘</em>. <a href="https://CRAN.R-project.org/package=data.table" class="uri">https://CRAN.R-project.org/package=data.table</a>.</p>
-</div>
-<div id="ref-R-writexl">
-<p>Ooms, Jeroen. 2018. <em>Writexl: Export Data Frames to Excel ’Xlsx’ Format</em>. <a href="https://CRAN.R-project.org/package=writexl" class="uri">https://CRAN.R-project.org/package=writexl</a>.</p>
-</div>
-<div id="ref-R-sf">
-<p>Pebesma, Edzer. 2019. <em>Sf: Simple Features for R</em>. <a href="https://CRAN.R-project.org/package=sf" class="uri">https://CRAN.R-project.org/package=sf</a>.</p>
-</div>
-<div id="ref-R-raster">
-<p>Hijmans, Robert J. 2019. <em>Raster: Geographic Data Analysis and Modeling</em>. <a href="https://www.rspatial.org/" class="uri">https://www.rspatial.org/</a>.</p>
-</div>
-<div id="ref-R-DBI">
-<p>R Special Interest Group on Databases (R-SIG-DB), Hadley Wickham, and Kirill Müller. 2018. <em>DBI: R Database Interface</em>. <a href="https://CRAN.R-project.org/package=DBI" class="uri">https://CRAN.R-project.org/package=DBI</a>.</p>
-</div>
-<div id="ref-R-RPostgreSQL">
-<p>Conway, Joe, Dirk Eddelbuettel, Tomoaki Nishiyama, Sameer Kumar Prayaga, and Neil Tiffin. 2017. <em>RPostgreSQL: R Interface to the ’Postgresql’ Database System</em>. <a href="https://CRAN.R-project.org/package=RPostgreSQL" class="uri">https://CRAN.R-project.org/package=RPostgreSQL</a>.</p>
-</div>
-<div id="ref-R-RSQLite">
-<p>Müller, Kirill, Hadley Wickham, David A. James, and Seth Falcon. 2018. <em>RSQLite: ’SQLite’ Interface for R</em>. <a href="https://CRAN.R-project.org/package=RSQLite" class="uri">https://CRAN.R-project.org/package=RSQLite</a>.</p>
-</div>
-</div>
 <div class="footnotes">
 <hr />
-<ol start="34">
-<li id="fn34"><p>Jeżeli poprawnie ustawiliśmy folder roboczy.<a href="io.html#fnref34" class="footnote-back">↩</a></p></li>
-<li id="fn35"><p>Więcej informacji o łączeniu się z bazami danych można znaleść na stronie <a href="https://db.rstudio.com/getting-started/connect-to-database" class="uri">https://db.rstudio.com/getting-started/connect-to-database</a>.<a href="io.html#fnref35" class="footnote-back">↩</a></p></li>
-<li id="fn36"><p>Na komputerach z systemem Windows wymagane jest posiadanie zainstalowanego programu do rozpakowywania plików ZIP.<a href="io.html#fnref36" class="footnote-back">↩</a></p></li>
+<ol start="35">
+<li id="fn35"><p>Jeżeli poprawnie ustawiliśmy folder roboczy.<a href="io.html#fnref35" class="footnote-back">↩</a></p></li>
+<li id="fn36"><p>Więcej informacji o łączeniu się z bazami danych można znaleść na stronie <a href="https://db.rstudio.com/getting-started/connect-to-database" class="uri">https://db.rstudio.com/getting-started/connect-to-database</a>.<a href="io.html#fnref36" class="footnote-back">↩</a></p></li>
+<li id="fn37"><p>Na komputerach z systemem Windows wymagane jest posiadanie zainstalowanego programu do rozpakowywania plików ZIP.<a href="io.html#fnref37" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

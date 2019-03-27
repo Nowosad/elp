@@ -145,7 +145,7 @@ Pierwsze dwa porównują wszystkie elementy zadanych wektorów i ich wynikiem mo
 Operatory `&&` i `||` porównują tylko pierwszy element każdego wektora, a w efekcie zawsze zwracają tylko jedną wartość.
 Dodatkowo, to one są zazwyczaj używane w wyrażeniach warunkowych.</div>\EndKnitrBlock{rmdinfo}
 
-## Wyrażenia warunkowe w funkcjach
+## Wyrażenia warunkowe w funkcjach {#wwwf}
 
 Wyrażenia warunkowe są często używanym elementem przy tworzeniu funkcji.
 Pozwalają one na nie tylko na określanie tego w jaki sposób dana funkcja zadziała, ale też pełnią rolę w sprawdzaniu czy do funkcji zostały wprowadzone poprawne argumenty.
