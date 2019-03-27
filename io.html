@@ -425,13 +425,17 @@ Dodatkowo możliwe jest pominięcie zapisania nazw wierszy (<code>row.names = FA
 <div class="rmdinfo">
 Funkcje <code>read.csv()</code> czy <code>write.csv()</code> są domyślnie dostępne w języku R.
 Ich wydajność nie jest niestety najlepsza w przypadku plików tekstowych o dużej wielkości.
-W takich przypadkach warto użyć alternatywnych funkcji, np. <code>read_csv()</code> i <code>write_csv()</code> z pakietu <strong>readr</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-readr"><strong>???</strong></span>)</span> lub <code>fread()</code> i <code>fwrite()</code> z pakietu <strong>data.table</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-data.table"><strong>???</strong></span>)</span>.
+W takich przypadkach warto użyć alternatywnych funkcji, np. <code>read_csv()</code> i <code>write_csv()</code> z pakietu <strong>readr</strong> <span class="citation">(Wickham, Hester, and Francois <a href="#ref-R-readr">2018</a>)</span> lub <code>fread()</code> i <code>fwrite()</code> z pakietu <strong>data.table</strong> <span class="citation">(Dowle and Srinivasan <a href="#ref-R-data.table">2019</a>)</span>.
 </div>
 
 </div>
 <div id="formaty-r" class="section level2">
 <h2><span class="header-section-number">9.4</span> Formaty R</h2>
 <!-- info about binary -->
+<p>Formaty tekstowe są bardzo uniwersalne pozwalając na odczyt, zapis czy przenoszenie danych pomiędzy różnymi komputerami, programami czy językami programowania.
+Mają one jednak pewne ograniczenia.
+Wielkość pliku tekstowego rośnie bardzo szybko wraz z liczbą elementów, a dodatkowo plik tekstowy nie przechowuje dodatkowych informacji specyficznych dla języków programowania.</p>
+<p>Przykładowo, chcemy aby kolumna <code>nazwa_stacji</code> była reprezentowana jako wektor czynnikowy.</p>
 <pre class="sourceCode r"><code class="sourceCode r">meteo<span class="op">$</span>nazwa_stacji =<span class="st"> </span><span class="kw">as.factor</span>(meteo<span class="op">$</span>nazwa_stacji)
 <span class="kw">str</span>(meteo)
 <span class="co">#&gt; &#39;data.frame&#39;:    730 obs. of  9 variables:</span>
@@ -444,7 +448,12 @@ W takich przypadkach warto użyć alternatywnych funkcji, np. <code>read_csv()</
 <span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span>
 <span class="co">#&gt;  $ humidity    : num  78 84 91.1 84.9 68.3 78.6 82.5 78.5 88.6 75.3 ...</span>
 <span class="co">#&gt;  $ pressure    : num  1018 1013 1012 996 1021 ...</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">saveRDS</span>(meteo, <span class="st">&quot;pliki/dane_meteo.rds&quot;</span>)</code></pre>
+<p>W przypadku zapisania nowego obiektu do pliku tekstowego ta informacja zostanie utracona.
+Alternatywnie, jeżeli chcemy używać tych danych tylko w języku R możemy zapisać je do pliku w formacie RDS.
+Taki zapis można wykonać używając funkcji <code>saveRDS()</code> podając nazwę obiektu do zapisu oraz ścieżkę do nowego pliku.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">saveRDS</span>(meteo, <span class="dt">file =</span> <span class="st">&quot;pliki/dane_meteo.rds&quot;</span>)</code></pre>
+<p>Taki plik będzie domyślnie mniejszy (nastąpi jego kompresja przy zapisie) niż tekstowy i będzie posiadał on wszelkie informacje o klasie tego obiektu.
+Ponowne wczytanie obiektu można wykonać używając funkcji <code>readRDS()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">meteo_rds =<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;pliki/dane_meteo.rds&quot;</span>)
 <span class="kw">str</span>(meteo_rds)
 <span class="co">#&gt; &#39;data.frame&#39;:    730 obs. of  9 variables:</span>
@@ -457,6 +466,7 @@ W takich przypadkach warto użyć alternatywnych funkcji, np. <code>read_csv()</
 <span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span>
 <span class="co">#&gt;  $ humidity    : num  78 84 91.1 84.9 68.3 78.6 82.5 78.5 88.6 75.3 ...</span>
 <span class="co">#&gt;  $ pressure    : num  1018 1013 1012 996 1021 ...</span></code></pre>
+<p>Powyżej można zobaczyć, że została zachowana wcześniejsza zmiana - kolumna <code>nazwa_stacji</code> nadal jest reprezentowana poprzez wektor czynnikowy.</p>
 
 <div class="rmdinfo">
 Dodatkowo możliwe jest zapisywanie wielu obiektów do jednego pliku w formacie <code>.rda</code> a następnie ich odczytanie używając wbudowanych funkcji <code>save()</code> i <code>load()</code>.
@@ -475,7 +485,7 @@ Dodatkowo możliwe jest zapisywanie wielu obiektów do jednego pliku w formacie 
 </div>
 <div id="arkusze-kalkulacyjne" class="section level2">
 <h2><span class="header-section-number">9.5</span> Arkusze kalkulacyjne</h2>
-<p><span class="citation">(<span class="citeproc-not-found" data-reference-id="R-readxl"><strong>???</strong></span>)</span></p>
+<p><span class="citation">(Wickham and Bryan <a href="#ref-R-readxl">2019</a>)</span></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readxl)
 meteo_z_xl =<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;pliki/dane_meteo.xlsx&quot;</span>)
 meteo_z_xl
@@ -493,7 +503,7 @@ meteo_z_xl
 <span class="co">#&gt;  9  352160330 POZNAŃ        2017       1     9  -5.8    0       88.6</span>
 <span class="co">#&gt; 10  352160330 POZNAŃ        2017       1    10  -5      0       75.3</span>
 <span class="co">#&gt; # … with 720 more rows, and 1 more variable: pressure &lt;dbl&gt;</span></code></pre>
-<p><code>write_xlsx()</code> z pakietu <strong>writexl</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-writexl"><strong>???</strong></span>)</span></p>
+<p><code>write_xlsx()</code> z pakietu <strong>writexl</strong> <span class="citation">(Ooms <a href="#ref-R-writexl">2018</a>)</span></p>
 </div>
 <div id="dane-internetowe" class="section level2">
 <h2><span class="header-section-number">9.6</span> Dane internetowe</h2>
@@ -509,11 +519,11 @@ meteo_z_xl
 <h2><span class="header-section-number">9.7</span> Inne formaty</h2>
 <p>Powyżej można było zobaczyć jaki sposób można wczytać dane z różnorodnych plików tekstowych, R, czy arkuszy kalkulacyjnych.
 R pozwala jednocześnie na otworzenie wielu innych formatów plików używając dodatkowych pakietów.
-Przykładowo, hierarchiczne formaty danych można wczytać używając pakietu <strong>jsonline</strong> (format <code>.json</code>) <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-jsonlite"><strong>???</strong></span>)</span> czy <strong>xml2</strong> (format <code>.xml</code>) <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-xml2"><strong>???</strong></span>)</span>, a formaty danych przestrzennych używając pakietu <strong>sf</strong> (dane wektorowe) <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-sf"><strong>???</strong></span>)</span> czy <strong>raster</strong> (dane rastrowe) <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-raster"><strong>???</strong></span>)</span>.
+Przykładowo, hierarchiczne formaty danych można wczytać używając pakietu <strong>jsonline</strong> (format <code>.json</code>) <span class="citation">(Ooms, Temple Lang, and Hilaiel <a href="#ref-R-jsonlite">2018</a>)</span> czy <strong>xml2</strong> (format <code>.xml</code>) <span class="citation">(Wickham, Hester, and Ooms <a href="#ref-R-xml2">2018</a>)</span>, a formaty danych przestrzennych używając pakietu <strong>sf</strong> (dane wektorowe) <span class="citation">(Pebesma <a href="#ref-R-sf">2019</a>)</span> czy <strong>raster</strong> (dane rastrowe) <span class="citation">(Hijmans <a href="#ref-R-raster">2019</a>)</span>.
 Zestawienie zawierające dodatkowe przykłady można znaleźć pod adresem <a href="https://github.com/leeper/rio" class="uri">https://github.com/leeper/rio</a>.</p>
 <p>Powszechną sytuacją jest przechowywanie danych w różnego rodzaju bazach danych.
 Ma to miejsce, kiedy dane są znacznej wielkości, mają złożone relacje, czy też muszą być jednocześnie dostępne dla wielu osób.
-Dostęp do baz danych w R możliwy jest używając pakietu <strong>DBI</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-DBI"><strong>???</strong></span>)</span> wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. <strong>RPostgreSQL</strong> dla baz PostgreSQL <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-RPostgreSQL"><strong>???</strong></span>)</span> czy <strong>RSQLite</strong> dla baz SQLite <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-RSQLite"><strong>???</strong></span>)</span>).<a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a></p>
+Dostęp do baz danych w R możliwy jest używając pakietu <strong>DBI</strong> <span class="citation">(R Special Interest Group on Databases (R-SIG-DB), Wickham, and Müller <a href="#ref-R-DBI">2018</a>)</span> wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. <strong>RPostgreSQL</strong> dla baz PostgreSQL <span class="citation">(Conway et al. <a href="#ref-R-RPostgreSQL">2017</a>)</span> czy <strong>RSQLite</strong> dla baz SQLite <span class="citation">(Müller et al. <a href="#ref-R-RSQLite">2018</a>)</span>).<a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a></p>
 </div>
 <div id="dziaania-na-plikach-i-folderach" class="section level2">
 <h2><span class="header-section-number">9.8</span> Działania na plikach i folderach</h2>
@@ -540,6 +550,42 @@ Obie funkcje przyjmują jako wejście wektor znakowy zawierający nazwy plików 
 
 
 
+<h3>Bibliografia</h3>
+<div id="refs" class="references">
+<div id="ref-R-readr">
+<p>Wickham, Hadley, Jim Hester, and Romain Francois. 2018. <em>Readr: Read Rectangular Text Data</em>. <a href="https://CRAN.R-project.org/package=readr" class="uri">https://CRAN.R-project.org/package=readr</a>.</p>
+</div>
+<div id="ref-R-data.table">
+<p>Dowle, Matt, and Arun Srinivasan. 2019. <em>Data.table: Extension of ‘Data.frame‘</em>. <a href="https://CRAN.R-project.org/package=data.table" class="uri">https://CRAN.R-project.org/package=data.table</a>.</p>
+</div>
+<div id="ref-R-readxl">
+<p>Wickham, Hadley, and Jennifer Bryan. 2019. <em>Readxl: Read Excel Files</em>. <a href="https://CRAN.R-project.org/package=readxl" class="uri">https://CRAN.R-project.org/package=readxl</a>.</p>
+</div>
+<div id="ref-R-writexl">
+<p>Ooms, Jeroen. 2018. <em>Writexl: Export Data Frames to Excel ’Xlsx’ Format</em>. <a href="https://CRAN.R-project.org/package=writexl" class="uri">https://CRAN.R-project.org/package=writexl</a>.</p>
+</div>
+<div id="ref-R-jsonlite">
+<p>Ooms, Jeroen, Duncan Temple Lang, and Lloyd Hilaiel. 2018. <em>Jsonlite: A Robust, High Performance Json Parser and Generator for R</em>. <a href="https://CRAN.R-project.org/package=jsonlite" class="uri">https://CRAN.R-project.org/package=jsonlite</a>.</p>
+</div>
+<div id="ref-R-xml2">
+<p>Wickham, Hadley, James Hester, and Jeroen Ooms. 2018. <em>Xml2: Parse Xml</em>. <a href="https://CRAN.R-project.org/package=xml2" class="uri">https://CRAN.R-project.org/package=xml2</a>.</p>
+</div>
+<div id="ref-R-sf">
+<p>Pebesma, Edzer. 2019. <em>Sf: Simple Features for R</em>. <a href="https://CRAN.R-project.org/package=sf" class="uri">https://CRAN.R-project.org/package=sf</a>.</p>
+</div>
+<div id="ref-R-raster">
+<p>Hijmans, Robert J. 2019. <em>Raster: Geographic Data Analysis and Modeling</em>. <a href="https://www.rspatial.org/" class="uri">https://www.rspatial.org/</a>.</p>
+</div>
+<div id="ref-R-DBI">
+<p>R Special Interest Group on Databases (R-SIG-DB), Hadley Wickham, and Kirill Müller. 2018. <em>DBI: R Database Interface</em>. <a href="https://CRAN.R-project.org/package=DBI" class="uri">https://CRAN.R-project.org/package=DBI</a>.</p>
+</div>
+<div id="ref-R-RPostgreSQL">
+<p>Conway, Joe, Dirk Eddelbuettel, Tomoaki Nishiyama, Sameer Kumar Prayaga, and Neil Tiffin. 2017. <em>RPostgreSQL: R Interface to the ’Postgresql’ Database System</em>. <a href="https://CRAN.R-project.org/package=RPostgreSQL" class="uri">https://CRAN.R-project.org/package=RPostgreSQL</a>.</p>
+</div>
+<div id="ref-R-RSQLite">
+<p>Müller, Kirill, Hadley Wickham, David A. James, and Seth Falcon. 2018. <em>RSQLite: ’SQLite’ Interface for R</em>. <a href="https://CRAN.R-project.org/package=RSQLite" class="uri">https://CRAN.R-project.org/package=RSQLite</a>.</p>
+</div>
+</div>
 <div class="footnotes">
 <hr />
 <ol start="35">
