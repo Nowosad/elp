@@ -144,21 +144,27 @@ odl_km
 
 ### Zastosowanie w funkcjach
 
+Pętle `for`, podobnie jak wyrażenia warunkowe (sekcja \@ref(wwwf)), w naturalny sposób są stosowane w funkcjach.
+Przykładowo, możemy stworzyć nową funkcję `mile_na_km()`, która przyjmuje listę z wartościami w milach lądowych jako obiekt wejściowy, a później zwraca listę z wartościami w kilometrach.
+
 ```{r}
-mile_na_km = function(odl_mile){
-  odl_km = vector("numeric", length = length(odl_mile))
-  odl_mile_l = seq_along(odl_mile)
-  for (i in odl_mile_l) {
-    odl_km[i] = odl_mile[i] * 1.609
+mile_na_km = function(odl_mile) {
+  odl_km = vector("list", length = length(odl_mile))
+  for (i in seq_along(odl_mile)) {
+    odl_km[[i]] = odl_mile[[i]] * 1.609
   }
   odl_km
 }
 ```
 
+Sprawdźmy działanie funkcji na prostym przykładzie listy z pięcioma elementami.
+
 ```{r}
-odleglosci_mile = c(0, 1, 10, 55, 160)
+odleglosci_mile = list(0, 1, 10, 55, 160)
 mile_na_km(odleglosci_mile)
 ```
+
+Zgodnie z oczekiwaniami zero mil lądowych to również zero kilometrów, a jedna mila lądowa to 1,609 kilometra.
 
 ```{r, echo=FALSE, eval=FALSE}
 mile_na_kilometry = function(mile){
