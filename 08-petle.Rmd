@@ -185,25 +185,26 @@ bench::mark(mile_na_kilometry(x),
             mile_na_km(x))
 ```
 
-```{block2 type="rmdinfo"}
-recursive
-```
-
 ## Pętla while
 
-W przypadku pętli for znana jest liczba powtórzeń przed rozpoczęciem jej działania.
-Inny rodzaj pętli, while, jest natomiast stosowany gdy nie wiadomo ile potwórzeń jest koniecznych.
-W efekcie pętla while jest bardziej elastyczna, co jest zarazem jej atutem, ale też wadą.
-Bardziej elastyczne metody charakteryzuje również większa liczba potencjalnych sytuacji, a w efekcie problemów.
+W przypadku pętli `for` znana jest liczba powtórzeń przed rozpoczęciem jej działania.
+Inny rodzaj pętli, pętla `while`, jest natomiast stosowany gdy nie wiadomo ile potwórzeń jest koniecznych.
+W efekcie pętla `while` jest bardziej elastyczna, co jest zarazem jej atutem i wadą.
+Bardziej elastyczne metody charakteryzuje większa liczba potencjalnych sytuacji do których mogą zostać użyte, ale w efekcie też więcej potencjalnych problemów.
+Pętla `while` powinna być używana tylko gdy rozwiązanie z użyciem pętli `for` nie jest możliwe. 
 
 <!-- https://rstudio-education.github.io/hopr/loops.html#while-loops -->
 <!--https://adv-r.hadley.nz/control-flow.html#loops -->
+
+Pętla `while` składa się z nagłówka definującego pewien warunek oraz ciała określającego operację do wykonania.
+Pętla ta będzie tak długo powtarzana jak długo warunek będzie spełniony - dlatego też w ciale pętli musi być jakiś mechanizm zmieniający wartość wpływającą na warunek.
 
 ```{r, eval=FALSE}
 while (warunek){
     wykonuj operację tak długo jak warunek jest spełniony
 }
 ```
+
 
 ```{r, eval=FALSE, echo=FALSE}
 woda = 20
@@ -215,23 +216,39 @@ while(woda > 0){
 }
 ```
 
+```{r, echo=FALSE}
+set.seed(2019-03-30)
+```
+
+Wyobraźmy sobie poniższą sytuację.
+Mamy 1000 zł (obiekt `budzet`) i chcemy zainwestować te pieniądze na giełdzie w celu ich pomnożenia.
+Interesują nas tylko dwa scenariusze - jeden w którym tracimy całą kwotę, oraz drugi w którym udaje się nam podwoić tę kwotę.
+Wiemy też jedną dodatkową rzecz - losowe wahania na giełdzie mogą pozwolić nam na stratę maksymalnie 100 zł aż do zysku 100 zł każdego dnia.
+Poniższy kod wykonuje pętlę `while` tak długo jak obiekt `budzet` ma wartość większą od zera i mniejszą od 2000.
+
 ```{r}
-budzet = 100
+budzet = 1000
 liczba_dni = 0
-while(budzet > 0 && budzet < 200){
-  budzet = budzet + sample(-10:10, size = 1)
+while(budzet > 0 && budzet < 2000){
+  budzet = budzet + sample(-100:100, size = 1) # losowa strata lub zysk
   liczba_dni = liczba_dni + 1
 }
+```
+
+Po jego wykonaniu możemy dowiedzieć się czy udało się nam zarobić czy też stracić całe pieniądze.
+Dodatkowo możemy sprawdzić ile zajęło to dni.
+
+```{r}
+budzet
 liczba_dni
 ```
 
-
 ```{block2 type="rmdinfo"}
-Inne rodzaje pętli to pętla repeat oraz pętla do.
-Pętla repeat powtarza pewnien kod aż do momentu przerwania go przez użytkownika (np. użycie klawisza Esc) lub do pojawienia się komendy `break`.
-Działanie pętli do natomiast wygląda w następujący sposób:
+Inne istniejące rodzaje pętli to pętla `repeat` oraz pętla `do`.
+Pętla `repeat` powtarza pewnien kod aż do momentu przerwania go przez użytkownika (np. użycie klawisza Esc) lub do pojawienia się komendy `break`.
+Działanie pętli `do` natomiast wygląda w następujący sposób:
 `do {wykonuj operację} while (warunek)`.
-Pętla do nie występuje w R.
+Pętla `do` nie występuje w R.
 ```
 
 Dodatkowe informacje na temat pętli for and while można znaleźć w sekcji [Loops](https://adv-r.hadley.nz/control-flow.html#loops) książki Advanced R [@wickham2014advanced]
@@ -312,8 +329,7 @@ Przykładowo, odpowiednikiem funkcji `lapply()` w pakiecie **purrr** jest funkcj
 Ma ona dodatkowo kilka kolejnych wariantów, np. `map_df()` - która przyjmuje jako wejście listy, ale zwraca ramki danych, czy `map_dbl()` - która również przyjmuje listy, ale zwraca wartości zmiennoprzecinkowe.
 ```
 
-<!-- https://r4ds.had.co.nz/iteration.html#the-map-functions -->
-<!-- link to purrr -->
+<!-- https://stackoverflow.com/questions/7142767/why-are-loops-slow-in-r -->
 
 ## Zadania
 
