@@ -26,7 +26,7 @@ is_html = knitr::is_html_output()
 
 # O książce {-}
 
-```{r echo==FALSE, eval=FALSE}
+```{r include=FALSE}
 # automatically create a bib database for R packages
 knitr::write_bib(c(.packages(),
                    "bookdown", "knitr", "rmarkdown",
