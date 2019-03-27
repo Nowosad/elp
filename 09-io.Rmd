@@ -143,16 +143,35 @@ str(meteo_rds)
 Powyżej można zobaczyć, że została zachowana wcześniejsza zmiana - kolumna `nazwa_stacji` nadal jest reprezentowana poprzez wektor czynnikowy.
 
 ```{block2 type="rmdinfo"}
-Dodatkowo możliwe jest zapisywanie wielu obiektów do jednego pliku w formacie `.rda` a następnie ich odczytanie używając wbudowanych funkcji `save()` i `load()`.
+Dodatkowo możliwe jest zapisywanie wielu obiektów do jednego pliku w formacie o rozszerzeniu `.rda` a następnie ich odczytanie używając wbudowanych funkcji `save()` i `load()`.
 ```
+
+Pakiety to zorganizowany zbiór funkcji rozszerzający możliwości R (sekcja \@ref(pakiety)).
+Istotnym elementem każdego pakietu jest jego dokumentacja, która ułatwia użytkownikom zrozumienie i wykorzystanie możliwości danego pakietu.
+Często, aby pokazać szczegółowo działanie danej funkcji wykorzystywane są przykładowe dane, które można dołączyć do pakietu.
+
+Przykładowo, wraz z R domyślnie instalowany jest pakiet o nazwie **datasets**.
+Aby wyświetlić listę zbiorów danych w tym pakiecie można użyć funkcji `data()` i podać w niej nazwę konkretnego pakietu.
 
 ```{r, eval=FALSE}
 data(package = "datasets")
 ```
 
+Wczytanie zbioru danych z wybranego pakietu odbywa się poprzez wybór nazwy zbioru (np. `"faithful"`) oraz nazwy pakietu `"datasets"`.
+
 ```{r}
 data("faithful", package = "datasets")
+```
+
+Po wykonaniu tej funkcji zbiór danych jest dostępny z poziomu R.
+Zawiera on ramkę danych z dwoma kolumnami opisującymi gejzer Old Faithful: `eruptions` - czas erupcji oraz `waiting` - czas oczekiwania na kolejną erupcję.
+
+```{r}
 head(faithful)
+```
+
+```{r marghamil, echo=FALSE, fig.cap="Obraz Alberta Bierstadta przedstawiający gejzer Old Faithful około roku 1881. Źródło: [Wikipedia](https://commons.wikimedia.org/wiki/File:Bierstadt_Albert_Old_Faithful.jpg)."}
+knitr::include_graphics("images/old-faithful.jpg")
 ```
 
 ## Arkusze kalkulacyjne
