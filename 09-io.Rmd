@@ -67,6 +67,9 @@ str(meteo)
 Oprócz funkcji `read.csv()` istnieje również funkcja o nazwie `read.csv2()`. 
 Pierwsza z nich jest przystosowana do wczytania danych dla których separator kolumn to `,` a separator dziesiętny to `.`, druga natomiast jest używana gdy wejściowe dane mają `;` jak separator kolumn i `,` jako separator dziesiętny.
 
+Czasem dane tekstowe posiadają inne znaki służące jako separatory, czy też nie posiadają nazw kolumn.
+W takich sytuacjach można użyć funkcji `read.table()`, która zawiera cały szereg argumentów, które można dopasować, aby poprawnie wczytać dane tekstowe.
+
 ```{r}
 meteo = read.table("pliki/dane_meteo.csv", 
                    sep = ",",

@@ -1,6 +1,6 @@
 # Powtarzanie {#petle}
 
-W rozdziale \@ref(jezyki-programowania) zostały wspomniane różne istniejące paradygmaty programowania.
+W sekcji \@ref(jezyki-programowania) zostały wspomniane różne istniejące paradygmaty programowania.
 Pętle `for` czy `while` (sekcje \@ref(petla-for) i \@ref(petla-while)) są przykładami programowania imperatywnego, gdzie program komputerowy postrzegany jest jako ciąg poleceń dla komputera.
 Alternatywą do tego sposobu działania jest programowanie funkcyjne, w którym rozwiązanie pewnego problemu jest oparte o użycie lub stworzenie odpowiedniej funkcji (sekcja \@ref(prog-fun)).
 Język R pozwala na stosowanie zarówno paradygmatu imperatywnego jak i paradygmatu funkcyjnego^[R również obsługuje paradygmat obiektowy.].
