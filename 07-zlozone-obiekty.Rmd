@@ -366,7 +366,7 @@ lista3 = list(lista1, lista1)
 str(lista3)
 ```
 
-### Wydzielanie
+### Wydzielanie {#wydzielanie-list}
 
 Wydzielanie list może mieć miejsce używając jednego z trzech operatorów - `[]`, `[[]]`, oraz `$`.
 
