@@ -115,7 +115,8 @@ W takich przypadkach warto użyć alternatywnych funkcji, np. `read_csv()` i `wr
 <!-- info about binary -->
 Formaty tekstowe są bardzo uniwersalne pozwalając na odczyt, zapis czy przenoszenie danych pomiędzy różnymi komputerami, programami czy językami programowania.
 Mają one jednak pewne ograniczenia.
-Wielkość pliku tekstowego rośnie bardzo szybko wraz z liczbą elementów, a dodatkowo plik tekstowy nie przechowuje dodatkowych informacji specyficznych dla języków programowania.
+Wielkość pliku tekstowego rośnie bardzo szybko wraz z liczbą elementów, a plik tekstowy nie przechowuje dodatkowych informacji specyficznych dla języków programowania.
+Wczytanie czy zapis dużego pliku tekstowego zabiera też relatywnie dużo czasu.
 
 Przykładowo, chcemy aby kolumna `nazwa_stacji` była reprezentowana jako wektor czynnikowy.
 
@@ -125,7 +126,7 @@ str(meteo)
 ```
 
 W przypadku zapisania nowego obiektu do pliku tekstowego ta informacja zostanie utracona.
-Alternatywnie, jeżeli chcemy używać tych danych tylko w języku R możemy zapisać je do pliku w formacie RDS. 
+Alternatywnie, jeżeli chcemy używać tych danych tylko w języku R możemy zapisać je do pliku w binarnym formacie RDS. 
 Taki zapis można wykonać używając funkcji `saveRDS()` podając nazwę obiektu do zapisu oraz ścieżkę do nowego pliku.
 
 ```{r, eval=FALSE}
@@ -193,16 +194,7 @@ Do zapisania ramki danych do formatu Excel można użyć funkcji `write_xlsx()` 
 writexl::write_xlsx(meteo_z_xl, "pliki/dane_meteo.xlsx")
 ```
 
-## Dane internetowe
-
-```{r, eval=FALSE}
-download.file("https://raw.githubusercontent.com/Nowosad/elp/master/pliki/dane_meteo.csv", 
-              destfile = "dane_meteo.csv")
-```
-
-```{block2 type="rmdinfo"}
-`download.file()` `mode`
-```
+<!-- block problemy z excelem jak daty -->
 
 ## Inne formaty
 
@@ -214,6 +206,20 @@ Zestawienie zawierające dodatkowe przykłady można znaleźć pod adresem https
 Powszechną sytuacją jest przechowywanie danych w różnego rodzaju bazach danych.
 Ma to miejsce, kiedy dane są znacznej wielkości, mają złożone relacje, czy też muszą być jednocześnie dostępne dla wielu osób.
 Dostęp do baz danych w R możliwy jest używając pakietu **DBI** [@R-DBI] wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. **RPostgreSQL** dla baz PostgreSQL [@R-RPostgreSQL] czy **RSQLite** dla baz SQLite [@R-RSQLite]). ^[Więcej informacji o łączeniu się z bazami danych można znaleść na stronie https://db.rstudio.com/getting-started/connect-to-database.]
+
+## Dane internetowe
+
+Pliki, które chcemy otworzyć nie muszą od razu znajdować się na dysku naszego komputera.
+Możliwe jest, między innymi, pobranie ich z poziomu R za pomocą funkcji `download.file()`^[Funkcje takie jak `read.csv()` pozwalają na otworzenie pliku tekstowego bezpośrednio z adresu internetowego.].
+Należy w niej podać adres URL pliku do pobrania, oraz nazwę pliku do zapisania.
+
+```{r, eval=FALSE}
+download.file("https://raw.githubusercontent.com/Nowosad/elp/master/pliki/dane_meteo.csv", 
+              destfile = "pliki/dane_meteo_url.csv")
+```
+
+W efekcie plik `dane_meteo_url.csv` zostanie zapisany w folderze `pliki`.
+Funkcja `download.file()` ma też szereg dodatkowych argumentów, między innymi `method` określającą metodę pobierania danych oraz `mode` określający sposób zapisu pliku.
 
 ## Działania na plikach i folderach
 
