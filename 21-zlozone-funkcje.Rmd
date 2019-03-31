@@ -31,8 +31,14 @@ Stabilność typu oznacza, że używając jednej klasy danych wejściowych funkc
 
 ## Obsługa błędów
 
-<!-- fail fast -->
-<!-- informative errors -->
+Obsługa błędów w funkcjach ma na celu ochronę użytkownika przed nieodpowiednim zachowaniem funkcji.
+Komunikat błędu powinien ułatwiać użytkownikowi zrozumienie problemu oraz jego rozwiązanie. 
+Zazwyczaj komunikat błędu przyjmuje jedną z trzech form: (1) określenie problemu, np. "Argument `x` musi być zmienną numeryczną, a nie znakową.", (2) lokalizacja błędu, np. "Kolumna `abc` nie istnieje w obiekcie `y`.", (3) porada, np. "Did you mean `Species == "setosa"`?". 
+Oczywiście te wymienione formy można łączyć.
+
+Ważne jest też, aby funkcja kończyła swoje działanie jak najszybciej po napotkaniu, np. błędnych wartości wejściowych.
+Żadnej użytkownik nie chce czekać na zakończenie wykonywania długiej funkcji zanim dostanie komunikat błędu.
+
 
 <!-- stop() + if() -->
 <!-- warning() -->
@@ -42,9 +48,22 @@ Stabilność typu oznacza, że używając jednej klasy danych wejściowych funkc
 <!-- http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/10/006_wyjatki.html --> -->
 
 
+
+Więcej informacji o strukturze komunikatów błędów można znaleźć na https://style.tidyverse.org/error-messages.html.
+
 ## Programowanie obiektowe
 
+Programowanie obiektowe (ang. *object-oriented programming*, OOP) to jeden z najpopulariniejszych paradygmatów programowania (sekcja \@ref(jezyki-programowania) . 
+Polega on na definiowaniu obiektów danej klasy posiadających pewną określoną strukturę oraz zachowania.
+
 <!-- s3 s4 etc -->
+
+
+
+<!-- W S3 zachowanie działania obiektu powiązane jest  \@ref(inne-klasy)-->
+
+
+
 <!-- methods -->
 <!-- scope - http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/11/005_funkcje.html -->
 <!-- lexical scoping https://adv-r.hadley.nz/functions.html -->
