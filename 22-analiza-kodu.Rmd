@@ -2,7 +2,60 @@
 
 ## Benchmarking
 
-<!-- benchmarking-->
+```{r}
+mi_do_km1 = function(odl_mile){
+  odl_km = vector("list", length = 0)
+  for (i in seq_along(odl_mile)) {
+    odl_km = c(odl_km, odl_mile[[i]] * 1.609)
+  }
+  odl_km
+}
+```
+
+```{r}
+mi_do_km2 = function(odl_mile){
+  odl_km = vector("list", length = length(odl_mile))
+  for (i in seq_along(odl_mile)) {
+    odl_km[[i]] = odl_mile[[i]] * 1.609
+  }
+  odl_km
+}
+```
+
+[@R-bench]
+
+```{r}
+library(bench)
+odl_mile = list(142, 63, 121)
+mark(mi_do_km1(odl_mile),
+     mi_do_km2(odl_mile))
+```
+
+```{r}
+odl_mile2 = as.list(0:10000)
+mark(mi_do_km1(odl_mile2),
+     mi_do_km2(odl_mile2))
+```
+
+```{r}
+tworz_liste = function(x){
+  as.list(0:x)
+}
+```
+
+```{r}
+porownanie = press(x = c(10, 100, 1000, 10000),
+                   {
+                   l = tworz_liste(x)
+                   mark(mi_do_km1(l),
+                   mi_do_km2(l))
+                   })
+```
+
+```{r, eval=FALSE}
+ggplot2::autoplot(porownanie)
+```
+
 
 ## Profiling
 
