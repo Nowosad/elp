@@ -38,18 +38,13 @@ mark(mi_do_km1(odl_mile2),
 ```
 
 ```{r}
-tworz_liste = function(x){
-  as.list(0:x)
-}
-```
-
-```{r}
 porownanie = press(x = c(10, 100, 1000, 10000),
                    {
-                   l = tworz_liste(x)
+                   l = as.list(0:x)
                    mark(mi_do_km1(l),
                    mi_do_km2(l))
                    })
+porownanie
 ```
 
 ```{r, eval=FALSE}
