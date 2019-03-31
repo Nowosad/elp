@@ -12,10 +12,22 @@
 
 ## API
 
-<!-- 04 in tidytools https://blog.rstudio.com/2019/02/06/rstudio-conf-2019-workshops/ -->
-<!-- nazwy e.g prefix --> <!--naming is hard!-->
-<!-- argumenty -->
-<!-- stabilność typu (ang. *type stability*) -->
+Interfejs programistyczny aplikacji (ang. *application programming interface*, API) to zbiór sposobów komunikacji pomiędzy różnymi komponentami oprogramowania.
+Inaczej mówiąc API określa w jaki sposób następuje interakcja z kodem.
+Dobrze zaprojektowane API uławia zarówno rozwijanie oprogramowania, jak i jego używanie.
+Podstawowe elementy przemyślanego API w R obejmują nazwy funkcji, ich argumenty, oraz tzw. stabilność typu (ang. *type stability*.
+
+Funkcje wewnątrz pojedynczego pakietu powinny być nazywane konsekwentnie używając tylko jednej konwencji nazywania (sekcja \@ref(nazwy-obiektow)).
+Sama nazwa powinna w zwięzły sposób przekazywać jakie jest działanie funkcji. 
+Dodatkową możliwością jest używanie w jednym pakiecie funkcji rozpoczynających się od takiego samego prefiksu. 
+Przykładowo, większość nazw funkcji w pakiecie **landscapemetrics** rozpoczyna się od liter `lsm_`, np. `lsm_l_ent()` [@R-landscapemetrics].
+
+Podobnie należy stosować tylko jedną konwencję przy nazywaniu argumentów funkcji, a nazwy argumentów powinny być informacyjne, ale jednocześnie zwięzłe.
+W przypadku, gdy taki sam rodzaj danych wejściowych jest oczekiwany w różnych funkcjach, koniecznie jest aby zawsze ten argument był tak samo nazwany.
+Podobnie należy zadbać o spójną kolejność podobnych argumentów w funkcjach jednego pakietu.
+
+Stabilność typu oznacza, że używając jednej klasy danych wejściowych funkcja zawsze zwróci obiekt jednej klasy. 
+<!-- Przykładowo... -->
 
 ## Obsługa błędów
 
@@ -28,6 +40,10 @@
 <!-- + examples -->
 <!-- tworzenie wiadomości, warnings, errors -->
 <!-- http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/10/006_wyjatki.html --> -->
+
+
+## Programowanie obiektowe
+
 <!-- s3 s4 etc -->
 <!-- methods -->
 <!-- scope - http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/11/005_funkcje.html -->

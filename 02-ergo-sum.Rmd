@@ -213,7 +213,7 @@ Więcej wskazówek można znaleźć na w [poradniku stylu RStudio](https://style
 Oba te poradniki nie są identyczne i czasami zawierają sprzeczne porady. 
 Najważniejsze jest, aby wybrać jeden odpowiadający piszącemu kod styl i się go konsekwentnie trzymać. 
 
-### Nazwy obiektów
+### Nazwy obiektów {#nazwy-obiektow}
 
 Istnieje wiele konwencji nazywania obiektów^[https://en.wikipedia.org/wiki/Naming_convention_(programming)]. 
 Najczęściej używaną konwencją w R jest tzw. ["snake case"](https://en.wikipedia.org/wiki/Snake_case).
