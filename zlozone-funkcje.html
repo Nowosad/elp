@@ -226,7 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.3.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-list"><i class="fa fa-check"></i><b>7.3.4</b> Wydzielanie</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zmiany-klas"><i class="fa fa-check"></i><b>7.4</b> Zmiany klas</a></li>
-<li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#inne-klasy-obiektow"><i class="fa fa-check"></i><b>7.5</b> Inne klasy obiektów</a></li>
+<li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#inne-klasy"><i class="fa fa-check"></i><b>7.5</b> Inne klasy obiektów</a></li>
 <li class="chapter" data-level="7.6" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zadania-6"><i class="fa fa-check"></i><b>7.6</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a><ul>
@@ -336,8 +336,12 @@ Podobnie należy zadbać o spójną kolejność podobnych argumentów w funkcjac
 </div>
 <div id="obsuga-bedow" class="section level2">
 <h2><span class="header-section-number">11.2</span> Obsługa błędów</h2>
-<!-- fail fast -->
-<!-- informative errors -->
+<p>Obsługa błędów w funkcjach ma na celu ochronę użytkownika przed nieodpowiednim zachowaniem funkcji.
+Komunikat błędu powinien ułatwiać użytkownikowi zrozumienie problemu oraz jego rozwiązanie.
+Zazwyczaj komunikat błędu przyjmuje jedną z trzech form: (1) określenie problemu, np. “Argument <code>x</code> musi być zmienną numeryczną, a nie znakową.”, (2) lokalizacja błędu, np. “Kolumna <code>abc</code> nie istnieje w obiekcie <code>y</code>.”, (3) porada, np. “Did you mean <code>Species == &quot;setosa&quot;</code>?”.
+Oczywiście te wymienione formy można łączyć.</p>
+<p>Ważne jest też, aby funkcja kończyła swoje działanie jak najszybciej po napotkaniu, np. błędnych wartości wejściowych.
+Żadnej użytkownik nie chce czekać na zakończenie wykonywania długiej funkcji zanim dostanie komunikat błędu.</p>
 <!-- stop() + if() -->
 <!-- warning() -->
 <!-- message -->
@@ -345,10 +349,14 @@ Podobnie należy zadbać o spójną kolejność podobnych argumentów w funkcjac
 <!-- tworzenie wiadomości, warnings, errors -->
 <!-- http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/10/006_wyjatki.html -->
 <p>–&gt;</p>
+<p>Więcej informacji o strukturze komunikatów błędów można znaleźć na <a href="https://style.tidyverse.org/error-messages.html" class="uri">https://style.tidyverse.org/error-messages.html</a>.</p>
 </div>
 <div id="programowanie-obiektowe" class="section level2">
 <h2><span class="header-section-number">11.3</span> Programowanie obiektowe</h2>
+<p>Programowanie obiektowe (ang. <em>object-oriented programming</em>, OOP) to jeden z najpopulariniejszych paradygmatów programowania (sekcja <a href="wprowadzenie.html#jezyki-programowania">1.2</a> .
+Polega on na definiowaniu obiektów danej klasy posiadających pewną określoną strukturę oraz zachowania.</p>
 <!-- s3 s4 etc -->
+<!-- W S3 zachowanie działania obiektu powiązane jest  \@ref(inne-klasy)-->
 <!-- methods -->
 <!-- scope - http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/11/005_funkcje.html -->
 <!-- lexical scoping https://adv-r.hadley.nz/functions.html -->

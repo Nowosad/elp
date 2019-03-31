@@ -710,7 +710,7 @@ str(lista_z_r1)
 #>  $ V3: int [1:4] 9 10 11 12
 ```
 
-## Inne klasy obiektów
+## Inne klasy obiektów {#inne-klasy}
 
 W tym oraz \@ref(proste-obiekty) rozdziale zostały wymienione i opisane cztery podstawowe klasy obiektów w R - wektory atomowe, macierze, natomiast listy i ramki danych.
 R zawiera jednak znacznie więcej klas obiektów, a co więcej - każda osoba może stworzyć swoją własną klasę obiektów.
