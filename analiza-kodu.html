@@ -262,8 +262,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>12</b> Analiza kodu</a><ul>
 <li class="chapter" data-level="12.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>12.1</b> Benchmarking</a></li>
 <li class="chapter" data-level="12.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>12.2</b> Profiling</a></li>
-<li class="chapter" data-level="12.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#wektoryzacja-kodu"><i class="fa fa-check"></i><b>12.3</b> Wektoryzacja kodu</a></li>
-<li class="chapter" data-level="12.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zadanie"><i class="fa fa-check"></i><b>12.4</b> Zadanie</a></li>
+<li class="chapter" data-level="12.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zadanie"><i class="fa fa-check"></i><b>12.3</b> Zadanie</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>13</b> Kontrola wersji</a><ul>
 <li class="chapter" data-level="13.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>13.1</b> Git</a></li>
@@ -337,8 +336,8 @@ odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv"
 <span class="co">#&gt; # A tibble: 2 x 10</span>
 <span class="co">#&gt;   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 1.46µs 2.01µs 1.77µs 24.1µs   496786.     4.1MB     0 10000</span>
-<span class="co">#&gt; 2 mi_do_km2… 1.06µs 1.41µs 1.27µs 25.7µs   708329.   221.8KB     0 10000</span>
+<span class="co">#&gt; 1 mi_do_km1… 1.41µs 2.08µs 1.76µs 45.7µs   479960.     4.1MB     0 10000</span>
+<span class="co">#&gt; 2 mi_do_km2… 1.04µs 1.44µs 1.25µs 64.8µs   695199.   221.8KB     0 10000</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">odl_mile2 =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10000</span>)
 <span class="kw">mark</span>(<span class="kw">mi_do_km1</span>(odl_mile2),
@@ -348,8 +347,8 @@ odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv"
 <span class="co">#&gt; # A tibble: 2 x 10</span>
 <span class="co">#&gt;   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;bch&gt; &lt;bch:tm&gt; &lt;bch:&gt; &lt;bch:t&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 464ms 464.69ms  465ms 465.4ms      2.15     382MB    16     2</span>
-<span class="co">#&gt; 2 mi_do_km2… 888µs   1.06ms  915µs   7.2ms    941.      78.2KB    11   471</span>
+<span class="co">#&gt; 1 mi_do_km1… 469ms 469.42ms  469ms 470.2ms      2.13     382MB    16     2</span>
+<span class="co">#&gt; 2 mi_do_km2… 882µs   1.07ms  909µs   7.2ms    937.      78.2KB    11   469</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">tworz_liste =<span class="st"> </span><span class="cf">function</span>(x){
   <span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span>x)
@@ -374,14 +373,12 @@ odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv"
 <h2><span class="header-section-number">12.2</span> Profiling</h2>
 <!-- profiling -->
 <!-- https://r-prof.github.io/jointprof/articles/proposal.html -->
-</div>
-<div id="wektoryzacja-kodu" class="section level2">
-<h2><span class="header-section-number">12.3</span> Wektoryzacja kodu</h2>
+<!--  Wektoryzacja kodu -->
 <!-- vectorized vs not-vectorized -->
 <!-- https://rstudio-education.github.io/hopr/speed.html -->
 </div>
 <div id="zadanie" class="section level2">
-<h2><span class="header-section-number">12.4</span> Zadanie</h2>
+<h2><span class="header-section-number">12.3</span> Zadanie</h2>
 
 </div>
 </div>

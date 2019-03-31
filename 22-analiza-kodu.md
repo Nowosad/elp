@@ -36,8 +36,8 @@ mark(mi_do_km1(odl_mile),
 #> # A tibble: 2 x 10
 #>   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr
 #>   <chr>      <bch:> <bch:> <bch:> <bch:>     <dbl> <bch:byt> <dbl> <int>
-#> 1 mi_do_km1… 1.46µs 2.01µs 1.77µs 24.1µs   496786.     4.1MB     0 10000
-#> 2 mi_do_km2… 1.06µs 1.41µs 1.27µs 25.7µs   708329.   221.8KB     0 10000
+#> 1 mi_do_km1… 1.41µs 2.08µs 1.76µs 45.7µs   479960.     4.1MB     0 10000
+#> 2 mi_do_km2… 1.04µs 1.44µs 1.25µs 64.8µs   695199.   221.8KB     0 10000
 #> # … with 1 more variable: total_time <bch:tm>
 ```
 
@@ -51,8 +51,8 @@ mark(mi_do_km1(odl_mile2),
 #> # A tibble: 2 x 10
 #>   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr
 #>   <chr>      <bch> <bch:tm> <bch:> <bch:t>     <dbl> <bch:byt> <dbl> <int>
-#> 1 mi_do_km1… 464ms 464.69ms  465ms 465.4ms      2.15     382MB    16     2
-#> 2 mi_do_km2… 888µs   1.06ms  915µs   7.2ms    941.      78.2KB    11   471
+#> 1 mi_do_km1… 469ms 469.42ms  469ms 470.2ms      2.13     382MB    16     2
+#> 2 mi_do_km2… 882µs   1.07ms  909µs   7.2ms    937.      78.2KB    11   469
 #> # … with 1 more variable: total_time <bch:tm>
 ```
 
@@ -92,10 +92,8 @@ ggplot2::autoplot(porownanie)
 <!-- profiling -->
 <!-- https://r-prof.github.io/jointprof/articles/proposal.html -->
 
-## Wektoryzacja kodu
-
+<!--  Wektoryzacja kodu -->
 <!-- vectorized vs not-vectorized -->
 <!-- https://rstudio-education.github.io/hopr/speed.html -->
-
 
 ## Zadanie
