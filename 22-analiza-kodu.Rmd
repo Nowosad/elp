@@ -62,10 +62,8 @@ ggplot2::autoplot(porownanie)
 <!-- profiling -->
 <!-- https://r-prof.github.io/jointprof/articles/proposal.html -->
 
-## Wektoryzacja kodu
-
+<!--  Wektoryzacja kodu -->
 <!-- vectorized vs not-vectorized -->
 <!-- https://rstudio-education.github.io/hopr/speed.html -->
-
 
 ## Zadanie
