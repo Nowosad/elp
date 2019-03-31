@@ -336,8 +336,8 @@ odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv"
 <span class="co">#&gt; # A tibble: 2 x 10</span>
 <span class="co">#&gt;   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 1.41µs 2.08µs 1.76µs 45.7µs   479960.     4.1MB     0 10000</span>
-<span class="co">#&gt; 2 mi_do_km2… 1.04µs 1.44µs 1.25µs 64.8µs   695199.   221.8KB     0 10000</span>
+<span class="co">#&gt; 1 mi_do_km1… 1.43µs 2.08µs 1.78µs 26.9µs   481493.     4.1MB     0 10000</span>
+<span class="co">#&gt; 2 mi_do_km2… 1.03µs 1.35µs 1.23µs 95.2µs   738991.   221.8KB     0 10000</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">odl_mile2 =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10000</span>)
 <span class="kw">mark</span>(<span class="kw">mi_do_km1</span>(odl_mile2),
@@ -345,10 +345,10 @@ odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv"
 <span class="co">#&gt; Warning: Some expressions had a GC in every iteration; so filtering is</span>
 <span class="co">#&gt; disabled.</span>
 <span class="co">#&gt; # A tibble: 2 x 10</span>
-<span class="co">#&gt;   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr</span>
-<span class="co">#&gt;   &lt;chr&gt;      &lt;bch&gt; &lt;bch:tm&gt; &lt;bch:&gt; &lt;bch:t&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 469ms 469.42ms  469ms 470.2ms      2.13     382MB    16     2</span>
-<span class="co">#&gt; 2 mi_do_km2… 882µs   1.07ms  909µs   7.2ms    937.      78.2KB    11   469</span>
+<span class="co">#&gt;   expression   min     mean median      max `itr/sec` mem_alloc  n_gc n_itr</span>
+<span class="co">#&gt;   &lt;chr&gt;      &lt;bch&gt; &lt;bch:tm&gt; &lt;bch:&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
+<span class="co">#&gt; 1 mi_do_km1… 475ms 478.76ms  479ms 482.47ms      2.09     382MB    16     2</span>
+<span class="co">#&gt; 2 mi_do_km2… 889µs   1.09ms  923µs   7.57ms    914.      78.2KB    11   460</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">tworz_liste =<span class="st"> </span><span class="cf">function</span>(x){
   <span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span>x)
