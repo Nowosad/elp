@@ -315,7 +315,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">12</span> Analiza kodu</h1>
 <div id="benchmarking" class="section level2">
 <h2><span class="header-section-number">12.1</span> Benchmarking</h2>
-<!-- benchmarking-->
+<pre class="sourceCode r"><code class="sourceCode r">mi_do_km1 =<span class="st"> </span><span class="cf">function</span>(odl_mile){
+  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="dv">0</span>)
+  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
+    odl_km =<span class="st"> </span><span class="kw">c</span>(odl_km, odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)
+  }
+  odl_km
+}</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">mi_do_km2 =<span class="st"> </span><span class="cf">function</span>(odl_mile){
+  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))
+  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
+    odl_km[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>
+  }
+  odl_km
+}</code></pre>
+<p><span class="citation">(Hester <a href="#ref-R-bench">2018</a>)</span></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(bench)
+odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)
+<span class="kw">mark</span>(<span class="kw">mi_do_km1</span>(odl_mile),
+     <span class="kw">mi_do_km2</span>(odl_mile))
+<span class="co">#&gt; # A tibble: 2 x 10</span>
+<span class="co">#&gt;   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr</span>
+<span class="co">#&gt;   &lt;chr&gt;      &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
+<span class="co">#&gt; 1 mi_do_km1… 1.46µs 2.01µs 1.77µs 24.1µs   496786.     4.1MB     0 10000</span>
+<span class="co">#&gt; 2 mi_do_km2… 1.06µs 1.41µs 1.27µs 25.7µs   708329.   221.8KB     0 10000</span>
+<span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">odl_mile2 =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10000</span>)
+<span class="kw">mark</span>(<span class="kw">mi_do_km1</span>(odl_mile2),
+     <span class="kw">mi_do_km2</span>(odl_mile2))
+<span class="co">#&gt; Warning: Some expressions had a GC in every iteration; so filtering is</span>
+<span class="co">#&gt; disabled.</span>
+<span class="co">#&gt; # A tibble: 2 x 10</span>
+<span class="co">#&gt;   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr</span>
+<span class="co">#&gt;   &lt;chr&gt;      &lt;bch&gt; &lt;bch:tm&gt; &lt;bch:&gt; &lt;bch:t&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
+<span class="co">#&gt; 1 mi_do_km1… 464ms 464.69ms  465ms 465.4ms      2.15     382MB    16     2</span>
+<span class="co">#&gt; 2 mi_do_km2… 888µs   1.06ms  915µs   7.2ms    941.      78.2KB    11   471</span>
+<span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">tworz_liste =<span class="st"> </span><span class="cf">function</span>(x){
+  <span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span>x)
+}</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">porownanie =<span class="st"> </span><span class="kw">press</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10000</span>),
+                   {
+                   l =<span class="st"> </span><span class="kw">tworz_liste</span>(x)
+                   <span class="kw">mark</span>(<span class="kw">mi_do_km1</span>(l),
+                   <span class="kw">mi_do_km2</span>(l))
+                   })
+<span class="co">#&gt; Running with:</span>
+<span class="co">#&gt;       x</span>
+<span class="co">#&gt; 1    10</span>
+<span class="co">#&gt; 2   100</span>
+<span class="co">#&gt; 3  1000</span>
+<span class="co">#&gt; 4 10000</span>
+<span class="co">#&gt; Warning: Some expressions had a GC in every iteration; so filtering is</span>
+<span class="co">#&gt; disabled.</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">ggplot2<span class="op">::</span><span class="kw">autoplot</span>(porownanie)</code></pre>
 </div>
 <div id="profiling" class="section level2">
 <h2><span class="header-section-number">12.2</span> Profiling</h2>
@@ -330,6 +383,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="zadanie" class="section level2">
 <h2><span class="header-section-number">12.4</span> Zadanie</h2>
 
+</div>
+</div>
+<h3>Bibliografia</h3>
+<div id="refs" class="references">
+<div id="ref-R-bench">
+<p>Hester, Jim. 2018. <em>Bench: High Precision Timing of R Expressions</em>. <a href="https://CRAN.R-project.org/package=bench" class="uri">https://CRAN.R-project.org/package=bench</a>.</p>
 </div>
 </div>
             </section>
