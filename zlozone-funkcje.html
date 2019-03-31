@@ -25,7 +25,7 @@
 <meta name="author" content="Jakub Nowosad">
 
 
-<meta name="date" content="2019-03-27">
+<meta name="date" content="2019-03-31">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -256,7 +256,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>11</b> Złożone funkcje</a><ul>
 <li class="chapter" data-level="11.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>11.1</b> API</a></li>
 <li class="chapter" data-level="11.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsuga-bedow"><i class="fa fa-check"></i><b>11.2</b> Obsługa błędów</a></li>
-<li class="chapter" data-level="11.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>11.3</b> Zadania</a></li>
+<li class="chapter" data-level="11.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#programowanie-obiektowe"><i class="fa fa-check"></i><b>11.3</b> Programowanie obiektowe</a></li>
+<li class="chapter" data-level="11.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>12</b> Analiza kodu</a><ul>
 <li class="chapter" data-level="12.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>12.1</b> Benchmarking</a></li>
@@ -319,11 +320,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- https://arxiv.org/pdf/1409.3531.pdf -->
 <div id="api" class="section level2">
 <h2><span class="header-section-number">11.1</span> API</h2>
-<!-- 04 in tidytools https://blog.rstudio.com/2019/02/06/rstudio-conf-2019-workshops/ -->
-<!-- nazwy e.g prefix -->
-<!--naming is hard!-->
-<!-- argumenty -->
-<!-- stabilność typu (ang. *type stability*) -->
+<p>Interfejs programistyczny aplikacji (ang. <em>application programming interface</em>, API) to zbiór sposobów komunikacji pomiędzy różnymi komponentami oprogramowania.
+Inaczej mówiąc API określa w jaki sposób następuje interakcja z kodem.
+Dobrze zaprojektowane API uławia zarówno rozwijanie oprogramowania, jak i jego używanie.
+Podstawowe elementy przemyślanego API w R obejmują nazwy funkcji, ich argumenty, oraz tzw. stabilność typu (ang. <em>type stability</em>.</p>
+<p>Funkcje wewnątrz pojedynczego pakietu powinny być nazywane konsekwentnie używając tylko jednej konwencji nazywania (sekcja <a href="ergosum.html#nazwy-obiektow">2.4.1</a>).
+Sama nazwa powinna w zwięzły sposób przekazywać jakie jest działanie funkcji.
+Dodatkową możliwością jest używanie w jednym pakiecie funkcji rozpoczynających się od takiego samego prefiksu.
+Przykładowo, większość nazw funkcji w pakiecie <strong>landscapemetrics</strong> rozpoczyna się od liter <code>lsm_</code>, np. <code>lsm_l_ent()</code> <span class="citation">(Hesselbarth et al. <a href="#ref-R-landscapemetrics">2019</a>)</span>.</p>
+<p>Podobnie należy stosować tylko jedną konwencję przy nazywaniu argumentów funkcji, a nazwy argumentów powinny być informacyjne, ale jednocześnie zwięzłe.
+W przypadku, gdy taki sam rodzaj danych wejściowych jest oczekiwany w różnych funkcjach, koniecznie jest aby zawsze ten argument był tak samo nazwany.
+Podobnie należy zadbać o spójną kolejność podobnych argumentów w funkcjach jednego pakietu.</p>
+<p>Stabilność typu oznacza, że używając jednej klasy danych wejściowych funkcja zawsze zwróci obiekt jednej klasy.
+<!-- Przykładowo... --></p>
 </div>
 <div id="obsuga-bedow" class="section level2">
 <h2><span class="header-section-number">11.2</span> Obsługa błędów</h2>
@@ -335,15 +344,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- + examples -->
 <!-- tworzenie wiadomości, warnings, errors -->
 <!-- http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/10/006_wyjatki.html -->
-<p>–&gt;
+<p>–&gt;</p>
+</div>
+<div id="programowanie-obiektowe" class="section level2">
+<h2><span class="header-section-number">11.3</span> Programowanie obiektowe</h2>
 <!-- s3 s4 etc -->
 <!-- methods -->
 <!-- scope - http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/11/005_funkcje.html -->
-<!-- lexical scoping https://adv-r.hadley.nz/functions.html --></p>
+<!-- lexical scoping https://adv-r.hadley.nz/functions.html -->
 </div>
 <div id="zadania-9" class="section level2">
-<h2><span class="header-section-number">11.3</span> Zadania</h2>
+<h2><span class="header-section-number">11.4</span> Zadania</h2>
 
+</div>
+</div>
+<h3>Bibliografia</h3>
+<div id="refs" class="references">
+<div id="ref-R-landscapemetrics">
+<p>Hesselbarth, Maximillian H.K., Marco Sciaini, Jakub Nowosad, and Sebastian Hanss. 2019. <em>Landscapemetrics: Landscape Metrics for Categorical Map Patterns</em>. <a href="https://r-spatialecology.github.io/landscapemetrics/" class="uri">https://r-spatialecology.github.io/landscapemetrics/</a>.</p>
 </div>
 </div>
             </section>

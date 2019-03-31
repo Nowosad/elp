@@ -25,7 +25,7 @@
 <meta name="author" content="Jakub Nowosad">
 
 
-<meta name="date" content="2019-03-27">
+<meta name="date" content="2019-03-31">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -256,7 +256,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>11</b> Złożone funkcje</a><ul>
 <li class="chapter" data-level="11.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>11.1</b> API</a></li>
 <li class="chapter" data-level="11.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsuga-bedow"><i class="fa fa-check"></i><b>11.2</b> Obsługa błędów</a></li>
-<li class="chapter" data-level="11.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>11.3</b> Zadania</a></li>
+<li class="chapter" data-level="11.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#programowanie-obiektowe"><i class="fa fa-check"></i><b>11.3</b> Programowanie obiektowe</a></li>
+<li class="chapter" data-level="11.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>12</b> Analiza kodu</a><ul>
 <li class="chapter" data-level="12.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>12.1</b> Benchmarking</a></li>
@@ -655,7 +656,7 @@ tekst2
 <p>R ma wbudowaną reprezentację dat w postaci klasy <code>Date</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">dzis =<span class="st"> </span><span class="kw">Sys.Date</span>()
 dzis
-<span class="co">#&gt; [1] &quot;2019-03-27&quot;</span></code></pre>
+<span class="co">#&gt; [1] &quot;2019-03-31&quot;</span></code></pre>
 <p>Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowia), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(dzis)
 <span class="co">#&gt; [1] &quot;double&quot;</span>
@@ -666,8 +667,8 @@ dzis
 <span class="co">#&gt; [1] &quot;Date&quot;</span></code></pre>
 <p>Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji <code>unclass()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unclass</span>(dzis)
-<span class="co">#&gt; [1] 17982</span></code></pre>
-<p>Wynik, 17982, oznacza liczbę dni od 1970-01-01.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>
+<span class="co">#&gt; [1] 17986</span></code></pre>
+<p>Wynik, 17986, oznacza liczbę dni od 1970-01-01.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.</p>
 <pre class="sourceCode r"><code class="sourceCode r">stara_data =<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;1912-04-13&quot;</span>)
 <span class="kw">unclass</span>(stara_data)
