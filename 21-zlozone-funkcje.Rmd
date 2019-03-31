@@ -45,24 +45,18 @@ Ważne jest też, aby funkcja kończyła swoje działanie jak najszybciej po nap
 <!-- message -->
 <!-- + examples -->
 <!-- tworzenie wiadomości, warnings, errors -->
-<!-- http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/10/006_wyjatki.html --> -->
-
-
+<!-- http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/10/006_wyjatki.html --> 
 
 Więcej informacji o strukturze komunikatów błędów można znaleźć na https://style.tidyverse.org/error-messages.html.
 
 ## Programowanie obiektowe
 
-Programowanie obiektowe (ang. *object-oriented programming*, OOP) to jeden z najpopulariniejszych paradygmatów programowania (sekcja \@ref(jezyki-programowania) . 
+Programowanie obiektowe (ang. *object-oriented programming*, OOP) to jeden z najpopulariniejszych paradygmatów programowania (sekcja \@ref(jezyki-programowania)). 
 Polega on na definiowaniu obiektów danej klasy posiadających pewną określoną strukturę oraz zachowania.
 
 <!-- s3 s4 etc -->
 
-
-
 <!-- W S3 zachowanie działania obiektu powiązane jest  \@ref(inne-klasy)-->
-
-
 
 <!-- methods -->
 <!-- scope - http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/11/005_funkcje.html -->
