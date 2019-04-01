@@ -195,20 +195,36 @@ class(x)
 ```
 
 ```{r}
-class(x) = "kwadrat"
-x
+y = structure(x, class = "prostokat")
 ```
 
 ```{r}
-class(x)
+class(y)
 ```
-
 
 <!-- constructor + validator -->
 
+```{r}
+powierzchnia = function(x) {
+  UseMethod("powierzchnia")
+}
+```
 
+```{r}
+powierzchnia.prostokat = function(x){
+  a = x[1, 2] - x[1, 1]
+  b = x[2, 2] - x[2, 1]
+  a * b
+}
+```
 
+```{r}
+powierzchnia(y)
+```
 
+```{r}
+powierzchnia(x)
+```
 
 <!-- methods -->
 <!-- https://arxiv.org/pdf/1409.3531.pdf -->
