@@ -49,6 +49,7 @@ potegowanie(2, w = 2)
 potegowanie(2, w = 3)
 ```
 <!-- elipsis -->
+<!-- https://adv-r.hadley.nz/functions.html#fun-dot-dot-dot -->
 
 ## Zasięg widoczności
 
@@ -70,6 +71,52 @@ Oczywiście te wymienione formy można łączyć.
 Ważne jest też, aby funkcja kończyła swoje działanie jak najszybciej po napotkaniu, np. błędnych wartości wejściowych.
 Żadnej użytkownik nie chce czekać na zakończenie wykonywania długiej funkcji zanim dostanie komunikat błędu.
 
+Do zatrzymania działania funkcji i wyświetlenia komunikatu błędu służy `stop()`.
+
+```{r}
+stop("To jest komunikat błędu.")
+```
+
+Ostrzeżenia mogą być używane w wielu różnorodnych sytuacjach, np. kiedy chcesz poinformować użytkowników o tym, że dana funkcja zostanie wygaszona lub przeniesiona do innego pakietu.
+<!-- Ostrzeżenia są też stosowane w przypadkach, gdy  -->
+Komunikaty ostrzeżenia tworzyć się używając funkcji `warning()`.
+
+```{r}
+warning("To jest komunikat ostrzeżenia.")
+```
+
+Do wyświetlenia wiadomości służy funkcja `message()`.
+
+```{r}
+message("To jest komunikat wiadomości.")
+```
+
+
+```{r}
+minus_1 = function(x){
+  if(is.character(x)){
+    stop("Argument `x` musi być zmienną numeryczną, a nie znakową.")
+  } else if(is.logical(x)){
+    warning("Argument `x` jest zmienną logiczną. Czy nie chcesz użyć zmiennej numerycznej?")
+  } else {
+    message("Wow. Argument `x` jest oczekiwaną zmienną numeryczną.")
+  }
+  abs(x - 1)
+}
+```
+
+```{r}
+minus_1("kot")
+```
+
+```{r}
+minus_1(c(TRUE, FALSE))
+```
+
+```{r}
+minus_1(c(1, 0, 6, -6))
+```
+
 <!-- stop() + if() -->
 <!-- warning() -->
 <!-- message -->
@@ -78,6 +125,8 @@ Ważne jest też, aby funkcja kończyła swoje działanie jak najszybciej po nap
 <!-- http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/10/006_wyjatki.html --> 
 
 Więcej informacji o strukturze komunikatów błędów można znaleźć na https://style.tidyverse.org/error-messages.html.
+
+<!-- https://adv-r.hadley.nz/conditions.html#conditions -->
 
 ## Programowanie obiektowe
 
