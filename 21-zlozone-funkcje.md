@@ -58,7 +58,17 @@ potegowanie(2, w = 3)
 ```
 <!-- elipsis -->
 
+## Zasięg widoczności
+
+Zasięg widoczności (ang. *scoping*)
+
+<!-- scope - http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/11/005_funkcje.html -->
+<!-- lexical scoping https://adv-r.hadley.nz/functions.html#lexical-scoping -->
+
 ## Obsługa błędów
+
+W sekcji \@ref(komunikaty) omówiliśmy trzy podstawowe rodzaje komunikatów: błędy, ostrzeżenia i wiadomości.
+Teraz zobaczmy jak te zaimplementować we własnych funkcjach i kiedy powinny być one użyte.
 
 Obsługa błędów w funkcjach ma na celu ochronę użytkownika przed nieodpowiednim zachowaniem funkcji.
 Komunikat błędu powinien ułatwiać użytkownikowi zrozumienie problemu oraz jego rozwiązanie. 
@@ -67,7 +77,6 @@ Oczywiście te wymienione formy można łączyć.
 
 Ważne jest też, aby funkcja kończyła swoje działanie jak najszybciej po napotkaniu, np. błędnych wartości wejściowych.
 Żadnej użytkownik nie chce czekać na zakończenie wykonywania długiej funkcji zanim dostanie komunikat błędu.
-
 
 <!-- stop() + if() -->
 <!-- warning() -->
@@ -88,8 +97,6 @@ Polega on na definiowaniu obiektów danej klasy posiadających pewną określon�
 <!-- W S3 zachowanie działania obiektu powiązane jest  \@ref(inne-klasy)-->
 
 <!-- methods -->
-<!-- scope - http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/11/005_funkcje.html -->
-<!-- lexical scoping https://adv-r.hadley.nz/functions.html -->
 
 ## Testy jednostkowe
 
