@@ -53,7 +53,7 @@ tekst1
 
 <!-- sekcja o wyswietlaniu tekstu?? -->
 
-## Postawowe operacje na tekście
+## Podstawowe operacje na tekście
 
 [@R-stringr]
 
@@ -86,7 +86,6 @@ str_sort(tekst2, locale = "pl")
 str_sort(tekst2, locale = "cs")
 #> [1] "alfabet"     "hałas"       "chronologia"
 ```
-
 
 
 ```r
