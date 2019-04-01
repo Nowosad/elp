@@ -433,8 +433,16 @@ Poniżej znajduje się fragment przykładowych danych wejściowych.
 ```
 
 5) Co należałoby zrobić, aby wydzielić tylko wartości pomiarów w powyższym przypadku?
-Stwórz nowy obiekt "wartosci" zawierający te pomiary.
+Stwórz nowy obiekt `wartosci` zawierający te pomiary.
 Jakiej klasy powinien być wyjściowy obiekt?
+6) Posiadasz wektor `wsp` zawierający współrzedne geograficzne szeregu miast w formacie DMS (Stopnie, Minuty, Sekundy).
+Wydziel tylko wartości stopnii z tej reprezentacji.
+Poniżej znajduje się fragment przykładowych danych wejściowych.
+
+```r
+wsp = c("52°24′N 16°55′E", "53°08′07″N 23°08′44″E", "39°6′N 84°31′W")
+```
+
+7) Stwórz funkcję, która przyjmując przykładowe dane z poprzedniego zadania zamieni współrzędne na format w postaci stopni dziesiętnych (np. `52°24′N` w formacie DMS to `52.4` w stopniach dziesiętnych) 
 <!-- match hex colors, examples :#abs, #f0, #BADA55, #COFFEE https://www.youtube.com/watch?v=EkluES9Rvak -->
-<!-- match coordinates -->
-<!-- match dates -->
+

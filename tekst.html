@@ -572,11 +572,16 @@ Poniżej znajduje się fragment przykładowych danych wejściowych.</li>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="st">&quot;2019-03-11: 23.5, 19/03/12: 12.7, 2019.03.13: 11.1, 2019-marzec-14: 14.3&quot;</span></code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li>Co należałoby zrobić, aby wydzielić tylko wartości pomiarów w powyższym przypadku?
-Stwórz nowy obiekt “wartosci” zawierający te pomiary.
-Jakiej klasy powinien być wyjściowy obiekt?
-<!-- match hex colors, examples :#abs, #f0, #BADA55, #COFFEE https://www.youtube.com/watch?v=EkluES9Rvak -->
-<!-- match coordinates -->
-<!-- match dates --></li>
+Stwórz nowy obiekt <code>wartosci</code> zawierający te pomiary.
+Jakiej klasy powinien być wyjściowy obiekt?</li>
+<li>Posiadasz wektor <code>wsp</code> zawierający współrzedne geograficzne szeregu miast w formacie DMS (Stopnie, Minuty, Sekundy).
+Wydziel tylko wartości stopnii z tej reprezentacji.
+Poniżej znajduje się fragment przykładowych danych wejściowych.</li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r">wsp =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;52°24′N 16°55′E&quot;</span>, <span class="st">&quot;53°08′07″N 23°08′44″E&quot;</span>, <span class="st">&quot;39°6′N 84°31′W&quot;</span>)</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li>Stwórz funkcję, która przyjmując przykładowe dane z poprzedniego zadania zamieni współrzędne na format w postaci stopni dziesiętnych (np. <code>52°24′N</code> w formacie DMS to <code>52.4</code> w stopniach dziesiętnych)
+<!-- match hex colors, examples :#abs, #f0, #BADA55, #COFFEE https://www.youtube.com/watch?v=EkluES9Rvak --></li>
 </ol>
 
 </div>
