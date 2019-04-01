@@ -94,6 +94,9 @@ Do wyświetlenia wiadomości służy funkcja `message()`.
 message("To jest komunikat wiadomości.")
 ```
 
+<!-- block cat vs message https://adv-r.hadley.nz/conditions.html#signalling-conditions -->
+
+
 
 ```{r}
 minus_1 = function(x){
@@ -120,14 +123,13 @@ minus_1(c(TRUE, FALSE))
 minus_1(c(1, 0, 6, -6))
 ```
 
-<!-- stop() + if() -->
-<!-- warning() -->
-<!-- message -->
-<!-- + examples -->
-<!-- tworzenie wiadomości, warnings, errors -->
 <!-- http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/10/006_wyjatki.html --> 
 
 Więcej informacji o strukturze komunikatów błędów można znaleźć na https://style.tidyverse.org/error-messages.html.
+
+```{block2 type="rmdinfo"}
+R pozwala na ignorowanie wystąpienia błędu używając funkcji `try()`, ignorowanie ostrzeżeń z `suppressWarnings()` oraz wiadomości z `suppressMessages()`.
+```
 
 <!-- https://adv-r.hadley.nz/conditions.html#conditions -->
 
