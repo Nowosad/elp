@@ -29,6 +29,27 @@ Podobnie należy zadbać o spójną kolejność podobnych argumentów w funkcjac
 Stabilność typu oznacza, że używając jednej klasy danych wejściowych funkcja zawsze zwróci obiekt jednej klasy. 
 <!-- Przykładowo... -->
 
+Dodatkowym elementem API może być określenie domyślnych parametrów funkcji.
+
+```{r}
+potegowanie = function(x, w = 2){
+  x ^ w
+}
+```
+
+```{r}
+potegowanie(2)
+```
+
+```{r}
+potegowanie(2, w = 2)
+```
+
+```{r}
+potegowanie(2, w = 3)
+```
+<!-- elipsis -->
+
 ## Obsługa błędów
 
 Obsługa błędów w funkcjach ma na celu ochronę użytkownika przed nieodpowiednim zachowaniem funkcji.
@@ -61,5 +82,12 @@ Polega on na definiowaniu obiektów danej klasy posiadających pewną określon�
 <!-- methods -->
 <!-- scope - http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/11/005_funkcje.html -->
 <!-- lexical scoping https://adv-r.hadley.nz/functions.html -->
+
+## Testy jednostkowe
+
+<!-- Unit testing -->
+<!-- usethis::use_test() -->
+<!-- devtools::test() -->
+<!-- devtools::test_coverage() -->
 
 ## Zadania
