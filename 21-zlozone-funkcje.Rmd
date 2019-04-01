@@ -219,10 +219,12 @@ powierzchnia.prostokat = function(x){
 ```
 
 ```{r}
+y
 powierzchnia(y)
 ```
 
-```{r}
+```{r, error=TRUE}
+x
 powierzchnia(x)
 ```
 
