@@ -58,7 +58,7 @@ Zasięg widoczności (ang. *scoping*)
 <!-- scope - http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/11/005_funkcje.html -->
 <!-- lexical scoping https://adv-r.hadley.nz/functions.html#lexical-scoping -->
 
-## Obsługa błędów
+## Obsługa błędów, ostrzeżeń i wiadomości
 
 W sekcji \@ref(komunikaty) omówiliśmy trzy podstawowe rodzaje komunikatów: błędy, ostrzeżenia i wiadomości.
 Teraz zobaczmy jak te zaimplementować we własnych funkcjach i kiedy powinny być one użyte.
@@ -70,10 +70,11 @@ Oczywiście te wymienione formy można łączyć.
 
 Ważne jest też, aby funkcja kończyła swoje działanie jak najszybciej po napotkaniu, np. błędnych wartości wejściowych.
 Żadnej użytkownik nie chce czekać na zakończenie wykonywania długiej funkcji zanim dostanie komunikat błędu.
+Więcej informacji o strukturze komunikatów błędów można znaleźć na https://style.tidyverse.org/error-messages.html.
 
 Do zatrzymania działania funkcji i wyświetlenia komunikatu błędu służy `stop()`.
 
-```{r}
+```{r, error=TRUE}
 stop("To jest komunikat błędu.")
 ```
 
@@ -95,8 +96,6 @@ message("To jest komunikat wiadomości.")
 ```
 
 <!-- block cat vs message https://adv-r.hadley.nz/conditions.html#signalling-conditions -->
-
-
 
 ```{r}
 minus_1 = function(x){
@@ -125,13 +124,51 @@ minus_1(c(1, 0, 6, -6))
 
 <!-- http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/10/006_wyjatki.html --> 
 
-Więcej informacji o strukturze komunikatów błędów można znaleźć na https://style.tidyverse.org/error-messages.html.
-
 ```{block2 type="rmdinfo"}
 R pozwala na ignorowanie wystąpienia błędu używając funkcji `try()`, ignorowanie ostrzeżeń z `suppressWarnings()` oraz wiadomości z `suppressMessages()`.
 ```
 
 <!-- https://adv-r.hadley.nz/conditions.html#conditions -->
+
+```{r, eval=FALSE}
+tryCatch(
+  error = function(e) {
+    wykonaj kod w przypadku wystąpienia błędu
+  },
+  kod do uruchomienia 
+)
+```
+
+```{r}
+test = function(x){
+  tryCatch(
+  error = function(e) {
+    NA
+  },
+  log(x)
+  )
+}
+```
+
+```{r}
+log(10)
+```
+
+```{r}
+test(10)
+```
+
+```{r, error=TRUE}
+log("abecadło")
+```
+
+```{r}
+test("abecadło")
+```
+
+```{block2 type="rmdinfo"}
+Dodatkowo istnieje funkcja `withCallingHandlers()`, która jest używana w przypadku działania na ostrzeżeniach.
+````
 
 ## Programowanie obiektowe
 
