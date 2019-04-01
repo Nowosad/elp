@@ -33,13 +33,6 @@ Funkcja `create_packages()` tworzy cztery pliki:
 <!-- readme -->
 <!-- news -->
 
-## Testy jednostkowe
-
-<!-- Unit testing -->
-<!-- usethis::use_test() -->
-<!-- devtools::test() -->
-<!-- devtools::test_coverage() -->
-
 ## Licencje
 
 ## Publikowanie pakietów

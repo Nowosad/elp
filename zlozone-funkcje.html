@@ -25,7 +25,7 @@
 <meta name="author" content="Jakub Nowosad">
 
 
-<meta name="date" content="2019-03-31">
+<meta name="date" content="2019-04-01">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -257,7 +257,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>11.1</b> API</a></li>
 <li class="chapter" data-level="11.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsuga-bedow"><i class="fa fa-check"></i><b>11.2</b> Obsługa błędów</a></li>
 <li class="chapter" data-level="11.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#programowanie-obiektowe"><i class="fa fa-check"></i><b>11.3</b> Programowanie obiektowe</a></li>
-<li class="chapter" data-level="11.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
+<li class="chapter" data-level="11.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.4</b> Testy jednostkowe</a></li>
+<li class="chapter" data-level="11.5" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>11.5</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>12</b> Analiza kodu</a><ul>
 <li class="chapter" data-level="12.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>12.1</b> Benchmarking</a></li>
@@ -275,10 +276,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-funkcji-1"><i class="fa fa-check"></i><b>14.2</b> Dokumentacja funkcji</a></li>
 <li class="chapter" data-level="14.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zaleznosci"><i class="fa fa-check"></i><b>14.3</b> Zależności</a></li>
 <li class="chapter" data-level="14.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-pakietu"><i class="fa fa-check"></i><b>14.4</b> Dokumentacja pakietu</a></li>
-<li class="chapter" data-level="14.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#testy-jednostkowe"><i class="fa fa-check"></i><b>14.5</b> Testy jednostkowe</a></li>
-<li class="chapter" data-level="14.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#licencje"><i class="fa fa-check"></i><b>14.6</b> Licencje</a></li>
-<li class="chapter" data-level="14.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietow"><i class="fa fa-check"></i><b>14.7</b> Publikowanie pakietów</a></li>
-<li class="chapter" data-level="14.8" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zadania-11"><i class="fa fa-check"></i><b>14.8</b> Zadania</a></li>
+<li class="chapter" data-level="14.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#licencje"><i class="fa fa-check"></i><b>14.5</b> Licencje</a></li>
+<li class="chapter" data-level="14.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietow"><i class="fa fa-check"></i><b>14.6</b> Publikowanie pakietów</a></li>
+<li class="chapter" data-level="14.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zadania-11"><i class="fa fa-check"></i><b>14.7</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>15</b> Łącznik</a><ul>
 <li class="chapter" data-level="15.1" data-path="lacznik.html"><a href="lacznik.html#c"><i class="fa fa-check"></i><b>15.1</b> C++</a></li>
@@ -332,6 +332,17 @@ W przypadku, gdy taki sam rodzaj danych wejściowych jest oczekiwany w różnych
 Podobnie należy zadbać o spójną kolejność podobnych argumentów w funkcjach jednego pakietu.</p>
 <p>Stabilność typu oznacza, że używając jednej klasy danych wejściowych funkcja zawsze zwróci obiekt jednej klasy.
 <!-- Przykładowo... --></p>
+<p>Dodatkowym elementem API może być określenie domyślnych parametrów funkcji.</p>
+<pre class="sourceCode r"><code class="sourceCode r">potegowanie =<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">w =</span> <span class="dv">2</span>){
+  x <span class="op">^</span><span class="st"> </span>w
+}</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">potegowanie</span>(<span class="dv">2</span>)
+<span class="co">#&gt; [1] 4</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">potegowanie</span>(<span class="dv">2</span>, <span class="dt">w =</span> <span class="dv">2</span>)
+<span class="co">#&gt; [1] 4</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">potegowanie</span>(<span class="dv">2</span>, <span class="dt">w =</span> <span class="dv">3</span>)
+<span class="co">#&gt; [1] 8</span></code></pre>
+<!-- elipsis -->
 </div>
 <div id="obsuga-bedow" class="section level2">
 <h2><span class="header-section-number">11.2</span> Obsługa błędów</h2>
@@ -359,8 +370,15 @@ Polega on na definiowaniu obiektów danej klasy posiadających pewną określon�
 <!-- scope - http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/11/005_funkcje.html -->
 <!-- lexical scoping https://adv-r.hadley.nz/functions.html -->
 </div>
+<div id="testy-jednostkowe" class="section level2">
+<h2><span class="header-section-number">11.4</span> Testy jednostkowe</h2>
+<!-- Unit testing -->
+<!-- usethis::use_test() -->
+<!-- devtools::test() -->
+<!-- devtools::test_coverage() -->
+</div>
 <div id="zadania-9" class="section level2">
-<h2><span class="header-section-number">11.4</span> Zadania</h2>
+<h2><span class="header-section-number">11.5</span> Zadania</h2>
 
 </div>
 </div>
