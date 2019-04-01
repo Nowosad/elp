@@ -35,7 +35,8 @@ knitr::write_bib(c(.packages(),
                    "readxl", "writexl", "jsonlite", 
                    "xml2", "sf", "raster", 
                    "RSQLite", "RPostgreSQL", "DBI",
-                   "landscapemetrics", "bench", "profvis"),
+                   "landscapemetrics", "bench", "profvis",
+                   "usethis"),
                    "packages.bib")
 ```
 
