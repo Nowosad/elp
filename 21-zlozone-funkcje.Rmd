@@ -175,11 +175,20 @@ Dodatkowo istnieje funkcja `withCallingHandlers()`, która jest używana w przyp
 Programowanie obiektowe (ang. *object-oriented programming*, OOP) to jeden z najpopulariniejszych paradygmatów programowania (sekcja \@ref(jezyki-programowania)). 
 Polega on na definiowaniu obiektów danej klasy posiadających pewną określoną strukturę oraz zachowania.
 
+R pozwala również na stosowanie paradygmatu obiektowego.
+Co więcej, w tym języku istnieje kilka różnych systemów programowania obiektowego, między innymi S3, S4 czy R6.
+Każdy z nich charakteryzuje inny sposób tworzenia obiektów czy ich zachowań.
+W tym rozdziale skupimy się na najczęściej używanego systemu S3.
+
+
+
 <!-- s3 s4 etc -->
 
 <!-- W S3 zachowanie działania obiektu powiązane jest  \@ref(inne-klasy)-->
 
 <!-- methods -->
+<!-- https://arxiv.org/pdf/1409.3531.pdf -->
+<!-- https://adv-r.hadley.nz/oo.html -->
 
 ## Testy jednostkowe
 
