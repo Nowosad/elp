@@ -44,7 +44,7 @@ tekst1
 
 <!-- sekcja o wyswietlaniu tekstu?? -->
 
-## Postawowe operacje na tekście
+## Podstawowe operacje na tekście
 
 [@R-stringr]
 
