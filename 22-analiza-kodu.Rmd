@@ -2,6 +2,12 @@
 
 ## Benchmarking
 
+<!-- system.time -->
+
+```{r}
+system.time(mean(1:100000000))
+```
+
 ```{r}
 mi_do_km1 = function(odl_mile){
   odl_km = vector("list", length = 0)
@@ -53,6 +59,27 @@ ggplot2::autoplot(porownanie)
 
 
 ## Profiling
+
+Istnieją trzy podstawowe reguły optymalizacji kodu^[http://www.moscowcoffeereview.com/programming/the-3-rules-of-optimization/]:
+
+1. Nie.
+2. Jeszcze nie.
+3. Profiluj przed optymalizowaniem.
+
+Czym jest profilowanie i dlaczego powinno być wykonywane przed optymalizowaniem kodu?
+Profilowanie mierzy czas działania każdej linii kodu.
+
+[@R-profvis]
+
+```{r, eval=FALSE}
+# plik R/moja_funkcja.R
+```
+
+```{r, eval=FALSE}
+library(profvis)
+profvis(source("R/moja_funkcja.R"))
+```
+
 
 <!-- profiling -->
 <!-- https://r-prof.github.io/jointprof/articles/proposal.html -->
