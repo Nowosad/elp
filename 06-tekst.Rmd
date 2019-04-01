@@ -69,7 +69,6 @@ str_sort(tekst2, locale = "pl")
 str_sort(tekst2, locale = "cs")
 ```
 
-
 ```{r}
 tekst3 = c("chronologia ", "alfabet", " hałas")
 str_sort(tekst3, locale = "pl")
