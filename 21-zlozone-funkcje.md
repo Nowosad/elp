@@ -232,27 +232,54 @@ class(x)
 
 
 ```r
-class(x) = "kwadrat"
-x
-#>      [,1] [,2]
-#> [1,]    0    2
-#> [2,]    0    3
-#> attr(,"class")
-#> [1] "kwadrat"
+y = structure(x, class = "prostokat")
 ```
 
 
 ```r
-class(x)
-#> [1] "kwadrat"
+class(y)
+#> [1] "prostokat"
 ```
-
 
 <!-- constructor + validator -->
 
 
+```r
+powierzchnia = function(x) {
+  UseMethod("powierzchnia")
+}
+```
 
 
+```r
+powierzchnia.prostokat = function(x){
+  a = x[1, 2] - x[1, 1]
+  b = x[2, 2] - x[2, 1]
+  a * b
+}
+```
+
+
+```r
+y
+#>      [,1] [,2]
+#> [1,]    0    2
+#> [2,]    0    3
+#> attr(,"class")
+#> [1] "prostokat"
+powierzchnia(y)
+#> [1] 6
+```
+
+
+```r
+x
+#>      [,1] [,2]
+#> [1,]    0    2
+#> [2,]    0    3
+powierzchnia(x)
+#> Error in UseMethod("powierzchnia"): no applicable method for 'powierzchnia' applied to an object of class "c('matrix', 'double', 'numeric')"
+```
 
 <!-- methods -->
 <!-- https://arxiv.org/pdf/1409.3531.pdf -->

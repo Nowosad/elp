@@ -450,16 +450,32 @@ x
 <span class="co">#&gt; [2,]    0    3</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(x)
 <span class="co">#&gt; [1] &quot;matrix&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(x) =<span class="st"> &quot;kwadrat&quot;</span>
-x
+<pre class="sourceCode r"><code class="sourceCode r">y =<span class="st"> </span><span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(y)
+<span class="co">#&gt; [1] &quot;prostokat&quot;</span></code></pre>
+<!-- constructor + validator -->
+<pre class="sourceCode r"><code class="sourceCode r">powierzchnia =<span class="st"> </span><span class="cf">function</span>(x) {
+  <span class="kw">UseMethod</span>(<span class="st">&quot;powierzchnia&quot;</span>)
+}</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">powierzchnia.prostokat =<span class="st"> </span><span class="cf">function</span>(x){
+  a =<span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">1</span>]
+  b =<span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">1</span>]
+  a <span class="op">*</span><span class="st"> </span>b
+}</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">y
 <span class="co">#&gt;      [,1] [,2]</span>
 <span class="co">#&gt; [1,]    0    2</span>
 <span class="co">#&gt; [2,]    0    3</span>
 <span class="co">#&gt; attr(,&quot;class&quot;)</span>
-<span class="co">#&gt; [1] &quot;kwadrat&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(x)
-<span class="co">#&gt; [1] &quot;kwadrat&quot;</span></code></pre>
-<!-- constructor + validator -->
+<span class="co">#&gt; [1] &quot;prostokat&quot;</span>
+<span class="kw">powierzchnia</span>(y)
+<span class="co">#&gt; [1] 6</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">x
+<span class="co">#&gt;      [,1] [,2]</span>
+<span class="co">#&gt; [1,]    0    2</span>
+<span class="co">#&gt; [2,]    0    3</span>
+<span class="kw">powierzchnia</span>(x)
+<span class="co">#&gt; Error in UseMethod(&quot;powierzchnia&quot;): no applicable method for &#39;powierzchnia&#39; applied to an object of class &quot;c(&#39;matrix&#39;, &#39;double&#39;, &#39;numeric&#39;)&quot;</span></code></pre>
 <!-- methods -->
 <!-- https://arxiv.org/pdf/1409.3531.pdf -->
 <!-- https://adv-r.hadley.nz/oo.html -->
