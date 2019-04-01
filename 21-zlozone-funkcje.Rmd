@@ -85,6 +85,9 @@ Komunikaty ostrzeżenia tworzyć się używając funkcji `warning()`.
 warning("To jest komunikat ostrzeżenia.")
 ```
 
+Wiadomości mają na celu poinformowanie użytkownika na temat działania pakietu lub funkcji.
+Są one wykorzystywane podczas wczytywania niektórych pakietów.<!--..-->
+Innym przykładem jest informowanie na temat działania funkcji w tle - pobierania danych, zapisywania do pliku, czy przeliczania cząstkowych parametrów.
 Do wyświetlenia wiadomości służy funkcja `message()`.
 
 ```{r}
