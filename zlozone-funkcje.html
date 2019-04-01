@@ -256,7 +256,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>11</b> Złożone funkcje</a><ul>
 <li class="chapter" data-level="11.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>11.1</b> API</a></li>
 <li class="chapter" data-level="11.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zasieg-widocznosci"><i class="fa fa-check"></i><b>11.2</b> Zasięg widoczności</a></li>
-<li class="chapter" data-level="11.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsuga-bedow"><i class="fa fa-check"></i><b>11.3</b> Obsługa błędów</a></li>
+<li class="chapter" data-level="11.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsuga-bedow-ostrzezen-i-wiadomosci"><i class="fa fa-check"></i><b>11.3</b> Obsługa błędów, ostrzeżeń i wiadomości</a></li>
 <li class="chapter" data-level="11.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#programowanie-obiektowe"><i class="fa fa-check"></i><b>11.4</b> Programowanie obiektowe</a></li>
 <li class="chapter" data-level="11.5" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.5</b> Testy jednostkowe</a></li>
 <li class="chapter" data-level="11.6" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>11.6</b> Zadania</a></li>
@@ -344,6 +344,7 @@ Podobnie należy zadbać o spójną kolejność podobnych argumentów w funkcjac
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">potegowanie</span>(<span class="dv">2</span>, <span class="dt">w =</span> <span class="dv">3</span>)
 <span class="co">#&gt; [1] 8</span></code></pre>
 <!-- elipsis -->
+<!-- https://adv-r.hadley.nz/functions.html#fun-dot-dot-dot -->
 </div>
 <div id="zasieg-widocznosci" class="section level2">
 <h2><span class="header-section-number">11.2</span> Zasięg widoczności</h2>
@@ -351,8 +352,8 @@ Podobnie należy zadbać o spójną kolejność podobnych argumentów w funkcjac
 <!-- scope - http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/11/005_funkcje.html -->
 <!-- lexical scoping https://adv-r.hadley.nz/functions.html#lexical-scoping -->
 </div>
-<div id="obsuga-bedow" class="section level2">
-<h2><span class="header-section-number">11.3</span> Obsługa błędów</h2>
+<div id="obsuga-bedow-ostrzezen-i-wiadomosci" class="section level2">
+<h2><span class="header-section-number">11.3</span> Obsługa błędów, ostrzeżeń i wiadomości</h2>
 <p>W sekcji <a href="funkcje.html#komunikaty">3.9</a> omówiliśmy trzy podstawowe rodzaje komunikatów: błędy, ostrzeżenia i wiadomości.
 Teraz zobaczmy jak te zaimplementować we własnych funkcjach i kiedy powinny być one użyte.</p>
 <p>Obsługa błędów w funkcjach ma na celu ochronę użytkownika przed nieodpowiednim zachowaniem funkcji.
@@ -360,22 +361,108 @@ Komunikat błędu powinien ułatwiać użytkownikowi zrozumienie problemu oraz j
 Zazwyczaj komunikat błędu przyjmuje jedną z trzech form: (1) określenie problemu, np. “Argument <code>x</code> musi być zmienną numeryczną, a nie znakową.”, (2) lokalizacja błędu, np. “Kolumna <code>abc</code> nie istnieje w obiekcie <code>y</code>.”, (3) porada, np. “Did you mean <code>Species == &quot;setosa&quot;</code>?”.
 Oczywiście te wymienione formy można łączyć.</p>
 <p>Ważne jest też, aby funkcja kończyła swoje działanie jak najszybciej po napotkaniu, np. błędnych wartości wejściowych.
-Żadnej użytkownik nie chce czekać na zakończenie wykonywania długiej funkcji zanim dostanie komunikat błędu.</p>
-<!-- stop() + if() -->
-<!-- warning() -->
-<!-- message -->
-<!-- + examples -->
-<!-- tworzenie wiadomości, warnings, errors -->
+Żadnej użytkownik nie chce czekać na zakończenie wykonywania długiej funkcji zanim dostanie komunikat błędu.
+Więcej informacji o strukturze komunikatów błędów można znaleźć na <a href="https://style.tidyverse.org/error-messages.html" class="uri">https://style.tidyverse.org/error-messages.html</a>.</p>
+<p>Do zatrzymania działania funkcji i wyświetlenia komunikatu błędu służy <code>stop()</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stop</span>(<span class="st">&quot;To jest komunikat błędu.&quot;</span>)
+<span class="co">#&gt; Error in eval(expr, envir, enclos): To jest komunikat błędu.</span></code></pre>
+<p>Ostrzeżenia mogą być używane w wielu różnorodnych sytuacjach, np. kiedy chcesz poinformować użytkowników o tym, że dana funkcja zostanie wygaszona lub przeniesiona do innego pakietu.
+<!-- Ostrzeżenia są też stosowane w przypadkach, gdy  -->
+Komunikaty ostrzeżenia tworzyć się używając funkcji <code>warning()</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">warning</span>(<span class="st">&quot;To jest komunikat ostrzeżenia.&quot;</span>)
+<span class="co">#&gt; Warning: To jest komunikat ostrzeżenia.</span></code></pre>
+<p>Wiadomości mają na celu poinformowanie użytkownika na temat działania pakietu lub funkcji.
+Są one wykorzystywane podczas wczytywania niektórych pakietów.<!--..-->
+Innym przykładem jest informowanie na temat działania funkcji w tle - pobierania danych, zapisywania do pliku, czy przeliczania cząstkowych parametrów.
+Do wyświetlenia wiadomości służy funkcja <code>message()</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">message</span>(<span class="st">&quot;To jest komunikat wiadomości.&quot;</span>)
+<span class="co">#&gt; To jest komunikat wiadomości.</span></code></pre>
+<!-- block cat vs message https://adv-r.hadley.nz/conditions.html#signalling-conditions -->
+<pre class="sourceCode r"><code class="sourceCode r">minus_<span class="dv">1</span> =<span class="st"> </span><span class="cf">function</span>(x){
+  <span class="cf">if</span>(<span class="kw">is.character</span>(x)){
+    <span class="kw">stop</span>(<span class="st">&quot;Argument `x` musi być zmienną numeryczną, a nie znakową.&quot;</span>)
+  } <span class="cf">else</span> <span class="cf">if</span>(<span class="kw">is.logical</span>(x)){
+    <span class="kw">warning</span>(<span class="st">&quot;Argument `x` jest zmienną logiczną. Czy nie chcesz użyć zmiennej numerycznej?&quot;</span>)
+  } <span class="cf">else</span> {
+    <span class="kw">message</span>(<span class="st">&quot;Wow. Argument `x` jest oczekiwaną zmienną numeryczną.&quot;</span>)
+  }
+  <span class="kw">abs</span>(x <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)
+}</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">minus_1</span>(<span class="st">&quot;kot&quot;</span>)
+<span class="co">#&gt; Error in minus_1(&quot;kot&quot;): Argument `x` musi być zmienną numeryczną, a nie znakową.</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">minus_1</span>(<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>))
+<span class="co">#&gt; Warning in minus_1(c(TRUE, FALSE)): Argument `x` jest zmienną logiczną. Czy</span>
+<span class="co">#&gt; nie chcesz użyć zmiennej numerycznej?</span>
+<span class="co">#&gt; [1] 0 1</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">minus_1</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">-6</span>))
+<span class="co">#&gt; Wow. Argument `x` jest oczekiwaną zmienną numeryczną.</span>
+<span class="co">#&gt; [1] 0 1 5 7</span></code></pre>
 <!-- http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/10/006_wyjatki.html -->
-<p>Więcej informacji o strukturze komunikatów błędów można znaleźć na <a href="https://style.tidyverse.org/error-messages.html" class="uri">https://style.tidyverse.org/error-messages.html</a>.</p>
+
+<div class="rmdinfo">
+R pozwala na ignorowanie wystąpienia błędu używając funkcji <code>try()</code>, ignorowanie ostrzeżeń z <code>suppressWarnings()</code> oraz wiadomości z <code>suppressMessages()</code>.
+</div>
+
+<!-- https://adv-r.hadley.nz/conditions.html#conditions -->
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tryCatch</span>(
+  <span class="dt">error =</span> <span class="cf">function</span>(e) {
+    wykonaj kod w przypadku wystąpienia błędu
+  },
+  kod do uruchomienia 
+)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">test =<span class="st"> </span><span class="cf">function</span>(x){
+  <span class="kw">tryCatch</span>(
+  <span class="dt">error =</span> <span class="cf">function</span>(e) {
+    <span class="ot">NA</span>
+  },
+  <span class="kw">log</span>(x)
+  )
+}</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(<span class="dv">10</span>)
+<span class="co">#&gt; [1] 2.3</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">test</span>(<span class="dv">10</span>)
+<span class="co">#&gt; [1] 2.3</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(<span class="st">&quot;abecadło&quot;</span>)
+<span class="co">#&gt; Error in log(&quot;abecadło&quot;): non-numeric argument to mathematical function</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">test</span>(<span class="st">&quot;abecadło&quot;</span>)
+<span class="co">#&gt; [1] NA</span></code></pre>
+
+<div class="rmdinfo">
+Dodatkowo istnieje funkcja <code>withCallingHandlers()</code>, która jest używana w przypadku działania na ostrzeżeniach.
+</div>
+
 </div>
 <div id="programowanie-obiektowe" class="section level2">
 <h2><span class="header-section-number">11.4</span> Programowanie obiektowe</h2>
 <p>Programowanie obiektowe (ang. <em>object-oriented programming</em>, OOP) to jeden z najpopulariniejszych paradygmatów programowania (sekcja <a href="wprowadzenie.html#jezyki-programowania">1.2</a>).
 Polega on na definiowaniu obiektów danej klasy posiadających pewną określoną strukturę oraz zachowania.</p>
-<!-- s3 s4 etc -->
+<!-- The main ideas of object-oriented programmingare also quite simple and intuitive:1. Everything we compute with is anobject, andobjects should be structured to suit the goals of ourcomputations.2. For this, the key programming tool is aclassdefinition saying that objects belonging to this classshare structure defined bypropertiesthey all have,with the properties being themselves objects of somespecified class.3. A class caninheritfrom (contain) a simplersuperclass, such that an object of this class is alsoan object of the superclass.4. In order to compute with objects, we can de-finemethodsthat are only used when objects are ofcertain classes -->
+<p>R pozwala również na stosowanie paradygmatu obiektowego.
+Co więcej, w tym języku istnieje kilka różnych systemów programowania obiektowego, między innymi S3, S4 czy R6.
+Każdy z nich charakteryzuje inny sposób tworzenia obiektów czy ich zachowań.
+W tym rozdziale skupimy się na najczęściej używanego systemu S3.</p>
 <!-- W S3 zachowanie działania obiektu powiązane jest  \@ref(inne-klasy)-->
+<!-- S3 simplest informal flexible -->
+<pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="dt">ncol =</span> <span class="dv">2</span>)
+x
+<span class="co">#&gt;      [,1] [,2]</span>
+<span class="co">#&gt; [1,]    0    2</span>
+<span class="co">#&gt; [2,]    0    3</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(x)
+<span class="co">#&gt; [1] &quot;matrix&quot;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(x) =<span class="st"> &quot;kwadrat&quot;</span>
+x
+<span class="co">#&gt;      [,1] [,2]</span>
+<span class="co">#&gt; [1,]    0    2</span>
+<span class="co">#&gt; [2,]    0    3</span>
+<span class="co">#&gt; attr(,&quot;class&quot;)</span>
+<span class="co">#&gt; [1] &quot;kwadrat&quot;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(x)
+<span class="co">#&gt; [1] &quot;kwadrat&quot;</span></code></pre>
+<!-- constructor + validator -->
 <!-- methods -->
+<!-- https://arxiv.org/pdf/1409.3531.pdf -->
+<!-- https://adv-r.hadley.nz/oo.html -->
 </div>
 <div id="testy-jednostkowe" class="section level2">
 <h2><span class="header-section-number">11.5</span> Testy jednostkowe</h2>
