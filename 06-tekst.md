@@ -228,7 +228,7 @@ str_detect(tekst4, pattern = "^[^L]+")
 
 
 ```r
->str_detect(tekst4, pattern = "\.")
+str_detect(tekst4, pattern = "\.")
 #> Error: '\.' is an unrecognized escape in character string starting ""\."
 ```
 
