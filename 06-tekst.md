@@ -45,10 +45,10 @@ paste0("t", "o", " ", "k", "o", "t")
 
 ```r
 imie = "Olek"
-wiek = 7
+wiek = 77
 tekst1 = paste(imie, "ma", wiek, "lat.")
 tekst1
-#> [1] "Olek ma 7 lat."
+#> [1] "Olek ma 77 lat."
 ```
 
 <!-- sekcja o wyswietlaniu tekstu?? -->
@@ -65,13 +65,13 @@ library(stringr)
 
 ```r
 toupper(tekst1)
-#> [1] "OLEK MA 7 LAT."
+#> [1] "OLEK MA 77 LAT."
 ```
 
 
 ```r
 tolower(tekst1)
-#> [1] "olek ma 7 lat."
+#> [1] "olek ma 77 lat."
 ```
 
 
@@ -114,20 +114,20 @@ str_sub(tekst1, start = 1, end = 4)
 
 
 ```r
-str_sub(tekst1, start = 9, end = 14)
-#> [1] "7 lat."
+str_sub(tekst1, start = 9, end = 15)
+#> [1] "77 lat."
 ```
 
 
 ```r
 str_sub(tekst1, start = 9, end = -1)
-#> [1] "7 lat."
+#> [1] "77 lat."
 ```
 
 
 ```r
-str_sub(tekst1, start = -6, end = -1)
-#> [1] "7 lat."
+str_sub(tekst1, start = -7, end = -1)
+#> [1] "77 lat."
 ```
 
 ## Wyrażenia regularne 

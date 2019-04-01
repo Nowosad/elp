@@ -334,10 +334,10 @@ Oznacza on, że wykonanie kodu nie może zostać zakończone.</p>
 <span class="co">#&gt; [1] &quot;to kot&quot;</span></code></pre>
 <!-- ^[funkcja `str_c()`] -->
 <pre class="sourceCode r"><code class="sourceCode r">imie =<span class="st"> &quot;Olek&quot;</span>
-wiek =<span class="st"> </span><span class="dv">7</span>
+wiek =<span class="st"> </span><span class="dv">77</span>
 tekst1 =<span class="st"> </span><span class="kw">paste</span>(imie, <span class="st">&quot;ma&quot;</span>, wiek, <span class="st">&quot;lat.&quot;</span>)
 tekst1
-<span class="co">#&gt; [1] &quot;Olek ma 7 lat.&quot;</span></code></pre>
+<span class="co">#&gt; [1] &quot;Olek ma 77 lat.&quot;</span></code></pre>
 <!-- sekcja o wyswietlaniu tekstu?? -->
 </div>
 <div id="postawowe-operacje-na-tekscie" class="section level2">
@@ -345,9 +345,9 @@ tekst1
 <p><span class="citation">(Wickham <a href="#ref-R-stringr">2019</a>)</span></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(stringr)</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">toupper</span>(tekst1)
-<span class="co">#&gt; [1] &quot;OLEK MA 7 LAT.&quot;</span></code></pre>
+<span class="co">#&gt; [1] &quot;OLEK MA 77 LAT.&quot;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tolower</span>(tekst1)
-<span class="co">#&gt; [1] &quot;olek ma 7 lat.&quot;</span></code></pre>
+<span class="co">#&gt; [1] &quot;olek ma 77 lat.&quot;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">tekst2 =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;chronologia&quot;</span>, <span class="st">&quot;alfabet&quot;</span>, <span class="st">&quot;hałas&quot;</span>)</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sort</span>(tekst2, <span class="dt">locale =</span> <span class="st">&quot;pl&quot;</span>)
 <span class="co">#&gt; [1] &quot;alfabet&quot;     &quot;chronologia&quot; &quot;hałas&quot;</span>
@@ -366,12 +366,12 @@ tekst3
 <h2><span class="header-section-number">6.3</span> Wydzielanie tekstu</h2>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">1</span>, <span class="dt">end =</span> <span class="dv">4</span>)
 <span class="co">#&gt; [1] &quot;Olek&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">9</span>, <span class="dt">end =</span> <span class="dv">14</span>)
-<span class="co">#&gt; [1] &quot;7 lat.&quot;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">9</span>, <span class="dt">end =</span> <span class="dv">15</span>)
+<span class="co">#&gt; [1] &quot;77 lat.&quot;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">9</span>, <span class="dt">end =</span> <span class="dv">-1</span>)
-<span class="co">#&gt; [1] &quot;7 lat.&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">-6</span>, <span class="dt">end =</span> <span class="dv">-1</span>)
-<span class="co">#&gt; [1] &quot;7 lat.&quot;</span></code></pre>
+<span class="co">#&gt; [1] &quot;77 lat.&quot;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">-7</span>, <span class="dt">end =</span> <span class="dv">-1</span>)
+<span class="co">#&gt; [1] &quot;77 lat.&quot;</span></code></pre>
 </div>
 <div id="wyrazenia-regularne" class="section level2">
 <h2><span class="header-section-number">6.4</span> Wyrażenia regularne</h2>
