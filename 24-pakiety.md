@@ -1,6 +1,8 @@
 
 # Tworzenie pakietów {#tworzenie-pakietow}
 
+[@R-usethis]
+
 <!-- package.skeleton()  Never use this! -->
 <!-- usethis::create_package("~/Desktop/mypackage") -->
 Funkcja `create_packages()` tworzy cztery pliki:

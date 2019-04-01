@@ -30,6 +30,15 @@ Podobnie należy zadbać o spójną kolejność podobnych argumentów w funkcjac
 Stabilność typu oznacza, że używając jednej klasy danych wejściowych funkcja zawsze zwróci obiekt jednej klasy. 
 <!-- Przykładowo... -->
 
+
+```r
+tekst = c("kołdra", "kordła", "pościel")
+grep("^[k].", x = tekst)
+#> [1] 1 2
+grep("^[k].", x = tekst, value = TRUE)
+#> [1] "kołdra" "kordła"
+```
+
 Dodatkowym elementem API może być określenie domyślnych parametrów funkcji.
 
 

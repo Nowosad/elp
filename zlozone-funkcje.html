@@ -333,6 +333,11 @@ W przypadku, gdy taki sam rodzaj danych wejściowych jest oczekiwany w różnych
 Podobnie należy zadbać o spójną kolejność podobnych argumentów w funkcjach jednego pakietu.</p>
 <p>Stabilność typu oznacza, że używając jednej klasy danych wejściowych funkcja zawsze zwróci obiekt jednej klasy.
 <!-- Przykładowo... --></p>
+<pre class="sourceCode r"><code class="sourceCode r">tekst =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kołdra&quot;</span>, <span class="st">&quot;kordła&quot;</span>, <span class="st">&quot;pościel&quot;</span>)
+<span class="kw">grep</span>(<span class="st">&quot;^[k].&quot;</span>, <span class="dt">x =</span> tekst)
+<span class="co">#&gt; [1] 1 2</span>
+<span class="kw">grep</span>(<span class="st">&quot;^[k].&quot;</span>, <span class="dt">x =</span> tekst, <span class="dt">value =</span> <span class="ot">TRUE</span>)
+<span class="co">#&gt; [1] &quot;kołdra&quot; &quot;kordła&quot;</span></code></pre>
 <p>Dodatkowym elementem API może być określenie domyślnych parametrów funkcji.</p>
 <pre class="sourceCode r"><code class="sourceCode r">potegowanie =<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">w =</span> <span class="dv">2</span>){
   x <span class="op">^</span><span class="st"> </span>w
