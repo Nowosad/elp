@@ -358,7 +358,7 @@ Podobnie należy zadbać o spójną kolejność podobnych argumentów w funkcjac
 Teraz zobaczmy jak te zaimplementować we własnych funkcjach i kiedy powinny być one użyte.</p>
 <p>Obsługa błędów w funkcjach ma na celu ochronę użytkownika przed nieodpowiednim zachowaniem funkcji.
 Komunikat błędu powinien ułatwiać użytkownikowi zrozumienie problemu oraz jego rozwiązanie.
-Zazwyczaj komunikat błędu przyjmuje jedną z trzech form: (1) określenie problemu, np. “Argument <code>x</code> musi być zmienną numeryczną, a nie znakową.”, (2) lokalizacja błędu, np. “Kolumna <code>abc</code> nie istnieje w obiekcie <code>y</code>.”, (3) porada, np. “Did you mean <code>Species == &quot;setosa&quot;</code>?”.
+Zazwyczaj komunikat błędu przyjmuje jedną z trzech form: (1) określenie problemu, np. <code>Argument 'x' musi być zmienną numeryczną, a nie znakową.</code>, (2) lokalizacja błędu, np. <code>Kolumna 'abc' nie istnieje w obiekcie 'y'.</code>, (3) porada, np. <code>Did you mean 'Species == &quot;setosa&quot;'?</code>.
 Oczywiście te wymienione formy można łączyć.</p>
 <p>Ważne jest też, aby funkcja kończyła swoje działanie jak najszybciej po napotkaniu, np. błędnych wartości wejściowych.
 Żadnej użytkownik nie chce czekać na zakończenie wykonywania długiej funkcji zanim dostanie komunikat błędu.
