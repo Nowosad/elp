@@ -246,8 +246,6 @@ class(y)
 #> [1] "prostokat"
 ```
 
-<!-- constructor + validator -->
-
 
 ```r
 powierzchnia = function(x) {
@@ -286,15 +284,114 @@ powierzchnia(x)
 #> Error in UseMethod("powierzchnia"): no applicable method for 'powierzchnia' applied to an object of class "c('matrix', 'double', 'numeric')"
 ```
 
+<!-- constructor + validator -->
+konstruktor
+
+
+```r
+nowy_prostokat = function(xmin, ymin, xmax, ymax){
+  if (!all(c(length(xmin), length(ymin), length(xmax), length(ymax)) == 1)){
+    stop("Każdy z argumentów może przyjmować tylko jedną wartość")
+  }
+  vals = c(xmin, ymin, xmax, ymax)
+  if (!(is.numeric(vals))){
+    stop("Wszystkie argumenty muszą być typu numerycznego")
+  }
+  x = matrix(vals, ncol = 2)
+  structure(x, class = "prostokat")
+}
+```
+
+
+```r
+nowy_p = nowy_prostokat(0, 0, 6, 5)
+nowy_p
+#>      [,1] [,2]
+#> [1,]    0    6
+#> [2,]    0    5
+#> attr(,"class")
+#> [1] "prostokat"
+powierzchnia(nowy_p)
+#> [1] 30
+```
+
+walidator (złożone funkcje)
+
+
+```r
+proprawny_prostokat = function(x){
+  vals = as.vector(x)
+  x_range = vals[3] - vals[1]
+  y_range = vals[4] - vals[2]
+  if (x_range <= 0){
+    stop("`xmax` musi przyjmować wartość większą niż `xmin`")
+  }
+  if (y_range <= 0) {
+    stop("`ymax` musi przyjmować wartość większą niż `ymin`")
+  }
+  x
+}
+```
+
+
+```r
+proprawny_prostokat(nowy_p)
+#>      [,1] [,2]
+#> [1,]    0    6
+#> [2,]    0    5
+#> attr(,"class")
+#> [1] "prostokat"
+```
+
+
+```r
+nowy_p2 = nowy_prostokat(7, 0, 6, 0)
+nowy_p2
+#>      [,1] [,2]
+#> [1,]    7    6
+#> [2,]    0    0
+#> attr(,"class")
+#> [1] "prostokat"
+proprawny_prostokat(nowy_p2)
+#> Error in proprawny_prostokat(nowy_p2): `xmax` musi przyjmować wartość większą niż `xmin`
+```
+
 <!-- methods -->
 <!-- https://arxiv.org/pdf/1409.3531.pdf -->
 <!-- https://adv-r.hadley.nz/oo.html -->
 
 ## Testy jednostkowe
 
-<!-- Unit testing -->
-<!-- usethis::use_test() -->
-<!-- devtools::test() -->
-<!-- devtools::test_coverage() -->
+
+```r
+library(testthat)
+```
+
+`expect_warning()`, `expect_message()`
+
+
+```r
+expect_error(nowy_prostokat(3, 5, 2, "a"))
+expect_error(nowy_prostokat(1, 2, 3, 6))
+#> Error: `nowy_prostokat(1, 2, 3, 6)` did not throw an error.
+```
+
+
+```r
+nowy_p = nowy_prostokat(0, 0, 6, 5)
+expect_length(powierzchnia(nowy_p), 1)
+```
+
+`expect_identical()`, `expect_equivalent()`
+
+
+```r
+expect_equal(powierzchnia(nowy_p), 30)
+```
+
+https://testthat.r-lib.org/reference/index.html
+
+<!-- When you find a bug, write a test -->
+<!-- Automated testing with Travis CI + codecov -->
 
 ## Zadania

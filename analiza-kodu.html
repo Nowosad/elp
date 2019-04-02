@@ -276,9 +276,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-funkcji-1"><i class="fa fa-check"></i><b>14.2</b> Dokumentacja funkcji</a></li>
 <li class="chapter" data-level="14.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zaleznosci"><i class="fa fa-check"></i><b>14.3</b> Zależności</a></li>
 <li class="chapter" data-level="14.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-pakietu"><i class="fa fa-check"></i><b>14.4</b> Dokumentacja pakietu</a></li>
-<li class="chapter" data-level="14.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#licencje"><i class="fa fa-check"></i><b>14.5</b> Licencje</a></li>
-<li class="chapter" data-level="14.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietow"><i class="fa fa-check"></i><b>14.6</b> Publikowanie pakietów</a></li>
-<li class="chapter" data-level="14.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zadania-11"><i class="fa fa-check"></i><b>14.7</b> Zadania</a></li>
+<li class="chapter" data-level="14.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#wbudowane-testy"><i class="fa fa-check"></i><b>14.5</b> Wbudowane testy</a></li>
+<li class="chapter" data-level="14.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#licencje"><i class="fa fa-check"></i><b>14.6</b> Licencje</a></li>
+<li class="chapter" data-level="14.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietow"><i class="fa fa-check"></i><b>14.7</b> Publikowanie pakietów</a></li>
+<li class="chapter" data-level="14.8" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zadania-11"><i class="fa fa-check"></i><b>14.8</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>15</b> Łącznik</a><ul>
 <li class="chapter" data-level="15.1" data-path="lacznik.html"><a href="lacznik.html#c"><i class="fa fa-check"></i><b>15.1</b> C++</a></li>
@@ -317,7 +318,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- system.time -->
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))
 <span class="co">#&gt;    user  system elapsed </span>
-<span class="co">#&gt;   0.568   0.004   0.573</span></code></pre>
+<span class="co">#&gt;   0.576   0.000   0.577</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">mi_do_km1 =<span class="st"> </span><span class="cf">function</span>(odl_mile){
   odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="dv">0</span>)
   <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
@@ -340,8 +341,8 @@ odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv"
 <span class="co">#&gt; # A tibble: 2 x 10</span>
 <span class="co">#&gt;   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 1.41µs 1.94µs 1.63µs 41.2µs   515650.     300KB     1  9999</span>
-<span class="co">#&gt; 2 mi_do_km2… 1.03µs 1.38µs 1.18µs 37.3µs   726703.     222KB     0 10000</span>
+<span class="co">#&gt; 1 mi_do_km1…  1.4µs 1.93µs 1.63µs 46.3µs   519256.     300KB     1  9999</span>
+<span class="co">#&gt; 2 mi_do_km2… 1.03µs 1.33µs 1.18µs 16.8µs   753888.     222KB     0 10000</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">odl_mile2 =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10000</span>)
 <span class="kw">mark</span>(<span class="kw">mi_do_km1</span>(odl_mile2),
@@ -351,8 +352,8 @@ odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv"
 <span class="co">#&gt; # A tibble: 2 x 10</span>
 <span class="co">#&gt;   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;bch&gt; &lt;bch:tm&gt; &lt;bch:&gt; &lt;bch:t&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 488ms 497.59ms  498ms 507.7ms      2.01     382MB    16     2</span>
-<span class="co">#&gt; 2 mi_do_km2… 870µs   1.19ms  937µs  13.1ms    843.      78.2KB    15   422</span>
+<span class="co">#&gt; 1 mi_do_km1… 520ms 519.69ms  520ms 519.7ms      1.92     382MB     8     1</span>
+<span class="co">#&gt; 2 mi_do_km2… 907µs   1.25ms  965µs  13.6ms    802.      78.2KB    15   401</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">porownanie =<span class="st"> </span><span class="kw">press</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10000</span>),
                    {
@@ -372,14 +373,14 @@ porownanie
 <span class="co">#&gt; # A tibble: 8 x 11</span>
 <span class="co">#&gt;   expression     x      min     mean   median      max `itr/sec` mem_alloc</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1…    10   3.86µs   5.71µs   4.74µs  70.92µs 175066.          0B</span>
-<span class="co">#&gt; 2 mi_do_km2…    10   1.72µs   2.27µs   1.99µs  37.61µs 441174.          0B</span>
-<span class="co">#&gt; 3 mi_do_km1…   100  67.39µs  83.31µs  75.47µs    2.2ms  12004.     43.16KB</span>
-<span class="co">#&gt; 4 mi_do_km2…   100   9.18µs  11.42µs  10.05µs 142.97µs  87572.        856B</span>
-<span class="co">#&gt; 5 mi_do_km1…  1000   4.48ms   4.82ms   4.82ms   5.25ms    208.      3.87MB</span>
-<span class="co">#&gt; 6 mi_do_km2…  1000  84.36µs 101.68µs   93.3µs 297.62µs   9835.      7.87KB</span>
-<span class="co">#&gt; 7 mi_do_km1… 10000 500.02ms 500.02ms 500.02ms 500.02ms      2.00  382.04MB</span>
-<span class="co">#&gt; 8 mi_do_km2… 10000 883.08µs   1.16ms 943.23µs   9.59ms    863.     78.18KB</span>
+<span class="co">#&gt; 1 mi_do_km1…    10   3.88µs   5.58µs   4.73µs 570.84µs 179173.          0B</span>
+<span class="co">#&gt; 2 mi_do_km2…    10   1.72µs   2.31µs   1.97µs  39.45µs 433624.          0B</span>
+<span class="co">#&gt; 3 mi_do_km1…   100  67.47µs  79.95µs  74.81µs 282.62µs  12508.     43.16KB</span>
+<span class="co">#&gt; 4 mi_do_km2…   100   9.15µs  11.04µs   10.1µs  71.34µs  90537.        856B</span>
+<span class="co">#&gt; 5 mi_do_km1…  1000   4.48ms   4.75ms   4.68ms   5.99ms    211.      3.87MB</span>
+<span class="co">#&gt; 6 mi_do_km2…  1000  84.89µs   98.3µs  91.01µs    2.2ms  10173.      7.87KB</span>
+<span class="co">#&gt; 7 mi_do_km1… 10000 487.11ms 494.44ms 494.44ms 501.76ms      2.02  382.04MB</span>
+<span class="co">#&gt; 8 mi_do_km2… 10000  930.6µs   1.25ms   1.01ms   9.04ms    800.     78.18KB</span>
 <span class="co">#&gt; # … with 3 more variables: n_gc &lt;dbl&gt;, n_itr &lt;int&gt;, total_time &lt;bch:tm&gt;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">ggplot2<span class="op">::</span><span class="kw">autoplot</span>(porownanie)</code></pre>
 </div>

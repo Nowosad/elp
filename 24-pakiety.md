@@ -35,10 +35,16 @@ Funkcja `create_packages()` tworzy cztery pliki:
 <!-- readme -->
 <!-- news -->
 
+## Wbudowane testy
+
+<!-- Unit testing -->
+<!-- usethis::use_test() -->
+<!-- devtools::test() -->
+<!-- devtools::test_coverage() -->
+
 ## Licencje
 
 ## Publikowanie pakietów
-
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">software documentation</div>\EndKnitrBlock{rmdinfo}
 

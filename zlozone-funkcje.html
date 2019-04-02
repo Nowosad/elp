@@ -276,9 +276,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-funkcji-1"><i class="fa fa-check"></i><b>14.2</b> Dokumentacja funkcji</a></li>
 <li class="chapter" data-level="14.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zaleznosci"><i class="fa fa-check"></i><b>14.3</b> Zależności</a></li>
 <li class="chapter" data-level="14.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-pakietu"><i class="fa fa-check"></i><b>14.4</b> Dokumentacja pakietu</a></li>
-<li class="chapter" data-level="14.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#licencje"><i class="fa fa-check"></i><b>14.5</b> Licencje</a></li>
-<li class="chapter" data-level="14.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietow"><i class="fa fa-check"></i><b>14.6</b> Publikowanie pakietów</a></li>
-<li class="chapter" data-level="14.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zadania-11"><i class="fa fa-check"></i><b>14.7</b> Zadania</a></li>
+<li class="chapter" data-level="14.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#wbudowane-testy"><i class="fa fa-check"></i><b>14.5</b> Wbudowane testy</a></li>
+<li class="chapter" data-level="14.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#licencje"><i class="fa fa-check"></i><b>14.6</b> Licencje</a></li>
+<li class="chapter" data-level="14.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietow"><i class="fa fa-check"></i><b>14.7</b> Publikowanie pakietów</a></li>
+<li class="chapter" data-level="14.8" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zadania-11"><i class="fa fa-check"></i><b>14.8</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>15</b> Łącznik</a><ul>
 <li class="chapter" data-level="15.1" data-path="lacznik.html"><a href="lacznik.html#c"><i class="fa fa-check"></i><b>15.1</b> C++</a></li>
@@ -453,7 +454,6 @@ x
 <pre class="sourceCode r"><code class="sourceCode r">y =<span class="st"> </span><span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(y)
 <span class="co">#&gt; [1] &quot;prostokat&quot;</span></code></pre>
-<!-- constructor + validator -->
 <pre class="sourceCode r"><code class="sourceCode r">powierzchnia =<span class="st"> </span><span class="cf">function</span>(x) {
   <span class="kw">UseMethod</span>(<span class="st">&quot;powierzchnia&quot;</span>)
 }</code></pre>
@@ -476,16 +476,74 @@ x
 <span class="co">#&gt; [2,]    0    3</span>
 <span class="kw">powierzchnia</span>(x)
 <span class="co">#&gt; Error in UseMethod(&quot;powierzchnia&quot;): no applicable method for &#39;powierzchnia&#39; applied to an object of class &quot;c(&#39;matrix&#39;, &#39;double&#39;, &#39;numeric&#39;)&quot;</span></code></pre>
+<!-- constructor + validator -->
+<p>konstruktor</p>
+<pre class="sourceCode r"><code class="sourceCode r">nowy_prostokat =<span class="st"> </span><span class="cf">function</span>(xmin, ymin, xmax, ymax){
+  <span class="cf">if</span> (<span class="op">!</span><span class="kw">all</span>(<span class="kw">c</span>(<span class="kw">length</span>(xmin), <span class="kw">length</span>(ymin), <span class="kw">length</span>(xmax), <span class="kw">length</span>(ymax)) <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)){
+    <span class="kw">stop</span>(<span class="st">&quot;Każdy z argumentów może przyjmować tylko jedną wartość&quot;</span>)
+  }
+  vals =<span class="st"> </span><span class="kw">c</span>(xmin, ymin, xmax, ymax)
+  <span class="cf">if</span> (<span class="op">!</span>(<span class="kw">is.numeric</span>(vals))){
+    <span class="kw">stop</span>(<span class="st">&quot;Wszystkie argumenty muszą być typu numerycznego&quot;</span>)
+  }
+  x =<span class="st"> </span><span class="kw">matrix</span>(vals, <span class="dt">ncol =</span> <span class="dv">2</span>)
+  <span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)
+}</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">5</span>)
+nowy_p
+<span class="co">#&gt;      [,1] [,2]</span>
+<span class="co">#&gt; [1,]    0    6</span>
+<span class="co">#&gt; [2,]    0    5</span>
+<span class="co">#&gt; attr(,&quot;class&quot;)</span>
+<span class="co">#&gt; [1] &quot;prostokat&quot;</span>
+<span class="kw">powierzchnia</span>(nowy_p)
+<span class="co">#&gt; [1] 30</span></code></pre>
+<p>walidator (złożone funkcje)</p>
+<pre class="sourceCode r"><code class="sourceCode r">proprawny_prostokat =<span class="st"> </span><span class="cf">function</span>(x){
+  vals =<span class="st"> </span><span class="kw">as.vector</span>(x)
+  x_range =<span class="st"> </span>vals[<span class="dv">3</span>] <span class="op">-</span><span class="st"> </span>vals[<span class="dv">1</span>]
+  y_range =<span class="st"> </span>vals[<span class="dv">4</span>] <span class="op">-</span><span class="st"> </span>vals[<span class="dv">2</span>]
+  <span class="cf">if</span> (x_range <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span>){
+    <span class="kw">stop</span>(<span class="st">&quot;`xmax` musi przyjmować wartość większą niż `xmin`&quot;</span>)
+  }
+  <span class="cf">if</span> (y_range <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span>) {
+    <span class="kw">stop</span>(<span class="st">&quot;`ymax` musi przyjmować wartość większą niż `ymin`&quot;</span>)
+  }
+  x
+}</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">proprawny_prostokat</span>(nowy_p)
+<span class="co">#&gt;      [,1] [,2]</span>
+<span class="co">#&gt; [1,]    0    6</span>
+<span class="co">#&gt; [2,]    0    5</span>
+<span class="co">#&gt; attr(,&quot;class&quot;)</span>
+<span class="co">#&gt; [1] &quot;prostokat&quot;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">nowy_p2 =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">7</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">0</span>)
+nowy_p2
+<span class="co">#&gt;      [,1] [,2]</span>
+<span class="co">#&gt; [1,]    7    6</span>
+<span class="co">#&gt; [2,]    0    0</span>
+<span class="co">#&gt; attr(,&quot;class&quot;)</span>
+<span class="co">#&gt; [1] &quot;prostokat&quot;</span>
+<span class="kw">proprawny_prostokat</span>(nowy_p2)
+<span class="co">#&gt; Error in proprawny_prostokat(nowy_p2): `xmax` musi przyjmować wartość większą niż `xmin`</span></code></pre>
 <!-- methods -->
 <!-- https://arxiv.org/pdf/1409.3531.pdf -->
 <!-- https://adv-r.hadley.nz/oo.html -->
 </div>
 <div id="testy-jednostkowe" class="section level2">
 <h2><span class="header-section-number">11.4</span> Testy jednostkowe</h2>
-<!-- Unit testing -->
-<!-- usethis::use_test() -->
-<!-- devtools::test() -->
-<!-- devtools::test_coverage() -->
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(testthat)</code></pre>
+<p><code>expect_warning()</code>, <code>expect_message()</code></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">expect_error</span>(<span class="kw">nowy_prostokat</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="st">&quot;a&quot;</span>))
+<span class="kw">expect_error</span>(<span class="kw">nowy_prostokat</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">6</span>))
+<span class="co">#&gt; Error: `nowy_prostokat(1, 2, 3, 6)` did not throw an error.</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">5</span>)
+<span class="kw">expect_length</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">1</span>)</code></pre>
+<p><code>expect_identical()</code>, <code>expect_equivalent()</code></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">expect_equal</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">30</span>)</code></pre>
+<p><a href="https://testthat.r-lib.org/reference/index.html" class="uri">https://testthat.r-lib.org/reference/index.html</a></p>
+<!-- When you find a bug, write a test -->
+<!-- Automated testing with Travis CI + codecov -->
 </div>
 <div id="zadania-9" class="section level2">
 <h2><span class="header-section-number">11.5</span> Zadania</h2>
