@@ -314,3 +314,12 @@ https://testthat.r-lib.org/reference/index.html
 <!-- Automated testing with Travis CI + codecov -->
 
 ## Zadania
+
+<!-- 1. zaprojektuj api -->
+<!-- 2. zaprojektuj i zaimplementuj api -->
+<!-- 3. api - na.rm  -->
+<!-- 4. error, warning, message -->
+<!-- 5. napraw error -->
+<!-- 6. oo - dodaj trójkąt -->
+<!-- 7. oo - dodaj liczenie centroidu -->
+<!-- 8. napisz testy dla 6 i 7 -->
