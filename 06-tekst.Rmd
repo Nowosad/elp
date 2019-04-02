@@ -206,7 +206,7 @@ roperators_exp = c("Określa początek tekstu/linii",
                    "Poprzedni znak zostanie wybrany jeden lub więcej razy", 
                    "Poprzedni znak zostanie wybrany zero lub jeden raz", 
                    "Poprzedni znak zostanie wybrany n razy", 
-                   "Jakikolwiek znak oprócz nowej linii (\\n)",
+                   "Jakikolwiek znak oprócz nowej linii (\\\\n)",
                    "Pozwala na użycie specjalnych znaków")
 knitr::kable(tibble(Operator = roperators, Wyjaśnienie = roperators_exp), 
              caption = "Metaznaki w wyrażeniach regularnych",
@@ -301,7 +301,6 @@ Pomocne w zrozumieniu bardziej zaawansowanych elementów wyrażeń regularncych 
 
 ## Wydzielanie tekstu - regex {#wtregex}
 
-<!-- https://r4ds.had.co.nz/strings.html#extract-matches -->
 Innym często spotykanym problemem w pracy z tekstem jest posiadanie długiego elementu tekstowego, z którego chcemy tylko wydobyć pewien fragment. 
 W sekcji \@ref(wt) używaliśmy do tego pozycji, ale możemy zastosować również wzroce do tego celu.
 
@@ -381,11 +380,14 @@ miasta_pomiary2
 
 ## Zamiana tekstu - regex
 
-<!-- https://r4ds.had.co.nz/strings.html#replacing-matches -->
+Innym przykładem działania na tekście jest zamiana wybranych jego elementów.
 
 ```{r}
 tekst_pomiary3 = "Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3"
 ```
+
+Powyższy obiekt `tekst_pomiary3` zawiera nazwy miast i wartości pomiarów przedstawione zgodnie z amerykańskim standardem, gdzie kropka oddziela wartości dziesiętne, a przecinek kolejne elementy.
+Aby zamienić wybrany wzorzec w tekście (np. kropkę na przecinek) możemy użyć funkcji `str_replace()`, w której podajemy obiekt tekstowy, szukany wzorzec oraz jego zamianę.
 
 ```{r}
 str_replace(tekst_pomiary3, 
@@ -393,11 +395,19 @@ str_replace(tekst_pomiary3,
             replacement = ",")
 ```
 
+Efekt działania tego kodu nie jest jednak zgodny z naszymi oczekiwaniami. 
+Zamiast zamiany wszyskich kropek na przecinki, nastąpiła zamiana pierwszego znaku w tekście (litery `W`) na przecinek.
+Wynika to ze znaczenia metaznaku `.`, który reprezentuje jakikolwiek znak oprócz nowej linii.
+Żeby naprawić tę sytuację musimy użyć ukośnika wstecznego.
+
 ```{r}
 str_replace(tekst_pomiary3, 
             pattern = "\\.", 
             replacement = "\\,")
 ```
+
+Funkcja `str_replace()`, podobnie jak `str_extract()`, jest leniwa i zamienia tylko pierwsze wystąpienie wzorca.
+Do zamiany wszystkich przypadków trzeba użyć funkcji `str_replace_all()`.
 
 ```{r}
 str_replace_all(tekst_pomiary3, 
@@ -405,17 +415,25 @@ str_replace_all(tekst_pomiary3,
                 replacement = "\\,")
 ```
 
+W przypadku, gdy interesuje nas zarówno zamiana kropek na przecinki oraz przecinków na średniki, musimy zacząć od tej drugiej zamiany.
+
 ```{r}
 tekst_pomiary4 = str_replace_all(tekst_pomiary3,
                                  pattern = "\\,",
                                  replacement = "\\;")
 ```
 
+Nowy obiekt `tekst_pomiary4` oddziela kolejne miasta średnikami.
+Teraz na jego podstawie możliwa jest zamiana kropek na przecinki w sposób opisany powyżej.
+
 ```{r}
 str_replace_all(tekst_pomiary4, 
                 pattern = "\\.", 
                 replacement = "\\,")
 ```
+
+Funkcje jakie jak `str_replace()` czy `str_replace_all()` mogą być też stosowane do usuwania fragmentów tekstu.
+Do tego celu można zdefiniować wzorzec jaki chcemy usunąć, a jako jego zamianę tekst pusty (`""`).
 
 ```{r}
 str_replace_all(tekst_pomiary4, 
