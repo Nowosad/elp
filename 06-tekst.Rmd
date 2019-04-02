@@ -281,6 +281,13 @@ str_detect(tekst3, pattern = "\\.")
 ```
 
 <!-- block z popularnymi regex -->
+Celem funkcji `str_detect()` jest wskazanie, który element spełnia dane zapytanie.
+Do wydzielenia elementu służy funkcja `str_subset()`.
+
+```{r}
+str_subset(tekst3, pattern = "\\.")
+```
+
 ```{r, eval=FALSE, echo=FALSE}
 y = c("kołdra", "kordła", "pościel")
 str_detect(y, pattern = "ko(łdr|rdł)a")
