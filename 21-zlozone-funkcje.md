@@ -362,6 +362,8 @@ proprawny_prostokat(nowy_p2)
 
 ## Testy jednostkowe
 
+[@R-testthat]
+
 
 ```r
 library(testthat)

@@ -9,7 +9,7 @@
 ```r
 system.time(mean(1:100000000))
 #>    user  system elapsed 
-#>   0.576   0.000   0.577
+#>   0.568   0.000   0.570
 ```
 
 
@@ -45,8 +45,8 @@ mark(mi_do_km1(odl_mile),
 #> # A tibble: 2 x 10
 #>   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr
 #>   <chr>      <bch:> <bch:> <bch:> <bch:>     <dbl> <bch:byt> <dbl> <int>
-#> 1 mi_do_km1…  1.4µs 1.93µs 1.63µs 46.3µs   519256.     300KB     1  9999
-#> 2 mi_do_km2… 1.03µs 1.33µs 1.18µs 16.8µs   753888.     222KB     0 10000
+#> 1 mi_do_km1… 1.43µs 1.95µs 1.67µs 46.5µs   512280.     300KB     1  9999
+#> 2 mi_do_km2… 1.05µs 1.34µs 1.18µs 13.2µs   747331.     222KB     0 10000
 #> # … with 1 more variable: total_time <bch:tm>
 ```
 
@@ -60,8 +60,8 @@ mark(mi_do_km1(odl_mile2),
 #> # A tibble: 2 x 10
 #>   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr
 #>   <chr>      <bch> <bch:tm> <bch:> <bch:t>     <dbl> <bch:byt> <dbl> <int>
-#> 1 mi_do_km1… 520ms 519.69ms  520ms 519.7ms      1.92     382MB     8     1
-#> 2 mi_do_km2… 907µs   1.25ms  965µs  13.6ms    802.      78.2KB    15   401
+#> 1 mi_do_km1… 478ms 488.23ms  488ms 498.6ms      2.05     382MB    16     2
+#> 2 mi_do_km2… 867µs   1.17ms  916µs  13.8ms    852.      78.2KB    16   427
 #> # … with 1 more variable: total_time <bch:tm>
 ```
 
@@ -85,14 +85,14 @@ porownanie
 #> # A tibble: 8 x 11
 #>   expression     x      min     mean   median      max `itr/sec` mem_alloc
 #>   <chr>      <dbl> <bch:tm> <bch:tm> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 mi_do_km1…    10   3.88µs   5.58µs   4.73µs 570.84µs 179173.          0B
-#> 2 mi_do_km2…    10   1.72µs   2.31µs   1.97µs  39.45µs 433624.          0B
-#> 3 mi_do_km1…   100  67.47µs  79.95µs  74.81µs 282.62µs  12508.     43.16KB
-#> 4 mi_do_km2…   100   9.15µs  11.04µs   10.1µs  71.34µs  90537.        856B
-#> 5 mi_do_km1…  1000   4.48ms   4.75ms   4.68ms   5.99ms    211.      3.87MB
-#> 6 mi_do_km2…  1000  84.89µs   98.3µs  91.01µs    2.2ms  10173.      7.87KB
-#> 7 mi_do_km1… 10000 487.11ms 494.44ms 494.44ms 501.76ms      2.02  382.04MB
-#> 8 mi_do_km2… 10000  930.6µs   1.25ms   1.01ms   9.04ms    800.     78.18KB
+#> 1 mi_do_km1…    10   3.89µs   5.11µs   4.58µs  62.04µs 195790.          0B
+#> 2 mi_do_km2…    10   1.75µs   2.25µs      2µs  298.9µs 444409.          0B
+#> 3 mi_do_km1…   100  67.46µs  77.67µs  73.75µs 376.72µs  12874.     43.16KB
+#> 4 mi_do_km2…   100   9.13µs  10.79µs  10.02µs 294.76µs  92679.        856B
+#> 5 mi_do_km1…  1000   4.35ms   4.68ms   4.66ms   6.27ms    214.      3.87MB
+#> 6 mi_do_km2…  1000   84.4µs  96.45µs  91.07µs 382.19µs  10368.      7.87KB
+#> 7 mi_do_km1… 10000 484.34ms 487.61ms 487.61ms 490.88ms      2.05  382.04MB
+#> 8 mi_do_km2… 10000  881.9µs   1.15ms 918.52µs  14.25ms    867.     78.18KB
 #> # … with 3 more variables: n_gc <dbl>, n_itr <int>, total_time <bch:tm>
 ```
 
@@ -118,6 +118,11 @@ Profilowanie mierzy czas działania każdej linii kodu.
 
 ```r
 # plik R/moja_funkcja.R
+x = 1:9999999
+y = seq(1, 19999998, by = 2)
+df = data.frame(x = x, y = y)
+z = rowSums(df)
+mean(z)
 ```
 
 
@@ -125,7 +130,6 @@ Profilowanie mierzy czas działania każdej linii kodu.
 library(profvis)
 profvis(source("R/moja_funkcja.R"))
 ```
-
 
 <!-- profiling -->
 <!-- https://r-prof.github.io/jointprof/articles/proposal.html -->
