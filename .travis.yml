@@ -17,6 +17,7 @@ install:
   - R -e "install.packages('kableExtra')"
   - R -e "install.packages('readxl')"
   - R -e "install.packages('bench')"
+  - R -e "install.packages('testthat')"
   - R -e "tinytex::install_tinytex()"
 
 script:
