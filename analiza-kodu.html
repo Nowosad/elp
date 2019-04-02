@@ -255,7 +255,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>III Narzędzia</b></span></li>
 <li class="chapter" data-level="11" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>11</b> Złożone funkcje</a><ul>
 <li class="chapter" data-level="11.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>11.1</b> API</a></li>
-<li class="chapter" data-level="11.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsuga-bedow-ostrzezen-i-wiadomosci"><i class="fa fa-check"></i><b>11.2</b> Obsługa błędów, ostrzeżeń i wiadomości</a></li>
+<li class="chapter" data-level="11.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsuga-komunikatow"><i class="fa fa-check"></i><b>11.2</b> Obsługa komunikatów</a></li>
 <li class="chapter" data-level="11.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#programowanie-obiektowe"><i class="fa fa-check"></i><b>11.3</b> Programowanie obiektowe</a></li>
 <li class="chapter" data-level="11.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.4</b> Testy jednostkowe</a></li>
 <li class="chapter" data-level="11.5" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>11.5</b> Zadania</a></li>
@@ -317,7 +317,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- system.time -->
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))
 <span class="co">#&gt;    user  system elapsed </span>
-<span class="co">#&gt;   0.564   0.000   0.566</span></code></pre>
+<span class="co">#&gt;   0.576   0.000   0.576</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">mi_do_km1 =<span class="st"> </span><span class="cf">function</span>(odl_mile){
   odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="dv">0</span>)
   <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
@@ -340,8 +340,8 @@ odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv"
 <span class="co">#&gt; # A tibble: 2 x 10</span>
 <span class="co">#&gt;   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 1.45µs 1.92µs 1.66µs 46.4µs   521186.     300KB     1  9999</span>
-<span class="co">#&gt; 2 mi_do_km2… 1.04µs 1.32µs 1.18µs 20.4µs   759734.     222KB     0 10000</span>
+<span class="co">#&gt; 1 mi_do_km1… 1.42µs 1.94µs 1.65µs 77.1µs   514671.     300KB     1  9999</span>
+<span class="co">#&gt; 2 mi_do_km2… 1.03µs 1.37µs 1.17µs 23.8µs   731610.     222KB     0 10000</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">odl_mile2 =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10000</span>)
 <span class="kw">mark</span>(<span class="kw">mi_do_km1</span>(odl_mile2),
@@ -351,8 +351,8 @@ odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv"
 <span class="co">#&gt; # A tibble: 2 x 10</span>
 <span class="co">#&gt;   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;bch&gt; &lt;bch:tm&gt; &lt;bch:&gt; &lt;bch:t&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 479ms 491.96ms  492ms 504.9ms      2.03     382MB    16     2</span>
-<span class="co">#&gt; 2 mi_do_km2… 874µs   1.18ms  911µs  13.8ms    851.      78.2KB    16   426</span>
+<span class="co">#&gt; 1 mi_do_km1… 474ms 483.47ms  483ms   493ms      2.07     382MB    16     2</span>
+<span class="co">#&gt; 2 mi_do_km2… 867µs   1.19ms  915µs  14.2ms    838.      78.2KB    15   419</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">porownanie =<span class="st"> </span><span class="kw">press</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10000</span>),
                    {
@@ -372,14 +372,14 @@ porownanie
 <span class="co">#&gt; # A tibble: 8 x 11</span>
 <span class="co">#&gt;   expression     x      min     mean   median      max `itr/sec` mem_alloc</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1…    10   3.92µs   5.14µs    4.6µs  67.16µs 194695.          0B</span>
-<span class="co">#&gt; 2 mi_do_km2…    10   1.73µs    2.2µs   1.96µs  42.89µs 454215.          0B</span>
-<span class="co">#&gt; 3 mi_do_km1…   100  67.42µs  77.09µs  73.28µs 182.93µs  12972.     43.16KB</span>
-<span class="co">#&gt; 4 mi_do_km2…   100   9.14µs   10.7µs   9.96µs 174.32µs  93471.        856B</span>
-<span class="co">#&gt; 5 mi_do_km1…  1000    4.4ms   4.66ms   4.65ms    5.2ms    214.      3.87MB</span>
-<span class="co">#&gt; 6 mi_do_km2…  1000   84.6µs  96.68µs  90.87µs   1.69ms  10343.      7.87KB</span>
-<span class="co">#&gt; 7 mi_do_km1… 10000 506.79ms 506.79ms 506.79ms 506.79ms      1.97  382.04MB</span>
-<span class="co">#&gt; 8 mi_do_km2… 10000 896.45µs   1.16ms 941.95µs  10.27ms    861.     78.18KB</span>
+<span class="co">#&gt; 1 mi_do_km1…    10   3.89µs   5.31µs   4.67µs   84.9µs 188274.          0B</span>
+<span class="co">#&gt; 2 mi_do_km2…    10   1.73µs   2.22µs   1.95µs   77.5µs 450360.          0B</span>
+<span class="co">#&gt; 3 mi_do_km1…   100  67.23µs  77.54µs   73.5µs 243.91µs  12896.     43.16KB</span>
+<span class="co">#&gt; 4 mi_do_km2…   100   9.16µs  10.76µs    9.9µs 240.77µs  92974.        856B</span>
+<span class="co">#&gt; 5 mi_do_km1…  1000   4.38ms   4.64ms   4.63ms   4.87ms    215.      3.87MB</span>
+<span class="co">#&gt; 6 mi_do_km2…  1000  84.34µs  95.23µs  90.15µs 431.35µs  10501.      7.87KB</span>
+<span class="co">#&gt; 7 mi_do_km1… 10000 473.89ms 480.24ms 480.24ms 486.59ms      2.08  382.04MB</span>
+<span class="co">#&gt; 8 mi_do_km2… 10000 880.42µs   1.17ms 912.14µs  14.54ms    858.     78.18KB</span>
 <span class="co">#&gt; # … with 3 more variables: n_gc &lt;dbl&gt;, n_itr &lt;int&gt;, total_time &lt;bch:tm&gt;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">ggplot2<span class="op">::</span><span class="kw">autoplot</span>(porownanie)</code></pre>
 </div>

@@ -71,7 +71,7 @@ potegowanie(2, w = 3)
 <!-- scope - http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/11/005_funkcje.html -->
 <!-- lexical scoping https://adv-r.hadley.nz/functions.html#lexical-scoping -->
 
-## Obsługa błędów, ostrzeżeń i wiadomości
+## Obsługa komunikatów
 
 W sekcji \@ref(komunikaty) omówiliśmy trzy podstawowe rodzaje komunikatów: błędy, ostrzeżenia i wiadomości.
 Teraz zobaczmy jak te zaimplementować we własnych funkcjach i kiedy powinny być one użyte.
