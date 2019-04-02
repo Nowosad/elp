@@ -1,6 +1,7 @@
 
 # Tekst {#tekst}
 
+
 Więcej na temat przetwarzania tekstu można znaleźć w rozdziale ["Strings"](https://r4ds.had.co.nz/strings.html) książki R for Data Science [@wickham2016r].
 
 Typ znakowy jest określany poprzez użycie cudzysłowia `"` lub `'`.
@@ -26,7 +27,10 @@ Oznacza on, że wykonanie kodu nie może zostać zakończone.
 
 W takiej sytuacji należy nacisnąć klawisz Esc, aby przerwać wykonywanie operacji, a następnie poprawić wpisany kod.
 
-## Łączenie tekstu
+## Podstawowe operacje na tekście
+
+Jedną z podstawowych operacji na wektorach znakowych jest ich łączenie.
+Do tego celu służy funkcja `paste()`^[Odpowiednikiem funkcji `paste()` w pakiecie **stringr** jest funkcja `str_c()`].
 
 
 ```r
@@ -34,13 +38,18 @@ paste("t", "o", " ", "k", "o", "t")
 #> [1] "t o   k o t"
 ```
 
+Efekt działania funkcji `paste()` jest jeden wektor tekstowy, który składa się z wejściowych wektorów oddzielonych domyślnie spacjami. 
+Funkcja `paste()` ma jednak również dodatkowy argument `sep`, który pozwala na dowolne określanie separatora.
+
+R oferuje też uproszczoną postać tej funkcji o nazwie `paste0()`, w której nie ma znaku seperatora.
+
 
 ```r
 paste0("t", "o", " ", "k", "o", "t")
 #> [1] "to kot"
 ```
 
-<!-- ^[funkcja `str_c()`] -->
+
 
 
 ```r
@@ -53,14 +62,6 @@ tekst1
 
 <!-- sekcja o wyswietlaniu tekstu?? -->
 
-## Podstawowe operacje na tekście
-
-[@R-stringr]
-
-
-```r
-library(stringr)
-```
 
 
 ```r
@@ -75,8 +76,32 @@ tolower(tekst1)
 ```
 
 
+[@R-stringr]
+
+
 ```r
-tekst2 = c("chronologia", "alfabet", "hałas")
+library(stringr)
+```
+
+
+
+```r
+tekst2 = c("chronologia ", "alfabet", " hałas")
+str_sort(tekst2)
+#> [1] " hałas"       "alfabet"      "chronologia "
+```
+
+
+```r
+tekst2 = str_trim(tekst2)
+str_sort(tekst2)
+#> [1] "alfabet"     "chronologia" "hałas"
+```
+
+
+```r
+tekst2
+#> [1] "chronologia" "alfabet"     "hałas"
 ```
 
 
@@ -85,22 +110,6 @@ str_sort(tekst2, locale = "pl")
 #> [1] "alfabet"     "chronologia" "hałas"
 str_sort(tekst2, locale = "cs")
 #> [1] "alfabet"     "hałas"       "chronologia"
-```
-
-
-```r
-tekst3 = c("chronologia ", "alfabet", " hałas")
-str_sort(tekst3, locale = "pl")
-#> [1] " hałas"       "alfabet"      "chronologia "
-```
-
-
-```r
-tekst3 = str_trim(tekst3)
-tekst3
-#> [1] "chronologia" "alfabet"     "hałas"
-str_sort(tekst3, locale = "pl")
-#> [1] "alfabet"     "chronologia" "hałas"
 ```
 
 ## Wydzielanie tekstu

@@ -25,7 +25,7 @@
 <meta name="author" content="Jakub Nowosad">
 
 
-<meta name="date" content="2019-04-01">
+<meta name="date" content="2019-04-02">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -197,14 +197,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.14" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zadania-4"><i class="fa fa-check"></i><b>5.14</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a><ul>
-<li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#aczenie-tekstu"><i class="fa fa-check"></i><b>6.1</b> Łączenie tekstu</a></li>
-<li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekscie"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście</a></li>
-<li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wydzielanie-tekstu"><i class="fa fa-check"></i><b>6.3</b> Wydzielanie tekstu</a></li>
-<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wyrazenia-regularne"><i class="fa fa-check"></i><b>6.4</b> Wyrażenia regularne</a></li>
-<li class="chapter" data-level="6.5" data-path="tekst.html"><a href="tekst.html#wydzielanie-tekstu---regex"><i class="fa fa-check"></i><b>6.5</b> Wydzielanie tekstu - regex</a></li>
-<li class="chapter" data-level="6.6" data-path="tekst.html"><a href="tekst.html#zamiana-tekstu---regex"><i class="fa fa-check"></i><b>6.6</b> Zamiana tekstu - regex</a></li>
-<li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plikow"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików</a></li>
-<li class="chapter" data-level="6.8" data-path="tekst.html"><a href="tekst.html#zadania-5"><i class="fa fa-check"></i><b>6.8</b> Zadania</a></li>
+<li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekscie"><i class="fa fa-check"></i><b>6.1</b> Podstawowe operacje na tekście</a></li>
+<li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#wydzielanie-tekstu"><i class="fa fa-check"></i><b>6.2</b> Wydzielanie tekstu</a></li>
+<li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wyrazenia-regularne"><i class="fa fa-check"></i><b>6.3</b> Wyrażenia regularne</a></li>
+<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wydzielanie-tekstu---regex"><i class="fa fa-check"></i><b>6.4</b> Wydzielanie tekstu - regex</a></li>
+<li class="chapter" data-level="6.5" data-path="tekst.html"><a href="tekst.html#zamiana-tekstu---regex"><i class="fa fa-check"></i><b>6.5</b> Zamiana tekstu - regex</a></li>
+<li class="chapter" data-level="6.6" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plikow"><i class="fa fa-check"></i><b>6.6</b> Wyszukiwanie plików</a></li>
+<li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#zadania-5"><i class="fa fa-check"></i><b>6.7</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a><ul>
 <li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a><ul>
@@ -656,7 +655,7 @@ tekst2
 <p>R ma wbudowaną reprezentację dat w postaci klasy <code>Date</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">dzis =<span class="st"> </span><span class="kw">Sys.Date</span>()
 dzis
-<span class="co">#&gt; [1] &quot;2019-04-01&quot;</span></code></pre>
+<span class="co">#&gt; [1] &quot;2019-04-02&quot;</span></code></pre>
 <p>Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowia), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(dzis)
 <span class="co">#&gt; [1] &quot;double&quot;</span>
@@ -667,8 +666,8 @@ dzis
 <span class="co">#&gt; [1] &quot;Date&quot;</span></code></pre>
 <p>Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji <code>unclass()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unclass</span>(dzis)
-<span class="co">#&gt; [1] 17987</span></code></pre>
-<p>Wynik, 17987, oznacza liczbę dni od 1970-01-01.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>
+<span class="co">#&gt; [1] 17988</span></code></pre>
+<p>Wynik, 17988, oznacza liczbę dni od 1970-01-01.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.</p>
 <pre class="sourceCode r"><code class="sourceCode r">stara_data =<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;1912-04-13&quot;</span>)
 <span class="kw">unclass</span>(stara_data)

@@ -25,7 +25,7 @@
 <meta name="author" content="Jakub Nowosad">
 
 
-<meta name="date" content="2019-04-01">
+<meta name="date" content="2019-04-02">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -197,14 +197,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.14" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zadania-4"><i class="fa fa-check"></i><b>5.14</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a><ul>
-<li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#aczenie-tekstu"><i class="fa fa-check"></i><b>6.1</b> Łączenie tekstu</a></li>
-<li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekscie"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście</a></li>
-<li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wydzielanie-tekstu"><i class="fa fa-check"></i><b>6.3</b> Wydzielanie tekstu</a></li>
-<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wyrazenia-regularne"><i class="fa fa-check"></i><b>6.4</b> Wyrażenia regularne</a></li>
-<li class="chapter" data-level="6.5" data-path="tekst.html"><a href="tekst.html#wydzielanie-tekstu---regex"><i class="fa fa-check"></i><b>6.5</b> Wydzielanie tekstu - regex</a></li>
-<li class="chapter" data-level="6.6" data-path="tekst.html"><a href="tekst.html#zamiana-tekstu---regex"><i class="fa fa-check"></i><b>6.6</b> Zamiana tekstu - regex</a></li>
-<li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plikow"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików</a></li>
-<li class="chapter" data-level="6.8" data-path="tekst.html"><a href="tekst.html#zadania-5"><i class="fa fa-check"></i><b>6.8</b> Zadania</a></li>
+<li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekscie"><i class="fa fa-check"></i><b>6.1</b> Podstawowe operacje na tekście</a></li>
+<li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#wydzielanie-tekstu"><i class="fa fa-check"></i><b>6.2</b> Wydzielanie tekstu</a></li>
+<li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wyrazenia-regularne"><i class="fa fa-check"></i><b>6.3</b> Wyrażenia regularne</a></li>
+<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wydzielanie-tekstu---regex"><i class="fa fa-check"></i><b>6.4</b> Wydzielanie tekstu - regex</a></li>
+<li class="chapter" data-level="6.5" data-path="tekst.html"><a href="tekst.html#zamiana-tekstu---regex"><i class="fa fa-check"></i><b>6.5</b> Zamiana tekstu - regex</a></li>
+<li class="chapter" data-level="6.6" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plikow"><i class="fa fa-check"></i><b>6.6</b> Wyszukiwanie plików</a></li>
+<li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#zadania-5"><i class="fa fa-check"></i><b>6.7</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a><ul>
 <li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a><ul>
@@ -318,7 +317,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- system.time -->
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))
 <span class="co">#&gt;    user  system elapsed </span>
-<span class="co">#&gt;   0.564   0.000   0.567</span></code></pre>
+<span class="co">#&gt;   0.568   0.000   0.567</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">mi_do_km1 =<span class="st"> </span><span class="cf">function</span>(odl_mile){
   odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="dv">0</span>)
   <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
@@ -339,10 +338,10 @@ odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv"
 <span class="kw">mark</span>(<span class="kw">mi_do_km1</span>(odl_mile),
      <span class="kw">mi_do_km2</span>(odl_mile))
 <span class="co">#&gt; # A tibble: 2 x 10</span>
-<span class="co">#&gt;   expression    min   mean median     max `itr/sec` mem_alloc  n_gc n_itr</span>
-<span class="co">#&gt;   &lt;chr&gt;      &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt; &lt;bch:t&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 1.41µs 1.86µs 1.61µs  44.2µs   537611.     300KB     1  9999</span>
-<span class="co">#&gt; 2 mi_do_km2… 1.04µs  1.3µs 1.16µs 107.3µs   767952.     222KB     0 10000</span>
+<span class="co">#&gt;   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr</span>
+<span class="co">#&gt;   &lt;chr&gt;      &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
+<span class="co">#&gt; 1 mi_do_km1… 1.42µs 1.87µs 1.62µs 44.7µs   535295.     300KB     1  9999</span>
+<span class="co">#&gt; 2 mi_do_km2… 1.05µs 1.29µs 1.17µs 48.5µs   772332.     222KB     0 10000</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">odl_mile2 =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10000</span>)
 <span class="kw">mark</span>(<span class="kw">mi_do_km1</span>(odl_mile2),
@@ -352,8 +351,8 @@ odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv"
 <span class="co">#&gt; # A tibble: 2 x 10</span>
 <span class="co">#&gt;   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;bch&gt; &lt;bch:tm&gt; &lt;bch:&gt; &lt;bch:t&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 480ms 487.93ms  488ms 495.8ms      2.05     382MB    16     2</span>
-<span class="co">#&gt; 2 mi_do_km2… 866µs   1.17ms  907µs  13.4ms    853.      78.2KB    16   427</span>
+<span class="co">#&gt; 1 mi_do_km1… 476ms 488.36ms  488ms 501.1ms      2.05     382MB    16     2</span>
+<span class="co">#&gt; 2 mi_do_km2… 866µs   1.19ms  919µs  13.6ms    842.      78.2KB    16   426</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">porownanie =<span class="st"> </span><span class="kw">press</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10000</span>),
                    {
@@ -373,20 +372,20 @@ porownanie
 <span class="co">#&gt; # A tibble: 8 x 11</span>
 <span class="co">#&gt;   expression     x      min     mean   median      max `itr/sec` mem_alloc</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1…    10   3.88µs   5.27µs   4.64µs 179.48µs 189862.          0B</span>
-<span class="co">#&gt; 2 mi_do_km2…    10   1.73µs   2.26µs   1.99µs  37.47µs 442919.          0B</span>
-<span class="co">#&gt; 3 mi_do_km1…   100   67.2µs  77.38µs  73.35µs 199.12µs  12923.     43.16KB</span>
-<span class="co">#&gt; 4 mi_do_km2…   100    9.1µs  10.69µs   9.97µs 114.34µs  93556.        856B</span>
-<span class="co">#&gt; 5 mi_do_km1…  1000   4.39ms   4.65ms   4.66ms   5.07ms    215.      3.87MB</span>
-<span class="co">#&gt; 6 mi_do_km2…  1000  84.49µs  96.69µs  90.62µs   4.64ms  10342.      7.87KB</span>
-<span class="co">#&gt; 7 mi_do_km1… 10000 485.15ms 488.75ms 488.75ms 492.35ms      2.05  382.04MB</span>
-<span class="co">#&gt; 8 mi_do_km2… 10000 880.73µs   1.15ms  912.6µs  13.75ms    871.     78.18KB</span>
+<span class="co">#&gt; 1 mi_do_km1…    10   3.89µs   5.09µs   4.56µs   75.9µs 196287.          0B</span>
+<span class="co">#&gt; 2 mi_do_km2…    10   1.73µs   2.14µs   1.95µs  24.01µs 466832.          0B</span>
+<span class="co">#&gt; 3 mi_do_km1…   100  67.15µs  77.44µs  73.23µs 456.09µs  12913.     43.16KB</span>
+<span class="co">#&gt; 4 mi_do_km2…   100   9.13µs  11.04µs     10µs   2.26ms  90617.        856B</span>
+<span class="co">#&gt; 5 mi_do_km1…  1000   4.39ms   4.68ms   4.71ms   5.12ms    214.      3.87MB</span>
+<span class="co">#&gt; 6 mi_do_km2…  1000  84.63µs  96.26µs  90.94µs  449.4µs  10389.      7.87KB</span>
+<span class="co">#&gt; 7 mi_do_km1… 10000 477.48ms 481.45ms 481.45ms 485.43ms      2.08  382.04MB</span>
+<span class="co">#&gt; 8 mi_do_km2… 10000 881.64µs   1.16ms 915.68µs  14.68ms    865.     78.18KB</span>
 <span class="co">#&gt; # … with 3 more variables: n_gc &lt;dbl&gt;, n_itr &lt;int&gt;, total_time &lt;bch:tm&gt;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">ggplot2<span class="op">::</span><span class="kw">autoplot</span>(porownanie)</code></pre>
 </div>
 <div id="profiling" class="section level2">
 <h2><span class="header-section-number">12.2</span> Profiling</h2>
-<p>Istnieją trzy podstawowe reguły optymalizacji kodu<a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a>:</p>
+<p>Istnieją trzy podstawowe reguły optymalizacji kodu<a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>:</p>
 <ol style="list-style-type: decimal">
 <li>Nie.</li>
 <li>Jeszcze nie.</li>
@@ -420,8 +419,8 @@ Profilowanie mierzy czas działania każdej linii kodu.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="42">
-<li id="fn42"><p><a href="http://www.moscowcoffeereview.com/programming/the-3-rules-of-optimization/" class="uri">http://www.moscowcoffeereview.com/programming/the-3-rules-of-optimization/</a><a href="analiza-kodu.html#fnref42" class="footnote-back">↩</a></p></li>
+<ol start="43">
+<li id="fn43"><p><a href="http://www.moscowcoffeereview.com/programming/the-3-rules-of-optimization/" class="uri">http://www.moscowcoffeereview.com/programming/the-3-rules-of-optimization/</a><a href="analiza-kodu.html#fnref43" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
