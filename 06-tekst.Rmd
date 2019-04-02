@@ -117,7 +117,7 @@ str_sort(tekst2, locale = "cs")
 
 Powyżej można zobaczyć dwa przykłady - ułożenia tekstu według polskiego i czeskiego alfabetu^[https://en.wikipedia.org/wiki/Czech_orthography].
 
-## Wydzielanie tekstu
+## Wydzielanie tekstu {#wt}
 
 Częstym przypadkiem jest potrzeba wydzielenia tylko fragmentu tekstu.
 W tej sekcji zostanie pokazane jak wydzielać tekst na podstawie pozycji, ale możliwe jest również wydzielanie tekstu na podstawie wzorca (zobacz sekcję \@ref(wtregex)).
@@ -302,29 +302,54 @@ Pomocne w zrozumieniu bardziej zaawansowanych elementów wyrażeń regularncych 
 ## Wydzielanie tekstu - regex {#wtregex}
 
 <!-- https://r4ds.had.co.nz/strings.html#extract-matches -->
+Innym często spotykanym problemem w pracy z tekstem jest posiadanie długiego elementu tekstowego, z którego chcemy tylko wydobyć pewien fragment. 
+W sekcji \@ref(wt) używaliśmy do tego pozycji, ale możemy zastosować również wzroce do tego celu.
 
 ```{r}
-tekst_pomiary = "Wrocław: 23, Bydgoszcz: 12, Toruń: 11, Lublin: 14"
+tekst_pomiary = "Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3"
 ```
+
+Wektor `tekst_pomiary` zawiera tylko jeden element tekstowy, w którym wymienione są kolejne miasta i ich wartości.
+Wyobraźmy sobie, że interesują nas tylko nazwy miast zawarte w powyższym wektorze. 
+Do wydzielania tekstu na podstawie wyrażeń regularnych służy funkcja `str_extract()`.
 
 ```{r}
 str_extract(tekst_pomiary, pattern = "[a-zA-Z]*")
 ```
 
+Podaliśmy jako wzorzec wszyskie litery od małego `a` do małego `z` oraz dużego `A` do dużego `Z`.
+Niestety w efekcie otrzymaliśmy tylko `r str_extract(tekst_pomiary, pattern = "[a-zA-Z]*")` - taka definicja wzorca obejmuje tylko litery z angielskiego alfabetu.
+
+Aby to naprawić możemy dodać do tego wzorca polskie litery.
+
 ```{r}
 str_extract(tekst_pomiary, pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*")
 ```
 
+Tym razem otrzymaliśmy pełną nazwę pierwszego miasta, ale nie żadnego kolejnego.
+Funkcja `str_extract()` jest leniwa - po znalezieniu pierwszego pasującego fragmentu przestaje ona szukać dalej i przekazuje wynik.
+
+Aby uzyskać wszystkie przypadki spełniające określony wzorzec należy użyć funkcji `str_extract_all()`.
+
 ```{r}
 str_extract_all(tekst_pomiary, pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*")
 ```
+
+Efektem jej działania są wszystkie nazwy miast z wektora `tekst_pomiary`, ale też wiele elementów pustych.
+Dlaczego?
+W powyższym wzorcu użyliśmy metaznaku `*`, który szuka wystąpienia zdefiniowanych znaków zero lub więcej razy.
+Gdy napotkany jest zdefiniowany znak sprawdzane jest jego kolejne wystąpienie, aż do momentu, gdy pojawi się jakiś inny znak.
+W efekcie zwrócony został np. `"Wrocław"`. 
+Metaznak `*` w przypadku, gdy zdefiniowanego znaku nie ma (wystąpił zero razy) zwraca pusty element.
+
+Jeżeli interesują nas tylko fragmenty wektora zawierające tekst musimy użyć metaznaku `+`.
 
 ```{r}
 str_extract_all(tekst_pomiary, pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+")
 ```
 
 ```{r}
-tekst_pomiary2 = "Wrocław: 23, Bydgoszcz: 12, Toruń: 11, Lublin: 14, Gorzów Wielkopolski: 20, Zielona Góra: 19"
+tekst_pomiary2 = "Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3, Gorzów Wielkopolski: 20, Zielona Góra: 19"
 ```
 
 ```{r}
