@@ -22,7 +22,7 @@ for (element in wektor) {
 }
 ```
 
-### Przykład działania
+### Przykład działania {#for-example}
 
 Zobaczmy jak działa pętla `for` na uproszczonym przykładzie zamiany wartości odległości z mil lądowych na kilometry.
 Nasze dane wejściowe to lista składająca się z trzech wartości - 142, 63, oraz 121.

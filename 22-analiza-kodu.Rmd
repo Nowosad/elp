@@ -22,6 +22,11 @@ system.time(mean(1:100000000))
 
 W efekcie dostajemy trzy wartości - `user`, `system` i `elapsed`. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.
 
+Benchmarking jest często używany w sytuacji, gdy istnieje kilka  funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
+Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.
+
+W sekcji \@ref(for-example) stworzyliśmy kilka wersji pętli `for` pozwalającej na przeliczanie wartości z mil lądowych na kilometry. 
+Pierwsza z nich, tutaj zdefiniowana jako funkcja `mi_do_km1`, tworzy pusty wektor o długości 0, do którego następie doklejane są kolejne przeliczone wartości.
 
 ```{r}
 mi_do_km1 = function(odl_mile){
@@ -33,6 +38,9 @@ mi_do_km1 = function(odl_mile){
 }
 ```
 
+Druga, tutaj zdefiniowana jako funkcja `mi_do_km2`, tworzy pusty wektor o oczekiwanej długości wyniku. 
+Następnie kolejne przeliczone wartości są wstawiane w odpowiednie miejsca wektora wynikowego.
+
 ```{r}
 mi_do_km2 = function(odl_mile){
   odl_km = vector("list", length = length(odl_mile))
@@ -43,20 +51,49 @@ mi_do_km2 = function(odl_mile){
 }
 ```
 
-[@R-bench]
+Dwie powyższe funkcje można porównać używając `system.time()`. 
+Nie zawsze jednak to wystarczy - ta sama funkcja wykonana dwa razy może mieć różny czas obliczeń.<!--why??-->
+Dodatkowo, oprócz czasu wykonywania funkcji może nas interesować zużycie zasobów, takich jak pamięc operacyjna.
+Do takiego celu powstała funkcja `mark()` z pakietu **bench** [@R-bench], która wykonuje funkcje wiele razy przed zwróceniem wyniku.
+
+Przyjmuje ona wywołania funkcji, które chcemy porównać.
+Poniżej nastąpi porównanie funkcji `mi_do_km1` i `mi_do_km2`, w przypadku gdy jako dane wejściowe zostanie podana lista z wartościami 142, 63, 121.
 
 ```{r}
 library(bench)
 odl_mile = list(142, 63, 121)
-mark(mi_do_km1(odl_mile),
-     mi_do_km2(odl_mile))
+wynik_1 = mark(
+  mi_do_km1(odl_mile),
+  mi_do_km2(odl_mile)
+)
 ```
+
+Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
+Zawiera ona szereg charakterystyk, w tym:
+
+- `min` - minimalny czas wykonania funkcji
+- `mean` - średni czas wykonania funkcji
+- `median` - mediana czasu wykonania funkcji
+- `max` - maksymalny czas wykonania funkcji
+- `itr/sec` - liczba wykonań funkcji na sekundę
+- `mem_alloc` - pamięć użyta przez wywołanie funkcji
+- `n_itr` - liczba powtórzeń wywołania funkcji
+
+Wynik działania funkcji `mark()` pozwala na zauważnie, że na tym przykładzie funkcja `mi_do_km2` jest ok. 30% szybsza od `mi_do_km1`.
+Czasami możliwe jest, że jakaś funkcja działa relatywnie szybko na małych danych, ale dużo wolniej na większych danych wejściowych.
+Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na większej liście, np. z wartościami od 0 do 10000 co 1.
 
 ```{r}
 odl_mile2 = as.list(0:10000)
-mark(mi_do_km1(odl_mile2),
-     mi_do_km2(odl_mile2))
+wynik_2 = mark(
+  mi_do_km1(odl_mile2),
+  mi_do_km2(odl_mile2)
+)
 ```
+
+W tym przypadku róznica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
+Funkcja `mi_do_km1` jest w stanie wykonać tylko `r round(wynik_2$`itr/sec`[[1]], 2)` operacji na sekundę, przy aż `r round(wynik_2$`itr/sec`[[2]], 2)` operacji na sekundę funkcji `mi_do_km2`.
+Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
 
 ```{r}
 porownanie = press(x = c(10, 100, 1000, 10000),
@@ -71,7 +108,6 @@ porownanie
 ```{r, eval=FALSE}
 ggplot2::autoplot(porownanie)
 ```
-
 
 ## Profiling
 
