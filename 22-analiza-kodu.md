@@ -9,7 +9,7 @@
 ```r
 system.time(mean(1:100000000))
 #>    user  system elapsed 
-#>   0.568   0.004   0.572
+#>   0.568   0.000   0.567
 ```
 
 
@@ -45,8 +45,8 @@ mark(mi_do_km1(odl_mile),
 #> # A tibble: 2 x 10
 #>   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr
 #>   <chr>      <bch:> <bch:> <bch:> <bch:>     <dbl> <bch:byt> <dbl> <int>
-#> 1 mi_do_km1… 1.41µs 1.87µs 1.61µs 71.2µs   534270.     300KB     1  9999
-#> 2 mi_do_km2… 1.02µs  1.3µs 1.16µs 24.6µs   767845.     222KB     0 10000
+#> 1 mi_do_km1… 1.43µs 1.89µs 1.65µs   66µs   529202.     300KB     1  9999
+#> 2 mi_do_km2… 1.03µs 1.34µs 1.19µs 20.9µs   744840.     222KB     0 10000
 #> # … with 1 more variable: total_time <bch:tm>
 ```
 
@@ -58,10 +58,10 @@ mark(mi_do_km1(odl_mile2),
 #> Warning: Some expressions had a GC in every iteration; so filtering is
 #> disabled.
 #> # A tibble: 2 x 10
-#>   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr
-#>   <chr>      <bch> <bch:tm> <bch:> <bch:t>     <dbl> <bch:byt> <dbl> <int>
-#> 1 mi_do_km1… 479ms 488.85ms  489ms 498.5ms      2.05     382MB    16     2
-#> 2 mi_do_km2… 869µs   1.18ms  918µs  13.6ms    844.      78.2KB    16   426
+#>   expression   min    mean median     max `itr/sec` mem_alloc  n_gc n_itr
+#>   <chr>      <bch> <bch:t> <bch:> <bch:t>     <dbl> <bch:byt> <dbl> <int>
+#> 1 mi_do_km1… 478ms 482.2ms  482ms   486ms      2.07     382MB    16     2
+#> 2 mi_do_km2… 870µs   1.2ms  916µs  13.9ms    835.      78.2KB    15   418
 #> # … with 1 more variable: total_time <bch:tm>
 ```
 
@@ -85,14 +85,14 @@ porownanie
 #> # A tibble: 8 x 11
 #>   expression     x      min     mean   median      max `itr/sec` mem_alloc
 #>   <chr>      <dbl> <bch:tm> <bch:tm> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 mi_do_km1…    10   3.87µs   5.13µs   4.56µs 113.19µs 194977.          0B
-#> 2 mi_do_km2…    10   1.72µs   2.16µs   1.94µs 110.95µs 462417.          0B
-#> 3 mi_do_km1…   100  67.22µs  78.16µs  73.69µs  298.2µs  12794.     43.16KB
-#> 4 mi_do_km2…   100   9.14µs  10.75µs   9.98µs 115.39µs  92993.        856B
-#> 5 mi_do_km1…  1000   4.49ms   4.75ms   4.74ms   5.11ms    211.      3.87MB
-#> 6 mi_do_km2…  1000  84.38µs  97.09µs  91.63µs 497.42µs  10300.      7.87KB
-#> 7 mi_do_km1… 10000 487.06ms 491.12ms 491.12ms 495.18ms      2.04  382.04MB
-#> 8 mi_do_km2… 10000 887.15µs   1.16ms 925.92µs  14.27ms    859.     78.18KB
+#> 1 mi_do_km1…    10   3.88µs   5.23µs   4.67µs  73.35µs 191367.          0B
+#> 2 mi_do_km2…    10   1.74µs   2.22µs   1.96µs  63.03µs 451340.          0B
+#> 3 mi_do_km1…   100  67.46µs  78.23µs  74.08µs 199.27µs  12782.     43.16KB
+#> 4 mi_do_km2…   100   9.14µs  10.92µs  10.02µs  97.47µs  91543.        856B
+#> 5 mi_do_km1…  1000   4.43ms   4.68ms   4.69ms   5.05ms    214.      3.87MB
+#> 6 mi_do_km2…  1000  84.31µs  96.93µs     92µs   2.18ms  10317.      7.87KB
+#> 7 mi_do_km1… 10000 496.29ms 505.71ms 505.71ms 515.12ms      1.98  382.04MB
+#> 8 mi_do_km2… 10000  916.6µs    1.2ms    946µs  14.14ms    836.     78.18KB
 #> # … with 3 more variables: n_gc <dbl>, n_itr <int>, total_time <bch:tm>
 ```
 
@@ -133,6 +133,8 @@ profvis(source("R/moja_funkcja.R"))
 
 <!-- profiling -->
 <!-- https://r-prof.github.io/jointprof/articles/proposal.html -->
+
+<!-- https://adv-r.hadley.nz/perf-improve.html -->
 
 <!--  Wektoryzacja kodu -->
 <!-- vectorized vs not-vectorized -->
