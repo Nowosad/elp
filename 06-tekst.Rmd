@@ -163,7 +163,7 @@ str_detect(x, "^Reg(exp?|ular expression)$")
 Sprawdzanie czy dany tekst występuje w wektorze można wykonać używając funkcji `str_detect()`.
 
 ```{r}
-tekst3= c("Magdalena", "Lena", "1Lena.csv", "LLena", "Helena", "Anna", 99)
+tekst3 = c("Magdalena", "Lena", "1Lena.csv", "LLena", "Helena", "Anna", "99")
 ```
 
 W takim wypadku konieczne jest zdefiniowanie argumentu `pattern`, czyli wzorca tekstowego, który nas interesuje.
@@ -217,46 +217,71 @@ Wymienione powyżej znaki (np. `^`<!--Kareta--> czy `.`) mają specjalne znaczen
 W związku z tym, jeżeli chcemy wyszukać tekstu zawierającego specjalny znak, musimy użyć ukośnik wsteczny (`\`, ang. *backslash*).
 Istnieje wiele dodatkowych znaków specjalnych, np. `\n` - nowa linia, `\t` - tabulator, `\d` - każdy znak numeryczny (stałoprzecinkowy), `\s` - znak niedrukowalny, np. spacja, tabulator, nowa linia.
 
+Sprawdźmy działanie wyrażeń regularnych na kilku przykładach.
+W pierwszym z nich określiliśmy nasz wzorzec jako `"^L"`, co oznacza, że interesują nas tylko elementy wektora `tekst3` rozpoczynające się od dużej litery `L`.
+
 ```{r}
 str_detect(tekst3, pattern = "^L")
 ```
+
+Do określenia zakończenia wzorca służy metaznak `$`. 
+Poniżej wyszukano elementy, które kończą się na `ena`.
 
 ```{r}
 str_detect(tekst3, pattern = "ena$")
 ```
 
+Operatory `()` i `|` można łączyć, aby zdefiniować alternatywy.
+Przykładowo, interesują nas elementy, które kończą się na `ena` lub `nna`.
+
 ```{r}
 str_detect(tekst3, pattern = "(ena|nna)$")
 ```
+
+W wyrażeniach regularnych można też stosować pewne skrótowe polecenia.
+W poniższym przypadku interesują nas elementy, które zawierają jakiekolwiek znaki od małego `a` do małego `z` oraz dużego `A` do dużego `Z`.
 
 ```{r}
 str_detect(tekst3, pattern = "[a-zA-Z]")
 ```
 
+Podobnie można określać wartości numeryczne - np. tylko elementy zawierające wartości od `0` do `9`.
+
 ```{r}
 str_detect(tekst3, pattern = "[0-9]")
 ```
+
+Celem metaznaku `+` jest określenie, że poprzedni znak musi wystąpić jeden lub więcej razy.
+Poniżej interesują nas tylko takie elementy, w których litera `L` występuje raz lub więcej.
 
 ```{r}
 str_detect(tekst3, pattern = "L+")
 ```
 
+W wyrażeniach regularnych metaznak `^` określa początek tekstu/linii, ale ma on też inne zastosowanie, gdy jest użyty w kwadratowym nawiasie.
+Przykładowo `[^L]` oznacza, że szukamy wszystkich elementów nie zawierających litery `L`.
+W poniższym przykładzie nie interesują nas elementy, które zaczynają się od jednej lub więcej litery `L`.
+
 ```{r}
 str_detect(tekst4, pattern = "^[^L]+")
 ```
+
+Metaznak `.` służy do określania jakikolwiek znaku, a ukośnik wsteczny (`\`) służy do określania innych znaków specjalnych.
+Dlatego też, jeżeli chcemy wyszukać elementów zawierających kropki (`.`) musimy połączyć ukośnik wsteczny z tym znakiem.
 
 ```{r, eval=FALSE}
 str_detect(tekst3, pattern = "\.")
 #> Error: '\.' is an unrecognized escape in character string starting ""\."
 ```
 
+Powyższy przykład daje jednak komunikat błędu - aby użyć ukośnik wsteczny do zasygnalizowania, że interesuje nas kropka musimy wprowadzić go dwa razy^[https://xkcd.com/1638/].
+
 ```{r}
 str_detect(tekst3, pattern = "\\.")
 ```
 
 <!-- block z popularnymi regex -->
-
-```{r, eval=FALSE}
+```{r, eval=FALSE, echo=FALSE}
 y = c("kołdra", "kordła", "pościel")
 str_detect(y, pattern = "ko(łdr|rdł)a")
 ```
