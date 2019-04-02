@@ -348,21 +348,34 @@ Jeżeli interesują nas tylko fragmenty wektora zawierające tekst musimy użyć
 str_extract_all(tekst_pomiary, pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+")
 ```
 
+Wyobrażmy sobie, że otrzymaliśmy rozszerzoną wersję poprzednich danych, która tym razem zawiera dwa dodatkowe miasta - Gorzów Wielkopolski i Zieloną Górę.
+
 ```{r}
 tekst_pomiary2 = "Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3, Gorzów Wielkopolski: 20, Zielona Góra: 19"
 ```
+
+Nadal interesuje nas wydzielenie nazw miast, więc próbujemy użyć kodu, który stworzyliśmy powyżej.
 
 ```{r}
 str_extract_all(tekst_pomiary2, pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+")
 ```
 
+Niestety w efekcie otrzymujemy osiem elementów, gdzie `"Gorzów"` jest innym elementem niż `"Wielkopolski"`.
+Zdefiniowany przez nas wzorzec nie brał pod uwagę możliwości wystąpienia spacji.
+Możemy naprawić tę sytuację w poniższy sposób.
+
 ```{r}
-str_extract_all(tekst_pomiary2, pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[\\s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*")
+str_extract_all(tekst_pomiary2, 
+       pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[\\s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*")
 ```
+
+Teraz szukamy wystąpienia liter co najmniej raz lub więcej (`+`), następnie wystąpienia spacji zero razy lub raz (`[\\s]?`) i kończymy na sprawdzeniu wystąpienia tekstu zero razy lub więcej (`*`).
+
+Podobnie jak w każdym powyższym przypadku, efekt działania funkcji może być użyty do stworzenia nowego obiektu.
 
 ```{r}
 miasta_pomiary2 = str_extract_all(tekst_pomiary2,
-                                  pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[\\s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*")
+       pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[\\s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*")
 miasta_pomiary2
 ```
 
