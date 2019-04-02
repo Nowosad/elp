@@ -255,11 +255,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>III Narzędzia</b></span></li>
 <li class="chapter" data-level="11" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>11</b> Złożone funkcje</a><ul>
 <li class="chapter" data-level="11.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>11.1</b> API</a></li>
-<li class="chapter" data-level="11.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zasieg-widocznosci"><i class="fa fa-check"></i><b>11.2</b> Zasięg widoczności</a></li>
-<li class="chapter" data-level="11.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsuga-bedow-ostrzezen-i-wiadomosci"><i class="fa fa-check"></i><b>11.3</b> Obsługa błędów, ostrzeżeń i wiadomości</a></li>
-<li class="chapter" data-level="11.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#programowanie-obiektowe"><i class="fa fa-check"></i><b>11.4</b> Programowanie obiektowe</a></li>
-<li class="chapter" data-level="11.5" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.5</b> Testy jednostkowe</a></li>
-<li class="chapter" data-level="11.6" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>11.6</b> Zadania</a></li>
+<li class="chapter" data-level="11.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsuga-bedow-ostrzezen-i-wiadomosci"><i class="fa fa-check"></i><b>11.2</b> Obsługa błędów, ostrzeżeń i wiadomości</a></li>
+<li class="chapter" data-level="11.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#programowanie-obiektowe"><i class="fa fa-check"></i><b>11.3</b> Programowanie obiektowe</a></li>
+<li class="chapter" data-level="11.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.4</b> Testy jednostkowe</a></li>
+<li class="chapter" data-level="11.5" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>11.5</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>12</b> Analiza kodu</a><ul>
 <li class="chapter" data-level="12.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>12.1</b> Benchmarking</a></li>
@@ -331,8 +330,7 @@ Przykładowo, większość nazw funkcji w pakiecie <strong>landscapemetrics</str
 <p>Podobnie należy stosować tylko jedną konwencję przy nazywaniu argumentów funkcji, a nazwy argumentów powinny być informacyjne, ale jednocześnie zwięzłe.
 W przypadku, gdy taki sam rodzaj danych wejściowych jest oczekiwany w różnych funkcjach, koniecznie jest aby zawsze ten argument był tak samo nazwany.
 Podobnie należy zadbać o spójną kolejność podobnych argumentów w funkcjach jednego pakietu.</p>
-<p>Stabilność typu oznacza, że używając jednej klasy danych wejściowych funkcja zawsze zwróci obiekt jednej klasy.
-<!-- Przykładowo... --></p>
+<p>Stabilność typu oznacza, że używając jednej klasy danych wejściowych funkcja zawsze zwróci obiekt jednej klasy.</p>
 <pre class="sourceCode r"><code class="sourceCode r">tekst =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kołdra&quot;</span>, <span class="st">&quot;kordła&quot;</span>, <span class="st">&quot;pościel&quot;</span>)
 <span class="kw">grep</span>(<span class="st">&quot;^[k].&quot;</span>, <span class="dt">x =</span> tekst)
 <span class="co">#&gt; [1] 1 2</span>
@@ -350,15 +348,12 @@ Podobnie należy zadbać o spójną kolejność podobnych argumentów w funkcjac
 <span class="co">#&gt; [1] 8</span></code></pre>
 <!-- elipsis -->
 <!-- https://adv-r.hadley.nz/functions.html#fun-dot-dot-dot -->
-</div>
-<div id="zasieg-widocznosci" class="section level2">
-<h2><span class="header-section-number">11.2</span> Zasięg widoczności</h2>
-<p>Zasięg widoczności (ang. <em>scoping</em>)</p>
+<!-- Zasięg widoczności (ang. *scoping*) -->
 <!-- scope - http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/11/005_funkcje.html -->
 <!-- lexical scoping https://adv-r.hadley.nz/functions.html#lexical-scoping -->
 </div>
 <div id="obsuga-bedow-ostrzezen-i-wiadomosci" class="section level2">
-<h2><span class="header-section-number">11.3</span> Obsługa błędów, ostrzeżeń i wiadomości</h2>
+<h2><span class="header-section-number">11.2</span> Obsługa błędów, ostrzeżeń i wiadomości</h2>
 <p>W sekcji <a href="funkcje.html#komunikaty">3.9</a> omówiliśmy trzy podstawowe rodzaje komunikatów: błędy, ostrzeżenia i wiadomości.
 Teraz zobaczmy jak te zaimplementować we własnych funkcjach i kiedy powinny być one użyte.</p>
 <p>Obsługa błędów w funkcjach ma na celu ochronę użytkownika przed nieodpowiednim zachowaniem funkcji.
@@ -438,7 +433,7 @@ Dodatkowo istnieje funkcja <code>withCallingHandlers()</code>, która jest używ
 
 </div>
 <div id="programowanie-obiektowe" class="section level2">
-<h2><span class="header-section-number">11.4</span> Programowanie obiektowe</h2>
+<h2><span class="header-section-number">11.3</span> Programowanie obiektowe</h2>
 <p>Programowanie obiektowe (ang. <em>object-oriented programming</em>, OOP) to jeden z najpopulariniejszych paradygmatów programowania (sekcja <a href="wprowadzenie.html#jezyki-programowania">1.2</a>).
 Polega on na definiowaniu obiektów danej klasy posiadających pewną określoną strukturę oraz zachowania.</p>
 <!-- The main ideas of object-oriented programmingare also quite simple and intuitive:1. Everything we compute with is anobject, andobjects should be structured to suit the goals of ourcomputations.2. For this, the key programming tool is aclassdefinition saying that objects belonging to this classshare structure defined bypropertiesthey all have,with the properties being themselves objects of somespecified class.3. A class caninheritfrom (contain) a simplersuperclass, such that an object of this class is alsoan object of the superclass.4. In order to compute with objects, we can de-finemethodsthat are only used when objects are ofcertain classes -->
@@ -486,14 +481,14 @@ x
 <!-- https://adv-r.hadley.nz/oo.html -->
 </div>
 <div id="testy-jednostkowe" class="section level2">
-<h2><span class="header-section-number">11.5</span> Testy jednostkowe</h2>
+<h2><span class="header-section-number">11.4</span> Testy jednostkowe</h2>
 <!-- Unit testing -->
 <!-- usethis::use_test() -->
 <!-- devtools::test() -->
 <!-- devtools::test_coverage() -->
 </div>
 <div id="zadania-9" class="section level2">
-<h2><span class="header-section-number">11.6</span> Zadania</h2>
+<h2><span class="header-section-number">11.5</span> Zadania</h2>
 
 </div>
 </div>

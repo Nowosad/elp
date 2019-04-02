@@ -28,7 +28,6 @@ W przypadku, gdy taki sam rodzaj danych wejściowych jest oczekiwany w różnych
 Podobnie należy zadbać o spójną kolejność podobnych argumentów w funkcjach jednego pakietu.
 
 Stabilność typu oznacza, że używając jednej klasy danych wejściowych funkcja zawsze zwróci obiekt jednej klasy. 
-<!-- Przykładowo... -->
 
 
 ```r
@@ -68,10 +67,7 @@ potegowanie(2, w = 3)
 <!-- elipsis -->
 <!-- https://adv-r.hadley.nz/functions.html#fun-dot-dot-dot -->
 
-## Zasięg widoczności
-
-Zasięg widoczności (ang. *scoping*)
-
+<!-- Zasięg widoczności (ang. *scoping*) -->
 <!-- scope - http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/11/005_funkcje.html -->
 <!-- lexical scoping https://adv-r.hadley.nz/functions.html#lexical-scoping -->
 
