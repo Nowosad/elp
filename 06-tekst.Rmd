@@ -160,23 +160,32 @@ x = c("Regular expression", "Regexp", "Regex")
 str_detect(x, "^Reg(exp?|ular expression)$")
 ```
 
+Sprawdzanie czy dany tekst występuje w wektorze można wykonać używając funkcji `str_detect()`.
+
+```{r}
+tekst3= c("Magdalena", "Lena", "1Lena.csv", "LLena", "Helena", "Anna", 99)
+```
+
+W takim wypadku konieczne jest zdefiniowanie argumentu `pattern`, czyli wzorca tekstowego, który nas interesuje.
+Aby znaleźć wszystkie wystąpienia (nawet fragmentaryczne) słowa `"Lena"` można użyć poniższego kodu.
+
+```{r}
+str_detect(tekst3, pattern = "Lena")
+```
+
+Jego efektem będzie wektor logiczny wskazujący, które elemeny zawierają wybrany wzorzec (`TRUE`) oraz które go nie zawierają (`FALSE`).
+Wzorzec zdefiniowany w tej sposób jest czuły na wielkość znaków dlatego też zapytanie używając `"Lena"` da inny wynik niż takie używając `"lena"`.
+
+```{r}
+str_detect(tekst3, pattern = "lena")
+```
+
+W celu ułatwienia wyszukiwania złożonych fraz powstały wyrażenia regularne.
 Wyrażenia regularne (ang. *regular expressions*), często określane jako *regex* to sposób opisywanie wzorców tekstu. 
 Używając wyrażeń regularnych możliwe jest, między innymi, znajdowanie tekstu lub zamienienie, który spełnia wymagane warunki.
 Wyrażenia regularne są powszechnie używane w wyszukiwarkach internetowych, edytorach tekstu, oraz wielu językach programowania.
 
-<!-- basic stuff -->
-
-```{r}
-tekst4 = c("Magdalena", "Lena", "1Lena.csv", "LLena", "Helena", "Anna", 99)
-```
-
-```{r}
-str_detect(tekst4, "Lena")
-```
-
-```{r}
-str_detect(tekst4, "lena")
-```
+Wyrażenia regularne opierają się o stosowanie szeregu operatorów (metaznaków) wymienionych w tabeli \@ref(tab:regexoperators).
 
 ```{r regexoperators, echo=FALSE}
 library(tibble)
@@ -204,32 +213,32 @@ knitr::kable(tibble(Operator = roperators, Wyjaśnienie = roperators_exp),
              booktabs = TRUE)
 ```
 
-Wymienione powyżej znaki (np. `^`<!--Kareta--> czy `.`) określane są jako metaznaki (ang. *metacharacters*) i mają one specjalne znaczenie.
+Wymienione powyżej znaki (np. `^`<!--Kareta--> czy `.`) mają specjalne znaczenie.
 W związku z tym, jeżeli chcemy wyszukać tekstu zawierającego specjalny znak, musimy użyć ukośnik wsteczny (`\`, ang. *backslash*).
 Istnieje wiele dodatkowych znaków specjalnych, np. `\n` - nowa linia, `\t` - tabulator, `\d` - każdy znak numeryczny (stałoprzecinkowy), `\s` - znak niedrukowalny, np. spacja, tabulator, nowa linia.
 
 ```{r}
-str_detect(tekst4, pattern = "^L")
+str_detect(tekst3, pattern = "^L")
 ```
 
 ```{r}
-str_detect(tekst4, pattern = "ena$")
+str_detect(tekst3, pattern = "ena$")
 ```
 
 ```{r}
-str_detect(tekst4, pattern = "(ena|nna)$")
+str_detect(tekst3, pattern = "(ena|nna)$")
 ```
 
 ```{r}
-str_detect(tekst4, pattern = "[a-zA-Z]")
+str_detect(tekst3, pattern = "[a-zA-Z]")
 ```
 
 ```{r}
-str_detect(tekst4, pattern = "[0-9]")
+str_detect(tekst3, pattern = "[0-9]")
 ```
 
 ```{r}
-str_detect(tekst4, pattern = "L+")
+str_detect(tekst3, pattern = "L+")
 ```
 
 ```{r}
@@ -237,12 +246,12 @@ str_detect(tekst4, pattern = "^[^L]+")
 ```
 
 ```{r, eval=FALSE}
-str_detect(tekst4, pattern = "\.")
+str_detect(tekst3, pattern = "\.")
 #> Error: '\.' is an unrecognized escape in character string starting ""\."
 ```
 
 ```{r}
-str_detect(tekst4, pattern = "\\.")
+str_detect(tekst3, pattern = "\\.")
 ```
 
 <!-- block z popularnymi regex -->
