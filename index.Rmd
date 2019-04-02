@@ -28,7 +28,8 @@ is_html = knitr::is_html_output()
 
 ```{r echo=FALSE, eval=FALSE}
 # automatically create a bib database for R packages
-knitr::write_bib(c("bookdown", "knitr", "rmarkdown",
+knitr::write_bib(c(.packages(),
+                   "bookdown", "knitr", "rmarkdown",
                    "magrittr", "stringr", "readxl",
                    "purrr", "data.table", "readr",
                    "readxl", "writexl", "jsonlite", 
