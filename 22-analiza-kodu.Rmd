@@ -88,6 +88,8 @@ profvis(source("R/moja_funkcja.R"))
 <!-- profiling -->
 <!-- https://r-prof.github.io/jointprof/articles/proposal.html -->
 
+<!-- https://adv-r.hadley.nz/perf-improve.html -->
+
 <!--  Wektoryzacja kodu -->
 <!-- vectorized vs not-vectorized -->
 <!-- https://rstudio-education.github.io/hopr/speed.html -->
