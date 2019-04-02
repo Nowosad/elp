@@ -93,3 +93,8 @@ profvis(source("R/moja_funkcja.R"))
 <!-- https://rstudio-education.github.io/hopr/speed.html -->
 
 ## Zadanie
+
+<!-- 1. benchmarking -->
+<!-- porównaj rowsum vs colsum vs loops implementation -->
+<!-- 2. profiling -->
+<!-- ??? -->
