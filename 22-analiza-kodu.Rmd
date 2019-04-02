@@ -1,12 +1,27 @@
 # Analiza kodu {#analiza-kodu}
 
+<!-- benchmarking -->
+<!-- profiling -->
+<!-- testing -->
+
 ## Benchmarking
 
-<!-- system.time -->
+Benchmarking oznacza określanie wydajności danej operacji czy funkcji.
+Wydajność może być określona na wiele różnych sposobów, w tym najprostszym jest czas wykonania pewnego kodu.
+Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej funkcji `system.time()`.
+
+```{r}
+system.time(kod_do_wykonania)
+```
+
+Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.
 
 ```{r}
 system.time(mean(1:100000000))
 ```
+
+W efekcie dostajemy trzy wartości - `user`, `system` i `elapsed`. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.
+
 
 ```{r}
 mi_do_km1 = function(odl_mile){
