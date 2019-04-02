@@ -35,6 +35,7 @@ paste("t", "o", " ", "k", "o", "t")
 
 Efekt działania funkcji `paste()` jest jeden wektor tekstowy, który składa się z wejściowych wektorów oddzielonych domyślnie spacjami. 
 Funkcja `paste()` ma jednak również dodatkowy argument `sep`, który pozwala na dowolne określanie separatora.
+Ostatnim argumentem tej funkcji jest `collapse`, który łączy elementy jednego wektora tekstowego.
 
 R oferuje też uproszczoną postać tej funkcji o nazwie `paste0()`, w której nie ma znaku seperatora.
 
@@ -42,7 +43,8 @@ R oferuje też uproszczoną postać tej funkcji o nazwie `paste0()`, w której n
 paste0("t", "o", " ", "k", "o", "t")
 ```
 
-
+Te funkcje są używane w sytuacjach, gdy chcemy połączyć stały, znany tekst, wraz z tekstem wprowadzanym przez użytkownika lub pochodzącym z innego źródła.
+Poniżej stworzono dwie nowe zmienne `imie` i `wiek`, których treść złączono ze słowami `"ma"` i `"lat."`.
 
 ```{r}
 imie = "Olek"
@@ -51,7 +53,18 @@ tekst1 = paste(imie, "ma", wiek, "lat.")
 tekst1
 ```
 
-<!-- sekcja o wyswietlaniu tekstu?? -->
+Takie konstrukcje są często używane w funkcjach. 
+Powyższy przykład możnaby przepisać jako:
+
+```{r}
+lata = function(imie, wiek){
+  paste(imie, "ma", wiek, "lat.")
+}
+lata("Asia", 61)
+```
+
+Dodatkowo w R istnieje alternatywa dla `paste()` i `paste0()` w postaci funkcji `sprintf()`.
+
 
 
 ```{r}
@@ -332,7 +345,7 @@ moje_pliki = dir("pliki", pattern = "*\\.(png|jpg)$", full.names = TRUE)
 "TERYT 18; podkarpackie; Rzeszów; 0.2 He; A"
 "TERYT 22; pomorskie;	Gdańsk; 12 C ; B"
 ```
-Napisz kod, który będzie wydział symbole chemiczne pomierzonych pierwiastków.
+Napisz kod, który będzie wydzielał symbole chemiczne pomierzonych pierwiastków.
 
 2) Napisz funkcję nazywającą się `horoskop`, która przyjmuje dwa argumenty `imie` (pierwsze imię, tekst) oraz `miesiac` (miesiąc urodzin, liczba).
 Funkcja ma zwrócić tekst "Osoba o imieniu 'imie' będzie miała jutro szczęście." w przypadku, gdy argument `miesiac` jest liczbą parzystą oraz "Osoba o imieniu 'imie' będzie miała jutro nieszczęście." jeżeli argument `miesiac` jest liczbą nieparzystą.
