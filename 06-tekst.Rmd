@@ -443,24 +443,35 @@ str_replace_all(tekst_pomiary4,
 
 ## Wyszukiwanie plików
 
+Umiejętności związane z obsługą wyrażeń regularnych przydają się też w przypadku wyszukiwania plików zawierających określony tekst w nazwie lub specyficzne rozszerzenie.
+Jest to szczególnie przydatne, gdy posiadamy wiele plików na komputerze, które chcemy następnie przetwarzać w sposób automatyczny.
+
+Do wyświetlania nazw plików znajdujących się w wybranym folderze służy funkcja `dir()`.
+Przykładowo poniższa linia kodu wyświetla wszyskie pliki znajdujące się w folderze `"pliki"`^[Folder o tej nazwie znajduje się w folderze robocznym.].
+
 ```{r}
 dir("pliki")
 ```
+
+W przypadku, gdy interesują nas tylko pliki o wybranym rozszerzeniu możemy użyć argumentu `pattern` i zdefiniować wzorzec.
 
 ```{r}
 dir("pliki", pattern = "*\\.png$")
 ```
 
+W powyższym przykładzie zostaną wybrane tylko pliki o jakiejkolwiek nazwie, ale kończące się na rozszerzenie `.png`.
+Metaznak `$` użyty w tym przypadku zapogiega sytuacji, gdy tekst `.png` znajduje się w środku nazwy pliku.
+
+Do znalezienia plików o kilku rozszerzeniach można użyć metaznaków `()` i `|`.
+
 ```{r}
 dir("pliki", pattern = "*\\.(png|jpg)$")
 ```
 
-```{r}
-dir("pliki", pattern = "*\\.(png|jpg)$", full.names = TRUE)
-```
+Domyślnie funkcja `dir()` pokazuje zawartość wybranego folderu, aby jednak poznać jego pełną ścieżkę względną należy określić argument `full.names` na `TRUE`.
 
 ```{r}
-moje_pliki = dir("pliki", pattern = "*\\.(png|jpg)$", full.names = TRUE)
+dir("pliki", pattern = "*\\.(png|jpg)$", full.names = TRUE)
 ```
 
 ## Zadania
