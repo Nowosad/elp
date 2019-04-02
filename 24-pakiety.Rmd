@@ -40,6 +40,7 @@ Funkcja `create_packages()` tworzy cztery pliki:
 <!-- usethis::use_test() -->
 <!-- devtools::test() -->
 <!-- devtools::test_coverage() -->
+<!-- https://katherinemwood.github.io/post/testthat/ -->
 
 ## Licencje
 
