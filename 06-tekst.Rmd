@@ -270,7 +270,7 @@ Przykładowo `[^L]` oznacza, że szukamy wszystkich elementów nie zawierającyc
 W poniższym przykładzie nie interesują nas elementy, które zaczynają się od jednej lub więcej litery `L`.
 
 ```{r}
-str_detect(tekst4, pattern = "^[^L]+")
+str_detect(tekst3, pattern = "^[^L]+")
 ```
 
 Metaznak `.` służy do określania jakikolwiek znaku, a ukośnik wsteczny (`\`) służy do określania innych znaków specjalnych.
