@@ -197,13 +197,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.14" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zadania-4"><i class="fa fa-check"></i><b>5.14</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a><ul>
-<li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekscie"><i class="fa fa-check"></i><b>6.1</b> Podstawowe operacje na tekście</a></li>
-<li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#wydzielanie-tekstu"><i class="fa fa-check"></i><b>6.2</b> Wydzielanie tekstu</a></li>
-<li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wyrazenia-regularne"><i class="fa fa-check"></i><b>6.3</b> Wyrażenia regularne</a></li>
-<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wtregex"><i class="fa fa-check"></i><b>6.4</b> Wydzielanie tekstu - regex</a></li>
-<li class="chapter" data-level="6.5" data-path="tekst.html"><a href="tekst.html#zamiana-tekstu---regex"><i class="fa fa-check"></i><b>6.5</b> Zamiana tekstu - regex</a></li>
-<li class="chapter" data-level="6.6" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plikow"><i class="fa fa-check"></i><b>6.6</b> Wyszukiwanie plików</a></li>
-<li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#zadania-5"><i class="fa fa-check"></i><b>6.7</b> Zadania</a></li>
+<li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#reprezentacja-tekstu"><i class="fa fa-check"></i><b>6.1</b> Reprezentacja tekstu</a></li>
+<li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekscie"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście</a></li>
+<li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wt"><i class="fa fa-check"></i><b>6.3</b> Wydzielanie tekstu</a></li>
+<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wyrazenia-regularne"><i class="fa fa-check"></i><b>6.4</b> Wyrażenia regularne</a></li>
+<li class="chapter" data-level="6.5" data-path="tekst.html"><a href="tekst.html#wtregex"><i class="fa fa-check"></i><b>6.5</b> Wydzielanie tekstu - regex</a></li>
+<li class="chapter" data-level="6.6" data-path="tekst.html"><a href="tekst.html#zamiana-tekstu---regex"><i class="fa fa-check"></i><b>6.6</b> Zamiana tekstu - regex</a></li>
+<li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plikow"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików</a></li>
+<li class="chapter" data-level="6.8" data-path="tekst.html"><a href="tekst.html#zadania-5"><i class="fa fa-check"></i><b>6.8</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a><ul>
 <li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a><ul>
@@ -312,7 +313,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="tekst" class="section level1">
 <h1><span class="header-section-number">6</span> Tekst</h1>
-<p>Więcej na temat przetwarzania tekstu można znaleźć w rozdziale <a href="https://r4ds.had.co.nz/strings.html">“Strings”</a> książki R for Data Science <span class="citation">(Wickham and Grolemund <a href="#ref-wickham2016r">2016</a>)</span>.</p>
+<p>Podstawowymi typami danych w R są wektory logiczne, numeryczne i znakowe (sekcja <a href="proste-obiekty.html#wektory">5.1</a>).
+Pierwsze z nich przyjmują dwie formy - <code>TRUE</code> i <code>FALSE</code>, przez co istnieje pewna skończona liczba operacji, które można na nich wykonać.
+Wektory numeryczne mogą przyjmować wiele form, ale najczęściej są one przetwarzanie używając podstawowych operacji arytmetycznych, takich jak dodawanie, odejmowanie, mnożenie czy dzielenie.
+Wektory znakowe są natomiast najbardziej zróżnicowane - mogę przyjmować różne formy (nawet w zależności od przyjętego alfabetu), w tym pozwalają one także na przechowywanie wartości logicznych czy numerycznych.</p>
+<p>Celem tego rozdziału jest przedstawienie najczęściej spotykanych operacji na tekście, takich jak jego wyszukiwanie, wydzielanie czy zamiana.
+Więcej na temat przetwarzania tekstu można znaleźć w rozdziale <a href="https://r4ds.had.co.nz/strings.html">“Strings”</a> książki R for Data Science <span class="citation">(Wickham and Grolemund <a href="#ref-wickham2016r">2016</a>)</span>.</p>
+<div id="reprezentacja-tekstu" class="section level2">
+<h2><span class="header-section-number">6.1</span> Reprezentacja tekstu</h2>
 <p>Typ znakowy jest określany poprzez użycie cudzysłowia <code>&quot;</code> lub <code>'</code>.
 Ważne tutaj jest, aby rozpoczynać i kończyć tekst tym samym cudzysłowiem.</p>
 <pre class="sourceCode r"><code class="sourceCode r">t1 =<span class="st"> &quot;kot&quot;</span>
@@ -325,8 +333,9 @@ Oznacza on, że wykonanie kodu nie może zostać zakończone.</p>
 <span class="st">+</span>
 <span class="st">+</span></code></pre>
 <p>W takiej sytuacji należy nacisnąć klawisz Esc, aby przerwać wykonywanie operacji, a następnie poprawić wpisany kod.</p>
+</div>
 <div id="podstawowe-operacje-na-tekscie" class="section level2">
-<h2><span class="header-section-number">6.1</span> Podstawowe operacje na tekście</h2>
+<h2><span class="header-section-number">6.2</span> Podstawowe operacje na tekście</h2>
 <p>Jedną z podstawowych operacji na wektorach znakowych jest ich łączenie.
 Do tego celu służy funkcja <code>paste()</code><a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">paste</span>(<span class="st">&quot;t&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot; &quot;</span>, <span class="st">&quot;k&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot;t&quot;</span>)
@@ -386,10 +395,10 @@ Do rozwiązania tego problemu służy argument <code>locale</code>, w którym mo
 <span class="co">#&gt; [1] &quot;ćma&quot;     &quot;czosnek&quot; &quot;hałas&quot;</span></code></pre>
 <p>Powyżej można zobaczyć dwa przykłady - ułożenia tekstu według polskiego i czeskiego alfabetu<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>.</p>
 </div>
-<div id="wydzielanie-tekstu" class="section level2">
-<h2><span class="header-section-number">6.2</span> Wydzielanie tekstu</h2>
+<div id="wt" class="section level2">
+<h2><span class="header-section-number">6.3</span> Wydzielanie tekstu</h2>
 <p>Częstym przypadkiem jest potrzeba wydzielenia tylko fragmentu tekstu.
-W tej sekcji zostanie pokazane jak wydzielać tekst na podstawie pozycji, ale możliwe jest również wydzielanie tekstu na podstawie wzorca (zobacz sekcję <a href="tekst.html#wtregex">6.4</a>).
+W tej sekcji zostanie pokazane jak wydzielać tekst na podstawie pozycji, ale możliwe jest również wydzielanie tekstu na podstawie wzorca (zobacz sekcję <a href="tekst.html#wtregex">6.5</a>).
 Wydzielanie na podstawie pozycji jest używane w sytuacjach, gdy struktura wejściowego tekstu jest nam znana i stabilna, np. gdy interesuje nas wybranie fragmentu tekstu z automatycznie generowanych raportów.</p>
 <pre class="sourceCode r"><code class="sourceCode r">tekst1 =<span class="st"> &quot;Olek ma 77 lat.&quot;</span></code></pre>
 <p>W przypadku wydzielania tekstu na podstawie pozycji należy określić pozycję pierwszego i ostatniego znaku, który nas interesuje.
@@ -406,20 +415,26 @@ Natomiat poniżej wybrany jest tekst zaczynający się na siódmym znaku od koń
 <span class="co">#&gt; [1] &quot;77 lat.&quot;</span></code></pre>
 </div>
 <div id="wyrazenia-regularne" class="section level2">
-<h2><span class="header-section-number">6.3</span> Wyrażenia regularne</h2>
+<h2><span class="header-section-number">6.4</span> Wyrażenia regularne</h2>
 <!-- https://github.com/VerbalExpressions/JSVerbalExpressions -->
 <!-- https://github.com/richierocks/rebus/blob/master/README.md -->
 <!-- https://www.garrickadenbuie.com/project/regexplain/ -->
 <!-- https://github.com/kevinushey/rex -->
-<p>Wyrażenia regularne (ang. <em>regular expressions</em>), często określane jako <em>regex</em> to sposób opisywanie wzorców tekstu.
+<p>Sprawdzanie czy dany tekst występuje w wektorze można wykonać używając funkcji <code>str_detect()</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">tekst3 =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Magdalena&quot;</span>, <span class="st">&quot;Lena&quot;</span>, <span class="st">&quot;1Lena.csv&quot;</span>, <span class="st">&quot;LLena&quot;</span>, <span class="st">&quot;Helena&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;99&quot;</span>)</code></pre>
+<p>W takim wypadku konieczne jest zdefiniowanie argumentu <code>pattern</code>, czyli wzorca tekstowego, który nas interesuje.
+Aby znaleźć wszystkie wystąpienia (nawet fragmentaryczne) słowa <code>&quot;Lena&quot;</code> można użyć poniższego kodu.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;Lena&quot;</span>)
+<span class="co">#&gt; [1] FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE</span></code></pre>
+<p>Jego efektem będzie wektor logiczny wskazujący, które elemeny zawierają wybrany wzorzec (<code>TRUE</code>) oraz które go nie zawierają (<code>FALSE</code>).
+Wzorzec zdefiniowany w tej sposób jest czuły na wielkość znaków dlatego też zapytanie używając <code>&quot;Lena&quot;</code> da inny wynik niż takie używając <code>&quot;lena&quot;</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;lena&quot;</span>)
+<span class="co">#&gt; [1]  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE</span></code></pre>
+<p>W celu ułatwienia wyszukiwania złożonych fraz powstały wyrażenia regularne.
+Wyrażenia regularne (ang. <em>regular expressions</em>), często określane jako <em>regex</em> to sposób opisywanie wzorców tekstu.
 Używając wyrażeń regularnych możliwe jest, między innymi, znajdowanie tekstu lub zamienienie, który spełnia wymagane warunki.
 Wyrażenia regularne są powszechnie używane w wyszukiwarkach internetowych, edytorach tekstu, oraz wielu językach programowania.</p>
-<!-- basic stuff -->
-<pre class="sourceCode r"><code class="sourceCode r">tekst4 =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Magdalena&quot;</span>, <span class="st">&quot;Lena&quot;</span>, <span class="st">&quot;1Lena.csv&quot;</span>, <span class="st">&quot;LLena&quot;</span>, <span class="st">&quot;Helena&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="dv">99</span>)</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="st">&quot;Lena&quot;</span>)
-<span class="co">#&gt; [1] FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="st">&quot;lena&quot;</span>)
-<span class="co">#&gt; [1]  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE</span></code></pre>
+<p>Wyrażenia regularne opierają się o stosowanie szeregu operatorów (metaznaków) wymienionych w tabeli <a href="tekst.html#tab:regexoperators">6.1</a>.</p>
 <table>
 <caption><span id="tab:regexoperators">Tabela 6.1: </span>Metaznaki w wyrażeniach regularnych</caption>
 <thead>
@@ -471,7 +486,7 @@ Wyrażenia regularne są powszechnie używane w wyszukiwarkach internetowych, ed
 </tr>
 <tr class="odd">
 <td align="left">.</td>
-<td align="left">Jakikolwiek znak oprócz nowej linii ()</td>
+<td align="left">Jakikolwiek znak oprócz nowej linii (\n)</td>
 </tr>
 <tr class="even">
 <td align="left">\</td>
@@ -479,30 +494,49 @@ Wyrażenia regularne są powszechnie używane w wyszukiwarkach internetowych, ed
 </tr>
 </tbody>
 </table>
-<p>Wymienione powyżej znaki (np. <code>^</code><!--Kareta--> czy <code>.</code>) określane są jako metaznaki (ang. <em>metacharacters</em>) i mają one specjalne znaczenie.
+<p>Wymienione powyżej znaki (np. <code>^</code><!--Kareta--> czy <code>.</code>) mają specjalne znaczenie.
 W związku z tym, jeżeli chcemy wyszukać tekstu zawierającego specjalny znak, musimy użyć ukośnik wsteczny (<code>\</code>, ang. <em>backslash</em>).
 Istnieje wiele dodatkowych znaków specjalnych, np. <code>\n</code> - nowa linia, <code>\t</code> - tabulator, <code>\d</code> - każdy znak numeryczny (stałoprzecinkowy), <code>\s</code> - znak niedrukowalny, np. spacja, tabulator, nowa linia.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;^L&quot;</span>)
+<p>Sprawdźmy działanie wyrażeń regularnych na kilku przykładach.
+W pierwszym z nich określiliśmy nasz wzorzec jako <code>&quot;^L&quot;</code>, co oznacza, że interesują nas tylko elementy wektora <code>tekst3</code> rozpoczynające się od dużej litery <code>L</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;^L&quot;</span>)
 <span class="co">#&gt; [1] FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;ena$&quot;</span>)
+<p>Do określenia zakończenia wzorca służy metaznak <code>$</code>.
+Poniżej wyszukano elementy, które kończą się na <code>ena</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;ena$&quot;</span>)
 <span class="co">#&gt; [1]  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;(ena|nna)$&quot;</span>)
+<p>Operatory <code>()</code> i <code>|</code> można łączyć, aby zdefiniować alternatywy.
+Przykładowo, interesują nas elementy, które kończą się na <code>ena</code> lub <code>nna</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;(ena|nna)$&quot;</span>)
 <span class="co">#&gt; [1]  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-Z]&quot;</span>)
+<p>W wyrażeniach regularnych można też stosować pewne skrótowe polecenia.
+W poniższym przypadku interesują nas elementy, które zawierają jakiekolwiek znaki od małego <code>a</code> do małego <code>z</code> oraz dużego <code>A</code> do dużego <code>Z</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-Z]&quot;</span>)
 <span class="co">#&gt; [1]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;[0-9]&quot;</span>)
+<p>Podobnie można określać wartości numeryczne - np. tylko elementy zawierające wartości od <code>0</code> do <code>9</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;[0-9]&quot;</span>)
 <span class="co">#&gt; [1] FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;L+&quot;</span>)
+<p>Celem metaznaku <code>+</code> jest określenie, że poprzedni znak musi wystąpić jeden lub więcej razy.
+Poniżej interesują nas tylko takie elementy, w których litera <code>L</code> występuje raz lub więcej.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;L+&quot;</span>)
 <span class="co">#&gt; [1] FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;^[^L]+&quot;</span>)
+<p>W wyrażeniach regularnych metaznak <code>^</code> określa początek tekstu/linii, ale ma on też inne zastosowanie, gdy jest użyty w kwadratowym nawiasie.
+Przykładowo <code>[^L]</code> oznacza, że szukamy wszystkich elementów nie zawierających litery <code>L</code>.
+W poniższym przykładzie nie interesują nas elementy, które zaczynają się od jednej lub więcej litery <code>L</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;^[^L]+&quot;</span>)
 <span class="co">#&gt; [1]  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;\.&quot;</span>)
+<p>Metaznak <code>.</code> służy do określania jakikolwiek znaku, a ukośnik wsteczny (<code>\</code>) służy do określania innych znaków specjalnych.
+Dlatego też, jeżeli chcemy wyszukać elementów zawierających kropki (<code>.</code>) musimy połączyć ukośnik wsteczny z tym znakiem.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;\.&quot;</span>)
 <span class="co">#&gt; Error: &#39;\.&#39; is an unrecognized escape in character string starting &quot;&quot;\.&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst4, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>)
+<p>Powyższy przykład daje jednak komunikat błędu - aby użyć ukośnik wsteczny do zasygnalizowania, że interesuje nas kropka musimy wprowadzić go dwa razy<a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>)
 <span class="co">#&gt; [1] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE</span></code></pre>
 <!-- block z popularnymi regex -->
-<pre class="sourceCode r"><code class="sourceCode r">y =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kołdra&quot;</span>, <span class="st">&quot;kordła&quot;</span>, <span class="st">&quot;pościel&quot;</span>)
-<span class="kw">str_detect</span>(y, <span class="dt">pattern =</span> <span class="st">&quot;ko(łdr|rdł)a&quot;</span>)</code></pre>
+<p>Celem funkcji <code>str_detect()</code> jest wskazanie, który element spełnia dane zapytanie.
+Do wydzielenia elementu służy funkcja <code>str_subset()</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_subset</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>)
+<span class="co">#&gt; [1] &quot;1Lena.csv&quot;</span></code></pre>
 <!-- https://stringr.tidyverse.org/articles/regular-expressions.html -->
 <p>Umiejętności używania wyrażeń regularnych można trenować używając różnych zasobów internetowych, np. strony <a href="https://regexr.com/" class="uri">https://regexr.com/</a>, <a href="https://regex101.com/" class="uri">https://regex101.com/</a>, czy <a href="https://regexcrossword.com/" class="uri">https://regexcrossword.com/</a>.
 Pomocne w zrozumieniu bardziej zaawansowanych elementów wyrażeń regularncych może być też prezentacja <a href="https://www.youtube.com/watch?v=EkluES9Rvak">Best of Fluent 2012: /Reg(exp){2}lained/: Demystifying Regular Expressions</a> oraz książka Mastering Regular Expressions <span class="citation">(Friedl <a href="#ref-friedl2006mastering">2006</a>)</span>.
@@ -510,83 +544,130 @@ Pomocne w zrozumieniu bardziej zaawansowanych elementów wyrażeń regularncych 
 <!-- https://www.rstudio.com/resources/cheatsheets/#stringr --></p>
 </div>
 <div id="wtregex" class="section level2">
-<h2><span class="header-section-number">6.4</span> Wydzielanie tekstu - regex</h2>
-<!-- https://r4ds.had.co.nz/strings.html#extract-matches -->
-<pre class="sourceCode r"><code class="sourceCode r">tekst_pomiary =<span class="st"> &quot;Wrocław: 23, Bydgoszcz: 12, Toruń: 11, Lublin: 14&quot;</span></code></pre>
+<h2><span class="header-section-number">6.5</span> Wydzielanie tekstu - regex</h2>
+<p>Innym często spotykanym problemem w pracy z tekstem jest posiadanie długiego elementu tekstowego, z którego chcemy tylko wydobyć pewien fragment.
+W sekcji <a href="tekst.html#wt">6.3</a> używaliśmy do tego pozycji, ale możemy zastosować również wzroce do tego celu.</p>
+<pre class="sourceCode r"><code class="sourceCode r">tekst_pomiary =<span class="st"> &quot;Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3&quot;</span></code></pre>
+<p>Wektor <code>tekst_pomiary</code> zawiera tylko jeden element tekstowy, w którym wymienione są kolejne miasta i ich wartości.
+Wyobraźmy sobie, że interesują nas tylko nazwy miast zawarte w powyższym wektorze.
+Do wydzielania tekstu na podstawie wyrażeń regularnych służy funkcja <code>str_extract()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_extract</span>(tekst_pomiary, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-Z]*&quot;</span>)
 <span class="co">#&gt; [1] &quot;Wroc&quot;</span></code></pre>
+<p>Podaliśmy jako wzorzec wszyskie litery od małego <code>a</code> do małego <code>z</code> oraz dużego <code>A</code> do dużego <code>Z</code>.
+Niestety w efekcie otrzymaliśmy tylko Wroc - taka definicja wzorca obejmuje tylko litery z angielskiego alfabetu.</p>
+<p>Aby to naprawić możemy dodać do tego wzorca polskie litery.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_extract</span>(tekst_pomiary, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)
 <span class="co">#&gt; [1] &quot;Wrocław&quot;</span></code></pre>
+<p>Tym razem otrzymaliśmy pełną nazwę pierwszego miasta, ale nie żadnego kolejnego.
+Funkcja <code>str_extract()</code> jest leniwa - po znalezieniu pierwszego pasującego fragmentu przestaje ona szukać dalej i przekazuje wynik.</p>
+<p>Aby uzyskać wszystkie przypadki spełniające określony wzorzec należy użyć funkcji <code>str_extract_all()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_extract_all</span>(tekst_pomiary, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)
 <span class="co">#&gt; [[1]]</span>
 <span class="co">#&gt;  [1] &quot;Wrocław&quot;   &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span>
-<span class="co">#&gt;  [6] &quot;&quot;          &quot;&quot;          &quot;Bydgoszcz&quot; &quot;&quot;          &quot;&quot;         </span>
-<span class="co">#&gt; [11] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;Toruń&quot;    </span>
-<span class="co">#&gt; [16] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span>
-<span class="co">#&gt; [21] &quot;&quot;          &quot;Lublin&quot;    &quot;&quot;          &quot;&quot;          &quot;&quot;         </span>
-<span class="co">#&gt; [26] &quot;&quot;          &quot;&quot;</span></code></pre>
+<span class="co">#&gt;  [6] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;Bydgoszcz&quot;</span>
+<span class="co">#&gt; [11] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span>
+<span class="co">#&gt; [16] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;Toruń&quot;     &quot;&quot;         </span>
+<span class="co">#&gt; [21] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span>
+<span class="co">#&gt; [26] &quot;&quot;          &quot;&quot;          &quot;Lublin&quot;    &quot;&quot;          &quot;&quot;         </span>
+<span class="co">#&gt; [31] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;</span></code></pre>
+<p>Efektem jej działania są wszystkie nazwy miast z wektora <code>tekst_pomiary</code>, ale też wiele elementów pustych.
+Dlaczego?
+W powyższym wzorcu użyliśmy metaznaku <code>*</code>, który szuka wystąpienia zdefiniowanych znaków zero lub więcej razy.
+Gdy napotkany jest zdefiniowany znak sprawdzane jest jego kolejne wystąpienie, aż do momentu, gdy pojawi się jakiś inny znak.
+W efekcie zwrócony został np. <code>&quot;Wrocław&quot;</code>.
+Metaznak <code>*</code> w przypadku, gdy zdefiniowanego znaku nie ma (wystąpił zero razy) zwraca pusty element.</p>
+<p>Jeżeli interesują nas tylko fragmenty wektora zawierające tekst musimy użyć metaznaku <code>+</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_extract_all</span>(tekst_pomiary, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+&quot;</span>)
 <span class="co">#&gt; [[1]]</span>
 <span class="co">#&gt; [1] &quot;Wrocław&quot;   &quot;Bydgoszcz&quot; &quot;Toruń&quot;     &quot;Lublin&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">tekst_pomiary2 =<span class="st"> &quot;Wrocław: 23, Bydgoszcz: 12, Toruń: 11, Lublin: 14, Gorzów Wielkopolski: 20, Zielona Góra: 19&quot;</span></code></pre>
+<p>Wyobrażmy sobie, że otrzymaliśmy rozszerzoną wersję poprzednich danych, która tym razem zawiera dwa dodatkowe miasta - Gorzów Wielkopolski i Zieloną Górę.</p>
+<pre class="sourceCode r"><code class="sourceCode r">tekst_pomiary2 =<span class="st"> &quot;Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3, Gorzów Wielkopolski: 20, Zielona Góra: 19&quot;</span></code></pre>
+<p>Nadal interesuje nas wydzielenie nazw miast, więc próbujemy użyć kodu, który stworzyliśmy powyżej.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_extract_all</span>(tekst_pomiary2, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+&quot;</span>)
 <span class="co">#&gt; [[1]]</span>
 <span class="co">#&gt; [1] &quot;Wrocław&quot;      &quot;Bydgoszcz&quot;    &quot;Toruń&quot;        &quot;Lublin&quot;      </span>
 <span class="co">#&gt; [5] &quot;Gorzów&quot;       &quot;Wielkopolski&quot; &quot;Zielona&quot;      &quot;Góra&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_extract_all</span>(tekst_pomiary2, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[</span><span class="ch">\\</span><span class="st">s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)
+<p>Niestety w efekcie otrzymujemy osiem elementów, gdzie <code>&quot;Gorzów&quot;</code> jest innym elementem niż <code>&quot;Wielkopolski&quot;</code>.
+Zdefiniowany przez nas wzorzec nie brał pod uwagę możliwości wystąpienia spacji.
+Możemy naprawić tę sytuację w poniższy sposób.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_extract_all</span>(tekst_pomiary2, 
+       <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[</span><span class="ch">\\</span><span class="st">s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)
 <span class="co">#&gt; [[1]]</span>
 <span class="co">#&gt; [1] &quot;Wrocław&quot;             &quot;Bydgoszcz&quot;           &quot;Toruń&quot;              </span>
 <span class="co">#&gt; [4] &quot;Lublin&quot;              &quot;Gorzów Wielkopolski&quot; &quot;Zielona Góra&quot;</span></code></pre>
+<p>Teraz szukamy wystąpienia liter co najmniej raz lub więcej (<code>+</code>), następnie wystąpienia spacji zero razy lub raz (<code>[\\s]?</code>) i kończymy na sprawdzeniu wystąpienia tekstu zero razy lub więcej (<code>*</code>).</p>
+<p>Podobnie jak w każdym powyższym przypadku, efekt działania funkcji może być użyty do stworzenia nowego obiektu.</p>
 <pre class="sourceCode r"><code class="sourceCode r">miasta_pomiary2 =<span class="st"> </span><span class="kw">str_extract_all</span>(tekst_pomiary2,
-                                  <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[</span><span class="ch">\\</span><span class="st">s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)
+       <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[</span><span class="ch">\\</span><span class="st">s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)
 miasta_pomiary2
 <span class="co">#&gt; [[1]]</span>
 <span class="co">#&gt; [1] &quot;Wrocław&quot;             &quot;Bydgoszcz&quot;           &quot;Toruń&quot;              </span>
 <span class="co">#&gt; [4] &quot;Lublin&quot;              &quot;Gorzów Wielkopolski&quot; &quot;Zielona Góra&quot;</span></code></pre>
 </div>
 <div id="zamiana-tekstu---regex" class="section level2">
-<h2><span class="header-section-number">6.5</span> Zamiana tekstu - regex</h2>
-<!-- https://r4ds.had.co.nz/strings.html#replacing-matches -->
+<h2><span class="header-section-number">6.6</span> Zamiana tekstu - regex</h2>
+<p>Innym przykładem działania na tekście jest zamiana wybranych jego elementów.</p>
 <pre class="sourceCode r"><code class="sourceCode r">tekst_pomiary3 =<span class="st"> &quot;Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3&quot;</span></code></pre>
+<p>Powyższy obiekt <code>tekst_pomiary3</code> zawiera nazwy miast i wartości pomiarów przedstawione zgodnie z amerykańskim standardem, gdzie kropka oddziela wartości dziesiętne, a przecinek kolejne elementy.
+Aby zamienić wybrany wzorzec w tekście (np. kropkę na przecinek) możemy użyć funkcji <code>str_replace()</code>, w której podajemy obiekt tekstowy, szukany wzorzec oraz jego zamianę.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace</span>(tekst_pomiary3, 
             <span class="dt">pattern =</span> <span class="st">&quot;.&quot;</span>, 
             <span class="dt">replacement =</span> <span class="st">&quot;,&quot;</span>)
 <span class="co">#&gt; [1] &quot;,rocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3&quot;</span></code></pre>
+<p>Efekt działania tego kodu nie jest jednak zgodny z naszymi oczekiwaniami.
+Zamiast zamiany wszyskich kropek na przecinki, nastąpiła zamiana pierwszego znaku w tekście (litery <code>W</code>) na przecinek.
+Wynika to ze znaczenia metaznaku <code>.</code>, który reprezentuje jakikolwiek znak oprócz nowej linii.
+Żeby naprawić tę sytuację musimy użyć ukośnika wstecznego.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace</span>(tekst_pomiary3, 
             <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>, 
             <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>)
 <span class="co">#&gt; [1] &quot;Wrocław: 23,5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3&quot;</span></code></pre>
+<p>Funkcja <code>str_replace()</code>, podobnie jak <code>str_extract()</code>, jest leniwa i zamienia tylko pierwsze wystąpienie wzorca.
+Do zamiany wszystkich przypadków trzeba użyć funkcji <code>str_replace_all()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace_all</span>(tekst_pomiary3, 
                 <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>, 
                 <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>)
 <span class="co">#&gt; [1] &quot;Wrocław: 23,5, Bydgoszcz: 12,7, Toruń: 11,1, Lublin: 14,3&quot;</span></code></pre>
+<p>W przypadku, gdy interesuje nas zarówno zamiana kropek na przecinki oraz przecinków na średniki, musimy zacząć od tej drugiej zamiany.</p>
 <pre class="sourceCode r"><code class="sourceCode r">tekst_pomiary4 =<span class="st"> </span><span class="kw">str_replace_all</span>(tekst_pomiary3,
                                  <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>,
                                  <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">;&quot;</span>)</code></pre>
+<p>Nowy obiekt <code>tekst_pomiary4</code> oddziela kolejne miasta średnikami.
+Teraz na jego podstawie możliwa jest zamiana kropek na przecinki w sposób opisany powyżej.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace_all</span>(tekst_pomiary4, 
                 <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>, 
                 <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>)
 <span class="co">#&gt; [1] &quot;Wrocław: 23,5; Bydgoszcz: 12,7; Toruń: 11,1; Lublin: 14,3&quot;</span></code></pre>
+<p>Funkcje jakie jak <code>str_replace()</code> czy <code>str_replace_all()</code> mogą być też stosowane do usuwania fragmentów tekstu.
+Do tego celu można zdefiniować wzorzec jaki chcemy usunąć, a jako jego zamianę tekst pusty (<code>&quot;&quot;</code>).</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace_all</span>(tekst_pomiary4, 
                 <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+&quot;</span>,
                 <span class="dt">replacement =</span> <span class="st">&quot;&quot;</span>)
 <span class="co">#&gt; [1] &quot;: 23.5; : 12.7; : 11.1; : 14.3&quot;</span></code></pre>
 </div>
 <div id="wyszukiwanie-plikow" class="section level2">
-<h2><span class="header-section-number">6.6</span> Wyszukiwanie plików</h2>
+<h2><span class="header-section-number">6.7</span> Wyszukiwanie plików</h2>
+<p>Umiejętności związane z obsługą wyrażeń regularnych przydają się też w przypadku wyszukiwania plików zawierających określony tekst w nazwie lub specyficzne rozszerzenie.
+Jest to szczególnie przydatne, gdy posiadamy wiele plików na komputerze, które chcemy następnie przetwarzać w sposób automatyczny.</p>
+<p>Do wyświetlania nazw plików znajdujących się w wybranym folderze służy funkcja <code>dir()</code>.
+Przykładowo poniższa linia kodu wyświetla wszyskie pliki znajdujące się w folderze <code>&quot;pliki&quot;</code><a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>)
 <span class="co">#&gt; [1] &quot;dane_meteo.csv&quot;  &quot;dane_meteo.rds&quot;  &quot;dane_meteo.xlsx&quot; &quot;dokument.docx&quot;  </span>
 <span class="co">#&gt; [5] &quot;kod.R&quot;           &quot;mapa.png&quot;        &quot;obrazek.png&quot;     &quot;zdjęcie.jpg&quot;</span></code></pre>
+<p>W przypadku, gdy interesują nas tylko pliki o wybranym rozszerzeniu możemy użyć argumentu <code>pattern</code> i zdefiniować wzorzec.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.png$&quot;</span>)
 <span class="co">#&gt; [1] &quot;mapa.png&quot;    &quot;obrazek.png&quot;</span></code></pre>
+<p>W powyższym przykładzie zostaną wybrane tylko pliki o jakiejkolwiek nazwie, ale kończące się na rozszerzenie <code>.png</code>.
+Metaznak <code>$</code> użyty w tym przypadku zapogiega sytuacji, gdy tekst <code>.png</code> znajduje się w środku nazwy pliku.</p>
+<p>Do znalezienia plików o kilku rozszerzeniach można użyć metaznaków <code>()</code> i <code>|</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.(png|jpg)$&quot;</span>)
 <span class="co">#&gt; [1] &quot;mapa.png&quot;    &quot;obrazek.png&quot; &quot;zdjęcie.jpg&quot;</span></code></pre>
+<p>Domyślnie funkcja <code>dir()</code> pokazuje zawartość wybranego folderu, aby jednak poznać jego pełną ścieżkę względną należy określić argument <code>full.names</code> na <code>TRUE</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.(png|jpg)$&quot;</span>, <span class="dt">full.names =</span> <span class="ot">TRUE</span>)
 <span class="co">#&gt; [1] &quot;pliki/mapa.png&quot;    &quot;pliki/obrazek.png&quot; &quot;pliki/zdjęcie.jpg&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">moje_pliki =<span class="st"> </span><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.(png|jpg)$&quot;</span>, <span class="dt">full.names =</span> <span class="ot">TRUE</span>)</code></pre>
 </div>
 <div id="zadania-5" class="section level2">
-<h2><span class="header-section-number">6.7</span> Zadania</h2>
+<h2><span class="header-section-number">6.8</span> Zadania</h2>
 <ol style="list-style-type: decimal">
 <li>Plik tekstowy zawiera listę pomiarów, w której piąty i czwarty znak od końca oznacza symbol chemiczny pomierzonego pierwiastka, przykładowo:</li>
 </ol>
@@ -635,6 +716,8 @@ Poniżej znajduje się fragment przykładowych danych wejściowych.</li>
 <ol start="33">
 <li id="fn33"><p>Odpowiednikiem funkcji <code>paste()</code> w pakiecie <strong>stringr</strong> jest funkcja <code>str_c()</code><a href="tekst.html#fnref33" class="footnote-back">↩</a></p></li>
 <li id="fn34"><p><a href="https://en.wikipedia.org/wiki/Czech_orthography" class="uri">https://en.wikipedia.org/wiki/Czech_orthography</a><a href="tekst.html#fnref34" class="footnote-back">↩</a></p></li>
+<li id="fn35"><p><a href="https://xkcd.com/1638/" class="uri">https://xkcd.com/1638/</a><a href="tekst.html#fnref35" class="footnote-back">↩</a></p></li>
+<li id="fn36"><p>Folder o tej nazwie znajduje się w folderze robocznym.<a href="tekst.html#fnref36" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

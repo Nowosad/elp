@@ -1,8 +1,15 @@
 
 # Tekst {#tekst}
 
+Podstawowymi typami danych w R są wektory logiczne, numeryczne i znakowe (sekcja \@ref(wektory)). 
+Pierwsze z nich przyjmują dwie formy - `TRUE` i `FALSE`, przez co istnieje pewna skończona liczba operacji, które można na nich wykonać.
+Wektory numeryczne mogą przyjmować wiele form, ale najczęściej są one przetwarzanie używając podstawowych operacji arytmetycznych, takich jak dodawanie, odejmowanie, mnożenie czy dzielenie.
+Wektory znakowe są natomiast najbardziej zróżnicowane - mogę przyjmować różne formy (nawet w zależności od przyjętego alfabetu), w tym pozwalają one także na przechowywanie wartości logicznych czy numerycznych.
 
+Celem tego rozdziału jest przedstawienie najczęściej spotykanych operacji na tekście, takich jak jego wyszukiwanie, wydzielanie czy zamiana.
 Więcej na temat przetwarzania tekstu można znaleźć w rozdziale ["Strings"](https://r4ds.had.co.nz/strings.html) książki R for Data Science [@wickham2016r].
+
+## Reprezentacja tekstu
 
 Typ znakowy jest określany poprzez użycie cudzysłowia `"` lub `'`.
 Ważne tutaj jest, aby rozpoczynać i kończyć tekst tym samym cudzysłowiem.
@@ -142,7 +149,7 @@ str_sort(tekst2, locale = "cs")
 
 Powyżej można zobaczyć dwa przykłady - ułożenia tekstu według polskiego i czeskiego alfabetu^[https://en.wikipedia.org/wiki/Czech_orthography].
 
-## Wydzielanie tekstu
+## Wydzielanie tekstu {#wt}
 
 Częstym przypadkiem jest potrzeba wydzielenia tylko fragmentu tekstu.
 W tej sekcji zostanie pokazane jak wydzielać tekst na podstawie pozycji, ale możliwe jest również wydzielanie tekstu na podstawie wzorca (zobacz sekcję \@ref(wtregex)).
@@ -189,28 +196,37 @@ str_sub(tekst1, start = -7, end = -1)
 
 
 
+Sprawdzanie czy dany tekst występuje w wektorze można wykonać używając funkcji `str_detect()`.
+
+
+```r
+tekst3 = c("Magdalena", "Lena", "1Lena.csv", "LLena", "Helena", "Anna", "99")
+```
+
+W takim wypadku konieczne jest zdefiniowanie argumentu `pattern`, czyli wzorca tekstowego, który nas interesuje.
+Aby znaleźć wszystkie wystąpienia (nawet fragmentaryczne) słowa `"Lena"` można użyć poniższego kodu.
+
+
+```r
+str_detect(tekst3, pattern = "Lena")
+#> [1] FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE
+```
+
+Jego efektem będzie wektor logiczny wskazujący, które elemeny zawierają wybrany wzorzec (`TRUE`) oraz które go nie zawierają (`FALSE`).
+Wzorzec zdefiniowany w tej sposób jest czuły na wielkość znaków dlatego też zapytanie używając `"Lena"` da inny wynik niż takie używając `"lena"`.
+
+
+```r
+str_detect(tekst3, pattern = "lena")
+#> [1]  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE
+```
+
+W celu ułatwienia wyszukiwania złożonych fraz powstały wyrażenia regularne.
 Wyrażenia regularne (ang. *regular expressions*), często określane jako *regex* to sposób opisywanie wzorców tekstu. 
 Używając wyrażeń regularnych możliwe jest, między innymi, znajdowanie tekstu lub zamienienie, który spełnia wymagane warunki.
 Wyrażenia regularne są powszechnie używane w wyszukiwarkach internetowych, edytorach tekstu, oraz wielu językach programowania.
 
-<!-- basic stuff -->
-
-
-```r
-tekst4 = c("Magdalena", "Lena", "1Lena.csv", "LLena", "Helena", "Anna", 99)
-```
-
-
-```r
-str_detect(tekst4, "Lena")
-#> [1] FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE
-```
-
-
-```r
-str_detect(tekst4, "lena")
-#> [1]  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE
-```
+Wyrażenia regularne opierają się o stosowanie szeregu operatorów (metaznaków) wymienionych w tabeli \@ref(tab:regexoperators).
 
 
 Table: (\#tab:regexoperators)Metaznaki w wyrażeniach regularnych
@@ -227,74 +243,104 @@ $          Określa koniec testu/linii
 +          Poprzedni znak zostanie wybrany jeden lub więcej razy 
 ?          Poprzedni znak zostanie wybrany zero lub jeden raz    
 {n}        Poprzedni znak zostanie wybrany n razy                
-.          Jakikolwiek znak oprócz nowej linii (\n)              
+.          Jakikolwiek znak oprócz nowej linii (\\n)             
 \\         Pozwala na użycie specjalnych znaków                  
 
-Wymienione powyżej znaki (np. `^`<!--Kareta--> czy `.`) określane są jako metaznaki (ang. *metacharacters*) i mają one specjalne znaczenie.
+Wymienione powyżej znaki (np. `^`<!--Kareta--> czy `.`) mają specjalne znaczenie.
 W związku z tym, jeżeli chcemy wyszukać tekstu zawierającego specjalny znak, musimy użyć ukośnik wsteczny (`\`, ang. *backslash*).
 Istnieje wiele dodatkowych znaków specjalnych, np. `\n` - nowa linia, `\t` - tabulator, `\d` - każdy znak numeryczny (stałoprzecinkowy), `\s` - znak niedrukowalny, np. spacja, tabulator, nowa linia.
 
+Sprawdźmy działanie wyrażeń regularnych na kilku przykładach.
+W pierwszym z nich określiliśmy nasz wzorzec jako `"^L"`, co oznacza, że interesują nas tylko elementy wektora `tekst3` rozpoczynające się od dużej litery `L`.
+
 
 ```r
-str_detect(tekst4, pattern = "^L")
+str_detect(tekst3, pattern = "^L")
 #> [1] FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE
 ```
 
+Do określenia zakończenia wzorca służy metaznak `$`. 
+Poniżej wyszukano elementy, które kończą się na `ena`.
+
 
 ```r
-str_detect(tekst4, pattern = "ena$")
+str_detect(tekst3, pattern = "ena$")
 #> [1]  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE
 ```
 
+Operatory `()` i `|` można łączyć, aby zdefiniować alternatywy.
+Przykładowo, interesują nas elementy, które kończą się na `ena` lub `nna`.
+
 
 ```r
-str_detect(tekst4, pattern = "(ena|nna)$")
+str_detect(tekst3, pattern = "(ena|nna)$")
 #> [1]  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE
 ```
 
+W wyrażeniach regularnych można też stosować pewne skrótowe polecenia.
+W poniższym przypadku interesują nas elementy, które zawierają jakiekolwiek znaki od małego `a` do małego `z` oraz dużego `A` do dużego `Z`.
+
 
 ```r
-str_detect(tekst4, pattern = "[a-zA-Z]")
+str_detect(tekst3, pattern = "[a-zA-Z]")
 #> [1]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE
 ```
 
+Podobnie można określać wartości numeryczne - np. tylko elementy zawierające wartości od `0` do `9`.
+
 
 ```r
-str_detect(tekst4, pattern = "[0-9]")
+str_detect(tekst3, pattern = "[0-9]")
 #> [1] FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE
 ```
 
+Celem metaznaku `+` jest określenie, że poprzedni znak musi wystąpić jeden lub więcej razy.
+Poniżej interesują nas tylko takie elementy, w których litera `L` występuje raz lub więcej.
+
 
 ```r
-str_detect(tekst4, pattern = "L+")
+str_detect(tekst3, pattern = "L+")
 #> [1] FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE
 ```
 
+W wyrażeniach regularnych metaznak `^` określa początek tekstu/linii, ale ma on też inne zastosowanie, gdy jest użyty w kwadratowym nawiasie.
+Przykładowo `[^L]` oznacza, że szukamy wszystkich elementów nie zawierających litery `L`.
+W poniższym przykładzie nie interesują nas elementy, które zaczynają się od jednej lub więcej litery `L`.
+
 
 ```r
-str_detect(tekst4, pattern = "^[^L]+")
+str_detect(tekst3, pattern = "^[^L]+")
 #> [1]  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE
 ```
 
+Metaznak `.` służy do określania jakikolwiek znaku, a ukośnik wsteczny (`\`) służy do określania innych znaków specjalnych.
+Dlatego też, jeżeli chcemy wyszukać elementów zawierających kropki (`.`) musimy połączyć ukośnik wsteczny z tym znakiem.
+
 
 ```r
-str_detect(tekst4, pattern = "\.")
+str_detect(tekst3, pattern = "\.")
 #> Error: '\.' is an unrecognized escape in character string starting ""\."
 ```
 
+Powyższy przykład daje jednak komunikat błędu - aby użyć ukośnik wsteczny do zasygnalizowania, że interesuje nas kropka musimy wprowadzić go dwa razy^[https://xkcd.com/1638/].
+
 
 ```r
-str_detect(tekst4, pattern = "\\.")
+str_detect(tekst3, pattern = "\\.")
 #> [1] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE
 ```
 
 <!-- block z popularnymi regex -->
+Celem funkcji `str_detect()` jest wskazanie, który element spełnia dane zapytanie.
+Do wydzielenia elementu służy funkcja `str_subset()`.
 
 
 ```r
-y = c("kołdra", "kordła", "pościel")
-str_detect(y, pattern = "ko(łdr|rdł)a")
+str_subset(tekst3, pattern = "\\.")
+#> [1] "1Lena.csv"
 ```
+
+
 
 <!-- https://stringr.tidyverse.org/articles/regular-expressions.html -->
 Umiejętności używania wyrażeń regularnych można trenować używając różnych zasobów internetowych, np. strony https://regexr.com/, https://regex101.com/, czy https://regexcrossword.com/.
@@ -304,12 +350,17 @@ Pomocne w zrozumieniu bardziej zaawansowanych elementów wyrażeń regularncych 
 
 ## Wydzielanie tekstu - regex {#wtregex}
 
-<!-- https://r4ds.had.co.nz/strings.html#extract-matches -->
+Innym często spotykanym problemem w pracy z tekstem jest posiadanie długiego elementu tekstowego, z którego chcemy tylko wydobyć pewien fragment. 
+W sekcji \@ref(wt) używaliśmy do tego pozycji, ale możemy zastosować również wzroce do tego celu.
 
 
 ```r
-tekst_pomiary = "Wrocław: 23, Bydgoszcz: 12, Toruń: 11, Lublin: 14"
+tekst_pomiary = "Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3"
 ```
+
+Wektor `tekst_pomiary` zawiera tylko jeden element tekstowy, w którym wymienione są kolejne miasta i ich wartości.
+Wyobraźmy sobie, że interesują nas tylko nazwy miast zawarte w powyższym wektorze. 
+Do wydzielania tekstu na podstawie wyrażeń regularnych służy funkcja `str_extract()`.
 
 
 ```r
@@ -317,23 +368,43 @@ str_extract(tekst_pomiary, pattern = "[a-zA-Z]*")
 #> [1] "Wroc"
 ```
 
+Podaliśmy jako wzorzec wszyskie litery od małego `a` do małego `z` oraz dużego `A` do dużego `Z`.
+Niestety w efekcie otrzymaliśmy tylko Wroc - taka definicja wzorca obejmuje tylko litery z angielskiego alfabetu.
+
+Aby to naprawić możemy dodać do tego wzorca polskie litery.
+
 
 ```r
 str_extract(tekst_pomiary, pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*")
 #> [1] "Wrocław"
 ```
 
+Tym razem otrzymaliśmy pełną nazwę pierwszego miasta, ale nie żadnego kolejnego.
+Funkcja `str_extract()` jest leniwa - po znalezieniu pierwszego pasującego fragmentu przestaje ona szukać dalej i przekazuje wynik.
+
+Aby uzyskać wszystkie przypadki spełniające określony wzorzec należy użyć funkcji `str_extract_all()`.
+
 
 ```r
 str_extract_all(tekst_pomiary, pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*")
 #> [[1]]
 #>  [1] "Wrocław"   ""          ""          ""          ""         
-#>  [6] ""          ""          "Bydgoszcz" ""          ""         
-#> [11] ""          ""          ""          ""          "Toruń"    
-#> [16] ""          ""          ""          ""          ""         
-#> [21] ""          "Lublin"    ""          ""          ""         
-#> [26] ""          ""
+#>  [6] ""          ""          ""          ""          "Bydgoszcz"
+#> [11] ""          ""          ""          ""          ""         
+#> [16] ""          ""          ""          "Toruń"     ""         
+#> [21] ""          ""          ""          ""          ""         
+#> [26] ""          ""          "Lublin"    ""          ""         
+#> [31] ""          ""          ""          ""          ""
 ```
+
+Efektem jej działania są wszystkie nazwy miast z wektora `tekst_pomiary`, ale też wiele elementów pustych.
+Dlaczego?
+W powyższym wzorcu użyliśmy metaznaku `*`, który szuka wystąpienia zdefiniowanych znaków zero lub więcej razy.
+Gdy napotkany jest zdefiniowany znak sprawdzane jest jego kolejne wystąpienie, aż do momentu, gdy pojawi się jakiś inny znak.
+W efekcie zwrócony został np. `"Wrocław"`. 
+Metaznak `*` w przypadku, gdy zdefiniowanego znaku nie ma (wystąpił zero razy) zwraca pusty element.
+
+Jeżeli interesują nas tylko fragmenty wektora zawierające tekst musimy użyć metaznaku `+`.
 
 
 ```r
@@ -342,10 +413,14 @@ str_extract_all(tekst_pomiary, pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓ�
 #> [1] "Wrocław"   "Bydgoszcz" "Toruń"     "Lublin"
 ```
 
+Wyobrażmy sobie, że otrzymaliśmy rozszerzoną wersję poprzednich danych, która tym razem zawiera dwa dodatkowe miasta - Gorzów Wielkopolski i Zieloną Górę.
+
 
 ```r
-tekst_pomiary2 = "Wrocław: 23, Bydgoszcz: 12, Toruń: 11, Lublin: 14, Gorzów Wielkopolski: 20, Zielona Góra: 19"
+tekst_pomiary2 = "Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3, Gorzów Wielkopolski: 20, Zielona Góra: 19"
 ```
+
+Nadal interesuje nas wydzielenie nazw miast, więc próbujemy użyć kodu, który stworzyliśmy powyżej.
 
 
 ```r
@@ -355,18 +430,27 @@ str_extract_all(tekst_pomiary2, pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓ
 #> [5] "Gorzów"       "Wielkopolski" "Zielona"      "Góra"
 ```
 
+Niestety w efekcie otrzymujemy osiem elementów, gdzie `"Gorzów"` jest innym elementem niż `"Wielkopolski"`.
+Zdefiniowany przez nas wzorzec nie brał pod uwagę możliwości wystąpienia spacji.
+Możemy naprawić tę sytuację w poniższy sposób.
+
 
 ```r
-str_extract_all(tekst_pomiary2, pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[\\s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*")
+str_extract_all(tekst_pomiary2, 
+       pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[\\s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*")
 #> [[1]]
 #> [1] "Wrocław"             "Bydgoszcz"           "Toruń"              
 #> [4] "Lublin"              "Gorzów Wielkopolski" "Zielona Góra"
 ```
 
+Teraz szukamy wystąpienia liter co najmniej raz lub więcej (`+`), następnie wystąpienia spacji zero razy lub raz (`[\\s]?`) i kończymy na sprawdzeniu wystąpienia tekstu zero razy lub więcej (`*`).
+
+Podobnie jak w każdym powyższym przypadku, efekt działania funkcji może być użyty do stworzenia nowego obiektu.
+
 
 ```r
 miasta_pomiary2 = str_extract_all(tekst_pomiary2,
-                                  pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[\\s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*")
+       pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[\\s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*")
 miasta_pomiary2
 #> [[1]]
 #> [1] "Wrocław"             "Bydgoszcz"           "Toruń"              
@@ -375,12 +459,15 @@ miasta_pomiary2
 
 ## Zamiana tekstu - regex
 
-<!-- https://r4ds.had.co.nz/strings.html#replacing-matches -->
+Innym przykładem działania na tekście jest zamiana wybranych jego elementów.
 
 
 ```r
 tekst_pomiary3 = "Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3"
 ```
+
+Powyższy obiekt `tekst_pomiary3` zawiera nazwy miast i wartości pomiarów przedstawione zgodnie z amerykańskim standardem, gdzie kropka oddziela wartości dziesiętne, a przecinek kolejne elementy.
+Aby zamienić wybrany wzorzec w tekście (np. kropkę na przecinek) możemy użyć funkcji `str_replace()`, w której podajemy obiekt tekstowy, szukany wzorzec oraz jego zamianę.
 
 
 ```r
@@ -390,6 +477,11 @@ str_replace(tekst_pomiary3,
 #> [1] ",rocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3"
 ```
 
+Efekt działania tego kodu nie jest jednak zgodny z naszymi oczekiwaniami. 
+Zamiast zamiany wszyskich kropek na przecinki, nastąpiła zamiana pierwszego znaku w tekście (litery `W`) na przecinek.
+Wynika to ze znaczenia metaznaku `.`, który reprezentuje jakikolwiek znak oprócz nowej linii.
+Żeby naprawić tę sytuację musimy użyć ukośnika wstecznego.
+
 
 ```r
 str_replace(tekst_pomiary3, 
@@ -397,6 +489,9 @@ str_replace(tekst_pomiary3,
             replacement = "\\,")
 #> [1] "Wrocław: 23,5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3"
 ```
+
+Funkcja `str_replace()`, podobnie jak `str_extract()`, jest leniwa i zamienia tylko pierwsze wystąpienie wzorca.
+Do zamiany wszystkich przypadków trzeba użyć funkcji `str_replace_all()`.
 
 
 ```r
@@ -406,12 +501,17 @@ str_replace_all(tekst_pomiary3,
 #> [1] "Wrocław: 23,5, Bydgoszcz: 12,7, Toruń: 11,1, Lublin: 14,3"
 ```
 
+W przypadku, gdy interesuje nas zarówno zamiana kropek na przecinki oraz przecinków na średniki, musimy zacząć od tej drugiej zamiany.
+
 
 ```r
 tekst_pomiary4 = str_replace_all(tekst_pomiary3,
                                  pattern = "\\,",
                                  replacement = "\\;")
 ```
+
+Nowy obiekt `tekst_pomiary4` oddziela kolejne miasta średnikami.
+Teraz na jego podstawie możliwa jest zamiana kropek na przecinki w sposób opisany powyżej.
 
 
 ```r
@@ -420,6 +520,9 @@ str_replace_all(tekst_pomiary4,
                 replacement = "\\,")
 #> [1] "Wrocław: 23,5; Bydgoszcz: 12,7; Toruń: 11,1; Lublin: 14,3"
 ```
+
+Funkcje jakie jak `str_replace()` czy `str_replace_all()` mogą być też stosowane do usuwania fragmentów tekstu.
+Do tego celu można zdefiniować wzorzec jaki chcemy usunąć, a jako jego zamianę tekst pusty (`""`).
 
 
 ```r
@@ -431,6 +534,12 @@ str_replace_all(tekst_pomiary4,
 
 ## Wyszukiwanie plików
 
+Umiejętności związane z obsługą wyrażeń regularnych przydają się też w przypadku wyszukiwania plików zawierających określony tekst w nazwie lub specyficzne rozszerzenie.
+Jest to szczególnie przydatne, gdy posiadamy wiele plików na komputerze, które chcemy następnie przetwarzać w sposób automatyczny.
+
+Do wyświetlania nazw plików znajdujących się w wybranym folderze służy funkcja `dir()`.
+Przykładowo poniższa linia kodu wyświetla wszyskie pliki znajdujące się w folderze `"pliki"`^[Folder o tej nazwie znajduje się w folderze robocznym.].
+
 
 ```r
 dir("pliki")
@@ -438,11 +547,18 @@ dir("pliki")
 #> [5] "kod.R"           "mapa.png"        "obrazek.png"     "zdjęcie.jpg"
 ```
 
+W przypadku, gdy interesują nas tylko pliki o wybranym rozszerzeniu możemy użyć argumentu `pattern` i zdefiniować wzorzec.
+
 
 ```r
 dir("pliki", pattern = "*\\.png$")
 #> [1] "mapa.png"    "obrazek.png"
 ```
+
+W powyższym przykładzie zostaną wybrane tylko pliki o jakiejkolwiek nazwie, ale kończące się na rozszerzenie `.png`.
+Metaznak `$` użyty w tym przypadku zapogiega sytuacji, gdy tekst `.png` znajduje się w środku nazwy pliku.
+
+Do znalezienia plików o kilku rozszerzeniach można użyć metaznaków `()` i `|`.
 
 
 ```r
@@ -450,15 +566,12 @@ dir("pliki", pattern = "*\\.(png|jpg)$")
 #> [1] "mapa.png"    "obrazek.png" "zdjęcie.jpg"
 ```
 
+Domyślnie funkcja `dir()` pokazuje zawartość wybranego folderu, aby jednak poznać jego pełną ścieżkę względną należy określić argument `full.names` na `TRUE`.
+
 
 ```r
 dir("pliki", pattern = "*\\.(png|jpg)$", full.names = TRUE)
 #> [1] "pliki/mapa.png"    "pliki/obrazek.png" "pliki/zdjęcie.jpg"
-```
-
-
-```r
-moje_pliki = dir("pliki", pattern = "*\\.(png|jpg)$", full.names = TRUE)
 ```
 
 ## Zadania
