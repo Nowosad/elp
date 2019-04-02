@@ -1,7 +1,14 @@
 # Tekst {#tekst}
 
+Podstawowymi typami danych w R są wektory logiczne, numeryczne i znakowe (sekcja \@ref(wektory)). 
+Pierwsze z nich przyjmują dwie formy - `TRUE` i `FALSE`, przez co istnieje pewna skończona liczba operacji, które można na nich wykonać.
+Wektory numeryczne mogą przyjmować wiele form, ale najczęściej są one przetwarzanie używając podstawowych operacji arytmetycznych, takich jak dodawanie, odejmowanie, mnożenie czy dzielenie.
+Wektory znakowe są natomiast najbardziej zróżnicowane - mogę przyjmować różne formy (nawet w zależności od przyjętego alfabetu), w tym pozwalają one także na przechowywanie wartości logicznych czy numerycznych.
 
+Celem tego rozdziału jest przedstawienie najczęściej spotykanych operacji na tekście, takich jak jego wyszukiwanie, wydzielanie czy zamiana.
 Więcej na temat przetwarzania tekstu można znaleźć w rozdziale ["Strings"](https://r4ds.had.co.nz/strings.html) książki R for Data Science [@wickham2016r].
+
+## Reprezentacja tekstu
 
 Typ znakowy jest określany poprzez użycie cudzysłowia `"` lub `'`.
 Ważne tutaj jest, aby rozpoczynać i kończyć tekst tym samym cudzysłowiem.
