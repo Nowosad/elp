@@ -317,7 +317,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- system.time -->
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))
 <span class="co">#&gt;    user  system elapsed </span>
-<span class="co">#&gt;   0.568   0.000   0.567</span></code></pre>
+<span class="co">#&gt;   0.568   0.000   0.568</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">mi_do_km1 =<span class="st"> </span><span class="cf">function</span>(odl_mile){
   odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="dv">0</span>)
   <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
@@ -340,8 +340,8 @@ odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv"
 <span class="co">#&gt; # A tibble: 2 x 10</span>
 <span class="co">#&gt;   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 1.42µs 1.87µs 1.62µs 44.7µs   535295.     300KB     1  9999</span>
-<span class="co">#&gt; 2 mi_do_km2… 1.05µs 1.29µs 1.17µs 48.5µs   772332.     222KB     0 10000</span>
+<span class="co">#&gt; 1 mi_do_km1… 1.43µs 1.96µs 1.65µs 53.3µs   510358.     300KB     1  9999</span>
+<span class="co">#&gt; 2 mi_do_km2… 1.04µs 1.39µs  1.2µs 22.3µs   717142.     222KB     0 10000</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">odl_mile2 =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10000</span>)
 <span class="kw">mark</span>(<span class="kw">mi_do_km1</span>(odl_mile2),
@@ -351,8 +351,8 @@ odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv"
 <span class="co">#&gt; # A tibble: 2 x 10</span>
 <span class="co">#&gt;   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;bch&gt; &lt;bch:tm&gt; &lt;bch:&gt; &lt;bch:t&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 476ms 488.36ms  488ms 501.1ms      2.05     382MB    16     2</span>
-<span class="co">#&gt; 2 mi_do_km2… 866µs   1.19ms  919µs  13.6ms    842.      78.2KB    16   426</span>
+<span class="co">#&gt; 1 mi_do_km1… 480ms  491.7ms  492ms 503.2ms      2.03     382MB    16     2</span>
+<span class="co">#&gt; 2 mi_do_km2… 876µs   1.19ms  925µs  14.6ms    843.      78.2KB    15   422</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">porownanie =<span class="st"> </span><span class="kw">press</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10000</span>),
                    {
@@ -372,20 +372,20 @@ porownanie
 <span class="co">#&gt; # A tibble: 8 x 11</span>
 <span class="co">#&gt;   expression     x      min     mean   median      max `itr/sec` mem_alloc</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1…    10   3.89µs   5.09µs   4.56µs   75.9µs 196287.          0B</span>
-<span class="co">#&gt; 2 mi_do_km2…    10   1.73µs   2.14µs   1.95µs  24.01µs 466832.          0B</span>
-<span class="co">#&gt; 3 mi_do_km1…   100  67.15µs  77.44µs  73.23µs 456.09µs  12913.     43.16KB</span>
-<span class="co">#&gt; 4 mi_do_km2…   100   9.13µs  11.04µs     10µs   2.26ms  90617.        856B</span>
-<span class="co">#&gt; 5 mi_do_km1…  1000   4.39ms   4.68ms   4.71ms   5.12ms    214.      3.87MB</span>
-<span class="co">#&gt; 6 mi_do_km2…  1000  84.63µs  96.26µs  90.94µs  449.4µs  10389.      7.87KB</span>
-<span class="co">#&gt; 7 mi_do_km1… 10000 477.48ms 481.45ms 481.45ms 485.43ms      2.08  382.04MB</span>
-<span class="co">#&gt; 8 mi_do_km2… 10000 881.64µs   1.16ms 915.68µs  14.68ms    865.     78.18KB</span>
+<span class="co">#&gt; 1 mi_do_km1…    10   3.87µs   5.43µs   4.78µs  79.82µs 184006.          0B</span>
+<span class="co">#&gt; 2 mi_do_km2…    10   1.74µs   2.23µs   1.98µs  54.74µs 448472.          0B</span>
+<span class="co">#&gt; 3 mi_do_km1…   100  67.36µs  79.15µs   74.7µs 216.81µs  12634.     43.16KB</span>
+<span class="co">#&gt; 4 mi_do_km2…   100   9.16µs  10.97µs   9.98µs 291.34µs  91151.        856B</span>
+<span class="co">#&gt; 5 mi_do_km1…  1000   4.44ms   4.75ms   4.73ms   7.06ms    210.      3.87MB</span>
+<span class="co">#&gt; 6 mi_do_km2…  1000  84.59µs  96.92µs  91.46µs 516.14µs  10318.      7.87KB</span>
+<span class="co">#&gt; 7 mi_do_km1… 10000 481.64ms 489.02ms 489.02ms 496.39ms      2.04  382.04MB</span>
+<span class="co">#&gt; 8 mi_do_km2… 10000 882.66µs   1.16ms 915.32µs   13.8ms    865.     78.18KB</span>
 <span class="co">#&gt; # … with 3 more variables: n_gc &lt;dbl&gt;, n_itr &lt;int&gt;, total_time &lt;bch:tm&gt;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">ggplot2<span class="op">::</span><span class="kw">autoplot</span>(porownanie)</code></pre>
 </div>
 <div id="profiling" class="section level2">
 <h2><span class="header-section-number">12.2</span> Profiling</h2>
-<p>Istnieją trzy podstawowe reguły optymalizacji kodu<a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>:</p>
+<p>Istnieją trzy podstawowe reguły optymalizacji kodu<a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a>:</p>
 <ol style="list-style-type: decimal">
 <li>Nie.</li>
 <li>Jeszcze nie.</li>
@@ -419,8 +419,8 @@ Profilowanie mierzy czas działania każdej linii kodu.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="43">
-<li id="fn43"><p><a href="http://www.moscowcoffeereview.com/programming/the-3-rules-of-optimization/" class="uri">http://www.moscowcoffeereview.com/programming/the-3-rules-of-optimization/</a><a href="analiza-kodu.html#fnref43" class="footnote-back">↩</a></p></li>
+<ol start="44">
+<li id="fn44"><p><a href="http://www.moscowcoffeereview.com/programming/the-3-rules-of-optimization/" class="uri">http://www.moscowcoffeereview.com/programming/the-3-rules-of-optimization/</a><a href="analiza-kodu.html#fnref44" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

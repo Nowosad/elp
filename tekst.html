@@ -332,34 +332,59 @@ Do tego celu służy funkcja <code>paste()</code><a href="#fn33" class="footnote
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">paste</span>(<span class="st">&quot;t&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot; &quot;</span>, <span class="st">&quot;k&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot;t&quot;</span>)
 <span class="co">#&gt; [1] &quot;t o   k o t&quot;</span></code></pre>
 <p>Efekt działania funkcji <code>paste()</code> jest jeden wektor tekstowy, który składa się z wejściowych wektorów oddzielonych domyślnie spacjami.
-Funkcja <code>paste()</code> ma jednak również dodatkowy argument <code>sep</code>, który pozwala na dowolne określanie separatora.</p>
+Funkcja <code>paste()</code> ma jednak również dodatkowy argument <code>sep</code>, który pozwala na dowolne określanie separatora.
+Ostatnim argumentem tej funkcji jest <code>collapse</code>, który łączy elementy jednego wektora tekstowego.</p>
 <p>R oferuje też uproszczoną postać tej funkcji o nazwie <code>paste0()</code>, w której nie ma znaku seperatora.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">paste0</span>(<span class="st">&quot;t&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot; &quot;</span>, <span class="st">&quot;k&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot;t&quot;</span>)
 <span class="co">#&gt; [1] &quot;to kot&quot;</span></code></pre>
+<p>Te funkcje są używane w sytuacjach, gdy chcemy połączyć stały, znany tekst, wraz z tekstem wprowadzanym przez użytkownika lub pochodzącym z innego źródła.
+Poniżej stworzono dwie nowe zmienne <code>imie</code> i <code>wiek</code>, których treść złączono ze słowami <code>&quot;ma&quot;</code> i <code>&quot;lat.&quot;</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">imie =<span class="st"> &quot;Olek&quot;</span>
 wiek =<span class="st"> </span><span class="dv">77</span>
 tekst1 =<span class="st"> </span><span class="kw">paste</span>(imie, <span class="st">&quot;ma&quot;</span>, wiek, <span class="st">&quot;lat.&quot;</span>)
 tekst1
 <span class="co">#&gt; [1] &quot;Olek ma 77 lat.&quot;</span></code></pre>
-<!-- sekcja o wyswietlaniu tekstu?? -->
+<p>Takie konstrukcje są często używane w funkcjach.
+Powyższy przykład możnaby przepisać jako:</p>
+<pre class="sourceCode r"><code class="sourceCode r">lata =<span class="st"> </span><span class="cf">function</span>(imie, wiek){
+  <span class="kw">paste</span>(imie, <span class="st">&quot;ma&quot;</span>, wiek, <span class="st">&quot;lat.&quot;</span>)
+}
+<span class="kw">lata</span>(<span class="st">&quot;Asia&quot;</span>, <span class="dv">61</span>)
+<span class="co">#&gt; [1] &quot;Asia ma 61 lat.&quot;</span></code></pre>
+<p>Dodatkowo w R istnieje alternatywa dla <code>paste()</code> i <code>paste0()</code> w postaci funkcji <code>sprintf()</code>.</p>
+<p>Kolejne podstawowe funkcje, <code>toupper()</code> i <code>tolower()</code> zamieniają cały istniejący tekst na taki który posiada tylko duże lub małe litery.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">toupper</span>(tekst1)
-<span class="co">#&gt; [1] &quot;OLEK MA 77 LAT.&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tolower</span>(tekst1)
+<span class="co">#&gt; [1] &quot;OLEK MA 77 LAT.&quot;</span>
+<span class="kw">tolower</span>(tekst1)
 <span class="co">#&gt; [1] &quot;olek ma 77 lat.&quot;</span></code></pre>
-<p><span class="citation">(Wickham <a href="#ref-R-stringr">2019</a>)</span></p>
+<p>Są one używane w sytuacjach, gdy posiadamy dane, w których jeden tekst jest podany w kilku formach i chcemy je ujednolicić.</p>
+<p>R posiada też wiele innych wbudowanych funkcji do obsługi tekstu (np. <code>grep()</code>)<!--API issues-->, ale istnieją też specjalne pakiety poświęcone temu zagadnieniu, w tym pakiet <strong>stringr</strong> <span class="citation">(Wickham <a href="#ref-R-stringr">2019</a>)</span>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(stringr)</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">tekst2 =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;chronologia &quot;</span>, <span class="st">&quot;alfabet&quot;</span>, <span class="st">&quot; hałas&quot;</span>)
+<p>Większość funkcji tego pakietu zaczyna się od prefiksu <code>str_</code> co ułatwia znajdowanie funkcji w tym pakiecie i zmniejsza szansę na nałożenie się funkcji o takiej samej nazwie z innego pakietu.</p>
+<p>Przykładową operacją na tekście jest jego sortowanie (czyli układanie alfabetycznie), do którego służy funkcja <code>str_sort()</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">tekst2 =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;czosnek&quot;</span>, <span class="st">&quot; hałas&quot;</span>, <span class="st">&quot;ćma &quot;</span>)
+tekst2
+<span class="co">#&gt; [1] &quot;czosnek&quot; &quot; hałas&quot;  &quot;ćma &quot;</span>
 <span class="kw">str_sort</span>(tekst2)
-<span class="co">#&gt; [1] &quot; hałas&quot;       &quot;alfabet&quot;      &quot;chronologia &quot;</span></code></pre>
+<span class="co">#&gt; [1] &quot; hałas&quot;  &quot;ćma &quot;    &quot;czosnek&quot;</span></code></pre>
+<p>W powyższym przykładzie oczkiwalibyśmy ułożenia, w których <code>&quot;hałas&quot;</code> byłby na ostatnim miejscu.
+Nie jest tak z powodu istnienia z przodu tego wyrazu znaku niedrukowalnego - spacji.
+Aby usunąć spacje z przodu i tyłu tekstu można użyć funkcji <code>str_trim()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">tekst2 =<span class="st"> </span><span class="kw">str_trim</span>(tekst2)
-<span class="kw">str_sort</span>(tekst2)
-<span class="co">#&gt; [1] &quot;alfabet&quot;     &quot;chronologia&quot; &quot;hałas&quot;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">tekst2
-<span class="co">#&gt; [1] &quot;chronologia&quot; &quot;alfabet&quot;     &quot;hałas&quot;</span></code></pre>
+tekst2
+<span class="co">#&gt; [1] &quot;czosnek&quot; &quot;hałas&quot;   &quot;ćma&quot;</span></code></pre>
+<p>W tej chwili możmy użyć funkcji <code>str_sort()</code> jeszcze raz.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sort</span>(tekst2)
+<span class="co">#&gt; [1] &quot;ćma&quot;     &quot;czosnek&quot; &quot;hałas&quot;</span></code></pre>
+<p>Teraz <code>&quot;hałas&quot;</code> jest poprawnie na ostanim miejscu, ale na pierwszej pozycji jest <code>&quot;ćma&quot;</code> zamiast <code>&quot;czosnek&quot;</code>.
+Różne alfabety na świecie mają inne znaki oraz ich kolejność.
+Domyślnie funkcja <code>str_sort()</code> używa alfabetu angielskiego, co w efekcie powoduje niepoprawne ułożenie polskich znaków.
+Do rozwiązania tego problemu służy argument <code>locale</code>, w którym można określić jaki alfabet ma być używany.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sort</span>(tekst2, <span class="dt">locale =</span> <span class="st">&quot;pl&quot;</span>)
-<span class="co">#&gt; [1] &quot;alfabet&quot;     &quot;chronologia&quot; &quot;hałas&quot;</span>
+<span class="co">#&gt; [1] &quot;czosnek&quot; &quot;ćma&quot;     &quot;hałas&quot;</span>
 <span class="kw">str_sort</span>(tekst2, <span class="dt">locale =</span> <span class="st">&quot;cs&quot;</span>)
-<span class="co">#&gt; [1] &quot;alfabet&quot;     &quot;hałas&quot;       &quot;chronologia&quot;</span></code></pre>
+<span class="co">#&gt; [1] &quot;ćma&quot;     &quot;czosnek&quot; &quot;hałas&quot;</span></code></pre>
+<p>Powyżej można zobaczyć dwa przykłady - ułożenia tekstu według polskiego i czeskiego alfabetu<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>.</p>
 </div>
 <div id="wydzielanie-tekstu" class="section level2">
 <h2><span class="header-section-number">6.2</span> Wydzielanie tekstu</h2>
@@ -559,7 +584,7 @@ miasta_pomiary2
 </ol>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="st">&quot;TERYT 18; podkarpackie; Rzeszów; 0.2 He; A&quot;</span>
 <span class="st">&quot;TERYT 22; pomorskie;   Gdańsk; 12 C ; B&quot;</span></code></pre>
-<p>Napisz kod, który będzie wydział symbole chemiczne pomierzonych pierwiastków.</p>
+<p>Napisz kod, który będzie wydzielał symbole chemiczne pomierzonych pierwiastków.</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Napisz funkcję nazywającą się <code>horoskop</code>, która przyjmuje dwa argumenty <code>imie</code> (pierwsze imię, tekst) oraz <code>miesiac</code> (miesiąc urodzin, liczba).
 Funkcja ma zwrócić tekst “Osoba o imieniu ‘imie’ będzie miała jutro szczęście.” w przypadku, gdy argument <code>miesiac</code> jest liczbą parzystą oraz “Osoba o imieniu ‘imie’ będzie miała jutro nieszczęście.” jeżeli argument <code>miesiac</code> jest liczbą nieparzystą.</li>
@@ -601,6 +626,7 @@ Poniżej znajduje się fragment przykładowych danych wejściowych.</li>
 <hr />
 <ol start="33">
 <li id="fn33"><p>Odpowiednikiem funkcji <code>paste()</code> w pakiecie <strong>stringr</strong> jest funkcja <code>str_c()</code><a href="tekst.html#fnref33" class="footnote-back">↩</a></p></li>
+<li id="fn34"><p><a href="https://en.wikipedia.org/wiki/Czech_orthography" class="uri">https://en.wikipedia.org/wiki/Czech_orthography</a><a href="tekst.html#fnref34" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

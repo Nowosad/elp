@@ -40,6 +40,7 @@ paste("t", "o", " ", "k", "o", "t")
 
 Efekt działania funkcji `paste()` jest jeden wektor tekstowy, który składa się z wejściowych wektorów oddzielonych domyślnie spacjami. 
 Funkcja `paste()` ma jednak również dodatkowy argument `sep`, który pozwala na dowolne określanie separatora.
+Ostatnim argumentem tej funkcji jest `collapse`, który łączy elementy jednego wektora tekstowego.
 
 R oferuje też uproszczoną postać tej funkcji o nazwie `paste0()`, w której nie ma znaku seperatora.
 
@@ -49,7 +50,8 @@ paste0("t", "o", " ", "k", "o", "t")
 #> [1] "to kot"
 ```
 
-
+Te funkcje są używane w sytuacjach, gdy chcemy połączyć stały, znany tekst, wraz z tekstem wprowadzanym przez użytkownika lub pochodzącym z innego źródła.
+Poniżej stworzono dwie nowe zmienne `imie` i `wiek`, których treść złączono ze słowami `"ma"` i `"lat."`.
 
 
 ```r
@@ -60,57 +62,85 @@ tekst1
 #> [1] "Olek ma 77 lat."
 ```
 
-<!-- sekcja o wyswietlaniu tekstu?? -->
+Takie konstrukcje są często używane w funkcjach. 
+Powyższy przykład możnaby przepisać jako:
 
+
+```r
+lata = function(imie, wiek){
+  paste(imie, "ma", wiek, "lat.")
+}
+lata("Asia", 61)
+#> [1] "Asia ma 61 lat."
+```
+
+Dodatkowo w R istnieje alternatywa dla `paste()` i `paste0()` w postaci funkcji `sprintf()`.
+
+Kolejne podstawowe funkcje, `toupper()` i `tolower()` zamieniają cały istniejący tekst na taki który posiada tylko duże lub małe litery.
 
 
 ```r
 toupper(tekst1)
 #> [1] "OLEK MA 77 LAT."
-```
-
-
-```r
 tolower(tekst1)
 #> [1] "olek ma 77 lat."
 ```
 
+Są one używane w sytuacjach, gdy posiadamy dane, w których jeden tekst jest podany w kilku formach i chcemy je ujednolicić.
 
-[@R-stringr]
+R posiada też wiele innych wbudowanych funkcji do obsługi tekstu (np. `grep()`)<!--API issues-->, ale istnieją też specjalne pakiety poświęcone temu zagadnieniu, w tym pakiet **stringr** [@R-stringr].
 
 
 ```r
 library(stringr)
 ```
 
+Większość funkcji tego pakietu zaczyna się od prefiksu `str_` co ułatwia znajdowanie funkcji w tym pakiecie i zmniejsza szansę na nałożenie się funkcji o takiej samej nazwie z innego pakietu.
+
+Przykładową operacją na tekście jest jego sortowanie (czyli układanie alfabetycznie), do którego służy funkcja `str_sort()`.
 
 
 ```r
-tekst2 = c("chronologia ", "alfabet", " hałas")
+tekst2 = c("czosnek", " hałas", "ćma ")
+tekst2
+#> [1] "czosnek" " hałas"  "ćma "
 str_sort(tekst2)
-#> [1] " hałas"       "alfabet"      "chronologia "
+#> [1] " hałas"  "ćma "    "czosnek"
 ```
+
+W powyższym przykładzie oczkiwalibyśmy ułożenia, w których `"hałas"` byłby na ostatnim miejscu. 
+Nie jest tak z powodu istnienia z przodu tego wyrazu znaku niedrukowalnego - spacji.
+Aby usunąć spacje z przodu i tyłu tekstu można użyć funkcji `str_trim()`.
 
 
 ```r
 tekst2 = str_trim(tekst2)
-str_sort(tekst2)
-#> [1] "alfabet"     "chronologia" "hałas"
+tekst2
+#> [1] "czosnek" "hałas"   "ćma"
 ```
+
+W tej chwili możmy użyć funkcji `str_sort()` jeszcze raz.
 
 
 ```r
-tekst2
-#> [1] "chronologia" "alfabet"     "hałas"
+str_sort(tekst2)
+#> [1] "ćma"     "czosnek" "hałas"
 ```
+
+Teraz `"hałas"` jest poprawnie na ostanim miejscu, ale na pierwszej pozycji jest `"ćma"` zamiast `"czosnek"`.
+Różne alfabety na świecie mają inne znaki oraz ich kolejność. 
+Domyślnie funkcja  `str_sort()` używa alfabetu angielskiego, co w efekcie powoduje niepoprawne ułożenie polskich znaków.
+Do rozwiązania tego problemu służy argument `locale`, w którym można określić jaki alfabet ma być używany.
 
 
 ```r
 str_sort(tekst2, locale = "pl")
-#> [1] "alfabet"     "chronologia" "hałas"
+#> [1] "czosnek" "ćma"     "hałas"
 str_sort(tekst2, locale = "cs")
-#> [1] "alfabet"     "hałas"       "chronologia"
+#> [1] "ćma"     "czosnek" "hałas"
 ```
+
+Powyżej można zobaczyć dwa przykłady - ułożenia tekstu według polskiego i czeskiego alfabetu^[https://en.wikipedia.org/wiki/Czech_orthography].
 
 ## Wydzielanie tekstu
 
@@ -427,7 +457,7 @@ moje_pliki = dir("pliki", pattern = "*\\.(png|jpg)$", full.names = TRUE)
 "TERYT 18; podkarpackie; Rzeszów; 0.2 He; A"
 "TERYT 22; pomorskie;	Gdańsk; 12 C ; B"
 ```
-Napisz kod, który będzie wydział symbole chemiczne pomierzonych pierwiastków.
+Napisz kod, który będzie wydzielał symbole chemiczne pomierzonych pierwiastków.
 
 2) Napisz funkcję nazywającą się `horoskop`, która przyjmuje dwa argumenty `imie` (pierwsze imię, tekst) oraz `miesiac` (miesiąc urodzin, liczba).
 Funkcja ma zwrócić tekst "Osoba o imieniu 'imie' będzie miała jutro szczęście." w przypadku, gdy argument `miesiac` jest liczbą parzystą oraz "Osoba o imieniu 'imie' będzie miała jutro nieszczęście." jeżeli argument `miesiac` jest liczbą nieparzystą.
