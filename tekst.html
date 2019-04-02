@@ -200,7 +200,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekscie"><i class="fa fa-check"></i><b>6.1</b> Podstawowe operacje na tekście</a></li>
 <li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#wydzielanie-tekstu"><i class="fa fa-check"></i><b>6.2</b> Wydzielanie tekstu</a></li>
 <li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wyrazenia-regularne"><i class="fa fa-check"></i><b>6.3</b> Wyrażenia regularne</a></li>
-<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wydzielanie-tekstu---regex"><i class="fa fa-check"></i><b>6.4</b> Wydzielanie tekstu - regex</a></li>
+<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wtregex"><i class="fa fa-check"></i><b>6.4</b> Wydzielanie tekstu - regex</a></li>
 <li class="chapter" data-level="6.5" data-path="tekst.html"><a href="tekst.html#zamiana-tekstu---regex"><i class="fa fa-check"></i><b>6.5</b> Zamiana tekstu - regex</a></li>
 <li class="chapter" data-level="6.6" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plikow"><i class="fa fa-check"></i><b>6.6</b> Wyszukiwanie plików</a></li>
 <li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#zadania-5"><i class="fa fa-check"></i><b>6.7</b> Zadania</a></li>
@@ -388,12 +388,20 @@ Do rozwiązania tego problemu służy argument <code>locale</code>, w którym mo
 </div>
 <div id="wydzielanie-tekstu" class="section level2">
 <h2><span class="header-section-number">6.2</span> Wydzielanie tekstu</h2>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">1</span>, <span class="dt">end =</span> <span class="dv">4</span>)
-<span class="co">#&gt; [1] &quot;Olek&quot;</span></code></pre>
+<p>Częstym przypadkiem jest potrzeba wydzielenia tylko fragmentu tekstu.
+W tej sekcji zostanie pokazane jak wydzielać tekst na podstawie pozycji, ale możliwe jest również wydzielanie tekstu na podstawie wzorca (zobacz sekcję <a href="tekst.html#wtregex">6.4</a>).
+Wydzielanie na podstawie pozycji jest używane w sytuacjach, gdy struktura wejściowego tekstu jest nam znana i stabilna, np. gdy interesuje nas wybranie fragmentu tekstu z automatycznie generowanych raportów.</p>
+<pre class="sourceCode r"><code class="sourceCode r">tekst1 =<span class="st"> &quot;Olek ma 77 lat.&quot;</span></code></pre>
+<p>W przypadku wydzielania tekstu na podstawie pozycji należy określić pozycję pierwszego i ostatniego znaku, który nas interesuje.
+Można to zrobić na kilka sposobów.
+Pierwszy z nich polega na określeniu położenia znaków od lewej strony, np. poniższy kod wybiera tekst rozpoczynający się od 9 znaku i kończący się na znaku 15 włącznie.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">9</span>, <span class="dt">end =</span> <span class="dv">15</span>)
 <span class="co">#&gt; [1] &quot;77 lat.&quot;</span></code></pre>
+<p>Definiowanie pozycji może się też odbywać od prawej strony tekstu używając znaku <code>-</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">9</span>, <span class="dt">end =</span> <span class="dv">-1</span>)
 <span class="co">#&gt; [1] &quot;77 lat.&quot;</span></code></pre>
+<p>W powyższym przykładzie wybierany jest tekst zaczynający się na 9 znaku a kończący na pierwszym znaku od końca włącznie.
+Natomiat poniżej wybrany jest tekst zaczynający się na siódmym znaku od końca i kończący na pierwszym od kónca włącznie.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">-7</span>, <span class="dt">end =</span> <span class="dv">-1</span>)
 <span class="co">#&gt; [1] &quot;77 lat.&quot;</span></code></pre>
 </div>
@@ -501,7 +509,7 @@ Pomocne w zrozumieniu bardziej zaawansowanych elementów wyrażeń regularncych 
 <!-- https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124/ref=sr_1_1?ie=UTF8&qid=1464113797&sr=8-1&keywords=mastering+regular+expressions -->
 <!-- https://www.rstudio.com/resources/cheatsheets/#stringr --></p>
 </div>
-<div id="wydzielanie-tekstu---regex" class="section level2">
+<div id="wtregex" class="section level2">
 <h2><span class="header-section-number">6.4</span> Wydzielanie tekstu - regex</h2>
 <!-- https://r4ds.had.co.nz/strings.html#extract-matches -->
 <pre class="sourceCode r"><code class="sourceCode r">tekst_pomiary =<span class="st"> &quot;Wrocław: 23, Bydgoszcz: 12, Toruń: 11, Lublin: 14&quot;</span></code></pre>

@@ -144,11 +144,18 @@ Powyżej można zobaczyć dwa przykłady - ułożenia tekstu według polskiego i
 
 ## Wydzielanie tekstu
 
+Częstym przypadkiem jest potrzeba wydzielenia tylko fragmentu tekstu.
+W tej sekcji zostanie pokazane jak wydzielać tekst na podstawie pozycji, ale możliwe jest również wydzielanie tekstu na podstawie wzorca (zobacz sekcję \@ref(wtregex)).
+Wydzielanie na podstawie pozycji jest używane w sytuacjach, gdy struktura wejściowego tekstu jest nam znana i stabilna, np. gdy interesuje nas wybranie fragmentu tekstu z automatycznie generowanych raportów.
+
 
 ```r
-str_sub(tekst1, start = 1, end = 4)
-#> [1] "Olek"
+tekst1 = "Olek ma 77 lat."
 ```
+
+W przypadku wydzielania tekstu na podstawie pozycji należy określić pozycję pierwszego i ostatniego znaku, który nas interesuje.
+Można to zrobić na kilka sposobów.
+Pierwszy z nich polega na określeniu położenia znaków od lewej strony, np. poniższy kod wybiera tekst rozpoczynający się od 9 znaku i kończący się na znaku 15 włącznie.
 
 
 ```r
@@ -156,11 +163,16 @@ str_sub(tekst1, start = 9, end = 15)
 #> [1] "77 lat."
 ```
 
+Definiowanie pozycji może się też odbywać od prawej strony tekstu używając znaku `-`. 
+
 
 ```r
 str_sub(tekst1, start = 9, end = -1)
 #> [1] "77 lat."
 ```
+
+W powyższym przykładzie wybierany jest tekst zaczynający się na 9 znaku a kończący na pierwszym znaku od końca włącznie.
+Natomiat poniżej wybrany jest tekst zaczynający się na siódmym znaku od końca i kończący na pierwszym od kónca włącznie.
 
 
 ```r
@@ -290,7 +302,7 @@ Pomocne w zrozumieniu bardziej zaawansowanych elementów wyrażeń regularncych 
 <!-- https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124/ref=sr_1_1?ie=UTF8&qid=1464113797&sr=8-1&keywords=mastering+regular+expressions -->
 <!-- https://www.rstudio.com/resources/cheatsheets/#stringr -->
 
-## Wydzielanie tekstu - regex
+## Wydzielanie tekstu - regex {#wtregex}
 
 <!-- https://r4ds.had.co.nz/strings.html#extract-matches -->
 
