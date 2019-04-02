@@ -9,7 +9,7 @@
 ```r
 system.time(mean(1:100000000))
 #>    user  system elapsed 
-#>   0.568   0.000   0.569
+#>   0.568   0.000   0.567
 ```
 
 
@@ -45,8 +45,8 @@ mark(mi_do_km1(odl_mile),
 #> # A tibble: 2 x 10
 #>   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr
 #>   <chr>      <bch:> <bch:> <bch:> <bch:>     <dbl> <bch:byt> <dbl> <int>
-#> 1 mi_do_km1… 1.45µs 1.97µs 1.69µs 83.2µs   507623.     300KB     1  9999
-#> 2 mi_do_km2… 1.05µs 1.34µs  1.2µs 21.5µs   743249.     222KB     0 10000
+#> 1 mi_do_km1… 1.38µs 1.86µs 1.62µs 39.1µs   538715.     300KB     1  9999
+#> 2 mi_do_km2… 1.03µs  1.3µs 1.17µs 22.9µs   770752.     222KB     0 10000
 #> # … with 1 more variable: total_time <bch:tm>
 ```
 
@@ -60,8 +60,8 @@ mark(mi_do_km1(odl_mile2),
 #> # A tibble: 2 x 10
 #>   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr
 #>   <chr>      <bch> <bch:tm> <bch:> <bch:t>     <dbl> <bch:byt> <dbl> <int>
-#> 1 mi_do_km1… 483ms 495.54ms  496ms 507.6ms      2.02     382MB    16     2
-#> 2 mi_do_km2… 888µs   1.22ms  939µs  15.3ms    817.      78.2KB    15   409
+#> 1 mi_do_km1… 477ms 481.11ms  481ms 485.2ms      2.08     382MB    16     2
+#> 2 mi_do_km2… 869µs   1.16ms  911µs  12.8ms    865.      78.2KB    16   433
 #> # … with 1 more variable: total_time <bch:tm>
 ```
 
@@ -85,14 +85,14 @@ porownanie
 #> # A tibble: 8 x 11
 #>   expression     x      min     mean   median      max `itr/sec` mem_alloc
 #>   <chr>      <dbl> <bch:tm> <bch:tm> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 mi_do_km1…    10   3.93µs   5.44µs    4.8µs  69.38µs 183874.          0B
-#> 2 mi_do_km2…    10   1.76µs   2.29µs   2.01µs  23.25µs 435853.          0B
-#> 3 mi_do_km1…   100  67.52µs  79.52µs  75.02µs 290.57µs  12576.     43.16KB
-#> 4 mi_do_km2…   100    9.2µs  11.34µs  10.28µs  94.84µs  88202.        856B
-#> 5 mi_do_km1…  1000    4.5ms   4.84ms   4.81ms   5.32ms    206.      3.87MB
-#> 6 mi_do_km2…  1000  85.23µs 102.13µs   95.8µs 316.65µs   9791.      7.87KB
-#> 7 mi_do_km1… 10000 511.81ms 511.81ms 511.81ms 511.81ms      1.95  382.04MB
-#> 8 mi_do_km2… 10000 889.73µs   1.18ms 941.87µs  10.11ms    849.     78.18KB
+#> 1 mi_do_km1…    10   3.91µs   5.21µs   4.62µs  56.67µs 192070.          0B
+#> 2 mi_do_km2…    10   1.74µs   2.25µs   1.98µs  48.66µs 443552.          0B
+#> 3 mi_do_km1…   100     65µs  76.56µs  72.95µs   1.05ms  13062.     43.16KB
+#> 4 mi_do_km2…   100   9.06µs  10.69µs   9.94µs  41.07µs  93525.        856B
+#> 5 mi_do_km1…  1000   4.36ms   4.65ms   4.65ms   5.07ms    215.      3.87MB
+#> 6 mi_do_km2…  1000  84.29µs  94.74µs  90.26µs 287.94µs  10555.      7.87KB
+#> 7 mi_do_km1… 10000 466.88ms 469.63ms 469.63ms 472.37ms      2.13  382.04MB
+#> 8 mi_do_km2… 10000 880.39µs   1.16ms  907.9µs  13.15ms    859.     78.18KB
 #> # … with 3 more variables: n_gc <dbl>, n_itr <int>, total_time <bch:tm>
 ```
 
