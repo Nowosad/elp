@@ -65,42 +65,57 @@ lata("Asia", 61)
 
 Dodatkowo w R istnieje alternatywa dla `paste()` i `paste0()` w postaci funkcji `sprintf()`.
 
-
+Kolejne podstawowe funkcje, `toupper()` i `tolower()` zamieniają cały istniejący tekst na taki który posiada tylko duże lub małe litery.
 
 ```{r}
 toupper(tekst1)
-```
-
-```{r}
 tolower(tekst1)
 ```
 
+Są one używane w sytuacjach, gdy posiadamy dane, w których jeden tekst jest podany w kilku formach i chcemy je ujednolicić.
 
-[@R-stringr]
+R posiada też wiele innych wbudowanych funkcji do obsługi tekstu (np. `grep()`)<!--API issues-->, ale istnieją też specjalne pakiety poświęcone temu zagadnieniu, w tym pakiet **stringr** [@R-stringr].
 
 ```{r}
 library(stringr)
 ```
 
+Większość funkcji tego pakietu zaczyna się od prefiksu `str_` co ułatwia znajdowanie funkcji w tym pakiecie i zmniejsza szansę na nałożenie się funkcji o takiej samej nazwie z innego pakietu.
+
+Przykładową operacją na tekście jest jego sortowanie (czyli układanie alfabetycznie), do którego służy funkcja `str_sort()`.
 
 ```{r}
-tekst2 = c("chronologia ", "alfabet", " hałas")
+tekst2 = c("czosnek", " hałas", "ćma ")
+tekst2
 str_sort(tekst2)
 ```
+
+W powyższym przykładzie oczkiwalibyśmy ułożenia, w których `"hałas"` byłby na ostatnim miejscu. 
+Nie jest tak z powodu istnienia z przodu tego wyrazu znaku niedrukowalnego - spacji.
+Aby usunąć spacje z przodu i tyłu tekstu można użyć funkcji `str_trim()`.
 
 ```{r}
 tekst2 = str_trim(tekst2)
+tekst2
+```
+
+W tej chwili możmy użyć funkcji `str_sort()` jeszcze raz.
+
+```{r}
 str_sort(tekst2)
 ```
 
-```{r}
-tekst2
-```
+Teraz `"hałas"` jest poprawnie na ostanim miejscu, ale na pierwszej pozycji jest `"ćma"` zamiast `"czosnek"`.
+Różne alfabety na świecie mają inne znaki oraz ich kolejność. 
+Domyślnie funkcja  `str_sort()` używa alfabetu angielskiego, co w efekcie powoduje niepoprawne ułożenie polskich znaków.
+Do rozwiązania tego problemu służy argument `locale`, w którym można określić jaki alfabet ma być używany.
 
 ```{r}
 str_sort(tekst2, locale = "pl")
 str_sort(tekst2, locale = "cs")
 ```
+
+Powyżej można zobaczyć dwa przykłady - ułożenia tekstu według polskiego i czeskiego alfabetu^[https://en.wikipedia.org/wiki/Czech_orthography].
 
 ## Wydzielanie tekstu
 
