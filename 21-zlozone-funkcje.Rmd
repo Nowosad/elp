@@ -204,8 +204,6 @@ y = structure(x, class = "prostokat")
 class(y)
 ```
 
-<!-- constructor + validator -->
-
 ```{r}
 powierzchnia = function(x) {
   UseMethod("powierzchnia")
@@ -230,15 +228,77 @@ x
 powierzchnia(x)
 ```
 
+<!-- constructor + validator -->
+konstruktor
+
+```{r}
+nowy_prostokat = function(xmin, ymin, xmax, ymax){
+  if (!all(c(length(xmin), length(ymin), length(xmax), length(ymax)) == 1)){
+    stop("Każdy z argumentów może przyjmować tylko jedną wartość")
+  }
+  vals = c(xmin, ymin, xmax, ymax)
+  if (!(is.numeric(vals))){
+    stop("Wszystkie argumenty muszą być typu numerycznego")
+  }
+  x = matrix(vals, ncol = 2)
+  structure(x, class = "prostokat")
+}
+```
+
+```{r}
+nowy_p = nowy_prostokat(0, 0, 6, 5)
+nowy_p
+powierzchnia(nowy_p)
+```
+
+walidator (złożone funkcje)
+
+```{r}
+proprawny_prostokat = function(x){
+  vals = as.vector(x)
+  x_range = vals[3] - vals[1]
+  y_range = vals[4] - vals[2]
+  if (x_range <= 0){
+    stop("`xmax` musi przyjmować wartość większą niż `xmin`")
+  }
+  if (y_range <= 0) {
+    stop("`ymax` musi przyjmować wartość większą niż `ymin`")
+  }
+  x
+}
+```
+
+```{r}
+proprawny_prostokat(nowy_p)
+```
+
+```{r, error=TRUE}
+nowy_p2 = nowy_prostokat(7, 0, 6, 0)
+nowy_p2
+proprawny_prostokat(nowy_p2)
+```
+
 <!-- methods -->
 <!-- https://arxiv.org/pdf/1409.3531.pdf -->
 <!-- https://adv-r.hadley.nz/oo.html -->
 
 ## Testy jednostkowe
 
-<!-- Unit testing -->
-<!-- usethis::use_test() -->
-<!-- devtools::test() -->
-<!-- devtools::test_coverage() -->
+```{r}
+library(testthat)
+```
+
+```{r}
+expect_error()
+expect_warning()
+expect_equal(a, b)
+expect_equivalent(a, b)
+```
+
+https://testthat.r-lib.org/reference/index.html
+
+
+<!-- When you find a bug, write a test -->
+<!-- Automated testing with Travis CI + codecov -->
 
 ## Zadania
