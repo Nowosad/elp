@@ -167,7 +167,17 @@ nowy_prostokat = function(xmin, ymin, xmax, ymax){
   x = matrix(vals, ncol = 2)
   structure(x, class = "prostokat")
 }
+powierzchnia = function(x) {
+  UseMethod("powierzchnia")
+}
+powierzchnia.prostokat = function(x){
+  a = x[1, 2] - x[1, 1]
+  b = x[2, 2] - x[2, 1]
+  a * b
+}
 ```
+
+
 
 `expect_warning()`, `expect_message()`
 
