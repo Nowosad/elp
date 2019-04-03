@@ -104,6 +104,12 @@ Do wyświetlenia wiadomości służy funkcja `message()`.
 message("To jest komunikat wiadomości.")
 ```
 
+```{block2 type="rmdinfo"}
+Działanie funkcji `message()` jest zbliżone do funkcji `cat()` czy `print()`.
+Różni je jednak cel w jakim są użyte.
+Rolą funkcji `message()` jest przekazanie informacji od twórcy do użytkownika, natomiast celem funkcji tj. `cat()` jest zapytanie użytkownika w pewnej kwestii.
+```
+
 <!-- block cat vs message https://adv-r.hadley.nz/conditions.html#signalling-conditions -->
 
 ```{r}
