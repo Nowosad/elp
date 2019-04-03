@@ -93,11 +93,6 @@ wynik_2 = mark(
 wynik_2
 ```
 
-```{r}
-wynik_
-```
-
-
 W tym przypadku róznica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
 Funkcja `mi_do_km1` jest w stanie wykonać tylko `r round(wynik_2$`itr/sec`[[1]], 2)` operacji na sekundę, przy aż `r round(round(unclass(wynik_2[[2, 6]]), 2)` operacji na sekundę funkcji `mi_do_km2`.
 Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
