@@ -110,7 +110,8 @@ Różni je jednak cel w jakim są użyte.
 Rolą funkcji `message()` jest przekazanie informacji od twórcy do użytkownika, natomiast celem funkcji tj. `cat()` jest zapytanie użytkownika w pewnej kwestii.
 ```
 
-<!-- block cat vs message https://adv-r.hadley.nz/conditions.html#signalling-conditions -->
+Przykład użycia trzech podstawowych rodzajów komunikatów można zobaczyć w poniższej funkcji `minus_1()`.
+Ta funkcja przyjmuje wartość numeryczną, od której odejmuje jeden, a na końcu zwraca wartość bezwzględną (`abs(x - 1)`).
 
 ```{r}
 minus_1 = function(x){
@@ -125,13 +126,20 @@ minus_1 = function(x){
 }
 ```
 
+W przypadku, gdy użytkownik wprowadzi jako wejście wektor tekstowy (`if(is.character(x))`) to działanie funkcji zostanie przerwane i pojawi się odpowiedni komunikat błędu.
+
 ```{r, error=TRUE}
 minus_1("kot")
 ```
 
+Jeżeli jako argument `x` zostanie podany wektor logiczny (`else if(is.logical(x))`) to pojawi się komunikat ostrzeżenia, ale dalsze obliczanie zostanie wykonane.
+W tym przypadku wartość `TRUE` zostanie najpierw zamieniona na 1 a `FALSE` na zero, następnie od tych wartości zostanie odjęte jeden, a na końcu zostaną one zamienione na wartości bezwzględne.
+
 ```{r}
 minus_1(c(TRUE, FALSE))
 ```
+
+Po wprowadzeniu wartości numerycznych do funkcji `minus_1()` pojawi się tekst wiadomości, po którym nastąpi wyliczenie kodu `abs(x - 1)`.
 
 ```{r}
 minus_1(c(1, 0, 6, -6))
