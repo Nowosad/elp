@@ -147,10 +147,17 @@ minus_1(c(1, 0, 6, -6))
 
 <!-- http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/10/006_wyjatki.html --> 
 
+Złożone funkcje opierają się o inne istniejące funkcje. 
+W powyższym przykładzie, `minus_1()` używał, między innymi funkcji `-` do odejmowania czy `abs` do wyliczania wartości bezwzględnej.
+Czasami spodziewamy się, że wartość wprowadzona przez użytkownika może spowodować wystąpienie wewnętrznego błędu i jednocześnie wiemy jak to naprawić.
+W takich sytuacjach przydaje się funkcja `tryCatch()`.
+
 ```{block2 type="rmdinfo"}
 R pozwala na ignorowanie wystąpienia błędu używając funkcji `try()`, ignorowanie ostrzeżeń z `suppressWarnings()` oraz wiadomości z `suppressMessages()`.
 ```
 
+`tryCatch()` stara się uruchomić jakiś wskazany kod, a w przypadku pojawienia się błędu wykonuje alternatywne obliczenia.
+Można to zobaczyć na poniższym przykładzie, gdzie najpierw sprawdzona zostałaby linia `kod do uruchomienia` i dopiero gdyby ona skutkowała błędem zostałaby uruchomiona linia `wykonaj kod w przypadku wystąpienia błędu`.
 <!-- https://adv-r.hadley.nz/conditions.html#conditions -->
 
 ```{r, eval=FALSE}
@@ -162,8 +169,11 @@ tryCatch(
 )
 ```
 
+Działanie `tryCatch` w praktyce jest pokazane w funkcji `log_safe()`.
+Stara się ona wyliczyć logarytm naturalny (`log()`) z wartości argumentu `x`, a w przypadku gdyby napotkała błąd zwóci ona wartość `NA`.
+
 ```{r}
-test = function(x){
+log_safe = function(x){
   tryCatch(
   error = function(e) {
     NA
@@ -173,20 +183,22 @@ test = function(x){
 }
 ```
 
-```{r}
-log(10)
-```
+Sprawdźmy jej zachowanie na dwóch przykładach.
+W pierwszym oryginalna funkcja `log()` jak i nowa `log_safe()` otrzymają poprawne dane wejściowe - wektor numeryczny.
 
 ```{r}
-test(10)
+log(10)
+log_safe(10)
 ```
+
+W tym przypadku obie zwracają dokładnie taki sam wynik.
+Jeżeli jednak jako dane wejściowe wprowadzimy wektor znakowy to oryginalna funkcja zwróci błąd, a nasza funkcja jedynie wartość `NA`.
 
 ```{r, error=TRUE}
 log("abecadło")
 ```
-
 ```{r}
-test("abecadło")
+log_safe("abecadło")
 ```
 
 ```{block2 type="rmdinfo"}
