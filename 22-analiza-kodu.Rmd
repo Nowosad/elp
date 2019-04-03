@@ -10,7 +10,7 @@ Benchmarking oznacza określanie wydajności danej operacji czy funkcji.
 Wydajność może być określona na wiele różnych sposobów, w tym najprostszym jest czas wykonania pewnego kodu.
 Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej funkcji `system.time()`.
 
-```{r}
+```{r, eval=FALSE}
 system.time(kod_do_wykonania)
 ```
 
