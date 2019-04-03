@@ -463,28 +463,44 @@ Dodatkowo istnieje funkcja <code>withCallingHandlers()</code>, która jest używ
 </div>
 <div id="programowanie-obiektowe" class="section level2">
 <h2><span class="header-section-number">11.3</span> Programowanie obiektowe</h2>
-<p>Programowanie obiektowe (ang. <em>object-oriented programming</em>, OOP) to jeden z najpopulariniejszych paradygmatów programowania (sekcja <a href="wprowadzenie.html#jezyki-programowania">1.2</a>).
+<p>Programowanie obiektowe (ang. <em>object-oriented programming</em>, OOP) to jeden z najpopularniejszych paradygmatów programowania (sekcja <a href="wprowadzenie.html#jezyki-programowania">1.2</a>).
 Polega on na definiowaniu obiektów danej klasy posiadających pewną określoną strukturę oraz zachowania.</p>
-<!-- The main ideas of object-oriented programmingare also quite simple and intuitive:1. Everything we compute with is anobject, andobjects should be structured to suit the goals of ourcomputations.2. For this, the key programming tool is aclassdefinition saying that objects belonging to this classshare structure defined bypropertiesthey all have,with the properties being themselves objects of somespecified class.3. A class caninheritfrom (contain) a simplersuperclass, such that an object of this class is alsoan object of the superclass.4. In order to compute with objects, we can de-finemethodsthat are only used when objects are ofcertain classes -->
+<!-- 1. everything is an object -->
+<!-- 2. class definition -->
+<!-- 3. class inheritiance -->
+<!-- 4. methods -->
 <p>R pozwala również na stosowanie paradygmatu obiektowego.
 Co więcej, w tym języku istnieje kilka różnych systemów programowania obiektowego, między innymi S3, S4 czy R6.
 Każdy z nich charakteryzuje inny sposób tworzenia obiektów czy ich zachowań.
 W tym rozdziale skupimy się na najczęściej używanego systemu S3.</p>
-<!-- W S3 zachowanie działania obiektu powiązane jest  \@ref(inne-klasy)-->
-<!-- S3 simplest informal flexible -->
+<p>Dwa najważniejsze elementy tego systemu to klasy i metody.
+Klasa obejmuje obiekty o podobnej strukturze, które posiadają specjalną informację o nazwie klasy.
+Metoda natomiast to sposób zachowania funkcji w przypadku napotkania obiektu danej klasy.
+Przykład metody był pokazany w sekcji <a href="zlozone-obiekty.html#inne-klasy">7.5</a>, gdzie funkcja <code>mean()</code> zachowywała się różnie w zależności od klasy danych wejściowych.</p>
+<p>Poniżej stworzono nową macierz <code>x</code>, która składa się z dwóch kolumn i dwóch wierszy oraz wartości 0, 0, 2 i 3.</p>
 <pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="dt">ncol =</span> <span class="dv">2</span>)
 x
 <span class="co">#&gt;      [,1] [,2]</span>
 <span class="co">#&gt; [1,]    0    2</span>
 <span class="co">#&gt; [2,]    0    3</span></code></pre>
+<p>Do sprawdzenia klasy obiektu w systemie S3 służy funkcja <code>class()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(x)
 <span class="co">#&gt; [1] &quot;matrix&quot;</span></code></pre>
+<p>W efekcie jej działania upewniamy się, że klasa naszego obiektu <code>x</code> to matrix.
+System S3 pozwala na prostą zmianę lub dodanie nazwy klasy używając funkcji <code>structure()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">y =<span class="st"> </span><span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)</code></pre>
+<p>Wynikiem działania tej funkcji z argumentem <code>class = &quot;prostokat&quot;</code> jest nowy obiekt <code>y</code>.
+W momencie, gdy sprawdzimy jego klasę, okaże się że nie jest to już matrix, ale za to prostokat.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(y)
 <span class="co">#&gt; [1] &quot;prostokat&quot;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">powierzchnia =<span class="st"> </span><span class="cf">function</span>(x) {
   <span class="kw">UseMethod</span>(<span class="st">&quot;powierzchnia&quot;</span>)
 }</code></pre>
+
+<div class="rmdinfo">
+powierzchnia.default
+</div>
+
 <pre class="sourceCode r"><code class="sourceCode r">powierzchnia.prostokat =<span class="st"> </span><span class="cf">function</span>(x){
   a =<span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">1</span>]
   b =<span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">1</span>]

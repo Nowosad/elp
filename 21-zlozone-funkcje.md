@@ -237,18 +237,25 @@ log_safe("abecadło")
 
 ## Programowanie obiektowe
 
-Programowanie obiektowe (ang. *object-oriented programming*, OOP) to jeden z najpopulariniejszych paradygmatów programowania (sekcja \@ref(jezyki-programowania)). 
+Programowanie obiektowe (ang. *object-oriented programming*, OOP) to jeden z najpopularniejszych paradygmatów programowania (sekcja \@ref(jezyki-programowania)). 
 Polega on na definiowaniu obiektów danej klasy posiadających pewną określoną strukturę oraz zachowania.
 
-<!-- The main ideas of object-oriented programmingare also quite simple and intuitive:1. Everything we compute with is anobject, andobjects should be structured to suit the goals of ourcomputations.2. For this, the key programming tool is aclassdefinition saying that objects belonging to this classshare structure defined bypropertiesthey all have,with the properties being themselves objects of somespecified class.3. A class caninheritfrom (contain) a simplersuperclass, such that an object of this class is alsoan object of the superclass.4. In order to compute with objects, we can de-finemethodsthat are only used when objects are ofcertain classes -->
+<!-- 1. everything is an object -->
+<!-- 2. class definition -->
+<!-- 3. class inheritiance -->
+<!-- 4. methods -->
 
 R pozwala również na stosowanie paradygmatu obiektowego.
 Co więcej, w tym języku istnieje kilka różnych systemów programowania obiektowego, między innymi S3, S4 czy R6.
 Każdy z nich charakteryzuje inny sposób tworzenia obiektów czy ich zachowań.
 W tym rozdziale skupimy się na najczęściej używanego systemu S3.
 
-<!-- W S3 zachowanie działania obiektu powiązane jest  \@ref(inne-klasy)-->
-<!-- S3 simplest informal flexible -->
+Dwa najważniejsze elementy tego systemu to klasy i metody.
+Klasa obejmuje obiekty o podobnej strukturze, które posiadają specjalną informację o nazwie klasy.
+Metoda natomiast to sposób zachowania funkcji w przypadku napotkania obiektu danej klasy. 
+Przykład metody był pokazany w sekcji \@ref(inne-klasy), gdzie funkcja `mean()` zachowywała się różnie w zależności od klasy danych wejściowych.
+
+Poniżej stworzono nową macierz `x`, która składa się z dwóch kolumn i dwóch wierszy oraz wartości 0, 0, 2 i 3.
 
 
 ```r
@@ -259,16 +266,24 @@ x
 #> [2,]    0    3
 ```
 
+Do sprawdzenia klasy obiektu w systemie S3 służy funkcja `class()`.
+
 
 ```r
 class(x)
 #> [1] "matrix"
 ```
 
+W efekcie jej działania upewniamy się, że klasa naszego obiektu `x` to matrix.
+System S3 pozwala na prostą zmianę lub dodanie nazwy klasy używając funkcji `structure()`.
+
 
 ```r
 y = structure(x, class = "prostokat")
 ```
+
+Wynikiem działania tej funkcji z argumentem `class = "prostokat"` jest nowy obiekt `y`.
+W momencie, gdy sprawdzimy jego klasę, okaże się że nie jest to już matrix, ale za to prostokat.
 
 
 ```r
@@ -282,6 +297,8 @@ powierzchnia = function(x) {
   UseMethod("powierzchnia")
 }
 ```
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">powierzchnia.default</div>\EndKnitrBlock{rmdinfo}
 
 
 ```r
