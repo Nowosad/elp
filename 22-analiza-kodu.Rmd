@@ -155,6 +155,20 @@ profvis(source("R/moja_funkcja.R"))
 library(testthat)
 ```
 
+```{r}
+nowy_prostokat = function(xmin, ymin, xmax, ymax){
+  if (!all(c(length(xmin), length(ymin), length(xmax), length(ymax)) == 1)){
+    stop("Każdy z argumentów może przyjmować tylko jedną wartość")
+  }
+  vals = c(xmin, ymin, xmax, ymax)
+  if (!(is.numeric(vals))){
+    stop("Wszystkie argumenty muszą być typu numerycznego")
+  }
+  x = matrix(vals, ncol = 2)
+  structure(x, class = "prostokat")
+}
+```
+
 `expect_warning()`, `expect_message()`
 
 ```{r, error = TRUE}
