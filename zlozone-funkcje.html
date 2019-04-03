@@ -477,7 +477,9 @@ W tym rozdziale skupimy się na najczęściej używanego systemu S3.</p>
 Klasa obejmuje obiekty o podobnej strukturze, które posiadają specjalną informację o nazwie klasy.
 Metoda natomiast to sposób zachowania funkcji w przypadku napotkania obiektu danej klasy.
 Przykład metody był pokazany w sekcji <a href="zlozone-obiekty.html#inne-klasy">7.5</a>, gdzie funkcja <code>mean()</code> zachowywała się różnie w zależności od klasy danych wejściowych.</p>
-<p>Poniżej stworzono nową macierz <code>x</code>, która składa się z dwóch kolumn i dwóch wierszy oraz wartości 0, 0, 2 i 3.</p>
+<p>Poniżej stworzono nową macierz <code>x</code>, która składa się z dwóch kolumn i dwóch wierszy oraz wartości 0, 0, 2 i 3.
+Ma ona na celu reprezentowanie figury geometrycznej - prostokąta.
+W najprostszej postaci prostokąt można opisać używając czterech współrzędnych - najmniejszej wartości położenia na osi x (np., <code>0</code>), najmniejszej wartości położenia na osi y (np., <code>0</code>), największej wartości położenia na osi x (np., <code>2</code>), oraz największej wartości położenia na osi y (np., <code>3</code>).</p>
 <pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="dt">ncol =</span> <span class="dv">2</span>)
 x
 <span class="co">#&gt;      [,1] [,2]</span>
@@ -486,27 +488,34 @@ x
 <p>Do sprawdzenia klasy obiektu w systemie S3 służy funkcja <code>class()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(x)
 <span class="co">#&gt; [1] &quot;matrix&quot;</span></code></pre>
-<p>W efekcie jej działania upewniamy się, że klasa naszego obiektu <code>x</code> to matrix.
+<p>W efekcie upewniamy się, że klasa naszego obiektu <code>x</code> to matrix.
 System S3 pozwala na prostą zmianę lub dodanie nazwy klasy używając funkcji <code>structure()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">y =<span class="st"> </span><span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)</code></pre>
 <p>Wynikiem działania tej funkcji z argumentem <code>class = &quot;prostokat&quot;</code> jest nowy obiekt <code>y</code>.
 W momencie, gdy sprawdzimy jego klasę, okaże się że nie jest to już matrix ale prostokat.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(y)
 <span class="co">#&gt; [1] &quot;prostokat&quot;</span></code></pre>
-<p>W najprostszej postaci, prostokąt można opisać używając czterech współrzędnych - najmniejszej wartości położenia na osi x, najmniejszej wartości położenia na osi y, największej wartości położenia na osi y, oraz największej wartości położenia na osi y.</p>
+<p>Posiadamy teraz nową klasę, <code>prostokat</code>, ale nie posiadamy do niej żadnych metod.
+Metoda w systemie S3 to funkcja, która działa w różny sposób w zależności od klasy danych wejściowych.
+Możliwe jest zarówno dodanie nowej metody do istniejącej funkcji, jak i stworzenie nowej funkcji.</p>
+<p>W tym wypadku interesuje nas możliwość policzenia powierzchni.
+Możemy do tego celu stworzyć nową funkcję w systemie S3 o nazwie <code>powierzchnia</code>.
+Pierwszym krokiem musi być określenie, że nasza funkcja ma być oparta o system S3 używając poniższej formy.</p>
 <pre class="sourceCode r"><code class="sourceCode r">powierzchnia =<span class="st"> </span><span class="cf">function</span>(x) {
   <span class="kw">UseMethod</span>(<span class="st">&quot;powierzchnia&quot;</span>)
 }</code></pre>
-
-<div class="rmdinfo">
-powierzchnia.default
-</div>
-
+<p>Drugim krokiem jest zdefiniowanie funkcji do wyliczania powierzchni prostokąta.
+Określa ona najpierw długości boków a i b, a następnie wymnaża je w celu wyliczenia powierzchni.</p>
 <pre class="sourceCode r"><code class="sourceCode r">powierzchnia.prostokat =<span class="st"> </span><span class="cf">function</span>(x){
-  a =<span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">1</span>]
-  b =<span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">1</span>]
-  a <span class="op">*</span><span class="st"> </span>b
+  a =<span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">1</span>] <span class="co">#wyliczenie długości boku a</span>
+  b =<span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">1</span>] <span class="co">#wyliczenie długości boku b</span>
+  a <span class="op">*</span><span class="st"> </span>b <span class="co">#wyliczenie powierzchni prostokąta</span>
 }</code></pre>
+<p>Nazwa powyższej funkcji wygląda jakby składała się z dwóch słów oddzielonych kropką - <code>powierzchnia.prostokat</code>.
+W rzeczywistości jednak nazwa funkcji to tylko <code>powierzchnia</code>, a kropka sugeruje że kolejny po niej wyraz to klasa obiektu jaki przyjmie funkcja.
+Jest to, innymi słowy, definicja metody.
+Nowa funkcja <code>powierzchnia</code> zadziała w powyższy sposób tylko w wypadku otrzymania jako dane wejściowe obiektu klasy <code>prostokat</code>.</p>
+<p>Sprawdżmy to na dwóch przykładach - obiektu <code>y</code> (klasa <code>prostokat</code>) i <code>x</code> (klasa <code>matrix</code>).</p>
 <pre class="sourceCode r"><code class="sourceCode r">y
 <span class="co">#&gt;      [,1] [,2]</span>
 <span class="co">#&gt; [1,]    0    2</span>
@@ -515,6 +524,25 @@ powierzchnia.default
 <span class="co">#&gt; [1] &quot;prostokat&quot;</span>
 <span class="kw">powierzchnia</span>(y)
 <span class="co">#&gt; [1] 6</span></code></pre>
+<p>W przypadku, gdy nasz obiekt wejściowy jest klasy <code>prostokat</code> to funkcja jest wykonywana zgodnie z metodą <code>powierzchnia.prostokat()</code>,</p>
+<pre class="sourceCode r"><code class="sourceCode r">x
+<span class="co">#&gt;      [,1] [,2]</span>
+<span class="co">#&gt; [1,]    0    2</span>
+<span class="co">#&gt; [2,]    0    3</span>
+<span class="kw">powierzchnia</span>(x)
+<span class="co">#&gt; Error in UseMethod(&quot;powierzchnia&quot;): no applicable method for &#39;powierzchnia&#39; applied to an object of class &quot;c(&#39;matrix&#39;, &#39;double&#39;, &#39;numeric&#39;)&quot;</span></code></pre>
+<p>Natomiast, gdy obiekt wejściowy będzie innej klasy to pojawi się komunikat błędu sugerujący, że nie istnieje metoda dla tej klasy pozwalająca na otrzymanie wyniku.</p>
+<p>Dodatkowo, oprócz tworzenia metod dla każdej klasy oddzielnie możliwe jest stworzenie metody domyślnej poprzez <code>nazwafunkcji.default</code>.
+W przypadku, gdy dla obiektu wejściowego nie istnieje metoda to wówczas wykonywana jest metoda domyślna (<code>default</code>).
+Poniżej dodano metodę domyślną - w przypadku, gdy dla wejściowego obiektu nie ma metody to pojawi się poniższy komunikat błędu.</p>
+
+<div class="rmdinfo">
+powierzchnia.default = function(x) {
+stop(“Funkcja <code>powierzchnia</code> ma wsparcie tylko dla obieków o klasie <code>prostokąt</code>”)
+}
+</div>
+
+<p>Sprawdźmy działanie domyślnej metody podając macierz jako obiekt wejściowy.</p>
 <pre class="sourceCode r"><code class="sourceCode r">x
 <span class="co">#&gt;      [,1] [,2]</span>
 <span class="co">#&gt; [1,]    0    2</span>

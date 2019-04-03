@@ -256,6 +256,8 @@ Metoda natomiast to sposób zachowania funkcji w przypadku napotkania obiektu da
 Przykład metody był pokazany w sekcji \@ref(inne-klasy), gdzie funkcja `mean()` zachowywała się różnie w zależności od klasy danych wejściowych.
 
 Poniżej stworzono nową macierz `x`, która składa się z dwóch kolumn i dwóch wierszy oraz wartości 0, 0, 2 i 3.
+Ma ona na celu reprezentowanie figury geometrycznej - prostokąta.
+W najprostszej postaci prostokąt można opisać używając czterech współrzędnych - najmniejszej wartości położenia na osi x (np., `0`), najmniejszej wartości położenia na osi y (np., `0`), największej wartości położenia na osi x (np., `2`), oraz największej wartości położenia na osi y (np., `3`).
 
 
 ```r
@@ -274,7 +276,7 @@ class(x)
 #> [1] "matrix"
 ```
 
-W efekcie jej działania upewniamy się, że klasa naszego obiektu `x` to matrix.
+W efekcie upewniamy się, że klasa naszego obiektu `x` to matrix.
 System S3 pozwala na prostą zmianę lub dodanie nazwy klasy używając funkcji `structure()`.
 
 
@@ -291,7 +293,13 @@ class(y)
 #> [1] "prostokat"
 ```
 
-W najprostszej postaci, prostokąt można opisać używając czterech współrzędnych - najmniejszej wartości położenia na osi x, najmniejszej wartości położenia na osi y, największej wartości położenia na osi y, oraz największej wartości położenia na osi y.
+Posiadamy teraz nową klasę, `prostokat`, ale nie posiadamy do niej żadnych metod.
+Metoda w systemie S3 to funkcja, która działa w różny sposób w zależności od klasy danych wejściowych.
+Możliwe jest zarówno dodanie nowej metody do istniejącej funkcji, jak i stworzenie nowej funkcji.
+
+W tym wypadku interesuje nas możliwość policzenia powierzchni.
+Możemy do tego celu stworzyć nową funkcję w systemie S3 o nazwie `powierzchnia`.
+Pierwszym krokiem musi być określenie, że nasza funkcja ma być oparta o system S3 używając poniższej formy.
 
 
 ```r
@@ -300,16 +308,24 @@ powierzchnia = function(x) {
 }
 ```
 
-\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">powierzchnia.default</div>\EndKnitrBlock{rmdinfo}
+Drugim krokiem jest zdefiniowanie funkcji do wyliczania powierzchni prostokąta.
+Określa ona najpierw długości boków a i b, a następnie wymnaża je w celu wyliczenia powierzchni.
 
 
 ```r
 powierzchnia.prostokat = function(x){
-  a = x[1, 2] - x[1, 1]
-  b = x[2, 2] - x[2, 1]
-  a * b
+  a = x[1, 2] - x[1, 1] #wyliczenie długości boku a
+  b = x[2, 2] - x[2, 1] #wyliczenie długości boku b
+  a * b #wyliczenie powierzchni prostokąta
 }
 ```
+
+Nazwa powyższej funkcji wygląda jakby składała się z dwóch słów oddzielonych kropką - `powierzchnia.prostokat`.
+W rzeczywistości jednak nazwa funkcji to tylko `powierzchnia`, a kropka sugeruje że kolejny po niej wyraz to klasa obiektu jaki przyjmie funkcja.
+Jest to, innymi słowy, definicja metody.
+Nowa funkcja `powierzchnia` zadziała w powyższy sposób tylko w wypadku otrzymania jako dane wejściowe obiektu klasy `prostokat`.
+
+Sprawdżmy to na dwóch przykładach - obiektu `y` (klasa `prostokat`) i `x` (klasa `matrix`).
 
 
 ```r
@@ -322,6 +338,30 @@ y
 powierzchnia(y)
 #> [1] 6
 ```
+
+W przypadku, gdy nasz obiekt wejściowy jest klasy `prostokat` to funkcja jest wykonywana zgodnie z metodą `powierzchnia.prostokat()`,
+
+
+```r
+x
+#>      [,1] [,2]
+#> [1,]    0    2
+#> [2,]    0    3
+powierzchnia(x)
+#> Error in UseMethod("powierzchnia"): no applicable method for 'powierzchnia' applied to an object of class "c('matrix', 'double', 'numeric')"
+```
+
+Natomiast, gdy obiekt wejściowy będzie innej klasy to pojawi się komunikat błędu sugerujący, że nie istnieje metoda dla tej klasy pozwalająca na otrzymanie wyniku.
+
+Dodatkowo, oprócz tworzenia metod dla każdej klasy oddzielnie możliwe jest stworzenie metody domyślnej poprzez `nazwafunkcji.default`. 
+W przypadku, gdy dla obiektu wejściowego nie istnieje metoda to wówczas wykonywana jest metoda domyślna (`default`).
+Poniżej dodano metodę domyślną - w przypadku, gdy dla wejściowego obiektu nie ma metody to pojawi się poniższy komunikat błędu.
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">powierzchnia.default = function(x) {
+  stop("Funkcja `powierzchnia` ma wsparcie tylko dla obieków o klasie `prostokąt`")
+}</div>\EndKnitrBlock{rmdinfo}
+
+Sprawdźmy działanie domyślnej metody podając macierz jako obiekt wejściowy.
 
 
 ```r
