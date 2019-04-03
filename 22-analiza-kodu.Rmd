@@ -66,6 +66,7 @@ wynik_1 = mark(
   mi_do_km1(odl_mile),
   mi_do_km2(odl_mile)
 )
+wynik_1
 ```
 
 Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
@@ -89,10 +90,16 @@ wynik_2 = mark(
   mi_do_km1(odl_mile2),
   mi_do_km2(odl_mile2)
 )
+wynik_2
 ```
 
+```{r}
+wynik_
+```
+
+
 W tym przypadku róznica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
-Funkcja `mi_do_km1` jest w stanie wykonać tylko `r round(wynik_2$`itr/sec`[[1]], 2)` operacji na sekundę, przy aż `r round(wynik_2$`itr/sec`[[2]], 2)` operacji na sekundę funkcji `mi_do_km2`.
+Funkcja `mi_do_km1` jest w stanie wykonać tylko `r round(wynik_2$`itr/sec`[[1]], 2)` operacji na sekundę, przy aż `r round(round(unclass(wynik_2[[2, 6]]), 2)` operacji na sekundę funkcji `mi_do_km2`.
 Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
 
 ```{r}
