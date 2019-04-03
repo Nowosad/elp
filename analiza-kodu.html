@@ -25,7 +25,7 @@
 <meta name="author" content="Jakub Nowosad">
 
 
-<meta name="date" content="2019-04-02">
+<meta name="date" content="2019-04-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -232,7 +232,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a><ul>
 <li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a><ul>
 <li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#skadnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia</a></li>
-<li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#przykad-dziaania"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
+<li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#for-example"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
 <li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="petle.html"><a href="petle.html#petla-while"><i class="fa fa-check"></i><b>8.2</b> Pętla while</a></li>
@@ -257,13 +257,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>11.1</b> API</a></li>
 <li class="chapter" data-level="11.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsuga-komunikatow"><i class="fa fa-check"></i><b>11.2</b> Obsługa komunikatów</a></li>
 <li class="chapter" data-level="11.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#programowanie-obiektowe"><i class="fa fa-check"></i><b>11.3</b> Programowanie obiektowe</a></li>
-<li class="chapter" data-level="11.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.4</b> Testy jednostkowe</a></li>
-<li class="chapter" data-level="11.5" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>11.5</b> Zadania</a></li>
+<li class="chapter" data-level="11.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>12</b> Analiza kodu</a><ul>
 <li class="chapter" data-level="12.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>12.1</b> Benchmarking</a></li>
 <li class="chapter" data-level="12.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>12.2</b> Profiling</a></li>
-<li class="chapter" data-level="12.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zadanie"><i class="fa fa-check"></i><b>12.3</b> Zadanie</a></li>
+<li class="chapter" data-level="12.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#testy-jednostkowe"><i class="fa fa-check"></i><b>12.3</b> Testy jednostkowe</a></li>
+<li class="chapter" data-level="12.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zadanie"><i class="fa fa-check"></i><b>12.4</b> Zadanie</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>13</b> Kontrola wersji</a><ul>
 <li class="chapter" data-level="13.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>13.1</b> Git</a></li>
@@ -313,12 +313,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="analiza-kodu" class="section level1">
 <h1><span class="header-section-number">12</span> Analiza kodu</h1>
+<!-- benchmarking -->
+<!-- profiling -->
+<!-- testing -->
 <div id="benchmarking" class="section level2">
 <h2><span class="header-section-number">12.1</span> Benchmarking</h2>
-<!-- system.time -->
+<p>Benchmarking oznacza określanie wydajności danej operacji czy funkcji.
+Wydajność może być określona na wiele różnych sposobów, w tym najprostszym jest czas wykonania pewnego kodu.
+Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej funkcji <code>system.time()</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(kod_do_wykonania)</code></pre>
+<p>Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))
 <span class="co">#&gt;    user  system elapsed </span>
 <span class="co">#&gt;   0.568   0.000   0.567</span></code></pre>
+<p>W efekcie dostajemy trzy wartości - <code>user</code>, <code>system</code> i <code>elapsed</code>. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.</p>
+<p>Benchmarking jest często używany w sytuacji, gdy istnieje kilka funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
+Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.</p>
+<p>W sekcji <a href="petle.html#for-example">8.1.2</a> stworzyliśmy kilka wersji pętli <code>for</code> pozwalającej na przeliczanie wartości z mil lądowych na kilometry.
+Pierwsza z nich, tutaj zdefiniowana jako funkcja <code>mi_do_km1</code>, tworzy pusty wektor o długości 0, do którego następie doklejane są kolejne przeliczone wartości.</p>
 <pre class="sourceCode r"><code class="sourceCode r">mi_do_km1 =<span class="st"> </span><span class="cf">function</span>(odl_mile){
   odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="dv">0</span>)
   <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
@@ -326,6 +338,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
   odl_km
 }</code></pre>
+<p>Druga, tutaj zdefiniowana jako funkcja <code>mi_do_km2</code>, tworzy pusty wektor o oczekiwanej długości wyniku.
+Następnie kolejne przeliczone wartości są wstawiane w odpowiednie miejsca wektora wynikowego.</p>
 <pre class="sourceCode r"><code class="sourceCode r">mi_do_km2 =<span class="st"> </span><span class="cf">function</span>(odl_mile){
   odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))
   <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
@@ -333,28 +347,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
   odl_km
 }</code></pre>
-<p><span class="citation">(Hester <a href="#ref-R-bench">2018</a>)</span></p>
+<p>Dwie powyższe funkcje można porównać używając <code>system.time()</code>.
+Nie zawsze jednak to wystarczy - ta sama funkcja wykonana dwa razy może mieć różny czas obliczeń.<!--why??-->
+Dodatkowo, oprócz czasu wykonywania funkcji może nas interesować zużycie zasobów, takich jak pamięc operacyjna.
+Do takiego celu powstała funkcja <code>mark()</code> z pakietu <strong>bench</strong> <span class="citation">(Hester <a href="#ref-R-bench">2018</a>)</span>, która wykonuje funkcje wiele razy przed zwróceniem wyniku.</p>
+<p>Przyjmuje ona wywołania funkcji, które chcemy porównać.
+Poniżej nastąpi porównanie funkcji <code>mi_do_km1</code> i <code>mi_do_km2</code>, w przypadku gdy jako dane wejściowe zostanie podana lista z wartościami 142, 63, 121.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(bench)
 odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)
-<span class="kw">mark</span>(<span class="kw">mi_do_km1</span>(odl_mile),
-     <span class="kw">mi_do_km2</span>(odl_mile))
+wynik_<span class="dv">1</span> =<span class="st"> </span><span class="kw">mark</span>(
+  <span class="kw">mi_do_km1</span>(odl_mile),
+  <span class="kw">mi_do_km2</span>(odl_mile)
+)
+wynik_<span class="dv">1</span>
 <span class="co">#&gt; # A tibble: 2 x 10</span>
 <span class="co">#&gt;   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 1.43µs 1.89µs 1.65µs   66µs   529202.     300KB     1  9999</span>
-<span class="co">#&gt; 2 mi_do_km2… 1.03µs 1.34µs 1.19µs 20.9µs   744840.     222KB     0 10000</span>
+<span class="co">#&gt; 1 mi_do_km1… 1.44µs 1.99µs 1.68µs 45.1µs   502330.     300KB     1  9999</span>
+<span class="co">#&gt; 2 mi_do_km2… 1.07µs 1.34µs 1.21µs 57.6µs   744256.     222KB     1  9999</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
+<p>Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
+Zawiera ona szereg charakterystyk, w tym:</p>
+<ul>
+<li><code>min</code> - minimalny czas wykonania funkcji</li>
+<li><code>mean</code> - średni czas wykonania funkcji</li>
+<li><code>median</code> - mediana czasu wykonania funkcji</li>
+<li><code>max</code> - maksymalny czas wykonania funkcji</li>
+<li><code>itr/sec</code> - liczba wykonań funkcji na sekundę</li>
+<li><code>mem_alloc</code> - pamięć użyta przez wywołanie funkcji</li>
+<li><code>n_itr</code> - liczba powtórzeń wywołania funkcji</li>
+</ul>
+<p>Wynik działania funkcji <code>mark()</code> pozwala na zauważnie, że na tym przykładzie funkcja <code>mi_do_km2</code> jest ok. 30% szybsza od <code>mi_do_km1</code>.
+Czasami możliwe jest, że jakaś funkcja działa relatywnie szybko na małych danych, ale dużo wolniej na większych danych wejściowych.
+Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na większej liście, np. z wartościami od 0 do 10000 co 1.</p>
 <pre class="sourceCode r"><code class="sourceCode r">odl_mile2 =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10000</span>)
-<span class="kw">mark</span>(<span class="kw">mi_do_km1</span>(odl_mile2),
-     <span class="kw">mi_do_km2</span>(odl_mile2))
+wynik_<span class="dv">2</span> =<span class="st"> </span><span class="kw">mark</span>(
+  <span class="kw">mi_do_km1</span>(odl_mile2),
+  <span class="kw">mi_do_km2</span>(odl_mile2)
+)
 <span class="co">#&gt; Warning: Some expressions had a GC in every iteration; so filtering is</span>
 <span class="co">#&gt; disabled.</span>
+wynik_<span class="dv">2</span>
 <span class="co">#&gt; # A tibble: 2 x 10</span>
-<span class="co">#&gt;   expression   min    mean median     max `itr/sec` mem_alloc  n_gc n_itr</span>
-<span class="co">#&gt;   &lt;chr&gt;      &lt;bch&gt; &lt;bch:t&gt; &lt;bch:&gt; &lt;bch:t&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 478ms 482.2ms  482ms   486ms      2.07     382MB    16     2</span>
-<span class="co">#&gt; 2 mi_do_km2… 870µs   1.2ms  916µs  13.9ms    835.      78.2KB    15   418</span>
+<span class="co">#&gt;   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr</span>
+<span class="co">#&gt;   &lt;chr&gt;      &lt;bch&gt; &lt;bch:tm&gt; &lt;bch:&gt; &lt;bch:t&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
+<span class="co">#&gt; 1 mi_do_km1… 484ms 488.29ms  488ms 492.6ms      2.05     382MB    16     2</span>
+<span class="co">#&gt; 2 mi_do_km2… 879µs   1.23ms  950µs  14.7ms    816.      78.2KB    15   408</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
+<p>W tym przypadku róznica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
+Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 2.05 operacji na sekundę, przy aż 815.62 operacji na sekundę funkcji <code>mi_do_km2</code>.
+Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż <code>mi_do_km2</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">porownanie =<span class="st"> </span><span class="kw">press</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10000</span>),
                    {
                    l =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span>x)
@@ -373,14 +415,14 @@ porownanie
 <span class="co">#&gt; # A tibble: 8 x 11</span>
 <span class="co">#&gt;   expression     x      min     mean   median      max `itr/sec` mem_alloc</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1…    10   3.88µs   5.23µs   4.67µs  73.35µs 191367.          0B</span>
-<span class="co">#&gt; 2 mi_do_km2…    10   1.74µs   2.22µs   1.96µs  63.03µs 451340.          0B</span>
-<span class="co">#&gt; 3 mi_do_km1…   100  67.46µs  78.23µs  74.08µs 199.27µs  12782.     43.16KB</span>
-<span class="co">#&gt; 4 mi_do_km2…   100   9.14µs  10.92µs  10.02µs  97.47µs  91543.        856B</span>
-<span class="co">#&gt; 5 mi_do_km1…  1000   4.43ms   4.68ms   4.69ms   5.05ms    214.      3.87MB</span>
-<span class="co">#&gt; 6 mi_do_km2…  1000  84.31µs  96.93µs     92µs   2.18ms  10317.      7.87KB</span>
-<span class="co">#&gt; 7 mi_do_km1… 10000 496.29ms 505.71ms 505.71ms 515.12ms      1.98  382.04MB</span>
-<span class="co">#&gt; 8 mi_do_km2… 10000  916.6µs    1.2ms    946µs  14.14ms    836.     78.18KB</span>
+<span class="co">#&gt; 1 mi_do_km1…    10   3.89µs   5.38µs   4.72µs  67.43µs 185953.          0B</span>
+<span class="co">#&gt; 2 mi_do_km2…    10   1.76µs   2.31µs   2.04µs  34.76µs 433065.          0B</span>
+<span class="co">#&gt; 3 mi_do_km1…   100  67.35µs  82.38µs  75.49µs   1.51ms  12140.     43.16KB</span>
+<span class="co">#&gt; 4 mi_do_km2…   100   9.17µs  11.25µs  10.18µs  51.01µs  88874.        856B</span>
+<span class="co">#&gt; 5 mi_do_km1…  1000    4.6ms   4.93ms   4.85ms   6.46ms    203.      3.87MB</span>
+<span class="co">#&gt; 6 mi_do_km2…  1000  85.32µs  99.74µs  92.81µs 250.25µs  10026.      7.87KB</span>
+<span class="co">#&gt; 7 mi_do_km1… 10000 533.87ms 533.87ms 533.87ms 533.87ms      1.87  382.04MB</span>
+<span class="co">#&gt; 8 mi_do_km2… 10000 916.13µs    1.1ms  948.6µs   7.17ms    910.     78.18KB</span>
 <span class="co">#&gt; # … with 3 more variables: n_gc &lt;dbl&gt;, n_itr &lt;int&gt;, total_time &lt;bch:tm&gt;</span></code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">ggplot2<span class="op">::</span><span class="kw">autoplot</span>(porownanie)</code></pre>
 </div>
@@ -410,8 +452,43 @@ z =<span class="st"> </span><span class="kw">rowSums</span>(df)
 <!-- vectorized vs not-vectorized -->
 <!-- https://rstudio-education.github.io/hopr/speed.html -->
 </div>
+<div id="testy-jednostkowe" class="section level2">
+<h2><span class="header-section-number">12.3</span> Testy jednostkowe</h2>
+<p><span class="citation">(Wickham <a href="#ref-R-testthat">2018</a>)</span></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(testthat)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">nowy_prostokat =<span class="st"> </span><span class="cf">function</span>(xmin, ymin, xmax, ymax){
+  <span class="cf">if</span> (<span class="op">!</span><span class="kw">all</span>(<span class="kw">c</span>(<span class="kw">length</span>(xmin), <span class="kw">length</span>(ymin), <span class="kw">length</span>(xmax), <span class="kw">length</span>(ymax)) <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)){
+    <span class="kw">stop</span>(<span class="st">&quot;Każdy z argumentów może przyjmować tylko jedną wartość&quot;</span>)
+  }
+  vals =<span class="st"> </span><span class="kw">c</span>(xmin, ymin, xmax, ymax)
+  <span class="cf">if</span> (<span class="op">!</span>(<span class="kw">is.numeric</span>(vals))){
+    <span class="kw">stop</span>(<span class="st">&quot;Wszystkie argumenty muszą być typu numerycznego&quot;</span>)
+  }
+  x =<span class="st"> </span><span class="kw">matrix</span>(vals, <span class="dt">ncol =</span> <span class="dv">2</span>)
+  <span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)
+}
+powierzchnia =<span class="st"> </span><span class="cf">function</span>(x) {
+  <span class="kw">UseMethod</span>(<span class="st">&quot;powierzchnia&quot;</span>)
+}
+powierzchnia.prostokat =<span class="st"> </span><span class="cf">function</span>(x){
+  a =<span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">1</span>]
+  b =<span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">1</span>]
+  a <span class="op">*</span><span class="st"> </span>b
+}</code></pre>
+<p><code>expect_warning()</code>, <code>expect_message()</code></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">expect_error</span>(<span class="kw">nowy_prostokat</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="st">&quot;a&quot;</span>))
+<span class="kw">expect_error</span>(<span class="kw">nowy_prostokat</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">6</span>))
+<span class="co">#&gt; Error: `nowy_prostokat(1, 2, 3, 6)` did not throw an error.</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">5</span>)
+<span class="kw">expect_length</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">1</span>)</code></pre>
+<p><code>expect_identical()</code>, <code>expect_equivalent()</code></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">expect_equal</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">30</span>)</code></pre>
+<p><a href="https://testthat.r-lib.org/reference/index.html" class="uri">https://testthat.r-lib.org/reference/index.html</a></p>
+<!-- When you find a bug, write a test -->
+<!-- Automated testing with Travis CI + codecov -->
+</div>
 <div id="zadanie" class="section level2">
-<h2><span class="header-section-number">12.3</span> Zadanie</h2>
+<h2><span class="header-section-number">12.4</span> Zadanie</h2>
 <!-- 1. benchmarking -->
 <!-- porównaj rowsum vs colsum vs loops implementation -->
 <!-- 2. profiling -->
@@ -426,6 +503,9 @@ z =<span class="st"> </span><span class="kw">rowSums</span>(df)
 </div>
 <div id="ref-R-profvis">
 <p>Chang, Winston, and Javier Luraschi. 2018. <em>Profvis: Interactive Visualizations for Profiling R Code</em>. <a href="https://CRAN.R-project.org/package=profvis" class="uri">https://CRAN.R-project.org/package=profvis</a>.</p>
+</div>
+<div id="ref-R-testthat">
+<p>Wickham, Hadley. 2018. <em>Testthat: Unit Testing for R</em>. <a href="https://CRAN.R-project.org/package=testthat" class="uri">https://CRAN.R-project.org/package=testthat</a>.</p>
 </div>
 </div>
 <div class="footnotes">

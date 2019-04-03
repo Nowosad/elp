@@ -1,9 +1,22 @@
 
 # Analiza kodu {#analiza-kodu}
 
+<!-- benchmarking -->
+<!-- profiling -->
+<!-- testing -->
+
 ## Benchmarking
 
-<!-- system.time -->
+Benchmarking oznacza określanie wydajności danej operacji czy funkcji.
+Wydajność może być określona na wiele różnych sposobów, w tym najprostszym jest czas wykonania pewnego kodu.
+Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej funkcji `system.time()`.
+
+
+```r
+system.time(kod_do_wykonania)
+```
+
+Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.
 
 
 ```r
@@ -11,6 +24,14 @@ system.time(mean(1:100000000))
 #>    user  system elapsed 
 #>   0.568   0.000   0.567
 ```
+
+W efekcie dostajemy trzy wartości - `user`, `system` i `elapsed`. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.
+
+Benchmarking jest często używany w sytuacji, gdy istnieje kilka  funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
+Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.
+
+W sekcji \@ref(for-example) stworzyliśmy kilka wersji pętli `for` pozwalającej na przeliczanie wartości z mil lądowych na kilometry. 
+Pierwsza z nich, tutaj zdefiniowana jako funkcja `mi_do_km1`, tworzy pusty wektor o długości 0, do którego następie doklejane są kolejne przeliczone wartości.
 
 
 ```r
@@ -23,6 +44,9 @@ mi_do_km1 = function(odl_mile){
 }
 ```
 
+Druga, tutaj zdefiniowana jako funkcja `mi_do_km2`, tworzy pusty wektor o oczekiwanej długości wyniku. 
+Następnie kolejne przeliczone wartości są wstawiane w odpowiednie miejsca wektora wynikowego.
+
 
 ```r
 mi_do_km2 = function(odl_mile){
@@ -34,36 +58,67 @@ mi_do_km2 = function(odl_mile){
 }
 ```
 
-[@R-bench]
+Dwie powyższe funkcje można porównać używając `system.time()`. 
+Nie zawsze jednak to wystarczy - ta sama funkcja wykonana dwa razy może mieć różny czas obliczeń.<!--why??-->
+Dodatkowo, oprócz czasu wykonywania funkcji może nas interesować zużycie zasobów, takich jak pamięc operacyjna.
+Do takiego celu powstała funkcja `mark()` z pakietu **bench** [@R-bench], która wykonuje funkcje wiele razy przed zwróceniem wyniku.
+
+Przyjmuje ona wywołania funkcji, które chcemy porównać.
+Poniżej nastąpi porównanie funkcji `mi_do_km1` i `mi_do_km2`, w przypadku gdy jako dane wejściowe zostanie podana lista z wartościami 142, 63, 121.
 
 
 ```r
 library(bench)
 odl_mile = list(142, 63, 121)
-mark(mi_do_km1(odl_mile),
-     mi_do_km2(odl_mile))
+wynik_1 = mark(
+  mi_do_km1(odl_mile),
+  mi_do_km2(odl_mile)
+)
+wynik_1
 #> # A tibble: 2 x 10
 #>   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr
 #>   <chr>      <bch:> <bch:> <bch:> <bch:>     <dbl> <bch:byt> <dbl> <int>
-#> 1 mi_do_km1… 1.43µs 1.89µs 1.65µs   66µs   529202.     300KB     1  9999
-#> 2 mi_do_km2… 1.03µs 1.34µs 1.19µs 20.9µs   744840.     222KB     0 10000
+#> 1 mi_do_km1… 1.44µs 1.99µs 1.68µs 45.1µs   502330.     300KB     1  9999
+#> 2 mi_do_km2… 1.07µs 1.34µs 1.21µs 57.6µs   744256.     222KB     1  9999
 #> # … with 1 more variable: total_time <bch:tm>
 ```
+
+Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
+Zawiera ona szereg charakterystyk, w tym:
+
+- `min` - minimalny czas wykonania funkcji
+- `mean` - średni czas wykonania funkcji
+- `median` - mediana czasu wykonania funkcji
+- `max` - maksymalny czas wykonania funkcji
+- `itr/sec` - liczba wykonań funkcji na sekundę
+- `mem_alloc` - pamięć użyta przez wywołanie funkcji
+- `n_itr` - liczba powtórzeń wywołania funkcji
+
+Wynik działania funkcji `mark()` pozwala na zauważnie, że na tym przykładzie funkcja `mi_do_km2` jest ok. 30% szybsza od `mi_do_km1`.
+Czasami możliwe jest, że jakaś funkcja działa relatywnie szybko na małych danych, ale dużo wolniej na większych danych wejściowych.
+Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na większej liście, np. z wartościami od 0 do 10000 co 1.
 
 
 ```r
 odl_mile2 = as.list(0:10000)
-mark(mi_do_km1(odl_mile2),
-     mi_do_km2(odl_mile2))
+wynik_2 = mark(
+  mi_do_km1(odl_mile2),
+  mi_do_km2(odl_mile2)
+)
 #> Warning: Some expressions had a GC in every iteration; so filtering is
 #> disabled.
+wynik_2
 #> # A tibble: 2 x 10
-#>   expression   min    mean median     max `itr/sec` mem_alloc  n_gc n_itr
-#>   <chr>      <bch> <bch:t> <bch:> <bch:t>     <dbl> <bch:byt> <dbl> <int>
-#> 1 mi_do_km1… 478ms 482.2ms  482ms   486ms      2.07     382MB    16     2
-#> 2 mi_do_km2… 870µs   1.2ms  916µs  13.9ms    835.      78.2KB    15   418
+#>   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr
+#>   <chr>      <bch> <bch:tm> <bch:> <bch:t>     <dbl> <bch:byt> <dbl> <int>
+#> 1 mi_do_km1… 484ms 488.29ms  488ms 492.6ms      2.05     382MB    16     2
+#> 2 mi_do_km2… 879µs   1.23ms  950µs  14.7ms    816.      78.2KB    15   408
 #> # … with 1 more variable: total_time <bch:tm>
 ```
+
+W tym przypadku róznica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
+Funkcja `mi_do_km1` jest w stanie wykonać tylko 2.05 operacji na sekundę, przy aż 815.62 operacji na sekundę funkcji `mi_do_km2`.
+Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
 
 
 ```r
@@ -85,14 +140,14 @@ porownanie
 #> # A tibble: 8 x 11
 #>   expression     x      min     mean   median      max `itr/sec` mem_alloc
 #>   <chr>      <dbl> <bch:tm> <bch:tm> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 mi_do_km1…    10   3.88µs   5.23µs   4.67µs  73.35µs 191367.          0B
-#> 2 mi_do_km2…    10   1.74µs   2.22µs   1.96µs  63.03µs 451340.          0B
-#> 3 mi_do_km1…   100  67.46µs  78.23µs  74.08µs 199.27µs  12782.     43.16KB
-#> 4 mi_do_km2…   100   9.14µs  10.92µs  10.02µs  97.47µs  91543.        856B
-#> 5 mi_do_km1…  1000   4.43ms   4.68ms   4.69ms   5.05ms    214.      3.87MB
-#> 6 mi_do_km2…  1000  84.31µs  96.93µs     92µs   2.18ms  10317.      7.87KB
-#> 7 mi_do_km1… 10000 496.29ms 505.71ms 505.71ms 515.12ms      1.98  382.04MB
-#> 8 mi_do_km2… 10000  916.6µs    1.2ms    946µs  14.14ms    836.     78.18KB
+#> 1 mi_do_km1…    10   3.89µs   5.38µs   4.72µs  67.43µs 185953.          0B
+#> 2 mi_do_km2…    10   1.76µs   2.31µs   2.04µs  34.76µs 433065.          0B
+#> 3 mi_do_km1…   100  67.35µs  82.38µs  75.49µs   1.51ms  12140.     43.16KB
+#> 4 mi_do_km2…   100   9.17µs  11.25µs  10.18µs  51.01µs  88874.        856B
+#> 5 mi_do_km1…  1000    4.6ms   4.93ms   4.85ms   6.46ms    203.      3.87MB
+#> 6 mi_do_km2…  1000  85.32µs  99.74µs  92.81µs 250.25µs  10026.      7.87KB
+#> 7 mi_do_km1… 10000 533.87ms 533.87ms 533.87ms 533.87ms      1.87  382.04MB
+#> 8 mi_do_km2… 10000 916.13µs    1.1ms  948.6µs   7.17ms    910.     78.18KB
 #> # … with 3 more variables: n_gc <dbl>, n_itr <int>, total_time <bch:tm>
 ```
 
@@ -100,7 +155,6 @@ porownanie
 ```r
 ggplot2::autoplot(porownanie)
 ```
-
 
 ## Profiling
 
@@ -139,6 +193,67 @@ profvis(source("R/moja_funkcja.R"))
 <!--  Wektoryzacja kodu -->
 <!-- vectorized vs not-vectorized -->
 <!-- https://rstudio-education.github.io/hopr/speed.html -->
+
+## Testy jednostkowe
+
+[@R-testthat]
+
+
+```r
+library(testthat)
+```
+
+
+```r
+nowy_prostokat = function(xmin, ymin, xmax, ymax){
+  if (!all(c(length(xmin), length(ymin), length(xmax), length(ymax)) == 1)){
+    stop("Każdy z argumentów może przyjmować tylko jedną wartość")
+  }
+  vals = c(xmin, ymin, xmax, ymax)
+  if (!(is.numeric(vals))){
+    stop("Wszystkie argumenty muszą być typu numerycznego")
+  }
+  x = matrix(vals, ncol = 2)
+  structure(x, class = "prostokat")
+}
+powierzchnia = function(x) {
+  UseMethod("powierzchnia")
+}
+powierzchnia.prostokat = function(x){
+  a = x[1, 2] - x[1, 1]
+  b = x[2, 2] - x[2, 1]
+  a * b
+}
+```
+
+
+
+`expect_warning()`, `expect_message()`
+
+
+```r
+expect_error(nowy_prostokat(3, 5, 2, "a"))
+expect_error(nowy_prostokat(1, 2, 3, 6))
+#> Error: `nowy_prostokat(1, 2, 3, 6)` did not throw an error.
+```
+
+
+```r
+nowy_p = nowy_prostokat(0, 0, 6, 5)
+expect_length(powierzchnia(nowy_p), 1)
+```
+
+`expect_identical()`, `expect_equivalent()`
+
+
+```r
+expect_equal(powierzchnia(nowy_p), 30)
+```
+
+https://testthat.r-lib.org/reference/index.html
+
+<!-- When you find a bug, write a test -->
+<!-- Automated testing with Travis CI + codecov -->
 
 ## Zadanie
 

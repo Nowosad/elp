@@ -25,7 +25,7 @@
 <meta name="author" content="Jakub Nowosad">
 
 
-<meta name="date" content="2019-04-02">
+<meta name="date" content="2019-04-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -232,7 +232,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a><ul>
 <li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a><ul>
 <li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#skadnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia</a></li>
-<li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#przykad-dziaania"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
+<li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#for-example"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
 <li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="petle.html"><a href="petle.html#petla-while"><i class="fa fa-check"></i><b>8.2</b> Pętla while</a></li>
@@ -257,13 +257,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>11.1</b> API</a></li>
 <li class="chapter" data-level="11.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsuga-komunikatow"><i class="fa fa-check"></i><b>11.2</b> Obsługa komunikatów</a></li>
 <li class="chapter" data-level="11.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#programowanie-obiektowe"><i class="fa fa-check"></i><b>11.3</b> Programowanie obiektowe</a></li>
-<li class="chapter" data-level="11.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.4</b> Testy jednostkowe</a></li>
-<li class="chapter" data-level="11.5" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>11.5</b> Zadania</a></li>
+<li class="chapter" data-level="11.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>12</b> Analiza kodu</a><ul>
 <li class="chapter" data-level="12.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>12.1</b> Benchmarking</a></li>
 <li class="chapter" data-level="12.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>12.2</b> Profiling</a></li>
-<li class="chapter" data-level="12.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zadanie"><i class="fa fa-check"></i><b>12.3</b> Zadanie</a></li>
+<li class="chapter" data-level="12.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#testy-jednostkowe"><i class="fa fa-check"></i><b>12.3</b> Testy jednostkowe</a></li>
+<li class="chapter" data-level="12.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zadanie"><i class="fa fa-check"></i><b>12.4</b> Zadanie</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>13</b> Kontrola wersji</a><ul>
 <li class="chapter" data-level="13.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>13.1</b> Git</a></li>
@@ -315,7 +315,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">11</span> Złożone funkcje</h1>
 <!-- intro -->
 <!-- solve a single problem -->
-<!-- type stability -->
 <!-- 07-oo https://blog.rstudio.com/2019/02/06/rstudio-conf-2019-workshops/ -->
 <!-- https://arxiv.org/pdf/1409.3531.pdf -->
 <div id="api" class="section level2">
@@ -337,14 +336,19 @@ Podobnie należy zadbać o spójną kolejność podobnych argumentów w funkcjac
 <span class="co">#&gt; [1] 1 2</span>
 <span class="kw">grep</span>(<span class="st">&quot;^[k].&quot;</span>, <span class="dt">x =</span> tekst, <span class="dt">value =</span> <span class="ot">TRUE</span>)
 <span class="co">#&gt; [1] &quot;kołdra&quot; &quot;kordła&quot;</span></code></pre>
-<p>Dodatkowym elementem API może być określenie domyślnych parametrów funkcji.</p>
+<p>Dodatkowym elementem API może być określenie domyślnych parametrów funkcji.
+Poniższa funkcja, <code>potegowanie()</code> ma na celu podnoszenie wartości wejściowego wektora (<code>x</code>) do wybranej potęgi (<code>w</code>).
+Domyślamy się jednak, że większość użytkowników jest zainteresowana używaniem tej funkcji do podnoszenia wartości do drugiej potęgi i dlatego też ustalamy, że domyślnie argument <code>w</code> przyjmuje wartość 2.</p>
 <pre class="sourceCode r"><code class="sourceCode r">potegowanie =<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">w =</span> <span class="dv">2</span>){
   x <span class="op">^</span><span class="st"> </span>w
 }</code></pre>
+<p>W tej sytuacji, gdy użytkownik poda tylko jeden argument do funkcji <code>potegowanie()</code> to podany wektor zostanie podniesiony do kwadratu.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">potegowanie</span>(<span class="dv">2</span>)
 <span class="co">#&gt; [1] 4</span></code></pre>
+<p>Będzie to identyczne z działaniem funkcji, gdy użytkownik ręcznie zdefinuje drugi argument jako dwa (<code>w = 2</code>).</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">potegowanie</span>(<span class="dv">2</span>, <span class="dt">w =</span> <span class="dv">2</span>)
 <span class="co">#&gt; [1] 4</span></code></pre>
+<p>W sytuacji, gdy użytkownika interesuje inna wartość <code>w</code> niż domyślna, może on ją zmodyfikować i otrzyma odpowiedni wynik.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">potegowanie</span>(<span class="dv">2</span>, <span class="dt">w =</span> <span class="dv">3</span>)
 <span class="co">#&gt; [1] 8</span></code></pre>
 <!-- elipsis -->
@@ -378,7 +382,15 @@ Innym przykładem jest informowanie na temat działania funkcji w tle - pobieran
 Do wyświetlenia wiadomości służy funkcja <code>message()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">message</span>(<span class="st">&quot;To jest komunikat wiadomości.&quot;</span>)
 <span class="co">#&gt; To jest komunikat wiadomości.</span></code></pre>
-<!-- block cat vs message https://adv-r.hadley.nz/conditions.html#signalling-conditions -->
+
+<div class="rmdinfo">
+Działanie funkcji <code>message()</code> jest zbliżone do funkcji <code>cat()</code> czy <code>print()</code>.
+Różni je jednak cel w jakim są użyte.
+Rolą funkcji <code>message()</code> jest przekazanie informacji od twórcy do użytkownika, natomiast celem funkcji tj. <code>cat()</code> jest zapytanie użytkownika w pewnej kwestii.
+</div>
+
+<p>Przykład użycia trzech podstawowych rodzajów komunikatów można zobaczyć w poniższej funkcji <code>minus_1()</code>.
+Ta funkcja przyjmuje wartość numeryczną, od której odejmuje jeden, a na końcu zwraca wartość bezwzględną (<code>abs(x - 1)</code>).</p>
 <pre class="sourceCode r"><code class="sourceCode r">minus_<span class="dv">1</span> =<span class="st"> </span><span class="cf">function</span>(x){
   <span class="cf">if</span>(<span class="kw">is.character</span>(x)){
     <span class="kw">stop</span>(<span class="st">&quot;Argument `x` musi być zmienną numeryczną, a nie znakową.&quot;</span>)
@@ -389,29 +401,41 @@ Do wyświetlenia wiadomości służy funkcja <code>message()</code>.</p>
   }
   <span class="kw">abs</span>(x <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)
 }</code></pre>
+<p>W przypadku, gdy użytkownik wprowadzi jako wejście wektor tekstowy (<code>if(is.character(x))</code>) to działanie funkcji zostanie przerwane i pojawi się odpowiedni komunikat błędu.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">minus_1</span>(<span class="st">&quot;kot&quot;</span>)
 <span class="co">#&gt; Error in minus_1(&quot;kot&quot;): Argument `x` musi być zmienną numeryczną, a nie znakową.</span></code></pre>
+<p>Jeżeli jako argument <code>x</code> zostanie podany wektor logiczny (<code>else if(is.logical(x))</code>) to pojawi się komunikat ostrzeżenia, ale dalsze obliczanie zostanie wykonane.
+W tym przypadku wartość <code>TRUE</code> zostanie najpierw zamieniona na 1 a <code>FALSE</code> na zero, następnie od tych wartości zostanie odjęte jeden, a na końcu zostaną one zamienione na wartości bezwzględne.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">minus_1</span>(<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>))
 <span class="co">#&gt; Warning in minus_1(c(TRUE, FALSE)): Argument `x` jest zmienną logiczną. Czy</span>
 <span class="co">#&gt; nie chcesz użyć zmiennej numerycznej?</span>
 <span class="co">#&gt; [1] 0 1</span></code></pre>
+<p>Po wprowadzeniu wartości numerycznych do funkcji <code>minus_1()</code> pojawi się tekst wiadomości, po którym nastąpi wyliczenie kodu <code>abs(x - 1)</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">minus_1</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">-6</span>))
 <span class="co">#&gt; Wow. Argument `x` jest oczekiwaną zmienną numeryczną.</span>
 <span class="co">#&gt; [1] 0 1 5 7</span></code></pre>
 <!-- http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/10/006_wyjatki.html -->
+<p>Złożone funkcje opierają się o inne istniejące funkcje.
+W powyższym przykładzie, <code>minus_1()</code> używał, między innymi funkcji <code>-</code> do odejmowania czy <code>abs</code> do wyliczania wartości bezwzględnej.
+Czasami spodziewamy się, że wartość wprowadzona przez użytkownika może spowodować wystąpienie wewnętrznego błędu i jednocześnie wiemy jak to naprawić.
+W takich sytuacjach przydaje się funkcja <code>tryCatch()</code>.</p>
 
 <div class="rmdinfo">
 R pozwala na ignorowanie wystąpienia błędu używając funkcji <code>try()</code>, ignorowanie ostrzeżeń z <code>suppressWarnings()</code> oraz wiadomości z <code>suppressMessages()</code>.
 </div>
 
-<!-- https://adv-r.hadley.nz/conditions.html#conditions -->
+<p><code>tryCatch()</code> stara się uruchomić jakiś wskazany kod, a w przypadku pojawienia się błędu wykonuje alternatywne obliczenia.
+Można to zobaczyć na poniższym przykładzie, gdzie najpierw sprawdzona zostałaby linia <code>kod do uruchomienia</code> i dopiero gdyby ona skutkowała błędem zostałaby uruchomiona linia <code>wykonaj kod w przypadku wystąpienia błędu</code>.
+<!-- https://adv-r.hadley.nz/conditions.html#conditions --></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tryCatch</span>(
   <span class="dt">error =</span> <span class="cf">function</span>(e) {
     wykonaj kod w przypadku wystąpienia błędu
   },
   kod do uruchomienia 
 )</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">test =<span class="st"> </span><span class="cf">function</span>(x){
+<p>Działanie <code>tryCatch</code> w praktyce jest pokazane w funkcji <code>log_safe()</code>.
+Stara się ona wyliczyć logarytm naturalny (<code>log()</code>) z wartości argumentu <code>x</code>, a w przypadku gdyby napotkała błąd zwóci ona wartość <code>NA</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">log_safe =<span class="st"> </span><span class="cf">function</span>(x){
   <span class="kw">tryCatch</span>(
   <span class="dt">error =</span> <span class="cf">function</span>(e) {
     <span class="ot">NA</span>
@@ -419,13 +443,17 @@ R pozwala na ignorowanie wystąpienia błędu używając funkcji <code>try()</co
   <span class="kw">log</span>(x)
   )
 }</code></pre>
+<p>Sprawdźmy jej zachowanie na dwóch przykładach.
+W pierwszym oryginalna funkcja <code>log()</code> jak i nowa <code>log_safe()</code> otrzymają poprawne dane wejściowe - wektor numeryczny.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(<span class="dv">10</span>)
+<span class="co">#&gt; [1] 2.3</span>
+<span class="kw">log_safe</span>(<span class="dv">10</span>)
 <span class="co">#&gt; [1] 2.3</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">test</span>(<span class="dv">10</span>)
-<span class="co">#&gt; [1] 2.3</span></code></pre>
+<p>W tym przypadku obie zwracają dokładnie taki sam wynik.
+Jeżeli jednak jako dane wejściowe wprowadzimy wektor znakowy to oryginalna funkcja zwróci błąd, a nasza funkcja jedynie wartość <code>NA</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(<span class="st">&quot;abecadło&quot;</span>)
 <span class="co">#&gt; Error in log(&quot;abecadło&quot;): non-numeric argument to mathematical function</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">test</span>(<span class="st">&quot;abecadło&quot;</span>)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log_safe</span>(<span class="st">&quot;abecadło&quot;</span>)
 <span class="co">#&gt; [1] NA</span></code></pre>
 
 <div class="rmdinfo">
@@ -530,24 +558,8 @@ nowy_p2
 <!-- https://arxiv.org/pdf/1409.3531.pdf -->
 <!-- https://adv-r.hadley.nz/oo.html -->
 </div>
-<div id="testy-jednostkowe" class="section level2">
-<h2><span class="header-section-number">11.4</span> Testy jednostkowe</h2>
-<p><span class="citation">(Wickham <a href="#ref-R-testthat">2018</a>)</span></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(testthat)</code></pre>
-<p><code>expect_warning()</code>, <code>expect_message()</code></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">expect_error</span>(<span class="kw">nowy_prostokat</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="st">&quot;a&quot;</span>))
-<span class="kw">expect_error</span>(<span class="kw">nowy_prostokat</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">6</span>))
-<span class="co">#&gt; Error: `nowy_prostokat(1, 2, 3, 6)` did not throw an error.</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">5</span>)
-<span class="kw">expect_length</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">1</span>)</code></pre>
-<p><code>expect_identical()</code>, <code>expect_equivalent()</code></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">expect_equal</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">30</span>)</code></pre>
-<p><a href="https://testthat.r-lib.org/reference/index.html" class="uri">https://testthat.r-lib.org/reference/index.html</a></p>
-<!-- When you find a bug, write a test -->
-<!-- Automated testing with Travis CI + codecov -->
-</div>
 <div id="zadania-9" class="section level2">
-<h2><span class="header-section-number">11.5</span> Zadania</h2>
+<h2><span class="header-section-number">11.4</span> Zadania</h2>
 <!-- 1. zaprojektuj api -->
 <!-- 2. zaprojektuj i zaimplementuj api -->
 <!-- 3. api - na.rm  -->
@@ -563,9 +575,6 @@ nowy_p2
 <div id="refs" class="references">
 <div id="ref-R-landscapemetrics">
 <p>Hesselbarth, Maximillian H.K., Marco Sciaini, Jakub Nowosad, and Sebastian Hanss. 2019. <em>Landscapemetrics: Landscape Metrics for Categorical Map Patterns</em>. <a href="https://r-spatialecology.github.io/landscapemetrics/" class="uri">https://r-spatialecology.github.io/landscapemetrics/</a>.</p>
-</div>
-<div id="ref-R-testthat">
-<p>Wickham, Hadley. 2018. <em>Testthat: Unit Testing for R</em>. <a href="https://CRAN.R-project.org/package=testthat" class="uri">https://CRAN.R-project.org/package=testthat</a>.</p>
 </div>
 </div>
             </section>

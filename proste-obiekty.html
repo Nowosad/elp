@@ -25,7 +25,7 @@
 <meta name="author" content="Jakub Nowosad">
 
 
-<meta name="date" content="2019-04-02">
+<meta name="date" content="2019-04-03">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -232,7 +232,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a><ul>
 <li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a><ul>
 <li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#skadnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia</a></li>
-<li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#przykad-dziaania"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
+<li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#for-example"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
 <li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="petle.html"><a href="petle.html#petla-while"><i class="fa fa-check"></i><b>8.2</b> Pętla while</a></li>
@@ -257,13 +257,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>11.1</b> API</a></li>
 <li class="chapter" data-level="11.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsuga-komunikatow"><i class="fa fa-check"></i><b>11.2</b> Obsługa komunikatów</a></li>
 <li class="chapter" data-level="11.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#programowanie-obiektowe"><i class="fa fa-check"></i><b>11.3</b> Programowanie obiektowe</a></li>
-<li class="chapter" data-level="11.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.4</b> Testy jednostkowe</a></li>
-<li class="chapter" data-level="11.5" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>11.5</b> Zadania</a></li>
+<li class="chapter" data-level="11.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>12</b> Analiza kodu</a><ul>
 <li class="chapter" data-level="12.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>12.1</b> Benchmarking</a></li>
 <li class="chapter" data-level="12.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>12.2</b> Profiling</a></li>
-<li class="chapter" data-level="12.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zadanie"><i class="fa fa-check"></i><b>12.3</b> Zadanie</a></li>
+<li class="chapter" data-level="12.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#testy-jednostkowe"><i class="fa fa-check"></i><b>12.3</b> Testy jednostkowe</a></li>
+<li class="chapter" data-level="12.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zadanie"><i class="fa fa-check"></i><b>12.4</b> Zadanie</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>13</b> Kontrola wersji</a><ul>
 <li class="chapter" data-level="13.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>13.1</b> Git</a></li>
@@ -656,7 +656,7 @@ tekst2
 <p>R ma wbudowaną reprezentację dat w postaci klasy <code>Date</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">dzis =<span class="st"> </span><span class="kw">Sys.Date</span>()
 dzis
-<span class="co">#&gt; [1] &quot;2019-04-02&quot;</span></code></pre>
+<span class="co">#&gt; [1] &quot;2019-04-03&quot;</span></code></pre>
 <p>Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowia), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(dzis)
 <span class="co">#&gt; [1] &quot;double&quot;</span>
@@ -667,8 +667,8 @@ dzis
 <span class="co">#&gt; [1] &quot;Date&quot;</span></code></pre>
 <p>Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji <code>unclass()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unclass</span>(dzis)
-<span class="co">#&gt; [1] 17988</span></code></pre>
-<p>Wynik, 17988, oznacza liczbę dni od 1970-01-01.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>
+<span class="co">#&gt; [1] 17989</span></code></pre>
+<p>Wynik, 17989, oznacza liczbę dni od 1970-01-01.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.</p>
 <pre class="sourceCode r"><code class="sourceCode r">stara_data =<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;1912-04-13&quot;</span>)
 <span class="kw">unclass</span>(stara_data)

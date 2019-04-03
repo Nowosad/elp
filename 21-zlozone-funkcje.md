@@ -5,7 +5,6 @@
 
 <!-- intro -->
 <!-- solve a single problem -->
-<!-- type stability -->
 
 <!-- 07-oo https://blog.rstudio.com/2019/02/06/rstudio-conf-2019-workshops/ -->
 
@@ -39,6 +38,8 @@ grep("^[k].", x = tekst, value = TRUE)
 ```
 
 Dodatkowym elementem API może być określenie domyślnych parametrów funkcji.
+Poniższa funkcja, `potegowanie()` ma na celu podnoszenie wartości wejściowego wektora (`x`) do wybranej potęgi (`w`).
+Domyślamy się jednak, że większość użytkowników jest zainteresowana używaniem tej funkcji do podnoszenia wartości do drugiej potęgi i dlatego też ustalamy, że domyślnie argument `w` przyjmuje wartość 2.
 
 
 ```r
@@ -47,17 +48,23 @@ potegowanie = function(x, w = 2){
 }
 ```
 
+W tej sytuacji, gdy użytkownik poda tylko jeden argument do funkcji `potegowanie()` to podany wektor zostanie podniesiony do kwadratu.
+
 
 ```r
 potegowanie(2)
 #> [1] 4
 ```
 
+Będzie to identyczne z działaniem funkcji, gdy użytkownik ręcznie zdefinuje drugi argument jako dwa (`w = 2`).
+
 
 ```r
 potegowanie(2, w = 2)
 #> [1] 4
 ```
+
+W sytuacji, gdy użytkownika interesuje inna wartość `w` niż domyślna, może on ją zmodyfikować i otrzyma odpowiedni wynik.
 
 
 ```r
@@ -114,7 +121,12 @@ message("To jest komunikat wiadomości.")
 #> To jest komunikat wiadomości.
 ```
 
-<!-- block cat vs message https://adv-r.hadley.nz/conditions.html#signalling-conditions -->
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Działanie funkcji `message()` jest zbliżone do funkcji `cat()` czy `print()`.
+Różni je jednak cel w jakim są użyte.
+Rolą funkcji `message()` jest przekazanie informacji od twórcy do użytkownika, natomiast celem funkcji tj. `cat()` jest zapytanie użytkownika w pewnej kwestii.</div>\EndKnitrBlock{rmdinfo}
+
+Przykład użycia trzech podstawowych rodzajów komunikatów można zobaczyć w poniższej funkcji `minus_1()`.
+Ta funkcja przyjmuje wartość numeryczną, od której odejmuje jeden, a na końcu zwraca wartość bezwzględną (`abs(x - 1)`).
 
 
 ```r
@@ -130,11 +142,16 @@ minus_1 = function(x){
 }
 ```
 
+W przypadku, gdy użytkownik wprowadzi jako wejście wektor tekstowy (`if(is.character(x))`) to działanie funkcji zostanie przerwane i pojawi się odpowiedni komunikat błędu.
+
 
 ```r
 minus_1("kot")
 #> Error in minus_1("kot"): Argument `x` musi być zmienną numeryczną, a nie znakową.
 ```
+
+Jeżeli jako argument `x` zostanie podany wektor logiczny (`else if(is.logical(x))`) to pojawi się komunikat ostrzeżenia, ale dalsze obliczanie zostanie wykonane.
+W tym przypadku wartość `TRUE` zostanie najpierw zamieniona na 1 a `FALSE` na zero, następnie od tych wartości zostanie odjęte jeden, a na końcu zostaną one zamienione na wartości bezwzględne.
 
 
 ```r
@@ -143,6 +160,8 @@ minus_1(c(TRUE, FALSE))
 #> nie chcesz użyć zmiennej numerycznej?
 #> [1] 0 1
 ```
+
+Po wprowadzeniu wartości numerycznych do funkcji `minus_1()` pojawi się tekst wiadomości, po którym nastąpi wyliczenie kodu `abs(x - 1)`.
 
 
 ```r
@@ -153,8 +172,15 @@ minus_1(c(1, 0, 6, -6))
 
 <!-- http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/10/006_wyjatki.html --> 
 
+Złożone funkcje opierają się o inne istniejące funkcje. 
+W powyższym przykładzie, `minus_1()` używał, między innymi funkcji `-` do odejmowania czy `abs` do wyliczania wartości bezwzględnej.
+Czasami spodziewamy się, że wartość wprowadzona przez użytkownika może spowodować wystąpienie wewnętrznego błędu i jednocześnie wiemy jak to naprawić.
+W takich sytuacjach przydaje się funkcja `tryCatch()`.
+
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">R pozwala na ignorowanie wystąpienia błędu używając funkcji `try()`, ignorowanie ostrzeżeń z `suppressWarnings()` oraz wiadomości z `suppressMessages()`.</div>\EndKnitrBlock{rmdinfo}
 
+`tryCatch()` stara się uruchomić jakiś wskazany kod, a w przypadku pojawienia się błędu wykonuje alternatywne obliczenia.
+Można to zobaczyć na poniższym przykładzie, gdzie najpierw sprawdzona zostałaby linia `kod do uruchomienia` i dopiero gdyby ona skutkowała błędem zostałaby uruchomiona linia `wykonaj kod w przypadku wystąpienia błędu`.
 <!-- https://adv-r.hadley.nz/conditions.html#conditions -->
 
 
@@ -167,9 +193,12 @@ tryCatch(
 )
 ```
 
+Działanie `tryCatch` w praktyce jest pokazane w funkcji `log_safe()`.
+Stara się ona wyliczyć logarytm naturalny (`log()`) z wartości argumentu `x`, a w przypadku gdyby napotkała błąd zwóci ona wartość `NA`.
+
 
 ```r
-test = function(x){
+log_safe = function(x){
   tryCatch(
   error = function(e) {
     NA
@@ -179,17 +208,19 @@ test = function(x){
 }
 ```
 
+Sprawdźmy jej zachowanie na dwóch przykładach.
+W pierwszym oryginalna funkcja `log()` jak i nowa `log_safe()` otrzymają poprawne dane wejściowe - wektor numeryczny.
+
 
 ```r
 log(10)
 #> [1] 2.3
-```
-
-
-```r
-test(10)
+log_safe(10)
 #> [1] 2.3
 ```
+
+W tym przypadku obie zwracają dokładnie taki sam wynik.
+Jeżeli jednak jako dane wejściowe wprowadzimy wektor znakowy to oryginalna funkcja zwróci błąd, a nasza funkcja jedynie wartość `NA`.
 
 
 ```r
@@ -197,9 +228,8 @@ log("abecadło")
 #> Error in log("abecadło"): non-numeric argument to mathematical function
 ```
 
-
 ```r
-test("abecadło")
+log_safe("abecadło")
 #> [1] NA
 ```
 
@@ -359,42 +389,6 @@ proprawny_prostokat(nowy_p2)
 <!-- methods -->
 <!-- https://arxiv.org/pdf/1409.3531.pdf -->
 <!-- https://adv-r.hadley.nz/oo.html -->
-
-## Testy jednostkowe
-
-[@R-testthat]
-
-
-```r
-library(testthat)
-```
-
-`expect_warning()`, `expect_message()`
-
-
-```r
-expect_error(nowy_prostokat(3, 5, 2, "a"))
-expect_error(nowy_prostokat(1, 2, 3, 6))
-#> Error: `nowy_prostokat(1, 2, 3, 6)` did not throw an error.
-```
-
-
-```r
-nowy_p = nowy_prostokat(0, 0, 6, 5)
-expect_length(powierzchnia(nowy_p), 1)
-```
-
-`expect_identical()`, `expect_equivalent()`
-
-
-```r
-expect_equal(powierzchnia(nowy_p), 30)
-```
-
-https://testthat.r-lib.org/reference/index.html
-
-<!-- When you find a bug, write a test -->
-<!-- Automated testing with Travis CI + codecov -->
 
 ## Zadania
 
