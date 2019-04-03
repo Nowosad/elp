@@ -256,7 +256,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>11</b> Złożone funkcje</a><ul>
 <li class="chapter" data-level="11.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>11.1</b> API</a></li>
 <li class="chapter" data-level="11.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsuga-komunikatow"><i class="fa fa-check"></i><b>11.2</b> Obsługa komunikatów</a></li>
-<li class="chapter" data-level="11.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#programowanie-obiektowe"><i class="fa fa-check"></i><b>11.3</b> Programowanie obiektowe</a></li>
+<li class="chapter" data-level="11.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#programowanie-obiektowe"><i class="fa fa-check"></i><b>11.3</b> Programowanie obiektowe</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#klasy"><i class="fa fa-check"></i><b>11.3.1</b> Klasy</a></li>
+<li class="chapter" data-level="11.3.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#metody"><i class="fa fa-check"></i><b>11.3.2</b> Metody</a></li>
+<li class="chapter" data-level="11.3.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#konstruktory"><i class="fa fa-check"></i><b>11.3.3</b> Konstruktory</a></li>
+<li class="chapter" data-level="11.3.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#walidatory"><i class="fa fa-check"></i><b>11.3.4</b> Walidatory</a></li>
+</ul></li>
 <li class="chapter" data-level="11.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>12</b> Analiza kodu</a><ul>
@@ -477,6 +482,8 @@ W tym rozdziale skupimy się na najczęściej używanego systemu S3.</p>
 Klasa obejmuje obiekty o podobnej strukturze, które posiadają specjalną informację o nazwie klasy.
 Metoda natomiast to sposób zachowania funkcji w przypadku napotkania obiektu danej klasy.
 Przykład metody był pokazany w sekcji <a href="zlozone-obiekty.html#inne-klasy">7.5</a>, gdzie funkcja <code>mean()</code> zachowywała się różnie w zależności od klasy danych wejściowych.</p>
+<div id="klasy" class="section level3">
+<h3><span class="header-section-number">11.3.1</span> Klasy</h3>
 <p>Poniżej stworzono nową macierz <code>x</code>, która składa się z dwóch kolumn i dwóch wierszy oraz wartości 0, 0, 2 i 3.
 Ma ona na celu reprezentowanie figury geometrycznej - prostokąta.
 W najprostszej postaci prostokąt można opisać używając czterech współrzędnych - najmniejszej wartości położenia na osi x (np., <code>0</code>), najmniejszej wartości położenia na osi y (np., <code>0</code>), największej wartości położenia na osi x (np., <code>2</code>), oraz największej wartości położenia na osi y (np., <code>3</code>).</p>
@@ -495,6 +502,9 @@ System S3 pozwala na prostą zmianę lub dodanie nazwy klasy używając funkcji 
 W momencie, gdy sprawdzimy jego klasę, okaże się że nie jest to już matrix ale prostokat.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(y)
 <span class="co">#&gt; [1] &quot;prostokat&quot;</span></code></pre>
+</div>
+<div id="metody" class="section level3">
+<h3><span class="header-section-number">11.3.2</span> Metody</h3>
 <p>Posiadamy teraz nową klasę, <code>prostokat</code>, ale nie posiadamy do niej żadnych metod.
 Metoda w systemie S3 to funkcja, która działa w różny sposób w zależności od klasy danych wejściowych.
 Możliwe jest zarówno dodanie nowej metody do istniejącej funkcji, jak i stworzenie nowej funkcji.</p>
@@ -549,6 +559,9 @@ stop(“Funkcja <code>powierzchnia</code> ma wsparcie tylko dla obieków o klasi
 <span class="co">#&gt; [2,]    0    3</span>
 <span class="kw">powierzchnia</span>(x)
 <span class="co">#&gt; Error in UseMethod(&quot;powierzchnia&quot;): no applicable method for &#39;powierzchnia&#39; applied to an object of class &quot;c(&#39;matrix&#39;, &#39;double&#39;, &#39;numeric&#39;)&quot;</span></code></pre>
+</div>
+<div id="konstruktory" class="section level3">
+<h3><span class="header-section-number">11.3.3</span> Konstruktory</h3>
 <!-- constructor + validator -->
 <p>konstruktor</p>
 <pre class="sourceCode r"><code class="sourceCode r">nowy_prostokat =<span class="st"> </span><span class="cf">function</span>(xmin, ymin, xmax, ymax){
@@ -571,6 +584,9 @@ nowy_p
 <span class="co">#&gt; [1] &quot;prostokat&quot;</span>
 <span class="kw">powierzchnia</span>(nowy_p)
 <span class="co">#&gt; [1] 30</span></code></pre>
+</div>
+<div id="walidatory" class="section level3">
+<h3><span class="header-section-number">11.3.4</span> Walidatory</h3>
 <p>walidator (złożone funkcje)</p>
 <pre class="sourceCode r"><code class="sourceCode r">proprawny_prostokat =<span class="st"> </span><span class="cf">function</span>(x){
   vals =<span class="st"> </span><span class="kw">as.vector</span>(x)
@@ -602,6 +618,7 @@ nowy_p2
 <!-- methods -->
 <!-- https://arxiv.org/pdf/1409.3531.pdf -->
 <!-- https://adv-r.hadley.nz/oo.html -->
+</div>
 </div>
 <div id="zadania-9" class="section level2">
 <h2><span class="header-section-number">11.4</span> Zadania</h2>

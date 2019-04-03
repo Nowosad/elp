@@ -255,6 +255,8 @@ Klasa obejmuje obiekty o podobnej strukturze, które posiadają specjalną infor
 Metoda natomiast to sposób zachowania funkcji w przypadku napotkania obiektu danej klasy. 
 Przykład metody był pokazany w sekcji \@ref(inne-klasy), gdzie funkcja `mean()` zachowywała się różnie w zależności od klasy danych wejściowych.
 
+### Klasy
+
 Poniżej stworzono nową macierz `x`, która składa się z dwóch kolumn i dwóch wierszy oraz wartości 0, 0, 2 i 3.
 Ma ona na celu reprezentowanie figury geometrycznej - prostokąta.
 W najprostszej postaci prostokąt można opisać używając czterech współrzędnych - najmniejszej wartości położenia na osi x (np., `0`), najmniejszej wartości położenia na osi y (np., `0`), największej wartości położenia na osi x (np., `2`), oraz największej wartości położenia na osi y (np., `3`).
@@ -292,6 +294,8 @@ W momencie, gdy sprawdzimy jego klasę, okaże się że nie jest to już matrix 
 class(y)
 #> [1] "prostokat"
 ```
+
+### Metody
 
 Posiadamy teraz nową klasę, `prostokat`, ale nie posiadamy do niej żadnych metod.
 Metoda w systemie S3 to funkcja, która działa w różny sposób w zależności od klasy danych wejściowych.
@@ -373,6 +377,8 @@ powierzchnia(x)
 #> Error in UseMethod("powierzchnia"): no applicable method for 'powierzchnia' applied to an object of class "c('matrix', 'double', 'numeric')"
 ```
 
+### Konstruktory
+
 <!-- constructor + validator -->
 konstruktor
 
@@ -403,6 +409,8 @@ nowy_p
 powierzchnia(nowy_p)
 #> [1] 30
 ```
+
+### Walidatory
 
 walidator (złożone funkcje)
 
