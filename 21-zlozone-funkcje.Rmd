@@ -4,7 +4,6 @@
 
 <!-- intro -->
 <!-- solve a single problem -->
-<!-- type stability -->
 
 <!-- 07-oo https://blog.rstudio.com/2019/02/06/rstudio-conf-2019-workshops/ -->
 
@@ -35,6 +34,8 @@ grep("^[k].", x = tekst, value = TRUE)
 ```
 
 Dodatkowym elementem API może być określenie domyślnych parametrów funkcji.
+Poniższa funkcja, `potegowanie()` ma na celu podnoszenie wartości wejściowego wektora (`x`) do wybranej potęgi (`w`).
+Domyślamy się jednak, że większość użytkowników jest zainteresowana używaniem tej funkcji do podnoszenia wartości do drugiej potęgi i dlatego też ustalamy, że domyślnie argument `w` przyjmuje wartość 2.
 
 ```{r}
 potegowanie = function(x, w = 2){
@@ -42,13 +43,19 @@ potegowanie = function(x, w = 2){
 }
 ```
 
+W tej sytuacji, gdy użytkownik poda tylko jeden argument do funkcji `potegowanie()` to podany wektor zostanie podniesiony do kwadratu.
+
 ```{r}
 potegowanie(2)
 ```
 
+Będzie to identyczne z działaniem funkcji, gdy użytkownik ręcznie zdefinuje drugi argument jako dwa (`w = 2`).
+
 ```{r}
 potegowanie(2, w = 2)
 ```
+
+W sytuacji, gdy użytkownika interesuje inna wartość `w` niż domyślna, może on ją zmodyfikować i otrzyma odpowiedni wynik.
 
 ```{r}
 potegowanie(2, w = 3)
