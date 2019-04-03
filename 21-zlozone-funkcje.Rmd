@@ -246,11 +246,13 @@ y = structure(x, class = "prostokat")
 ```
 
 Wynikiem działania tej funkcji z argumentem `class = "prostokat"` jest nowy obiekt `y`.
-W momencie, gdy sprawdzimy jego klasę, okaże się że nie jest to już `r class(x)`, ale za to `r class(y)`.
+W momencie, gdy sprawdzimy jego klasę, okaże się że nie jest to już `r class(x)` ale `r class(y)`.
 
 ```{r}
 class(y)
 ```
+
+W najprostszej postaci, prostokąt można opisać używając czterech współrzędnych - najmniejszej wartości położenia na osi x, najmniejszej wartości położenia na osi y, największej wartości położenia na osi y, oraz największej wartości położenia na osi y.
 
 ```{r}
 powierzchnia = function(x) {
