@@ -490,9 +490,10 @@ x
 System S3 pozwala na prostą zmianę lub dodanie nazwy klasy używając funkcji <code>structure()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">y =<span class="st"> </span><span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)</code></pre>
 <p>Wynikiem działania tej funkcji z argumentem <code>class = &quot;prostokat&quot;</code> jest nowy obiekt <code>y</code>.
-W momencie, gdy sprawdzimy jego klasę, okaże się że nie jest to już matrix, ale za to prostokat.</p>
+W momencie, gdy sprawdzimy jego klasę, okaże się że nie jest to już matrix ale prostokat.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(y)
 <span class="co">#&gt; [1] &quot;prostokat&quot;</span></code></pre>
+<p>W najprostszej postaci, prostokąt można opisać używając czterech współrzędnych - najmniejszej wartości położenia na osi x, najmniejszej wartości położenia na osi y, największej wartości położenia na osi y, oraz największej wartości położenia na osi y.</p>
 <pre class="sourceCode r"><code class="sourceCode r">powierzchnia =<span class="st"> </span><span class="cf">function</span>(x) {
   <span class="kw">UseMethod</span>(<span class="st">&quot;powierzchnia&quot;</span>)
 }</code></pre>

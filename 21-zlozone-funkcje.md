@@ -283,13 +283,15 @@ y = structure(x, class = "prostokat")
 ```
 
 Wynikiem działania tej funkcji z argumentem `class = "prostokat"` jest nowy obiekt `y`.
-W momencie, gdy sprawdzimy jego klasę, okaże się że nie jest to już matrix, ale za to prostokat.
+W momencie, gdy sprawdzimy jego klasę, okaże się że nie jest to już matrix ale prostokat.
 
 
 ```r
 class(y)
 #> [1] "prostokat"
 ```
+
+W najprostszej postaci, prostokąt można opisać używając czterech współrzędnych - najmniejszej wartości położenia na osi x, najmniejszej wartości położenia na osi y, największej wartości położenia na osi y, oraz największej wartości położenia na osi y.
 
 
 ```r
