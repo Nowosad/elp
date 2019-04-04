@@ -25,7 +25,7 @@
 <meta name="author" content="Jakub Nowosad">
 
 
-<meta name="date" content="2019-04-03">
+<meta name="date" content="2019-04-04">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -260,7 +260,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.3.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#klasy"><i class="fa fa-check"></i><b>11.3.1</b> Klasy</a></li>
 <li class="chapter" data-level="11.3.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#metody"><i class="fa fa-check"></i><b>11.3.2</b> Metody</a></li>
 <li class="chapter" data-level="11.3.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#konstruktory"><i class="fa fa-check"></i><b>11.3.3</b> Konstruktory</a></li>
-<li class="chapter" data-level="11.3.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#walidatory"><i class="fa fa-check"></i><b>11.3.4</b> Walidatory</a></li>
 </ul></li>
 <li class="chapter" data-level="11.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
 </ul></li>
@@ -330,7 +329,7 @@ Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej fu
 <p>Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))
 <span class="co">#&gt;    user  system elapsed </span>
-<span class="co">#&gt;   0.572   0.000   0.573</span></code></pre>
+<span class="co">#&gt;   0.572   0.000   0.572</span></code></pre>
 <p>W efekcie dostajemy trzy wartości - <code>user</code>, <code>system</code> i <code>elapsed</code>. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.</p>
 <p>Benchmarking jest często używany w sytuacji, gdy istnieje kilka funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
 Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.</p>
@@ -368,8 +367,8 @@ wynik_<span class="dv">1</span>
 <span class="co">#&gt; # A tibble: 2 x 10</span>
 <span class="co">#&gt;   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 1.47µs 1.96µs 1.67µs 45.9µs   509306.     300KB     1  9999</span>
-<span class="co">#&gt; 2 mi_do_km2… 1.06µs 1.35µs 1.21µs 57.5µs   740837.     222KB     1  9999</span>
+<span class="co">#&gt; 1 mi_do_km1… 1.43µs 1.97µs 1.67µs 46.4µs   507426.     300KB     1  9999</span>
+<span class="co">#&gt; 2 mi_do_km2… 1.04µs 1.39µs  1.2µs   62µs   717887.     222KB     1  9999</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <p>Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
 Zawiera ona szereg charakterystyk, w tym:</p>
@@ -396,40 +395,32 @@ wynik_<span class="dv">2</span>
 <span class="co">#&gt; # A tibble: 2 x 10</span>
 <span class="co">#&gt;   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;bch&gt; &lt;bch:tm&gt; &lt;bch:&gt; &lt;bch:t&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 456ms 466.98ms  467ms 478.3ms      2.14     382MB    16     2</span>
-<span class="co">#&gt; 2 mi_do_km2… 866µs   1.13ms  910µs  12.4ms    885.      78.2KB    16   443</span>
+<span class="co">#&gt; 1 mi_do_km1… 459ms 462.62ms  463ms 465.9ms      2.16     382MB    16     2</span>
+<span class="co">#&gt; 2 mi_do_km2… 874µs   1.15ms  909µs  13.2ms    869.      78.2KB    16   435</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <p>W tym przypadku róznica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
-Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 2.14 operacji na sekundę, przy aż 884.58 operacji na sekundę funkcji <code>mi_do_km2</code>.
+Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 2.16 operacji na sekundę, przy aż 869 operacji na sekundę funkcji <code>mi_do_km2</code>.
 Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż <code>mi_do_km2</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">porownanie =<span class="st"> </span><span class="kw">press</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10000</span>),
-                   {
-                   l =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span>x)
-                   <span class="kw">mark</span>(<span class="kw">mi_do_km1</span>(l),
-                   <span class="kw">mi_do_km2</span>(l))
-                   })
-<span class="co">#&gt; Running with:</span>
-<span class="co">#&gt;       x</span>
-<span class="co">#&gt; 1    10</span>
-<span class="co">#&gt; 2   100</span>
-<span class="co">#&gt; 3  1000</span>
-<span class="co">#&gt; 4 10000</span>
-<span class="co">#&gt; Warning: Some expressions had a GC in every iteration; so filtering is</span>
-<span class="co">#&gt; disabled.</span>
-porownanie
-<span class="co">#&gt; # A tibble: 8 x 11</span>
-<span class="co">#&gt;   expression     x      min     mean   median      max `itr/sec` mem_alloc</span>
-<span class="co">#&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1…    10   3.93µs   5.15µs   4.58µs  59.95µs 194314.          0B</span>
-<span class="co">#&gt; 2 mi_do_km2…    10   1.76µs   2.13µs   1.94µs  19.01µs 469188.          0B</span>
-<span class="co">#&gt; 3 mi_do_km1…   100     67µs  76.69µs  72.79µs 201.55µs  13040.     43.16KB</span>
-<span class="co">#&gt; 4 mi_do_km2…   100   9.08µs  10.55µs   9.91µs  60.39µs  94738.        856B</span>
-<span class="co">#&gt; 5 mi_do_km1…  1000   4.39ms   4.58ms   4.55ms    4.9ms    218.      3.87MB</span>
-<span class="co">#&gt; 6 mi_do_km2…  1000   84.3µs  93.22µs  89.24µs 298.36µs  10728.      7.87KB</span>
-<span class="co">#&gt; 7 mi_do_km1… 10000 489.23ms 514.11ms 514.11ms 538.98ms      1.95  382.04MB</span>
-<span class="co">#&gt; 8 mi_do_km2… 10000 871.76µs   1.07ms 914.64µs   9.55ms    936.     78.18KB</span>
-<span class="co">#&gt; # … with 3 more variables: n_gc &lt;dbl&gt;, n_itr &lt;int&gt;, total_time &lt;bch:tm&gt;</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">ggplot2<span class="op">::</span><span class="kw">autoplot</span>(porownanie)</code></pre>
+<pre><code>#&gt; Running with:
+#&gt;       x
+#&gt; 1    10
+#&gt; 2   100
+#&gt; 3  1000
+#&gt; 4 10000
+#&gt; Warning: Some expressions had a GC in every iteration; so filtering is
+#&gt; disabled.
+#&gt; # A tibble: 8 x 11
+#&gt;   expression     x      min     mean   median      max `itr/sec` mem_alloc
+#&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;
+#&gt; 1 mi_do_km1…    10    3.9µs      5µs   4.54µs   59.8µs 199925.          0B
+#&gt; 2 mi_do_km2…    10   1.75µs    2.1µs   1.92µs  31.14µs 475171.          0B
+#&gt; 3 mi_do_km1…   100     67µs   77.6µs  73.68µs   1.41ms  12886.     43.16KB
+#&gt; 4 mi_do_km2…   100   9.16µs  10.68µs   9.96µs 100.99µs  93622.        856B
+#&gt; 5 mi_do_km1…  1000    4.4ms   4.62ms   4.61ms   4.92ms    216.      3.87MB
+#&gt; 6 mi_do_km2…  1000  84.55µs  94.93µs  91.17µs 363.46µs  10534.      7.87KB
+#&gt; 7 mi_do_km1… 10000 490.73ms 506.55ms 506.55ms 522.37ms      1.97  382.04MB
+#&gt; 8 mi_do_km2… 10000 877.81µs   1.07ms 913.38µs   9.64ms    938.     78.18KB
+#&gt; # … with 3 more variables: n_gc &lt;dbl&gt;, n_itr &lt;int&gt;, total_time &lt;bch:tm&gt;</code></pre>
 </div>
 <div id="profiling" class="section level2">
 <h2><span class="header-section-number">12.2</span> Profiling</h2>
@@ -440,16 +431,21 @@ porownanie
 <li>Profiluj przed optymalizowaniem.</li>
 </ol>
 <p>Czym jest profilowanie i dlaczego powinno być wykonywane przed optymalizowaniem kodu?
-Profilowanie mierzy czas działania każdej linii kodu.</p>
-<p><span class="citation">(Chang and Luraschi <a href="#ref-R-profvis">2018</a>)</span></p>
+Profilowanie mierzy wydajność działania każdej linii kodu w celu sprawdzenia, która linia zabiera najwięcej czasu lub zasobów.
+Dzięki profilowaniu można określić fragmenty kodu, które można poprawić w celu zwiększenia czasu wykonywania skryptu czy funkcji.</p>
+<p>Poniżej znajduje się zawartość pliku <code>R/moja_funkcja.R</code>.
+Jego działanie polega na stworzeniu wektora od 1 do 9999999 (obiekt <code>x</code>), wektora od 1 do 19999998 co 2 (obiekt <code>y</code>), połączenie tych wektorów do ramki danych (obiekt <code>df</code>), wyliczenie sumy wartości dla każdego wiersza (obiekt <code>z</code>), a na końcu wyliczenie średniej z obiektu <code>z</code>.
+Która z tych linii zabiera najwięcej czasu a która najmniej?</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># plik R/moja_funkcja.R</span>
 x =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">9999999</span>
 y =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">19999998</span>, <span class="dt">by =</span> <span class="dv">2</span>)
 df =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y)
 z =<span class="st"> </span><span class="kw">rowSums</span>(df)
 <span class="kw">mean</span>(z)</code></pre>
+<p>Profilowanie kodu R można wykonać używając pakietu <strong>profvis</strong> <span class="citation">(Chang and Luraschi <a href="#ref-R-profvis">2018</a>)</span>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(profvis)
 <span class="kw">profvis</span>(<span class="kw">source</span>(<span class="st">&quot;R/moja_funkcja.R&quot;</span>))</code></pre>
+<!-- add image/app -->
 <!-- profiling -->
 <!-- https://r-prof.github.io/jointprof/articles/proposal.html -->
 <!-- https://adv-r.hadley.nz/perf-improve.html -->

@@ -22,7 +22,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 ```r
 system.time(mean(1:100000000))
 #>    user  system elapsed 
-#>   0.572   0.000   0.573
+#>   0.572   0.000   0.572
 ```
 
 W efekcie dostajemy trzy wartości - `user`, `system` i `elapsed`. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.
@@ -78,8 +78,8 @@ wynik_1
 #> # A tibble: 2 x 10
 #>   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr
 #>   <chr>      <bch:> <bch:> <bch:> <bch:>     <dbl> <bch:byt> <dbl> <int>
-#> 1 mi_do_km1… 1.47µs 1.96µs 1.67µs 45.9µs   509306.     300KB     1  9999
-#> 2 mi_do_km2… 1.06µs 1.35µs 1.21µs 57.5µs   740837.     222KB     1  9999
+#> 1 mi_do_km1… 1.43µs 1.97µs 1.67µs 46.4µs   507426.     300KB     1  9999
+#> 2 mi_do_km2… 1.04µs 1.39µs  1.2µs   62µs   717887.     222KB     1  9999
 #> # … with 1 more variable: total_time <bch:tm>
 ```
 
@@ -111,23 +111,17 @@ wynik_2
 #> # A tibble: 2 x 10
 #>   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr
 #>   <chr>      <bch> <bch:tm> <bch:> <bch:t>     <dbl> <bch:byt> <dbl> <int>
-#> 1 mi_do_km1… 456ms 466.98ms  467ms 478.3ms      2.14     382MB    16     2
-#> 2 mi_do_km2… 866µs   1.13ms  910µs  12.4ms    885.      78.2KB    16   443
+#> 1 mi_do_km1… 459ms 462.62ms  463ms 465.9ms      2.16     382MB    16     2
+#> 2 mi_do_km2… 874µs   1.15ms  909µs  13.2ms    869.      78.2KB    16   435
 #> # … with 1 more variable: total_time <bch:tm>
 ```
 
 W tym przypadku róznica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
-Funkcja `mi_do_km1` jest w stanie wykonać tylko 2.14 operacji na sekundę, przy aż 884.58 operacji na sekundę funkcji `mi_do_km2`.
+Funkcja `mi_do_km1` jest w stanie wykonać tylko 2.16 operacji na sekundę, przy aż 869 operacji na sekundę funkcji `mi_do_km2`.
 Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
 
 
-```r
-porownanie = press(x = c(10, 100, 1000, 10000),
-                   {
-                   l = as.list(0:x)
-                   mark(mi_do_km1(l),
-                   mi_do_km2(l))
-                   })
+```
 #> Running with:
 #>       x
 #> 1    10
@@ -136,25 +130,21 @@ porownanie = press(x = c(10, 100, 1000, 10000),
 #> 4 10000
 #> Warning: Some expressions had a GC in every iteration; so filtering is
 #> disabled.
-porownanie
 #> # A tibble: 8 x 11
 #>   expression     x      min     mean   median      max `itr/sec` mem_alloc
 #>   <chr>      <dbl> <bch:tm> <bch:tm> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 mi_do_km1…    10   3.93µs   5.15µs   4.58µs  59.95µs 194314.          0B
-#> 2 mi_do_km2…    10   1.76µs   2.13µs   1.94µs  19.01µs 469188.          0B
-#> 3 mi_do_km1…   100     67µs  76.69µs  72.79µs 201.55µs  13040.     43.16KB
-#> 4 mi_do_km2…   100   9.08µs  10.55µs   9.91µs  60.39µs  94738.        856B
-#> 5 mi_do_km1…  1000   4.39ms   4.58ms   4.55ms    4.9ms    218.      3.87MB
-#> 6 mi_do_km2…  1000   84.3µs  93.22µs  89.24µs 298.36µs  10728.      7.87KB
-#> 7 mi_do_km1… 10000 489.23ms 514.11ms 514.11ms 538.98ms      1.95  382.04MB
-#> 8 mi_do_km2… 10000 871.76µs   1.07ms 914.64µs   9.55ms    936.     78.18KB
+#> 1 mi_do_km1…    10    3.9µs      5µs   4.54µs   59.8µs 199925.          0B
+#> 2 mi_do_km2…    10   1.75µs    2.1µs   1.92µs  31.14µs 475171.          0B
+#> 3 mi_do_km1…   100     67µs   77.6µs  73.68µs   1.41ms  12886.     43.16KB
+#> 4 mi_do_km2…   100   9.16µs  10.68µs   9.96µs 100.99µs  93622.        856B
+#> 5 mi_do_km1…  1000    4.4ms   4.62ms   4.61ms   4.92ms    216.      3.87MB
+#> 6 mi_do_km2…  1000  84.55µs  94.93µs  91.17µs 363.46µs  10534.      7.87KB
+#> 7 mi_do_km1… 10000 490.73ms 506.55ms 506.55ms 522.37ms      1.97  382.04MB
+#> 8 mi_do_km2… 10000 877.81µs   1.07ms 913.38µs   9.64ms    938.     78.18KB
 #> # … with 3 more variables: n_gc <dbl>, n_itr <int>, total_time <bch:tm>
 ```
 
 
-```r
-ggplot2::autoplot(porownanie)
-```
 
 ## Profiling
 
@@ -165,9 +155,12 @@ Istnieją trzy podstawowe reguły optymalizacji kodu^[http://www.moscowcoffeerev
 3. Profiluj przed optymalizowaniem.
 
 Czym jest profilowanie i dlaczego powinno być wykonywane przed optymalizowaniem kodu?
-Profilowanie mierzy czas działania każdej linii kodu.
+Profilowanie mierzy wydajność działania każdej linii kodu w celu sprawdzenia, która linia zabiera najwięcej czasu lub zasobów.
+Dzięki profilowaniu można określić fragmenty kodu, które można poprawić w celu zwiększenia czasu wykonywania skryptu czy funkcji.
 
-[@R-profvis]
+Poniżej znajduje się zawartość pliku `R/moja_funkcja.R`.
+Jego działanie polega na stworzeniu wektora od 1 do 9999999 (obiekt `x`), wektora od 1 do 19999998 co 2 (obiekt `y`), połączenie tych wektorów do ramki danych (obiekt `df`), wyliczenie sumy wartości dla każdego wiersza (obiekt `z`), a na końcu wyliczenie średniej z obiektu `z`.
+Która z tych linii zabiera najwięcej czasu a która najmniej?
 
 
 ```r
@@ -179,11 +172,15 @@ z = rowSums(df)
 mean(z)
 ```
 
+Profilowanie kodu R można wykonać używając pakietu **profvis** [@R-profvis].
+
 
 ```r
 library(profvis)
 profvis(source("R/moja_funkcja.R"))
 ```
+
+<!-- add image/app -->
 
 <!-- profiling -->
 <!-- https://r-prof.github.io/jointprof/articles/proposal.html -->

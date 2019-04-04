@@ -25,7 +25,7 @@
 <meta name="author" content="Jakub Nowosad">
 
 
-<meta name="date" content="2019-04-03">
+<meta name="date" content="2019-04-04">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -260,7 +260,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.3.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#klasy"><i class="fa fa-check"></i><b>11.3.1</b> Klasy</a></li>
 <li class="chapter" data-level="11.3.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#metody"><i class="fa fa-check"></i><b>11.3.2</b> Metody</a></li>
 <li class="chapter" data-level="11.3.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#konstruktory"><i class="fa fa-check"></i><b>11.3.3</b> Konstruktory</a></li>
-<li class="chapter" data-level="11.3.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#walidatory"><i class="fa fa-check"></i><b>11.3.4</b> Walidatory</a></li>
 </ul></li>
 <li class="chapter" data-level="11.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
 </ul></li>
@@ -519,7 +518,7 @@ Określa ona najpierw długości boków a i b, a następnie wymnaża je w celu w
 <pre class="sourceCode r"><code class="sourceCode r">powierzchnia.prostokat =<span class="st"> </span><span class="cf">function</span>(x){
   a =<span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">1</span>] <span class="co">#wyliczenie długości boku a</span>
   b =<span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">1</span>] <span class="co">#wyliczenie długości boku b</span>
-  a <span class="op">*</span><span class="st"> </span>b <span class="co">#wyliczenie powierzchni prostokąta</span>
+  a <span class="op">*</span><span class="st"> </span>b                 <span class="co">#wyliczenie powierzchni prostokąta</span>
 }</code></pre>
 <p>Nazwa powyższej funkcji wygląda jakby składała się z dwóch słów oddzielonych kropką - <code>powierzchnia.prostokat</code>.
 W rzeczywistości jednak nazwa funkcji to tylko <code>powierzchnia</code>, a kropka sugeruje że kolejny po niej wyraz to klasa obiektu jaki przyjmie funkcja.
@@ -562,59 +561,53 @@ stop(“Funkcja <code>powierzchnia</code> ma wsparcie tylko dla obieków o klasi
 </div>
 <div id="konstruktory" class="section level3">
 <h3><span class="header-section-number">11.3.3</span> Konstruktory</h3>
-<!-- constructor + validator -->
-<p>konstruktor</p>
+<p>Trudno oczekiwać od użytkownika, że bez żadnych pomyłek stworzy obiekt klasy, który wymyśliliśmy, a następnie użyje funkcji <code>structure()</code>, aby dodać odpowiednią nazwę klasy.
+Dlatego też ważnym elementem jest stworzenie konstruktora - funkcji, której celem jest zbudowanie poprawnego obiektu naszej klasy, a w przypadku podania złych argumentów wejściowych poinformowanie użytkownika co jest nie tak.</p>
+<p>Poniżej znajduje się konstruktor o nazwie <code>nowy_prostokąt()</code>. Przyjmuje on wartości czterech współrzędnych, a następnie wykonuje szereg sprawdzeń ich poprawności:</p>
+<ul>
+<li>Czy wszyskie argumenty są typu numerycznego?</li>
+<li>Czy każdy argument ma tylko jeden element?</li>
+<li>Czy minimalna wartość współrzędnej x jest mniejsza od maksymalnej?</li>
+<li>Czy minimalna wartość współrzędnej y jest mniejsza od maksymalnej?</li>
+</ul>
+<p>Po tych sprawdzeniach następuje zbudowanie nowej macierzy oraz dodanie nazwy klasy.</p>
 <pre class="sourceCode r"><code class="sourceCode r">nowy_prostokat =<span class="st"> </span><span class="cf">function</span>(xmin, ymin, xmax, ymax){
-  <span class="cf">if</span> (<span class="op">!</span><span class="kw">all</span>(<span class="kw">c</span>(<span class="kw">length</span>(xmin), <span class="kw">length</span>(ymin), <span class="kw">length</span>(xmax), <span class="kw">length</span>(ymax)) <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)){
-    <span class="kw">stop</span>(<span class="st">&quot;Każdy z argumentów może przyjmować tylko jedną wartość&quot;</span>)
-  }
   vals =<span class="st"> </span><span class="kw">c</span>(xmin, ymin, xmax, ymax)
   <span class="cf">if</span> (<span class="op">!</span>(<span class="kw">is.numeric</span>(vals))){
     <span class="kw">stop</span>(<span class="st">&quot;Wszystkie argumenty muszą być typu numerycznego&quot;</span>)
   }
-  x =<span class="st"> </span><span class="kw">matrix</span>(vals, <span class="dt">ncol =</span> <span class="dv">2</span>)
-  <span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)
-}</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">5</span>)
-nowy_p
-<span class="co">#&gt;      [,1] [,2]</span>
-<span class="co">#&gt; [1,]    0    6</span>
-<span class="co">#&gt; [2,]    0    5</span>
-<span class="co">#&gt; attr(,&quot;class&quot;)</span>
-<span class="co">#&gt; [1] &quot;prostokat&quot;</span>
-<span class="kw">powierzchnia</span>(nowy_p)
-<span class="co">#&gt; [1] 30</span></code></pre>
-</div>
-<div id="walidatory" class="section level3">
-<h3><span class="header-section-number">11.3.4</span> Walidatory</h3>
-<p>walidator (złożone funkcje)</p>
-<pre class="sourceCode r"><code class="sourceCode r">proprawny_prostokat =<span class="st"> </span><span class="cf">function</span>(x){
-  vals =<span class="st"> </span><span class="kw">as.vector</span>(x)
+  <span class="cf">if</span> (<span class="op">!</span><span class="kw">all</span>(<span class="kw">c</span>(<span class="kw">length</span>(xmin), <span class="kw">length</span>(ymin), <span class="kw">length</span>(xmax), <span class="kw">length</span>(ymax)) <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)){
+    <span class="kw">stop</span>(<span class="st">&quot;Każdy z argumentów może przyjmować tylko jedną wartość&quot;</span>)
+  }
   x_range =<span class="st"> </span>vals[<span class="dv">3</span>] <span class="op">-</span><span class="st"> </span>vals[<span class="dv">1</span>]
-  y_range =<span class="st"> </span>vals[<span class="dv">4</span>] <span class="op">-</span><span class="st"> </span>vals[<span class="dv">2</span>]
   <span class="cf">if</span> (x_range <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span>){
     <span class="kw">stop</span>(<span class="st">&quot;`xmax` musi przyjmować wartość większą niż `xmin`&quot;</span>)
   }
+  y_range =<span class="st"> </span>vals[<span class="dv">4</span>] <span class="op">-</span><span class="st"> </span>vals[<span class="dv">2</span>]
   <span class="cf">if</span> (y_range <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span>) {
     <span class="kw">stop</span>(<span class="st">&quot;`ymax` musi przyjmować wartość większą niż `ymin`&quot;</span>)
   }
-  x
+  x =<span class="st"> </span><span class="kw">matrix</span>(vals, <span class="dt">ncol =</span> <span class="dv">2</span>)
+  <span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)
 }</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">proprawny_prostokat</span>(nowy_p)
+<p>Sprawdźmy działanie tego konstruktora na dwóch przypadkach.
+W pierwszym podajmy poprawne, sprawdzone wcześniej wartości.</p>
+<pre class="sourceCode r"><code class="sourceCode r">nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>)
+nowy_p
 <span class="co">#&gt;      [,1] [,2]</span>
-<span class="co">#&gt; [1,]    0    6</span>
-<span class="co">#&gt; [2,]    0    5</span>
+<span class="co">#&gt; [1,]    0    2</span>
+<span class="co">#&gt; [2,]    0    3</span>
 <span class="co">#&gt; attr(,&quot;class&quot;)</span>
 <span class="co">#&gt; [1] &quot;prostokat&quot;</span></code></pre>
+<p>Konstruktor <code>nowy_prostokat()</code> działa bez problemu, zwracając nowy obiekt <code>nowy_p</code> o klasie <code>prostokat</code>.
+Warto od razu zobaczyć, czy ten obiekt zadziała poprawnie w funkcji <code>powierzchnia()</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">powierzchnia</span>(nowy_p)
+<span class="co">#&gt; [1] 6</span></code></pre>
+<p>W przypadku, gdy do konstruktora zostaną podane niepoprawne wartości wejściowe pojawi się odpowiedni komunikat błędu.</p>
 <pre class="sourceCode r"><code class="sourceCode r">nowy_p2 =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">7</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">0</span>)
-nowy_p2
-<span class="co">#&gt;      [,1] [,2]</span>
-<span class="co">#&gt; [1,]    7    6</span>
-<span class="co">#&gt; [2,]    0    0</span>
-<span class="co">#&gt; attr(,&quot;class&quot;)</span>
-<span class="co">#&gt; [1] &quot;prostokat&quot;</span>
-<span class="kw">proprawny_prostokat</span>(nowy_p2)
-<span class="co">#&gt; Error in proprawny_prostokat(nowy_p2): `xmax` musi przyjmować wartość większą niż `xmin`</span></code></pre>
+<span class="co">#&gt; Error in nowy_prostokat(7, 0, 6, 0): `xmax` musi przyjmować wartość większą niż `xmin`</span></code></pre>
+<!-- block - konstuktor, walidator, helper -->
+<!-- https://adv-r.hadley.nz/s3.html#s3-classes -->
 <!-- methods -->
 <!-- https://arxiv.org/pdf/1409.3531.pdf -->
 <!-- https://adv-r.hadley.nz/oo.html -->
