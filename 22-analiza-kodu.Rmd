@@ -143,6 +143,10 @@ library(profvis)
 profvis(source("R/moja_funkcja.R"))
 ```
 
+```{r, echo=FALSE}
+knitr::include_graphics("images/profvis.png")
+```
+
 <!-- add image/app -->
 
 <!-- profiling -->
