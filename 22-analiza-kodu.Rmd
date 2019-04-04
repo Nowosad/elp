@@ -184,6 +184,8 @@ W tym momencie wystarczy już tylko stworzyć nową implementację i użyć wcze
 Dadzą one informację, czy efekt działania jest taki jaki oczekujemy, a w przciwnym razie wskażą gdzie pojawił się błąd. 
 Istnieje też dodatkowa reguła - jeżeli znajdziesz błąd w kodzie od razu napisz test jednostkowy.
 
+Zobaczmy jak działają testy jednostkowe na przykładzie funkcji `nowy_prostokat()` oraz `powierzchnia()` stworzonych w sekcji \@ref(oop).
+
 ```{r}
 nowy_prostokat = function(xmin, ymin, xmax, ymax){
   if (!all(c(length(xmin), length(ymin), length(xmax), length(ymax)) == 1)){
