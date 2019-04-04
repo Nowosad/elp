@@ -1,5 +1,89 @@
 # Analiza kodu {#analiza-kodu}
 
+Programując naszym celem jest tworzenie funkcji, które są zarówno poprawne oraz wydajne (zwracają wynik szybko).
+W tym rozdziale przedstawione będą testy jednostkowe, które sprawdzają czy funkcje zwracają oczekiwany wynik oraz metody sprawdzające wydajność funkcji, takie jak, benchmarking i profiling.
+
+## Testy jednostkowe
+
+Testy jednostkowe (ang. *unit tests*) to sposób sprawdzania czy stworzona przez nas funkcja działa w sposób jaki oczekujemy.
+Tworzenie takich testów wymusza także myślenie na temat odpowiedniego działania funkcji i jej API.
+<!--..-->
+Testy jednostkowe są najczęściej stosowane w przypadku budowania pakietów (sekcja \@ref(wbudowane-testy)), gdzie możliwe jest automatyczne sprawdzenie wielu testów na raz.
+Przykładowo, napisaliśmy nową funkcję, która wykonuje złożone operacje i, po wielu sprawdzeniach, wiemy, że daje poprawne wyniki.
+Po kilku miesiącach wpadliśmy na pomysł jak zwiększyć wydajność naszej funkcji. 
+W tym momencie wystarczy już tylko stworzyć nową implementację i użyć wcześniej zbudowanych testów.
+Dadzą one informację, czy efekt działania jest taki jaki oczekujemy, a w przciwnym razie wskażą gdzie pojawił się błąd. 
+Istnieje też dodatkowa reguła - jeżeli znajdziesz błąd w kodzie od razu napisz test jednostkowy.
+
+Zobaczmy jak działają testy jednostkowe na przykładzie funkcji `nowy_prostokat()` oraz `powierzchnia()` stworzonych w sekcji \@ref(oop).
+
+```{r}
+nowy_prostokat = function(xmin, ymin, xmax, ymax){
+  if (!all(c(length(xmin), length(ymin), length(xmax), length(ymax)) == 1)){
+    stop("Każdy z argumentów może przyjmować tylko jedną wartość")
+  }
+  vals = c(xmin, ymin, xmax, ymax)
+  if (!(is.numeric(vals))){
+    stop("Wszystkie argumenty muszą być typu numerycznego")
+  }
+  x = matrix(vals, ncol = 2)
+  structure(x, class = "prostokat")
+}
+powierzchnia = function(x) {
+  UseMethod("powierzchnia")
+}
+powierzchnia.prostokat = function(x){
+  a = x[1, 2] - x[1, 1]
+  b = x[2, 2] - x[2, 1]
+  a * b
+}
+```
+
+Jednym z możliwych narzędzi do testów jednostkowych w R jest pakiet **testthat** [@R-testthat].
+
+```{r}
+library(testthat)
+```
+
+Zawiera on szereg funkcji sprawdzających czy działanie naszych funkcji jest zgodne z oczekiwaniem.
+Funkcje w tym pakiecie rozpoczynają się od prefiksu `expect_` (oczekuj).
+
+W przypadku funkcji `powierzchnia()` oczekujemy, że wynik będzie zawierał tylko jeden element.
+Możemy to sprawdźić za pomocą funkcji `expect_length()`.
+
+```{r}
+nowy_p = nowy_prostokat(0, 0, 6, 5)
+expect_length(powierzchnia(nowy_p), 1)
+```
+
+Jeżeli wynik ma długość jeden to wówczas nic się nie stane.
+W przeciwnym razie pojawi się komunikat błędu.
+
+Wiemy, że powierzchnia naszego przykładowego obiektu `nowy_p` to 30.
+Do sprawdzenia, czy nasza funkcja daje na tym obiekcie dokładnie taki wynik możemy użyć `expect_equal()`.
+
+```{r}
+expect_equal(powierzchnia(nowy_p), 30)
+```
+
+W momencie, gdy wynik jest zgodny to nie nastąpi żadna reakcja, a w przeciwnym razie wystąpi błąd.
+W pakiecie **testthat** istnieją inne funkcje podobne do `expect_equal()`.
+Przykładowo, funkcja `expect_identical()` sprawdza nie tylko podobieństwo wartości, ale też to czy klasa wyników jest taka sama.
+
+Aby sprawdzić czy nasza funkcja na pewno zwróci błąd w przypadku podania niepoprawnych danych wejściowych możemy użyć funkcji `expect_error()`.
+Jej działanie jest przedstawione poniżej.
+
+```{r, error = TRUE}
+expect_error(nowy_prostokat(3, 5, 2, "a"))
+expect_error(nowy_prostokat(1, 2, 3, 6))
+```
+
+W przypadku, gdy wywołanie funkcji zwróci błąd, `expect_error()` nic nie zwróci.
+Natomiast, jeżeli wywołania funkcji nie zwróci błędu, `expect_error()` zatrzyma swoje działanie i zwóci komunikat.
+Odpowiednikami `expect_error()` dla ostrzeżeń jest `expect_warning()`, a dla wiadomości `expect_message()`.
+
+Pozostałe funkcje z tego pakietu są wymienione i opisane na stronie https://testthat.r-lib.org/reference/index.html.
+
 <!-- benchmarking -->
 <!-- profiling -->
 <!-- testing -->
@@ -161,8 +245,6 @@ Najbardziej czasochłonną okazała się linia czwarta.
 Wyliczenie sum wierszy i stworzenie obiektu `z` zabrało ok. 400ms.
 Ostatnia linia, wyliczająca średnią, zabrała ok. 10ms.
 
-<!-- add image/app -->
-
 <!-- profiling -->
 <!-- https://r-prof.github.io/jointprof/articles/proposal.html -->
 
@@ -171,87 +253,6 @@ Ostatnia linia, wyliczająca średnią, zabrała ok. 10ms.
 <!--  Wektoryzacja kodu -->
 <!-- vectorized vs not-vectorized -->
 <!-- https://rstudio-education.github.io/hopr/speed.html -->
-
-## Testy jednostkowe
-
-Testy jednostkowe (ang. *unit tests*) to sposób sprawdzania czy stworzona przez nas funkcja działa w sposób jaki oczekujemy.
-Tworzenie takich testów wymusza także myślenie na temat odpowiedniego działania funkcji i jej API.
-<!--..-->
-Testy jednostkowe są najczęściej stosowane w przypadku budowania pakietów (sekcja \@ref(wbudowane-testy)), gdzie możliwe jest automatyczne sprawdzenie wielu testów na raz.
-Przykładowo, napisaliśmy nową funkcję, która wykonuje złożone operacje i, po wielu sprawdzeniach, wiemy, że daje poprawne wyniki.
-Po kilku miesiącach wpadliśmy na pomysł jak zwiększyć wydajność naszej funkcji. 
-W tym momencie wystarczy już tylko stworzyć nową implementację i użyć wcześniej zbudowanych testów.
-Dadzą one informację, czy efekt działania jest taki jaki oczekujemy, a w przciwnym razie wskażą gdzie pojawił się błąd. 
-Istnieje też dodatkowa reguła - jeżeli znajdziesz błąd w kodzie od razu napisz test jednostkowy.
-
-Zobaczmy jak działają testy jednostkowe na przykładzie funkcji `nowy_prostokat()` oraz `powierzchnia()` stworzonych w sekcji \@ref(oop).
-
-```{r}
-nowy_prostokat = function(xmin, ymin, xmax, ymax){
-  if (!all(c(length(xmin), length(ymin), length(xmax), length(ymax)) == 1)){
-    stop("Każdy z argumentów może przyjmować tylko jedną wartość")
-  }
-  vals = c(xmin, ymin, xmax, ymax)
-  if (!(is.numeric(vals))){
-    stop("Wszystkie argumenty muszą być typu numerycznego")
-  }
-  x = matrix(vals, ncol = 2)
-  structure(x, class = "prostokat")
-}
-powierzchnia = function(x) {
-  UseMethod("powierzchnia")
-}
-powierzchnia.prostokat = function(x){
-  a = x[1, 2] - x[1, 1]
-  b = x[2, 2] - x[2, 1]
-  a * b
-}
-```
-
-Jednym z możliwych narzędzi do testów jednostkowych w R jest pakiet **testthat** [@R-testthat].
-
-```{r}
-library(testthat)
-```
-
-Zawiera on szereg funkcji sprawdzających czy działanie naszych funkcji jest zgodne z oczekiwaniem.
-Funkcje w tym pakiecie rozpoczynają się od prefiksu `expect_` (oczekuj).
-
-W przypadku funkcji `powierzchnia()` oczekujemy, że wynik będzie zawierał tylko jeden element.
-Możemy to sprawdźić za pomocą funkcji `expect_length()`.
-
-```{r}
-nowy_p = nowy_prostokat(0, 0, 6, 5)
-expect_length(powierzchnia(nowy_p), 1)
-```
-
-Jeżeli wynik ma długość jeden to wówczas nic się nie stane.
-W przeciwnym razie pojawi się komunikat błędu.
-
-Wiemy, że powierzchnia naszego przykładowego obiektu `nowy_p` to 30.
-Do sprawdzenia, czy nasza funkcja daje na tym obiekcie dokładnie taki wynik możemy użyć `expect_equal()`.
-
-```{r}
-expect_equal(powierzchnia(nowy_p), 30)
-```
-
-W momencie, gdy wynik jest zgodny to nie nastąpi żadna reakcja, a w przeciwnym razie wystąpi błąd.
-W pakiecie **testthat** istnieją inne funkcje podobne do `expect_equal()`.
-Przykładowo, funkcja `expect_identical()` sprawdza nie tylko podobieństwo wartości, ale też to czy klasa wyników jest taka sama.
-
-Aby sprawdzić czy nasza funkcja na pewno zwróci błąd w przypadku podania niepoprawnych danych wejściowych możemy użyć funkcji `expect_error()`.
-Jej działanie jest przedstawione poniżej.
-
-```{r, error = TRUE}
-expect_error(nowy_prostokat(3, 5, 2, "a"))
-expect_error(nowy_prostokat(1, 2, 3, 6))
-```
-
-W przypadku, gdy wywołanie funkcji zwróci błąd, `expect_error()` nic nie zwróci.
-Natomiast, jeżeli wywołania funkcji nie zwróci błędu, `expect_error()` zatrzyma swoje działanie i zwóci komunikat.
-Odpowiednikami `expect_error()` dla ostrzeżeń jest `expect_warning()`, a dla wiadomości `expect_message()`.
-
-Pozostałe funkcje z tego pakietu są wymienione i opisane na stronie https://testthat.r-lib.org/reference/index.html.
 
 ## Zadanie
 
