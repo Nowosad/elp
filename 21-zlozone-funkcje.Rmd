@@ -279,7 +279,7 @@ Określa ona najpierw długości boków a i b, a następnie wymnaża je w celu w
 powierzchnia.prostokat = function(x){
   a = x[1, 2] - x[1, 1] #wyliczenie długości boku a
   b = x[2, 2] - x[2, 1] #wyliczenie długości boku b
-  a * b #wyliczenie powierzchni prostokąta
+  a * b                 #wyliczenie powierzchni prostokąta
 }
 ```
 
@@ -323,57 +323,63 @@ powierzchnia(x)
 
 ### Konstruktory
 
-<!-- constructor + validator -->
-konstruktor
+Trudno oczekiwać od użytkownika, że bez żadnych pomyłek stworzy obiekt klasy, który wymyśliliśmy, a następnie użyje funkcji `structure()`, aby dodać odpowiednią nazwę klasy.
+Dlatego też ważnym elementem jest stworzenie konstruktora - funkcji, której celem jest zbudowanie poprawnego obiektu naszej klasy, a w przypadku podania złych argumentów wejściowych poinformowanie użytkownika co jest nie tak.
+
+Poniżej znajduje się konstruktor o nazwie `nowy_prostokąt()`. Przyjmuje on wartości czterech współrzędnych, a następnie wykonuje szereg sprawdzeń ich poprawności:
+
+- Czy wszyskie argumenty są typu numerycznego?
+- Czy każdy argument ma tylko jeden element?
+- Czy minimalna wartość współrzędnej x jest mniejsza od maksymalnej?
+- Czy minimalna wartość współrzędnej y jest mniejsza od maksymalnej?
+
+Po tych sprawdzeniach następuje zbudowanie nowej macierzy oraz dodanie nazwy klasy.
 
 ```{r}
 nowy_prostokat = function(xmin, ymin, xmax, ymax){
-  if (!all(c(length(xmin), length(ymin), length(xmax), length(ymax)) == 1)){
-    stop("Każdy z argumentów może przyjmować tylko jedną wartość")
-  }
   vals = c(xmin, ymin, xmax, ymax)
   if (!(is.numeric(vals))){
     stop("Wszystkie argumenty muszą być typu numerycznego")
+  }
+  if (!all(c(length(xmin), length(ymin), length(xmax), length(ymax)) == 1)){
+    stop("Każdy z argumentów może przyjmować tylko jedną wartość")
+  }
+  x_range = vals[3] - vals[1]
+  if (x_range <= 0){
+    stop("`xmax` musi przyjmować wartość większą niż `xmin`")
+  }
+  y_range = vals[4] - vals[2]
+  if (y_range <= 0) {
+    stop("`ymax` musi przyjmować wartość większą niż `ymin`")
   }
   x = matrix(vals, ncol = 2)
   structure(x, class = "prostokat")
 }
 ```
 
+Sprawdźmy działanie tego konstruktora na dwóch przypadkach.
+W pierwszym podajmy poprawne, sprawdzone wcześniej wartości.
+
 ```{r}
-nowy_p = nowy_prostokat(0, 0, 6, 5)
+nowy_p = nowy_prostokat(0, 0, 2, 3)
 nowy_p
+```
+
+Konstruktor `nowy_prostokat()` działa bez problemu, zwracając nowy obiekt `nowy_p` o klasie `prostokat`.
+Warto od razu zobaczyć, czy ten obiekt zadziała poprawnie w funkcji `powierzchnia()`.
+
+```{r}
 powierzchnia(nowy_p)
 ```
 
-### Walidatory
-
-walidator (złożone funkcje)
-
-```{r}
-proprawny_prostokat = function(x){
-  vals = as.vector(x)
-  x_range = vals[3] - vals[1]
-  y_range = vals[4] - vals[2]
-  if (x_range <= 0){
-    stop("`xmax` musi przyjmować wartość większą niż `xmin`")
-  }
-  if (y_range <= 0) {
-    stop("`ymax` musi przyjmować wartość większą niż `ymin`")
-  }
-  x
-}
-```
-
-```{r}
-proprawny_prostokat(nowy_p)
-```
+W przypadku, gdy do konstruktora zostaną podane niepoprawne wartości wejściowe pojawi się odpowiedni komunikat błędu.
 
 ```{r, error=TRUE}
 nowy_p2 = nowy_prostokat(7, 0, 6, 0)
-nowy_p2
-proprawny_prostokat(nowy_p2)
 ```
+
+<!-- block - konstuktor, walidator, helper -->
+<!-- https://adv-r.hadley.nz/s3.html#s3-classes -->
 
 <!-- methods -->
 <!-- https://arxiv.org/pdf/1409.3531.pdf -->
