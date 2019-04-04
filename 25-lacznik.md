@@ -5,6 +5,7 @@
 
 ## C++
 <!-- Rcpp -->
+<!-- https://adv-r.hadley.nz/rcpp.html -->
 
 ## Python
 <!-- reticulate -->
