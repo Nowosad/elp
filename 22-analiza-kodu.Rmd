@@ -97,7 +97,7 @@ W tym przypadku róznica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo wi
 Funkcja `mi_do_km1` jest w stanie wykonać tylko `r round(unclass(wynik_2[[1, 6]]), 2)` operacji na sekundę, przy aż `r round(unclass(wynik_2[[2, 6]]), 2)` operacji na sekundę funkcji `mi_do_km2`.
 Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
 
-```{r}
+```{r, echo=FALSE}
 porownanie = press(x = c(10, 100, 1000, 10000),
                    {
                    l = as.list(0:x)
@@ -107,7 +107,7 @@ porownanie = press(x = c(10, 100, 1000, 10000),
 porownanie
 ```
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, echo=FALSE}
 ggplot2::autoplot(porownanie)
 ```
 
