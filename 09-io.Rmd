@@ -1,8 +1,10 @@
 # Wczytywanie i zapisywanie plików {#io}
 
-<!-- A flat file can be a plain text file or a binary file. In the former case, the files usually contain one record per line -->
-<!-- csv better than many! -->
-<!-- folder roboczy -->
+Języki programowania mają na celu wykonywanie wielu złożnych operacji w relatywnie krótkim czasie. 
+Często te działania oparte są o dane zewnętrzne, np. stworzone przez człowieka, automatyczny sensor, czy jako efekt działania innego programu.
+Czasem też konieczne jest przekazanie lub udostępnienie wyników obliczeń dla innych osób.
+Celem tego rozdziału jest wprowadzenie do zagadnień związanych z określaniem położenia plików na dysku komputera, wykonywaniu działań na plikach i folderach oraz pobieraniu danych z internetu. 
+Posiadając taką więdzę możliwe jest wczytywanie i zapisywanie danych, takich jak dane tekstowe, dane w formatach R, czy dane z arkuszy kalkulacyjnych.
 
 ## Folder roboczy
 
@@ -38,11 +40,38 @@ Prawy ukośnik jest rekomendowany, ponieważ działa on zarówno na Windowsach, 
 
 <!-- footnote with fs and here pacakges -->
 
+## Działania na plikach i folderach
+
+Z poziomu R możliwe jest również zarządzanie folderami i plikami na dysku.
+Do tworzenia nowych folderów służy funkcja `dir.create()`, np. `dir.create("dane")` stworzy nowy podfolder o nazwie `"dane"`.
+Sprawdzenie czy folder już istnieje możliwe jest używając funkcji `dir.exists()`, np. `dir.exists("dane")`, która zwraca wartość `TRUE` gdy folder o tej nazwie istnieje lub `FALSE` gdy takiego folderu nie ma.
+Do usuwania istniejących folderów służy funkcja `unlink()`.
+W jej przypadku konieczne jest podanie, oprócz nazwy folder do usunięcia, argumentu `recursive = TRUE`.
+Przykładowo, aby usunąć folder `"dane"` należy wpisać `unlink("dane", recursive = TRUE)`.
+
+Sprawdzenie czy plik istnieje na dysku można wykonać używając `file.exist()`, a usunąć go za pomocą `file.remove()`.
+Obie funkcje przyjmują jako wejście wektor znakowy zawierający nazwy plików do sprawdzenia czy usunięcia.
+
+W przypadkach, gdy konieczne jest stworzenie nowego archiwum ZIP lub rozpakowanie istniejącego pliku w tym formacie można użyć funkcji `zip()` oraz `unzip()`^[Na komputerach z systemem Windows wymagane jest posiadanie zainstalowanego programu do rozpakowywania plików ZIP.].
+
+## Dane internetowe
+
+Pliki, które chcemy otworzyć nie muszą od razu znajdować się na dysku naszego komputera.
+Możliwe jest, między innymi, pobranie ich z poziomu R za pomocą funkcji `download.file()`^[Funkcje takie jak `read.csv()` pozwalają na otworzenie pliku tekstowego bezpośrednio z adresu internetowego.].
+Należy w niej podać adres URL pliku do pobrania, oraz nazwę pliku do zapisania.
+
+```{r, eval=FALSE}
+download.file("https://raw.githubusercontent.com/Nowosad/elp/master/pliki/dane_meteo.csv", 
+              destfile = "pliki/dane_meteo_url.csv")
+```
+
+W efekcie plik `dane_meteo_url.csv` zostanie zapisany w folderze `pliki`.
+Funkcja `download.file()` ma też szereg dodatkowych argumentów, między innymi `method` określającą metodę pobierania danych oraz `mode` określający sposób zapisu pliku.
+
 ## Wczytywanie plików tekstowych
 
-Podstawowym sposobem przechowywania informacji są pliki tekstowe.
-Przykładowo, mogą one przechowywać dane w postaci tabelarycznej.
-Jednym z najczęściej używanych formatów tekstowych jest CSV (ang. *comma-separated values*).
+Podstawowymi sposobami przechowywania informacji są pliki tekstowe i binarne.
+Przykładowo, pliki tekstowe mogą przechowywać dane w postaci tabelarycznej, a jednym z najczęściej używanych formatów tekstowych jest CSV (ang. *comma-separated values*).
 
 Wyobraźmy sobie, że otrzymaliśmy plik tekstowy zawierający wybrane pomiary meteorologiczne dla Poznania oraz Zakopanego w roku 2017.
 
@@ -206,34 +235,6 @@ Zestawienie zawierające dodatkowe przykłady można znaleźć pod adresem https
 Powszechną sytuacją jest przechowywanie danych w różnego rodzaju bazach danych.
 Ma to miejsce, kiedy dane są znacznej wielkości, mają złożone relacje, czy też muszą być jednocześnie dostępne dla wielu osób.
 Dostęp do baz danych w R możliwy jest używając pakietu **DBI** [@R-DBI] wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. **RPostgreSQL** dla baz PostgreSQL [@R-RPostgreSQL] czy **RSQLite** dla baz SQLite [@R-RSQLite]). ^[Więcej informacji o łączeniu się z bazami danych można znaleść na stronie https://db.rstudio.com/getting-started/connect-to-database.]
-
-## Dane internetowe
-
-Pliki, które chcemy otworzyć nie muszą od razu znajdować się na dysku naszego komputera.
-Możliwe jest, między innymi, pobranie ich z poziomu R za pomocą funkcji `download.file()`^[Funkcje takie jak `read.csv()` pozwalają na otworzenie pliku tekstowego bezpośrednio z adresu internetowego.].
-Należy w niej podać adres URL pliku do pobrania, oraz nazwę pliku do zapisania.
-
-```{r, eval=FALSE}
-download.file("https://raw.githubusercontent.com/Nowosad/elp/master/pliki/dane_meteo.csv", 
-              destfile = "pliki/dane_meteo_url.csv")
-```
-
-W efekcie plik `dane_meteo_url.csv` zostanie zapisany w folderze `pliki`.
-Funkcja `download.file()` ma też szereg dodatkowych argumentów, między innymi `method` określającą metodę pobierania danych oraz `mode` określający sposób zapisu pliku.
-
-## Działania na plikach i folderach
-
-Z poziomu R możliwe jest również zarządzanie folderami i plikami na dysku.
-Do tworzenia nowych folderów służy funkcja `dir.create()`, np. `dir.create("dane")` stworzy nowy podfolder o nazwie `"dane"`.
-Sprawdzenie czy folder już istnieje możliwe jest używając funkcji `dir.exists()`, np. `dir.exists("dane")`, która zwraca wartość `TRUE` gdy folder o tej nazwie istnieje lub `FALSE` gdy takiego folderu nie ma.
-Do usuwania istniejących folderów służy funkcja `unlink()`.
-W jej przypadku konieczne jest podanie, oprócz nazwy folder do usunięcia, argumentu `recursive = TRUE`.
-Przykładowo, aby usunąć folder `"dane"` należy wpisać `unlink("dane", recursive = TRUE)`.
-
-Sprawdzenie czy plik istnieje na dysku można wykonać używając `file.exist()`, a usunąć go za pomocą `file.remove()`.
-Obie funkcje przyjmują jako wejście wektor znakowy zawierający nazwy plików do sprawdzenia czy usunięcia.
-
-W przypadkach, gdy konieczne jest stworzenie nowego archiwum ZIP lub rozpakowanie istniejącego pliku w tym formacie można użyć funkcji `zip()` oraz `unzip()`^[Na komputerach z systemem Windows wymagane jest posiadanie zainstalowanego programu do rozpakowywania plików ZIP.].
 
 ## Zadania
 
