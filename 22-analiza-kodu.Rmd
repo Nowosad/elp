@@ -136,16 +136,30 @@ z = rowSums(df)
 mean(z)
 ```
 
-Profilowanie kodu R można wykonać używając pakietu **profvis** [@R-profvis].
+Profilowanie kodu R można wykonać używając funkcji `profvis()` z pakietu **profvis** [@R-profvis].
+Przyjmuje ona kod lub funkcję, która ma zostać profilowana.
 
 ```{r, eval=FALSE}
 library(profvis)
 profvis(source("R/moja_funkcja.R"))
 ```
 
-```{r, echo=FALSE}
+W powyższym przypadku nastąpiło profilowanie kodu zawartego w skrypcie `R/moja_funkcja.R`.
+Efektem działania jest interaktywne podsumowanie pokazujące zużycie pamięci oraz czas poświęcony dla kolejnych linii kodu (rycina \@ref(fig:profvis)).
+
+```{r profvis, echo=FALSE, fig.cap="Zrzut ekranu przedstawiający wynik działania funkcji profvis()."}
 knitr::include_graphics("images/profvis.png")
 ```
+
+Czas wykonania tego przykładu wyniósł sumarycznie 690ms.
+Pierwsza linia tworząca obiekt `x` została wykonana bardzo szybko - poniżej mierzalnego progu.
+Stworzenie obiektu `y` w drugiej linii zajęło ok. 280ms.
+Trzecia linia została wykonana również w czasie poniżej mierzalnego progu. 
+Wynika to z kwestii, że tworzenie tam ramki danych nie powoduje wykonania nowych, złożonych obliczeń.
+Powstała ona jedynie poprzez przekazanie odpowiednich adresów w pamięci do obiektów `x` i `y`.
+Najbardziej czasochłonną okazała się linia czwarta.
+Wyliczenie sum wierszy i stworzenie obiektu `z` zabrało ok. 400ms.
+Ostatnia linia, wyliczająca średnią, zabrała ok. 10ms.
 
 <!-- add image/app -->
 
