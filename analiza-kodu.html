@@ -264,9 +264,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zadania-9"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>12</b> Analiza kodu</a><ul>
-<li class="chapter" data-level="12.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>12.1</b> Benchmarking</a></li>
-<li class="chapter" data-level="12.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>12.2</b> Profiling</a></li>
-<li class="chapter" data-level="12.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#testy-jednostkowe"><i class="fa fa-check"></i><b>12.3</b> Testy jednostkowe</a></li>
+<li class="chapter" data-level="12.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#testy-jednostkowe"><i class="fa fa-check"></i><b>12.1</b> Testy jednostkowe</a></li>
+<li class="chapter" data-level="12.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>12.2</b> Benchmarking</a></li>
+<li class="chapter" data-level="12.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>12.3</b> Profiling</a></li>
 <li class="chapter" data-level="12.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zadanie"><i class="fa fa-check"></i><b>12.4</b> Zadanie</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>13</b> Kontrola wersji</a><ul>
@@ -317,162 +317,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="analiza-kodu" class="section level1">
 <h1><span class="header-section-number">12</span> Analiza kodu</h1>
-<!-- benchmarking -->
-<!-- profiling -->
-<!-- testing -->
-<div id="benchmarking" class="section level2">
-<h2><span class="header-section-number">12.1</span> Benchmarking</h2>
-<p>Benchmarking oznacza określanie wydajności danej operacji czy funkcji.
-Wydajność może być określona na wiele różnych sposobów, w tym najprostszym jest czas wykonania pewnego kodu.
-Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej funkcji <code>system.time()</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(kod_do_wykonania)</code></pre>
-<p>Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))
-<span class="co">#&gt;    user  system elapsed </span>
-<span class="co">#&gt;   0.568   0.000   0.567</span></code></pre>
-<p>W efekcie dostajemy trzy wartości - <code>user</code>, <code>system</code> i <code>elapsed</code>. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.</p>
-<p>Benchmarking jest często używany w sytuacji, gdy istnieje kilka funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
-Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.</p>
-<p>W sekcji <a href="petle.html#for-example">8.1.2</a> stworzyliśmy kilka wersji pętli <code>for</code> pozwalającej na przeliczanie wartości z mil lądowych na kilometry.
-Pierwsza z nich, tutaj zdefiniowana jako funkcja <code>mi_do_km1</code>, tworzy pusty wektor o długości 0, do którego następie doklejane są kolejne przeliczone wartości.</p>
-<pre class="sourceCode r"><code class="sourceCode r">mi_do_km1 =<span class="st"> </span><span class="cf">function</span>(odl_mile){
-  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="dv">0</span>)
-  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
-    odl_km =<span class="st"> </span><span class="kw">c</span>(odl_km, odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)
-  }
-  odl_km
-}</code></pre>
-<p>Druga, tutaj zdefiniowana jako funkcja <code>mi_do_km2</code>, tworzy pusty wektor o oczekiwanej długości wyniku.
-Następnie kolejne przeliczone wartości są wstawiane w odpowiednie miejsca wektora wynikowego.</p>
-<pre class="sourceCode r"><code class="sourceCode r">mi_do_km2 =<span class="st"> </span><span class="cf">function</span>(odl_mile){
-  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))
-  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
-    odl_km[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>
-  }
-  odl_km
-}</code></pre>
-<p>Dwie powyższe funkcje można porównać używając <code>system.time()</code>.
-Nie zawsze jednak to wystarczy - ta sama funkcja wykonana dwa razy może mieć różny czas obliczeń.<!--why??-->
-Dodatkowo, oprócz czasu wykonywania funkcji może nas interesować zużycie zasobów, takich jak pamięc operacyjna.
-Do takiego celu powstała funkcja <code>mark()</code> z pakietu <strong>bench</strong> <span class="citation">(Hester <a href="#ref-R-bench">2018</a>)</span>, która wykonuje funkcje wiele razy przed zwróceniem wyniku.</p>
-<p>Przyjmuje ona wywołania funkcji, które chcemy porównać.
-Poniżej nastąpi porównanie funkcji <code>mi_do_km1</code> i <code>mi_do_km2</code>, w przypadku gdy jako dane wejściowe zostanie podana lista z wartościami 142, 63, 121.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(bench)
-odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)
-wynik_<span class="dv">1</span> =<span class="st"> </span><span class="kw">mark</span>(
-  <span class="kw">mi_do_km1</span>(odl_mile),
-  <span class="kw">mi_do_km2</span>(odl_mile)
-)
-wynik_<span class="dv">1</span>
-<span class="co">#&gt; # A tibble: 2 x 10</span>
-<span class="co">#&gt;   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr</span>
-<span class="co">#&gt;   &lt;chr&gt;      &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 1.44µs 1.93µs 1.67µs 48.6µs   517071.     300KB     1  9999</span>
-<span class="co">#&gt; 2 mi_do_km2… 1.04µs 1.38µs 1.21µs 70.3µs   725736.     222KB     1  9999</span>
-<span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
-<p>Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
-Zawiera ona szereg charakterystyk, w tym:</p>
-<ul>
-<li><code>min</code> - minimalny czas wykonania funkcji</li>
-<li><code>mean</code> - średni czas wykonania funkcji</li>
-<li><code>median</code> - mediana czasu wykonania funkcji</li>
-<li><code>max</code> - maksymalny czas wykonania funkcji</li>
-<li><code>itr/sec</code> - liczba wykonań funkcji na sekundę</li>
-<li><code>mem_alloc</code> - pamięć użyta przez wywołanie funkcji</li>
-<li><code>n_itr</code> - liczba powtórzeń wywołania funkcji</li>
-</ul>
-<p>Wynik działania funkcji <code>mark()</code> pozwala na zauważnie, że na tym przykładzie funkcja <code>mi_do_km2</code> jest ok. 30% szybsza od <code>mi_do_km1</code>.
-Czasami możliwe jest, że jakaś funkcja działa relatywnie szybko na małych danych, ale dużo wolniej na większych danych wejściowych.
-Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na większej liście, np. z wartościami od 0 do 10000 co 1.</p>
-<pre class="sourceCode r"><code class="sourceCode r">odl_mile2 =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10000</span>)
-wynik_<span class="dv">2</span> =<span class="st"> </span><span class="kw">mark</span>(
-  <span class="kw">mi_do_km1</span>(odl_mile2),
-  <span class="kw">mi_do_km2</span>(odl_mile2)
-)
-<span class="co">#&gt; Warning: Some expressions had a GC in every iteration; so filtering is</span>
-<span class="co">#&gt; disabled.</span>
-wynik_<span class="dv">2</span>
-<span class="co">#&gt; # A tibble: 2 x 10</span>
-<span class="co">#&gt;   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr</span>
-<span class="co">#&gt;   &lt;chr&gt;      &lt;bch&gt; &lt;bch:tm&gt; &lt;bch:&gt; &lt;bch:t&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 463ms 469.28ms  469ms 475.4ms      2.13     382MB    16     2</span>
-<span class="co">#&gt; 2 mi_do_km2… 878µs   1.15ms  921µs  13.8ms    867.      78.2KB    15   434</span>
-<span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
-<p>W tym przypadku róznica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
-Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 2.13 operacji na sekundę, przy aż 866.51 operacji na sekundę funkcji <code>mi_do_km2</code>.
-Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż <code>mi_do_km2</code>.</p>
-<pre><code>#&gt; Running with:
-#&gt;       x
-#&gt; 1    10
-#&gt; 2   100
-#&gt; 3  1000
-#&gt; 4 10000
-#&gt; Warning: Some expressions had a GC in every iteration; so filtering is
-#&gt; disabled.
-#&gt; # A tibble: 8 x 11
-#&gt;   expression     x      min     mean   median      max `itr/sec` mem_alloc
-#&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;
-#&gt; 1 mi_do_km1…    10   3.91µs   5.16µs   4.65µs  68.04µs 193914.          0B
-#&gt; 2 mi_do_km2…    10   1.74µs   2.21µs   1.99µs   41.7µs 451872.          0B
-#&gt; 3 mi_do_km1…   100  67.33µs  78.33µs   74.4µs   1.87ms  12766.     43.16KB
-#&gt; 4 mi_do_km2…   100   9.08µs  10.74µs  10.04µs  60.12µs  93104.        856B
-#&gt; 5 mi_do_km1…  1000   4.38ms   4.82ms   4.68ms   8.68ms    208.      3.87MB
-#&gt; 6 mi_do_km2…  1000  85.01µs  95.94µs  92.15µs 197.74µs  10423.      7.87KB
-#&gt; 7 mi_do_km1… 10000 502.81ms 502.81ms 502.81ms 502.81ms      1.99  382.04MB
-#&gt; 8 mi_do_km2… 10000 889.25µs   1.05ms 927.25µs   7.15ms    952.     78.18KB
-#&gt; # … with 3 more variables: n_gc &lt;dbl&gt;, n_itr &lt;int&gt;, total_time &lt;bch:tm&gt;</code></pre>
-</div>
-<div id="profiling" class="section level2">
-<h2><span class="header-section-number">12.2</span> Profiling</h2>
-<p>Istnieją trzy podstawowe reguły optymalizacji kodu<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a>:</p>
-<ol style="list-style-type: decimal">
-<li>Nie.</li>
-<li>Jeszcze nie.</li>
-<li>Profiluj przed optymalizowaniem.</li>
-</ol>
-<p>Czym jest profilowanie i dlaczego powinno być wykonywane przed optymalizowaniem kodu?
-Profilowanie mierzy wydajność działania każdej linii kodu w celu sprawdzenia, która linia zabiera najwięcej czasu lub zasobów.
-Dzięki profilowaniu można określić fragmenty kodu, które można poprawić w celu zwiększenia czasu wykonywania skryptu czy funkcji.</p>
-<p>Poniżej znajduje się zawartość pliku <code>R/moja_funkcja.R</code>.
-Jego działanie polega na stworzeniu wektora od 1 do 9999999 (obiekt <code>x</code>), wektora od 1 do 19999998 co 2 (obiekt <code>y</code>), połączenie tych wektorów do ramki danych (obiekt <code>df</code>), wyliczenie sumy wartości dla każdego wiersza (obiekt <code>z</code>), a na końcu wyliczenie średniej z obiektu <code>z</code>.
-Która z tych linii zabiera najwięcej czasu a która najmniej?</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># plik R/moja_funkcja.R</span>
-x =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">9999999</span>
-y =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">19999998</span>, <span class="dt">by =</span> <span class="dv">2</span>)
-df =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y)
-z =<span class="st"> </span><span class="kw">rowSums</span>(df)
-<span class="kw">mean</span>(z)</code></pre>
-<p>Profilowanie kodu R można wykonać używając funkcji <code>profvis()</code> z pakietu <strong>profvis</strong> <span class="citation">(Chang and Luraschi <a href="#ref-R-profvis">2018</a>)</span>.
-Przyjmuje ona kod lub funkcję, która ma zostać profilowana.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(profvis)
-<span class="kw">profvis</span>(<span class="kw">source</span>(<span class="st">&quot;R/moja_funkcja.R&quot;</span>))</code></pre>
-<p>W powyższym przypadku nastąpiło profilowanie kodu zawartego w skrypcie <code>R/moja_funkcja.R</code>.
-Efektem działania jest interaktywne podsumowanie pokazujące zużycie pamięci oraz czas poświęcony dla kolejnych linii kodu (rycina <a href="analiza-kodu.html#fig:profvis">12.1</a>).</p>
-<div class="figure" style="text-align: center"><span id="fig:profvis"></span>
-<img src="images/profvis.png" alt="Zrzut ekranu przedstawiający wynik działania funkcji profvis()." width="100%" />
-<p class="caption">
-Rycina 12.1: Zrzut ekranu przedstawiający wynik działania funkcji profvis().
-</p>
-</div>
-<p>Czas wykonania tego przykładu wyniósł sumarycznie 690ms.
-Pierwsza linia tworząca obiekt <code>x</code> została wykonana bardzo szybko - poniżej mierzalnego progu.
-Stworzenie obiektu <code>y</code> w drugiej linii zajęło ok. 280ms.
-Trzecia linia została wykonana również w czasie poniżej mierzalnego progu.
-Wynika to z kwestii, że tworzenie tam ramki danych nie powoduje wykonania nowych, złożonych obliczeń.
-Powstała ona jedynie poprzez przekazanie odpowiednich adresów w pamięci do obiektów <code>x</code> i <code>y</code>.
-Najbardziej czasochłonną okazała się linia czwarta.
-Wyliczenie sum wierszy i stworzenie obiektu <code>z</code> zabrało ok. 400ms.
-Ostatnia linia, wyliczająca średnią, zabrała ok. 10ms.</p>
-<!-- add image/app -->
-<!-- profiling -->
-<!-- https://r-prof.github.io/jointprof/articles/proposal.html -->
-<!-- https://adv-r.hadley.nz/perf-improve.html -->
-<!--  Wektoryzacja kodu -->
-<!-- vectorized vs not-vectorized -->
-<!-- https://rstudio-education.github.io/hopr/speed.html -->
-</div>
+<p>Programując naszym celem jest tworzenie funkcji, które są zarówno poprawne oraz wydajne (zwracają wynik szybko).
+W tym rozdziale przedstawione będą testy jednostkowe, które sprawdzają czy funkcje zwracają oczekiwany wynik oraz metody sprawdzające wydajność funkcji, takie jak, benchmarking i profiling.</p>
 <div id="testy-jednostkowe" class="section level2">
-<h2><span class="header-section-number">12.3</span> Testy jednostkowe</h2>
+<h2><span class="header-section-number">12.1</span> Testy jednostkowe</h2>
 <p>Testy jednostkowe (ang. <em>unit tests</em>) to sposób sprawdzania czy stworzona przez nas funkcja działa w sposób jaki oczekujemy.
 Tworzenie takich testów wymusza także myślenie na temat odpowiedniego działania funkcji i jej API.
 <!--..-->
@@ -527,6 +375,159 @@ Jej działanie jest przedstawione poniżej.</p>
 Natomiast, jeżeli wywołania funkcji nie zwróci błędu, <code>expect_error()</code> zatrzyma swoje działanie i zwóci komunikat.
 Odpowiednikami <code>expect_error()</code> dla ostrzeżeń jest <code>expect_warning()</code>, a dla wiadomości <code>expect_message()</code>.</p>
 <p>Pozostałe funkcje z tego pakietu są wymienione i opisane na stronie <a href="https://testthat.r-lib.org/reference/index.html" class="uri">https://testthat.r-lib.org/reference/index.html</a>.</p>
+<!-- benchmarking -->
+<!-- profiling -->
+<!-- testing -->
+</div>
+<div id="benchmarking" class="section level2">
+<h2><span class="header-section-number">12.2</span> Benchmarking</h2>
+<p>Benchmarking oznacza określanie wydajności danej operacji czy funkcji.
+Wydajność może być określona na wiele różnych sposobów, w tym najprostszym jest czas wykonania pewnego kodu.
+Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej funkcji <code>system.time()</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(kod_do_wykonania)</code></pre>
+<p>Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))
+<span class="co">#&gt;    user  system elapsed </span>
+<span class="co">#&gt;   0.564   0.004   0.565</span></code></pre>
+<p>W efekcie dostajemy trzy wartości - <code>user</code>, <code>system</code> i <code>elapsed</code>. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.</p>
+<p>Benchmarking jest często używany w sytuacji, gdy istnieje kilka funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
+Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.</p>
+<p>W sekcji <a href="petle.html#for-example">8.1.2</a> stworzyliśmy kilka wersji pętli <code>for</code> pozwalającej na przeliczanie wartości z mil lądowych na kilometry.
+Pierwsza z nich, tutaj zdefiniowana jako funkcja <code>mi_do_km1</code>, tworzy pusty wektor o długości 0, do którego następie doklejane są kolejne przeliczone wartości.</p>
+<pre class="sourceCode r"><code class="sourceCode r">mi_do_km1 =<span class="st"> </span><span class="cf">function</span>(odl_mile){
+  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="dv">0</span>)
+  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
+    odl_km =<span class="st"> </span><span class="kw">c</span>(odl_km, odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)
+  }
+  odl_km
+}</code></pre>
+<p>Druga, tutaj zdefiniowana jako funkcja <code>mi_do_km2</code>, tworzy pusty wektor o oczekiwanej długości wyniku.
+Następnie kolejne przeliczone wartości są wstawiane w odpowiednie miejsca wektora wynikowego.</p>
+<pre class="sourceCode r"><code class="sourceCode r">mi_do_km2 =<span class="st"> </span><span class="cf">function</span>(odl_mile){
+  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))
+  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
+    odl_km[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>
+  }
+  odl_km
+}</code></pre>
+<p>Dwie powyższe funkcje można porównać używając <code>system.time()</code>.
+Nie zawsze jednak to wystarczy - ta sama funkcja wykonana dwa razy może mieć różny czas obliczeń.<!--why??-->
+Dodatkowo, oprócz czasu wykonywania funkcji może nas interesować zużycie zasobów, takich jak pamięc operacyjna.
+Do takiego celu powstała funkcja <code>mark()</code> z pakietu <strong>bench</strong> <span class="citation">(Hester <a href="#ref-R-bench">2018</a>)</span>, która wykonuje funkcje wiele razy przed zwróceniem wyniku.</p>
+<p>Przyjmuje ona wywołania funkcji, które chcemy porównać.
+Poniżej nastąpi porównanie funkcji <code>mi_do_km1</code> i <code>mi_do_km2</code>, w przypadku gdy jako dane wejściowe zostanie podana lista z wartościami 142, 63, 121.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(bench)
+odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)
+wynik_<span class="dv">1</span> =<span class="st"> </span><span class="kw">mark</span>(
+  <span class="kw">mi_do_km1</span>(odl_mile),
+  <span class="kw">mi_do_km2</span>(odl_mile)
+)
+wynik_<span class="dv">1</span>
+<span class="co">#&gt; # A tibble: 2 x 10</span>
+<span class="co">#&gt;   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr</span>
+<span class="co">#&gt;   &lt;chr&gt;      &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
+<span class="co">#&gt; 1 mi_do_km1… 1.44µs 1.89µs 1.65µs 40.2µs   529740.     117KB     0 10000</span>
+<span class="co">#&gt; 2 mi_do_km2… 1.04µs 1.25µs 1.16µs 19.6µs   801614.     222KB     0 10000</span>
+<span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
+<p>Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
+Zawiera ona szereg charakterystyk, w tym:</p>
+<ul>
+<li><code>min</code> - minimalny czas wykonania funkcji</li>
+<li><code>mean</code> - średni czas wykonania funkcji</li>
+<li><code>median</code> - mediana czasu wykonania funkcji</li>
+<li><code>max</code> - maksymalny czas wykonania funkcji</li>
+<li><code>itr/sec</code> - liczba wykonań funkcji na sekundę</li>
+<li><code>mem_alloc</code> - pamięć użyta przez wywołanie funkcji</li>
+<li><code>n_itr</code> - liczba powtórzeń wywołania funkcji</li>
+</ul>
+<p>Wynik działania funkcji <code>mark()</code> pozwala na zauważnie, że na tym przykładzie funkcja <code>mi_do_km2</code> jest ok. 30% szybsza od <code>mi_do_km1</code>.
+Czasami możliwe jest, że jakaś funkcja działa relatywnie szybko na małych danych, ale dużo wolniej na większych danych wejściowych.
+Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na większej liście, np. z wartościami od 0 do 10000 co 1.</p>
+<pre class="sourceCode r"><code class="sourceCode r">odl_mile2 =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10000</span>)
+wynik_<span class="dv">2</span> =<span class="st"> </span><span class="kw">mark</span>(
+  <span class="kw">mi_do_km1</span>(odl_mile2),
+  <span class="kw">mi_do_km2</span>(odl_mile2)
+)
+<span class="co">#&gt; Warning: Some expressions had a GC in every iteration; so filtering is</span>
+<span class="co">#&gt; disabled.</span>
+wynik_<span class="dv">2</span>
+<span class="co">#&gt; # A tibble: 2 x 10</span>
+<span class="co">#&gt;   expression   min     mean median      max `itr/sec` mem_alloc  n_gc n_itr</span>
+<span class="co">#&gt;   &lt;chr&gt;      &lt;bch&gt; &lt;bch:tm&gt; &lt;bch:&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
+<span class="co">#&gt; 1 mi_do_km1… 447ms  448.3ms  448ms 449.36ms      2.23     382MB    16     2</span>
+<span class="co">#&gt; 2 mi_do_km2… 879µs   1.04ms  905µs   9.64ms    964.      78.2KB     9   482</span>
+<span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
+<p>W tym przypadku róznica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
+Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 2.23 operacji na sekundę, przy aż 963.68 operacji na sekundę funkcji <code>mi_do_km2</code>.
+Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż <code>mi_do_km2</code>.</p>
+<pre><code>#&gt; Running with:
+#&gt;       x
+#&gt; 1    10
+#&gt; 2   100
+#&gt; 3  1000
+#&gt; 4 10000
+#&gt; Warning: Some expressions had a GC in every iteration; so filtering is
+#&gt; disabled.
+#&gt; # A tibble: 8 x 11
+#&gt;   expression     x      min     mean   median      max `itr/sec` mem_alloc
+#&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;
+#&gt; 1 mi_do_km1…    10   3.89µs   4.88µs   4.46µs 127.76µs 204716.          0B
+#&gt; 2 mi_do_km2…    10   1.75µs   2.14µs   1.95µs  95.55µs 467683.          0B
+#&gt; 3 mi_do_km1…   100  66.93µs   75.7µs   71.6µs   1.17ms  13210.     43.16KB
+#&gt; 4 mi_do_km2…   100   9.18µs  10.44µs   9.91µs  47.87µs  95799.        856B
+#&gt; 5 mi_do_km1…  1000   4.28ms    4.5ms   4.51ms   5.28ms    222.      3.87MB
+#&gt; 6 mi_do_km2…  1000  85.59µs   92.2µs  89.17µs 208.42µs  10846.      7.87KB
+#&gt; 7 mi_do_km1… 10000 534.51ms 534.51ms 534.51ms 534.51ms      1.87  382.04MB
+#&gt; 8 mi_do_km2… 10000 860.61µs 977.99µs 899.51µs   5.15ms   1023.     78.18KB
+#&gt; # … with 3 more variables: n_gc &lt;dbl&gt;, n_itr &lt;int&gt;, total_time &lt;bch:tm&gt;</code></pre>
+</div>
+<div id="profiling" class="section level2">
+<h2><span class="header-section-number">12.3</span> Profiling</h2>
+<p>Istnieją trzy podstawowe reguły optymalizacji kodu<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a>:</p>
+<ol style="list-style-type: decimal">
+<li>Nie.</li>
+<li>Jeszcze nie.</li>
+<li>Profiluj przed optymalizowaniem.</li>
+</ol>
+<p>Czym jest profilowanie i dlaczego powinno być wykonywane przed optymalizowaniem kodu?
+Profilowanie mierzy wydajność działania każdej linii kodu w celu sprawdzenia, która linia zabiera najwięcej czasu lub zasobów.
+Dzięki profilowaniu można określić fragmenty kodu, które można poprawić w celu zwiększenia czasu wykonywania skryptu czy funkcji.</p>
+<p>Poniżej znajduje się zawartość pliku <code>R/moja_funkcja.R</code>.
+Jego działanie polega na stworzeniu wektora od 1 do 9999999 (obiekt <code>x</code>), wektora od 1 do 19999998 co 2 (obiekt <code>y</code>), połączenie tych wektorów do ramki danych (obiekt <code>df</code>), wyliczenie sumy wartości dla każdego wiersza (obiekt <code>z</code>), a na końcu wyliczenie średniej z obiektu <code>z</code>.
+Która z tych linii zabiera najwięcej czasu a która najmniej?</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># plik R/moja_funkcja.R</span>
+x =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">9999999</span>
+y =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">19999998</span>, <span class="dt">by =</span> <span class="dv">2</span>)
+df =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y)
+z =<span class="st"> </span><span class="kw">rowSums</span>(df)
+<span class="kw">mean</span>(z)</code></pre>
+<p>Profilowanie kodu R można wykonać używając funkcji <code>profvis()</code> z pakietu <strong>profvis</strong> <span class="citation">(Chang and Luraschi <a href="#ref-R-profvis">2018</a>)</span>.
+Przyjmuje ona kod lub funkcję, która ma zostać profilowana.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(profvis)
+<span class="kw">profvis</span>(<span class="kw">source</span>(<span class="st">&quot;R/moja_funkcja.R&quot;</span>))</code></pre>
+<p>W powyższym przypadku nastąpiło profilowanie kodu zawartego w skrypcie <code>R/moja_funkcja.R</code>.
+Efektem działania jest interaktywne podsumowanie pokazujące zużycie pamięci oraz czas poświęcony dla kolejnych linii kodu (rycina <a href="analiza-kodu.html#fig:profvis">12.1</a>).</p>
+<div class="figure" style="text-align: center"><span id="fig:profvis"></span>
+<img src="images/profvis.png" alt="Zrzut ekranu przedstawiający wynik działania funkcji profvis()." width="100%" />
+<p class="caption">
+Rycina 12.1: Zrzut ekranu przedstawiający wynik działania funkcji profvis().
+</p>
+</div>
+<p>Czas wykonania tego przykładu wyniósł sumarycznie 690ms.
+Pierwsza linia tworząca obiekt <code>x</code> została wykonana bardzo szybko - poniżej mierzalnego progu.
+Stworzenie obiektu <code>y</code> w drugiej linii zajęło ok. 280ms.
+Trzecia linia została wykonana również w czasie poniżej mierzalnego progu.
+Wynika to z kwestii, że tworzenie tam ramki danych nie powoduje wykonania nowych, złożonych obliczeń.
+Powstała ona jedynie poprzez przekazanie odpowiednich adresów w pamięci do obiektów <code>x</code> i <code>y</code>.
+Najbardziej czasochłonną okazała się linia czwarta.
+Wyliczenie sum wierszy i stworzenie obiektu <code>z</code> zabrało ok. 400ms.
+Ostatnia linia, wyliczająca średnią, zabrała ok. 10ms.</p>
+<!-- profiling -->
+<!-- https://r-prof.github.io/jointprof/articles/proposal.html -->
+<!-- https://adv-r.hadley.nz/perf-improve.html -->
+<!--  Wektoryzacja kodu -->
+<!-- vectorized vs not-vectorized -->
+<!-- https://rstudio-education.github.io/hopr/speed.html -->
 </div>
 <div id="zadanie" class="section level2">
 <h2><span class="header-section-number">12.4</span> Zadanie</h2>
@@ -539,14 +540,14 @@ Odpowiednikami <code>expect_error()</code> dla ostrzeżeń jest <code>expect_war
 </div>
 <h3>Bibliografia</h3>
 <div id="refs" class="references">
+<div id="ref-R-testthat">
+<p>Wickham, Hadley. 2018. <em>Testthat: Unit Testing for R</em>. <a href="https://CRAN.R-project.org/package=testthat" class="uri">https://CRAN.R-project.org/package=testthat</a>.</p>
+</div>
 <div id="ref-R-bench">
 <p>Hester, Jim. 2018. <em>Bench: High Precision Timing of R Expressions</em>. <a href="https://CRAN.R-project.org/package=bench" class="uri">https://CRAN.R-project.org/package=bench</a>.</p>
 </div>
 <div id="ref-R-profvis">
 <p>Chang, Winston, and Javier Luraschi. 2018. <em>Profvis: Interactive Visualizations for Profiling R Code</em>. <a href="https://CRAN.R-project.org/package=profvis" class="uri">https://CRAN.R-project.org/package=profvis</a>.</p>
-</div>
-<div id="ref-R-testthat">
-<p>Wickham, Hadley. 2018. <em>Testthat: Unit Testing for R</em>. <a href="https://CRAN.R-project.org/package=testthat" class="uri">https://CRAN.R-project.org/package=testthat</a>.</p>
 </div>
 </div>
 <div class="footnotes">

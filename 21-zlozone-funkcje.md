@@ -10,7 +10,6 @@ W tym rozdziale zostanie podanych kilka porad w jaki sposób budować funkcje pr
 Dodatkowo, nastąpi także wprowadzenie do kolejnego paradygmatu programowania - programowania obiektowego.
 
 <!-- solve a single problem -->
-
 <!-- 07-oo https://blog.rstudio.com/2019/02/06/rstudio-conf-2019-workshops/ -->
 <!-- https://arxiv.org/pdf/1409.3531.pdf -->
 
