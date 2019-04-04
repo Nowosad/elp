@@ -174,11 +174,7 @@ Ostatnia linia, wyliczająca średnią, zabrała ok. 10ms.
 
 ## Testy jednostkowe
 
-[@R-testthat]
 
-```{r}
-library(testthat)
-```
 
 ```{r}
 nowy_prostokat = function(xmin, ymin, xmax, ymax){
@@ -202,27 +198,50 @@ powierzchnia.prostokat = function(x){
 }
 ```
 
+Jednym z możliwych narzędzi do testów jednostkowych w R jest pakiet **testthat** [@R-testthat].
 
-
-`expect_warning()`, `expect_message()`
-
-```{r, error = TRUE}
-expect_error(nowy_prostokat(3, 5, 2, "a"))
-expect_error(nowy_prostokat(1, 2, 3, 6))
+```{r}
+library(testthat)
 ```
+
+Zawiera on szereg funkcji sprawdzających czy działanie naszych funkcji jest zgodne z oczekiwaniem.
+Funkcje w tym pakiecie rozpoczynają się od prefiksu `expect_` (oczekuj).
+
+W przypadku funkcji `powierzchnia()` oczekujemy, że wynik będzie zawierał tylko jeden element.
+Możemy to sprawdźić za pomocą funkcji `expect_length()`.
 
 ```{r}
 nowy_p = nowy_prostokat(0, 0, 6, 5)
 expect_length(powierzchnia(nowy_p), 1)
 ```
 
-`expect_identical()`, `expect_equivalent()`
+Jeżeli wynik ma długość jeden to wówczas nic się nie stane.
+W przeciwnym razie pojawi się komunikat błędu.
+
+Wiemy, że powierzchnia naszego przykładowego obiektu `nowy_p` to 30.
+Do sprawdzenia, czy nasza funkcja daje na tym obiekcie dokładnie taki wynik możemy użyć `expect_equal()`.
 
 ```{r}
 expect_equal(powierzchnia(nowy_p), 30)
 ```
 
-https://testthat.r-lib.org/reference/index.html
+W momencie, gdy wynik jest zgodny to nie nastąpi żadna reakcja, a w przeciwnym razie wystąpi błąd.
+W pakiecie **testthat** istnieją inne funkcje podobne do `expect_equal()`.
+Przykładowo, funkcja `expect_identical()` sprawdza nie tylko podobieństwo wartości, ale też to czy klasa wyników jest taka sama.
+
+Aby sprawdzić czy nasza funkcja na pewno zwróci błąd w przypadku podania niepoprawnych danych wejściowych możemy użyć funkcji `expect_error()`.
+Jej działanie jest przedstawione poniżej.
+
+```{r, error = TRUE}
+expect_error(nowy_prostokat(3, 5, 2, "a"))
+expect_error(nowy_prostokat(1, 2, 3, 6))
+```
+
+W przypadku, gdy wywołanie funkcji zwróci błąd, `expect_error()` nic nie zwróci.
+Natomiast, jeżeli wywołania funkcji nie zwróci błędu, `expect_error()` zatrzyma swoje działanie i zwóci komunikat.
+Odpowiednikami `expect_error()` dla ostrzeżeń jest `expect_warning()`, a dla wiadomości `expect_message()`.
+
+Pozostałe funkcje z tego pakietu są wymienione i opisane na stronie https://testthat.r-lib.org/reference/index.html.
 
 <!-- When you find a bug, write a test -->
 <!-- Automated testing with Travis CI + codecov -->
