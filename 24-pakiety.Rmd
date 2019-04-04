@@ -34,7 +34,7 @@ Funkcja `create_packages()` tworzy cztery pliki:
 <!-- readme -->
 <!-- news -->
 
-## Wbudowane testy
+## Wbudowane testy {#wbudowane-testy}
 
 <!-- Unit testing -->
 <!-- usethis::use_test() -->
