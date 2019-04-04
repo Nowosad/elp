@@ -1,5 +1,6 @@
 # Kontrola wersji {#kontrola-wersji}
 
+<!-- https://peerj.com/preprints/3159/ -->
 <!-- https://swcarpentry.github.io/git-novice/ -->
 <!-- https://arxiv.org/pdf/1811.02021.pdf -->
 <!-- http://happygitwithr.com/ -->

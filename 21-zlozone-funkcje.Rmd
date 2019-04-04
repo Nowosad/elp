@@ -261,6 +261,8 @@ class(y)
 
 ### Metody
 
+<!-- dodac meotde print -->
+
 Posiadamy teraz nową klasę, `prostokat`, ale nie posiadamy do niej żadnych metod.
 Metoda w systemie S3 to funkcja, która działa w różny sposób w zależności od klasy danych wejściowych.
 Możliwe jest zarówno dodanie nowej metody do istniejącej funkcji, jak i stworzenie nowej funkcji.

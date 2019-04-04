@@ -1,4 +1,5 @@
 # Tworzenie pakietów {#tworzenie-pakietow}
+<!-- https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1006561&type=printable -->
 
 [@R-usethis]
 
@@ -44,6 +45,20 @@ Funkcja `create_packages()` tworzy cztery pliki:
 <!-- Automated testing with Travis CI + codecov -->
 
 ## Licencje
+
+<!-- There are three main open source licenses -->
+
+<!-- CC0 “public domain”, best for data packages  -->
+<!-- MIT Free for anyone to do anything with -->
+<!-- GPL Changes and bundles must also be GPL -->
+<!-- These are gross simplifications! -->
+
+<!-- DESCRIPTION: -->
+<!-- License: file LICENSE -->
+<!-- LICENSE: -->
+<!-- Proprietary: do not distribute outside of -->
+<!-- Widgets Incorporated. -->
+
 
 ## Publikowanie pakietów
 
