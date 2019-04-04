@@ -174,7 +174,15 @@ Ostatnia linia, wyliczająca średnią, zabrała ok. 10ms.
 
 ## Testy jednostkowe
 
-
+Testy jednostkowe (ang. *unit tests*) to sposób sprawdzania czy stworzona przez nas funkcja działa w sposób jaki oczekujemy.
+Tworzenie takich testów wymusza także myślenie na temat odpowiedniego działania funkcji i jej API.
+<!--..-->
+Testy jednostkowe są najczęściej stosowane w przypadku budowania pakietów (sekcja \@ref(wbudowane-testy)), gdzie możliwe jest automatyczne sprawdzenie wielu testów na raz.
+Przykładowo, napisaliśmy nową funkcję, która wykonuje złożone operacje i, po wielu sprawdzeniach, wiemy, że daje poprawne wyniki.
+Po kilku miesiącach wpadliśmy na pomysł jak zwiększyć wydajność naszej funkcji. 
+W tym momencie wystarczy już tylko stworzyć nową implementację i użyć wcześniej zbudowanych testów.
+Dadzą one informację, czy efekt działania jest taki jaki oczekujemy, a w przciwnym razie wskażą gdzie pojawił się błąd. 
+Istnieje też dodatkowa reguła - jeżeli znajdziesz błąd w kodzie od razu napisz test jednostkowy.
 
 ```{r}
 nowy_prostokat = function(xmin, ymin, xmax, ymax){
@@ -242,9 +250,6 @@ Natomiast, jeżeli wywołania funkcji nie zwróci błędu, `expect_error()` zatr
 Odpowiednikami `expect_error()` dla ostrzeżeń jest `expect_warning()`, a dla wiadomości `expect_message()`.
 
 Pozostałe funkcje z tego pakietu są wymienione i opisane na stronie https://testthat.r-lib.org/reference/index.html.
-
-<!-- When you find a bug, write a test -->
-<!-- Automated testing with Travis CI + codecov -->
 
 ## Zadanie
 
