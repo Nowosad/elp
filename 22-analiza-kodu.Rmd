@@ -120,9 +120,12 @@ Istnieją trzy podstawowe reguły optymalizacji kodu^[http://www.moscowcoffeerev
 3. Profiluj przed optymalizowaniem.
 
 Czym jest profilowanie i dlaczego powinno być wykonywane przed optymalizowaniem kodu?
-Profilowanie mierzy czas działania każdej linii kodu.
+Profilowanie mierzy wydajność działania każdej linii kodu w celu sprawdzenia, która linia zabiera najwięcej czasu lub zasobów.
+Dzięki profilowaniu można określić fragmenty kodu, które można poprawić w celu zwiększenia czasu wykonywania skryptu czy funkcji.
 
-[@R-profvis]
+Poniżej znajduje się zawartość pliku `R/moja_funkcja.R`.
+Jego działanie polega na stworzeniu wektora od 1 do 9999999 (obiekt `x`), wektora od 1 do 19999998 co 2 (obiekt `y`), połączenie tych wektorów do ramki danych (obiekt `df`), wyliczenie sumy wartości dla każdego wiersza (obiekt `z`), a na końcu wyliczenie średniej z obiektu `z`.
+Która z tych linii zabiera najwięcej czasu a która najmniej?
 
 ```{r, eval=FALSE}
 # plik R/moja_funkcja.R
@@ -133,10 +136,14 @@ z = rowSums(df)
 mean(z)
 ```
 
+Profilowanie kodu R można wykonać używając pakietu **profvis** [@R-profvis].
+
 ```{r, eval=FALSE}
 library(profvis)
 profvis(source("R/moja_funkcja.R"))
 ```
+
+<!-- add image/app -->
 
 <!-- profiling -->
 <!-- https://r-prof.github.io/jointprof/articles/proposal.html -->
