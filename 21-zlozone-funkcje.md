@@ -235,7 +235,7 @@ log_safe("abecadło")
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Dodatkowo istnieje funkcja `withCallingHandlers()`, która jest używana w przypadku działania na ostrzeżeniach.</div>\EndKnitrBlock{rmdinfo}
 
-## Programowanie obiektowe
+## Programowanie obiektowe {#oop}
 
 Programowanie obiektowe (ang. *object-oriented programming*, OOP) to jeden z najpopularniejszych paradygmatów programowania (sekcja \@ref(jezyki-programowania)). 
 Polega on na definiowaniu obiektów danej klasy posiadających pewną określoną strukturę oraz zachowania.

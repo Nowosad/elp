@@ -256,7 +256,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>11</b> Złożone funkcje</a><ul>
 <li class="chapter" data-level="11.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>11.1</b> API</a></li>
 <li class="chapter" data-level="11.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsuga-komunikatow"><i class="fa fa-check"></i><b>11.2</b> Obsługa komunikatów</a></li>
-<li class="chapter" data-level="11.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#programowanie-obiektowe"><i class="fa fa-check"></i><b>11.3</b> Programowanie obiektowe</a><ul>
+<li class="chapter" data-level="11.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>11.3</b> Programowanie obiektowe</a><ul>
 <li class="chapter" data-level="11.3.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#klasy"><i class="fa fa-check"></i><b>11.3.1</b> Klasy</a></li>
 <li class="chapter" data-level="11.3.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#metody"><i class="fa fa-check"></i><b>11.3.2</b> Metody</a></li>
 <li class="chapter" data-level="11.3.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#konstruktory"><i class="fa fa-check"></i><b>11.3.3</b> Konstruktory</a></li>
@@ -329,7 +329,7 @@ Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej fu
 <p>Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))
 <span class="co">#&gt;    user  system elapsed </span>
-<span class="co">#&gt;   0.568   0.000   0.566</span></code></pre>
+<span class="co">#&gt;   0.568   0.000   0.567</span></code></pre>
 <p>W efekcie dostajemy trzy wartości - <code>user</code>, <code>system</code> i <code>elapsed</code>. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.</p>
 <p>Benchmarking jest często używany w sytuacji, gdy istnieje kilka funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
 Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.</p>
@@ -367,8 +367,8 @@ wynik_<span class="dv">1</span>
 <span class="co">#&gt; # A tibble: 2 x 10</span>
 <span class="co">#&gt;   expression    min   mean median   max `itr/sec` mem_alloc  n_gc n_itr</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt; &lt;bch&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 1.45µs 2.13µs 1.78µs  68µs   469248.     300KB     1  9999</span>
-<span class="co">#&gt; 2 mi_do_km2… 1.04µs 1.46µs 1.25µs  98µs   684985.     222KB     1  9999</span>
+<span class="co">#&gt; 1 mi_do_km1… 1.42µs 1.91µs 1.62µs 106µs   522890.     300KB     1  9999</span>
+<span class="co">#&gt; 2 mi_do_km2… 1.02µs 1.34µs 1.17µs 103µs   743789.     222KB     1  9999</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <p>Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
 Zawiera ona szereg charakterystyk, w tym:</p>
@@ -395,11 +395,11 @@ wynik_<span class="dv">2</span>
 <span class="co">#&gt; # A tibble: 2 x 10</span>
 <span class="co">#&gt;   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;bch&gt; &lt;bch:tm&gt; &lt;bch:&gt; &lt;bch:t&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 506ms 505.67ms  506ms 505.7ms      1.98     382MB     8     1</span>
-<span class="co">#&gt; 2 mi_do_km2… 941µs   1.36ms  980µs  20.5ms    736.      78.2KB    14   380</span>
+<span class="co">#&gt; 1 mi_do_km1… 483ms 484.01ms  484ms 484.9ms      2.07     382MB    16     2</span>
+<span class="co">#&gt; 2 mi_do_km2… 881µs   1.18ms  914µs  14.1ms    851.      78.2KB    15   426</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <p>W tym przypadku róznica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
-Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 1.98 operacji na sekundę, przy aż 735.84 operacji na sekundę funkcji <code>mi_do_km2</code>.
+Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 2.07 operacji na sekundę, przy aż 850.81 operacji na sekundę funkcji <code>mi_do_km2</code>.
 Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż <code>mi_do_km2</code>.</p>
 <pre><code>#&gt; Running with:
 #&gt;       x
@@ -412,14 +412,14 @@ Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) r
 #&gt; # A tibble: 8 x 11
 #&gt;   expression     x      min     mean   median      max `itr/sec` mem_alloc
 #&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;
-#&gt; 1 mi_do_km1…    10    3.9µs   5.45µs   4.82µs    115µs 183533.          0B
-#&gt; 2 mi_do_km2…    10   1.73µs   2.35µs   2.04µs  30.09µs 426519.          0B
-#&gt; 3 mi_do_km1…   100  69.94µs  83.92µs  79.84µs 271.96µs  11916.     43.16KB
-#&gt; 4 mi_do_km2…   100   9.16µs  11.39µs  10.63µs  54.01µs  87799.        856B
-#&gt; 5 mi_do_km1…  1000   4.79ms    5.1ms   5.05ms   6.62ms    196.      3.87MB
-#&gt; 6 mi_do_km2…  1000  86.84µs  103.8µs  97.64µs   1.94ms   9634.      7.87KB
-#&gt; 7 mi_do_km1… 10000  495.4ms 507.12ms 507.12ms 518.83ms      1.97  382.04MB
-#&gt; 8 mi_do_km2… 10000 941.33µs   1.14ms 992.31µs   9.64ms    876.     78.18KB
+#&gt; 1 mi_do_km1…    10   3.89µs    5.1µs   4.59µs 121.95µs 196040.          0B
+#&gt; 2 mi_do_km2…    10   1.73µs   2.14µs   1.93µs 106.99µs 466610.          0B
+#&gt; 3 mi_do_km1…   100  67.33µs  77.39µs  73.53µs 300.32µs  12921.     43.16KB
+#&gt; 4 mi_do_km2…   100   9.12µs  10.69µs   9.94µs 124.55µs  93516.        856B
+#&gt; 5 mi_do_km1…  1000   4.44ms   4.71ms   4.66ms   5.66ms    212.      3.87MB
+#&gt; 6 mi_do_km2…  1000  85.06µs  97.68µs  91.89µs   4.75ms  10238.      7.87KB
+#&gt; 7 mi_do_km1… 10000 498.49ms 508.21ms 508.21ms 517.93ms      1.97  382.04MB
+#&gt; 8 mi_do_km2… 10000 884.26µs   1.06ms  913.6µs  11.47ms    943.     78.18KB
 #&gt; # … with 3 more variables: n_gc &lt;dbl&gt;, n_itr &lt;int&gt;, total_time &lt;bch:tm&gt;</code></pre>
 </div>
 <div id="profiling" class="section level2">
@@ -442,10 +442,27 @@ y =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span
 df =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y)
 z =<span class="st"> </span><span class="kw">rowSums</span>(df)
 <span class="kw">mean</span>(z)</code></pre>
-<p>Profilowanie kodu R można wykonać używając pakietu <strong>profvis</strong> <span class="citation">(Chang and Luraschi <a href="#ref-R-profvis">2018</a>)</span>.</p>
+<p>Profilowanie kodu R można wykonać używając funkcji <code>profvis()</code> z pakietu <strong>profvis</strong> <span class="citation">(Chang and Luraschi <a href="#ref-R-profvis">2018</a>)</span>.
+Przyjmuje ona kod lub funkcję, która ma zostać profilowana.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(profvis)
 <span class="kw">profvis</span>(<span class="kw">source</span>(<span class="st">&quot;R/moja_funkcja.R&quot;</span>))</code></pre>
-<p><img src="images/profvis.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>W powyższym przypadku nastąpiło profilowanie kodu zawartego w skrypcie <code>R/moja_funkcja.R</code>.
+Efektem działania jest interaktywne podsumowanie pokazujące zużycie pamięci oraz czas poświęcony dla kolejnych linii kodu (rycina <a href="analiza-kodu.html#fig:profvis">12.1</a>).</p>
+<div class="figure" style="text-align: center"><span id="fig:profvis"></span>
+<img src="images/profvis.png" alt="Zrzut ekranu przedstawiający wynik działania funkcji profvis()." width="100%" />
+<p class="caption">
+Rycina 12.1: Zrzut ekranu przedstawiający wynik działania funkcji profvis().
+</p>
+</div>
+<p>Czas wykonania tego przykładu wyniósł sumarycznie 690ms.
+Pierwsza linia tworząca obiekt <code>x</code> została wykonana bardzo szybko - poniżej mierzalnego progu.
+Stworzenie obiektu <code>y</code> w drugiej linii zajęło ok. 280ms.
+Trzecia linia została wykonana również w czasie poniżej mierzalnego progu.
+Wynika to z kwestii, że tworzenie tam ramki danych nie powoduje wykonania nowych, złożonych obliczeń.
+Powstała ona jedynie poprzez przekazanie odpowiednich adresów w pamięci do obiektów <code>x</code> i <code>y</code>.
+Najbardziej czasochłonną okazała się linia czwarta.
+Wyliczenie sum wierszy i stworzenie obiektu <code>z</code> zabrało ok. 400ms.
+Ostatnia linia, wyliczająca średnią, zabrała ok. 10ms.</p>
 <!-- add image/app -->
 <!-- profiling -->
 <!-- https://r-prof.github.io/jointprof/articles/proposal.html -->
@@ -456,8 +473,16 @@ z =<span class="st"> </span><span class="kw">rowSums</span>(df)
 </div>
 <div id="testy-jednostkowe" class="section level2">
 <h2><span class="header-section-number">12.3</span> Testy jednostkowe</h2>
-<p><span class="citation">(Wickham <a href="#ref-R-testthat">2018</a>)</span></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(testthat)</code></pre>
+<p>Testy jednostkowe (ang. <em>unit tests</em>) to sposób sprawdzania czy stworzona przez nas funkcja działa w sposób jaki oczekujemy.
+Tworzenie takich testów wymusza także myślenie na temat odpowiedniego działania funkcji i jej API.
+<!--..-->
+Testy jednostkowe są najczęściej stosowane w przypadku budowania pakietów (sekcja <a href="tworzenie-pakietow.html#wbudowane-testy">14.5</a>), gdzie możliwe jest automatyczne sprawdzenie wielu testów na raz.
+Przykładowo, napisaliśmy nową funkcję, która wykonuje złożone operacje i, po wielu sprawdzeniach, wiemy, że daje poprawne wyniki.
+Po kilku miesiącach wpadliśmy na pomysł jak zwiększyć wydajność naszej funkcji.
+W tym momencie wystarczy już tylko stworzyć nową implementację i użyć wcześniej zbudowanych testów.
+Dadzą one informację, czy efekt działania jest taki jaki oczekujemy, a w przciwnym razie wskażą gdzie pojawił się błąd.
+Istnieje też dodatkowa reguła - jeżeli znajdziesz błąd w kodzie od razu napisz test jednostkowy.</p>
+<p>Zobaczmy jak działają testy jednostkowe na przykładzie funkcji <code>nowy_prostokat()</code> oraz <code>powierzchnia()</code> stworzonych w sekcji <a href="zlozone-funkcje.html#oop">11.3</a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">nowy_prostokat =<span class="st"> </span><span class="cf">function</span>(xmin, ymin, xmax, ymax){
   <span class="cf">if</span> (<span class="op">!</span><span class="kw">all</span>(<span class="kw">c</span>(<span class="kw">length</span>(xmin), <span class="kw">length</span>(ymin), <span class="kw">length</span>(xmax), <span class="kw">length</span>(ymax)) <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)){
     <span class="kw">stop</span>(<span class="st">&quot;Każdy z argumentów może przyjmować tylko jedną wartość&quot;</span>)
@@ -477,17 +502,31 @@ powierzchnia.prostokat =<span class="st"> </span><span class="cf">function</span
   b =<span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">1</span>]
   a <span class="op">*</span><span class="st"> </span>b
 }</code></pre>
-<p><code>expect_warning()</code>, <code>expect_message()</code></p>
+<p>Jednym z możliwych narzędzi do testów jednostkowych w R jest pakiet <strong>testthat</strong> <span class="citation">(Wickham <a href="#ref-R-testthat">2018</a>)</span>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(testthat)</code></pre>
+<p>Zawiera on szereg funkcji sprawdzających czy działanie naszych funkcji jest zgodne z oczekiwaniem.
+Funkcje w tym pakiecie rozpoczynają się od prefiksu <code>expect_</code> (oczekuj).</p>
+<p>W przypadku funkcji <code>powierzchnia()</code> oczekujemy, że wynik będzie zawierał tylko jeden element.
+Możemy to sprawdźić za pomocą funkcji <code>expect_length()</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">5</span>)
+<span class="kw">expect_length</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">1</span>)</code></pre>
+<p>Jeżeli wynik ma długość jeden to wówczas nic się nie stane.
+W przeciwnym razie pojawi się komunikat błędu.</p>
+<p>Wiemy, że powierzchnia naszego przykładowego obiektu <code>nowy_p</code> to 30.
+Do sprawdzenia, czy nasza funkcja daje na tym obiekcie dokładnie taki wynik możemy użyć <code>expect_equal()</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">expect_equal</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">30</span>)</code></pre>
+<p>W momencie, gdy wynik jest zgodny to nie nastąpi żadna reakcja, a w przeciwnym razie wystąpi błąd.
+W pakiecie <strong>testthat</strong> istnieją inne funkcje podobne do <code>expect_equal()</code>.
+Przykładowo, funkcja <code>expect_identical()</code> sprawdza nie tylko podobieństwo wartości, ale też to czy klasa wyników jest taka sama.</p>
+<p>Aby sprawdzić czy nasza funkcja na pewno zwróci błąd w przypadku podania niepoprawnych danych wejściowych możemy użyć funkcji <code>expect_error()</code>.
+Jej działanie jest przedstawione poniżej.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">expect_error</span>(<span class="kw">nowy_prostokat</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="st">&quot;a&quot;</span>))
 <span class="kw">expect_error</span>(<span class="kw">nowy_prostokat</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">6</span>))
 <span class="co">#&gt; Error: `nowy_prostokat(1, 2, 3, 6)` did not throw an error.</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">5</span>)
-<span class="kw">expect_length</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">1</span>)</code></pre>
-<p><code>expect_identical()</code>, <code>expect_equivalent()</code></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">expect_equal</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">30</span>)</code></pre>
-<p><a href="https://testthat.r-lib.org/reference/index.html" class="uri">https://testthat.r-lib.org/reference/index.html</a></p>
-<!-- When you find a bug, write a test -->
-<!-- Automated testing with Travis CI + codecov -->
+<p>W przypadku, gdy wywołanie funkcji zwróci błąd, <code>expect_error()</code> nic nie zwróci.
+Natomiast, jeżeli wywołania funkcji nie zwróci błędu, <code>expect_error()</code> zatrzyma swoje działanie i zwóci komunikat.
+Odpowiednikami <code>expect_error()</code> dla ostrzeżeń jest <code>expect_warning()</code>, a dla wiadomości <code>expect_message()</code>.</p>
+<p>Pozostałe funkcje z tego pakietu są wymienione i opisane na stronie <a href="https://testthat.r-lib.org/reference/index.html" class="uri">https://testthat.r-lib.org/reference/index.html</a>.</p>
 </div>
 <div id="zadanie" class="section level2">
 <h2><span class="header-section-number">12.4</span> Zadanie</h2>
