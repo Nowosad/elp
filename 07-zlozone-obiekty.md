@@ -145,7 +145,7 @@ macierz2[, c(1, 3)]
 #> [4,] 10 12
 ```
 
-Wszystkie pozostałe sposoby wydzielania opisane dla wektorów w sekcji \@ref() działają również na macierzach.
+Wszystkie pozostałe sposoby wydzielania opisane dla wektorów w sekcji \@ref(wydzielanie) działają również na macierzach.
 Możeliwe jest więc używanie wektora logicznego czy nazw kolumn.
 
 
