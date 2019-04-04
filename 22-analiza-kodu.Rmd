@@ -136,16 +136,30 @@ z = rowSums(df)
 mean(z)
 ```
 
-Profilowanie kodu R można wykonać używając pakietu **profvis** [@R-profvis].
+Profilowanie kodu R można wykonać używając funkcji `profvis()` z pakietu **profvis** [@R-profvis].
+Przyjmuje ona kod lub funkcję, która ma zostać profilowana.
 
 ```{r, eval=FALSE}
 library(profvis)
 profvis(source("R/moja_funkcja.R"))
 ```
 
-```{r, echo=FALSE}
+W powyższym przypadku nastąpiło profilowanie kodu zawartego w skrypcie `R/moja_funkcja.R`.
+Efektem działania jest interaktywne podsumowanie pokazujące zużycie pamięci oraz czas poświęcony dla kolejnych linii kodu (rycina \@ref(fig:profvis)).
+
+```{r profvis, echo=FALSE, fig.cap="Zrzut ekranu przedstawiający wynik działania funkcji profvis()."}
 knitr::include_graphics("images/profvis.png")
 ```
+
+Czas wykonania tego przykładu wyniósł sumarycznie 690ms.
+Pierwsza linia tworząca obiekt `x` została wykonana bardzo szybko - poniżej mierzalnego progu.
+Stworzenie obiektu `y` w drugiej linii zajęło ok. 280ms.
+Trzecia linia została wykonana również w czasie poniżej mierzalnego progu. 
+Wynika to z kwestii, że tworzenie tam ramki danych nie powoduje wykonania nowych, złożonych obliczeń.
+Powstała ona jedynie poprzez przekazanie odpowiednich adresów w pamięci do obiektów `x` i `y`.
+Najbardziej czasochłonną okazała się linia czwarta.
+Wyliczenie sum wierszy i stworzenie obiektu `z` zabrało ok. 400ms.
+Ostatnia linia, wyliczająca średnią, zabrała ok. 10ms.
 
 <!-- add image/app -->
 
@@ -160,11 +174,17 @@ knitr::include_graphics("images/profvis.png")
 
 ## Testy jednostkowe
 
-[@R-testthat]
+Testy jednostkowe (ang. *unit tests*) to sposób sprawdzania czy stworzona przez nas funkcja działa w sposób jaki oczekujemy.
+Tworzenie takich testów wymusza także myślenie na temat odpowiedniego działania funkcji i jej API.
+<!--..-->
+Testy jednostkowe są najczęściej stosowane w przypadku budowania pakietów (sekcja \@ref(wbudowane-testy)), gdzie możliwe jest automatyczne sprawdzenie wielu testów na raz.
+Przykładowo, napisaliśmy nową funkcję, która wykonuje złożone operacje i, po wielu sprawdzeniach, wiemy, że daje poprawne wyniki.
+Po kilku miesiącach wpadliśmy na pomysł jak zwiększyć wydajność naszej funkcji. 
+W tym momencie wystarczy już tylko stworzyć nową implementację i użyć wcześniej zbudowanych testów.
+Dadzą one informację, czy efekt działania jest taki jaki oczekujemy, a w przciwnym razie wskażą gdzie pojawił się błąd. 
+Istnieje też dodatkowa reguła - jeżeli znajdziesz błąd w kodzie od razu napisz test jednostkowy.
 
-```{r}
-library(testthat)
-```
+Zobaczmy jak działają testy jednostkowe na przykładzie funkcji `nowy_prostokat()` oraz `powierzchnia()` stworzonych w sekcji \@ref(oop).
 
 ```{r}
 nowy_prostokat = function(xmin, ymin, xmax, ymax){
@@ -188,30 +208,50 @@ powierzchnia.prostokat = function(x){
 }
 ```
 
+Jednym z możliwych narzędzi do testów jednostkowych w R jest pakiet **testthat** [@R-testthat].
 
-
-`expect_warning()`, `expect_message()`
-
-```{r, error = TRUE}
-expect_error(nowy_prostokat(3, 5, 2, "a"))
-expect_error(nowy_prostokat(1, 2, 3, 6))
+```{r}
+library(testthat)
 ```
+
+Zawiera on szereg funkcji sprawdzających czy działanie naszych funkcji jest zgodne z oczekiwaniem.
+Funkcje w tym pakiecie rozpoczynają się od prefiksu `expect_` (oczekuj).
+
+W przypadku funkcji `powierzchnia()` oczekujemy, że wynik będzie zawierał tylko jeden element.
+Możemy to sprawdźić za pomocą funkcji `expect_length()`.
 
 ```{r}
 nowy_p = nowy_prostokat(0, 0, 6, 5)
 expect_length(powierzchnia(nowy_p), 1)
 ```
 
-`expect_identical()`, `expect_equivalent()`
+Jeżeli wynik ma długość jeden to wówczas nic się nie stane.
+W przeciwnym razie pojawi się komunikat błędu.
+
+Wiemy, że powierzchnia naszego przykładowego obiektu `nowy_p` to 30.
+Do sprawdzenia, czy nasza funkcja daje na tym obiekcie dokładnie taki wynik możemy użyć `expect_equal()`.
 
 ```{r}
 expect_equal(powierzchnia(nowy_p), 30)
 ```
 
-https://testthat.r-lib.org/reference/index.html
+W momencie, gdy wynik jest zgodny to nie nastąpi żadna reakcja, a w przeciwnym razie wystąpi błąd.
+W pakiecie **testthat** istnieją inne funkcje podobne do `expect_equal()`.
+Przykładowo, funkcja `expect_identical()` sprawdza nie tylko podobieństwo wartości, ale też to czy klasa wyników jest taka sama.
 
-<!-- When you find a bug, write a test -->
-<!-- Automated testing with Travis CI + codecov -->
+Aby sprawdzić czy nasza funkcja na pewno zwróci błąd w przypadku podania niepoprawnych danych wejściowych możemy użyć funkcji `expect_error()`.
+Jej działanie jest przedstawione poniżej.
+
+```{r, error = TRUE}
+expect_error(nowy_prostokat(3, 5, 2, "a"))
+expect_error(nowy_prostokat(1, 2, 3, 6))
+```
+
+W przypadku, gdy wywołanie funkcji zwróci błąd, `expect_error()` nic nie zwróci.
+Natomiast, jeżeli wywołania funkcji nie zwróci błędu, `expect_error()` zatrzyma swoje działanie i zwóci komunikat.
+Odpowiednikami `expect_error()` dla ostrzeżeń jest `expect_warning()`, a dla wiadomości `expect_message()`.
+
+Pozostałe funkcje z tego pakietu są wymienione i opisane na stronie https://testthat.r-lib.org/reference/index.html.
 
 ## Zadanie
 
