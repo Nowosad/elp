@@ -41,6 +41,7 @@ Funkcja `create_packages()` tworzy cztery pliki:
 <!-- devtools::test() -->
 <!-- devtools::test_coverage() -->
 <!-- https://katherinemwood.github.io/post/testthat/ -->
+<!-- Automated testing with Travis CI + codecov -->
 
 ## Licencje
 
