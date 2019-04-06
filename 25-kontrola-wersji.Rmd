@@ -16,7 +16,7 @@ Systemy kontroli wersji są bardzo powszechnie wykorzystywane przy tworzeniu wsz
 Wynika to nie tylko z ich zalet wymienionych powyżej, ale również rozbudowanych możliwości pozwalających na współpracę wielu osób nad jednym projektem.
 
 Istnieje wiele systemów kontroli wersji różniących się zarówno używaną terminologią, sposobem działania czy możliwościami.^[https://en.wikipedia.org/wiki/Comparison_of_version-control_software#History_and_adoption]
-Współcześnie najbardziej popularnym systemem kontroli jest Git, któremu będzie poświęcona reszta tego rozdziału.[^Instrukcje dotyczące instalacji Gita znajdują się we wstępie książki.]
+Współcześnie najbardziej popularnym systemem kontroli jest Git, któremu będzie poświęcona reszta tego rozdziału.
 Inne popularne systemy kontroli wersji to Concurrent Versions System (CVS), Mercurial czy Subversion (SVN).
 
 <!-- gdzie wykorzystywaneC -->
@@ -25,26 +25,86 @@ Inne popularne systemy kontroli wersji to Concurrent Versions System (CVS), Merc
 ## Git
 
 System Git jest niezależny od języka (lub języków) programowania, które używamy.
-Jego działanie oparte jest o system komend rozpoczynających się od słowa `git `, które należy wykonać w systemowej linii komend.^[Nie w linii komend R.]
+Jego działanie oparte jest o system komend rozpoczynających się od słowa `git `, które należy wykonać w systemowym oknie konsoli.^[Nie w oknie konsoli R.]
 Zrozumienie działania systemu Git wymaga także poznania kilku nowych terminów.
 
+Git składa się z kilkudziesięciu komend, których działanie jest dalej uzależnione od podanych argumentów.
+Tutaj przedstawiony zostanie tylko podzbiór najczęściej używanych.
+Pełniejszy opis komend systemu Git można znaleźć pod adresem https://education.github.com/git-cheat-sheet-education.pdf.
+
+### Konfiguracja systemu Git
+
+[^Instrukcje dotyczące instalacji Gita znajdują się we wstępie książki.]
+
+```{bash, eval=FALSE}
+git config --global user.name "imie nazwisko"
+git config --global user.email "email"
+```
+
+### Repozytorium
+
+<!-- co to repo -->
 Podstawowym z nich jest repozytorium (ang. *repository*, często określane skrótowo jako repo).
 Jest to folder, który przechowuje wszystkie pliki i foldery w ramach jednego projektu.^[W kontekście R, warto o tym myśleć jako o projekcie RStudio.]
 Dodatkowo wewnątrz repozytorium znajduje się ukryty folder `.git`, który zawiera informację o historii i zmianach każdego z naszych plików.
 Repozytorium może znajdować się na dysku naszego komputera (wtedy jest nazywane repozytorium lokalnym) lub też na serwerze w internecie (określane jako repozytorium zdalne (ang. *remote*)).
 Istnieje wiele serwisów internetowych pozwalających na tworzenie, przechowywanie i edycję repozytoriów zdalnych, między innymi [GitHub](https://github.com/) (przybliżony w sekcji \@ref(github)), [GitLab](https://gitlab.com/), czy [BitBucket](https://bitbucket.org/).
 
+```{bash, eval=FALSE}
 
+git init
+```
 
-<!-- co to repo -->
-<!-- co to commit -->
-<!-- co to branch -->
-<!-- co to diff -->
-<!-- co to merge -->
-<!-- co to pull -->
+### Dodawanie zmian
+
+```{bash, eval=FALSE}
+git add sciezka_do_pliku
+```
+
+### Sprawdzanie zmian
+
+```{bash, eval=FALSE}
+git diff
+```
+
+### Zatwierdzanie zmian
+
+Zatwierdzanie zmian (ang. **commit**)
+
+```{bash, eval=FALSE}
+git commit -m "opis wprowadzonych zmian"
+```
+
+### Rozgałęzienia
+
+```{bash, eval=FALSE}
+git branch
+```
+
+```{bash, eval=FALSE}
+git branch nazwa_nowej_galezi
+```
+
+```{bash, eval=FALSE}
+git checkout nazwa_innej_galezi
+```
+
+```{bash, eval=FALSE}
+git merge nazwa_innej_galezi
+```
+
+### Repozytorium zdalne
+
+```{bash, eval=FALSE}
+git remote add 
+```
+
+### ...
 <!-- co to push -->
-<!-- co to pull request -->
-<!-- lista podsatwowych komend -->
+
+### ...
+<!-- co to pull -->
+
 <!-- podstawowy workflow -->
 
 ## Git w RStudio
@@ -56,6 +116,8 @@ Istnieje wiele serwisów internetowych pozwalających na tworzenie, przechowywan
 <!-- https://github.com/maciejkorsan/podlaskigit -->
 <!-- when something go wrong -->
 <!-- stackoverflow git questions -->
+<!-- co to pull request -->
+<!-- lista podsatwowych komend -->
 
 ## Zadania
 
