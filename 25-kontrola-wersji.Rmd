@@ -16,13 +16,24 @@ Systemy kontroli wersji są bardzo powszechnie wykorzystywane przy tworzeniu wsz
 Wynika to nie tylko z ich zalet wymienionych powyżej, ale również rozbudowanych możliwości pozwalających na współpracę wielu osób nad jednym projektem.
 
 Istnieje wiele systemów kontroli wersji różniących się zarówno używaną terminologią, sposobem działania czy możliwościami.^[https://en.wikipedia.org/wiki/Comparison_of_version-control_software#History_and_adoption]
-Współcześnie najbardziej popularnym systemem kontroli jest Git, któremu będzie poświęcona reszta tego rozdziału.
+Współcześnie najbardziej popularnym systemem kontroli jest Git, któremu będzie poświęcona reszta tego rozdziału.[^Instrukcje dotyczące instalacji Gita znajdują się we wstępie książki.]
 Inne popularne systemy kontroli wersji to Concurrent Versions System (CVS), Mercurial czy Subversion (SVN).
 
 <!-- gdzie wykorzystywaneC -->
 <!-- block - large files -->
 
 ## Git
+
+System Git jest niezależny od języka (lub języków) programowania, które używamy.
+Jego działanie oparte jest o system komend rozpoczynających się od słowa `git `, które należy wykonać w systemowej linii komend.^[Nie w linii komend R.]
+Zrozumienie działania systemu Git wymaga także poznania kilku nowych terminów.
+
+Podstawowym z nich jest repozytorium (ang. *repository*, często określane skrótowo jako repo).
+Jest to folder, który przechowuje wszystkie pliki i foldery w ramach jednego projektu.^[W kontekście R, warto o tym myśleć jako o projekcie RStudio.]
+Dodatkowo wewnątrz repozytorium znajduje się ukryty folder `.git`, który zawiera informację o historii i zmianach każdego z naszych plików.
+Repozytorium może znajdować się na dysku naszego komputera (wtedy jest nazywane repozytorium lokalnym) lub też na serwerze w internecie (określane jako repozytorium zdalne (ang. *remote*)).
+Istnieje wiele serwisów internetowych pozwalających na tworzenie, przechowywanie i edycję repozytoriów zdalnych, między innymi [GitHub](https://github.com/) (przybliżony w sekcji \@ref(github)), [GitLab](https://gitlab.com/), czy [BitBucket](https://bitbucket.org/).
+
 
 
 <!-- co to repo -->
