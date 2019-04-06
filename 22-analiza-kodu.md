@@ -112,7 +112,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 ```r
 system.time(mean(1:100000000))
 #>    user  system elapsed 
-#>   0.580   0.000   0.578
+#>   0.564   0.004   0.569
 ```
 
 W efekcie dostajemy trzy wartości - `user`, `system` i `elapsed`. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.
@@ -168,8 +168,8 @@ wynik_1
 #> # A tibble: 2 x 10
 #>   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr
 #>   <chr>      <bch:> <bch:> <bch:> <bch:>     <dbl> <bch:byt> <dbl> <int>
-#> 1 mi_do_km1… 1.42µs 1.97µs 1.69µs 31.1µs   507498.     117KB     0 10000
-#> 2 mi_do_km2… 1.01µs 1.27µs 1.15µs 21.7µs   786061.     222KB     0 10000
+#> 1 mi_do_km1… 1.44µs 1.99µs 1.69µs 78.2µs   503014.     117KB     0 10000
+#> 2 mi_do_km2… 1.04µs 1.27µs 1.16µs 21.1µs   785469.     222KB     0 10000
 #> # … with 1 more variable: total_time <bch:tm>
 ```
 
@@ -201,13 +201,13 @@ wynik_2
 #> # A tibble: 2 x 10
 #>   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr
 #>   <chr>      <bch> <bch:tm> <bch:> <bch:t>     <dbl> <bch:byt> <dbl> <int>
-#> 1 mi_do_km1… 468ms 474.74ms  475ms 481.2ms      2.11     382MB    16     2
-#> 2 mi_do_km2… 896µs   1.09ms  929µs  10.8ms    916.      78.2KB     9   458
+#> 1 mi_do_km1… 460ms 465.38ms  465ms 470.4ms      2.15     382MB    16     2
+#> 2 mi_do_km2… 900µs   1.11ms  938µs  10.3ms    904.      78.2KB     9   453
 #> # … with 1 more variable: total_time <bch:tm>
 ```
 
 W tym przypadku róznica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
-Funkcja `mi_do_km1` jest w stanie wykonać tylko 2.11 operacji na sekundę, przy aż 915.97 operacji na sekundę funkcji `mi_do_km2`.
+Funkcja `mi_do_km1` jest w stanie wykonać tylko 2.15 operacji na sekundę, przy aż 904.19 operacji na sekundę funkcji `mi_do_km2`.
 Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
 
 
@@ -223,14 +223,14 @@ Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej
 #> # A tibble: 8 x 11
 #>   expression     x      min     mean   median      max `itr/sec` mem_alloc
 #>   <chr>      <dbl> <bch:tm> <bch:tm> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 mi_do_km1…    10   3.88µs   5.12µs   4.63µs  99.93µs 195444.          0B
-#> 2 mi_do_km2…    10   1.72µs   2.05µs   1.92µs  96.68µs 487326.          0B
-#> 3 mi_do_km1…   100  67.79µs  79.92µs  74.27µs 266.13µs  12513.     43.16KB
-#> 4 mi_do_km2…   100   9.15µs  10.52µs   9.98µs 106.31µs  95026.        856B
-#> 5 mi_do_km1…  1000   4.46ms   4.83ms    4.7ms   9.89ms    207.      3.87MB
-#> 6 mi_do_km2…  1000  86.14µs  94.79µs  90.83µs 389.04µs  10550.      7.87KB
-#> 7 mi_do_km1… 10000  582.3ms  582.3ms  582.3ms  582.3ms      1.72  382.04MB
-#> 8 mi_do_km2… 10000 883.35µs   1.04ms 917.31µs   9.51ms    963.     78.18KB
+#> 1 mi_do_km1…    10   3.87µs   5.11µs   4.67µs  96.26µs 195726.          0B
+#> 2 mi_do_km2…    10   1.74µs   2.11µs   1.92µs  26.37µs 473639.          0B
+#> 3 mi_do_km1…   100  68.01µs  77.92µs  74.25µs   3.61ms  12833.     43.16KB
+#> 4 mi_do_km2…   100   9.14µs  10.34µs   9.94µs  84.29µs  96681.        856B
+#> 5 mi_do_km1…  1000   4.48ms   4.77ms   4.73ms   8.35ms    210.      3.87MB
+#> 6 mi_do_km2…  1000  86.05µs  95.58µs  91.72µs 220.21µs  10462.      7.87KB
+#> 7 mi_do_km1… 10000 580.54ms 580.54ms 580.54ms 580.54ms      1.72  382.04MB
+#> 8 mi_do_km2… 10000 888.45µs   1.02ms 918.03µs   5.73ms    979.     78.18KB
 #> # … with 3 more variables: n_gc <dbl>, n_itr <int>, total_time <bch:tm>
 ```
 
