@@ -33,9 +33,13 @@ Git składa się z kilkudziesięciu komend, których działanie jest dalej uzale
 Tutaj przedstawiony zostanie tylko podzbiór najczęściej używanych.
 Pełniejszy opis komend systemu Git można znaleźć pod adresem https://education.github.com/git-cheat-sheet-education.pdf lub http://rogerdudler.github.io/git-guide/index.pl.html.
 
+<!-- git clients -->
+
 ### Konfiguracja systemu Git
 
-^[Instrukcje dotyczące instalacji Gita znajdują się we wstępie książki.]
+Kolejnym krokiem po instalacji systemu Git^[Instrukcje dotyczące instalacji Gita znajdują się we wstępie książki.] jest jego konfiguracja. 
+Można ją wykonać używając wbudowanego terminala (Mac OS i Linux) lub terminala dodanego podczas instalacji systemu Git (Windows).
+Polega ona na podaniu nazwy użytkownika (np. "Imie Nazwisko") oraz jego emaila ("email@portal.com").
 
 
 ```bash
