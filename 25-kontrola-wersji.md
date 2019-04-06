@@ -35,7 +35,7 @@ Pełniejszy opis komend systemu Git można znaleźć pod adresem https://educati
 
 ### Konfiguracja systemu Git
 
-[^Instrukcje dotyczące instalacji Gita znajdują się we wstępie książki.]
+^[Instrukcje dotyczące instalacji Gita znajdują się we wstępie książki.]
 
 
 ```bash
@@ -54,7 +54,6 @@ Istnieje wiele serwisów internetowych pozwalających na tworzenie, przechowywan
 
 
 ```bash
-
 git init
 ```
 
@@ -62,7 +61,8 @@ git init
 
 
 ```bash
-git add sciezka_do_pliku
+git add sciezka_do_pliku #dodanie pojedynczego pliku
+git add --all            #dodanie wszystkich plików        
 ```
 
 ### Sprawdzanie zmian
@@ -107,28 +107,56 @@ git merge nazwa_innej_galezi
 
 
 ```bash
-git remote add 
+git clone sciezka_do_zdalnego_repo
 ```
 
-### ...
+
+```bash
+git remote add origin sciezka_do_zdalnego_repo
+```
+
+### Wysyłanie zmian
+
+
+```bash
+git push
+```
+
 <!-- co to push -->
 
-### ...
-<!-- co to pull -->
+### Aktualizowanie 
+
+
+```bash
+git pull
+```
+
+### Sposób pracy
 
 <!-- podstawowy workflow -->
 
-## Git w RStudio
-
-<!-- Use a Git client, if you like -->
-
 ## GitHub
+
+GitHub jest serwisem internetowym pozwalającym na przechowywanie i interakcję z repozytoriami w systemie kontroli wersji Git.
+
+
+Oprócz dostępu do kodu i jego zmian, GitHub oferuje szereg dodatkowych możliwości.
+<!--..-->
+
 
 <!-- https://github.com/maciejkorsan/podlaskigit -->
 <!-- when something go wrong -->
 <!-- stackoverflow git questions -->
 <!-- co to pull request -->
 <!-- lista podsatwowych komend -->
+<!-- create a ssh key -->
+<!-- http://rogerdudler.github.io/git-guide/index.pl.html -->
+
+## Git w RStudio
+
+<!-- Use a Git client, if you like -->
+<!-- workflow -->
+
 
 ## Zadania
 
