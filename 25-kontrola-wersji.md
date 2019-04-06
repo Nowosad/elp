@@ -25,16 +25,97 @@ Inne popularne systemy kontroli wersji to Concurrent Versions System (CVS), Merc
 
 ## Git
 
+System Git jest niezależny od języka (lub języków) programowania, które używamy.
+Jego działanie oparte jest o system komend rozpoczynających się od słowa `git `, które należy wykonać w systemowym oknie konsoli.^[Nie w oknie konsoli R.]
+Zrozumienie działania systemu Git wymaga także poznania kilku nowych terminów.
+
+Git składa się z kilkudziesięciu komend, których działanie jest dalej uzależnione od podanych argumentów.
+Tutaj przedstawiony zostanie tylko podzbiór najczęściej używanych.
+Pełniejszy opis komend systemu Git można znaleźć pod adresem https://education.github.com/git-cheat-sheet-education.pdf.
+
+### Konfiguracja systemu Git
+
+[^Instrukcje dotyczące instalacji Gita znajdują się we wstępie książki.]
+
+
+```bash
+git config --global user.name "imie nazwisko"
+git config --global user.email "email"
+```
+
+### Repozytorium
 
 <!-- co to repo -->
-<!-- co to commit -->
-<!-- co to branch -->
-<!-- co to diff -->
-<!-- co to merge -->
-<!-- co to pull -->
+Podstawowym z nich jest repozytorium (ang. *repository*, często określane skrótowo jako repo).
+Jest to folder, który przechowuje wszystkie pliki i foldery w ramach jednego projektu.^[W kontekście R, warto o tym myśleć jako o projekcie RStudio.]
+Dodatkowo wewnątrz repozytorium znajduje się ukryty folder `.git`, który zawiera informację o historii i zmianach każdego z naszych plików.
+Repozytorium może znajdować się na dysku naszego komputera (wtedy jest nazywane repozytorium lokalnym) lub też na serwerze w internecie (określane jako repozytorium zdalne (ang. *remote*)).
+Istnieje wiele serwisów internetowych pozwalających na tworzenie, przechowywanie i edycję repozytoriów zdalnych, między innymi [GitHub](https://github.com/) (przybliżony w sekcji \@ref(github)), [GitLab](https://gitlab.com/), czy [BitBucket](https://bitbucket.org/).
+
+
+```bash
+
+git init
+```
+
+### Dodawanie zmian
+
+
+```bash
+git add sciezka_do_pliku
+```
+
+### Sprawdzanie zmian
+
+
+```bash
+git diff
+```
+
+### Zatwierdzanie zmian
+
+Zatwierdzanie zmian (ang. **commit**)
+
+
+```bash
+git commit -m "opis wprowadzonych zmian"
+```
+
+### Rozgałęzienia
+
+
+```bash
+git branch
+```
+
+
+```bash
+git branch nazwa_nowej_galezi
+```
+
+
+```bash
+git checkout nazwa_innej_galezi
+```
+
+
+```bash
+git merge nazwa_innej_galezi
+```
+
+### Repozytorium zdalne
+
+
+```bash
+git remote add 
+```
+
+### ...
 <!-- co to push -->
-<!-- co to pull request -->
-<!-- lista podsatwowych komend -->
+
+### ...
+<!-- co to pull -->
+
 <!-- podstawowy workflow -->
 
 ## Git w RStudio
@@ -46,6 +127,8 @@ Inne popularne systemy kontroli wersji to Concurrent Versions System (CVS), Merc
 <!-- https://github.com/maciejkorsan/podlaskigit -->
 <!-- when something go wrong -->
 <!-- stackoverflow git questions -->
+<!-- co to pull request -->
+<!-- lista podsatwowych komend -->
 
 ## Zadania
 

@@ -278,7 +278,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.3" data-path="lacznik.html"><a href="lacznik.html#zadania-11"><i class="fa fa-check"></i><b>14.3</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>15</b> Kontrola wersji</a><ul>
-<li class="chapter" data-level="15.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>15.1</b> Git</a></li>
+<li class="chapter" data-level="15.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>15.1</b> Git</a><ul>
+<li class="chapter" data-level="15.1.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#konfiguracja-systemu-git"><i class="fa fa-check"></i><b>15.1.1</b> Konfiguracja systemu Git</a></li>
+<li class="chapter" data-level="15.1.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium"><i class="fa fa-check"></i><b>15.1.2</b> Repozytorium</a></li>
+<li class="chapter" data-level="15.1.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodawanie-zmian"><i class="fa fa-check"></i><b>15.1.3</b> Dodawanie zmian</a></li>
+<li class="chapter" data-level="15.1.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sprawdzanie-zmian"><i class="fa fa-check"></i><b>15.1.4</b> Sprawdzanie zmian</a></li>
+<li class="chapter" data-level="15.1.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zatwierdzanie-zmian"><i class="fa fa-check"></i><b>15.1.5</b> Zatwierdzanie zmian</a></li>
+<li class="chapter" data-level="15.1.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rozgaezienia"><i class="fa fa-check"></i><b>15.1.6</b> Rozgałęzienia</a></li>
+<li class="chapter" data-level="15.1.7" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-zdalne"><i class="fa fa-check"></i><b>15.1.7</b> Repozytorium zdalne</a></li>
+<li class="chapter" data-level="15.1.8" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#section"><i class="fa fa-check"></i><b>15.1.8</b> …</a></li>
+<li class="chapter" data-level="15.1.9" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#section-1"><i class="fa fa-check"></i><b>15.1.9</b> …</a></li>
+</ul></li>
 <li class="chapter" data-level="15.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git-w-rstudio"><i class="fa fa-check"></i><b>15.2</b> Git w RStudio</a></li>
 <li class="chapter" data-level="15.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>15.3</b> GitHub</a></li>
 <li class="chapter" data-level="15.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zadania-12"><i class="fa fa-check"></i><b>15.4</b> Zadania</a></li>
@@ -336,16 +346,62 @@ Inne popularne systemy kontroli wersji to Concurrent Versions System (CVS), Merc
 <!-- block - large files -->
 <div id="git" class="section level2">
 <h2><span class="header-section-number">15.1</span> Git</h2>
+<p>System Git jest niezależny od języka (lub języków) programowania, które używamy.
+Jego działanie oparte jest o system komend rozpoczynających się od słowa <code>git</code>, które należy wykonać w systemowym oknie konsoli.<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a>
+Zrozumienie działania systemu Git wymaga także poznania kilku nowych terminów.</p>
+<p>Git składa się z kilkudziesięciu komend, których działanie jest dalej uzależnione od podanych argumentów.
+Tutaj przedstawiony zostanie tylko podzbiór najczęściej używanych.
+Pełniejszy opis komend systemu Git można znaleźć pod adresem <a href="https://education.github.com/git-cheat-sheet-education.pdf" class="uri">https://education.github.com/git-cheat-sheet-education.pdf</a>.</p>
+<div id="konfiguracja-systemu-git" class="section level3">
+<h3><span class="header-section-number">15.1.1</span> Konfiguracja systemu Git</h3>
+<p>[^Instrukcje dotyczące instalacji Gita znajdują się we wstępie książki.]</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> config --global user.name <span class="st">&quot;imie nazwisko&quot;</span>
+<span class="fu">git</span> config --global user.email <span class="st">&quot;email&quot;</span></code></pre>
+</div>
+<div id="repozytorium" class="section level3">
+<h3><span class="header-section-number">15.1.2</span> Repozytorium</h3>
 <!-- co to repo -->
-<!-- co to commit -->
-<!-- co to branch -->
-<!-- co to diff -->
-<!-- co to merge -->
-<!-- co to pull -->
+<p>Podstawowym z nich jest repozytorium (ang. <em>repository</em>, często określane skrótowo jako repo).
+Jest to folder, który przechowuje wszystkie pliki i foldery w ramach jednego projektu.<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a>
+Dodatkowo wewnątrz repozytorium znajduje się ukryty folder <code>.git</code>, który zawiera informację o historii i zmianach każdego z naszych plików.
+Repozytorium może znajdować się na dysku naszego komputera (wtedy jest nazywane repozytorium lokalnym) lub też na serwerze w internecie (określane jako repozytorium zdalne (ang. <em>remote</em>)).
+Istnieje wiele serwisów internetowych pozwalających na tworzenie, przechowywanie i edycję repozytoriów zdalnych, między innymi <a href="https://github.com/">GitHub</a> (przybliżony w sekcji <a href="kontrola-wersji.html#github">15.3</a>), <a href="https://gitlab.com/">GitLab</a>, czy <a href="https://bitbucket.org/">BitBucket</a>.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash">
+<span class="fu">git</span> init</code></pre>
+</div>
+<div id="dodawanie-zmian" class="section level3">
+<h3><span class="header-section-number">15.1.3</span> Dodawanie zmian</h3>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add sciezka_do_pliku</code></pre>
+</div>
+<div id="sprawdzanie-zmian" class="section level3">
+<h3><span class="header-section-number">15.1.4</span> Sprawdzanie zmian</h3>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> diff</code></pre>
+</div>
+<div id="zatwierdzanie-zmian" class="section level3">
+<h3><span class="header-section-number">15.1.5</span> Zatwierdzanie zmian</h3>
+<p>Zatwierdzanie zmian (ang. <strong>commit</strong>)</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> commit -m <span class="st">&quot;opis wprowadzonych zmian&quot;</span></code></pre>
+</div>
+<div id="rozgaezienia" class="section level3">
+<h3><span class="header-section-number">15.1.6</span> Rozgałęzienia</h3>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> branch</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> branch nazwa_nowej_galezi</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> checkout nazwa_innej_galezi</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> merge nazwa_innej_galezi</code></pre>
+</div>
+<div id="repozytorium-zdalne" class="section level3">
+<h3><span class="header-section-number">15.1.7</span> Repozytorium zdalne</h3>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> remote add </code></pre>
+</div>
+<div id="section" class="section level3">
+<h3><span class="header-section-number">15.1.8</span> …</h3>
 <!-- co to push -->
-<!-- co to pull request -->
-<!-- lista podsatwowych komend -->
+</div>
+<div id="section-1" class="section level3">
+<h3><span class="header-section-number">15.1.9</span> …</h3>
+<!-- co to pull -->
 <!-- podstawowy workflow -->
+</div>
 </div>
 <div id="git-w-rstudio" class="section level2">
 <h2><span class="header-section-number">15.2</span> Git w RStudio</h2>
@@ -356,6 +412,8 @@ Inne popularne systemy kontroli wersji to Concurrent Versions System (CVS), Merc
 <!-- https://github.com/maciejkorsan/podlaskigit -->
 <!-- when something go wrong -->
 <!-- stackoverflow git questions -->
+<!-- co to pull request -->
+<!-- lista podsatwowych komend -->
 </div>
 <div id="zadania-12" class="section level2">
 <h2><span class="header-section-number">15.4</span> Zadania</h2>
@@ -367,6 +425,8 @@ Inne popularne systemy kontroli wersji to Concurrent Versions System (CVS), Merc
 <hr />
 <ol start="47">
 <li id="fn47"><p><a href="https://en.wikipedia.org/wiki/Comparison_of_version-control_software#History_and_adoption" class="uri">https://en.wikipedia.org/wiki/Comparison_of_version-control_software#History_and_adoption</a><a href="kontrola-wersji.html#fnref47" class="footnote-back">↩</a></p></li>
+<li id="fn48"><p>Nie w oknie konsoli R.<a href="kontrola-wersji.html#fnref48" class="footnote-back">↩</a></p></li>
+<li id="fn49"><p>W kontekście R, warto o tym myśleć jako o projekcie RStudio.<a href="kontrola-wersji.html#fnref49" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
