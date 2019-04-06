@@ -288,11 +288,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.1.7" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-zdalne"><i class="fa fa-check"></i><b>15.1.7</b> Repozytorium zdalne</a></li>
 <li class="chapter" data-level="15.1.8" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#wysyanie-zmian"><i class="fa fa-check"></i><b>15.1.8</b> Wysyłanie zmian</a></li>
 <li class="chapter" data-level="15.1.9" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#aktualizowanie"><i class="fa fa-check"></i><b>15.1.9</b> Aktualizowanie</a></li>
-<li class="chapter" data-level="15.1.10" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposob-pracy"><i class="fa fa-check"></i><b>15.1.10</b> Sposób pracy</a></li>
 </ul></li>
 <li class="chapter" data-level="15.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>15.2</b> GitHub</a></li>
 <li class="chapter" data-level="15.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git-w-rstudio"><i class="fa fa-check"></i><b>15.3</b> Git w RStudio</a></li>
-<li class="chapter" data-level="15.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zadania-12"><i class="fa fa-check"></i><b>15.4</b> Zadania</a></li>
+<li class="chapter" data-level="15.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposob-pracy"><i class="fa fa-check"></i><b>15.4</b> Sposób pracy</a></li>
+<li class="chapter" data-level="15.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zadania-12"><i class="fa fa-check"></i><b>15.5</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>16</b> Tworzenie pakietów</a><ul>
 <li class="chapter" data-level="16.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>16.1</b> Rozwijanie pakietu</a></li>
@@ -352,7 +352,7 @@ Jego działanie oparte jest o system komend rozpoczynających się od słowa <co
 Zrozumienie działania systemu Git wymaga także poznania kilku nowych terminów.</p>
 <p>Git składa się z kilkudziesięciu komend, których działanie jest dalej uzależnione od podanych argumentów.
 Tutaj przedstawiony zostanie tylko podzbiór najczęściej używanych.
-Pełniejszy opis komend systemu Git można znaleźć pod adresem <a href="https://education.github.com/git-cheat-sheet-education.pdf" class="uri">https://education.github.com/git-cheat-sheet-education.pdf</a>.</p>
+Pełniejszy opis komend systemu Git można znaleźć pod adresem <a href="https://education.github.com/git-cheat-sheet-education.pdf" class="uri">https://education.github.com/git-cheat-sheet-education.pdf</a> lub <a href="http://rogerdudler.github.io/git-guide/index.pl.html" class="uri">http://rogerdudler.github.io/git-guide/index.pl.html</a>.</p>
 <div id="konfiguracja-systemu-git" class="section level3">
 <h3><span class="header-section-number">15.1.1</span> Konfiguracja systemu Git</h3>
 <p><a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a></p>
@@ -367,68 +367,79 @@ Jest to folder, który przechowuje wszystkie pliki i foldery w ramach jednego pr
 Dodatkowo wewnątrz repozytorium znajduje się ukryty folder <code>.git</code>, który zawiera informację o historii i zmianach każdego z naszych plików.
 Repozytorium może znajdować się na dysku naszego komputera (wtedy jest nazywane repozytorium lokalnym) lub też na serwerze w internecie (określane jako repozytorium zdalne (ang. <em>remote</em>)).
 Istnieje wiele serwisów internetowych pozwalających na tworzenie, przechowywanie i edycję repozytoriów zdalnych, między innymi <a href="https://github.com/">GitHub</a> (przybliżony w sekcji <a href="kontrola-wersji.html#github">15.2</a>), <a href="https://gitlab.com/">GitLab</a>, czy <a href="https://bitbucket.org/">BitBucket</a>.</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> init</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># określenie obecnego katalogu jako repozytorium Git</span>
+<span class="fu">git</span> init                  </code></pre>
 </div>
 <div id="dodawanie-zmian" class="section level3">
 <h3><span class="header-section-number">15.1.3</span> Dodawanie zmian</h3>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add sciezka_do_pliku <span class="co">#dodanie pojedynczego pliku</span>
-<span class="fu">git</span> add --all            #dodanie wszystkich plików        </code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add sciezka_do_pliku  #dodanie pojedynczego pliku
+<span class="fu">git</span> add --all             #dodanie wszystkich plików        </code></pre>
 </div>
 <div id="sprawdzanie-zmian" class="section level3">
 <h3><span class="header-section-number">15.1.4</span> Sprawdzanie zmian</h3>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> diff</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> diff                  #sprawdzenie dodanych zmian</code></pre>
 </div>
 <div id="zatwierdzanie-zmian" class="section level3">
 <h3><span class="header-section-number">15.1.5</span> Zatwierdzanie zmian</h3>
 <p>Zatwierdzanie zmian (ang. <strong>commit</strong>)</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> commit -m <span class="st">&quot;opis wprowadzonych zmian&quot;</span></code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># zawierdzenie dodanych zmian</span>
+<span class="fu">git</span> commit -m <span class="st">&quot;opis wprowadzonych zmian&quot;</span></code></pre>
 </div>
 <div id="rozgaezienia" class="section level3">
 <h3><span class="header-section-number">15.1.6</span> Rozgałęzienia</h3>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> branch</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> branch nazwa_nowej_galezi</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> checkout nazwa_innej_galezi</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> merge nazwa_innej_galezi</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># wypisanie wszystkich rozgałęzień</span>
+<span class="fu">git</span> branch</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># utworzenienie nowego rozgałęzienia</span>
+<span class="fu">git</span> branch nazwa_nowej_galezi</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># przejście do innego rozgałęzienia</span>
+<span class="fu">git</span> checkout nazwa_innej_galezi</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># połączenie wybranego rozgałęzienia z obecnym</span>
+<span class="fu">git</span> merge nazwa_nowej_galezi</code></pre>
 </div>
 <div id="repozytorium-zdalne" class="section level3">
 <h3><span class="header-section-number">15.1.7</span> Repozytorium zdalne</h3>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> clone sciezka_do_zdalnego_repo</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> remote add origin sciezka_do_zdalnego_repo</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># pobranie kopii istniejącego zdalnego repo</span>
+<span class="fu">git</span> clone sciezka_do_zdalnego_repo</code></pre>
+<!-- ssh vs https -->
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># dodanie ścieżki do zdalnego repo</span>
+<span class="fu">git</span> remote add origin sciezka_do_zdalnego_repo</code></pre>
+<!-- zmiana z git remote set-url origin git@github.com:User/UserRepo.git -->
 </div>
 <div id="wysyanie-zmian" class="section level3">
 <h3><span class="header-section-number">15.1.8</span> Wysyłanie zmian</h3>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> push</code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># wysyłanie zmian do zdalnego repo</span>
+<span class="fu">git</span> push</code></pre>
 <!-- co to push -->
 </div>
 <div id="aktualizowanie" class="section level3">
 <h3><span class="header-section-number">15.1.9</span> Aktualizowanie</h3>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> pull</code></pre>
-</div>
-<div id="sposob-pracy" class="section level3">
-<h3><span class="header-section-number">15.1.10</span> Sposób pracy</h3>
-<!-- podstawowy workflow -->
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># aktualizowanie zmian ze zdalnego repo</span>
+<span class="fu">git</span> pull</code></pre>
 </div>
 </div>
 <div id="github" class="section level2">
 <h2><span class="header-section-number">15.2</span> GitHub</h2>
 <p>GitHub jest serwisem internetowym pozwalającym na przechowywanie i interakcję z repozytoriami w systemie kontroli wersji Git.</p>
-<p>Oprócz dostępu do kodu i jego zmian, GitHub oferuje szereg dodatkowych możliwości.
-<!--..--></p>
-<!-- https://github.com/maciejkorsan/podlaskigit -->
-<!-- when something go wrong -->
-<!-- stackoverflow git questions -->
 <!-- co to pull request -->
 <!-- lista podsatwowych komend -->
 <!-- create a ssh key -->
-<!-- http://rogerdudler.github.io/git-guide/index.pl.html -->
+<p>Oprócz dostępu do kodu i jego zmian, GitHub oferuje szereg dodatkowych możliwości.
+<!--..-->
+<!-- https://en.wikipedia.org/wiki/GitHub#Scope --></p>
 </div>
 <div id="git-w-rstudio" class="section level2">
 <h2><span class="header-section-number">15.3</span> Git w RStudio</h2>
 <!-- Use a Git client, if you like -->
 <!-- workflow -->
 </div>
+<div id="sposob-pracy" class="section level2">
+<h2><span class="header-section-number">15.4</span> Sposób pracy</h2>
+<!-- podstawowy workflow -->
+<!-- when something go wrong -->
+<!-- stackoverflow git questions -->
+</div>
 <div id="zadania-12" class="section level2">
-<h2><span class="header-section-number">15.4</span> Zadania</h2>
+<h2><span class="header-section-number">15.5</span> Zadania</h2>
 <!-- stwórz najprostszą stronę internetową -->
 
 </div>

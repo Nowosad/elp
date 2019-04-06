@@ -31,7 +31,7 @@ Zrozumienie działania systemu Git wymaga także poznania kilku nowych terminów
 
 Git składa się z kilkudziesięciu komend, których działanie jest dalej uzależnione od podanych argumentów.
 Tutaj przedstawiony zostanie tylko podzbiór najczęściej używanych.
-Pełniejszy opis komend systemu Git można znaleźć pod adresem https://education.github.com/git-cheat-sheet-education.pdf.
+Pełniejszy opis komend systemu Git można znaleźć pod adresem https://education.github.com/git-cheat-sheet-education.pdf lub http://rogerdudler.github.io/git-guide/index.pl.html.
 
 ### Konfiguracja systemu Git
 
@@ -54,22 +54,23 @@ Istnieje wiele serwisów internetowych pozwalających na tworzenie, przechowywan
 
 
 ```bash
-git init
+# określenie obecnego katalogu jako repozytorium Git
+git init                  
 ```
 
 ### Dodawanie zmian
 
 
 ```bash
-git add sciezka_do_pliku #dodanie pojedynczego pliku
-git add --all            #dodanie wszystkich plików        
+git add sciezka_do_pliku  #dodanie pojedynczego pliku
+git add --all             #dodanie wszystkich plików        
 ```
 
 ### Sprawdzanie zmian
 
 
 ```bash
-git diff
+git diff                  #sprawdzenie dodanych zmian
 ```
 
 ### Zatwierdzanie zmian
@@ -78,6 +79,7 @@ Zatwierdzanie zmian (ang. **commit**)
 
 
 ```bash
+# zawierdzenie dodanych zmian
 git commit -m "opis wprowadzonych zmian"
 ```
 
@@ -85,40 +87,51 @@ git commit -m "opis wprowadzonych zmian"
 
 
 ```bash
+# wypisanie wszystkich rozgałęzień
 git branch
 ```
 
 
 ```bash
+# utworzenienie nowego rozgałęzienia
 git branch nazwa_nowej_galezi
 ```
 
 
 ```bash
+# przejście do innego rozgałęzienia
 git checkout nazwa_innej_galezi
 ```
 
 
 ```bash
-git merge nazwa_innej_galezi
+# połączenie wybranego rozgałęzienia z obecnym
+git merge nazwa_nowej_galezi
 ```
 
 ### Repozytorium zdalne
 
 
 ```bash
+# pobranie kopii istniejącego zdalnego repo
 git clone sciezka_do_zdalnego_repo
 ```
 
+<!-- ssh vs https -->
+
 
 ```bash
+# dodanie ścieżki do zdalnego repo
 git remote add origin sciezka_do_zdalnego_repo
 ```
+
+<!-- zmiana z git remote set-url origin git@github.com:User/UserRepo.git -->
 
 ### Wysyłanie zmian
 
 
 ```bash
+# wysyłanie zmian do zdalnego repo
 git push
 ```
 
@@ -128,35 +141,38 @@ git push
 
 
 ```bash
+# aktualizowanie zmian ze zdalnego repo
 git pull
 ```
-
-### Sposób pracy
-
-<!-- podstawowy workflow -->
 
 ## GitHub
 
 GitHub jest serwisem internetowym pozwalającym na przechowywanie i interakcję z repozytoriami w systemie kontroli wersji Git.
 
 
-Oprócz dostępu do kodu i jego zmian, GitHub oferuje szereg dodatkowych możliwości.
-<!--..-->
-
-
-<!-- https://github.com/maciejkorsan/podlaskigit -->
-<!-- when something go wrong -->
-<!-- stackoverflow git questions -->
 <!-- co to pull request -->
 <!-- lista podsatwowych komend -->
 <!-- create a ssh key -->
-<!-- http://rogerdudler.github.io/git-guide/index.pl.html -->
+
+
+
+Oprócz dostępu do kodu i jego zmian, GitHub oferuje szereg dodatkowych możliwości.
+<!--..-->
+<!-- https://en.wikipedia.org/wiki/GitHub#Scope -->
+
+
+
 
 ## Git w RStudio
 
 <!-- Use a Git client, if you like -->
 <!-- workflow -->
 
+## Sposób pracy
+
+<!-- podstawowy workflow -->
+<!-- when something go wrong -->
+<!-- stackoverflow git questions -->
 
 ## Zadania
 
