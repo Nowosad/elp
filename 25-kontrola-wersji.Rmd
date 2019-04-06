@@ -7,12 +7,23 @@
 <!-- https://whattheyforgot.org/ -->
 <!-- https://education.github.com/git-cheat-sheet-education.pdf -->
 <!-- https://enterprise.github.com/downloads/en/github-flow-cheatsheet.pdf -->
-<!-- intro -->
-<!-- co to -->
+
+Systemy kontroli wersji to narzędzia pozwalające na zapamiętywaniu zmian zachodzących w plikach.
+Dzięki nim możemy sprawdzić nie tylko kiedy zmieniliśmy dany plik i kto go zmienił, ale co najważniejsze - możemy linia po linii prześledzić zmiany wewnątrz tego pliku.
+Dodatkowo, mamy możliwość przywracania wersji pliku z wybranego czasu w całej historii jego zmian.
+
+Systemy kontroli wersji są bardzo powszechnie wykorzystywane przy tworzeniu wszelakiego rodzaju oprogramowania.
+Wynika to nie tylko z ich zalet wymienionych powyżej, ale również rozbudowanych możliwości pozwalających na współpracę wielu osób nad jednym projektem.
+
+Istnieje wiele systemów kontroli wersji różniących się zarówno używaną terminologią, sposobem działania czy możliwościami.^[https://en.wikipedia.org/wiki/Comparison_of_version-control_software#History_and_adoption]
+Współcześnie najbardziej popularnym systemem kontroli jest Git, któremu będzie poświęcona reszta tego rozdziału.
+Inne popularne systemy kontroli wersji to Concurrent Versions System (CVS), Mercurial czy Subversion (SVN).
+
 <!-- gdzie wykorzystywaneC -->
 <!-- block - large files -->
 
 ## Git
+
 
 <!-- co to repo -->
 <!-- co to commit -->
