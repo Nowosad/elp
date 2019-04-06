@@ -60,22 +60,32 @@ git init
 
 ### Dodawanie zmian
 
+Po dodaniu zmian są one przechowywane w miejscu określanym jako *Index*.
+Działa ono jak poczekalnia - w tym momencie zmiany jeszcze nie są potwierdzone, ale możemy sprawdzić co zmieniło się od ostatniego zatwierdzenia zmian.
+
 
 ```bash
-git add sciezka_do_pliku  #dodanie pojedynczego pliku
-git add --all             #dodanie wszystkich plików        
+# dodanie pojedynczego pliku
+git add sciezka_do_pliku  
+# dodanie wszystkich plików 
+git add --all                    
 ```
 
 ### Sprawdzanie zmian
 
+Zanim zatwierdzimy zmiany możemy je sprawdzić.
+W ten sposób można dla każdej linii tekstu dowiedzieć się co zostało dodane lub usunięte.
+
 
 ```bash
-git diff                  #sprawdzenie dodanych zmian
+# sprawdzenie dodanych zmian
+git diff                  
 ```
 
 ### Zatwierdzanie zmian
 
-Zatwierdzanie zmian (ang. **commit**)
+Zatwierdzanie zmian (ang. **commit**) powoduje ich zapisanie w systemie Git.
+<!-- HEAD -->
 
 
 ```bash

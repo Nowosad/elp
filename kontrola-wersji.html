@@ -372,16 +372,24 @@ Istnieje wiele serwisów internetowych pozwalających na tworzenie, przechowywan
 </div>
 <div id="dodawanie-zmian" class="section level3">
 <h3><span class="header-section-number">15.1.3</span> Dodawanie zmian</h3>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> add sciezka_do_pliku  #dodanie pojedynczego pliku
-<span class="fu">git</span> add --all             #dodanie wszystkich plików        </code></pre>
+<p>Po dodaniu zmian są one przechowywane w miejscu określanym jako <em>Index</em>.
+Działa ono jak poczekalnia - w tym momencie zmiany jeszcze nie są potwierdzone, ale możemy sprawdzić co zmieniło się od ostatniego zatwierdzenia zmian.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># dodanie pojedynczego pliku</span>
+<span class="fu">git</span> add sciezka_do_pliku  
+<span class="co"># dodanie wszystkich plików </span>
+<span class="fu">git</span> add --all                    </code></pre>
 </div>
 <div id="sprawdzanie-zmian" class="section level3">
 <h3><span class="header-section-number">15.1.4</span> Sprawdzanie zmian</h3>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> diff                  #sprawdzenie dodanych zmian</code></pre>
+<p>Zanim zatwierdzimy zmiany możemy je sprawdzić.
+W ten sposób można dla każdej linii tekstu dowiedzieć się co zostało dodane lub usunięte.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># sprawdzenie dodanych zmian</span>
+<span class="fu">git</span> diff                  </code></pre>
 </div>
 <div id="zatwierdzanie-zmian" class="section level3">
 <h3><span class="header-section-number">15.1.5</span> Zatwierdzanie zmian</h3>
-<p>Zatwierdzanie zmian (ang. <strong>commit</strong>)</p>
+<p>Zatwierdzanie zmian (ang. <strong>commit</strong>) powoduje ich zapisanie w systemie Git.
+<!-- HEAD --></p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># zawierdzenie dodanych zmian</span>
 <span class="fu">git</span> commit -m <span class="st">&quot;opis wprowadzonych zmian&quot;</span></code></pre>
 </div>
