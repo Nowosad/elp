@@ -34,7 +34,7 @@ Pełniejszy opis komend systemu Git można znaleźć pod adresem https://educati
 
 ### Konfiguracja systemu Git
 
-[^Instrukcje dotyczące instalacji Gita znajdują się we wstępie książki.]
+^[Instrukcje dotyczące instalacji Gita znajdują się we wstępie książki.]
 
 ```{bash, eval=FALSE}
 git config --global user.name "imie nazwisko"
@@ -51,14 +51,14 @@ Repozytorium może znajdować się na dysku naszego komputera (wtedy jest nazywa
 Istnieje wiele serwisów internetowych pozwalających na tworzenie, przechowywanie i edycję repozytoriów zdalnych, między innymi [GitHub](https://github.com/) (przybliżony w sekcji \@ref(github)), [GitLab](https://gitlab.com/), czy [BitBucket](https://bitbucket.org/).
 
 ```{bash, eval=FALSE}
-
 git init
 ```
 
 ### Dodawanie zmian
 
 ```{bash, eval=FALSE}
-git add sciezka_do_pliku
+git add sciezka_do_pliku #dodanie pojedynczego pliku
+git add --all            #dodanie wszystkich plików        
 ```
 
 ### Sprawdzanie zmian
@@ -96,28 +96,53 @@ git merge nazwa_innej_galezi
 ### Repozytorium zdalne
 
 ```{bash, eval=FALSE}
-git remote add 
+git clone sciezka_do_zdalnego_repo
 ```
 
-### ...
+```{bash, eval=FALSE}
+git remote add origin sciezka_do_zdalnego_repo
+```
+
+### Wysyłanie zmian
+
+```{bash, eval=FALSE}
+git push
+```
+
 <!-- co to push -->
 
-### ...
-<!-- co to pull -->
+### Aktualizowanie 
+
+```{bash, eval=FALSE}
+git pull
+```
+
+### Sposób pracy
 
 <!-- podstawowy workflow -->
 
-## Git w RStudio
-
-<!-- Use a Git client, if you like -->
-
 ## GitHub
+
+GitHub jest serwisem internetowym pozwalającym na przechowywanie i interakcję z repozytoriami w systemie kontroli wersji Git.
+
+
+Oprócz dostępu do kodu i jego zmian, GitHub oferuje szereg dodatkowych możliwości.
+<!--..-->
+
 
 <!-- https://github.com/maciejkorsan/podlaskigit -->
 <!-- when something go wrong -->
 <!-- stackoverflow git questions -->
 <!-- co to pull request -->
 <!-- lista podsatwowych komend -->
+<!-- create a ssh key -->
+<!-- http://rogerdudler.github.io/git-guide/index.pl.html -->
+
+## Git w RStudio
+
+<!-- Use a Git client, if you like -->
+<!-- workflow -->
+
 
 ## Zadania
 
