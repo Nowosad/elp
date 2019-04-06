@@ -85,6 +85,11 @@ git diff
 ### Zatwierdzanie zmian
 
 Zatwierdzanie zmian (ang. **commit**) powoduje ich zapisanie w systemie Git.
+Wymaga to dodania wiadomości, która opisuje wprowadzone zmiany.
+<!-- https://chris.beams.io/posts/git-commit/ -->
+<!-- https://thoughtbot.com/blog/5-useful-tips-for-a-better-commit-message -->
+<!-- https://github.com/erlang/otp/wiki/writing-good-commit-messages -->
+<!-- https://code.likeagirl.io/useful-tips-for-writing-better-git-commit-messages-808770609503 -->
 <!-- HEAD -->
 
 
