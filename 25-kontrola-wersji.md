@@ -9,8 +9,6 @@
 <!-- https://education.github.com/git-cheat-sheet-education.pdf -->
 <!-- https://enterprise.github.com/downloads/en/github-flow-cheatsheet.pdf -->
 
-<!-- pliki tesktowe vs binarne -->
-
 Systemy kontroli wersji to narzędzia pozwalające na zapamiętywaniu zmian zachodzących w plikach.
 Dzięki nim możemy sprawdzić nie tylko kiedy zmieniliśmy dany plik i kto go zmienił, ale co najważniejsze - możemy linia po linii prześledzić zmiany wewnątrz tego pliku.
 Dodatkowo, mamy możliwość przywracania wersji pliku z wybranego czasu w całej historii jego zmian.
@@ -23,7 +21,7 @@ Współcześnie najbardziej popularnym systemem kontroli jest Git, któremu będ
 Inne popularne systemy kontroli wersji to Concurrent Versions System (CVS), Mercurial czy Subversion (SVN).
 
 <!-- gdzie wykorzystywaneC -->
-<!-- block - large files -->
+
 
 ## Git
 
@@ -31,11 +29,16 @@ System Git jest niezależny od języka (lub języków) programowania, które uż
 Jego działanie oparte jest o system komend rozpoczynających się od słowa `git `, które należy wykonać w systemowym oknie konsoli.^[Nie w oknie konsoli R.]
 Zrozumienie działania systemu Git wymaga także poznania kilku nowych terminów.
 
+System Git został zaprojektowany i jest używany głównie do kontroli wersji plików tekstowych.
+Dzięki temu możemy w prosty sposób zobaczyć, co do linii kodu, w którym miejscu zaszła zmiana.
+Dodatkowo przechowywanie plików tekstowych i ich zmian nie zajmuje dużo miejsca. 
+Możliwe w systemie Git jest również przechowywanie kolejnych wersji plików binarnych (np. pliki dokumentów, arkusze kalkulacyjne, obrazki, itd.).
+W ich przypadku niestety nie można liczyć na dokładne sprawdzanie miejsc zmian, a także ich wielkość może powodować znaczne powiększanie się repozytorium.^[Między innymi z tego powodu internetowe serwisy kontroli wersji posiadają ograniczenia dotyczące wielkości plików. 
+Przykładowo, GitHub ogranicza wielkość pojedynczych plików do 100MB.]
+
 Git składa się z kilkudziesięciu komend, których działanie jest dalej uzależnione od podanych argumentów.
 Tutaj przedstawiony zostanie tylko podzbiór najczęściej używanych.
 Pełniejszy opis komend systemu Git można znaleźć pod adresem https://education.github.com/git-cheat-sheet-education.pdf lub http://rogerdudler.github.io/git-guide/index.pl.html.
-
-<!-- git clients -->
 
 ### Konfiguracja systemu Git
 
@@ -51,7 +54,6 @@ git config --global user.email "email"
 
 ### Repozytorium
 
-<!-- co to repo -->
 Podstawowym z nich jest repozytorium (ang. *repository*, często określane skrótowo jako repo).
 Jest to folder, który przechowuje wszystkie pliki i foldery w ramach jednego projektu.^[W kontekście R, warto o tym myśleć jako o projekcie RStudio.]
 Dodatkowo wewnątrz repozytorium znajduje się ukryty folder `.git`, który zawiera informację o historii i zmianach każdego z naszych plików.
@@ -353,7 +355,9 @@ Kolejne etapy pracy wyglądają identycznie jak w poprzedniej sekcji.
 ## Problemy z kontrolą wersji
 
 W ramach jednego projektu często posiadamy wiele plików z długą historią zmian, do tego nanoszonych przez szereg różnych osób.
-Jest to sytuacja w której dość prosto o wystąpienie problemów czy nieoczekiwanych (przez użytkownika) zachowań systemu kontroli wersji Git. 
+Jest to sytuacja w której dość prosto o wystąpienie problemów czy nieoczekiwanych (przez użytkownika) zachowań systemu kontroli wersji Git.
+
+Jednym z najczęstszych problemów jest pojawienie się poniższego komunikatu podczas próby wysyłania zmian do zdalnego repozytorium.
 
 
 ```bash
@@ -368,11 +372,14 @@ hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
 
+Oznacza on, że w repozytorium zdalnym są jakieś zmiany, których nie ma lokalnie.
+Prawdopodobnie wynikają one z kwestii, że inna osoba przesłała swoje zmiany do zdalnego repozytorium lub też pliki były zmienione i przesłane przez ciebie na innym komputerze.
+Najczęściej w takiej sytuacji wystarczy aktualizowanie zmian ze zdalnego repo (ikona strzałki w dół), a następnie ponowienie próby wysłania zmian.
+Czasem jednak mogły zajść zmiany w tym samym pliku edytowanym przez wiele osób.
+Wówczas konieczne jest ręczne poprawienie problematycznych plików, dodanie zmian i ich zatwierdzenie. 
 
-
-<!-- block  -->
-<!-- when something go wrong -->
-<!-- stackoverflow git questions -->
+Z racji popularności systemu Git istnieje ogromna liczba materiałów pomagających w jego nauce i zrozumieniu oraz wiele stron zawierających pytania i odpowiedzi dotyczące napotkanych problemów.
+W przypadku łączenia możliwości języka R z systemem Git warto poczytać materiały zawarte na stronie https://happygitwithr.com/<!--CITE--> 
 
 
 <!-- http://rogerdudler.github.io/git-guide/index.pl.html -->
