@@ -290,7 +290,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.1.9" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#aktualizowanie"><i class="fa fa-check"></i><b>15.1.9</b> Aktualizowanie</a></li>
 </ul></li>
 <li class="chapter" data-level="15.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>15.2</b> GitHub</a></li>
-<li class="chapter" data-level="15.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git-w-rstudio"><i class="fa fa-check"></i><b>15.3</b> Git w RStudio</a></li>
+<li class="chapter" data-level="15.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#kontrola-wersji-w-rstudio"><i class="fa fa-check"></i><b>15.3</b> Kontrola wersji w RStudio</a></li>
 <li class="chapter" data-level="15.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposob-pracy"><i class="fa fa-check"></i><b>15.4</b> Sposób pracy</a></li>
 <li class="chapter" data-level="15.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zadania-13"><i class="fa fa-check"></i><b>15.5</b> Zadania</a></li>
 </ul></li>
@@ -430,21 +430,31 @@ Teraz można powrócić do głównej gałęzi (<code>master</code>) i dołączy�
 </div>
 <div id="repozytorium-zdalne" class="section level3">
 <h3><span class="header-section-number">15.1.7</span> Repozytorium zdalne</h3>
+<p>System Git ma wiele zalet w przypadku samodzielnej pracy na własnym komputerze<!--np.-->, zyski z jego używania są jednak znacznie większe, gdy nasze repozytoria mają też zdalne odpowiedniki.</p>
+<p>Łączenie się ze zdalnymi repozytoriami może nastąpić na dwa sposoby.
+W pierwszym z nich repozytorium zdane już istnieje, a my chcemy się do niego podłączyć i je pobrać.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># pobranie kopii istniejącego zdalnego repo</span>
 <span class="fu">git</span> clone sciezka_do_zdalnego_repo</code></pre>
-<!-- ssh vs https -->
+<p>Drugim sposobem jest posiadanie istniejącego, lokalnego repozytorium, a następnie dodanie do niego adresu zdalnego repozytorium.
+<!-- ssh vs https --></p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># dodanie ścieżki do zdalnego repo</span>
 <span class="fu">git</span> remote add origin sciezka_do_zdalnego_repo</code></pre>
 <!-- zmiana z git remote set-url origin git@github.com:User/UserRepo.git -->
 </div>
 <div id="wysyanie-zmian" class="section level3">
 <h3><span class="header-section-number">15.1.8</span> Wysyłanie zmian</h3>
+<p>Obecne dodane i zatwierdzone zmiany znajdują się jedynie w repozytorium lokalnym.
+Konieczne jest ich wysłanie do zdalnego repozytorium.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># wysyłanie zmian do zdalnego repo</span>
 <span class="fu">git</span> push</code></pre>
-<!-- co to push -->
+<!--skrót od git push origin master -->
 </div>
 <div id="aktualizowanie" class="section level3">
 <h3><span class="header-section-number">15.1.9</span> Aktualizowanie</h3>
+<p>Zdalne repozytoria mogą pozwalać na nadawanie różnych uprawnień użytkownikom.
+Możliwe jest określenie, że inne osoby mogą nanosić zmiany w zdalnych repozytoriach.
+Dodatkowo, jedna osoba może zmieniać zdalne repozytoria używając różnych komputerów.
+Konieczne jest więc aktualizowanie zmian, które zaszły w zdalnym repozytorium na lokalnym komputerze.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># aktualizowanie zmian ze zdalnego repo</span>
 <span class="fu">git</span> pull</code></pre>
 </div>
@@ -457,11 +467,10 @@ Teraz można powrócić do głównej gałęzi (<code>master</code>) i dołączy�
 <!-- create a ssh key -->
 <!-- fork -->
 <p>Oprócz dostępu do kodu i jego zmian, GitHub oferuje szereg dodatkowych możliwości.
-<!--..-->
-<!-- https://en.wikipedia.org/wiki/GitHub#Scope --></p>
+Obejmuje to, między innymi, automatyczne wyświetlanie plików README, śledzenie spraw (ang. <em>issue tracking</em>), zapytania aktualizacyjne (ang. <em>pull request</em>), wizualizacje zmian, czy nawet tworzenie stron internetowych.</p>
 </div>
-<div id="git-w-rstudio" class="section level2">
-<h2><span class="header-section-number">15.3</span> Git w RStudio</h2>
+<div id="kontrola-wersji-w-rstudio" class="section level2">
+<h2><span class="header-section-number">15.3</span> Kontrola wersji w RStudio</h2>
 <!-- Use a Git client, if you like -->
 <!-- workflow -->
 </div>
@@ -470,6 +479,8 @@ Teraz można powrócić do głównej gałęzi (<code>master</code>) i dołączy�
 <!-- podstawowy workflow -->
 <!-- when something go wrong -->
 <!-- stackoverflow git questions -->
+<!-- http://rogerdudler.github.io/git-guide/index.pl.html -->
+<!-- https://happygitwithr.com/ -->
 </div>
 <div id="zadania-13" class="section level2">
 <h2><span class="header-section-number">15.5</span> Zadania</h2>
