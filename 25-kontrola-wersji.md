@@ -258,16 +258,17 @@ Pod zieloną ikoną *Clone or download* można dodatkowo znaleźć ścieżkę do
 
 ### Dodatkowe możliwości GitHub
 
-Oprócz dostępu do kodu i jego zmian, GitHub oferuje także szereg dodatkowych możliwości.
-Obejmuje to, między innymi, automatyczne wyświetlanie plików README, śledzenie spraw (ang. *issue tracking*), zapytania aktualizacyjne (ang. *pull request*), wizualizacje zmian, czy nawet tworzenie stron internetowych.
-
-
-<!-- co to pull request -->
 W prawym górnym rogu okna repozytorium (rycina \@ref(fig:gh-new-repo4)) znajdują się trzy ikony - *Unwatch*, *Star*, *Fork*.
 Pierwsza z nich pozwala na określenie czy chcemy dostawać powiadomienia na temat dyskusji prowadzonych wewnątrz danego repozytorium, takich jak utworzenie nowej sprawy.
 Druga ikona pozwala na oznaczanie interesujących repozytoriów i przez to ułatwiająca znajdowania podobnych projektów.
 Ostatnia ikona *Fork* oznacza w tym kontekście rozwidlenie.
 Po jej kliknięciu następuje utworzenie kopii repozytorium innego użytkownika do naszego konta.
+
+Oprócz dostępu do kodu i jego zmian, GitHub oferuje także szereg dodatkowych możliwości.
+Obejmuje to, między innymi, automatyczne wyświetlanie plików README, śledzenie spraw (ang. *issue tracking*), zapytania aktualizacyjne (ang. *pull request*), wizualizacje zmian, czy nawet tworzenie stron internetowych.
+Sprawy (ang. *issues*) to miejsce, gdzie twórcy mogą zapisywać swoje listy zadań dotyczące danej aplikacji, a użytkownicy mogą zgłaszać błędy czy propozycje ulepszeń.
+Zapytania aktualizacyjne są tworzone, np. w przypadku, gdy lokalnie zmieniliśmy zawartość repozytorium innego użytkownika^[Może to być zarówno dodanie nowej możliwości, naprawnienie błędu w kodzie, czy nawet poprawienie literówki w dokumentacji.] i chcemy zaproponować żeby nasza zmiana została dołączona do oryginalnego repozytorium.
+W takiej sytuacji często opiera się to o (1) stworzenie rozwidlenia (ang. *fork*), (2) pobranie rozwidlenia jako lokalne repozytorium, (3) edycja lokalnego repozytorium, (4) zatwierdzenie zmian i wysłanie ich do zdalnego repozytorium (rozwidlenia), (5) zaproponowanie zapytania aktualizacyjnego.
 
 Możliwe jest również łączenie możliwości serwisu GitHub z innymi serwisami internetowymi, takimi jak [Travis CI](https://travis-ci.org/), [Codecov](https://codecov.io/), [Gitter](https://gitter.im/)  i [wiele innych](https://github.com/marketplace).
 
