@@ -64,6 +64,9 @@ git init
 
 ### Dodawanie zmian
 
+W nowoutworzonym repozytorium możemy tworzyć nowe pliki oraz edytować już istniejące.
+Po pewnym czasie możemy stwierdzić, że dodaliśmy nową funkcjonalność do funkcji lub naprawiliśmy bład w kodzie.
+Wtedy należy (po zapisaniu również pliku na dysku) dodać te zmiany do systemu Git.
 Po dodaniu zmian są one przechowywane w miejscu określanym jako *Index*.
 Działa ono jak poczekalnia - w tym momencie zmiany jeszcze nie są potwierdzone, ale możemy sprawdzić co zmieniło się od ostatniego zatwierdzenia zmian.
 
@@ -77,8 +80,8 @@ git add --all
 
 ### Sprawdzanie zmian
 
-Zanim zatwierdzimy zmiany możemy je sprawdzić.
-W ten sposób można dla każdej linii tekstu dowiedzieć się co zostało dodane lub usunięte.
+Zanim zatwierdzimy zmiany można je sprawdzić.
+W ten sposób dla każdej linii tekstu (kodu) otrzymuje się informacje co zostało dodane lub usunięte.
 
 
 ```bash
