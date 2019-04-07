@@ -256,8 +256,20 @@ Możliwe jest również łączenie możliwości serwisu GitHub z innymi serwisam
 
 ## Kontrola wersji w RStudio {#rstudio-git}
 
-RStudio posiada wbudowane, uproszczone graficzne wspacie dla systemu Git.^[Istnieje też szereg programów, których głównym celem jest ułatwienie pracy z systemem Git.
-Nazwane są one klientami Git, wśród których można wymienić [GitKraken](https://www.gitkraken.com/) i [Sourcetree](https://www.sourcetreeapp.com/).] 
+RStudio posiada wbudowane, uproszczone graficzne wspacie dla systemu Git.
+Istnieje też szereg programów, których głównym celem jest ułatwienie pracy z systemem Git.
+Nazwane są one klientami Git, wśród których można wymienić [GitKraken](https://www.gitkraken.com/) i [Sourcetree](https://www.sourcetreeapp.com/).
+
+Najprostszym sposobem połączenia RStudio z systemem Git i serwisem GitHub jest stworzenie nowego projektu:
+
+1. Kliknąć `File -> New Project`.
+2. Wybrać `Version Control`.
+3. Wybrać `Git`.
+4. Podać ścieżkę do zdalnego repozytorium (adres HTTPS lub SSH) oraz wybrać miejsce na dysku, gdzie ma się ten projekt znajdować.
+5. Kliknąć `Create Project`.
+
+
+
 
 ## Sposób pracy
 
