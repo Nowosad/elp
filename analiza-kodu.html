@@ -295,7 +295,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-mozliwosci-github"><i class="fa fa-check"></i><b>15.2.3</b> Dodatkowe możliwości GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="15.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rstudio-git"><i class="fa fa-check"></i><b>15.3</b> Kontrola wersji w RStudio</a></li>
-<li class="chapter" data-level="15.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposob-pracy"><i class="fa fa-check"></i><b>15.4</b> Sposób pracy</a></li>
+<li class="chapter" data-level="15.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>15.4</b> Sposoby pracy z systemem Git</a></li>
 <li class="chapter" data-level="15.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zadania-13"><i class="fa fa-check"></i><b>15.5</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>16</b> Tworzenie pakietów</a><ul>
@@ -403,7 +403,7 @@ Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej fu
 <p>Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))
 <span class="co">#&gt;    user  system elapsed </span>
-<span class="co">#&gt;   0.576   0.000   0.574</span></code></pre>
+<span class="co">#&gt;   0.568   0.000   0.566</span></code></pre>
 <p>W efekcie dostajemy trzy wartości - <code>user</code>, <code>system</code> i <code>elapsed</code>. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.</p>
 <p>Benchmarking jest często używany w sytuacji, gdy istnieje kilka funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
 Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.</p>
@@ -439,10 +439,10 @@ wynik_<span class="dv">1</span> =<span class="st"> </span><span class="kw">mark<
 )
 wynik_<span class="dv">1</span>
 <span class="co">#&gt; # A tibble: 2 x 10</span>
-<span class="co">#&gt;   expression    min   mean median     max `itr/sec` mem_alloc  n_gc n_itr</span>
-<span class="co">#&gt;   &lt;chr&gt;      &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt; &lt;bch:t&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 1.43µs 2.08µs 1.76µs  88.3µs   481721.     117KB     0 10000</span>
-<span class="co">#&gt; 2 mi_do_km2… 1.04µs 1.34µs 1.18µs 394.5µs   746680.     222KB     0 10000</span>
+<span class="co">#&gt;   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr</span>
+<span class="co">#&gt;   &lt;chr&gt;      &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
+<span class="co">#&gt; 1 mi_do_km1… 1.41µs 1.93µs 1.65µs 37.1µs   516960.     117KB     0 10000</span>
+<span class="co">#&gt; 2 mi_do_km2… 1.02µs 1.25µs 1.14µs 19.1µs   801987.     222KB     0 10000</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <p>Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
 Zawiera ona szereg charakterystyk, w tym:</p>
@@ -467,13 +467,13 @@ wynik_<span class="dv">2</span> =<span class="st"> </span><span class="kw">mark<
 <span class="co">#&gt; disabled.</span>
 wynik_<span class="dv">2</span>
 <span class="co">#&gt; # A tibble: 2 x 10</span>
-<span class="co">#&gt;   expression   min    mean median   max `itr/sec` mem_alloc  n_gc n_itr</span>
-<span class="co">#&gt;   &lt;chr&gt;      &lt;bch&gt; &lt;bch:t&gt; &lt;bch:&gt; &lt;bch&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 476ms 486.5ms  486ms 497ms      2.06     382MB    16     2</span>
-<span class="co">#&gt; 2 mi_do_km2… 901µs   1.1ms  943µs  11ms    905.      78.2KB     9   453</span>
+<span class="co">#&gt;   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr</span>
+<span class="co">#&gt;   &lt;chr&gt;      &lt;bch&gt; &lt;bch:tm&gt; &lt;bch:&gt; &lt;bch:t&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
+<span class="co">#&gt; 1 mi_do_km1… 489ms 494.74ms  495ms 500.3ms      2.02     382MB    16     2</span>
+<span class="co">#&gt; 2 mi_do_km2… 911µs   1.17ms  979µs  10.6ms    852.      78.2KB     8   426</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <p>W tym przypadku róznica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
-Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 2.06 operacji na sekundę, przy aż 905.26 operacji na sekundę funkcji <code>mi_do_km2</code>.
+Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 2.02 operacji na sekundę, przy aż 852.03 operacji na sekundę funkcji <code>mi_do_km2</code>.
 Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż <code>mi_do_km2</code>.</p>
 <pre><code>#&gt; Running with:
 #&gt;       x
@@ -486,14 +486,14 @@ Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) r
 #&gt; # A tibble: 8 x 11
 #&gt;   expression     x      min     mean   median      max `itr/sec` mem_alloc
 #&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;
-#&gt; 1 mi_do_km1…    10   3.89µs      5µs   4.61µs  76.89µs 199802.          0B
-#&gt; 2 mi_do_km2…    10   1.75µs   2.15µs   1.94µs 138.43µs 465719.          0B
-#&gt; 3 mi_do_km1…   100  67.81µs  78.48µs  73.95µs   4.51ms  12741.     43.16KB
-#&gt; 4 mi_do_km2…   100   9.17µs  10.48µs  10.05µs 400.38µs  95404.        856B
-#&gt; 5 mi_do_km1…  1000   4.45ms   4.82ms   4.74ms   9.87ms    207.      3.87MB
-#&gt; 6 mi_do_km2…  1000  86.52µs  97.37µs   92.1µs 517.57µs  10270.      7.87KB
-#&gt; 7 mi_do_km1… 10000 572.92ms 572.92ms 572.92ms 572.92ms      1.75  382.04MB
-#&gt; 8 mi_do_km2… 10000 885.65µs   1.04ms 925.96µs   9.62ms    962.     78.18KB
+#&gt; 1 mi_do_km1…    10   3.89µs   5.49µs   4.62µs 130.73µs 182265.          0B
+#&gt; 2 mi_do_km2…    10   1.72µs   2.36µs   1.99µs  73.09µs 424510.          0B
+#&gt; 3 mi_do_km1…   100  69.74µs  83.94µs  76.63µs 285.95µs  11913.     43.16KB
+#&gt; 4 mi_do_km2…   100   9.15µs  10.89µs  10.03µs 476.98µs  91798.        856B
+#&gt; 5 mi_do_km1…  1000   4.57ms   4.99ms   4.96ms    5.9ms    200.      3.87MB
+#&gt; 6 mi_do_km2…  1000   86.3µs 102.79µs  93.46µs      4ms   9728.      7.87KB
+#&gt; 7 mi_do_km1… 10000  649.5ms  649.5ms  649.5ms  649.5ms      1.54  382.04MB
+#&gt; 8 mi_do_km2… 10000 888.16µs   1.07ms 956.43µs   5.67ms    930.     78.18KB
 #&gt; # … with 3 more variables: n_gc &lt;dbl&gt;, n_itr &lt;int&gt;, total_time &lt;bch:tm&gt;</code></pre>
 </div>
 <div id="profiling" class="section level2">

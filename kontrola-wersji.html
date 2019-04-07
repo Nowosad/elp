@@ -295,7 +295,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-mozliwosci-github"><i class="fa fa-check"></i><b>15.2.3</b> Dodatkowe możliwości GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="15.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rstudio-git"><i class="fa fa-check"></i><b>15.3</b> Kontrola wersji w RStudio</a></li>
-<li class="chapter" data-level="15.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposob-pracy"><i class="fa fa-check"></i><b>15.4</b> Sposób pracy</a></li>
+<li class="chapter" data-level="15.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>15.4</b> Sposoby pracy z systemem Git</a></li>
 <li class="chapter" data-level="15.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zadania-13"><i class="fa fa-check"></i><b>15.5</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>16</b> Tworzenie pakietów</a><ul>
@@ -548,7 +548,7 @@ Nazwane są one klientami Git, wśród których można wymienić <a href="https:
 <li>Podać ścieżkę do zdalnego repozytorium (adres HTTPS lub SSH) oraz wybrać miejsce na dysku, gdzie ma się ten projekt znajdować.</li>
 <li>Kliknąć <code>Create Project</code>.</li>
 </ol>
-<p>W efekcie zostanie utworzony nowy projekt RStudio, który jednocześnie jest lokalnym repozytorium Git.
+<p>W efekcie zostanie utworzony nowy projekt RStudio (w tle wykonywane jest pobranie kopii istniejącego zdalnego repo - patrz sekcja <a href="kontrola-wersji.html#repozytorium-zdalne">15.1.7</a>), który jednocześnie jest lokalnym repozytorium Git.
 Dodatkowo, w RStudio pojawi się nowy panel “Git” (rycina <a href="kontrola-wersji.html#fig:rstudio-git">15.5</a>).</p>
 <div class="figure" style="text-align: center"><span id="fig:rstudio-git"></span>
 <img src="images/rstudio-git.png" alt="Panel Git w RStudio." width="100%" />
@@ -567,8 +567,23 @@ Ikona zegarka otwiera nowe okno, w którym można zobaczyć jakie zmiany zaszły
 Następne ikony pozwalają na określenie plików do ignorowania (ikona koła zębatego) oraz tworzenie nowych rozgałęzień.
 Przedostatni element tego okna to nazwa obecnie ustawionego rozgałęzienia, a po kliknięciu tej nazwy możliwa jest przejście do innego rozgałęzienia (sekcja <a href="kontrola-wersji.html#branches">15.1.6</a>).</p>
 </div>
-<div id="sposob-pracy" class="section level2">
-<h2><span class="header-section-number">15.4</span> Sposób pracy</h2>
+<div id="sposoby-pracy-z-systemem-git" class="section level2">
+<h2><span class="header-section-number">15.4</span> Sposoby pracy z systemem Git</h2>
+<p>Istnieje wiele możliwych sposobów pracy z systemem Git.
+Zależą one od wielu czynników, takich jak planowany cel repozytorium czy wykorzystywana technologia.
+Dodatkowo znaczny wpływ na sposób pracy z systemem Git ma czynnik ludzki - przyzwyczajenia osób pracujących nad projektem i ich preferencje.</p>
+<p>Preferowanym sposobem rozpoczęcia pracy nad nowym zadaniem (projektem) w R jest stworzenie nowego, pustego repozytorium w serwisie GitHub, a następnie połączenie z nim nowego projektu RStudio.
+Taki sposób został opisany na początku sekcji <a href="kontrola-wersji.html#rstudio-git">15.3</a>.</p>
+<!-- block - https://happygitwithr.com/existing-github-first.html -->
+<p>W momencie, gdy posiadamy ustawione zarówno lokalne jak i zdalne repozytorium możliwe jest rozpoczęcie pracy.
+Teraz można tworzyć nowe oraz edytować istniejące pliki.
+Po każdej wyraźnej zmianie plików (np. ulepszenie kodu, naprawa błędów, dodanie nowych możliwości) należy dodać zmiany oraz je zatwierdzić.
+Można to zrobić klikając pole <em>Staged</em> przy wybranych plikach oraz następnie ikonę <em>Commit</em>.
+Teraz można dodać wiadomość opisująca zmiany jakie zaszły, oraz ją zatwierdzić klikając przycisk <em>Commit</em>.
+Zalecane jest, aby powyższą czynność wykonywać nawet wiele razy dziennie.</p>
+<p>Efektem powyższej operacji jest posiadanie zatwierdzonych zmian w lokalnym repozytorium, ale jeszcze ich brak w repozytorium zdalnym.
+Kolejnym krokiem jest przesłanie zmian na zdalne repozytorium.
+Tutaj zalecane jest najpierw kliknięcie ikony aktualizowania zmian (strzałka w dół), aby upewnić się, że posiadamy aktualną wersję repozytorium, a następnie kliknięcie ikony wysyłania zmian (strzałka w górę).</p>
 <!-- podstawowy workflow -->
 <!-- when something go wrong -->
 <!-- stackoverflow git questions -->
