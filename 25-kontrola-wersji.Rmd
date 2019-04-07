@@ -268,7 +268,7 @@ Najprostszym sposobem połączenia RStudio z systemem Git i serwisem GitHub jest
 4. Podać ścieżkę do zdalnego repozytorium (adres HTTPS lub SSH) oraz wybrać miejsce na dysku, gdzie ma się ten projekt znajdować.
 5. Kliknąć `Create Project`.
 
-W efekcie zostanie utworzony nowy projekt RStudio, który jednocześnie jest lokalnym repozytorium Git. 
+W efekcie zostanie utworzony nowy projekt RStudio (w tle wykonywane jest pobranie kopii istniejącego zdalnego repo - patrz sekcja \@ref(repozytorium-zdalne)), który jednocześnie jest lokalnym repozytorium Git. 
 Dodatkowo, w RStudio pojawi się nowy panel "Git" (rycina \@ref(fig:rstudio-git)).
 
 ```{r rstudio-git, echo=FALSE, fig.cap="Panel Git w RStudio."}
@@ -287,7 +287,27 @@ Ikona zegarka otwiera nowe okno, w którym można zobaczyć jakie zmiany zaszły
 Następne ikony pozwalają na określenie plików do ignorowania (ikona koła zębatego) oraz tworzenie nowych rozgałęzień.
 Przedostatni element tego okna to nazwa obecnie ustawionego rozgałęzienia, a po kliknięciu tej nazwy możliwa jest przejście do innego rozgałęzienia (sekcja \@ref(branches)).
 
-## Sposób pracy
+## Sposoby pracy z systemem Git
+
+Istnieje wiele możliwych sposobów pracy z systemem Git. 
+Zależą one od wielu czynników, takich jak planowany cel repozytorium czy wykorzystywana technologia. 
+Dodatkowo znaczny wpływ na sposób pracy z systemem Git ma czynnik ludzki - przyzwyczajenia osób pracujących nad projektem i ich preferencje.
+
+Preferowanym sposobem rozpoczęcia pracy nad nowym zadaniem (projektem) w R jest stworzenie nowego, pustego repozytorium w serwisie GitHub, a następnie połączenie z nim nowego projektu RStudio.
+Taki sposób został opisany na początku sekcji \@ref(rstudio-git).
+
+<!-- block - https://happygitwithr.com/existing-github-first.html -->
+
+W momencie, gdy posiadamy ustawione zarówno lokalne jak i zdalne repozytorium możliwe jest rozpoczęcie pracy.
+Teraz można tworzyć nowe oraz edytować istniejące pliki.
+Po każdej wyraźnej zmianie plików (np. ulepszenie kodu, naprawa błędów, dodanie nowych możliwości) należy dodać zmiany oraz je zatwierdzić.
+Można to zrobić klikając pole *Staged* przy wybranych plikach oraz następnie ikonę *Commit*. 
+Teraz można dodać wiadomość opisująca zmiany jakie zaszły, oraz ją zatwierdzić klikając przycisk *Commit*.
+Zalecane jest, aby powyższą czynność wykonywać nawet wiele razy dziennie.
+
+Efektem powyższej operacji jest posiadanie zatwierdzonych zmian w lokalnym repozytorium, ale jeszcze ich brak w repozytorium zdalnym.
+Kolejnym krokiem jest przesłanie zmian na zdalne repozytorium.
+Tutaj zalecane jest najpierw kliknięcie ikony aktualizowania zmian (strzałka w dół), aby upewnić się, że posiadamy aktualną wersję repozytorium, a następnie kliknięcie ikony wysyłania zmian (strzałka w górę).
 
 <!-- podstawowy workflow -->
 <!-- when something go wrong -->
