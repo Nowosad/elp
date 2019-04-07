@@ -8,6 +8,8 @@
 <!-- https://education.github.com/git-cheat-sheet-education.pdf -->
 <!-- https://enterprise.github.com/downloads/en/github-flow-cheatsheet.pdf -->
 
+<!-- pliki tesktowe vs binarne -->
+
 Systemy kontroli wersji to narzędzia pozwalające na zapamiętywaniu zmian zachodzących w plikach.
 Dzięki nim możemy sprawdzić nie tylko kiedy zmieniliśmy dany plik i kto go zmienił, ale co najważniejsze - możemy linia po linii prześledzić zmiany wewnątrz tego pliku.
 Dodatkowo, mamy możliwość przywracania wersji pliku z wybranego czasu w całej historii jego zmian.
@@ -256,6 +258,8 @@ Możliwe jest również łączenie możliwości serwisu GitHub z innymi serwisam
 
 ## Kontrola wersji w RStudio {#rstudio-git}
 
+<!-- ograniczenia github -->
+
 RStudio posiada wbudowane, uproszczone graficzne wspacie dla systemu Git.
 Istnieje też szereg programów, których głównym celem jest ułatwienie pracy z systemem Git.
 Nazwane są one klientami Git, wśród których można wymienić [GitKraken](https://www.gitkraken.com/) i [Sourcetree](https://www.sourcetreeapp.com/).
@@ -293,10 +297,10 @@ Istnieje wiele możliwych sposobów pracy z systemem Git.
 Zależą one od wielu czynników, takich jak planowany cel repozytorium czy wykorzystywana technologia. 
 Dodatkowo znaczny wpływ na sposób pracy z systemem Git ma czynnik ludzki - przyzwyczajenia osób pracujących nad projektem i ich preferencje.
 
+### Nowy projekt
+
 Preferowanym sposobem rozpoczęcia pracy nad nowym zadaniem (projektem) w R jest stworzenie nowego, pustego repozytorium w serwisie GitHub, a następnie połączenie z nim nowego projektu RStudio.
 Taki sposób został opisany na początku sekcji \@ref(rstudio-git).
-
-<!-- block - https://happygitwithr.com/existing-github-first.html -->
 
 W momencie, gdy posiadamy ustawione zarówno lokalne jak i zdalne repozytorium możliwe jest rozpoczęcie pracy.
 Teraz można tworzyć nowe oraz edytować istniejące pliki.
@@ -308,10 +312,31 @@ Zalecane jest, aby powyższą czynność wykonywać nawet wiele razy dziennie.
 Efektem powyższej operacji jest posiadanie zatwierdzonych zmian w lokalnym repozytorium, ale jeszcze ich brak w repozytorium zdalnym.
 Kolejnym krokiem jest przesłanie zmian na zdalne repozytorium.
 Tutaj zalecane jest najpierw kliknięcie ikony aktualizowania zmian (strzałka w dół), aby upewnić się, że posiadamy aktualną wersję repozytorium, a następnie kliknięcie ikony wysyłania zmian (strzałka w górę).
+Jeżeli wszystko poszło zgodnie z planem, nowa wersja repozytorium powinna pojawić się na odpowiedniej stronie serwisu GitHub.
+Tą czynność warto wykonywać rzadziej niż poprzednią, ale też regularnie.
 
-<!-- podstawowy workflow -->
+Dalej praca polega na powtarzaniu tych czynności:
+
+1. Edycja/dodanie plików czy folderów.
+2. Dodanie zmian.
+3. Zatwierdzenie zmian.
+4. Sprawdzenie czy posiadamy aktualną wersję repozytorium.
+5. Wysyłania zmian na zdalne repozytorium.
+
+### Istniejący projekt
+
+Czasami posiadasz już jakiś istniejący projekt, ale chcesz do niego dodać możliwości kontroli wersji.
+W takich przypadkach najprostszy sposób to stworzenie nowego repozytorium w serwisie GitHub oraz pustego, połączonego z nim nowego projektu RStudio.
+Następnie należy przekopiować do tego projektu wszystkie już istniejące pliki, dodać je (pole *Staged*), zatwierdzić oraz przesłać na zdalne repozytorium.
+
+Kolejne etapy pracy wyglądają identycznie jak w poprzedniej sekcji.
+
+<!-- ### Problemy z kontrolą wersji -->
+
+<!-- block  -->
 <!-- when something go wrong -->
 <!-- stackoverflow git questions -->
+
 
 <!-- http://rogerdudler.github.io/git-guide/index.pl.html -->
 <!-- https://happygitwithr.com/ -->
