@@ -1,20 +1,12 @@
 
 # Kontrola wersji {#kontrola-wersji}
 
-<!-- https://peerj.com/preprints/3159/ -->
-<!-- https://swcarpentry.github.io/git-novice/ -->
-<!-- https://arxiv.org/pdf/1811.02021.pdf -->
-<!-- http://happygitwithr.com/ -->
-<!-- https://whattheyforgot.org/ -->
-<!-- https://education.github.com/git-cheat-sheet-education.pdf -->
-<!-- https://enterprise.github.com/downloads/en/github-flow-cheatsheet.pdf -->
-
 Systemy kontroli wersji to narzędzia pozwalające na zapamiętywaniu zmian zachodzących w plikach.
 Dzięki nim możemy sprawdzić nie tylko kiedy zmieniliśmy dany plik i kto go zmienił, ale co najważniejsze - możemy linia po linii prześledzić zmiany wewnątrz tego pliku.
 Dodatkowo, mamy możliwość przywracania wersji pliku z wybranego czasu w całej historii jego zmian.
 
 Systemy kontroli wersji są bardzo powszechnie wykorzystywane przy tworzeniu wszelakiego rodzaju oprogramowania.
-Wynika to nie tylko z ich zalet wymienionych powyżej, ale również rozbudowanych możliwości pozwalających na współpracę wielu osób nad jednym projektem.
+Wynika to nie tylko z ich zalet wymienionych powyżej, ale również rozbudowanych możliwości pozwalających na zorganizowaną współpracę wielu osób nad jednym projektem.
 
 Istnieje wiele systemów kontroli wersji różniących się zarówno używaną terminologią, sposobem działania czy możliwościami.^[https://en.wikipedia.org/wiki/Comparison_of_version-control_software#History_and_adoption]
 Współcześnie najbardziej popularnym systemem kontroli jest Git, któremu będzie poświęcona reszta tego rozdziału.
@@ -385,6 +377,7 @@ W przypadku łączenia możliwości języka R z systemem Git warto poczytać mat
 Do ogólnego wprowadzenia do systemu Git może posłużyć darmowa książka online [Pro Git](https://git-scm.com/book/pl/v2)<!--CITE-->, której kilka pierwszych rozdziałów jest również dostępna w języku polskim.
 Git jest również bardzo popularnym tematem na serwisie stackoverflow, gdzie można znaleźć [pytania i odpowiedzi na różnorodne tematy z nim związane](https://stackoverflow.com/questions/tagged/git).
 Więcej odnośników do materiałów związanych z sytemem Git i serwisem GitHub można znaleźć na stronach [pomocy GitHub](https://help.github.com/en/articles/git-and-github-learning-resources).
+<!-- może warto dodać jak się pojawią kolejne części - https://randomseed.pl/pub/git-system-kontroli-wersji/01-wprowadzenie/#Podstawoweterminy -->
 
 ## Zadania
 
