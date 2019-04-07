@@ -209,7 +209,7 @@ knitr::include_graphics("images/gh-new-repo2.png")
 Po wybraniu potwierdzenia (*Create repository*) utworzone zostanie nowe, puste repozytorium (rycina \@ref(fig:gh-new-repo3)).
 
 ```{r gh-new-repo3, echo=FALSE, fig.cap="Nowe, puste repozytorium GitHub."}
-knitr::include_graphics("images/gh-new-repo2.png")
+knitr::include_graphics("images/gh-new-repo3.png")
 ```
 
 Okno pustego repozytorium przedstawia cztery główne drogi pozwalające na dodanie zawartości:
