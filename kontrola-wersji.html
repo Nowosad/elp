@@ -289,8 +289,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.1.8" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#wysyanie-zmian"><i class="fa fa-check"></i><b>15.1.8</b> Wysyłanie zmian</a></li>
 <li class="chapter" data-level="15.1.9" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#aktualizowanie"><i class="fa fa-check"></i><b>15.1.9</b> Aktualizowanie</a></li>
 </ul></li>
-<li class="chapter" data-level="15.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>15.2</b> GitHub</a></li>
-<li class="chapter" data-level="15.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#kontrola-wersji-w-rstudio-rstudio-git"><i class="fa fa-check"></i><b>15.3</b> Kontrola wersji w RStudio {<span class="citation">(<span class="citeproc-not-found" data-reference-id="rstudio-git"><strong>???</strong></span>)</span>}</a></li>
+<li class="chapter" data-level="15.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>15.2</b> GitHub</a><ul>
+<li class="chapter" data-level="15.2.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#tworzenie-zdanego-repo"><i class="fa fa-check"></i><b>15.2.1</b> Tworzenie zdanego repo</a></li>
+<li class="chapter" data-level="15.2.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-github"><i class="fa fa-check"></i><b>15.2.2</b> Repozytorium GitHub</a></li>
+<li class="chapter" data-level="15.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-mozliwosci-github"><i class="fa fa-check"></i><b>15.2.3</b> Dodatkowe możliwości GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="15.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rstudio-git"><i class="fa fa-check"></i><b>15.3</b> Kontrola wersji w RStudio</a></li>
 <li class="chapter" data-level="15.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposob-pracy"><i class="fa fa-check"></i><b>15.4</b> Sposób pracy</a></li>
 <li class="chapter" data-level="15.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zadania-13"><i class="fa fa-check"></i><b>15.5</b> Zadania</a></li>
 </ul></li>
@@ -465,6 +469,8 @@ Konieczne jest więc aktualizowanie zmian, które zaszły w zdalnym repozytorium
 Posiada on dwa rodzaje repozytorów - publiczne (ang. <em>public</em>), które może każdy zobaczyć oraz prywatne (ang. <em>private</em>) dostępne tylko dla osób z odpowiednimi uprawnieniami.</p>
 <p>Repozytoria połączone są z kontami użytkowników (np. <a href="https://github.com/Nowosad" class="uri">https://github.com/Nowosad</a> to moje konto, gdzie “Nowosad” oznacza nazwę użytkownika) lub organizacjami (np. <a href="https://github.com/r-spatialecology" class="uri">https://github.com/r-spatialecology</a> to konto organizacji “r-spatialecology”).
 Pod adresem <a href="https://github.com/join" class="uri">https://github.com/join</a> można założyć nowe konto użytkownika.</p>
+<div id="tworzenie-zdanego-repo" class="section level3">
+<h3><span class="header-section-number">15.2.1</span> Tworzenie zdanego repo</h3>
 <p>Posiadanie konta użytkownika pozwala na, między innymi, tworzenie nowych repozytoriów i zarządzanie nimi.
 Stworzenie nowego repozytorium odbywa się poprzez naciśnięcie zielonej ikony (rycina <a href="kontrola-wersji.html#fig:gh-new-repo">15.1</a>).</p>
 <div class="figure" style="text-align: center"><span id="fig:gh-new-repo"></span>
@@ -492,7 +498,7 @@ Rycina 15.3: Nowe, puste repozytorium GitHub.
 <ol style="list-style-type: decimal">
 <li>Szybka konfiguracja - tutaj podane są dwie możliwe ścieżki do zdalnego repozytorium.
 Pierwsza z nich to adres HTTPS a druga to adres SSH.
-W sekcji <a href="#rstudio-git"><strong>??</strong></a> zostanie wyjaśnione jak korzystać z szybkiej konfiguracji.</li>
+W sekcji <a href="kontrola-wersji.html#rstudio-git">15.3</a> zostanie wyjaśnione jak korzystać z szybkiej konfiguracji.</li>
 <li>Stworzenie nowego repozytorium używając linii komend.
 Jest to używane w sytuacjach, gdy lokalna wersja repozytorium jeszcze nie istnieje.
 W tej sytuacji (1) tworzony jest nowy plik tekstowy <code>README.md</code>, (2) obecny katalog jest określany jako repozytorium Git, (3) plik <code>README.md</code> jest dodawany do repozytorium, (4) dodanie tego pliku jest zatwierdzone wraz z wiadomością `“first commit”, (5) dodana jest ścieżka do zdalnego repozytorium, (6) następuje wysłanie zmian z lokalnego do zdalnego repozytorium.</li>
@@ -501,16 +507,34 @@ Ta opcja przydaje się, gdy mamy już istniejące lokalne repozytorium, ale do k
 Tutaj następuje tylko (1) dodanie ścieżki do zdalnego repozytorium oraz (2) wysłanie zmian z lokalnego do zdalnego repozytorium.</li>
 <li>Import kodu z innego systemu kontroli wersji niż Git.</li>
 </ol>
+</div>
+<div id="repozytorium-github" class="section level3">
+<h3><span class="header-section-number">15.2.2</span> Repozytorium GitHub</h3>
+<p>Wygląd okna repozytorium zmienia się po dodaniu pierwszej zawartości (rycina <a href="kontrola-wersji.html#fig:gh-new-repo4">15.4</a>).</p>
+<div class="figure" style="text-align: center"><span id="fig:gh-new-repo4"></span>
+<img src="images/gh-new-repo4.png" alt="Repozytorium GitHub po dodaniu zawartości." width="100%" />
+<p class="caption">
+Rycina 15.4: Repozytorium GitHub po dodaniu zawartości.
+</p>
+</div>
+<p>Teraz możliwe jest podejrzenie występujących tam plików (w tym momencie jedynie plik <code>README.md</code>), zmian jakie zaszły w repozytorium (klikając na <em>commit</em>), istniejących rozgałęzień (klikając na <em>branch</em>) oraz wiele innych.
+Pod zieloną ikoną <em>Clone or download</em> można dodatkowo znaleźć ścieżkę do tego zdalnego repozytorium.</p>
+</div>
+<div id="dodatkowe-mozliwosci-github" class="section level3">
+<h3><span class="header-section-number">15.2.3</span> Dodatkowe możliwości GitHub</h3>
 <p>Oprócz dostępu do kodu i jego zmian, GitHub oferuje także szereg dodatkowych możliwości.
 Obejmuje to, między innymi, automatyczne wyświetlanie plików README, śledzenie spraw (ang. <em>issue tracking</em>), zapytania aktualizacyjne (ang. <em>pull request</em>), wizualizacje zmian, czy nawet tworzenie stron internetowych.
 <!-- +ci etc --></p>
 <!-- co to pull request -->
-<!-- lista podsatwowych komend -->
-<!-- create a ssh key -->
-<!-- fork -->
+<p>W prawym górnym rogu okna repozytorium (rycina <a href="kontrola-wersji.html#fig:gh-new-repo4">15.4</a>) znajdują się trzy ikony - <em>Unwatch</em>, <em>Star</em>, <em>Fork</em>.
+Pierwsza z nich pozwala na określenie czy chcemy dostawać powiadomienia na temat dyskusji prowadzonych wewnątrz danego repozytorium, takich jak utworzenie nowej sprawy.
+Druga ikona pozwala na oznaczanie interesujących repozytoriów i przez to ułatwiająca znajdowania podobnych projektów.
+Ostatnia ikona <em>Fork</em> oznacza w tym kontekście rozwidlenie.
+Po jej kliknięciu następuje utworzenie kopii repozytorium innego użytkownika do naszego konta.</p>
 </div>
-<div id="kontrola-wersji-w-rstudio-rstudio-git" class="section level2">
-<h2><span class="header-section-number">15.3</span> Kontrola wersji w RStudio {<span class="citation">(<span class="citeproc-not-found" data-reference-id="rstudio-git"><strong>???</strong></span>)</span>}</h2>
+</div>
+<div id="rstudio-git" class="section level2">
+<h2><span class="header-section-number">15.3</span> Kontrola wersji w RStudio</h2>
 <!-- intro Use a Git client, if you like -->
 <!-- workflow -->
 </div>

@@ -112,7 +112,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 ```r
 system.time(mean(1:100000000))
 #>    user  system elapsed 
-#>   0.572   0.000   0.570
+#>   0.568   0.000   0.569
 ```
 
 W efekcie dostajemy trzy wartości - `user`, `system` i `elapsed`. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.
@@ -166,10 +166,10 @@ wynik_1 = mark(
 )
 wynik_1
 #> # A tibble: 2 x 10
-#>   expression    min   mean median     max `itr/sec` mem_alloc  n_gc n_itr
-#>   <chr>      <bch:> <bch:> <bch:> <bch:t>     <dbl> <bch:byt> <dbl> <int>
-#> 1 mi_do_km1… 1.42µs 2.58µs 2.07µs 523.9µs   387978.     117KB     0 10000
-#> 2 mi_do_km2… 1.02µs 1.29µs 1.16µs  19.6µs   776641.     222KB     0 10000
+#>   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr
+#>   <chr>      <bch:> <bch:> <bch:> <bch:>     <dbl> <bch:byt> <dbl> <int>
+#> 1 mi_do_km1… 1.42µs 1.99µs  1.7µs 73.7µs   503142.     117KB     0 10000
+#> 2 mi_do_km2… 1.04µs 1.34µs 1.18µs 20.2µs   744674.     222KB     0 10000
 #> # … with 1 more variable: total_time <bch:tm>
 ```
 
@@ -199,15 +199,15 @@ wynik_2 = mark(
 #> disabled.
 wynik_2
 #> # A tibble: 2 x 10
-#>   expression   min    mean median     max `itr/sec` mem_alloc  n_gc n_itr
-#>   <chr>      <bch> <bch:t> <bch:> <bch:t>     <dbl> <bch:byt> <dbl> <int>
-#> 1 mi_do_km1… 479ms 487.8ms  488ms   497ms      2.05     382MB    16     2
-#> 2 mi_do_km2… 904µs   1.1ms  945µs  10.4ms    906.      78.2KB     9   453
+#>   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr
+#>   <chr>      <bch> <bch:tm> <bch:> <bch:t>     <dbl> <bch:byt> <dbl> <int>
+#> 1 mi_do_km1… 462ms 469.21ms  469ms 476.8ms      2.13     382MB    16     2
+#> 2 mi_do_km2… 896µs   1.08ms  933µs  10.7ms    922.      78.2KB     9   462
 #> # … with 1 more variable: total_time <bch:tm>
 ```
 
 W tym przypadku róznica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
-Funkcja `mi_do_km1` jest w stanie wykonać tylko 2.05 operacji na sekundę, przy aż 905.62 operacji na sekundę funkcji `mi_do_km2`.
+Funkcja `mi_do_km1` jest w stanie wykonać tylko 2.13 operacji na sekundę, przy aż 922.42 operacji na sekundę funkcji `mi_do_km2`.
 Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
 
 
@@ -223,14 +223,14 @@ Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej
 #> # A tibble: 8 x 11
 #>   expression     x      min     mean   median      max `itr/sec` mem_alloc
 #>   <chr>      <dbl> <bch:tm> <bch:tm> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 mi_do_km1…    10   3.87µs   5.19µs   4.73µs  80.16µs 192637.          0B
-#> 2 mi_do_km2…    10   1.72µs   2.08µs   1.91µs  20.45µs 479825.          0B
-#> 3 mi_do_km1…   100  67.72µs  77.31µs   74.1µs   1.83ms  12934.     43.16KB
-#> 4 mi_do_km2…   100    9.1µs  10.45µs   9.96µs  41.78µs  95666.        856B
-#> 5 mi_do_km1…  1000    4.5ms   4.83ms   4.79ms   5.35ms    207.      3.87MB
-#> 6 mi_do_km2…  1000  86.86µs  97.48µs  92.62µs  322.4µs  10259.      7.87KB
-#> 7 mi_do_km1… 10000 585.39ms 585.39ms 585.39ms 585.39ms      1.71  382.04MB
-#> 8 mi_do_km2… 10000 893.52µs   1.05ms 940.06µs   5.76ms    951.     78.18KB
+#> 1 mi_do_km1…    10   3.87µs   5.13µs    4.6µs   97.9µs 194938.          0B
+#> 2 mi_do_km2…    10   1.74µs   2.06µs   1.92µs  31.58µs 484898.          0B
+#> 3 mi_do_km1…   100   67.7µs  77.73µs  73.72µs   3.45ms  12864.     43.16KB
+#> 4 mi_do_km2…   100   9.16µs  10.29µs   9.92µs  88.73µs  97133.        856B
+#> 5 mi_do_km1…  1000   4.48ms   4.77ms   4.73ms   8.36ms    210.      3.87MB
+#> 6 mi_do_km2…  1000  86.51µs  96.54µs  91.83µs 253.24µs  10358.      7.87KB
+#> 7 mi_do_km1… 10000 561.17ms 561.17ms 561.17ms 561.17ms      1.78  382.04MB
+#> 8 mi_do_km2… 10000 881.04µs   1.02ms 917.71µs   5.86ms    983.     78.18KB
 #> # … with 3 more variables: n_gc <dbl>, n_itr <int>, total_time <bch:tm>
 ```
 

@@ -206,6 +206,8 @@ Posiada on dwa rodzaje repozytorów - publiczne (ang. *public*), które może ka
 Repozytoria połączone są z kontami użytkowników (np. https://github.com/Nowosad to moje konto, gdzie "Nowosad" oznacza nazwę użytkownika) lub organizacjami (np. https://github.com/r-spatialecology to konto organizacji "r-spatialecology").
 Pod adresem https://github.com/join można założyć nowe konto użytkownika.
 
+### Tworzenie zdanego repo
+
 Posiadanie konta użytkownika pozwala na, między innymi, tworzenie nowych repozytoriów i zarządzanie nimi.
 Stworzenie nowego repozytorium odbywa się poprzez naciśnięcie zielonej ikony (rycina \@ref(fig:gh-new-repo)).
 
@@ -242,19 +244,32 @@ Ta opcja przydaje się, gdy mamy już istniejące lokalne repozytorium, ale do k
 Tutaj następuje tylko (1) dodanie ścieżki do zdalnego repozytorium oraz (2) wysłanie zmian z lokalnego do zdalnego repozytorium.
 4. Import kodu z innego systemu kontroli wersji niż Git.
 
+### Repozytorium GitHub
+
+Wygląd okna repozytorium zmienia się po dodaniu pierwszej zawartości (rycina \@ref(fig:gh-new-repo4)).
+
+<div class="figure" style="text-align: center">
+<img src="images/gh-new-repo4.png" alt="Repozytorium GitHub po dodaniu zawartości." width="100%" />
+<p class="caption">(\#fig:gh-new-repo4)Repozytorium GitHub po dodaniu zawartości.</p>
+</div>
+
+Teraz możliwe jest podejrzenie występujących tam plików (w tym momencie jedynie plik `README.md`), zmian jakie zaszły w repozytorium (klikając na *commit*), istniejących rozgałęzień (klikając na *branch*) oraz wiele innych.
+Pod zieloną ikoną *Clone or download* można dodatkowo znaleźć ścieżkę do tego zdalnego repozytorium. 
+
+### Dodatkowe możliwości GitHub
+
 Oprócz dostępu do kodu i jego zmian, GitHub oferuje także szereg dodatkowych możliwości.
 Obejmuje to, między innymi, automatyczne wyświetlanie plików README, śledzenie spraw (ang. *issue tracking*), zapytania aktualizacyjne (ang. *pull request*), wizualizacje zmian, czy nawet tworzenie stron internetowych.
 <!-- +ci etc -->
 
-
 <!-- co to pull request -->
-<!-- lista podsatwowych komend -->
-<!-- create a ssh key -->
-<!-- fork -->
+W prawym górnym rogu okna repozytorium (rycina \@ref(fig:gh-new-repo4)) znajdują się trzy ikony - *Unwatch*, *Star*, *Fork*.
+Pierwsza z nich pozwala na określenie czy chcemy dostawać powiadomienia na temat dyskusji prowadzonych wewnątrz danego repozytorium, takich jak utworzenie nowej sprawy.
+Druga ikona pozwala na oznaczanie interesujących repozytoriów i przez to ułatwiająca znajdowania podobnych projektów.
+Ostatnia ikona *Fork* oznacza w tym kontekście rozwidlenie.
+Po jej kliknięciu następuje utworzenie kopii repozytorium innego użytkownika do naszego konta.
 
-
-
-## Kontrola wersji w RStudio {@rstudio-git}
+## Kontrola wersji w RStudio {#rstudio-git}
 
 <!-- intro Use a Git client, if you like -->
 <!-- workflow -->
