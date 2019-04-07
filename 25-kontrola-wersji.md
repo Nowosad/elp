@@ -91,7 +91,7 @@ git diff
 
 ### Zatwierdzanie zmian
 
-Zatwierdzanie zmian (ang. **commit**) powoduje ich zapisanie w systemie Git.
+Zatwierdzanie zmian (ang. **commit**) powoduje ich zapisanie na stałe w systemie Git.
 Wymaga to dodania wiadomości, która opisuje wprowadzone zmiany.
 <!-- https://chris.beams.io/posts/git-commit/ -->
 <!-- https://thoughtbot.com/blog/5-useful-tips-for-a-better-commit-message -->
@@ -107,11 +107,19 @@ git commit -m "opis wprowadzonych zmian"
 
 ### Rozgałęzienia
 
+Częstą sytuacją jest posiadanie stabilnego, działającego kodu, ale co do którego mamy pomysły jak go ulepszyć, np. zwiększyć jego wydajność.
+Wtedy edycja poprawnego kodu może nie przynieść najlepszych wyników - co jeżeli nasz pomysł się jednak nie sprawdzi?
+Lepszą możliwością jest użycie rozgałęzień (ang. *branches*) w systemie Git.
+Domyślnie nowe repozytorium posiada już jedną gałąź nazwaną `master`.
+
 
 ```bash
 # wypisanie wszystkich rozgałęzień
 git branch
 ```
+
+Kolejnym krokiem jest utworzeie nowego rozgałęzienia. 
+W efekcie tego działania nowa gałąź staje się odniesieniem do istniejącego stanu obecnej gałęzi.
 
 
 ```bash
@@ -119,17 +127,27 @@ git branch
 git branch nazwa_nowej_galezi
 ```
 
+Co ważne utworzenie nowego rozgałęzienia nie powoduje przejście do niego - należy to samodzielnie wykonać.
+
 
 ```bash
 # przejście do innego rozgałęzienia
-git checkout nazwa_innej_galezi
+git checkout nazwa_nowej_galezi
 ```
+
+W tym momencie możliwe jest testowanie różnych możliwości ulepszenia istniejącego kodu bez obawy, że wpłynie to na jego działającą wersję. 
+Po stwierdzeniu, że nasze zmiany są odpowiednie należy je dodać (sekcja \@ref(dodawanie-zmian)) i zatwierdzić (sekcja \@ref(zatwierdzanie-zmian)).
+Teraz można powrócić do głównej gałęzi (`master`) i dołączyć zmiany stworzone w innej gałęzi.
 
 
 ```bash
+# powrót do głównej gałęzi
+git checkout master
 # połączenie wybranego rozgałęzienia z obecnym
 git merge nazwa_nowej_galezi
 ```
+
+<!-- block merge conflicts -->
 
 ### Repozytorium zdalne
 
@@ -175,8 +193,7 @@ GitHub jest serwisem internetowym pozwalającym na przechowywanie i interakcję 
 <!-- co to pull request -->
 <!-- lista podsatwowych komend -->
 <!-- create a ssh key -->
-
-
+<!-- fork -->
 
 Oprócz dostępu do kodu i jego zmian, GitHub oferuje szereg dodatkowych możliwości.
 <!--..-->

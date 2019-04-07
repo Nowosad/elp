@@ -394,7 +394,7 @@ W ten sposób dla każdej linii tekstu (kodu) otrzymuje się informacje co zosta
 </div>
 <div id="zatwierdzanie-zmian" class="section level3">
 <h3><span class="header-section-number">15.1.5</span> Zatwierdzanie zmian</h3>
-<p>Zatwierdzanie zmian (ang. <strong>commit</strong>) powoduje ich zapisanie w systemie Git.
+<p>Zatwierdzanie zmian (ang. <strong>commit</strong>) powoduje ich zapisanie na stałe w systemie Git.
 Wymaga to dodania wiadomości, która opisuje wprowadzone zmiany.
 <!-- https://chris.beams.io/posts/git-commit/ -->
 <!-- https://thoughtbot.com/blog/5-useful-tips-for-a-better-commit-message -->
@@ -406,14 +406,27 @@ Wymaga to dodania wiadomości, która opisuje wprowadzone zmiany.
 </div>
 <div id="rozgaezienia" class="section level3">
 <h3><span class="header-section-number">15.1.6</span> Rozgałęzienia</h3>
+<p>Częstą sytuacją jest posiadanie stabilnego, działającego kodu, ale co do którego mamy pomysły jak go ulepszyć, np. zwiększyć jego wydajność.
+Wtedy edycja poprawnego kodu może nie przynieść najlepszych wyników - co jeżeli nasz pomysł się jednak nie sprawdzi?
+Lepszą możliwością jest użycie rozgałęzień (ang. <em>branches</em>) w systemie Git.
+Domyślnie nowe repozytorium posiada już jedną gałąź nazwaną <code>master</code>.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># wypisanie wszystkich rozgałęzień</span>
 <span class="fu">git</span> branch</code></pre>
+<p>Kolejnym krokiem jest utworzeie nowego rozgałęzienia.
+W efekcie tego działania nowa gałąź staje się odniesieniem do istniejącego stanu obecnej gałęzi.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># utworzenienie nowego rozgałęzienia</span>
 <span class="fu">git</span> branch nazwa_nowej_galezi</code></pre>
+<p>Co ważne utworzenie nowego rozgałęzienia nie powoduje przejście do niego - należy to samodzielnie wykonać.</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># przejście do innego rozgałęzienia</span>
-<span class="fu">git</span> checkout nazwa_innej_galezi</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># połączenie wybranego rozgałęzienia z obecnym</span>
+<span class="fu">git</span> checkout nazwa_nowej_galezi</code></pre>
+<p>W tym momencie możliwe jest testowanie różnych możliwości ulepszenia istniejącego kodu bez obawy, że wpłynie to na jego działającą wersję.
+Po stwierdzeniu, że nasze zmiany są odpowiednie należy je dodać (sekcja <a href="kontrola-wersji.html#dodawanie-zmian">15.1.3</a>) i zatwierdzić (sekcja <a href="kontrola-wersji.html#zatwierdzanie-zmian">15.1.5</a>).
+Teraz można powrócić do głównej gałęzi (<code>master</code>) i dołączyć zmiany stworzone w innej gałęzi.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># powrót do głównej gałęzi</span>
+<span class="fu">git</span> checkout master
+<span class="co"># połączenie wybranego rozgałęzienia z obecnym</span>
 <span class="fu">git</span> merge nazwa_nowej_galezi</code></pre>
+<!-- block merge conflicts -->
 </div>
 <div id="repozytorium-zdalne" class="section level3">
 <h3><span class="header-section-number">15.1.7</span> Repozytorium zdalne</h3>
@@ -442,6 +455,7 @@ Wymaga to dodania wiadomości, która opisuje wprowadzone zmiany.
 <!-- co to pull request -->
 <!-- lista podsatwowych komend -->
 <!-- create a ssh key -->
+<!-- fork -->
 <p>Oprócz dostępu do kodu i jego zmian, GitHub oferuje szereg dodatkowych możliwości.
 <!--..-->
 <!-- https://en.wikipedia.org/wiki/GitHub#Scope --></p>
