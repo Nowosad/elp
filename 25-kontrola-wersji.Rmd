@@ -141,11 +141,17 @@ git merge nazwa_nowej_galezi
 
 ### Repozytorium zdalne
 
+System Git ma wiele zalet w przypadku samodzielnej pracy na własnym komputerze<!--np.-->, zyski z jego używania są jednak znacznie większe, gdy nasze repozytoria mają też zdalne odpowiedniki.
+
+Łączenie się ze zdalnymi repozytoriami może nastąpić na dwa sposoby.
+W pierwszym z nich repozytorium zdane już istnieje, a my chcemy się do niego podłączyć i je pobrać.
+
 ```{bash, eval=FALSE}
 # pobranie kopii istniejącego zdalnego repo
 git clone sciezka_do_zdalnego_repo
 ```
 
+Drugim sposobem jest posiadanie istniejącego, lokalnego repozytorium, a następnie dodanie do niego adresu zdalnego repozytorium.
 <!-- ssh vs https -->
 
 ```{bash, eval=FALSE}
@@ -157,14 +163,21 @@ git remote add origin sciezka_do_zdalnego_repo
 
 ### Wysyłanie zmian
 
+Obecne dodane i zatwierdzone zmiany znajdują się jedynie w repozytorium lokalnym.
+Konieczne jest ich wysłanie do zdalnego repozytorium.
+
 ```{bash, eval=FALSE}
 # wysyłanie zmian do zdalnego repo
 git push
 ```
-
-<!-- co to push -->
+<!--skrót od git push origin master -->
 
 ### Aktualizowanie 
+
+Zdalne repozytoria mogą pozwalać na nadawanie różnych uprawnień użytkownikom.
+Możliwe jest określenie, że inne osoby mogą nanosić zmiany w zdalnych repozytoriach.
+Dodatkowo, jedna osoba może zmieniać zdalne repozytoria używając różnych komputerów.
+Konieczne jest więc aktualizowanie zmian, które zaszły w zdalnym repozytorium na lokalnym komputerze.
 
 ```{bash, eval=FALSE}
 # aktualizowanie zmian ze zdalnego repo
@@ -188,7 +201,7 @@ Oprócz dostępu do kodu i jego zmian, GitHub oferuje szereg dodatkowych możliw
 
 
 
-## Git w RStudio
+## Kontrola wersji w RStudio
 
 <!-- Use a Git client, if you like -->
 <!-- workflow -->
@@ -198,6 +211,9 @@ Oprócz dostępu do kodu i jego zmian, GitHub oferuje szereg dodatkowych możliw
 <!-- podstawowy workflow -->
 <!-- when something go wrong -->
 <!-- stackoverflow git questions -->
+
+<!-- http://rogerdudler.github.io/git-guide/index.pl.html -->
+<!-- https://happygitwithr.com/ -->
 
 ## Zadania
 
