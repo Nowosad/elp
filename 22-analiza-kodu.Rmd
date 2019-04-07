@@ -254,7 +254,7 @@ Ostatnia linia, wyliczająca średnią, zabrała ok. 10ms.
 <!-- vectorized vs not-vectorized -->
 <!-- https://rstudio-education.github.io/hopr/speed.html -->
 
-## Zadanie
+## Zadania
 
 <!-- 1. benchmarking -->
 <!-- porównaj rowsum vs colsum vs loops implementation -->
