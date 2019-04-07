@@ -295,7 +295,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-mozliwosci-github"><i class="fa fa-check"></i><b>15.2.3</b> Dodatkowe możliwości GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="15.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rstudio-git"><i class="fa fa-check"></i><b>15.3</b> Kontrola wersji w RStudio</a></li>
-<li class="chapter" data-level="15.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>15.4</b> Sposoby pracy z systemem Git</a></li>
+<li class="chapter" data-level="15.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>15.4</b> Sposoby pracy z systemem Git</a><ul>
+<li class="chapter" data-level="15.4.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#nowy-projekt"><i class="fa fa-check"></i><b>15.4.1</b> Nowy projekt</a></li>
+<li class="chapter" data-level="15.4.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#istniejacy-projekt"><i class="fa fa-check"></i><b>15.4.2</b> Istniejący projekt</a></li>
+</ul></li>
 <li class="chapter" data-level="15.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zadania-13"><i class="fa fa-check"></i><b>15.5</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>16</b> Tworzenie pakietów</a><ul>
@@ -339,6 +342,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- https://whattheyforgot.org/ -->
 <!-- https://education.github.com/git-cheat-sheet-education.pdf -->
 <!-- https://enterprise.github.com/downloads/en/github-flow-cheatsheet.pdf -->
+<!-- pliki tesktowe vs binarne -->
 <p>Systemy kontroli wersji to narzędzia pozwalające na zapamiętywaniu zmian zachodzących w plikach.
 Dzięki nim możemy sprawdzić nie tylko kiedy zmieniliśmy dany plik i kto go zmienił, ale co najważniejsze - możemy linia po linii prześledzić zmiany wewnątrz tego pliku.
 Dodatkowo, mamy możliwość przywracania wersji pliku z wybranego czasu w całej historii jego zmian.</p>
@@ -537,6 +541,7 @@ W takiej sytuacji często opiera się to o (1) stworzenie rozwidlenia (ang. <em
 </div>
 <div id="rstudio-git" class="section level2">
 <h2><span class="header-section-number">15.3</span> Kontrola wersji w RStudio</h2>
+<!-- ograniczenia github -->
 <p>RStudio posiada wbudowane, uproszczone graficzne wspacie dla systemu Git.
 Istnieje też szereg programów, których głównym celem jest ułatwienie pracy z systemem Git.
 Nazwane są one klientami Git, wśród których można wymienić <a href="https://www.gitkraken.com/">GitKraken</a> i <a href="https://www.sourcetreeapp.com/">Sourcetree</a>.</p>
@@ -572,9 +577,10 @@ Przedostatni element tego okna to nazwa obecnie ustawionego rozgałęzienia, a p
 <p>Istnieje wiele możliwych sposobów pracy z systemem Git.
 Zależą one od wielu czynników, takich jak planowany cel repozytorium czy wykorzystywana technologia.
 Dodatkowo znaczny wpływ na sposób pracy z systemem Git ma czynnik ludzki - przyzwyczajenia osób pracujących nad projektem i ich preferencje.</p>
+<div id="nowy-projekt" class="section level3">
+<h3><span class="header-section-number">15.4.1</span> Nowy projekt</h3>
 <p>Preferowanym sposobem rozpoczęcia pracy nad nowym zadaniem (projektem) w R jest stworzenie nowego, pustego repozytorium w serwisie GitHub, a następnie połączenie z nim nowego projektu RStudio.
 Taki sposób został opisany na początku sekcji <a href="kontrola-wersji.html#rstudio-git">15.3</a>.</p>
-<!-- block - https://happygitwithr.com/existing-github-first.html -->
 <p>W momencie, gdy posiadamy ustawione zarówno lokalne jak i zdalne repozytorium możliwe jest rozpoczęcie pracy.
 Teraz można tworzyć nowe oraz edytować istniejące pliki.
 Po każdej wyraźnej zmianie plików (np. ulepszenie kodu, naprawa błędów, dodanie nowych możliwości) należy dodać zmiany oraz je zatwierdzić.
@@ -583,12 +589,31 @@ Teraz można dodać wiadomość opisująca zmiany jakie zaszły, oraz ją zatwie
 Zalecane jest, aby powyższą czynność wykonywać nawet wiele razy dziennie.</p>
 <p>Efektem powyższej operacji jest posiadanie zatwierdzonych zmian w lokalnym repozytorium, ale jeszcze ich brak w repozytorium zdalnym.
 Kolejnym krokiem jest przesłanie zmian na zdalne repozytorium.
-Tutaj zalecane jest najpierw kliknięcie ikony aktualizowania zmian (strzałka w dół), aby upewnić się, że posiadamy aktualną wersję repozytorium, a następnie kliknięcie ikony wysyłania zmian (strzałka w górę).</p>
-<!-- podstawowy workflow -->
+Tutaj zalecane jest najpierw kliknięcie ikony aktualizowania zmian (strzałka w dół), aby upewnić się, że posiadamy aktualną wersję repozytorium, a następnie kliknięcie ikony wysyłania zmian (strzałka w górę).
+Jeżeli wszystko poszło zgodnie z planem, nowa wersja repozytorium powinna pojawić się na odpowiedniej stronie serwisu GitHub.
+Tą czynność warto wykonywać rzadziej niż poprzednią, ale też regularnie.</p>
+<p>Dalej praca polega na powtarzaniu tych czynności:</p>
+<ol style="list-style-type: decimal">
+<li>Edycja/dodanie plików czy folderów.</li>
+<li>Dodanie zmian.</li>
+<li>Zatwierdzenie zmian.</li>
+<li>Sprawdzenie czy posiadamy aktualną wersję repozytorium.</li>
+<li>Wysyłania zmian na zdalne repozytorium.</li>
+</ol>
+</div>
+<div id="istniejacy-projekt" class="section level3">
+<h3><span class="header-section-number">15.4.2</span> Istniejący projekt</h3>
+<p>Czasami posiadasz już jakiś istniejący projekt, ale chcesz do niego dodać możliwości kontroli wersji.
+W takich przypadkach najprostszy sposób to stworzenie nowego repozytorium w serwisie GitHub oraz pustego, połączonego z nim nowego projektu RStudio.
+Następnie należy przekopiować do tego projektu wszystkie już istniejące pliki, dodać je (pole <em>Staged</em>), zatwierdzić oraz przesłać na zdalne repozytorium.</p>
+<p>Kolejne etapy pracy wyglądają identycznie jak w poprzedniej sekcji.</p>
+<!-- ### Problemy z kontrolą wersji -->
+<!-- block  -->
 <!-- when something go wrong -->
 <!-- stackoverflow git questions -->
 <!-- http://rogerdudler.github.io/git-guide/index.pl.html -->
 <!-- https://happygitwithr.com/ -->
+</div>
 </div>
 <div id="zadania-13" class="section level2">
 <h2><span class="header-section-number">15.5</span> Zadania</h2>
