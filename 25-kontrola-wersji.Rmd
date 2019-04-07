@@ -57,8 +57,8 @@ git init
 
 ### Dodawanie zmian
 
-W nowoutworzonym repozytorium możemy tworzyć nowe pliki oraz edytować już istniejące.
-Po pewnym czasie możemy stwierdzić, że dodaliśmy nową funkcjonalność do funkcji lub naprawiliśmy bład w kodzie.
+W nowo utworzonym repozytorium możemy tworzyć nowe pliki oraz edytować już istniejące.
+Po pewnym czasie możemy stwierdzić, że dodaliśmy nową funkcjonalność do funkcji lub naprawiliśmy błąd w kodzie.
 Wtedy należy (po zapisaniu również pliku na dysku) dodać te zmiany do systemu Git.
 Po dodaniu zmian są one przechowywane w miejscu określanym jako *Index*.
 Działa ono jak poczekalnia - w tym momencie zmiany jeszcze nie są potwierdzone, ale możemy sprawdzić co zmieniło się od ostatniego zatwierdzenia zmian.
@@ -107,7 +107,7 @@ Domyślnie nowe repozytorium posiada już jedną gałąź nazwaną `master`.
 git branch
 ```
 
-Kolejnym krokiem jest utworzeie nowego rozgałęzienia. 
+Kolejnym krokiem jest utworzenie nowego rozgałęzienia. 
 W efekcie tego działania nowa gałąź staje się odniesieniem do istniejącego stanu obecnej gałęzi.
 
 ```{bash, eval=FALSE}
@@ -183,7 +183,7 @@ git pull
 ## GitHub
 
 GitHub jest serwisem internetowym pozwalającym na przechowywanie i interakcję z repozytoriami w systemie kontroli wersji Git.
-Posiada on dwa rodzaje repozytorów - publiczne (ang. *public*), które może każdy zobaczyć oraz prywatne (ang. *private*) dostępne tylko dla osób z odpowiednimi uprawnieniami.
+Posiada on dwa rodzaje repozytoriów - publiczne (ang. *public*), które może każdy zobaczyć oraz prywatne (ang. *private*) dostępne tylko dla osób z odpowiednimi uprawnieniami.
 
 Repozytoria połączone są z kontami użytkowników (np. https://github.com/Nowosad to moje konto, gdzie "Nowosad" oznacza nazwę użytkownika) lub organizacjami (np. https://github.com/r-spatialecology to konto organizacji "r-spatialecology").
 Pod adresem https://github.com/join można założyć nowe konto użytkownika.
@@ -245,14 +245,14 @@ Po jej kliknięciu następuje utworzenie kopii repozytorium innego użytkownika 
 Oprócz dostępu do kodu i jego zmian, GitHub oferuje także szereg dodatkowych możliwości.
 Obejmuje to, między innymi, automatyczne wyświetlanie plików README, śledzenie spraw (ang. *issue tracking*), zapytania aktualizacyjne (ang. *pull request*), wizualizacje zmian, czy nawet tworzenie stron internetowych.
 Sprawy (ang. *issues*) to miejsce, gdzie twórcy mogą zapisywać swoje listy zadań dotyczące danej aplikacji, a użytkownicy mogą zgłaszać błędy czy propozycje ulepszeń.
-Zapytania aktualizacyjne są tworzone, np. w przypadku, gdy lokalnie zmieniliśmy zawartość repozytorium innego użytkownika^[Może to być zarówno dodanie nowej możliwości, naprawnienie błędu w kodzie, czy nawet poprawienie literówki w dokumentacji.] i chcemy zaproponować żeby nasza zmiana została dołączona do oryginalnego repozytorium.
+Zapytania aktualizacyjne są tworzone, np. w przypadku, gdy lokalnie zmieniliśmy zawartość repozytorium innego użytkownika^[Może to być zarówno dodanie nowej możliwości, naprawienie błędu w kodzie, czy nawet poprawienie literówki w dokumentacji.] i chcemy zaproponować żeby nasza zmiana została dołączona do oryginalnego repozytorium.
 W takiej sytuacji często opiera się to o (1) stworzenie rozwidlenia (ang. *fork*), (2) pobranie rozwidlenia jako lokalne repozytorium, (3) edycja lokalnego repozytorium, (4) zatwierdzenie zmian i wysłanie ich do zdalnego repozytorium (rozwidlenia), (5) zaproponowanie zapytania aktualizacyjnego.
 
 Możliwe jest również łączenie możliwości serwisu GitHub z innymi serwisami internetowymi, takimi jak [Travis CI](https://travis-ci.org/), [Codecov](https://codecov.io/), [Gitter](https://gitter.im/)  i [wiele innych](https://github.com/marketplace).
 
 ## Kontrola wersji w RStudio {#rstudio-git}
 
-RStudio posiada wbudowane, uproszczone graficzne wspacie dla systemu Git.
+RStudio posiada wbudowane, uproszczone graficzne wsparcie dla systemu Git.
 Istnieje też szereg programów, których głównym celem jest ułatwienie pracy z systemem Git.
 Nazwane są one klientami Git, wśród których można wymienić [GitKraken](https://www.gitkraken.com/) i [Sourcetree](https://www.sourcetreeapp.com/).
 
