@@ -225,7 +225,7 @@ Dodatkowo możliwe jest dodanie opisu repozytorium (ang. *description*), pliku R
 Po wybraniu potwierdzenia (*Create repository*) utworzone zostanie nowe, puste repozytorium (rycina \@ref(fig:gh-new-repo3)).
 
 <div class="figure" style="text-align: center">
-<img src="images/gh-new-repo2.png" alt="Nowe, puste repozytorium GitHub." width="100%" />
+<img src="images/gh-new-repo3.png" alt="Nowe, puste repozytorium GitHub." width="100%" />
 <p class="caption">(\#fig:gh-new-repo3)Nowe, puste repozytorium GitHub.</p>
 </div>
 
