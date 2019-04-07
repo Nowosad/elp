@@ -278,8 +278,6 @@ Możliwe jest również łączenie możliwości serwisu GitHub z innymi serwisam
 
 ## Kontrola wersji w RStudio {#rstudio-git}
 
-<!-- ograniczenia github -->
-
 RStudio posiada wbudowane, uproszczone graficzne wspacie dla systemu Git.
 Istnieje też szereg programów, których głównym celem jest ułatwienie pracy z systemem Git.
 Nazwane są one klientami Git, wśród których można wymienić [GitKraken](https://www.gitkraken.com/) i [Sourcetree](https://www.sourcetreeapp.com/).
@@ -300,7 +298,7 @@ Dodatkowo, w RStudio pojawi się nowy panel "Git" (rycina \@ref(fig:rstudio-git
 <p class="caption">(\#fig:rstudio-git)Panel Git w RStudio.</p>
 </div>
 
-W tym panelu są wyświetlone (1) wszystkie pliki, które są w folderze projektu, ale nie w repozytorium Git (żółte ikony statusu), (2) pliki, które chcemy dodać do repozytorium (zielona ikona statusu), oraz (3) pliki, które są już w repozytorium, ale zostały zmodyfikowane (niebieska ikona statusu).
+W tym panelu są wyświetlone (1) wszystkie pliki, które są w folderze projektu, ale nie w repozytorium Git (żółte ikony statusu), (2) pliki, które chcemy dodać do repozytorium (zielona ikona statusu), oraz (3) pliki, które są już w repozytorium, ale zostały zmodyfikowane (niebieska ikona statusu).^[Możliwe są też inne sytuacje, np. czerwona ikona z literą R sugerująca zmianę nazwy pliku.]
 Ten panel nie pokazuje plików, które nie zostały ostatnio zmienione.
 Pierwsza kolumna w tym panelu (*Staged*) domyślnie zawiera same nieodhaczone białe pola.
 Wybór tego pola (jego odhaczenie) jest równoznaczne z dodaniem zmian (więcej informacji można znaleźć w sekcji \@ref(dodawanie-zmian)).
@@ -328,7 +326,11 @@ Teraz można tworzyć nowe oraz edytować istniejące pliki.
 Po każdej wyraźnej zmianie plików (np. ulepszenie kodu, naprawa błędów, dodanie nowych możliwości) należy dodać zmiany oraz je zatwierdzić.
 Można to zrobić klikając pole *Staged* przy wybranych plikach oraz następnie ikonę *Commit*. 
 Teraz można dodać wiadomość opisująca zmiany jakie zaszły, oraz ją zatwierdzić klikając przycisk *Commit*.
+<!-- minimal but complete -->
 Zalecane jest, aby powyższą czynność wykonywać nawet wiele razy dziennie.
+
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Często w folderze projektu możesz posiadać pliki, których nie chcesz dodawać do repozytorium.
+W takiej sytuacji dodaj ich nazwy do pliku `gitignore` i staną się one niewidoczne dla systemu Git.</div>\EndKnitrBlock{rmdinfo}
 
 Efektem powyższej operacji jest posiadanie zatwierdzonych zmian w lokalnym repozytorium, ale jeszcze ich brak w repozytorium zdalnym.
 Kolejnym krokiem jest przesłanie zmian na zdalne repozytorium.
