@@ -331,7 +331,11 @@ Następnie należy przekopiować do tego projektu wszystkie już istniejące pli
 
 Kolejne etapy pracy wyglądają identycznie jak w poprzedniej sekcji.
 
-<!-- ### Problemy z kontrolą wersji -->
+## Problemy z kontrolą wersji
+
+W ramach jednego projektu często posiadamy wiele plików z długą historią zmian, do tego nanoszonych przez szereg różnych osób.
+Jest to sytuacja w której dość prosto o wystąpienie problemów czy nieoczekiwanych (przez użytkownika) zachowań systemu kontroli wersji Git. 
+
 
 <!-- block  -->
 <!-- when something go wrong -->
