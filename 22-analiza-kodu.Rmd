@@ -12,7 +12,7 @@ Testy jednostkowe są najczęściej stosowane w przypadku budowania pakietów (s
 Przykładowo, napisaliśmy nową funkcję, która wykonuje złożone operacje i, po wielu sprawdzeniach, wiemy, że daje poprawne wyniki.
 Po kilku miesiącach wpadliśmy na pomysł jak zwiększyć wydajność naszej funkcji. 
 W tym momencie wystarczy już tylko stworzyć nową implementację i użyć wcześniej zbudowanych testów.
-Dadzą one informację, czy efekt działania jest taki jaki oczekujemy, a w przciwnym razie wskażą gdzie pojawił się błąd. 
+Dadzą one informację, czy efekt działania jest taki jaki oczekujemy, a w przeciwnym razie wskażą gdzie pojawił się błąd. 
 Istnieje też dodatkowa reguła - jeżeli znajdziesz błąd w kodzie od razu napisz test jednostkowy.
 
 Zobaczmy jak działają testy jednostkowe na przykładzie funkcji `nowy_prostokat()` oraz `powierzchnia()` stworzonych w sekcji \@ref(oop).
@@ -49,7 +49,7 @@ Zawiera on szereg funkcji sprawdzających czy działanie naszych funkcji jest zg
 Funkcje w tym pakiecie rozpoczynają się od prefiksu `expect_` (oczekuj).
 
 W przypadku funkcji `powierzchnia()` oczekujemy, że wynik będzie zawierał tylko jeden element.
-Możemy to sprawdźić za pomocą funkcji `expect_length()`.
+Możemy to sprawdzić za pomocą funkcji `expect_length()`.
 
 ```{r}
 nowy_p = nowy_prostokat(0, 0, 6, 5)
@@ -79,7 +79,7 @@ expect_error(nowy_prostokat(1, 2, 3, 6))
 ```
 
 W przypadku, gdy wywołanie funkcji zwróci błąd, `expect_error()` nic nie zwróci.
-Natomiast, jeżeli wywołania funkcji nie zwróci błędu, `expect_error()` zatrzyma swoje działanie i zwóci komunikat.
+Natomiast, jeżeli wywołania funkcji nie zwróci błędu, `expect_error()` zatrzyma swoje działanie i zwróci komunikat.
 Odpowiednikami `expect_error()` dla ostrzeżeń jest `expect_warning()`, a dla wiadomości `expect_message()`.
 
 Pozostałe funkcje z tego pakietu są wymienione i opisane na stronie https://testthat.r-lib.org/reference/index.html.
@@ -137,7 +137,7 @@ mi_do_km2 = function(odl_mile){
 
 Dwie powyższe funkcje można porównać używając `system.time()`. 
 Nie zawsze jednak to wystarczy - ta sama funkcja wykonana dwa razy może mieć różny czas obliczeń.<!--why??-->
-Dodatkowo, oprócz czasu wykonywania funkcji może nas interesować zużycie zasobów, takich jak pamięc operacyjna.
+Dodatkowo, oprócz czasu wykonywania funkcji może nas interesować zużycie zasobów, takich jak pamięć operacyjna.
 Do takiego celu powstała funkcja `mark()` z pakietu **bench** [@R-bench], która wykonuje funkcje wiele razy przed zwróceniem wyniku.
 
 Przyjmuje ona wywołania funkcji, które chcemy porównać.
@@ -164,7 +164,7 @@ Zawiera ona szereg charakterystyk, w tym:
 - `mem_alloc` - pamięć użyta przez wywołanie funkcji
 - `n_itr` - liczba powtórzeń wywołania funkcji
 
-Wynik działania funkcji `mark()` pozwala na zauważnie, że na tym przykładzie funkcja `mi_do_km2` jest ok. 30% szybsza od `mi_do_km1`.
+Wynik działania funkcji `mark()` pozwala na zauważenie, że na tym przykładzie funkcja `mi_do_km2` jest ok. 30% szybsza od `mi_do_km1`.
 Czasami możliwe jest, że jakaś funkcja działa relatywnie szybko na małych danych, ale dużo wolniej na większych danych wejściowych.
 Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na większej liście, np. z wartościami od 0 do 10000 co 1.
 
@@ -177,7 +177,7 @@ wynik_2 = mark(
 wynik_2
 ```
 
-W tym przypadku róznica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
+W tym przypadku różnica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
 Funkcja `mi_do_km1` jest w stanie wykonać tylko `r round(unclass(wynik_2[[1, 6]]), 2)` operacji na sekundę, przy aż `r round(unclass(wynik_2[[2, 6]]), 2)` operacji na sekundę funkcji `mi_do_km2`.
 Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
 
