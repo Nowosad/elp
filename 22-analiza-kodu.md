@@ -112,7 +112,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 ```r
 system.time(mean(1:100000000))
 #>    user  system elapsed 
-#>   0.564   0.004   0.569
+#>   0.568   0.000   0.569
 ```
 
 W efekcie dostajemy trzy wartości - `user`, `system` i `elapsed`. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.
@@ -166,10 +166,10 @@ wynik_1 = mark(
 )
 wynik_1
 #> # A tibble: 2 x 10
-#>   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr
-#>   <chr>      <bch:> <bch:> <bch:> <bch:>     <dbl> <bch:byt> <dbl> <int>
-#> 1 mi_do_km1… 1.44µs 1.99µs 1.69µs 78.2µs   503014.     117KB     0 10000
-#> 2 mi_do_km2… 1.04µs 1.27µs 1.16µs 21.1µs   785469.     222KB     0 10000
+#>   expression    min   mean median     max `itr/sec` mem_alloc  n_gc n_itr
+#>   <chr>      <bch:> <bch:> <bch:> <bch:t>     <dbl> <bch:byt> <dbl> <int>
+#> 1 mi_do_km1… 1.43µs 2.02µs 1.72µs 141.3µs   493844.     117KB     0 10000
+#> 2 mi_do_km2… 1.01µs 1.31µs 1.17µs  18.8µs   765638.     222KB     0 10000
 #> # … with 1 more variable: total_time <bch:tm>
 ```
 
@@ -201,13 +201,13 @@ wynik_2
 #> # A tibble: 2 x 10
 #>   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr
 #>   <chr>      <bch> <bch:tm> <bch:> <bch:t>     <dbl> <bch:byt> <dbl> <int>
-#> 1 mi_do_km1… 460ms 465.38ms  465ms 470.4ms      2.15     382MB    16     2
-#> 2 mi_do_km2… 900µs   1.11ms  938µs  10.3ms    904.      78.2KB     9   453
+#> 1 mi_do_km1… 480ms 479.78ms  480ms   480ms      2.08     382MB    16     2
+#> 2 mi_do_km2… 896µs   1.11ms  939µs  10.3ms    904.      78.2KB     9   453
 #> # … with 1 more variable: total_time <bch:tm>
 ```
 
 W tym przypadku róznica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
-Funkcja `mi_do_km1` jest w stanie wykonać tylko 2.15 operacji na sekundę, przy aż 904.19 operacji na sekundę funkcji `mi_do_km2`.
+Funkcja `mi_do_km1` jest w stanie wykonać tylko 2.08 operacji na sekundę, przy aż 904.36 operacji na sekundę funkcji `mi_do_km2`.
 Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
 
 
@@ -223,14 +223,14 @@ Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej
 #> # A tibble: 8 x 11
 #>   expression     x      min     mean   median      max `itr/sec` mem_alloc
 #>   <chr>      <dbl> <bch:tm> <bch:tm> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 mi_do_km1…    10   3.87µs   5.11µs   4.67µs  96.26µs 195726.          0B
-#> 2 mi_do_km2…    10   1.74µs   2.11µs   1.92µs  26.37µs 473639.          0B
-#> 3 mi_do_km1…   100  68.01µs  77.92µs  74.25µs   3.61ms  12833.     43.16KB
-#> 4 mi_do_km2…   100   9.14µs  10.34µs   9.94µs  84.29µs  96681.        856B
-#> 5 mi_do_km1…  1000   4.48ms   4.77ms   4.73ms   8.35ms    210.      3.87MB
-#> 6 mi_do_km2…  1000  86.05µs  95.58µs  91.72µs 220.21µs  10462.      7.87KB
-#> 7 mi_do_km1… 10000 580.54ms 580.54ms 580.54ms 580.54ms      1.72  382.04MB
-#> 8 mi_do_km2… 10000 888.45µs   1.02ms 918.03µs   5.73ms    979.     78.18KB
+#> 1 mi_do_km1…    10   3.91µs   5.17µs   4.67µs  76.07µs 193563.          0B
+#> 2 mi_do_km2…    10   1.72µs   2.12µs   1.93µs  24.78µs 472791.          0B
+#> 3 mi_do_km1…   100  67.67µs  76.75µs  73.16µs 193.71µs  13030.     43.16KB
+#> 4 mi_do_km2…   100    9.2µs  10.47µs  10.01µs  83.12µs  95478.        856B
+#> 5 mi_do_km1…  1000   4.51ms   4.82ms   4.78ms   5.91ms    208.      3.87MB
+#> 6 mi_do_km2…  1000  86.51µs  96.74µs  91.62µs 339.96µs  10337.      7.87KB
+#> 7 mi_do_km1… 10000 579.96ms 579.96ms 579.96ms 579.96ms      1.72  382.04MB
+#> 8 mi_do_km2… 10000 881.97µs   1.02ms 924.35µs   5.26ms    981.     78.18KB
 #> # … with 3 more variables: n_gc <dbl>, n_itr <int>, total_time <bch:tm>
 ```
 
@@ -298,7 +298,7 @@ Ostatnia linia, wyliczająca średnią, zabrała ok. 10ms.
 <!-- vectorized vs not-vectorized -->
 <!-- https://rstudio-education.github.io/hopr/speed.html -->
 
-## Zadanie
+## Zadania
 
 <!-- 1. benchmarking -->
 <!-- porównaj rowsum vs colsum vs loops implementation -->
