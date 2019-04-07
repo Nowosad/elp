@@ -297,12 +297,12 @@ Dodatkowo, w RStudio pojawi się nowy panel "Git" (rycina \@ref(fig:rstudio-git
 W tym panelu są wyświetlone (1) wszystkie pliki, które są w folderze projektu, ale nie w repozytorium Git (żółte ikony statusu), (2) pliki, które chcemy dodać do repozytorium (zielona ikona statusu), oraz (3) pliki, które są już w repozytorium, ale zostały zmodyfikowane (niebieska ikona statusu).
 Ten panel nie pokazuje plików, które nie zostały ostatnio zmienione.
 Pierwsza kolumna w tym panelu (*Staged*) domyślnie zawiera same nieodhaczone białe pola.
-Wybór tego pola (jego odhaczenie) jest równoznaczne z dodaniem zmian (więcej informacji można znaleźć w sekcji \@ref(dodanie-zmian)).
+Wybór tego pola (jego odhaczenie) jest równoznaczne z dodaniem zmian (więcej informacji można znaleźć w sekcji \@ref(dodawanie-zmian)).
 
 Dodatkowo nad listą plików znajduje się szereg ikon.
 Pierwsze dwie z nich (*Diff* i *Commit*) wyświetlają okno, które pozwala sprawdzić jakie zmiany zaszły w plikach od ostatniego ich dodania (dolny panel; sekcja \@ref(sprawdzanie-zmian)) oraz zatwierdzić zmiany (prawy panel; sekcja \@ref(zatwierdzanie-zmian)).
 Kolejne, strzałki w dół i górę, oznaczają odpowiednio aktualizowanie zmian (sekcja \@ref(aktualizowanie-zmian)) i wysyłanie zmian (sekcja \@ref(wysylanie-zmian)).
-Ikona zegarka otwiera nowe okno, w którym można zobaczyć jakie zmiany zaszły w kolejnych zatwierdzeniach zmian (*commitach*).
+Ikona zegarka otwiera nowe okno, w którym można zobaczyć jakie zmiany zaszły w kolejnych zatwierdzeniach zmian (tak zwanych *commitach*).
 Następne ikony pozwalają na określenie plików do ignorowania (ikona koła zębatego) oraz tworzenie nowych rozgałęzień.
 Przedostatni element tego okna to nazwa obecnie ustawionego rozgałęzienia, a po kliknięciu tej nazwy możliwa jest przejście do innego rozgałęzienia (sekcja \@ref(branches)).
 
