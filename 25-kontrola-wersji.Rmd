@@ -240,7 +240,7 @@ Pod zieloną ikoną *Clone or download* można dodatkowo znaleźć ścieżkę do
 
 ### Dodatkowe możliwości GitHub
 
-W prawym górnym rogu okna repozytorium (rycina \@ref(fig:gh-new-repo4)) znajdują się trzy ikony - *Unwatch*, *Star*, *Fork*.
+W prawym górnym rogu okna repozytorium (rycina \@ref(fig:gh-new-repo4)) znajdują się trzy ikony - *Watch*, *Star*, *Fork*.
 Pierwsza z nich pozwala na określenie czy chcemy dostawać powiadomienia na temat dyskusji prowadzonych wewnątrz danego repozytorium, takich jak utworzenie nowej sprawy.
 Druga ikona pozwala na oznaczanie interesujących repozytoriów i przez to ułatwiająca znajdowania podobnych projektów.
 Ostatnia ikona *Fork* oznacza w tym kontekście rozwidlenie.
@@ -268,8 +268,12 @@ Najprostszym sposobem połączenia RStudio z systemem Git i serwisem GitHub jest
 4. Podać ścieżkę do zdalnego repozytorium (adres HTTPS lub SSH) oraz wybrać miejsce na dysku, gdzie ma się ten projekt znajdować.
 5. Kliknąć `Create Project`.
 
+W efekcie zostanie utworzony nowy projekt RStudio, który jednocześnie jest lokalnym repozytorium Git. 
+Dodatkowo, w RStudio pojawi się nowy panel "Git" (rycina \@ref(fig:rstudio-git)).
 
-
+```{r rstudio-git, echo=FALSE, fig.cap="Panel Git w RStudio."}
+knitr::include_graphics("images/rstudio-git.png")
+```
 
 ## Sposób pracy
 
