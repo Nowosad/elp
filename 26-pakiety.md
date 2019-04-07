@@ -1,6 +1,7 @@
 
 # Tworzenie pakietów {#tworzenie-pakietow}
 <!-- https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1006561&type=printable -->
+<!-- https://github.com/ropensci/dev_guide -->
 
 [@R-usethis]
 
