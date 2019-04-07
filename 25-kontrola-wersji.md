@@ -203,14 +203,17 @@ git pull
 GitHub jest serwisem internetowym pozwalającym na przechowywanie i interakcję z repozytoriami w systemie kontroli wersji Git.
 
 
-
 <!-- co to pull request -->
 <!-- lista podsatwowych komend -->
 <!-- create a ssh key -->
 <!-- fork -->
 
 Oprócz dostępu do kodu i jego zmian, GitHub oferuje szereg dodatkowych możliwości.
-Obejmuje to, między innymi, automatyczne wyświetlanie plików README, śledzenie spraw (ang. *issue tracking*), zapytania aktualizacyjne (ang. *pull request*), wizualizacje zmian, czy nawet tworzenie stron internetowych.
+<!--..-->
+<!-- https://en.wikipedia.org/wiki/GitHub#Scope -->
+
+
+
 
 ## Kontrola wersji w RStudio
 
