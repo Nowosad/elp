@@ -193,6 +193,26 @@ Repozytoria połączone są z kontami użytkowników (np. https://github.com/Now
 Pod adresem https://github.com/join można założyć nowe konto użytkownika.
 
 Posiadanie konta użytkownika pozwala na, między innymi, tworzenie nowych repozytoriów i zarządzanie nimi.
+Stworzenie nowego repozytorium odbywa się poprzez naciśnięcie zielonej ikony (rycina \@ref(fig:gh-new-repo)).
+
+```{r gh-new-repo, echo=FALSE, fig.cap="Ikona tworzenia nowego repozytorium GitHub."}
+knitr::include_graphics("images/gh-new-repo.png")
+```
+
+W kolejnym oknie (rycina \@ref(fig:gh-new-repo2)) należy podać nazwę nowego repozytorium oraz wybrać czy będzie ono publiczne czy prywatne. 
+Dodatkowo możliwe jest dodanie opisu repozytorium (ang. *description*), pliku README, czy licencji.
+
+```{r gh-new-repo2, echo=FALSE, fig.cap="Okno tworzenia nowego repozytorium GitHub."}
+knitr::include_graphics("images/gh-new-repo2.png")
+```
+
+Po wybraniu potwierdzenia (*Create repository*) utworzone zostanie nowe, puste repozytorium (rycina \@ref(fig:gh-new-repo3)).
+
+```{r gh-new-repo3, echo=FALSE, fig.cap="Nowe, puste repozytorium GitHub."}
+knitr::include_graphics("images/gh-new-repo2.png")
+```
+
+
 Oprócz dostępu do kodu i jego zmian, GitHub oferuje także szereg dodatkowych możliwości.
 Obejmuje to, między innymi, automatyczne wyświetlanie plików README, śledzenie spraw (ang. *issue tracking*), zapytania aktualizacyjne (ang. *pull request*), wizualizacje zmian, czy nawet tworzenie stron internetowych.
 <!-- +ci etc -->
