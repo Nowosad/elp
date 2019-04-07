@@ -13,7 +13,7 @@ Testy jednostkowe są najczęściej stosowane w przypadku budowania pakietów (s
 Przykładowo, napisaliśmy nową funkcję, która wykonuje złożone operacje i, po wielu sprawdzeniach, wiemy, że daje poprawne wyniki.
 Po kilku miesiącach wpadliśmy na pomysł jak zwiększyć wydajność naszej funkcji. 
 W tym momencie wystarczy już tylko stworzyć nową implementację i użyć wcześniej zbudowanych testów.
-Dadzą one informację, czy efekt działania jest taki jaki oczekujemy, a w przciwnym razie wskażą gdzie pojawił się błąd. 
+Dadzą one informację, czy efekt działania jest taki jaki oczekujemy, a w przeciwnym razie wskażą gdzie pojawił się błąd. 
 Istnieje też dodatkowa reguła - jeżeli znajdziesz błąd w kodzie od razu napisz test jednostkowy.
 
 Zobaczmy jak działają testy jednostkowe na przykładzie funkcji `nowy_prostokat()` oraz `powierzchnia()` stworzonych w sekcji \@ref(oop).
@@ -52,7 +52,7 @@ Zawiera on szereg funkcji sprawdzających czy działanie naszych funkcji jest zg
 Funkcje w tym pakiecie rozpoczynają się od prefiksu `expect_` (oczekuj).
 
 W przypadku funkcji `powierzchnia()` oczekujemy, że wynik będzie zawierał tylko jeden element.
-Możemy to sprawdźić za pomocą funkcji `expect_length()`.
+Możemy to sprawdzić za pomocą funkcji `expect_length()`.
 
 
 ```r
@@ -86,7 +86,7 @@ expect_error(nowy_prostokat(1, 2, 3, 6))
 ```
 
 W przypadku, gdy wywołanie funkcji zwróci błąd, `expect_error()` nic nie zwróci.
-Natomiast, jeżeli wywołania funkcji nie zwróci błędu, `expect_error()` zatrzyma swoje działanie i zwóci komunikat.
+Natomiast, jeżeli wywołania funkcji nie zwróci błędu, `expect_error()` zatrzyma swoje działanie i zwróci komunikat.
 Odpowiednikami `expect_error()` dla ostrzeżeń jest `expect_warning()`, a dla wiadomości `expect_message()`.
 
 Pozostałe funkcje z tego pakietu są wymienione i opisane na stronie https://testthat.r-lib.org/reference/index.html.
@@ -112,7 +112,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 ```r
 system.time(mean(1:100000000))
 #>    user  system elapsed 
-#>   0.568   0.000   0.568
+#>   0.572   0.000   0.572
 ```
 
 W efekcie dostajemy trzy wartości - `user`, `system` i `elapsed`. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.
@@ -150,7 +150,7 @@ mi_do_km2 = function(odl_mile){
 
 Dwie powyższe funkcje można porównać używając `system.time()`. 
 Nie zawsze jednak to wystarczy - ta sama funkcja wykonana dwa razy może mieć różny czas obliczeń.<!--why??-->
-Dodatkowo, oprócz czasu wykonywania funkcji może nas interesować zużycie zasobów, takich jak pamięc operacyjna.
+Dodatkowo, oprócz czasu wykonywania funkcji może nas interesować zużycie zasobów, takich jak pamięć operacyjna.
 Do takiego celu powstała funkcja `mark()` z pakietu **bench** [@R-bench], która wykonuje funkcje wiele razy przed zwróceniem wyniku.
 
 Przyjmuje ona wywołania funkcji, które chcemy porównać.
@@ -168,8 +168,8 @@ wynik_1
 #> # A tibble: 2 x 10
 #>   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr
 #>   <chr>      <bch:> <bch:> <bch:> <bch:>     <dbl> <bch:byt> <dbl> <int>
-#> 1 mi_do_km1… 1.41µs 1.98µs 1.69µs 34.3µs   505307.     117KB     0 10000
-#> 2 mi_do_km2… 1.05µs 1.31µs 1.18µs 28.5µs   764282.     222KB     0 10000
+#> 1 mi_do_km1… 1.43µs 1.99µs  1.7µs 81.8µs   503123.     117KB     0 10000
+#> 2 mi_do_km2… 1.03µs 1.32µs 1.18µs 24.2µs   756880.     222KB     0 10000
 #> # … with 1 more variable: total_time <bch:tm>
 ```
 
@@ -184,7 +184,7 @@ Zawiera ona szereg charakterystyk, w tym:
 - `mem_alloc` - pamięć użyta przez wywołanie funkcji
 - `n_itr` - liczba powtórzeń wywołania funkcji
 
-Wynik działania funkcji `mark()` pozwala na zauważnie, że na tym przykładzie funkcja `mi_do_km2` jest ok. 30% szybsza od `mi_do_km1`.
+Wynik działania funkcji `mark()` pozwala na zauważenie, że na tym przykładzie funkcja `mi_do_km2` jest ok. 30% szybsza od `mi_do_km1`.
 Czasami możliwe jest, że jakaś funkcja działa relatywnie szybko na małych danych, ale dużo wolniej na większych danych wejściowych.
 Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na większej liście, np. z wartościami od 0 do 10000 co 1.
 
@@ -199,15 +199,15 @@ wynik_2 = mark(
 #> disabled.
 wynik_2
 #> # A tibble: 2 x 10
-#>   expression   min    mean median     max `itr/sec` mem_alloc  n_gc n_itr
-#>   <chr>      <bch> <bch:t> <bch:> <bch:t>     <dbl> <bch:byt> <dbl> <int>
-#> 1 mi_do_km1… 478ms 483.5ms  483ms 488.6ms      2.07     382MB    16     2
-#> 2 mi_do_km2… 902µs   1.1ms  940µs  10.4ms    911.      78.2KB     9   456
+#>   expression   min     mean median      max `itr/sec` mem_alloc  n_gc n_itr
+#>   <chr>      <bch> <bch:tm> <bch:> <bch:tm>     <dbl> <bch:byt> <dbl> <int>
+#> 1 mi_do_km1… 475ms 481.79ms  482ms 488.82ms      2.08     382MB    16     2
+#> 2 mi_do_km2… 897µs   1.09ms  944µs   9.41ms    917.      78.2KB     9   459
 #> # … with 1 more variable: total_time <bch:tm>
 ```
 
-W tym przypadku róznica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
-Funkcja `mi_do_km1` jest w stanie wykonać tylko 2.07 operacji na sekundę, przy aż 911.01 operacji na sekundę funkcji `mi_do_km2`.
+W tym przypadku różnica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
+Funkcja `mi_do_km1` jest w stanie wykonać tylko 2.08 operacji na sekundę, przy aż 917.41 operacji na sekundę funkcji `mi_do_km2`.
 Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
 
 
@@ -223,14 +223,14 @@ Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej
 #> # A tibble: 8 x 11
 #>   expression     x      min     mean   median      max `itr/sec` mem_alloc
 #>   <chr>      <dbl> <bch:tm> <bch:tm> <bch:tm> <bch:tm>     <dbl> <bch:byt>
-#> 1 mi_do_km1…    10    3.9µs   5.27µs   4.78µs  78.95µs 189855.          0B
-#> 2 mi_do_km2…    10   1.73µs   2.06µs   1.91µs  24.09µs 486581.          0B
-#> 3 mi_do_km1…   100  67.77µs  78.53µs  75.65µs 228.02µs  12735.     43.16KB
-#> 4 mi_do_km2…   100   9.16µs  10.48µs     10µs 430.98µs  95397.        856B
-#> 5 mi_do_km1…  1000   4.43ms   4.72ms   4.73ms   5.05ms    212.      3.87MB
-#> 6 mi_do_km2…  1000  85.93µs  96.39µs  92.52µs 490.92µs  10375.      7.87KB
-#> 7 mi_do_km1… 10000 583.55ms 583.55ms 583.55ms 583.55ms      1.71  382.04MB
-#> 8 mi_do_km2… 10000 890.32µs   1.02ms 925.83µs   5.93ms    981.     78.18KB
+#> 1 mi_do_km1…    10    3.9µs   5.11µs   4.66µs 133.64µs 195590.          0B
+#> 2 mi_do_km2…    10   1.74µs   2.19µs   1.96µs  31.24µs 457306.          0B
+#> 3 mi_do_km1…   100  67.67µs  78.75µs   74.4µs 278.11µs  12699.     43.16KB
+#> 4 mi_do_km2…   100   9.16µs  10.73µs  10.03µs  95.22µs  93203.        856B
+#> 5 mi_do_km1…  1000   4.49ms   5.06ms   4.88ms   8.33ms    198.      3.87MB
+#> 6 mi_do_km2…  1000  86.15µs 102.63µs  93.64µs 280.91µs   9743.      7.87KB
+#> 7 mi_do_km1… 10000 621.22ms 621.22ms 621.22ms 621.22ms      1.61  382.04MB
+#> 8 mi_do_km2… 10000 886.44µs   1.06ms 959.03µs   5.69ms    945.     78.18KB
 #> # … with 3 more variables: n_gc <dbl>, n_itr <int>, total_time <bch:tm>
 ```
 

@@ -347,7 +347,7 @@ Testy jednostkowe są najczęściej stosowane w przypadku budowania pakietów (s
 Przykładowo, napisaliśmy nową funkcję, która wykonuje złożone operacje i, po wielu sprawdzeniach, wiemy, że daje poprawne wyniki.
 Po kilku miesiącach wpadliśmy na pomysł jak zwiększyć wydajność naszej funkcji.
 W tym momencie wystarczy już tylko stworzyć nową implementację i użyć wcześniej zbudowanych testów.
-Dadzą one informację, czy efekt działania jest taki jaki oczekujemy, a w przciwnym razie wskażą gdzie pojawił się błąd.
+Dadzą one informację, czy efekt działania jest taki jaki oczekujemy, a w przeciwnym razie wskażą gdzie pojawił się błąd.
 Istnieje też dodatkowa reguła - jeżeli znajdziesz błąd w kodzie od razu napisz test jednostkowy.</p>
 <p>Zobaczmy jak działają testy jednostkowe na przykładzie funkcji <code>nowy_prostokat()</code> oraz <code>powierzchnia()</code> stworzonych w sekcji <a href="zlozone-funkcje.html#oop">11.3</a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">nowy_prostokat =<span class="st"> </span><span class="cf">function</span>(xmin, ymin, xmax, ymax){
@@ -374,7 +374,7 @@ powierzchnia.prostokat =<span class="st"> </span><span class="cf">function</span
 <p>Zawiera on szereg funkcji sprawdzających czy działanie naszych funkcji jest zgodne z oczekiwaniem.
 Funkcje w tym pakiecie rozpoczynają się od prefiksu <code>expect_</code> (oczekuj).</p>
 <p>W przypadku funkcji <code>powierzchnia()</code> oczekujemy, że wynik będzie zawierał tylko jeden element.
-Możemy to sprawdźić za pomocą funkcji <code>expect_length()</code>.</p>
+Możemy to sprawdzić za pomocą funkcji <code>expect_length()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">5</span>)
 <span class="kw">expect_length</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">1</span>)</code></pre>
 <p>Jeżeli wynik ma długość jeden to wówczas nic się nie stane.
@@ -391,7 +391,7 @@ Jej działanie jest przedstawione poniżej.</p>
 <span class="kw">expect_error</span>(<span class="kw">nowy_prostokat</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">6</span>))
 <span class="co">#&gt; Error: `nowy_prostokat(1, 2, 3, 6)` did not throw an error.</span></code></pre>
 <p>W przypadku, gdy wywołanie funkcji zwróci błąd, <code>expect_error()</code> nic nie zwróci.
-Natomiast, jeżeli wywołania funkcji nie zwróci błędu, <code>expect_error()</code> zatrzyma swoje działanie i zwóci komunikat.
+Natomiast, jeżeli wywołania funkcji nie zwróci błędu, <code>expect_error()</code> zatrzyma swoje działanie i zwróci komunikat.
 Odpowiednikami <code>expect_error()</code> dla ostrzeżeń jest <code>expect_warning()</code>, a dla wiadomości <code>expect_message()</code>.</p>
 <p>Pozostałe funkcje z tego pakietu są wymienione i opisane na stronie <a href="https://testthat.r-lib.org/reference/index.html" class="uri">https://testthat.r-lib.org/reference/index.html</a>.</p>
 <!-- benchmarking -->
@@ -407,7 +407,7 @@ Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej fu
 <p>Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))
 <span class="co">#&gt;    user  system elapsed </span>
-<span class="co">#&gt;   0.568   0.000   0.568</span></code></pre>
+<span class="co">#&gt;   0.572   0.000   0.572</span></code></pre>
 <p>W efekcie dostajemy trzy wartości - <code>user</code>, <code>system</code> i <code>elapsed</code>. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.</p>
 <p>Benchmarking jest często używany w sytuacji, gdy istnieje kilka funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
 Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.</p>
@@ -431,7 +431,7 @@ Następnie kolejne przeliczone wartości są wstawiane w odpowiednie miejsca wek
 }</code></pre>
 <p>Dwie powyższe funkcje można porównać używając <code>system.time()</code>.
 Nie zawsze jednak to wystarczy - ta sama funkcja wykonana dwa razy może mieć różny czas obliczeń.<!--why??-->
-Dodatkowo, oprócz czasu wykonywania funkcji może nas interesować zużycie zasobów, takich jak pamięc operacyjna.
+Dodatkowo, oprócz czasu wykonywania funkcji może nas interesować zużycie zasobów, takich jak pamięć operacyjna.
 Do takiego celu powstała funkcja <code>mark()</code> z pakietu <strong>bench</strong> <span class="citation">(Hester <a href="#ref-R-bench">2018</a>)</span>, która wykonuje funkcje wiele razy przed zwróceniem wyniku.</p>
 <p>Przyjmuje ona wywołania funkcji, które chcemy porównać.
 Poniżej nastąpi porównanie funkcji <code>mi_do_km1</code> i <code>mi_do_km2</code>, w przypadku gdy jako dane wejściowe zostanie podana lista z wartościami 142, 63, 121.</p>
@@ -445,8 +445,8 @@ wynik_<span class="dv">1</span>
 <span class="co">#&gt; # A tibble: 2 x 10</span>
 <span class="co">#&gt;   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 1.41µs 1.98µs 1.69µs 34.3µs   505307.     117KB     0 10000</span>
-<span class="co">#&gt; 2 mi_do_km2… 1.05µs 1.31µs 1.18µs 28.5µs   764282.     222KB     0 10000</span>
+<span class="co">#&gt; 1 mi_do_km1… 1.43µs 1.99µs  1.7µs 81.8µs   503123.     117KB     0 10000</span>
+<span class="co">#&gt; 2 mi_do_km2… 1.03µs 1.32µs 1.18µs 24.2µs   756880.     222KB     0 10000</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <p>Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
 Zawiera ona szereg charakterystyk, w tym:</p>
@@ -459,7 +459,7 @@ Zawiera ona szereg charakterystyk, w tym:</p>
 <li><code>mem_alloc</code> - pamięć użyta przez wywołanie funkcji</li>
 <li><code>n_itr</code> - liczba powtórzeń wywołania funkcji</li>
 </ul>
-<p>Wynik działania funkcji <code>mark()</code> pozwala na zauważnie, że na tym przykładzie funkcja <code>mi_do_km2</code> jest ok. 30% szybsza od <code>mi_do_km1</code>.
+<p>Wynik działania funkcji <code>mark()</code> pozwala na zauważenie, że na tym przykładzie funkcja <code>mi_do_km2</code> jest ok. 30% szybsza od <code>mi_do_km1</code>.
 Czasami możliwe jest, że jakaś funkcja działa relatywnie szybko na małych danych, ale dużo wolniej na większych danych wejściowych.
 Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na większej liście, np. z wartościami od 0 do 10000 co 1.</p>
 <pre class="sourceCode r"><code class="sourceCode r">odl_mile2 =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10000</span>)
@@ -471,13 +471,13 @@ wynik_<span class="dv">2</span> =<span class="st"> </span><span class="kw">mark<
 <span class="co">#&gt; disabled.</span>
 wynik_<span class="dv">2</span>
 <span class="co">#&gt; # A tibble: 2 x 10</span>
-<span class="co">#&gt;   expression   min    mean median     max `itr/sec` mem_alloc  n_gc n_itr</span>
-<span class="co">#&gt;   &lt;chr&gt;      &lt;bch&gt; &lt;bch:t&gt; &lt;bch:&gt; &lt;bch:t&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 478ms 483.5ms  483ms 488.6ms      2.07     382MB    16     2</span>
-<span class="co">#&gt; 2 mi_do_km2… 902µs   1.1ms  940µs  10.4ms    911.      78.2KB     9   456</span>
+<span class="co">#&gt;   expression   min     mean median      max `itr/sec` mem_alloc  n_gc n_itr</span>
+<span class="co">#&gt;   &lt;chr&gt;      &lt;bch&gt; &lt;bch:tm&gt; &lt;bch:&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
+<span class="co">#&gt; 1 mi_do_km1… 475ms 481.79ms  482ms 488.82ms      2.08     382MB    16     2</span>
+<span class="co">#&gt; 2 mi_do_km2… 897µs   1.09ms  944µs   9.41ms    917.      78.2KB     9   459</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
-<p>W tym przypadku róznica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
-Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 2.07 operacji na sekundę, przy aż 911.01 operacji na sekundę funkcji <code>mi_do_km2</code>.
+<p>W tym przypadku różnica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
+Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 2.08 operacji na sekundę, przy aż 917.41 operacji na sekundę funkcji <code>mi_do_km2</code>.
 Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż <code>mi_do_km2</code>.</p>
 <pre><code>#&gt; Running with:
 #&gt;       x
@@ -490,14 +490,14 @@ Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) r
 #&gt; # A tibble: 8 x 11
 #&gt;   expression     x      min     mean   median      max `itr/sec` mem_alloc
 #&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;
-#&gt; 1 mi_do_km1…    10    3.9µs   5.27µs   4.78µs  78.95µs 189855.          0B
-#&gt; 2 mi_do_km2…    10   1.73µs   2.06µs   1.91µs  24.09µs 486581.          0B
-#&gt; 3 mi_do_km1…   100  67.77µs  78.53µs  75.65µs 228.02µs  12735.     43.16KB
-#&gt; 4 mi_do_km2…   100   9.16µs  10.48µs     10µs 430.98µs  95397.        856B
-#&gt; 5 mi_do_km1…  1000   4.43ms   4.72ms   4.73ms   5.05ms    212.      3.87MB
-#&gt; 6 mi_do_km2…  1000  85.93µs  96.39µs  92.52µs 490.92µs  10375.      7.87KB
-#&gt; 7 mi_do_km1… 10000 583.55ms 583.55ms 583.55ms 583.55ms      1.71  382.04MB
-#&gt; 8 mi_do_km2… 10000 890.32µs   1.02ms 925.83µs   5.93ms    981.     78.18KB
+#&gt; 1 mi_do_km1…    10    3.9µs   5.11µs   4.66µs 133.64µs 195590.          0B
+#&gt; 2 mi_do_km2…    10   1.74µs   2.19µs   1.96µs  31.24µs 457306.          0B
+#&gt; 3 mi_do_km1…   100  67.67µs  78.75µs   74.4µs 278.11µs  12699.     43.16KB
+#&gt; 4 mi_do_km2…   100   9.16µs  10.73µs  10.03µs  95.22µs  93203.        856B
+#&gt; 5 mi_do_km1…  1000   4.49ms   5.06ms   4.88ms   8.33ms    198.      3.87MB
+#&gt; 6 mi_do_km2…  1000  86.15µs 102.63µs  93.64µs 280.91µs   9743.      7.87KB
+#&gt; 7 mi_do_km1… 10000 621.22ms 621.22ms 621.22ms 621.22ms      1.61  382.04MB
+#&gt; 8 mi_do_km2… 10000 886.44µs   1.06ms 959.03µs   5.69ms    945.     78.18KB
 #&gt; # … with 3 more variables: n_gc &lt;dbl&gt;, n_itr &lt;int&gt;, total_time &lt;bch:tm&gt;</code></pre>
 </div>
 <div id="profiling" class="section level2">

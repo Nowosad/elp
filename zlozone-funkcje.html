@@ -338,8 +338,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">11</span> Złożone funkcje</h1>
 <p>Funkcje są podstawą działania w językach programowania.
 Rozdział <a href="funkcje.html#funkcje">3</a> wprowadził do podstawowych kwestii związanych z funkcjami - jak się używa wbudowanych funkcji oraz jak się tworzy proste nowe funkcje.
-Tworzenie bardziej złożnych funkcji czy też zbiorów funkcji wymaga przemyślenia tego nie tylko jak się będą one nazywać, ale też tego jak mogą one zostać użyte przez inne osoby.
-W tym rozdziale zostanie podanych kilka porad w jaki sposób budować funkcje przyjazne innym użytownikom oraz w jaki sposób tworzyć odpowiednie komunikaty błędów, ostrzeżeń czy wiadomości.
+Tworzenie bardziej złożonych funkcji czy też zbiorów funkcji wymaga przemyślenia tego nie tylko jak się będą one nazywać, ale też tego jak mogą one zostać użyte przez inne osoby.
+W tym rozdziale zostanie podanych kilka porad w jaki sposób budować funkcje przyjazne innym użytkownikom oraz w jaki sposób tworzyć odpowiednie komunikaty błędów, ostrzeżeń czy wiadomości.
 Dodatkowo, nastąpi także wprowadzenie do kolejnego paradygmatu programowania - programowania obiektowego.</p>
 <!-- solve a single problem -->
 <!-- 07-oo https://blog.rstudio.com/2019/02/06/rstudio-conf-2019-workshops/ -->
@@ -372,7 +372,7 @@ Domyślamy się jednak, że większość użytkowników jest zainteresowana uży
 <p>W tej sytuacji, gdy użytkownik poda tylko jeden argument do funkcji <code>potegowanie()</code> to podany wektor zostanie podniesiony do kwadratu.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">potegowanie</span>(<span class="dv">2</span>)
 <span class="co">#&gt; [1] 4</span></code></pre>
-<p>Będzie to identyczne z działaniem funkcji, gdy użytkownik ręcznie zdefinuje drugi argument jako dwa (<code>w = 2</code>).</p>
+<p>Będzie to identyczne z działaniem funkcji, gdy użytkownik ręcznie zdefiniuje drugi argument jako dwa (<code>w = 2</code>).</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">potegowanie</span>(<span class="dv">2</span>, <span class="dt">w =</span> <span class="dv">2</span>)
 <span class="co">#&gt; [1] 4</span></code></pre>
 <p>W sytuacji, gdy użytkownika interesuje inna wartość <code>w</code> niż domyślna, może on ją zmodyfikować i otrzyma odpowiedni wynik.</p>
@@ -571,7 +571,7 @@ Poniżej dodano metodę domyślną - w przypadku, gdy dla wejściowego obiektu n
 
 <div class="rmdinfo">
 powierzchnia.default = function(x) {
-stop(“Funkcja <code>powierzchnia</code> ma wsparcie tylko dla obieków o klasie <code>prostokąt</code>”)
+stop(“Funkcja <code>powierzchnia</code> ma wsparcie tylko dla obiektów o klasie <code>prostokąt</code>”)
 }
 </div>
 
@@ -589,7 +589,7 @@ stop(“Funkcja <code>powierzchnia</code> ma wsparcie tylko dla obieków o klasi
 Dlatego też ważnym elementem jest stworzenie konstruktora - funkcji, której celem jest zbudowanie poprawnego obiektu naszej klasy, a w przypadku podania złych argumentów wejściowych poinformowanie użytkownika co jest nie tak.</p>
 <p>Poniżej znajduje się konstruktor o nazwie <code>nowy_prostokąt()</code>. Przyjmuje on wartości czterech współrzędnych, a następnie wykonuje szereg sprawdzeń ich poprawności:</p>
 <ul>
-<li>Czy wszyskie argumenty są typu numerycznego?</li>
+<li>Czy wszystkie argumenty są typu numerycznego?</li>
 <li>Czy każdy argument ma tylko jeden element?</li>
 <li>Czy minimalna wartość współrzędnej x jest mniejsza od maksymalnej?</li>
 <li>Czy minimalna wartość współrzędnej y jest mniejsza od maksymalnej?</li>

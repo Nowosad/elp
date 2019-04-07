@@ -5,8 +5,8 @@
 
 Funkcje są podstawą działania w językach programowania.
 Rozdział \@ref(funkcje) wprowadził do podstawowych kwestii związanych z funkcjami - jak się używa wbudowanych funkcji oraz jak się tworzy proste nowe funkcje.
-Tworzenie bardziej złożnych funkcji czy też zbiorów funkcji wymaga przemyślenia tego nie tylko jak się będą one nazywać, ale też tego jak mogą one zostać użyte przez inne osoby.
-W tym rozdziale zostanie podanych kilka porad w jaki sposób budować funkcje przyjazne innym użytownikom oraz w jaki sposób tworzyć odpowiednie komunikaty błędów, ostrzeżeń czy wiadomości.
+Tworzenie bardziej złożonych funkcji czy też zbiorów funkcji wymaga przemyślenia tego nie tylko jak się będą one nazywać, ale też tego jak mogą one zostać użyte przez inne osoby.
+W tym rozdziale zostanie podanych kilka porad w jaki sposób budować funkcje przyjazne innym użytkownikom oraz w jaki sposób tworzyć odpowiednie komunikaty błędów, ostrzeżeń czy wiadomości.
 Dodatkowo, nastąpi także wprowadzenie do kolejnego paradygmatu programowania - programowania obiektowego.
 
 <!-- solve a single problem -->
@@ -59,7 +59,7 @@ potegowanie(2)
 #> [1] 4
 ```
 
-Będzie to identyczne z działaniem funkcji, gdy użytkownik ręcznie zdefinuje drugi argument jako dwa (`w = 2`).
+Będzie to identyczne z działaniem funkcji, gdy użytkownik ręcznie zdefiniuje drugi argument jako dwa (`w = 2`).
 
 
 ```r
@@ -367,7 +367,7 @@ W przypadku, gdy dla obiektu wejściowego nie istnieje metoda to wówczas wykony
 Poniżej dodano metodę domyślną - w przypadku, gdy dla wejściowego obiektu nie ma metody to pojawi się poniższy komunikat błędu.
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">powierzchnia.default = function(x) {
-  stop("Funkcja `powierzchnia` ma wsparcie tylko dla obieków o klasie `prostokąt`")
+  stop("Funkcja `powierzchnia` ma wsparcie tylko dla obiektów o klasie `prostokąt`")
 }</div>\EndKnitrBlock{rmdinfo}
 
 Sprawdźmy działanie domyślnej metody podając macierz jako obiekt wejściowy.
@@ -389,7 +389,7 @@ Dlatego też ważnym elementem jest stworzenie konstruktora - funkcji, której c
 
 Poniżej znajduje się konstruktor o nazwie `nowy_prostokąt()`. Przyjmuje on wartości czterech współrzędnych, a następnie wykonuje szereg sprawdzeń ich poprawności:
 
-- Czy wszyskie argumenty są typu numerycznego?
+- Czy wszystkie argumenty są typu numerycznego?
 - Czy każdy argument ma tylko jeden element?
 - Czy minimalna wartość współrzędnej x jest mniejsza od maksymalnej?
 - Czy minimalna wartość współrzędnej y jest mniejsza od maksymalnej?
