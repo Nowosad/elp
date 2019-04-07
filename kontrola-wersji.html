@@ -284,10 +284,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.1.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodawanie-zmian"><i class="fa fa-check"></i><b>15.1.3</b> Dodawanie zmian</a></li>
 <li class="chapter" data-level="15.1.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sprawdzanie-zmian"><i class="fa fa-check"></i><b>15.1.4</b> Sprawdzanie zmian</a></li>
 <li class="chapter" data-level="15.1.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zatwierdzanie-zmian"><i class="fa fa-check"></i><b>15.1.5</b> Zatwierdzanie zmian</a></li>
-<li class="chapter" data-level="15.1.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rozgaezienia"><i class="fa fa-check"></i><b>15.1.6</b> Rozgałęzienia</a></li>
+<li class="chapter" data-level="15.1.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#branches"><i class="fa fa-check"></i><b>15.1.6</b> Rozgałęzienia</a></li>
 <li class="chapter" data-level="15.1.7" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-zdalne"><i class="fa fa-check"></i><b>15.1.7</b> Repozytorium zdalne</a></li>
-<li class="chapter" data-level="15.1.8" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#wysyanie-zmian"><i class="fa fa-check"></i><b>15.1.8</b> Wysyłanie zmian</a></li>
-<li class="chapter" data-level="15.1.9" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#aktualizowanie"><i class="fa fa-check"></i><b>15.1.9</b> Aktualizowanie</a></li>
+<li class="chapter" data-level="15.1.8" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#wysylanie-zmian"><i class="fa fa-check"></i><b>15.1.8</b> Wysyłanie zmian</a></li>
+<li class="chapter" data-level="15.1.9" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#aktualizowanie-zmian"><i class="fa fa-check"></i><b>15.1.9</b> Aktualizowanie zmian</a></li>
 </ul></li>
 <li class="chapter" data-level="15.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>15.2</b> GitHub</a><ul>
 <li class="chapter" data-level="15.2.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#tworzenie-zdanego-repo"><i class="fa fa-check"></i><b>15.2.1</b> Tworzenie zdanego repo</a></li>
@@ -408,7 +408,7 @@ Wymaga to dodania wiadomości, która opisuje wprowadzone zmiany.
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># zawierdzenie dodanych zmian</span>
 <span class="fu">git</span> commit -m <span class="st">&quot;opis wprowadzonych zmian&quot;</span></code></pre>
 </div>
-<div id="rozgaezienia" class="section level3">
+<div id="branches" class="section level3">
 <h3><span class="header-section-number">15.1.6</span> Rozgałęzienia</h3>
 <p>Częstą sytuacją jest posiadanie stabilnego, działającego kodu, ale co do którego mamy pomysły jak go ulepszyć, np. zwiększyć jego wydajność.
 Wtedy edycja poprawnego kodu może nie przynieść najlepszych wyników - co jeżeli nasz pomysł się jednak nie sprawdzi?
@@ -445,7 +445,7 @@ W pierwszym z nich repozytorium zdane już istnieje, a my chcemy się do niego
 <span class="fu">git</span> remote add origin sciezka_do_zdalnego_repo</code></pre>
 <!-- zmiana z git remote set-url origin git@github.com:User/UserRepo.git -->
 </div>
-<div id="wysyanie-zmian" class="section level3">
+<div id="wysylanie-zmian" class="section level3">
 <h3><span class="header-section-number">15.1.8</span> Wysyłanie zmian</h3>
 <p>Obecne dodane i zatwierdzone zmiany znajdują się jedynie w repozytorium lokalnym.
 Konieczne jest ich wysłanie do zdalnego repozytorium.</p>
@@ -453,8 +453,8 @@ Konieczne jest ich wysłanie do zdalnego repozytorium.</p>
 <span class="fu">git</span> push</code></pre>
 <!--skrót od git push origin master -->
 </div>
-<div id="aktualizowanie" class="section level3">
-<h3><span class="header-section-number">15.1.9</span> Aktualizowanie</h3>
+<div id="aktualizowanie-zmian" class="section level3">
+<h3><span class="header-section-number">15.1.9</span> Aktualizowanie zmian</h3>
 <p>Zdalne repozytoria mogą pozwalać na nadawanie różnych uprawnień użytkownikom.
 Możliwe jest określenie, że inne osoby mogą nanosić zmiany w zdalnych repozytoriach.
 Dodatkowo, jedna osoba może zmieniać zdalne repozytoria używając różnych komputerów.
@@ -556,6 +556,16 @@ Dodatkowo, w RStudio pojawi się nowy panel “Git” (rycina <a href="kontrola
 Rycina 15.5: Panel Git w RStudio.
 </p>
 </div>
+<p>W tym panelu są wyświetlone (1) wszystkie pliki, które są w folderze projektu, ale nie w repozytorium Git (żółte ikony statusu), (2) pliki, które chcemy dodać do repozytorium (zielona ikona statusu), oraz (3) pliki, które są już w repozytorium, ale zostały zmodyfikowane (niebieska ikona statusu).
+Ten panel nie pokazuje plików, które nie zostały ostatnio zmienione.
+Pierwsza kolumna w tym panelu (<em>Staged</em>) domyślnie zawiera same nieodhaczone białe pola.
+Wybór tego pola (jego odhaczenie) jest równoznaczne z dodaniem zmian (więcej informacji można znaleźć w sekcji <a href="#dodanie-zmian"><strong>??</strong></a>).</p>
+<p>Dodatkowo nad listą plików znajduje się szereg ikon.
+Pierwsze dwie z nich (<em>Diff</em> i <em>Commit</em>) wyświetlają okno, które pozwala sprawdzić jakie zmiany zaszły w plikach od ostatniego ich dodania (dolny panel; sekcja <a href="kontrola-wersji.html#sprawdzanie-zmian">15.1.4</a>) oraz zatwierdzić zmiany (prawy panel; sekcja <a href="kontrola-wersji.html#zatwierdzanie-zmian">15.1.5</a>).
+Kolejne, strzałki w dół i górę, oznaczają odpowiednio aktualizowanie zmian (sekcja <a href="kontrola-wersji.html#aktualizowanie-zmian">15.1.9</a>) i wysyłanie zmian (sekcja <a href="kontrola-wersji.html#wysylanie-zmian">15.1.8</a>).
+Ikona zegarka otwiera nowe okno, w którym można zobaczyć jakie zmiany zaszły w kolejnych zatwierdzeniach zmian (<em>commitach</em>).
+Następne ikony pozwalają na określenie plików do ignorowania (ikona koła zębatego) oraz tworzenie nowych rozgałęzień.
+Przedostatni element tego okna to nazwa obecnie ustawionego rozgałęzienia, a po kliknięciu tej nazwy możliwa jest przejście do innego rozgałęzienia (sekcja <a href="kontrola-wersji.html#branches">15.1.6</a>).</p>
 </div>
 <div id="sposob-pracy" class="section level2">
 <h2><span class="header-section-number">15.4</span> Sposób pracy</h2>
