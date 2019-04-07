@@ -256,8 +256,8 @@ Możliwe jest również łączenie możliwości serwisu GitHub z innymi serwisam
 
 ## Kontrola wersji w RStudio {#rstudio-git}
 
-<!-- intro Use a Git client, if you like -->
-<!-- workflow -->
+RStudio posiada wbudowane, uproszczone graficzne wspacie dla systemu Git.^[Istnieje też szereg programów, których głównym celem jest ułatwienie pracy z systemem Git.
+Nazwane są one klientami Git, wśród których można wymienić [GitKraken](https://www.gitkraken.com/) i [Sourcetree](https://www.sourcetreeapp.com/).] 
 
 ## Sposób pracy
 
