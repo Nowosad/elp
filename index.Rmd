@@ -75,9 +75,6 @@ sudo apt install git
 sudo dnf install git
 ```
 
-Dodatkowo, warto stworzyć konto na stronie **GitHub** poprzez adres https://github.com/join. 
-GitHub jest serwisem internetowym wspierającym tworzenie oraz współpracę przy tworzeniu programów komputerowych.
-
 ## Styl książki {-}
 
 W całej książce stosowana jest konwencja, w której `fun()` oznacza funkcje, `obi` oznacza nazwy obiektów, nazwy zmiennych oraz argumentów funkcji, a `sci/` oznacza ścieżki do plików.

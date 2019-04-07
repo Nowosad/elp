@@ -187,7 +187,15 @@ git pull
 ## GitHub
 
 GitHub jest serwisem internetowym pozwalającym na przechowywanie i interakcję z repozytoriami w systemie kontroli wersji Git.
+Posiada on dwa rodzaje repozytorów - publiczne (ang. *public*), które może każdy zobaczyć oraz prywatne (ang. *private*) dostępne tylko dla osób z odpowiednimi uprawnieniami.
 
+Repozytoria połączone są z kontami użytkowników (np. https://github.com/Nowosad to moje konto, gdzie "Nowosad" oznacza nazwę użytkownika) lub organizacjami (np. https://github.com/r-spatialecology to konto organizacji "r-spatialecology").
+Pod adresem https://github.com/join można założyć nowe konto użytkownika.
+
+Posiadanie konta użytkownika pozwala na, między innymi, tworzenie nowych repozytoriów i zarządzanie nimi.
+Oprócz dostępu do kodu i jego zmian, GitHub oferuje także szereg dodatkowych możliwości.
+Obejmuje to, między innymi, automatyczne wyświetlanie plików README, śledzenie spraw (ang. *issue tracking*), zapytania aktualizacyjne (ang. *pull request*), wizualizacje zmian, czy nawet tworzenie stron internetowych.
+<!-- +ci etc -->
 
 
 <!-- co to pull request -->
@@ -195,12 +203,11 @@ GitHub jest serwisem internetowym pozwalającym na przechowywanie i interakcję 
 <!-- create a ssh key -->
 <!-- fork -->
 
-Oprócz dostępu do kodu i jego zmian, GitHub oferuje szereg dodatkowych możliwości.
-Obejmuje to, między innymi, automatyczne wyświetlanie plików README, śledzenie spraw (ang. *issue tracking*), zapytania aktualizacyjne (ang. *pull request*), wizualizacje zmian, czy nawet tworzenie stron internetowych.
+
 
 ## Kontrola wersji w RStudio
 
-<!-- Use a Git client, if you like -->
+<!-- intro Use a Git client, if you like -->
 <!-- workflow -->
 
 ## Sposób pracy
