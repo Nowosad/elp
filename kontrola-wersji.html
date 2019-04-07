@@ -522,7 +522,7 @@ Pod zieloną ikoną <em>Clone or download</em> można dodatkowo znaleźć ście�
 </div>
 <div id="dodatkowe-mozliwosci-github" class="section level3">
 <h3><span class="header-section-number">15.2.3</span> Dodatkowe możliwości GitHub</h3>
-<p>W prawym górnym rogu okna repozytorium (rycina <a href="kontrola-wersji.html#fig:gh-new-repo4">15.4</a>) znajdują się trzy ikony - <em>Unwatch</em>, <em>Star</em>, <em>Fork</em>.
+<p>W prawym górnym rogu okna repozytorium (rycina <a href="kontrola-wersji.html#fig:gh-new-repo4">15.4</a>) znajdują się trzy ikony - <em>Watch</em>, <em>Star</em>, <em>Fork</em>.
 Pierwsza z nich pozwala na określenie czy chcemy dostawać powiadomienia na temat dyskusji prowadzonych wewnątrz danego repozytorium, takich jak utworzenie nowej sprawy.
 Druga ikona pozwala na oznaczanie interesujących repozytoriów i przez to ułatwiająca znajdowania podobnych projektów.
 Ostatnia ikona <em>Fork</em> oznacza w tym kontekście rozwidlenie.
@@ -537,8 +537,25 @@ W takiej sytuacji często opiera się to o (1) stworzenie rozwidlenia (ang. <em
 </div>
 <div id="rstudio-git" class="section level2">
 <h2><span class="header-section-number">15.3</span> Kontrola wersji w RStudio</h2>
-<!-- intro Use a Git client, if you like -->
-<!-- workflow -->
+<p>RStudio posiada wbudowane, uproszczone graficzne wspacie dla systemu Git.
+Istnieje też szereg programów, których głównym celem jest ułatwienie pracy z systemem Git.
+Nazwane są one klientami Git, wśród których można wymienić <a href="https://www.gitkraken.com/">GitKraken</a> i <a href="https://www.sourcetreeapp.com/">Sourcetree</a>.</p>
+<p>Najprostszym sposobem połączenia RStudio z systemem Git i serwisem GitHub jest stworzenie nowego projektu:</p>
+<ol style="list-style-type: decimal">
+<li>Kliknąć <code>File -&gt; New Project</code>.</li>
+<li>Wybrać <code>Version Control</code>.</li>
+<li>Wybrać <code>Git</code>.</li>
+<li>Podać ścieżkę do zdalnego repozytorium (adres HTTPS lub SSH) oraz wybrać miejsce na dysku, gdzie ma się ten projekt znajdować.</li>
+<li>Kliknąć <code>Create Project</code>.</li>
+</ol>
+<p>W efekcie zostanie utworzony nowy projekt RStudio, który jednocześnie jest lokalnym repozytorium Git.
+Dodatkowo, w RStudio pojawi się nowy panel “Git” (rycina <a href="kontrola-wersji.html#fig:rstudio-git">15.5</a>).</p>
+<div class="figure" style="text-align: center"><span id="fig:rstudio-git"></span>
+<img src="images/rstudio-git.png" alt="Panel Git w RStudio." width="100%" />
+<p class="caption">
+Rycina 15.5: Panel Git w RStudio.
+</p>
+</div>
 </div>
 <div id="sposob-pracy" class="section level2">
 <h2><span class="header-section-number">15.4</span> Sposób pracy</h2>
