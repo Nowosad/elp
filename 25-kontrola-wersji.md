@@ -225,10 +225,22 @@ Dodatkowo możliwe jest dodanie opisu repozytorium (ang. *description*), pliku R
 Po wybraniu potwierdzenia (*Create repository*) utworzone zostanie nowe, puste repozytorium (rycina \@ref(fig:gh-new-repo3)).
 
 <div class="figure" style="text-align: center">
-<img src="images/gh-new-repo2.png" alt="Nowe, puste repozytorium GitHub." width="100%" />
+<img src="images/gh-new-repo3.png" alt="Nowe, puste repozytorium GitHub." width="100%" />
 <p class="caption">(\#fig:gh-new-repo3)Nowe, puste repozytorium GitHub.</p>
 </div>
 
+Okno pustego repozytorium przedstawia cztery główne drogi pozwalające na dodanie zawartości:
+
+1. Szybka konfiguracja - tutaj podane są dwie możliwe ścieżki do zdalnego repozytorium. 
+Pierwsza z nich to adres HTTPS a druga to adres SSH.
+W sekcji \@ref(rstudio-git) zostanie wyjaśnione jak korzystać z szybkiej konfiguracji.
+2. Stworzenie nowego repozytorium używając linii komend. 
+Jest to używane w sytuacjach, gdy lokalna wersja repozytorium jeszcze nie istnieje.
+W tej sytuacji (1) tworzony jest nowy plik tekstowy `README.md`, (2) obecny katalog jest określany jako repozytorium Git, (3) plik `README.md` jest dodawany do repozytorium, (4) dodanie tego pliku jest zatwierdzone wraz z wiadomością `"first commit", (5) dodana jest ścieżka do zdalnego repozytorium, (6) następuje wysłanie zmian z lokalnego do zdalnego repozytorium.
+3. Wysłanie zmian z istniejącego repozytorium.
+Ta opcja przydaje się, gdy mamy już istniejące lokalne repozytorium, ale do którego nie ma jeszcze zdalnego repozytorium. 
+Tutaj następuje tylko (1) dodanie ścieżki do zdalnego repozytorium oraz (2) wysłanie zmian z lokalnego do zdalnego repozytorium.
+4. Import kodu z innego systemu kontroli wersji niż Git.
 
 Oprócz dostępu do kodu i jego zmian, GitHub oferuje także szereg dodatkowych możliwości.
 Obejmuje to, między innymi, automatyczne wyświetlanie plików README, śledzenie spraw (ang. *issue tracking*), zapytania aktualizacyjne (ang. *pull request*), wizualizacje zmian, czy nawet tworzenie stron internetowych.
@@ -242,7 +254,7 @@ Obejmuje to, między innymi, automatyczne wyświetlanie plików README, śledzen
 
 
 
-## Kontrola wersji w RStudio
+## Kontrola wersji w RStudio {@rstudio-git}
 
 <!-- intro Use a Git client, if you like -->
 <!-- workflow -->
