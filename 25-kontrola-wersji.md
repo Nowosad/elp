@@ -350,7 +350,25 @@ Następnie należy przekopiować do tego projektu wszystkie już istniejące pli
 
 Kolejne etapy pracy wyglądają identycznie jak w poprzedniej sekcji.
 
-<!-- ### Problemy z kontrolą wersji -->
+## Problemy z kontrolą wersji
+
+W ramach jednego projektu często posiadamy wiele plików z długą historią zmian, do tego nanoszonych przez szereg różnych osób.
+Jest to sytuacja w której dość prosto o wystąpienie problemów czy nieoczekiwanych (przez użytkownika) zachowań systemu kontroli wersji Git. 
+
+
+```bash
+>>> git push
+To https://github.com/YOU/REPO.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/YOU/REPO.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+
 
 <!-- block  -->
 <!-- when something go wrong -->

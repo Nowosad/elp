@@ -299,7 +299,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.4.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#nowy-projekt"><i class="fa fa-check"></i><b>15.4.1</b> Nowy projekt</a></li>
 <li class="chapter" data-level="15.4.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#istniejacy-projekt"><i class="fa fa-check"></i><b>15.4.2</b> Istniejący projekt</a></li>
 </ul></li>
-<li class="chapter" data-level="15.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zadania-13"><i class="fa fa-check"></i><b>15.5</b> Zadania</a></li>
+<li class="chapter" data-level="15.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#problemy-z-kontrola-wersji"><i class="fa fa-check"></i><b>15.5</b> Problemy z kontrolą wersji</a></li>
+<li class="chapter" data-level="15.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zadania-13"><i class="fa fa-check"></i><b>15.6</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>16</b> Tworzenie pakietów</a><ul>
 <li class="chapter" data-level="16.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>16.1</b> Rozwijanie pakietu</a></li>
@@ -607,16 +608,29 @@ Tą czynność warto wykonywać rzadziej niż poprzednią, ale też regularnie.<
 W takich przypadkach najprostszy sposób to stworzenie nowego repozytorium w serwisie GitHub oraz pustego, połączonego z nim nowego projektu RStudio.
 Następnie należy przekopiować do tego projektu wszystkie już istniejące pliki, dodać je (pole <em>Staged</em>), zatwierdzić oraz przesłać na zdalne repozytorium.</p>
 <p>Kolejne etapy pracy wyglądają identycznie jak w poprzedniej sekcji.</p>
-<!-- ### Problemy z kontrolą wersji -->
+</div>
+</div>
+<div id="problemy-z-kontrola-wersji" class="section level2">
+<h2><span class="header-section-number">15.5</span> Problemy z kontrolą wersji</h2>
+<p>W ramach jednego projektu często posiadamy wiele plików z długą historią zmian, do tego nanoszonych przez szereg różnych osób.
+Jest to sytuacja w której dość prosto o wystąpienie problemów czy nieoczekiwanych (przez użytkownika) zachowań systemu kontroli wersji Git.</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="op">&gt;&gt;&gt;</span> <span class="fu">git</span> push
+<span class="ex">To</span> https://github.com/YOU/REPO.git
+ ! [<span class="ex">rejected</span>]        master -<span class="op">&gt;</span> master (fetch first)
+<span class="ex">error</span>: failed to push some refs to <span class="st">&#39;https://github.com/YOU/REPO.git&#39;</span>
+<span class="ex">hint</span>: Updates were rejected because the remote contains work that you do
+<span class="ex">hint</span>: not have locally. This is usually caused by another repository pushing
+<span class="ex">hint</span>: to the same ref. You may want to first integrate the remote changes
+<span class="ex">hint</span>: (e.g., <span class="st">&#39;git pull ...&#39;</span>) <span class="ex">before</span> pushing again.
+<span class="ex">hint</span>: See the <span class="st">&#39;Note about fast-forwards&#39;</span> in <span class="st">&#39;git push --help&#39;</span> for details.</code></pre>
 <!-- block  -->
 <!-- when something go wrong -->
 <!-- stackoverflow git questions -->
 <!-- http://rogerdudler.github.io/git-guide/index.pl.html -->
 <!-- https://happygitwithr.com/ -->
 </div>
-</div>
 <div id="zadania-13" class="section level2">
-<h2><span class="header-section-number">15.5</span> Zadania</h2>
+<h2><span class="header-section-number">15.6</span> Zadania</h2>
 <!-- stwórz najprostszą stronę internetową -->
 
 </div>
