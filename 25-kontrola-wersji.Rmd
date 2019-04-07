@@ -307,7 +307,13 @@ Teraz można tworzyć nowe oraz edytować istniejące pliki.
 Po każdej wyraźnej zmianie plików (np. ulepszenie kodu, naprawa błędów, dodanie nowych możliwości) należy dodać zmiany oraz je zatwierdzić.
 Można to zrobić klikając pole *Staged* przy wybranych plikach oraz następnie ikonę *Commit*. 
 Teraz można dodać wiadomość opisująca zmiany jakie zaszły, oraz ją zatwierdzić klikając przycisk *Commit*.
+<!-- minimal but complete -->
 Zalecane jest, aby powyższą czynność wykonywać nawet wiele razy dziennie.
+
+```{block2 type="rmdinfo"}
+Często w folderze projektu możesz posiadać pliki, których nie chcesz dodawać do repozytorium.
+W takiej sytuacji dodaj ich nazwy do pliku `gitignore` i staną się one niewidoczne dla systemu Git.
+```
 
 Efektem powyższej operacji jest posiadanie zatwierdzonych zmian w lokalnym repozytorium, ale jeszcze ich brak w repozytorium zdalnym.
 Kolejnym krokiem jest przesłanie zmian na zdalne repozytorium.
