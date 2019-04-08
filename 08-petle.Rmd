@@ -441,10 +441,28 @@ for (i in c(1, 2, 3)){
 }
 ```
 
-<!-- stworz for 1 -->
-<!-- stworz for 2 -->
-<!-- stworz while 1 -->
-<!-- stworz for dla pierwszego przypadku funkcyjnego -->
-<!-- lapply 1 -->
-<!-- lapply 2 -->
-<!-- apply 1 -->
+6) Posiadasz listę zawierającą wartości temperatury w stopniach Fahrenheita, która została przedstawiona na początku sekcji \@ref(prog-fun). 
+Stwórz pętlę `for`, która zamieni te wartości na stopnie Celsjusza.
+
+7) Rozwiąż powyższe zadanie używając również pętli `while`.
+Dodatkowo: spróbuj rozwiązać to zadanie używając pętli `repeat`.
+
+
+8) Posiadasz listę zawierającą wartości odległości w milach lądowych, która została przedstawiona na początku sekcji \@ref(for-example). 
+Użyj metod programowania funkcyjnego, żeby przeliczyć jej wartości na kilometry.
+
+9) Posiadasz ramkę danych `pomiary` zawierającą wartości temperatury dla kolejnych miast, która została przedstawiona w sekcji \@ref(prog-fun).
+Napisz dwie funkcje używając pętli `for` - jedna, która znajdzie drugą najwyższą wartość w każdym wierszu oraz druga, która znajdzie drugą najwyższą wartość w każdej kolumnie.
+
+10) Rozwiąż poprzednie zadanie korzystając z metod programowania funkcyjnego zamiast pętli `for`.
+
+11) Posiadasz macierz o wymiarach czterech wierszy na sześć kolumn składającą się z kolejnych liter alfabetu. 
+```{r}
+m = matrix(LETTERS[1:24], ncol = 6, nrow = 4)
+m
+```
+Napisz funkcję wykorzystującą pętle `for` aby określić "sąsiadów" kolejnych liter wykorzystując sąsiedztwo oparte tylko o wspólną krawędź (ang. *4-neighborhood*).
+Przykładowo, sąsiadem litery "A" są litery "E" i "B".
+
+12) Przepisz powyższą funkcję, aby wykorzystywała sąsiedztwo oparte także o wspólne punkty (ang. *8-neighborhood*).
+Przykładowo, sąsiadem litery "A" są litery "E", "B" i "F".
