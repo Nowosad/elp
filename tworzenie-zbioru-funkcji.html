@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>1 Wprowadzenie | Elementarz programisty</title>
-  <meta name="description" content="1 Wprowadzenie | Elementarz programisty">
+  <title>17 Tworzenie zbioru funkcji | Elementarz programisty</title>
+  <meta name="description" content="17 Tworzenie zbioru funkcji | Elementarz programisty">
   <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="1 Wprowadzenie | Elementarz programisty" />
+  <meta property="og:title" content="17 Tworzenie zbioru funkcji | Elementarz programisty" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="nowosad/my-minimal-bookdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1 Wprowadzenie | Elementarz programisty" />
+  <meta name="twitter:title" content="17 Tworzenie zbioru funkcji | Elementarz programisty" />
   
   
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="ergosum.html">
+<link rel="prev" href="analiza-danych.html">
+<link rel="next" href="tworzenie-pakietu.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -338,262 +338,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="wprowadzenie" class="section level1">
-<h1><span class="header-section-number">1</span> Wprowadzenie</h1>
-<p>Żyjemy obecnie w epoce trzeciej rewolucji przemysłowej<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, zwanej inaczej rewolucją cyfrową.
-Jest ona powiązana z przejściem z technologii mechanicznych i analogowych na technologie elektroniczne i cyfrowe.
-W tej epoce nastąpiło stworzenie i rozpowszechnieniem się komputerów, co w efekcie spowodowało szerokie zmiany społeczno-ekonomiczne.
-Wiele z tych zmian jest pozytywnych, ale istnieją również zmiany negatywne, bądź też takie które trudno jednoznacznie ocenić.
-Przykładowo, wyraźną korzyścią społeczną jest znacznie ułatwiony dostęp do informacji.
-Jednocześnie taki dostęp powoduje sytuację określaną jako przeciążenie informacją (ang. <em>information overload</em>), w której występuje zbyt wielka ilość informacji aby podjąć właściwą decyzję lub zrozumieć sens danego tematu.</p>
-<p>Rozwój technologiczny spowodował też transformację produkcji przemysłowej i zmiany gospodarcze.
-<!--DODAJ PRZYKŁADY!!-->
-Firmy zajmujące się technologiami informacyjnymi, tj. Microsoft, Apple, czy Google, są obecnie jednymi z najbardziej dochodowych przedsiębiorstw, a twórca platformy Amazon, Jeff Bezos, jest najbogatszym człowiekiem świata<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.
-Wiele z tych technologii nie byłoby możliwych bez programowania.
-Programowanie, w znacznym uproszczeniu, to proces tworzenia serii instrukcji, które informują komputer jak wykonać pewne zadanie.
-Ta seria instrukcji jest zazwyczaj zapisywana na komputerze w postaci tekstu w wybranym języku programowania.
-Co w takim razie powoduje, że programowanie ma tak istotny wpływ na wiele elementów codziennego życia?</p>
-<p>Programowanie cechuje kilka unikatowych możliwości.
-Po pierwsze, programowanie i jego efekty można w prosty sposób powielać niemal w nieskończoność.
-Wcześniej stworzenie pewnego towaru opierało się o ograniczone zasoby, np. ziemia czy surowce naturalne.
-Nie możliwe było wykucie zbroi raz, a następnie natychmiastowe powielenie jej wiele razy i sprzedanie jej wielu kopii.
-We współczesnym świecie, jedna aplikacja może być sprzedana (lub rozpowszechniona) wiele razy, a często większy nacisk kładzie się na rozbudowę i ulepszanie istniejących popularnych aplikacji niż tworzenie nowych<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.
-Ułatwia to też budowę nowych rozwiązań na podstawie już istniejących<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>.
-Współcześnie programowanie pozwala na wykonywanie trylionów (10<sup>18</sup>) operacji arytmetycznych na sekundę<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>.
-Pozwala to na znaczne zwiększenie wydajności dostępnych rozwiązań<!--księgowość-->, otwiera możliwość praktycznego wykorzystania istniejących idei<!--modele klimatu-->, lub też tworzenia nowych pomysłów<!--internet,sztucznainteligencja-->.
-Inną cechą programowania jest też jego prosta możliwość automatyzacji powtarzanych czynnośći oraz ułatwiona powtarzalność (ang. <em>reproducibility</em>)
-Posiadając kod źródłowy danego oprogramowania lub skrypt wykonujący analizę danych, możliwe jest odtworzenie tego wyniku przez inną osobę na drugim końcu świata<!--pod pewnymi warunkami-->, lub też przez siebie samego po paru miesiącach.
-<!--...-->
-Ostatnią cechą programowania jest jego uniwersalność.
-Jest ono wykorzystywane w transporcie, przemyśle, nauce, rozrywce i wielu innych strefach życia.
-W efekcie zrozumienie i znajomość języków programowania jest cenną umiejętnością we współczesnym świecie.</p>
-<!-- Współcześnie również programowanie - dostępność -->
-<!-- geoinformacyjne przykłady -->
-<div id="mity-programistyczne" class="section level2">
-<h2><span class="header-section-number">1.1</span> Mity programistyczne</h2>
-<p>Programowanie komputerowe ma obecnie już długą historię<!--^[footnote o programowaniu niekomputerowym-https://en.wikipedia.org/wiki/History_of_programming_languages]--> - pierwszy język programowania Plankalkül powstał w latach 1943-1945<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>.
-Fortran, stworzony w roku 1957, jest nadal używany współcześnie do wielu celów, między innymi wymagających dużej wydajności obliczeń hydrologicznych, prognozowania pogody czy modelowania klimatu.
-Programowanie ewoluowało i nadal ewoluuje wraz z rozwojem dostępności i możliwości komputerów.
-Pojawiły się nowe pradygmaty<!--^[wyjaśnij]--> programowania oraz wiele nowych języków.
-W tym samym czasie narosło również wiele mitów dotyczących programowania<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>.</p>
-<p>Jednym z mitów jest to, że programowanie polega tylko siedzeniu przed ekranem komputera i wpisywaniu do niego kolejnych linii kodu.
-<!-- mit, Coding is Simply the Act of Writing Code -->
-<!-- mit, Coding Starts and Ends With a Computer -->
-Jest to oczywiście istotna część pracy programistycznej, ale prawdopodobnie nie jest ona nawet dominująca w przeciętym dniu programisty.
-Wcześniej konieczne jest zastanowienie się jaki problem rozwiązujemy oraz zaprojektowanie możliwego rozwiązania tego problemu.
-Stworzony kod może okazać się być nieprzystępny dla użytkownika, słabo zoptymalizowany, lub nawet błędny.
-Dlatego też innym ważnym elementem jest testowanie kodu w celu wyłapania potencjalnych problemów.
-Innym aspektem programowania jest tworzenie dokumentacji.
-Żaden program nie może zachęcić do siebie użytkowników, jeżeli nie będą oni w stanie zrozumieć jak on działa.
-Dokumentacja jest też cenna dla twórców programu, szczególnie kiedy konieczne jest użycie czy modyfikacja programu kilka miesięcy po jego ostatnim użyciu.
-Programy komputerowe są też zazwyczaj w dużej sieci powiązań z już istniejącymi bibliotekami czy oprogramowaniem.
-Zmiana w tych bibliotekach czy oprogramowaniu może skutkować nie zawsze oczekiwanymi zmianami w stworzonym programie.
-Częścią programowania jest też utrzymywanie istniejącego kodu źródłowego oraz jego ulepszanie.
-Programiści do swojej pracy wykorzystują też odpowiednie wspierające ich narzędzia, takie jak edytory kodu źródłowego, debugery, zintegrowane środowiska programistyczne czy systemy kontroli wersji.</p>
-<p>Mitem również jest przekonanie, że programowanie to męskie zajęcie.
-Bierze się ono z obecnej na rynku pracy struktury, w której około 75% programistów to mężczyźni a tylko 25% to kobiety.
-Ta struktura jednak nie jest odzwierciedleniem jakichś wrodzonych umiejętności.
-Za pierwszego programistę często uważa się Adę Lovelace, angielskiego matematyka i poetkę<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>.
-To ona w 1843 opublikowała pierwszy program komputerowy.
-Jej algorytm do obliczenia liczb Bernoulliego nie został jednak przetestowany, ponieważ urządzenie do tych obliczeń (zwane maszyną analityczną<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a>) nie zostało skonstruowane.
-Ponad wiek później, gdy istniały już techniczne możliwości tworzenia komputerów, programowanie było uważane za kobiecy zawód<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> (Rycina <a href="wprowadzenie.html#fig:marghamil">1.1</a>).
-Z uwagi na szereg czynników społecznych i historycznych<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>, w latach 1970 nastąpiło odwrócenie proporcji w tym zawodzie.
-Obecnie podejmowanych jest szereg inicjatyw, które mają na celu zachęcić kobiety do programowania.
-Wsród nich można wymienić działania organizacji <a href="https://rladies.org/">R-Ladies</a>, <a href="https://www.pyladies.com/">PyLadies</a>, czy <a href="https://girlsjs.pl/">girls.js</a>.
-Mit programisty mężczyzny jest też powiązany z wymienionym kilka akapitów niżej mitem samotnego programisty.</p>
-<div class="figure" style="text-align: center"><span id="fig:marghamil"></span>
-<img src="images/margaret-hamilton.png" alt="Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które on i jej zespół stworzył na potrzeby misji Apollo. Źródło: [Wikipedia](https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg)." width="100%" />
-<p class="caption">
-Rycina 1.1: Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które on i jej zespół stworzył na potrzeby misji Apollo. Źródło: <a href="https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg">Wikipedia</a>.
-</p>
-</div>
-<p>Kolejny jest mit wielkiego produktu.
-Oznacza on, że po nauczeniu się podstaw danego języka programowanie, jest się od razu w stanie stworzyć bardzo złożony program, np. nowy system operacyjny, skomplikowaną aplikację na telefon, czy grę komputerową.
-W rzeczywistości takie produkty opierają się o tysiące godzin pracy wielu programistów.
-Dodatkowo, nie są one tworzone od podstaw, ale używając szeregu dostępnych narzędzi, bibliotek i innych rozwiązań.
-Celem pisania kodu, więc nie powinno być stworzenie od zera bardzo złożonej aplikacji, lecz odpowiednie użycie istniejących rozwiązań.
-Jednocześnie pisanie złożonego oprogramowania wymaga uzyskania niezbędnego doświadczenia.
-Mit wielkiego produktu wiąże się również z wymienionym w kolejnym akapicie mitem samotnego programisty.</p>
-<p>W popkulturze osoba, która potrafi programować spędza czas samotnie, gwałtownie wpisując kolejne linie kodu do komputera w ciemnym pokoju.
-W rzeczywistości jednak większość profesjonalnych programistów pracuje w zespołach, których członkowie pracują nad różnymi aspektami tego samego problemu.
-Pisanie programów często wymaga współpracy różnych osób, dlatego też umiejętność pracy w grupie jest coraz istotniejsza.
-Warto dodać, że współpraca nad pisaniem programów nie musi odbywać się w jednym pokoju czy budynku.
-Ze względu na charakter takiej pracy i możliwości technologiczne, wiele formalnych i nieformalnych grup pracuje zdalnie nad projektami.
-Wiele przykładów takich zachowań można znaleźć przyglądając się otwartemu oprogramowaniu (ang. <em>open-source software</em>) na platformie GitHub (np. <a href="https://github.com/trending/r" class="uri">https://github.com/trending/r</a>).</p>
-<p>W poprzednim akapicie celowo użyłem stwierdzenia “osoba, która potrafi programować” zamiast “programista”.
-Jest to kolejny powszechny mit, że każda osoba która potrafi stworzyć program musi od razu zostać pełnoetatowym programistą.
-Pisanie programów jest narzędziem, które ma wspomóc twórcę w pewnym celu.
-Jednym z celów może być zostanie profesjonalnym deweloperem stron internetowych, aplikacji mobilnych, gier komputerowych, itd.
-Nie jest to jednak jedyny cel - programowanie może być, na przykład przydatnym narzędziem w analizie danych<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>.
-Umiejętności programistyczne są wykorzystywane przez ekonomistów, biologów, geografów i osób z wielu innych dziedzin.
-Dodatkowo, podstawowe aspekty programowania są bardzo cenne w zawodach, w których ważna jest częsta współpraca z programistami.
-<!--more--></p>
-<p>Kolejny mitem jest mit programisty geniusza.
-W tym micie programują tylko osoby, która ma nadludzką pamięć oraz wyróżniającą wiedzę matematyczną.
-Oczywiście, takie cechy przydają się w programowaniu, ale nie są one wymagane do programowania.
-W programowaniu częściej od dobrej pamięci przydaje się umiejętność szybkiego znalezienia rozwiązania czy odpowiedzi na problem w internecie.
-Programista nie musi znać na pamięć setek różnych poleceń i funkcji, ważne że umie je zidentyfikować.
-Natomiast zamiast głębokiej wiedzy matematycznej do większości zadań programistycznych wystarczy podstawowa znajomość algebry<!---->.
-Z tym mitem wiąże się też inna kwestia - założenia że ten programista geniusz posiadł całą wiedzę programistyczną.
-Podobnie jak nauka języka obcego, nauka języka programowania wymaga dużo pracy i czasu.
-Dodatkowo, języki programowania czy techniki programowania zmieniają się znacznie częściej niż języki naturalne, dlatego też częścią programowania jest ciągłe uczenie się.</p>
-<!-- impostor syndrome -->
-<p>Ostatni mit natomiast mówi o tym, że dla każdego problemu programistycznego istnieje tylko jedno najlepsze rozwiązanie.
-Jeden problem można zazwyczaj rozwiązać na dziesiątki różnych sposobów.
-Wynika to z tego, że wiele aspektów programowania opiera się o personalne preferencje, np. wybór danego języka programowania, używanych bibliotek, czy stylu pisania kodu.
-W efekcie zazwyczaj nie możliwe jest jednoznaczne określenie, które rozwiązanie jest lepsze, szczególnie jeżeli wiele rozwiązań ma podobną wydajność.
-Istnieje jednak kilka reguł, z którymi zgadza się większość programistów.
-Pierwsza z nich mówi, że wolny działający kod jest lepszy niż szybki niedziałający kod<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>.
-Kolejna opiera się o zasadę DRY (nie powtarzaj się, ang. <em>Don’t Repeat Yourself</em>), zalecającą unikanie różnego rodzaju powtórzeń wykonywanych przy programowaniu, np. używania tych samych fragmentów kodu w wielu miejscach.
-Ostatnia reguła mówi, żeby tworzyć pisać programy w sposób modularny, czyli taki w którym każda funkcja spełnia tylko jedno i nie więcej zadanie, a złożone funkcje składają się z szeregu prostych funkcji.</p>
-</div>
-<div id="jezyki-programowania" class="section level2">
-<h2><span class="header-section-number">1.2</span> Języki programowania</h2>
-<p>Głównym sposobem przekazywania instrukcji do komputera jest użycie języków programowania.
-Pozwalają one na precyzyjny zapis zadań, które następnie mają zostać wykonane przez komputer.
-Języki programowania składają się ze zbioru reguł syntaktycznych (składni) oraz semantyki.
-Składnia (forma) mówi o tym jakie symbole są dostępne w danym języku oraz jak te symbole mogą być łączone w większe struktury.
-Semantyka (treść) natomiast definiuje znaczenie poszczególnych symboli.
-<!--przykłady-->
-W przeciwieństwie do języków naturalnych, języki programowania wymagają wysokiej precyzji.
-Mówiąc w języku naturalnym możemy popełnić jakiś błąd (np. gramatyczny czy składniowy) i nadal być łatwo zrozumianym przez otoczenie.
-Języki programowania nie akceptują takich błędów i nie są w stanie wykonać danego polecenia.
-Obecnie istnieją tysiące<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a> języków programowania i każdego roku powstają nowe.
-Nie ma wśród nich jednego najlepszego, uniwersalnego języka programowania i w najbliższej przyszłości ten stan się nie zmieni.
-Jest to związane z bardzo szerokim zastosowaniem programowania w wielu dziedzinach czy problemach, które mają od siebie zupełnie różne wymagania.
-Przykładowe wymagania mogą dotyczyć np. szybkości wykonywanych obliczeń, łatwości pisania kodu, stabilności języka programowania, czy celu obliczeń.
-Do tego dochodzą również rożne kwestie historyczne i społeczne, jak na przykład preferowanie danego języka programowania przez osoby w danej branży.
-Obecnie wśród najpopularniejszych języków programowania można wymienić takie języki jak Java, C, Python, C++, Visual Basic .NET, JavaScript, C#, PHP, SQL, Objective-C, język asemblera, Perl, czy R.
-Języki programowania można podzielić na wiele różnych grup w zależności od przyjętych kryteriów.
-Poniżej wyjaśnionych jest kilka możliwych podziałów języków programowania.
-<!-- Static versus dynamic typing --></p>
-<p>Jednym z nich jest sposób wykonywania kodu - to czy kod w danym języku jest kompilowany czy też interpretowany.
-Kompilacja kodu (np. C czy Java) polega na jego tłumaczeniu do postaci języka maszynowego.
-W efekcie zapewnia to wysoką wydajność programu, ale za to kod jest ściśle powiązany z daną platformą sprzętową.
-Programowanie w językach kompilowanych jest zazwyczaj bardziej złożone i trudniejsze w nich jest odnajdywanie błędów (tzw. debugging).
-Interpretowane języki programowania, często również nazywane językami skryptowymi, (np. R czy Python) charakteryzuje to,
-że w momencie uruchomienia kod jest zamieniany na postać zrozumiałą dla komputera i od razu wykonywany.
-W efekcie można szybko zobaczyć efekt zmian.
-Wadą tego typu języków jest ich zmniejszona wydajność w porównany do języków kompilowanych.</p>
-<p>Innym powszechnym podziałem języków programowania jest ich rozróżnianie na podstawie poziomu.
-Tutaj można wyróżnić języki od niskiego poziomu do wysokiego poziomu.
-Na najniższym poziomie jest język maszynowy, czyli taki w którym zapis programu wyrażony jest w postaci liczb binarnych.
-Powyżej są umieszczony jest język asemblera, w którym program jest zapisany poprzez serię instrukcji.
-Na najwyższym poziomie stawia się języki, które są wspomagane przez kompilator albo interpreter.</p>
-<p>Języki programowania można też rozróżnić ze względu na paradygmat programowania.
-Definiuje on w jaki sposób w danym języku wykonywany jest przepływ sterowania czy też jak kod jest organizowany.
-Dwa podstawowe paradygmaty programowania to programowanie imperatywne i deklaratywne.
-Programowanie imperatywne (np. Fortran, C) opisuje proces wykonywania kodu jako sekwencję instrukcji zmieniających stan programu.
-Obejmuje ono inne paradygmaty, jak na przykład programowanie proceduralne czy obiektowe.
-Programowanie deklaratywne skupia się natomiast na warunkach jakie musi spełniać końcowe rozwiązanie, a nie na sekwencji kroków do jego stworzenia.
-W skład tej grupy wchodzi, między innymi, programowanie funkcyjne czy matematyczne.
-Niektóre języki mogą być zaklasyfikowane do kilku paradygmatów.
-Przykładowo R wspiera zarówno paradygmat funkcyjny, ale zawiera też możliwości programowania obiektowego.
-<!-- S3, S4, ... -->
-<!-- what for? --></p>
-</div>
-<div id="r" class="section level2">
-<h2><span class="header-section-number">1.3</span> R</h2>
-<p>W tej książce wprowadzenie do programowania opiera się o język <a href="https://www.r-project.org/">R</a> (Rycina <a href="wprowadzenie.html#fig:rlogo">1.2</a>).</p>
-<div class="figure" style="text-align: center"><span id="fig:rlogo"></span>
-<img src="images/Rlogo.png" alt="Logo języka programowania R." width="25%" />
-<p class="caption">
-Rycina 1.2: Logo języka programowania R.
-</p>
-</div>
-<p>Wynika to z szeregu zalet tego języka:</p>
-<ul>
-<li>R jest bezpłatnym, otwartym oprogramowaniem, który można uruchomić na różnych systemach operacyjnych (Windows, Mac OS i Linux), zarówno na komputerach osobistych jak i na dużych klastrach obliczeniowych.
-W efekcie nie ma on finansowej bariery rozpoczęcia pracy, a kod napisany na jednym komputerze można również przenieść i uruchomić na innym sprzęcie.
-<!-- Dodatkowo  --></li>
-<li>R jest językiem interpretowalnym, czyli wykonanie w nim komend nie wymaga kompilacji.
-Ten aspekt ułatwia szybsze zrozumienie działania tego języka.</li>
-<li>R posiada wiele wbudowanych narzędzi analizy i wizualizacji danych.
-Pozwala to na relatywnie szybkie osiąganie wymiernych efektów z korzystania z tego języka.</li>
-<li>R posiada tysiące dodatkowych rozszerzeń (zwanych pakietami) pozwalających na, między innymi, przetwarzanie różnorodnych danych, ich wizualizację, czy zaawansowane modelowanie.
-Oficjalnym portalem zawierającym dodatkowe pakiety R jest <a href="https://cran.r-project.org/">CRAN</a>.</li>
-<li>R ma przyjazną społeczność użytkowników tego języka, zarówno online jak i spotykających się na żywo na tzw. meetupach.</li>
-<li>W celu ułatwienia pracy z R powstało również zintegrowane środowisko programistyczne RStudio, które wspomaga pisanie i analizę kodu w R.</li>
-<li>R został zaprojektowany jako narzędzie ułatwiające komunikację między różnymi językami programowania, głównie C oraz Fortran<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a>.
-Obecnie R pozwala na łatwe łączenie kodu pochodzącego również z takich języków jak C++, Python, JavaScript, itd.</li>
-<li>R jest używany przez wiele małych firm, jak i wielkich korporacji, wliczając w to BBC, Facebook, Google, Microsoft, Mozilla, Netflix, T-Mobile, czy Uber<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a>.</li>
-</ul>
-<p>Oczywiście, uniwersalny i idealny język nie istnieje:</p>
-<ul>
-<li>R jest językiem interpretowalnym, czyli wykonanie w nim komend nie wymaga kompilacji.
-W efekcie R nie jest najszybszym językiem programowania.</li>
-<li>Podobnie jak wiele innych języków, również R zawiera wiele niekonsekwencji, wynikających z wieloletniej ewolucji tego języka.
-W efekcie istnieje wiele specjalnych przypadków czy wyjątków, które warto znać <span class="citation">(Burns <a href="#ref-burns2012r">2012</a>)</span>.</li>
-</ul>
-<p>Ta książka skupia się na prezentacji głównym konceptów programistycznych używając języka R.
-W sekcji <a href="ergosum.html#resources">2.5</a> można znaleźć listę różnorodnych materiałów, książek, blogów, kursów, czy serwisów ułatwiających i wspomagających naukę R.
-Istnieje także wiele wprowadzających materiałów do nauki innych języków.
-Przykładowo, osoby zainteresowane nauką Pythona mogą skorzystać z istniejących książek (<span class="citation">Gries, Campbell, and Montojo (<a href="#ref-gries2017practical">2017</a>)</span> oraz <span class="citation">Guzdial and Ericson (<a href="#ref-guzdial2016introduction">2016</a>)</span>), czy też kursów <a href="http://swcarpentry.github.io/python-novice-inflammation/">Software Carpentry</a> oraz <a href="https://www.python-course.eu/python3_course.php">Python Course</a>.
-W pracy programistycznej przydaje się również często znajomość linii komend.
-Tutaj również można użyć materiałów z kursu <a href="https://swcarpentry.github.io/shell-novice/">Software Carpentry</a> lub książki <a href="https://seankross.com/the-unix-workbench/">The Unix Workbench</a> <span class="citation">(Kross <a href="#ref-krossUnixWorkbench2017">2017</a>)</span>.</p>
-<!-- https://rstudio.cloud/learn/primers -->
-<!-- http://jarekj.home.amu.edu.pl/?page_id=36 -->
-<!-- https://speakerdeck.com/jennybc/zen-and-the-art-of-workflow-maintenance -->
-</div>
-<div id="zadania" class="section level2">
-<h2><span class="header-section-number">1.4</span> Zadania</h2>
-<ol style="list-style-type: decimal">
-<li>Pomyśl do czego jesteś w stanie wykorzystać programowanie w swoim życiu zawodowym lub prywatnym?</li>
-<li>Zastanów się nad mitami związanymi z programowaniem.
-Czy jesteś w stanie wskazać jakieś mity nie wymienione powyżej?</li>
-<li>Wybierz trzy języki programowania z listy wymienionej w tym rozdziale i poszukaj informacji o nich.
-Do czego są one stosowane?
-Jakie mają wady i zalety?</li>
-</ol>
+<div id="tworzenie-zbioru-funkcji" class="section level1">
+<h1><span class="header-section-number">17</span> Tworzenie zbioru funkcji</h1>
+<!-- 2. stworzenie zbioru funkcji -->
+<!-- - określ problem (np. zamiana jednostek) -->
+<!-- - napisz jeden/dwa przykłady -->
+<!-- - dodaj tam komunikaty i testy -->
+<!-- dodaj przykłady -->
+<!-- zadania - zaawanosowane - użyj systemu kontroli wersji -->
 
-</div>
-</div>
-
-
-
-<h3>Bibliografia</h3>
-<div id="refs" class="references">
-<div id="ref-burns2012r">
-<p>Burns, Patrick. 2012. <em>The R Inferno</em>. Lulu.com.</p>
-</div>
-<div id="ref-gries2017practical">
-<p>Gries, Paul, Jennifer Campbell, and Jason Montojo. 2017. <em>Practical Programming: An Introduction to Computer Science Using Python 3.6</em>. Pragmatic Bookshelf.</p>
-</div>
-<div id="ref-guzdial2016introduction">
-<p>Guzdial, Mark, and Barbara Ericson. 2016. <em>Introduction to Computing and Programming in Python</em>. Pearson.</p>
-</div>
-<div id="ref-krossUnixWorkbench2017">
-<p>Kross, Sean. 2017. <em>The Unix Workbench</em>.</p>
-</div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p>Niektórzy wydzielają już nawet obecny czas jako czwartą rewolucję przemysłową - <a href="https://en.wikipedia.org/wiki/Industry_4.0" class="uri">https://en.wikipedia.org/wiki/Industry_4.0</a>.<a href="wprowadzenie.html#fnref1" class="footnote-back">↩</a></p></li>
-<li id="fn2"><p><a href="https://en.wikipedia.org/wiki/The_World%27s_Billionaires#2018">https://en.wikipedia.org/wiki/The_World%27s_Billionaires#2018</a><a href="wprowadzenie.html#fnref2" class="footnote-back">↩</a></p></li>
-<li id="fn3"><p>Efektem tego jest też coraz większa popularność modeli subskrypcyjnych - <a href="https://en.wikipedia.org/wiki/Subscription_business_model" class="uri">https://en.wikipedia.org/wiki/Subscription_business_model</a>.<a href="wprowadzenie.html#fnref3" class="footnote-back">↩</a></p></li>
-<li id="fn4"><p><a href="https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants" class="uri">https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants</a><a href="wprowadzenie.html#fnref4" class="footnote-back">↩</a></p></li>
-<li id="fn5"><p>Przecięty człowiek jest w stanie wykonać około pół operacji na sekundę - <a href="https://en.wikipedia.org/wiki/Computer_performance_by_orders_of_magnitude" class="uri">https://en.wikipedia.org/wiki/Computer_performance_by_orders_of_magnitude</a>.<a href="wprowadzenie.html#fnref5" class="footnote-back">↩</a></p></li>
-<li id="fn6"><p><a href="https://en.wikipedia.org/wiki/Plankalk%C3%BCl">https://en.wikipedia.org/wiki/Plankalk%C3%BCl</a><a href="wprowadzenie.html#fnref6" class="footnote-back">↩</a></p></li>
-<li id="fn7"><p>Zobacz porównanie oczekiwań i rzeczywistej pracy programisty na <a href="https://www.youtube.com/watch?v=HluANRwPyNo" class="uri">https://www.youtube.com/watch?v=HluANRwPyNo</a>.<a href="wprowadzenie.html#fnref7" class="footnote-back">↩</a></p></li>
-<li id="fn8"><p><a href="https://en.wikipedia.org/wiki/Ada_Lovelace" class="uri">https://en.wikipedia.org/wiki/Ada_Lovelace</a><a href="wprowadzenie.html#fnref8" class="footnote-back">↩</a></p></li>
-<li id="fn9"><p><a href="https://en.wikipedia.org/wiki/Analytical_Engine" class="uri">https://en.wikipedia.org/wiki/Analytical_Engine</a><a href="wprowadzenie.html#fnref9" class="footnote-back">↩</a></p></li>
-<li id="fn10"><p><a href="https://www.history.com/news/coding-used-to-be-a-womans-job-so-it-was-paid-less-and-undervalued" class="uri">https://www.history.com/news/coding-used-to-be-a-womans-job-so-it-was-paid-less-and-undervalued</a><a href="wprowadzenie.html#fnref10" class="footnote-back">↩</a></p></li>
-<li id="fn11"><p><a href="http://www.smbc-comics.com/?id=1883" class="uri">http://www.smbc-comics.com/?id=1883</a><a href="wprowadzenie.html#fnref11" class="footnote-back">↩</a></p></li>
-<li id="fn12"><p>Wiąże się to z popularnym na Zachodzie terminem <a href="https://en.wikipedia.org/wiki/Data_science">data science</a>, który łączy programowanie, analizę danych i wiedzę dziedzinową.<a href="wprowadzenie.html#fnref12" class="footnote-back">↩</a></p></li>
-<li id="fn13"><p>Parafrazując Donalda Kuntha “We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil. Yet we should not pass up our opportunities in that critical 3%.”<a href="wprowadzenie.html#fnref13" class="footnote-back">↩</a></p></li>
-<li id="fn14"><p><a href="http://codelani.com/lists/languages.html" class="uri">http://codelani.com/lists/languages.html</a><a href="wprowadzenie.html#fnref14" class="footnote-back">↩</a></p></li>
-<li id="fn15"><p><a href="https://www.youtube.com/watch?v=_hcpuRB5nGs" class="uri">https://www.youtube.com/watch?v=_hcpuRB5nGs</a><a href="wprowadzenie.html#fnref15" class="footnote-back">↩</a></p></li>
-<li id="fn16"><p><a href="https://github.com/ThinkR-open/companies-using-r" class="uri">https://github.com/ThinkR-open/companies-using-r</a><a href="wprowadzenie.html#fnref16" class="footnote-back">↩</a></p></li>
-</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ergosum.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="analiza-danych.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tworzenie-pakietu.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -623,7 +384,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Nowosad/my-minimal-bookdown/edit/master/01-wprowadzenie.Rmd",
+"link": "https://github.com/Nowosad/my-minimal-bookdown/edit/master/22-example2.Rmd",
 "text": "Edit"
 },
 "history": {

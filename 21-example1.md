@@ -1,7 +1,7 @@
 
 # (PART) Przykłady {-}
 
-# Przykład 1
+# Analiza danych
 
 <!-- 1. analiza danych1 -->
 <!-- - stwórz projekt -->
@@ -14,10 +14,3 @@
 
 <!-- zadania - zaawanosowane - użyj systemu kontroli wersji -->
 
-<!-- 2. stworzenie zbioru funkcji -->
-<!-- - określ problem (np. zamiana jednostek) -->
-<!-- - napisz jeden/dwa przykłady -->
-<!-- - dodaj tam komunikaty i testy -->
-<!-- dodaj przykłady -->
-
-<!-- zadania - zaawanosowane - użyj systemu kontroli wersji -->
