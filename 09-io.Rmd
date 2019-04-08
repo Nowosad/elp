@@ -238,6 +238,11 @@ Dostęp do baz danych w R możliwy jest używając pakietu **DBI** [@R-DBI] wraz
 
 ## Zadania
 
+```{r, eval=FALSE, echo=FALSE}
+pliki = dir("pliki", full.names = TRUE)
+zip("pliki.zip", pliki)
+```
+
 1) Stwórz nowy projekt RStudio o nazwie "IO".
 Wszystkie kolejne zadania wykonuj wewnątrz tego projektu.
 
@@ -245,13 +250,13 @@ Wszystkie kolejne zadania wykonuj wewnątrz tego projektu.
 
 3) Stwórz z poziomu R dwa nowe foldery, jeden o nazwie `"data"` i drugi o nazwie `"R"`.
 
-4) Pobierz plik `` znajdujący się pod adresem ``.
-Rozpakuj go do podfolderu `"data"` i usuń to archiwum z poziomu R.
+4) Pobierz plik `pliki.zip` znajdujący się pod adresem `https://github.com/Nowosad/elp/raw/master/`.
+Rozpakuj go do podfolderu `"data"` i usuń pobrane archiwum z poziomu R.
 
-5) Wczytaj dane z pliku `` xls.
+5) Wczytaj dane z pliku `dane_meteo.xlsx`.
 Usuń z nowego obiektu pierwszą kolumnę i zapisz go jako plik w binarnym formacie RDS.
 
-6) Wczytaj plik `` oraz `` do R.
+6) Wczytaj pliki `dane_meteo.csv` oraz `dane_meteo2.csv` do R.
 Połącz te dwa obiekty łącząc kolumny, a następnie zapisz nowy obiekt do pliku ``.
 
 7) Napisz funkcję, która przyjmuje jako argument nazwę folderu, a następnie wczytuje wszystkie pliki o rozszerzeniu `.csv` znajdujące się w tym folderze i łączy je kolumnami.
