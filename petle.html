@@ -706,13 +706,31 @@ Ile razy zostanie wyświetlony tekst <code>&quot;Działa!&quot;</code>?</li>
       <span class="kw">print</span>(<span class="st">&quot;Działa!&quot;</span>)
   }
 }</code></pre>
-<!-- stworz for 1 -->
-<!-- stworz for 2 -->
-<!-- stworz while 1 -->
-<!-- stworz for dla pierwszego przypadku funkcyjnego -->
-<!-- lapply 1 -->
-<!-- lapply 2 -->
-<!-- apply 1 -->
+<ol start="6" style="list-style-type: decimal">
+<li><p>Posiadasz listę zawierającą wartości temperatury w stopniach Fahrenheita, która została przedstawiona na początku sekcji <a href="petle.html#prog-fun">8.3</a>.
+Stwórz pętlę <code>for</code>, która zamieni te wartości na stopnie Celsjusza.</p></li>
+<li><p>Rozwiąż powyższe zadanie używając również pętli <code>while</code>.
+Dodatkowo: spróbuj rozwiązać to zadanie używając pętli <code>repeat</code>.</p></li>
+<li><p>Posiadasz listę zawierającą wartości odległości w milach lądowych, która została przedstawiona na początku sekcji <a href="petle.html#for-example">8.1.2</a>.
+Użyj metod programowania funkcyjnego, żeby przeliczyć jej wartości na kilometry.</p></li>
+<li><p>Posiadasz ramkę danych <code>pomiary</code> zawierającą wartości temperatury dla kolejnych miast, która została przedstawiona w sekcji <a href="petle.html#prog-fun">8.3</a>.
+Napisz dwie funkcje używając pętli <code>for</code> - jedna, która znajdzie drugą najwyższą wartość w każdym wierszu oraz druga, która znajdzie drugą najwyższą wartość w każdej kolumnie.</p></li>
+<li><p>Rozwiąż poprzednie zadanie korzystając z metod programowania funkcyjnego zamiast pętli <code>for</code>.</p></li>
+<li><p>Posiadasz macierz o wymiarach czterech wierszy na sześć kolumn składającą się z kolejnych liter alfabetu.</p></li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r">m =<span class="st"> </span><span class="kw">matrix</span>(LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">24</span>], <span class="dt">ncol =</span> <span class="dv">6</span>, <span class="dt">nrow =</span> <span class="dv">4</span>)
+m
+<span class="co">#&gt;      [,1] [,2] [,3] [,4] [,5] [,6]</span>
+<span class="co">#&gt; [1,] &quot;A&quot;  &quot;E&quot;  &quot;I&quot;  &quot;M&quot;  &quot;Q&quot;  &quot;U&quot; </span>
+<span class="co">#&gt; [2,] &quot;B&quot;  &quot;F&quot;  &quot;J&quot;  &quot;N&quot;  &quot;R&quot;  &quot;V&quot; </span>
+<span class="co">#&gt; [3,] &quot;C&quot;  &quot;G&quot;  &quot;K&quot;  &quot;O&quot;  &quot;S&quot;  &quot;W&quot; </span>
+<span class="co">#&gt; [4,] &quot;D&quot;  &quot;H&quot;  &quot;L&quot;  &quot;P&quot;  &quot;T&quot;  &quot;X&quot;</span></code></pre>
+<p>Napisz funkcję wykorzystującą pętle <code>for</code> aby określić “sąsiadów” kolejnych liter wykorzystując sąsiedztwo oparte tylko o wspólną krawędź (ang. <em>4-neighborhood</em>).
+Przykładowo, sąsiadem litery “A” są litery “E” i “B”.</p>
+<ol start="12" style="list-style-type: decimal">
+<li>Przepisz powyższą funkcję, aby wykorzystywała sąsiedztwo oparte także o wspólne punkty (ang. <em>8-neighborhood</em>).
+Przykładowo, sąsiadem litery “A” są litery “E”, “B” i “F”.</li>
+</ol>
 
 </div>
 </div>
