@@ -238,8 +238,22 @@ Dostęp do baz danych w R możliwy jest używając pakietu **DBI** [@R-DBI] wraz
 
 ## Zadania
 
-<!-- wczytaj jeden format, zapisz inny -->
-<!-- automatycznie wczytaj dwa pliki -->
-<!-- wczytaj, zamien, zapisz -->
-<!-- napisz funkcje do zamiany -->
+1) Stwórz nowy projekt RStudio o nazwie "IO".
+Wszystkie kolejne zadania wykonuj wewnątrz tego projektu.
+
+2) Sprawdź jaki jest obecny folder roboczy.
+
+3) Stwórz z poziomu R dwa nowe foldery, jeden o nazwie `"data"` i drugi o nazwie `"R"`.
+
+4) Pobierz plik `` znajdujący się pod adresem ``.
+Rozpakuj go do podfolderu `"data"` i usuń to archiwum z poziomu R.
+
+5) Wczytaj dane z pliku `` xls.
+Usuń z nowego obiektu pierwszą kolumnę i zapisz go jako plik w binarnym formacie RDS.
+
+6) Wczytaj plik `` oraz `` do R.
+Połącz te dwa obiekty łącząc kolumny, a następnie zapisz nowy obiekt do pliku ``.
+
+7) Napisz funkcję, która przyjmuje jako argument nazwę folderu, a następnie wczytuje wszystkie pliki o rozszerzeniu `.csv` znajdujące się w tym folderze i łączy je kolumnami.
+
 <!-- pobierz, zamien, zapisz, usun stary plik -->
