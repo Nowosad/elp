@@ -373,8 +373,8 @@ Czasem jednak mogły zajść zmiany w tym samym pliku edytowanym przez wiele os�
 Wówczas konieczne jest ręczne poprawienie problematycznych plików, dodanie zmian i ich zatwierdzenie. 
 
 Z racji popularności systemu Git istnieje ogromna liczba materiałów pomagających w jego nauce i zrozumieniu oraz wiele stron zawierających pytania i odpowiedzi dotyczące napotkanych problemów.
-W przypadku łączenia możliwości języka R z systemem Git warto poczytać materiały zawarte na stronie https://happygitwithr.com/<!--CITE--> oraz rozdział [Git and GitHub](https://r-pkgs.org/git.html) książki R packages<!--CITE--> .
-Do ogólnego wprowadzenia do systemu Git może posłużyć darmowa książka online [Pro Git](https://git-scm.com/book/pl/v2)<!--CITE-->, której kilka pierwszych rozdziałów jest również dostępna w języku polskim.
+W przypadku łączenia możliwości języka R z systemem Git warto poczytać materiały zawarte na stronie https://happygitwithr.com/ [@bryanHappyGitGitHub2019] oraz rozdział [Git and GitHub](https://r-pkgs.org/git.html) książki R packages [@wickham2015r].
+Do ogólnego wprowadzenia do systemu Git może posłużyć darmowa książka online [Pro Git](https://git-scm.com/book/pl/v2)[@chacon2014pro], której kilka pierwszych rozdziałów jest również dostępna w języku polskim.
 Git jest również bardzo popularnym tematem na serwisie stackoverflow, gdzie można znaleźć [pytania i odpowiedzi na różnorodne tematy z nim związane](https://stackoverflow.com/questions/tagged/git).
 Więcej odnośników do materiałów związanych z sytemem Git i serwisem GitHub można znaleźć na stronach [pomocy GitHub](https://help.github.com/en/articles/git-and-github-learning-resources).
 <!-- może warto dodać jak się pojawią kolejne części - https://randomseed.pl/pub/git-system-kontroli-wersji/01-wprowadzenie/#Podstawoweterminy -->
