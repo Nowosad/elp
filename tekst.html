@@ -680,7 +680,7 @@ Przykładowo poniższa linia kodu wyświetla wszyskie pliki znajdujące się w f
 <span class="co">#&gt;  [1] &quot;dane_meteo.csv&quot;  &quot;dane_meteo.rds&quot;  &quot;dane_meteo.xlsx&quot;</span>
 <span class="co">#&gt;  [4] &quot;dane_meteo2.csv&quot; &quot;dokument.docx&quot;   &quot;kod.R&quot;          </span>
 <span class="co">#&gt;  [7] &quot;list.txt&quot;        &quot;mapa.png&quot;        &quot;obrazek.png&quot;    </span>
-<span class="co">#&gt; [10] &quot;zdjęcie.jpg&quot;</span></code></pre>
+<span class="co">#&gt; [10] &quot;zdjecie.jpg&quot;</span></code></pre>
 <p>W przypadku, gdy interesują nas tylko pliki o wybranym rozszerzeniu możemy użyć argumentu <code>pattern</code> i zdefiniować wzorzec.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.png$&quot;</span>)
 <span class="co">#&gt; [1] &quot;mapa.png&quot;    &quot;obrazek.png&quot;</span></code></pre>
@@ -688,10 +688,10 @@ Przykładowo poniższa linia kodu wyświetla wszyskie pliki znajdujące się w f
 Metaznak <code>$</code> użyty w tym przypadku zapogiega sytuacji, gdy tekst <code>.png</code> znajduje się w środku nazwy pliku.</p>
 <p>Do znalezienia plików o kilku rozszerzeniach można użyć metaznaków <code>()</code> i <code>|</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.(png|jpg)$&quot;</span>)
-<span class="co">#&gt; [1] &quot;mapa.png&quot;    &quot;obrazek.png&quot; &quot;zdjęcie.jpg&quot;</span></code></pre>
+<span class="co">#&gt; [1] &quot;mapa.png&quot;    &quot;obrazek.png&quot; &quot;zdjecie.jpg&quot;</span></code></pre>
 <p>Domyślnie funkcja <code>dir()</code> pokazuje zawartość wybranego folderu, aby jednak poznać jego pełną ścieżkę względną należy określić argument <code>full.names</code> na <code>TRUE</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.(png|jpg)$&quot;</span>, <span class="dt">full.names =</span> <span class="ot">TRUE</span>)
-<span class="co">#&gt; [1] &quot;pliki/mapa.png&quot;    &quot;pliki/obrazek.png&quot; &quot;pliki/zdjęcie.jpg&quot;</span></code></pre>
+<span class="co">#&gt; [1] &quot;pliki/mapa.png&quot;    &quot;pliki/obrazek.png&quot; &quot;pliki/zdjecie.jpg&quot;</span></code></pre>
 </div>
 <div id="zadania-5" class="section level2">
 <h2><span class="header-section-number">6.8</span> Zadania</h2>

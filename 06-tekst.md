@@ -546,7 +546,7 @@ dir("pliki")
 #>  [1] "dane_meteo.csv"  "dane_meteo.rds"  "dane_meteo.xlsx"
 #>  [4] "dane_meteo2.csv" "dokument.docx"   "kod.R"          
 #>  [7] "list.txt"        "mapa.png"        "obrazek.png"    
-#> [10] "zdjęcie.jpg"
+#> [10] "zdjecie.jpg"
 ```
 
 W przypadku, gdy interesują nas tylko pliki o wybranym rozszerzeniu możemy użyć argumentu `pattern` i zdefiniować wzorzec.
@@ -565,7 +565,7 @@ Do znalezienia plików o kilku rozszerzeniach można użyć metaznaków `()` i `
 
 ```r
 dir("pliki", pattern = "*\\.(png|jpg)$")
-#> [1] "mapa.png"    "obrazek.png" "zdjęcie.jpg"
+#> [1] "mapa.png"    "obrazek.png" "zdjecie.jpg"
 ```
 
 Domyślnie funkcja `dir()` pokazuje zawartość wybranego folderu, aby jednak poznać jego pełną ścieżkę względną należy określić argument `full.names` na `TRUE`.
@@ -573,7 +573,7 @@ Domyślnie funkcja `dir()` pokazuje zawartość wybranego folderu, aby jednak po
 
 ```r
 dir("pliki", pattern = "*\\.(png|jpg)$", full.names = TRUE)
-#> [1] "pliki/mapa.png"    "pliki/obrazek.png" "pliki/zdjęcie.jpg"
+#> [1] "pliki/mapa.png"    "pliki/obrazek.png" "pliki/zdjecie.jpg"
 ```
 
 ## Zadania
