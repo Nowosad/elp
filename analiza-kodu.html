@@ -25,7 +25,7 @@
 <meta name="author" content="Jakub Nowosad">
 
 
-<meta name="date" content="2019-04-07">
+<meta name="date" content="2019-04-08">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -407,7 +407,7 @@ Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej fu
 <p>Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))
 <span class="co">#&gt;    user  system elapsed </span>
-<span class="co">#&gt;   0.572   0.000   0.572</span></code></pre>
+<span class="co">#&gt;   0.576   0.000   0.575</span></code></pre>
 <p>W efekcie dostajemy trzy wartości - <code>user</code>, <code>system</code> i <code>elapsed</code>. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.</p>
 <p>Benchmarking jest często używany w sytuacji, gdy istnieje kilka funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
 Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.</p>
@@ -445,8 +445,8 @@ wynik_<span class="dv">1</span>
 <span class="co">#&gt; # A tibble: 2 x 10</span>
 <span class="co">#&gt;   expression    min   mean median    max `itr/sec` mem_alloc  n_gc n_itr</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 1.43µs 1.99µs  1.7µs 81.8µs   503123.     117KB     0 10000</span>
-<span class="co">#&gt; 2 mi_do_km2… 1.03µs 1.32µs 1.18µs 24.2µs   756880.     222KB     0 10000</span>
+<span class="co">#&gt; 1 mi_do_km1… 1.43µs 2.04µs 1.72µs   32µs   490738.     117KB     0 10000</span>
+<span class="co">#&gt; 2 mi_do_km2… 1.03µs 1.35µs 1.18µs 33.4µs   738159.     222KB     0 10000</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <p>Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
 Zawiera ona szereg charakterystyk, w tym:</p>
@@ -471,13 +471,13 @@ wynik_<span class="dv">2</span> =<span class="st"> </span><span class="kw">mark<
 <span class="co">#&gt; disabled.</span>
 wynik_<span class="dv">2</span>
 <span class="co">#&gt; # A tibble: 2 x 10</span>
-<span class="co">#&gt;   expression   min     mean median      max `itr/sec` mem_alloc  n_gc n_itr</span>
-<span class="co">#&gt;   &lt;chr&gt;      &lt;bch&gt; &lt;bch:tm&gt; &lt;bch:&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1… 475ms 481.79ms  482ms 488.82ms      2.08     382MB    16     2</span>
-<span class="co">#&gt; 2 mi_do_km2… 897µs   1.09ms  944µs   9.41ms    917.      78.2KB     9   459</span>
+<span class="co">#&gt;   expression   min     mean median     max `itr/sec` mem_alloc  n_gc n_itr</span>
+<span class="co">#&gt;   &lt;chr&gt;      &lt;bch&gt; &lt;bch:tm&gt; &lt;bch:&gt; &lt;bch:t&gt;     &lt;dbl&gt; &lt;bch:byt&gt; &lt;dbl&gt; &lt;int&gt;</span>
+<span class="co">#&gt; 1 mi_do_km1… 483ms 483.51ms  484ms 483.7ms      2.07     382MB    16     2</span>
+<span class="co">#&gt; 2 mi_do_km2… 901µs   1.11ms  943µs  10.9ms    898.      78.2KB     9   453</span>
 <span class="co">#&gt; # … with 1 more variable: total_time &lt;bch:tm&gt;</span></code></pre>
 <p>W tym przypadku różnica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
-Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 2.08 operacji na sekundę, przy aż 917.41 operacji na sekundę funkcji <code>mi_do_km2</code>.
+Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 2.07 operacji na sekundę, przy aż 898.05 operacji na sekundę funkcji <code>mi_do_km2</code>.
 Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż <code>mi_do_km2</code>.</p>
 <pre><code>#&gt; Running with:
 #&gt;       x
@@ -490,14 +490,14 @@ Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) r
 #&gt; # A tibble: 8 x 11
 #&gt;   expression     x      min     mean   median      max `itr/sec` mem_alloc
 #&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;
-#&gt; 1 mi_do_km1…    10    3.9µs   5.11µs   4.66µs 133.64µs 195590.          0B
-#&gt; 2 mi_do_km2…    10   1.74µs   2.19µs   1.96µs  31.24µs 457306.          0B
-#&gt; 3 mi_do_km1…   100  67.67µs  78.75µs   74.4µs 278.11µs  12699.     43.16KB
-#&gt; 4 mi_do_km2…   100   9.16µs  10.73µs  10.03µs  95.22µs  93203.        856B
-#&gt; 5 mi_do_km1…  1000   4.49ms   5.06ms   4.88ms   8.33ms    198.      3.87MB
-#&gt; 6 mi_do_km2…  1000  86.15µs 102.63µs  93.64µs 280.91µs   9743.      7.87KB
-#&gt; 7 mi_do_km1… 10000 621.22ms 621.22ms 621.22ms 621.22ms      1.61  382.04MB
-#&gt; 8 mi_do_km2… 10000 886.44µs   1.06ms 959.03µs   5.69ms    945.     78.18KB
+#&gt; 1 mi_do_km1…    10   3.88µs   5.07µs   4.65µs  92.05µs 197090.          0B
+#&gt; 2 mi_do_km2…    10   1.71µs   2.18µs   1.94µs  81.34µs 459081.          0B
+#&gt; 3 mi_do_km1…   100  67.69µs   78.2µs   73.9µs   4.14ms  12788.     43.16KB
+#&gt; 4 mi_do_km2…   100   9.12µs   10.5µs   9.98µs  97.02µs  95256.        856B
+#&gt; 5 mi_do_km1…  1000   4.45ms    4.8ms   4.76ms   8.78ms    208.      3.87MB
+#&gt; 6 mi_do_km2…  1000   86.1µs  96.69µs  91.73µs 270.88µs  10342.      7.87KB
+#&gt; 7 mi_do_km1… 10000    580ms    580ms    580ms    580ms      1.72  382.04MB
+#&gt; 8 mi_do_km2… 10000 883.26µs   1.04ms 926.97µs   5.58ms    964.     78.18KB
 #&gt; # … with 3 more variables: n_gc &lt;dbl&gt;, n_itr &lt;int&gt;, total_time &lt;bch:tm&gt;</code></pre>
 </div>
 <div id="profiling" class="section level2">
