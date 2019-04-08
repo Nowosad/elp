@@ -677,9 +677,10 @@ Jest to szczególnie przydatne, gdy posiadamy wiele plików na komputerze, któr
 <p>Do wyświetlania nazw plików znajdujących się w wybranym folderze służy funkcja <code>dir()</code>.
 Przykładowo poniższa linia kodu wyświetla wszyskie pliki znajdujące się w folderze <code>&quot;pliki&quot;</code><a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>)
-<span class="co">#&gt; [1] &quot;dane_meteo.csv&quot;  &quot;dane_meteo.rds&quot;  &quot;dane_meteo.xlsx&quot; &quot;dokument.docx&quot;  </span>
-<span class="co">#&gt; [5] &quot;kod.R&quot;           &quot;list.txt&quot;        &quot;mapa.png&quot;        &quot;obrazek.png&quot;    </span>
-<span class="co">#&gt; [9] &quot;zdjęcie.jpg&quot;</span></code></pre>
+<span class="co">#&gt;  [1] &quot;dane_meteo.csv&quot;  &quot;dane_meteo.rds&quot;  &quot;dane_meteo.xlsx&quot;</span>
+<span class="co">#&gt;  [4] &quot;dane_meteo2.csv&quot; &quot;dokument.docx&quot;   &quot;kod.R&quot;          </span>
+<span class="co">#&gt;  [7] &quot;list.txt&quot;        &quot;mapa.png&quot;        &quot;obrazek.png&quot;    </span>
+<span class="co">#&gt; [10] &quot;zdjęcie.jpg&quot;</span></code></pre>
 <p>W przypadku, gdy interesują nas tylko pliki o wybranym rozszerzeniu możemy użyć argumentu <code>pattern</code> i zdefiniować wzorzec.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.png$&quot;</span>)
 <span class="co">#&gt; [1] &quot;mapa.png&quot;    &quot;obrazek.png&quot;</span></code></pre>

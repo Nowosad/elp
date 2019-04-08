@@ -543,9 +543,10 @@ Przykładowo poniższa linia kodu wyświetla wszyskie pliki znajdujące się w f
 
 ```r
 dir("pliki")
-#> [1] "dane_meteo.csv"  "dane_meteo.rds"  "dane_meteo.xlsx" "dokument.docx"  
-#> [5] "kod.R"           "list.txt"        "mapa.png"        "obrazek.png"    
-#> [9] "zdjęcie.jpg"
+#>  [1] "dane_meteo.csv"  "dane_meteo.rds"  "dane_meteo.xlsx"
+#>  [4] "dane_meteo2.csv" "dokument.docx"   "kod.R"          
+#>  [7] "list.txt"        "mapa.png"        "obrazek.png"    
+#> [10] "zdjęcie.jpg"
 ```
 
 W przypadku, gdy interesują nas tylko pliki o wybranym rozszerzeniu możemy użyć argumentu `pattern` i zdefiniować wzorzec.
