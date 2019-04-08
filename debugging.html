@@ -270,7 +270,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zadania-10"><i class="fa fa-check"></i><b>12.4</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>13</b> Debugowanie</a><ul>
-<li class="chapter" data-level="13.1" data-path="debugging.html"><a href="debugging.html#zadania-11"><i class="fa fa-check"></i><b>13.1</b> Zadania</a></li>
+<li class="chapter" data-level="13.1" data-path="debugging.html"><a href="debugging.html#podstawowe-podejscie-do-debugowania"><i class="fa fa-check"></i><b>13.1</b> Podstawowe podejście do debugowania</a></li>
+<li class="chapter" data-level="13.2" data-path="debugging.html"><a href="debugging.html#interaktywne-debugowanie"><i class="fa fa-check"></i><b>13.2</b> Interaktywne debugowanie</a></li>
+<li class="chapter" data-level="13.3" data-path="debugging.html"><a href="debugging.html#zadania-11"><i class="fa fa-check"></i><b>13.3</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>14</b> Łącznik</a><ul>
 <li class="chapter" data-level="14.1" data-path="lacznik.html"><a href="lacznik.html#c"><i class="fa fa-check"></i><b>14.1</b> C++</a></li>
@@ -336,15 +338,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="debugging" class="section level1">
 <h1><span class="header-section-number">13</span> Debugowanie</h1>
-<!-- ## intro -->
-<!-- google search exact error message -->
-<!-- stackoverflow [r] tag -->
+<!-- proces: -->
+<!-- 1. szukaj błędu - ktoś inny - google + stackoverflow -->
+<!-- 2. reprex -> stackoverflow -->
+<!-- 3. debug -> find an error -->
+<!-- 4. fix an error and add tests  -->
 <!-- ref intro -->
-<!-- ## inside R - naive  -->
+<!-- resources -->
+<!-- https://rstudio-education.github.io/hopr/debug.html -->
+<!-- https://jennybc.github.io/wtf-2019-rsc/debugging.pdf -->
+<!-- https://blog.davisvaughan.com/2019/04/05/debug-r-package-with-cpp/ -->
+<!-- https://bookdown.org/rdpeng/RProgDA/debugging.html -->
+<!-- https://adv-r.hadley.nz/debugging.html -->
+<!-- https://www.youtube.com/watch?time_continue=1&v=R3-IMGyNJY4 -->
+<!-- https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio -->
+<!-- http://kevinushey.github.io/blog/2015/04/13/debugging-with-lldb/ -->
+<!-- https://github.com/wch/r-debug/blob/master/debugging-r.md -->
+<div id="podstawowe-podejscie-do-debugowania" class="section level2">
+<h2><span class="header-section-number">13.1</span> Podstawowe podejście do debugowania</h2>
 <!-- `print()`, `cat()` - small objects -->
 <!-- `str()` - large object trunct -->
 <!-- test values -->
 <!-- `traceback()` - bottom to top -->
+</div>
+<div id="interaktywne-debugowanie" class="section level2">
+<h2><span class="header-section-number">13.2</span> Interaktywne debugowanie</h2>
 <!-- ## inside R -->
 <!-- `browser()` -->
 <!-- `n` - next statement -->
@@ -354,15 +372,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- `where` previous calls -->
 <!-- `Q` quit debugger -->
 <!-- + RStudio gui -->
+<!-- + brakepoints -->
+<!-- ## inside R 2-->
 <!-- `debug()`, `trace()`, `recover()` -->
-<!-- https://rstudio-education.github.io/hopr/debug.html -->
-<!-- https://jennybc.github.io/wtf-2019-rsc/debugging.pdf -->
-<!-- https://blog.davisvaughan.com/2019/04/05/debug-r-package-with-cpp/ -->
-<!-- https://bookdown.org/rdpeng/RProgDA/debugging.html -->
-<!-- https://adv-r.hadley.nz/debugging.html -->
-<!-- https://www.youtube.com/watch?time_continue=1&v=R3-IMGyNJY4 -->
+</div>
 <div id="zadania-11" class="section level2">
-<h2><span class="header-section-number">13.1</span> Zadania</h2>
+<h2><span class="header-section-number">13.3</span> Zadania</h2>
 <!-- create debugging examples - .R files -->
 <!-- https://github.com/jimhester/wtf-debugging -->
 
