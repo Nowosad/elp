@@ -1,5 +1,7 @@
 # Kontrola wersji {#kontrola-wersji}
 
+DODALEM ZMIANE!!!
+
 Systemy kontroli wersji to narzędzia pozwalające na zapamiętywaniu zmian zachodzących w plikach.
 Dzięki nim możemy sprawdzić nie tylko kiedy zmieniliśmy dany plik i kto go zmienił, ale co najważniejsze - możemy linia po linii prześledzić zmiany wewnątrz tego pliku.
 Dodatkowo, mamy możliwość przywracania wersji pliku z wybranego czasu w całej historii jego zmian.
