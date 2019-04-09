@@ -424,4 +424,6 @@ Kliknij w ikonę aktualizowania zmian (strzałka w dół).
 Zobacz jak teraz wygląda lokalny plik `README.md`. 
 Co się w nim zmieniło?
 <!-- add more complex ex -->
+<!-- clone a repo -->
+<!-- / fork a repo - znajdź błąd w kodzie i zrób PR -->
 <!-- stwórz najprostszą stronę internetową -->
