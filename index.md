@@ -3,7 +3,7 @@
 title: "Elementarz programisty"
 subtitle: "Wstęp do programowania używając R"
 author: "Jakub Nowosad"
-date: "2019-04-08"
+date: "2019-04-09"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: scrbook

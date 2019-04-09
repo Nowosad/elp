@@ -381,4 +381,47 @@ Więcej odnośników do materiałów związanych z sytemem Git i serwisem GitHub
 
 ## Zadania
 
+1) Skonfiguruj system Git podając swoją nazwę użytkownika oraz adres email. 
+Sprawdź czy nazwa została dodana używając komendy `git config --global user.name` oraz czy dodany został adres email używając `git config --global user.email`.
+2) Stwórz nowe konto użytkownika lub zaloguj się na swoje istniejące konto GitHub.
+Utwórz nowe publiczne repozytorium o nazwie "test".
+3) Połącz zdalne repozytorium "test" z nowym projektem RStudio.
+Sprawdź czy w RStudio pojawił się panel Git, a następnie w tym panelu dodaj pliki `.gitignore` i `test.Rproj` do repozytorium Git poprzez odhaczenie odpowiednich pól w kolumnie *Staged*.
+Kliknij ikonę *Commit* i wpisz wiadomość "Dodano pliki .gitignore i test.Rroj" w pole po prawej stronie. 
+Zatwierdź tą wiadomość, a następnie prześlij te zmiany do repozytorium zdalnego.
+4) Sprawdź stronę internetową zawierającą zdalne repozytorium "test".
+Czy zaszły na niej jakieś zmiany od poprzedniego wejścia? 
+Przejrzyj jakie dodatkowe opcje pojawiły się na stronie tego repozytorium.
+5) W projekcie "test" w RStudio stwórz nowy plik `README.md`. 
+Do tego pliku wstaw zdanie poniższy tekst:
+
+```
+# test
+
+To jest moje pierwsze repozytorium!
+```
+
+Dodaj ten plik do repozytorium Git, napisz odpowiedni komunikat, zatwierdź zmiany i prześlij je do repozytorium zdalnego.
+Sprawdź stronę internetową zawierającą zdalne repozytorium "test".
+Czy zaszły na niej jakieś zmiany od poprzedniego wejścia? 
+
+6) Z poziomu strony internetowej swojego repozytorium "test" edytuj plik `README.md`.
+Możesz to zrobić klikając na nazwę tego pliku, a następnie na ikonę ołówka w prawym górnym roku okna.
+Dodaj do niego kolejną linię `Edytowałem plik z poziomu GitHub.` oraz napisz odpowiedni komunikat poniżej tego okna i zawierdź zmiany (zielony przycisk `Commit changes`).
+Sprawdź stonę internetową zawierającą zdalne repozytorium "test".
+Czy zaszły na niej jakieś zmiany od poprzedniego wejścia? 
+
+7) Wróć do swojego projektu RStudio. 
+Zobacz jak wygląda lokalny plik `README.md` - powinien on nadal zawierać wcześniej wprowadzony tekst.
+
+```
+# test
+
+To jest moje pierwsze repozytorium!
+```
+
+Kliknij w ikonę aktualizowania zmian (strzałka w dół).
+Zobacz jak teraz wygląda lokalny plik `README.md`. 
+Co się w nim zmieniło?
+<!-- add more complex ex -->
 <!-- stwórz najprostszą stronę internetową -->
