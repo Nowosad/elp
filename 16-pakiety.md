@@ -4,6 +4,13 @@
 <!-- https://github.com/ropensci/dev_guide -->
 
 
+Informacje w tym rozdziale powinny pozwolić na stworzenie podstawowego pakietu R.
+Istnieje jednak wiele dodatkowych aspektów i kwestii w tym temacie, które zostały tutaj wspomniane pobieżnie lub pominięte.
+W celu poznania i zrozumienia złożnych aspektów tworzenia pakietów R cennymi źródłami wiedzy może być książki [R packages](https://r-pkgs.org) [@wickham2015r] oraz [rOpenSci Packages: Development, Maintenance, and Peer Review](https://ropensci.github.io/dev_guide/) [@ropensci_2019_2554759].
+Dodatkowo, w niektórych przypadkach pomocna może być oficjalna dokumentacja [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html#Creating-R-packages)
+
+## Tworzenie szkieletu pakietu
+
 [@R-usethis]
 
 <!-- package.skeleton()  Never use this! -->

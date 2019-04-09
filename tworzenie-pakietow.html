@@ -303,14 +303,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zadania-13"><i class="fa fa-check"></i><b>14.6</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a><ul>
-<li class="chapter" data-level="15.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>15.1</b> Rozwijanie pakietu</a></li>
-<li class="chapter" data-level="15.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-funkcji-1"><i class="fa fa-check"></i><b>15.2</b> Dokumentacja funkcji</a></li>
-<li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zaleznosci"><i class="fa fa-check"></i><b>15.3</b> Zależności</a></li>
-<li class="chapter" data-level="15.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-pakietu"><i class="fa fa-check"></i><b>15.4</b> Dokumentacja pakietu</a></li>
-<li class="chapter" data-level="15.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#wbudowane-testy"><i class="fa fa-check"></i><b>15.5</b> Wbudowane testy</a></li>
-<li class="chapter" data-level="15.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#licencje"><i class="fa fa-check"></i><b>15.6</b> Licencje</a></li>
-<li class="chapter" data-level="15.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietow"><i class="fa fa-check"></i><b>15.7</b> Publikowanie pakietów</a></li>
-<li class="chapter" data-level="15.8" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zadania-14"><i class="fa fa-check"></i><b>15.8</b> Zadania</a></li>
+<li class="chapter" data-level="15.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-szkieletu-pakietu"><i class="fa fa-check"></i><b>15.1</b> Tworzenie szkieletu pakietu</a></li>
+<li class="chapter" data-level="15.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>15.2</b> Rozwijanie pakietu</a></li>
+<li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-funkcji-1"><i class="fa fa-check"></i><b>15.3</b> Dokumentacja funkcji</a></li>
+<li class="chapter" data-level="15.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zaleznosci"><i class="fa fa-check"></i><b>15.4</b> Zależności</a></li>
+<li class="chapter" data-level="15.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-pakietu"><i class="fa fa-check"></i><b>15.5</b> Dokumentacja pakietu</a></li>
+<li class="chapter" data-level="15.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#wbudowane-testy"><i class="fa fa-check"></i><b>15.6</b> Wbudowane testy</a></li>
+<li class="chapter" data-level="15.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#licencje"><i class="fa fa-check"></i><b>15.7</b> Licencje</a></li>
+<li class="chapter" data-level="15.8" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietow"><i class="fa fa-check"></i><b>15.8</b> Publikowanie pakietów</a></li>
+<li class="chapter" data-level="15.9" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zadania-14"><i class="fa fa-check"></i><b>15.9</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>III Przykłady</b></span></li>
 <li class="chapter" data-level="16" data-path="analiza-danych.html"><a href="analiza-danych.html"><i class="fa fa-check"></i><b>16</b> Analiza danych</a></li>
@@ -342,6 +343,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">15</span> Pakiety</h1>
 <!-- https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1006561&type=printable -->
 <!-- https://github.com/ropensci/dev_guide -->
+<p>Informacje w tym rozdziale powinny pozwolić na stworzenie podstawowego pakietu R.
+Istnieje jednak wiele dodatkowych aspektów i kwestii w tym temacie, które zostały tutaj wspomniane pobieżnie lub pominięte.
+W celu poznania i zrozumienia złożnych aspektów tworzenia pakietów R cennymi źródłami wiedzy może być książki <a href="https://r-pkgs.org">R packages</a> <span class="citation">(Wickham <a href="#ref-wickham2015r">2015</a>)</span> oraz <a href="https://ropensci.github.io/dev_guide/">rOpenSci Packages: Development, Maintenance, and Peer Review</a> <span class="citation">(rOpenSci et al. <a href="#ref-ropensci_2019_2554759">2019</a>)</span>.
+Dodatkowo, w niektórych przypadkach pomocna może być oficjalna dokumentacja <a href="https://cran.r-project.org/doc/manuals/R-exts.html#Creating-R-packages">Writing R Extensions</a></p>
+<div id="tworzenie-szkieletu-pakietu" class="section level2">
+<h2><span class="header-section-number">15.1</span> Tworzenie szkieletu pakietu</h2>
 <p><span class="citation">(Wickham and Bryan <a href="#ref-R-usethis">2018</a>)</span></p>
 <!-- package.skeleton()  Never use this! -->
 <!-- usethis::create_package("~/Desktop/mypackage") -->
@@ -352,22 +359,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>DESCRIPTION</code></li>
 <li><code>NAMESPACE</code></li>
 </ol>
+</div>
 <div id="rozwijanie-pakietu" class="section level2">
-<h2><span class="header-section-number">15.1</span> Rozwijanie pakietu</h2>
+<h2><span class="header-section-number">15.2</span> Rozwijanie pakietu</h2>
 <!-- twórz/modyfikuj kod -->
 <!-- devtools::load_all() -->
 <!-- sprawdź czy działa (unittests)-->
 <!-- powtórz -->
 </div>
 <div id="dokumentacja-funkcji-1" class="section level2">
-<h2><span class="header-section-number">15.2</span> Dokumentacja funkcji</h2>
+<h2><span class="header-section-number">15.3</span> Dokumentacja funkcji</h2>
 <!-- roxygen2 -->
 </div>
 <div id="zaleznosci" class="section level2">
-<h2><span class="header-section-number">15.3</span> Zależności</h2>
+<h2><span class="header-section-number">15.4</span> Zależności</h2>
 </div>
 <div id="dokumentacja-pakietu" class="section level2">
-<h2><span class="header-section-number">15.4</span> Dokumentacja pakietu</h2>
+<h2><span class="header-section-number">15.5</span> Dokumentacja pakietu</h2>
 <!-- vignettes -->
 <!-- usethis::use_vignette("name") -->
 <!-- rmarkdown -->
@@ -377,7 +385,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- news -->
 </div>
 <div id="wbudowane-testy" class="section level2">
-<h2><span class="header-section-number">15.5</span> Wbudowane testy</h2>
+<h2><span class="header-section-number">15.6</span> Wbudowane testy</h2>
 <!-- Unit testing -->
 <!-- usethis::use_test() -->
 <!-- devtools::test() -->
@@ -386,7 +394,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Automated testing with Travis CI + codecov -->
 </div>
 <div id="licencje" class="section level2">
-<h2><span class="header-section-number">15.6</span> Licencje</h2>
+<h2><span class="header-section-number">15.7</span> Licencje</h2>
 <!-- There are three main open source licenses -->
 <!-- CC0 “public domain”, best for data packages  -->
 <!-- MIT Free for anyone to do anything with -->
@@ -399,7 +407,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- Widgets Incorporated. -->
 </div>
 <div id="publikowanie-pakietow" class="section level2">
-<h2><span class="header-section-number">15.7</span> Publikowanie pakietów</h2>
+<h2><span class="header-section-number">15.8</span> Publikowanie pakietów</h2>
 
 <div class="rmdinfo">
 software documentation
@@ -417,7 +425,7 @@ Continuous Integration
 
 </div>
 <div id="zadania-14" class="section level2">
-<h2><span class="header-section-number">15.8</span> Zadania</h2>
+<h2><span class="header-section-number">15.9</span> Zadania</h2>
 
 </div>
 </div>
@@ -426,6 +434,12 @@ Continuous Integration
 
 <h3>Bibliografia</h3>
 <div id="refs" class="references">
+<div id="ref-wickham2015r">
+<p>Wickham, Hadley. 2015. <em>R Packages: Organize, Test, Document, and Share Your Code</em>. &quot; O’Reilly Media, Inc.&quot;.</p>
+</div>
+<div id="ref-ropensci_2019_2554759">
+<p>rOpenSci, Brooke Anderson, Scott Chamberlain, Anna Krystalli, Lincoln Mullen, Karthik Ram, Noam Ross, Maëlle Salmon, and Melina Vidoni. 2019. “rOpenSci Packages: Development, Maintenance, and Peer Review,” January. <a href="https://doi.org/10.5281/zenodo.2554759" class="uri">https://doi.org/10.5281/zenodo.2554759</a>.</p>
+</div>
 <div id="ref-R-usethis">
 <p>Wickham, Hadley, and Jennifer Bryan. 2018. <em>Usethis: Automate Package and Project Setup</em>. <a href="https://CRAN.R-project.org/package=usethis" class="uri">https://CRAN.R-project.org/package=usethis</a>.</p>
 </div>
