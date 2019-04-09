@@ -387,7 +387,7 @@ Sprawdź czy nazwa została dodana używając komendy `git config --global user.
 Utwórz nowe publiczne repozytorium o nazwie "test".
 3) Połącz zdalne repozytorium "test" z nowym projektem RStudio.
 Sprawdź czy w RStudio pojawił się panel Git, a następnie w tym panelu dodaj pliki `.gitignore` i `test.Rproj` do repozytorium Git poprzez odhaczenie odpowiednich pól w kolumnie *Staged*.
-Kliknij ikonę *Commit* i wpisz wiadomość "Dodano pliki .gitignore i test.Rroj" w pole po prawej stronie. 
+Kliknij ikonę *Commit* i wpisz wiadomość "Dodano pliki .gitignore i test.Rproj" w pole po prawej stronie. 
 Zatwierdź tą wiadomość, a następnie prześlij te zmiany do repozytorium zdalnego.
 4) Sprawdź stronę internetową zawierającą zdalne repozytorium "test".
 Czy zaszły na niej jakieś zmiany od poprzedniego wejścia? 
