@@ -408,7 +408,7 @@ Czy zaszły na niej jakieś zmiany od poprzedniego wejścia?
 6) Z poziomu strony internetowej swojego repozytorium "test" edytuj plik `README.md`.
 Możesz to zrobić klikając na nazwę tego pliku, a następnie na ikonę ołówka w prawym górnym roku okna.
 Dodaj do niego kolejną linię `Edytowałem plik z poziomu GitHub.` oraz napisz odpowiedni komunikat poniżej tego okna i zawierdź zmiany (zielony przycisk `Commit changes`).
-Sprawdź stonę internetową zawierającą zdalne repozytorium "test".
+Sprawdź stronę internetową zawierającą zdalne repozytorium "test".
 Czy zaszły na niej jakieś zmiany od poprzedniego wejścia? 
 
 7) Wróć do swojego projektu RStudio. 
