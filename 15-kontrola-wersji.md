@@ -426,4 +426,5 @@ Co się w nim zmieniło?
 <!-- add more complex ex -->
 <!-- clone a repo -->
 <!-- / fork a repo - znajdź błąd w kodzie i zrób PR -->
+<!-- collaboration? -->
 <!-- stwórz najprostszą stronę internetową -->
