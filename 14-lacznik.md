@@ -49,7 +49,7 @@ codecodecode(5)
 ```
 
 <!-- note - packages -->
-
+<!-- indexing starts at 0 -->
 
 <!-- https://adv-r.hadley.nz/rcpp.html -->
 <!-- https://csgillespie.github.io/efficientR/performance.html#rcpp -->

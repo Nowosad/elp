@@ -565,7 +565,7 @@ R ma wbudowaną reprezentację dat w postaci klasy `Date`.
 ```r
 dzis = Sys.Date()
 dzis
-#> [1] "2019-04-10"
+#> [1] "2019-04-13"
 ```
 
 Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowia), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.
@@ -586,10 +586,10 @@ Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji `unclass()`.
 
 ```r
 unclass(dzis)
-#> [1] 17996
+#> [1] 17999
 ```
 
-Wynik, 17996, oznacza liczbę dni od 1970-01-01.^[https://en.wikipedia.org/wiki/Unix_time]
+Wynik, 17999, oznacza liczbę dni od 1970-01-01.^[https://en.wikipedia.org/wiki/Unix_time]
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
 
 
