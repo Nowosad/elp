@@ -23,18 +23,29 @@ Można to przykładowo zrobić używając pakietu **https://github.com/ropenscil
 
 ## Tworzenie szkieletu pakietu
 
+Kolejnym krokiem jest stworzenie szkieletu pakietu, czyli zorganizowanego zbioru plików i folderów, do których później należy dodać odpowiednie informacje i funkcje.
+Znacznie w tym może pomóc pakiet **usethis** [@R-usethis], który zawiera szereg funkcji ułatwiających budowanie pakietów R.
+
+```{r, eval=FALSE}
+library(usethis)
+```
 
 
-[@R-usethis]
+Do stworzenia szkieletu pakietu służy funkcja `create_packages()`, w której należy podać ścieżkę do nowego pakietu.<!-- package.skeleton()  Never use this! -->
+W tej ścieżce ostatnia nazwa folderu określa również nazwę pakietu.^[Funkcja również `create_packages()` sama tworzy nowy folder, jeżeli on wcześniej nie istniał.]
 
-<!-- package.skeleton()  Never use this! -->
-<!-- usethis::create_package("~/Desktop/mypackage") -->
-Funkcja `create_packages()` tworzy cztery pliki:
+```{r, eval=FALSE}
+usethis::create_package("~/Documents/mojpakiet")
+```
 
-1. `.Rproj`
-2. `R/`
-3. `DESCRIPTION`
-4. `NAMESPACE`
+W efekcie działania powyższej funkcji stworzony zostanie nowy folder `mojpakiet` zawierający kilka plików oraz otwarty zostanie nowy projekt RStudio zawierający ten pakiet.
+Najważniejsze nowe pliki to:
+
+1. `mojpakiet.Rproj` - plik projektu RStudio
+2. `DESCRIPTION` - plik zawierający podstawowe informacje o pakiecie, w tym jego nazwę, tytuł, wersję, autorów, opis, czy licencję
+3. `R/` - w tym pustym folderze konieczne będzie umieszczenie nowych funkcji R
+4. `NAMESPACE` - ten plik określa, między innymi, jakie funkcje są dostępne w tym pakiecie. 
+Ten plik i jego zawartość jest tworzona automatycznie
 
 ## Rozwijanie pakietu
 
