@@ -389,7 +389,6 @@ Blogi:
 
 Kursy:
 
-- Lista kursów dotyczących R na platformie DataCamp (część z nich jest dostępna bezpłatnie) - https://www.datacamp.com/search?q=r
 - Polskie tłumaczenie pakietu R służącego do nauki tego języka - https://github.com/dabrze/swirl
 - Lista kursów dotyczących R na platformie Coursera - https://www.coursera.org/courses?query=r
 - Lista kursów dotyczących R na platformie edX - https://www.edx.org/course?search_query=r
