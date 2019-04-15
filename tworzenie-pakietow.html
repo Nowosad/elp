@@ -316,9 +316,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zaleznosci"><i class="fa fa-check"></i><b>15.6</b> Zależności</a></li>
 <li class="chapter" data-level="15.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-pakietu"><i class="fa fa-check"></i><b>15.7</b> Dokumentacja pakietu</a></li>
 <li class="chapter" data-level="15.8" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#wbudowane-testy"><i class="fa fa-check"></i><b>15.8</b> Wbudowane testy</a></li>
-<li class="chapter" data-level="15.9" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#licencje"><i class="fa fa-check"></i><b>15.9</b> Licencje</a></li>
-<li class="chapter" data-level="15.10" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietow"><i class="fa fa-check"></i><b>15.10</b> Publikowanie pakietów</a></li>
-<li class="chapter" data-level="15.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zadania-14"><i class="fa fa-check"></i><b>15.11</b> Zadania</a></li>
+<li class="chapter" data-level="15.9" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietow"><i class="fa fa-check"></i><b>15.9</b> Publikowanie pakietów</a></li>
+<li class="chapter" data-level="15.10" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zadania-14"><i class="fa fa-check"></i><b>15.10</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>III Przykłady</b></span></li>
 <li class="chapter" data-level="16" data-path="analiza-danych.html"><a href="analiza-danych.html"><i class="fa fa-check"></i><b>16</b> Analiza danych</a></li>
@@ -420,13 +419,30 @@ Dodatkowo ta osoba posiada dwie role przy tworzeniu tego pakietu <code>&quot;cre
 Pierwsza rola, <code>&quot;cre&quot;</code>, informuje że ta osoba jest twórcą i konserwatorem tego pakietu.
 Ona jest odpowiedzialna za pracę pakietu.
 Druga rola, <code>&quot;aut&quot;</code>, jest nadawana osom, które wniosły bardzo duży wkład w kod zawarty w pakiecie.
-Inne często używane role to <code>&quot;ctb&quot;</code> określająca osoby, które wniosły mniejszy wkład w kod (np. drobne zmiany) oraz <code>&quot;cph&quot;</code> określająca osoby czy instytucje będące posiadaczami praw autorskich (np. firma zatrudniająca autora kodu albo autor biblioteki, która została wewnętrznie użyta).
-<!-- http://www.loc.gov/marc/relators/relaterm.html -->
+Inne często używane role to <code>&quot;ctb&quot;</code> określająca osoby, które wniosły mniejszy wkład w kod (np. drobne zmiany) oraz <code>&quot;cph&quot;</code> określająca osoby czy instytucje będące posiadaczami praw autorskich (np. firma zatrudniająca autora kodu albo autor biblioteki, która została wewnętrznie użyta).<a href="#fn56" class="footnote-ref" id="fnref56"><sup>56</sup></a>
 Dodanie kolejnych osób odbywa się poprzez łączenie ich funkcją <code>c()</code>.</p>
 <pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">Authors@R:</span><span class="at"> c(</span>
-    person(given = <span class="st">&quot;Imie&quot;</span>, <span class="st">&quot;Nazwisko&quot;</span>, role = c(<span class="st">&quot;cre&quot;</span>, <span class="st">&quot;aut&quot;</span>), email = <span class="st">&quot;imie.nazwisko@example.com&quot;</span>),
-    person(given = <span class="st">&quot;Imie2&quot;</span>, <span class="st">&quot;Nazwisko2&quot;</span>, role = <span class="st">&quot;aut&quot;</span>, email = <span class="st">&quot;imie2.nazwisko2@example.com&quot;</span>)
+    person(<span class="st">&quot;Imie&quot;</span>, <span class="st">&quot;Nazwisko&quot;</span>, role = c(<span class="st">&quot;cre&quot;</span>, <span class="st">&quot;aut&quot;</span>), email = <span class="st">&quot;imie.nazwisko@example.com&quot;</span>),
+    person(<span class="st">&quot;Imie2&quot;</span>, <span class="st">&quot;Nazwisko2&quot;</span>, role = <span class="st">&quot;aut&quot;</span>, email = <span class="st">&quot;imie2.nazwisko2@example.com&quot;</span>)
 )</code></pre>
+<p>Licencja (<code>License:</code>) określa warunki korzystania z pakietu przez inne osoby.
+W bardzo dużym skrócie licencje oprogramowania można podzielić na licencje otwarte (<em>open-source</em>) oraz zamknięte (<em>proprietary</em>).
+Najpopularniejsze licencje otwarte używane w pakietach R to licencja <code>CC0</code>, <code>MIT</code> oraz <code>GPL</code>.
+Pierwsza z nich, <code>CC0</code> oznacza przekazanie <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.pl">zawartości pakietu do domeny publicznej</a> i najczęściej stosowana jest do pakietów zawierających tylko zbiory danych.
+Licencja <code>MIT</code> daje nieograniczone prawo do używania, modyfikowania i rozpowszechniania kodu, pod warunkiem zachowania informacji o autorze.
+Dodanie licencji <code>MIT</code> do pakietu R można wykonać podając swoje imię i nazwisko w funkcji <code>usethis::use_mit_license(&quot;Imie Nazwisko&quot;)</code>.
+W ten sposób informacja o tej licencji zostanie dodana do pliku <code>DESCRIPTION</code> (<code>License: MIT + file LICENSE</code>) oraz zostaną utworzone specjalne pliki z treścią licencji.
+Trzecia z licencji otwartych, <code>GPL</code> (ang. <em>GNU General Public License</em>) pozwala użytkownikom na uruchamianie, dostosowywanie, rozpowszechnianie i udoskonalanie kodu.
+Ważną cechą tej licencji jest wymaganie, że wszelkie prace oparte o kod w licencji <code>GPL</code> również muszą mieć licencję <code>GPL</code>
+Oprogramowanie zamknięte może również przyjmować wiele form (np. freeware czy też oprogramowanie komercyjne).
+Określenie pakietu jako oprogramowania zamkniętego odbywa się poprzez dodanie informacji, że licencja znajduje się w pliku <code>LICENSE</code> (<code>License: file LICENSE</code>), a następnie stworzenie pliku tekstowego o tej nazwie zawierającego odpowiednią modyfikację poniższego tekstu:</p>
+<pre class="sourceCode yaml"><code class="sourceCode yaml">Proprietary 
+
+Do not distribute outside of NAZWA MOJEJ FIRMY.</code></pre>
+<!-- linki do licencji -->
+<!-- http://choosealicense.com/licenses/ -->
+<!-- https://tldrlegal.com/ -->
+<!-- http://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file -->
 <!-- inne opcje -->
 <p>Plik <code>DESCRIPTION</code> należy regularnie uaktualniać, np. zmieniać numer wersji po naniesionych zmianach w kodzie, czy dodawać nowych autorów, jeżeli tacy się pojawili.</p>
 </div>
@@ -506,21 +522,8 @@ Zbudowanie pliku dokumentacji pozwala teraz na jej podejrzenie poprzez wywołani
 <!-- https://katherinemwood.github.io/post/testthat/ -->
 <!-- Automated testing with Travis CI + codecov -->
 </div>
-<div id="licencje" class="section level2">
-<h2><span class="header-section-number">15.9</span> Licencje</h2>
-<!-- There are three main open source licenses -->
-<!-- CC0 “public domain”, best for data packages  -->
-<!-- MIT Free for anyone to do anything with -->
-<!-- GPL Changes and bundles must also be GPL -->
-<!-- These are gross simplifications! -->
-<!-- DESCRIPTION: -->
-<!-- License: file LICENSE -->
-<!-- LICENSE: -->
-<!-- Proprietary: do not distribute outside of -->
-<!-- Widgets Incorporated. -->
-</div>
 <div id="publikowanie-pakietow" class="section level2">
-<h2><span class="header-section-number">15.10</span> Publikowanie pakietów</h2>
+<h2><span class="header-section-number">15.9</span> Publikowanie pakietów</h2>
 
 <div class="rmdinfo">
 software documentation
@@ -538,7 +541,7 @@ Continuous Integration
 
 </div>
 <div id="zadania-14" class="section level2">
-<h2><span class="header-section-number">15.11</span> Zadania</h2>
+<h2><span class="header-section-number">15.10</span> Zadania</h2>
 
 </div>
 </div>
@@ -568,6 +571,7 @@ Continuous Integration
 <ol start="54">
 <li id="fn54"><p>Funkcja również <code>create_packages()</code> sama tworzy nowy folder, jeżeli on wcześniej nie istniał.<a href="tworzenie-pakietow.html#fnref54" class="footnote-back">↩</a></p></li>
 <li id="fn55"><p>Tytuły pakietów można znaleźć, np. w panelu “Packages” w RStudio.<a href="tworzenie-pakietow.html#fnref55" class="footnote-back">↩</a></p></li>
+<li id="fn56"><p>Pełną listę dostępnych ról można znaleźć pod adresem <a href="http://www.loc.gov/marc/relators/relaterm.html" class="uri">http://www.loc.gov/marc/relators/relaterm.html</a>.<a href="tworzenie-pakietow.html#fnref56" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
