@@ -2,6 +2,12 @@
 <!-- https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1006561&type=printable -->
 <!-- https://github.com/ropensci/dev_guide -->
 
+Pakiety są powszechnie wykorzystywane podczas pracy z językiem R.
+Celem sekcji \@ref(pakiety) było wprowadzenie do tego czym są pakiety, jak się je instaluje oraz dołącza. 
+Najważniejszą informacją było, że pakiety są zorganizowanymi zbiorami funkcji. 
+Oznacza to, że nie tylko posiadamy pewną liczbę stworzonych funkcji, ale także są one ułożone w pewien ustalony sposób.
+Funkcje w pakietach posiadają też swoją dokumentację (jej struktura została przedstawiona w sekcji \@ref(dokumentacja-funkcji)) czy przykładowe dane.
+Pakiety, oprócz swojej unikalnej nazwy, posiadają również informacje o swojej wersji, autorach, zależnościach i licencji.
 
 Informacje w tym rozdziale powinny pozwolić na stworzenie podstawowego pakietu R.
 Istnieje jednak wiele dodatkowych aspektów i kwestii w tym temacie, które zostały tutaj wspomniane pobieżnie lub pominięte.
