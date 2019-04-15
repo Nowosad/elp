@@ -52,10 +52,13 @@ Ten plik i jego zawartość jest tworzona automatycznie
 
 ## Rozwijanie pakietu
 
-<!-- twórz/modyfikuj kod -->
-<!-- devtools::load_all() -->
-<!-- sprawdź czy działa (unittests)-->
-<!-- powtórz -->
+Rozwój pakietu R może opierać się na kilku poniższych krokach:
+
+1. Tworzenie/modyfikowanie kodu
+2. Używanie funkcji `devtools::load_all()`, która dodaje nowe/zmodyfikowane funkcje do R
+3. Sprawdzenie czy funkcja działa zgodnie z oczekiwaniami na kilku przykładach
+4. Dodanie testów jednostkowych (sekcja \@ref(testy-jednostkowe)) na podstawie stworzonych przykładów
+5. Powtórzenie powyższych czynności
 
 ## Dokumentacja funkcji
 

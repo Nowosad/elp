@@ -386,10 +386,14 @@ Ten plik i jego zawartość jest tworzona automatycznie</li>
 </div>
 <div id="rozwijanie-pakietu" class="section level2">
 <h2><span class="header-section-number">15.3</span> Rozwijanie pakietu</h2>
-<!-- twórz/modyfikuj kod -->
-<!-- devtools::load_all() -->
-<!-- sprawdź czy działa (unittests)-->
-<!-- powtórz -->
+<p>Rozwój pakietu R może opierać się na kilku poniższych krokach:</p>
+<ol style="list-style-type: decimal">
+<li>Tworzenie/modyfikowanie kodu</li>
+<li>Używanie funkcji <code>devtools::load_all()</code>, która dodaje nowe/zmodyfikowane funkcje do R</li>
+<li>Sprawdzenie czy funkcja działa zgodnie z oczekiwaniami na kilku przykładach</li>
+<li>Dodanie testów jednostkowych (sekcja <a href="analiza-kodu.html#testy-jednostkowe">11.1</a>) na podstawie stworzonych przykładów</li>
+<li>Powtórzenie powyższych czynności</li>
+</ol>
 </div>
 <div id="dokumentacja-funkcji-1" class="section level2">
 <h2><span class="header-section-number">15.4</span> Dokumentacja funkcji</h2>
