@@ -310,14 +310,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a><ul>
 <li class="chapter" data-level="15.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#nazwa-pakietu"><i class="fa fa-check"></i><b>15.1</b> Nazwa pakietu</a></li>
 <li class="chapter" data-level="15.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-szkieletu-pakietu"><i class="fa fa-check"></i><b>15.2</b> Tworzenie szkieletu pakietu</a></li>
-<li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>15.3</b> Rozwijanie pakietu</a></li>
-<li class="chapter" data-level="15.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-funkcji-1"><i class="fa fa-check"></i><b>15.4</b> Dokumentacja funkcji</a></li>
-<li class="chapter" data-level="15.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zaleznosci"><i class="fa fa-check"></i><b>15.5</b> Zależności</a></li>
-<li class="chapter" data-level="15.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-pakietu"><i class="fa fa-check"></i><b>15.6</b> Dokumentacja pakietu</a></li>
-<li class="chapter" data-level="15.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#wbudowane-testy"><i class="fa fa-check"></i><b>15.7</b> Wbudowane testy</a></li>
-<li class="chapter" data-level="15.8" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#licencje"><i class="fa fa-check"></i><b>15.8</b> Licencje</a></li>
-<li class="chapter" data-level="15.9" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietow"><i class="fa fa-check"></i><b>15.9</b> Publikowanie pakietów</a></li>
-<li class="chapter" data-level="15.10" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zadania-14"><i class="fa fa-check"></i><b>15.10</b> Zadania</a></li>
+<li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>15.3</b> Opis pakietu</a></li>
+<li class="chapter" data-level="15.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>15.4</b> Rozwijanie pakietu</a></li>
+<li class="chapter" data-level="15.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-i-dokumentacja-funkcji"><i class="fa fa-check"></i><b>15.5</b> Tworzenie i dokumentacja funkcji</a></li>
+<li class="chapter" data-level="15.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zaleznosci"><i class="fa fa-check"></i><b>15.6</b> Zależności</a></li>
+<li class="chapter" data-level="15.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-pakietu"><i class="fa fa-check"></i><b>15.7</b> Dokumentacja pakietu</a></li>
+<li class="chapter" data-level="15.8" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#wbudowane-testy"><i class="fa fa-check"></i><b>15.8</b> Wbudowane testy</a></li>
+<li class="chapter" data-level="15.9" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#licencje"><i class="fa fa-check"></i><b>15.9</b> Licencje</a></li>
+<li class="chapter" data-level="15.10" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietow"><i class="fa fa-check"></i><b>15.10</b> Publikowanie pakietów</a></li>
+<li class="chapter" data-level="15.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zadania-14"><i class="fa fa-check"></i><b>15.11</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>III Przykłady</b></span></li>
 <li class="chapter" data-level="16" data-path="analiza-danych.html"><a href="analiza-danych.html"><i class="fa fa-check"></i><b>16</b> Analiza danych</a></li>
@@ -378,14 +379,59 @@ W tej ścieżce ostatnia nazwa folderu określa również nazwę pakietu.<a href
 Najważniejsze nowe pliki to:</p>
 <ol style="list-style-type: decimal">
 <li><code>mojpakiet.Rproj</code> - plik projektu RStudio</li>
-<li><code>DESCRIPTION</code> - plik zawierający podstawowe informacje o pakiecie, w tym jego nazwę, tytuł, wersję, autorów, opis, czy licencję</li>
+<li><code>DESCRIPTION</code> - plik zawierający podstawowe informacje o pakiecie</li>
 <li><code>R/</code> - w tym pustym folderze konieczne będzie umieszczenie nowych funkcji R</li>
 <li><code>NAMESPACE</code> - ten plik określa, między innymi, jakie funkcje są dostępne w tym pakiecie.
 Ten plik i jego zawartość jest tworzona automatycznie</li>
 </ol>
+<p>Dodatkowo w prawym górnym panelu RStudio pojawi się nowy panel “Build”.</p>
+<!-- printscreen -->
+</div>
+<div id="opis-pakietu" class="section level2">
+<h2><span class="header-section-number">15.3</span> Opis pakietu</h2>
+<p>Plik <code>DESCRIPTION</code> zawiera opis (metadane) pakietu, w tym jego nazwę, tytuł, wersję, autorów, opis, czy licencję.</p>
+<pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">Package:</span><span class="at"> mojpakiet</span>
+<span class="fu">Title:</span><span class="at"> Moje Funkcje Robiace Wszystko</span>
+<span class="fu">Version:</span><span class="at"> 0.0.1</span>
+<span class="fu">Authors@R:</span><span class="at"> </span>
+    person(given = <span class="st">&quot;Imie&quot;</span>,
+           family = <span class="st">&quot;Nazwisko&quot;</span>,
+           role = c(<span class="st">&quot;cre&quot;</span>, <span class="st">&quot;aut&quot;</span>),
+           email = <span class="st">&quot;imie.nazwisko@example.com&quot;</span>)
+<span class="fu">Description:</span><span class="at"> Tworzenie, przeliczanie i wyliczanie wszystkiego. </span>
+    Czasami nawet więcej.
+<span class="fu">License:</span><span class="at"> CC0</span>
+<span class="fu">Encoding:</span><span class="at"> UTF-8</span>
+<span class="fu">LazyData:</span><span class="at"> true</span>
+<span class="fu">RoxygenNote:</span><span class="at"> 6.1.1</span></code></pre>
+<p>Tytuł pakietu (<code>Title:</code>) w jednym krótkim zdaniu (sloganie) określa do czego służy ten pakiet.<a href="#fn55" class="footnote-ref" id="fnref55"><sup>55</sup></a>
+Składa się on ze słów rozpoczynających się z dużej litery.
+Wersja pakietu (<code>Version:</code>) pozwala jego użytkownikom na zobaczenie, czy korzystają z aktualnej wersji pakietu.
+Zalecanym sposobem określania wersji pakietu jest stosowanie trzech liczb <code>pierwsza.druga.trzecia</code>, np. <code>0.9.1</code>.
+Zmiana trzeciej liczby służy do pokazania, że zaszła niewielka zmiana w kodzie, zazwyczaj wiążąca się z naprawą małego błędu, np. <code>0.9.2</code>.
+Druga liczba jest zmieniana podczas wydania nowej wersji pakietu, która zawiera większe zmiany w kodzie, jak naprawy poważnych błędów, czy dodanie nowych możliwości, np. <code>0.10.0</code>.
+Zmiana pierwszej liczby sugeruje poważne zmiany w kodzie, które ale też sugeruje pewną stabilizację działania, np. <code>1.0.0</code>.
+<!-- https://semver.org/ -->
+<!-- https://www.x.org/releases/X11R7.7/doc/xorg-docs/Versions.html -->
+<!-- https://r-pkgs.org/release.html#release-version -->
+<code>Authors@R:</code> określa kolejne osoby zaangażowane w budowę tego pakietu.
+W powyższym przykładzie mamy wymienioną jedną osobę <code>&quot;Imie&quot;</code> <code>&quot;Nazwisko&quot;</code>, której adres mailowy to <code>&quot;imie.nazwisko@example.com&quot;</code>.
+Dodatkowo ta osoba posiada dwie role przy tworzeniu tego pakietu <code>&quot;cre&quot;</code> oraz <code>&quot;aut&quot;</code>.
+Pierwsza rola, <code>&quot;cre&quot;</code>, informuje że ta osoba jest twórcą i konserwatorem tego pakietu.
+Ona jest odpowiedzialna za pracę pakietu.
+Druga rola, <code>&quot;aut&quot;</code>, jest nadawana osom, które wniosły bardzo duży wkład w kod zawarty w pakiecie.
+Inne często używane role to <code>&quot;ctb&quot;</code> określająca osoby, które wniosły mniejszy wkład w kod (np. drobne zmiany) oraz <code>&quot;cph&quot;</code> określająca osoby czy instytucje będące posiadaczami praw autorskich (np. firma zatrudniająca autora kodu albo autor biblioteki, która została wewnętrznie użyta).
+<!-- http://www.loc.gov/marc/relators/relaterm.html -->
+Dodanie kolejnych osób odbywa się poprzez łączenie ich funkcją <code>c()</code>.</p>
+<pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">Authors@R:</span><span class="at"> c(</span>
+    person(given = <span class="st">&quot;Imie&quot;</span>, <span class="st">&quot;Nazwisko&quot;</span>, role = c(<span class="st">&quot;cre&quot;</span>, <span class="st">&quot;aut&quot;</span>), email = <span class="st">&quot;imie.nazwisko@example.com&quot;</span>),
+    person(given = <span class="st">&quot;Imie2&quot;</span>, <span class="st">&quot;Nazwisko2&quot;</span>, role = <span class="st">&quot;aut&quot;</span>, email = <span class="st">&quot;imie2.nazwisko2@example.com&quot;</span>)
+)</code></pre>
+<!-- inne opcje -->
+<p>Plik <code>DESCRIPTION</code> należy regularnie uaktualniać, np. zmieniać numer wersji po naniesionych zmianach w kodzie, czy dodawać nowych autorów, jeżeli tacy się pojawili.</p>
 </div>
 <div id="rozwijanie-pakietu" class="section level2">
-<h2><span class="header-section-number">15.3</span> Rozwijanie pakietu</h2>
+<h2><span class="header-section-number">15.4</span> Rozwijanie pakietu</h2>
 <p>Rozwój pakietu R może opierać się na kilku poniższych krokach:</p>
 <ol style="list-style-type: decimal">
 <li>Tworzenie/modyfikowanie kodu</li>
@@ -395,15 +441,54 @@ Ten plik i jego zawartość jest tworzona automatycznie</li>
 <li>Powtórzenie powyższych czynności</li>
 </ol>
 </div>
-<div id="dokumentacja-funkcji-1" class="section level2">
-<h2><span class="header-section-number">15.4</span> Dokumentacja funkcji</h2>
+<div id="tworzenie-i-dokumentacja-funkcji" class="section level2">
+<h2><span class="header-section-number">15.5</span> Tworzenie i dokumentacja funkcji</h2>
+<p>W sekcji <a href="funkcje.html#budowanie-funkcji">3.8</a> stworzyliśmy nową funkcję <code>konwersja_temp()</code> przeliczającą temperaturę ze stopni Fahrenheita na stopnie Celsjusza.</p>
+<pre class="sourceCode r"><code class="sourceCode r">konwersja_temp =<span class="st"> </span><span class="cf">function</span>(temperatura_f){
+    (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span>
+}</code></pre>
+<p>Umieszczenie tej funkcji w nowym pakiecie R odbywa się poprzez zapisanie tego kodu jako skrypt R (np. <code>konwersja_temp.R</code>) w folderze <code>R/</code>.</p>
+<p>Funkcje zawarte w pakietach muszą także posiadać odpowiednią dokumentację, zawierającą, między innymi, tytuł funkcji, opis jej działania, wyjaśnienie kolejnych argumentów funkcji, oraz przykłady jej działania.
+Linie obejmujące dokumentację funkcji rozpoczynają się od znaków <code>#'</code>, a tworzenie dokumentacji funkcji odbywa się poprzez wypełnianie treści dla kolejnych znaczników (np. <code>@example</code> określa występowanie przykładu).</p>
+<p>Przykładowy plik <code>R/konwersja_temp.R</code> może wyglądać następująco:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Konwersja temperatur</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; @description Funkcja sluzaca do konwersji temperatury w stopniach Fahrenheita do stopni Celsjusza.</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; @param temperatura_f wektor zawierajacy wartosci temperatury w stopniach Fahrenheita</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; @return wektor numeryczny</span>
+<span class="co">#&#39; @export</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; @examples</span>
+<span class="co">#&#39; konwersja_temp(75)</span>
+<span class="co">#&#39; konwersja_temp(110)</span>
+<span class="co">#&#39; konwersja_temp(0)</span>
+<span class="co">#&#39; konwersja_temp(c(0, 75, 110))</span>
+konwersja_temp =<span class="st"> </span><span class="cf">function</span>(temperatura_f){
+  (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span>
+}</code></pre>
+<p>Pierwsza linia w tym pliku określa tytuł danej funkcji.
+Kolejny element rozpoczynający się od znacznika <code>@description</code> zawiera krótki opis tego, co funkcja robi.
+Następnie zazwyczaj wypisane są wszystkie argumenty danej funkcji używając kolejnych znaczników <code>@param</code>.
+Znacznik <code>@return</code> pozwala na przekazanie informacji o tym co jest zwracane jako efekt działania funkcji.
+Przedostatnim znacznikiem w powyższym przypadku jest <code>@export</code>.
+Oznacza on, że ta funkcja będzie widoczna dla każdego użytkownika tego pakietu po użyciu <code>library(mojpakiet)</code>.
+Bez tego znacznika funkcja byłaby tylko widoczna wewnątrz pakietu.
+Ostatni znacznik, <code>@examples</code>, wypisuje kolejne przykłady działania funkcji.</p>
+<!-- istnieje wiecej znacznikow - link -->
+<p>Wybór <code>More -&gt; Document</code> w panelu “Build” (lub użycie skrótu CTRL+SHIFT+D) spowoduje zbudowanie pliku dokumentacji w folderze <code>man</code>, np. <code>man/konwersja_temp.Rd</code>.
+Pliki dokumentacji będą zawsze tworzone w ten sposób - nie należy ich modyfikować ręcznie.
+Zbudowanie pliku dokumentacji pozwala teraz na jej podejrzenie poprzez wywołanie pliku pomocy naszej funkcji:</p>
+<pre class="sourceCode r"><code class="sourceCode r">?konwersja_temp</code></pre>
+<!-- printscreen -->
 <!-- roxygen2 -->
 </div>
 <div id="zaleznosci" class="section level2">
-<h2><span class="header-section-number">15.5</span> Zależności</h2>
+<h2><span class="header-section-number">15.6</span> Zależności</h2>
 </div>
 <div id="dokumentacja-pakietu" class="section level2">
-<h2><span class="header-section-number">15.6</span> Dokumentacja pakietu</h2>
+<h2><span class="header-section-number">15.7</span> Dokumentacja pakietu</h2>
 <!-- vignettes -->
 <!-- usethis::use_vignette("name") -->
 <!-- rmarkdown -->
@@ -413,7 +498,7 @@ Ten plik i jego zawartość jest tworzona automatycznie</li>
 <!-- news -->
 </div>
 <div id="wbudowane-testy" class="section level2">
-<h2><span class="header-section-number">15.7</span> Wbudowane testy</h2>
+<h2><span class="header-section-number">15.8</span> Wbudowane testy</h2>
 <!-- Unit testing -->
 <!-- usethis::use_test() -->
 <!-- devtools::test() -->
@@ -422,7 +507,7 @@ Ten plik i jego zawartość jest tworzona automatycznie</li>
 <!-- Automated testing with Travis CI + codecov -->
 </div>
 <div id="licencje" class="section level2">
-<h2><span class="header-section-number">15.8</span> Licencje</h2>
+<h2><span class="header-section-number">15.9</span> Licencje</h2>
 <!-- There are three main open source licenses -->
 <!-- CC0 “public domain”, best for data packages  -->
 <!-- MIT Free for anyone to do anything with -->
@@ -435,7 +520,7 @@ Ten plik i jego zawartość jest tworzona automatycznie</li>
 <!-- Widgets Incorporated. -->
 </div>
 <div id="publikowanie-pakietow" class="section level2">
-<h2><span class="header-section-number">15.9</span> Publikowanie pakietów</h2>
+<h2><span class="header-section-number">15.10</span> Publikowanie pakietów</h2>
 
 <div class="rmdinfo">
 software documentation
@@ -453,7 +538,7 @@ Continuous Integration
 
 </div>
 <div id="zadania-14" class="section level2">
-<h2><span class="header-section-number">15.10</span> Zadania</h2>
+<h2><span class="header-section-number">15.11</span> Zadania</h2>
 
 </div>
 </div>
@@ -482,6 +567,7 @@ Continuous Integration
 <hr />
 <ol start="54">
 <li id="fn54"><p>Funkcja również <code>create_packages()</code> sama tworzy nowy folder, jeżeli on wcześniej nie istniał.<a href="tworzenie-pakietow.html#fnref54" class="footnote-back">↩</a></p></li>
+<li id="fn55"><p>Tytuły pakietów można znaleźć, np. w panelu “Packages” w RStudio.<a href="tworzenie-pakietow.html#fnref55" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

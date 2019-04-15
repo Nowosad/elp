@@ -32,7 +32,6 @@ Znacznie w tym może pomóc pakiet **usethis** [@R-usethis], który zawiera szer
 library(usethis)
 ```
 
-
 Do stworzenia szkieletu pakietu służy funkcja `create_packages()`, w której należy podać ścieżkę do nowego pakietu.<!-- package.skeleton()  Never use this! -->
 W tej ścieżce ostatnia nazwa folderu określa również nazwę pakietu.^[Funkcja również `create_packages()` sama tworzy nowy folder, jeżeli on wcześniej nie istniał.]
 
@@ -45,10 +44,67 @@ W efekcie działania powyższej funkcji stworzony zostanie nowy folder `mojpakie
 Najważniejsze nowe pliki to:
 
 1. `mojpakiet.Rproj` - plik projektu RStudio
-2. `DESCRIPTION` - plik zawierający podstawowe informacje o pakiecie, w tym jego nazwę, tytuł, wersję, autorów, opis, czy licencję
+2. `DESCRIPTION` - plik zawierający podstawowe informacje o pakiecie
 3. `R/` - w tym pustym folderze konieczne będzie umieszczenie nowych funkcji R
 4. `NAMESPACE` - ten plik określa, między innymi, jakie funkcje są dostępne w tym pakiecie. 
 Ten plik i jego zawartość jest tworzona automatycznie
+
+Dodatkowo w prawym górnym panelu RStudio pojawi się nowy panel "Build".
+
+<!-- printscreen -->
+
+## Opis pakietu
+
+Plik `DESCRIPTION` zawiera opis (metadane) pakietu, w tym jego nazwę, tytuł, wersję, autorów, opis, czy licencję.
+
+```yaml
+Package: mojpakiet
+Title: Moje Funkcje Robiace Wszystko
+Version: 0.0.1
+Authors@R: 
+    person(given = "Imie",
+           family = "Nazwisko",
+           role = c("cre", "aut"),
+           email = "imie.nazwisko@example.com")
+Description: Tworzenie, przeliczanie i wyliczanie wszystkiego. 
+    Czasami nawet więcej.
+License: CC0
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+```
+
+Tytuł pakietu (`Title:`) w jednym krótkim zdaniu (sloganie) określa do czego służy ten pakiet.^[Tytuły pakietów można znaleźć, np. w panelu "Packages" w RStudio.]
+Składa się on ze słów rozpoczynających się z dużej litery.
+Wersja pakietu (`Version:`) pozwala jego użytkownikom na zobaczenie, czy korzystają z aktualnej wersji pakietu. 
+Zalecanym sposobem określania wersji pakietu jest stosowanie trzech liczb `pierwsza.druga.trzecia`, np. `0.9.1`.
+Zmiana trzeciej liczby służy do pokazania, że zaszła niewielka zmiana w kodzie, zazwyczaj wiążąca się z naprawą małego błędu, np. `0.9.2`.
+Druga liczba jest zmieniana podczas wydania nowej wersji pakietu, która zawiera większe zmiany w kodzie, jak naprawy poważnych błędów, czy dodanie nowych możliwości, np. `0.10.0`.
+Zmiana pierwszej liczby sugeruje poważne zmiany w kodzie, które ale też sugeruje pewną stabilizację działania, np. `1.0.0`.
+<!-- https://semver.org/ -->
+<!-- https://www.x.org/releases/X11R7.7/doc/xorg-docs/Versions.html -->
+<!-- https://r-pkgs.org/release.html#release-version -->
+`Authors@R: ` określa kolejne osoby zaangażowane w budowę tego pakietu.
+W powyższym przykładzie mamy wymienioną jedną osobę `"Imie"` `"Nazwisko"`, której adres mailowy to `"imie.nazwisko@example.com"`. 
+Dodatkowo ta osoba posiada dwie role przy tworzeniu tego pakietu `"cre"` oraz `"aut"`. 
+Pierwsza rola, `"cre"`, informuje że ta osoba jest twórcą i konserwatorem tego pakietu. 
+Ona jest odpowiedzialna za pracę pakietu.
+Druga rola, `"aut"`, jest nadawana osom, które wniosły bardzo duży wkład w kod zawarty w pakiecie.
+Inne często używane role to `"ctb"` określająca osoby, które wniosły mniejszy wkład w kod (np. drobne zmiany) oraz `"cph"` określająca osoby czy instytucje będące posiadaczami praw autorskich (np. firma zatrudniająca autora kodu albo autor biblioteki, która została wewnętrznie użyta).
+<!-- http://www.loc.gov/marc/relators/relaterm.html -->
+Dodanie kolejnych osób odbywa się poprzez łączenie ich funkcją `c()`.
+
+```yaml
+Authors@R: c(
+    person(given = "Imie", "Nazwisko", role = c("cre", "aut"), email = "imie.nazwisko@example.com"),
+    person(given = "Imie2", "Nazwisko2", role = "aut", email = "imie2.nazwisko2@example.com")
+)
+```
+
+
+<!-- inne opcje -->
+
+Plik `DESCRIPTION` należy regularnie uaktualniać, np. zmieniać numer wersji po naniesionych zmianach w kodzie, czy dodawać nowych autorów, jeżeli tacy się pojawili. 
 
 ## Rozwijanie pakietu
 
@@ -60,7 +116,66 @@ Rozwój pakietu R może opierać się na kilku poniższych krokach:
 4. Dodanie testów jednostkowych (sekcja \@ref(testy-jednostkowe)) na podstawie stworzonych przykładów
 5. Powtórzenie powyższych czynności
 
-## Dokumentacja funkcji
+## Tworzenie i dokumentacja funkcji
+
+W sekcji \@ref(budowanie-funkcji) stworzyliśmy nową funkcję `konwersja_temp()` przeliczającą temperaturę ze stopni Fahrenheita na stopnie Celsjusza.
+
+
+```r
+konwersja_temp = function(temperatura_f){
+    (temperatura_f - 32) / 1.8
+}
+```
+
+Umieszczenie tej funkcji w nowym pakiecie R odbywa się poprzez zapisanie tego kodu jako skrypt R (np. `konwersja_temp.R`) w folderze `R/`.
+
+Funkcje zawarte w pakietach muszą także posiadać odpowiednią dokumentację, zawierającą, między innymi, tytuł funkcji, opis jej działania, wyjaśnienie kolejnych argumentów funkcji, oraz przykłady jej działania.
+Linie obejmujące dokumentację funkcji rozpoczynają się od znaków `#' `, a tworzenie dokumentacji funkcji odbywa się poprzez wypełnianie treści dla kolejnych znaczników (np. `@example` określa występowanie przykładu).
+
+Przykładowy plik `R/konwersja_temp.R` może wyglądać następująco:
+
+
+```r
+#' Konwersja temperatur
+#'
+#' @description Funkcja sluzaca do konwersji temperatury w stopniach Fahrenheita do stopni Celsjusza.
+#'
+#' @param temperatura_f wektor zawierajacy wartosci temperatury w stopniach Fahrenheita
+#'
+#' @return wektor numeryczny
+#' @export
+#'
+#' @examples
+#' konwersja_temp(75)
+#' konwersja_temp(110)
+#' konwersja_temp(0)
+#' konwersja_temp(c(0, 75, 110))
+konwersja_temp = function(temperatura_f){
+  (temperatura_f - 32) / 1.8
+}
+```
+
+Pierwsza linia w tym pliku określa tytuł danej funkcji.
+Kolejny element rozpoczynający się od znacznika `@description` zawiera krótki opis tego, co funkcja robi. 
+Następnie zazwyczaj wypisane są wszystkie argumenty danej funkcji używając kolejnych znaczników `@param`.
+Znacznik `@return` pozwala na przekazanie informacji o tym co jest zwracane jako efekt działania funkcji.
+Przedostatnim znacznikiem w powyższym przypadku jest `@export`. 
+Oznacza on, że ta funkcja będzie widoczna dla każdego użytkownika tego pakietu po użyciu `library(mojpakiet)`.
+Bez tego znacznika funkcja byłaby tylko widoczna wewnątrz pakietu.
+Ostatni znacznik, `@examples`, wypisuje kolejne przykłady działania funkcji.
+
+<!-- istnieje wiecej znacznikow - link -->
+
+Wybór `More -> Document` w panelu "Build" (lub użycie skrótu CTRL+SHIFT+D) spowoduje zbudowanie pliku dokumentacji w folderze `man`, np. `man/konwersja_temp.Rd`. 
+Pliki dokumentacji będą zawsze tworzone w ten sposób - nie należy ich modyfikować ręcznie.
+Zbudowanie pliku dokumentacji pozwala teraz na jej podejrzenie poprzez wywołanie pliku pomocy naszej funkcji:
+
+
+```r
+?konwersja_temp
+```
+
+<!-- printscreen -->
 
 <!-- roxygen2 -->
 
