@@ -14,7 +14,16 @@ Istnieje jednak wiele dodatkowych aspektów i kwestii w tym temacie, które zost
 W celu poznania i zrozumienia złożnych aspektów tworzenia pakietów R cennymi źródłami wiedzy może być książki [R packages](https://r-pkgs.org) [@wickham2015r] oraz [rOpenSci Packages: Development, Maintenance, and Peer Review](https://ropensci.github.io/dev_guide/) [@ropensci_2019_2554759].
 Dodatkowo, w niektórych przypadkach pomocna może być oficjalna dokumentacja [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html#Creating-R-packages) [@team1999writing].
 
+## Nazwa pakietu
+
+Nazwa nowego pakietu musi spełniać kilka wymagań: składać się tylko ze znaków [ASCII](https://en.wikipedia.org/wiki/ASCII), cyfr i kropek, mieć co najmniej dwa znaki oraz zaczynać się od litery i nie kończyć się kropką [@team1999writing]. 
+Ważne jest również myślenie o nazwie pakietu tak jak o nazwach funkcji (sekcja \@ref(styl)) - nazwy pakietów powinny ułatwiać zrozumienie ich zawartości.
+Dodatkowo, z uwagi na istnienie wielu pakietów warto najpierw sprawdzić czy pakiet o wymyślonej przez nas nazwie już nie istnieje.
+Można to przykładowo zrobić używając pakietu **https://github.com/ropenscilabs/available** [@R-available], który sprawdza przy wybrana nazwa nie jest już zajęta oraz czy nie ma ona jakiegoś niepożądanego przez nas znaczenia.
+
 ## Tworzenie szkieletu pakietu
+
+
 
 [@R-usethis]
 
