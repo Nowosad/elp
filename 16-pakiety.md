@@ -76,6 +76,7 @@ RoxygenNote: 6.1.1
 
 Tytuł pakietu (`Title:`) w jednym krótkim zdaniu (sloganie) określa do czego służy ten pakiet.^[Tytuły pakietów można znaleźć, np. w panelu "Packages" w RStudio.]
 Składa się on ze słów rozpoczynających się z dużej litery.
+
 Wersja pakietu (`Version:`) pozwala jego użytkownikom na zobaczenie, czy korzystają z aktualnej wersji pakietu. 
 Zalecanym sposobem określania wersji pakietu jest stosowanie trzech liczb `pierwsza.druga.trzecia`, np. `0.9.1`.
 Zmiana trzeciej liczby służy do pokazania, że zaszła niewielka zmiana w kodzie, zazwyczaj wiążąca się z naprawą małego błędu, np. `0.9.2`.
@@ -84,6 +85,7 @@ Zmiana pierwszej liczby sugeruje poważne zmiany w kodzie, które ale też suger
 <!-- https://semver.org/ -->
 <!-- https://www.x.org/releases/X11R7.7/doc/xorg-docs/Versions.html -->
 <!-- https://r-pkgs.org/release.html#release-version -->
+
 `Authors@R: ` określa kolejne osoby zaangażowane w budowę tego pakietu.
 W powyższym przykładzie mamy wymienioną jedną osobę `"Imie"` `"Nazwisko"`, której adres mailowy to `"imie.nazwisko@example.com"`. 
 Dodatkowo ta osoba posiada dwie role przy tworzeniu tego pakietu `"cre"` oraz `"aut"`. 
@@ -135,7 +137,8 @@ Rozwój pakietu R może opierać się na kilku poniższych krokach:
 2. Używanie funkcji `devtools::load_all()`, która dodaje nowe/zmodyfikowane funkcje do R
 3. Sprawdzenie czy funkcja działa zgodnie z oczekiwaniami na kilku przykładach
 4. Dodanie testów jednostkowych (sekcja \@ref(testy-jednostkowe)) na podstawie stworzonych przykładów
-5. Powtórzenie powyższych czynności
+5. Modyfikacja wersji oprogramowania
+6. Powtórzenie powyższych czynności
 
 ## Tworzenie i dokumentacja funkcji
 
@@ -159,9 +162,11 @@ Przykładowy plik `R/konwersja_temp.R` może wyglądać następująco:
 ```r
 #' Konwersja temperatur
 #'
-#' @description Funkcja sluzaca do konwersji temperatury w stopniach Fahrenheita do stopni Celsjusza.
+#' @description Funkcja sluzaca do konwersji temperatury 
+#'   ze stopni Fahrenheita do stopni Celsjusza.
 #'
-#' @param temperatura_f wektor zawierajacy wartosci temperatury w stopniach Fahrenheita
+#' @param temperatura_f wektor zawierajacy wartosci temperatury 
+#'   w stopniach Fahrenheita
 #'
 #' @return wektor numeryczny
 #' @export
@@ -184,7 +189,6 @@ Przedostatnim znacznikiem w powyższym przypadku jest `@export`.
 Oznacza on, że ta funkcja będzie widoczna dla każdego użytkownika tego pakietu po użyciu `library(mojpakiet)`.
 Bez tego znacznika funkcja byłaby tylko widoczna wewnątrz pakietu.
 Ostatni znacznik, `@examples`, wypisuje kolejne przykłady działania funkcji.
-
 <!-- istnieje wiecej znacznikow - link -->
 
 Wybór `More -> Document` w panelu "Build" (lub użycie skrótu CTRL+SHIFT+D) spowoduje zbudowanie pliku dokumentacji w folderze `man`, np. `man/konwersja_temp.Rd`. 
@@ -209,8 +213,12 @@ Zbudowanie pliku dokumentacji pozwala teraz na jej podejrzenie poprzez wywołani
 <!-- rmarkdown -->
 <!-- rstudio helper -->
 <!-- pkgdown -->
+<!-- https://pkgdown.r-lib.org/ -->
 <!-- readme -->
+<!-- https://ropensci.github.io/dev_guide/building.html#readme -->
 <!-- news -->
+<!-- https://ropensci.github.io/dev_guide/releasing.html#news -->
+<!-- https://ropensci.github.io/dev_guide/newstemplate.html -->
 
 ## Wbudowane testy {#wbudowane-testy}
 
@@ -226,6 +234,8 @@ Zbudowanie pliku dokumentacji pozwala teraz na jej podejrzenie poprzez wywołani
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">software documentation</div>\EndKnitrBlock{rmdinfo}
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">software promotion</div>\EndKnitrBlock{rmdinfo}
+
+<!-- https://ropensci.github.io/dev_guide/marketing.html -->
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Continuous Integration</div>\EndKnitrBlock{rmdinfo}
 

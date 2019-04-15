@@ -404,16 +404,16 @@ Ten plik i jego zawartość jest tworzona automatycznie</li>
 <span class="fu">LazyData:</span><span class="at"> true</span>
 <span class="fu">RoxygenNote:</span><span class="at"> 6.1.1</span></code></pre>
 <p>Tytuł pakietu (<code>Title:</code>) w jednym krótkim zdaniu (sloganie) określa do czego służy ten pakiet.<a href="#fn55" class="footnote-ref" id="fnref55"><sup>55</sup></a>
-Składa się on ze słów rozpoczynających się z dużej litery.
-Wersja pakietu (<code>Version:</code>) pozwala jego użytkownikom na zobaczenie, czy korzystają z aktualnej wersji pakietu.
+Składa się on ze słów rozpoczynających się z dużej litery.</p>
+<p>Wersja pakietu (<code>Version:</code>) pozwala jego użytkownikom na zobaczenie, czy korzystają z aktualnej wersji pakietu.
 Zalecanym sposobem określania wersji pakietu jest stosowanie trzech liczb <code>pierwsza.druga.trzecia</code>, np. <code>0.9.1</code>.
 Zmiana trzeciej liczby służy do pokazania, że zaszła niewielka zmiana w kodzie, zazwyczaj wiążąca się z naprawą małego błędu, np. <code>0.9.2</code>.
 Druga liczba jest zmieniana podczas wydania nowej wersji pakietu, która zawiera większe zmiany w kodzie, jak naprawy poważnych błędów, czy dodanie nowych możliwości, np. <code>0.10.0</code>.
 Zmiana pierwszej liczby sugeruje poważne zmiany w kodzie, które ale też sugeruje pewną stabilizację działania, np. <code>1.0.0</code>.
 <!-- https://semver.org/ -->
 <!-- https://www.x.org/releases/X11R7.7/doc/xorg-docs/Versions.html -->
-<!-- https://r-pkgs.org/release.html#release-version -->
-<code>Authors@R:</code> określa kolejne osoby zaangażowane w budowę tego pakietu.
+<!-- https://r-pkgs.org/release.html#release-version --></p>
+<p><code>Authors@R:</code> określa kolejne osoby zaangażowane w budowę tego pakietu.
 W powyższym przykładzie mamy wymienioną jedną osobę <code>&quot;Imie&quot;</code> <code>&quot;Nazwisko&quot;</code>, której adres mailowy to <code>&quot;imie.nazwisko@example.com&quot;</code>.
 Dodatkowo ta osoba posiada dwie role przy tworzeniu tego pakietu <code>&quot;cre&quot;</code> oraz <code>&quot;aut&quot;</code>.
 Pierwsza rola, <code>&quot;cre&quot;</code>, informuje że ta osoba jest twórcą i konserwatorem tego pakietu.
@@ -454,6 +454,7 @@ Do not distribute outside of NAZWA MOJEJ FIRMY.</code></pre>
 <li>Używanie funkcji <code>devtools::load_all()</code>, która dodaje nowe/zmodyfikowane funkcje do R</li>
 <li>Sprawdzenie czy funkcja działa zgodnie z oczekiwaniami na kilku przykładach</li>
 <li>Dodanie testów jednostkowych (sekcja <a href="analiza-kodu.html#testy-jednostkowe">11.1</a>) na podstawie stworzonych przykładów</li>
+<li>Modyfikacja wersji oprogramowania</li>
 <li>Powtórzenie powyższych czynności</li>
 </ol>
 </div>
@@ -469,9 +470,11 @@ Linie obejmujące dokumentację funkcji rozpoczynają się od znaków <code>#'</
 <p>Przykładowy plik <code>R/konwersja_temp.R</code> może wyglądać następująco:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Konwersja temperatur</span>
 <span class="co">#&#39;</span>
-<span class="co">#&#39; @description Funkcja sluzaca do konwersji temperatury w stopniach Fahrenheita do stopni Celsjusza.</span>
+<span class="co">#&#39; @description Funkcja sluzaca do konwersji temperatury </span>
+<span class="co">#&#39;   ze stopni Fahrenheita do stopni Celsjusza.</span>
 <span class="co">#&#39;</span>
-<span class="co">#&#39; @param temperatura_f wektor zawierajacy wartosci temperatury w stopniach Fahrenheita</span>
+<span class="co">#&#39; @param temperatura_f wektor zawierajacy wartosci temperatury </span>
+<span class="co">#&#39;   w stopniach Fahrenheita</span>
 <span class="co">#&#39;</span>
 <span class="co">#&#39; @return wektor numeryczny</span>
 <span class="co">#&#39; @export</span>
@@ -491,8 +494,8 @@ Znacznik <code>@return</code> pozwala na przekazanie informacji o tym co jest zw
 Przedostatnim znacznikiem w powyższym przypadku jest <code>@export</code>.
 Oznacza on, że ta funkcja będzie widoczna dla każdego użytkownika tego pakietu po użyciu <code>library(mojpakiet)</code>.
 Bez tego znacznika funkcja byłaby tylko widoczna wewnątrz pakietu.
-Ostatni znacznik, <code>@examples</code>, wypisuje kolejne przykłady działania funkcji.</p>
-<!-- istnieje wiecej znacznikow - link -->
+Ostatni znacznik, <code>@examples</code>, wypisuje kolejne przykłady działania funkcji.
+<!-- istnieje wiecej znacznikow - link --></p>
 <p>Wybór <code>More -&gt; Document</code> w panelu “Build” (lub użycie skrótu CTRL+SHIFT+D) spowoduje zbudowanie pliku dokumentacji w folderze <code>man</code>, np. <code>man/konwersja_temp.Rd</code>.
 Pliki dokumentacji będą zawsze tworzone w ten sposób - nie należy ich modyfikować ręcznie.
 Zbudowanie pliku dokumentacji pozwala teraz na jej podejrzenie poprzez wywołanie pliku pomocy naszej funkcji:</p>
@@ -510,8 +513,12 @@ Zbudowanie pliku dokumentacji pozwala teraz na jej podejrzenie poprzez wywołani
 <!-- rmarkdown -->
 <!-- rstudio helper -->
 <!-- pkgdown -->
+<!-- https://pkgdown.r-lib.org/ -->
 <!-- readme -->
+<!-- https://ropensci.github.io/dev_guide/building.html#readme -->
 <!-- news -->
+<!-- https://ropensci.github.io/dev_guide/releasing.html#news -->
+<!-- https://ropensci.github.io/dev_guide/newstemplate.html -->
 </div>
 <div id="wbudowane-testy" class="section level2">
 <h2><span class="header-section-number">15.8</span> Wbudowane testy</h2>
@@ -534,6 +541,7 @@ software documentation
 software promotion
 </div>
 
+<!-- https://ropensci.github.io/dev_guide/marketing.html -->
 
 <div class="rmdinfo">
 Continuous Integration
