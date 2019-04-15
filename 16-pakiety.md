@@ -20,7 +20,7 @@ Dodatkowo, w niektórych przypadkach pomocna może być oficjalna dokumentacja [
 Nazwa nowego pakietu musi spełniać kilka wymagań: składać się tylko ze znaków [ASCII](https://en.wikipedia.org/wiki/ASCII), cyfr i kropek, mieć co najmniej dwa znaki oraz zaczynać się od litery i nie kończyć się kropką [@team1999writing]. 
 Ważne jest również myślenie o nazwie pakietu tak jak o nazwach funkcji (sekcja \@ref(styl)) - nazwy pakietów powinny ułatwiać zrozumienie ich zawartości.
 Dodatkowo, z uwagi na istnienie wielu pakietów warto najpierw sprawdzić czy pakiet o wymyślonej przez nas nazwie już nie istnieje.
-Można to przykładowo zrobić używając pakietu **https://github.com/ropenscilabs/available** [@R-available], który sprawdza przy wybrana nazwa nie jest już zajęta oraz czy nie ma ona jakiegoś niepożądanego przez nas znaczenia.
+Można to przykładowo zrobić używając pakietu **available** [@R-available], który sprawdza przy wybrana nazwa nie jest już zajęta oraz czy nie ma ona jakiegoś niepożądanego przez nas znaczenia.
 
 ## Tworzenie szkieletu pakietu
 
@@ -52,6 +52,83 @@ Ten plik i jego zawartość jest tworzona automatycznie
 Dodatkowo w prawym górnym panelu RStudio pojawi się nowy panel "Build".
 
 <!-- printscreen -->
+
+
+## Rozwijanie pakietu
+
+Rozwój pakietu R może opierać się na kilku poniższych krokach:
+
+1. Tworzenie/modyfikowanie kodu
+2. Używanie funkcji `devtools::load_all()`, która dodaje nowe/zmodyfikowane funkcje do R
+3. Sprawdzenie czy funkcja działa zgodnie z oczekiwaniami na kilku przykładach
+4. Dodanie testów jednostkowych (sekcja \@ref(testy-jednostkowe)) na podstawie stworzonych przykładów
+5. Modyfikacja wersji oprogramowania
+6. Powtórzenie powyższych czynności
+
+## Tworzenie i dokumentacja funkcji
+
+W sekcji \@ref(budowanie-funkcji) stworzyliśmy nową funkcję `konwersja_temp()` przeliczającą temperaturę ze stopni Fahrenheita na stopnie Celsjusza.
+
+
+```r
+konwersja_temp = function(temperatura_f){
+    (temperatura_f - 32) / 1.8
+}
+```
+
+Umieszczenie tej funkcji w nowym pakiecie R odbywa się poprzez zapisanie tego kodu jako skrypt R (np. `konwersja_temp.R`) w folderze `R/`.
+
+Funkcje zawarte w pakietach muszą także posiadać odpowiednią dokumentację, zawierającą, między innymi, tytuł funkcji, opis jej działania, wyjaśnienie kolejnych argumentów funkcji, oraz przykłady jej działania.
+Linie obejmujące dokumentację funkcji rozpoczynają się od znaków `#' `, a tworzenie dokumentacji funkcji odbywa się poprzez wypełnianie treści dla kolejnych znaczników (np. `@example` określa występowanie przykładu).
+
+Przykładowy plik `R/konwersja_temp.R` może wyglądać następująco:
+
+
+```r
+#' Konwersja temperatur
+#'
+#' @description Funkcja sluzaca do konwersji temperatury 
+#'   ze stopni Fahrenheita do stopni Celsjusza.
+#'
+#' @param temperatura_f wektor zawierajacy wartosci temperatury 
+#'   w stopniach Fahrenheita
+#'
+#' @return wektor numeryczny
+#' @export
+#'
+#' @examples
+#' konwersja_temp(75)
+#' konwersja_temp(110)
+#' konwersja_temp(0)
+#' konwersja_temp(c(0, 75, 110))
+konwersja_temp = function(temperatura_f){
+  (temperatura_f - 32) / 1.8
+}
+```
+
+Pierwsza linia w tym pliku określa tytuł danej funkcji.
+Kolejny element rozpoczynający się od znacznika `@description` zawiera krótki opis tego, co funkcja robi. 
+Następnie zazwyczaj wypisane są wszystkie argumenty danej funkcji używając kolejnych znaczników `@param`.
+Znacznik `@return` pozwala na przekazanie informacji o tym co jest zwracane jako efekt działania funkcji.
+Przedostatnim znacznikiem w powyższym przypadku jest `@export`. 
+Oznacza on, że ta funkcja będzie widoczna dla każdego użytkownika tego pakietu po użyciu `library(mojpakiet)`.
+Bez tego znacznika funkcja byłaby tylko widoczna wewnątrz pakietu.
+Ostatni znacznik, `@examples`, wypisuje kolejne przykłady działania funkcji.
+<!-- istnieje wiecej znacznikow - link -->
+
+Wybór `More -> Document` w panelu "Build" (lub użycie skrótu CTRL+SHIFT+D) spowoduje zbudowanie pliku dokumentacji w folderze `man`, np. `man/konwersja_temp.Rd`. 
+Pliki dokumentacji będą zawsze tworzone w ten sposób - nie należy ich modyfikować ręcznie.
+Zbudowanie pliku dokumentacji pozwala teraz na jej podejrzenie poprzez wywołanie pliku pomocy naszej funkcji:
+
+
+```r
+?konwersja_temp
+```
+
+<!-- printscreen -->
+
+<!-- roxygen2 -->
+<!-- https://r-pkgs.org/data.html#documenting-data -->
 
 ## Opis pakietu
 
@@ -129,82 +206,28 @@ Do not distribute outside of NAZWA MOJEJ FIRMY.
 
 Plik `DESCRIPTION` należy regularnie uaktualniać, np. zmieniać numer wersji po naniesionych zmianach w kodzie, czy dodawać nowych autorów, jeżeli tacy się pojawili. 
 
-## Rozwijanie pakietu
-
-Rozwój pakietu R może opierać się na kilku poniższych krokach:
-
-1. Tworzenie/modyfikowanie kodu
-2. Używanie funkcji `devtools::load_all()`, która dodaje nowe/zmodyfikowane funkcje do R
-3. Sprawdzenie czy funkcja działa zgodnie z oczekiwaniami na kilku przykładach
-4. Dodanie testów jednostkowych (sekcja \@ref(testy-jednostkowe)) na podstawie stworzonych przykładów
-5. Modyfikacja wersji oprogramowania
-6. Powtórzenie powyższych czynności
-
-## Tworzenie i dokumentacja funkcji
-
-W sekcji \@ref(budowanie-funkcji) stworzyliśmy nową funkcję `konwersja_temp()` przeliczającą temperaturę ze stopni Fahrenheita na stopnie Celsjusza.
-
-
-```r
-konwersja_temp = function(temperatura_f){
-    (temperatura_f - 32) / 1.8
-}
-```
-
-Umieszczenie tej funkcji w nowym pakiecie R odbywa się poprzez zapisanie tego kodu jako skrypt R (np. `konwersja_temp.R`) w folderze `R/`.
-
-Funkcje zawarte w pakietach muszą także posiadać odpowiednią dokumentację, zawierającą, między innymi, tytuł funkcji, opis jej działania, wyjaśnienie kolejnych argumentów funkcji, oraz przykłady jej działania.
-Linie obejmujące dokumentację funkcji rozpoczynają się od znaków `#' `, a tworzenie dokumentacji funkcji odbywa się poprzez wypełnianie treści dla kolejnych znaczników (np. `@example` określa występowanie przykładu).
-
-Przykładowy plik `R/konwersja_temp.R` może wyglądać następująco:
-
-
-```r
-#' Konwersja temperatur
-#'
-#' @description Funkcja sluzaca do konwersji temperatury 
-#'   ze stopni Fahrenheita do stopni Celsjusza.
-#'
-#' @param temperatura_f wektor zawierajacy wartosci temperatury 
-#'   w stopniach Fahrenheita
-#'
-#' @return wektor numeryczny
-#' @export
-#'
-#' @examples
-#' konwersja_temp(75)
-#' konwersja_temp(110)
-#' konwersja_temp(0)
-#' konwersja_temp(c(0, 75, 110))
-konwersja_temp = function(temperatura_f){
-  (temperatura_f - 32) / 1.8
-}
-```
-
-Pierwsza linia w tym pliku określa tytuł danej funkcji.
-Kolejny element rozpoczynający się od znacznika `@description` zawiera krótki opis tego, co funkcja robi. 
-Następnie zazwyczaj wypisane są wszystkie argumenty danej funkcji używając kolejnych znaczników `@param`.
-Znacznik `@return` pozwala na przekazanie informacji o tym co jest zwracane jako efekt działania funkcji.
-Przedostatnim znacznikiem w powyższym przypadku jest `@export`. 
-Oznacza on, że ta funkcja będzie widoczna dla każdego użytkownika tego pakietu po użyciu `library(mojpakiet)`.
-Bez tego znacznika funkcja byłaby tylko widoczna wewnątrz pakietu.
-Ostatni znacznik, `@examples`, wypisuje kolejne przykłady działania funkcji.
-<!-- istnieje wiecej znacznikow - link -->
-
-Wybór `More -> Document` w panelu "Build" (lub użycie skrótu CTRL+SHIFT+D) spowoduje zbudowanie pliku dokumentacji w folderze `man`, np. `man/konwersja_temp.Rd`. 
-Pliki dokumentacji będą zawsze tworzone w ten sposób - nie należy ich modyfikować ręcznie.
-Zbudowanie pliku dokumentacji pozwala teraz na jej podejrzenie poprzez wywołanie pliku pomocy naszej funkcji:
-
-
-```r
-?konwersja_temp
-```
-
-<!-- printscreen -->
-
-<!-- roxygen2 -->
-
 ## Zależności
+
+Istnieje jedna ważna różnica pomiędzy tworzeniem funkcji w skryptach a tworzeniem jej wewnątrz pakietu - w pakietach nie można używać dołączania pakietów za pomocą funkcji `library()`.
+Zamiast tego możliwe jest definiowanie każdej zewnątrznej funkcji używając operatora `::`.^[Istnieją również inne możliwości, np. użycie znaczników `@import` lub `@importFrom`.]
+
+<!-- przykład -->
+
+Dodatkowo każda zależność z zewnętrznym pakietem musi być określona w pliku `DESCRIPTION`.
+Jest to możliwe używając wpisów `Imports: ` oraz `Suggests: `, przykładowo: ^[Istnieją również inne wpisy, takie jak `Depends: `, `LinkingTo: `, czy `Enhances: `].
+
+```yaml
+Imports:
+  stringr,
+  readr
+Suggests:
+  readxl
+```
+
+`Imports: ` określa pakiety, które muszą być zainstalowane, aby tworzony pakiet mógł zadziałać.
+Jeżeli wymienione tutaj pakiety nie będą znajdować się na komputerze użytkownika to zostaną one automatycznie doinstalowane podczas instalacji naszego pakietu.
+`Suggests: ` wymienia pakiety, które pomagają w użytkowaniu naszego pakietu, np. takie które zawierają testowe dane.
+Wymienione tutaj pakiety nie będą automatycznie doinstalowane podczas instalacji naszego pakietu.
 
 ## Dokumentacja pakietu
 

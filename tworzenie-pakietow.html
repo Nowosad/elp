@@ -310,9 +310,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a><ul>
 <li class="chapter" data-level="15.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#nazwa-pakietu"><i class="fa fa-check"></i><b>15.1</b> Nazwa pakietu</a></li>
 <li class="chapter" data-level="15.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-szkieletu-pakietu"><i class="fa fa-check"></i><b>15.2</b> Tworzenie szkieletu pakietu</a></li>
-<li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>15.3</b> Opis pakietu</a></li>
-<li class="chapter" data-level="15.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>15.4</b> Rozwijanie pakietu</a></li>
-<li class="chapter" data-level="15.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-i-dokumentacja-funkcji"><i class="fa fa-check"></i><b>15.5</b> Tworzenie i dokumentacja funkcji</a></li>
+<li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>15.3</b> Rozwijanie pakietu</a></li>
+<li class="chapter" data-level="15.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-i-dokumentacja-funkcji"><i class="fa fa-check"></i><b>15.4</b> Tworzenie i dokumentacja funkcji</a></li>
+<li class="chapter" data-level="15.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>15.5</b> Opis pakietu</a></li>
 <li class="chapter" data-level="15.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zaleznosci"><i class="fa fa-check"></i><b>15.6</b> Zależności</a></li>
 <li class="chapter" data-level="15.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-pakietu"><i class="fa fa-check"></i><b>15.7</b> Dokumentacja pakietu</a></li>
 <li class="chapter" data-level="15.8" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#wbudowane-testy"><i class="fa fa-check"></i><b>15.8</b> Wbudowane testy</a></li>
@@ -364,7 +364,7 @@ Dodatkowo, w niektórych przypadkach pomocna może być oficjalna dokumentacja <
 <p>Nazwa nowego pakietu musi spełniać kilka wymagań: składać się tylko ze znaków <a href="https://en.wikipedia.org/wiki/ASCII">ASCII</a>, cyfr i kropek, mieć co najmniej dwa znaki oraz zaczynać się od litery i nie kończyć się kropką <span class="citation">(Team <a href="#ref-team1999writing">1999</a>)</span>.
 Ważne jest również myślenie o nazwie pakietu tak jak o nazwach funkcji (sekcja <a href="ergosum.html#styl">2.4</a>) - nazwy pakietów powinny ułatwiać zrozumienie ich zawartości.
 Dodatkowo, z uwagi na istnienie wielu pakietów warto najpierw sprawdzić czy pakiet o wymyślonej przez nas nazwie już nie istnieje.
-Można to przykładowo zrobić używając pakietu <strong><a href="https://github.com/ropenscilabs/available" class="uri">https://github.com/ropenscilabs/available</a></strong> <span class="citation">(Ganz et al. <a href="#ref-R-available">2018</a>)</span>, który sprawdza przy wybrana nazwa nie jest już zajęta oraz czy nie ma ona jakiegoś niepożądanego przez nas znaczenia.</p>
+Można to przykładowo zrobić używając pakietu <strong>available</strong> <span class="citation">(Ganz et al. <a href="#ref-R-available">2018</a>)</span>, który sprawdza przy wybrana nazwa nie jest już zajęta oraz czy nie ma ona jakiegoś niepożądanego przez nas znaczenia.</p>
 </div>
 <div id="tworzenie-szkieletu-pakietu" class="section level2">
 <h2><span class="header-section-number">15.2</span> Tworzenie szkieletu pakietu</h2>
@@ -386,8 +386,66 @@ Ten plik i jego zawartość jest tworzona automatycznie</li>
 <p>Dodatkowo w prawym górnym panelu RStudio pojawi się nowy panel “Build”.</p>
 <!-- printscreen -->
 </div>
+<div id="rozwijanie-pakietu" class="section level2">
+<h2><span class="header-section-number">15.3</span> Rozwijanie pakietu</h2>
+<p>Rozwój pakietu R może opierać się na kilku poniższych krokach:</p>
+<ol style="list-style-type: decimal">
+<li>Tworzenie/modyfikowanie kodu</li>
+<li>Używanie funkcji <code>devtools::load_all()</code>, która dodaje nowe/zmodyfikowane funkcje do R</li>
+<li>Sprawdzenie czy funkcja działa zgodnie z oczekiwaniami na kilku przykładach</li>
+<li>Dodanie testów jednostkowych (sekcja <a href="analiza-kodu.html#testy-jednostkowe">11.1</a>) na podstawie stworzonych przykładów</li>
+<li>Modyfikacja wersji oprogramowania</li>
+<li>Powtórzenie powyższych czynności</li>
+</ol>
+</div>
+<div id="tworzenie-i-dokumentacja-funkcji" class="section level2">
+<h2><span class="header-section-number">15.4</span> Tworzenie i dokumentacja funkcji</h2>
+<p>W sekcji <a href="funkcje.html#budowanie-funkcji">3.8</a> stworzyliśmy nową funkcję <code>konwersja_temp()</code> przeliczającą temperaturę ze stopni Fahrenheita na stopnie Celsjusza.</p>
+<pre class="sourceCode r"><code class="sourceCode r">konwersja_temp =<span class="st"> </span><span class="cf">function</span>(temperatura_f){
+    (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span>
+}</code></pre>
+<p>Umieszczenie tej funkcji w nowym pakiecie R odbywa się poprzez zapisanie tego kodu jako skrypt R (np. <code>konwersja_temp.R</code>) w folderze <code>R/</code>.</p>
+<p>Funkcje zawarte w pakietach muszą także posiadać odpowiednią dokumentację, zawierającą, między innymi, tytuł funkcji, opis jej działania, wyjaśnienie kolejnych argumentów funkcji, oraz przykłady jej działania.
+Linie obejmujące dokumentację funkcji rozpoczynają się od znaków <code>#'</code>, a tworzenie dokumentacji funkcji odbywa się poprzez wypełnianie treści dla kolejnych znaczników (np. <code>@example</code> określa występowanie przykładu).</p>
+<p>Przykładowy plik <code>R/konwersja_temp.R</code> może wyglądać następująco:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Konwersja temperatur</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; @description Funkcja sluzaca do konwersji temperatury </span>
+<span class="co">#&#39;   ze stopni Fahrenheita do stopni Celsjusza.</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; @param temperatura_f wektor zawierajacy wartosci temperatury </span>
+<span class="co">#&#39;   w stopniach Fahrenheita</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; @return wektor numeryczny</span>
+<span class="co">#&#39; @export</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; @examples</span>
+<span class="co">#&#39; konwersja_temp(75)</span>
+<span class="co">#&#39; konwersja_temp(110)</span>
+<span class="co">#&#39; konwersja_temp(0)</span>
+<span class="co">#&#39; konwersja_temp(c(0, 75, 110))</span>
+konwersja_temp =<span class="st"> </span><span class="cf">function</span>(temperatura_f){
+  (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span>
+}</code></pre>
+<p>Pierwsza linia w tym pliku określa tytuł danej funkcji.
+Kolejny element rozpoczynający się od znacznika <code>@description</code> zawiera krótki opis tego, co funkcja robi.
+Następnie zazwyczaj wypisane są wszystkie argumenty danej funkcji używając kolejnych znaczników <code>@param</code>.
+Znacznik <code>@return</code> pozwala na przekazanie informacji o tym co jest zwracane jako efekt działania funkcji.
+Przedostatnim znacznikiem w powyższym przypadku jest <code>@export</code>.
+Oznacza on, że ta funkcja będzie widoczna dla każdego użytkownika tego pakietu po użyciu <code>library(mojpakiet)</code>.
+Bez tego znacznika funkcja byłaby tylko widoczna wewnątrz pakietu.
+Ostatni znacznik, <code>@examples</code>, wypisuje kolejne przykłady działania funkcji.
+<!-- istnieje wiecej znacznikow - link --></p>
+<p>Wybór <code>More -&gt; Document</code> w panelu “Build” (lub użycie skrótu CTRL+SHIFT+D) spowoduje zbudowanie pliku dokumentacji w folderze <code>man</code>, np. <code>man/konwersja_temp.Rd</code>.
+Pliki dokumentacji będą zawsze tworzone w ten sposób - nie należy ich modyfikować ręcznie.
+Zbudowanie pliku dokumentacji pozwala teraz na jej podejrzenie poprzez wywołanie pliku pomocy naszej funkcji:</p>
+<pre class="sourceCode r"><code class="sourceCode r">?konwersja_temp</code></pre>
+<!-- printscreen -->
+<!-- roxygen2 -->
+<!-- https://r-pkgs.org/data.html#documenting-data -->
+</div>
 <div id="opis-pakietu" class="section level2">
-<h2><span class="header-section-number">15.3</span> Opis pakietu</h2>
+<h2><span class="header-section-number">15.5</span> Opis pakietu</h2>
 <p>Plik <code>DESCRIPTION</code> zawiera opis (metadane) pakietu, w tym jego nazwę, tytuł, wersję, autorów, opis, czy licencję.</p>
 <pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">Package:</span><span class="at"> mojpakiet</span>
 <span class="fu">Title:</span><span class="at"> Moje Funkcje Robiace Wszystko</span>
@@ -446,65 +504,22 @@ Do not distribute outside of NAZWA MOJEJ FIRMY.</code></pre>
 <!-- inne opcje -->
 <p>Plik <code>DESCRIPTION</code> należy regularnie uaktualniać, np. zmieniać numer wersji po naniesionych zmianach w kodzie, czy dodawać nowych autorów, jeżeli tacy się pojawili.</p>
 </div>
-<div id="rozwijanie-pakietu" class="section level2">
-<h2><span class="header-section-number">15.4</span> Rozwijanie pakietu</h2>
-<p>Rozwój pakietu R może opierać się na kilku poniższych krokach:</p>
-<ol style="list-style-type: decimal">
-<li>Tworzenie/modyfikowanie kodu</li>
-<li>Używanie funkcji <code>devtools::load_all()</code>, która dodaje nowe/zmodyfikowane funkcje do R</li>
-<li>Sprawdzenie czy funkcja działa zgodnie z oczekiwaniami na kilku przykładach</li>
-<li>Dodanie testów jednostkowych (sekcja <a href="analiza-kodu.html#testy-jednostkowe">11.1</a>) na podstawie stworzonych przykładów</li>
-<li>Modyfikacja wersji oprogramowania</li>
-<li>Powtórzenie powyższych czynności</li>
-</ol>
-</div>
-<div id="tworzenie-i-dokumentacja-funkcji" class="section level2">
-<h2><span class="header-section-number">15.5</span> Tworzenie i dokumentacja funkcji</h2>
-<p>W sekcji <a href="funkcje.html#budowanie-funkcji">3.8</a> stworzyliśmy nową funkcję <code>konwersja_temp()</code> przeliczającą temperaturę ze stopni Fahrenheita na stopnie Celsjusza.</p>
-<pre class="sourceCode r"><code class="sourceCode r">konwersja_temp =<span class="st"> </span><span class="cf">function</span>(temperatura_f){
-    (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span>
-}</code></pre>
-<p>Umieszczenie tej funkcji w nowym pakiecie R odbywa się poprzez zapisanie tego kodu jako skrypt R (np. <code>konwersja_temp.R</code>) w folderze <code>R/</code>.</p>
-<p>Funkcje zawarte w pakietach muszą także posiadać odpowiednią dokumentację, zawierającą, między innymi, tytuł funkcji, opis jej działania, wyjaśnienie kolejnych argumentów funkcji, oraz przykłady jej działania.
-Linie obejmujące dokumentację funkcji rozpoczynają się od znaków <code>#'</code>, a tworzenie dokumentacji funkcji odbywa się poprzez wypełnianie treści dla kolejnych znaczników (np. <code>@example</code> określa występowanie przykładu).</p>
-<p>Przykładowy plik <code>R/konwersja_temp.R</code> może wyglądać następująco:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; Konwersja temperatur</span>
-<span class="co">#&#39;</span>
-<span class="co">#&#39; @description Funkcja sluzaca do konwersji temperatury </span>
-<span class="co">#&#39;   ze stopni Fahrenheita do stopni Celsjusza.</span>
-<span class="co">#&#39;</span>
-<span class="co">#&#39; @param temperatura_f wektor zawierajacy wartosci temperatury </span>
-<span class="co">#&#39;   w stopniach Fahrenheita</span>
-<span class="co">#&#39;</span>
-<span class="co">#&#39; @return wektor numeryczny</span>
-<span class="co">#&#39; @export</span>
-<span class="co">#&#39;</span>
-<span class="co">#&#39; @examples</span>
-<span class="co">#&#39; konwersja_temp(75)</span>
-<span class="co">#&#39; konwersja_temp(110)</span>
-<span class="co">#&#39; konwersja_temp(0)</span>
-<span class="co">#&#39; konwersja_temp(c(0, 75, 110))</span>
-konwersja_temp =<span class="st"> </span><span class="cf">function</span>(temperatura_f){
-  (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span>
-}</code></pre>
-<p>Pierwsza linia w tym pliku określa tytuł danej funkcji.
-Kolejny element rozpoczynający się od znacznika <code>@description</code> zawiera krótki opis tego, co funkcja robi.
-Następnie zazwyczaj wypisane są wszystkie argumenty danej funkcji używając kolejnych znaczników <code>@param</code>.
-Znacznik <code>@return</code> pozwala na przekazanie informacji o tym co jest zwracane jako efekt działania funkcji.
-Przedostatnim znacznikiem w powyższym przypadku jest <code>@export</code>.
-Oznacza on, że ta funkcja będzie widoczna dla każdego użytkownika tego pakietu po użyciu <code>library(mojpakiet)</code>.
-Bez tego znacznika funkcja byłaby tylko widoczna wewnątrz pakietu.
-Ostatni znacznik, <code>@examples</code>, wypisuje kolejne przykłady działania funkcji.
-<!-- istnieje wiecej znacznikow - link --></p>
-<p>Wybór <code>More -&gt; Document</code> w panelu “Build” (lub użycie skrótu CTRL+SHIFT+D) spowoduje zbudowanie pliku dokumentacji w folderze <code>man</code>, np. <code>man/konwersja_temp.Rd</code>.
-Pliki dokumentacji będą zawsze tworzone w ten sposób - nie należy ich modyfikować ręcznie.
-Zbudowanie pliku dokumentacji pozwala teraz na jej podejrzenie poprzez wywołanie pliku pomocy naszej funkcji:</p>
-<pre class="sourceCode r"><code class="sourceCode r">?konwersja_temp</code></pre>
-<!-- printscreen -->
-<!-- roxygen2 -->
-</div>
 <div id="zaleznosci" class="section level2">
 <h2><span class="header-section-number">15.6</span> Zależności</h2>
+<p>Istnieje jedna ważna różnica pomiędzy tworzeniem funkcji w skryptach a tworzeniem jej wewnątrz pakietu - w pakietach nie można używać dołączania pakietów za pomocą funkcji <code>library()</code>.
+Zamiast tego możliwe jest definiowanie każdej zewnątrznej funkcji używając operatora <code>::</code>.<a href="#fn57" class="footnote-ref" id="fnref57"><sup>57</sup></a></p>
+<!-- przykład -->
+<p>Dodatkowo każda zależność z zewnętrznym pakietem musi być określona w pliku <code>DESCRIPTION</code>.
+Jest to możliwe używając wpisów <code>Imports:</code> oraz <code>Suggests:</code>, przykładowo:.<a href="#fn58" class="footnote-ref" id="fnref58"><sup>58</sup></a></p>
+<pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="fu">Imports:</span>
+  stringr,
+  readr
+<span class="fu">Suggests:</span>
+  readxl</code></pre>
+<p><code>Imports:</code> określa pakiety, które muszą być zainstalowane, aby tworzony pakiet mógł zadziałać.
+Jeżeli wymienione tutaj pakiety nie będą znajdować się na komputerze użytkownika to zostaną one automatycznie doinstalowane podczas instalacji naszego pakietu.
+<code>Suggests:</code> wymienia pakiety, które pomagają w użytkowaniu naszego pakietu, np. takie które zawierają testowe dane.
+Wymienione tutaj pakiety nie będą automatycznie doinstalowane podczas instalacji naszego pakietu.</p>
 </div>
 <div id="dokumentacja-pakietu" class="section level2">
 <h2><span class="header-section-number">15.7</span> Dokumentacja pakietu</h2>
@@ -580,6 +595,8 @@ Continuous Integration
 <li id="fn54"><p>Funkcja również <code>create_packages()</code> sama tworzy nowy folder, jeżeli on wcześniej nie istniał.<a href="tworzenie-pakietow.html#fnref54" class="footnote-back">↩</a></p></li>
 <li id="fn55"><p>Tytuły pakietów można znaleźć, np. w panelu “Packages” w RStudio.<a href="tworzenie-pakietow.html#fnref55" class="footnote-back">↩</a></p></li>
 <li id="fn56"><p>Pełną listę dostępnych ról można znaleźć pod adresem <a href="http://www.loc.gov/marc/relators/relaterm.html" class="uri">http://www.loc.gov/marc/relators/relaterm.html</a>.<a href="tworzenie-pakietow.html#fnref56" class="footnote-back">↩</a></p></li>
+<li id="fn57"><p>Istnieją również inne możliwości, np. użycie znaczników <code>@import</code> lub <code>@importFrom</code>.<a href="tworzenie-pakietow.html#fnref57" class="footnote-back">↩</a></p></li>
+<li id="fn58"><p>Istnieją również inne wpisy, takie jak <code>Depends:</code>, <code>LinkingTo:</code>, czy <code>Enhances:</code><a href="tworzenie-pakietow.html#fnref58" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
