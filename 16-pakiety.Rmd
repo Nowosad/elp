@@ -87,17 +87,38 @@ Dodatkowo ta osoba posiada dwie role przy tworzeniu tego pakietu `"cre"` oraz `"
 Pierwsza rola, `"cre"`, informuje że ta osoba jest twórcą i konserwatorem tego pakietu. 
 Ona jest odpowiedzialna za pracę pakietu.
 Druga rola, `"aut"`, jest nadawana osom, które wniosły bardzo duży wkład w kod zawarty w pakiecie.
-Inne często używane role to `"ctb"` określająca osoby, które wniosły mniejszy wkład w kod (np. drobne zmiany) oraz `"cph"` określająca osoby czy instytucje będące posiadaczami praw autorskich (np. firma zatrudniająca autora kodu albo autor biblioteki, która została wewnętrznie użyta).
-<!-- http://www.loc.gov/marc/relators/relaterm.html -->
+Inne często używane role to `"ctb"` określająca osoby, które wniosły mniejszy wkład w kod (np. drobne zmiany) oraz `"cph"` określająca osoby czy instytucje będące posiadaczami praw autorskich (np. firma zatrudniająca autora kodu albo autor biblioteki, która została wewnętrznie użyta).^[Pełną listę dostępnych ról można znaleźć pod adresem http://www.loc.gov/marc/relators/relaterm.html.]
 Dodanie kolejnych osób odbywa się poprzez łączenie ich funkcją `c()`.
 
 ```yaml
 Authors@R: c(
-    person(given = "Imie", "Nazwisko", role = c("cre", "aut"), email = "imie.nazwisko@example.com"),
-    person(given = "Imie2", "Nazwisko2", role = "aut", email = "imie2.nazwisko2@example.com")
+    person("Imie", "Nazwisko", role = c("cre", "aut"), email = "imie.nazwisko@example.com"),
+    person("Imie2", "Nazwisko2", role = "aut", email = "imie2.nazwisko2@example.com")
 )
 ```
 
+Licencja (`License: `) określa warunki korzystania z pakietu przez inne osoby.
+W bardzo dużym skrócie licencje oprogramowania można podzielić na licencje otwarte (*open-source*) oraz zamknięte (*proprietary*).
+Najpopularniejsze licencje otwarte używane w pakietach R to licencja `CC0`, `MIT` oraz `GPL`.
+Pierwsza z nich, `CC0` oznacza przekazanie [zawartości pakietu do domeny publicznej](https://creativecommons.org/publicdomain/zero/1.0/deed.pl) i najczęściej stosowana jest do pakietów zawierających tylko zbiory danych.
+Licencja `MIT` daje nieograniczone prawo do używania, modyfikowania i rozpowszechniania kodu, pod warunkiem zachowania informacji o autorze.
+Dodanie licencji `MIT` do pakietu R można wykonać podając swoje imię i nazwisko w funkcji `usethis::use_mit_license("Imie Nazwisko")`. 
+W ten sposób informacja o tej licencji zostanie dodana do pliku `DESCRIPTION` (`License: MIT + file LICENSE`) oraz zostaną utworzone specjalne pliki z treścią licencji.
+Trzecia z licencji otwartych, `GPL` (ang. *GNU General Public License*) pozwala użytkownikom na uruchamianie, dostosowywanie, rozpowszechnianie i udoskonalanie kodu.
+Ważną cechą tej licencji jest wymaganie, że wszelkie prace oparte o kod w licencji `GPL` również muszą mieć licencję `GPL`
+Oprogramowanie zamknięte może również przyjmować wiele form (np. freeware czy też oprogramowanie komercyjne).
+Określenie pakietu jako oprogramowania zamkniętego odbywa się poprzez dodanie informacji, że licencja znajduje się w pliku `LICENSE` (`License: file LICENSE`), a następnie stworzenie pliku tekstowego o tej nazwie zawierającego odpowiednią modyfikację poniższego tekstu:
+
+```yaml
+Proprietary 
+
+Do not distribute outside of NAZWA MOJEJ FIRMY.
+```
+
+<!-- linki do licencji -->
+<!-- http://choosealicense.com/licenses/ -->
+<!-- https://tldrlegal.com/ -->
+<!-- http://cran.r-project.org/doc/manuals/R-exts.html#The-DESCRIPTION-file -->
 
 <!-- inne opcje -->
 
@@ -193,22 +214,6 @@ Zbudowanie pliku dokumentacji pozwala teraz na jej podejrzenie poprzez wywołani
 <!-- devtools::test_coverage() -->
 <!-- https://katherinemwood.github.io/post/testthat/ -->
 <!-- Automated testing with Travis CI + codecov -->
-
-## Licencje
-
-<!-- There are three main open source licenses -->
-
-<!-- CC0 “public domain”, best for data packages  -->
-<!-- MIT Free for anyone to do anything with -->
-<!-- GPL Changes and bundles must also be GPL -->
-<!-- These are gross simplifications! -->
-
-<!-- DESCRIPTION: -->
-<!-- License: file LICENSE -->
-<!-- LICENSE: -->
-<!-- Proprietary: do not distribute outside of -->
-<!-- Widgets Incorporated. -->
-
 
 ## Publikowanie pakietów
 
