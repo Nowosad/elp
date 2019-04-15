@@ -30,7 +30,6 @@ Znacznie w tym może pomóc pakiet **usethis** [@R-usethis], który zawiera szer
 library(usethis)
 ```
 
-
 Do stworzenia szkieletu pakietu służy funkcja `create_packages()`, w której należy podać ścieżkę do nowego pakietu.<!-- package.skeleton()  Never use this! -->
 W tej ścieżce ostatnia nazwa folderu określa również nazwę pakietu.^[Funkcja również `create_packages()` sama tworzy nowy folder, jeżeli on wcześniej nie istniał.]
 
@@ -47,6 +46,11 @@ Najważniejsze nowe pliki to:
 4. `NAMESPACE` - ten plik określa, między innymi, jakie funkcje są dostępne w tym pakiecie. 
 Ten plik i jego zawartość jest tworzona automatycznie
 
+Dodatkowo w prawym górnym panelu RStudio pojawi się nowy panel "Build".
+
+<!-- printscreen -->
+
+
 ## Rozwijanie pakietu
 
 Rozwój pakietu R może opierać się na kilku poniższych krokach:
@@ -57,7 +61,63 @@ Rozwój pakietu R może opierać się na kilku poniższych krokach:
 4. Dodanie testów jednostkowych (sekcja \@ref(testy-jednostkowe)) na podstawie stworzonych przykładów
 5. Powtórzenie powyższych czynności
 
-## Dokumentacja funkcji
+## Tworzenie i dokumentacja funkcji
+
+W sekcji \@ref(budowanie-funkcji) stworzyliśmy nową funkcję `konwersja_temp()` przeliczającą temperaturę ze stopni Fahrenheita na stopnie Celsjusza.
+
+```{r, eval=FALSE}
+konwersja_temp = function(temperatura_f){
+    (temperatura_f - 32) / 1.8
+}
+```
+
+Umieszczenie tej funkcji w nowym pakiecie R odbywa się poprzez zapisanie tego kodu jako skrypt R (np. `konwersja_temp.R`) w folderze `R/`.
+
+Funkcje zawarte w pakietach muszą także posiadać odpowiednią dokumentację, zawierającą, między innymi, tytuł funkcji, opis jej działania, wyjaśnienie kolejnych argumentów funkcji, oraz przykłady jej działania.
+Linie obejmujące dokumentację funkcji rozpoczynają się od znaków `#' `, a tworzenie dokumentacji funkcji odbywa się poprzez wypełnianie treści dla kolejnych znaczników (np. `@example` określa występowanie przykładu).
+
+Przykładowy plik `R/konwersja_temp.R` może wyglądać następująco:
+
+```{r, eval=FALSE}
+#' Konwersja temperatur
+#'
+#' @description Funkcja sluzaca do konwersji temperatury w stopniach Fahrenheita do stopni Celsjusza.
+#'
+#' @param temperatura_f wektor zawierajacy wartosci temperatury w stopniach Fahrenheita
+#'
+#' @return wektor numeryczny
+#' @export
+#'
+#' @examples
+#' konwersja_temp(75)
+#' konwersja_temp(110)
+#' konwersja_temp(0)
+#' konwersja_temp(c(0, 75, 110))
+konwersja_temp = function(temperatura_f){
+  (temperatura_f - 32) / 1.8
+}
+```
+
+Pierwsza linia w tym pliku określa tytuł danej funkcji.
+Kolejny element rozpoczynający się od znacznika `@description` zawiera krótki opis tego, co funkcja robi. 
+Następnie zazwyczaj wypisane są wszystkie argumenty danej funkcji używając kolejnych znaczników `@param`.
+Znacznik `@return` pozwala na przekazanie informacji o tym co jest zwracane jako efekt działania funkcji.
+Przedostatnim znacznikiem w powyższym przypadku jest `@export`. 
+Oznacza on, że ta funkcja będzie widoczna dla każdego użytkownika tego pakietu po użyciu `library(mojpakiet)`.
+Bez tego znacznika funkcja byłaby tylko widoczna wewnątrz pakietu.
+Ostatni znacznik, `@examples`, wypisuje kolejne przykłady działania funkcji.
+
+<!-- istnieje wiecej znacznikow - link -->
+
+Wybór `More -> Document` w panelu "Build" (lub użycie skrótu CTRL+SHIFT+D) spowoduje zbudowanie pliku dokumentacji w folderze `man`, np. `man/konwersja_temp.Rd`. 
+Pliki dokumentacji będą zawsze tworzone w ten sposób - nie należy ich modyfikować ręcznie.
+Zbudowanie pliku dokumentacji pozwala teraz na jej podejrzenie poprzez wywołanie pliku pomocy naszej funkcji:
+
+```{r, eval=FALSE}
+?konwersja_temp
+```
+
+<!-- printscreen -->
 
 <!-- roxygen2 -->
 
