@@ -308,7 +308,7 @@ Przykładowo, nasz pakiet zawiera funkcję `powierzchnia()`, dlatego też do jeg
 Wewnątrz tego pliku należy sprawdzać kolejne aspekty działania kodu używając funkcji `test_that()`, gdzie należy podać (1) opis tego co jest sprawdzane i (2) testy wewnątrz nawiasów klamrowych (zobacz sekcję \@ref(testy-jednostkowe)).
 Przykładowy plik `tests/testthat/test-powierzchnia.R` może wyglądać w ten sposób:
 
-```
+```r
 nowy_p = nowy_prostokat(0, 0, 6, 5)
 
 test_that("struktura wyniku jest poprawna", {
