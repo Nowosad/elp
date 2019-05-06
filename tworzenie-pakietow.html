@@ -371,7 +371,7 @@ Można to przykładowo zrobić używając pakietu <strong>available</strong> <sp
 <div id="tworzenie-szkieletu-pakietu" class="section level2">
 <h2><span class="header-section-number">15.2</span> Tworzenie szkieletu pakietu</h2>
 <p>Kolejnym krokiem jest stworzenie szkieletu pakietu, czyli zorganizowanego zbioru plików i folderów, do których później należy dodać odpowiednie informacje i funkcje.
-Znacznie w tym może pomóc pakiet <strong>usethis</strong> <span class="citation">(Wickham and Bryan <a href="#ref-R-usethis">2018</a>)</span>, który zawiera szereg funkcji ułatwiających budowanie pakietów R.</p>
+Znacznie w tym może pomóc pakiet <strong>usethis</strong> <span class="citation">(Wickham and Bryan <a href="#ref-R-usethis">2019</a><a href="#ref-R-usethis">b</a>)</span>, który zawiera szereg funkcji ułatwiających budowanie pakietów R.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(usethis)</code></pre>
 <p>Do stworzenia szkieletu pakietu służy funkcja <code>create_packages()</code>, w której należy podać ścieżkę do nowego pakietu.<!-- package.skeleton()  Never use this! -->
 W tej ścieżce ostatnia nazwa folderu określa również nazwę pakietu.<a href="#fn54" class="footnote-ref" id="fnref54"><sup>54</sup></a></p>
@@ -555,21 +555,26 @@ Pakiety mogą posiadać wiele różnych winiet, zawierających coraz bardziej za
 <p>Zarówno plik <code>README.Rmd</code>, jak i winieta wymaga użycia odpowiedniej składni - używany jest tam tzw. język znaczników RMarkdown.
 Języki znaczników opierają się o założenie, że pewne znaki w pliku tekstowym mają specjalne znaczenie, które po przetworzeniu pliku wyświetla je w odpowiedni sposób.
 Przykładowo jedna gwiazdka przed tekstem i jedna po tekście oznacza pochylony tekst (<code>*pochylony tekst*</code>), a dwie gwiazdki przed i po oznaczają pogrubiony tekst (<code>**pogrubiony tekst**</code>).
-Innym przykładem są agłówki określane poprzez jeden lub więcej symboli kratki.</p>
+Innym przykładem są nagłówki określane poprzez jeden lub więcej symboli kratki.</p>
 <pre><code># Nagłówek
 
-## Drugi nagłówek</code></pre>
+## Nagłówek drugiego poziomu (mniejsza czcionka)</code></pre>
 <p>Zestawienie pokazujące podstawy składni RMarkdown jest wbudowane w RStudio i można je wyświetlić za pomocą <code>Help -&gt; Markdown Quick Reference</code>.</p>
 <p>Pliki RMarkdown mogą być przetworzone (ang. <em>render</em>) do wielu różnych formatów plików, między innymi html, pdf, czy word w zależności od określonych opcji w nagłówku pliku.
 To przetworzenie może odbyć się używając ikony “Knit” w RStudio lub funkcji <code>rmarkdown::render()</code>.
 <!-- more information ... -->
 <!-- https://rmarkdown.rstudio.com/ -->
 <!-- https://bookdown.org/yihui/rmarkdown/ --></p>
-<!-- news -->
-<!-- https://ropensci.github.io/dev_guide/releasing.html#news -->
-<!-- https://ropensci.github.io/dev_guide/newstemplate.html -->
-<!-- pkgdown -->
-<!-- https://pkgdown.r-lib.org/ -->
+<p>Elementem dokumentowania pakietu jest również informowanie o tym jakie nowe zmiany zaszły wraz z kolejnymi wersjami pakietu.
+W pakietach R może mieć to miejsce używając pliku <code>NEWS.md</code> tworzonego poprzez <code>usethis::use_news_md()</code>.
+Taki plik może zawierać informacje o nowych funkcjach, zmianach istniejących funkcji, naprawionych błędach, itd.
+Przykład szablonu pliku <code>NEWS.md</code> można znaleźć pod adresem <a href="https://ropensci.github.io/dev_guide/newstemplate.html" class="uri">https://ropensci.github.io/dev_guide/newstemplate.html</a>.</p>
+<p>Dodatkowo w R istnieje możliwość prostego stworzenia stron internetowych dla wybranego pakietu używając pakietu <strong>pkgdown</strong> <span class="citation">(Wickham and Hesselberth <a href="#ref-R-pkgdown">2019</a>)</span>.
+Przykład takiej strony można zobaczyć pod adresem <a href="https://pkgdown.r-lib.org/index.html" class="uri">https://pkgdown.r-lib.org/index.html</a>.
+Stworzenie strony pakietu wymaga jedynie wywołania funkcji <code>pkgdown::build_site()</code> wewnątrz pakietu R.
+W efekcie zostanie utworzony folder <code>docs/</code> zawierający tę stronę.
+W przypadku, gdy pakiet znajduje się na GitHubie możliwe jest wyświetlenie tej strony pod adresem <code>https://&lt;nazwauzytkownika&gt;.github.io/&lt;nazwapakietu&gt;/</code>.
+Aby ta strona była dostępna w internecie należy na platformie GitHub wejść w zakładkę settings, następnie znaleźć część określoną jako GitHub Pages, i określić Source jako “master branch /docs folder”.</p>
 </div>
 <div id="wbudowane-testy" class="section level2">
 <h2><span class="header-section-number">15.10</span> Wbudowane testy</h2>
@@ -622,7 +627,10 @@ Continuous Integration
 <p>Ganz, Carl, Gábor Csárdi, Jim Hester, Molly Lewis, and Rachael Tatman. 2018. <em>Available: Check If the Title of a Package Is Available, Appropriate and Interesting</em>. <a href="https://CRAN.R-project.org/package=available" class="uri">https://CRAN.R-project.org/package=available</a>.</p>
 </div>
 <div id="ref-R-usethis">
-<p>Wickham, Hadley, and Jennifer Bryan. 2018. <em>Usethis: Automate Package and Project Setup</em>. <a href="https://CRAN.R-project.org/package=usethis" class="uri">https://CRAN.R-project.org/package=usethis</a>.</p>
+<p>Wickham, Hadley, and Jennifer Bryan. 2019b. <em>Usethis: Automate Package and Project Setup</em>. <a href="https://CRAN.R-project.org/package=usethis" class="uri">https://CRAN.R-project.org/package=usethis</a>.</p>
+</div>
+<div id="ref-R-pkgdown">
+<p>Wickham, Hadley, and Jay Hesselberth. 2019. <em>Pkgdown: Make Static Html Documentation for a Package</em>.</p>
 </div>
 </div>
 <div class="footnotes">

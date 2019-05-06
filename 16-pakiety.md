@@ -263,12 +263,12 @@ Pakiety mogą posiadać wiele różnych winiet, zawierających coraz bardziej za
 Zarówno plik `README.Rmd`, jak i winieta wymaga użycia odpowiedniej składni - używany jest tam tzw. język znaczników RMarkdown.
 Języki znaczników opierają się o założenie, że pewne znaki w pliku tekstowym mają specjalne znaczenie, które po przetworzeniu pliku wyświetla je w odpowiedni sposób.
 Przykładowo jedna gwiazdka przed tekstem i jedna po tekście oznacza pochylony tekst (`*pochylony tekst*`), a dwie gwiazdki przed i po oznaczają pogrubiony tekst (`**pogrubiony tekst**`).
-Innym przykładem są agłówki określane poprzez jeden lub więcej symboli kratki.
+Innym przykładem są nagłówki określane poprzez jeden lub więcej symboli kratki.
 
 ```
 # Nagłówek
 
-## Drugi nagłówek
+## Nagłówek drugiego poziomu (mniejsza czcionka)
 ```
 
 Zestawienie pokazujące podstawy składni RMarkdown jest wbudowane w RStudio i można je wyświetlić za pomocą `Help -> Markdown Quick Reference`.
@@ -279,12 +279,18 @@ To przetworzenie może odbyć się używając ikony "Knit" w RStudio lub funkcji
 <!-- https://rmarkdown.rstudio.com/ -->
 <!-- https://bookdown.org/yihui/rmarkdown/ -->
 
-<!-- news -->
-<!-- https://ropensci.github.io/dev_guide/releasing.html#news -->
-<!-- https://ropensci.github.io/dev_guide/newstemplate.html -->
+Elementem dokumentowania pakietu jest również informowanie o tym jakie nowe zmiany zaszły wraz z kolejnymi wersjami pakietu.
+W pakietach R może mieć to miejsce używając pliku `NEWS.md` tworzonego poprzez `usethis::use_news_md()`.
+Taki plik może zawierać informacje o nowych funkcjach, zmianach istniejących funkcji, naprawionych błędach, itd.
+Przykład szablonu pliku `NEWS.md` można znaleźć pod adresem https://ropensci.github.io/dev_guide/newstemplate.html.
 
-<!-- pkgdown -->
-<!-- https://pkgdown.r-lib.org/ -->
+Dodatkowo w R istnieje możliwość prostego stworzenia stron internetowych dla wybranego pakietu używając pakietu **pkgdown** [@R-pkgdown]. 
+Przykład takiej strony można zobaczyć pod adresem https://pkgdown.r-lib.org/index.html.
+Stworzenie strony pakietu wymaga jedynie wywołania funkcji `pkgdown::build_site()` wewnątrz pakietu R.
+W efekcie zostanie utworzony folder `docs/` zawierający tę stronę. 
+W przypadku, gdy pakiet znajduje się na GitHubie możliwe jest wyświetlenie tej strony pod adresem `https://<nazwauzytkownika>.github.io/<nazwapakietu>/`.
+Aby ta strona była dostępna w internecie należy na platformie GitHub wejść w zakładkę settings, następnie znaleźć część określoną jako GitHub Pages, i określić Source jako "master branch /docs folder".
+
 ## Wbudowane testy {#wbudowane-testy}
 
 <!-- Unit testing -->
