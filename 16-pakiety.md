@@ -4,8 +4,8 @@
 <!-- https://github.com/ropensci/dev_guide -->
 
 Pakiety są powszechnie wykorzystywane podczas pracy z językiem R.
-Celem sekcji \@ref(pakiety) było wprowadzenie do tego czym są pakiety, jak się je instaluje oraz dołącza. 
-Najważniejszą informacją było, że pakiety są zorganizowanymi zbiorami funkcji. 
+Celem sekcji \@ref(pakiety) było wprowadzenie do tego czym one są, jak się je instaluje oraz dołącza. 
+Najważniejszą tam informacją było, że pakiety są zorganizowanymi zbiorami funkcji. 
 Oznacza to, że nie tylko posiadamy pewną liczbę stworzonych funkcji, ale także są one ułożone w pewien ustalony sposób.
 Funkcje w pakietach posiadają też swoją dokumentację (jej struktura została przedstawiona w sekcji \@ref(dokumentacja-funkcji)) czy przykładowe dane.
 Pakiety, oprócz swojej unikalnej nazwy, posiadają również informacje o swojej wersji, autorach, zależnościach i licencji.
@@ -51,9 +51,6 @@ Ten plik i jego zawartość jest tworzona automatycznie
 
 Dodatkowo w prawym górnym panelu RStudio pojawi się nowy panel "Build".
 
-<!-- printscreen -->
-
-
 ## Rozwijanie pakietu
 
 Rozwój pakietu R może opierać się na kilku poniższych krokach:
@@ -61,9 +58,11 @@ Rozwój pakietu R może opierać się na kilku poniższych krokach:
 1. Tworzenie/modyfikowanie kodu
 2. Używanie funkcji `devtools::load_all()`, która dodaje nowe/zmodyfikowane funkcje do R
 3. Sprawdzenie czy funkcja działa zgodnie z oczekiwaniami na kilku przykładach
-4. Dodanie testów jednostkowych (sekcja \@ref(testy-jednostkowe)) na podstawie stworzonych przykładów
+4. Dodanie testów jednostkowych (sekcja \@ref(wbudowane-testy)) na podstawie stworzonych przykładów
 5. Modyfikacja wersji oprogramowania
 6. Powtórzenie powyższych czynności
+
+<!--inne jak news, check, etc.-->
 
 ## Tworzenie i dokumentacja funkcji
 
