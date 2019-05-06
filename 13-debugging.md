@@ -1,5 +1,5 @@
 
-# Debugowanie {#debugging}
+<!-- # Debugowanie {#debugging} -->
 
 <!-- proces: -->
 <!-- 1. szukaj błędu - ktoś inny - google + stackoverflow -->
@@ -21,7 +21,7 @@
 <!-- http://kevinushey.github.io/blog/2015/04/13/debugging-with-lldb/ -->
 <!-- https://github.com/wch/r-debug/blob/master/debugging-r.md -->
 
-## Podstawowe podejście do debugowania
+<!-- ## Podstawowe podejście do debugowania -->
 
 <!-- `print()`, `cat()` - small objects -->
 <!-- `str()` - large object trunct -->
@@ -29,7 +29,7 @@
 
 <!-- `traceback()` - bottom to top -->
 
-## Interaktywne debugowanie
+<!-- ## Interaktywne debugowanie -->
 
 <!-- ## inside R -->
 
@@ -49,7 +49,7 @@
 
 <!-- `debug()`, `trace()`, `recover()` -->
 
-## Zadania
+<!-- ## Zadania -->
 
 <!-- create debugging examples - .R files -->
 <!-- https://github.com/jimhester/wtf-debugging -->
