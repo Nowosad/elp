@@ -271,24 +271,20 @@ Innym przykładem są agłówki określane poprzez jeden lub więcej symboli kra
 ## Drugi nagłówek
 ```
 
-Zestawienie pokazujące składnie RMarkdown jest wbudowane w RStudio i można je wyświetlić za pomocą `Help -> Markdown Quick Reference`.
+Zestawienie pokazujące podstawy składni RMarkdown jest wbudowane w RStudio i można je wyświetlić za pomocą `Help -> Markdown Quick Reference`.
 
 Pliki RMarkdown mogą być przetworzone (ang. *render*) do wielu różnych formatów plików, między innymi html, pdf, czy word w zależności od określonych opcji w nagłówku pliku.
 To przetworzenie może odbyć się używając ikony "Knit" w RStudio lub funkcji `rmarkdown::render()`.
+<!-- more information ... -->
+<!-- https://rmarkdown.rstudio.com/ -->
+<!-- https://bookdown.org/yihui/rmarkdown/ -->
 
-
-<!-- rmarkdown -->
-<!-- rstudio helper -->
-
-<!-- pkgdown -->
-<!-- https://pkgdown.r-lib.org/ -->
-<!-- readme -->
-<!-- https://ropensci.github.io/dev_guide/building.html#readme -->
 <!-- news -->
 <!-- https://ropensci.github.io/dev_guide/releasing.html#news -->
 <!-- https://ropensci.github.io/dev_guide/newstemplate.html -->
 
-
+<!-- pkgdown -->
+<!-- https://pkgdown.r-lib.org/ -->
 ## Wbudowane testy {#wbudowane-testy}
 
 <!-- Unit testing -->
