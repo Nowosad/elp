@@ -251,6 +251,7 @@ Ten plik powinien zawierać:^[Dodatkowe elementy to oznaki (ang. *badges*) pokaz
 1. Prosty przykład użycia
 1. Odnośniki do podobnych prac, programów, czy artykułów naukowych
 
+<!-- knit -->
 <!--examples--->
 
 Winiety mają na celu pokazanie bardziej złożonego przykładu użycia pakietu.
@@ -260,7 +261,20 @@ Teraz możliwe jest jego edytowanie i dodawanie nowej treści.
 Pakiety mogą posiadać wiele różnych winiet, zawierających coraz bardziej zaawansowane przykłady lub też opis różnych grup funkcji z pakietu.
 
 Zarówno plik `README.Rmd`, jak i winieta wymaga użycia odpowiedniej składni - używany jest tam tzw. język znaczników RMarkdown.
-Języki znaczników polegają na tym, że 
+Języki znaczników opierają się o założenie, że pewne znaki w pliku tekstowym mają specjalne znaczenie, które po przetworzeniu pliku wyświetla je w odpowiedni sposób.
+Przykładowo jedna gwiazdka przed tekstem i jedna po tekście oznacza pochylony tekst (`*pochylony tekst*`), a dwie gwiazdki przed i po oznaczają pogrubiony tekst (`**pogrubiony tekst**`).
+Innym przykładem są agłówki określane poprzez jeden lub więcej symboli kratki.
+
+```
+# Nagłówek
+
+## Drugi nagłówek
+```
+
+Zestawienie pokazujące składnie RMarkdown jest wbudowane w RStudio i można je wyświetlić za pomocą `Help -> Markdown Quick Reference`.
+
+Pliki RMarkdown mogą być przetworzone (ang. *render*) do wielu różnych formatów plików, między innymi html, pdf, czy word w zależności od określonych opcji w nagłówku pliku.
+To przetworzenie może odbyć się używając ikony "Knit" w RStudio lub funkcji `rmarkdown::render()`.
 
 
 <!-- rmarkdown -->

@@ -545,6 +545,7 @@ Ten plik powinien zawierać:<a href="#fn59" class="footnote-ref" id="fnref59"><s
 <li>Prosty przykład użycia</li>
 <li>Odnośniki do podobnych prac, programów, czy artykułów naukowych</li>
 </ol>
+<!-- knit -->
 <!--examples--->
 <p>Winiety mają na celu pokazanie bardziej złożonego przykładu użycia pakietu.
 Nową winietę można stworzyć za pomocą funkcji <code>usethis::use_vignette(&quot;nazwa-winiety&quot;)</code>.
@@ -552,7 +553,15 @@ W tym momencie zostanie stworzony nowy plik <code>nazwa-winiety.Rmd</code> w fol
 Teraz możliwe jest jego edytowanie i dodawanie nowej treści.
 Pakiety mogą posiadać wiele różnych winiet, zawierających coraz bardziej zaawansowane przykłady lub też opis różnych grup funkcji z pakietu.</p>
 <p>Zarówno plik <code>README.Rmd</code>, jak i winieta wymaga użycia odpowiedniej składni - używany jest tam tzw. język znaczników RMarkdown.
-Języki znaczników polegają na tym, że</p>
+Języki znaczników opierają się o założenie, że pewne znaki w pliku tekstowym mają specjalne znaczenie, które po przetworzeniu pliku wyświetla je w odpowiedni sposób.
+Przykładowo jedna gwiazdka przed tekstem i jedna po tekście oznacza pochylony tekst (<code>*pochylony tekst*</code>), a dwie gwiazdki przed i po oznaczają pogrubiony tekst (<code>**pogrubiony tekst**</code>).
+Innym przykładem są agłówki określane poprzez jeden lub więcej symboli kratki.</p>
+<pre><code># Nagłówek
+
+## Drugi nagłówek</code></pre>
+<p>Zestawienie pokazujące składnie RMarkdown jest wbudowane w RStudio i można je wyświetlić za pomocą <code>Help -&gt; Markdown Quick Reference</code>.</p>
+<p>Pliki RMarkdown mogą być przetworzone (ang. <em>render</em>) do wielu różnych formatów plików, między innymi html, pdf, czy word w zależności od określonych opcji w nagłówku pliku.
+To przetworzenie może odbyć się używając ikony “Knit” w RStudio lub funkcji <code>rmarkdown::render()</code>.</p>
 <!-- rmarkdown -->
 <!-- rstudio helper -->
 <!-- pkgdown -->
