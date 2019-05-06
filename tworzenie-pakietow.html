@@ -618,24 +618,15 @@ W efekcie wyświetlone zostaną wszystkie testy i zostanie wskazane, które z ni
 <p>Nowo utworzony pakiet w R można od razu umieścić na wybranym serwisie internetowym wspierającym kontrolę wersji takim jak GitHub, GitLab, czy BitBucket (rozdział <a href="kontrola-wersji.html#kontrola-wersji">14</a>), gdzie nazwa repozytorium będzie identyczna jak nazwa pakietu.
 Dodatkowo, gdy napisaliśmy plik <code>README.md</code> użytkownicy mogą dowiedzieć się do czego ten pakiet służy, jak go zainstalować i użyć w podstawowy sposób.
 Teraz konieczna jest promocja tego pakietu w sytuacji, gdy chcemy zainteresować inne osoby jego użyciem.
-Taka promocja może odbywać się poprzez ogłoszenie stworzenia tego pakietu na Twitterze używając hasztagu <code>#rstats</code>, czy też napisaniu wpisu na blogu opisującego ten pakiet.</p>
+Taka promocja może odbywać się poprzez ogłoszenie stworzenia tego pakietu na Twitterze używając hasztagu <code>#rstats</code>, czy też napisaniu wpisu na blogu opisującego ten pakiet.
+<!-- https://ropensci.github.io/dev_guide/marketing.html -->
+<!-- block2 Continuous Integration --></p>
 <p>Dodatkowo w R istnieje możliwość prostego stworzenia stron internetowych dla wybranego pakietu używając pakietu <strong>pkgdown</strong> <span class="citation">(Wickham and Hesselberth <a href="#ref-R-pkgdown">2019</a>)</span>.
 Przykład takiej strony można zobaczyć pod adresem <a href="https://pkgdown.r-lib.org/index.html" class="uri">https://pkgdown.r-lib.org/index.html</a>.
 Stworzenie strony pakietu wymaga jedynie wywołania funkcji <code>pkgdown::build_site()</code> wewnątrz pakietu R.
 W efekcie zostanie utworzony folder <code>docs/</code> zawierający stronę internetową reprezentującą pakiet i jego dokumentację.
 W przypadku, gdy pakiet znajduje się na GitHubie możliwe jest wyświetlenie tej strony pod adresem <code>https://&lt;nazwauzytkownika&gt;.github.io/&lt;nazwapakietu&gt;/</code>.
 Aby ta strona była dostępna w internecie należy na platformie GitHub wejść w zakładkę settings, następnie znaleźć część określoną jako GitHub Pages, i określić Source jako “master branch /docs folder”.</p>
-
-<div class="rmdinfo">
-software promotion
-</div>
-
-<!-- https://ropensci.github.io/dev_guide/marketing.html -->
-
-<div class="rmdinfo">
-Continuous Integration
-</div>
-
 </div>
 <div id="zadania-14" class="section level2">
 <h2><span class="header-section-number">15.12</span> Zadania</h2>
