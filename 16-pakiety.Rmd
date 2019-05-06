@@ -273,12 +273,18 @@ To przetworzenie może odbyć się używając ikony "Knit" w RStudio lub funkcji
 <!-- https://rmarkdown.rstudio.com/ -->
 <!-- https://bookdown.org/yihui/rmarkdown/ -->
 
-<!-- news -->
-<!-- https://ropensci.github.io/dev_guide/releasing.html#news -->
-<!-- https://ropensci.github.io/dev_guide/newstemplate.html -->
+Elementem dokumentowania pakietu jest również informowanie o tym jakie nowe zmiany zaszły wraz z kolejnymi wersjami pakietu.
+W pakietach R może mieć to miejsce używając pliku `NEWS.md` tworzonego poprzez `usethis::use_news_md()`.
+Taki plik może zawierać informacje o nowych funkcjach, zmianach istniejących funkcji, naprawionych błędach, itd.
+Przykład szablonu pliku `NEWS.md` można znaleźć pod adresem https://ropensci.github.io/dev_guide/newstemplate.html.
 
-<!-- pkgdown -->
-<!-- https://pkgdown.r-lib.org/ -->
+Dodatkowo w R istnieje możliwość prostego stworzenia stron internetowych dla wybranego pakietu używając pakietu **pkgdown** [@R-pkgdown]. 
+Przykład takiej strony można zobaczyć pod adresem https://pkgdown.r-lib.org/index.html.
+Stworzenie strony pakietu wymaga jedynie wywołania funkcji `pkgdown::build_site()` wewnątrz pakietu R.
+W efekcie zostanie utworzony folder `docs/` zawierający tę stronę. 
+W przypadku, gdy pakiet znajduje się na GitHubie możliwe jest wyświetlenie tej strony pod adresem `https://<nazwauzytkownika>.github.io/<nazwapakietu>/`.
+Aby ta strona była dostępna w internecie należy na platformie GitHub wejść w zakładkę settings, następnie znaleźć część określoną jako GitHub Pages, i określić Source jako "master branch /docs folder".
+
 ## Wbudowane testy {#wbudowane-testy}
 
 <!-- Unit testing -->
