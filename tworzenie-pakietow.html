@@ -586,12 +586,38 @@ Aby ta strona była dostępna w internecie należy na platformie GitHub wejść 
 </div>
 <div id="wbudowane-testy" class="section level2">
 <h2><span class="header-section-number">15.10</span> Wbudowane testy</h2>
-<!-- Unit testing -->
-<!-- usethis::use_test() -->
-<!-- devtools::test() -->
-<!-- devtools::test_coverage() -->
-<!-- https://katherinemwood.github.io/post/testthat/ -->
+<p>Sekcja <a href="analiza-kodu.html#testy-jednostkowe">11.1</a> pokazywała w jaki sposób tworzyć testy jednostkowe dla funkcji, w celu sprawdzenia czy ich działanie jest zgodne z naszymi oczekiwaniami.
+Takie testy można również wbudować wewnątrz pakietu - w efekcie, gdy naniesiemy w nim jakieś zmiany możemy sprawdzić czy otrzemujemy takie same wyniki.</p>
+<p>Pierwszym krokiem do używania wbudowanych testów jest ustawienie odpowiedniej infrastruktury używając funkcji <code>use_testthat()</code>.
+Powoduje ona dodanie pakietu <strong>testthat</strong> do wpisu <code>Suggests:</code>, stworzenie folderów <code>tests/</code> i <code>tests/testthat/</code> oraz pliku <code>tests/testthat.R</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">use_testthat</span>()
+<span class="co">#&gt; ✔ Adding &#39;testthat&#39; to Suggests field in DESCRIPTION</span>
+<span class="co">#&gt; ✔ Creating &#39;tests/testthat/&#39;</span>
+<span class="co">#&gt; ✔ Writing &#39;tests/testthat.R&#39;</span></code></pre>
+<p>Teraz możliwe jest napisanie testów jednostkowych.
+Zazwyczaj polega to na stworzeniu oddzielnego pliku dla każdej funkcji z naszego pakietu.
+Przykładowo, nasz pakiet zawiera funkcję <code>powierzchnia()</code>, dlatego też do jego testowania możemy stworzyć nowy plik <code>tests/testthat/test-powierzchnia.R</code>.
+Wewnątrz tego pliku należy sprawdzać kolejne aspekty działania kodu używając funkcji <code>test_that()</code>, gdzie należy podać (1) opis tego co jest sprawdzane i (2) testy wewnątrz nawiasów klamrowych (zobacz sekcję <a href="analiza-kodu.html#testy-jednostkowe">11.1</a>).
+Przykładowy plik <code>tests/testthat/test-powierzchnia.R</code> może wyglądać w ten sposób:</p>
+<pre><code>nowy_p = nowy_prostokat(0, 0, 6, 5)
+
+test_that(&quot;struktura wyniku jest poprawna&quot;, {
+  expect_length(powierzchnia(nowy_p), 1)
+})
+
+test_that(&quot;wartosc wyniku jest poprawna&quot;, {
+  expect_equal(powierzchnia(nowy_p), 30)
+})
+
+test_that(&quot;wystepuja odpowiednie bledy&quot;, {
+  expect_error(nowy_prostokat(3, 5, 2, &quot;a&quot;))
+})</code></pre>
+<p>Po napisaniu testów można sprawdzić czy wszystkie z nich dają odpowiedni wynik używając <code>devtools::test()</code><a href="#fn60" class="footnote-ref" id="fnref60"><sup>60</sup></a>.
+W efekcie wyświetlone zostaną wszystkie testy i zostanie wskazane, które z nich się nie powiodły i należy je poprawić.</p>
+<!-- why? -->
+<!-- block -->
 <!-- Automated testing with Travis CI + codecov -->
+<!-- devtools::test_coverage() -->
 </div>
 <div id="publikowanie-pakietow" class="section level2">
 <h2><span class="header-section-number">15.11</span> Publikowanie pakietów</h2>
@@ -653,6 +679,7 @@ Continuous Integration
 <li id="fn57"><p>Istnieją również inne możliwości, np. użycie znaczników <code>@import</code> lub <code>@importFrom</code>.<a href="tworzenie-pakietow.html#fnref57" class="footnote-back">↩</a></p></li>
 <li id="fn58"><p>Istnieją również inne wpisy, takie jak <code>Depends:</code>, <code>LinkingTo:</code>, czy <code>Enhances:</code>.<a href="tworzenie-pakietow.html#fnref58" class="footnote-back">↩</a></p></li>
 <li id="fn59"><p>Dodatkowe elementy to oznaki (ang. <em>badges</em>) pokazujące, np. status pakietu, liczbę jego pobrań i wiele innych.<a href="tworzenie-pakietow.html#fnref59" class="footnote-back">↩</a></p></li>
+<li id="fn60"><p>Testy są też automatycznie uruchamiane podczas sprawdzania pakietu (<a href="tworzenie-pakietow.html#sprawdzanie-pakietu">15.7</a>)<a href="tworzenie-pakietow.html#fnref60" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

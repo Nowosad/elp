@@ -302,12 +302,50 @@ Aby ta strona była dostępna w internecie należy na platformie GitHub wejść 
 
 ## Wbudowane testy {#wbudowane-testy}
 
-<!-- Unit testing -->
-<!-- usethis::use_test() -->
-<!-- devtools::test() -->
-<!-- devtools::test_coverage() -->
-<!-- https://katherinemwood.github.io/post/testthat/ -->
+Sekcja \@ref(testy-jednostkowe) pokazywała w jaki sposób tworzyć testy jednostkowe dla funkcji, w celu sprawdzenia czy ich działanie jest zgodne z naszymi oczekiwaniami.
+Takie testy można również wbudować wewnątrz pakietu - w efekcie, gdy naniesiemy w nim jakieś zmiany możemy sprawdzić czy otrzemujemy takie same wyniki.
+
+Pierwszym krokiem do używania wbudowanych testów jest ustawienie odpowiedniej infrastruktury używając funkcji `use_testthat()`. 
+Powoduje ona dodanie pakietu **testthat** do wpisu `Suggests:`, stworzenie folderów `tests/` i `tests/testthat/` oraz pliku `tests/testthat.R`.
+
+```r
+use_testthat()
+#> ✔ Adding 'testthat' to Suggests field in DESCRIPTION
+#> ✔ Creating 'tests/testthat/'
+#> ✔ Writing 'tests/testthat.R'
+```
+
+Teraz możliwe jest napisanie testów jednostkowych.
+Zazwyczaj polega to na stworzeniu oddzielnego pliku dla każdej funkcji z naszego pakietu.
+Przykładowo, nasz pakiet zawiera funkcję `powierzchnia()`, dlatego też do jego testowania możemy stworzyć nowy plik `tests/testthat/test-powierzchnia.R`.
+Wewnątrz tego pliku należy sprawdzać kolejne aspekty działania kodu używając funkcji `test_that()`, gdzie należy podać (1) opis tego co jest sprawdzane i (2) testy wewnątrz nawiasów klamrowych (zobacz sekcję \@ref(testy-jednostkowe)).
+Przykładowy plik `tests/testthat/test-powierzchnia.R` może wyglądać w ten sposób:
+
+```
+nowy_p = nowy_prostokat(0, 0, 6, 5)
+
+test_that("struktura wyniku jest poprawna", {
+  expect_length(powierzchnia(nowy_p), 1)
+})
+
+test_that("wartosc wyniku jest poprawna", {
+  expect_equal(powierzchnia(nowy_p), 30)
+})
+
+test_that("wystepuja odpowiednie bledy", {
+  expect_error(nowy_prostokat(3, 5, 2, "a"))
+})
+```
+
+Po napisaniu testów można sprawdzić czy wszystkie z nich dają odpowiedni wynik używając `devtools::test()`^[Testy są też automatycznie uruchamiane podczas sprawdzania pakietu (\@ref(sprawdzanie-pakietu))].
+W efekcie wyświetlone zostaną wszystkie testy i zostanie wskazane, które z nich się nie powiodły i należy je poprawić.
+
+<!-- why? -->
+
+<!-- block -->
 <!-- Automated testing with Travis CI + codecov -->
+
+<!-- devtools::test_coverage() -->
 
 ## Publikowanie pakietów
 
