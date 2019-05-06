@@ -616,6 +616,7 @@ W efekcie wyświetlone zostaną wszystkie testy i zostanie wskazane, które z ni
 <div id="publikowanie-pakietow" class="section level2">
 <h2><span class="header-section-number">15.11</span> Publikowanie pakietów</h2>
 <p>Nowo utworzony pakiet w R można od razu umieścić na wybranym serwisie internetowym wspierającym kontrolę wersji takim jak GitHub, GitLab, czy BitBucket (rozdział <a href="kontrola-wersji.html#kontrola-wersji">14</a>), gdzie nazwa repozytorium będzie identyczna jak nazwa pakietu.
+<!--adds links to descr-->
 Dodatkowo, gdy napisaliśmy plik <code>README.md</code> użytkownicy mogą dowiedzieć się do czego ten pakiet służy, jak go zainstalować i użyć w podstawowy sposób.
 Teraz konieczna jest promocja tego pakietu w sytuacji, gdy chcemy zainteresować inne osoby jego użyciem.
 Taka promocja może odbywać się poprzez ogłoszenie stworzenia tego pakietu na Twitterze używając hasztagu <code>#rstats</code>, czy też napisaniu wpisu na blogu opisującego ten pakiet.
@@ -630,6 +631,46 @@ Aby ta strona była dostępna w internecie należy na platformie GitHub wejść 
 </div>
 <div id="zadania-14" class="section level2">
 <h2><span class="header-section-number">15.12</span> Zadania</h2>
+<ol style="list-style-type: decimal">
+<li><p>Stwórz szkielet nowego pakietu R nazwającego się <strong>konwerter</strong>.</p></li>
+<li><p>Napisz funkcję <code>mil_do_km()</code> służącą do odległości z mili lądowych na kilometry i zapisz ją jako <code>R/mil_do_km.R</code>.</p></li>
+<li><p>Uzupełnij dokumentację funkcji <code>mil_do_km()</code> zawierającą tytuł funkcji, opis funkcji, opis jej parametrów, format danych wyjściowych oraz kilka przykładów.</p></li>
+<li><p>Uzupełnij opis pakietu (plik <code>DESCRIPTION</code>) poprzez podanie jego nazwy, tytułu, wersji, autora, opisu i licencji.
+Zastanów się nad z każdą z tych opcji.
+Jak powinny one wyglądać, aby potencjalny użytkownik zrozumiał do czego służy ten pakiet?</p></li>
+<li><p>Sprawdź czy pakiet działa używając funkcji <code>devtools::check()</code>.
+Postaraj się naprawić wszystkie komunikaty błędów, ostrzeżeń i notatek jeżeli się pojawią.
+Zainstaluj pakiet <strong>konwerter</strong>.</p></li>
+<li><p>Stwórz nowe repozytorium w serwisie GitHub nazywające się <code>konwerter</code>.
+Połącz projekt RStudio zawierający pakiet <strong>konwerter</strong> z tym repozytorium w serwisie GitHub (<a href="kontrola-wersji.html#istniejacy-projekt">14.4.2</a>).
+Prześlij wszystkie pliki na zdalne repozytorium.
+Sprawdź czy widzisz wszystkie pliki w repozytorium GitHub.</p></li>
+<li><p>Stwórz nowy plik <code>README.Rmd</code> i dodaj do niego informacje o nazwie pakietu, jego zastosowaniu oraz w jaki sposób można go zainstalować.
+Dodaj również jeden przykład użycia tego pakietu.
+Przetwórz uzupełniony plik <code>README.Rmd</code> na <code>README.md</code> używając ikony “Knit” w RStudio lub funkcji <code>rmarkdown::render()</code>.
+Wyślij te dwa nowe pliki do zdalnego repozytorium.
+Czy widzisz jakąś zmianę w repozytorium GitHub?</p></li>
+<li><p>Dodaj infrastrukturę do testów jednostkowych używając funkcji <code>use_testthat()</code>, a następnie stwórz nowy plik <code>tests/testthat/test-mil_do_km.R</code>.
+Wewnątrz tego pliku dodaj kilka testów jednostkowych sprawdzających, czy wynik działania funkcji <code>-mil_do_km()</code> jest zgodny z oczekiwaniami.
+Sprawdź czy wszystkie z testów dają odpowiedni wynik używając <code>devtools::test()</code>.</p></li>
+<li><p>Stwórz stronę internetową pakietu <strong>konwerter</strong> używając funkcji <code>build_site()</code> z pakietu <strong>pkgdown</strong>.
+Aktywuj tę stronę internetową wewnątrz zakładki setting na stronie repozytorium <code>konwerter</code> na GitHub.
+Sprawdź czy strona wyświetla się zgodnie z oczekiwaniami.</p></li>
+<li><p>Dodaj do tego pakietu drugą funkcję <code>konwersja_temp()</code>, która przyjmuje trzy argumenty - <code>x</code>, <code>z</code>, <code>na</code>.
+Pierwszy argument <code>x</code> to wektor numeryczny oznaczający temperaturę w dowolnej jednostce.
+Drugi argument <code>z</code> przyjmuje wartość tekstową określającą w jakiej jednostce jest obiekt <code>x</code>, może to być <code>&quot;Celsjusz&quot;</code>, <code>&quot;Fahrenheit&quot;</code>, lub <code>&quot;Kelvin&quot;</code>.
+Trzeci argument <code>z</code> przyjmuje wartość tekstową określającą w jakiej jednostce ma być wynik działania tej funkcji, może to być <code>&quot;Celsjusz&quot;</code>, <code>&quot;Fahrenheit&quot;</code>, lub <code>&quot;Kelvin&quot;</code>.
+Funkcja <code>konwersja_temp()</code> przyjmuje temperaturę (<code>x</code>) w podanej jednostce (<code>z</code>) i przelicza ją do innej wybranej skali (<code>do</code>).</p></li>
+<li><p>Sprawdź na kilku przykładach czy ta funkcja działa zgodnie z oczekiwaniami.
+Następnie dodaj dokumentację do funkcji <code>konwersja_temp()</code>.</p></li>
+<li><p>Napisz kilka testów jednostkowych do funkcji <code>konwersja_temp()</code>.
+Sprawdź czy dają one poprawny wynik.
+Sprawdź cały pakiet używając <code>devtools::check()</code> i zainstaluj go poprzez <code>devtools::install()</code>.</p></li>
+<li><p>Zaktualizuj opis pakietu (np. zmień wersję pakietu).
+Przebuduj stronę internetową pakietu i prześlij wszystkie zmiany na zdalne repozytorium.</p></li>
+<li><p>Stwórz nową winietę do pakietu <strong>konwerter</strong> nazwywającą się <code>wprowadzenie</code>.
+Dodaj do niej krótki opis tego co robi ten pakiet, a następnie przedstaw przykład użycia funkcji <code>mil_do_km()</code> oraz funkcji <code>konwersja_temp()</code>.</p></li>
+</ol>
 
 </div>
 </div>

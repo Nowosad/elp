@@ -338,7 +338,7 @@ Dalej praca polega na powtarzaniu tych czynności:
 4. Sprawdzenie czy posiadamy aktualną wersję repozytorium.
 5. Wysyłania zmian na zdalne repozytorium.
 
-### Istniejący projekt
+### Istniejący projekt {#istniejacy-projekt}
 
 Czasami posiadasz już jakiś istniejący projekt, ale chcesz do niego dodać możliwości kontroli wersji.
 W takich przypadkach najprostszy sposób to stworzenie nowego repozytorium w serwisie GitHub oraz pustego, połączonego z nim nowego projektu RStudio.
