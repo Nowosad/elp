@@ -111,7 +111,7 @@ Bez tego znacznika funkcja byłaby tylko widoczna wewnątrz pakietu.
 Ostatni znacznik, `@examples`, wypisuje kolejne przykłady działania funkcji.
 <!-- istnieje wiecej znacznikow - link -->
 
-Wybór `More -> Document` w panelu "Build" (lub użycie skrótu CTRL+SHIFT+D) spowoduje zbudowanie pliku dokumentacji w folderze `man`, np. `man/konwersja_temp.Rd`. 
+Wybór `More -> Document` w panelu "Build" (inaczej wywołanie funkcji `devtools::document()` lub użycie skrótu CTRL+SHIFT+D) spowoduje zbudowanie pliku dokumentacji w folderze `man`, np. `man/konwersja_temp.Rd`. 
 Pliki dokumentacji będą zawsze tworzone w ten sposób - nie należy ich modyfikować ręcznie.
 Zbudowanie pliku dokumentacji pozwala teraz na jej podejrzenie poprzez wywołanie pliku pomocy naszej funkcji:
 
@@ -223,10 +223,18 @@ Jeżeli wymienione tutaj pakiety nie będą znajdować się na komputerze użytk
 `Suggests: ` wymienia pakiety, które pomagają w użytkowaniu naszego pakietu, np. takie które zawierają testowe dane.
 Wymienione tutaj pakiety nie będą automatycznie doinstalowane podczas instalacji naszego pakietu.
 
-
 ## Sprawdzanie pakietu
 
+W momencie, gdy pakiet posiada już swoje podstawowe elementy, tj. pierwsze udokumentowane funkcje oraz uzupełniony opis wraz z zależnościami warto sprawdzić czy te wszystkie elementy pakietu dobrze współgrają ze sobą.
+Można to zrobić używając funkcji `devtools::check()` (inaczej wybór `Check` w panelu "Build" lub skrót CTRL+SHIFT+E).
+W efekcie tego wywołania zostanie uruchomiony szereg sprawdzeń i testów dotyczących pakietu, jego funkcji czy opisu.
+Na końcu zwrócone zostanie wypisanie liczby błędów (*error*), ostrzeżeń (*warnings*) i notatek (*notes*), poprzedzone wymienieniem każdego ich wystąpienia.
+Błędy oznaczają, że z jakiegoś powodu pakietu nie można zbudować, ostrzeżenia natomiast sugerują sytuację w której jakieś ważne elementy funkcji mogą wymagać poprawy.
+Notatki natomiast wskazują na kwestie, które użytkownik może, ale nie musi poprawić.
+
 ## Instalowanie pakietu
+
+
 
 ## Dokumentacja pakietu
 
