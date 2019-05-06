@@ -526,7 +526,7 @@ Wymienione tutaj pakiety nie będą automatycznie doinstalowane podczas instalac
 <div id="sprawdzanie-pakietu" class="section level2">
 <h2><span class="header-section-number">15.7</span> Sprawdzanie pakietu</h2>
 <p>W momencie, gdy pakiet posiada już swoje podstawowe elementy, tj. pierwsze udokumentowane funkcje oraz uzupełniony opis wraz z zależnościami warto sprawdzić czy te wszystkie elementy pakietu dobrze współgrają ze sobą.
-Można to zrobić używając funkcji <code>devtools::check()</code> (inaczej wybór <code>Check</code> w panelu “Build” lub skrót CTRL+SHIFT+E).
+Można to zrobić używając funkcji <code>devtools::check()</code> (inaczej wybór <code>Check</code> w panelu “Build” RStudio lub skrót CTRL+SHIFT+E).
 W efekcie tego wywołania zostanie uruchomiony szereg sprawdzeń i testów dotyczących pakietu, jego funkcji czy opisu.
 Na końcu zwrócone zostanie wypisanie liczby błędów (<em>error</em>), ostrzeżeń (<em>warnings</em>) i notatek (<em>notes</em>), poprzedzone wymienieniem każdego ich wystąpienia.
 Błędy oznaczają, że z jakiegoś powodu pakietu nie można zbudować, ostrzeżenia natomiast sugerują sytuację w której jakieś ważne elementy funkcji mogą wymagać poprawy.
@@ -534,6 +534,8 @@ Notatki natomiast wskazują na kwestie, które użytkownik może, ale nie musi p
 </div>
 <div id="instalowanie-pakietu" class="section level2">
 <h2><span class="header-section-number">15.8</span> Instalowanie pakietu</h2>
+<p>Sprawdzony pakiet, który nie zwraca błędów można zainstalować na własnym komputerze używając funkcji <code>devtools::install()</code> (inaczej wybór <code>Install and restart</code> w panelu “Build” RStudio lub skrót CTRL+SHIFT+B).
+W przypadku, gdy kod źródłowy tego pakietu znajduje się na platformie GitHub, inni użytkownicy mogą go zainstalować za pomocą funkcji <code>remotes::install_github(&quot;nazwa_uzytkownika_github/nazwa_pakietu&quot;)</code> <span class="citation">(Hester et al. <a href="#ref-R-remotes">2019</a>)</span>.</p>
 </div>
 <div id="dokumentacja-pakietu" class="section level2">
 <h2><span class="header-section-number">15.9</span> Dokumentacja pakietu</h2>
@@ -634,6 +636,9 @@ Continuous Integration
 </div>
 <div id="ref-R-usethis">
 <p>Wickham, Hadley, and Jennifer Bryan. 2019b. <em>Usethis: Automate Package and Project Setup</em>. <a href="https://CRAN.R-project.org/package=usethis" class="uri">https://CRAN.R-project.org/package=usethis</a>.</p>
+</div>
+<div id="ref-R-remotes">
+<p>Hester, Jim, Gábor Csárdi, Hadley Wickham, Winston Chang, Martin Morgan, and Dan Tenenbaum. 2019. <em>Remotes: R Package Installation from Remote Repositories, Including ’Github’</em>. <a href="https://CRAN.R-project.org/package=remotes" class="uri">https://CRAN.R-project.org/package=remotes</a>.</p>
 </div>
 <div id="ref-R-pkgdown">
 <p>Wickham, Hadley, and Jay Hesselberth. 2019. <em>Pkgdown: Make Static Html Documentation for a Package</em>.</p>

@@ -232,7 +232,7 @@ Wymienione tutaj pakiety nie będą automatycznie doinstalowane podczas instalac
 ## Sprawdzanie pakietu
 
 W momencie, gdy pakiet posiada już swoje podstawowe elementy, tj. pierwsze udokumentowane funkcje oraz uzupełniony opis wraz z zależnościami warto sprawdzić czy te wszystkie elementy pakietu dobrze współgrają ze sobą.
-Można to zrobić używając funkcji `devtools::check()` (inaczej wybór `Check` w panelu "Build" lub skrót CTRL+SHIFT+E).
+Można to zrobić używając funkcji `devtools::check()` (inaczej wybór `Check` w panelu "Build" RStudio lub skrót CTRL+SHIFT+E).
 W efekcie tego wywołania zostanie uruchomiony szereg sprawdzeń i testów dotyczących pakietu, jego funkcji czy opisu.
 Na końcu zwrócone zostanie wypisanie liczby błędów (*error*), ostrzeżeń (*warnings*) i notatek (*notes*), poprzedzone wymienieniem każdego ich wystąpienia.
 Błędy oznaczają, że z jakiegoś powodu pakietu nie można zbudować, ostrzeżenia natomiast sugerują sytuację w której jakieś ważne elementy funkcji mogą wymagać poprawy.
@@ -240,7 +240,8 @@ Notatki natomiast wskazują na kwestie, które użytkownik może, ale nie musi p
 
 ## Instalowanie pakietu
 
-
+Sprawdzony pakiet, który nie zwraca błędów można zainstalować na własnym komputerze używając funkcji `devtools::install()` (inaczej wybór `Install and restart` w panelu "Build" RStudio lub skrót CTRL+SHIFT+B).
+W przypadku, gdy kod źródłowy tego pakietu znajduje się na platformie GitHub, inni użytkownicy mogą go zainstalować za pomocą funkcji `remotes::install_github("nazwa_uzytkownika_github/nazwa_pakietu")` [@R-remotes].
 
 ## Dokumentacja pakietu
 
