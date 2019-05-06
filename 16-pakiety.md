@@ -293,13 +293,6 @@ W pakietach R może mieć to miejsce używając pliku `NEWS.md` tworzonego poprz
 Taki plik może zawierać informacje o nowych funkcjach, zmianach istniejących funkcji, naprawionych błędach, itd.
 Przykład szablonu pliku `NEWS.md` można znaleźć pod adresem https://ropensci.github.io/dev_guide/newstemplate.html.
 
-Dodatkowo w R istnieje możliwość prostego stworzenia stron internetowych dla wybranego pakietu używając pakietu **pkgdown** [@R-pkgdown]. 
-Przykład takiej strony można zobaczyć pod adresem https://pkgdown.r-lib.org/index.html.
-Stworzenie strony pakietu wymaga jedynie wywołania funkcji `pkgdown::build_site()` wewnątrz pakietu R.
-W efekcie zostanie utworzony folder `docs/` zawierający tę stronę. 
-W przypadku, gdy pakiet znajduje się na GitHubie możliwe jest wyświetlenie tej strony pod adresem `https://<nazwauzytkownika>.github.io/<nazwapakietu>/`.
-Aby ta strona była dostępna w internecie należy na platformie GitHub wejść w zakładkę settings, następnie znaleźć część określoną jako GitHub Pages, i określić Source jako "master branch /docs folder".
-
 ## Wbudowane testy {#wbudowane-testy}
 
 Sekcja \@ref(testy-jednostkowe) pokazywała w jaki sposób tworzyć testy jednostkowe dla funkcji, w celu sprawdzenia czy ich działanie jest zgodne z naszymi oczekiwaniami.
@@ -349,13 +342,27 @@ W efekcie wyświetlone zostaną wszystkie testy i zostanie wskazane, które z ni
 
 ## Publikowanie pakietów
 
-\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">software documentation</div>\EndKnitrBlock{rmdinfo}
+Nowo utworzony pakiet w R można od razu umieścić na wybranym serwisie internetowym wspierającym kontrolę wersji takim jak GitHub, GitLab, czy BitBucket (rozdział \@ref(kontrola-wersji)), gdzie nazwa repozytorium będzie identyczna jak nazwa pakietu.
+Dodatkowo, gdy napisaliśmy plik `README.md` użytkownicy mogą dowiedzieć się do czego ten pakiet służy, jak go zainstalować i użyć w podstawowy sposób.
+Teraz konieczna jest promocja tego pakietu w sytuacji, gdy chcemy zainteresować inne osoby jego użyciem. 
+Taka promocja może odbywać się poprzez ogłoszenie stworzenia tego pakietu na Twitterze używając hasztagu `#rstats`, czy też napisaniu wpisu na blogu opisującego ten pakiet.
+
+Dodatkowo w R istnieje możliwość prostego stworzenia stron internetowych dla wybranego pakietu używając pakietu **pkgdown** [@R-pkgdown]. 
+Przykład takiej strony można zobaczyć pod adresem https://pkgdown.r-lib.org/index.html.
+Stworzenie strony pakietu wymaga jedynie wywołania funkcji `pkgdown::build_site()` wewnątrz pakietu R.
+W efekcie zostanie utworzony folder `docs/` zawierający stronę internetową reprezentującą pakiet i jego dokumentację. 
+W przypadku, gdy pakiet znajduje się na GitHubie możliwe jest wyświetlenie tej strony pod adresem `https://<nazwauzytkownika>.github.io/<nazwapakietu>/`.
+Aby ta strona była dostępna w internecie należy na platformie GitHub wejść w zakładkę settings, następnie znaleźć część określoną jako GitHub Pages, i określić Source jako "master branch /docs folder".
+
+
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">software promotion</div>\EndKnitrBlock{rmdinfo}
 
 <!-- https://ropensci.github.io/dev_guide/marketing.html -->
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Continuous Integration</div>\EndKnitrBlock{rmdinfo}
+
+
 
 
 ## Zadania
