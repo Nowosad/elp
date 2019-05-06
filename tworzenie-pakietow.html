@@ -593,18 +593,18 @@ Zazwyczaj polega to na stworzeniu oddzielnego pliku dla każdej funkcji z naszeg
 Przykładowo, nasz pakiet zawiera funkcję <code>powierzchnia()</code>, dlatego też do jego testowania możemy stworzyć nowy plik <code>tests/testthat/test-powierzchnia.R</code>.
 Wewnątrz tego pliku należy sprawdzać kolejne aspekty działania kodu używając funkcji <code>test_that()</code>, gdzie należy podać (1) opis tego co jest sprawdzane i (2) testy wewnątrz nawiasów klamrowych (zobacz sekcję <a href="analiza-kodu.html#testy-jednostkowe">11.1</a>).
 Przykładowy plik <code>tests/testthat/test-powierzchnia.R</code> może wyglądać w ten sposób:</p>
-<pre><code>nowy_p = nowy_prostokat(0, 0, 6, 5)
+<pre class="sourceCode r"><code class="sourceCode r">nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">5</span>)
 
-test_that(&quot;struktura wyniku jest poprawna&quot;, {
-  expect_length(powierzchnia(nowy_p), 1)
+<span class="kw">test_that</span>(<span class="st">&quot;struktura wyniku jest poprawna&quot;</span>, {
+  <span class="kw">expect_length</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">1</span>)
 })
 
-test_that(&quot;wartosc wyniku jest poprawna&quot;, {
-  expect_equal(powierzchnia(nowy_p), 30)
+<span class="kw">test_that</span>(<span class="st">&quot;wartosc wyniku jest poprawna&quot;</span>, {
+  <span class="kw">expect_equal</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">30</span>)
 })
 
-test_that(&quot;wystepuja odpowiednie bledy&quot;, {
-  expect_error(nowy_prostokat(3, 5, 2, &quot;a&quot;))
+<span class="kw">test_that</span>(<span class="st">&quot;wystepuja odpowiednie bledy&quot;</span>, {
+  <span class="kw">expect_error</span>(<span class="kw">nowy_prostokat</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="st">&quot;a&quot;</span>))
 })</code></pre>
 <p>Po napisaniu testów można sprawdzić czy wszystkie z nich dają odpowiedni wynik używając <code>devtools::test()</code><a href="#fn60" class="footnote-ref" id="fnref60"><sup>60</sup></a>.
 W efekcie wyświetlone zostaną wszystkie testy i zostanie wskazane, które z nich się nie powiodły i należy je poprawić.</p>
