@@ -5,6 +5,13 @@
 
 ## C++
 <!-- Rcpp -->
+[@R-Rcpp]
+
+
+```r
+library(Rcpp)
+```
+
 
 ### Podstawy C++
 
