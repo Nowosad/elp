@@ -37,7 +37,7 @@ knitr::write_bib(c(.packages(),
                    "RSQLite", "RPostgreSQL", "DBI",
                    "landscapemetrics", "bench", "profvis",
                    "usethis", "testthat", "available",
-                   "pkgdown", "remotes"),
+                   "pkgdown", "remotes", "Rcpp"),
                    "packages.bib")
 ```
 
