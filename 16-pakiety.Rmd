@@ -257,12 +257,12 @@ Pakiety mogą posiadać wiele różnych winiet, zawierających coraz bardziej za
 Zarówno plik `README.Rmd`, jak i winieta wymaga użycia odpowiedniej składni - używany jest tam tzw. język znaczników RMarkdown.
 Języki znaczników opierają się o założenie, że pewne znaki w pliku tekstowym mają specjalne znaczenie, które po przetworzeniu pliku wyświetla je w odpowiedni sposób.
 Przykładowo jedna gwiazdka przed tekstem i jedna po tekście oznacza pochylony tekst (`*pochylony tekst*`), a dwie gwiazdki przed i po oznaczają pogrubiony tekst (`**pogrubiony tekst**`).
-Innym przykładem są agłówki określane poprzez jeden lub więcej symboli kratki.
+Innym przykładem są nagłówki określane poprzez jeden lub więcej symboli kratki.
 
 ```
 # Nagłówek
 
-## Drugi nagłówek
+## Nagłówek drugiego poziomu (mniejsza czcionka)
 ```
 
 Zestawienie pokazujące podstawy składni RMarkdown jest wbudowane w RStudio i można je wyświetlić za pomocą `Help -> Markdown Quick Reference`.
