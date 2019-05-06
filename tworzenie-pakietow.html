@@ -438,7 +438,7 @@ Oznacza on, że ta funkcja będzie widoczna dla każdego użytkownika tego pakie
 Bez tego znacznika funkcja byłaby tylko widoczna wewnątrz pakietu.
 Ostatni znacznik, <code>@examples</code>, wypisuje kolejne przykłady działania funkcji.
 <!-- istnieje wiecej znacznikow - link --></p>
-<p>Wybór <code>More -&gt; Document</code> w panelu “Build” (lub użycie skrótu CTRL+SHIFT+D) spowoduje zbudowanie pliku dokumentacji w folderze <code>man</code>, np. <code>man/konwersja_temp.Rd</code>.
+<p>Wybór <code>More -&gt; Document</code> w panelu “Build” (inaczej wywołanie funkcji <code>devtools::document()</code> lub użycie skrótu CTRL+SHIFT+D) spowoduje zbudowanie pliku dokumentacji w folderze <code>man</code>, np. <code>man/konwersja_temp.Rd</code>.
 Pliki dokumentacji będą zawsze tworzone w ten sposób - nie należy ich modyfikować ręcznie.
 Zbudowanie pliku dokumentacji pozwala teraz na jej podejrzenie poprzez wywołanie pliku pomocy naszej funkcji:</p>
 <pre class="sourceCode r"><code class="sourceCode r">?konwersja_temp</code></pre>
@@ -525,6 +525,12 @@ Wymienione tutaj pakiety nie będą automatycznie doinstalowane podczas instalac
 </div>
 <div id="sprawdzanie-pakietu" class="section level2">
 <h2><span class="header-section-number">15.7</span> Sprawdzanie pakietu</h2>
+<p>W momencie, gdy pakiet posiada już swoje podstawowe elementy, tj. pierwsze udokumentowane funkcje oraz uzupełniony opis wraz z zależnościami warto sprawdzić czy te wszystkie elementy pakietu dobrze współgrają ze sobą.
+Można to zrobić używając funkcji <code>devtools::check()</code> (inaczej wybór <code>Check</code> w panelu “Build” lub skrót CTRL+SHIFT+E).
+W efekcie tego wywołania zostanie uruchomiony szereg sprawdzeń i testów dotyczących pakietu, jego funkcji czy opisu.
+Na końcu zwrócone zostanie wypisanie liczby błędów (<em>error</em>), ostrzeżeń (<em>warnings</em>) i notatek (<em>notes</em>), poprzedzone wymienieniem każdego ich wystąpienia.
+Błędy oznaczają, że z jakiegoś powodu pakietu nie można zbudować, ostrzeżenia natomiast sugerują sytuację w której jakieś ważne elementy funkcji mogą wymagać poprawy.
+Notatki natomiast wskazują na kwestie, które użytkownik może, ale nie musi poprawić.</p>
 </div>
 <div id="instalowanie-pakietu" class="section level2">
 <h2><span class="header-section-number">15.8</span> Instalowanie pakietu</h2>
