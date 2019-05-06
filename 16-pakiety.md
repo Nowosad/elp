@@ -214,7 +214,7 @@ Zamiast tego możliwe jest definiowanie każdej zewnątrznej funkcji używając 
 <!-- przykład -->
 
 Dodatkowo każda zależność z zewnętrznym pakietem musi być określona w pliku `DESCRIPTION`.
-Jest to możliwe używając wpisów `Imports: ` oraz `Suggests: `, przykładowo: ^[Istnieją również inne wpisy, takie jak `Depends: `, `LinkingTo: `, czy `Enhances: `].
+Jest to możliwe używając wpisów `Imports: ` oraz `Suggests: `, przykładowo:^[Istnieją również inne wpisy, takie jak `Depends: `, `LinkingTo: `, czy `Enhances: `.]
 
 ```yaml
 Imports:
@@ -229,12 +229,43 @@ Jeżeli wymienione tutaj pakiety nie będą znajdować się na komputerze użytk
 `Suggests: ` wymienia pakiety, które pomagają w użytkowaniu naszego pakietu, np. takie które zawierają testowe dane.
 Wymienione tutaj pakiety nie będą automatycznie doinstalowane podczas instalacji naszego pakietu.
 
+
+## Sprawdzanie pakietu
+
+## Instalowanie pakietu
+
 ## Dokumentacja pakietu
 
-<!-- vignettes -->
-<!-- usethis::use_vignette("name") -->
+Po wykonaniu poprzednich kroków posiadamy działający pakiet, którego funkcje posiadają odpowiednią dokumentację.
+Teraz konieczne jest stworzenie dokumentacji pakietu - ma ona na celu poinformować potencjalnych użytkowników do czego pakiet służy, jak go zainstalować, czy też pokazać przykłady jego użycia.
+Pakiety mogą być dokumentowane używając kilku różnych rodzajów plików, np. za pomocą pliku `README.Rmd`, tzw. winiety (ang. *vignette*), czy pliku `NEWS.md`.
+Każdy z nich ma swój cel.
+
+Plik `README.Rmd` można stworzyć za pomocą funkcji `usethis::use_readme_rmd()`.
+W efekcie będzie się on znajdować się w głównym folderze pakietu.
+Ten plik powinien zawierać:^[Dodatkowe elementy to oznaki (ang. *badges*) pokazujące, np. status pakietu, liczbę jego pobrań i wiele innych.]
+
+1. Nazwę pakietu
+1. Opis do czego pakiet służy
+1. Instrukcje jak go zainstalować
+1. Prosty przykład użycia
+1. Odnośniki do podobnych prac, programów, czy artykułów naukowych
+
+<!--examples--->
+
+Winiety mają na celu pokazanie bardziej złożonego przykładu użycia pakietu.
+Nową winietę można stworzyć za pomocą funkcji `usethis::use_vignette("nazwa-winiety")`. 
+W tym momencie zostanie stworzony nowy plik `nazwa-winiety.Rmd` w folderze `vignettes`.
+Teraz możliwe jest jego edytowanie i dodawanie nowej treści.
+Pakiety mogą posiadać wiele różnych winiet, zawierających coraz bardziej zaawansowane przykłady lub też opis różnych grup funkcji z pakietu.
+
+Zarówno plik `README.Rmd`, jak i winieta wymaga użycia odpowiedniej składni - używany jest tam tzw. język znaczników RMarkdown.
+Języki znaczników polegają na tym, że 
+
+
 <!-- rmarkdown -->
 <!-- rstudio helper -->
+
 <!-- pkgdown -->
 <!-- https://pkgdown.r-lib.org/ -->
 <!-- readme -->
@@ -242,6 +273,7 @@ Wymienione tutaj pakiety nie będą automatycznie doinstalowane podczas instalac
 <!-- news -->
 <!-- https://ropensci.github.io/dev_guide/releasing.html#news -->
 <!-- https://ropensci.github.io/dev_guide/newstemplate.html -->
+
 
 ## Wbudowane testy {#wbudowane-testy}
 

@@ -278,9 +278,9 @@ Dodatkowo możemy sprawdzić ile zajęło to dni.
 
 ```r
 budzet
-#> [1] 2009
+#> [1] -33
 liczba_dni
-#> [1] 531
+#> [1] 522
 ```
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Inne istniejące rodzaje pętli to pętla `repeat` oraz pętla `do`.

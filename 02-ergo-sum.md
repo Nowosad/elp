@@ -209,6 +209,14 @@ Aby stworzyć pierwszy projekt RStudio, należy:
 
 
 
+```
+#> Registered S3 method overwritten by 'rvest':
+#>   method            from
+#>   read_xml.response xml2
+```
+
+
+
 Table: (\#tab:rstudiosk)Podstawowe skróty klawiaturowe w RStudio
 
 Skrót                                 Wyjaśnienie                                                   
