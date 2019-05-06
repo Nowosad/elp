@@ -1,5 +1,5 @@
 
-# Tworzenie zbioru funkcji
+<!-- # Tworzenie zbioru funkcji -->
 
 <!-- 2. stworzenie zbioru funkcji -->
 <!-- - określ problem (np. zamiana jednostek) -->

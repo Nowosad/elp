@@ -1,7 +1,7 @@
 
-# (PART) Przykłady {-}
+<!-- # (PART) Przykłady {-} -->
 
-# Analiza danych
+<!-- # Analiza danych -->
 
 <!-- 1. analiza danych1 -->
 <!-- - stwórz projekt -->
