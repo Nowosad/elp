@@ -336,6 +336,7 @@ W efekcie wyświetlone zostaną wszystkie testy i zostanie wskazane, które z ni
 ## Publikowanie pakietów
 
 Nowo utworzony pakiet w R można od razu umieścić na wybranym serwisie internetowym wspierającym kontrolę wersji takim jak GitHub, GitLab, czy BitBucket (rozdział \@ref(kontrola-wersji)), gdzie nazwa repozytorium będzie identyczna jak nazwa pakietu.
+<!--adds links to descr-->
 Dodatkowo, gdy napisaliśmy plik `README.md` użytkownicy mogą dowiedzieć się do czego ten pakiet służy, jak go zainstalować i użyć w podstawowy sposób.
 Teraz konieczna jest promocja tego pakietu w sytuacji, gdy chcemy zainteresować inne osoby jego użyciem. 
 Taka promocja może odbywać się poprzez ogłoszenie stworzenia tego pakietu na Twitterze używając hasztagu `#rstats`, czy też napisaniu wpisu na blogu opisującego ten pakiet.
@@ -350,3 +351,59 @@ W przypadku, gdy pakiet znajduje się na GitHubie możliwe jest wyświetlenie te
 Aby ta strona była dostępna w internecie należy na platformie GitHub wejść w zakładkę settings, następnie znaleźć część określoną jako GitHub Pages, i określić Source jako "master branch /docs folder".
 
 ## Zadania
+
+1) Stwórz szkielet nowego pakietu R nazwającego się **konwerter**.
+
+2) Napisz funkcję `mil_do_km()` służącą do odległości z mili lądowych na kilometry i zapisz ją jako `R/mil_do_km.R`. 
+
+3) Uzupełnij dokumentację funkcji `mil_do_km()` zawierającą tytuł funkcji, opis funkcji, opis jej parametrów, format danych wyjściowych oraz kilka przykładów.
+
+4) Uzupełnij opis pakietu (plik `DESCRIPTION`) poprzez podanie jego nazwy, tytułu, wersji, autora, opisu i licencji.
+Zastanów się nad z każdą z tych opcji. 
+Jak powinny one wyglądać, aby potencjalny użytkownik zrozumiał do czego służy ten pakiet?
+
+5) Sprawdź czy pakiet działa używając funkcji `devtools::check()`. 
+Postaraj się naprawić wszystkie komunikaty błędów, ostrzeżeń i notatek jeżeli się pojawią.
+Zainstaluj pakiet **konwerter**.
+
+6) Stwórz nowe repozytorium w serwisie GitHub nazywające się `konwerter`. 
+Połącz projekt RStudio zawierający pakiet **konwerter** z tym repozytorium w serwisie GitHub (\@ref(istniejacy-projekt)).
+Prześlij wszystkie pliki na zdalne repozytorium.
+Sprawdź czy widzisz wszystkie pliki w repozytorium GitHub.
+
+7) Stwórz nowy plik `README.Rmd` i dodaj do niego informacje o nazwie pakietu, jego zastosowaniu oraz w jaki sposób można go zainstalować.
+Dodaj również jeden przykład użycia tego pakietu.
+Przetwórz uzupełniony plik `README.Rmd` na `README.md` używając ikony "Knit" w RStudio lub funkcji `rmarkdown::render()`.
+Wyślij te dwa nowe pliki do zdalnego repozytorium. 
+Czy widzisz jakąś zmianę w repozytorium GitHub?
+
+8) Dodaj infrastrukturę do testów jednostkowych używając funkcji `use_testthat()`, a następnie stwórz nowy plik `tests/testthat/test-mil_do_km.R`.
+Wewnątrz tego pliku dodaj kilka testów jednostkowych sprawdzających, czy wynik działania funkcji `-mil_do_km()` jest zgodny z oczekiwaniami.
+Sprawdź czy wszystkie z testów dają odpowiedni wynik używając `devtools::test()`.
+
+9) Stwórz stronę internetową pakietu **konwerter** używając funkcji `build_site()` z pakietu **pkgdown**. 
+Aktywuj tę stronę internetową wewnątrz zakładki setting na stronie repozytorium `konwerter` na GitHub.
+Sprawdź czy strona wyświetla się zgodnie z oczekiwaniami.
+
+10) Dodaj do tego pakietu drugą funkcję `konwersja_temp()`, która przyjmuje trzy argumenty - `x`, `z`, `na`. 
+Pierwszy argument `x` to wektor numeryczny oznaczający temperaturę w dowolnej jednostce.
+Drugi argument `z` przyjmuje wartość tekstową określającą w jakiej jednostce jest obiekt `x`, może to być `"Celsjusz"`, `"Fahrenheit"`, lub `"Kelvin"`.
+Trzeci argument `z` przyjmuje wartość tekstową określającą w jakiej jednostce ma być wynik działania tej funkcji, może to być `"Celsjusz"`, `"Fahrenheit"`, lub `"Kelvin"`.
+Funkcja `konwersja_temp()` przyjmuje temperaturę (`x`) w podanej jednostce (`z`) i przelicza ją do innej wybranej skali (`do`).
+
+11) Sprawdź na kilku przykładach czy ta funkcja działa zgodnie z oczekiwaniami.
+Następnie dodaj dokumentację do funkcji `konwersja_temp()`.
+
+12) Napisz kilka testów jednostkowych do funkcji `konwersja_temp()`.
+Sprawdź czy dają one poprawny wynik.
+Sprawdź cały pakiet używając `devtools::check()` i zainstaluj go poprzez `devtools::install()`.
+
+13) Zaktualizuj opis pakietu (np. zmień wersję pakietu). 
+Przebuduj stronę internetową pakietu i prześlij wszystkie zmiany na zdalne repozytorium.
+
+14) Stwórz nową winietę do pakietu **konwerter** nazwywającą się `wprowadzenie`.
+Dodaj do niej krótki opis tego co robi ten pakiet, a następnie przedstaw przykład użycia funkcji `mil_do_km()` oraz funkcji `konwersja_temp()`.
+
+
+
+
