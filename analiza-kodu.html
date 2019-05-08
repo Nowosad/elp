@@ -253,7 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>II Narzędzia</b></span></li>
 <li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a><ul>
 <li class="chapter" data-level="10.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>10.1</b> API</a></li>
-<li class="chapter" data-level="10.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsuga-komunikatow"><i class="fa fa-check"></i><b>10.2</b> Obsługa komunikatów</a></li>
+<li class="chapter" data-level="10.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsluga-komunikatow"><i class="fa fa-check"></i><b>10.2</b> Obsługa komunikatów</a></li>
 <li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe</a><ul>
 <li class="chapter" data-level="10.3.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#klasy"><i class="fa fa-check"></i><b>10.3.1</b> Klasy</a></li>
 <li class="chapter" data-level="10.3.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#metody"><i class="fa fa-check"></i><b>10.3.2</b> Metody</a></li>
@@ -263,8 +263,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu</a><ul>
 <li class="chapter" data-level="11.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.1</b> Testy jednostkowe</a></li>
-<li class="chapter" data-level="11.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>11.2</b> Benchmarking</a></li>
-<li class="chapter" data-level="11.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>11.3</b> Profiling</a></li>
+<li class="chapter" data-level="11.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>11.2</b> Profiling</a></li>
+<li class="chapter" data-level="11.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>11.3</b> Benchmarking</a></li>
 <li class="chapter" data-level="11.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zadania-10"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>12</b> Łącznik</a><ul>
@@ -402,107 +402,8 @@ Odpowiednikami <code>expect_error()</code> dla ostrzeżeń jest <code>expect_war
 <!-- profiling -->
 <!-- testing -->
 </div>
-<div id="benchmarking" class="section level2">
-<h2><span class="header-section-number">11.2</span> Benchmarking</h2>
-<p>Benchmarking oznacza określanie wydajności danej operacji czy funkcji.
-Wydajność może być określona na wiele różnych sposobów, w tym najprostszym jest czas wykonania pewnego kodu.
-Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej funkcji <code>system.time()</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(kod_do_wykonania)</code></pre>
-<p>Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))
-<span class="co">#&gt;    user  system elapsed </span>
-<span class="co">#&gt;   0.640   0.000   0.641</span></code></pre>
-<p>W efekcie dostajemy trzy wartości - <code>user</code>, <code>system</code> i <code>elapsed</code>. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.</p>
-<p>Benchmarking jest często używany w sytuacji, gdy istnieje kilka funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
-Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.</p>
-<p>W sekcji <a href="petle.html#for-example">8.1.2</a> stworzyliśmy kilka wersji pętli <code>for</code> pozwalającej na przeliczanie wartości z mil lądowych na kilometry.
-Pierwsza z nich, tutaj zdefiniowana jako funkcja <code>mi_do_km1</code>, tworzy pusty wektor o długości 0, do którego następie doklejane są kolejne przeliczone wartości.</p>
-<pre class="sourceCode r"><code class="sourceCode r">mi_do_km1 =<span class="st"> </span><span class="cf">function</span>(odl_mile){
-  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="dv">0</span>)
-  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
-    odl_km =<span class="st"> </span><span class="kw">c</span>(odl_km, odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)
-  }
-  odl_km
-}</code></pre>
-<p>Druga, tutaj zdefiniowana jako funkcja <code>mi_do_km2</code>, tworzy pusty wektor o oczekiwanej długości wyniku.
-Następnie kolejne przeliczone wartości są wstawiane w odpowiednie miejsca wektora wynikowego.</p>
-<pre class="sourceCode r"><code class="sourceCode r">mi_do_km2 =<span class="st"> </span><span class="cf">function</span>(odl_mile){
-  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))
-  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
-    odl_km[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>
-  }
-  odl_km
-}</code></pre>
-<p>Dwie powyższe funkcje można porównać używając <code>system.time()</code>.
-Nie zawsze jednak to wystarczy - ta sama funkcja wykonana dwa razy może mieć różny czas obliczeń.<!--why??-->
-Dodatkowo, oprócz czasu wykonywania funkcji może nas interesować zużycie zasobów, takich jak pamięć operacyjna.
-Do takiego celu powstała funkcja <code>mark()</code> z pakietu <strong>bench</strong> <span class="citation">(Hester <a href="#ref-R-bench">2018</a>)</span>, która wykonuje funkcje wiele razy przed zwróceniem wyniku.</p>
-<p>Przyjmuje ona wywołania funkcji, które chcemy porównać.
-Poniżej nastąpi porównanie funkcji <code>mi_do_km1</code> i <code>mi_do_km2</code>, w przypadku gdy jako dane wejściowe zostanie podana lista z wartościami 142, 63, 121.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(bench)
-odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)
-wynik_<span class="dv">1</span> =<span class="st"> </span><span class="kw">mark</span>(
-  <span class="kw">mi_do_km1</span>(odl_mile),
-  <span class="kw">mi_do_km2</span>(odl_mile)
-)
-wynik_<span class="dv">1</span>
-<span class="co">#&gt; # A tibble: 2 x 6</span>
-<span class="co">#&gt;   expression               min   median `itr/sec` mem_alloc `gc/sec`</span>
-<span class="co">#&gt;   &lt;bch:expr&gt;          &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1(odl_mile)   1.59µs   1.84µs   470294.     117KB        0</span>
-<span class="co">#&gt; 2 mi_do_km2(odl_mile)   1.18µs    1.3µs   705711.     221KB        0</span></code></pre>
-<p>Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
-Zawiera ona szereg charakterystyk, w tym:</p>
-<ul>
-<li><code>min</code> - minimalny czas wykonania funkcji</li>
-<li><code>mean</code> - średni czas wykonania funkcji</li>
-<li><code>median</code> - mediana czasu wykonania funkcji</li>
-<li><code>max</code> - maksymalny czas wykonania funkcji</li>
-<li><code>itr/sec</code> - liczba wykonań funkcji na sekundę</li>
-<li><code>mem_alloc</code> - pamięć użyta przez wywołanie funkcji</li>
-<li><code>n_itr</code> - liczba powtórzeń wywołania funkcji</li>
-</ul>
-<p>Wynik działania funkcji <code>mark()</code> pozwala na zauważenie, że na tym przykładzie funkcja <code>mi_do_km2</code> jest ok. 30% szybsza od <code>mi_do_km1</code>.
-Czasami możliwe jest, że jakaś funkcja działa relatywnie szybko na małych danych, ale dużo wolniej na większych danych wejściowych.
-Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na większej liście, np. z wartościami od 0 do 10000 co 1.</p>
-<pre class="sourceCode r"><code class="sourceCode r">odl_mile2 =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10000</span>)
-wynik_<span class="dv">2</span> =<span class="st"> </span><span class="kw">mark</span>(
-  <span class="kw">mi_do_km1</span>(odl_mile2),
-  <span class="kw">mi_do_km2</span>(odl_mile2)
-)
-<span class="co">#&gt; Warning: Some expressions had a GC in every iteration; so filtering is</span>
-<span class="co">#&gt; disabled.</span>
-wynik_<span class="dv">2</span>
-<span class="co">#&gt; # A tibble: 2 x 6</span>
-<span class="co">#&gt;   expression                min   median `itr/sec` mem_alloc `gc/sec`</span>
-<span class="co">#&gt;   &lt;bch:expr&gt;           &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1(odl_mile2)    459ms    463ms      2.16     382MB     17.3</span>
-<span class="co">#&gt; 2 mi_do_km2(odl_mile2)    788µs    831µs   1013.      78.2KB     19.9</span></code></pre>
-<p>W tym przypadku różnica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
-Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 17.28 operacji na sekundę, przy aż 19.86 operacji na sekundę funkcji <code>mi_do_km2</code>.
-Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż <code>mi_do_km2</code>.</p>
-<pre><code>#&gt; Running with:
-#&gt;       x
-#&gt; 1    10
-#&gt; 2   100
-#&gt; 3  1000
-#&gt; 4 10000
-#&gt; Warning: Some expressions had a GC in every iteration; so filtering is
-#&gt; disabled.
-#&gt; # A tibble: 8 x 7
-#&gt;   expression       x      min   median `itr/sec` mem_alloc `gc/sec`
-#&gt;   &lt;bch:expr&gt;   &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-#&gt; 1 mi_do_km1(l)    10   3.95µs   4.63µs 200120.          0B     20.0
-#&gt; 2 mi_do_km2(l)    10   1.82µs   2.04µs 453694.          0B     45.4
-#&gt; 3 mi_do_km1(l)   100  66.17µs  71.57µs  13185.     43.16KB     14.2
-#&gt; 4 mi_do_km2(l)   100   8.42µs   9.25µs 100636.        856B     30.2
-#&gt; 5 mi_do_km1(l)  1000   4.33ms   4.53ms    219.      3.87MB     19.7
-#&gt; 6 mi_do_km2(l)  1000  76.22µs  80.76µs  11548.      7.87KB     22.5
-#&gt; 7 mi_do_km1(l) 10000 548.05ms 548.05ms      1.82  382.04MB     14.6
-#&gt; 8 mi_do_km2(l) 10000 879.02µs 922.24µs    975.     78.18KB     18.0</code></pre>
-</div>
 <div id="profiling" class="section level2">
-<h2><span class="header-section-number">11.3</span> Profiling</h2>
+<h2><span class="header-section-number">11.2</span> Profiling</h2>
 <p>Istnieją trzy podstawowe reguły optymalizacji kodu<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a>:</p>
 <ol style="list-style-type: decimal">
 <li>Nie.</li>
@@ -549,12 +450,131 @@ Ostatnia linia, wyliczająca średnią, zabrała ok. 10ms.</p>
 <!-- vectorized vs not-vectorized -->
 <!-- https://rstudio-education.github.io/hopr/speed.html -->
 </div>
+<div id="benchmarking" class="section level2">
+<h2><span class="header-section-number">11.3</span> Benchmarking</h2>
+<p>Benchmarking oznacza określanie wydajności danej operacji czy funkcji.
+Wydajność może być określona na wiele różnych sposobów, w tym najprostszym jest czas wykonania pewnego kodu.
+Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej funkcji <code>system.time()</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(kod_do_wykonania)</code></pre>
+<p>Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))
+<span class="co">#&gt;    user  system elapsed </span>
+<span class="co">#&gt;   0.652   0.000   0.648</span></code></pre>
+<p>W efekcie dostajemy trzy wartości - <code>user</code>, <code>system</code> i <code>elapsed</code>. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.</p>
+<p>Benchmarking jest często używany w sytuacji, gdy istnieje kilka funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
+Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.</p>
+<p>W sekcji <a href="petle.html#for-example">8.1.2</a> stworzyliśmy kilka wersji pętli <code>for</code> pozwalającej na przeliczanie wartości z mil lądowych na kilometry.
+Pierwsza z nich, tutaj zdefiniowana jako funkcja <code>mi_do_km1</code>, tworzy pusty wektor o długości 0, do którego następie doklejane są kolejne przeliczone wartości.</p>
+<pre class="sourceCode r"><code class="sourceCode r">mi_do_km1 =<span class="st"> </span><span class="cf">function</span>(odl_mile){
+  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="dv">0</span>)
+  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
+    odl_km =<span class="st"> </span><span class="kw">c</span>(odl_km, odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)
+  }
+  odl_km
+}</code></pre>
+<p>Druga, tutaj zdefiniowana jako funkcja <code>mi_do_km2</code>, tworzy pusty wektor o oczekiwanej długości wyniku.
+Następnie kolejne przeliczone wartości są wstawiane w odpowiednie miejsca wektora wynikowego.</p>
+<pre class="sourceCode r"><code class="sourceCode r">mi_do_km2 =<span class="st"> </span><span class="cf">function</span>(odl_mile){
+  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))
+  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
+    odl_km[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>
+  }
+  odl_km
+}</code></pre>
+<p>Dwie powyższe funkcje można porównać używając <code>system.time()</code>.
+Nie zawsze jednak to wystarczy - ta sama funkcja wykonana dwa razy może mieć różny czas obliczeń.<!--why??-->
+Dodatkowo, oprócz czasu wykonywania funkcji może nas interesować zużycie zasobów, takich jak pamięć operacyjna.
+Do takiego celu powstała funkcja <code>mark()</code> z pakietu <strong>bench</strong> <span class="citation">(Hester <a href="#ref-R-bench">2018</a>)</span>, która wykonuje funkcje wiele razy przed zwróceniem wyniku.</p>
+<p>Przyjmuje ona wywołania funkcji, które chcemy porównać.
+Poniżej nastąpi porównanie funkcji <code>mi_do_km1</code> i <code>mi_do_km2</code>, w przypadku gdy jako dane wejściowe zostanie podana lista z wartościami 142, 63, 121.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(bench)
+odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)
+wynik_<span class="dv">1</span> =<span class="st"> </span><span class="kw">mark</span>(
+  <span class="kw">mi_do_km1</span>(odl_mile),
+  <span class="kw">mi_do_km2</span>(odl_mile)
+)
+wynik_<span class="dv">1</span>
+<span class="co">#&gt; # A tibble: 2 x 6</span>
+<span class="co">#&gt;   expression               min   median `itr/sec` mem_alloc `gc/sec`</span>
+<span class="co">#&gt;   &lt;bch:expr&gt;          &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 mi_do_km1(odl_mile)   1.55µs   1.76µs   480335.     117KB        0</span>
+<span class="co">#&gt; 2 mi_do_km2(odl_mile)   1.14µs   1.27µs   704193.     221KB        0</span></code></pre>
+<p>Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
+Zawiera ona szereg charakterystyk, w tym:</p>
+<ul>
+<li><code>min</code> - minimalny czas wykonania funkcji</li>
+<li><code>mean</code> - średni czas wykonania funkcji</li>
+<li><code>median</code> - mediana czasu wykonania funkcji</li>
+<li><code>max</code> - maksymalny czas wykonania funkcji</li>
+<li><code>itr/sec</code> - liczba wykonań funkcji na sekundę</li>
+<li><code>mem_alloc</code> - pamięć użyta przez wywołanie funkcji</li>
+<li><code>n_itr</code> - liczba powtórzeń wywołania funkcji</li>
+</ul>
+<p>Wynik działania funkcji <code>mark()</code> pozwala na zauważenie, że na tym przykładzie funkcja <code>mi_do_km2</code> jest ok. 30% szybsza od <code>mi_do_km1</code>.
+Czasami możliwe jest, że jakaś funkcja działa relatywnie szybko na małych danych, ale dużo wolniej na większych danych wejściowych.
+Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na większej liście, np. z wartościami od 0 do 10000 co 1.</p>
+<pre class="sourceCode r"><code class="sourceCode r">odl_mile2 =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10000</span>)
+wynik_<span class="dv">2</span> =<span class="st"> </span><span class="kw">mark</span>(
+  <span class="kw">mi_do_km1</span>(odl_mile2),
+  <span class="kw">mi_do_km2</span>(odl_mile2)
+)
+<span class="co">#&gt; Warning: Some expressions had a GC in every iteration; so filtering is</span>
+<span class="co">#&gt; disabled.</span>
+wynik_<span class="dv">2</span>
+<span class="co">#&gt; # A tibble: 2 x 6</span>
+<span class="co">#&gt;   expression                min   median `itr/sec` mem_alloc `gc/sec`</span>
+<span class="co">#&gt;   &lt;bch:expr&gt;           &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 mi_do_km1(odl_mile2)    471ms    475ms      2.10     382MB     16.8</span>
+<span class="co">#&gt; 2 mi_do_km2(odl_mile2)    783µs    821µs   1006.      78.2KB     19.9</span></code></pre>
+<p>W tym przypadku różnica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
+Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 16.83 operacji na sekundę, przy aż 19.93 operacji na sekundę funkcji <code>mi_do_km2</code>.
+Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż <code>mi_do_km2</code>.</p>
+<pre><code>#&gt; Running with:
+#&gt;       x
+#&gt; 1    10
+#&gt; 2   100
+#&gt; 3  1000
+#&gt; 4 10000
+#&gt; Warning: Some expressions had a GC in every iteration; so filtering is
+#&gt; disabled.
+#&gt; # A tibble: 8 x 7
+#&gt;   expression       x      min   median `itr/sec` mem_alloc `gc/sec`
+#&gt;   &lt;bch:expr&gt;   &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
+#&gt; 1 mi_do_km1(l)    10   3.94µs   4.58µs 196300.          0B     19.6
+#&gt; 2 mi_do_km2(l)    10   1.79µs   1.98µs 466481.          0B     46.7
+#&gt; 3 mi_do_km1(l)   100  66.39µs  72.48µs  13053.     43.16KB     14.3
+#&gt; 4 mi_do_km2(l)   100   8.48µs   9.32µs  99055.        856B     29.7
+#&gt; 5 mi_do_km1(l)  1000   4.31ms   4.58ms    217.      3.87MB     19.7
+#&gt; 6 mi_do_km2(l)  1000  76.96µs  81.69µs  11599.      7.87KB     22.7
+#&gt; 7 mi_do_km1(l) 10000 566.26ms 566.26ms      1.77  382.04MB     14.1
+#&gt; 8 mi_do_km2(l) 10000  853.9µs 935.37µs    948.     78.18KB     17.9</code></pre>
+</div>
 <div id="zadania-10" class="section level2">
 <h2><span class="header-section-number">11.4</span> Zadania</h2>
-<!-- 1. benchmarking -->
-<!-- porównaj rowsum vs colsum vs loops implementation -->
-<!-- 2. profiling -->
-<!-- ??? -->
+<ol style="list-style-type: decimal">
+<li>Korzystając z wiedzy z rozdziału <a href="petle.html#petle">8</a> dotyczącej pętli <code>for</code>, napisz funkcję <code>gdzie_naj()</code>, która przyjmuje na wejściu macierz z wartościami numerycznymi, wylicza sumę wartości dla każdego wiersza, a następnie zwraca numer wiersza z najwyższą sumą wartości.
+Przykładowe dane wejściowe do tej funkcji to:</li>
+</ol>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">2019-05-08</span>)
+mat =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">size =</span> <span class="dv">25</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)),
+             <span class="dt">ncol =</span> <span class="dv">5</span>, <span class="dt">nrow =</span> <span class="dv">5</span>)
+mat
+<span class="co">#&gt;      [,1] [,2] [,3] [,4] [,5]</span>
+<span class="co">#&gt; [1,]    6    1    2    4    6</span>
+<span class="co">#&gt; [2,]    9    9    9    5    5</span>
+<span class="co">#&gt; [3,]    2    6    4    8   10</span>
+<span class="co">#&gt; [4,]    4    6    1    2    5</span>
+<span class="co">#&gt; [5,]    2   10    6    4    9</span></code></pre>
+<ol style="list-style-type: decimal">
+<li><p>Dodaj do powyższj funkcji odpowiednie komunikaty błędów czy ostrzeżeń (sekcja <a href="zlozone-funkcje.html#obsluga-komunikatow">10.2</a>), pojawiające się w zależności od rodzaju wprowadzonych danych wejściowych.</p></li>
+<li><p>Napisz testy jednostkowe sprawdzające (1) czy błędy pojawiają się w odpowiednich sytuacjach oraz (2) czy funkcja zwraca prawidłową wartość.</p></li>
+<li><p>Użyj metod profilowania kodu w celu sprawdzenia czasów wykonywania kolejnych linii kodu.
+Działanie której linii kodu zabiera najwięcej czasu?</p></li>
+<li><p>Stwórz funkcję <code>gdzie_naj2()</code>, której cel jest taki sam jak funkcji <code>gdzie_naj()</code>, ale zamiast pętli <code>for</code> jej działanie oparte jest o funkcję <code>rowSums()</code>.</p></li>
+<li><p>Używając pakietu <strong>bench</strong> porównaj czas działania funkcji <code>gdzie_naj()</code> i <code>gdzie_naj2()</code>.
+Która z nich jest szybsza?
+Która z nich zużywa mniej zasobów?</p></li>
+</ol>
 
 <!-- # Debugowanie {#debugging} -->
 <!-- proces: -->
@@ -602,11 +622,11 @@ Ostatnia linia, wyliczająca średnią, zabrała ok. 10ms.</p>
 <div id="ref-R-testthat">
 <p>Wickham, Hadley. 2019b. <em>Testthat: Unit Testing for R</em>. <a href="https://CRAN.R-project.org/package=testthat" class="uri">https://CRAN.R-project.org/package=testthat</a>.</p>
 </div>
-<div id="ref-R-bench">
-<p>Hester, Jim. 2018. <em>Bench: High Precision Timing of R Expressions</em>. <a href="https://CRAN.R-project.org/package=bench" class="uri">https://CRAN.R-project.org/package=bench</a>.</p>
-</div>
 <div id="ref-R-profvis">
 <p>Chang, Winston, and Javier Luraschi. 2018. <em>Profvis: Interactive Visualizations for Profiling R Code</em>. <a href="https://CRAN.R-project.org/package=profvis" class="uri">https://CRAN.R-project.org/package=profvis</a>.</p>
+</div>
+<div id="ref-R-bench">
+<p>Hester, Jim. 2018. <em>Bench: High Precision Timing of R Expressions</em>. <a href="https://CRAN.R-project.org/package=bench" class="uri">https://CRAN.R-project.org/package=bench</a>.</p>
 </div>
 </div>
 <div class="footnotes">

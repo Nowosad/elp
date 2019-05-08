@@ -95,144 +95,6 @@ Pozostałe funkcje z tego pakietu są wymienione i opisane na stronie https://te
 <!-- profiling -->
 <!-- testing -->
 
-## Benchmarking
-
-Benchmarking oznacza określanie wydajności danej operacji czy funkcji.
-Wydajność może być określona na wiele różnych sposobów, w tym najprostszym jest czas wykonania pewnego kodu.
-Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej funkcji `system.time()`.
-
-
-```r
-system.time(kod_do_wykonania)
-```
-
-Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.
-
-
-```r
-system.time(mean(1:100000000))
-#>    user  system elapsed 
-#>   0.640   0.000   0.641
-```
-
-W efekcie dostajemy trzy wartości - `user`, `system` i `elapsed`. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.
-
-Benchmarking jest często używany w sytuacji, gdy istnieje kilka  funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
-Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.
-
-W sekcji \@ref(for-example) stworzyliśmy kilka wersji pętli `for` pozwalającej na przeliczanie wartości z mil lądowych na kilometry. 
-Pierwsza z nich, tutaj zdefiniowana jako funkcja `mi_do_km1`, tworzy pusty wektor o długości 0, do którego następie doklejane są kolejne przeliczone wartości.
-
-
-```r
-mi_do_km1 = function(odl_mile){
-  odl_km = vector("list", length = 0)
-  for (i in seq_along(odl_mile)) {
-    odl_km = c(odl_km, odl_mile[[i]] * 1.609)
-  }
-  odl_km
-}
-```
-
-Druga, tutaj zdefiniowana jako funkcja `mi_do_km2`, tworzy pusty wektor o oczekiwanej długości wyniku. 
-Następnie kolejne przeliczone wartości są wstawiane w odpowiednie miejsca wektora wynikowego.
-
-
-```r
-mi_do_km2 = function(odl_mile){
-  odl_km = vector("list", length = length(odl_mile))
-  for (i in seq_along(odl_mile)) {
-    odl_km[[i]] = odl_mile[[i]] * 1.609
-  }
-  odl_km
-}
-```
-
-Dwie powyższe funkcje można porównać używając `system.time()`. 
-Nie zawsze jednak to wystarczy - ta sama funkcja wykonana dwa razy może mieć różny czas obliczeń.<!--why??-->
-Dodatkowo, oprócz czasu wykonywania funkcji może nas interesować zużycie zasobów, takich jak pamięć operacyjna.
-Do takiego celu powstała funkcja `mark()` z pakietu **bench** [@R-bench], która wykonuje funkcje wiele razy przed zwróceniem wyniku.
-
-Przyjmuje ona wywołania funkcji, które chcemy porównać.
-Poniżej nastąpi porównanie funkcji `mi_do_km1` i `mi_do_km2`, w przypadku gdy jako dane wejściowe zostanie podana lista z wartościami 142, 63, 121.
-
-
-```r
-library(bench)
-odl_mile = list(142, 63, 121)
-wynik_1 = mark(
-  mi_do_km1(odl_mile),
-  mi_do_km2(odl_mile)
-)
-wynik_1
-#> # A tibble: 2 x 6
-#>   expression               min   median `itr/sec` mem_alloc `gc/sec`
-#>   <bch:expr>          <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 mi_do_km1(odl_mile)   1.59µs   1.84µs   470294.     117KB        0
-#> 2 mi_do_km2(odl_mile)   1.18µs    1.3µs   705711.     221KB        0
-```
-
-Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
-Zawiera ona szereg charakterystyk, w tym:
-
-- `min` - minimalny czas wykonania funkcji
-- `mean` - średni czas wykonania funkcji
-- `median` - mediana czasu wykonania funkcji
-- `max` - maksymalny czas wykonania funkcji
-- `itr/sec` - liczba wykonań funkcji na sekundę
-- `mem_alloc` - pamięć użyta przez wywołanie funkcji
-- `n_itr` - liczba powtórzeń wywołania funkcji
-
-Wynik działania funkcji `mark()` pozwala na zauważenie, że na tym przykładzie funkcja `mi_do_km2` jest ok. 30% szybsza od `mi_do_km1`.
-Czasami możliwe jest, że jakaś funkcja działa relatywnie szybko na małych danych, ale dużo wolniej na większych danych wejściowych.
-Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na większej liście, np. z wartościami od 0 do 10000 co 1.
-
-
-```r
-odl_mile2 = as.list(0:10000)
-wynik_2 = mark(
-  mi_do_km1(odl_mile2),
-  mi_do_km2(odl_mile2)
-)
-#> Warning: Some expressions had a GC in every iteration; so filtering is
-#> disabled.
-wynik_2
-#> # A tibble: 2 x 6
-#>   expression                min   median `itr/sec` mem_alloc `gc/sec`
-#>   <bch:expr>           <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 mi_do_km1(odl_mile2)    459ms    463ms      2.16     382MB     17.3
-#> 2 mi_do_km2(odl_mile2)    788µs    831µs   1013.      78.2KB     19.9
-```
-
-W tym przypadku różnica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
-Funkcja `mi_do_km1` jest w stanie wykonać tylko 17.28 operacji na sekundę, przy aż 19.86 operacji na sekundę funkcji `mi_do_km2`.
-Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
-
-
-```
-#> Running with:
-#>       x
-#> 1    10
-#> 2   100
-#> 3  1000
-#> 4 10000
-#> Warning: Some expressions had a GC in every iteration; so filtering is
-#> disabled.
-#> # A tibble: 8 x 7
-#>   expression       x      min   median `itr/sec` mem_alloc `gc/sec`
-#>   <bch:expr>   <dbl> <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 mi_do_km1(l)    10   3.95µs   4.63µs 200120.          0B     20.0
-#> 2 mi_do_km2(l)    10   1.82µs   2.04µs 453694.          0B     45.4
-#> 3 mi_do_km1(l)   100  66.17µs  71.57µs  13185.     43.16KB     14.2
-#> 4 mi_do_km2(l)   100   8.42µs   9.25µs 100636.        856B     30.2
-#> 5 mi_do_km1(l)  1000   4.33ms   4.53ms    219.      3.87MB     19.7
-#> 6 mi_do_km2(l)  1000  76.22µs  80.76µs  11548.      7.87KB     22.5
-#> 7 mi_do_km1(l) 10000 548.05ms 548.05ms      1.82  382.04MB     14.6
-#> 8 mi_do_km2(l) 10000 879.02µs 922.24µs    975.     78.18KB     18.0
-```
-
-
-
 ## Profiling
 
 Istnieją trzy podstawowe reguły optymalizacji kodu^[http://www.moscowcoffeereview.com/programming/the-3-rules-of-optimization/]:
@@ -295,9 +157,174 @@ Ostatnia linia, wyliczająca średnią, zabrała ok. 10ms.
 <!-- vectorized vs not-vectorized -->
 <!-- https://rstudio-education.github.io/hopr/speed.html -->
 
+## Benchmarking
+
+Benchmarking oznacza określanie wydajności danej operacji czy funkcji.
+Wydajność może być określona na wiele różnych sposobów, w tym najprostszym jest czas wykonania pewnego kodu.
+Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej funkcji `system.time()`.
+
+
+```r
+system.time(kod_do_wykonania)
+```
+
+Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.
+
+
+```r
+system.time(mean(1:100000000))
+#>    user  system elapsed 
+#>   0.652   0.000   0.648
+```
+
+W efekcie dostajemy trzy wartości - `user`, `system` i `elapsed`. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.
+
+Benchmarking jest często używany w sytuacji, gdy istnieje kilka  funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
+Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.
+
+W sekcji \@ref(for-example) stworzyliśmy kilka wersji pętli `for` pozwalającej na przeliczanie wartości z mil lądowych na kilometry. 
+Pierwsza z nich, tutaj zdefiniowana jako funkcja `mi_do_km1`, tworzy pusty wektor o długości 0, do którego następie doklejane są kolejne przeliczone wartości.
+
+
+```r
+mi_do_km1 = function(odl_mile){
+  odl_km = vector("list", length = 0)
+  for (i in seq_along(odl_mile)) {
+    odl_km = c(odl_km, odl_mile[[i]] * 1.609)
+  }
+  odl_km
+}
+```
+
+Druga, tutaj zdefiniowana jako funkcja `mi_do_km2`, tworzy pusty wektor o oczekiwanej długości wyniku. 
+Następnie kolejne przeliczone wartości są wstawiane w odpowiednie miejsca wektora wynikowego.
+
+
+```r
+mi_do_km2 = function(odl_mile){
+  odl_km = vector("list", length = length(odl_mile))
+  for (i in seq_along(odl_mile)) {
+    odl_km[[i]] = odl_mile[[i]] * 1.609
+  }
+  odl_km
+}
+```
+
+Dwie powyższe funkcje można porównać używając `system.time()`. 
+Nie zawsze jednak to wystarczy - ta sama funkcja wykonana dwa razy może mieć różny czas obliczeń.<!--why??-->
+Dodatkowo, oprócz czasu wykonywania funkcji może nas interesować zużycie zasobów, takich jak pamięć operacyjna.
+Do takiego celu powstała funkcja `mark()` z pakietu **bench** [@R-bench], która wykonuje funkcje wiele razy przed zwróceniem wyniku.
+
+Przyjmuje ona wywołania funkcji, które chcemy porównać.
+Poniżej nastąpi porównanie funkcji `mi_do_km1` i `mi_do_km2`, w przypadku gdy jako dane wejściowe zostanie podana lista z wartościami 142, 63, 121.
+
+
+```r
+library(bench)
+odl_mile = list(142, 63, 121)
+wynik_1 = mark(
+  mi_do_km1(odl_mile),
+  mi_do_km2(odl_mile)
+)
+wynik_1
+#> # A tibble: 2 x 6
+#>   expression               min   median `itr/sec` mem_alloc `gc/sec`
+#>   <bch:expr>          <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
+#> 1 mi_do_km1(odl_mile)   1.55µs   1.76µs   480335.     117KB        0
+#> 2 mi_do_km2(odl_mile)   1.14µs   1.27µs   704193.     221KB        0
+```
+
+Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
+Zawiera ona szereg charakterystyk, w tym:
+
+- `min` - minimalny czas wykonania funkcji
+- `mean` - średni czas wykonania funkcji
+- `median` - mediana czasu wykonania funkcji
+- `max` - maksymalny czas wykonania funkcji
+- `itr/sec` - liczba wykonań funkcji na sekundę
+- `mem_alloc` - pamięć użyta przez wywołanie funkcji
+- `n_itr` - liczba powtórzeń wywołania funkcji
+
+Wynik działania funkcji `mark()` pozwala na zauważenie, że na tym przykładzie funkcja `mi_do_km2` jest ok. 30% szybsza od `mi_do_km1`.
+Czasami możliwe jest, że jakaś funkcja działa relatywnie szybko na małych danych, ale dużo wolniej na większych danych wejściowych.
+Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na większej liście, np. z wartościami od 0 do 10000 co 1.
+
+
+```r
+odl_mile2 = as.list(0:10000)
+wynik_2 = mark(
+  mi_do_km1(odl_mile2),
+  mi_do_km2(odl_mile2)
+)
+#> Warning: Some expressions had a GC in every iteration; so filtering is
+#> disabled.
+wynik_2
+#> # A tibble: 2 x 6
+#>   expression                min   median `itr/sec` mem_alloc `gc/sec`
+#>   <bch:expr>           <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
+#> 1 mi_do_km1(odl_mile2)    471ms    475ms      2.10     382MB     16.8
+#> 2 mi_do_km2(odl_mile2)    783µs    821µs   1006.      78.2KB     19.9
+```
+
+W tym przypadku różnica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
+Funkcja `mi_do_km1` jest w stanie wykonać tylko 16.83 operacji na sekundę, przy aż 19.93 operacji na sekundę funkcji `mi_do_km2`.
+Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
+
+
+```
+#> Running with:
+#>       x
+#> 1    10
+#> 2   100
+#> 3  1000
+#> 4 10000
+#> Warning: Some expressions had a GC in every iteration; so filtering is
+#> disabled.
+#> # A tibble: 8 x 7
+#>   expression       x      min   median `itr/sec` mem_alloc `gc/sec`
+#>   <bch:expr>   <dbl> <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
+#> 1 mi_do_km1(l)    10   3.94µs   4.58µs 196300.          0B     19.6
+#> 2 mi_do_km2(l)    10   1.79µs   1.98µs 466481.          0B     46.7
+#> 3 mi_do_km1(l)   100  66.39µs  72.48µs  13053.     43.16KB     14.3
+#> 4 mi_do_km2(l)   100   8.48µs   9.32µs  99055.        856B     29.7
+#> 5 mi_do_km1(l)  1000   4.31ms   4.58ms    217.      3.87MB     19.7
+#> 6 mi_do_km2(l)  1000  76.96µs  81.69µs  11599.      7.87KB     22.7
+#> 7 mi_do_km1(l) 10000 566.26ms 566.26ms      1.77  382.04MB     14.1
+#> 8 mi_do_km2(l) 10000  853.9µs 935.37µs    948.     78.18KB     17.9
+```
+
+
+
+
+
 ## Zadania
 
-<!-- 1. benchmarking -->
-<!-- porównaj rowsum vs colsum vs loops implementation -->
-<!-- 2. profiling -->
-<!-- ??? -->
+1) Korzystając z wiedzy z rozdziału \@ref(petle) dotyczącej pętli `for`, napisz funkcję `gdzie_naj()`, która przyjmuje na wejściu macierz z wartościami numerycznymi, wylicza sumę wartości dla każdego wiersza, a następnie zwraca numer wiersza z najwyższą sumą wartości.
+Przykładowe dane wejściowe do tej funkcji to:
+
+
+```r
+set.seed(2019-05-08)
+mat = matrix(c(sample(1:10, size = 25, replace = TRUE)),
+             ncol = 5, nrow = 5)
+mat
+#>      [,1] [,2] [,3] [,4] [,5]
+#> [1,]    6    1    2    4    6
+#> [2,]    9    9    9    5    5
+#> [3,]    2    6    4    8   10
+#> [4,]    4    6    1    2    5
+#> [5,]    2   10    6    4    9
+```
+
+1) Dodaj do powyższj funkcji odpowiednie komunikaty błędów czy ostrzeżeń (sekcja \@ref(obsluga-komunikatow)), pojawiające się w zależności od rodzaju wprowadzonych danych wejściowych.
+
+1) Napisz testy jednostkowe sprawdzające (1) czy błędy pojawiają się w odpowiednich sytuacjach oraz (2) czy funkcja zwraca prawidłową wartość.
+
+1) Użyj metod profilowania kodu w celu sprawdzenia czasów wykonywania kolejnych linii kodu.
+Działanie której linii kodu zabiera najwięcej czasu?
+
+1) Stwórz funkcję `gdzie_naj2()`, której cel jest taki sam jak funkcji `gdzie_naj()`, ale zamiast pętli `for` jej działanie oparte jest o funkcję `rowSums()`.
+
+1) Używając pakietu **bench** porównaj czas działania funkcji `gdzie_naj()` i `gdzie_naj2()`.
+Która z nich jest szybsza?
+Która z nich zużywa mniej zasobów?
