@@ -268,7 +268,7 @@ mat = matrix(c(sample(1:10, size = 25, replace = TRUE)),
 mat
 ```
 
-1) Dodaj do powyższj funkcji odpowiednie komunikaty błędów czy ostrzeżeń (sekcja \@ref(obsluga-komunikatow)), pojawiające się w zależności od rodzaju wprowadzonych danych wejściowych.
+1) Dodaj do powyższej funkcji odpowiednie komunikaty błędów czy ostrzeżeń (sekcja \@ref(obsluga-komunikatow)), pojawiające się w zależności od rodzaju wprowadzonych danych wejściowych.
 
 1) Napisz testy jednostkowe sprawdzające (1) czy błędy pojawiają się w odpowiednich sytuacjach oraz (2) czy funkcja zwraca prawidłową wartość.
 
