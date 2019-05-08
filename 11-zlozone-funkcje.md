@@ -462,7 +462,7 @@ nowy_p2 = nowy_prostokat(7, 0, 6, 0)
 ## Zadania
 
 1) Bez pisania kodu, zaprojektuj API zbioru funkcji R pozwalających na tworzenie podstawowych obiektów reprezentujących podstawowe figury (np. kwadrat, prostokąt, koło, trójkąt, itd.) oraz wyliczania na ich podstawie podstawowych miar (np. obwód, pole powierzchni, itd.).
-Nowe API powino obejmować nazwy funkcji, nazwy ich argumentów, istnienie lub brak domyślnych wartości argumentów, klasy obiektów wejściowych i wyjściowych z tych funkcji, itd.
+Nowe API powinno obejmować nazwy funkcji, nazwy ich argumentów, istnienie lub brak domyślnych wartości argumentów, klasy obiektów wejściowych i wyjściowych z tych funkcji, itd.
 
 1) Stwórz nową klasę obiektów w R reprezentujących trójkąty. 
 Nazwij tą nową klasę `"trojkat"`. 

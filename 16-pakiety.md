@@ -208,7 +208,7 @@ Plik `DESCRIPTION` należy regularnie uaktualniać, np. zmieniać numer wersji p
 ## Zależności
 
 Istnieje jedna ważna różnica pomiędzy tworzeniem funkcji w skryptach a tworzeniem jej wewnątrz pakietu - w pakietach nie można używać dołączania pakietów za pomocą funkcji `library()`.
-Zamiast tego możliwe jest definiowanie każdej zewnątrznej funkcji używając operatora `::`.^[Istnieją również inne możliwości, np. użycie znaczników `@import` lub `@importFrom`.]
+Zamiast tego możliwe jest definiowanie każdej zewnętrznej funkcji używając operatora `::`.^[Istnieją również inne możliwości, np. użycie znaczników `@import` lub `@importFrom`.]
 
 <!-- przykład -->
 
@@ -295,7 +295,7 @@ Przykład szablonu pliku `NEWS.md` można znaleźć pod adresem https://ropensci
 ## Wbudowane testy {#wbudowane-testy}
 
 Sekcja \@ref(testy-jednostkowe) pokazywała w jaki sposób tworzyć testy jednostkowe dla funkcji, w celu sprawdzenia czy ich działanie jest zgodne z naszymi oczekiwaniami.
-Takie testy można również wbudować wewnątrz pakietu - w efekcie, gdy naniesiemy w nim jakieś zmiany możemy sprawdzić czy otrzemujemy takie same wyniki.
+Takie testy można również wbudować wewnątrz pakietu - w efekcie, gdy naniesiemy w nim jakieś zmiany możemy sprawdzić czy otrzymujemy takie same wyniki.
 
 Pierwszym krokiem do używania wbudowanych testów jest ustawienie odpowiedniej infrastruktury używając funkcji `use_testthat()`. 
 Powoduje ona dodanie pakietu **testthat** do wpisu `Suggests:`, stworzenie folderów `tests/` i `tests/testthat/` oraz pliku `tests/testthat.R`.
@@ -407,7 +407,7 @@ Sprawdź cały pakiet używając `devtools::check()` i zainstaluj go poprzez `de
 13) Zaktualizuj opis pakietu (np. zmień wersję pakietu). 
 Przebuduj stronę internetową pakietu i prześlij wszystkie zmiany na zdalne repozytorium.
 
-14) Stwórz nową winietę do pakietu **konwerter** nazwywającą się `wprowadzenie`.
+14) Stwórz nową winietę do pakietu **konwerter** nazywającą się `wprowadzenie`.
 Dodaj do niej krótki opis tego co robi ten pakiet, a następnie przedstaw przykład użycia funkcji `mil_do_km()` oraz funkcji `konwersja_temp()`.
 
 

@@ -500,7 +500,7 @@ Do not distribute outside of NAZWA MOJEJ FIRMY.</code></pre>
 <div id="zaleznosci" class="section level2">
 <h2><span class="header-section-number">14.6</span> Zależności</h2>
 <p>Istnieje jedna ważna różnica pomiędzy tworzeniem funkcji w skryptach a tworzeniem jej wewnątrz pakietu - w pakietach nie można używać dołączania pakietów za pomocą funkcji <code>library()</code>.
-Zamiast tego możliwe jest definiowanie każdej zewnątrznej funkcji używając operatora <code>::</code>.<a href="#fn57" class="footnote-ref" id="fnref57"><sup>57</sup></a></p>
+Zamiast tego możliwe jest definiowanie każdej zewnętrznej funkcji używając operatora <code>::</code>.<a href="#fn57" class="footnote-ref" id="fnref57"><sup>57</sup></a></p>
 <!-- przykład -->
 <p>Dodatkowo każda zależność z zewnętrznym pakietem musi być określona w pliku <code>DESCRIPTION</code>.
 Jest to możliwe używając wpisów <code>Imports:</code> oraz <code>Suggests:</code>, przykładowo:<a href="#fn58" class="footnote-ref" id="fnref58"><sup>58</sup></a></p>
@@ -572,7 +572,7 @@ Przykład szablonu pliku <code>NEWS.md</code> można znaleźć pod adresem <a hr
 <div id="wbudowane-testy" class="section level2">
 <h2><span class="header-section-number">14.10</span> Wbudowane testy</h2>
 <p>Sekcja <a href="analiza-kodu.html#testy-jednostkowe">11.1</a> pokazywała w jaki sposób tworzyć testy jednostkowe dla funkcji, w celu sprawdzenia czy ich działanie jest zgodne z naszymi oczekiwaniami.
-Takie testy można również wbudować wewnątrz pakietu - w efekcie, gdy naniesiemy w nim jakieś zmiany możemy sprawdzić czy otrzemujemy takie same wyniki.</p>
+Takie testy można również wbudować wewnątrz pakietu - w efekcie, gdy naniesiemy w nim jakieś zmiany możemy sprawdzić czy otrzymujemy takie same wyniki.</p>
 <p>Pierwszym krokiem do używania wbudowanych testów jest ustawienie odpowiedniej infrastruktury używając funkcji <code>use_testthat()</code>.
 Powoduje ona dodanie pakietu <strong>testthat</strong> do wpisu <code>Suggests:</code>, stworzenie folderów <code>tests/</code> i <code>tests/testthat/</code> oraz pliku <code>tests/testthat.R</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">use_testthat</span>()
@@ -659,7 +659,7 @@ Sprawdź czy dają one poprawny wynik.
 Sprawdź cały pakiet używając <code>devtools::check()</code> i zainstaluj go poprzez <code>devtools::install()</code>.</p></li>
 <li><p>Zaktualizuj opis pakietu (np. zmień wersję pakietu).
 Przebuduj stronę internetową pakietu i prześlij wszystkie zmiany na zdalne repozytorium.</p></li>
-<li><p>Stwórz nową winietę do pakietu <strong>konwerter</strong> nazwywającą się <code>wprowadzenie</code>.
+<li><p>Stwórz nową winietę do pakietu <strong>konwerter</strong> nazywającą się <code>wprowadzenie</code>.
 Dodaj do niej krótki opis tego co robi ten pakiet, a następnie przedstaw przykład użycia funkcji <code>mil_do_km()</code> oraz funkcji <code>konwersja_temp()</code>.</p></li>
 </ol>
 
