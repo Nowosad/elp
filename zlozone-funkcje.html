@@ -25,7 +25,7 @@
 <meta name="author" content="Jakub Nowosad">
 
 
-<meta name="date" content="2019-05-06">
+<meta name="date" content="2019-05-08">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -361,7 +361,9 @@ Przykładowo, większość nazw funkcji w pakiecie <strong>landscapemetrics</str
 <p>Podobnie należy stosować tylko jedną konwencję przy nazywaniu argumentów funkcji, a nazwy argumentów powinny być informacyjne, ale jednocześnie zwięzłe.
 W przypadku, gdy taki sam rodzaj danych wejściowych jest oczekiwany w różnych funkcjach, koniecznie jest aby zawsze ten argument był tak samo nazwany.
 Podobnie należy zadbać o spójną kolejność podobnych argumentów w funkcjach jednego pakietu.</p>
-<p>Stabilność typu oznacza, że używając jednej klasy danych wejściowych funkcja zawsze zwróci obiekt jednej klasy.</p>
+<p>Stabilność typu oznacza, że używając jednej klasy danych wejściowych funkcja zawsze zwróci obiekt jednej klasy.
+Poniższy przykład użycia funkcji <code>grep()</code> pokazuje, że nie ma ona stabilności typu.
+Zalecane jest unikanie tworzenia funkcji bez stabilności typu.</p>
 <pre class="sourceCode r"><code class="sourceCode r">tekst =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kołdra&quot;</span>, <span class="st">&quot;kordła&quot;</span>, <span class="st">&quot;pościel&quot;</span>)
 <span class="kw">grep</span>(<span class="st">&quot;^[k].&quot;</span>, <span class="dt">x =</span> tekst)
 <span class="co">#&gt; [1] 1 2</span>
@@ -648,8 +650,16 @@ Warto od razu zobaczyć, czy ten obiekt zadziała poprawnie w funkcji <code>powi
 <!-- 3. api - na.rm  -->
 <!-- 4. error, warning, message -->
 <!-- 5. napraw error -->
-<!-- 6. oo - dodaj trójkąt -->
-<!-- 7. oo - dodaj liczenie centroidu -->
+<ol style="list-style-type: decimal">
+<li><p>Stwórz nową klasę obiektów w R reprezentujących trójkąty.
+Nazwij tą nową klasę <code>&quot;trojkat&quot;</code>.
+W jaki sposób trójkąty będą reprezentowane w tej nowej klasie?
+(Podpowiedź: twoja nowa klasa może być oparta o wektory, macierze lub ramki danych.)</p></li>
+<li><p>Dodaj konstruktor pozwalający innym użytkownikom na tworzenie obiektów klasy <code>&quot;trojkat&quot;</code>.
+Zastanów się jakie powinny być wartości argumentów wejściowych i napisz wewnątrz konstruktora odpowiednie sprawdzenia używając komunikatów błędów, ostrzeżeń czy też wiadomości.</p></li>
+<li><p>Stwórz metodę pozwalającą na liczenie powierzchni trójkąta.</p></li>
+<li><p>Stwórz metodę pozwalającą na liczenie centroidu trójkąta.</p></li>
+</ol>
 <!-- 8. napisz testy dla 6 i 7 -->
 
 </div>

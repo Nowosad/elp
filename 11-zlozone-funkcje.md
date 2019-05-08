@@ -30,6 +30,8 @@ W przypadku, gdy taki sam rodzaj danych wejściowych jest oczekiwany w różnych
 Podobnie należy zadbać o spójną kolejność podobnych argumentów w funkcjach jednego pakietu.
 
 Stabilność typu oznacza, że używając jednej klasy danych wejściowych funkcja zawsze zwróci obiekt jednej klasy. 
+Poniższy przykład użycia funkcji `grep()` pokazuje, że nie ma ona stabilności typu.
+Zalecane jest unikanie tworzenia funkcji bez stabilności typu.
 
 
 ```r
@@ -459,11 +461,23 @@ nowy_p2 = nowy_prostokat(7, 0, 6, 0)
 
 ## Zadania
 
+
 <!-- 1. zaprojektuj api -->
 <!-- 2. zaprojektuj i zaimplementuj api -->
 <!-- 3. api - na.rm  -->
 <!-- 4. error, warning, message -->
 <!-- 5. napraw error -->
-<!-- 6. oo - dodaj trójkąt -->
-<!-- 7. oo - dodaj liczenie centroidu -->
+
+1) Stwórz nową klasę obiektów w R reprezentujących trójkąty. 
+Nazwij tą nową klasę `"trojkat"`. 
+W jaki sposób trójkąty będą reprezentowane w tej nowej klasie?
+(Podpowiedź: twoja nowa klasa może być oparta o wektory, macierze lub ramki danych.)
+
+1) Dodaj konstruktor pozwalający innym użytkownikom na tworzenie obiektów klasy `"trojkat"`. 
+Zastanów się jakie powinny być wartości argumentów wejściowych i napisz wewnątrz konstruktora odpowiednie sprawdzenia używając komunikatów błędów, ostrzeżeń czy też wiadomości.
+
+1) Stwórz metodę pozwalającą na liczenie powierzchni trójkąta.
+
+1) Stwórz metodę pozwalającą na liczenie centroidu trójkąta.
+
 <!-- 8. napisz testy dla 6 i 7 -->
