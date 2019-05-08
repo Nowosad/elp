@@ -353,7 +353,7 @@ Dodatkowo, nastąpi także wprowadzenie do kolejnego paradygmatu programowania -
 <p>Interfejs programistyczny aplikacji (ang. <em>application programming interface</em>, API) to zbiór sposobów komunikacji pomiędzy różnymi komponentami oprogramowania.
 Inaczej mówiąc API określa w jaki sposób następuje interakcja z kodem.
 Dobrze zaprojektowane API uławia zarówno rozwijanie oprogramowania, jak i jego używanie.
-Podstawowe elementy przemyślanego API w R obejmują nazwy funkcji, ich argumenty, oraz tzw. stabilność typu (ang. <em>type stability</em>.</p>
+Podstawowe elementy przemyślanego API w R obejmują nazwy funkcji, ich argumenty, oraz tzw. stabilność typu (ang. <em>type stability</em>).</p>
 <p>Funkcje wewnątrz pojedynczego pakietu powinny być nazywane konsekwentnie używając tylko jednej konwencji nazywania (sekcja <a href="ergosum.html#nazwy-obiektow">2.4.1</a>).
 Sama nazwa powinna w zwięzły sposób przekazywać jakie jest działanie funkcji.
 Dodatkową możliwością jest używanie w jednym pakiecie funkcji rozpoczynających się od takiego samego prefiksu.
@@ -645,20 +645,17 @@ Warto od razu zobaczyć, czy ten obiekt zadziała poprawnie w funkcji <code>powi
 </div>
 <div id="zadania-9" class="section level2">
 <h2><span class="header-section-number">10.4</span> Zadania</h2>
-<!-- 1. zaprojektuj api -->
-<!-- 2. zaprojektuj i zaimplementuj api -->
-<!-- 3. api - na.rm  -->
-<!-- 4. error, warning, message -->
-<!-- 5. napraw error -->
 <ol style="list-style-type: decimal">
+<li><p>Bez pisania kodu, zaprojektuj API zbioru funkcji R pozwalających na tworzenie podstawowych obiektów reprezentujących podstawowe figury (np. kwadrat, prostokąt, koło, trójkąt, itd.) oraz wyliczania na ich podstawie podstawowych miar (np. obwód, pole powierzchni, itd.).
+Nowe API powino obejmować nazwy funkcji, nazwy ich argumentów, istnienie lub brak domyślnych wartości argumentów, klasy obiektów wejściowych i wyjściowych z tych funkcji, itd.</p></li>
 <li><p>Stwórz nową klasę obiektów w R reprezentujących trójkąty.
 Nazwij tą nową klasę <code>&quot;trojkat&quot;</code>.
 W jaki sposób trójkąty będą reprezentowane w tej nowej klasie?
-(Podpowiedź: twoja nowa klasa może być oparta o wektory, macierze lub ramki danych.)</p></li>
+(Podpowiedź: w zależności od podjętej decyzji nowa klasa może być oparta o wektory, macierze lub ramki danych.)</p></li>
 <li><p>Dodaj konstruktor pozwalający innym użytkownikom na tworzenie obiektów klasy <code>&quot;trojkat&quot;</code>.
 Zastanów się jakie powinny być wartości argumentów wejściowych i napisz wewnątrz konstruktora odpowiednie sprawdzenia używając komunikatów błędów, ostrzeżeń czy też wiadomości.</p></li>
-<li><p>Stwórz metodę pozwalającą na liczenie powierzchni trójkąta.</p></li>
-<li><p>Stwórz metodę pozwalającą na liczenie centroidu trójkąta.</p></li>
+<li><p>Stwórz metodę pozwalającą na wyliczanie powierzchni trójkąta.</p></li>
+<li><p>Stwórz metodę pozwalającą na określanie współrzędnych centroidu trójkąta.</p></li>
 </ol>
 <!-- 8. napisz testy dla 6 i 7 -->
 

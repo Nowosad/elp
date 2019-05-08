@@ -18,7 +18,7 @@ Dodatkowo, nastąpi także wprowadzenie do kolejnego paradygmatu programowania -
 Interfejs programistyczny aplikacji (ang. *application programming interface*, API) to zbiór sposobów komunikacji pomiędzy różnymi komponentami oprogramowania.
 Inaczej mówiąc API określa w jaki sposób następuje interakcja z kodem.
 Dobrze zaprojektowane API uławia zarówno rozwijanie oprogramowania, jak i jego używanie.
-Podstawowe elementy przemyślanego API w R obejmują nazwy funkcji, ich argumenty, oraz tzw. stabilność typu (ang. *type stability*.
+Podstawowe elementy przemyślanego API w R obejmują nazwy funkcji, ich argumenty, oraz tzw. stabilność typu (ang. *type stability*).
 
 Funkcje wewnątrz pojedynczego pakietu powinny być nazywane konsekwentnie używając tylko jednej konwencji nazywania (sekcja \@ref(nazwy-obiektow)).
 Sama nazwa powinna w zwięzły sposób przekazywać jakie jest działanie funkcji. 
@@ -461,23 +461,19 @@ nowy_p2 = nowy_prostokat(7, 0, 6, 0)
 
 ## Zadania
 
-
-<!-- 1. zaprojektuj api -->
-<!-- 2. zaprojektuj i zaimplementuj api -->
-<!-- 3. api - na.rm  -->
-<!-- 4. error, warning, message -->
-<!-- 5. napraw error -->
+1) Bez pisania kodu, zaprojektuj API zbioru funkcji R pozwalających na tworzenie podstawowych obiektów reprezentujących podstawowe figury (np. kwadrat, prostokąt, koło, trójkąt, itd.) oraz wyliczania na ich podstawie podstawowych miar (np. obwód, pole powierzchni, itd.).
+Nowe API powino obejmować nazwy funkcji, nazwy ich argumentów, istnienie lub brak domyślnych wartości argumentów, klasy obiektów wejściowych i wyjściowych z tych funkcji, itd.
 
 1) Stwórz nową klasę obiektów w R reprezentujących trójkąty. 
 Nazwij tą nową klasę `"trojkat"`. 
 W jaki sposób trójkąty będą reprezentowane w tej nowej klasie?
-(Podpowiedź: twoja nowa klasa może być oparta o wektory, macierze lub ramki danych.)
+(Podpowiedź: w zależności od podjętej decyzji nowa klasa może być oparta o wektory, macierze lub ramki danych.)
 
 1) Dodaj konstruktor pozwalający innym użytkownikom na tworzenie obiektów klasy `"trojkat"`. 
 Zastanów się jakie powinny być wartości argumentów wejściowych i napisz wewnątrz konstruktora odpowiednie sprawdzenia używając komunikatów błędów, ostrzeżeń czy też wiadomości.
 
-1) Stwórz metodę pozwalającą na liczenie powierzchni trójkąta.
+1) Stwórz metodę pozwalającą na wyliczanie powierzchni trójkąta.
 
-1) Stwórz metodę pozwalającą na liczenie centroidu trójkąta.
+1) Stwórz metodę pozwalającą na określanie współrzędnych centroidu trójkąta.
 
 <!-- 8. napisz testy dla 6 i 7 -->
