@@ -29,6 +29,8 @@ W przypadku, gdy taki sam rodzaj danych wejściowych jest oczekiwany w różnych
 Podobnie należy zadbać o spójną kolejność podobnych argumentów w funkcjach jednego pakietu.
 
 Stabilność typu oznacza, że używając jednej klasy danych wejściowych funkcja zawsze zwróci obiekt jednej klasy. 
+Poniższy przykład użycia funkcji `grep()` pokazuje, że nie ma ona stabilności typu.
+Zalecane jest unikanie tworzenia funkcji bez stabilności typu.
 
 ```{r}
 tekst = c("kołdra", "kordła", "pościel")
@@ -391,6 +393,7 @@ nowy_p2 = nowy_prostokat(7, 0, 6, 0)
 <!-- https://adv-r.hadley.nz/oo.html -->
 
 ## Zadania
+
 
 <!-- 1. zaprojektuj api -->
 <!-- 2. zaprojektuj i zaimplementuj api -->
