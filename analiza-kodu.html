@@ -25,7 +25,7 @@
 <meta name="author" content="Jakub Nowosad">
 
 
-<meta name="date" content="2019-05-08">
+<meta name="date" content="2019-05-10">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -459,7 +459,7 @@ Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej fu
 <p>Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))
 <span class="co">#&gt;    user  system elapsed </span>
-<span class="co">#&gt;   0.664   0.000   0.667</span></code></pre>
+<span class="co">#&gt;   0.632   0.000   0.630</span></code></pre>
 <p>W efekcie dostajemy trzy wartości - <code>user</code>, <code>system</code> i <code>elapsed</code>. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.</p>
 <p>Benchmarking jest często używany w sytuacji, gdy istnieje kilka funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
 Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.</p>
@@ -497,8 +497,8 @@ wynik_<span class="dv">1</span>
 <span class="co">#&gt; # A tibble: 2 x 6</span>
 <span class="co">#&gt;   expression               min   median `itr/sec` mem_alloc `gc/sec`</span>
 <span class="co">#&gt;   &lt;bch:expr&gt;          &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1(odl_mile)   1.61µs    1.8µs   468079.     117KB        0</span>
-<span class="co">#&gt; 2 mi_do_km2(odl_mile)   1.24µs   1.37µs   658630.     221KB        0</span></code></pre>
+<span class="co">#&gt; 1 mi_do_km1(odl_mile)   1.53µs   1.74µs   466529.     117KB        0</span>
+<span class="co">#&gt; 2 mi_do_km2(odl_mile)   1.12µs   1.25µs   715769.     221KB        0</span></code></pre>
 <p>Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
 Zawiera ona szereg charakterystyk, w tym:</p>
 <ul>
@@ -524,10 +524,10 @@ wynik_<span class="dv">2</span>
 <span class="co">#&gt; # A tibble: 2 x 6</span>
 <span class="co">#&gt;   expression                min   median `itr/sec` mem_alloc `gc/sec`</span>
 <span class="co">#&gt;   &lt;bch:expr&gt;           &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1(odl_mile2)    574ms    574ms      1.74     382MB     13.9</span>
-<span class="co">#&gt; 2 mi_do_km2(odl_mile2)    817µs    845µs   1030.      78.2KB     20.0</span></code></pre>
+<span class="co">#&gt; 1 mi_do_km1(odl_mile2)    449ms    456ms      2.19     382MB     17.6</span>
+<span class="co">#&gt; 2 mi_do_km2(odl_mile2)    778µs    809µs   1051.      78.2KB     20.0</span></code></pre>
 <p>W tym przypadku różnica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
-Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 13.95 operacji na sekundę, przy aż 19.97 operacji na sekundę funkcji <code>mi_do_km2</code>.
+Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 17.55 operacji na sekundę, przy aż 19.97 operacji na sekundę funkcji <code>mi_do_km2</code>.
 Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż <code>mi_do_km2</code>.</p>
 <pre><code>#&gt; Running with:
 #&gt;       x
@@ -540,14 +540,14 @@ Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) r
 #&gt; # A tibble: 8 x 7
 #&gt;   expression       x      min   median `itr/sec` mem_alloc `gc/sec`
 #&gt;   &lt;bch:expr&gt;   &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-#&gt; 1 mi_do_km1(l)    10   4.13µs   4.69µs 189319.          0B     18.9
-#&gt; 2 mi_do_km2(l)    10   1.89µs   2.15µs 433862.          0B      0  
-#&gt; 3 mi_do_km1(l)   100  75.29µs  86.53µs  11176.     43.16KB     11.1
-#&gt; 4 mi_do_km2(l)   100   9.11µs   9.77µs  97926.        856B     19.6
-#&gt; 5 mi_do_km1(l)  1000   4.85ms   4.93ms    201.      3.87MB     19.4
-#&gt; 6 mi_do_km2(l)  1000   84.3µs  88.61µs  10642.      7.87KB     20.0
-#&gt; 7 mi_do_km1(l) 10000 549.36ms 549.36ms      1.82  382.04MB     18.2
-#&gt; 8 mi_do_km2(l) 10000 828.26µs 858.69µs    813.     78.18KB     16.0</code></pre>
+#&gt; 1 mi_do_km1(l)    10   3.92µs   4.47µs 202251.          0B     40.5
+#&gt; 2 mi_do_km2(l)    10   1.78µs   1.96µs 482112.          0B      0  
+#&gt; 3 mi_do_km1(l)   100   65.9µs  70.89µs  13451.     43.16KB     16.7
+#&gt; 4 mi_do_km2(l)   100   8.41µs    9.3µs 100536.        856B     20.1
+#&gt; 5 mi_do_km1(l)  1000   4.35ms   4.53ms    218.      3.87MB     19.4
+#&gt; 6 mi_do_km2(l)  1000  76.22µs  79.75µs  11974.      7.87KB     22.4
+#&gt; 7 mi_do_km1(l) 10000  528.9ms  528.9ms      1.89  382.04MB     15.1
+#&gt; 8 mi_do_km2(l) 10000 776.06µs  810.2µs   1102.     78.18KB     20.0</code></pre>
 </div>
 <div id="zadania-10" class="section level2">
 <h2><span class="header-section-number">11.4</span> Zadania</h2>

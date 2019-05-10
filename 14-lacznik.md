@@ -1,9 +1,11 @@
 
 # Łącznik {#lacznik}
 
+<!-- intro o r jako jezyku laczacym inne -->
 <!-- intro o innych łącznikach -->
 
 ## C++
+
 <!-- Rcpp -->
 [@R-Rcpp]
 
@@ -16,6 +18,12 @@ library(Rcpp)
 ### Podstawy C++
 
 <!-- intro to Cpp -->
+<!-- https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-introduction.pdf -->
+<!-- data type -->
+<!-- scalars -->
+<!-- semicolons -->
+<!-- loops -->
+<!-- many more -->
 
 ### evalCpp
 
@@ -60,6 +68,7 @@ codecodecode(5)
 
 <!-- https://adv-r.hadley.nz/rcpp.html -->
 <!-- https://csgillespie.github.io/efficientR/performance.html#rcpp -->
+<!-- http://thecoatlessprofessor.com/programming/unofficial-rcpp-api-documentation/#minmax -->
 
 ## Python
 <!-- reticulate -->
