@@ -18,6 +18,7 @@ install:
   - R -e "install.packages('readxl')"
   - R -e "install.packages('bench')"
   - R -e "install.packages('testthat')"
+  - R -e "install.packages('ggplot2')"
   - R -e "tinytex::install_tinytex()"
 
 script:
