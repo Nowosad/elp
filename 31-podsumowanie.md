@@ -11,6 +11,8 @@ Stosując uzyskane umiejętności w praktyce.
 
 <!-- co było -->
 
+<!-- how to keep up-to-date-->
+
 ## Grafika
 
 R posiada potężne wbudowane narzędzia do tworzenia wykresów.
@@ -49,7 +51,6 @@ ggplot(met, aes(nazwa_stacji, tavg)) + geom_boxplot()
 <!-- graphics -->
 
 ## Analiza danych
-
 
 
 <!-- aka tidyverse -->
