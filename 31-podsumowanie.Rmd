@@ -8,9 +8,6 @@ W jaki sposób można najbardziej efektywnie użyć wiedzę z tej książki?
 Stosując uzyskane umiejętności w praktyce. 
 <!-- Może to być... -->
 
-<!-- co było -->
-
-<!-- how to keep up-to-date-->
 
 ## Grafika
 
@@ -73,4 +70,7 @@ Ten pakiet zawiera funkcje tworzące palety kolorystyczne inspirowane filmami re
 <!-- functional programming - 05 -->
 <!-- tidy eval -->
 
+## Co dalej?
+
+<!-- how to keep up-to-date-->
 Powodzenia z przygodą z R!
