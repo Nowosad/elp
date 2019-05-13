@@ -367,11 +367,6 @@ Stosując uzyskane umiejętności w praktyce.
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(tavg <span class="op">~</span><span class="st"> </span>nazwa_stacji, <span class="dt">data =</span> met)</code></pre>
 <p><img src="figures/unnamed-chunk-3-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
-<span class="co">#&gt; Registered S3 methods overwritten by &#39;ggplot2&#39;:</span>
-<span class="co">#&gt;   method         from </span>
-<span class="co">#&gt;   [.quosures     rlang</span>
-<span class="co">#&gt;   c.quosures     rlang</span>
-<span class="co">#&gt;   print.quosures rlang</span>
 <span class="kw">ggplot</span>(met, <span class="kw">aes</span>(nazwa_stacji, tavg)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>()</code></pre>
 <p><img src="figures/unnamed-chunk-4-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <!-- graphics -->
@@ -393,12 +388,26 @@ Stosując uzyskane umiejętności w praktyce.
 </div>
 <div id="programowanie" class="section level2">
 <h2><span class="header-section-number">15.4</span> Programowanie</h2>
+<p>Wcześniejsze sekcje opisywały różne obszary zastosowań R, ale nie pokazywały w jaki sposób rozwijać umięjętności programowania w tym języku.
+Najprostszym sposobem jest używanie R jak najczęściej.
+Nauka języka programowania przebiega wówczas naturalnie - wraz ze znalezniemiem rozwiązania kolejnego problemu czy rozwiązaniem kolejnego zadania.</p>
+<p>Często jednak, nie jesteśmy w stanie stwierdzić czy ten sposób rozwiązania jest optymalny, lub też napotykamy sytuacje w których nie wiemy jak się do nich odnieść.
+Wówczas szczególnie istotna jest inna umiejętność - czytania kodu innych osób<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.
+Większość pakietów R jest otwartoźródłowych - ich kod jest dostępny online i każda chętna osoba ma do niego dostęp.
+Kod pakietów R można, między innymi, znaleźć w serwisie GitHub.</p>
+<!-- https://github.com/search -->
 <!-- czytanie kodu źródłowego innych osób -->
 <!-- https://jennybc.github.io/wtf-2019-rsc/read-the-source.pdf -->
 <!-- functional programming - 05 -->
 <!-- tidy eval -->
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="61">
+<li id="fn61"><p>Read the Source, Luke.<a href="podsumowanie.html#fnref61" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 

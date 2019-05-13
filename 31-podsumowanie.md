@@ -39,11 +39,6 @@ boxplot(tavg ~ nazwa_stacji, data = met)
 
 ```r
 library(ggplot2)
-#> Registered S3 methods overwritten by 'ggplot2':
-#>   method         from 
-#>   [.quosures     rlang
-#>   c.quosures     rlang
-#>   print.quosures rlang
 ggplot(met, aes(nazwa_stacji, tavg)) + geom_boxplot()
 ```
 
@@ -52,6 +47,8 @@ ggplot(met, aes(nazwa_stacji, tavg)) + geom_boxplot()
 <!-- graphics -->
 
 ## Analiza danych
+
+
 
 <!-- aka tidyverse -->
 <!-- dplyr -->
@@ -66,8 +63,18 @@ ggplot(met, aes(nazwa_stacji, tavg)) + geom_boxplot()
 <!-- maps -->
 <!-- bioinformatyka -->
 
-
 ## Programowanie
+
+Wcześniejsze sekcje opisywały różne obszary zastosowań R, ale nie pokazywały w jaki sposób rozwijać umięjętności programowania w tym języku.
+Najprostszym sposobem jest używanie R jak najczęściej.
+Nauka języka programowania przebiega wówczas naturalnie - wraz ze znalezniemiem rozwiązania kolejnego problemu czy rozwiązaniem kolejnego zadania. 
+
+Często jednak, nie jesteśmy w stanie stwierdzić czy ten sposób rozwiązania jest optymalny, lub też napotykamy sytuacje w których nie wiemy jak się do nich odnieść.
+Wówczas szczególnie istotna jest inna umiejętność - czytania kodu innych osób^[Read the Source, Luke.].
+Większość pakietów R jest otwartoźródłowych - ich kod jest dostępny online i każda chętna osoba ma do niego dostęp.
+Kod pakietów R można, między innymi, znaleźć w serwisie GitHub.
+
+<!-- https://github.com/search -->
 
 <!-- czytanie kodu źródłowego innych osób -->
 <!-- https://jennybc.github.io/wtf-2019-rsc/read-the-source.pdf -->
