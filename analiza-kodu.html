@@ -320,6 +320,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.2" data-path="podsumowanie.html"><a href="podsumowanie.html#analiza-danych"><i class="fa fa-check"></i><b>15.2</b> Analiza danych</a></li>
 <li class="chapter" data-level="15.3" data-path="podsumowanie.html"><a href="podsumowanie.html#inne-zastosowania"><i class="fa fa-check"></i><b>15.3</b> Inne zastosowania</a></li>
 <li class="chapter" data-level="15.4" data-path="podsumowanie.html"><a href="podsumowanie.html#programowanie"><i class="fa fa-check"></i><b>15.4</b> Programowanie</a></li>
+<li class="chapter" data-level="15.5" data-path="podsumowanie.html"><a href="podsumowanie.html#co-dalej"><i class="fa fa-check"></i><b>15.5</b> Co dalej?</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
 <li class="divider"></li>
@@ -463,7 +464,7 @@ Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej fu
 <p>Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))
 <span class="co">#&gt;    user  system elapsed </span>
-<span class="co">#&gt;   0.636   0.000   0.639</span></code></pre>
+<span class="co">#&gt;   0.628   0.000   0.630</span></code></pre>
 <p>W efekcie dostajemy trzy wartości - <code>user</code>, <code>system</code> i <code>elapsed</code>. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.</p>
 <p>Benchmarking jest często używany w sytuacji, gdy istnieje kilka funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
 Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.</p>
@@ -501,8 +502,8 @@ wynik_<span class="dv">1</span>
 <span class="co">#&gt; # A tibble: 2 x 6</span>
 <span class="co">#&gt;   expression               min   median `itr/sec` mem_alloc `gc/sec`</span>
 <span class="co">#&gt;   &lt;bch:expr&gt;          &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1(odl_mile)    1.6µs   1.78µs   484820.     117KB        0</span>
-<span class="co">#&gt; 2 mi_do_km2(odl_mile)   1.21µs   1.32µs   695563.     221KB        0</span></code></pre>
+<span class="co">#&gt; 1 mi_do_km1(odl_mile)   1.52µs    1.7µs   494130.     117KB        0</span>
+<span class="co">#&gt; 2 mi_do_km2(odl_mile)   1.14µs   1.25µs   740301.     221KB        0</span></code></pre>
 <p>Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
 Zawiera ona szereg charakterystyk, w tym:</p>
 <ul>
@@ -528,10 +529,10 @@ wynik_<span class="dv">2</span>
 <span class="co">#&gt; # A tibble: 2 x 6</span>
 <span class="co">#&gt;   expression                min   median `itr/sec` mem_alloc `gc/sec`</span>
 <span class="co">#&gt;   &lt;bch:expr&gt;           &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1(odl_mile2)    456ms    459ms      2.18     382MB     17.4</span>
-<span class="co">#&gt; 2 mi_do_km2(odl_mile2)    789µs    819µs   1023.      78.2KB     20.0</span></code></pre>
+<span class="co">#&gt; 1 mi_do_km1(odl_mile2)    452ms    461ms      2.17     382MB     17.4</span>
+<span class="co">#&gt; 2 mi_do_km2(odl_mile2)    785µs    822µs   1039.      78.2KB     20.0</span></code></pre>
 <p>W tym przypadku różnica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
-Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 17.42 operacji na sekundę, przy aż 19.99 operacji na sekundę funkcji <code>mi_do_km2</code>.
+Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 17.35 operacji na sekundę, przy aż 19.99 operacji na sekundę funkcji <code>mi_do_km2</code>.
 Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż <code>mi_do_km2</code>.</p>
 <pre><code>#&gt; Running with:
 #&gt;       x
@@ -544,14 +545,14 @@ Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) r
 #&gt; # A tibble: 8 x 7
 #&gt;   expression       x      min   median `itr/sec` mem_alloc `gc/sec`
 #&gt;   &lt;bch:expr&gt;   &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-#&gt; 1 mi_do_km1(l)    10   3.96µs   4.55µs 203071.          0B     20.3
-#&gt; 2 mi_do_km2(l)    10   1.82µs   2.01µs 462688.          0B     46.3
-#&gt; 3 mi_do_km1(l)   100  65.94µs  71.37µs  13283.     43.16KB     17.0
-#&gt; 4 mi_do_km2(l)   100   8.44µs   9.29µs 100217.        856B     20.0
-#&gt; 5 mi_do_km1(l)  1000   4.26ms   4.51ms    221.      3.87MB     19.6
-#&gt; 6 mi_do_km2(l)  1000  76.68µs  80.76µs  11566.      7.87KB     22.6
-#&gt; 7 mi_do_km1(l) 10000 542.05ms 542.05ms      1.84  382.04MB     14.8
-#&gt; 8 mi_do_km2(l) 10000 768.97µs 814.32µs   1097.     78.18KB     20.0</code></pre>
+#&gt; 1 mi_do_km1(l)    10   3.86µs   4.44µs 205170.          0B     41.0
+#&gt; 2 mi_do_km2(l)    10   1.77µs   1.93µs 485556.          0B      0  
+#&gt; 3 mi_do_km1(l)   100  65.91µs  71.81µs  13238.     43.16KB     16.9
+#&gt; 4 mi_do_km2(l)   100   8.41µs   9.25µs  99663.        856B     19.9
+#&gt; 5 mi_do_km1(l)  1000   4.36ms   4.54ms    220.      3.87MB     22.2
+#&gt; 6 mi_do_km2(l)  1000  76.43µs  81.93µs  11301.      7.87KB     20.1
+#&gt; 7 mi_do_km1(l) 10000 553.88ms 553.88ms      1.81  382.04MB     14.4
+#&gt; 8 mi_do_km2(l) 10000 791.43µs  828.6µs   1084.     78.18KB     20.0</code></pre>
 </div>
 <div id="zadania-10" class="section level2">
 <h2><span class="header-section-number">11.4</span> Zadania</h2>

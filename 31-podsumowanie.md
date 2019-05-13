@@ -9,13 +9,11 @@ W jaki sposób można najbardziej efektywnie użyć wiedzę z tej książki?
 Stosując uzyskane umiejętności w praktyce. 
 <!-- Może to być... -->
 
-<!-- co było -->
-
-<!-- how to keep up-to-date-->
 
 ## Grafika
 
-R posiada potężne wbudowane narzędzia do tworzenia wykresów.
+R posiada wbudowane narzędzia do tworzenia wykresów.
+Możemy to zobaczyć na poniższym przykładzie danych meteorologicznych dla Poznania i Zakopanego z roku 2017.
 
 
 ```r
@@ -31,12 +29,23 @@ head(met)
 #> 6  352160330       POZNAŃ 2017       1     6 -8.4    0.0
 ```
 
+Wewnątrz obiektu `met` znajdują się kolumny `tavg` (określająca średnią dobową temperaturę powietrza w stopniach Celsjusza) oraz `nazwa_stacji` ("POZNAŃ" lub "ZAKOPANE").
+Do porównania wartości temperatury pomiędzy stacjami może posłużyć wykres pudełkowy, stworzony przy pomocy funkcji `boxplot()`.
+<!-- explain -->
+
 
 ```r
 boxplot(tavg ~ nazwa_stacji, data = met)
 ```
 
 <img src="figures/unnamed-chunk-3-1.png" width="100%" style="display: block; margin: auto;" />
+
+<!-- możliwość modyfikacji -->
+Inne dostępne wbudowane funkcje do tworzenia wykresów to, między innymi, `hist()` czy `barplot()`.
+<!-- dotchart() -->
+<!--explain-->
+<!-- `plot()`, -->
+<!--explain-->
 
 [@R-ggplot2]
 
@@ -88,4 +97,7 @@ Ten pakiet zawiera funkcje tworzące palety kolorystyczne inspirowane filmami re
 <!-- functional programming - 05 -->
 <!-- tidy eval -->
 
+## Co dalej?
+
+<!-- how to keep up-to-date-->
 Powodzenia z przygodą z R!

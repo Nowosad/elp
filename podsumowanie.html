@@ -320,6 +320,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.2" data-path="podsumowanie.html"><a href="podsumowanie.html#analiza-danych"><i class="fa fa-check"></i><b>15.2</b> Analiza danych</a></li>
 <li class="chapter" data-level="15.3" data-path="podsumowanie.html"><a href="podsumowanie.html#inne-zastosowania"><i class="fa fa-check"></i><b>15.3</b> Inne zastosowania</a></li>
 <li class="chapter" data-level="15.4" data-path="podsumowanie.html"><a href="podsumowanie.html#programowanie"><i class="fa fa-check"></i><b>15.4</b> Programowanie</a></li>
+<li class="chapter" data-level="15.5" data-path="podsumowanie.html"><a href="podsumowanie.html#co-dalej"><i class="fa fa-check"></i><b>15.5</b> Co dalej?</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
 <li class="divider"></li>
@@ -350,11 +351,10 @@ Jest to szczególnie nieosiągalne w przypadku takiego języka jak R, który pos
 <p>W jaki sposób można najbardziej efektywnie użyć wiedzę z tej książki?
 Stosując uzyskane umiejętności w praktyce.
 <!-- Może to być... --></p>
-<!-- co było -->
-<!-- how to keep up-to-date-->
 <div id="grafika" class="section level2">
 <h2><span class="header-section-number">15.1</span> Grafika</h2>
-<p>R posiada potężne wbudowane narzędzia do tworzenia wykresów.</p>
+<p>R posiada wbudowane narzędzia do tworzenia wykresów.
+Możemy to zobaczyć na poniższym przykładzie danych meteorologicznych dla Poznania i Zakopanego z roku 2017.</p>
 <pre class="sourceCode r"><code class="sourceCode r">met =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv&quot;</span>,
              <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
 <span class="kw">head</span>(met)
@@ -365,8 +365,17 @@ Stosując uzyskane umiejętności w praktyce.
 <span class="co">#&gt; 4  352160330       POZNAŃ 2017       1     4  1.5    2.3</span>
 <span class="co">#&gt; 5  352160330       POZNAŃ 2017       1     5 -3.5    0.0</span>
 <span class="co">#&gt; 6  352160330       POZNAŃ 2017       1     6 -8.4    0.0</span></code></pre>
+<p>Wewnątrz obiektu <code>met</code> znajdują się kolumny <code>tavg</code> (określająca średnią dobową temperaturę powietrza w stopniach Celsjusza) oraz <code>nazwa_stacji</code> (“POZNAŃ” lub “ZAKOPANE”).
+Do porównania wartości temperatury pomiędzy stacjami może posłużyć wykres pudełkowy, stworzony przy pomocy funkcji <code>boxplot()</code>.
+<!-- explain --></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(tavg <span class="op">~</span><span class="st"> </span>nazwa_stacji, <span class="dt">data =</span> met)</code></pre>
 <p><img src="figures/unnamed-chunk-3-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<!-- możliwość modyfikacji -->
+<p>Inne dostępne wbudowane funkcje do tworzenia wykresów to, między innymi, <code>hist()</code> czy <code>barplot()</code>.
+<!-- dotchart() -->
+<!--explain-->
+<!-- `plot()`, -->
+<!--explain--></p>
 <p><span class="citation">(Wickham et al. <a href="#ref-R-ggplot2">2019</a>)</span></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
 <span class="kw">ggplot</span>(met, <span class="kw">aes</span>(nazwa_stacji, tavg)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>()</code></pre>
@@ -405,6 +414,10 @@ Ten pakiet zawiera funkcje tworzące palety kolorystyczne inspirowane filmami re
 <!-- `src/` --></p>
 <!-- functional programming - 05 -->
 <!-- tidy eval -->
+</div>
+<div id="co-dalej" class="section level2">
+<h2><span class="header-section-number">15.5</span> Co dalej?</h2>
+<!-- how to keep up-to-date-->
 <p>Powodzenia z przygodą z R!</p>
 
 </div>
