@@ -10,10 +10,28 @@ Stosując uzyskane umiejętności w praktyce.
 
 <!-- co było -->
 
+## Grafika
+
+R posiada potężne wbudowane narzędzia do tworzenia wykresów.
+
+```{r}
+met = read.csv("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv",
+             stringsAsFactors = FALSE)
+head(met)
+```
+
+```{r}
+boxplot(tavg ~ nazwa_stacji, data = met)
+```
+
+```{r}
+library(ggplot2)
+ggplot(met, aes(nazwa_stacji, tavg)) + geom_boxplot()
+```
+
 <!-- graphics -->
 
-<!-- czytanie kodu źródłowego innych osób -->
-<!-- https://jennybc.github.io/wtf-2019-rsc/read-the-source.pdf -->
+## Analiza danych
 
 <!-- aka tidyverse -->
 <!-- dplyr -->
@@ -22,8 +40,20 @@ Stosując uzyskane umiejętności w praktyce.
 <!-- https://speakerdeck.com/jennybc/purrr-workshop?slide=91 -->
 <!-- pipe %>%  -->
 
+## Inne zastosowania
+
+<!-- https://cran.r-project.org/web/views/ -->
 <!-- maps -->
+<!-- bioinformatyka -->
+
+
+## Programowanie
+
+<!-- czytanie kodu źródłowego innych osób -->
+<!-- https://jennybc.github.io/wtf-2019-rsc/read-the-source.pdf -->
 
 <!-- functional programming - 05 -->
 
 <!-- tidy eval -->
+
+
