@@ -1,6 +1,13 @@
 
 # Podsumowanie {#podsumowanie}
 
+Celem tego rozdziału jest z jednej strony podsumowanie zawatych w niej informacji, ale co ważniejsze wskazanie co można zrobić dalej na podstawie uzyskanej wiedzy i umiejętnośc z tej książki. 
+Nie jest możliwe, aby jedna książka wyczerpująco pokazywała wszystkie elementy języka programowania i podawała wszelkie jego możliwości i zastosowania. 
+Jest to szczególnie nieosiągalne w przypadku takiego języka jak R, który posiada ogromny zbiór pakietów, oraz społeczność, która używa ten język na wiele sposobów, co wpływa na jego ewolucję.
+
+W jaki sposób można najbardziej efektywnie użyć wiedzę z tej książki? 
+Stosując uzyskane umiejętności w praktyce. 
+<!-- Może to być... -->
 
 <!-- co było -->
 
