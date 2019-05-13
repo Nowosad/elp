@@ -11,7 +11,8 @@ Stosując uzyskane umiejętności w praktyce.
 
 ## Grafika
 
-R posiada potężne wbudowane narzędzia do tworzenia wykresów.
+R posiada wbudowane narzędzia do tworzenia wykresów.
+Możemy to zobaczyć na poniższym przykładzie danych meteorologicznych dla Poznania i Zakopanego z roku 2017.
 
 ```{r}
 met = read.csv("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv",
@@ -19,9 +20,20 @@ met = read.csv("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv",
 head(met)
 ```
 
+Wewnątrz obiektu `met` znajdują się kolumny `tavg` (określająca średnią dobową temperaturę powietrza w stopniach Celsjusza) oraz `nazwa_stacji` ("POZNAŃ" lub "ZAKOPANE").
+Do porównania wartości temperatury pomiędzy stacjami może posłużyć wykres pudełkowy, stworzony przy pomocy funkcji `boxplot()`.
+<!-- explain -->
+
 ```{r}
 boxplot(tavg ~ nazwa_stacji, data = met)
 ```
+
+<!-- możliwość modyfikacji -->
+Inne dostępne wbudowane funkcje do tworzenia wykresów to, między innymi, `hist()` czy `barplot()`.
+<!-- dotchart() -->
+<!--explain-->
+<!-- `plot()`, -->
+<!--explain-->
 
 [@R-ggplot2]
 
