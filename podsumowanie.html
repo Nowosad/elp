@@ -315,7 +315,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietow"><i class="fa fa-check"></i><b>14.11</b> Publikowanie pakietów</a></li>
 <li class="chapter" data-level="14.12" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zadania-13"><i class="fa fa-check"></i><b>14.12</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>15</b> Podsumowanie</a></li>
+<li class="chapter" data-level="15" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>15</b> Podsumowanie</a><ul>
+<li class="chapter" data-level="15.1" data-path="podsumowanie.html"><a href="podsumowanie.html#grafika"><i class="fa fa-check"></i><b>15.1</b> Grafika</a></li>
+<li class="chapter" data-level="15.2" data-path="podsumowanie.html"><a href="podsumowanie.html#analiza-danych"><i class="fa fa-check"></i><b>15.2</b> Analiza danych</a></li>
+<li class="chapter" data-level="15.3" data-path="podsumowanie.html"><a href="podsumowanie.html#inne-zastosowania"><i class="fa fa-check"></i><b>15.3</b> Inne zastosowania</a></li>
+<li class="chapter" data-level="15.4" data-path="podsumowanie.html"><a href="podsumowanie.html#programowanie"><i class="fa fa-check"></i><b>15.4</b> Programowanie</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
 <li class="divider"></li>
 <li><a href="https://nowosad.github.io/">Jakub Nowosad</a></li>
@@ -346,19 +351,54 @@ Jest to szczególnie nieosiągalne w przypadku takiego języka jak R, który pos
 Stosując uzyskane umiejętności w praktyce.
 <!-- Może to być... --></p>
 <!-- co było -->
+<div id="grafika" class="section level2">
+<h2><span class="header-section-number">15.1</span> Grafika</h2>
+<p>R posiada potężne wbudowane narzędzia do tworzenia wykresów.</p>
+<pre class="sourceCode r"><code class="sourceCode r">met =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv&quot;</span>,
+             <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
+<span class="kw">head</span>(met)
+<span class="co">#&gt;   kod_stacji nazwa_stacji  rok miesiac dzien tavg precip</span>
+<span class="co">#&gt; 1  352160330       POZNAŃ 2017       1     1  1.4    0.0</span>
+<span class="co">#&gt; 2  352160330       POZNAŃ 2017       1     2  0.1    0.0</span>
+<span class="co">#&gt; 3  352160330       POZNAŃ 2017       1     3  0.5    4.8</span>
+<span class="co">#&gt; 4  352160330       POZNAŃ 2017       1     4  1.5    2.3</span>
+<span class="co">#&gt; 5  352160330       POZNAŃ 2017       1     5 -3.5    0.0</span>
+<span class="co">#&gt; 6  352160330       POZNAŃ 2017       1     6 -8.4    0.0</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(tavg <span class="op">~</span><span class="st"> </span>nazwa_stacji, <span class="dt">data =</span> met)</code></pre>
+<p><img src="figures/unnamed-chunk-3-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
+<span class="co">#&gt; Registered S3 methods overwritten by &#39;ggplot2&#39;:</span>
+<span class="co">#&gt;   method         from </span>
+<span class="co">#&gt;   [.quosures     rlang</span>
+<span class="co">#&gt;   c.quosures     rlang</span>
+<span class="co">#&gt;   print.quosures rlang</span>
+<span class="kw">ggplot</span>(met, <span class="kw">aes</span>(nazwa_stacji, tavg)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>()</code></pre>
+<p><img src="figures/unnamed-chunk-4-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <!-- graphics -->
-<!-- czytanie kodu źródłowego innych osób -->
-<!-- https://jennybc.github.io/wtf-2019-rsc/read-the-source.pdf -->
+</div>
+<div id="analiza-danych" class="section level2">
+<h2><span class="header-section-number">15.2</span> Analiza danych</h2>
 <!-- aka tidyverse -->
 <!-- dplyr -->
 <!-- tidyr -->
 <!-- purrr -->
 <!-- https://speakerdeck.com/jennybc/purrr-workshop?slide=91 -->
 <!-- pipe %>%  -->
+</div>
+<div id="inne-zastosowania" class="section level2">
+<h2><span class="header-section-number">15.3</span> Inne zastosowania</h2>
+<!-- https://cran.r-project.org/web/views/ -->
 <!-- maps -->
+<!-- bioinformatyka -->
+</div>
+<div id="programowanie" class="section level2">
+<h2><span class="header-section-number">15.4</span> Programowanie</h2>
+<!-- czytanie kodu źródłowego innych osób -->
+<!-- https://jennybc.github.io/wtf-2019-rsc/read-the-source.pdf -->
 <!-- functional programming - 05 -->
 <!-- tidy eval -->
 
+</div>
 </div>
             </section>
 
