@@ -36,6 +36,8 @@ boxplot(tavg ~ nazwa_stacji, data = met)
 
 <img src="figures/unnamed-chunk-3-1.png" width="100%" style="display: block; margin: auto;" />
 
+[@R-ggplot2]
+
 
 ```r
 library(ggplot2)
@@ -71,16 +73,16 @@ Nauka języka programowania przebiega wówczas naturalnie - wraz ze znalezniemie
 
 Często jednak, nie jesteśmy w stanie stwierdzić czy ten sposób rozwiązania jest optymalny, lub też napotykamy sytuacje w których nie wiemy jak się do nich odnieść.
 Wówczas szczególnie istotna jest inna umiejętność - czytania kodu innych osób^[Read the Source, Luke.].
-Większość pakietów R jest otwartoźródłowych - ich kod jest dostępny online i każda chętna osoba ma do niego dostęp.
+Większość pakietów R jest otwartoźródłowych - ich kod jest dostępny online i każda chętna osoba ma do niego dostęp^[Dostępny jest także kod źródłowy samego języka R. 
+Można go znaleźć pod adresem https://github.com/wch/r-source].
 Kod pakietów R można, między innymi, znaleźć w serwisie GitHub.
+Wszystkie pakiety znajdujące się w repozytorium CRAN można znaleźć pod adresem https://github.com/cran.
+Inną możliwością jest samodzielne wyszukanie kodu pakietu używając wyszukiwarki GitHub - https://github.com/search.
 
-<!-- https://github.com/search -->
-
-<!-- czytanie kodu źródłowego innych osób -->
-<!-- https://jennybc.github.io/wtf-2019-rsc/read-the-source.pdf -->
+Przykładowo, pod adresem https://github.com/karthik/wesanderson znajduje się kod źródłowy pakietu **wesanderson** [@R-wesanderson]. 
+Ten pakiet zawiera funkcje tworzące palety kolorystyczne inspirowane filmami reżysera [Wesa Andersona](https://en.wikipedia.org/wiki/Wes_Anderson).
+<!-- `R/` -->
+<!-- `src/` -->
 
 <!-- functional programming - 05 -->
-
 <!-- tidy eval -->
-
-
