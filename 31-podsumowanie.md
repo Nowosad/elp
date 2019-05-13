@@ -86,3 +86,5 @@ Ten pakiet zawiera funkcje tworzące palety kolorystyczne inspirowane filmami re
 
 <!-- functional programming - 05 -->
 <!-- tidy eval -->
+
+Powodzenia z przygodą z R!
