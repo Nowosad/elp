@@ -1,6 +1,11 @@
 
 # Podsumowanie {#podsumowanie}
 
+
+<!-- co było -->
+
+<!-- graphics -->
+
 <!-- czytanie kodu źródłowego innych osób -->
 <!-- https://jennybc.github.io/wtf-2019-rsc/read-the-source.pdf -->
 
@@ -9,12 +14,9 @@
 <!-- tidyr -->
 <!-- purrr -->
 <!-- https://speakerdeck.com/jennybc/purrr-workshop?slide=91 -->
-
-<!-- graphics -->
+<!-- pipe %>%  -->
 
 <!-- maps -->
-
-<!-- pipe %>%  -->
 
 <!-- functional programming - 05 -->
 
