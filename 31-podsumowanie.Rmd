@@ -81,8 +81,9 @@ Inną możliwością jest samodzielne wyszukanie kodu pakietu używając wyszuki
 
 Przykładowo, pod adresem https://github.com/karthik/wesanderson znajduje się kod źródłowy pakietu **wesanderson** [@R-wesanderson]. 
 Ten pakiet zawiera funkcje tworzące palety kolorystyczne inspirowane filmami reżysera [Wesa Andersona](https://en.wikipedia.org/wiki/Wes_Anderson).
-<!-- `R/` -->
-<!-- `src/` -->
+Kod R będący podstawą działania tego pakietu znajduje się w folderze `R/`^[Szczególnie `R/colors.R`.].
+Dodatkowo, niektóre pakietu zawierają kod z innych języków programowania (np. C lub C++), który wymaga wcześniejszej kompliacji.
+Taki kod znajduje się w folderze `src/`.
 
 <!-- functional programming - 05 -->
 <!-- tidy eval -->
