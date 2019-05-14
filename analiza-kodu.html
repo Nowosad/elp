@@ -378,7 +378,7 @@ powierzchnia.prostokat =<span class="st"> </span><span class="cf">function</span
   b =<span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">1</span>]
   a <span class="op">*</span><span class="st"> </span>b
 }</code></pre>
-<p>Jednym z możliwych narzędzi do testów jednostkowych w R jest pakiet <strong>testthat</strong> <span class="citation">(Wickham <a href="#ref-R-testthat">2019</a><a href="#ref-R-testthat">b</a>)</span>.</p>
+<p>Jednym z możliwych narzędzi do testów jednostkowych w R jest pakiet <strong>testthat</strong> <span class="citation">(Wickham <a href="#ref-R-testthat">2018</a>)</span>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(testthat)</code></pre>
 <p>Zawiera on szereg funkcji sprawdzających czy działanie naszych funkcji jest zgodne z oczekiwaniem.
 Funkcje w tym pakiecie rozpoczynają się od prefiksu <code>expect_</code> (oczekuj).</p>
@@ -464,7 +464,7 @@ Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej fu
 <p>Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))
 <span class="co">#&gt;    user  system elapsed </span>
-<span class="co">#&gt;   0.628   0.000   0.629</span></code></pre>
+<span class="co">#&gt;    0.62    0.00    0.62</span></code></pre>
 <p>W efekcie dostajemy trzy wartości - <code>user</code>, <code>system</code> i <code>elapsed</code>. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.</p>
 <p>Benchmarking jest często używany w sytuacji, gdy istnieje kilka funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
 Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.</p>
@@ -502,8 +502,8 @@ wynik_<span class="dv">1</span>
 <span class="co">#&gt; # A tibble: 2 x 6</span>
 <span class="co">#&gt;   expression               min   median `itr/sec` mem_alloc `gc/sec`</span>
 <span class="co">#&gt;   &lt;bch:expr&gt;          &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1(odl_mile)   1.52µs   1.74µs   484438.     117KB        0</span>
-<span class="co">#&gt; 2 mi_do_km2(odl_mile)   1.18µs    1.3µs   692490.     221KB        0</span></code></pre>
+<span class="co">#&gt; 1 mi_do_km1(odl_mile)   1.53µs   1.74µs   493068.     117KB        0</span>
+<span class="co">#&gt; 2 mi_do_km2(odl_mile)   1.15µs   1.26µs   728221.     221KB        0</span></code></pre>
 <p>Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
 Zawiera ona szereg charakterystyk, w tym:</p>
 <ul>
@@ -529,10 +529,10 @@ wynik_<span class="dv">2</span>
 <span class="co">#&gt; # A tibble: 2 x 6</span>
 <span class="co">#&gt;   expression                min   median `itr/sec` mem_alloc `gc/sec`</span>
 <span class="co">#&gt;   &lt;bch:expr&gt;           &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1(odl_mile2)    468ms    469ms      2.13     382MB     17.1</span>
-<span class="co">#&gt; 2 mi_do_km2(odl_mile2)    786µs    816µs   1041.      78.2KB     20.0</span></code></pre>
+<span class="co">#&gt; 1 mi_do_km1(odl_mile2)    449ms    454ms      2.20     382MB     17.6</span>
+<span class="co">#&gt; 2 mi_do_km2(odl_mile2)    775µs    803µs   1052.      78.2KB     20.0</span></code></pre>
 <p>W tym przypadku różnica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
-Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 17.06 operacji na sekundę, przy aż 19.98 operacji na sekundę funkcji <code>mi_do_km2</code>.
+Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 17.62 operacji na sekundę, przy aż 19.99 operacji na sekundę funkcji <code>mi_do_km2</code>.
 Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż <code>mi_do_km2</code>.</p>
 <pre><code>#&gt; Running with:
 #&gt;       x
@@ -545,14 +545,14 @@ Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) r
 #&gt; # A tibble: 8 x 7
 #&gt;   expression       x      min   median `itr/sec` mem_alloc `gc/sec`
 #&gt;   &lt;bch:expr&gt;   &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-#&gt; 1 mi_do_km1(l)    10    3.9µs   4.55µs 200656.          0B     40.1
-#&gt; 2 mi_do_km2(l)    10   1.79µs   1.99µs 470129.          0B      0  
-#&gt; 3 mi_do_km1(l)   100  66.25µs  72.04µs  13309.     43.16KB     16.9
-#&gt; 4 mi_do_km2(l)   100   8.45µs   9.43µs  98224.        856B     19.6
-#&gt; 5 mi_do_km1(l)  1000   4.34ms   4.56ms    218.      3.87MB     19.6
-#&gt; 6 mi_do_km2(l)  1000  76.54µs  80.48µs  11778.      7.87KB     22.5
-#&gt; 7 mi_do_km1(l) 10000 527.53ms 527.53ms      1.90  382.04MB     15.2
-#&gt; 8 mi_do_km2(l) 10000 787.89µs 831.18µs   1078.     78.18KB     20.0</code></pre>
+#&gt; 1 mi_do_km1(l)    10   3.92µs   4.49µs 202949.          0B     40.6
+#&gt; 2 mi_do_km2(l)    10   1.79µs      2µs 468807.          0B      0  
+#&gt; 3 mi_do_km1(l)   100  66.14µs  71.14µs  13305.     43.16KB     17.0
+#&gt; 4 mi_do_km2(l)   100   8.74µs   9.66µs  96863.        856B     19.4
+#&gt; 5 mi_do_km1(l)  1000   4.28ms   4.55ms    218.      3.87MB     19.6
+#&gt; 6 mi_do_km2(l)  1000  80.25µs  84.59µs  11293.      7.87KB     20.0
+#&gt; 7 mi_do_km1(l) 10000 533.22ms 533.22ms      1.88  382.04MB     15.0
+#&gt; 8 mi_do_km2(l) 10000 829.35µs 862.31µs   1042.     78.18KB     18.0</code></pre>
 </div>
 <div id="zadania-10" class="section level2">
 <h2><span class="header-section-number">11.4</span> Zadania</h2>
@@ -631,7 +631,7 @@ Która z nich zużywa mniej zasobów?</p></li>
 <p>Hester, Jim. 2019. <em>Bench: High Precision Timing of R Expressions</em>. <a href="https://CRAN.R-project.org/package=bench" class="uri">https://CRAN.R-project.org/package=bench</a>.</p>
 </div>
 <div id="ref-R-testthat">
-<p>Wickham, Hadley. 2019b. <em>Testthat: Unit Testing for R</em>. <a href="https://CRAN.R-project.org/package=testthat" class="uri">https://CRAN.R-project.org/package=testthat</a>.</p>
+<p>Wickham, Hadley. 2018. <em>Testthat: Unit Testing for R</em>. <a href="https://CRAN.R-project.org/package=testthat" class="uri">https://CRAN.R-project.org/package=testthat</a>.</p>
 </div>
 </div>
 <div class="footnotes">

@@ -547,7 +547,7 @@ Rycina 9.1: Obraz Alberta Bierstadta przedstawiający gejzer Old Faithful około
 <div id="arkusze-kalkulacyjne" class="section level2">
 <h2><span class="header-section-number">9.7</span> Arkusze kalkulacyjne</h2>
 <p>Powszechnym sposobem przechowywania danych tabelarycznych są arkusze kalkulacyjne tworzone w programie Microsoft Excel.
-Tego typu dane można wczytać do R używając pakietu <strong>readxl</strong> <span class="citation">(Wickham and Bryan <a href="#ref-R-readxl">2019</a><a href="#ref-R-readxl">a</a>)</span>.
+Tego typu dane można wczytać do R używając pakietu <strong>readxl</strong> <span class="citation">(Wickham and Bryan <a href="#ref-R-readxl">2018</a>)</span>.
 Główną funkcją tego pakietu jest <code>read_excel()</code>, przyjmująca ścieżkę pliku do wczytania.
 Dodatkowe argumenty tej funkcji pozwalają, np. na zdefiniowanie arkusza do wczytania (<code>sheet</code>) czy zasięgu komórek (<code>range</code>).</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readxl)
@@ -573,7 +573,7 @@ Przykładowo, hierarchiczne formaty danych można wczytać używając pakietu <s
 Zestawienie zawierające dodatkowe przykłady można znaleźć pod adresem <a href="https://github.com/leeper/rio" class="uri">https://github.com/leeper/rio</a>.</p>
 <p>Powszechną sytuacją jest przechowywanie danych w różnego rodzaju bazach danych.
 Ma to miejsce, kiedy dane są znacznej wielkości, mają złożone relacje, czy też muszą być jednocześnie dostępne dla wielu osób.
-Dostęp do baz danych w R możliwy jest używając pakietu <strong>DBI</strong> <span class="citation">(R Special Interest Group on Databases (R-SIG-DB), Wickham, and Müller <a href="#ref-R-DBI">2018</a>)</span> wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. <strong>RPostgreSQL</strong> dla baz PostgreSQL <span class="citation">(Conway et al. <a href="#ref-R-RPostgreSQL">2017</a>)</span> czy <strong>RSQLite</strong> dla baz SQLite <span class="citation">(Müller et al. <a href="#ref-R-RSQLite">2018</a>)</span>).<a href="#fn45" class="footnote-ref" id="fnref45"><sup>45</sup></a></p>
+Dostęp do baz danych w R możliwy jest używając pakietu <strong>DBI</strong> <span class="citation">(R Special Interest Group on Databases (R-SIG-DB), Wickham, and Müller <a href="#ref-R-DBI">2018</a>)</span> wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. <strong>RPostgreSQL</strong> dla baz PostgreSQL <span class="citation">(Conway et al. <a href="#ref-R-RPostgreSQL">2017</a>)</span> czy <strong>RSQLite</strong> dla baz SQLite <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-RSQLite"><strong>???</strong></span>)</span>).<a href="#fn45" class="footnote-ref" id="fnref45"><sup>45</sup></a></p>
 </div>
 <div id="zadania-8" class="section level2">
 <h2><span class="header-section-number">9.9</span> Zadania</h2>
@@ -611,9 +611,6 @@ Napisz funkcję, która odszyfruje tą wiadomość.</p></li>
 <div id="ref-R-raster">
 <p>Hijmans, Robert J. 2019. <em>Raster: Geographic Data Analysis and Modeling</em>. <a href="https://www.rspatial.org/" class="uri">https://www.rspatial.org/</a>.</p>
 </div>
-<div id="ref-R-RSQLite">
-<p>Müller, Kirill, Hadley Wickham, David A. James, and Seth Falcon. 2018. <em>RSQLite: ’SQLite’ Interface for R</em>. <a href="https://CRAN.R-project.org/package=RSQLite" class="uri">https://CRAN.R-project.org/package=RSQLite</a>.</p>
-</div>
 <div id="ref-R-writexl">
 <p>Ooms, Jeroen. 2018. <em>Writexl: Export Data Frames to Excel ’Xlsx’ Format</em>. <a href="https://CRAN.R-project.org/package=writexl" class="uri">https://CRAN.R-project.org/package=writexl</a>.</p>
 </div>
@@ -627,7 +624,7 @@ Napisz funkcję, która odszyfruje tą wiadomość.</p></li>
 <p>R Special Interest Group on Databases (R-SIG-DB), Hadley Wickham, and Kirill Müller. 2018. <em>DBI: R Database Interface</em>. <a href="https://CRAN.R-project.org/package=DBI" class="uri">https://CRAN.R-project.org/package=DBI</a>.</p>
 </div>
 <div id="ref-R-readxl">
-<p>Wickham, Hadley, and Jennifer Bryan. 2019a. <em>Readxl: Read Excel Files</em>. <a href="https://CRAN.R-project.org/package=readxl" class="uri">https://CRAN.R-project.org/package=readxl</a>.</p>
+<p>Wickham, Hadley, and Jennifer Bryan. 2018. <em>Readxl: Read Excel Files</em>. <a href="https://CRAN.R-project.org/package=readxl" class="uri">https://CRAN.R-project.org/package=readxl</a>.</p>
 </div>
 <div id="ref-R-xml2">
 <p>Wickham, Hadley, James Hester, and Jeroen Ooms. 2018. <em>Xml2: Parse Xml</em>. <a href="https://CRAN.R-project.org/package=xml2" class="uri">https://CRAN.R-project.org/package=xml2</a>.</p>
