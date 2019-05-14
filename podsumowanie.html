@@ -367,35 +367,51 @@ Możemy to zobaczyć na poniższym przykładzie danych meteorologicznych dla Poz
 <span class="co">#&gt; 6  352160330       POZNAŃ 2017       1     6 -8.4    0.0</span></code></pre>
 <p>Wewnątrz obiektu <code>met</code> znajdują się kolumny <code>tavg</code> (określająca średnią dobową temperaturę powietrza w stopniach Celsjusza) oraz <code>nazwa_stacji</code> (“POZNAŃ” lub “ZAKOPANE”).
 Do porównania wartości temperatury pomiędzy stacjami może posłużyć wykres pudełkowy, stworzony przy pomocy funkcji <code>boxplot()</code>.
-<!-- explain --></p>
+Poniżej zdefiniowano, która zmienna ma zostać zwizualizowana (<code>tavg</code>) w podziale na jakie grupy (<code>nazwa_stacji</code>) z jakiego zbioru danych (<code>met</code>)<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(tavg <span class="op">~</span><span class="st"> </span>nazwa_stacji, <span class="dt">data =</span> met)</code></pre>
 <p><img src="figures/unnamed-chunk-3-1.png" width="100%" style="display: block; margin: auto;" /></p>
-<!-- możliwość modyfikacji -->
-<p>Inne dostępne wbudowane funkcje do tworzenia wykresów to, między innymi, <code>hist()</code> czy <code>barplot()</code>.
-<!-- dotchart() -->
-<!--explain-->
-<!-- `plot()`, -->
-<!--explain--></p>
-<p><span class="citation">(Wickham et al. <a href="#ref-R-ggplot2">2019</a>)</span></p>
+<p>Powyższy wykres może być zmodyfikowany używając dodatkowych argumentów (np. <code>main</code> dodający tytuł czy <code>col</code> zmieniający kolor pudełek) czy też dodatkowych funkcji pozwalających na dodanie legendy (funkcja <code>legend</code>) czy też tekstu (funkcja <code>text</code>).
+Inne dostępne wbudowane funkcje do tworzenia wykresów to, między innymi, <code>hist()</code> czy <code>barplot()</code> budujące histogramy oraz wykresy słupkowe.</p>
+<p>Najbardziej elastyczną funkcją do tworzenia wykresów w R jest <code>plot()</code>.
+<!-- explain --></p>
+<p>Oprócz wbudowanych <!--uproszczenie--> w R funkcji graficznych, istnieje też szereg dodatkowych pakietów służących do wizualizacji danych.
+Wśród nich najpopularniejszym jest <strong>ggplot2</strong> <span class="citation">(Wickham et al. <a href="#ref-R-ggplot2">2019</a>)</span>.
+Ten pakiet jest implementacją założeń zawartych w książce Grammar of Graphics [REF???]<!--moremoremore-->.
+Główną funkcją tego pakietu jest <code>ggplot()</code>, która przyjmuje dane wejściowe w podstaci ramki danych.
+Wewnątrz tej funkcji następuje wywołanie kolejnej funkcji <code>aes</code>, gdzie definiowane są kolejne kolumny, które mają być wyświetlone na osiach wykresów oraz określają kolor, kształt, wielkość i inne elementy.
+Kolejnym krokiem jest określenie typu wykresu poprzez połączenie poprzedniej funkcji (używając operatora <code>+</code>) z jedną z wielu funkcji rozpoczynających się od <code>geom_</code>.
+Przykładowo, do stworzenia wykresu pudełkowego służy <code>geom_boxplot()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)
 <span class="kw">ggplot</span>(met, <span class="kw">aes</span>(nazwa_stacji, tavg)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>()</code></pre>
 <p><img src="figures/unnamed-chunk-4-1.png" width="100%" style="display: block; margin: auto;" /></p>
-<!-- graphics -->
+<p>Pełna dokumentacja pakietu <strong>ggplot2</strong> znajduje się na stronie <a href="http://docs.ggplot2.org" class="uri">http://docs.ggplot2.org</a>.</p>
 </div>
 <div id="analiza-danych" class="section level2">
 <h2><span class="header-section-number">15.2</span> Analiza danych</h2>
-<!-- aka tidyverse -->
-<!-- dplyr -->
-<!-- tidyr -->
-<!-- purrr -->
-<!-- https://speakerdeck.com/jennybc/purrr-workshop?slide=91 -->
+<p>R jest jednym z języków programowania najczęściej używanych w analizie danych<!--datascience--><!--REF???-->.
+Jest to wynikiem szeregu przyczyn, w tym dużej liczby wbudowanych funkcji statystycznych oraz graficznych w R.
+Dodatkowo, ramka danych, jeden z podstawowych obiektów w R, może być utożsamiany z arkuszem kalkulacyjnym czy tabelą z bazy danych.
+W związku z tym ta forma obiektu złożonego z kolumn (zmienne) i wierszy (obserwacje) jest reprezentacją, która uławia czyszczenie, przetwarzanie i analizowanie danych.</p>
+<p>Inną przyczyną popularności R do analizy danych jest grupa pakietów zbiorczo określana jako <em>tidyverse</em>.
+Jest to spójny zbiór pakietów pozwalających na wczytywanie, czyszczenie, przetwarzanie, wizualizację czy modelowanie danych.</p>
+<!-- FIG? -->
 <!-- pipe %>%  -->
+<!-- KOD? -->
+<p>Pełne wprowadzenie do koncepcji <em>tidyverse</em> można znaleźć w książce <a href="https://r4ds.had.co.nz/">R for Data Science</a> <span class="citation">(Wickham and Grolemund <a href="#ref-wickham2016r">2016</a>)</span>.</p>
 </div>
 <div id="inne-zastosowania" class="section level2">
 <h2><span class="header-section-number">15.3</span> Inne zastosowania</h2>
+<!-- dużo zastosowań -->
 <!-- https://cran.r-project.org/web/views/ -->
 <!-- maps -->
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(sf)
+<span class="kw">library</span>(tmap)
+<span class="kw">data</span>(World)
+<span class="kw">tm_shape</span>(World, <span class="dt">projection =</span> <span class="st">&quot;robin&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">tm_polygons</span>(<span class="dt">col =</span> <span class="st">&quot;life_exp&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Oczekiwana dalsza </span><span class="ch">\n</span><span class="st">długość życia&quot;</span>)</code></pre>
 <!-- bioinformatyka -->
+<!-- https://www.bioconductor.org/ -->
+<!-- https://en.wikipedia.org/wiki/Bioconductor -->
 </div>
 <div id="programowanie" class="section level2">
 <h2><span class="header-section-number">15.4</span> Programowanie</h2>
@@ -403,26 +419,34 @@ Do porównania wartości temperatury pomiędzy stacjami może posłużyć wykres
 Najprostszym sposobem jest używanie R jak najczęściej.
 Nauka języka programowania przebiega wówczas naturalnie - wraz ze znalezniemiem rozwiązania kolejnego problemu czy rozwiązaniem kolejnego zadania.</p>
 <p>Często jednak, nie jesteśmy w stanie stwierdzić czy ten sposób rozwiązania jest optymalny, lub też napotykamy sytuacje w których nie wiemy jak się do nich odnieść.
-Wówczas szczególnie istotna jest inna umiejętność - czytania kodu innych osób<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.
-Większość pakietów R jest otwartoźródłowych - ich kod jest dostępny online i każda chętna osoba ma do niego dostęp<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a>.
+Wówczas szczególnie istotna jest inna umiejętność - czytania kodu innych osób<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a>.
+Większość pakietów R jest otwartoźródłowych - ich kod jest dostępny online i każda chętna osoba ma do niego dostęp<a href="#fn63" class="footnote-ref" id="fnref63"><sup>63</sup></a>.
 Kod pakietów R można, między innymi, znaleźć w serwisie GitHub.
 Wszystkie pakiety znajdujące się w repozytorium CRAN można znaleźć pod adresem <a href="https://github.com/cran" class="uri">https://github.com/cran</a>.
 Inną możliwością jest samodzielne wyszukanie kodu pakietu używając wyszukiwarki GitHub - <a href="https://github.com/search" class="uri">https://github.com/search</a>.</p>
 <p>Przykładowo, pod adresem <a href="https://github.com/karthik/wesanderson" class="uri">https://github.com/karthik/wesanderson</a> znajduje się kod źródłowy pakietu <strong>wesanderson</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-wesanderson"><strong>???</strong></span>)</span>.
 Ten pakiet zawiera funkcje tworzące palety kolorystyczne inspirowane filmami reżysera <a href="https://en.wikipedia.org/wiki/Wes_Anderson">Wesa Andersona</a>.
-<!-- `R/` -->
-<!-- `src/` --></p>
+Kod R będący podstawą działania tego pakietu znajduje się w folderze <code>R/</code><a href="#fn64" class="footnote-ref" id="fnref64"><sup>64</sup></a>.
+Dodatkowo, niektóre pakietu zawierają kod z innych języków programowania (np. C lub C++), który wymaga wcześniejszej kompliacji.
+Taki kod znajduje się w folderze <code>src/</code>.</p>
 <!-- functional programming - 05 -->
 <!-- tidy eval -->
+<!-- how to keep up-to-date-->
 </div>
 <div id="co-dalej" class="section level2">
 <h2><span class="header-section-number">15.5</span> Co dalej?</h2>
-<!-- inne języki programowania -->
-<!-- alogrytmy -->
-<!-- metody -->
-<!-- hobby -->
-<!-- how to keep up-to-date-->
-<p>Powodzenia z przygodą z R!</p>
+<p>Programowanie to nie tylko pisanie kodu.
+Obejmuje to też wiele innych czynności, takich jak stosowanie optymalnych algorytmów czy narzędzi programistycznych.
+<!--alogrytmy-->
+<!--narzędzia programistyczne-->
+<!--współpraca z innymi, e.g. code review--></p>
+<p>Innym kierunkiem działań może być nauka kolejnego języka programowania - najlepiej takiego, którego zastosowanie różni się od R.
+<!-- C/C++/Go/Rust -->
+<!-- javascript, what else --></p>
+<p>Pomimo już znaczącej historii, języki programowania nadal mają wiele nowego do zaoferowania.
+<!-- nowe metody -->
+<!-- nowe stosowanie --></p>
+<p>Powodzenia w dalszej przygodzie z programowaniem!</p>
 
 </div>
 </div>
@@ -431,13 +455,18 @@ Ten pakiet zawiera funkcje tworzące palety kolorystyczne inspirowane filmami re
 <div id="ref-R-ggplot2">
 <p>Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, and Kara Woo. 2019. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2" class="uri">https://CRAN.R-project.org/package=ggplot2</a>.</p>
 </div>
+<div id="ref-wickham2016r">
+<p>Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. &quot; O’Reilly Media, Inc.&quot;.</p>
+</div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="61">
-<li id="fn61"><p>Read the Source, Luke.<a href="podsumowanie.html#fnref61" class="footnote-back">↩</a></p></li>
-<li id="fn62"><p>Dostępny jest także kod źródłowy samego języka R.
-Można go znaleźć pod adresem <a href="https://github.com/wch/r-source" class="uri">https://github.com/wch/r-source</a><a href="podsumowanie.html#fnref62" class="footnote-back">↩</a></p></li>
+<li id="fn61"><p>Kod <code>tavg ~ nazwa_stacji</code> można inaczej odczytać jako <code>tavg</code> w zależności od <code>nazwa_stacji</code>.<a href="podsumowanie.html#fnref61" class="footnote-back">↩</a></p></li>
+<li id="fn62"><p>Read the Source, Luke.<a href="podsumowanie.html#fnref62" class="footnote-back">↩</a></p></li>
+<li id="fn63"><p>Dostępny jest także kod źródłowy samego języka R.
+Można go znaleźć pod adresem <a href="https://github.com/wch/r-source" class="uri">https://github.com/wch/r-source</a><a href="podsumowanie.html#fnref63" class="footnote-back">↩</a></p></li>
+<li id="fn64"><p>Szczególnie <code>R/colors.R</code>.<a href="podsumowanie.html#fnref64" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
