@@ -22,27 +22,32 @@ head(met)
 
 Wewnątrz obiektu `met` znajdują się kolumny `tavg` (określająca średnią dobową temperaturę powietrza w stopniach Celsjusza) oraz `nazwa_stacji` ("POZNAŃ" lub "ZAKOPANE").
 Do porównania wartości temperatury pomiędzy stacjami może posłużyć wykres pudełkowy, stworzony przy pomocy funkcji `boxplot()`.
-<!-- explain -->
+Poniżej zdefiniowano, która zmienna ma zostać zwizualizowana (`tavg`) w podziale na jakie grupy (`nazwa_stacji`) z jakiego zbioru danych (`met`)^[Kod `tavg ~ nazwa_stacji` można inaczej odczytać jako `tavg` w zależności od `nazwa_stacji`.].
 
 ```{r}
 boxplot(tavg ~ nazwa_stacji, data = met)
 ```
 
-<!-- możliwość modyfikacji -->
-Inne dostępne wbudowane funkcje do tworzenia wykresów to, między innymi, `hist()` czy `barplot()`.
-<!-- dotchart() -->
-<!--explain-->
-<!-- `plot()`, -->
-<!--explain-->
+Powyższy wykres może być zmodyfikowany używając dodatkowych argumentów (np. `main` dodający tytuł czy `col` zmieniający kolor pudełek) czy też dodatkowych funkcji pozwalających na dodanie legendy (funkcja `legend`) czy też tekstu (funkcja `text`).
+Inne dostępne wbudowane funkcje do tworzenia wykresów to, między innymi, `hist()` czy `barplot()` budujące histogramy oraz wykresy słupkowe.
 
-[@R-ggplot2]
+Najbardziej elastyczną funkcją do tworzenia wykresów w R jest `plot()`.
+<!-- explain -->
+
+Oprócz wbudowanych <!--uproszczenie--> w R funkcji graficznych, istnieje też szereg dodatkowych pakietów służących do wizualizacji danych.
+Wśród nich najpopularniejszym jest **ggplot2** [@R-ggplot2].
+Ten pakiet jest implementacją założeń zawartych w książce Grammar of Graphics [REF???]<!--moremoremore-->.
+Główną funkcją tego pakietu jest `ggplot()`, która przyjmuje dane wejściowe w podstaci ramki danych.
+Wewnątrz tej funkcji następuje wywołanie kolejnej funkcji `aes`, gdzie definiowane są kolejne kolumny, które mają być wyświetlone na osiach wykresów oraz określają kolor, kształt, wielkość i inne elementy.
+Kolejnym krokiem jest określenie typu wykresu poprzez połączenie poprzedniej funkcji (używając operatora `+`) z jedną z wielu funkcji rozpoczynających się od `geom_`.
+Przykładowo, do stworzenia wykresu pudełkowego służy `geom_boxplot()`.
 
 ```{r, message=FALSE}
 library(ggplot2)
 ggplot(met, aes(nazwa_stacji, tavg)) + geom_boxplot()
 ```
 
-<!-- graphics -->
+Pełna dokumentacja pakietu **ggplot2** znajduje się na stronie http://docs.ggplot2.org.
 
 ## Analiza danych
 
