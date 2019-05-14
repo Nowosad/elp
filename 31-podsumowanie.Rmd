@@ -126,4 +126,4 @@ Pomimo już znaczącej historii, języki programowania nadal mają wiele nowego 
 <!-- nowe metody -->
 <!-- nowe stosowanie -->
 
-Powodzenia z przygodą z R!
+Powodzenia w dalszej przygodzie z programowaniem!
