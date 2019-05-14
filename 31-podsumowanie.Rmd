@@ -84,5 +84,10 @@ Ten pakiet zawiera funkcje tworzące palety kolorystyczne inspirowane filmami re
 
 ## Co dalej?
 
+<!-- inne języki programowania -->
+<!-- alogrytmy -->
+<!-- metody -->
+<!-- hobby -->
+
 <!-- how to keep up-to-date-->
 Powodzenia z przygodą z R!
