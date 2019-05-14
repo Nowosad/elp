@@ -1,7 +1,7 @@
 
 # Podsumowanie {#podsumowanie}
 
-Celem tego rozdziału jest z jednej strony podsumowanie zawatych w niej informacji, ale co ważniejsze wskazanie co można zrobić dalej na podstawie uzyskanej wiedzy i umiejętnośc z tej książki. 
+Celem tego rozdziału jest z jednej strony podsumowanie zawartych w niej informacji, ale co ważniejsze wskazanie co można zrobić dalej na podstawie uzyskanej wiedzy i umiejętność z tej książki. 
 Nie jest możliwe, aby jedna książka wyczerpująco pokazywała wszystkie elementy języka programowania i podawała wszelkie jego możliwości i zastosowania. 
 Jest to szczególnie nieosiągalne w przypadku takiego języka jak R, który posiada ogromny zbiór pakietów, oraz społeczność, która używa ten język na wiele sposobów, co wpływa na jego ewolucję.
 
@@ -49,7 +49,7 @@ Najbardziej elastyczną funkcją do tworzenia wykresów w R jest `plot()`.
 Oprócz wbudowanych <!--uproszczenie--> w R funkcji graficznych, istnieje też szereg dodatkowych pakietów służących do wizualizacji danych.
 Wśród nich najpopularniejszym jest **ggplot2** [@R-ggplot2].
 Ten pakiet jest implementacją założeń zawartych w książce Grammar of Graphics [REF???]<!--moremoremore-->.
-Główną funkcją tego pakietu jest `ggplot()`, która przyjmuje dane wejściowe w podstaci ramki danych.
+Główną funkcją tego pakietu jest `ggplot()`, która przyjmuje dane wejściowe w postaci ramki danych.
 Wewnątrz tej funkcji następuje wywołanie kolejnej funkcji `aes`, gdzie definiowane są kolejne kolumny, które mają być wyświetlone na osiach wykresów oraz określają kolor, kształt, wielkość i inne elementy.
 Kolejnym krokiem jest określenie typu wykresu poprzez połączenie poprzedniej funkcji (używając operatora `+`) z jedną z wielu funkcji rozpoczynających się od `geom_`.
 Przykładowo, do stworzenia wykresu pudełkowego służy `geom_boxplot()`.
@@ -104,9 +104,9 @@ tm_shape(World, projection = "robin") +
 
 ## Programowanie
 
-Wcześniejsze sekcje opisywały różne obszary zastosowań R, ale nie pokazywały w jaki sposób rozwijać umięjętności programowania w tym języku.
+Wcześniejsze sekcje opisywały różne obszary zastosowań R, ale nie pokazywały w jaki sposób rozwijać umiejętności programowania w tym języku.
 Najprostszym sposobem jest używanie R jak najczęściej.
-Nauka języka programowania przebiega wówczas naturalnie - wraz ze znalezniemiem rozwiązania kolejnego problemu czy rozwiązaniem kolejnego zadania. 
+Nauka języka programowania przebiega wówczas naturalnie - wraz ze znaleziskiem rozwiązania kolejnego problemu czy rozwiązaniem kolejnego zadania. 
 
 Często jednak, nie jesteśmy w stanie stwierdzić czy ten sposób rozwiązania jest optymalny, lub też napotykamy sytuacje w których nie wiemy jak się do nich odnieść.
 Wówczas szczególnie istotna jest inna umiejętność - czytania kodu innych osób^[Read the Source, Luke.].
@@ -119,7 +119,7 @@ Inną możliwością jest samodzielne wyszukanie kodu pakietu używając wyszuki
 Przykładowo, pod adresem https://github.com/karthik/wesanderson znajduje się kod źródłowy pakietu **wesanderson** [@R-wesanderson]. 
 Ten pakiet zawiera funkcje tworzące palety kolorystyczne inspirowane filmami reżysera [Wesa Andersona](https://en.wikipedia.org/wiki/Wes_Anderson).
 Kod R będący podstawą działania tego pakietu znajduje się w folderze `R/`^[Szczególnie `R/colors.R`.].
-Dodatkowo, niektóre pakietu zawierają kod z innych języków programowania (np. C lub C++), który wymaga wcześniejszej kompliacji.
+Dodatkowo, niektóre pakietu zawierają kod z innych języków programowania (np. C lub C++), który wymaga wcześniejszej kompilacji.
 Taki kod znajduje się w folderze `src/`.
 
 <!-- functional programming - 05 -->

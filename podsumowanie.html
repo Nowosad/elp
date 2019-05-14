@@ -345,7 +345,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="podsumowanie" class="section level1">
 <h1><span class="header-section-number">15</span> Podsumowanie</h1>
-<p>Celem tego rozdziału jest z jednej strony podsumowanie zawatych w niej informacji, ale co ważniejsze wskazanie co można zrobić dalej na podstawie uzyskanej wiedzy i umiejętnośc z tej książki.
+<p>Celem tego rozdziału jest z jednej strony podsumowanie zawartych w niej informacji, ale co ważniejsze wskazanie co można zrobić dalej na podstawie uzyskanej wiedzy i umiejętność z tej książki.
 Nie jest możliwe, aby jedna książka wyczerpująco pokazywała wszystkie elementy języka programowania i podawała wszelkie jego możliwości i zastosowania.
 Jest to szczególnie nieosiągalne w przypadku takiego języka jak R, który posiada ogromny zbiór pakietów, oraz społeczność, która używa ten język na wiele sposobów, co wpływa na jego ewolucję.</p>
 <p>W jaki sposób można najbardziej efektywnie użyć wiedzę z tej książki?
@@ -377,7 +377,7 @@ Inne dostępne wbudowane funkcje do tworzenia wykresów to, między innymi, <cod
 <p>Oprócz wbudowanych <!--uproszczenie--> w R funkcji graficznych, istnieje też szereg dodatkowych pakietów służących do wizualizacji danych.
 Wśród nich najpopularniejszym jest <strong>ggplot2</strong> <span class="citation">(Wickham et al. <a href="#ref-R-ggplot2">2019</a>)</span>.
 Ten pakiet jest implementacją założeń zawartych w książce Grammar of Graphics [REF???]<!--moremoremore-->.
-Główną funkcją tego pakietu jest <code>ggplot()</code>, która przyjmuje dane wejściowe w podstaci ramki danych.
+Główną funkcją tego pakietu jest <code>ggplot()</code>, która przyjmuje dane wejściowe w postaci ramki danych.
 Wewnątrz tej funkcji następuje wywołanie kolejnej funkcji <code>aes</code>, gdzie definiowane są kolejne kolumny, które mają być wyświetlone na osiach wykresów oraz określają kolor, kształt, wielkość i inne elementy.
 Kolejnym krokiem jest określenie typu wykresu poprzez połączenie poprzedniej funkcji (używając operatora <code>+</code>) z jedną z wielu funkcji rozpoczynających się od <code>geom_</code>.
 Przykładowo, do stworzenia wykresu pudełkowego służy <code>geom_boxplot()</code>.</p>
@@ -415,9 +415,9 @@ Jest to spójny zbiór pakietów pozwalających na wczytywanie, czyszczenie, prz
 </div>
 <div id="programowanie" class="section level2">
 <h2><span class="header-section-number">15.4</span> Programowanie</h2>
-<p>Wcześniejsze sekcje opisywały różne obszary zastosowań R, ale nie pokazywały w jaki sposób rozwijać umięjętności programowania w tym języku.
+<p>Wcześniejsze sekcje opisywały różne obszary zastosowań R, ale nie pokazywały w jaki sposób rozwijać umiejętności programowania w tym języku.
 Najprostszym sposobem jest używanie R jak najczęściej.
-Nauka języka programowania przebiega wówczas naturalnie - wraz ze znalezniemiem rozwiązania kolejnego problemu czy rozwiązaniem kolejnego zadania.</p>
+Nauka języka programowania przebiega wówczas naturalnie - wraz ze znaleziskiem rozwiązania kolejnego problemu czy rozwiązaniem kolejnego zadania.</p>
 <p>Często jednak, nie jesteśmy w stanie stwierdzić czy ten sposób rozwiązania jest optymalny, lub też napotykamy sytuacje w których nie wiemy jak się do nich odnieść.
 Wówczas szczególnie istotna jest inna umiejętność - czytania kodu innych osób<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a>.
 Większość pakietów R jest otwartoźródłowych - ich kod jest dostępny online i każda chętna osoba ma do niego dostęp<a href="#fn63" class="footnote-ref" id="fnref63"><sup>63</sup></a>.
@@ -427,7 +427,7 @@ Inną możliwością jest samodzielne wyszukanie kodu pakietu używając wyszuki
 <p>Przykładowo, pod adresem <a href="https://github.com/karthik/wesanderson" class="uri">https://github.com/karthik/wesanderson</a> znajduje się kod źródłowy pakietu <strong>wesanderson</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-wesanderson"><strong>???</strong></span>)</span>.
 Ten pakiet zawiera funkcje tworzące palety kolorystyczne inspirowane filmami reżysera <a href="https://en.wikipedia.org/wiki/Wes_Anderson">Wesa Andersona</a>.
 Kod R będący podstawą działania tego pakietu znajduje się w folderze <code>R/</code><a href="#fn64" class="footnote-ref" id="fnref64"><sup>64</sup></a>.
-Dodatkowo, niektóre pakietu zawierają kod z innych języków programowania (np. C lub C++), który wymaga wcześniejszej kompliacji.
+Dodatkowo, niektóre pakietu zawierają kod z innych języków programowania (np. C lub C++), który wymaga wcześniejszej kompilacji.
 Taki kod znajduje się w folderze <code>src/</code>.</p>
 <!-- functional programming - 05 -->
 <!-- tidy eval -->
