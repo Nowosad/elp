@@ -3,7 +3,7 @@
 title: "Elementarz programisty"
 subtitle: "Wstęp do programowania używając R"
 author: "Jakub Nowosad"
-date: "2019-05-13"
+date: "2019-05-14"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: scrbook
@@ -24,7 +24,7 @@ links-as-notes: true
 
 # O książce {-}
 
-**Elementarz programisty: Wstęp do programowania** używając R ma na celu wprowadzenie do podstaw działania w języku R. 
+**Elementarz programisty: Wstęp do programowania używając R** ma na celu wprowadzenie do podstaw działania w języku R. 
 W pierszej części, "Podstawy", opisuje ona w jaki sposób wykonywać proste operacje w R, czym są obiekty oraz jak tworzyć funkcje, które je przetwarzają.
 Ta część zawiera także omówienie podstawowych narzędzi pozwalających na sterowanie przepływem informacji, takich jak wyrażenia warunkowe i pętle, metod działania na tekście, oraz sposobów wczytywania i zapisywania plików w różnych formatach.
 Druga część, "Narzędzia", buduje na wiedzy zdobytej w części pierwszej i rozszerza ją.
