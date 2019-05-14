@@ -56,13 +56,16 @@ Jest to wynikiem szeregu przyczyn, w tym dużej liczby wbudowanych funkcji staty
 Dodatkowo, ramka danych, jeden z podstawowych obiektów w R, może być utożsamiany z arkuszem kalkulacyjnym czy tabelą z bazy danych. 
 W związku z tym ta forma obiektu złożonego z kolumn (zmienne) i wierszy (obserwacje) jest reprezentacją, która uławia czyszczenie, przetwarzanie i analizowanie danych.
 
+Inną przyczyną popularności R do analizy danych jest grupa pakietów zbiorczo określana jako *tidyverse*.
+Jest to spójny zbiór pakietów pozwalających na wczytywanie, czyszczenie, przetwarzanie, wizualizację czy modelowanie danych.
 
-<!-- aka tidyverse -->
-<!-- dplyr -->
-<!-- tidyr -->
-<!-- purrr -->
-<!-- https://speakerdeck.com/jennybc/purrr-workshop?slide=91 -->
+<!-- FIG? -->
+
 <!-- pipe %>%  -->
+
+<!-- KOD? -->
+
+Pełne wprowadzenie do koncepcji *tidyverse* można znaleźć w książce [R for Data Science](https://r4ds.had.co.nz/) [@wickham2016r].
 
 ## Inne zastosowania
 
