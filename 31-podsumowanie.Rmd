@@ -51,6 +51,11 @@ Pełna dokumentacja pakietu **ggplot2** znajduje się na stronie http://docs.ggp
 
 ## Analiza danych
 
+R jest jednym z języków programowania najczęściej używanych w analizie danych<!--datascience--><!--REF???-->.
+Jest to wynikiem szeregu przyczyn, w tym dużej liczby wbudowanych funkcji statystycznych oraz graficznych w R.
+Dodatkowo, ramka danych, jeden z podstawowych obiektów w R, może być utożsamiany z arkuszem kalkulacyjnym czy tabelą z bazy danych. 
+W związku z tym ta forma obiektu złożonego z kolumn (zmienne) i wierszy (obserwacje) jest reprezentacją, która uławia czyszczenie, przetwarzanie i analizowanie danych.
+
 
 <!-- aka tidyverse -->
 <!-- dplyr -->
