@@ -1,19 +1,19 @@
-# Łącznik {#lacznik}
+<!-- # Łącznik {#lacznik} -->
 
 <!-- intro o r jako jezyku laczacym inne -->
 <!-- intro o innych łącznikach -->
 
-## C++
+<!-- ## C++ -->
 
 <!-- Rcpp -->
-[@R-Rcpp]
+<!-- [@R-Rcpp] -->
 
-```{r}
-library(Rcpp)
-```
+<!-- ```{r} -->
+<!-- library(Rcpp) -->
+<!-- ``` -->
 
 
-### Podstawy C++
+<!-- ### Podstawy C++ -->
 
 <!-- intro to Cpp -->
 <!-- https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-introduction.pdf -->
@@ -23,42 +23,42 @@ library(Rcpp)
 <!-- loops -->
 <!-- many more -->
 
-### evalCpp
+<!-- ### evalCpp -->
 
-### cppFunction
+<!-- ### cppFunction -->
 
-### .cpp
+<!-- ### .cpp -->
 
 <!-- header file -->
 
-```
-#include <Rcpp.h>
-```
+<!-- ``` -->
+<!-- #include <Rcpp.h> -->
+<!-- ``` -->
 
-```
-using namespace Rcpp ;
-```
+<!-- ``` -->
+<!-- using namespace Rcpp ; -->
+<!-- ``` -->
 
 
-```
-// [[Rcpp::export]]
-```
+<!-- ``` -->
+<!-- // [[Rcpp::export]] -->
+<!-- ``` -->
 
 <!-- internal vs exported functions -->
 
-```
-#include <Rcpp.h>
-using namespace Rcpp ;
-// [[Rcpp::export]]
-codecodecode
-```
+<!-- ``` -->
+<!-- #include <Rcpp.h> -->
+<!-- using namespace Rcpp ; -->
+<!-- // [[Rcpp::export]] -->
+<!-- codecodecode -->
+<!-- ``` -->
 
-```{r, eval=FALSE}
-library(Rcpp)
-sourceCpp("kod.cpp")
+<!-- ```{r, eval=FALSE} -->
+<!-- library(Rcpp) -->
+<!-- sourceCpp("kod.cpp") -->
 
-codecodecode(5)
-```
+<!-- codecodecode(5) -->
+<!-- ``` -->
 
 <!-- note - packages -->
 <!-- indexing starts at 0 -->
@@ -67,7 +67,7 @@ codecodecode(5)
 <!-- https://csgillespie.github.io/efficientR/performance.html#rcpp -->
 <!-- http://thecoatlessprofessor.com/programming/unofficial-rcpp-api-documentation/#minmax -->
 
-## Python
+<!-- ## Python -->
 <!-- reticulate -->
 
-## Zadania
+<!-- ## Zadania -->
