@@ -352,12 +352,12 @@ Dodatkowo, w niektórych przypadkach pomocna może być oficjalna dokumentacja <
 <p>Nazwa nowego pakietu musi spełniać kilka wymagań: składać się tylko ze znaków <a href="https://en.wikipedia.org/wiki/ASCII">ASCII</a>, cyfr i kropek, mieć co najmniej dwa znaki oraz zaczynać się od litery i nie kończyć się kropką <span class="citation">(Team <a href="#ref-team1999writing">1999</a>)</span>.
 Ważne jest również myślenie o nazwie pakietu tak jak o nazwach funkcji (sekcja <a href="ergosum.html#styl">2.4</a>) - nazwy pakietów powinny ułatwiać zrozumienie ich zawartości.
 Dodatkowo, z uwagi na istnienie wielu pakietów warto najpierw sprawdzić czy pakiet o wymyślonej przez nas nazwie już nie istnieje.
-Można to przykładowo zrobić używając pakietu <strong>available</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-available"><strong>???</strong></span>)</span>, który sprawdza przy wybrana nazwa nie jest już zajęta oraz czy nie ma ona jakiegoś niepożądanego przez nas znaczenia.</p>
+Można to przykładowo zrobić używając pakietu <strong>available</strong> <span class="citation">(Ganz et al. <a href="#ref-R-available">2018</a>)</span>, który sprawdza przy wybrana nazwa nie jest już zajęta oraz czy nie ma ona jakiegoś niepożądanego przez nas znaczenia.</p>
 </div>
 <div id="tworzenie-szkieletu-pakietu" class="section level2">
 <h2><span class="header-section-number">13.2</span> Tworzenie szkieletu pakietu</h2>
 <p>Kolejnym krokiem jest stworzenie szkieletu pakietu, czyli zorganizowanego zbioru plików i folderów, do których później należy dodać odpowiednie informacje i funkcje.
-Znacznie w tym może pomóc pakiet <strong>usethis</strong> <span class="citation">(Wickham and Bryan <a href="#ref-R-usethis">2019</a>)</span>, który zawiera szereg funkcji ułatwiających budowanie pakietów R.</p>
+Znacznie w tym może pomóc pakiet <strong>usethis</strong> <span class="citation">(Wickham and Bryan <a href="#ref-R-usethis">2019</a><a href="#ref-R-usethis">b</a>)</span>, który zawiera szereg funkcji ułatwiających budowanie pakietów R.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(usethis)</code></pre>
 <p>Do stworzenia szkieletu pakietu służy funkcja <code>create_packages()</code>, w której należy podać ścieżkę do nowego pakietu.<!-- package.skeleton()  Never use this! -->
 W tej ścieżce ostatnia nazwa folderu określa również nazwę pakietu.<a href="#fn53" class="footnote-ref" id="fnref53"><sup>53</sup></a></p>
@@ -686,6 +686,9 @@ Dodaj do niej krótki opis tego co robi ten pakiet, a następnie przedstaw przyk
 </div>
 <h3>Bibliografia</h3>
 <div id="refs" class="references">
+<div id="ref-R-available">
+<p>Ganz, Carl, Gábor Csárdi, Jim Hester, Molly Lewis, and Rachael Tatman. 2018. <em>Available: Check If the Title of a Package Is Available, Appropriate and Interesting</em>. <a href="https://CRAN.R-project.org/package=available" class="uri">https://CRAN.R-project.org/package=available</a>.</p>
+</div>
 <div id="ref-R-remotes">
 <p>Hester, Jim, Gábor Csárdi, Hadley Wickham, Winston Chang, Martin Morgan, and Dan Tenenbaum. 2019. <em>Remotes: R Package Installation from Remote Repositories, Including ’Github’</em>. <a href="https://CRAN.R-project.org/package=remotes" class="uri">https://CRAN.R-project.org/package=remotes</a>.</p>
 </div>
@@ -699,7 +702,7 @@ Dodaj do niej krótki opis tego co robi ten pakiet, a następnie przedstaw przyk
 <p>Wickham, Hadley. 2015. <em>R Packages: Organize, Test, Document, and Share Your Code</em>. &quot; O’Reilly Media, Inc.&quot;.</p>
 </div>
 <div id="ref-R-usethis">
-<p>Wickham, Hadley, and Jennifer Bryan. 2019. <em>Usethis: Automate Package and Project Setup</em>. <a href="https://CRAN.R-project.org/package=usethis" class="uri">https://CRAN.R-project.org/package=usethis</a>.</p>
+<p>Wickham, Hadley, and Jennifer Bryan. 2019b. <em>Usethis: Automate Package and Project Setup</em>. <a href="https://CRAN.R-project.org/package=usethis" class="uri">https://CRAN.R-project.org/package=usethis</a>.</p>
 </div>
 <div id="ref-R-pkgdown">
 <p>Wickham, Hadley, and Jay Hesselberth. 2019. <em>Pkgdown: Make Static Html Documentation for a Package</em>.</p>
