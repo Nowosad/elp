@@ -1,18 +1,19 @@
 
 # Podsumowanie {#podsumowanie}
 
-Celem tego rozdziału jest z jednej strony podsumowanie zawartych w niej informacji, ale co ważniejsze wskazanie co można zrobić dalej na podstawie uzyskanej wiedzy i umiejętność z tej książki. 
 Nie jest możliwe, aby jedna książka wyczerpująco pokazywała wszystkie elementy języka programowania i podawała wszelkie jego możliwości i zastosowania. 
 Jest to szczególnie nieosiągalne w przypadku takiego języka jak R, który posiada ogromny zbiór pakietów, oraz społeczność, która używa ten język na wiele sposobów, co wpływa na jego ewolucję.
+Celem tego rozdziału jest z jednej strony podsumowanie zawartych w niej informacji, ale co ważniejsze wskazanie co można zrobić dalej na podstawie uzyskanej wiedzy i umiejętność z tej książki. 
+
+<!--co było-->
 
 W jaki sposób można najbardziej efektywnie użyć wiedzę z tej książki? 
 Stosując uzyskane umiejętności w praktyce. 
 <!-- Może to być... -->
 
-
 ## Grafika
 
-R posiada wbudowane narzędzia do tworzenia wykresów.
+R posiada rozbudowane narzędzia do tworzenia wykresów.
 Możemy to zobaczyć na poniższym przykładzie danych meteorologicznych dla Poznania i Zakopanego z roku 2017.
 
 
@@ -40,16 +41,17 @@ boxplot(tavg ~ nazwa_stacji, data = met)
 
 <img src="figures/unnamed-chunk-3-1.png" width="100%" style="display: block; margin: auto;" />
 
-Powyższy wykres może być zmodyfikowany używając dodatkowych argumentów (np. `main` dodający tytuł czy `col` zmieniający kolor pudełek) czy też dodatkowych funkcji pozwalających na dodanie legendy (funkcja `legend`) czy też tekstu (funkcja `text`).
+Powyższy wykres może być zmodyfikowany używając dodatkowych argumentów (np. `main` dodający tytuł czy `col` zmieniający kolor pudełek) czy też dodatkowych funkcji pozwalających na dodanie legendy (funkcja `legend`) czy też tekstu (funkcja `text`).
 Inne dostępne wbudowane funkcje do tworzenia wykresów to, między innymi, `hist()` czy `barplot()` budujące histogramy oraz wykresy słupkowe.
 
 Najbardziej elastyczną funkcją do tworzenia wykresów w R jest `plot()`.
+<!-- Domyślnie  -->
 <!-- explain -->
 
 Oprócz wbudowanych <!--uproszczenie--> w R funkcji graficznych, istnieje też szereg dodatkowych pakietów służących do wizualizacji danych.
 Wśród nich najpopularniejszym jest **ggplot2** [@R-ggplot2].
 Ten pakiet jest implementacją założeń zawartych w książce Grammar of Graphics [REF???]<!--moremoremore-->.
-Główną funkcją tego pakietu jest `ggplot()`, która przyjmuje dane wejściowe w postaci ramki danych.
+Główną funkcją tego pakietu jest `ggplot()`, która przyjmuje dane wejściowe w postaci ramki danych.
 Wewnątrz tej funkcji następuje wywołanie kolejnej funkcji `aes`, gdzie definiowane są kolejne kolumny, które mają być wyświetlone na osiach wykresów oraz określają kolor, kształt, wielkość i inne elementy.
 Kolejnym krokiem jest określenie typu wykresu poprzez połączenie poprzedniej funkcji (używając operatora `+`) z jedną z wielu funkcji rozpoczynających się od `geom_`.
 Przykładowo, do stworzenia wykresu pudełkowego służy `geom_boxplot()`.

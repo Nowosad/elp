@@ -335,15 +335,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="podsumowanie" class="section level1">
 <h1><span class="header-section-number">14</span> Podsumowanie</h1>
-<p>Celem tego rozdziału jest z jednej strony podsumowanie zawartych w niej informacji, ale co ważniejsze wskazanie co można zrobić dalej na podstawie uzyskanej wiedzy i umiejętność z tej książki.
-Nie jest możliwe, aby jedna książka wyczerpująco pokazywała wszystkie elementy języka programowania i podawała wszelkie jego możliwości i zastosowania.
-Jest to szczególnie nieosiągalne w przypadku takiego języka jak R, który posiada ogromny zbiór pakietów, oraz społeczność, która używa ten język na wiele sposobów, co wpływa na jego ewolucję.</p>
+<p>Nie jest możliwe, aby jedna książka wyczerpująco pokazywała wszystkie elementy języka programowania i podawała wszelkie jego możliwości i zastosowania.
+Jest to szczególnie nieosiągalne w przypadku takiego języka jak R, który posiada ogromny zbiór pakietów, oraz społeczność, która używa ten język na wiele sposobów, co wpływa na jego ewolucję.
+Celem tego rozdziału jest z jednej strony podsumowanie zawartych w niej informacji, ale co ważniejsze wskazanie co można zrobić dalej na podstawie uzyskanej wiedzy i umiejętność z tej książki.</p>
+<!--co było-->
 <p>W jaki sposób można najbardziej efektywnie użyć wiedzę z tej książki?
 Stosując uzyskane umiejętności w praktyce.
 <!-- Może to być... --></p>
 <div id="grafika" class="section level2">
 <h2><span class="header-section-number">14.1</span> Grafika</h2>
-<p>R posiada wbudowane narzędzia do tworzenia wykresów.
+<p>R posiada rozbudowane narzędzia do tworzenia wykresów.
 Możemy to zobaczyć na poniższym przykładzie danych meteorologicznych dla Poznania i Zakopanego z roku 2017.</p>
 <pre class="sourceCode r"><code class="sourceCode r">met =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv&quot;</span>,
              <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
@@ -360,14 +361,15 @@ Do porównania wartości temperatury pomiędzy stacjami może posłużyć wykres
 Poniżej zdefiniowano, która zmienna ma zostać zwizualizowana (<code>tavg</code>) w podziale na jakie grupy (<code>nazwa_stacji</code>) z jakiego zbioru danych (<code>met</code>)<a href="#fn60" class="footnote-ref" id="fnref60"><sup>60</sup></a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(tavg <span class="op">~</span><span class="st"> </span>nazwa_stacji, <span class="dt">data =</span> met)</code></pre>
 <p><img src="figures/unnamed-chunk-3-1.png" width="100%" style="display: block; margin: auto;" /></p>
-<p>Powyższy wykres może być zmodyfikowany używając dodatkowych argumentów (np. <code>main</code> dodający tytuł czy <code>col</code> zmieniający kolor pudełek) czy też dodatkowych funkcji pozwalających na dodanie legendy (funkcja <code>legend</code>) czy też tekstu (funkcja <code>text</code>).
+<p>Powyższy wykres może być zmodyfikowany używając dodatkowych argumentów (np. <code>main</code> dodający tytuł czy <code>col</code> zmieniający kolor pudełek) czy też dodatkowych funkcji pozwalających na dodanie legendy (funkcja <code>legend</code>) czy też tekstu (funkcja <code>text</code>).
 Inne dostępne wbudowane funkcje do tworzenia wykresów to, między innymi, <code>hist()</code> czy <code>barplot()</code> budujące histogramy oraz wykresy słupkowe.</p>
 <p>Najbardziej elastyczną funkcją do tworzenia wykresów w R jest <code>plot()</code>.
+<!-- Domyślnie  -->
 <!-- explain --></p>
 <p>Oprócz wbudowanych <!--uproszczenie--> w R funkcji graficznych, istnieje też szereg dodatkowych pakietów służących do wizualizacji danych.
 Wśród nich najpopularniejszym jest <strong>ggplot2</strong> <span class="citation">(Wickham et al. <a href="#ref-R-ggplot2">2019</a>)</span>.
 Ten pakiet jest implementacją założeń zawartych w książce Grammar of Graphics [REF???]<!--moremoremore-->.
-Główną funkcją tego pakietu jest <code>ggplot()</code>, która przyjmuje dane wejściowe w postaci ramki danych.
+Główną funkcją tego pakietu jest <code>ggplot()</code>, która przyjmuje dane wejściowe w postaci ramki danych.
 Wewnątrz tej funkcji następuje wywołanie kolejnej funkcji <code>aes</code>, gdzie definiowane są kolejne kolumny, które mają być wyświetlone na osiach wykresów oraz określają kolor, kształt, wielkość i inne elementy.
 Kolejnym krokiem jest określenie typu wykresu poprzez połączenie poprzedniej funkcji (używając operatora <code>+</code>) z jedną z wielu funkcji rozpoczynających się od <code>geom_</code>.
 Przykładowo, do stworzenia wykresu pudełkowego służy <code>geom_boxplot()</code>.</p>
