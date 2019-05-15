@@ -357,7 +357,7 @@ Ustawienie folderu roboczego ma też miejsce przy tworzeniu nowego lub otwierani
 <p>Folder roboczy jest ważny ponieważ pozwala na korzystanie z względnej ścieżki.
 Ścieżka względna oznacza określanie ścieżki pliku w odniesieniu do istniejącego folderu roboczego, podczas, gdy ścieżka bezwzględna opisuje pełne położenie pliku.
 Przykładowo, mamy plik <code>dane_meteo.csv</code>, którego pełna ścieżka to <code>home/jakub/Documents/elp/pliki/dane_meteo.csv</code>.
-Z poziomu R ten plik jest widoczny zarówno jako <code>home/jakub/Documents/elp/pliki/dane_meteo.csv</code>, ale też w postaci <code>pliki/dane_meteo.csv</code><a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a>.
+Z poziomu R ten plik jest widoczny zarówno jako <code>home/jakub/Documents/elp/pliki/dane_meteo.csv</code>, ale też w postaci <code>pliki/dane_meteo.csv</code><a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a>.
 Używanie ścieżek względnych jest rekomendowane, ponieważ znacząco upraszcza pracę, gdy dane/obliczenia przenosi się pomiędzy różnymi komputerami lub gdy współpracuje się z innymi osobami.
 Ścieżki względne są też używane w połączeniu z systemami kontroli wersji (rozdział <a href="kontrola-wersji.html#kontrola-wersji">12</a>).</p>
 
@@ -378,12 +378,12 @@ W jej przypadku konieczne jest podanie, oprócz nazwy folder do usunięcia, argu
 Przykładowo, aby usunąć folder <code>&quot;dane&quot;</code> należy wpisać <code>unlink(&quot;dane&quot;, recursive = TRUE)</code>.</p>
 <p>Sprawdzenie czy plik istnieje na dysku można wykonać używając <code>file.exist()</code>, a usunąć go za pomocą <code>file.remove()</code>.
 Obie funkcje przyjmują jako wejście wektor znakowy zawierający nazwy plików do sprawdzenia czy usunięcia.</p>
-<p>W przypadkach, gdy konieczne jest stworzenie nowego archiwum ZIP lub rozpakowanie istniejącego pliku w tym formacie można użyć funkcji <code>zip()</code> oraz <code>unzip()</code><a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>.</p>
+<p>W przypadkach, gdy konieczne jest stworzenie nowego archiwum ZIP lub rozpakowanie istniejącego pliku w tym formacie można użyć funkcji <code>zip()</code> oraz <code>unzip()</code><a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a>.</p>
 </div>
 <div id="dane-internetowe" class="section level2">
 <h2><span class="header-section-number">9.3</span> Dane internetowe</h2>
 <p>Pliki, które chcemy otworzyć nie muszą od razu znajdować się na dysku naszego komputera.
-Możliwe jest, między innymi, pobranie ich z poziomu R za pomocą funkcji <code>download.file()</code><a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a>.
+Możliwe jest, między innymi, pobranie ich z poziomu R za pomocą funkcji <code>download.file()</code><a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>.
 Należy w niej podać adres URL pliku do pobrania, oraz nazwę pliku do zapisania.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">download.file</span>(<span class="st">&quot;https://raw.githubusercontent.com/Nowosad/elp/master/pliki/dane_meteo.csv&quot;</span>, 
               <span class="dt">destfile =</span> <span class="st">&quot;pliki/dane_meteo_url.csv&quot;</span>)</code></pre>
@@ -404,7 +404,7 @@ Przykładowo, pliki tekstowe mogą przechowywać dane w postaci tabelarycznej, a
 Po otworzeniu tego pliku w edytorze tekstu widzimy, że pierwszy jego wiersz zawiera nazwy kolumn, a następne wiersze to kolejne obserwacje.
 Dodatkowo można zobaczyć, że kolumny rozdzielane są przecinkami (<code>,</code>), natomiast wartości zmiennoprzecinkowe kropkami (<code>.</code>).</p>
 <p>Do wczytania tego pliku możemy użyć wbudowanej w R funkcji <code>read.csv()</code>, podając w niej bezwzględną lub względną ścieżkę do pliku.
-W poniższych przykładzie dodatkowo ustalono argument <code>stringsAsFactors</code> na <code>FALSE</code>, dzięki czemu kolumny z tekstem nie będą zamieniane na klasę czynnikową<a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a>.</p>
+W poniższych przykładzie dodatkowo ustalono argument <code>stringsAsFactors</code> na <code>FALSE</code>, dzięki czemu kolumny z tekstem nie będą zamieniane na klasę czynnikową<a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">meteo =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;pliki/dane_meteo.csv&quot;</span>, 
                  <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
 <span class="kw">str</span>(meteo)
@@ -456,7 +456,7 @@ W przypadku, gdy interesują nas tylko informacje dla Poznania możemy wydzieli�
 <span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span>
 <span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span>
 <span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span></code></pre>
-<p>Następnie możemy zapisać obiekt <code>meteo_pzn</code> do nowego pliku używając funkcji <code>write.csv()</code><a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>, poprzez podanie nazwy obiektu do zapisania oraz ścieżki zapisu wynikowego pliku.
+<p>Następnie możemy zapisać obiekt <code>meteo_pzn</code> do nowego pliku używając funkcji <code>write.csv()</code><a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a>, poprzez podanie nazwy obiektu do zapisania oraz ścieżki zapisu wynikowego pliku.
 Dodatkowo możliwe jest pominięcie zapisania nazw wierszy (<code>row.names = FALSE</code>).</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">write.csv</span>(meteo_pzn,
           <span class="dt">file =</span> <span class="st">&quot;pliki/dane_meteo_pzn.csv&quot;</span>,
@@ -552,7 +552,7 @@ meteo_z_xl =<span class="st"> </span><span class="kw">read_excel</span>(<span cl
 <span class="co">#&gt; 4  352160330 POZNAŃ        2017       1     4   1.5    2.3</span>
 <span class="co">#&gt; 5  352160330 POZNAŃ        2017       1     5  -3.5    0  </span>
 <span class="co">#&gt; 6  352160330 POZNAŃ        2017       1     6  -8.4    0</span></code></pre>
-<p>Do zapisania ramki danych do formatu Excel można użyć funkcji <code>write_xlsx()</code> z pakietu <strong>writexl</strong> <span class="citation">(Ooms <a href="#ref-R-writexl">2018</a>)</span><a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a>.</p>
+<p>Do zapisania ramki danych do formatu Excel można użyć funkcji <code>write_xlsx()</code> z pakietu <strong>writexl</strong> <span class="citation">(Ooms <a href="#ref-R-writexl">2018</a>)</span><a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>.</p>
 <!-- block problemy z excelem jak daty -->
 </div>
 <div id="inne-formaty" class="section level2">
@@ -563,7 +563,7 @@ Przykładowo, hierarchiczne formaty danych można wczytać używając pakietu <s
 Zestawienie zawierające dodatkowe przykłady można znaleźć pod adresem <a href="https://github.com/leeper/rio" class="uri">https://github.com/leeper/rio</a>.</p>
 <p>Powszechną sytuacją jest przechowywanie danych w różnego rodzaju bazach danych.
 Ma to miejsce, kiedy dane są znacznej wielkości, mają złożone relacje, czy też muszą być jednocześnie dostępne dla wielu osób.
-Dostęp do baz danych w R możliwy jest używając pakietu <strong>DBI</strong> <span class="citation">(R Special Interest Group on Databases (R-SIG-DB), Wickham, and Müller <a href="#ref-R-DBI">2018</a>)</span> wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. <strong>RPostgreSQL</strong> dla baz PostgreSQL <span class="citation">(Conway et al. <a href="#ref-R-RPostgreSQL">2017</a>)</span> czy <strong>RSQLite</strong> dla baz SQLite <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-RSQLite"><strong>???</strong></span>)</span>).<a href="#fn45" class="footnote-ref" id="fnref45"><sup>45</sup></a></p>
+Dostęp do baz danych w R możliwy jest używając pakietu <strong>DBI</strong> <span class="citation">(R Special Interest Group on Databases (R-SIG-DB), Wickham, and Müller <a href="#ref-R-DBI">2018</a>)</span> wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. <strong>RPostgreSQL</strong> dla baz PostgreSQL <span class="citation">(Conway et al. <a href="#ref-R-RPostgreSQL">2017</a>)</span> czy <strong>RSQLite</strong> dla baz SQLite <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-RSQLite"><strong>???</strong></span>)</span>).<a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a></p>
 </div>
 <div id="zadania-8" class="section level2">
 <h2><span class="header-section-number">9.9</span> Zadania</h2>
@@ -625,14 +625,14 @@ Napisz funkcję, która odszyfruje tą wiadomość.</p></li>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="39">
-<li id="fn39"><p>Jeżeli poprawnie ustawiliśmy folder roboczy.<a href="io.html#fnref39" class="footnote-back">↩</a></p></li>
-<li id="fn40"><p>Na komputerach z systemem Windows wymagane jest posiadanie zainstalowanego programu do rozpakowywania plików ZIP.<a href="io.html#fnref40" class="footnote-back">↩</a></p></li>
-<li id="fn41"><p>Funkcje takie jak <code>read.csv()</code> pozwalają na otworzenie pliku tekstowego bezpośrednio z adresu internetowego.<a href="io.html#fnref41" class="footnote-back">↩</a></p></li>
-<li id="fn42"><p>Takie defensywne zachowanie może oszczędzić pewnych problemów w przyszłości.<a href="io.html#fnref42" class="footnote-back">↩</a></p></li>
-<li id="fn43"><p>Istnieje również jej odpowiednik <code>write.csv2()</code>.<a href="io.html#fnref43" class="footnote-back">↩</a></p></li>
-<li id="fn44"><p>Po więcej informacji otwórz plik pomocy tej funkcji <code>?write_xlsx()</code>.<a href="io.html#fnref44" class="footnote-back">↩</a></p></li>
-<li id="fn45"><p>Więcej informacji o łączeniu się z bazami danych można znaleść na stronie <a href="https://db.rstudio.com/getting-started/connect-to-database" class="uri">https://db.rstudio.com/getting-started/connect-to-database</a>.<a href="io.html#fnref45" class="footnote-back">↩</a></p></li>
+<ol start="38">
+<li id="fn38"><p>Jeżeli poprawnie ustawiliśmy folder roboczy.<a href="io.html#fnref38" class="footnote-back">↩</a></p></li>
+<li id="fn39"><p>Na komputerach z systemem Windows wymagane jest posiadanie zainstalowanego programu do rozpakowywania plików ZIP.<a href="io.html#fnref39" class="footnote-back">↩</a></p></li>
+<li id="fn40"><p>Funkcje takie jak <code>read.csv()</code> pozwalają na otworzenie pliku tekstowego bezpośrednio z adresu internetowego.<a href="io.html#fnref40" class="footnote-back">↩</a></p></li>
+<li id="fn41"><p>Takie defensywne zachowanie może oszczędzić pewnych problemów w przyszłości.<a href="io.html#fnref41" class="footnote-back">↩</a></p></li>
+<li id="fn42"><p>Istnieje również jej odpowiednik <code>write.csv2()</code>.<a href="io.html#fnref42" class="footnote-back">↩</a></p></li>
+<li id="fn43"><p>Po więcej informacji otwórz plik pomocy tej funkcji <code>?write_xlsx()</code>.<a href="io.html#fnref43" class="footnote-back">↩</a></p></li>
+<li id="fn44"><p>Więcej informacji o łączeniu się z bazami danych można znaleść na stronie <a href="https://db.rstudio.com/getting-started/connect-to-database" class="uri">https://db.rstudio.com/getting-started/connect-to-database</a>.<a href="io.html#fnref44" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

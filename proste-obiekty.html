@@ -343,7 +343,7 @@ Więcej informacji na temat podstawowych typów obiektów można znaleźć w ro
 <div id="wektory" class="section level2">
 <h2><span class="header-section-number">5.1</span> Wektory</h2>
 <p>Wektory są podstawowymi elementami, które pozwalają na budowanie bardziej złożonych rodzajów obiektów.
-Wektor może przyjmować jeden z czterech podstawowych typów<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a>:</p>
+Wektor może przyjmować jeden z czterech podstawowych typów<a href="#fn25" class="footnote-ref" id="fnref25"><sup>25</sup></a>:</p>
 <ol style="list-style-type: decimal">
 <li>logiczny (ang. <em>logical</em>)</li>
 </ol>
@@ -357,7 +357,7 @@ wek_log
 wek_cal
 <span class="co">#&gt; [1]  5 -7</span></code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li>liczba zmiennoprzecinkowa (ang. <em>double</em>)<a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a></li>
+<li>liczba zmiennoprzecinkowa (ang. <em>double</em>)<a href="#fn26" class="footnote-ref" id="fnref26"><sup>26</sup></a></li>
 </ol>
 <pre class="sourceCode r"><code class="sourceCode r">wek_zmi =<span class="st"> </span><span class="kw">c</span>(<span class="fl">5.3</span>, <span class="fl">-7.1</span>)
 wek_zmi
@@ -413,7 +413,7 @@ wek_zna
 <span class="co">#&gt;  &quot;kot&quot; &quot;pies&quot;</span>
 <span class="kw">names</span>(wek_zna)
 <span class="co">#&gt; [1] &quot;a&quot; &quot;b&quot;</span></code></pre>
-<p>Funkcja <code>seq</code> ma na celu generowanie ciągów liczbowych<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a>.
+<p>Funkcja <code>seq</code> ma na celu generowanie ciągów liczbowych<a href="#fn27" class="footnote-ref" id="fnref27"><sup>27</sup></a>.
 Pierwszym jego argumentem jest <code>from</code> czyli początkowa liczba w ciągu a drugi argument <code>to</code> oznacza maksymalną możliwą liczbę w ciągu.
 Obie te liczby mogą być wektorami o długości jeden.
 Dodatkowo ta funkcja wymaga zdefiniowania jeszcze jednego argumentu, np. <code>by</code> lub <code>length.out</code>.
@@ -634,7 +634,7 @@ Odbywa się to zgodnie z zasadą: logiczny -&gt; liczba całkowita -&gt; liczba 
 <div id="zmiana-typow-obiektow" class="section level2">
 <h2><span class="header-section-number">5.10</span> Zmiana typów obiektów</h2>
 <!--rzutowanie??-->
-<p>Do zmiany typu obiektu<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a> służą funkcje <code>as.logical()</code>, <code>as.integer()</code>, <code>as.double()</code>, oraz <code>as.character()</code>.</p>
+<p>Do zmiany typu obiektu<a href="#fn28" class="footnote-ref" id="fnref28"><sup>28</sup></a> służą funkcje <code>as.logical()</code>, <code>as.integer()</code>, <code>as.double()</code>, oraz <code>as.character()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">as.logical</span>(<span class="kw">c</span>(<span class="st">&quot;FALSE&quot;</span>, <span class="st">&quot;TRUE&quot;</span>)) <span class="co"># znakowy na logiczny</span>
 <span class="co">#&gt; [1] FALSE  TRUE</span>
 <span class="kw">as.integer</span>(<span class="kw">c</span>(<span class="st">&quot;3&quot;</span>, <span class="st">&quot;2&quot;</span>)) <span class="co"># znakowy na liczba całkowita </span>
@@ -690,7 +690,7 @@ dzis
 <p>Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji <code>unclass()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unclass</span>(dzis)
 <span class="co">#&gt; [1] 18031</span></code></pre>
-<p>Wynik, 18031, oznacza liczbę dni od 1970-01-01.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>
+<p>Wynik, 18031, oznacza liczbę dni od 1970-01-01.<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.</p>
 <pre class="sourceCode r"><code class="sourceCode r">stara_data =<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;1912-04-13&quot;</span>)
 <span class="kw">unclass</span>(stara_data)
@@ -704,7 +704,7 @@ daty
 <div id="ime" class="section level2">
 <h2><span class="header-section-number">5.13</span> Wektory czasu</h2>
 <p>W R istnieją również wbudowane reprezentacje dat i godzin (inaczej zwane data-czas, ang. <em>date-times</em>).
-Najczęściej używaną jest klasa <code>POSIXct</code>, która jest wektorem przedstawiającym liczbę sekund of 1970-01-01.<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a></p>
+Najczęściej używaną jest klasa <code>POSIXct</code>, która jest wektorem przedstawiającym liczbę sekund of 1970-01-01.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a></p>
 <pre class="sourceCode r"><code class="sourceCode r">czas =<span class="st"> </span><span class="kw">as.POSIXct</span>(<span class="st">&quot;2011-02-02 10:33&quot;</span>, <span class="dt">tz =</span> <span class="st">&quot;CET&quot;</span>)
 czas
 <span class="co">#&gt; [1] &quot;2011-02-02 10:33:00 CET&quot;</span></code></pre>
@@ -726,7 +726,7 @@ czas
 <span class="co">#&gt; [1] &quot;CET&quot;</span></code></pre>
 <p>Ważnym elementem reprezentacji czasu jest określenie strefy czasowej.
 Można ją zdefiniować w funkcji <code>as.POSIXct()</code> używając argumentu <code>tz</code>, ale też można zmienić strefę czasową istniejącego wektora poprzez modyfikację jego atrybutów.
-W poniższym przykładzie nastąpiła zmiana strefy czasowej z czasu środkowoeuropejskiego (<code>&quot;CET&quot;</code>) na czas pacyficzny.<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a></p>
+W poniższym przykładzie nastąpiła zmiana strefy czasowej z czasu środkowoeuropejskiego (<code>&quot;CET&quot;</code>) na czas pacyficzny.<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attributes</span>(czas)<span class="op">$</span>tzone =<span class="st"> &quot;America/Los_Angeles&quot;</span>
 czas
 <span class="co">#&gt; [1] &quot;2011-02-02 01:33:00 PST&quot;</span></code></pre>
@@ -802,14 +802,14 @@ Jak to można uzyskać?</li>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="26">
-<li id="fn26"><p>Istnieją też dwa kolejne podstawowe typy wektorów, złożone (ang. <em>complex</em>) oraz surowe (ang. <em>raw</em>) ale są one bardzo rzadko używane.<a href="proste-obiekty.html#fnref26" class="footnote-back">↩</a></p></li>
-<li id="fn27"><p>Liczby zmiennoprzecinkowe mogą być też reprezentowane poprzez notację naukową, np. 11111.2 może być zapisane jako 1.11112e4, a 0.00021 jako 2.1e-4.<a href="proste-obiekty.html#fnref27" class="footnote-back">↩</a></p></li>
-<li id="fn28"><p>Uproszczeniem funkcji <code>seq</code> jest operator <code>:</code> (np. <code>1:10</code>). W jego przypadku wartości zawsze zmieniają się o jeden.<a href="proste-obiekty.html#fnref28" class="footnote-back">↩</a></p></li>
-<li id="fn29"><p>Taka operacja często jest określana jako rzutowanie.<a href="proste-obiekty.html#fnref29" class="footnote-back">↩</a></p></li>
-<li id="fn30"><p><a href="https://en.wikipedia.org/wiki/Unix_time" class="uri">https://en.wikipedia.org/wiki/Unix_time</a><a href="proste-obiekty.html#fnref30" class="footnote-back">↩</a></p></li>
-<li id="fn31"><p>Wyświetlenie aktualnego czasu jest możliwe używając funkcji <code>Sys.time()</code>.<a href="proste-obiekty.html#fnref31" class="footnote-back">↩</a></p></li>
-<li id="fn32"><p><a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" class="uri">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a><a href="proste-obiekty.html#fnref32" class="footnote-back">↩</a></p></li>
+<ol start="25">
+<li id="fn25"><p>Istnieją też dwa kolejne podstawowe typy wektorów, złożone (ang. <em>complex</em>) oraz surowe (ang. <em>raw</em>) ale są one bardzo rzadko używane.<a href="proste-obiekty.html#fnref25" class="footnote-back">↩</a></p></li>
+<li id="fn26"><p>Liczby zmiennoprzecinkowe mogą być też reprezentowane poprzez notację naukową, np. 11111.2 może być zapisane jako 1.11112e4, a 0.00021 jako 2.1e-4.<a href="proste-obiekty.html#fnref26" class="footnote-back">↩</a></p></li>
+<li id="fn27"><p>Uproszczeniem funkcji <code>seq</code> jest operator <code>:</code> (np. <code>1:10</code>). W jego przypadku wartości zawsze zmieniają się o jeden.<a href="proste-obiekty.html#fnref27" class="footnote-back">↩</a></p></li>
+<li id="fn28"><p>Taka operacja często jest określana jako rzutowanie.<a href="proste-obiekty.html#fnref28" class="footnote-back">↩</a></p></li>
+<li id="fn29"><p><a href="https://en.wikipedia.org/wiki/Unix_time" class="uri">https://en.wikipedia.org/wiki/Unix_time</a><a href="proste-obiekty.html#fnref29" class="footnote-back">↩</a></p></li>
+<li id="fn30"><p>Wyświetlenie aktualnego czasu jest możliwe używając funkcji <code>Sys.time()</code>.<a href="proste-obiekty.html#fnref30" class="footnote-back">↩</a></p></li>
+<li id="fn31"><p><a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" class="uri">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a><a href="proste-obiekty.html#fnref31" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

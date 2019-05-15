@@ -357,7 +357,7 @@ Możemy to zobaczyć na poniższym przykładzie danych meteorologicznych dla Poz
 <span class="co">#&gt; 6  352160330       POZNAŃ 2017       1     6 -8.4    0.0</span></code></pre>
 <p>Wewnątrz obiektu <code>met</code> znajdują się kolumny <code>tavg</code> (określająca średnią dobową temperaturę powietrza w stopniach Celsjusza) oraz <code>nazwa_stacji</code> (“POZNAŃ” lub “ZAKOPANE”).
 Do porównania wartości temperatury pomiędzy stacjami może posłużyć wykres pudełkowy, stworzony przy pomocy funkcji <code>boxplot()</code>.
-Poniżej zdefiniowano, która zmienna ma zostać zwizualizowana (<code>tavg</code>) w podziale na jakie grupy (<code>nazwa_stacji</code>) z jakiego zbioru danych (<code>met</code>)<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.</p>
+Poniżej zdefiniowano, która zmienna ma zostać zwizualizowana (<code>tavg</code>) w podziale na jakie grupy (<code>nazwa_stacji</code>) z jakiego zbioru danych (<code>met</code>)<a href="#fn60" class="footnote-ref" id="fnref60"><sup>60</sup></a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(tavg <span class="op">~</span><span class="st"> </span>nazwa_stacji, <span class="dt">data =</span> met)</code></pre>
 <p><img src="figures/unnamed-chunk-3-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Powyższy wykres może być zmodyfikowany używając dodatkowych argumentów (np. <code>main</code> dodający tytuł czy <code>col</code> zmieniający kolor pudełek) czy też dodatkowych funkcji pozwalających na dodanie legendy (funkcja <code>legend</code>) czy też tekstu (funkcja <code>text</code>).
@@ -409,14 +409,14 @@ Jest to spójny zbiór pakietów pozwalających na wczytywanie, czyszczenie, prz
 Najprostszym sposobem jest używanie R jak najczęściej.
 Nauka języka programowania przebiega wówczas naturalnie - wraz ze znaleziskiem rozwiązania kolejnego problemu czy rozwiązaniem kolejnego zadania.</p>
 <p>Często jednak, nie jesteśmy w stanie stwierdzić czy ten sposób rozwiązania jest optymalny, lub też napotykamy sytuacje w których nie wiemy jak się do nich odnieść.
-Wówczas szczególnie istotna jest inna umiejętność - czytania kodu innych osób<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a>.
-Większość pakietów R jest otwartoźródłowych - ich kod jest dostępny online i każda chętna osoba ma do niego dostęp<a href="#fn63" class="footnote-ref" id="fnref63"><sup>63</sup></a>.
+Wówczas szczególnie istotna jest inna umiejętność - czytania kodu innych osób<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.
+Większość pakietów R jest otwartoźródłowych - ich kod jest dostępny online i każda chętna osoba ma do niego dostęp<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a>.
 Kod pakietów R można, między innymi, znaleźć w serwisie GitHub.
 Wszystkie pakiety znajdujące się w repozytorium CRAN można znaleźć pod adresem <a href="https://github.com/cran" class="uri">https://github.com/cran</a>.
 Inną możliwością jest samodzielne wyszukanie kodu pakietu używając wyszukiwarki GitHub - <a href="https://github.com/search" class="uri">https://github.com/search</a>.</p>
 <p>Przykładowo, pod adresem <a href="https://github.com/karthik/wesanderson" class="uri">https://github.com/karthik/wesanderson</a> znajduje się kod źródłowy pakietu <strong>wesanderson</strong> <span class="citation">(Ram and Wickham <a href="#ref-R-wesanderson">2018</a>)</span>.
 Ten pakiet zawiera funkcje tworzące palety kolorystyczne inspirowane filmami reżysera <a href="https://en.wikipedia.org/wiki/Wes_Anderson">Wesa Andersona</a>.
-Kod R będący podstawą działania tego pakietu znajduje się w folderze <code>R/</code><a href="#fn64" class="footnote-ref" id="fnref64"><sup>64</sup></a>.
+Kod R będący podstawą działania tego pakietu znajduje się w folderze <code>R/</code><a href="#fn63" class="footnote-ref" id="fnref63"><sup>63</sup></a>.
 Dodatkowo, niektóre pakietu zawierają kod z innych języków programowania (np. C lub C++), który wymaga wcześniejszej kompilacji.
 Taki kod znajduje się w folderze <code>src/</code>.</p>
 <!-- functional programming - 05 -->
@@ -454,12 +454,12 @@ Obejmuje to też wiele innych czynności, takich jak stosowanie optymalnych algo
 </div>
 <div class="footnotes">
 <hr />
-<ol start="61">
-<li id="fn61"><p>Kod <code>tavg ~ nazwa_stacji</code> można inaczej odczytać jako <code>tavg</code> w zależności od <code>nazwa_stacji</code>.<a href="podsumowanie.html#fnref61" class="footnote-back">↩</a></p></li>
-<li id="fn62"><p>Read the Source, Luke.<a href="podsumowanie.html#fnref62" class="footnote-back">↩</a></p></li>
-<li id="fn63"><p>Dostępny jest także kod źródłowy samego języka R.
-Można go znaleźć pod adresem <a href="https://github.com/wch/r-source" class="uri">https://github.com/wch/r-source</a><a href="podsumowanie.html#fnref63" class="footnote-back">↩</a></p></li>
-<li id="fn64"><p>Szczególnie <code>R/colors.R</code>.<a href="podsumowanie.html#fnref64" class="footnote-back">↩</a></p></li>
+<ol start="60">
+<li id="fn60"><p>Kod <code>tavg ~ nazwa_stacji</code> można inaczej odczytać jako <code>tavg</code> w zależności od <code>nazwa_stacji</code>.<a href="podsumowanie.html#fnref60" class="footnote-back">↩</a></p></li>
+<li id="fn61"><p>Read the Source, Luke.<a href="podsumowanie.html#fnref61" class="footnote-back">↩</a></p></li>
+<li id="fn62"><p>Dostępny jest także kod źródłowy samego języka R.
+Można go znaleźć pod adresem <a href="https://github.com/wch/r-source" class="uri">https://github.com/wch/r-source</a><a href="podsumowanie.html#fnref62" class="footnote-back">↩</a></p></li>
+<li id="fn63"><p>Szczególnie <code>R/colors.R</code>.<a href="podsumowanie.html#fnref63" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

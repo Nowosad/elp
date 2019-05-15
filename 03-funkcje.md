@@ -220,7 +220,7 @@ Algorytmy można porównać do przepisu kucharskiego, w którym opisany jest sze
 Podobnie jak w przepisie kucharskim, algorytmy wymagają posiadania odpowiednich składników - danych wejściowych w o pewnej strukturze.
 
 Tworzenie nowych algorytmów często zaczyna się od narysowania schematu procedury działania lub też pseudokodu. 
-Kolejnym krokiem jest zapisanie tego algorytmu w wybranym języku lub językach programowania^[Łączenie różnych języków programowania jest wyjaśnione w rozdziale \@ref(lacznik)] w formie skryptu (sekcja \@ref(tworzenie-skryptow)) lub funkcji (sekcja \@ref(budowanie-funkcji)).
+Kolejnym krokiem jest zapisanie tego algorytmu w wybranym języku lub językach programowania<!--^[Łączenie różnych języków programowania jest wyjaśnione w rozdziale \@ref(lacznik)]--> w formie skryptu (sekcja \@ref(tworzenie-skryptow)) lub funkcji (sekcja \@ref(budowanie-funkcji)).
 
 ## Tworzenie skryptów
 
