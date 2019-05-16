@@ -73,8 +73,14 @@ Ma to na celu zrozumienie posiadanych danych oraz zależności czy zjawisk któr
 W ramach grupy pakietów **tidyverse** często stosuje się operator `%>%` (ang. *pipe*, ???) z pakietu **magrittr** [@R-magrittr]. 
 Pozwala on na łączenie kilku oddzielnych funkcji w jedno zapytanie.
 Działanie tego operatora polega na tym, że wynik jednej działania jednej funkcji staje się automatycznie pierwszym argumentem w kolejnej funkcji.
-
+<!-- footnote o wywołaniu funkcji -->
 <!-- KOD? -->
+```{r, echo=FALSE, eval=FALSE}
+readxl::read_excel("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.xls")
+
+readxl::read_excel("pliki/dane_meteo.xlsx")
+```
+
 
 Pełne wprowadzenie do koncepcji *tidyverse* można znaleźć w książce [R for Data Science](https://r4ds.had.co.nz/) [@wickham2016r].
 
