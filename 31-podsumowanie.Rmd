@@ -12,7 +12,7 @@ Stosując uzyskane umiejętności w praktyce.
 
 ## Grafika
 
-R posiada rozbudowane narzędzia do tworzenia wykresów.
+Jedną z najczęściej wymienianych zalet R są jego rozbudowane narzędzia do tworzenia wykresów.
 Możemy to zobaczyć na poniższym przykładzie danych meteorologicznych dla Poznania i Zakopanego z roku 2017.
 
 ```{r}
@@ -54,39 +54,64 @@ Pełna dokumentacja pakietu **ggplot2** znajduje się na stronie http://docs.ggp
 ## Analiza danych
 
 R jest jednym z języków programowania najczęściej używanych w analizie danych<!--datascience--><!--REF???-->.
-Jest to wynikiem szeregu przyczyn, w tym dużej liczby wbudowanych funkcji statystycznych oraz graficznych w R.
-Dodatkowo, ramka danych, jeden z podstawowych obiektów w R, może być utożsamiany z arkuszem kalkulacyjnym czy tabelą z bazy danych. 
-W związku z tym ta forma obiektu złożonego z kolumn (zmienne) i wierszy (obserwacje) jest reprezentacją, która uławia czyszczenie, przetwarzanie i analizowanie danych.
+Jest to wynikiem szeregu przyczyn, w tym dużej liczby wbudowanych w R funkcji statystycznych oraz graficznych.
+Dodatkowo, ramka danych, jeden z podstawowych obiektów w R, może być utożsamiany z arkuszem kalkulacyjnym czy tabelą z bazy danych - najpopuarniejszych form przechowywania różnorakich danych.
+Ta forma obiektu, złożonego z kolumn (zmienne) i wierszy (obserwacje), jest reprezentacją, która uławia czyszczenie, przetwarzanie i analizowanie danych.
 
 Inną przyczyną popularności R do analizy danych jest grupa pakietów zbiorczo określana jako *tidyverse*.
-Jest to spójny zbiór pakietów pozwalających na wczytywanie, czyszczenie, przetwarzanie, wizualizację czy modelowanie danych.
+Jest to spójny zbiór pakietów pozwalających na wykonywanie kolejnych czynności analizy danych.
+Na samym początku obejmuje to pakiety poświęcone wczytywaniu danych w różnych formatach, w tym poznane w rozdziale \@ref(io) pakiety **readr** [@R-readr] oraz **readxl** [@R-readxl].
+Kolejnym krokiem jest porządkowanie danych, polegające, na przykład, na zmianie struktury ramki danych gdzie wartości jakiejś zmiennej stają się nazwami kolumn.
+W tym etapie można użyć pakiet **tidyr** [REF???].
+
+Dane w odpowiedniej postaci można następnie przetwarzać, np. tworzyć nowe zmienne na postawie przeliczania już istniejących czy też wyliczać ich podsumowania używając pakietu **dplyr** [REF???].
+Tak przetworzone dane następnie są często wizualizowane używając pakietu **ggplot2** [@R-ggplot2] lub też w ich oparciu budowane są modele (pakiety ??, ??, ?? [REF???]).
+Ma to na celu zrozumienie posiadanych danych oraz zależności czy zjawisk które opisują.
 
 <!-- FIG? -->
 
-<!-- pipe %>%  -->
+W ramach grupy pakietów **tidyverse** często stosuje się operator `%>%` (ang. *pipe*, ???) z pakietu **magrittr** [@R-magrittr]. 
+Pozwala on na łączenie kilku oddzielnych funkcji w jedno zapytanie.
+Działanie tego operatora polega na tym, że wynik jednej działania jednej funkcji staje się automatycznie pierwszym argumentem w kolejnej funkcji.
 
 <!-- KOD? -->
 
 Pełne wprowadzenie do koncepcji *tidyverse* można znaleźć w książce [R for Data Science](https://r4ds.had.co.nz/) [@wickham2016r].
 
+<!-- rmarkdown -->
+Zrozumienie zależności czy zjawisk bardzo rzadko jest ostatnim etapem - równie istotne jest przekazanie tych wyników właściwej grupie odbiorców<!--communicate-->.
+<!-- ... -->
+<!-- rmarkdown co to -->
+<!-- markdown co to -->
+
 ## Inne zastosowania
 
-<!-- dużo zastosowań -->
-<!-- https://cran.r-project.org/web/views/ -->
+Wcześniejsze dwie sekcje pokazywały bardzo szerokie zastosowania R - analizować czy wizualizować można zarówno dane o temperaturze powietrza jak i wyniki wyborów prezydenckich.
+<!-- ... -->
+W związku z czym, w R istnieje także znacząca liczba pakietów stworzonych do bardziej specjalistycznych i szczegółowych celów.
+Można to zobaczyć przeglądając tzw. *task views* - listy pakietów zaagregowane według podobnej tematyki znajdujące się pod adresem  https://cran.r-project.org/web/views/.
+<!-- co tam jest -->
+<!-- bioinformatyka -->
+<!-- https://www.bioconductor.org/ -->
+<!-- https://en.wikipedia.org/wiki/Bioconductor -->
+<!-- może footnote tylko -->
 
 <!-- maps -->
+Wsród tych list znajduje się także jedna poświęcona analizie danych przestrzennych.
+Opisuje ona, między innymi, takie pakiety jak **sf**, pozwalający na wczytywanie, przetwarzanie i zapisywanie danych wektorowych czy **tmap** ułatwiający tworzenie map.
+Na poniższym przykładzie następuje dołączenie tych pakietów oraz wczytanie zbioru danych `World` zawierającego poligony krajów na świecie i podstawowe informacje o nich.
+Dalej następuje dodanie tych danych do wyświetlenia i wybór odwzorowania przestrzennego<!--footnote--> używając funkcji `tm_shape()`, po czym te dane są wyświetlone w postaci poligonów (funkcja `tm_polygons()`), gdzie kolory poligonów wynikają z ich wartości w kolumnie `life_exp` a tytuł legendy jest wybrany przez nas.
 
 ```{r, eval=FALSE}
 library(sf)
 library(tmap)
 data(World)
 tm_shape(World, projection = "robin") + 
-    tm_polygons(col = "life_exp", title = "Oczekiwana dalsza \ndługość życia")
+    tm_polygons(col = "life_exp", 
+                title = "Oczekiwana dalsza \ndługość życia")
 ```
 
-<!-- bioinformatyka -->
-<!-- https://www.bioconductor.org/ -->
-<!-- https://en.wikipedia.org/wiki/Bioconductor -->
+<!-- geocompr -->
 
 ## Programowanie
 
