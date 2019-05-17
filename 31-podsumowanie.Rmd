@@ -78,17 +78,23 @@ Działanie tego operatora polega na tym, że wynik jednej działania jednej funk
 ```{r, echo=FALSE, eval=FALSE}
 readxl::read_excel("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.xls")
 
-readxl::read_excel("pliki/dane_meteo.xlsx")
-```
+a = readxl::read_excel("pliki/dane_meteo.xlsx")
+tidyr::unite(a, data, rok, miesiac, dzien)
 
+read %>% 
+  tidyr %>% 
+  dplyr %>% 
+  ggplot2
+```
 
 Pełne wprowadzenie do koncepcji *tidyverse* można znaleźć w książce [R for Data Science](https://r4ds.had.co.nz/) [@wickham2016r].
 
 <!-- rmarkdown -->
-Zrozumienie zależności czy zjawisk bardzo rzadko jest ostatnim etapem - równie istotne jest przekazanie tych wyników właściwej grupie odbiorców<!--communicate-->.
-<!-- ... -->
-<!-- rmarkdown co to -->
-<!-- markdown co to -->
+Zrozumienie zależności czy zjawis jest bardzo rzadko ostatnim etapem - równie istotne jest przekazanie tych wyników wybranej grupie odbiorców<!--communicate--> w odpowiedni sposób.
+Do tego celu może posłużyć R Markdown (jego podstawy zostały opisane w sekcji \@ref(dokumentacja-pakietu))
+R Markdown pozwala na tworzenie dokumentów w różnych formatach (html, pdf, docx, itd.), prezentacji, stron internetowych, książek^[Ta książka również powstała używająć R Markdown.] i wiele innych.
+Po szczegołowe instrukcje jak używać tego języka warto zajrzeć do książki
+[R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) [REF???].
 
 ## Inne zastosowania
 
