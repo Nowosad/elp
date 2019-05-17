@@ -24,7 +24,7 @@ links-as-notes: true
 
 # O książce {-}
 
-<a href="http://nowosad.github.io/elp/"><img src="cover/cover.png" width="250" height="375" alt="Cover image" align="right" style="margin: 0 1em 0 1em" /></a> 
+<a href="http://nowosad.github.io/elp/"><img src="cover/cover_lr.png" width="250" height="375" alt="Cover image" align="right" style="margin: 0 1em 0 1em" /></a> 
 
 **Elementarz programisty: Wstęp do programowania używając R** ma na celu wprowadzenie do podstaw działania w języku R. 
 W pierszej części, "Podstawy", opisuje ona w jaki sposób wykonywać proste operacje w R, czym są obiekty oraz jak tworzyć funkcje, które je przetwarzają.
