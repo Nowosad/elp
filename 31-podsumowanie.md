@@ -113,7 +113,7 @@ Obejmuje to bardzo szeroki przekrój tematów - od list poświęconych projektow
 Wsród tych list znajduje się także jedna poświęcona analizie danych przestrzennych.
 Opisuje ona, między innymi, takie pakiety jak **sf**, pozwalający na wczytywanie, przetwarzanie i zapisywanie danych wektorowych czy **tmap** ułatwiający tworzenie map.
 Na poniższym przykładzie następuje dołączenie tych pakietów oraz wczytanie zbioru danych `World` zawierającego poligony krajów na świecie i podstawowe informacje o nich.
-Dalej następuje dodanie tych danych do wyświetlenia i wybór odwzorowania przestrzennego<!--footnote--> używając funkcji `tm_shape()`, po czym te dane są wyświetlone w postaci poligonów (funkcja `tm_polygons()`), gdzie kolory poligonów wynikają z ich wartości w kolumnie `life_exp` a tytuł legendy jest wybrany przez nas.
+Dalej następuje dodanie tych danych do wyświetlenia i wybór odwzorowania przestrzennego<!--footnote--> używając funkcji `tm_shape()`, po czym te dane są wyświetlone w postaci poligonów (funkcja `tm_polygons()`), gdzie kolory poligonów wynikają z ich wartości w kolumnie `life_exp` a tytuł legendy jest wybrany przez nas (rycina \@ref(fig:tmap-example)).
 
 
 ```r
@@ -125,7 +125,12 @@ tm_shape(World, projection = "robin") +
                 title = "Oczekiwana dalsza \ndługość życia")
 ```
 
-<!-- geocompr -->
+<div class="figure" style="text-align: center">
+<img src="images/tmap-example.png" alt="Przykład działania pakietu tmap." width="100%" />
+<p class="caption">(\#fig:tmap-example)Przykład działania pakietu tmap.</p>
+</div>
+
+Podstawy działania na danych przestrzennych zawiera książka [Geocomputation with R](https://geocompr.robinlovelace.net/) [@lovelace2019geocomputation].
 
 ## Programowanie
 

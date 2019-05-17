@@ -417,14 +417,20 @@ Obejmuje to bardzo szeroki przekrój tematów - od list poświęconych projektow
 <p>Wsród tych list znajduje się także jedna poświęcona analizie danych przestrzennych.
 Opisuje ona, między innymi, takie pakiety jak <strong>sf</strong>, pozwalający na wczytywanie, przetwarzanie i zapisywanie danych wektorowych czy <strong>tmap</strong> ułatwiający tworzenie map.
 Na poniższym przykładzie następuje dołączenie tych pakietów oraz wczytanie zbioru danych <code>World</code> zawierającego poligony krajów na świecie i podstawowe informacje o nich.
-Dalej następuje dodanie tych danych do wyświetlenia i wybór odwzorowania przestrzennego<!--footnote--> używając funkcji <code>tm_shape()</code>, po czym te dane są wyświetlone w postaci poligonów (funkcja <code>tm_polygons()</code>), gdzie kolory poligonów wynikają z ich wartości w kolumnie <code>life_exp</code> a tytuł legendy jest wybrany przez nas.</p>
+Dalej następuje dodanie tych danych do wyświetlenia i wybór odwzorowania przestrzennego<!--footnote--> używając funkcji <code>tm_shape()</code>, po czym te dane są wyświetlone w postaci poligonów (funkcja <code>tm_polygons()</code>), gdzie kolory poligonów wynikają z ich wartości w kolumnie <code>life_exp</code> a tytuł legendy jest wybrany przez nas (rycina <a href="podsumowanie.html#fig:tmap-example">14.1</a>).</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(sf)
 <span class="kw">library</span>(tmap)
 <span class="kw">data</span>(World)
 <span class="kw">tm_shape</span>(World, <span class="dt">projection =</span> <span class="st">&quot;robin&quot;</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">tm_polygons</span>(<span class="dt">col =</span> <span class="st">&quot;life_exp&quot;</span>, 
                 <span class="dt">title =</span> <span class="st">&quot;Oczekiwana dalsza </span><span class="ch">\n</span><span class="st">długość życia&quot;</span>)</code></pre>
-<!-- geocompr -->
+<div class="figure" style="text-align: center"><span id="fig:tmap-example"></span>
+<img src="images/tmap-example.png" alt="Przykład działania pakietu tmap." width="100%" />
+<p class="caption">
+Rycina 14.1: Przykład działania pakietu tmap.
+</p>
+</div>
+<p>Podstawy działania na danych przestrzennych zawiera książka <a href="https://geocompr.robinlovelace.net/">Geocomputation with R</a> <span class="citation">(Lovelace, Nowosad, and Muenchow <a href="#ref-lovelace2019geocomputation">2019</a>)</span>.</p>
 </div>
 <div id="programowanie" class="section level2">
 <h2><span class="header-section-number">14.4</span> Programowanie</h2>
@@ -468,6 +474,9 @@ Obejmuje to też wiele innych czynności, takich jak stosowanie optymalnych algo
 <div id="refs" class="references">
 <div id="ref-R-magrittr">
 <p>Bache, Stefan Milton, and Hadley Wickham. 2014. <em>Magrittr: A Forward-Pipe Operator for R</em>. <a href="https://CRAN.R-project.org/package=magrittr" class="uri">https://CRAN.R-project.org/package=magrittr</a>.</p>
+</div>
+<div id="ref-lovelace2019geocomputation">
+<p>Lovelace, R, J Nowosad, and J Muenchow. 2019. <em>Geocomputation with R</em>. Chapman and Hall/CRC Press.</p>
 </div>
 <div id="ref-R-wesanderson">
 <p>Ram, Karthik, and Hadley Wickham. 2018. <em>Wesanderson: A Wes Anderson Palette Generator</em>. <a href="https://CRAN.R-project.org/package=wesanderson" class="uri">https://CRAN.R-project.org/package=wesanderson</a>.</p>
