@@ -400,10 +400,11 @@ Działanie tego operatora polega na tym, że wynik jednej działania jednej funk
 <!-- KOD? --></p>
 <p>Pełne wprowadzenie do koncepcji <em>tidyverse</em> można znaleźć w książce <a href="https://r4ds.had.co.nz/">R for Data Science</a> <span class="citation">(Wickham and Grolemund <a href="#ref-wickham2016r">2016</a>)</span>.</p>
 <!-- rmarkdown -->
-<p>Zrozumienie zależności czy zjawisk bardzo rzadko jest ostatnim etapem - równie istotne jest przekazanie tych wyników właściwej grupie odbiorców<!--communicate-->.
-<!-- ... -->
-<!-- rmarkdown co to -->
-<!-- markdown co to --></p>
+<p>Zrozumienie zależności czy zjawis jest bardzo rzadko ostatnim etapem - równie istotne jest przekazanie tych wyników wybranej grupie odbiorców<!--communicate--> w odpowiedni sposób.
+Do tego celu może posłużyć R Markdown (jego podstawy zostały opisane w sekcji <a href="tworzenie-pakietow.html#dokumentacja-pakietu">13.9</a>)
+R Markdown pozwala na tworzenie dokumentów w różnych formatach (html, pdf, docx, itd.), prezentacji, stron internetowych, książek<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a> i wiele innych.
+Po szczegołowe instrukcje jak używać tego języka warto zajrzeć do książki
+<a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a> [REF???].</p>
 </div>
 <div id="inne-zastosowania" class="section level2">
 <h2><span class="header-section-number">14.3</span> Inne zastosowania</h2>
@@ -435,14 +436,14 @@ Dalej następuje dodanie tych danych do wyświetlenia i wybór odwzorowania prze
 Najprostszym sposobem jest używanie R jak najczęściej.
 Nauka języka programowania przebiega wówczas naturalnie - wraz ze znaleziskiem rozwiązania kolejnego problemu czy rozwiązaniem kolejnego zadania.</p>
 <p>Często jednak, nie jesteśmy w stanie stwierdzić czy ten sposób rozwiązania jest optymalny, lub też napotykamy sytuacje w których nie wiemy jak się do nich odnieść.
-Wówczas szczególnie istotna jest inna umiejętność - czytania kodu innych osób<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.
-Większość pakietów R jest otwartoźródłowych - ich kod jest dostępny online i każda chętna osoba ma do niego dostęp<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a>.
+Wówczas szczególnie istotna jest inna umiejętność - czytania kodu innych osób<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a>.
+Większość pakietów R jest otwartoźródłowych - ich kod jest dostępny online i każda chętna osoba ma do niego dostęp<a href="#fn63" class="footnote-ref" id="fnref63"><sup>63</sup></a>.
 Kod pakietów R można, między innymi, znaleźć w serwisie GitHub.
 Wszystkie pakiety znajdujące się w repozytorium CRAN można znaleźć pod adresem <a href="https://github.com/cran" class="uri">https://github.com/cran</a>.
 Inną możliwością jest samodzielne wyszukanie kodu pakietu używając wyszukiwarki GitHub - <a href="https://github.com/search" class="uri">https://github.com/search</a>.</p>
 <p>Przykładowo, pod adresem <a href="https://github.com/karthik/wesanderson" class="uri">https://github.com/karthik/wesanderson</a> znajduje się kod źródłowy pakietu <strong>wesanderson</strong> <span class="citation">(Ram and Wickham <a href="#ref-R-wesanderson">2018</a>)</span>.
 Ten pakiet zawiera funkcje tworzące palety kolorystyczne inspirowane filmami reżysera <a href="https://en.wikipedia.org/wiki/Wes_Anderson">Wesa Andersona</a>.
-Kod R będący podstawą działania tego pakietu znajduje się w folderze <code>R/</code><a href="#fn63" class="footnote-ref" id="fnref63"><sup>63</sup></a>.
+Kod R będący podstawą działania tego pakietu znajduje się w folderze <code>R/</code><a href="#fn64" class="footnote-ref" id="fnref64"><sup>64</sup></a>.
 Dodatkowo, niektóre pakietu zawierają kod z innych języków programowania (np. C lub C++), który wymaga wcześniejszej kompilacji.
 Taki kod znajduje się w folderze <code>src/</code>.</p>
 <!-- functional programming - 05 -->
@@ -498,10 +499,11 @@ Obejmuje to też wiele innych czynności, takich jak stosowanie optymalnych algo
 <hr />
 <ol start="60">
 <li id="fn60"><p>Kod <code>tavg ~ nazwa_stacji</code> można inaczej odczytać jako <code>tavg</code> w zależności od <code>nazwa_stacji</code>.<a href="podsumowanie.html#fnref60" class="footnote-back">↩</a></p></li>
-<li id="fn61"><p>Read the Source, Luke.<a href="podsumowanie.html#fnref61" class="footnote-back">↩</a></p></li>
-<li id="fn62"><p>Dostępny jest także kod źródłowy samego języka R.
-Można go znaleźć pod adresem <a href="https://github.com/wch/r-source" class="uri">https://github.com/wch/r-source</a><a href="podsumowanie.html#fnref62" class="footnote-back">↩</a></p></li>
-<li id="fn63"><p>Szczególnie <code>R/colors.R</code>.<a href="podsumowanie.html#fnref63" class="footnote-back">↩</a></p></li>
+<li id="fn61"><p>Ta książka również powstała używająć R Markdown.<a href="podsumowanie.html#fnref61" class="footnote-back">↩</a></p></li>
+<li id="fn62"><p>Read the Source, Luke.<a href="podsumowanie.html#fnref62" class="footnote-back">↩</a></p></li>
+<li id="fn63"><p>Dostępny jest także kod źródłowy samego języka R.
+Można go znaleźć pod adresem <a href="https://github.com/wch/r-source" class="uri">https://github.com/wch/r-source</a><a href="podsumowanie.html#fnref63" class="footnote-back">↩</a></p></li>
+<li id="fn64"><p>Szczególnie <code>R/colors.R</code>.<a href="podsumowanie.html#fnref64" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
