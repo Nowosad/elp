@@ -51,7 +51,8 @@ knitr::write_bib(c(.packages(),
                    "landscapemetrics", "bench", "profvis",
                    "usethis", "testthat", "available",
                    "pkgdown", "remotes", "Rcpp", "ggplot2",
-                   "wesanderson"),
+                   "wesanderson", "tmap", "dplyr",
+                   "tidyr"),
                    "packages.bib")
 ```
 
