@@ -62,15 +62,15 @@ Inną przyczyną popularności R do analizy danych jest grupa pakietów zbiorczo
 Jest to spójny zbiór pakietów pozwalających na wykonywanie kolejnych czynności analizy danych.
 Na samym początku obejmuje to pakiety poświęcone wczytywaniu danych w różnych formatach, w tym poznane w rozdziale \@ref(io) pakiety **readr** [@R-readr] oraz **readxl** [@R-readxl].
 Kolejnym krokiem jest porządkowanie danych, polegające, na przykład, na zmianie struktury ramki danych gdzie wartości jakiejś zmiennej stają się nazwami kolumn.
-W tym etapie można użyć pakiet **tidyr** [REF???].
+W tym etapie można użyć pakiet **tidyr** [@R-tidyr].
 
-Dane w odpowiedniej postaci można następnie przetwarzać, np. tworzyć nowe zmienne na postawie przeliczania już istniejących czy też wyliczać ich podsumowania używając pakietu **dplyr** [REF???].
-Tak przetworzone dane następnie są często wizualizowane używając pakietu **ggplot2** [@R-ggplot2] lub też w ich oparciu budowane są modele (pakiety ??, ??, ?? [REF???]).
+Dane w odpowiedniej postaci można następnie przetwarzać, np. tworzyć nowe zmienne na postawie przeliczania już istniejących czy też wyliczać ich podsumowania używając pakietu **dplyr** [@R-dplyr].
+Tak przetworzone dane następnie są często wizualizowane używając pakietu **ggplot2** [@R-ggplot2] lub też w ich oparciu budowane są [modele](https://github.com/tidymodels/tidymodels).
 Ma to na celu zrozumienie posiadanych danych oraz zależności czy zjawisk które opisują.
 
 <!-- FIG? -->
 
-W ramach grupy pakietów **tidyverse** często stosuje się operator `%>%` (ang. *pipe*, ???) z pakietu **magrittr** [@R-magrittr]. 
+W ramach grupy pakietów **tidyverse** często stosuje się operator `%>%` (ang. *pipe*) z pakietu **magrittr** [@R-magrittr]. 
 Pozwala on na łączenie kilku oddzielnych funkcji w jedno zapytanie.
 Działanie tego operatora polega na tym, że wynik jednej działania jednej funkcji staje się automatycznie pierwszym argumentem w kolejnej funkcji.
 <!-- footnote o wywołaniu funkcji -->
