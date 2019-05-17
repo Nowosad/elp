@@ -108,7 +108,7 @@ Obejmuje to bardzo szeroki przekrój tematów - od list poświęconych projektow
 Wsród tych list znajduje się także jedna poświęcona analizie danych przestrzennych.
 Opisuje ona, między innymi, takie pakiety jak **sf**, pozwalający na wczytywanie, przetwarzanie i zapisywanie danych wektorowych czy **tmap** ułatwiający tworzenie map.
 Na poniższym przykładzie następuje dołączenie tych pakietów oraz wczytanie zbioru danych `World` zawierającego poligony krajów na świecie i podstawowe informacje o nich.
-Dalej następuje dodanie tych danych do wyświetlenia i wybór odwzorowania przestrzennego<!--footnote--> używając funkcji `tm_shape()`, po czym te dane są wyświetlone w postaci poligonów (funkcja `tm_polygons()`), gdzie kolory poligonów wynikają z ich wartości w kolumnie `life_exp` a tytuł legendy jest wybrany przez nas.
+Dalej następuje dodanie tych danych do wyświetlenia i wybór odwzorowania przestrzennego<!--footnote--> używając funkcji `tm_shape()`, po czym te dane są wyświetlone w postaci poligonów (funkcja `tm_polygons()`), gdzie kolory poligonów wynikają z ich wartości w kolumnie `life_exp` a tytuł legendy jest wybrany przez nas (rycina \@ref(fig:tmap-example)).
 
 ```{r, eval=FALSE}
 library(sf)
@@ -118,6 +118,18 @@ tm_shape(World, projection = "robin") +
     tm_polygons(col = "life_exp", 
                 title = "Oczekiwana dalsza \ndługość życia")
 ```
+```{r, eval=FALSE, echo=FALSE}
+tm1 = tm_shape(World, projection = "robin") + 
+    tm_polygons(col = "life_exp", 
+                title = "Oczekiwana dalsza \ndługość życia")
+tmap_save(tm1, "images/tmap-example.png", 
+          units = "px", width = 1152, height = 614,
+          dpi = 180)
+```
+```{r tmap-example, echo=FALSE, fig.cap="Przykład działania pakietu tmap."}
+knitr::include_graphics("images/tmap-example.png", dpi = NA)
+```
+
 
 <!-- geocompr -->
 
