@@ -130,8 +130,7 @@ tmap_save(tm1, "images/tmap-example.png",
 knitr::include_graphics("images/tmap-example.png", dpi = NA)
 ```
 
-
-<!-- geocompr -->
+Podstawy działania na danych przestrzennych zawiera książka [Geocomputation with R](https://geocompr.robinlovelace.net/) [@lovelace2019geocomputation].
 
 ## Programowanie
 
