@@ -62,15 +62,15 @@ Inną przyczyną popularności R do analizy danych jest grupa pakietów zbiorczo
 Jest to spójny zbiór pakietów pozwalających na wykonywanie kolejnych czynności analizy danych.
 Na samym początku obejmuje to pakiety poświęcone wczytywaniu danych w różnych formatach, w tym poznane w rozdziale \@ref(io) pakiety **readr** [@R-readr] oraz **readxl** [@R-readxl].
 Kolejnym krokiem jest porządkowanie danych, polegające, na przykład, na zmianie struktury ramki danych gdzie wartości jakiejś zmiennej stają się nazwami kolumn.
-W tym etapie można użyć pakiet **tidyr** [REF???].
+W tym etapie można użyć pakiet **tidyr** [@R-tidyr].
 
-Dane w odpowiedniej postaci można następnie przetwarzać, np. tworzyć nowe zmienne na postawie przeliczania już istniejących czy też wyliczać ich podsumowania używając pakietu **dplyr** [REF???].
-Tak przetworzone dane następnie są często wizualizowane używając pakietu **ggplot2** [@R-ggplot2] lub też w ich oparciu budowane są modele (pakiety ??, ??, ?? [REF???]).
+Dane w odpowiedniej postaci można następnie przetwarzać, np. tworzyć nowe zmienne na postawie przeliczania już istniejących czy też wyliczać ich podsumowania używając pakietu **dplyr** [@R-dplyr].
+Tak przetworzone dane następnie są często wizualizowane używając pakietu **ggplot2** [@R-ggplot2] lub też w ich oparciu budowane są [modele](https://github.com/tidymodels/tidymodels).
 Ma to na celu zrozumienie posiadanych danych oraz zależności czy zjawisk które opisują.
 
 <!-- FIG? -->
 
-W ramach grupy pakietów **tidyverse** często stosuje się operator `%>%` (ang. *pipe*, ???) z pakietu **magrittr** [@R-magrittr]. 
+W ramach grupy pakietów **tidyverse** często stosuje się operator `%>%` (ang. *pipe*) z pakietu **magrittr** [@R-magrittr]. 
 Pozwala on na łączenie kilku oddzielnych funkcji w jedno zapytanie.
 Działanie tego operatora polega na tym, że wynik jednej działania jednej funkcji staje się automatycznie pierwszym argumentem w kolejnej funkcji.
 <!-- footnote o wywołaniu funkcji -->
@@ -78,17 +78,23 @@ Działanie tego operatora polega na tym, że wynik jednej działania jednej funk
 ```{r, echo=FALSE, eval=FALSE}
 readxl::read_excel("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.xls")
 
-readxl::read_excel("pliki/dane_meteo.xlsx")
-```
+a = readxl::read_excel("pliki/dane_meteo.xlsx")
+tidyr::unite(a, data, rok, miesiac, dzien)
 
+read %>% 
+  tidyr %>% 
+  dplyr %>% 
+  ggplot2
+```
 
 Pełne wprowadzenie do koncepcji *tidyverse* można znaleźć w książce [R for Data Science](https://r4ds.had.co.nz/) [@wickham2016r].
 
 <!-- rmarkdown -->
-Zrozumienie zależności czy zjawisk bardzo rzadko jest ostatnim etapem - równie istotne jest przekazanie tych wyników właściwej grupie odbiorców<!--communicate-->.
-<!-- ... -->
-<!-- rmarkdown co to -->
-<!-- markdown co to -->
+Zrozumienie zależności czy zjawis jest bardzo rzadko ostatnim etapem - równie istotne jest przekazanie tych wyników wybranej grupie odbiorców<!--communicate--> w odpowiedni sposób.
+Do tego celu może posłużyć R Markdown (jego podstawy zostały opisane w sekcji \@ref(dokumentacja-pakietu))
+R Markdown pozwala na tworzenie dokumentów w różnych formatach (html, pdf, docx, itd.), prezentacji, stron internetowych, książek^[Ta książka również powstała używająć R Markdown.] i wiele innych.
+Po szczegołowe instrukcje jak używać tego języka warto zajrzeć do książki
+[R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) [REF???].
 
 ## Inne zastosowania
 
@@ -96,17 +102,13 @@ Wcześniejsze dwie sekcje pokazywały bardzo szerokie zastosowania R - analizowa
 <!-- ... -->
 W związku z czym, w R istnieje także znacząca liczba pakietów stworzonych do bardziej specjalistycznych i szczegółowych celów.
 Można to zobaczyć przeglądając tzw. *task views* - listy pakietów zaagregowane według podobnej tematyki znajdujące się pod adresem  https://cran.r-project.org/web/views/.
-<!-- co tam jest -->
-<!-- bioinformatyka -->
-<!-- https://www.bioconductor.org/ -->
-<!-- https://en.wikipedia.org/wiki/Bioconductor -->
-<!-- może footnote tylko -->
+Obejmuje to bardzo szeroki przekrój tematów - od list poświęconych projektowaniu prób klinicznych, poprzez przetwarzanie języka naturalnego, skończywszy na ekonometrii i analizach finansowych^[Dodatkowo istnieje specjalne repozytorium Bioconductor poświęcone pakietom R dotyczącym zagadnień bioinformatycznych.].
 
 <!-- maps -->
 Wsród tych list znajduje się także jedna poświęcona analizie danych przestrzennych.
 Opisuje ona, między innymi, takie pakiety jak **sf**, pozwalający na wczytywanie, przetwarzanie i zapisywanie danych wektorowych czy **tmap** ułatwiający tworzenie map.
 Na poniższym przykładzie następuje dołączenie tych pakietów oraz wczytanie zbioru danych `World` zawierającego poligony krajów na świecie i podstawowe informacje o nich.
-Dalej następuje dodanie tych danych do wyświetlenia i wybór odwzorowania przestrzennego<!--footnote--> używając funkcji `tm_shape()`, po czym te dane są wyświetlone w postaci poligonów (funkcja `tm_polygons()`), gdzie kolory poligonów wynikają z ich wartości w kolumnie `life_exp` a tytuł legendy jest wybrany przez nas.
+Dalej następuje dodanie tych danych do wyświetlenia i wybór odwzorowania przestrzennego<!--footnote--> używając funkcji `tm_shape()`, po czym te dane są wyświetlone w postaci poligonów (funkcja `tm_polygons()`), gdzie kolory poligonów wynikają z ich wartości w kolumnie `life_exp` a tytuł legendy jest wybrany przez nas (rycina \@ref(fig:tmap-example)).
 
 ```{r, eval=FALSE}
 library(sf)
@@ -116,8 +118,19 @@ tm_shape(World, projection = "robin") +
     tm_polygons(col = "life_exp", 
                 title = "Oczekiwana dalsza \ndługość życia")
 ```
+```{r, eval=FALSE, echo=FALSE}
+tm1 = tm_shape(World, projection = "robin") + 
+    tm_polygons(col = "life_exp", 
+                title = "Oczekiwana dalsza \ndługość życia")
+tmap_save(tm1, "images/tmap-example.png", 
+          units = "px", width = 1152, height = 614,
+          dpi = 180)
+```
+```{r tmap-example, echo=FALSE, fig.cap="Przykład działania pakietu tmap."}
+knitr::include_graphics("images/tmap-example.png", dpi = NA)
+```
 
-<!-- geocompr -->
+Podstawy działania na danych przestrzennych zawiera książka [Geocomputation with R](https://geocompr.robinlovelace.net/) [@lovelace2019geocomputation].
 
 ## Programowanie
 
