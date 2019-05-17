@@ -24,7 +24,7 @@
 <meta name="author" content="Jakub Nowosad" />
 
 
-<meta name="date" content="2019-05-15" />
+<meta name="date" content="2019-05-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -344,7 +344,7 @@ Stosując uzyskane umiejętności w praktyce.
 <!-- Może to być... --></p>
 <div id="grafika" class="section level2">
 <h2><span class="header-section-number">14.1</span> Grafika</h2>
-<p>R posiada rozbudowane narzędzia do tworzenia wykresów.
+<p>Jedną z najczęściej wymienianych zalet R są jego rozbudowane narzędzia do tworzenia wykresów.
 Możemy to zobaczyć na poniższym przykładzie danych meteorologicznych dla Poznania i Zakopanego z roku 2017.</p>
 <pre class="sourceCode r"><code class="sourceCode r">met =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv&quot;</span>,
              <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
@@ -381,29 +381,53 @@ Przykładowo, do stworzenia wykresu pudełkowego służy <code>geom_boxplot()</c
 <div id="analiza-danych" class="section level2">
 <h2><span class="header-section-number">14.2</span> Analiza danych</h2>
 <p>R jest jednym z języków programowania najczęściej używanych w analizie danych<!--datascience--><!--REF???-->.
-Jest to wynikiem szeregu przyczyn, w tym dużej liczby wbudowanych funkcji statystycznych oraz graficznych w R.
-Dodatkowo, ramka danych, jeden z podstawowych obiektów w R, może być utożsamiany z arkuszem kalkulacyjnym czy tabelą z bazy danych.
-W związku z tym ta forma obiektu złożonego z kolumn (zmienne) i wierszy (obserwacje) jest reprezentacją, która uławia czyszczenie, przetwarzanie i analizowanie danych.</p>
+Jest to wynikiem szeregu przyczyn, w tym dużej liczby wbudowanych w R funkcji statystycznych oraz graficznych.
+Dodatkowo, ramka danych, jeden z podstawowych obiektów w R, może być utożsamiany z arkuszem kalkulacyjnym czy tabelą z bazy danych - najpopuarniejszych form przechowywania różnorakich danych.
+Ta forma obiektu, złożonego z kolumn (zmienne) i wierszy (obserwacje), jest reprezentacją, która uławia czyszczenie, przetwarzanie i analizowanie danych.</p>
 <p>Inną przyczyną popularności R do analizy danych jest grupa pakietów zbiorczo określana jako <em>tidyverse</em>.
-Jest to spójny zbiór pakietów pozwalających na wczytywanie, czyszczenie, przetwarzanie, wizualizację czy modelowanie danych.</p>
+Jest to spójny zbiór pakietów pozwalających na wykonywanie kolejnych czynności analizy danych.
+Na samym początku obejmuje to pakiety poświęcone wczytywaniu danych w różnych formatach, w tym poznane w rozdziale <a href="io.html#io">9</a> pakiety <strong>readr</strong> <span class="citation">(Wickham, Hester, and Francois <a href="#ref-R-readr">2018</a>)</span> oraz <strong>readxl</strong> <span class="citation">(Wickham and Bryan <a href="#ref-R-readxl">2019</a><a href="#ref-R-readxl">a</a>)</span>.
+Kolejnym krokiem jest porządkowanie danych, polegające, na przykład, na zmianie struktury ramki danych gdzie wartości jakiejś zmiennej stają się nazwami kolumn.
+W tym etapie można użyć pakiet <strong>tidyr</strong> [REF???].</p>
+<p>Dane w odpowiedniej postaci można następnie przetwarzać, np. tworzyć nowe zmienne na postawie przeliczania już istniejących czy też wyliczać ich podsumowania używając pakietu <strong>dplyr</strong> [REF???].
+Tak przetworzone dane następnie są często wizualizowane używając pakietu <strong>ggplot2</strong> <span class="citation">(Wickham et al. <a href="#ref-R-ggplot2">2019</a>)</span> lub też w ich oparciu budowane są modele (pakiety ??, ??, ?? [REF???]).
+Ma to na celu zrozumienie posiadanych danych oraz zależności czy zjawisk które opisują.</p>
 <!-- FIG? -->
-<!-- pipe %>%  -->
-<!-- KOD? -->
+<p>W ramach grupy pakietów <strong>tidyverse</strong> często stosuje się operator <code>%&gt;%</code> (ang. <em>pipe</em>, ???) z pakietu <strong>magrittr</strong> <span class="citation">(Bache and Wickham <a href="#ref-R-magrittr">2014</a>)</span>.
+Pozwala on na łączenie kilku oddzielnych funkcji w jedno zapytanie.
+Działanie tego operatora polega na tym, że wynik jednej działania jednej funkcji staje się automatycznie pierwszym argumentem w kolejnej funkcji.
+<!-- footnote o wywołaniu funkcji -->
+<!-- KOD? --></p>
 <p>Pełne wprowadzenie do koncepcji <em>tidyverse</em> można znaleźć w książce <a href="https://r4ds.had.co.nz/">R for Data Science</a> <span class="citation">(Wickham and Grolemund <a href="#ref-wickham2016r">2016</a>)</span>.</p>
+<!-- rmarkdown -->
+<p>Zrozumienie zależności czy zjawisk bardzo rzadko jest ostatnim etapem - równie istotne jest przekazanie tych wyników właściwej grupie odbiorców<!--communicate-->.
+<!-- ... -->
+<!-- rmarkdown co to -->
+<!-- markdown co to --></p>
 </div>
 <div id="inne-zastosowania" class="section level2">
 <h2><span class="header-section-number">14.3</span> Inne zastosowania</h2>
-<!-- dużo zastosowań -->
-<!-- https://cran.r-project.org/web/views/ -->
+<p>Wcześniejsze dwie sekcje pokazywały bardzo szerokie zastosowania R - analizować czy wizualizować można zarówno dane o temperaturze powietrza jak i wyniki wyborów prezydenckich.
+<!-- ... -->
+W związku z czym, w R istnieje także znacząca liczba pakietów stworzonych do bardziej specjalistycznych i szczegółowych celów.
+Można to zobaczyć przeglądając tzw. <em>task views</em> - listy pakietów zaagregowane według podobnej tematyki znajdujące się pod adresem <a href="https://cran.r-project.org/web/views/" class="uri">https://cran.r-project.org/web/views/</a>.
+<!-- co tam jest -->
+<!-- bioinformatyka -->
+<!-- https://www.bioconductor.org/ -->
+<!-- https://en.wikipedia.org/wiki/Bioconductor -->
+<!-- może footnote tylko --></p>
 <!-- maps -->
+<p>Wsród tych list znajduje się także jedna poświęcona analizie danych przestrzennych.
+Opisuje ona, między innymi, takie pakiety jak <strong>sf</strong>, pozwalający na wczytywanie, przetwarzanie i zapisywanie danych wektorowych czy <strong>tmap</strong> ułatwiający tworzenie map.
+Na poniższym przykładzie następuje dołączenie tych pakietów oraz wczytanie zbioru danych <code>World</code> zawierającego poligony krajów na świecie i podstawowe informacje o nich.
+Dalej następuje dodanie tych danych do wyświetlenia i wybór odwzorowania przestrzennego<!--footnote--> używając funkcji <code>tm_shape()</code>, po czym te dane są wyświetlone w postaci poligonów (funkcja <code>tm_polygons()</code>), gdzie kolory poligonów wynikają z ich wartości w kolumnie <code>life_exp</code> a tytuł legendy jest wybrany przez nas.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(sf)
 <span class="kw">library</span>(tmap)
 <span class="kw">data</span>(World)
 <span class="kw">tm_shape</span>(World, <span class="dt">projection =</span> <span class="st">&quot;robin&quot;</span>) <span class="op">+</span><span class="st"> </span>
-<span class="st">    </span><span class="kw">tm_polygons</span>(<span class="dt">col =</span> <span class="st">&quot;life_exp&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Oczekiwana dalsza </span><span class="ch">\n</span><span class="st">długość życia&quot;</span>)</code></pre>
-<!-- bioinformatyka -->
-<!-- https://www.bioconductor.org/ -->
-<!-- https://en.wikipedia.org/wiki/Bioconductor -->
+<span class="st">    </span><span class="kw">tm_polygons</span>(<span class="dt">col =</span> <span class="st">&quot;life_exp&quot;</span>, 
+                <span class="dt">title =</span> <span class="st">&quot;Oczekiwana dalsza </span><span class="ch">\n</span><span class="st">długość życia&quot;</span>)</code></pre>
+<!-- geocompr -->
 </div>
 <div id="programowanie" class="section level2">
 <h2><span class="header-section-number">14.4</span> Programowanie</h2>
@@ -434,7 +458,8 @@ Obejmuje to też wiele innych czynności, takich jak stosowanie optymalnych algo
 <!--współpraca z innymi, e.g. code review--></p>
 <p>Innym kierunkiem działań może być nauka kolejnego języka programowania - najlepiej takiego, którego zastosowanie różni się od R.
 <!-- C/C++/Go/Rust -->
-<!-- javascript, what else --></p>
+<!-- javascript, what else -->
+<!-- łącznik --></p>
 <p>Pomimo już znaczącej historii, języki programowania nadal mają wiele nowego do zaoferowania.
 <!-- nowe metody -->
 <!-- nowe stosowanie --></p>
@@ -444,14 +469,23 @@ Obejmuje to też wiele innych czynności, takich jak stosowanie optymalnych algo
 </div>
 <h3>Bibliografia</h3>
 <div id="refs" class="references">
+<div id="ref-R-magrittr">
+<p>Bache, Stefan Milton, and Hadley Wickham. 2014. <em>Magrittr: A Forward-Pipe Operator for R</em>. <a href="https://CRAN.R-project.org/package=magrittr" class="uri">https://CRAN.R-project.org/package=magrittr</a>.</p>
+</div>
 <div id="ref-R-wesanderson">
 <p>Ram, Karthik, and Hadley Wickham. 2018. <em>Wesanderson: A Wes Anderson Palette Generator</em>. <a href="https://CRAN.R-project.org/package=wesanderson" class="uri">https://CRAN.R-project.org/package=wesanderson</a>.</p>
+</div>
+<div id="ref-R-readxl">
+<p>Wickham, Hadley, and Jennifer Bryan. 2019a. <em>Readxl: Read Excel Files</em>. <a href="https://CRAN.R-project.org/package=readxl" class="uri">https://CRAN.R-project.org/package=readxl</a>.</p>
 </div>
 <div id="ref-R-ggplot2">
 <p>Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, and Kara Woo. 2019. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2" class="uri">https://CRAN.R-project.org/package=ggplot2</a>.</p>
 </div>
 <div id="ref-wickham2016r">
 <p>Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. &quot; O’Reilly Media, Inc.&quot;.</p>
+</div>
+<div id="ref-R-readr">
+<p>Wickham, Hadley, Jim Hester, and Romain Francois. 2018. <em>Readr: Read Rectangular Text Data</em>. <a href="https://CRAN.R-project.org/package=readr" class="uri">https://CRAN.R-project.org/package=readr</a>.</p>
 </div>
 </div>
 <div class="footnotes">
