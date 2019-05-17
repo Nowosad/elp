@@ -26,6 +26,8 @@ is_html = knitr::is_html_output()
 
 # O książce {-}
 
+<a href="http://nowosad.github.io/elp/"><img src="cover/cover.png" width="250" height="375" alt="Cover image" align="right" style="margin: 0 1em 0 1em" /></a> 
+
 **Elementarz programisty: Wstęp do programowania używając R** ma na celu wprowadzenie do podstaw działania w języku R. 
 W pierszej części, "Podstawy", opisuje ona w jaki sposób wykonywać proste operacje w R, czym są obiekty oraz jak tworzyć funkcje, które je przetwarzają.
 Ta część zawiera także omówienie podstawowych narzędzi pozwalających na sterowanie przepływem informacji, takich jak wyrażenia warunkowe i pętle, metod działania na tekście, oraz sposobów wczytywania i zapisywania plików w różnych formatach.
@@ -115,7 +117,10 @@ Tutaj może znaleźć się dodatkowa informacja, alternatywny sposób użycia 
 
 Książka została stworzona w R [@R-base] z wykorzystaniem pakietów **bookdown** [@R-bookdown], **rmarkdown** [@R-rmarkdown], **knitr** [@R-knitr] oraz programu [Pandoc](http://pandoc.org/). 
 
-<div>Ikony użyte w tej książce zostały stworzone przez <a href="https://www.freepik.com/" title="Freepik">Freepik</a> z <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> na licencji <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0." target="_blank">CC 3.0 BY</a>.</div>
+Rysunek na okładce książki "Great-billed Heron (Ardea rectirostris)" został stworzony przez Elizabeth Gould do książki Birds of Australia Johna Goulda i zostało udostępnione na licencji <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en" title="CC0 1.0 Universal" target="_blank">CC0 1.0</a>.
+<!-- https://ccsearch.creativecommons.org/photos/28692762-697a-42a8-964b-ee95843c5347 -->
+
+Ikony użyte w tej książce zostały stworzone przez <a href="https://www.freepik.com/" title="Freepik">Freepik</a> z <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> na licencji <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0." target="_blank">CC 3.0 BY</a>.
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
