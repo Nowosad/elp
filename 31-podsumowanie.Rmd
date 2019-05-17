@@ -102,11 +102,7 @@ Wcześniejsze dwie sekcje pokazywały bardzo szerokie zastosowania R - analizowa
 <!-- ... -->
 W związku z czym, w R istnieje także znacząca liczba pakietów stworzonych do bardziej specjalistycznych i szczegółowych celów.
 Można to zobaczyć przeglądając tzw. *task views* - listy pakietów zaagregowane według podobnej tematyki znajdujące się pod adresem  https://cran.r-project.org/web/views/.
-<!-- co tam jest -->
-<!-- bioinformatyka -->
-<!-- https://www.bioconductor.org/ -->
-<!-- https://en.wikipedia.org/wiki/Bioconductor -->
-<!-- może footnote tylko -->
+Obejmuje to bardzo szeroki przekrój tematów - od list poświęconych projektowaniu prób klinicznych, poprzez przetwarzanie języka naturalnego, skończywszy na ekonometrii i analizach finansowych^[Dodatkowo istnieje specjalne repozytorium Bioconductor poświęcone pakietom R dotyczącym zagadnień bioinformatycznych.].
 
 <!-- maps -->
 Wsród tych list znajduje się także jedna poświęcona analizie danych przestrzennych.
