@@ -24,7 +24,7 @@
 <meta name="author" content="Jakub Nowosad" />
 
 
-<meta name="date" content="2019-05-17" />
+<meta name="date" content="2019-05-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -678,7 +678,7 @@ tekst2
 <p>R ma wbudowaną reprezentację dat w postaci klasy <code>Date</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">dzis =<span class="st"> </span><span class="kw">Sys.Date</span>()
 dzis
-<span class="co">#&gt; [1] &quot;2019-05-17&quot;</span></code></pre>
+<span class="co">#&gt; [1] &quot;2019-05-18&quot;</span></code></pre>
 <p>Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowia), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(dzis)
 <span class="co">#&gt; [1] &quot;double&quot;</span>
@@ -689,8 +689,8 @@ dzis
 <span class="co">#&gt; [1] &quot;Date&quot;</span></code></pre>
 <p>Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji <code>unclass()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unclass</span>(dzis)
-<span class="co">#&gt; [1] 18033</span></code></pre>
-<p>Wynik, 18033, oznacza liczbę dni od 1970-01-01.<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>
+<span class="co">#&gt; [1] 18034</span></code></pre>
+<p>Wynik, 18034, oznacza liczbę dni od 1970-01-01.<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.</p>
 <pre class="sourceCode r"><code class="sourceCode r">stara_data =<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;1912-04-13&quot;</span>)
 <span class="kw">unclass</span>(stara_data)
