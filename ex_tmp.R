@@ -54,7 +54,21 @@ apply(pomiary, 2, max)
 m = matrix(LETTERS[1:24], ncol = 6, nrow = 4)
 m
 # Napisz funkcję wykorzystującą pętle for aby określić “sąsiadów” kolejnych liter wykorzystując sąsiedztwo oparte tylko o wspólną krawędź (ang. 4-neighborhood). Przykładowo, sąsiadem litery “A” są litery “E” i “B”.
-???
+neigh = function(x){
+  for (i in seq_len(ncol(x))){
+    for (j in seq_len(nrow(x))){
+      main = x[j, i]
+      n1_i = i - 1
+      n1_j = j - 1
+      n1 =  x[n1_j, n1_i]
+
+      cat("Główna litera: ", main, 
+          " Sąsiad 1:", n1, "\n")
+    }
+  }
+}
+
+neigh(m)
 
 # 9.7
 # Napisz funkcję, która przyjmuje jako argument nazwę folderu, a następnie wczytuje wszystkie pliki o rozszerzeniu .csv znajdujące się w tym folderze i łączy je kolumnami.
