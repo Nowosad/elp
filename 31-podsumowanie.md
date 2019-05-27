@@ -172,7 +172,7 @@ Po inspekcji twórca kodu może dostać informację zwrotną, co jest dobre, a c
 W efekcie, z jednej strony wyjściowy produkt jest lepszej jakości, a z drugiej strony programista uczy się i polepsza swoje umiejętności.
 
 Niezależnie od używanego języka istnieje również szereg narzędzi, których znajomość ułatwia lub czasem nawet umożliwia pracę.
-Wśród nich można wyróżnić znajomość linii komend i jej możliwości [@krossUnixWorkbench2017] oraz języka SQL służącego do tworzenia, edycji i zarządzania relacyjnymi bazami danych [@beighley2007head;forta2013sams].
+Wśród nich można wyróżnić znajomość linii komend i jej możliwości [@krossUnixWorkbench2017] oraz języka SQL służącego do tworzenia, edycji i zarządzania relacyjnymi bazami danych [@beighley2007head;@forta2013sams].
 <!-- uczenie maszynowe -->
 <!-- zrównoleglanie (hcp) -->
 
