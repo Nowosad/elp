@@ -164,9 +164,15 @@ Istnieje wiele książek poświęconych kwestii algorytmów, wsród których naj
 <!-- https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments -->
 <!-- vim? emacs? -->
 <!--współpraca z innymi, e.g. code review-->
+^[https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments]
+Programowanie często obejmuje pracę w zespole.
+Wówczas jednym ze sposobów dbania o jakość tworzonego produktu może być inspekcja kodu (ang. *code review*). 
+Polega ona na tym, że zmiany naniesione w kodzie są przekazywane innej osobie, która sprawdza go pod kątem błędów, spójności, stylu, zgodności z isniejącymi rozwiązaniami, itd.
+Po inspekcji twórca kodu może dostać informację zwrotną, co jest dobre, a co wymaga poprawy.
+W efekcie, z jednej strony wyjściowy produkt jest lepszej jakości, a z drugiej strony programista uczy się i polepsza swoje umiejętności.
 
-<!-- unix/command line -->
-<!-- sql + bazy danych -->
+Niezależnie od używanego języka istnieje również szereg narzędzi, których znajomość ułatwia lub czasem nawet umożliwia pracę.
+Wśród nich można wyróżnić znajomość linii komend i jej możliwości [@krossUnixWorkbench2017] oraz języka SQL służącego do tworzenia, edycji i zarządzania relacyjnymi bazami danych [@beighley2007head;forta2013sams].
 <!-- uczenie maszynowe -->
 <!-- zrównoleglanie (hcp) -->
 
