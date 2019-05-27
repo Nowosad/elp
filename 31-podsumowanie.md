@@ -173,10 +173,9 @@ Obejmuje to też wiele innych czynności, takich jak stosowanie optymalnych algo
 Innym kierunkiem działań może być nauka kolejnego języka programowania - najlepiej takiego, którego główne zastosowanie różni się od R.
 Może to być przykładowo język kompilowany, taki jak C, C++ lub Rust, którego efektem będzie bardziej wydajny<!--...--> program.
 Co ważne, kod napisany w tych językach można łączyć z kodem R.
-R posiada wbudowany interfejs do używania kodu napisanego w C (rozdział 5 z dokumentacji [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html#System-and-foreign-language-interfaces) [@team1999writing]), łączenie kodu napisanego w C++ ułatwia znacząco pakiet **Rcpp** [@R-Rcpp] (więcej informacji w rozdziale ["Rewriting R code in C++"](https://adv-r.hadley.nz/rcpp.html) książki Advanced R [@wickham2014advanced]), a wskazówki dotyczące łączenia kodu Rust można znaleźć w repozytorium https://github.com/r-rust/hellorust.
+R posiada wbudowany interfejs do używania kodu napisanego w C (rozdział 5 z dokumentacji [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html#System-and-foreign-language-interfaces) [@team1999writing]), łączenie kodu napisanego w C++ ułatwia znacząco pakiet **Rcpp**(@R-Rcpp; więcej informacji w rozdziale ["Rewriting R code in C++"](https://adv-r.hadley.nz/rcpp.html) książki Advanced R [@wickham2014advanced]), a wskazówki dotyczące łączenia kodu Rust można znaleźć w repozytorium https://github.com/r-rust/hellorust.
 W efekcie użytkownik może korzystać z interaktywności R, wykonując dowolne linie kodu, ale część z nich może używać wydajniejszych funkcji napisanych w jezykach kompilowanych.
-<!-- javascript, what else -->
-<!-- łącznik -->
+Alternatywną drogą może być nauka języków używanych do tworzenia i rozwijania aplikacji internetowych, w tym JavaScript czy PHP.
 
 <!-- sql + bazy danych -->
 <!-- uczenie maszynowe -->
@@ -184,7 +183,11 @@ W efekcie użytkownik może korzystać z interaktywności R, wykonując dowolne 
 
 
 Pomimo już znaczącej historii, języki programowania nadal mają wiele nowego do zaoferowania.
-<!-- nowe metody -->
-<!-- nowe stosowanie -->
+Nieustannie następuje ich ewolucja <!--nowe wersje R czy Pythona; nowe standardy c++-->- dodawane są nowe możliwości, zmieniane są istniejące funkcje, czy też następuje poprawa wydajności.
+Tworzone są również pakiety, moduły, czy biblioteki implementujące nowe pomysły, czy też ulepszające i rozszerzające dostępne oprogramowanie.
+W efekcie typowy kod napisany w danym języku kilka lat temu może się różnić od tego napisanego dziś.
+Powstaje też ciągle wiele nowych języków, z których tylko niewielka część zdobywa szersze grono użytkowników.
+Te języki często wprowadzają nowe podejścia i koncepcje, które później mają bezpośredni wpływ na zmiany w istniejących językach.
+Języki programowania są też stosowane coraz częściej w wielu codzienne używanych sprzętach, w tym samochodach czy lodówkach (ang. [*internet of things*](https://en.wikipedia.org/wiki/Internet_of_things), IOT).
 
 Powodzenia w dalszej przygodzie z programowaniem!
