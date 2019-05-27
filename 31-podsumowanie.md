@@ -159,16 +159,22 @@ Taki kod znajduje się w folderze `src/`.
 
 Programowanie to nie tylko pisanie kodu. 
 Obejmuje to też wiele innych czynności, takich jak stosowanie optymalnych algorytmów czy narzędzi programistycznych.
-<!--alogrytmy-->
-<!-- https://en.wikipedia.org/wiki/Introduction_to_Algorithms -->
-<!-- https://www.amazon.co.uk/dp/032157351X?linkCode=gs2&tag=javarevisit01-21 -->
-<!-- https://www.amazon.co.uk/dp/1849967202?linkCode=gs2&tag=javarevisit01-21 -->
+Istnieje wiele książek poświęconych kwestii algorytmów, wsród których najbardziej popularne to Introduction to Algorithms [@cormen2009introduction], The Algorithm Design Manual [@skienaAlgorithmDesignManual2008] i Algorithms [032157351X].
 <!--narzędzia programistyczne-->
 <!-- https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments -->
 <!-- vim? emacs? -->
 <!--współpraca z innymi, e.g. code review-->
+^[https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments]
+Programowanie często obejmuje pracę w zespole.
+Wówczas jednym ze sposobów dbania o jakość tworzonego produktu może być inspekcja kodu (ang. *code review*). 
+Polega ona na tym, że zmiany naniesione w kodzie są przekazywane innej osobie, która sprawdza go pod kątem błędów, spójności, stylu, zgodności z isniejącymi rozwiązaniami, itd.
+Po inspekcji twórca kodu może dostać informację zwrotną, co jest dobre, a co wymaga poprawy.
+W efekcie, z jednej strony wyjściowy produkt jest lepszej jakości, a z drugiej strony programista uczy się i polepsza swoje umiejętności.
 
-<!-- unix/command line -->
+Niezależnie od używanego języka istnieje również szereg narzędzi, których znajomość ułatwia lub czasem nawet umożliwia pracę.
+Wśród nich można wyróżnić znajomość linii komend i jej możliwości [@krossUnixWorkbench2017] oraz języka SQL służącego do tworzenia, edycji i zarządzania relacyjnymi bazami danych [@beighley2007head;forta2013sams].
+<!-- uczenie maszynowe -->
+<!-- zrównoleglanie (hcp) -->
 
 Innym kierunkiem działań może być nauka kolejnego języka programowania - najlepiej takiego, którego główne zastosowanie różni się od R.
 Może to być przykładowo język kompilowany, taki jak C, C++ lub Rust, którego efektem będzie bardziej wydajny<!--...--> program.
@@ -176,11 +182,6 @@ Co ważne, kod napisany w tych językach można łączyć z kodem R.
 R posiada wbudowany interfejs do używania kodu napisanego w C (rozdział 5 z dokumentacji [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html#System-and-foreign-language-interfaces) [@team1999writing]), łączenie kodu napisanego w C++ ułatwia znacząco pakiet **Rcpp**(@R-Rcpp; więcej informacji w rozdziale ["Rewriting R code in C++"](https://adv-r.hadley.nz/rcpp.html) książki Advanced R [@wickham2014advanced]), a wskazówki dotyczące łączenia kodu Rust można znaleźć w repozytorium https://github.com/r-rust/hellorust.
 W efekcie użytkownik może korzystać z interaktywności R, wykonując dowolne linie kodu, ale część z nich może używać wydajniejszych funkcji napisanych w jezykach kompilowanych.
 Alternatywną drogą może być nauka języków używanych do tworzenia i rozwijania aplikacji internetowych, w tym JavaScript czy PHP.
-
-<!-- sql + bazy danych -->
-<!-- uczenie maszynowe -->
-<!-- zrównoleglanie (hcp) -->
-
 
 Pomimo już znaczącej historii, języki programowania nadal mają wiele nowego do zaoferowania.
 Nieustannie następuje ich ewolucja <!--nowe wersje R czy Pythona; nowe standardy c++-->- dodawane są nowe możliwości, zmieniane są istniejące funkcje, czy też następuje poprawa wydajności.

@@ -456,24 +456,26 @@ Taki kod znajduje się w folderze <code>src/</code>.</p>
 <h2><span class="header-section-number">14.5</span> Co dalej?</h2>
 <p>Programowanie to nie tylko pisanie kodu.
 Obejmuje to też wiele innych czynności, takich jak stosowanie optymalnych algorytmów czy narzędzi programistycznych.
-<!--alogrytmy-->
-<!-- https://en.wikipedia.org/wiki/Introduction_to_Algorithms -->
-<!-- https://www.amazon.co.uk/dp/032157351X?linkCode=gs2&tag=javarevisit01-21 -->
-<!-- https://www.amazon.co.uk/dp/1849967202?linkCode=gs2&tag=javarevisit01-21 -->
+Istnieje wiele książek poświęconych kwestii algorytmów, wsród których najbardziej popularne to Introduction to Algorithms <span class="citation">(Cormen et al. <a href="#ref-cormen2009introduction">2009</a>)</span>, The Algorithm Design Manual <span class="citation">(Skiena <a href="#ref-skienaAlgorithmDesignManual2008">2008</a>)</span> i Algorithms [032157351X].
 <!--narzędzia programistyczne-->
 <!-- https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments -->
 <!-- vim? emacs? -->
-<!--współpraca z innymi, e.g. code review--></p>
-<!-- unix/command line -->
+<!--współpraca z innymi, e.g. code review--><a href="#fn67" class="footnote-ref" id="fnref67"><sup>67</sup></a>
+Programowanie często obejmuje pracę w zespole.
+Wówczas jednym ze sposobów dbania o jakość tworzonego produktu może być inspekcja kodu (ang. <em>code review</em>).
+Polega ona na tym, że zmiany naniesione w kodzie są przekazywane innej osobie, która sprawdza go pod kątem błędów, spójności, stylu, zgodności z isniejącymi rozwiązaniami, itd.
+Po inspekcji twórca kodu może dostać informację zwrotną, co jest dobre, a co wymaga poprawy.
+W efekcie, z jednej strony wyjściowy produkt jest lepszej jakości, a z drugiej strony programista uczy się i polepsza swoje umiejętności.</p>
+<p>Niezależnie od używanego języka istnieje również szereg narzędzi, których znajomość ułatwia lub czasem nawet umożliwia pracę.
+Wśród nich można wyróżnić znajomość linii komend i jej możliwości <span class="citation">(Kross <a href="#ref-krossUnixWorkbench2017">2017</a>)</span> oraz języka SQL służącego do tworzenia, edycji i zarządzania relacyjnymi bazami danych [<span class="citation">Beighley (<a href="#ref-beighley2007head">2007</a>)</span>;forta2013sams].
+<!-- uczenie maszynowe -->
+<!-- zrównoleglanie (hcp) --></p>
 <p>Innym kierunkiem działań może być nauka kolejnego języka programowania - najlepiej takiego, którego główne zastosowanie różni się od R.
 Może to być przykładowo język kompilowany, taki jak C, C++ lub Rust, którego efektem będzie bardziej wydajny<!--...--> program.
 Co ważne, kod napisany w tych językach można łączyć z kodem R.
 R posiada wbudowany interfejs do używania kodu napisanego w C (rozdział 5 z dokumentacji <a href="https://cran.r-project.org/doc/manuals/R-exts.html#System-and-foreign-language-interfaces">Writing R Extensions</a> <span class="citation">(Team <a href="#ref-team1999writing">1999</a>)</span>), łączenie kodu napisanego w C++ ułatwia znacząco pakiet <strong>Rcpp</strong>(<span class="citation">Eddelbuettel et al. (<a href="#ref-R-Rcpp">2019</a>)</span>; więcej informacji w rozdziale <a href="https://adv-r.hadley.nz/rcpp.html">“Rewriting R code in C++”</a> książki Advanced R <span class="citation">(Wickham <a href="#ref-wickham2014advanced">2014</a>)</span>), a wskazówki dotyczące łączenia kodu Rust można znaleźć w repozytorium <a href="https://github.com/r-rust/hellorust" class="uri">https://github.com/r-rust/hellorust</a>.
 W efekcie użytkownik może korzystać z interaktywności R, wykonując dowolne linie kodu, ale część z nich może używać wydajniejszych funkcji napisanych w jezykach kompilowanych.
 Alternatywną drogą może być nauka języków używanych do tworzenia i rozwijania aplikacji internetowych, w tym JavaScript czy PHP.</p>
-<!-- sql + bazy danych -->
-<!-- uczenie maszynowe -->
-<!-- zrównoleglanie (hcp) -->
 <p>Pomimo już znaczącej historii, języki programowania nadal mają wiele nowego do zaoferowania.
 Nieustannie następuje ich ewolucja <!--nowe wersje R czy Pythona; nowe standardy c++-->- dodawane są nowe możliwości, zmieniane są istniejące funkcje, czy też następuje poprawa wydajności.
 Tworzone są również pakiety, moduły, czy biblioteki implementujące nowe pomysły, czy też ulepszające i rozszerzające dostępne oprogramowanie.
@@ -490,14 +492,26 @@ Języki programowania są też stosowane coraz częściej w wielu codzienne u�
 <div id="ref-R-magrittr">
 <p>Bache, Stefan Milton, and Hadley Wickham. 2014. <em>Magrittr: A Forward-Pipe Operator for R</em>. <a href="https://CRAN.R-project.org/package=magrittr" class="uri">https://CRAN.R-project.org/package=magrittr</a>.</p>
 </div>
+<div id="ref-beighley2007head">
+<p>Beighley, Lynn. 2007. <em>Head First SQL: Your Brain on SQL–A Learner’s Guide</em>. &quot; O’Reilly Media, Inc.&quot;.</p>
+</div>
+<div id="ref-cormen2009introduction">
+<p>Cormen, Thomas H, Charles E Leiserson, Ronald L Rivest, and Clifford Stein. 2009. <em>Introduction to Algorithms</em>. MIT press.</p>
+</div>
 <div id="ref-R-Rcpp">
 <p>Eddelbuettel, Dirk, Romain Francois, JJ Allaire, Kevin Ushey, Qiang Kou, Nathan Russell, Douglas Bates, and John Chambers. 2019. <em>Rcpp: Seamless R and C++ Integration</em>. <a href="https://CRAN.R-project.org/package=Rcpp" class="uri">https://CRAN.R-project.org/package=Rcpp</a>.</p>
+</div>
+<div id="ref-krossUnixWorkbench2017">
+<p>Kross, Sean. 2017. <em>The Unix Workbench</em>.</p>
 </div>
 <div id="ref-lovelace2019geocomputation">
 <p>Lovelace, R, J Nowosad, and J Muenchow. 2019. <em>Geocomputation with R</em>. Chapman and Hall/CRC Press.</p>
 </div>
 <div id="ref-R-wesanderson">
 <p>Ram, Karthik, and Hadley Wickham. 2018. <em>Wesanderson: A Wes Anderson Palette Generator</em>. <a href="https://CRAN.R-project.org/package=wesanderson" class="uri">https://CRAN.R-project.org/package=wesanderson</a>.</p>
+</div>
+<div id="ref-skienaAlgorithmDesignManual2008">
+<p>Skiena, Steven S. 2008. <em>The Algorithm Design Manual</em>. Springer Science &amp; Business Media.</p>
 </div>
 <div id="ref-team1999writing">
 <p>Team, R Core. 1999. “Writing R Extensions.”</p>
@@ -535,6 +549,7 @@ Języki programowania są też stosowane coraz częściej w wielu codzienne u�
 <li id="fn65"><p>Dostępny jest także kod źródłowy samego języka R.
 Można go znaleźć pod adresem <a href="https://github.com/wch/r-source" class="uri">https://github.com/wch/r-source</a><a href="podsumowanie.html#fnref65" class="footnote-back">↩</a></p></li>
 <li id="fn66"><p>Szczególnie <code>R/colors.R</code>.<a href="podsumowanie.html#fnref66" class="footnote-back">↩</a></p></li>
+<li id="fn67"><p><a href="https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments" class="uri">https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments</a><a href="podsumowanie.html#fnref67" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
