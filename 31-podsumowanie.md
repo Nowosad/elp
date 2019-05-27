@@ -159,7 +159,7 @@ Taki kod znajduje się w folderze `src/`.
 
 Programowanie to nie tylko pisanie kodu. 
 Obejmuje to też wiele innych czynności, takich jak stosowanie optymalnych algorytmów czy narzędzi programistycznych.
-Istnieje wiele książek poświęconych kwestii algorytmów, wsród których najbardziej popularne to Introduction to Algorithms [@cormen2009introduction], The Algorithm Design Manual [@skienaAlgorithmDesignManual2008] i Algorithms [032157351X].
+Istnieje wiele książek poświęconych kwestii algorytmów, wsród których najbardziej popularne to Introduction to Algorithms [@cormen2009introduction], The Algorithm Design Manual [@skienaAlgorithmDesignManual2008] i Algorithms [@032157351X].
 <!--narzędzia programistyczne-->
 <!-- https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments -->
 <!-- vim? emacs? -->
