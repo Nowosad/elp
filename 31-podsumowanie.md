@@ -68,7 +68,7 @@ Pełna dokumentacja pakietu **ggplot2** znajduje się na stronie http://docs.ggp
 
 ## Analiza danych
 
-R jest jednym z języków programowania najczęściej używanych w analizie danych<!--datascience--><!--REF???-->.
+R jest jednym z języków programowania najczęściej używanych w analizie danych^[Analiza danych często jest określana również jako [data science](https://en.wikipedia.org/wiki/Data_science).]
 Jest to wynikiem szeregu przyczyn, w tym dużej liczby wbudowanych w R funkcji statystycznych oraz graficznych.
 Dodatkowo, ramka danych, jeden z podstawowych obiektów w R, może być utożsamiany z arkuszem kalkulacyjnym czy tabelą z bazy danych - najpopuarniejszych form przechowywania różnorakich danych.
 Ta forma obiektu, złożonego z kolumn (zmienne) i wierszy (obserwacje), jest reprezentacją, która uławia czyszczenie, przetwarzanie i analizowanie danych.
@@ -132,11 +132,14 @@ tm_shape(World, projection = "robin") +
 
 Podstawy działania na danych przestrzennych zawiera książka [Geocomputation with R](https://geocompr.robinlovelace.net/) [@lovelace2019geocomputation].
 
-## Programowanie
+## Programowanie w R
 
 Wcześniejsze sekcje opisywały różne obszary zastosowań R, ale nie pokazywały w jaki sposób rozwijać umiejętności programowania w tym języku.
 Najprostszym sposobem jest używanie R jak najczęściej.
 Nauka języka programowania przebiega wówczas naturalnie - wraz ze znaleziskiem rozwiązania kolejnego problemu czy rozwiązaniem kolejnego zadania. 
+<!-- functional programming - 05 -->
+<!-- tidy eval -->
+<!-- how to keep up-to-date-->
 
 Często jednak, nie jesteśmy w stanie stwierdzić czy ten sposób rozwiązania jest optymalny, lub też napotykamy sytuacje w których nie wiemy jak się do nich odnieść.
 Wówczas szczególnie istotna jest inna umiejętność - czytania kodu innych osób^[Read the Source, Luke.].
@@ -152,22 +155,33 @@ Kod R będący podstawą działania tego pakietu znajduje się w folderze `R/`^[
 Dodatkowo, niektóre pakietu zawierają kod z innych języków programowania (np. C lub C++), który wymaga wcześniejszej kompilacji.
 Taki kod znajduje się w folderze `src/`.
 
-<!-- functional programming - 05 -->
-<!-- tidy eval -->
-<!-- how to keep up-to-date-->
-
 ## Co dalej?
 
 Programowanie to nie tylko pisanie kodu. 
 Obejmuje to też wiele innych czynności, takich jak stosowanie optymalnych algorytmów czy narzędzi programistycznych.
 <!--alogrytmy-->
+<!-- https://en.wikipedia.org/wiki/Introduction_to_Algorithms -->
+<!-- https://www.amazon.co.uk/dp/032157351X?linkCode=gs2&tag=javarevisit01-21 -->
+<!-- https://www.amazon.co.uk/dp/1849967202?linkCode=gs2&tag=javarevisit01-21 -->
 <!--narzędzia programistyczne-->
+<!-- https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments -->
+<!-- vim? emacs? -->
 <!--współpraca z innymi, e.g. code review-->
 
-Innym kierunkiem działań może być nauka kolejnego języka programowania - najlepiej takiego, którego zastosowanie różni się od R.
-<!-- C/C++/Go/Rust -->
+<!-- unix/command line -->
+
+Innym kierunkiem działań może być nauka kolejnego języka programowania - najlepiej takiego, którego główne zastosowanie różni się od R.
+Może to być przykładowo język kompilowany, taki jak C, C++ lub Rust, którego efektem będzie bardziej wydajny<!--...--> program.
+Co ważne, kod napisany w tych językach można łączyć z kodem R.
+R posiada wbudowany interfejs do używania kodu napisanego w C (rozdział 5 z dokumentacji [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html#System-and-foreign-language-interfaces) [@team1999writing]), łączenie kodu napisanego w C++ ułatwia znacząco pakiet **Rcpp** [@R-Rcpp] (więcej informacji w rozdziale ["Rewriting R code in C++"](https://adv-r.hadley.nz/rcpp.html) książki Advanced R [@wickham2014advanced]), a wskazówki dotyczące łączenia kodu Rust można znaleźć w repozytorium https://github.com/r-rust/hellorust.
+W efekcie użytkownik może korzystać z interaktywności R, wykonując dowolne linie kodu, ale część z nich może używać wydajniejszych funkcji napisanych w jezykach kompilowanych.
 <!-- javascript, what else -->
 <!-- łącznik -->
+
+<!-- sql + bazy danych -->
+<!-- uczenie maszynowe -->
+<!-- zrównoleglanie (hcp) -->
+
 
 Pomimo już znaczącej historii, języki programowania nadal mają wiele nowego do zaoferowania.
 <!-- nowe metody -->
