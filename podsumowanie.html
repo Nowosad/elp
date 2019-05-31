@@ -336,12 +336,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="podsumowanie" class="section level1">
 <h1><span class="header-section-number">14</span> Podsumowanie</h1>
 <p>Nie jest możliwe, aby jedna książka wyczerpująco pokazywała wszystkie elementy języka programowania i podawała wszelkie jego możliwości i zastosowania.
-Jest to szczególnie nieosiągalne w przypadku takiego języka jak R, który posiada ogromny zbiór pakietów, oraz społeczność, która używa ten język na wiele sposobów, co wpływa na jego ewolucję.
-Celem tego rozdziału jest z jednej strony podsumowanie zawartych w niej informacji, ale co ważniejsze wskazanie co można zrobić dalej na podstawie uzyskanej wiedzy i umiejętność z tej książki.</p>
+Jest to szczególnie nieosiągalne w przypadku takiego języka jak R, który posiada ogromny zbiór pakietów, oraz społeczność, która używa ten język na wiele sposobów<!--, co wpływa na jego ewolucję-->.
+Celem tego rozdziału jest wskazanie co można zrobić dalej na podstawie uzyskanej wiedzy i umiejętność z tej książki.</p>
 <!--co było-->
-<p>W jaki sposób można najbardziej efektywnie użyć wiedzę z tej książki?
-Stosując uzyskane umiejętności w praktyce.
-<!-- Może to być... --></p>
+<!-- W jaki sposób można najbardziej efektywnie użyć wiedzę z tej książki?  -->
+<!-- Stosując uzyskane umiejętności w praktyce.  -->
+<!-- Może to być... -->
 <div id="grafika" class="section level2">
 <h2><span class="header-section-number">14.1</span> Grafika</h2>
 <p>Jedną z najczęściej wymienianych zalet R są jego rozbudowane narzędzia do tworzenia wykresów.
@@ -368,7 +368,7 @@ Inne dostępne wbudowane funkcje do tworzenia wykresów to, między innymi, <cod
 <!-- explain --></p>
 <p>Oprócz wbudowanych <!--uproszczenie--> w R funkcji graficznych, istnieje też szereg dodatkowych pakietów służących do wizualizacji danych.
 Wśród nich najpopularniejszym jest <strong>ggplot2</strong> <span class="citation">(Wickham, Chang, et al. <a href="#ref-R-ggplot2">2019</a>)</span>.
-Ten pakiet jest implementacją założeń zawartych w książce Grammar of Graphics [REF???]<!--moremoremore-->.
+Ten pakiet jest implementacją założeń zawartych w książce Grammar of Graphics <span class="citation">(Wilkinson <a href="#ref-wilkinsonGrammarGraphics2005">2005</a>)</span><!--moremoremore-->.
 Główną funkcją tego pakietu jest <code>ggplot()</code>, która przyjmuje dane wejściowe w postaci ramki danych.
 Wewnątrz tej funkcji następuje wywołanie kolejnej funkcji <code>aes</code>, gdzie definiowane są kolejne kolumny, które mają być wyświetlone na osiach wykresów oraz określają kolor, kształt, wielkość i inne elementy.
 Kolejnym krokiem jest określenie typu wykresu poprzez połączenie poprzedniej funkcji (używając operatora <code>+</code>) z jedną z wielu funkcji rozpoczynających się od <code>geom_</code>.
@@ -380,7 +380,7 @@ Przykładowo, do stworzenia wykresu pudełkowego służy <code>geom_boxplot()</c
 </div>
 <div id="analiza-danych" class="section level2">
 <h2><span class="header-section-number">14.2</span> Analiza danych</h2>
-<p>R jest jednym z języków programowania najczęściej używanych w analizie danych<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>
+<p>R jest jednym z języków programowania najczęściej używanych w analizie danych<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.
 Jest to wynikiem szeregu przyczyn, w tym dużej liczby wbudowanych w R funkcji statystycznych oraz graficznych.
 Dodatkowo, ramka danych, jeden z podstawowych obiektów w R, może być utożsamiany z arkuszem kalkulacyjnym czy tabelą z bazy danych - najpopuarniejszych form przechowywania różnorakich danych.
 Ta forma obiektu, złożonego z kolumn (zmienne) i wierszy (obserwacje), jest reprezentacją, która uławia czyszczenie, przetwarzanie i analizowanie danych.</p>
@@ -541,6 +541,9 @@ Języki programowania są też stosowane coraz częściej w wielu codzienne u�
 </div>
 <div id="ref-R-readr">
 <p>Wickham, Hadley, Jim Hester, and Romain Francois. 2018. <em>Readr: Read Rectangular Text Data</em>. <a href="https://CRAN.R-project.org/package=readr" class="uri">https://CRAN.R-project.org/package=readr</a>.</p>
+</div>
+<div id="ref-wilkinsonGrammarGraphics2005">
+<p>Wilkinson, Leland. 2005. <em>The Grammar of Graphics</em>. Springer.</p>
 </div>
 </div>
 <div class="footnotes">
