@@ -98,7 +98,7 @@ Zrozumienie zależności czy zjawis jest bardzo rzadko ostatnim etapem - równie
 Do tego celu może posłużyć R Markdown (jego podstawy zostały opisane w sekcji \@ref(dokumentacja-pakietu))
 R Markdown pozwala na tworzenie dokumentów w różnych formatach (html, pdf, docx, itd.), prezentacji, stron internetowych, książek^[Ta książka również powstała używająć R Markdown.] i wiele innych.
 Po szczegołowe instrukcje jak używać tego języka warto zajrzeć do książki
-[R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) [REF???].
+[R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) [@xieMarkdownDefinitiveGuide2018].
 
 ## Inne zastosowania
 
