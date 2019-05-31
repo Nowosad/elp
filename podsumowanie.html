@@ -364,8 +364,9 @@ Poniżej zdefiniowano, która zmienna ma zostać zwizualizowana (<code>tavg</cod
 <p>Powyższy wykres może być zmodyfikowany używając dodatkowych argumentów (np. <code>main</code> dodający tytuł czy <code>col</code> zmieniający kolor pudełek) czy też dodatkowych funkcji pozwalających na dodanie legendy (funkcja <code>legend</code>) czy też tekstu (funkcja <code>text</code>).
 Inne dostępne wbudowane funkcje do tworzenia wykresów to, między innymi, <code>hist()</code> czy <code>barplot()</code> budujące histogramy oraz wykresy słupkowe.</p>
 <p>Najbardziej elastyczną funkcją do tworzenia wykresów w R jest <code>plot()</code>.
-<!-- Domyślnie  -->
-<!-- explain --></p>
+Domyślnie, gdy użytkownik poda wartości numeryczne dla argumentów <code>x</code> i <code>y</code> pozwala ona tworzyć wykresy punktowe.
+Jej zachowanie i wynik będzie jednak inne w zależności od tego jakiej klasy będzie obiekt wejściowy, przykładowo inaczej wyświetlony zostanie model liniowy, efekt grupowania hierarchicznego, czy też wynik testu statystycznego.
+<!-- (więcej na temat metod można przeczytać w sekcji \@ref(inne-klasy) oraz \@ref(oop)) --></p>
 <p>Oprócz wbudowanych <!--uproszczenie--> w R funkcji graficznych, istnieje też szereg dodatkowych pakietów służących do wizualizacji danych.
 Wśród nich najpopularniejszym jest <strong>ggplot2</strong> <span class="citation">(Wickham, Chang, et al. <a href="#ref-R-ggplot2">2019</a>)</span>.
 Ten pakiet jest implementacją założeń zawartych w książce Grammar of Graphics <span class="citation">(Wilkinson <a href="#ref-wilkinsonGrammarGraphics2005">2005</a>)</span><!--moremoremore-->.
@@ -398,9 +399,23 @@ Pozwala on na łączenie kilku oddzielnych funkcji w jedno zapytanie.
 Działanie tego operatora polega na tym, że wynik jednej działania jednej funkcji staje się automatycznie pierwszym argumentem w kolejnej funkcji.
 <!-- footnote o wywołaniu funkcji -->
 <!-- KOD? --></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(magrittr)
+readxl<span class="op">::</span><span class="kw">read_excel</span>(<span class="st">&quot;https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.xlsx&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span>tidyr<span class="op">::</span><span class="kw">gather</span>(<span class="dt">key =</span> <span class="st">&quot;zmienna&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;wartosc&quot;</span>, tavg<span class="op">:</span>precip) <span class="op">%&gt;%</span>
+<span class="st">  </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">data =</span> <span class="kw">as.Date</span>(<span class="kw">paste</span>(rok, miesiac, dzien, <span class="dt">sep =</span> <span class="st">&quot;-&quot;</span>))) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(ggplot2<span class="op">::</span><span class="kw">aes</span>(data, wartosc)) <span class="op">+</span>
+<span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">geom_line</span>() <span class="op">+</span>
+<span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">facet_grid</span>(zmienna<span class="op">~</span>nazwa_stacji, <span class="dt">scale =</span> <span class="st">&quot;free_y&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span></code></pre>
+<div class="figure" style="text-align: center"><span id="fig:tidyverse-example"></span>
+<img src="images/tidyverse-example.png" alt="Przykład wyniku użycia pakietów z grupy *tidyverse*." width="100%" />
+<p class="caption">
+Rycina 14.1: Przykład wyniku użycia pakietów z grupy <em>tidyverse</em>.
+</p>
+</div>
 <p>Pełne wprowadzenie do koncepcji <em>tidyverse</em> można znaleźć w książce <a href="https://r4ds.had.co.nz/">R for Data Science</a> <span class="citation">(Wickham and Grolemund <a href="#ref-wickham2016r">2016</a>)</span>.</p>
 <!-- rmarkdown -->
-<p>Zrozumienie zależności czy zjawis jest bardzo rzadko ostatnim etapem - równie istotne jest przekazanie tych wyników wybranej grupie odbiorców<!--communicate--> w odpowiedni sposób.
+<p>Zrozumienie zależności czy zjawisk jest bardzo rzadko ostatnim etapem - równie istotne jest przekazanie tych wyników wybranej grupie odbiorców<!--communicate--> w odpowiedni sposób.
 Do tego celu może posłużyć R Markdown (jego podstawy zostały opisane w sekcji <a href="tworzenie-pakietow.html#dokumentacja-pakietu">13.9</a>)
 R Markdown pozwala na tworzenie dokumentów w różnych formatach (html, pdf, docx, itd.), prezentacji, stron internetowych, książek<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a> i wiele innych.
 Po szczegołowe instrukcje jak używać tego języka warto zajrzeć do książki
@@ -417,7 +432,7 @@ Obejmuje to bardzo szeroki przekrój tematów - od list poświęconych projektow
 <p>Wsród tych list znajduje się także jedna poświęcona analizie danych przestrzennych.
 Opisuje ona, między innymi, takie pakiety jak <strong>sf</strong>, pozwalający na wczytywanie, przetwarzanie i zapisywanie danych wektorowych czy <strong>tmap</strong> ułatwiający tworzenie map.
 Na poniższym przykładzie następuje dołączenie tych pakietów oraz wczytanie zbioru danych <code>World</code> zawierającego poligony krajów na świecie i podstawowe informacje o nich.
-Dalej następuje dodanie tych danych do wyświetlenia i wybór odwzorowania przestrzennego<!--footnote--> używając funkcji <code>tm_shape()</code>, po czym te dane są wyświetlone w postaci poligonów (funkcja <code>tm_polygons()</code>), gdzie kolory poligonów wynikają z ich wartości w kolumnie <code>life_exp</code> a tytuł legendy jest wybrany przez nas (rycina <a href="podsumowanie.html#fig:tmap-example">14.1</a>).</p>
+Dalej następuje dodanie tych danych do wyświetlenia i wybór odwzorowania przestrzennego<!--footnote--> używając funkcji <code>tm_shape()</code>, po czym te dane są wyświetlone w postaci poligonów (funkcja <code>tm_polygons()</code>), gdzie kolory poligonów wynikają z ich wartości w kolumnie <code>life_exp</code> a tytuł legendy jest wybrany przez nas (rycina <a href="podsumowanie.html#fig:tmap-example">14.2</a>).</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(sf)
 <span class="kw">library</span>(tmap)
 <span class="kw">data</span>(World)
@@ -427,7 +442,7 @@ Dalej następuje dodanie tych danych do wyświetlenia i wybór odwzorowania prze
 <div class="figure" style="text-align: center"><span id="fig:tmap-example"></span>
 <img src="images/tmap-example.png" alt="Przykład działania pakietu tmap." width="100%" />
 <p class="caption">
-Rycina 14.1: Przykład działania pakietu tmap.
+Rycina 14.2: Przykład działania pakietu tmap.
 </p>
 </div>
 <p>Podstawy działania na danych przestrzennych zawiera książka <a href="https://geocompr.robinlovelace.net/">Geocomputation with R</a> <span class="citation">(Lovelace, Nowosad, and Muenchow <a href="#ref-lovelace2019geocomputation">2019</a>)</span>.</p>
@@ -472,7 +487,7 @@ Wśród nich można wyróżnić znajomość linii komend i jej możliwości <spa
 <p>Innym kierunkiem działań może być nauka kolejnego języka programowania - najlepiej takiego, którego główne zastosowanie różni się od R.
 Może to być przykładowo język kompilowany, taki jak C, C++ lub Rust, którego efektem będzie bardziej wydajny<!--...--> program.
 Co ważne, kod napisany w tych językach można łączyć z kodem R.
-R posiada wbudowany interfejs do używania kodu napisanego w C (rozdział 5 z dokumentacji <a href="https://cran.r-project.org/doc/manuals/R-exts.html#System-and-foreign-language-interfaces">Writing R Extensions</a> <span class="citation">(Team <a href="#ref-team1999writing">1999</a>)</span>), łączenie kodu napisanego w C++ ułatwia znacząco pakiet <strong>Rcpp</strong>(<span class="citation">Eddelbuettel et al. (<a href="#ref-R-Rcpp">2019</a>)</span>; więcej informacji w rozdziale <a href="https://adv-r.hadley.nz/rcpp.html">“Rewriting R code in C++”</a> książki Advanced R <span class="citation">(Wickham <a href="#ref-wickham2014advanced">2014</a>)</span>), a wskazówki dotyczące łączenia kodu Rust można znaleźć w repozytorium <a href="https://github.com/r-rust/hellorust" class="uri">https://github.com/r-rust/hellorust</a>.
+R posiada wbudowany interfejs do używania kodu napisanego w C (rozdział 5 z dokumentacji <a href="https://cran.r-project.org/doc/manuals/R-exts.html#System-and-foreign-language-interfaces">Writing R Extensions</a> <span class="citation">(R Core Team <a href="#ref-team1999writing">2019</a><a href="#ref-team1999writing">b</a>)</span>), łączenie kodu napisanego w C++ ułatwia znacząco pakiet <strong>Rcpp</strong> (<span class="citation">Eddelbuettel et al. (<a href="#ref-R-Rcpp">2019</a>)</span>; więcej informacji w rozdziale <a href="https://adv-r.hadley.nz/rcpp.html">“Rewriting R code in C++”</a> książki Advanced R <span class="citation">(Wickham <a href="#ref-wickham2014advanced">2014</a>)</span>), a wskazówki dotyczące łączenia kodu Rust można znaleźć w repozytorium <a href="https://github.com/r-rust/hellorust" class="uri">https://github.com/r-rust/hellorust</a>.
 W efekcie użytkownik może korzystać z interaktywności R, wykonując dowolne linie kodu, ale część z nich może używać wydajniejszych funkcji napisanych w jezykach kompilowanych.
 Alternatywną drogą może być nauka języków używanych do tworzenia i rozwijania aplikacji internetowych, w tym JavaScript czy PHP.</p>
 <p>Pomimo już znaczącej historii, języki programowania nadal mają wiele nowego do zaoferowania.
@@ -512,14 +527,14 @@ Języki programowania są też stosowane coraz częściej w wielu codzienne u�
 <div id="ref-R-wesanderson">
 <p>Ram, Karthik, and Hadley Wickham. 2018. <em>Wesanderson: A Wes Anderson Palette Generator</em>. <a href="https://CRAN.R-project.org/package=wesanderson" class="uri">https://CRAN.R-project.org/package=wesanderson</a>.</p>
 </div>
+<div id="ref-team1999writing">
+<p>R Core Team. 2019b. <em>Writing R Extensions</em>. R Foundation for Statistical Computing.</p>
+</div>
 <div id="ref-032157351X">
 <p>Sedgewick, Robert, and Kevin Wayne. 2011. <em>Algorithms (4th Edition)</em>. Addison-Wesley Professional.</p>
 </div>
 <div id="ref-skienaAlgorithmDesignManual2008">
 <p>Skiena, Steven S. 2008. <em>The Algorithm Design Manual</em>. Springer Science &amp; Business Media.</p>
-</div>
-<div id="ref-team1999writing">
-<p>Team, R Core. 1999. “Writing R Extensions.”</p>
 </div>
 <div id="ref-wickham2014advanced">
 <p>Wickham, Hadley. 2014. <em>Advanced R</em>. Chapman and Hall/CRC.</p>
@@ -558,7 +573,7 @@ Języki programowania są też stosowane coraz częściej w wielu codzienne u�
 <li id="fn63"><p>Dodatkowo istnieje specjalne repozytorium Bioconductor poświęcone pakietom R dotyczącym zagadnień bioinformatycznych.<a href="podsumowanie.html#fnref63" class="footnote-back">↩</a></p></li>
 <li id="fn64"><p>Read the Source, Luke.<a href="podsumowanie.html#fnref64" class="footnote-back">↩</a></p></li>
 <li id="fn65"><p>Dostępny jest także kod źródłowy samego języka R.
-Można go znaleźć pod adresem <a href="https://github.com/wch/r-source" class="uri">https://github.com/wch/r-source</a><a href="podsumowanie.html#fnref65" class="footnote-back">↩</a></p></li>
+Można go znaleźć pod adresem <a href="https://github.com/wch/r-source" class="uri">https://github.com/wch/r-source</a>.<a href="podsumowanie.html#fnref65" class="footnote-back">↩</a></p></li>
 <li id="fn66"><p>Szczególnie <code>R/colors.R</code>.<a href="podsumowanie.html#fnref66" class="footnote-back">↩</a></p></li>
 <li id="fn67"><p><a href="https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments" class="uri">https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments</a><a href="podsumowanie.html#fnref67" class="footnote-back">↩</a></p></li>
 </ol>

@@ -44,8 +44,9 @@ Powyższy wykres może być zmodyfikowany używając dodatkowych argumentów (np
 Inne dostępne wbudowane funkcje do tworzenia wykresów to, między innymi, `hist()` czy `barplot()` budujące histogramy oraz wykresy słupkowe.
 
 Najbardziej elastyczną funkcją do tworzenia wykresów w R jest `plot()`.
-<!-- Domyślnie  -->
-<!-- explain -->
+Domyślnie, gdy użytkownik poda wartości numeryczne dla argumentów `x` i `y` pozwala ona tworzyć wykresy punktowe.
+Jej zachowanie i wynik będzie jednak inne w zależności od tego jakiej klasy będzie obiekt wejściowy, przykładowo inaczej wyświetlony zostanie model liniowy, efekt grupowania hierarchicznego, czy też wynik testu statystycznego.
+<!-- (więcej na temat metod można przeczytać w sekcji \@ref(inne-klasy) oraz \@ref(oop)) -->
 
 Oprócz wbudowanych <!--uproszczenie--> w R funkcji graficznych, istnieje też szereg dodatkowych pakietów służących do wizualizacji danych.
 Wśród nich najpopularniejszym jest **ggplot2** [@R-ggplot2].
@@ -90,11 +91,26 @@ Działanie tego operatora polega na tym, że wynik jednej działania jednej funk
 <!-- footnote o wywołaniu funkcji -->
 <!-- KOD? -->
 
+```r
+library(magrittr)
+readxl::read_excel("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.xlsx") %>% 
+  tidyr::gather(key = "zmienna", value = "wartosc", tavg:precip) %>%
+  dplyr::mutate(data = as.Date(paste(rok, miesiac, dzien, sep = "-"))) %>% 
+  ggplot2::ggplot(ggplot2::aes(data, wartosc)) +
+  ggplot2::geom_line() +
+  ggplot2::facet_grid(zmienna~nazwa_stacji, scale = "free_y") + 
+  
+```
+
+<div class="figure" style="text-align: center">
+<img src="images/tidyverse-example.png" alt="Przykład wyniku użycia pakietów z grupy *tidyverse*." width="100%" />
+<p class="caption">(\#fig:tidyverse-example)Przykład wyniku użycia pakietów z grupy *tidyverse*.</p>
+</div>
 
 Pełne wprowadzenie do koncepcji *tidyverse* można znaleźć w książce [R for Data Science](https://r4ds.had.co.nz/) [@wickham2016r].
 
 <!-- rmarkdown -->
-Zrozumienie zależności czy zjawis jest bardzo rzadko ostatnim etapem - równie istotne jest przekazanie tych wyników wybranej grupie odbiorców<!--communicate--> w odpowiedni sposób.
+Zrozumienie zależności czy zjawisk jest bardzo rzadko ostatnim etapem - równie istotne jest przekazanie tych wyników wybranej grupie odbiorców<!--communicate--> w odpowiedni sposób.
 Do tego celu może posłużyć R Markdown (jego podstawy zostały opisane w sekcji \@ref(dokumentacja-pakietu))
 R Markdown pozwala na tworzenie dokumentów w różnych formatach (html, pdf, docx, itd.), prezentacji, stron internetowych, książek^[Ta książka również powstała używająć R Markdown.] i wiele innych.
 Po szczegołowe instrukcje jak używać tego języka warto zajrzeć do książki
@@ -143,7 +159,7 @@ Nauka języka programowania przebiega wówczas naturalnie - wraz ze znaleziskiem
 Często jednak, nie jesteśmy w stanie stwierdzić czy ten sposób rozwiązania jest optymalny, lub też napotykamy sytuacje w których nie wiemy jak się do nich odnieść.
 Wówczas szczególnie istotna jest inna umiejętność - czytania kodu innych osób^[Read the Source, Luke.].
 Większość pakietów R jest otwartoźródłowych - ich kod jest dostępny online i każda chętna osoba ma do niego dostęp^[Dostępny jest także kod źródłowy samego języka R. 
-Można go znaleźć pod adresem https://github.com/wch/r-source].
+Można go znaleźć pod adresem https://github.com/wch/r-source.].
 Kod pakietów R można, między innymi, znaleźć w serwisie GitHub.
 Wszystkie pakiety znajdujące się w repozytorium CRAN można znaleźć pod adresem https://github.com/cran.
 Inną możliwością jest samodzielne wyszukanie kodu pakietu używając wyszukiwarki GitHub - https://github.com/search.
@@ -177,7 +193,7 @@ Wśród nich można wyróżnić znajomość linii komend i jej możliwości [@kr
 Innym kierunkiem działań może być nauka kolejnego języka programowania - najlepiej takiego, którego główne zastosowanie różni się od R.
 Może to być przykładowo język kompilowany, taki jak C, C++ lub Rust, którego efektem będzie bardziej wydajny<!--...--> program.
 Co ważne, kod napisany w tych językach można łączyć z kodem R.
-R posiada wbudowany interfejs do używania kodu napisanego w C (rozdział 5 z dokumentacji [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html#System-and-foreign-language-interfaces) [@team1999writing]), łączenie kodu napisanego w C++ ułatwia znacząco pakiet **Rcpp**(@R-Rcpp; więcej informacji w rozdziale ["Rewriting R code in C++"](https://adv-r.hadley.nz/rcpp.html) książki Advanced R [@wickham2014advanced]), a wskazówki dotyczące łączenia kodu Rust można znaleźć w repozytorium https://github.com/r-rust/hellorust.
+R posiada wbudowany interfejs do używania kodu napisanego w C (rozdział 5 z dokumentacji [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html#System-and-foreign-language-interfaces) [@team1999writing]), łączenie kodu napisanego w C++ ułatwia znacząco pakiet **Rcpp** (@R-Rcpp; więcej informacji w rozdziale ["Rewriting R code in C++"](https://adv-r.hadley.nz/rcpp.html) książki Advanced R [@wickham2014advanced]), a wskazówki dotyczące łączenia kodu Rust można znaleźć w repozytorium https://github.com/r-rust/hellorust.
 W efekcie użytkownik może korzystać z interaktywności R, wykonując dowolne linie kodu, ale część z nich może używać wydajniejszych funkcji napisanych w jezykach kompilowanych.
 Alternatywną drogą może być nauka języków używanych do tworzenia i rozwijania aplikacji internetowych, w tym JavaScript czy PHP.
 
