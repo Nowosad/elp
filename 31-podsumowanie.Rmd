@@ -94,7 +94,7 @@ p1 = readr::read_csv("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo
   ggplot2::facet_grid(zmienna~nazwa_stacji, scale = "free_y")
 ggplot2::ggsave("images/tidyverse-example.png", p1, height = 5.5, width = 12, units = "cm", scale = 2.5)
 ```
-```{r tmap-example, echo=FALSE, fig.cap="Przykład wyniku użycia pakietów z grupy *tidyverse*."}
+```{r tidyverse-example, echo=FALSE, fig.cap="Przykład wyniku użycia pakietów z grupy *tidyverse*."}
 knitr::include_graphics("images/tidyverse-example.png", dpi = NA)
 ```
 
