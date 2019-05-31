@@ -74,16 +74,27 @@ Pozwala on na łączenie kilku oddzielnych funkcji w jedno zapytanie.
 Działanie tego operatora polega na tym, że wynik jednej działania jednej funkcji staje się automatycznie pierwszym argumentem w kolejnej funkcji.
 <!-- footnote o wywołaniu funkcji -->
 <!-- KOD? -->
+```{r, eval=FALSE}
+library(magrittr)
+readxl::read_excel("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.xlsx") %>% 
+  tidyr::gather(key = "zmienna", value = "wartosc", tavg:precip) %>%
+  dplyr::mutate(data = as.Date(paste(rok, miesiac, dzien, sep = "-"))) %>% 
+  ggplot2::ggplot(ggplot2::aes(data, wartosc)) +
+  ggplot2::geom_line() +
+  ggplot2::facet_grid(zmienna~nazwa_stacji, scale = "free_y") + 
+  
+```
 ```{r, echo=FALSE, eval=FALSE}
-readxl::read_excel("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.xls")
-
-a = readxl::read_excel("pliki/dane_meteo.xlsx")
-tidyr::unite(a, data, rok, miesiac, dzien)
-
-read %>% 
-  tidyr %>% 
-  dplyr %>% 
-  ggplot2
+p1 = readr::read_csv("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv") %>% 
+  tidyr::gather(key = "zmienna", value = "wartosc", tavg:precip) %>%
+  dplyr::mutate(data = as.Date(paste(rok, miesiac, dzien, sep = "-"))) %>% 
+  ggplot2::ggplot(ggplot2::aes(data, wartosc)) +
+  ggplot2::geom_line() +
+  ggplot2::facet_grid(zmienna~nazwa_stacji, scale = "free_y")
+ggplot2::ggsave("images/tidyverse-example.png", p1, height = 5.5, width = 12, units = "cm", scale = 2.5)
+```
+```{r tmap-example, echo=FALSE, fig.cap="Przykład działania pakietu tmap."}
+knitr::include_graphics("images/tidyverse-example.png", dpi = NA)
 ```
 
 Pełne wprowadzenie do koncepcji *tidyverse* można znaleźć w książce [R for Data Science](https://r4ds.had.co.nz/) [@wickham2016r].
@@ -177,7 +188,7 @@ Wśród nich można wyróżnić znajomość linii komend i jej możliwości [@kr
 Innym kierunkiem działań może być nauka kolejnego języka programowania - najlepiej takiego, którego główne zastosowanie różni się od R.
 Może to być przykładowo język kompilowany, taki jak C, C++ lub Rust, którego efektem będzie bardziej wydajny<!--...--> program.
 Co ważne, kod napisany w tych językach można łączyć z kodem R.
-R posiada wbudowany interfejs do używania kodu napisanego w C (rozdział 5 z dokumentacji [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html#System-and-foreign-language-interfaces) [@team1999writing]), łączenie kodu napisanego w C++ ułatwia znacząco pakiet **Rcpp**(@R-Rcpp; więcej informacji w rozdziale ["Rewriting R code in C++"](https://adv-r.hadley.nz/rcpp.html) książki Advanced R [@wickham2014advanced]), a wskazówki dotyczące łączenia kodu Rust można znaleźć w repozytorium https://github.com/r-rust/hellorust.
+R posiada wbudowany interfejs do używania kodu napisanego w C (rozdział 5 z dokumentacji [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html#System-and-foreign-language-interfaces) [@team1999writing]), łączenie kodu napisanego w C++ ułatwia znacząco pakiet **Rcpp** (@R-Rcpp; więcej informacji w rozdziale ["Rewriting R code in C++"](https://adv-r.hadley.nz/rcpp.html) książki Advanced R [@wickham2014advanced]), a wskazówki dotyczące łączenia kodu Rust można znaleźć w repozytorium https://github.com/r-rust/hellorust.
 W efekcie użytkownik może korzystać z interaktywności R, wykonując dowolne linie kodu, ale część z nich może używać wydajniejszych funkcji napisanych w jezykach kompilowanych.
 Alternatywną drogą może być nauka języków używanych do tworzenia i rozwijania aplikacji internetowych, w tym JavaScript czy PHP.
 
