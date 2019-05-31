@@ -159,12 +159,11 @@ Taki kod znajduje się w folderze `src/`.
 
 Programowanie to nie tylko pisanie kodu. 
 Obejmuje to też wiele innych czynności, takich jak stosowanie optymalnych algorytmów czy narzędzi programistycznych.
-Istnieje wiele książek poświęconych kwestii algorytmów, wsród których najbardziej popularne to Introduction to Algorithms [@cormen2009introduction], The Algorithm Design Manual [@skienaAlgorithmDesignManual2008] i Algorithms [@032157351X].
-<!--narzędzia programistyczne-->
-<!-- https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments -->
-<!-- vim? emacs? -->
-<!--współpraca z innymi, e.g. code review-->
-^[https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments]
+Istnieje wiele książek poświęconych kwestii algorytmów, wsród których najbardziej popularne to Introduction to Algorithms [@cormen2009introduction], The Algorithm Design Manual [@skienaAlgorithmDesignManual2008] czy Algorithms [@032157351X].
+Podstawowym narzędziem programistycznym jest program do pisania kodu.
+Może to być zarówno prosty edytor tekstu, taki jak [Notepad++](https://notepad-plus-plus.org/), [Sublime Text](https://www.sublimetext.com/), lub [Atom](https://atom.io/) czy też bardziej złożone zintegrowane środowisko programistyczne (IDE). 
+O ile narzędzia z tej pierwszej grupy są uniwersalne to w przypadku wyboru IDE warto zdecydować się na zintegrowane środowisko programistyczne odpowiednie dla używanego języka programowania^[https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments].
+
 Programowanie często obejmuje pracę w zespole.
 Wówczas jednym ze sposobów dbania o jakość tworzonego produktu może być inspekcja kodu (ang. *code review*). 
 Polega ona na tym, że zmiany naniesione w kodzie są przekazywane innej osobie, która sprawdza go pod kątem błędów, spójności, stylu, zgodności z isniejącymi rozwiązaniami, itd.
