@@ -206,32 +206,17 @@ roperators_exp = c("Określa początek tekstu/linii",
                    "Poprzedni znak zostanie wybrany n razy", 
                    "Jakikolwiek znak oprócz nowej linii (\\\\n)",
                    "Pozwala na użycie specjalnych znaków")
-if (knitr::is_html_output()){
-    roperators = c("^", 
-               "$", "()", 
-               "|", "[]", 
-               "[^]",
-               "*", "+", 
-               "?", "{n}", 
-               ".", "\\\\"
-               )
-  knitr::kable(tibble(Operator = roperators, Wyjaśnienie = roperators_exp), 
-             caption = "Metaznaki w wyrażeniach regularnych",
-             booktabs = TRUE)
-  
-} else{
-  roperators = c("^", 
-               "$", "()", 
-               "|", "[]", 
-               "[^]",
-               "*", "+", 
-               "?", "{n}", 
-               ".", "\\"
-               )
-  knitr::kable(tibble(Operator = roperators, Wyjaśnienie = roperators_exp), 
-             caption = "Metaznaki w wyrażeniach regularnych",
-             booktabs = TRUE, format = "pandoc")
-}
+roperators = c("^", 
+             "$", "()", 
+             "|", "[]", 
+             "[^]",
+             "*", "+", 
+             "?", "{n}", 
+             ".", "\\"
+             )
+knitr::kable(tibble(Operator = roperators, Wyjaśnienie = roperators_exp), 
+           caption = "Metaznaki w wyrażeniach regularnych.",
+           booktabs = TRUE, format = "pandoc")
 ```
 
 Wymienione powyżej znaki (np. `^`<!--Kareta--> czy `.`) mają specjalne znaczenie.
