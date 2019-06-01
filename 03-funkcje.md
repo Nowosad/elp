@@ -15,14 +15,10 @@ Może ona przyjąć kilka różnych argumentów, czyli pewnych obiektów lub par
 W poniższym przykładzie do funkcji `mean()` zostały podane dwa argumenty (rycina \@ref(fig:funstr)).
 Pierwszy argument nazywa się `x` i przyjmuje on wektor numeryczny `economics$pop`, drugi argument nazywa się `na.rm` i został on ustalony na `TRUE`.
 
-\begin{figure}[H]
-
-{\centering \includegraphics[width=0.8\linewidth]{images/funkcje} 
-
-}
-
-\caption{Przykład struktury funkcji w R.}(\#fig:funstr)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/funkcje.png" alt="Przykład struktury funkcji w R." width="80%" />
+<p class="caption">(\#fig:funstr)Przykład struktury funkcji w R.</p>
+</div>
 
 W efekcie działania funkcji otrzymano wynik - `246348.9` - który jest średnią wartością w zadanym wektorze.
 

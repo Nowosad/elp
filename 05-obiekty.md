@@ -131,11 +131,10 @@ Argument `by` określa co ile wartości w ciągu mają rosnąć od wartości poc
 
 ```r
 seq(1, 365, by = 7)
-#>  [1]   1   8  15  22  29  36  43  50  57  64  71  78  85
-#> [14]  92  99 106 113 120 127 134 141 148 155 162 169 176
-#> [27] 183 190 197 204 211 218 225 232 239 246 253 260 267
-#> [40] 274 281 288 295 302 309 316 323 330 337 344 351 358
-#> [53] 365
+#>  [1]   1   8  15  22  29  36  43  50  57  64  71  78  85  92  99 106 113
+#> [18] 120 127 134 141 148 155 162 169 176 183 190 197 204 211 218 225 232
+#> [35] 239 246 253 260 267 274 281 288 295 302 309 316 323 330 337 344 351
+#> [52] 358 365
 ```
 
 Alternatywnie, argument `length.out` ustala jakiej długości ma być wynikowy ciąg, a na podstawie tego tworzone są wartości w równych odstępach.
@@ -143,8 +142,7 @@ Alternatywnie, argument `length.out` ustala jakiej długości ma być wynikowy 
 
 ```r
 seq(1, 365, length.out = 10)
-#>  [1]   1.0  41.4  81.9 122.3 162.8 203.2 243.7 284.1
-#>  [9] 324.6 365.0
+#>  [1]   1.0  41.4  81.9 122.3 162.8 203.2 243.7 284.1 324.6 365.0
 ```
 
 Funkcja `rep` służy powielaniu zadanej wartości podaną liczbę razy.
@@ -225,8 +223,8 @@ W takiej sytuacji pojawi się też poniższy komunikat ostrzeżenia.
 a = c(1, 2, 3)
 d = c(3, 5)
 a * d
-#> Warning in a * d: longer object length is not a multiple
-#> of shorter object length
+#> Warning in a * d: longer object length is not a multiple of shorter object
+#> length
 #> [1]  3 10  9
 ```
 

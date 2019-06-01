@@ -20,20 +20,13 @@ Możemy to zobaczyć na poniższym przykładzie danych meteorologicznych dla Poz
 met = read.csv("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv",
              stringsAsFactors = FALSE)
 head(met)
-#>   kod_stacji nazwa_stacji  rok miesiac dzien tavg
-#> 1  352160330       POZNAŃ 2017       1     1  1.4
-#> 2  352160330       POZNAŃ 2017       1     2  0.1
-#> 3  352160330       POZNAŃ 2017       1     3  0.5
-#> 4  352160330       POZNAŃ 2017       1     4  1.5
-#> 5  352160330       POZNAŃ 2017       1     5 -3.5
-#> 6  352160330       POZNAŃ 2017       1     6 -8.4
-#>   precip
-#> 1    0.0
-#> 2    0.0
-#> 3    4.8
-#> 4    2.3
-#> 5    0.0
-#> 6    0.0
+#>   kod_stacji nazwa_stacji  rok miesiac dzien tavg precip
+#> 1  352160330       POZNAŃ 2017       1     1  1.4    0.0
+#> 2  352160330       POZNAŃ 2017       1     2  0.1    0.0
+#> 3  352160330       POZNAŃ 2017       1     3  0.5    4.8
+#> 4  352160330       POZNAŃ 2017       1     4  1.5    2.3
+#> 5  352160330       POZNAŃ 2017       1     5 -3.5    0.0
+#> 6  352160330       POZNAŃ 2017       1     6 -8.4    0.0
 ```
 
 Wewnątrz obiektu `met` znajdują się kolumny `tavg` (określająca średnią dobową temperaturę powietrza w stopniach Celsjusza) oraz `nazwa_stacji` ("POZNAŃ" lub "ZAKOPANE").
@@ -45,14 +38,10 @@ Poniżej zdefiniowano, która zmienna ma zostać zwizualizowana (`tavg`) w podzi
 boxplot(tavg ~ nazwa_stacji, data = met)
 ```
 
-\begin{figure}[H]
-
-{\centering \includegraphics[width=\textwidth]{figures/plotex-1} 
-
-}
-
-\caption{Przykład wykresu utworzonego przy pomocy funkcji boxplot().}(\#fig:plotex)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="figures/plotex-1.png" alt="Przykład wykresu utworzonego przy pomocy funkcji boxplot()." width="\textwidth" />
+<p class="caption">(\#fig:plotex)Przykład wykresu utworzonego przy pomocy funkcji boxplot().</p>
+</div>
 
 Powyższy wykres może być zmodyfikowany używając dodatkowych argumentów (np. `main` dodający tytuł czy `col` zmieniający kolor pudełek) czy też dodatkowych funkcji pozwalających na dodanie legendy (funkcja `legend`) czy też tekstu (funkcja `text`).
 Inne dostępne wbudowane funkcje do tworzenia wykresów to, między innymi, `hist()` czy `barplot()` budujące histogramy oraz wykresy słupkowe.
@@ -76,14 +65,10 @@ library(ggplot2)
 ggplot(met, aes(nazwa_stacji, tavg)) + geom_boxplot()
 ```
 
-\begin{figure}[H]
-
-{\centering \includegraphics[width=\textwidth]{figures/ggplotex-1} 
-
-}
-
-\caption{Przykład wykresu utworzonego z użyciem pakietu ggplot2.}(\#fig:ggplotex)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="figures/ggplotex-1.png" alt="Przykład wykresu utworzonego z użyciem pakietu ggplot2." width="\textwidth" />
+<p class="caption">(\#fig:ggplotex)Przykład wykresu utworzonego z użyciem pakietu ggplot2.</p>
+</div>
 
 Pełna dokumentacja pakietu **ggplot2** znajduje się na stronie http://docs.ggplot2.org.
 
@@ -123,14 +108,10 @@ readxl::read_excel("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.x
   
 ```
 
-\begin{figure}[H]
-
-{\centering \includegraphics[width=\textwidth]{images/tidyverse-example} 
-
-}
-
-\caption{Przykład wyniku użycia pakietów z grupy tidyverse.}(\#fig:tidyverse-example)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/tidyverse-example.png" alt="Przykład wyniku użycia pakietów z grupy tidyverse." width="\textwidth" />
+<p class="caption">(\#fig:tidyverse-example)Przykład wyniku użycia pakietów z grupy tidyverse.</p>
+</div>
 
 Pełne wprowadzenie do koncepcji *tidyverse* można znaleźć w książce [R for Data Science](https://r4ds.had.co.nz/) [@wickham2016r].
 
@@ -165,14 +146,10 @@ tm_shape(World, projection = "robin") +
                 title = "Oczekiwana dalsza \ndługość życia")
 ```
 
-\begin{figure}[H]
-
-{\centering \includegraphics[width=\textwidth]{images/tmap-example} 
-
-}
-
-\caption{Przykład działania pakietu tmap.}(\#fig:tmap-example)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/tmap-example.png" alt="Przykład działania pakietu tmap." width="\textwidth" />
+<p class="caption">(\#fig:tmap-example)Przykład działania pakietu tmap.</p>
+</div>
 
 Podstawy działania na danych przestrzennych zawiera książka [Geocomputation with R](https://geocompr.robinlovelace.net/) [@lovelace2019geocomputation].
 

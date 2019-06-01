@@ -76,22 +76,16 @@ W przypadku `else` wyliczane są wszystkie przypadki, które nie spełniają wcz
 W tabeli \@ref(tab:operators) można znaleźć listę podstawowych operatorów porównania.
 Ich celem jest sprawdzanie pewnego warunku i zwrócenie wartości `TRUE` lub `FALSE`.
 
-\begin{table}[t]
 
-\caption{(\#tab:operators)Operatory porównania.}
-\centering
-\begin{tabular}{ll}
-\toprule
-Operator & Wyjaśnienie\\
-\midrule
-== & Równy\\
-!= & Nie równy\\
-\%in\% & Zawiera się w\\
->, < & Większy/Mniejszy niż\\
->=, <= & Większy/Mniejszy niż lub równy\\
-\bottomrule
-\end{tabular}
-\end{table}
+Table: (\#tab:operators)Operatory porównania.
+
+Operator   Wyjaśnienie                    
+---------  -------------------------------
+==         Równy                          
+!=         Nie równy                      
+%in%       Zawiera się w                  
+>, <       Większy/Mniejszy niż           
+>=, <=     Większy/Mniejszy niż lub równy 
 
 Wyrażenie `if()` oczekuje wektora logiczego o długości jeden. 
 Często jednak efektem porównania może być wektor o większej długości.
@@ -109,22 +103,16 @@ x %in% y
 
 Sterowanie tym, żeby uzyskany wynik miał oczekiwaną długość jeden może się odbywać też z pomocą operatorów logicznych i funkcji pomocniczych (tabela \@ref(tab:operators2)).
 
-\begin{table}[t]
 
-\caption{(\#tab:operators2)Operatory logiczne i funkcje pomocniczne.}
-\centering
-\begin{tabular}{ll}
-\toprule
-Operator & Wyjaśnienie\\
-\midrule
-! & Negacja (nie)\\
-\&\& & Koniunkcja (i)\\
-|| & Alternatywa (lub)\\
-all & Wszystkie\\
-any & Którykolwiek\\
-\bottomrule
-\end{tabular}
-\end{table}
+Table: (\#tab:operators2)Operatory logiczne i funkcje pomocniczne.
+
+Operator   Wyjaśnienie       
+---------  ------------------
+!          Negacja (nie)     
+&&         Koniunkcja (i)    
+||         Alternatywa (lub) 
+all        Wszystkie         
+any        Którykolwiek      
 
 Pozwalają one na sprawdzenie czy wszystkie (`all()`) lub którykolwiek (`any()`) z elementów obiektu przyjmuje wartość `TRUE`.
 

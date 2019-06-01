@@ -388,15 +388,13 @@ Aby uzyskać wszystkie przypadki spełniające określony wzorzec należy użyć
 ```r
 str_extract_all(tekst_pomiary, pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*")
 #> [[1]]
-#>  [1] "Wrocław"   ""          ""          ""         
-#>  [5] ""          ""          ""          ""         
-#>  [9] ""          "Bydgoszcz" ""          ""         
-#> [13] ""          ""          ""          ""         
-#> [17] ""          ""          "Toruń"     ""         
-#> [21] ""          ""          ""          ""         
-#> [25] ""          ""          ""          "Lublin"   
-#> [29] ""          ""          ""          ""         
-#> [33] ""          ""          ""
+#>  [1] "Wrocław"   ""          ""          ""          ""         
+#>  [6] ""          ""          ""          ""          "Bydgoszcz"
+#> [11] ""          ""          ""          ""          ""         
+#> [16] ""          ""          ""          "Toruń"     ""         
+#> [21] ""          ""          ""          ""          ""         
+#> [26] ""          ""          "Lublin"    ""          ""         
+#> [31] ""          ""          ""          ""          ""
 ```
 
 Efektem jej działania są wszystkie nazwy miast z wektora `tekst_pomiary`, ale też wiele elementów pustych.
@@ -429,9 +427,8 @@ Nadal interesuje nas wydzielenie nazw miast, więc próbujemy użyć kodu, któr
 ```r
 str_extract_all(tekst_pomiary2, pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+")
 #> [[1]]
-#> [1] "Wrocław"      "Bydgoszcz"    "Toruń"       
-#> [4] "Lublin"       "Gorzów"       "Wielkopolski"
-#> [7] "Zielona"      "Góra"
+#> [1] "Wrocław"      "Bydgoszcz"    "Toruń"        "Lublin"      
+#> [5] "Gorzów"       "Wielkopolski" "Zielona"      "Góra"
 ```
 
 Niestety w efekcie otrzymujemy osiem elementów, gdzie `"Gorzów"` jest innym elementem niż `"Wielkopolski"`.
@@ -443,9 +440,8 @@ Możemy naprawić tę sytuację w poniższy sposób.
 str_extract_all(tekst_pomiary2, 
        pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[\\s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*")
 #> [[1]]
-#> [1] "Wrocław"             "Bydgoszcz"          
-#> [3] "Toruń"               "Lublin"             
-#> [5] "Gorzów Wielkopolski" "Zielona Góra"
+#> [1] "Wrocław"             "Bydgoszcz"           "Toruń"              
+#> [4] "Lublin"              "Gorzów Wielkopolski" "Zielona Góra"
 ```
 
 Teraz szukamy wystąpienia liter co najmniej raz lub więcej (`+`), następnie wystąpienia spacji zero razy lub raz (`[\\s]?`) i kończymy na sprawdzeniu wystąpienia tekstu zero razy lub więcej (`*`).
@@ -458,9 +454,8 @@ miasta_pomiary2 = str_extract_all(tekst_pomiary2,
        pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[\\s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*")
 miasta_pomiary2
 #> [[1]]
-#> [1] "Wrocław"             "Bydgoszcz"          
-#> [3] "Toruń"               "Lublin"             
-#> [5] "Gorzów Wielkopolski" "Zielona Góra"
+#> [1] "Wrocław"             "Bydgoszcz"           "Toruń"              
+#> [4] "Lublin"              "Gorzów Wielkopolski" "Zielona Góra"
 ```
 
 ## Zamiana tekstu - regex
@@ -549,11 +544,10 @@ Przykładowo poniższa linia kodu wyświetla wszyskie pliki znajdujące się w f
 
 ```r
 dir("pliki")
-#>  [1] "dane_meteo.csv"  "dane_meteo.rds" 
-#>  [3] "dane_meteo.xlsx" "dane_meteo2.csv"
-#>  [5] "dokument.docx"   "kod.R"          
-#>  [7] "list.txt"        "mapa.png"       
-#>  [9] "obrazek.png"     "zdjecie.jpg"
+#>  [1] "dane_meteo.csv"  "dane_meteo.rds"  "dane_meteo.xlsx"
+#>  [4] "dane_meteo2.csv" "dokument.docx"   "kod.R"          
+#>  [7] "list.txt"        "mapa.png"        "obrazek.png"    
+#> [10] "zdjecie.jpg"
 ```
 
 W przypadku, gdy interesują nas tylko pliki o wybranym rozszerzeniu możemy użyć argumentu `pattern` i zdefiniować wzorzec.
@@ -580,8 +574,7 @@ Domyślnie funkcja `dir()` pokazuje zawartość wybranego folderu, aby jednak po
 
 ```r
 dir("pliki", pattern = "*\\.(png|jpg)$", full.names = TRUE)
-#> [1] "pliki/mapa.png"    "pliki/obrazek.png"
-#> [3] "pliki/zdjecie.jpg"
+#> [1] "pliki/mapa.png"    "pliki/obrazek.png" "pliki/zdjecie.jpg"
 ```
 
 ## Zadania

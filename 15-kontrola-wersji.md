@@ -207,37 +207,25 @@ Pod adresem https://github.com/join można założyć nowe konto użytkownika.
 Posiadanie konta użytkownika pozwala na, między innymi, tworzenie nowych repozytoriów i zarządzanie nimi.
 Stworzenie nowego repozytorium odbywa się poprzez naciśnięcie zielonej ikony (rycina \@ref(fig:gh-new-repo)).
 
-\begin{figure}[H]
-
-{\centering \includegraphics[width=0.8\linewidth]{images/gh-new-repo} 
-
-}
-
-\caption{Ikona tworzenia nowego repozytorium GitHub.}(\#fig:gh-new-repo)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/gh-new-repo.png" alt="Ikona tworzenia nowego repozytorium GitHub." width="80%" />
+<p class="caption">(\#fig:gh-new-repo)Ikona tworzenia nowego repozytorium GitHub.</p>
+</div>
 
 W kolejnym oknie (rycina \@ref(fig:gh-new-repo2)) należy podać nazwę nowego repozytorium oraz wybrać czy będzie ono publiczne czy prywatne. 
 Dodatkowo możliwe jest dodanie opisu repozytorium (ang. *description*), pliku README, czy licencji.
 
-\begin{figure}[H]
-
-{\centering \includegraphics[width=0.8\linewidth]{images/gh-new-repo2} 
-
-}
-
-\caption{Okno tworzenia nowego repozytorium GitHub.}(\#fig:gh-new-repo2)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/gh-new-repo2.png" alt="Okno tworzenia nowego repozytorium GitHub." width="80%" />
+<p class="caption">(\#fig:gh-new-repo2)Okno tworzenia nowego repozytorium GitHub.</p>
+</div>
 
 Po wybraniu potwierdzenia (*Create repository*) utworzone zostanie nowe, puste repozytorium (rycina \@ref(fig:gh-new-repo3)).
 
-\begin{figure}[H]
-
-{\centering \includegraphics[width=0.8\linewidth]{images/gh-new-repo3} 
-
-}
-
-\caption{Nowe, puste repozytorium GitHub.}(\#fig:gh-new-repo3)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/gh-new-repo3.png" alt="Nowe, puste repozytorium GitHub." width="80%" />
+<p class="caption">(\#fig:gh-new-repo3)Nowe, puste repozytorium GitHub.</p>
+</div>
 
 Okno pustego repozytorium przedstawia cztery główne drogi pozwalające na dodanie zawartości:
 
@@ -256,14 +244,10 @@ Tutaj następuje tylko (1) dodanie ścieżki do zdalnego repozytorium oraz (2) w
 
 Wygląd okna repozytorium zmienia się po dodaniu pierwszej zawartości (rycina \@ref(fig:gh-new-repo4)).
 
-\begin{figure}[H]
-
-{\centering \includegraphics[width=0.8\linewidth]{images/gh-new-repo4} 
-
-}
-
-\caption{Repozytorium GitHub po dodaniu zawartości.}(\#fig:gh-new-repo4)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/gh-new-repo4.png" alt="Repozytorium GitHub po dodaniu zawartości." width="80%" />
+<p class="caption">(\#fig:gh-new-repo4)Repozytorium GitHub po dodaniu zawartości.</p>
+</div>
 
 Teraz możliwe jest podejrzenie występujących tam plików (w tym momencie jedynie plik `README.md`), zmian jakie zaszły w repozytorium (klikając na *commit*), istniejących rozgałęzień (klikając na *branch*) oraz wiele innych.
 Pod zieloną ikoną *Clone or download* można dodatkowo znaleźć ścieżkę do tego zdalnego repozytorium. 
@@ -301,14 +285,10 @@ Najprostszym sposobem połączenia RStudio z systemem Git i serwisem GitHub jest
 W efekcie zostanie utworzony nowy projekt RStudio (w tle wykonywane jest pobranie kopii istniejącego zdalnego repo - patrz sekcja \@ref(repozytorium-zdalne)), który jednocześnie jest lokalnym repozytorium Git. 
 Dodatkowo, w RStudio pojawi się nowy panel "Git" (rycina \@ref(fig:rstudio-git)).
 
-\begin{figure}[H]
-
-{\centering \includegraphics[width=0.8\linewidth]{images/rstudio-git} 
-
-}
-
-\caption{Panel Git w RStudio.}(\#fig:rstudio-git)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/rstudio-git.png" alt="Panel Git w RStudio." width="80%" />
+<p class="caption">(\#fig:rstudio-git)Panel Git w RStudio.</p>
+</div>
 
 W tym panelu są wyświetlone (1) wszystkie pliki, które są w folderze projektu, ale nie w repozytorium Git (żółte ikony statusu), (2) pliki, które chcemy dodać do repozytorium (zielona ikona statusu), oraz (3) pliki, które są już w repozytorium, ale zostały zmodyfikowane (niebieska ikona statusu).^[Możliwe są też inne sytuacje, np. czerwona ikona z literą R sugerująca zmianę nazwy pliku.]
 Ten panel nie pokazuje plików, które nie zostały ostatnio zmienione.

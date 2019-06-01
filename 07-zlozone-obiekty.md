@@ -731,8 +731,8 @@ Raczej nie - wyliczenie średniej z tekstu nie jest jednoznacznie możliwe, wyli
 
 ```r
 mean(wek_tkt)
-#> Warning in mean.default(wek_tkt): argument is not
-#> numeric or logical: returning NA
+#> Warning in mean.default(wek_tkt): argument is not numeric or logical:
+#> returning NA
 #> [1] NA
 mean(wek_num)
 #> [1] 6
@@ -747,8 +747,7 @@ Metoda to sposób w jaki zachowuje się funkcja w zależności od tego jakiej kl
 
 ```r
 methods(mean)
-#> [1] mean.Date     mean.default  mean.difftime
-#> [4] mean.POSIXct  mean.POSIXlt 
+#> [1] mean.Date     mean.default  mean.difftime mean.POSIXct  mean.POSIXlt 
 #> see '?methods' for accessing help and source code
 ```
 

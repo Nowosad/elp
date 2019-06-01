@@ -345,9 +345,9 @@ Więcej na temat przetwarzania tekstu można znaleźć w rozdziale <a href="http
 <h2><span class="header-section-number">6.1</span> Reprezentacja tekstu</h2>
 <p>Typ znakowy jest określany poprzez użycie cudzysłowia <code>&quot;</code> lub <code>'</code>.
 Ważne tutaj jest, aby rozpoczynać i kończyć tekst tym samym cudzysłowiem.</p>
-<pre class="sourceCode r"><code class="sourceCode r">t1 =<span class="st"> &quot;kot&quot;</span>
-t2 =<span class="st"> &#39;pies&#39;</span>
-t3 =<span class="st"> &#39;&quot;W teorii, teoria i praktyka są tym samym. W praktyce, nie są.&quot; - Yogi Berra&#39;</span></code></pre>
+<pre><code>t1 = &quot;kot&quot;
+t2 = &#39;pies&#39;
+t3 = &#39;&quot;W teorii, teoria i praktyka są tym samym. W praktyce, nie są.&quot; - Yogi Berra&#39;</code></pre>
 <p>W momencie, gdy tekst nie będzie kończył się cudzysłowiem, wykonanie kodu jest niemożliwe.
 Wówczas zamiast znaku <code>&gt;</code>, oznaczającego nową linię wykonywanego kodu, pojawi się znak <code>+</code>.
 Oznacza on, że wykonanie kodu nie może zostać zakończone.</p>
@@ -458,7 +458,7 @@ Używając wyrażeń regularnych możliwe jest, między innymi, znajdowanie teks
 Wyrażenia regularne są powszechnie używane w wyszukiwarkach internetowych, edytorach tekstu, oraz wielu językach programowania.</p>
 <p>Wyrażenia regularne opierają się o stosowanie szeregu operatorów (metaznaków) wymienionych w tabeli <a href="tekst.html#tab:regexoperators">6.1</a>.</p>
 <table>
-<caption><span id="tab:regexoperators">Tabela 6.1: </span>Metaznaki w wyrażeniach regularnych</caption>
+<caption><span id="tab:regexoperators">Tabela 6.1: </span>Metaznaki w wyrażeniach regularnych.</caption>
 <thead>
 <tr class="header">
 <th align="left">Operator</th>
@@ -483,11 +483,11 @@ Wyrażenia regularne są powszechnie używane w wyszukiwarkach internetowych, ed
 <td align="left">Alternatywa (lub)</td>
 </tr>
 <tr class="odd">
-<td align="left">\[\]</td>
+<td align="left">[]</td>
 <td align="left">Wymienia dozwolone znaki</td>
 </tr>
 <tr class="even">
-<td align="left">\[^\\]</td>
+<td align="left">[^]</td>
 <td align="left">Wymienia niedozwolone znaki</td>
 </tr>
 <tr class="odd">
