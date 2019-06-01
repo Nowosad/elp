@@ -222,15 +222,15 @@ if (knitr::is_html_output()){
 } else{
   roperators = c("^", 
                "$", "()", 
-               "|", "\\[\\]", 
-               "\\[^\\]",
+               "|", "[]", 
+               "[^]",
                "*", "+", 
                "?", "{n}", 
-               ".", "\\\\"
+               ".", "\\"
                )
   knitr::kable(tibble(Operator = roperators, Wyjaśnienie = roperators_exp), 
              caption = "Metaznaki w wyrażeniach regularnych",
-             booktabs = TRUE, format = "latex")
+             booktabs = TRUE, format = "pandoc")
 }
 ```
 
