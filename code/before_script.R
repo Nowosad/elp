@@ -1,7 +1,7 @@
 library(methods)
 
 knitr::opts_chunk$set(
-  background = "#FCFCFC", # code chunk color in latex
+  background = "#FCFCFC",
   comment = "#>",
   collapse = TRUE,
   cache = TRUE,
@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
   # fig.asp = 0.618,  # 1 / pi (golden ratio)
   fig.asp = 0.7072136,  # 1 / 1.414 (silver ratio)
   fig.show = "hold",
-  out.width = "100%"
+  out.width = "\\textwidth"
 )
 
 if(!knitr:::is_html_output()){
@@ -22,4 +22,4 @@ if(!knitr:::is_html_output()){
 }
 
 set.seed(2018-12-22)
-options(digits = 3)
+options(digits = 3, knitr.graphics.auto_pdf = TRUE, tinytex.verbose = TRUE)

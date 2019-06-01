@@ -1,4 +1,4 @@
-book_filename: "wstep_do_progr_w_r_nowosad_2019"
+book_filename: "elementarz-programisty-nowosad-2019"
 new_session: yes
 before_chapter_script: ["code/before_script.R"]
 delete_merged_file: true
@@ -6,3 +6,9 @@ language:
   label:
     fig: 'Rycina '
     tab: 'Tabela '
+#rmd_files:
+#  - "index.Rmd"
+#  - "01-wprowadzenie.Rmd"
+#  - "02-ergo-sum.Rmd"
+#  - "03-funkcje.Rmd"
+#  - "32-references.Rmd"

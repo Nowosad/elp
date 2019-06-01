@@ -7,16 +7,18 @@ bookdown::gitbook:
         <li><a href="./">Elementarz programisty</a></li>
       after: |
         <li><a href="https://nowosad.github.io/">Jakub Nowosad</a></li>
-    edit: https://github.com/Nowosad/my-minimal-bookdown/edit/master/%s
-    download: ["pdf", "epub"]
+    edit: https://github.com/Nowosad/elp/edit/master/%s
+    download: ["pdf"]
     includes:
         in_header: ga.html
 bookdown::pdf_book:
   includes:
+    before_body: style/before_body.tex
     in_header: style/preamble.tex
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
   dev: "cairo_pdf"
   template: null
+  quote_footer: ["\\VA{", "}{}"]
 bookdown::epub_book: default
