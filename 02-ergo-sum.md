@@ -52,7 +52,7 @@ Wszystkie powyższe operacje można wykonać poprzez ich wpisanie w oknie konsol
 > "Dwa slogany są pomocne w zrozumieniu obliczeń w R: 1. Wszystko co istnieje jest obiektem. 2. Wszystko co się dzieje jest wywołaniem funkcji." John Chambers
 
 <!-- - obiekty (zmienne) -->
-<img src="images/obiekty.jpg" width="\textwidth" style="display: block; margin: auto;" />
+
 
 Powyższy cytat sugeruje dwa najważniejsze elementy języka R: obiekty i funkcje.
 Zrozumienie w jaki sposób się je tworzy i zmienia będzie w związku z tym, konieczną wiedzą osób piszących w tym języku.
@@ -184,10 +184,14 @@ R jest językiem programowania, podczas gdy RStudio to aplikacja ułatwiająca p
 Możliwe jest używanie R bez RStudio, ale RStudio bez R nie pełni już swojej roli.
 Częstą analogią jest porównanie samochodowe, w którym R jest opisywany jako silnik a RStudio jako deska rozdzielcza.</div>\EndKnitrBlock{rmdinfo}
 
-<div class="figure" style="text-align: center">
-<img src="images/rstudio-ide.png" alt="Okno RStudio z opisaną funkcjonalnością każdej z jego części." width="\textwidth" />
-<p class="caption">(\#fig:rstudioimage)Okno RStudio z opisaną funkcjonalnością każdej z jego części.</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=\textwidth]{images/rstudio-ide} 
+
+}
+
+\caption{Okno RStudio z opisaną funkcjonalnością każdej z jego części.}(\#fig:rstudioimage)
+\end{figure}
 
 Typowa praca w RStudio często polega na wpisywaniu poleceń do pliku tekstowego widocznego w części skryptowej (Rycina \@ref(fig:rstudioimage)), a następnie wykonywaniu kolejnych linii kodu w oknie konsoli używając skrótu klawiaturowego CTRL+ENTER (więcej przydatnych skrótów klawiaturowych można znaleźć w tabeli \@ref(tab:rstudiosk)).
 Efektem wykonywania funkcji może być powstanie nowych obiektów, które można zobaczyć w oknie "środowiska" lub też wyświetlenie grafik, które można zobaczyć w oknie "wykresu".
@@ -213,19 +217,25 @@ Aby stworzyć pierwszy projekt RStudio, należy:
 #>   read_xml.response xml2
 ```
 
+\begin{table}[t]
 
-
-Table: (\#tab:rstudiosk)Podstawowe skróty klawiaturowe w RStudio
-
-Skrót                                 Wyjaśnienie                                                   
-------------------------------------  --------------------------------------------------------------
-Ctrl+Enter                            wykonuje wybraną linię kodu w skrypcie R                      
-Tab                                   uzupełnia kod (podaje pasujące możliwości)                    
-F1                                    wyświetla plik pomocy dla wybranej funkcji                    
-Ctrl+Shift+C                          ustawia wybrane linie jako komentarz/odkomentuj fragment kodu 
-strzałka Góra/Dół (w oknie konsoli)   wybiera wcześniej wpisany kod                                 
-Esc                                   przerywa niedokończoną operację                               
-Shift+Alt+K                           wyświetla listę skrótów klawiaturowych                        
+\caption{(\#tab:rstudiosk)Podstawowe skróty klawiaturowe w RStudio}
+\centering
+\begin{tabular}{>{\raggedright\arraybackslash}p{12em}>{\raggedright\arraybackslash}p{18em}}
+\toprule
+Skrót & Wyjaśnienie\\
+\midrule
+Ctrl+Enter & wykonuje wybraną linię kodu w skrypcie R\\
+Tab & uzupełnia kod (podaje pasujące możliwości)\\
+F1 & wyświetla plik pomocy dla wybranej funkcji\\
+Ctrl+Shift+C & ustawia wybrane linie jako komentarz/odkomentuj fragment kodu\\
+strzałka Góra/Dół (w oknie konsoli) & wybiera wcześniej wpisany kod\\
+\addlinespace
+Esc & przerywa niedokończoną operację\\
+Shift+Alt+K & wyświetla listę skrótów klawiaturowych\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 ## Styl
 

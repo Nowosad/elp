@@ -71,10 +71,14 @@ Mit programisty mężczyzny jest też powiązany z wymienionym kilka akapitów n
 
 (ref:marghamil) Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które on i jej zespół stworzył na potrzeby misji Apollo. Źródło: https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg
 
-<div class="figure" style="text-align: center">
-<img src="images/margaret-hamilton.png" alt="(ref:marghamil)" width="80%" />
-<p class="caption">(\#fig:marghamil)(ref:marghamil)</p>
-</div>
+\begin{figure}[ht]
+
+{\centering \includegraphics[width=0.8\linewidth]{images/margaret-hamilton} 
+
+}
+
+\caption{(ref:marghamil)}(\#fig:marghamil)
+\end{figure}
 
 Kolejny jest mit wielkiego produktu.
 Oznacza on, że po nauczeniu się podstaw danego języka programowanie, jest się od razu w stanie stworzyć bardzo złożony program, np. nowy system operacyjny, skomplikowaną aplikację na telefon, czy grę komputerową.
@@ -172,10 +176,14 @@ Przykładowo R wspiera zarówno paradygmat funkcyjny, ale zawiera też możliwo�
 
 W tej książce wprowadzenie do programowania opiera się o język [R](https://www.r-project.org/) (Rycina \@ref(fig:rlogo)).
 
-<div class="figure" style="text-align: center">
-<img src="images/Rlogo.png" alt="Logo języka programowania R." width="25%" />
-<p class="caption">(\#fig:rlogo)Logo języka programowania R.</p>
-</div>
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.25\linewidth]{images/Rlogo} 
+
+}
+
+\caption{Logo języka programowania R.}(\#fig:rlogo)
+\end{figure}
 
 Wynika to z szeregu zalet tego języka:
 
