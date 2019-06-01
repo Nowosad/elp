@@ -43,7 +43,7 @@ Wszystkie powyższe operacje można wykonać poprzez ich wpisanie w oknie konsol
 > "Dwa slogany są pomocne w zrozumieniu obliczeń w R: 1. Wszystko co istnieje jest obiektem. 2. Wszystko co się dzieje jest wywołaniem funkcji." John Chambers
 
 <!-- - obiekty (zmienne) -->
-```{r, echo=FALSE}
+```{r, echo=FALSE, eval=FALSE}
 knitr::include_graphics("images/obiekty.jpg")
 ```
 
