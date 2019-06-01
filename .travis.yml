@@ -3,7 +3,9 @@ cache: packages
 latex: false
 sudo: required
 
-#before_install:
+before_install:
+  - sudo cp fonts/ -r /usr/local/share/fonts
+  - sudo fc-cache -f -v
 #  - sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable --yes
 #  - sudo add-apt-repository ppa:opencpu/jq --yes
 #  - sudo apt-get --yes --force-yes update -qq
