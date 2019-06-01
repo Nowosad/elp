@@ -10,21 +10,21 @@
 
   <meta property="og:title" content="6 Tekst | Elementarz programisty" />
   <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://nowosad.github.io/elp" />
+  <meta property="og:image" content="https://nowosad.github.io/elpcover/cover.png" />
   
-  
-  
-  <meta name="github-repo" content="nowosad/my-minimal-bookdown" />
+  <meta name="github-repo" content="nowosad/elp" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="6 Tekst | Elementarz programisty" />
   
   
-  
+  <meta name="twitter:image" content="https://nowosad.github.io/elpcover/cover.png" />
 
 <meta name="author" content="Jakub Nowosad" />
 
 
-<meta name="date" content="2019-05-31" />
+<meta name="date" content="2019-06-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -483,11 +483,11 @@ Wyrażenia regularne są powszechnie używane w wyszukiwarkach internetowych, ed
 <td align="left">Alternatywa (lub)</td>
 </tr>
 <tr class="odd">
-<td align="left">[]</td>
+<td align="left">\[\]</td>
 <td align="left">Wymienia dozwolone znaki</td>
 </tr>
 <tr class="even">
-<td align="left">[^]</td>
+<td align="left">\[^\\]</td>
 <td align="left">Wymienia niedozwolone znaki</td>
 </tr>
 <tr class="odd">
@@ -604,7 +604,8 @@ Metaznak <code>*</code> w przypadku, gdy zdefiniowanego znaku nie ma (wystąpił
 <span class="co">#&gt; [[1]]</span>
 <span class="co">#&gt; [1] &quot;Wrocław&quot;   &quot;Bydgoszcz&quot; &quot;Toruń&quot;     &quot;Lublin&quot;</span></code></pre>
 <p>Wyobrażmy sobie, że otrzymaliśmy rozszerzoną wersję poprzednich danych, która tym razem zawiera dwa dodatkowe miasta - Gorzów Wielkopolski i Zieloną Górę.</p>
-<pre class="sourceCode r"><code class="sourceCode r">tekst_pomiary2 =<span class="st"> &quot;Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3, Gorzów Wielkopolski: 20, Zielona Góra: 19&quot;</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">tekst_pomiary2 =<span class="st"> &quot;Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3, </span>
+<span class="st">Gorzów Wielkopolski: 20, Zielona Góra: 19&quot;</span></code></pre>
 <p>Nadal interesuje nas wydzielenie nazw miast, więc próbujemy użyć kodu, który stworzyliśmy powyżej.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_extract_all</span>(tekst_pomiary2, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+&quot;</span>)
 <span class="co">#&gt; [[1]]</span>
@@ -781,14 +782,14 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Nowosad/my-minimal-bookdown/edit/master/06-tekst.Rmd",
+"link": "https://github.com/Nowosad/elp/edit/master/06-tekst.Rmd",
 "text": "Edit"
 },
 "history": {
 "link": null,
 "text": null
 },
-"download": ["wstep_do_progr_w_r_nowosad_2019.pdf", "wstep_do_progr_w_r_nowosad_2019.epub"],
+"download": ["elementarz-programisty-nowosad-2019.pdf"],
 "toc": {
 "collapse": "section"
 },

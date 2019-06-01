@@ -208,7 +208,7 @@ Posiadanie konta użytkownika pozwala na, między innymi, tworzenie nowych repoz
 Stworzenie nowego repozytorium odbywa się poprzez naciśnięcie zielonej ikony (rycina \@ref(fig:gh-new-repo)).
 
 <div class="figure" style="text-align: center">
-<img src="images/gh-new-repo.png" alt="Ikona tworzenia nowego repozytorium GitHub." width="100%" />
+<img src="images/gh-new-repo.png" alt="Ikona tworzenia nowego repozytorium GitHub." width="80%" />
 <p class="caption">(\#fig:gh-new-repo)Ikona tworzenia nowego repozytorium GitHub.</p>
 </div>
 
@@ -216,14 +216,14 @@ W kolejnym oknie (rycina \@ref(fig:gh-new-repo2)) należy podać nazwę nowego r
 Dodatkowo możliwe jest dodanie opisu repozytorium (ang. *description*), pliku README, czy licencji.
 
 <div class="figure" style="text-align: center">
-<img src="images/gh-new-repo2.png" alt="Okno tworzenia nowego repozytorium GitHub." width="100%" />
+<img src="images/gh-new-repo2.png" alt="Okno tworzenia nowego repozytorium GitHub." width="80%" />
 <p class="caption">(\#fig:gh-new-repo2)Okno tworzenia nowego repozytorium GitHub.</p>
 </div>
 
 Po wybraniu potwierdzenia (*Create repository*) utworzone zostanie nowe, puste repozytorium (rycina \@ref(fig:gh-new-repo3)).
 
 <div class="figure" style="text-align: center">
-<img src="images/gh-new-repo3.png" alt="Nowe, puste repozytorium GitHub." width="100%" />
+<img src="images/gh-new-repo3.png" alt="Nowe, puste repozytorium GitHub." width="80%" />
 <p class="caption">(\#fig:gh-new-repo3)Nowe, puste repozytorium GitHub.</p>
 </div>
 
@@ -245,7 +245,7 @@ Tutaj następuje tylko (1) dodanie ścieżki do zdalnego repozytorium oraz (2) w
 Wygląd okna repozytorium zmienia się po dodaniu pierwszej zawartości (rycina \@ref(fig:gh-new-repo4)).
 
 <div class="figure" style="text-align: center">
-<img src="images/gh-new-repo4.png" alt="Repozytorium GitHub po dodaniu zawartości." width="100%" />
+<img src="images/gh-new-repo4.png" alt="Repozytorium GitHub po dodaniu zawartości." width="80%" />
 <p class="caption">(\#fig:gh-new-repo4)Repozytorium GitHub po dodaniu zawartości.</p>
 </div>
 
@@ -286,7 +286,7 @@ W efekcie zostanie utworzony nowy projekt RStudio (w tle wykonywane jest pobrani
 Dodatkowo, w RStudio pojawi się nowy panel "Git" (rycina \@ref(fig:rstudio-git)).
 
 <div class="figure" style="text-align: center">
-<img src="images/rstudio-git.png" alt="Panel Git w RStudio." width="100%" />
+<img src="images/rstudio-git.png" alt="Panel Git w RStudio." width="80%" />
 <p class="caption">(\#fig:rstudio-git)Panel Git w RStudio.</p>
 </div>
 

@@ -139,7 +139,8 @@ minus_1 = function(x){
   if(is.character(x)){
     stop("Argument `x` musi być zmienną numeryczną, a nie znakową.")
   } else if(is.logical(x)){
-    warning("Argument `x` jest zmienną logiczną. Czy nie chcesz użyć zmiennej numerycznej?")
+    warning(paste("Argument `x` jest zmienną logiczną.",
+                  "Czy nie chcesz użyć zmiennej numerycznej?"))
   } else {
     message("Wow. Argument `x` jest oczekiwaną zmienną numeryczną.")
   }

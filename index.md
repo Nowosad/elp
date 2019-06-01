@@ -3,21 +3,23 @@
 title: "Elementarz programisty"
 subtitle: "Wstęp do programowania używając R"
 author: "Jakub Nowosad"
-date: "2019-05-31"
+date: "2019-06-01"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: scrbook
 classoption: "paper=6in:9in,pagesize=pdftex,headinclude=on,footinclude=on,10pt"
 geometry: "top=1.6cm, bottom=2cm, left=2cm, right=2cm"
 monofont: "Source Code Pro"
-monofontoptions: "Scale=0.7"
+monofontoptions: "Scale=0.66"
 bibliography: [references.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: nowosad/my-minimal-bookdown
+github-repo: nowosad/elp
 description: ""
 graphics: yes
 links-as-notes: true
+cover-image: "cover/cover.png"
+url: 'https\://nowosad.github.io/elp'
 ---
 
 

@@ -69,9 +69,11 @@ Obecnie podejmowanych jest szereg inicjatyw, które mają na celu zachęcić kob
 Wsród nich można wymienić działania organizacji [R-Ladies](https://rladies.org/), [PyLadies](https://www.pyladies.com/), czy [girls.js](https://girlsjs.pl/).
 Mit programisty mężczyzny jest też powiązany z wymienionym kilka akapitów niżej mitem samotnego programisty.
 
+(ref:marghamil) Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które on i jej zespół stworzył na potrzeby misji Apollo. Źródło: https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg
+
 <div class="figure" style="text-align: center">
-<img src="images/margaret-hamilton.png" alt="Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które on i jej zespół stworzył na potrzeby misji Apollo. Źródło: [Wikipedia](https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg)." width="100%" />
-<p class="caption">(\#fig:marghamil)Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które on i jej zespół stworzył na potrzeby misji Apollo. Źródło: [Wikipedia](https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg).</p>
+<img src="images/margaret-hamilton.png" alt="(ref:marghamil)" width="80%" />
+<p class="caption">(\#fig:marghamil)(ref:marghamil)</p>
 </div>
 
 Kolejny jest mit wielkiego produktu.

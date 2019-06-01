@@ -10,21 +10,21 @@
 
   <meta property="og:title" content="8 Powtarzanie | Elementarz programisty" />
   <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://nowosad.github.io/elp" />
+  <meta property="og:image" content="https://nowosad.github.io/elpcover/cover.png" />
   
-  
-  
-  <meta name="github-repo" content="nowosad/my-minimal-bookdown" />
+  <meta name="github-repo" content="nowosad/elp" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="8 Powtarzanie | Elementarz programisty" />
   
   
-  
+  <meta name="twitter:image" content="https://nowosad.github.io/elpcover/cover.png" />
 
 <meta name="author" content="Jakub Nowosad" />
 
 
-<meta name="date" content="2019-05-31" />
+<meta name="date" content="2019-06-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -570,9 +570,10 @@ W paradygmacie funkcyjnym natomiast naszym pierwszym krokiem jest stworzenie fun
 <ol style="list-style-type: decimal">
 <li>Wynik działania funkcji musi zależeć od obiektu wejściowego, czyli gdy dwa razy uruchomimy tą samą funkcję na tych samych danych musimy dostać ten sam wynik.
 Taka funkcja nie może mieć w sobie, np. elementu losowego.</li>
-<li>Funkcja nie może mieć efektów ubocznych (ang. <em>side-effects</em>), czyli wykonywać jakiegoś działania w tle, jak np. wyświetlanie czy zapisywanie na dysk.
-</div></li>
+<li>Funkcja nie może mieć efektów ubocznych (ang. <em>side-effects</em>), czyli wykonywać jakiegoś działania w tle, jak np. wyświetlanie czy zapisywanie na dysk.</li>
 </ol>
+</div>
+
 <p>Powyższa funkcja <code>konwersja_f_to_c()</code> działa poprawnie na wektorach wartości, ale niestety nie jest w stanie zwrócić wyniku w przypadku listy, co obrazuje komunikat błędu.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">konwersja_f_to_c</span>(pomiary_f_lista)
 <span class="co">#&gt; Error in temperatura_f - 32: non-numeric argument to binary operator</span></code></pre>
@@ -783,14 +784,14 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Nowosad/my-minimal-bookdown/edit/master/08-petle.Rmd",
+"link": "https://github.com/Nowosad/elp/edit/master/08-petle.Rmd",
 "text": "Edit"
 },
 "history": {
 "link": null,
 "text": null
 },
-"download": ["wstep_do_progr_w_r_nowosad_2019.pdf", "wstep_do_progr_w_r_nowosad_2019.epub"],
+"download": ["elementarz-programisty-nowosad-2019.pdf"],
 "toc": {
 "collapse": "section"
 },

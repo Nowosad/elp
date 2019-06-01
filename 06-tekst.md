@@ -237,8 +237,8 @@ Operator   Wyjaśnienie
 $          Określa koniec testu/linii                            
 ()         Grupowanie                                            
 |          Alternatywa (lub)                                     
-[]         Wymienia dozwolone znaki                              
-[^]        Wymienia niedozwolone znaki                           
+\\[\\]     Wymienia dozwolone znaki                              
+\\[^\\]    Wymienia niedozwolone znaki                           
 *          Poprzedni znak zostanie wybrany zero lub więcej razy  
 +          Poprzedni znak zostanie wybrany jeden lub więcej razy 
 ?          Poprzedni znak zostanie wybrany zero lub jeden raz    
@@ -418,7 +418,8 @@ Wyobrażmy sobie, że otrzymaliśmy rozszerzoną wersję poprzednich danych, kt�
 
 
 ```r
-tekst_pomiary2 = "Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3, Gorzów Wielkopolski: 20, Zielona Góra: 19"
+tekst_pomiary2 = "Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3, 
+Gorzów Wielkopolski: 20, Zielona Góra: 19"
 ```
 
 Nadal interesuje nas wydzielenie nazw miast, więc próbujemy użyć kodu, który stworzyliśmy powyżej.

@@ -12,10 +12,13 @@ Zamiast wielokrotnie powtarzać te same linie kodu, możliwe jest napisanie funk
 Funkcje są reprezentowane w R jako specjalne obiekty, które można uruchomić poprzez dodanie do ich nazwy nawiasów okrągłych.
 Przykładowo, funkcja `mean()` wylicza średnią.
 Może ona przyjąć kilka różnych argumentów, czyli pewnych obiektów lub parametrów wejściowych.
-W poniższym przykładzie do funkcji `mean()` zostały podane dwa argumenty.
+W poniższym przykładzie do funkcji `mean()` zostały podane dwa argumenty (rycina \@ref(fig:funstr)).
 Pierwszy argument nazywa się `x` i przyjmuje on wektor numeryczny `economics$pop`, drugi argument nazywa się `na.rm` i został on ustalony na `TRUE`.
 
-<img src="images/funkcje.png" width="100%" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="images/funkcje.png" alt="Przykład struktury funkcji w R." width="80%" />
+<p class="caption">(\#fig:funstr)Przykład struktury funkcji w R.</p>
+</div>
 
 W efekcie działania funkcji otrzymano wynik - `246348.9` - który jest średnią wartością w zadanym wektorze.
 

@@ -329,7 +329,8 @@ konwersja_f_to_c = function(temperatura_f){
   
 1. Wynik działania funkcji musi zależeć od obiektu wejściowego, czyli gdy dwa razy uruchomimy tą samą funkcję na tych samych danych musimy dostać ten sam wynik.
 Taka funkcja nie może mieć w sobie, np. elementu losowego.
-2. Funkcja nie może mieć efektów ubocznych (ang. *side-effects*), czyli wykonywać jakiegoś działania w tle, jak np. wyświetlanie czy zapisywanie na dysk.</div>\EndKnitrBlock{rmdinfo}
+2. Funkcja nie może mieć efektów ubocznych (ang. *side-effects*), czyli wykonywać jakiegoś działania w tle, jak np. wyświetlanie czy zapisywanie na dysk.
+</div>\EndKnitrBlock{rmdinfo}
 
 Powyższa funkcja `konwersja_f_to_c()` działa poprawnie na wektorach wartości, ale niestety nie jest w stanie zwrócić wyniku w przypadku listy, co obrazuje komunikat błędu.
 

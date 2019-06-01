@@ -134,7 +134,7 @@ W powyższym przypadku nastąpiło profilowanie kodu zawartego w skrypcie `R/moj
 Efektem działania jest interaktywne podsumowanie pokazujące zużycie pamięci oraz czas poświęcony dla kolejnych linii kodu (rycina \@ref(fig:profvis)).
 
 <div class="figure" style="text-align: center">
-<img src="images/profvis.png" alt="Zrzut ekranu przedstawiający wynik działania funkcji profvis()." width="100%" />
+<img src="images/profvis.png" alt="Zrzut ekranu przedstawiający wynik działania funkcji profvis()." width="\textwidth" />
 <p class="caption">(\#fig:profvis)Zrzut ekranu przedstawiający wynik działania funkcji profvis().</p>
 </div>
 
@@ -174,7 +174,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 ```r
 system.time(mean(1:100000000))
 #>    user  system elapsed 
-#>   0.624   0.000   0.625
+#>   0.640   0.000   0.641
 ```
 
 W efekcie dostajemy trzy wartości - `user`, `system` i `elapsed`. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.
@@ -230,8 +230,8 @@ wynik_1
 #> # A tibble: 2 x 6
 #>   expression               min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr>          <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 mi_do_km1(odl_mile)   1.53µs    1.7µs   495164.     117KB        0
-#> 2 mi_do_km2(odl_mile)   1.16µs   1.34µs   634365.     221KB        0
+#> 1 mi_do_km1(odl_mile)    1.6µs    1.8µs   471754.     117KB        0
+#> 2 mi_do_km2(odl_mile)   1.18µs    1.3µs   694637.     221KB        0
 ```
 
 Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
@@ -262,12 +262,12 @@ wynik_2
 #> # A tibble: 2 x 6
 #>   expression                min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr>           <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 mi_do_km1(odl_mile2)    452ms    462ms      2.17     382MB     17.3
-#> 2 mi_do_km2(odl_mile2)    779µs    816µs   1035.      78.2KB     20.0
+#> 1 mi_do_km1(odl_mile2)    464ms    469ms      2.13     382MB     17.1
+#> 2 mi_do_km2(odl_mile2)    792µs    830µs   1004.      78.2KB     18.0
 ```
 
 W tym przypadku różnica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
-Funkcja `mi_do_km1` jest w stanie wykonać tylko 17.32 operacji na sekundę, przy aż 19.97 operacji na sekundę funkcji `mi_do_km2`.
+Funkcja `mi_do_km1` jest w stanie wykonać tylko 17.07 operacji na sekundę, przy aż 18 operacji na sekundę funkcji `mi_do_km2`.
 Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
 
 
@@ -283,14 +283,14 @@ Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej
 #> # A tibble: 8 x 7
 #>   expression       x      min   median `itr/sec` mem_alloc `gc/sec`
 #>   <bch:expr>   <dbl> <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 mi_do_km1(l)    10   3.89µs   4.51µs 200622.          0B     40.1
-#> 2 mi_do_km2(l)    10   1.77µs   1.97µs 475663.          0B      0  
-#> 3 mi_do_km1(l)   100  65.63µs  71.42µs  13166.     43.16KB     17.2
-#> 4 mi_do_km2(l)   100   8.47µs   9.31µs 101073.        856B     20.2
-#> 5 mi_do_km1(l)  1000   4.31ms   4.59ms    215.      3.87MB     19.8
-#> 6 mi_do_km2(l)  1000  76.31µs  80.53µs  11842.      7.87KB     22.7
-#> 7 mi_do_km1(l) 10000 553.78ms 553.78ms      1.81  382.04MB     14.4
-#> 8 mi_do_km2(l) 10000 786.78µs 818.74µs   1083.     78.18KB     20.0
+#> 1 mi_do_km1(l)    10   3.92µs   4.54µs 202073.          0B     20.2
+#> 2 mi_do_km2(l)    10    1.8µs   2.04µs 442565.          0B     44.3
+#> 3 mi_do_km1(l)   100  66.28µs  72.92µs  13025.     43.16KB     14.4
+#> 4 mi_do_km2(l)   100   8.47µs   9.32µs  99136.        856B     29.7
+#> 5 mi_do_km1(l)  1000   4.37ms   4.63ms    212.      3.87MB     20.2
+#> 6 mi_do_km2(l)  1000   75.3µs  82.28µs  11517.      7.87KB     20.1
+#> 7 mi_do_km1(l) 10000 557.74ms 557.74ms      1.79  382.04MB     14.3
+#> 8 mi_do_km2(l) 10000 791.96µs 830.65µs   1067.     78.18KB     20.0
 ```
 
 

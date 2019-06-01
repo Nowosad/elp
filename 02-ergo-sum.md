@@ -49,12 +49,10 @@ Wszystkie powyższe operacje można wykonać poprzez ich wpisanie w oknie konsol
 
 ## Obiekty
 
-> "Dwa slogany są pomocne w zrozumieniu obliczeń w R: 1. Wszystko co istnieje jest obiektem. 2. Wszystko co się dzieje jest wywołaniem funkcji."
->
-> --- John Chambers
+> "Dwa slogany są pomocne w zrozumieniu obliczeń w R: 1. Wszystko co istnieje jest obiektem. 2. Wszystko co się dzieje jest wywołaniem funkcji." John Chambers
 
 <!-- - obiekty (zmienne) -->
-<img src="images/obiekty.png" width="100%" style="display: block; margin: auto;" />
+<img src="images/obiekty.jpg" width="\textwidth" style="display: block; margin: auto;" />
 
 Powyższy cytat sugeruje dwa najważniejsze elementy języka R: obiekty i funkcje.
 Zrozumienie w jaki sposób się je tworzy i zmienia będzie w związku z tym, konieczną wiedzą osób piszących w tym języku.
@@ -187,7 +185,7 @@ Możliwe jest używanie R bez RStudio, ale RStudio bez R nie pełni już swojej
 Częstą analogią jest porównanie samochodowe, w którym R jest opisywany jako silnik a RStudio jako deska rozdzielcza.</div>\EndKnitrBlock{rmdinfo}
 
 <div class="figure" style="text-align: center">
-<img src="images/rstudio.png" alt="Okno RStudio z opisaną funkcjonalnością każdej z jego części." width="100%" />
+<img src="images/rstudio-ide.png" alt="Okno RStudio z opisaną funkcjonalnością każdej z jego części." width="\textwidth" />
 <p class="caption">(\#fig:rstudioimage)Okno RStudio z opisaną funkcjonalnością każdej z jego części.</p>
 </div>
 
@@ -370,7 +368,7 @@ obliczanie-sredniej.R
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Kodowanie znaków (ang. *character encodings*) jest to sposób sposób prezentacji znaków.
 Istnieje szereg różnych standardów kodowania znaków.
-Standard ASCII przyporządkowuje liczbom z zakresu 0−127 litery alfabetu angielskiego, cyfry, znaki przestankowe i inne symbole oraz polecenia.
+Standard ASCII przyporządkowuje liczbom z zakresu 0-127 litery alfabetu angielskiego, cyfry, znaki przestankowe i inne symbole oraz polecenia.
 Firma Microsoft stworzyła dodatkowo cały szereg standardów dla różnych języków. 
 Przykładowo do obsługi języków środkowoeuropejskich istnieje wersja oznaczona jako Windows-1250 (lub CP1250).
 Alternatywnie do systemu Microsoftu powstał też zbiór standardów ISO, przykładowo ISO-8859-2 dla języków środkowoeuropejskich.

@@ -30,7 +30,7 @@ head(met)
 ```
 
 Wewnątrz obiektu `met` znajdują się kolumny `tavg` (określająca średnią dobową temperaturę powietrza w stopniach Celsjusza) oraz `nazwa_stacji` ("POZNAŃ" lub "ZAKOPANE").
-Do porównania wartości temperatury pomiędzy stacjami może posłużyć wykres pudełkowy, stworzony przy pomocy funkcji `boxplot()`.
+Do porównania wartości temperatury pomiędzy stacjami może posłużyć wykres pudełkowy, stworzony przy pomocy funkcji `boxplot()`  (rycina \@ref(fig:plotex)).
 Poniżej zdefiniowano, która zmienna ma zostać zwizualizowana (`tavg`) w podziale na jakie grupy (`nazwa_stacji`) z jakiego zbioru danych (`met`)^[Kod `tavg ~ nazwa_stacji` można inaczej odczytać jako `tavg` w zależności od `nazwa_stacji`.].
 
 
@@ -38,7 +38,10 @@ Poniżej zdefiniowano, która zmienna ma zostać zwizualizowana (`tavg`) w podzi
 boxplot(tavg ~ nazwa_stacji, data = met)
 ```
 
-<img src="figures/unnamed-chunk-3-1.png" width="100%" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="figures/plotex-1.png" alt="Przykład wykresu utworzonego przy pomocy funkcji boxplot()." width="\textwidth" />
+<p class="caption">(\#fig:plotex)Przykład wykresu utworzonego przy pomocy funkcji boxplot().</p>
+</div>
 
 Powyższy wykres może być zmodyfikowany używając dodatkowych argumentów (np. `main` dodający tytuł czy `col` zmieniający kolor pudełek) czy też dodatkowych funkcji pozwalających na dodanie legendy (funkcja `legend`) czy też tekstu (funkcja `text`).
 Inne dostępne wbudowane funkcje do tworzenia wykresów to, między innymi, `hist()` czy `barplot()` budujące histogramy oraz wykresy słupkowe.
@@ -54,7 +57,7 @@ Ten pakiet jest implementacją założeń zawartych w książce Grammar of Graph
 Główną funkcją tego pakietu jest `ggplot()`, która przyjmuje dane wejściowe w postaci ramki danych.
 Wewnątrz tej funkcji następuje wywołanie kolejnej funkcji `aes`, gdzie definiowane są kolejne kolumny, które mają być wyświetlone na osiach wykresów oraz określają kolor, kształt, wielkość i inne elementy.
 Kolejnym krokiem jest określenie typu wykresu poprzez połączenie poprzedniej funkcji (używając operatora `+`) z jedną z wielu funkcji rozpoczynających się od `geom_`.
-Przykładowo, do stworzenia wykresu pudełkowego służy `geom_boxplot()`.
+Przykładowo, do stworzenia wykresu pudełkowego służy `geom_boxplot()` (rycina \@ref(fig:ggplotex)).
 
 
 ```r
@@ -62,7 +65,10 @@ library(ggplot2)
 ggplot(met, aes(nazwa_stacji, tavg)) + geom_boxplot()
 ```
 
-<img src="figures/unnamed-chunk-4-1.png" width="100%" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="figures/ggplotex-1.png" alt="Przykład wykresu utworzonego z użyciem pakietu ggplot2." width="\textwidth" />
+<p class="caption">(\#fig:ggplotex)Przykład wykresu utworzonego z użyciem pakietu ggplot2.</p>
+</div>
 
 Pełna dokumentacja pakietu **ggplot2** znajduje się na stronie http://docs.ggplot2.org.
 
@@ -87,7 +93,7 @@ Ma to na celu zrozumienie posiadanych danych oraz zależności czy zjawisk któr
 
 W ramach grupy pakietów **tidyverse** często stosuje się operator `%>%` (ang. *pipe*) z pakietu **magrittr** [@R-magrittr]. 
 Pozwala on na łączenie kilku oddzielnych funkcji w jedno zapytanie.
-Działanie tego operatora polega na tym, że wynik jednej działania jednej funkcji staje się automatycznie pierwszym argumentem w kolejnej funkcji.
+Działanie tego operatora polega na tym, że wynik jednej działania jednej funkcji staje się automatycznie pierwszym argumentem w kolejnej funkcji (rycina \@ref(fig:tidyverse-example)).
 <!-- footnote o wywołaniu funkcji -->
 <!-- KOD? -->
 
@@ -103,8 +109,8 @@ readxl::read_excel("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.x
 ```
 
 <div class="figure" style="text-align: center">
-<img src="images/tidyverse-example.png" alt="Przykład wyniku użycia pakietów z grupy *tidyverse*." width="100%" />
-<p class="caption">(\#fig:tidyverse-example)Przykład wyniku użycia pakietów z grupy *tidyverse*.</p>
+<img src="images/tidyverse-example.png" alt="Przykład wyniku użycia pakietów z grupy tidyverse." width="\textwidth" />
+<p class="caption">(\#fig:tidyverse-example)Przykład wyniku użycia pakietów z grupy tidyverse.</p>
 </div>
 
 Pełne wprowadzenie do koncepcji *tidyverse* można znaleźć w książce [R for Data Science](https://r4ds.had.co.nz/) [@wickham2016r].
@@ -141,7 +147,7 @@ tm_shape(World, projection = "robin") +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="images/tmap-example.png" alt="Przykład działania pakietu tmap." width="100%" />
+<img src="images/tmap-example.png" alt="Przykład działania pakietu tmap." width="\textwidth" />
 <p class="caption">(\#fig:tmap-example)Przykład działania pakietu tmap.</p>
 </div>
 
@@ -203,6 +209,6 @@ Tworzone są również pakiety, moduły, czy biblioteki implementujące nowe pom
 W efekcie typowy kod napisany w danym języku kilka lat temu może się różnić od tego napisanego dziś.
 Powstaje też ciągle wiele nowych języków, z których tylko niewielka część zdobywa szersze grono użytkowników.
 Te języki często wprowadzają nowe podejścia i koncepcje, które później mają bezpośredni wpływ na zmiany w istniejących językach.
-Języki programowania są też stosowane coraz częściej w wielu codzienne używanych sprzętach, w tym samochodach czy lodówkach (ang. [*internet of things*](https://en.wikipedia.org/wiki/Internet_of_things), IOT).
+Języki programowania są też stosowane coraz częściej w wielu codzienne używanych sprzętach, w tym samochodach czy lodówkach (ang. *internet of things*, IOT).
 
 Powodzenia w dalszej przygodzie z programowaniem!
