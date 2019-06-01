@@ -13,7 +13,7 @@ Więcej na temat przetwarzania tekstu można znaleźć w rozdziale ["Strings"](h
 Typ znakowy jest określany poprzez użycie cudzysłowia `"` lub `'`.
 Ważne tutaj jest, aby rozpoczynać i kończyć tekst tym samym cudzysłowiem.
 
-```{r}
+```
 t1 = "kot"
 t2 = 'pies'
 t3 = '"W teorii, teoria i praktyka są tym samym. W praktyce, nie są." - Yogi Berra'
@@ -196,15 +196,6 @@ Wyrażenia regularne opierają się o stosowanie szeregu operatorów (metaznakó
 
 ```{r regexoperators, echo=FALSE}
 library(tibble)
-roperators = c("^", 
-               "$", "()", 
-               "|", "\\\\[\\\\]", 
-               "\\\\[^\\\\]",
-               "*", "+", 
-               "?", "{n}", 
-               ".", "\\\\"
-               )
-
 roperators_exp = c("Określa początek tekstu/linii",
                    "Określa koniec testu/linii", "Grupowanie",
                    "Alternatywa (lub)", "Wymienia dozwolone znaki",
@@ -215,9 +206,32 @@ roperators_exp = c("Określa początek tekstu/linii",
                    "Poprzedni znak zostanie wybrany n razy", 
                    "Jakikolwiek znak oprócz nowej linii (\\\\n)",
                    "Pozwala na użycie specjalnych znaków")
-knitr::kable(tibble(Operator = roperators, Wyjaśnienie = roperators_exp), 
+if (knitr::is_html_output()){
+    roperators = c("^", 
+               "$", "()", 
+               "|", "[]", 
+               "[^]",
+               "*", "+", 
+               "?", "{n}", 
+               ".", "\\\\"
+               )
+  knitr::kable(tibble(Operator = roperators, Wyjaśnienie = roperators_exp), 
              caption = "Metaznaki w wyrażeniach regularnych",
              booktabs = TRUE)
+  
+} else{
+  roperators = c("^", 
+               "$", "()", 
+               "|", "\\[\\]", 
+               "\\[^\\]",
+               "*", "+", 
+               "?", "{n}", 
+               ".", "\\\\"
+               )
+  knitr::kable(tibble(Operator = roperators, Wyjaśnienie = roperators_exp), 
+             caption = "Metaznaki w wyrażeniach regularnych",
+             booktabs = TRUE, format = "latex")
+}
 ```
 
 Wymienione powyżej znaki (np. `^`<!--Kareta--> czy `.`) mają specjalne znaczenie.
