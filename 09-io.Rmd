@@ -200,7 +200,9 @@ Zawiera on ramkę danych z dwoma kolumnami opisującymi gejzer Old Faithful (ryc
 head(faithful)
 ```
 
-```{r faithful, echo=FALSE, fig.cap="Obraz Alberta Bierstadta przedstawiający gejzer Old Faithful około roku 1881. Źródło: [Wikipedia](https://commons.wikimedia.org/wiki/File:Bierstadt_Albert_Old_Faithful.jpg)."}
+(ref:faithful) Obraz Alberta Bierstadta przedstawiający gejzer Old Faithful około roku 1881. Źródło: https://commons.wikimedia.org/wiki/File:Bierstadt_Albert_Old_Faithful.jpg
+
+```{r faithful, echo=FALSE, out.width="80%", fig.cap='(ref:faithful)', fig.pos = "ht"}
 knitr::include_graphics("images/old-faithful.jpg")
 ```
 
@@ -250,7 +252,7 @@ Wszystkie kolejne zadania wykonuj wewnątrz tego projektu.
 
 3) Stwórz z poziomu R dwa nowe foldery, jeden o nazwie `"data"` i drugi o nazwie `"R"`.
 
-4) Pobierz plik `pliki.zip` znajdujący się pod adresem `https://github.com/Nowosad/elp/raw/master/`.
+4) Pobierz plik `pliki.zip` znajdujący się pod adresem \url{https://github.com/Nowosad/elp/raw/master/}.
 Rozpakuj go do podfolderu `"data"` i usuń pobrane archiwum z poziomu R.
 
 5) Wczytaj dane z pliku `dane_meteo.xlsx`.
