@@ -198,8 +198,8 @@ Wyrażenia regularne opierają się o stosowanie szeregu operatorów (metaznakó
 library(tibble)
 roperators = c("^", 
                "$", "()", 
-               "|", "[]", 
-               "[^]",
+               "|", "\\\\[\\\\]", 
+               "\\\\[^\\\\]",
                "*", "+", 
                "?", "{n}", 
                ".", "\\\\"
@@ -358,7 +358,8 @@ str_extract_all(tekst_pomiary, pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓ�
 Wyobrażmy sobie, że otrzymaliśmy rozszerzoną wersję poprzednich danych, która tym razem zawiera dwa dodatkowe miasta - Gorzów Wielkopolski i Zieloną Górę.
 
 ```{r}
-tekst_pomiary2 = "Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3, Gorzów Wielkopolski: 20, Zielona Góra: 19"
+tekst_pomiary2 = "Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3, 
+Gorzów Wielkopolski: 20, Zielona Góra: 19"
 ```
 
 Nadal interesuje nas wydzielenie nazw miast, więc próbujemy użyć kodu, który stworzyliśmy powyżej.
