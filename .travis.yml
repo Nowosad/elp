@@ -22,6 +22,7 @@ install:
   - R -e "tinytex::install_tinytex()"
 
 script:
+  - make pdf
   - make html
   
 after_success:
