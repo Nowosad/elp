@@ -21,10 +21,10 @@ head(met)
 ```
 
 Wewnątrz obiektu `met` znajdują się kolumny `tavg` (określająca średnią dobową temperaturę powietrza w stopniach Celsjusza) oraz `nazwa_stacji` ("POZNAŃ" lub "ZAKOPANE").
-Do porównania wartości temperatury pomiędzy stacjami może posłużyć wykres pudełkowy, stworzony przy pomocy funkcji `boxplot()`.
+Do porównania wartości temperatury pomiędzy stacjami może posłużyć wykres pudełkowy, stworzony przy pomocy funkcji `boxplot()`  (rycina \@ref(fig:plotex)).
 Poniżej zdefiniowano, która zmienna ma zostać zwizualizowana (`tavg`) w podziale na jakie grupy (`nazwa_stacji`) z jakiego zbioru danych (`met`)^[Kod `tavg ~ nazwa_stacji` można inaczej odczytać jako `tavg` w zależności od `nazwa_stacji`.].
 
-```{r}
+```{r plotex, message=FALSE, fig.cap="Przykład wykresu utworzonego przy pomocy funkcji boxplot()."}
 boxplot(tavg ~ nazwa_stacji, data = met)
 ```
 
@@ -42,9 +42,9 @@ Ten pakiet jest implementacją założeń zawartych w książce Grammar of Graph
 Główną funkcją tego pakietu jest `ggplot()`, która przyjmuje dane wejściowe w postaci ramki danych.
 Wewnątrz tej funkcji następuje wywołanie kolejnej funkcji `aes`, gdzie definiowane są kolejne kolumny, które mają być wyświetlone na osiach wykresów oraz określają kolor, kształt, wielkość i inne elementy.
 Kolejnym krokiem jest określenie typu wykresu poprzez połączenie poprzedniej funkcji (używając operatora `+`) z jedną z wielu funkcji rozpoczynających się od `geom_`.
-Przykładowo, do stworzenia wykresu pudełkowego służy `geom_boxplot()`.
+Przykładowo, do stworzenia wykresu pudełkowego służy `geom_boxplot()` (rycina \@ref(fig:ggplotex)).
 
-```{r, message=FALSE}
+```{r ggplotex, message=FALSE, fig.cap="Przykład wykresu utworzonego z użyciem pakietu ggplot2."}
 library(ggplot2)
 ggplot(met, aes(nazwa_stacji, tavg)) + geom_boxplot()
 ```
@@ -72,7 +72,7 @@ Ma to na celu zrozumienie posiadanych danych oraz zależności czy zjawisk któr
 
 W ramach grupy pakietów **tidyverse** często stosuje się operator `%>%` (ang. *pipe*) z pakietu **magrittr** [@R-magrittr]. 
 Pozwala on na łączenie kilku oddzielnych funkcji w jedno zapytanie.
-Działanie tego operatora polega na tym, że wynik jednej działania jednej funkcji staje się automatycznie pierwszym argumentem w kolejnej funkcji.
+Działanie tego operatora polega na tym, że wynik jednej działania jednej funkcji staje się automatycznie pierwszym argumentem w kolejnej funkcji (rycina \@ref(fig:tidyverse-example)).
 <!-- footnote o wywołaniu funkcji -->
 <!-- KOD? -->
 ```{r, eval=FALSE}
@@ -94,7 +94,7 @@ p1 = readr::read_csv("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo
   ggplot2::facet_grid(zmienna~nazwa_stacji, scale = "free_y")
 ggplot2::ggsave("images/tidyverse-example.png", p1, height = 5.5, width = 12, units = "cm", scale = 2.5)
 ```
-```{r tidyverse-example, echo=FALSE, fig.cap="Przykład wyniku użycia pakietów z grupy *tidyverse*."}
+```{r tidyverse-example, echo=FALSE, fig.cap="Przykład wyniku użycia pakietów z grupy tidyverse."}
 knitr::include_graphics("images/tidyverse-example.png", dpi = NA)
 ```
 
@@ -199,6 +199,6 @@ Tworzone są również pakiety, moduły, czy biblioteki implementujące nowe pom
 W efekcie typowy kod napisany w danym języku kilka lat temu może się różnić od tego napisanego dziś.
 Powstaje też ciągle wiele nowych języków, z których tylko niewielka część zdobywa szersze grono użytkowników.
 Te języki często wprowadzają nowe podejścia i koncepcje, które później mają bezpośredni wpływ na zmiany w istniejących językach.
-Języki programowania są też stosowane coraz częściej w wielu codzienne używanych sprzętach, w tym samochodach czy lodówkach (ang. [*internet of things*](https://en.wikipedia.org/wiki/Internet_of_things), IOT).
+Języki programowania są też stosowane coraz częściej w wielu codzienne używanych sprzętach, w tym samochodach czy lodówkach (ang. *internet of things*, IOT).
 
 Powodzenia w dalszej przygodzie z programowaniem!
