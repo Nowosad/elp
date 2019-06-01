@@ -200,13 +200,13 @@ knitr::include_graphics("images/gh-new-repo.png")
 W kolejnym oknie (rycina \@ref(fig:gh-new-repo2)) należy podać nazwę nowego repozytorium oraz wybrać czy będzie ono publiczne czy prywatne. 
 Dodatkowo możliwe jest dodanie opisu repozytorium (ang. *description*), pliku README, czy licencji.
 
-```{r gh-new-repo2, echo=FALSE, fig.cap="Okno tworzenia nowego repozytorium GitHub."}
+```{r gh-new-repo2, echo=FALSE, fig.cap="Okno tworzenia nowego repozytorium GitHub.", out.width="80%"}
 knitr::include_graphics("images/gh-new-repo2.png")
 ```
 
 Po wybraniu potwierdzenia (*Create repository*) utworzone zostanie nowe, puste repozytorium (rycina \@ref(fig:gh-new-repo3)).
 
-```{r gh-new-repo3, echo=FALSE, fig.cap="Nowe, puste repozytorium GitHub."}
+```{r gh-new-repo3, echo=FALSE, fig.cap="Nowe, puste repozytorium GitHub.", out.width="80%"}
 knitr::include_graphics("images/gh-new-repo3.png")
 ```
 
@@ -227,7 +227,7 @@ Tutaj następuje tylko (1) dodanie ścieżki do zdalnego repozytorium oraz (2) w
 
 Wygląd okna repozytorium zmienia się po dodaniu pierwszej zawartości (rycina \@ref(fig:gh-new-repo4)).
 
-```{r gh-new-repo4, echo=FALSE, fig.cap="Repozytorium GitHub po dodaniu zawartości."}
+```{r gh-new-repo4, echo=FALSE, fig.cap="Repozytorium GitHub po dodaniu zawartości.", out.width="80%"}
 knitr::include_graphics("images/gh-new-repo4.png")
 ```
 
@@ -267,7 +267,7 @@ Najprostszym sposobem połączenia RStudio z systemem Git i serwisem GitHub jest
 W efekcie zostanie utworzony nowy projekt RStudio (w tle wykonywane jest pobranie kopii istniejącego zdalnego repo - patrz sekcja \@ref(repozytorium-zdalne)), który jednocześnie jest lokalnym repozytorium Git. 
 Dodatkowo, w RStudio pojawi się nowy panel "Git" (rycina \@ref(fig:rstudio-git)).
 
-```{r rstudio-git, echo=FALSE, fig.cap="Panel Git w RStudio."}
+```{r rstudio-git, echo=FALSE, fig.cap="Panel Git w RStudio.", out.width="80%"}
 knitr::include_graphics("images/rstudio-git.png")
 ```
 
