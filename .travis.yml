@@ -24,9 +24,7 @@ install:
   - R -e "tinytex::install_tinytex()"
 
 script:
-  - make html
-  - make clean
-  - make pdf
+  - make both
   
 after_success:
   - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash _deploy.sh
