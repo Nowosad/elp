@@ -1,7 +1,8 @@
 \usepackage{float} %H
-
-\usepackage{array} %kableExtra::column_spec(2, width = "20em")
 \usepackage{booktabs}
+\usepackage{polski}
+\usepackage{pdfpages}
+\usepackage{array} %kableExtra::column_spec(2, width = "20em")
 \usepackage{amsthm}
 \makeatletter
 \def\thm@space@setup{%
@@ -79,3 +80,6 @@
 \newenvironment{rmdinfo}
   {\begin{rmdblock}{compass}}
   {\end{rmdblock}}
+
+\let\oldmaketitle\maketitle
+\AtBeginDocument{\let\maketitle\relax}

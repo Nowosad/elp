@@ -167,8 +167,8 @@ Dodanie kolejnych osób odbywa się poprzez łączenie ich funkcją `c()`.
 
 ```yaml
 Authors@R: c(
-    person("Imie", "Nazwisko", role = c("cre", "aut"), email = "imie.nazwisko@example.com"),
-    person("Imie2", "Nazwisko2", role = "aut", email = "imie2.nazwisko2@example.com")
+    person("Imie", "Nazwisko", role = c("cre", "aut"), email = "email1@example.com"),
+    person("Imie2", "Nazwisko2", role = "aut", email = "email2@example.com")
 )
 ```
 
