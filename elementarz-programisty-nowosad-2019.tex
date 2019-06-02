@@ -563,9 +563,9 @@ Tutaj również można użyć materiałów z kursu \href{https://swcarpentry.git
 \chapter{Start R}\label{ergosum}}
 
 Wykonywanie kodu w języku interpretowalnym, jakim jest R, może odbywać się~poprzez wpisanie polecenia w oknie konsoli (zwanej też terminalem) i jego uruchomienie\footnote{To jest tzw. tryb interaktywny.
-  Isnieje również tryb skryptowy, o którym więcej informacji można znaleźć w kolejnym rozdziale.}.
+  Istnieje również tryb skryptowy, o którym więcej informacji można znaleźć w kolejnym rozdziale.}.
 Komendy są najpierw sprawdzanie pod kontekstem ich poprawności.
-Polega to na określeniu, np. czy podana funkcja lub inny obiekt istnieje, czy nie zostały użyte niedozwolone znaki, lub czy wszystkie nazwiasy czy cudzysłowia zostały zamknięte.
+Polega to na określeniu, np. czy podana funkcja lub inny obiekt istnieje, czy nie zostały użyte niedozwolone znaki, lub czy wszystkie nawiasy czy cudzysłowy zostały zamknięte.
 Języki programowania są w tym aspekcie bardziej bezwzględne niż języki naturalne - nie potrafią one zrozumieć wyrażeń zawierających nawet niewielkie błędy takie jak, np. użycie dużej litery zamiast małej.
 
 \hypertarget{wyrazenia}{%
@@ -600,7 +600,7 @@ Operatorem mnożenia jest \texttt{*}.
 \end{Highlighting}
 \end{Shaded}
 
-Operatorem mnożenia jest \texttt{/}.
+Operatorem dzielenia jest \texttt{/}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -665,7 +665,7 @@ Istnieje równocześnie \href{https://bookdown.org/rdpeng/RProgDA/working-with-l
 \subsection{Działania na obiektach}\label{dzialania-na-obiektach}}
 
 Każdy stworzony obiekt w R może być następnie używany do kolejnych operacji, a w efekcie też tworzenia nowych obiektów.
-W poniższych czterech przypadkach obiekt \texttt{x} został przetworzony używając operatorów dodawania, odejmowania, mnożenia oraz dzielenia, a nowe obiekty powstały jako wyniki tych obliczeń.
+W poniższych czterech przypadkach obiekt \texttt{x} został przetworzony używając operatorów dodawania, odejmowania, mnożenia oraz dzielenia, a jako wyniki tych obliczeń powstały nowe obiekty.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -685,7 +685,7 @@ W poniższych czterech przypadkach obiekt \texttt{x} został przetworzony używa
 \end{Shaded}
 
 \BeginKnitrBlock{rmdinfo}
-Część języków programowania, np. C, wymaga zadeklarowania zmiennej przed jej użyciem poprzez podanie jej nazwy i typu.
+Część języków programowania, np. C, wymaga zadeklarowania zmiennej przed jej użyciem poprzez podanie jej typu i nazwy.
 Wybór typu zmiennej w tych językach może mieć widoczne konsekwencje.
 Przykładowo, jeżeli obiekt \texttt{x} zostanie zadeklarowany jako liczba całkowita (integer), wynikiem dzielenia \texttt{x\ /\ 4} będzie \texttt{1} zamiast \texttt{1.75}.
 \EndKnitrBlock{rmdinfo}
@@ -701,7 +701,7 @@ Przykładowo, operator zapisywany jako \texttt{\%\%} to modulo, którego celem j
 \end{Highlighting}
 \end{Shaded}
 
-Operator \texttt{\%/\%} przestawia dzielenie całkowite.
+Operator \texttt{\%/\%} przedstawia dzielenie całkowite.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -722,7 +722,7 @@ Operator \texttt{\^{}} natomiast wykonuje podniesienie wartości obiektu do wybr
 \end{Shaded}
 
 Odwrotnością potęgowania jest pierwiastkowanie.
-W R nie istnieje do tego celu specjalny operator, ale zawiera on specjalną funkcję \texttt{sqrt()}.
+W R nie istnieje do tego celu specjalny operator, ale zawiera on funkcję \texttt{sqrt()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -745,14 +745,14 @@ Ta funkcja łączy krótsze wektory w dłuższe wektory.
 
 \BeginKnitrBlock{rmdinfo}
 Operatory użyte w tym rozdziale, np. \texttt{+}, \texttt{*}, \texttt{\^{}}, \texttt{\%\%} to też są funkcje, ale zapisane w skrótowej formie ułatwiającej z nimi pracę.
-Te operatory można też użyć jako normalne funkcje poprzez dodanie znaku zwanego grawisem - "\texttt{",\ np.}2 + 2\texttt{można\ też~zapisać\ jako}`+`(2, 2)`.
+Te operatory można też użyć jako normalne funkcje poprzez dodanie znaku zwanego grawisem - "\textbackslash{}\texttt{",\ np.}2 + 2\texttt{można\ też~zapisać\ jako}\textbackslash{}\texttt{+\textbackslash{}\textbackslash{}}(2, 2)`.
 \EndKnitrBlock{rmdinfo}
 
 \hypertarget{ide}{%
 \section{IDE}\label{ide}}
 
 RStudio to zintegrowane środowisko programistyczne (ang. \emph{Integrated Development Environment}, IDE) dla R.
-Zawiera ono bardzo wiele użytecznych funkcjonalności, tj. wbudowany edytor, podświetlanie składni, automatyczne uzupełnianie kodu i wiele innych.
+Jest to program, który zawiera bardzo wiele użytecznych funkcjonalności ułatwiających programowanie, takich jak wbudowany edytor, podświetlanie składni, automatyczne uzupełnianie kodu, itd.
 
 \BeginKnitrBlock{rmdinfo}
 RStudio to nie jest to samo co R.
@@ -6168,7 +6168,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.624   0.000   0.626}
+\CommentTok{#>   0.636   0.000   0.635}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6227,8 +6227,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile) 1.52us 1.72us   490801.     117KB}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 1.15us 1.25us   736934.     221KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile) 1.62us 1.84us   462767.     117KB}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 1.24us 1.35us   683376.     221KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
@@ -6271,14 +6271,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 467ms  478ms      2.09     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 788us  816us   1032.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 476ms  488ms      2.05     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 801us  844us    964.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 16.74 operacji na sekundę, przy aż 19.99 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 16.39 operacji na sekundę, przy aż 19.76 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \begin{verbatim}
@@ -6293,14 +6293,14 @@ Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) raz
 #> # A tibble: 8 x 7
 #>   expression       x      min   median `itr/sec`
 #>   <bch:expr>   <dbl> <bch:tm> <bch:tm>     <dbl>
-#> 1 mi_do_km1(l)    10   3.91us   4.46us 199502.  
-#> 2 mi_do_km2(l)    10   1.81us      2us 459299.  
-#> 3 mi_do_km1(l)   100  66.26us  71.08us  12536.  
-#> 4 mi_do_km2(l)   100   8.51us   9.43us  97894.  
-#> 5 mi_do_km1(l)  1000   4.32ms   4.62ms    215.  
-#> 6 mi_do_km2(l)  1000  76.62us  80.43us  11742.  
-#> 7 mi_do_km1(l) 10000 538.24ms 538.24ms      1.86
-#> 8 mi_do_km2(l) 10000 781.49us 810.48us   1096.  
+#> 1 mi_do_km1(l)    10   3.97us   4.55us 201287.  
+#> 2 mi_do_km2(l)    10   1.91us   2.11us 441027.  
+#> 3 mi_do_km1(l)   100  66.22us  72.64us  12938.  
+#> 4 mi_do_km2(l)   100   8.73us   9.49us  97452.  
+#> 5 mi_do_km1(l)  1000   4.25ms   4.58ms    218.  
+#> 6 mi_do_km2(l)  1000  77.74us  82.22us  11379.  
+#> 7 mi_do_km1(l) 10000 735.64ms 735.64ms      1.36
+#> 8 mi_do_km2(l) 10000 865.67us 914.84us    976.  
 #> # ... with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 \end{verbatim}

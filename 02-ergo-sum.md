@@ -4,9 +4,9 @@
 # Start R {#ergosum}
 
 Wykonywanie kodu w języku interpretowalnym, jakim jest R, może odbywać się poprzez wpisanie polecenia w oknie konsoli (zwanej też terminalem) i jego uruchomienie^[To jest tzw. tryb interaktywny. 
-Isnieje również tryb skryptowy, o którym więcej informacji można znaleźć w kolejnym rozdziale.].
+Istnieje również tryb skryptowy, o którym więcej informacji można znaleźć w kolejnym rozdziale.].
 Komendy są najpierw sprawdzanie pod kontekstem ich poprawności.
-Polega to na określeniu, np. czy podana funkcja lub inny obiekt istnieje, czy nie zostały użyte niedozwolone znaki, lub czy wszystkie nazwiasy czy cudzysłowia zostały zamknięte.
+Polega to na określeniu, np. czy podana funkcja lub inny obiekt istnieje, czy nie zostały użyte niedozwolone znaki, lub czy wszystkie nawiasy czy cudzysłowy zostały zamknięte.
 Języki programowania są w tym aspekcie bardziej bezwzględne niż języki naturalne - nie potrafią one zrozumieć wyrażeń zawierających nawet niewielkie błędy takie jak, np. użycie dużej litery zamiast małej.
 
 ## Wyrażenia
@@ -37,7 +37,7 @@ Operatorem mnożenia jest `*`.
 #> [1] 25
 ```
 
-Operatorem mnożenia jest `/`.
+Operatorem dzielenia jest `/`.
 
 
 ```r
@@ -96,7 +96,7 @@ Istnieje równocześnie [szereg strategii](https://bookdown.org/rdpeng/RProgDA/w
 ### Działania na obiektach {#dzialania-na-obiektach}
 
 Każdy stworzony obiekt w R może być następnie używany do kolejnych operacji, a w efekcie też tworzenia nowych obiektów. 
-W poniższych czterech przypadkach obiekt `x` został przetworzony używając operatorów dodawania, odejmowania, mnożenia oraz dzielenia, a nowe obiekty powstały jako wyniki tych obliczeń.
+W poniższych czterech przypadkach obiekt `x` został przetworzony używając operatorów dodawania, odejmowania, mnożenia oraz dzielenia, a jako wyniki tych obliczeń powstały nowe obiekty.
 
 
 ```r
@@ -114,7 +114,7 @@ z4
 #> [1] 1.75
 ```
 
-\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Część języków programowania, np. C, wymaga zadeklarowania zmiennej przed jej użyciem poprzez podanie jej nazwy i typu.
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Część języków programowania, np. C, wymaga zadeklarowania zmiennej przed jej użyciem poprzez podanie jej typu i nazwy.
 Wybór typu zmiennej w tych językach może mieć widoczne konsekwencje.
 Przykładowo, jeżeli obiekt `x` zostanie zadeklarowany jako liczba całkowita (integer), wynikiem dzielenia `x / 4` będzie `1` zamiast `1.75`.</div>\EndKnitrBlock{rmdinfo}
 
@@ -128,7 +128,7 @@ z5
 #> [1] 1
 ```
 
-Operator `%/%` przestawia dzielenie całkowite.
+Operator `%/%` przedstawia dzielenie całkowite.
 
 
 ```r
@@ -147,7 +147,7 @@ z7
 ```
 
 Odwrotnością potęgowania jest pierwiastkowanie. 
-W R nie istnieje do tego celu specjalny operator, ale zawiera on specjalną funkcję `sqrt()`.
+W R nie istnieje do tego celu specjalny operator, ale zawiera on funkcję `sqrt()`.
 
 
 ```r
@@ -171,13 +171,14 @@ z9
 <!-- Floating-point arithmetic is a feature of computer programming.  -->
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Operatory użyte w tym rozdziale, np. `+`, `*`, `^`, `%%` to też są funkcje, ale zapisane w skrótowej formie ułatwiającej z nimi pracę.
-Te operatory można też użyć jako normalne funkcje poprzez dodanie znaku zwanego grawisem - "`", np. `2 + 2` można też zapisać jako `\`+\`(2, 2)`.</div>\EndKnitrBlock{rmdinfo}
+Te operatory można też użyć jako normalne funkcje poprzez dodanie znaku zwanego grawisem - "\\`", np. `2 + 2` można też zapisać jako `\\`+\\`(2, 2)`.
+</div>\EndKnitrBlock{rmdinfo}
 
 ## IDE
 
 RStudio to zintegrowane środowisko programistyczne (ang. *Integrated Development Environment*, IDE) dla R.
 <!-- wyjaśnienie -->
-Zawiera ono bardzo wiele użytecznych funkcjonalności, tj. wbudowany edytor, podświetlanie składni, automatyczne uzupełnianie kodu i wiele innych.
+Jest to program, który zawiera bardzo wiele użytecznych funkcjonalności ułatwiających programowanie, takich jak wbudowany edytor, podświetlanie składni, automatyczne uzupełnianie kodu, itd.
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">RStudio to nie jest to samo co R. 
 R jest językiem programowania, podczas gdy RStudio to aplikacja ułatwiająca pisanie kodu.

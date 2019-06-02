@@ -337,7 +337,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">2</span> Start R</h1>
 <p>Wykonywanie kodu w języku interpretowalnym, jakim jest R, może odbywać się poprzez wpisanie polecenia w oknie konsoli (zwanej też terminalem) i jego uruchomienie<a href="#fn17" class="footnote-ref" id="fnref17"><sup>17</sup></a>.
 Komendy są najpierw sprawdzanie pod kontekstem ich poprawności.
-Polega to na określeniu, np. czy podana funkcja lub inny obiekt istnieje, czy nie zostały użyte niedozwolone znaki, lub czy wszystkie nazwiasy czy cudzysłowia zostały zamknięte.
+Polega to na określeniu, np. czy podana funkcja lub inny obiekt istnieje, czy nie zostały użyte niedozwolone znaki, lub czy wszystkie nawiasy czy cudzysłowy zostały zamknięte.
 Języki programowania są w tym aspekcie bardziej bezwzględne niż języki naturalne - nie potrafią one zrozumieć wyrażeń zawierających nawet niewielkie błędy takie jak, np. użycie dużej litery zamiast małej.</p>
 <div id="wyrazenia" class="section level2">
 <h2><span class="header-section-number">2.1</span> Wyrażenia</h2>
@@ -352,7 +352,7 @@ Operatorem dodawania jest <code>+</code>.</p>
 <p>Operatorem mnożenia jest <code>*</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="dv">5</span> <span class="op">*</span><span class="st"> </span><span class="dv">5</span>
 <span class="co">#&gt; [1] 25</span></code></pre>
-<p>Operatorem mnożenia jest <code>/</code>.</p>
+<p>Operatorem dzielenia jest <code>/</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="dv">42</span> <span class="op">/</span><span class="st"> </span><span class="dv">5</span>
 <span class="co">#&gt; [1] 8.4</span></code></pre>
 <p>Wszystkie powyższe operacje można wykonać poprzez ich wpisanie w oknie konsoli R i naciśnięcie klawisza Enter.</p>
@@ -388,7 +388,7 @@ Istnieje równocześnie <a href="https://bookdown.org/rdpeng/RProgDA/working-wit
 <div id="dzialania-na-obiektach" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Działania na obiektach</h3>
 <p>Każdy stworzony obiekt w R może być następnie używany do kolejnych operacji, a w efekcie też tworzenia nowych obiektów.
-W poniższych czterech przypadkach obiekt <code>x</code> został przetworzony używając operatorów dodawania, odejmowania, mnożenia oraz dzielenia, a nowe obiekty powstały jako wyniki tych obliczeń.</p>
+W poniższych czterech przypadkach obiekt <code>x</code> został przetworzony używając operatorów dodawania, odejmowania, mnożenia oraz dzielenia, a jako wyniki tych obliczeń powstały nowe obiekty.</p>
 <pre class="sourceCode r"><code class="sourceCode r">z1 =<span class="st"> </span>x <span class="op">+</span><span class="st"> </span><span class="dv">3</span>
 z1
 <span class="co">#&gt; [1] 10</span>
@@ -403,7 +403,7 @@ z4
 <span class="co">#&gt; [1] 1.75</span></code></pre>
 
 <div class="rmdinfo">
-Część języków programowania, np. C, wymaga zadeklarowania zmiennej przed jej użyciem poprzez podanie jej nazwy i typu.
+Część języków programowania, np. C, wymaga zadeklarowania zmiennej przed jej użyciem poprzez podanie jej typu i nazwy.
 Wybór typu zmiennej w tych językach może mieć widoczne konsekwencje.
 Przykładowo, jeżeli obiekt <code>x</code> zostanie zadeklarowany jako liczba całkowita (integer), wynikiem dzielenia <code>x / 4</code> będzie <code>1</code> zamiast <code>1.75</code>.
 </div>
@@ -413,7 +413,7 @@ Przykładowo, operator zapisywany jako <code>%%</code> to modulo, którego celem
 <pre class="sourceCode r"><code class="sourceCode r">z5 =<span class="st"> </span>x <span class="op">%%</span><span class="st"> </span><span class="dv">3</span>
 z5
 <span class="co">#&gt; [1] 1</span></code></pre>
-<p>Operator <code>%/%</code> przestawia dzielenie całkowite.</p>
+<p>Operator <code>%/%</code> przedstawia dzielenie całkowite.</p>
 <pre class="sourceCode r"><code class="sourceCode r">z6 =<span class="st"> </span>x <span class="op">%/%</span><span class="st"> </span><span class="dv">3</span>
 z6
 <span class="co">#&gt; [1] 2</span></code></pre>
@@ -422,7 +422,7 @@ z6
 z7
 <span class="co">#&gt; [1] 49</span></code></pre>
 <p>Odwrotnością potęgowania jest pierwiastkowanie.
-W R nie istnieje do tego celu specjalny operator, ale zawiera on specjalną funkcję <code>sqrt()</code>.</p>
+W R nie istnieje do tego celu specjalny operator, ale zawiera on funkcję <code>sqrt()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">z8 =<span class="st"> </span><span class="kw">sqrt</span>(x)
 z8
 <span class="co">#&gt; [1] 2.65</span></code></pre>
@@ -436,8 +436,8 @@ z9
 <!-- Floating-point arithmetic is a feature of computer programming.  -->
 
 <div class="rmdinfo">
-Operatory użyte w tym rozdziale, np. <code>+</code>, <code>*</code>, <code>^</code>, <code>%%</code> to też są funkcje, ale zapisane w skrótowej formie ułatwiającej z nimi pracę.
-Te operatory można też użyć jako normalne funkcje poprzez dodanie znaku zwanego grawisem - &quot;<code>&quot;, np.</code>2 + 2<code>można też zapisać jako</code>`+`(2, 2)`.
+<p>Operatory użyte w tym rozdziale, np. <code>+</code>, <code>*</code>, <code>^</code>, <code>%%</code> to też są funkcje, ale zapisane w skrótowej formie ułatwiającej z nimi pracę.
+Te operatory można też użyć jako normalne funkcje poprzez dodanie znaku zwanego grawisem - &quot;\<code>&quot;, np.</code>2 + 2<code>można też zapisać jako</code>\<code>+\\</code>(2, 2)`.</p>
 </div>
 
 </div>
@@ -446,7 +446,7 @@ Te operatory można też użyć jako normalne funkcje poprzez dodanie znaku zwan
 <h2><span class="header-section-number">2.3</span> IDE</h2>
 <p>RStudio to zintegrowane środowisko programistyczne (ang. <em>Integrated Development Environment</em>, IDE) dla R.
 <!-- wyjaśnienie -->
-Zawiera ono bardzo wiele użytecznych funkcjonalności, tj. wbudowany edytor, podświetlanie składni, automatyczne uzupełnianie kodu i wiele innych.</p>
+Jest to program, który zawiera bardzo wiele użytecznych funkcjonalności ułatwiających programowanie, takich jak wbudowany edytor, podświetlanie składni, automatyczne uzupełnianie kodu, itd.</p>
 
 <div class="rmdinfo">
 RStudio to nie jest to samo co R.
@@ -772,7 +772,7 @@ Wylicz w R, czy bardziej opłaca się kupno dwóch małych pizz czy jednej duże
 <hr />
 <ol start="17">
 <li id="fn17"><p>To jest tzw. tryb interaktywny.
-Isnieje również tryb skryptowy, o którym więcej informacji można znaleźć w kolejnym rozdziale.<a href="ergosum.html#fnref17" class="footnote-back">↩</a></p></li>
+Istnieje również tryb skryptowy, o którym więcej informacji można znaleźć w kolejnym rozdziale.<a href="ergosum.html#fnref17" class="footnote-back">↩</a></p></li>
 <li id="fn18"><p>Jest to pewne uproszczenie - <a href="https://adv-r.hadley.nz/names-values.html#binding-basics" class="uri">https://adv-r.hadley.nz/names-values.html#binding-basics</a>.<a href="ergosum.html#fnref18" class="footnote-back">↩</a></p></li>
 <li id="fn19"><p>Więcej informacji na temat różnic w działaniu tych operatorów można znaleźć na stronie <a href="https://stackoverflow.com/questions/1741820/what-are-the-differences-between-and-in-r" class="uri">https://stackoverflow.com/questions/1741820/what-are-the-differences-between-and-in-r</a>.<a href="ergosum.html#fnref19" class="footnote-back">↩</a></p></li>
 <li id="fn20"><p><a href="https://en.wikipedia.org/wiki/Naming_convention_(programming)" class="uri">https://en.wikipedia.org/wiki/Naming_convention_(programming)</a><a href="ergosum.html#fnref20" class="footnote-back">↩</a></p></li>
