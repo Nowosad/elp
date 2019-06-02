@@ -434,7 +434,7 @@ Ta funkcja przyjmuje wartość numeryczną, od której odejmuje jeden, a na koń
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">minus_1</span>(<span class="st">&quot;kot&quot;</span>)
 <span class="co">#&gt; Error in minus_1(&quot;kot&quot;): Argument `x` musi być zmienną numeryczną, a nie znakową.</span></code></pre>
 <p>Jeżeli jako argument <code>x</code> zostanie podany wektor logiczny (<code>else if(is.logical(x))</code>) to pojawi się komunikat ostrzeżenia, ale dalsze obliczanie zostanie wykonane.
-W tym przypadku wartość <code>TRUE</code> zostanie najpierw zamieniona na 1 a <code>FALSE</code> na zero, następnie od tych wartości zostanie odjęte jeden, a na końcu zostaną one zamienione na wartości bezwzględne.</p>
+W tym przypadku wartość <code>TRUE</code> zostanie najpierw zamieniona na jeden a <code>FALSE</code> na zero, następnie od tych wartości zostanie odjęte jeden, a na końcu zostaną one zamienione na wartości bezwzględne.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">minus_1</span>(<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>))
 <span class="co">#&gt; Warning in minus_1(c(TRUE, FALSE)): Argument `x` jest zmienną logiczną. Czy</span>
 <span class="co">#&gt; nie chcesz użyć zmiennej numerycznej?</span>
@@ -463,7 +463,7 @@ Można to zobaczyć na poniższym przykładzie, gdzie najpierw sprawdzona zosta�
   kod do uruchomienia 
 )</code></pre>
 <p>Działanie <code>tryCatch</code> w praktyce jest pokazane w funkcji <code>log_safe()</code>.
-Stara się ona wyliczyć logarytm naturalny (<code>log()</code>) z wartości argumentu <code>x</code>, a w przypadku gdyby napotkała błąd zwóci ona wartość <code>NA</code>.</p>
+Stara się ona wyliczyć logarytm naturalny (<code>log()</code>) z wartości argumentu <code>x</code>, a w przypadku gdyby napotkała błąd zwróci ona wartość <code>NA</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">log_safe =<span class="st"> </span><span class="cf">function</span>(x){
   <span class="kw">tryCatch</span>(
   <span class="dt">error =</span> <span class="cf">function</span>(e) {
@@ -550,7 +550,7 @@ Określa ona najpierw długości boków a i b, a następnie wymnaża je w celu w
 W rzeczywistości jednak nazwa funkcji to tylko <code>powierzchnia</code>, a kropka sugeruje że kolejny po niej wyraz to klasa obiektu jaki przyjmie funkcja.
 Jest to, innymi słowy, definicja metody.
 Nowa funkcja <code>powierzchnia</code> zadziała w powyższy sposób tylko w wypadku otrzymania jako dane wejściowe obiektu klasy <code>prostokat</code>.</p>
-<p>Sprawdżmy to na dwóch przykładach - obiektu <code>y</code> (klasa <code>prostokat</code>) i <code>x</code> (klasa <code>matrix</code>).</p>
+<p>Sprawdźmy to na dwóch przykładach - obiektu <code>y</code> (klasa <code>prostokat</code>) i <code>x</code> (klasa <code>matrix</code>).</p>
 <pre class="sourceCode r"><code class="sourceCode r">y
 <span class="co">#&gt;      [,1] [,2]</span>
 <span class="co">#&gt; [1,]    0    2</span>

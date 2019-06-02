@@ -343,12 +343,12 @@ Wektory znakowe są natomiast najbardziej zróżnicowane - mogę przyjmować ró
 Więcej na temat przetwarzania tekstu można znaleźć w rozdziale <a href="https://r4ds.had.co.nz/strings.html">“Strings”</a> książki R for Data Science <span class="citation">(Wickham and Grolemund <a href="#ref-wickham2016r">2016</a>)</span>.</p>
 <div id="reprezentacja-tekstu" class="section level2">
 <h2><span class="header-section-number">6.1</span> Reprezentacja tekstu</h2>
-<p>Typ znakowy jest określany poprzez użycie cudzysłowia <code>&quot;</code> lub <code>'</code>.
-Ważne tutaj jest, aby rozpoczynać i kończyć tekst tym samym cudzysłowiem.</p>
+<p>Typ znakowy jest określany poprzez użycie cudzysłowu <code>&quot;</code> lub <code>'</code>.
+Ważne tutaj jest, aby rozpoczynać i kończyć tekst tym samym cudzysłowem.</p>
 <pre><code>t1 = &quot;kot&quot;
 t2 = &#39;pies&#39;
 t3 = &#39;&quot;W teorii, teoria i praktyka są tym samym. W praktyce, nie są.&quot; - Yogi Berra&#39;</code></pre>
-<p>W momencie, gdy tekst nie będzie kończył się cudzysłowiem, wykonanie kodu jest niemożliwe.
+<p>W momencie, gdy tekst nie będzie kończył się cudzysłowem, wykonanie kodu jest niemożliwe.
 Wówczas zamiast znaku <code>&gt;</code>, oznaczającego nową linię wykonywanego kodu, pojawi się znak <code>+</code>.
 Oznacza on, że wykonanie kodu nie może zostać zakończone.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="st"> &quot;Mój pierwszy alfabet</span>
@@ -365,7 +365,7 @@ Do tego celu służy funkcja <code>paste()</code><a href="#fn32" class="footnote
 <p>Efekt działania funkcji <code>paste()</code> jest jeden wektor tekstowy, który składa się z wejściowych wektorów oddzielonych domyślnie spacjami.
 Funkcja <code>paste()</code> ma jednak również dodatkowy argument <code>sep</code>, który pozwala na dowolne określanie separatora.
 Ostatnim argumentem tej funkcji jest <code>collapse</code>, który łączy elementy jednego wektora tekstowego.</p>
-<p>R oferuje też uproszczoną postać tej funkcji o nazwie <code>paste0()</code>, w której nie ma znaku seperatora.</p>
+<p>R oferuje też uproszczoną postać tej funkcji o nazwie <code>paste0()</code>, w której nie ma znaku separatora.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">paste0</span>(<span class="st">&quot;t&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot; &quot;</span>, <span class="st">&quot;k&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot;t&quot;</span>)
 <span class="co">#&gt; [1] &quot;to kot&quot;</span></code></pre>
 <p>Te funkcje są używane w sytuacjach, gdy chcemy połączyć stały, znany tekst, wraz z tekstem wprowadzanym przez użytkownika lub pochodzącym z innego źródła.
@@ -376,7 +376,7 @@ tekst1 =<span class="st"> </span><span class="kw">paste</span>(imie, <span class
 tekst1
 <span class="co">#&gt; [1] &quot;Olek ma 77 lat.&quot;</span></code></pre>
 <p>Takie konstrukcje są często używane w funkcjach.
-Powyższy przykład możnaby przepisać jako:</p>
+Powyższy przykład można by przepisać jako:</p>
 <pre class="sourceCode r"><code class="sourceCode r">lata =<span class="st"> </span><span class="cf">function</span>(imie, wiek){
   <span class="kw">paste</span>(imie, <span class="st">&quot;ma&quot;</span>, wiek, <span class="st">&quot;lat.&quot;</span>)
 }
@@ -398,16 +398,16 @@ tekst2
 <span class="co">#&gt; [1] &quot;czosnek&quot; &quot; hałas&quot;  &quot;ćma &quot;</span>
 <span class="kw">str_sort</span>(tekst2)
 <span class="co">#&gt; [1] &quot; hałas&quot;  &quot;ćma &quot;    &quot;czosnek&quot;</span></code></pre>
-<p>W powyższym przykładzie oczkiwalibyśmy ułożenia, w których <code>&quot;hałas&quot;</code> byłby na ostatnim miejscu.
+<p>W powyższym przykładzie oczekiwalibyśmy ułożenia, w których <code>&quot;hałas&quot;</code> byłby na ostatnim miejscu.
 Nie jest tak z powodu istnienia z przodu tego wyrazu znaku niedrukowalnego - spacji.
 Aby usunąć spacje z przodu i tyłu tekstu można użyć funkcji <code>str_trim()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">tekst2 =<span class="st"> </span><span class="kw">str_trim</span>(tekst2)
 tekst2
 <span class="co">#&gt; [1] &quot;czosnek&quot; &quot;hałas&quot;   &quot;ćma&quot;</span></code></pre>
-<p>W tej chwili możmy użyć funkcji <code>str_sort()</code> jeszcze raz.</p>
+<p>W tej chwili możemy użyć funkcji <code>str_sort()</code> jeszcze raz.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sort</span>(tekst2)
 <span class="co">#&gt; [1] &quot;ćma&quot;     &quot;czosnek&quot; &quot;hałas&quot;</span></code></pre>
-<p>Teraz <code>&quot;hałas&quot;</code> jest poprawnie na ostanim miejscu, ale na pierwszej pozycji jest <code>&quot;ćma&quot;</code> zamiast <code>&quot;czosnek&quot;</code>.
+<p>Teraz <code>&quot;hałas&quot;</code> jest poprawnie na ostatnim miejscu, ale na pierwszej pozycji jest <code>&quot;ćma&quot;</code> zamiast <code>&quot;czosnek&quot;</code>.
 Różne alfabety na świecie mają inne znaki oraz ich kolejność.
 Domyślnie funkcja <code>str_sort()</code> używa alfabetu angielskiego, co w efekcie powoduje niepoprawne ułożenie polskich znaków.
 Do rozwiązania tego problemu służy argument <code>locale</code>, w którym można określić jaki alfabet ma być używany.</p>
@@ -432,7 +432,7 @@ Pierwszy z nich polega na określeniu położenia znaków od lewej strony, np. p
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">9</span>, <span class="dt">end =</span> <span class="dv">-1</span>)
 <span class="co">#&gt; [1] &quot;77 lat.&quot;</span></code></pre>
 <p>W powyższym przykładzie wybierany jest tekst zaczynający się na 9 znaku a kończący na pierwszym znaku od końca włącznie.
-Natomiat poniżej wybrany jest tekst zaczynający się na siódmym znaku od końca i kończący na pierwszym od kónca włącznie.</p>
+Natomiast poniżej wybrany jest tekst zaczynający się na siódmym znaku od końca i kończący na pierwszym od końca włącznie.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">-7</span>, <span class="dt">end =</span> <span class="dv">-1</span>)
 <span class="co">#&gt; [1] &quot;77 lat.&quot;</span></code></pre>
 </div>
@@ -448,7 +448,7 @@ Natomiat poniżej wybrany jest tekst zaczynający się na siódmym znaku od koń
 Aby znaleźć wszystkie wystąpienia (nawet fragmentaryczne) słowa <code>&quot;Lena&quot;</code> można użyć poniższego kodu.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;Lena&quot;</span>)
 <span class="co">#&gt; [1] FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE</span></code></pre>
-<p>Jego efektem będzie wektor logiczny wskazujący, które elemeny zawierają wybrany wzorzec (<code>TRUE</code>) oraz które go nie zawierają (<code>FALSE</code>).
+<p>Jego efektem będzie wektor logiczny wskazujący, które elementy zawierają wybrany wzorzec (<code>TRUE</code>) oraz które go nie zawierają (<code>FALSE</code>).
 Wzorzec zdefiniowany w tej sposób jest czuły na wielkość znaków dlatego też zapytanie używając <code>&quot;Lena&quot;</code> da inny wynik niż takie używając <code>&quot;lena&quot;</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;lena&quot;</span>)
 <span class="co">#&gt; [1]  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE</span></code></pre>
@@ -569,14 +569,14 @@ Pomocne w zrozumieniu bardziej zaawansowanych elementów wyrażeń regularncych 
 <div id="wtregex" class="section level2">
 <h2><span class="header-section-number">6.5</span> Wydzielanie tekstu - regex</h2>
 <p>Innym często spotykanym problemem w pracy z tekstem jest posiadanie długiego elementu tekstowego, z którego chcemy tylko wydobyć pewien fragment.
-W sekcji <a href="tekst.html#wt">6.3</a> używaliśmy do tego pozycji, ale możemy zastosować również wzroce do tego celu.</p>
+W sekcji <a href="tekst.html#wt">6.3</a> używaliśmy do tego pozycji, ale możemy zastosować również wzorce do tego celu.</p>
 <pre class="sourceCode r"><code class="sourceCode r">tekst_pomiary =<span class="st"> &quot;Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3&quot;</span></code></pre>
 <p>Wektor <code>tekst_pomiary</code> zawiera tylko jeden element tekstowy, w którym wymienione są kolejne miasta i ich wartości.
 Wyobraźmy sobie, że interesują nas tylko nazwy miast zawarte w powyższym wektorze.
 Do wydzielania tekstu na podstawie wyrażeń regularnych służy funkcja <code>str_extract()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_extract</span>(tekst_pomiary, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-Z]*&quot;</span>)
 <span class="co">#&gt; [1] &quot;Wroc&quot;</span></code></pre>
-<p>Podaliśmy jako wzorzec wszyskie litery od małego <code>a</code> do małego <code>z</code> oraz dużego <code>A</code> do dużego <code>Z</code>.
+<p>Podaliśmy jako wzorzec wszystkie litery od małego <code>a</code> do małego <code>z</code> oraz dużego <code>A</code> do dużego <code>Z</code>.
 Niestety w efekcie otrzymaliśmy tylko Wroc - taka definicja wzorca obejmuje tylko litery z angielskiego alfabetu.</p>
 <p>Aby to naprawić możemy dodać do tego wzorca polskie litery.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_extract</span>(tekst_pomiary, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)
@@ -639,7 +639,7 @@ Aby zamienić wybrany wzorzec w tekście (np. kropkę na przecinek) możemy uży
             <span class="dt">replacement =</span> <span class="st">&quot;,&quot;</span>)
 <span class="co">#&gt; [1] &quot;,rocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3&quot;</span></code></pre>
 <p>Efekt działania tego kodu nie jest jednak zgodny z naszymi oczekiwaniami.
-Zamiast zamiany wszyskich kropek na przecinki, nastąpiła zamiana pierwszego znaku w tekście (litery <code>W</code>) na przecinek.
+Zamiast zamiany wszystkich kropek na przecinki, nastąpiła zamiana pierwszego znaku w tekście (litery <code>W</code>) na przecinek.
 Wynika to ze znaczenia metaznaku <code>.</code>, który reprezentuje jakikolwiek znak oprócz nowej linii.
 Żeby naprawić tę sytuację musimy użyć ukośnika wstecznego.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace</span>(tekst_pomiary3, 
@@ -674,7 +674,7 @@ Do tego celu można zdefiniować wzorzec jaki chcemy usunąć, a jako jego zamia
 <p>Umiejętności związane z obsługą wyrażeń regularnych przydają się też w przypadku wyszukiwania plików zawierających określony tekst w nazwie lub specyficzne rozszerzenie.
 Jest to szczególnie przydatne, gdy posiadamy wiele plików na komputerze, które chcemy następnie przetwarzać w sposób automatyczny.</p>
 <p>Do wyświetlania nazw plików znajdujących się w wybranym folderze służy funkcja <code>dir()</code>.
-Przykładowo poniższa linia kodu wyświetla wszyskie pliki znajdujące się w folderze <code>&quot;pliki&quot;</code><a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>.</p>
+Przykładowo poniższa linia kodu wyświetla wszystkie pliki znajdujące się w folderze <code>&quot;pliki&quot;</code><a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>)
 <span class="co">#&gt;  [1] &quot;dane_meteo.csv&quot;  &quot;dane_meteo.rds&quot;  &quot;dane_meteo.xlsx&quot;</span>
 <span class="co">#&gt;  [4] &quot;dane_meteo2.csv&quot; &quot;dokument.docx&quot;   &quot;kod.R&quot;          </span>
@@ -684,7 +684,7 @@ Przykładowo poniższa linia kodu wyświetla wszyskie pliki znajdujące się w f
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.png$&quot;</span>)
 <span class="co">#&gt; [1] &quot;mapa.png&quot;    &quot;obrazek.png&quot;</span></code></pre>
 <p>W powyższym przykładzie zostaną wybrane tylko pliki o jakiejkolwiek nazwie, ale kończące się na rozszerzenie <code>.png</code>.
-Metaznak <code>$</code> użyty w tym przypadku zapogiega sytuacji, gdy tekst <code>.png</code> znajduje się w środku nazwy pliku.</p>
+Metaznak <code>$</code> użyty w tym przypadku zapobiega sytuacji, gdy tekst <code>.png</code> znajduje się w środku nazwy pliku.</p>
 <p>Do znalezienia plików o kilku rozszerzeniach można użyć metaznaków <code>()</code> i <code>|</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.(png|jpg)$&quot;</span>)
 <span class="co">#&gt; [1] &quot;mapa.png&quot;    &quot;obrazek.png&quot; &quot;zdjecie.jpg&quot;</span></code></pre>
@@ -713,8 +713,8 @@ Poniżej znajduje się fragment przykładowych danych wejściowych.</li>
 <li>Co należałoby zrobić, aby wydzielić tylko wartości pomiarów w powyższym przypadku?
 Stwórz nowy obiekt <code>wartosci</code> zawierający te pomiary.
 Jakiej klasy powinien być wyjściowy obiekt?</li>
-<li>Posiadasz wektor <code>wsp</code> zawierający współrzedne geograficzne szeregu miast w formacie DMS (Stopnie, Minuty, Sekundy).
-Wydziel tylko wartości stopnii z tej reprezentacji.
+<li>Posiadasz wektor <code>wsp</code> zawierający współrzędne geograficzne szeregu miast w formacie DMS (Stopnie, Minuty, Sekundy).
+Wydziel tylko wartości stopni z tej reprezentacji.
 Poniżej znajduje się fragment przykładowych danych wejściowych.</li>
 </ol>
 <pre class="sourceCode r"><code class="sourceCode r">wsp =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;52°24′N 16°55′E&quot;</span>, <span class="st">&quot;53°08′07″N 23°08′44″E&quot;</span>, <span class="st">&quot;39°6′N 84°31′W&quot;</span>)</code></pre>
@@ -743,7 +743,7 @@ Poniżej znajduje się fragment przykładowych danych wejściowych.</li>
 <li id="fn32"><p>Odpowiednikiem funkcji <code>paste()</code> w pakiecie <strong>stringr</strong> jest funkcja <code>str_c()</code><a href="tekst.html#fnref32" class="footnote-back">↩</a></p></li>
 <li id="fn33"><p><a href="https://en.wikipedia.org/wiki/Czech_orthography" class="uri">https://en.wikipedia.org/wiki/Czech_orthography</a><a href="tekst.html#fnref33" class="footnote-back">↩</a></p></li>
 <li id="fn34"><p><a href="https://xkcd.com/1638/" class="uri">https://xkcd.com/1638/</a><a href="tekst.html#fnref34" class="footnote-back">↩</a></p></li>
-<li id="fn35"><p>Folder o tej nazwie znajduje się w folderze robocznym.<a href="tekst.html#fnref35" class="footnote-back">↩</a></p></li>
+<li id="fn35"><p>Folder o tej nazwie znajduje się w folderze roboczym.<a href="tekst.html#fnref35" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

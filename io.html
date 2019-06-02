@@ -335,11 +335,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="io" class="section level1">
 <h1><span class="header-section-number">9</span> Wczytywanie i zapisywanie plików</h1>
-<p>Języki programowania mają na celu wykonywanie wielu złożnych operacji w relatywnie krótkim czasie.
+<p>Języki programowania mają na celu wykonywanie wielu złożonych operacji w relatywnie krótkim czasie.
 Często te działania oparte są o dane zewnętrzne, np. stworzone przez człowieka, automatyczny sensor, czy jako efekt działania innego programu.
 Czasem też konieczne jest przekazanie lub udostępnienie wyników obliczeń dla innych osób.
 Celem tego rozdziału jest wprowadzenie do zagadnień związanych z określaniem położenia plików na dysku komputera, wykonywaniu działań na plikach i folderach oraz pobieraniu danych z internetu.
-Posiadając taką więdzę możliwe jest wczytywanie i zapisywanie danych, takich jak dane tekstowe, dane w formatach R, czy dane z arkuszy kalkulacyjnych.</p>
+Posiadając taką wiedzę możliwe jest wczytywanie i zapisywanie danych, takich jak dane tekstowe, dane w formatach R, czy dane z arkuszy kalkulacyjnych.</p>
 <div id="folder-roboczy" class="section level2">
 <h2><span class="header-section-number">9.1</span> Folder roboczy</h2>
 <p>Folder roboczy (ang. <em>working directory</em>) to miejsce na dysku, w którym aktualnie pracujemy.
@@ -347,8 +347,8 @@ Folder roboczy można sprawdzić korzystając z funkcji <code>getwd()</code>:</p
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">getwd</span>()
 <span class="co">#&gt; [1] &quot;/home/travis/build/Nowosad/elp&quot;</span></code></pre>
 <p>Zmienić folder roboczy można za pomocą skrótu <em>Ctrl+Shift+H</em> w RStudio (inaczej <em>Session -&gt; Set Working Directory -&gt; Choose Directory..</em>) lub też funkcji <code>setwd()</code>:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(<span class="st">&quot;home/jakub/Documents/elp/&quot;</span>) <span class="co">#unix</span>
-<span class="kw">setwd</span>(<span class="st">&quot;C:/Users/jakub/Documenty/elp/&quot;</span>) <span class="co">#windows</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(<span class="st">&quot;home/jakub/Documents/elp/&quot;</span>) <span class="co">#Linux</span>
+<span class="kw">setwd</span>(<span class="st">&quot;C:/Users/jakub/Documenty/elp/&quot;</span>) <span class="co">#Windows</span></code></pre>
 
 <div class="rmdinfo">
 Ustawienie folderu roboczego ma też miejsce przy tworzeniu nowego lub otwieraniu istniejącego projektu RStudio.
@@ -366,7 +366,7 @@ Używanie ścieżek względnych jest rekomendowane, ponieważ znacząco upraszcz
 Prawy ukośnik jest rekomendowany, ponieważ działa on zarówno na Windowsach, jak i komputerach z systemami MacOS czy Linux.
 </div>
 
-<!-- footnote with fs and here pacakges -->
+<!-- footnote with fs and here package -->
 </div>
 <div id="dziaania-na-plikach-i-folderach" class="section level2">
 <h2><span class="header-section-number">9.2</span> Działania na plikach i folderach</h2>

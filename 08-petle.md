@@ -45,7 +45,7 @@ print(odl_mile[[1]] * 1.609)
 #> [1] 228
 ```
 
-Teraz naszym celem jest potwórzenie tej operacji dla każdego elementu.
+Teraz naszym celem jest potworzenie tej operacji dla każdego elementu.
 
 
 ```r
@@ -60,7 +60,7 @@ print(odl_mile[[3]] * 1.609)
 W powyższym przypadku mamy tylko trzy elementy, ale jeżeli mielibyśmy takich elementów 1000 musielibyśmy powtórzyć niemal tą samą linię kodu tysiąc razy jedynie zamieniając numer elementu.
 
 Jednym z celów programowania jest ułatwienie szybkiej powtarzalności pewnych czynności.
-Dlatego w tym przypadku moglibyśmy uniknąć wieloktornego pisania podobnego kodu używając pętli `for`.
+Dlatego w tym przypadku moglibyśmy uniknąć wielokrotnego pisania podobnego kodu używając pętli `for`.
 Ciałem tej pętli będzie sposób przeliczania i wyświetlania wartości na kilometry, ale zamiast wydzielać kolejne elementy listy (`[[1]]`, `[[2]]`, `[[3]]`), użyjemy nowego obiektu `i`.
 W efekcie nowe ciało pętli `for` będzie przedstawiać się jako `print(odl_mile[[i]] * 1.609)`.
 Kolejnym krokiem jest odpowiednie ustawienie jakie wartości będzie przyjmować `i` w kolejnych powtórzeniach.
@@ -77,7 +77,7 @@ for (i in 1:3) {
 
 Powyższy nagłówek pętli `for`, `for (i in 1:3)`, określa, że nasz obiekt `i` przyjmie najpierw wartość 1, wykona obliczenie wewnątrz pętli, następnie `i` przyjmie wartość 2, znów wykona obliczenie, a na końcu `i` przyjmie wartość 3 i obliczenie zostanie wykonane po raz ostatni.
 
-\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Tradycyjnie zmienna w pętli `for` nazywana jest `i`, a w przypadku zagnieżdzonych pętli druga zmienna nazywana jest `j`.
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Tradycyjnie zmienna w pętli `for` nazywana jest `i`, a w przypadku zagnieżdżonych pętli druga zmienna nazywana jest `j`.
 Nazywanie zmiennych w ten sposób nie jest jednak obowiązkowe.
 W powyższym przypadku możliwe byłoby nazwanie zmiennej, np. `pomiar`: `for (pomiar in odl_mile) {...}`.</div>\EndKnitrBlock{rmdinfo}
 
@@ -185,7 +185,7 @@ odl_km
 #> [1] 195
 ```
 
-<!-- Wiele funkcji w R jest zwektoryzowanych, w efekcie powyższy przykład możnaby zastąpić kodem `odl_km = odl_mile * 1.609`.  -->
+<!-- Wiele funkcji w R jest zwektoryzowanych, w efekcie powyższy przykład można by zastąpić kodem `odl_km = odl_mile * 1.609`.  -->
 <!-- Taka zamiana jest jednak możliwa w ten sposób, ponieważ mnożenie jest w niewidzialny sposób dla użytkownika rozpisane jako pętla for. -->
 
 ### Zastosowanie w funkcjach
@@ -233,7 +233,7 @@ Zgodnie z oczekiwaniami zero mil lądowych to również zero kilometrów, a jedn
 ## Pętla while {#petla-while}
 
 W przypadku pętli `for` znana jest liczba powtórzeń przed rozpoczęciem jej działania.
-Inny rodzaj pętli, pętla `while`, jest natomiast stosowany gdy nie wiadomo ile potwórzeń jest koniecznych.
+Inny rodzaj pętli, pętla `while`, jest natomiast stosowany gdy nie wiadomo ile potworzeń jest koniecznych.
 W efekcie pętla `while` jest bardziej elastyczna, co jest zarazem jej atutem i wadą.
 Bardziej elastyczne metody charakteryzuje większa liczba potencjalnych sytuacji do których mogą zostać użyte, ale w efekcie też więcej potencjalnych problemów.
 Pętla `while` powinna być używana tylko gdy rozwiązanie z użyciem pętli `for` nie jest możliwe. 
@@ -241,8 +241,8 @@ Pętla `while` powinna być używana tylko gdy rozwiązanie z użyciem pętli `f
 <!-- https://rstudio-education.github.io/hopr/loops.html#while-loops -->
 <!--https://adv-r.hadley.nz/control-flow.html#loops -->
 
-Pętla `while` składa się z nagłówka definującego pewien warunek oraz ciała określającego operację do wykonania.
-Pętla ta będzie tak długo powtarzana jak długo warunek będzie spełniony - dlatego też w ciale pętli musi być jakiś mechanizm zmieniający wartość wpływającą na warunek.
+Pętla `while` składa się z nagłówka definiującego pewien warunek oraz ciała określającego operację do wykonania.
+Pętla ta będzie tak długo powtarzana jak długo warunek będzie spełniony - dlatego też w ciele pętli musi być jakiś mechanizm zmieniający wartość wpływającą na warunek.
 
 
 ```r
@@ -284,7 +284,7 @@ liczba_dni
 ```
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Inne istniejące rodzaje pętli to pętla `repeat` oraz pętla `do`.
-Pętla `repeat` powtarza pewnien kod aż do momentu przerwania go przez użytkownika (np. użycie klawisza Esc) lub do pojawienia się komendy `break`.
+Pętla `repeat` powtarza pewien kod aż do momentu przerwania go przez użytkownika (np. użycie klawisza Esc) lub do pojawienia się komendy `break`.
 Działanie pętli `do` natomiast wygląda w następujący sposób:
 `do {wykonuj operację} while (warunek)`.
 Pętla `do` nie występuje w R.</div>\EndKnitrBlock{rmdinfo}
@@ -347,7 +347,7 @@ Funkcjonały to funkcje, które przyjmują inne funkcje jako argumenty.
 Oprócz najczęściej używanych, `lapply()` i `apply()`, istnieją również takie funkcje jak `sapply()`, `vapply()`, `tapply()`, `mapply()` i inne.</div>\EndKnitrBlock{rmdinfo}
 
 Jednym z podstawowych funkcjonałów w R jest `lapply()`.
-Funkcjonał `lapply()` przyjmuje jako pierwszy arugment wektor atomowy lub listę, a następnie przetwarza go używając funkcji podanej jako drugi argument `FUN`.
+Funkcjonał `lapply()` przyjmuje jako pierwszy argument wektor atomowy lub listę, a następnie przetwarza go używając funkcji podanej jako drugi argument `FUN`.
 
 Poniżej, `lapply()` wykonuje funkcję `konwersja_f_to_c()` na kolejnych elementach listy `pomiary_f_lista` i zwraca nową listę zawierającą wyniki
 

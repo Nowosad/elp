@@ -11,8 +11,8 @@ Więcej na temat przetwarzania tekstu można znaleźć w rozdziale ["Strings"](h
 
 ## Reprezentacja tekstu
 
-Typ znakowy jest określany poprzez użycie cudzysłowia `"` lub `'`.
-Ważne tutaj jest, aby rozpoczynać i kończyć tekst tym samym cudzysłowiem.
+Typ znakowy jest określany poprzez użycie cudzysłowu `"` lub `'`.
+Ważne tutaj jest, aby rozpoczynać i kończyć tekst tym samym cudzysłowem.
 
 ```
 t1 = "kot"
@@ -20,7 +20,7 @@ t2 = 'pies'
 t3 = '"W teorii, teoria i praktyka są tym samym. W praktyce, nie są." - Yogi Berra'
 ```
 
-W momencie, gdy tekst nie będzie kończył się cudzysłowiem, wykonanie kodu jest niemożliwe.
+W momencie, gdy tekst nie będzie kończył się cudzysłowem, wykonanie kodu jest niemożliwe.
 Wówczas zamiast znaku `>`, oznaczającego nową linię wykonywanego kodu, pojawi się znak `+`.
 Oznacza on, że wykonanie kodu nie może zostać zakończone.
 
@@ -48,7 +48,7 @@ Efekt działania funkcji `paste()` jest jeden wektor tekstowy, który składa si
 Funkcja `paste()` ma jednak również dodatkowy argument `sep`, który pozwala na dowolne określanie separatora.
 Ostatnim argumentem tej funkcji jest `collapse`, który łączy elementy jednego wektora tekstowego.
 
-R oferuje też uproszczoną postać tej funkcji o nazwie `paste0()`, w której nie ma znaku seperatora.
+R oferuje też uproszczoną postać tej funkcji o nazwie `paste0()`, w której nie ma znaku separatora.
 
 
 ```r
@@ -69,7 +69,7 @@ tekst1
 ```
 
 Takie konstrukcje są często używane w funkcjach. 
-Powyższy przykład możnaby przepisać jako:
+Powyższy przykład można by przepisać jako:
 
 
 ```r
@@ -114,7 +114,7 @@ str_sort(tekst2)
 #> [1] " hałas"  "ćma "    "czosnek"
 ```
 
-W powyższym przykładzie oczkiwalibyśmy ułożenia, w których `"hałas"` byłby na ostatnim miejscu. 
+W powyższym przykładzie oczekiwalibyśmy ułożenia, w których `"hałas"` byłby na ostatnim miejscu. 
 Nie jest tak z powodu istnienia z przodu tego wyrazu znaku niedrukowalnego - spacji.
 Aby usunąć spacje z przodu i tyłu tekstu można użyć funkcji `str_trim()`.
 
@@ -125,7 +125,7 @@ tekst2
 #> [1] "czosnek" "hałas"   "ćma"
 ```
 
-W tej chwili możmy użyć funkcji `str_sort()` jeszcze raz.
+W tej chwili możemy użyć funkcji `str_sort()` jeszcze raz.
 
 
 ```r
@@ -133,7 +133,7 @@ str_sort(tekst2)
 #> [1] "ćma"     "czosnek" "hałas"
 ```
 
-Teraz `"hałas"` jest poprawnie na ostanim miejscu, ale na pierwszej pozycji jest `"ćma"` zamiast `"czosnek"`.
+Teraz `"hałas"` jest poprawnie na ostatnim miejscu, ale na pierwszej pozycji jest `"ćma"` zamiast `"czosnek"`.
 Różne alfabety na świecie mają inne znaki oraz ich kolejność. 
 Domyślnie funkcja  `str_sort()` używa alfabetu angielskiego, co w efekcie powoduje niepoprawne ułożenie polskich znaków.
 Do rozwiązania tego problemu służy argument `locale`, w którym można określić jaki alfabet ma być używany.
@@ -178,7 +178,7 @@ str_sub(tekst1, start = 9, end = -1)
 ```
 
 W powyższym przykładzie wybierany jest tekst zaczynający się na 9 znaku a kończący na pierwszym znaku od końca włącznie.
-Natomiat poniżej wybrany jest tekst zaczynający się na siódmym znaku od końca i kończący na pierwszym od kónca włącznie.
+Natomiast poniżej wybrany jest tekst zaczynający się na siódmym znaku od końca i kończący na pierwszym od końca włącznie.
 
 
 ```r
@@ -211,7 +211,7 @@ str_detect(tekst3, pattern = "Lena")
 #> [1] FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE
 ```
 
-Jego efektem będzie wektor logiczny wskazujący, które elemeny zawierają wybrany wzorzec (`TRUE`) oraz które go nie zawierają (`FALSE`).
+Jego efektem będzie wektor logiczny wskazujący, które elementy zawierają wybrany wzorzec (`TRUE`) oraz które go nie zawierają (`FALSE`).
 Wzorzec zdefiniowany w tej sposób jest czuły na wielkość znaków dlatego też zapytanie używając `"Lena"` da inny wynik niż takie używając `"lena"`.
 
 
@@ -351,7 +351,7 @@ Pomocne w zrozumieniu bardziej zaawansowanych elementów wyrażeń regularncych 
 ## Wydzielanie tekstu - regex {#wtregex}
 
 Innym często spotykanym problemem w pracy z tekstem jest posiadanie długiego elementu tekstowego, z którego chcemy tylko wydobyć pewien fragment. 
-W sekcji \@ref(wt) używaliśmy do tego pozycji, ale możemy zastosować również wzroce do tego celu.
+W sekcji \@ref(wt) używaliśmy do tego pozycji, ale możemy zastosować również wzorce do tego celu.
 
 
 ```r
@@ -368,7 +368,7 @@ str_extract(tekst_pomiary, pattern = "[a-zA-Z]*")
 #> [1] "Wroc"
 ```
 
-Podaliśmy jako wzorzec wszyskie litery od małego `a` do małego `z` oraz dużego `A` do dużego `Z`.
+Podaliśmy jako wzorzec wszystkie litery od małego `a` do małego `z` oraz dużego `A` do dużego `Z`.
 Niestety w efekcie otrzymaliśmy tylko Wroc - taka definicja wzorca obejmuje tylko litery z angielskiego alfabetu.
 
 Aby to naprawić możemy dodać do tego wzorca polskie litery.
@@ -479,7 +479,7 @@ str_replace(tekst_pomiary3,
 ```
 
 Efekt działania tego kodu nie jest jednak zgodny z naszymi oczekiwaniami. 
-Zamiast zamiany wszyskich kropek na przecinki, nastąpiła zamiana pierwszego znaku w tekście (litery `W`) na przecinek.
+Zamiast zamiany wszystkich kropek na przecinki, nastąpiła zamiana pierwszego znaku w tekście (litery `W`) na przecinek.
 Wynika to ze znaczenia metaznaku `.`, który reprezentuje jakikolwiek znak oprócz nowej linii.
 Żeby naprawić tę sytuację musimy użyć ukośnika wstecznego.
 
@@ -539,7 +539,7 @@ Umiejętności związane z obsługą wyrażeń regularnych przydają się też w
 Jest to szczególnie przydatne, gdy posiadamy wiele plików na komputerze, które chcemy następnie przetwarzać w sposób automatyczny.
 
 Do wyświetlania nazw plików znajdujących się w wybranym folderze służy funkcja `dir()`.
-Przykładowo poniższa linia kodu wyświetla wszyskie pliki znajdujące się w folderze `"pliki"`^[Folder o tej nazwie znajduje się w folderze robocznym.].
+Przykładowo poniższa linia kodu wyświetla wszystkie pliki znajdujące się w folderze `"pliki"`^[Folder o tej nazwie znajduje się w folderze roboczym.].
 
 
 ```r
@@ -559,7 +559,7 @@ dir("pliki", pattern = "*\\.png$")
 ```
 
 W powyższym przykładzie zostaną wybrane tylko pliki o jakiejkolwiek nazwie, ale kończące się na rozszerzenie `.png`.
-Metaznak `$` użyty w tym przypadku zapogiega sytuacji, gdy tekst `.png` znajduje się w środku nazwy pliku.
+Metaznak `$` użyty w tym przypadku zapobiega sytuacji, gdy tekst `.png` znajduje się w środku nazwy pliku.
 
 Do znalezienia plików o kilku rozszerzeniach można użyć metaznaków `()` i `|`.
 
@@ -601,8 +601,8 @@ Poniżej znajduje się fragment przykładowych danych wejściowych.
 5) Co należałoby zrobić, aby wydzielić tylko wartości pomiarów w powyższym przypadku?
 Stwórz nowy obiekt `wartosci` zawierający te pomiary.
 Jakiej klasy powinien być wyjściowy obiekt?
-6) Posiadasz wektor `wsp` zawierający współrzedne geograficzne szeregu miast w formacie DMS (Stopnie, Minuty, Sekundy).
-Wydziel tylko wartości stopnii z tej reprezentacji.
+6) Posiadasz wektor `wsp` zawierający współrzędne geograficzne szeregu miast w formacie DMS (Stopnie, Minuty, Sekundy).
+Wydziel tylko wartości stopni z tej reprezentacji.
 Poniżej znajduje się fragment przykładowych danych wejściowych.
 
 ```r

@@ -345,7 +345,7 @@ Macierze są używane do różnorodnych obliczeń matematycznych i statystyczny
 W uproszczeniu można o nich myśleć jako o reprezentacji komputerowej zdjęcia lub mapy.</p>
 
 <div class="rmdinfo">
-W R istnieją też wielowiarowe obiekty podobne do macierzy zwane matrycami (ang. <em>array</em>).
+W R istnieją też wielowymiarowe obiekty podobne do macierzy zwane matrycami (ang. <em>array</em>).
 </div>
 
 <div id="tworzenie" class="section level3">
@@ -381,7 +381,7 @@ Jej działanie na macierzy jest bardzo podobne do wyniku na wektorach (zobacz se
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">typeof</span>(macierz2)
 <span class="co">#&gt; [1] &quot;integer&quot;</span></code></pre>
 <p>Wektory atomowe mają tylko jeden wymiar więc ich długość oznacza liczbę elementów i może być sprawdzona używając funkcji <code>length()</code>.
-W przypadku macierzy możliwe jest dodatowo sprawdzenie liczby występujących wierszy (<code>nrow</code>) i kolumn (<code>ncol</code>).</p>
+W przypadku macierzy możliwe jest dodatkowo sprawdzenie liczby występujących wierszy (<code>nrow</code>) i kolumn (<code>ncol</code>).</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">nrow</span>(macierz2)
 <span class="co">#&gt; [1] 4</span>
 <span class="kw">ncol</span>(macierz2)
@@ -426,7 +426,7 @@ Na poniższy przykładzie zostały wybrane wiersze jeden i dwa oraz, z uwagi na 
 <span class="co">#&gt; [3,]  7  9</span>
 <span class="co">#&gt; [4,] 10 12</span></code></pre>
 <p>Wszystkie pozostałe sposoby wydzielania opisane dla wektorów w sekcji <a href="proste-obiekty.html#wydzielanie">5.6</a> działają również na macierzach.
-Możeliwe jest więc używanie wektora logicznego czy nazw kolumn.</p>
+Możliwe jest więc używanie wektora logicznego czy nazw kolumn.</p>
 <pre class="sourceCode r"><code class="sourceCode r">macierz2[, <span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)]
 <span class="co">#&gt;       a  c</span>
 <span class="co">#&gt; [1,]  1  3</span>
@@ -445,7 +445,7 @@ macierz2[, <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <spa
 <p>Łączenie wektorów odbywa się używając jednej funkcji <code>c()</code>.
 W przypadku macierzy występują jednak dwa wymiary - możliwe jest połączenie macierzy wierszami lub kolumnami.
 W efekcie istnieją do tego dwie oddzielne funkcje <code>rbind()</code> i <code>cbind()</code>.</p>
-<p>Pierwsza z nich łączy macierze wierszami.</p>
+<p>Pierwsza z nich łączy macierze wierszami, a liczba kolumn pozostaje niezmieniona.</p>
 <pre class="sourceCode r"><code class="sourceCode r">macierz3 =<span class="st"> </span><span class="kw">rbind</span>(macierz1, macierz2)
 macierz3
 <span class="co">#&gt;       a  b  c</span>
@@ -457,7 +457,7 @@ macierz3
 <span class="co">#&gt; [6,]  4  5  6</span>
 <span class="co">#&gt; [7,]  7  8  9</span>
 <span class="co">#&gt; [8,] 10 11 12</span></code></pre>
-<p>Druga dokleja obiekty kolumnami.</p>
+<p>Druga dokleja obiekty kolumnami bez zmiany liczby wierszy.</p>
 <pre class="sourceCode r"><code class="sourceCode r">macierz4 =<span class="st"> </span><span class="kw">cbind</span>(macierz1, macierz2)
 macierz4
 <span class="co">#&gt;              a  b  c</span>
@@ -476,7 +476,7 @@ W przypadku, gdy chcemy połączyć kilka wektorów różnych typów działają 
 <h2><span class="header-section-number">7.2</span> Ramki danych</h2>
 <p>Ramki danych (ang. <em>data frame</em>) mają dużo podobieństw z macierzami.
 Są to obiekty dwuwymiarowe, składające się z kolumn i wierszy.
-Główną różnicą pomiędzy macierzą a ramką danych jest to, że pierwsza z nich przyjmuje tylko dane jednego typu, podczas gdy druga może się składać z danych róznych typów.</p>
+Główną różnicą pomiędzy macierzą a ramką danych jest to, że pierwsza z nich przyjmuje tylko dane jednego typu, podczas gdy druga może się składać z danych rożnych typów.</p>
 <p>Ramka danych jest zbudowana z kolumn (wektorów) o równej długości.
 <!-- a data frame is a list of equal-length vectors -->
 Ten typ obiektu jest głównie wykorzystywany do różnorodnej analizy danych.
@@ -497,8 +497,8 @@ Ramki danych przypominają w swojej strukturze arkusze kalkulacyjne czy bazy dan
 <span class="st">#&gt; 3   FALSE      12     1.1 nosorożec</span></code></pre>
 <p>W powyższym przykładzie, <code>ramka1</code> składa się z czterech kolumn o długości trzy.
 Każda z tych kolumn ma inny typ - logiczny, liczby całkowitej, liczby zmiennoprzecinkowej oraz znakowy.
-Domyślnie funkcja <code>data.frame</code> wykonuje jeszcze jedną operację w tle - zamienia ona wszystkie dane o type znakowym na typ czynnikowy (sekcja <a href="proste-obiekty.html#fac">5.11</a>).
-W większości przypadków nie jest to porządane działanie - dlatego też warto wyłączyć tę konwersję używając argumentu <code>stringsAsFactors = FALSE</code>.</p>
+Domyślnie funkcja <code>data.frame</code> wykonuje jeszcze jedną operację w tle - zamienia ona wszystkie dane o typie znakowym na typ czynnikowy (sekcja <a href="proste-obiekty.html#fac">5.11</a>).
+W większości przypadków nie jest to pożądane działanie - dlatego też warto wyłączyć tę konwersję używając argumentu <code>stringsAsFactors = FALSE</code>.</p>
 
 <div class="rmdinfo">
 Obiekty klasy ramka danych są też zazwyczaj wynikiem wczytywania zewnętrznych plików do R, np. w formacie <code>.csv</code> czy <code>.xlsx</code>.
@@ -511,7 +511,7 @@ Więcej informacji na ten temat można znaleźć w rozdziale <a href="io.html#i
 <p>Oficjalnie klasa ramki danych jest określana jako <code>data.frame</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(ramka1)
 <span class="co">#&gt; [1] &quot;data.frame&quot;</span></code></pre>
-<p>Sprawdzenie struktury ramki danych pozwala na szybkie poznanie kilku róznych cech wejściowego obiektu.
+<p>Sprawdzenie struktury ramki danych pozwala na szybkie poznanie kilku rożnych cech wejściowego obiektu.
 Pierwszą informacją jest klasa obiektu (<code>data.frame</code>), liczba wierszy (<code>3 obs.</code> - trzy obserwacje) i liczba kolumn (<code>4 variables</code> - cztery zmienne).
 Następnie, dla kolejnych kolumn są określane ich nazwy, typy danych oraz przykładowe wartości.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(ramka1)
@@ -547,7 +547,7 @@ ramka1
 <span class="co">#&gt; [1]  5.3 -7.1  1.1</span>
 ramka1<span class="op">$</span>zna
 <span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span></code></pre>
-<p>W efekcie otrzymywany jest jednak inna klasa - w powyższych przykładzach są to wektory.</p>
+<p>W efekcie otrzymywany jest jednak inna klasa - w powyższych przykładach są to wektory.</p>
 <p>W przypadku ramek danych operator <code>[]</code> wymaga podania dwóch argumentów - jednego dla wierszy (obserwacji) oraz jednego dla kolumn (zmiennych) - <code>[wiersze, kolumny]</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">ramka1[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)]
 <span class="co">#&gt;     log cal</span>
@@ -646,7 +646,7 @@ Ta klasa pozwala na przechowywanie obiektów o różnych typach i różnej dług
 <span class="st">#&gt; [[4]]</span>
 <span class="st">#&gt; [1] &quot;</span>kot<span class="st">&quot;       &quot;</span>pies<span class="st">&quot;      &quot;</span>nosorożec&quot;</code></pre>
 <p>Przykładowa powyższa lista składa się z czterech elementów, o długości jeden, dwa lub trzy, i o różnorodnych typach danych.</p>
-<p>Inną ważną właściwością list jest możliwość ich zagnieżdzania - jedna lista może przechowywać kolejną, która jest w stanie przechowywać następną… Z tego powodu listy są czasami nazywane wektorami rekurencyjnymi.</p>
+<p>Inną ważną właściwością list jest możliwość ich zagnieżdżania - jedna lista może przechowywać kolejną, która jest w stanie przechowywać następną… Z tego powodu listy są czasami nazywane wektorami rekurencyjnymi.</p>
 <pre class="sourceCode r"><code class="sourceCode r">zlozona_lista1 =<span class="st"> </span><span class="kw">list</span>(<span class="kw">list</span>(<span class="kw">list</span>(lista1)))
 <span class="kw">str</span>(zlozona_lista1)
 <span class="co">#&gt; List of 1</span>
@@ -660,7 +660,7 @@ Ta klasa pozwala na przechowywanie obiektów o różnych typach i różnej dług
 </div>
 <div id="podstawowe-funkcje-2" class="section level3">
 <h3><span class="header-section-number">7.3.2</span> Podstawowe funkcje</h3>
-<p>Listy są przedstawane jako klasa <code>list</code>.</p>
+<p>Listy są przedstawiane jako klasa <code>list</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(lista1)
 <span class="co">#&gt; [1] &quot;list&quot;</span></code></pre>
 <p>W ich wypadku funkcja <code>str()</code> wyświetla klasę (<code>List</code>), liczbę elementów w liście (<code>4</code>) oraz wypisuje kolejne elementy listy, ich typy, wymiary i przykładowe wartości.</p>
@@ -673,7 +673,7 @@ Ta klasa pozwala na przechowywanie obiektów o różnych typach i różnej dług
 <p>Listy nie zawierają wierszy czy kolumn, dlatego do sprawdzenia liczby elementów w liście służy tylko funkcja <code>length()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">length</span>(lista1)
 <span class="co">#&gt; [1] 4</span></code></pre>
-<p>Kolejne elementy znajdujące się w liście mogą przyjmować wbrane nazwy.
+<p>Kolejne elementy znajdujące się w liście mogą przyjmować wybrane nazwy.
 Można je sprawdzić czy zmienić używając funkcji <code>names()</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(lista1) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;log&quot;</span>, <span class="st">&quot;cal&quot;</span>, <span class="st">&quot;zmi&quot;</span>, <span class="st">&quot;zna&quot;</span>)
 lista1
@@ -693,7 +693,7 @@ lista1
 </div>
 <div id="aczenie-2" class="section level3">
 <h3><span class="header-section-number">7.3.3</span> Łączenie</h3>
-<p>Łączenie list może odbywać się na dwa postawowe sposoby.
+<p>Łączenie list może odbywać się na dwa podstawowe sposoby.
 W pierwszym, używając funkcji <code>c()</code> następuje dołączenie elementów jednej listy do drugiej.</p>
 <pre class="sourceCode r"><code class="sourceCode r">lista2 =<span class="st"> </span><span class="kw">c</span>(lista1, lista1)
 <span class="kw">str</span>(lista2)
@@ -777,8 +777,8 @@ lista6
 </div>
 <div id="zmiany-klas" class="section level2">
 <h2><span class="header-section-number">7.4</span> Zmiany klas</h2>
-<p>R ma też szereg pomocnicznych służących do zmian istniejących klas.
-Te funcje rozpoczynają się od <code>as.</code> a następnie zawierają nazwę klasy do której chcemy przetworzyć wejściowy obiekt, np. <code>as.vector()</code>, <code>as.matrix()</code>, <code>as.data.frame()</code>, <code>as.list()</code>.</p>
+<p>R ma też szereg pomocniczych służących do zmian istniejących klas.
+Te funkcje rozpoczynają się od <code>as.</code> a następnie zawierają nazwę klasy do której chcemy przetworzyć wejściowy obiekt, np. <code>as.vector()</code>, <code>as.matrix()</code>, <code>as.data.frame()</code>, <code>as.list()</code>.</p>
 <p>Działanie tych funkcji jednak jest bardzo różne w zależności o klasy wejściowego obiektu.
 Zobaczmy to na przykładzie obiektu <code>macierz1</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">macierz1
@@ -829,8 +829,7 @@ lista_z_r1 =<span class="st"> </span><span class="kw">as.list</span>(ramka_z_m1)
 <div id="inne-klasy" class="section level2">
 <h2><span class="header-section-number">7.5</span> Inne klasy obiektów</h2>
 <p>W tym oraz <a href="proste-obiekty.html#proste-obiekty">5</a> rozdziale zostały wymienione i opisane cztery podstawowe klasy obiektów w R - wektory atomowe, macierze, natomiast listy i ramki danych.
-R zawiera jednak znacznie więcej klas obiektów, a co więcej - każda osoba może stworzyć swoją własną klasę obiektów.
-<!-- ref to tworzenie klas? --></p>
+R zawiera jednak znacznie więcej klas obiektów, a co więcej - każda osoba może stworzyć swoją własną klasę obiektów (sekcja <a href="zlozone-funkcje.html#oop">10.3</a>).</p>
 <p>Poniżej zostały stworzone trzy nowe wektory - znakowy (<code>wek_tkt</code>), numeryczny (<code>wek_num</code>) i dat (<code>wek_dat</code>).</p>
 <pre class="sourceCode r"><code class="sourceCode r">wek_tkt =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>, <span class="st">&quot;nosorożec&quot;)</span>
 <span class="st">wek_num = c(4, 6, 8)</span>
@@ -859,11 +858,8 @@ Metoda to sposób w jaki zachowuje się funkcja w zależności od tego jakiej kl
 <li><code>.default</code> - domyślna metoda</li>
 </ul>
 <p>W momencie, gdy funkcja otrzyma jakiś obiekt, sprawdzana jest jego klasa i jeżeli istnieje metoda dla tego obiektu to wówczas jest ona używana.
-Natomiat w sytuacji, gdy dla danej klasy obiektu nie ma istniejącej metody, używana jest domyślna metoda (<code>.default</code>).</p>
+Natomiast w sytuacji, gdy dla danej klasy obiektu nie ma istniejącej metody, używana jest domyślna metoda (<code>.default</code>).</p>
 <p>Jak widać w powyższym przykładzie, nowe klasy obiektów oraz nowe metody są tworzone, aby ułatwić pracę na innych niż domyślne strukturach danych.</p>
-<!-- https://www.njtierney.com/post/2016/11/06/simple-s3-post/ -->
-<!-- ... -->
-<!-- reference?? -->
 </div>
 <div id="zadania-6" class="section level2">
 <h2><span class="header-section-number">7.6</span> Zadania</h2>

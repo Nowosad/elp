@@ -157,7 +157,7 @@ minus_1("kot")
 ```
 
 Jeżeli jako argument `x` zostanie podany wektor logiczny (`else if(is.logical(x))`) to pojawi się komunikat ostrzeżenia, ale dalsze obliczanie zostanie wykonane.
-W tym przypadku wartość `TRUE` zostanie najpierw zamieniona na 1 a `FALSE` na zero, następnie od tych wartości zostanie odjęte jeden, a na końcu zostaną one zamienione na wartości bezwzględne.
+W tym przypadku wartość `TRUE` zostanie najpierw zamieniona na jeden a `FALSE` na zero, następnie od tych wartości zostanie odjęte jeden, a na końcu zostaną one zamienione na wartości bezwzględne.
 
 
 ```r
@@ -200,7 +200,7 @@ tryCatch(
 ```
 
 Działanie `tryCatch` w praktyce jest pokazane w funkcji `log_safe()`.
-Stara się ona wyliczyć logarytm naturalny (`log()`) z wartości argumentu `x`, a w przypadku gdyby napotkała błąd zwóci ona wartość `NA`.
+Stara się ona wyliczyć logarytm naturalny (`log()`) z wartości argumentu `x`, a w przypadku gdyby napotkała błąd zwróci ona wartość `NA`.
 
 
 ```r
@@ -337,7 +337,7 @@ W rzeczywistości jednak nazwa funkcji to tylko `powierzchnia`, a kropka sugeruj
 Jest to, innymi słowy, definicja metody.
 Nowa funkcja `powierzchnia` zadziała w powyższy sposób tylko w wypadku otrzymania jako dane wejściowe obiektu klasy `prostokat`.
 
-Sprawdżmy to na dwóch przykładach - obiektu `y` (klasa `prostokat`) i `x` (klasa `matrix`).
+Sprawdźmy to na dwóch przykładach - obiektu `y` (klasa `prostokat`) i `x` (klasa `matrix`).
 
 
 ```r

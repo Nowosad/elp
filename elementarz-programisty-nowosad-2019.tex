@@ -2924,8 +2924,8 @@ Więcej na temat przetwarzania tekstu można znaleźć w rozdziale \href{https:/
 \hypertarget{reprezentacja-tekstu}{%
 \section{Reprezentacja tekstu}\label{reprezentacja-tekstu}}
 
-Typ znakowy jest określany poprzez użycie cudzysłowia \texttt{"} lub \texttt{\textquotesingle{}}.
-Ważne tutaj jest, aby rozpoczynać i kończyć tekst tym samym cudzysłowiem.
+Typ znakowy jest określany poprzez użycie cudzysłowu \texttt{"} lub \texttt{\textquotesingle{}}.
+Ważne tutaj jest, aby rozpoczynać i kończyć tekst tym samym cudzysłowem.
 
 \begin{verbatim}
 t1 = "kot"
@@ -2933,7 +2933,7 @@ t2 = 'pies'
 t3 = '"W teorii, teoria i praktyka są tym samym. W praktyce, nie są." - Yogi Berra'
 \end{verbatim}
 
-W momencie, gdy tekst nie będzie kończył się cudzysłowiem, wykonanie kodu jest niemożliwe.
+W momencie, gdy tekst nie będzie kończył się cudzysłowem, wykonanie kodu jest niemożliwe.
 Wówczas zamiast znaku \texttt{\textgreater{}}, oznaczającego nową linię wykonywanego kodu, pojawi się znak \texttt{+}.
 Oznacza on, że wykonanie kodu nie może zostać zakończone.
 
@@ -2964,7 +2964,7 @@ Efekt działania funkcji \texttt{paste()} jest jeden wektor tekstowy, który sk�
 Funkcja \texttt{paste()} ma jednak również dodatkowy argument \texttt{sep}, który pozwala na dowolne określanie separatora.
 Ostatnim argumentem tej funkcji jest \texttt{collapse}, który łączy elementy jednego wektora tekstowego.
 
-R oferuje też uproszczoną postać tej funkcji o nazwie \texttt{paste0()}, w której nie ma znaku seperatora.
+R oferuje też uproszczoną postać tej funkcji o nazwie \texttt{paste0()}, w której nie ma znaku separatora.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2987,7 +2987,7 @@ Poniżej stworzono dwie nowe zmienne \texttt{imie} i \texttt{wiek}, których tre
 \end{Shaded}
 
 Takie konstrukcje są często używane w funkcjach.
-Powyższy przykład możnaby przepisać jako:
+Powyższy przykład można by przepisać jako:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3036,7 +3036,7 @@ Przykładową operacją na tekście jest jego sortowanie (czyli układanie alfab
 \end{Highlighting}
 \end{Shaded}
 
-W powyższym przykładzie oczkiwalibyśmy ułożenia, w których \texttt{"hałas"} byłby na ostatnim miejscu.
+W powyższym przykładzie oczekiwalibyśmy ułożenia, w których \texttt{"hałas"} byłby na ostatnim miejscu.
 Nie jest tak z powodu istnienia z przodu tego wyrazu znaku niedrukowalnego - spacji.
 Aby usunąć spacje z przodu i tyłu tekstu można użyć funkcji \texttt{str\_trim()}.
 
@@ -3048,7 +3048,7 @@ Aby usunąć spacje z przodu i tyłu tekstu można użyć funkcji \texttt{str\_t
 \end{Highlighting}
 \end{Shaded}
 
-W tej chwili możmy użyć funkcji \texttt{str\_sort()} jeszcze raz.
+W tej chwili możemy użyć funkcji \texttt{str\_sort()} jeszcze raz.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3057,7 +3057,7 @@ W tej chwili możmy użyć funkcji \texttt{str\_sort()} jeszcze raz.
 \end{Highlighting}
 \end{Shaded}
 
-Teraz \texttt{"hałas"} jest poprawnie na ostanim miejscu, ale na pierwszej pozycji jest \texttt{"ćma"} zamiast \texttt{"czosnek"}.
+Teraz \texttt{"hałas"} jest poprawnie na ostatnim miejscu, ale na pierwszej pozycji jest \texttt{"ćma"} zamiast \texttt{"czosnek"}.
 Różne alfabety na świecie mają inne znaki oraz ich kolejność.
 Domyślnie funkcja \texttt{str\_sort()} używa alfabetu angielskiego, co w efekcie powoduje niepoprawne ułożenie polskich znaków.
 Do rozwiązania tego problemu służy argument \texttt{locale}, w którym można określić jaki alfabet ma być używany.
@@ -3107,7 +3107,7 @@ Definiowanie pozycji może się też odbywać od prawej strony tekstu używając
 \end{Shaded}
 
 W powyższym przykładzie wybierany jest tekst zaczynający się na 9 znaku a kończący na pierwszym znaku od końca włącznie.
-Natomiat poniżej wybrany jest tekst zaczynający się na siódmym znaku od końca i kończący na pierwszym od kónca włącznie.
+Natomiast poniżej wybrany jest tekst zaczynający się na siódmym znaku od końca i kończący na pierwszym od końca włącznie.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3137,7 +3137,7 @@ Aby znaleźć wszystkie wystąpienia (nawet fragmentaryczne) słowa \texttt{"Len
 \end{Highlighting}
 \end{Shaded}
 
-Jego efektem będzie wektor logiczny wskazujący, które elemeny zawierają wybrany wzorzec (\texttt{TRUE}) oraz które go nie zawierają (\texttt{FALSE}).
+Jego efektem będzie wektor logiczny wskazujący, które elementy zawierają wybrany wzorzec (\texttt{TRUE}) oraz które go nie zawierają (\texttt{FALSE}).
 Wzorzec zdefiniowany w tej sposób jest czuły na wielkość znaków dlatego też zapytanie używając \texttt{"Lena"} da inny wynik niż takie używając \texttt{"lena"}.
 
 \begin{Shaded}
@@ -3289,7 +3289,7 @@ Pomocne w zrozumieniu bardziej zaawansowanych elementów wyrażeń regularncych 
 \section{Wydzielanie tekstu - regex}\label{wtregex}}
 
 Innym często spotykanym problemem w pracy z tekstem jest posiadanie długiego elementu tekstowego, z którego chcemy tylko wydobyć pewien fragment.
-W sekcji \ref{wt} używaliśmy do tego pozycji, ale możemy zastosować również wzroce do tego celu.
+W sekcji \ref{wt} używaliśmy do tego pozycji, ale możemy zastosować również wzorce do tego celu.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3308,7 +3308,7 @@ Do wydzielania tekstu na podstawie wyrażeń regularnych służy funkcja \texttt
 \end{Highlighting}
 \end{Shaded}
 
-Podaliśmy jako wzorzec wszyskie litery od małego \texttt{a} do małego \texttt{z} oraz dużego \texttt{A} do dużego \texttt{Z}.
+Podaliśmy jako wzorzec wszystkie litery od małego \texttt{a} do małego \texttt{z} oraz dużego \texttt{A} do dużego \texttt{Z}.
 Niestety w efekcie otrzymaliśmy tylko Wroc - taka definicja wzorca obejmuje tylko litery z angielskiego alfabetu.
 
 Aby to naprawić możemy dodać do tego wzorca polskie litery.
@@ -3434,7 +3434,7 @@ Aby zamienić wybrany wzorzec w tekście (np. kropkę na przecinek) możemy uży
 \end{Shaded}
 
 Efekt działania tego kodu nie jest jednak zgodny z naszymi oczekiwaniami.
-Zamiast zamiany wszyskich kropek na przecinki, nastąpiła zamiana pierwszego znaku w tekście (litery \texttt{W}) na przecinek.
+Zamiast zamiany wszystkich kropek na przecinki, nastąpiła zamiana pierwszego znaku w tekście (litery \texttt{W}) na przecinek.
 Wynika to ze znaczenia metaznaku \texttt{.}, który reprezentuje jakikolwiek znak oprócz nowej linii.
 Żeby naprawić tę sytuację musimy użyć ukośnika wstecznego.
 
@@ -3500,7 +3500,7 @@ Umiejętności związane z obsługą wyrażeń regularnych przydają się też w
 Jest to szczególnie przydatne, gdy posiadamy wiele plików na komputerze, które chcemy następnie przetwarzać w sposób automatyczny.
 
 Do wyświetlania nazw plików znajdujących się w wybranym folderze służy funkcja \texttt{dir()}.
-Przykładowo poniższa linia kodu wyświetla wszyskie pliki znajdujące się w folderze \texttt{"pliki"}\footnote{Folder o tej nazwie znajduje się w folderze robocznym.}.
+Przykładowo poniższa linia kodu wyświetla wszystkie pliki znajdujące się w folderze \texttt{"pliki"}\footnote{Folder o tej nazwie znajduje się w folderze roboczym.}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3523,7 +3523,7 @@ W przypadku, gdy interesują nas tylko pliki o wybranym rozszerzeniu możemy uż
 \end{Shaded}
 
 W powyższym przykładzie zostaną wybrane tylko pliki o jakiejkolwiek nazwie, ale kończące się na rozszerzenie \texttt{.png}.
-Metaznak \texttt{\$} użyty w tym przypadku zapogiega sytuacji, gdy tekst \texttt{.png} znajduje się w środku nazwy pliku.
+Metaznak \texttt{\$} użyty w tym przypadku zapobiega sytuacji, gdy tekst \texttt{.png} znajduje się w środku nazwy pliku.
 
 Do znalezienia plików o kilku rozszerzeniach można użyć metaznaków \texttt{()} i \texttt{\textbar{}}.
 
@@ -3593,8 +3593,8 @@ Napisz kod, który będzie wydzielał symbole chemiczne pomierzonych pierwiastk�
   Stwórz nowy obiekt \texttt{wartosci} zawierający te pomiary.
   Jakiej klasy powinien być wyjściowy obiekt?
 \item
-  Posiadasz wektor \texttt{wsp} zawierający współrzedne geograficzne szeregu miast w formacie DMS (Stopnie, Minuty, Sekundy).
-  Wydziel tylko wartości stopnii z tej reprezentacji.
+  Posiadasz wektor \texttt{wsp} zawierający współrzędne geograficzne szeregu miast w formacie DMS (Stopnie, Minuty, Sekundy).
+  Wydziel tylko wartości stopni z tej reprezentacji.
   Poniżej znajduje się fragment przykładowych danych wejściowych.
 \end{enumerate}
 
@@ -3627,7 +3627,7 @@ Macierze są~używane do różnorodnych obliczeń matematycznych i statystycznyc
 W uproszczeniu można o nich myśleć jako o reprezentacji komputerowej zdjęcia lub mapy.
 
 \BeginKnitrBlock{rmdinfo}
-W R istnieją też wielowiarowe obiekty podobne do macierzy zwane matrycami (ang. \emph{array}).
+W R istnieją też wielowymiarowe obiekty podobne do macierzy zwane matrycami (ang. \emph{array}).
 \EndKnitrBlock{rmdinfo}
 
 \hypertarget{tworzenie}{%
@@ -3694,7 +3694,7 @@ Macierz może przyjmować tylko jeden typ obiektów, co można sprawdzić używa
 \end{Shaded}
 
 Wektory atomowe mają tylko jeden wymiar więc ich długość oznacza liczbę elementów i może być sprawdzona używając funkcji \texttt{length()}.
-W przypadku macierzy możliwe jest dodatowo sprawdzenie liczby występujących wierszy (\texttt{nrow}) i kolumn (\texttt{ncol}).
+W przypadku macierzy możliwe jest dodatkowo sprawdzenie liczby występujących wierszy (\texttt{nrow}) i kolumn (\texttt{ncol}).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3775,7 +3775,7 @@ Element pusty można też zastosować do wybrania wszystkich wierszy.
 \end{Shaded}
 
 Wszystkie pozostałe sposoby wydzielania opisane dla wektorów w sekcji \ref{wydzielanie} działają również na macierzach.
-Możeliwe jest więc używanie wektora logicznego czy nazw kolumn.
+Możliwe jest więc używanie wektora logicznego czy nazw kolumn.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3801,7 +3801,7 @@ Możeliwe jest więc używanie wektora logicznego czy nazw kolumn.
 W przypadku macierzy występują jednak dwa wymiary - możliwe jest połączenie macierzy wierszami lub kolumnami.
 W efekcie istnieją do tego dwie oddzielne funkcje \texttt{rbind()} i \texttt{cbind()}.
 
-Pierwsza z nich łączy macierze wierszami.
+Pierwsza z nich łączy macierze wierszami, a liczba kolumn pozostaje niezmieniona.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3819,7 +3819,7 @@ Pierwsza z nich łączy macierze wierszami.
 \end{Highlighting}
 \end{Shaded}
 
-Druga dokleja obiekty kolumnami.
+Druga dokleja obiekty kolumnami bez zmiany liczby wierszy.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3842,7 +3842,7 @@ W przypadku, gdy chcemy połączyć kilka wektorów różnych typów działają 
 
 Ramki danych (ang. \emph{data frame}) mają dużo podobieństw z macierzami.
 Są to obiekty dwuwymiarowe, składające się z kolumn i wierszy.
-Główną różnicą pomiędzy macierzą a ramką danych jest to, że pierwsza z nich przyjmuje tylko dane jednego typu, podczas gdy druga może się składać z danych róznych typów.
+Główną różnicą pomiędzy macierzą a ramką danych jest to, że pierwsza z nich przyjmuje tylko dane jednego typu, podczas gdy druga może się składać z danych rożnych typów.
 
 Ramka danych jest zbudowana z kolumn (wektorów) o równej długości.
 Ten typ obiektu jest głównie wykorzystywany do różnorodnej analizy danych.
@@ -3870,8 +3870,8 @@ Stworzenie nowej ramki danych możliwe jest używając funkcji \texttt{data.fram
 
 W powyższym przykładzie, \texttt{ramka1} składa się z czterech kolumn o długości trzy.
 Każda z tych kolumn ma inny typ - logiczny, liczby całkowitej, liczby zmiennoprzecinkowej oraz znakowy.
-Domyślnie funkcja \texttt{data.frame} wykonuje jeszcze jedną operację w tle - zamienia ona wszystkie dane o type znakowym na typ czynnikowy (sekcja \ref{fac}).
-W większości przypadków nie jest to porządane działanie - dlatego też warto wyłączyć tę konwersję używając argumentu \texttt{stringsAsFactors\ =\ FALSE}.
+Domyślnie funkcja \texttt{data.frame} wykonuje jeszcze jedną operację w tle - zamienia ona wszystkie dane o typie znakowym na typ czynnikowy (sekcja \ref{fac}).
+W większości przypadków nie jest to pożądane działanie - dlatego też warto wyłączyć tę konwersję używając argumentu \texttt{stringsAsFactors\ =\ FALSE}.
 
 \BeginKnitrBlock{rmdinfo}
 Obiekty klasy ramka danych są też zazwyczaj wynikiem wczytywania zewnętrznych plików do R, np. w formacie \texttt{.csv} czy \texttt{.xlsx}.
@@ -3890,7 +3890,7 @@ Oficjalnie klasa ramki danych jest określana jako \texttt{data.frame}.
 \end{Highlighting}
 \end{Shaded}
 
-Sprawdzenie struktury ramki danych pozwala na szybkie poznanie kilku róznych cech wejściowego obiektu.
+Sprawdzenie struktury ramki danych pozwala na szybkie poznanie kilku rożnych cech wejściowego obiektu.
 Pierwszą informacją jest klasa obiektu (\texttt{data.frame}), liczba wierszy (\texttt{3\ obs.} - trzy obserwacje) i liczba kolumn (\texttt{4\ variables} - cztery zmienne).
 Następnie, dla kolejnych kolumn są określane ich nazwy, typy danych oraz przykładowe wartości.
 
@@ -3956,7 +3956,7 @@ Operator \texttt{\$} pozwala na wybranie zmiennej (kolumny) na podstawie jej naz
 \end{Highlighting}
 \end{Shaded}
 
-W efekcie otrzymywany jest jednak inna klasa - w powyższych przykładzach są to wektory.
+W efekcie otrzymywany jest jednak inna klasa - w powyższych przykładach są to wektory.
 
 W przypadku ramek danych operator \texttt{{[}{]}} wymaga podania dwóch argumentów - jednego dla wierszy (obserwacji) oraz jednego dla kolumn (zmiennych) - \texttt{{[}wiersze,\ kolumny{]}}.
 
@@ -4111,7 +4111,7 @@ Do tworzenia list służy funkcja \texttt{list()}, która przyjmuje jako argumen
 
 Przykładowa powyższa lista składa się z czterech elementów, o długości jeden, dwa lub trzy, i o różnorodnych typach danych.
 
-Inną ważną właściwością list jest możliwość ich zagnieżdzania - jedna lista może przechowywać kolejną, która jest w stanie przechowywać następną\ldots{} Z tego powodu listy są czasami nazywane wektorami rekurencyjnymi.
+Inną ważną właściwością list jest możliwość ich zagnieżdżania - jedna lista może przechowywać kolejną, która jest w stanie przechowywać następną\ldots{} Z tego powodu listy są czasami nazywane wektorami rekurencyjnymi.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4131,7 +4131,7 @@ Inną ważną właściwością list jest możliwość ich zagnieżdzania - jedna
 \hypertarget{podstawowe-funkcje-2}{%
 \subsection{Podstawowe funkcje}\label{podstawowe-funkcje-2}}
 
-Listy są przedstawane jako klasa \texttt{list}.
+Listy są przedstawiane jako klasa \texttt{list}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4162,7 +4162,7 @@ Listy nie zawierają wierszy czy kolumn, dlatego do sprawdzenia liczby elementó
 \end{Highlighting}
 \end{Shaded}
 
-Kolejne elementy znajdujące się w liście mogą przyjmować wbrane nazwy.
+Kolejne elementy znajdujące się w liście mogą przyjmować wybrane nazwy.
 Można je sprawdzić czy zmienić używając funkcji \texttt{names()}.
 
 \begin{Shaded}
@@ -4188,7 +4188,7 @@ Można je sprawdzić czy zmienić używając funkcji \texttt{names()}.
 \hypertarget{aczenie-2}{%
 \subsection{Łączenie}\label{aczenie-2}}
 
-Łączenie list może odbywać się na dwa postawowe sposoby.
+Łączenie list może odbywać się na dwa podstawowe sposoby.
 W pierwszym, używając funkcji \texttt{c()} następuje dołączenie elementów jednej listy do drugiej.
 
 \begin{Shaded}
@@ -4310,8 +4310,8 @@ Ostatni operator, \texttt{\$}, wydziela wartości na podstawie ich nazw.
 \hypertarget{zmiany-klas}{%
 \section{Zmiany klas}\label{zmiany-klas}}
 
-R ma też~szereg pomocnicznych służących do zmian istniejących klas.
-Te funcje rozpoczynają się~od \texttt{as.} a następnie zawierają nazwę klasy do której chcemy przetworzyć wejściowy obiekt, np. \texttt{as.vector()}, \texttt{as.matrix()}, \texttt{as.data.frame()}, \texttt{as.list()}.
+R ma też~szereg pomocniczych służących do zmian istniejących klas.
+Te funkcje rozpoczynają się~od \texttt{as.} a następnie zawierają nazwę klasy do której chcemy przetworzyć wejściowy obiekt, np. \texttt{as.vector()}, \texttt{as.matrix()}, \texttt{as.data.frame()}, \texttt{as.list()}.
 
 Działanie tych funkcji jednak jest bardzo różne w zależności o klasy wejściowego obiektu.
 Zobaczmy to na przykładzie obiektu \texttt{macierz1}.
@@ -4393,7 +4393,7 @@ W drugim przypadku efektem będzie lista składająca się z trzech wektorów, k
 \section{Inne klasy obiektów}\label{inne-klasy}}
 
 W tym oraz \ref{proste-obiekty} rozdziale zostały wymienione i opisane cztery podstawowe klasy obiektów w R - wektory atomowe, macierze, natomiast listy i ramki danych.
-R zawiera jednak znacznie więcej klas obiektów, a co więcej - każda osoba może stworzyć swoją własną klasę obiektów.
+R zawiera jednak znacznie więcej klas obiektów, a co więcej - każda osoba może stworzyć swoją własną klasę obiektów (sekcja \ref{oop}).
 
 Poniżej zostały stworzone trzy nowe wektory - znakowy (\texttt{wek\_tkt}), numeryczny (\texttt{wek\_num}) i dat (\texttt{wek\_dat}).
 
@@ -4449,7 +4449,7 @@ Przykładowo, funkcja \texttt{mean()} ma pięć metod:
 \end{itemize}
 
 W momencie, gdy funkcja otrzyma jakiś obiekt, sprawdzana jest jego klasa i jeżeli istnieje metoda dla tego obiektu to wówczas jest ona używana.
-Natomiat w sytuacji, gdy dla danej klasy obiektu nie ma istniejącej metody, używana jest domyślna metoda (\texttt{.default}).
+Natomiast w sytuacji, gdy dla danej klasy obiektu nie ma istniejącej metody, używana jest domyślna metoda (\texttt{.default}).
 
 Jak widać w powyższym przykładzie, nowe klasy obiektów oraz nowe metody są~tworzone, aby ułatwić pracę na innych niż domyślne strukturach danych.
 
@@ -4547,7 +4547,7 @@ Wiemy, że do wybrania jednego elementu z listy służy operator \texttt{{[}{[}{
 \end{Highlighting}
 \end{Shaded}
 
-Teraz naszym celem jest potwórzenie tej operacji dla każdego elementu.
+Teraz naszym celem jest potworzenie tej operacji dla każdego elementu.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4563,7 +4563,7 @@ Teraz naszym celem jest potwórzenie tej operacji dla każdego elementu.
 W powyższym przypadku mamy tylko trzy elementy, ale jeżeli mielibyśmy takich elementów 1000 musielibyśmy powtórzyć niemal tą samą linię kodu tysiąc razy jedynie zamieniając numer elementu.
 
 Jednym z celów programowania jest ułatwienie szybkiej powtarzalności pewnych czynności.
-Dlatego w tym przypadku moglibyśmy uniknąć wieloktornego pisania podobnego kodu używając pętli \texttt{for}.
+Dlatego w tym przypadku moglibyśmy uniknąć wielokrotnego pisania podobnego kodu używając pętli \texttt{for}.
 Ciałem tej pętli będzie sposób przeliczania i wyświetlania wartości na kilometry, ale zamiast wydzielać kolejne elementy listy (\texttt{{[}{[}1{]}{]}}, \texttt{{[}{[}2{]}{]}}, \texttt{{[}{[}3{]}{]}}), użyjemy nowego obiektu \texttt{i}.
 W efekcie nowe ciało pętli \texttt{for} będzie przedstawiać się jako \texttt{print(odl\_mile{[}{[}i{]}{]}\ *\ 1.609)}.
 Kolejnym krokiem jest odpowiednie ustawienie jakie wartości będzie przyjmować \texttt{i} w kolejnych powtórzeniach.
@@ -4582,7 +4582,7 @@ Kolejnym krokiem jest odpowiednie ustawienie jakie wartości będzie przyjmować
 Powyższy nagłówek pętli \texttt{for}, \texttt{for\ (i\ in\ 1:3)}, określa, że nasz obiekt \texttt{i} przyjmie najpierw wartość 1, wykona obliczenie wewnątrz pętli, następnie \texttt{i} przyjmie wartość 2, znów wykona obliczenie, a na końcu \texttt{i} przyjmie wartość 3 i obliczenie zostanie wykonane po raz ostatni.
 
 \BeginKnitrBlock{rmdinfo}
-Tradycyjnie zmienna w pętli \texttt{for} nazywana jest \texttt{i}, a w przypadku zagnieżdzonych pętli druga zmienna nazywana jest \texttt{j}.
+Tradycyjnie zmienna w pętli \texttt{for} nazywana jest \texttt{i}, a w przypadku zagnieżdżonych pętli druga zmienna nazywana jest \texttt{j}.
 Nazywanie zmiennych w ten sposób nie jest jednak obowiązkowe.
 W powyższym przypadku możliwe byłoby nazwanie zmiennej, np. \texttt{pomiar}: \texttt{for\ (pomiar\ in\ odl\_mile)\ \{...\}}.
 \EndKnitrBlock{rmdinfo}
@@ -4745,13 +4745,13 @@ Zgodnie z oczekiwaniami zero mil lądowych to również zero kilometrów, a jedn
 \section{Pętla while}\label{petla-while}}
 
 W przypadku pętli \texttt{for} znana jest liczba powtórzeń przed rozpoczęciem jej działania.
-Inny rodzaj pętli, pętla \texttt{while}, jest natomiast stosowany gdy nie wiadomo ile potwórzeń jest koniecznych.
+Inny rodzaj pętli, pętla \texttt{while}, jest natomiast stosowany gdy nie wiadomo ile potworzeń jest koniecznych.
 W efekcie pętla \texttt{while} jest bardziej elastyczna, co jest zarazem jej atutem i wadą.
 Bardziej elastyczne metody charakteryzuje większa liczba potencjalnych sytuacji do których mogą zostać użyte, ale w efekcie też więcej potencjalnych problemów.
 Pętla \texttt{while} powinna być używana tylko gdy rozwiązanie z użyciem pętli \texttt{for} nie jest możliwe.
 
-Pętla \texttt{while} składa się z nagłówka definującego pewien warunek oraz ciała określającego operację do wykonania.
-Pętla ta będzie tak długo powtarzana jak długo warunek będzie spełniony - dlatego też w ciale pętli musi być jakiś mechanizm zmieniający wartość wpływającą na warunek.
+Pętla \texttt{while} składa się z nagłówka definiującego pewien warunek oraz ciała określającego operację do wykonania.
+Pętla ta będzie tak długo powtarzana jak długo warunek będzie spełniony - dlatego też w ciele pętli musi być jakiś mechanizm zmieniający wartość wpływającą na warunek.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -4792,7 +4792,7 @@ Dodatkowo możemy sprawdzić ile zajęło to dni.
 
 \BeginKnitrBlock{rmdinfo}
 Inne istniejące rodzaje pętli to pętla \texttt{repeat} oraz pętla \texttt{do}.
-Pętla \texttt{repeat} powtarza pewnien kod aż do momentu przerwania go przez użytkownika (np. użycie klawisza Esc) lub do pojawienia się~komendy \texttt{break}.
+Pętla \texttt{repeat} powtarza pewien kod aż do momentu przerwania go przez użytkownika (np. użycie klawisza Esc) lub do pojawienia się~komendy \texttt{break}.
 Działanie pętli \texttt{do} natomiast wygląda w następujący sposób:
 \texttt{do\ \{wykonuj\ operację\}\ while\ (warunek)}.
 Pętla \texttt{do} nie występuje w R.
@@ -4869,7 +4869,7 @@ Oprócz najczęściej używanych, \texttt{lapply()} i \texttt{apply()}, istniej�
 \EndKnitrBlock{rmdinfo}
 
 Jednym z podstawowych funkcjonałów w R jest \texttt{lapply()}.
-Funkcjonał \texttt{lapply()} przyjmuje jako pierwszy arugment wektor atomowy lub listę, a następnie przetwarza go używając funkcji podanej jako drugi argument \texttt{FUN}.
+Funkcjonał \texttt{lapply()} przyjmuje jako pierwszy argument wektor atomowy lub listę, a następnie przetwarza go używając funkcji podanej jako drugi argument \texttt{FUN}.
 
 Poniżej, \texttt{lapply()} wykonuje funkcję \texttt{konwersja\_f\_to\_c()} na kolejnych elementach listy \texttt{pomiary\_f\_lista} i zwraca nową listę zawierającą wyniki
 
@@ -5112,11 +5112,11 @@ Przykładowo, sąsiadem litery ``A'' są litery ``E'' i ``B''.
 \hypertarget{io}{%
 \chapter{Wczytywanie i zapisywanie plików}\label{io}}
 
-Języki programowania mają na celu wykonywanie wielu złożnych operacji w relatywnie krótkim czasie.
+Języki programowania mają na celu wykonywanie wielu złożonych operacji w relatywnie krótkim czasie.
 Często te działania oparte są o dane zewnętrzne, np. stworzone przez człowieka, automatyczny sensor, czy jako efekt działania innego programu.
 Czasem też~konieczne jest przekazanie lub udostępnienie wyników obliczeń dla innych osób.
 Celem tego rozdziału jest wprowadzenie do zagadnień związanych z określaniem położenia plików na dysku komputera, wykonywaniu działań na plikach i folderach oraz pobieraniu danych z internetu.
-Posiadając taką więdzę możliwe jest wczytywanie i zapisywanie danych, takich jak dane tekstowe, dane w formatach R, czy dane z arkuszy kalkulacyjnych.
+Posiadając taką wiedzę możliwe jest wczytywanie i zapisywanie danych, takich jak dane tekstowe, dane w formatach R, czy dane z arkuszy kalkulacyjnych.
 
 \hypertarget{folder-roboczy}{%
 \section{Folder roboczy}\label{folder-roboczy}}
@@ -5135,8 +5135,8 @@ Zmienić folder roboczy można za pomocą skrótu \emph{Ctrl+Shift+H} w RStudio 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{setwd}\NormalTok{(}\StringTok{"home/jakub/Documents/elp/"}\NormalTok{) }\CommentTok{#unix}
-\KeywordTok{setwd}\NormalTok{(}\StringTok{"C:/Users/jakub/Documenty/elp/"}\NormalTok{) }\CommentTok{#windows}
+\KeywordTok{setwd}\NormalTok{(}\StringTok{"home/jakub/Documents/elp/"}\NormalTok{) }\CommentTok{#Linux}
+\KeywordTok{setwd}\NormalTok{(}\StringTok{"C:/Users/jakub/Documenty/elp/"}\NormalTok{) }\CommentTok{#Windows}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5635,7 +5635,7 @@ W przypadku, gdy użytkownik wprowadzi jako wejście wektor tekstowy (\texttt{if
 \end{Shaded}
 
 Jeżeli jako argument \texttt{x} zostanie podany wektor logiczny (\texttt{else\ if(is.logical(x))}) to pojawi się komunikat ostrzeżenia, ale dalsze obliczanie zostanie wykonane.
-W tym przypadku wartość~\texttt{TRUE} zostanie najpierw zamieniona na 1 a \texttt{FALSE} na zero, następnie od tych wartości zostanie odjęte jeden, a na końcu zostaną one zamienione na wartości bezwzględne.
+W tym przypadku wartość~\texttt{TRUE} zostanie najpierw zamieniona na jeden a \texttt{FALSE} na zero, następnie od tych wartości zostanie odjęte jeden, a na końcu zostaną one zamienione na wartości bezwzględne.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5681,7 +5681,7 @@ Można to zobaczyć na poniższym przykładzie, gdzie najpierw sprawdzona zosta�
 \end{Shaded}
 
 Działanie \texttt{tryCatch} w praktyce jest pokazane w funkcji \texttt{log\_safe()}.
-Stara się~ona wyliczyć logarytm naturalny (\texttt{log()}) z wartości argumentu \texttt{x}, a w przypadku gdyby napotkała błąd zwóci ona wartość \texttt{NA}.
+Stara się~ona wyliczyć logarytm naturalny (\texttt{log()}) z wartości argumentu \texttt{x}, a w przypadku gdyby napotkała błąd zwróci ona wartość \texttt{NA}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5827,7 +5827,7 @@ W rzeczywistości jednak nazwa funkcji to tylko \texttt{powierzchnia}, a kropka 
 Jest to, innymi słowy, definicja metody.
 Nowa funkcja \texttt{powierzchnia} zadziała w powyższy sposób tylko w wypadku otrzymania jako dane wejściowe obiektu klasy \texttt{prostokat}.
 
-Sprawdżmy to na dwóch przykładach - obiektu \texttt{y} (klasa \texttt{prostokat}) i \texttt{x} (klasa \texttt{matrix}).
+Sprawdźmy to na dwóch przykładach - obiektu \texttt{y} (klasa \texttt{prostokat}) i \texttt{x} (klasa \texttt{matrix}).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6166,7 +6166,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.616   0.000   0.614}
+\CommentTok{#>   0.624   0.000   0.623}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6225,8 +6225,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile) 1.52us 1.75us   486845.     117KB}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 1.14us 1.26us   728368.     221KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile) 1.54us 1.71us   448434.     117KB}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 1.14us 1.25us   752024.     221KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
@@ -6269,14 +6269,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 479ms  488ms      2.05     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 786us  818us   1013.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 463ms  471ms      2.12     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 777us  801us   1061.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 16.4 operacji na sekundę, przy aż 19.99 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 17 operacji na sekundę, przy aż 19.97 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \begin{verbatim}
@@ -6291,14 +6291,14 @@ Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) raz
 #> # A tibble: 8 x 7
 #>   expression       x      min   median `itr/sec`
 #>   <bch:expr>   <dbl> <bch:tm> <bch:tm>     <dbl>
-#> 1 mi_do_km1(l)    10   3.95us   4.66us 197282.  
-#> 2 mi_do_km2(l)    10   1.78us   2.01us 470518.  
-#> 3 mi_do_km1(l)   100  67.05us  73.58us  12843.  
-#> 4 mi_do_km2(l)   100   8.47us   9.43us  99560.  
-#> 5 mi_do_km1(l)  1000    4.3ms   4.73ms    209.  
-#> 6 mi_do_km2(l)  1000  76.89us   83.1us  11497.  
-#> 7 mi_do_km1(l) 10000 573.41ms 573.41ms      1.74
-#> 8 mi_do_km2(l) 10000 891.05us 960.01us    908.  
+#> 1 mi_do_km1(l)    10   3.91us   4.44us 210995.  
+#> 2 mi_do_km2(l)    10   1.76us   1.96us 477406.  
+#> 3 mi_do_km1(l)   100  66.26us  70.82us  13414.  
+#> 4 mi_do_km2(l)   100   8.45us   9.47us  98552.  
+#> 5 mi_do_km1(l)  1000   4.27ms   4.52ms    220.  
+#> 6 mi_do_km2(l)  1000  76.53us  80.59us  11746.  
+#> 7 mi_do_km1(l) 10000 522.56ms 522.56ms      1.91
+#> 8 mi_do_km2(l) 10000 776.76us 811.99us   1103.  
 #> # ... with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 \end{verbatim}
@@ -6447,7 +6447,7 @@ Wymaga to dodania wiadomości, która opisuje wprowadzone zmiany.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# zawierdzenie dodanych zmian}
+\CommentTok{# zatwierdzenie dodanych zmian}
 \FunctionTok{git}\NormalTok{ commit -m }\StringTok{"opis wprowadzonych zmian"}
 \end{Highlighting}
 \end{Shaded}
@@ -6472,7 +6472,7 @@ W efekcie tego działania nowa gałąź staje się~odniesieniem do istniejącego
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# utworzenienie nowego rozgałęzienia}
+\CommentTok{# utworzenie nowego rozgałęzienia}
 \FunctionTok{git}\NormalTok{ branch nazwa_nowej_galezi}
 \end{Highlighting}
 \end{Shaded}
@@ -6834,7 +6834,7 @@ Czy zaszły na niej jakieś zmiany od poprzedniego wejścia?
 \item
   Z poziomu strony internetowej swojego repozytorium ``test'' edytuj plik \texttt{README.md}.
   Możesz to zrobić klikając na nazwę tego pliku, a następnie na ikonę ołówka w prawym górnym roku okna.
-  Dodaj do niego kolejną linię \texttt{Edytowałem\ plik\ z\ poziomu\ GitHub.} oraz napisz odpowiedni komunikat poniżej tego okna i zawierdź zmiany (zielony przycisk \texttt{Commit\ changes}).
+  Dodaj do niego kolejną linię \texttt{Edytowałem\ plik\ z\ poziomu\ GitHub.} oraz napisz odpowiedni komunikat poniżej tego okna i zatwierdź zmiany (zielony przycisk \texttt{Commit\ changes}).
   Sprawdź stronę internetową zawierającą zdalne repozytorium ``test''.
   Czy zaszły na niej jakieś zmiany od poprzedniego wejścia?
 \item
@@ -6864,7 +6864,7 @@ Pakiety, oprócz swojej unikalnej nazwy, posiadają również informacje o swoje
 
 Informacje w tym rozdziale powinny pozwolić na stworzenie podstawowego pakietu R.
 Istnieje jednak wiele dodatkowych aspektów i kwestii w tym temacie, które zostały tutaj wspomniane pobieżnie lub pominięte.
-W celu poznania i zrozumienia złożnych aspektów tworzenia pakietów R cennymi źródłami wiedzy może być książki \href{https://r-pkgs.org}{R packages} \citep{wickham2015r} oraz \href{https://ropensci.github.io/dev_guide/}{rOpenSci Packages: Development, Maintenance, and Peer Review} \citep{ropensci_2019_2554759}.
+W celu poznania i zrozumienia złożonych aspektów tworzenia pakietów R cennymi źródłami wiedzy może być książki \href{https://r-pkgs.org}{R packages} \citep{wickham2015r} oraz \href{https://ropensci.github.io/dev_guide/}{rOpenSci Packages: Development, Maintenance, and Peer Review} \citep{ropensci_2019_2554759}.
 Dodatkowo, w niektórych przypadkach pomocna może być oficjalna dokumentacja \href{https://cran.r-project.org/doc/manuals/R-exts.html\#Creating-R-packages}{Writing R Extensions} \citep{team1999writing}.
 
 \hypertarget{nazwa-pakietu}{%
@@ -7233,7 +7233,7 @@ Aby ta strona była dostępna w internecie należy na platformie GitHub wejść 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
 \item
-  Stwórz szkielet nowego pakietu R nazwającego się \textbf{konwerter}.
+  Stwórz szkielet nowego pakietu R nazywającego się \textbf{konwerter}.
 \item
   Napisz funkcję \texttt{mil\_do\_km()} służącą do odległości z mili lądowych na kilometry i zapisz ją jako \texttt{R/mil\_do\_km.R}.
 \item
@@ -7378,7 +7378,7 @@ Pełna dokumentacja pakietu \textbf{ggplot2} znajduje się na stronie \url{http:
 
 R jest jednym z języków programowania najczęściej używanych w analizie danych\footnote{Analiza danych często jest określana również jako \href{https://en.wikipedia.org/wiki/Data_science}{data science}.}.
 Jest to wynikiem szeregu przyczyn, w tym dużej liczby wbudowanych w R funkcji statystycznych oraz graficznych.
-Dodatkowo, ramka danych, jeden z podstawowych obiektów w R, może być utożsamiany z arkuszem kalkulacyjnym czy tabelą z bazy danych - najpopuarniejszych form przechowywania różnorakich danych.
+Dodatkowo, ramka danych, jeden z podstawowych obiektów w R, może być utożsamiany z arkuszem kalkulacyjnym czy tabelą z bazy danych - najpopularniejszych form przechowywania różnorakich danych.
 Ta forma obiektu, złożonego z kolumn (zmienne) i wierszy (obserwacje), jest reprezentacją, która uławia czyszczenie, przetwarzanie i analizowanie danych.
 
 Inną przyczyną popularności R do analizy danych jest grupa pakietów zbiorczo określana jako \emph{tidyverse}.
@@ -7422,7 +7422,7 @@ Pełne wprowadzenie do koncepcji \emph{tidyverse} można znaleźć w książce \
 Zrozumienie zależności czy zjawisk jest bardzo rzadko ostatnim etapem - równie istotne jest przekazanie tych wyników wybranej grupie odbiorców w odpowiedni sposób.
 Do tego celu może posłużyć R Markdown (jego podstawy zostały opisane w sekcji \ref{dokumentacja-pakietu})
 R Markdown pozwala na tworzenie dokumentów w różnych formatach (html, pdf, docx, itd.), prezentacji, stron internetowych, książek\footnote{Ta książka również powstała używająć R Markdown.} i wiele innych.
-Po szczegołowe instrukcje jak używać tego języka warto zajrzeć do książki
+Po szczegółowe instrukcje jak używać tego języka warto zajrzeć do książki
 \href{https://bookdown.org/yihui/rmarkdown/}{R Markdown: The Definitive Guide} \citep{xieMarkdownDefinitiveGuide2018}.
 
 \hypertarget{inne-zastosowania}{%
@@ -7430,10 +7430,10 @@ Po szczegołowe instrukcje jak używać tego języka warto zajrzeć do książki
 
 Wcześniejsze dwie sekcje pokazywały bardzo szerokie zastosowania R - analizować czy wizualizować można zarówno dane o temperaturze powietrza jak i wyniki wyborów prezydenckich.
 W związku z czym, w R istnieje także znacząca liczba pakietów stworzonych do bardziej specjalistycznych i szczegółowych celów.
-Można to zobaczyć przeglądając tzw. \emph{task views} - listy pakietów zaagregowane według podobnej tematyki znajdujące się pod adresem \url{https://cran.r-project.org/web/views/}.
+Można to zobaczyć przeglądając tzw. \emph{task views} - listy pakietów zagregowane według podobnej tematyki znajdujące się pod adresem \url{https://cran.r-project.org/web/views/}.
 Obejmuje to bardzo szeroki przekrój tematów - od list poświęconych projektowaniu prób klinicznych, poprzez przetwarzanie języka naturalnego, skończywszy na ekonometrii i analizach finansowych\footnote{Dodatkowo istnieje specjalne repozytorium Bioconductor poświęcone pakietom R dotyczącym zagadnień bioinformatycznych.}.
 
-Wsród tych list znajduje się także jedna poświęcona analizie danych przestrzennych.
+Wśród tych list znajduje się także jedna poświęcona analizie danych przestrzennych.
 Opisuje ona, między innymi, takie pakiety jak \textbf{sf}, pozwalający na wczytywanie, przetwarzanie i zapisywanie danych wektorowych czy \textbf{tmap} ułatwiający tworzenie map.
 Na poniższym przykładzie następuje dołączenie tych pakietów oraz wczytanie zbioru danych \texttt{World} zawierającego poligony krajów na świecie i podstawowe informacje o nich.
 Dalej następuje dodanie tych danych do wyświetlenia i wybór odwzorowania przestrzennego używając funkcji \texttt{tm\_shape()}, po czym te dane są wyświetlone w postaci poligonów (funkcja \texttt{tm\_polygons()}), gdzie kolory poligonów wynikają z ich wartości w kolumnie \texttt{life\_exp} a tytuł legendy jest wybrany przez nas (rycina \ref{fig:tmap-example}).
@@ -7486,14 +7486,14 @@ Taki kod znajduje się w folderze \texttt{src/}.
 
 Programowanie to nie tylko pisanie kodu.
 Obejmuje to też wiele innych czynności, takich jak stosowanie optymalnych algorytmów czy narzędzi programistycznych.
-Istnieje wiele książek poświęconych kwestii algorytmów, wsród których najbardziej popularne to Introduction to Algorithms \citep{cormen2009introduction}, The Algorithm Design Manual \citep{skienaAlgorithmDesignManual2008} czy Algorithms \citep{032157351X}.
+Istnieje wiele książek poświęconych kwestii algorytmów, wśród których najbardziej popularne to Introduction to Algorithms \citep{cormen2009introduction}, The Algorithm Design Manual \citep{skienaAlgorithmDesignManual2008} czy Algorithms \citep{032157351X}.
 Podstawowym narzędziem programistycznym jest program do pisania kodu.
 Może to być zarówno prosty edytor tekstu, taki jak \href{https://notepad-plus-plus.org/}{Notepad++}, \href{https://www.sublimetext.com/}{Sublime Text}, lub \href{https://atom.io/}{Atom} czy też~bardziej złożone zintegrowane środowisko programistyczne (IDE).
 O ile narzędzia z tej pierwszej grupy są uniwersalne to w przypadku wyboru IDE warto zdecydować się~na zintegrowane środowisko programistyczne odpowiednie dla używanego języka programowania\footnote{\url{https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments}}.
 
 Programowanie często obejmuje pracę w zespole.
 Wówczas jednym ze sposobów dbania o jakość tworzonego produktu może być inspekcja kodu (ang. \emph{code review}).
-Polega ona na tym, że zmiany naniesione w kodzie są~przekazywane innej osobie, która sprawdza go pod kątem błędów, spójności, stylu, zgodności z isniejącymi rozwiązaniami, itd.
+Polega ona na tym, że zmiany naniesione w kodzie są~przekazywane innej osobie, która sprawdza go pod kątem błędów, spójności, stylu, zgodności z istniejącymi rozwiązaniami, itd.
 Po inspekcji twórca kodu może dostać informację zwrotną, co jest dobre, a co wymaga poprawy.
 W efekcie, z jednej strony wyjściowy produkt jest lepszej jakości, a z drugiej strony programista uczy się~i polepsza swoje umiejętności.
 
@@ -7504,7 +7504,7 @@ Innym kierunkiem działań może być nauka kolejnego języka programowania - na
 Może to być przykładowo język kompilowany, taki jak C, C++ lub Rust, którego efektem będzie bardziej wydajny program.
 Co ważne, kod napisany w tych językach można łączyć z kodem R.
 R posiada wbudowany interfejs do używania kodu napisanego w C (rozdział 5 z dokumentacji \href{https://cran.r-project.org/doc/manuals/R-exts.html\#System-and-foreign-language-interfaces}{Writing R Extensions} \citep{team1999writing}), łączenie kodu napisanego w C++ ułatwia znacząco pakiet \textbf{Rcpp} (\citet{R-Rcpp}; więcej informacji w rozdziale \href{https://adv-r.hadley.nz/rcpp.html}{``Rewriting R code in C++''} książki Advanced R \citep{wickham2014advanced}), a wskazówki dotyczące łączenia kodu Rust można znaleźć w repozytorium \url{https://github.com/r-rust/hellorust}.
-W efekcie użytkownik może korzystać z interaktywności R, wykonując dowolne linie kodu, ale część z nich może używać wydajniejszych funkcji napisanych w jezykach kompilowanych.
+W efekcie użytkownik może korzystać z interaktywności R, wykonując dowolne linie kodu, ale część z nich może używać wydajniejszych funkcji napisanych w językach kompilowanych.
 Alternatywną drogą może być~nauka języków używanych do tworzenia i rozwijania aplikacji internetowych, w tym JavaScript czy PHP.
 
 Pomimo już znaczącej historii, języki programowania nadal mają wiele nowego do zaoferowania.

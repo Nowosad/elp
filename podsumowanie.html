@@ -393,7 +393,7 @@ Rycina 14.2: Przykład wykresu utworzonego z użyciem pakietu ggplot2.
 <h2><span class="header-section-number">14.2</span> Analiza danych</h2>
 <p>R jest jednym z języków programowania najczęściej używanych w analizie danych<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.
 Jest to wynikiem szeregu przyczyn, w tym dużej liczby wbudowanych w R funkcji statystycznych oraz graficznych.
-Dodatkowo, ramka danych, jeden z podstawowych obiektów w R, może być utożsamiany z arkuszem kalkulacyjnym czy tabelą z bazy danych - najpopuarniejszych form przechowywania różnorakich danych.
+Dodatkowo, ramka danych, jeden z podstawowych obiektów w R, może być utożsamiany z arkuszem kalkulacyjnym czy tabelą z bazy danych - najpopularniejszych form przechowywania różnorakich danych.
 Ta forma obiektu, złożonego z kolumn (zmienne) i wierszy (obserwacje), jest reprezentacją, która uławia czyszczenie, przetwarzanie i analizowanie danych.</p>
 <p>Inną przyczyną popularności R do analizy danych jest grupa pakietów zbiorczo określana jako <em>tidyverse</em>.
 Jest to spójny zbiór pakietów pozwalających na wykonywanie kolejnych czynności analizy danych.
@@ -428,7 +428,7 @@ Rycina 14.3: Przykład wyniku użycia pakietów z grupy tidyverse.
 <p>Zrozumienie zależności czy zjawisk jest bardzo rzadko ostatnim etapem - równie istotne jest przekazanie tych wyników wybranej grupie odbiorców<!--communicate--> w odpowiedni sposób.
 Do tego celu może posłużyć R Markdown (jego podstawy zostały opisane w sekcji <a href="tworzenie-pakietow.html#dokumentacja-pakietu">13.9</a>)
 R Markdown pozwala na tworzenie dokumentów w różnych formatach (html, pdf, docx, itd.), prezentacji, stron internetowych, książek<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a> i wiele innych.
-Po szczegołowe instrukcje jak używać tego języka warto zajrzeć do książki
+Po szczegółowe instrukcje jak używać tego języka warto zajrzeć do książki
 <a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a> <span class="citation">(Xie, Allaire, and Grolemund <a href="#ref-xieMarkdownDefinitiveGuide2018">2018</a>)</span>.</p>
 </div>
 <div id="inne-zastosowania" class="section level2">
@@ -436,10 +436,10 @@ Po szczegołowe instrukcje jak używać tego języka warto zajrzeć do książki
 <p>Wcześniejsze dwie sekcje pokazywały bardzo szerokie zastosowania R - analizować czy wizualizować można zarówno dane o temperaturze powietrza jak i wyniki wyborów prezydenckich.
 <!-- ... -->
 W związku z czym, w R istnieje także znacząca liczba pakietów stworzonych do bardziej specjalistycznych i szczegółowych celów.
-Można to zobaczyć przeglądając tzw. <em>task views</em> - listy pakietów zaagregowane według podobnej tematyki znajdujące się pod adresem <a href="https://cran.r-project.org/web/views/" class="uri">https://cran.r-project.org/web/views/</a>.
+Można to zobaczyć przeglądając tzw. <em>task views</em> - listy pakietów zagregowane według podobnej tematyki znajdujące się pod adresem <a href="https://cran.r-project.org/web/views/" class="uri">https://cran.r-project.org/web/views/</a>.
 Obejmuje to bardzo szeroki przekrój tematów - od list poświęconych projektowaniu prób klinicznych, poprzez przetwarzanie języka naturalnego, skończywszy na ekonometrii i analizach finansowych<a href="#fn63" class="footnote-ref" id="fnref63"><sup>63</sup></a>.</p>
 <!-- maps -->
-<p>Wsród tych list znajduje się także jedna poświęcona analizie danych przestrzennych.
+<p>Wśród tych list znajduje się także jedna poświęcona analizie danych przestrzennych.
 Opisuje ona, między innymi, takie pakiety jak <strong>sf</strong>, pozwalający na wczytywanie, przetwarzanie i zapisywanie danych wektorowych czy <strong>tmap</strong> ułatwiający tworzenie map.
 Na poniższym przykładzie następuje dołączenie tych pakietów oraz wczytanie zbioru danych <code>World</code> zawierającego poligony krajów na świecie i podstawowe informacje o nich.
 Dalej następuje dodanie tych danych do wyświetlenia i wybór odwzorowania przestrzennego<!--footnote--> używając funkcji <code>tm_shape()</code>, po czym te dane są wyświetlone w postaci poligonów (funkcja <code>tm_polygons()</code>), gdzie kolory poligonów wynikają z ich wartości w kolumnie <code>life_exp</code> a tytuł legendy jest wybrany przez nas (rycina <a href="podsumowanie.html#fig:tmap-example">14.4</a>).</p>
@@ -481,13 +481,13 @@ Taki kod znajduje się w folderze <code>src/</code>.</p>
 <h2><span class="header-section-number">14.5</span> Co dalej?</h2>
 <p>Programowanie to nie tylko pisanie kodu.
 Obejmuje to też wiele innych czynności, takich jak stosowanie optymalnych algorytmów czy narzędzi programistycznych.
-Istnieje wiele książek poświęconych kwestii algorytmów, wsród których najbardziej popularne to Introduction to Algorithms <span class="citation">(Cormen et al. <a href="#ref-cormen2009introduction">2009</a>)</span>, The Algorithm Design Manual <span class="citation">(Skiena <a href="#ref-skienaAlgorithmDesignManual2008">2008</a>)</span> czy Algorithms <span class="citation">(Sedgewick and Wayne <a href="#ref-032157351X">2011</a>)</span>.
+Istnieje wiele książek poświęconych kwestii algorytmów, wśród których najbardziej popularne to Introduction to Algorithms <span class="citation">(Cormen et al. <a href="#ref-cormen2009introduction">2009</a>)</span>, The Algorithm Design Manual <span class="citation">(Skiena <a href="#ref-skienaAlgorithmDesignManual2008">2008</a>)</span> czy Algorithms <span class="citation">(Sedgewick and Wayne <a href="#ref-032157351X">2011</a>)</span>.
 Podstawowym narzędziem programistycznym jest program do pisania kodu.
 Może to być zarówno prosty edytor tekstu, taki jak <a href="https://notepad-plus-plus.org/">Notepad++</a>, <a href="https://www.sublimetext.com/">Sublime Text</a>, lub <a href="https://atom.io/">Atom</a> czy też bardziej złożone zintegrowane środowisko programistyczne (IDE).
 O ile narzędzia z tej pierwszej grupy są uniwersalne to w przypadku wyboru IDE warto zdecydować się na zintegrowane środowisko programistyczne odpowiednie dla używanego języka programowania<a href="#fn67" class="footnote-ref" id="fnref67"><sup>67</sup></a>.</p>
 <p>Programowanie często obejmuje pracę w zespole.
 Wówczas jednym ze sposobów dbania o jakość tworzonego produktu może być inspekcja kodu (ang. <em>code review</em>).
-Polega ona na tym, że zmiany naniesione w kodzie są przekazywane innej osobie, która sprawdza go pod kątem błędów, spójności, stylu, zgodności z isniejącymi rozwiązaniami, itd.
+Polega ona na tym, że zmiany naniesione w kodzie są przekazywane innej osobie, która sprawdza go pod kątem błędów, spójności, stylu, zgodności z istniejącymi rozwiązaniami, itd.
 Po inspekcji twórca kodu może dostać informację zwrotną, co jest dobre, a co wymaga poprawy.
 W efekcie, z jednej strony wyjściowy produkt jest lepszej jakości, a z drugiej strony programista uczy się i polepsza swoje umiejętności.</p>
 <p>Niezależnie od używanego języka istnieje również szereg narzędzi, których znajomość ułatwia lub czasem nawet umożliwia pracę.
@@ -498,7 +498,7 @@ Wśród nich można wyróżnić znajomość linii komend i jej możliwości <spa
 Może to być przykładowo język kompilowany, taki jak C, C++ lub Rust, którego efektem będzie bardziej wydajny<!--...--> program.
 Co ważne, kod napisany w tych językach można łączyć z kodem R.
 R posiada wbudowany interfejs do używania kodu napisanego w C (rozdział 5 z dokumentacji <a href="https://cran.r-project.org/doc/manuals/R-exts.html#System-and-foreign-language-interfaces">Writing R Extensions</a> <span class="citation">(R Core Team <a href="#ref-team1999writing">2019</a><a href="#ref-team1999writing">b</a>)</span>), łączenie kodu napisanego w C++ ułatwia znacząco pakiet <strong>Rcpp</strong> (<span class="citation">Eddelbuettel et al. (<a href="#ref-R-Rcpp">2019</a>)</span>; więcej informacji w rozdziale <a href="https://adv-r.hadley.nz/rcpp.html">“Rewriting R code in C++”</a> książki Advanced R <span class="citation">(Wickham <a href="#ref-wickham2014advanced">2014</a>)</span>), a wskazówki dotyczące łączenia kodu Rust można znaleźć w repozytorium <a href="https://github.com/r-rust/hellorust" class="uri">https://github.com/r-rust/hellorust</a>.
-W efekcie użytkownik może korzystać z interaktywności R, wykonując dowolne linie kodu, ale część z nich może używać wydajniejszych funkcji napisanych w jezykach kompilowanych.
+W efekcie użytkownik może korzystać z interaktywności R, wykonując dowolne linie kodu, ale część z nich może używać wydajniejszych funkcji napisanych w językach kompilowanych.
 Alternatywną drogą może być nauka języków używanych do tworzenia i rozwijania aplikacji internetowych, w tym JavaScript czy PHP.</p>
 <p>Pomimo już znaczącej historii, języki programowania nadal mają wiele nowego do zaoferowania.
 Nieustannie następuje ich ewolucja <!--nowe wersje R czy Pythona; nowe standardy c++-->- dodawane są nowe możliwości, zmieniane są istniejące funkcje, czy też następuje poprawa wydajności.

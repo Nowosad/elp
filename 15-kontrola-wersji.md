@@ -97,7 +97,7 @@ Wymaga to dodania wiadomości, która opisuje wprowadzone zmiany.
 
 
 ```bash
-# zawierdzenie dodanych zmian
+# zatwierdzenie dodanych zmian
 git commit -m "opis wprowadzonych zmian"
 ```
 
@@ -119,7 +119,7 @@ W efekcie tego działania nowa gałąź staje się odniesieniem do istniejąceg
 
 
 ```bash
-# utworzenienie nowego rozgałęzienia
+# utworzenie nowego rozgałęzienia
 git branch nazwa_nowej_galezi
 ```
 
@@ -407,7 +407,7 @@ Czy zaszły na niej jakieś zmiany od poprzedniego wejścia?
 
 6) Z poziomu strony internetowej swojego repozytorium "test" edytuj plik `README.md`.
 Możesz to zrobić klikając na nazwę tego pliku, a następnie na ikonę ołówka w prawym górnym roku okna.
-Dodaj do niego kolejną linię `Edytowałem plik z poziomu GitHub.` oraz napisz odpowiedni komunikat poniżej tego okna i zawierdź zmiany (zielony przycisk `Commit changes`).
+Dodaj do niego kolejną linię `Edytowałem plik z poziomu GitHub.` oraz napisz odpowiedni komunikat poniżej tego okna i zatwierdź zmiany (zielony przycisk `Commit changes`).
 Sprawdź stronę internetową zawierającą zdalne repozytorium "test".
 Czy zaszły na niej jakieś zmiany od poprzedniego wejścia? 
 
