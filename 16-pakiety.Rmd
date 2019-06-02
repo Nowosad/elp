@@ -11,7 +11,7 @@ Pakiety, oprócz swojej unikalnej nazwy, posiadają również informacje o swoje
 
 Informacje w tym rozdziale powinny pozwolić na stworzenie podstawowego pakietu R.
 Istnieje jednak wiele dodatkowych aspektów i kwestii w tym temacie, które zostały tutaj wspomniane pobieżnie lub pominięte.
-W celu poznania i zrozumienia złożnych aspektów tworzenia pakietów R cennymi źródłami wiedzy może być książki [R packages](https://r-pkgs.org) [@wickham2015r] oraz [rOpenSci Packages: Development, Maintenance, and Peer Review](https://ropensci.github.io/dev_guide/) [@ropensci_2019_2554759].
+W celu poznania i zrozumienia złożonych aspektów tworzenia pakietów R cennymi źródłami wiedzy może być książki [R packages](https://r-pkgs.org) [@wickham2015r] oraz [rOpenSci Packages: Development, Maintenance, and Peer Review](https://ropensci.github.io/dev_guide/) [@ropensci_2019_2554759].
 Dodatkowo, w niektórych przypadkach pomocna może być oficjalna dokumentacja [Writing R Extensions](https://cran.r-project.org/doc/manuals/R-exts.html#Creating-R-packages) [@team1999writing].
 
 ## Nazwa pakietu
@@ -352,7 +352,7 @@ Aby ta strona była dostępna w internecie należy na platformie GitHub wejść 
 
 ## Zadania
 
-1) Stwórz szkielet nowego pakietu R nazwającego się **konwerter**.
+1) Stwórz szkielet nowego pakietu R nazywającego się **konwerter**.
 
 2) Napisz funkcję `mil_do_km()` służącą do odległości z mili lądowych na kilometry i zapisz ją jako `R/mil_do_km.R`. 
 
@@ -403,7 +403,5 @@ Przebuduj stronę internetową pakietu i prześlij wszystkie zmiany na zdalne re
 
 14) Stwórz nową winietę do pakietu **konwerter** nazywającą się `wprowadzenie`.
 Dodaj do niej krótki opis tego co robi ten pakiet, a następnie przedstaw przykład użycia funkcji `mil_do_km()` oraz funkcji `konwersja_temp()`.
-
-
 
 
