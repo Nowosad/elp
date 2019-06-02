@@ -770,8 +770,8 @@ Częstą analogią~jest porównanie samochodowe, w którym R jest opisywany jako
 \caption{Okno RStudio z opisaną funkcjonalnością każdej z jego części.}\label{fig:rstudioimage}
 \end{figure}
 
-Typowa praca w RStudio często polega na wpisywaniu poleceń do pliku tekstowego widocznego w części skryptowej (Rycina \ref{fig:rstudioimage}), a następnie wykonywaniu kolejnych linii kodu w oknie konsoli używając skrótu klawiaturowego CTRL+ENTER (więcej przydatnych skrótów klawiaturowych można znaleźć w tabeli \ref{tab:rstudiosk}).
-Efektem wykonywania funkcji może być powstanie nowych obiektów, które można zobaczyć w oknie ``środowiska'' lub też wyświetlenie grafik, które można zobaczyć w oknie ``wykresu''.
+Typowa praca w RStudio często polega na wpisywaniu poleceń do pliku tekstowego widocznego w części skryptowej (rycina \ref{fig:rstudioimage}), a następnie wykonywaniu kolejnych linii kodu w oknie konsoli używając skrótu klawiaturowego CTRL+ENTER (więcej przydatnych skrótów klawiaturowych można znaleźć w tabeli \ref{tab:rstudiosk}).
+Efektem wykonywania funkcji może być powstanie nowych obiektów, które można zobaczyć w oknie ``środowiska'' lub też wyświetlenie grafik, które można zobaczyć w oknie ``wykresu'' (rycina \ref{fig:rstudioimage}).
 
 Dobrą praktyką pracy z R w RStudio jest też używanie projektów RStudio (ang. \emph{RStudio projects}).
 Projekt jest to folder zawierający wszystkie skrypty i pozostałe pliki powiązane z jakimś zadaniem (np. analizą danych, czy stworzeniem nowego pakietu R).
@@ -796,12 +796,6 @@ Aby stworzyć pierwszy projekt RStudio, należy:
   Kliknąć \texttt{Create\ Project}.
 \end{enumerate}
 
-\begin{verbatim}
-#> Registered S3 method overwritten by 'rvest':
-#>   method            from
-#>   read_xml.response xml2
-\end{verbatim}
-
 \begin{table}[t]
 
 \caption{\label{tab:rstudiosk}Podstawowe skróty klawiaturowe w RStudio}
@@ -810,20 +804,25 @@ Aby stworzyć pierwszy projekt RStudio, należy:
 \toprule
 Skrót & Wyjaśnienie\\
 \midrule
-Ctrl+Enter & wykonuje wybraną linię kodu w skrypcie R\\
-Tab & uzupełnia kod (podaje pasujące możliwości)\\
-F1 & wyświetla plik pomocy dla wybranej funkcji\\
-Ctrl+Shift+C & ustawia wybrane linie jako komentarz/odkomentuj fragment kodu\\
-strzałka Góra/Dół (w oknie konsoli) & wybiera wcześniej wpisany kod\\
+Ctrl+Enter & Wykonuje wybraną linię kodu w skrypcie R\\
+Tab & Uzupełnia kod (podaje pasujące możliwości)\\
+F1 & Wyświetla plik pomocy dla wybranej funkcji\\
+Ctrl+Shift+C & Ustawia wybrane linie jako komentarz/odkomentuj fragment kodu\\
+strzałka Góra/Dół (w oknie konsoli) & Wybiera wcześniej wpisany kod\\
 \addlinespace
-Esc & przerywa niedokończoną operację\\
-Shift+Alt+K & wyświetla listę skrótów klawiaturowych\\
+Esc & Przerywa niedokończoną operację\\
+Shift+Alt+K & Wyświetla listę skrótów klawiaturowych\\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \hypertarget{styl}{%
 \section{Styl}\label{styl}}
+
+Języki programowania pozwalają na napisanie dokładnie tego samego kodu na wiele sposobów.
+Przykładowo \texttt{z1\ =\ x\ +\ 3} ma identyczne działanie jak \texttt{z1=x+3}.
+Styl pisania kodu obejmuje, między innymi, sposoby nazywania obiektów, stosowania odstępów czy wcięć, czy też pisania komentarzy.
+Przyjęcie wybranego stylu pozwala na ułatwienie czytania i zrozumienia kodu oraz zmniejszenie szans na powstawanie w nim błędów.
 
 Poniżej znajdują się podstawowe porady dotyczące stylu pisania kodu.
 Więcej wskazówek można znaleźć na w \href{https://style.tidyverse.org/}{poradniku stylu RStudio} oraz \href{https://google.github.io/styleguide/Rguide.xml}{poradniku stylu Google}.
@@ -6168,7 +6167,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.636   0.000   0.635}
+\CommentTok{#>   0.616   0.000   0.619}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6227,8 +6226,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile) 1.62us 1.84us   462767.     117KB}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 1.24us 1.35us   683376.     221KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile) 1.57us 1.74us   498290.     117KB}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 1.14us 1.26us   743041.     221KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
@@ -6271,14 +6270,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 476ms  488ms      2.05     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 801us  844us    964.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 452ms  463ms      2.16     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 782us  804us   1057.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 16.39 operacji na sekundę, przy aż 19.76 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 17.3 operacji na sekundę, przy aż 19.98 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \begin{verbatim}
@@ -6293,14 +6292,14 @@ Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) raz
 #> # A tibble: 8 x 7
 #>   expression       x      min   median `itr/sec`
 #>   <bch:expr>   <dbl> <bch:tm> <bch:tm>     <dbl>
-#> 1 mi_do_km1(l)    10   3.97us   4.55us 201287.  
-#> 2 mi_do_km2(l)    10   1.91us   2.11us 441027.  
-#> 3 mi_do_km1(l)   100  66.22us  72.64us  12938.  
-#> 4 mi_do_km2(l)   100   8.73us   9.49us  97452.  
-#> 5 mi_do_km1(l)  1000   4.25ms   4.58ms    218.  
-#> 6 mi_do_km2(l)  1000  77.74us  82.22us  11379.  
-#> 7 mi_do_km1(l) 10000 735.64ms 735.64ms      1.36
-#> 8 mi_do_km2(l) 10000 865.67us 914.84us    976.  
+#> 1 mi_do_km1(l)    10   3.91us   4.45us 208393.  
+#> 2 mi_do_km2(l)    10   1.79us   1.98us 464395.  
+#> 3 mi_do_km1(l)   100  65.71us  70.91us  13400.  
+#> 4 mi_do_km2(l)   100   8.53us   9.57us  96918.  
+#> 5 mi_do_km1(l)  1000   4.26ms   4.53ms    219.  
+#> 6 mi_do_km2(l)  1000  77.49us  81.12us  11874.  
+#> 7 mi_do_km1(l) 10000 520.21ms 520.21ms      1.92
+#> 8 mi_do_km2(l) 10000 786.13us 817.49us   1093.  
 #> # ... with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 \end{verbatim}

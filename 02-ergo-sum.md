@@ -190,8 +190,8 @@ Częstą analogią jest porównanie samochodowe, w którym R jest opisywany jak
 <p class="caption">(\#fig:rstudioimage)Okno RStudio z opisaną funkcjonalnością każdej z jego części.</p>
 </div>
 
-Typowa praca w RStudio często polega na wpisywaniu poleceń do pliku tekstowego widocznego w części skryptowej (Rycina \@ref(fig:rstudioimage)), a następnie wykonywaniu kolejnych linii kodu w oknie konsoli używając skrótu klawiaturowego CTRL+ENTER (więcej przydatnych skrótów klawiaturowych można znaleźć w tabeli \@ref(tab:rstudiosk)).
-Efektem wykonywania funkcji może być powstanie nowych obiektów, które można zobaczyć w oknie "środowiska" lub też wyświetlenie grafik, które można zobaczyć w oknie "wykresu".
+Typowa praca w RStudio często polega na wpisywaniu poleceń do pliku tekstowego widocznego w części skryptowej (rycina \@ref(fig:rstudioimage)), a następnie wykonywaniu kolejnych linii kodu w oknie konsoli używając skrótu klawiaturowego CTRL+ENTER (więcej przydatnych skrótów klawiaturowych można znaleźć w tabeli \@ref(tab:rstudiosk)).
+Efektem wykonywania funkcji może być powstanie nowych obiektów, które można zobaczyć w oknie "środowiska" lub też wyświetlenie grafik, które można zobaczyć w oknie "wykresu" (rycina \@ref(fig:rstudioimage)).
 
 Dobrą praktyką pracy z R w RStudio jest też używanie projektów RStudio (ang. *RStudio projects*).
 Projekt jest to folder zawierający wszystkie skrypty i pozostałe pliki powiązane z jakimś zadaniem (np. analizą danych, czy stworzeniem nowego pakietu R).
@@ -208,27 +208,24 @@ Aby stworzyć pierwszy projekt RStudio, należy:
 
 
 
-```
-#> Registered S3 method overwritten by 'rvest':
-#>   method            from
-#>   read_xml.response xml2
-```
-
-
-
 Table: (\#tab:rstudiosk)Podstawowe skróty klawiaturowe w RStudio
 
 Skrót                                 Wyjaśnienie                                                   
 ------------------------------------  --------------------------------------------------------------
-Ctrl+Enter                            wykonuje wybraną linię kodu w skrypcie R                      
-Tab                                   uzupełnia kod (podaje pasujące możliwości)                    
-F1                                    wyświetla plik pomocy dla wybranej funkcji                    
-Ctrl+Shift+C                          ustawia wybrane linie jako komentarz/odkomentuj fragment kodu 
-strzałka Góra/Dół (w oknie konsoli)   wybiera wcześniej wpisany kod                                 
-Esc                                   przerywa niedokończoną operację                               
-Shift+Alt+K                           wyświetla listę skrótów klawiaturowych                        
+Ctrl+Enter                            Wykonuje wybraną linię kodu w skrypcie R                      
+Tab                                   Uzupełnia kod (podaje pasujące możliwości)                    
+F1                                    Wyświetla plik pomocy dla wybranej funkcji                    
+Ctrl+Shift+C                          Ustawia wybrane linie jako komentarz/odkomentuj fragment kodu 
+strzałka Góra/Dół (w oknie konsoli)   Wybiera wcześniej wpisany kod                                 
+Esc                                   Przerywa niedokończoną operację                               
+Shift+Alt+K                           Wyświetla listę skrótów klawiaturowych                        
 
 ## Styl
+
+Języki programowania pozwalają na napisanie dokładnie tego samego kodu na wiele sposobów.
+Przykładowo `z1 = x + 3` ma identyczne działanie jak `z1=x+3`.
+Styl pisania kodu obejmuje, między innymi, sposoby nazywania obiektów, stosowania odstępów czy wcięć, czy też pisania komentarzy.
+Przyjęcie wybranego stylu pozwala na ułatwienie czytania i zrozumienia kodu oraz zmniejszenie szans na powstawanie w nim błędów.
 
 Poniżej znajdują się podstawowe porady dotyczące stylu pisania kodu. 
 Więcej wskazówek można znaleźć na w [poradniku stylu RStudio](https://style.tidyverse.org/) oraz [poradniku stylu Google](https://google.github.io/styleguide/Rguide.xml).
