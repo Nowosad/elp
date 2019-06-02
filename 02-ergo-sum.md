@@ -322,7 +322,7 @@ Do komentowania w języku R służy operator `#`.
 
 ### Nazwy plików
 
-Nazwy plików powinny spełniać trzy wymagania - być łatwe  (i) do odczytania przez komputer, (ii) do odczytania przez człowieka, (iii) do posortowania.
+Nazwy plików powinny spełniać trzy wymagania - być łatwe (i) do odczytania przez komputer, (ii) do odczytania przez człowieka, (iii) do posortowania.
 
 Nazwy plików nie powinny zawierać spacji, znaków specjalnych (np. !, %, *), znaków diakrytycznych (np. ć, Ł, ź).
 Warto też aby nazwy plików składały się tylko z małych liter.
@@ -473,6 +473,6 @@ Wylicz to w R.
 3) Masz trapez o długości podstaw `a = 5` i `b = 6` oraz wysokości `h = 3`.
 Stwórz nowy obiekt `pole_trapezu`, który zawiera obliczone pole tego trapezu.
 4) Wraz z grupą znajomych planujesz zamówić pizzę z dostawą i macie na to przeznaczonych 50 PLN. 
-Pizza o średnicy 30 cm kosztuje 23,5 PLN, a pizza o średniczy 50 cm kosztuje 50 PLN.
+Pizza o średnicy 30 cm kosztuje 23,5 PLN, a pizza o średnicy 50 cm kosztuje 50 PLN.
 Wylicz w R, czy bardziej opłaca się kupno dwóch małych pizz czy jednej dużej.
 <!--zadanie z poprawą stylu-->

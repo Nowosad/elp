@@ -88,7 +88,7 @@ b2 = b^2
 ```
 
 R pozwala na dwa podstawowe sposoby łączenia działania wielu funkcji^[Istnieje też szereg dodatkowych sposobów, wśród których najpopularniejszy polega na używaniu operatora `%>%` z pakietu **magrittr** [@R-magrittr].].
-Pierwszy z nich polega na tworzeniu pośrednich obiektow jako wyników działania pojedynczych funkcji.
+Pierwszy z nich polega na tworzeniu pośrednich obiektów jako wyników działania pojedynczych funkcji.
 
 
 ```r
@@ -98,7 +98,7 @@ przekatna
 #> [1] 6.4
 ```
 
-Drugi sposób opiera się o zagnieżdzanie funkcji. 
+Drugi sposób opiera się o zagnieżdżanie funkcji. 
 W tej sytuacji najpierw wykonywana jest funkcja w środku, na następnie kolejne funkcje coraz bliżej brzegu.
 
 
@@ -137,7 +137,7 @@ Przykładowo, `x` musi być obiektem R o typie numerycznym (który łączy typ 
 Jeżeli nie jesteśmy pewni jak dana funkcja działa warto zacząć od skopiowania przykładów a następnie ich wykonania.
 
 Czytanie dokumentacji wymaga pewnej wprawy i doświadczenia. 
-Nie bój się używać innych źródeł pomocy (zobacz sekcję \@ref(resources)), jeżli potrzebujesz zrozumieć działanie danej funkcji.
+Nie bój się używać innych źródeł pomocy (zobacz sekcję \@ref(resources)), jeżeli potrzebujesz zrozumieć działanie danej funkcji.
 
 ## Pakiety
 
@@ -218,7 +218,7 @@ Wówczas, aby kod został poprawnie wykonany, warto podać nie tylko nazwę funk
 
 ## Algorytmy
 
-Algorytm to zbiór kroków powadzących do uzyskania określonego celu.
+Algorytm to zbiór kroków prowadzących do uzyskania określonego celu.
 Algorytmy można porównać do przepisu kucharskiego, w którym opisany jest szereg czynności aby uzyskać konkretną potrawę.
 Podobnie jak w przepisie kucharskim, algorytmy wymagają posiadania odpowiednich składników - danych wejściowych w o pewnej strukturze.
 

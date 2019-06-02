@@ -1148,7 +1148,7 @@ Rozwiązując poniższe zadania oraz pozostałe zadania z tej książki staraj s
   Stwórz nowy obiekt \texttt{pole\_trapezu}, który zawiera obliczone pole tego trapezu.
 \item
   Wraz z grupą znajomych planujesz zamówić pizzę z dostawą i macie na to przeznaczonych 50 PLN.
-  Pizza o średnicy 30 cm kosztuje 23,5 PLN, a pizza o średniczy 50 cm kosztuje 50 PLN.
+  Pizza o średnicy 30 cm kosztuje 23,5 PLN, a pizza o średnicy 50 cm kosztuje 50 PLN.
   Wylicz w R, czy bardziej opłaca się kupno dwóch małych pizz czy jednej dużej.
 \end{enumerate}
 
@@ -1255,7 +1255,7 @@ Wykonywanie funkcji w R odbywa się linia po linii, od góry do dołu.
 \end{Shaded}
 
 R pozwala na dwa podstawowe sposoby łączenia działania wielu funkcji\footnote{Istnieje też szereg dodatkowych sposobów, wśród których najpopularniejszy polega na używaniu operatora \texttt{\%\textgreater{}\%} z pakietu \textbf{magrittr} \citep{R-magrittr}.}.
-Pierwszy z nich polega na tworzeniu pośrednich obiektow jako wyników działania pojedynczych funkcji.
+Pierwszy z nich polega na tworzeniu pośrednich obiektów jako wyników działania pojedynczych funkcji.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1266,7 +1266,7 @@ Pierwszy z nich polega na tworzeniu pośrednich obiektow jako wyników działani
 \end{Highlighting}
 \end{Shaded}
 
-Drugi sposób opiera się o zagnieżdzanie funkcji.
+Drugi sposób opiera się o zagnieżdżanie funkcji.
 W tej sytuacji najpierw wykonywana jest funkcja w środku, na następnie kolejne funkcje coraz bliżej brzegu.
 
 \begin{Shaded}
@@ -1317,7 +1317,7 @@ Dokumentacja każdej funkcji, zwana inaczej plikiem pomocy, ma zazwyczaj podobn�
 \end{itemize}
 
 Czytanie dokumentacji wymaga pewnej wprawy i doświadczenia.
-Nie bój się używać innych źródeł pomocy (zobacz sekcję \ref{resources}), jeżli potrzebujesz zrozumieć działanie danej funkcji.
+Nie bój się używać innych źródeł pomocy (zobacz sekcję \ref{resources}), jeżeli potrzebujesz zrozumieć działanie danej funkcji.
 
 \hypertarget{pakiety}{%
 \section{Pakiety}\label{pakiety}}
@@ -1410,7 +1410,7 @@ Wówczas, aby kod został poprawnie wykonany, warto podać nie tylko nazwę funk
 \hypertarget{algorytmy}{%
 \section{Algorytmy}\label{algorytmy}}
 
-Algorytm to zbiór kroków powadzących do uzyskania określonego celu.
+Algorytm to zbiór kroków prowadzących do uzyskania określonego celu.
 Algorytmy można porównać do przepisu kucharskiego, w którym opisany jest szereg czynności aby uzyskać konkretną potrawę.
 Podobnie jak w przepisie kucharskim, algorytmy wymagają posiadania odpowiednich składników - danych wejściowych w o pewnej strukturze.
 
@@ -6167,7 +6167,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.616   0.000   0.619}
+\CommentTok{#>   0.620   0.000   0.624}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6226,8 +6226,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile) 1.57us 1.74us   498290.     117KB}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 1.14us 1.26us   743041.     221KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile) 1.57us 1.73us   495654.     117KB}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 1.16us 1.27us   724014.     221KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
@@ -6270,14 +6270,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 452ms  463ms      2.16     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 782us  804us   1057.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 467ms  479ms      2.09     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 774us  802us   1057.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 17.3 operacji na sekundę, przy aż 19.98 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 16.69 operacji na sekundę, przy aż 19.99 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \begin{verbatim}
@@ -6292,14 +6292,14 @@ Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) raz
 #> # A tibble: 8 x 7
 #>   expression       x      min   median `itr/sec`
 #>   <bch:expr>   <dbl> <bch:tm> <bch:tm>     <dbl>
-#> 1 mi_do_km1(l)    10   3.91us   4.45us 208393.  
-#> 2 mi_do_km2(l)    10   1.79us   1.98us 464395.  
-#> 3 mi_do_km1(l)   100  65.71us  70.91us  13400.  
-#> 4 mi_do_km2(l)   100   8.53us   9.57us  96918.  
-#> 5 mi_do_km1(l)  1000   4.26ms   4.53ms    219.  
-#> 6 mi_do_km2(l)  1000  77.49us  81.12us  11874.  
-#> 7 mi_do_km1(l) 10000 520.21ms 520.21ms      1.92
-#> 8 mi_do_km2(l) 10000 786.13us 817.49us   1093.  
+#> 1 mi_do_km1(l)    10   3.94us   4.46us 204223.  
+#> 2 mi_do_km2(l)    10   1.79us   1.99us 462968.  
+#> 3 mi_do_km1(l)   100  66.39us  71.27us  13422.  
+#> 4 mi_do_km2(l)   100   8.49us   9.52us  95673.  
+#> 5 mi_do_km1(l)  1000   4.32ms   4.59ms    216.  
+#> 6 mi_do_km2(l)  1000  76.81us  81.17us  11751.  
+#> 7 mi_do_km1(l) 10000 526.92ms 526.92ms      1.90
+#> 8 mi_do_km2(l) 10000 788.05us 825.51us   1087.  
 #> # ... with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 \end{verbatim}
