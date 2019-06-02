@@ -18,13 +18,13 @@ Co w takim razie powoduje, że programowanie ma tak istotny wpływ na wiele elem
 
 Programowanie cechuje kilka unikatowych możliwości.
 Po pierwsze, programowanie i jego efekty można w prosty sposób powielać niemal w nieskończoność.
-Wcześniej stworzenie pewnego towaru opierało się o ograniczone zasoby, np. ziemia czy surowce naturalne.
+Wcześniej stworzenie pewnego towaru opierało się o ograniczone zasoby, takie jak surowce naturalne.
 Nie możliwe było wykucie zbroi raz, a następnie natychmiastowe powielenie jej wiele razy i sprzedanie jej wielu kopii.
 We współczesnym świecie, jedna aplikacja może być sprzedana (lub rozpowszechniona) wiele razy, a często większy nacisk kładzie się na rozbudowę i ulepszanie istniejących popularnych aplikacji niż tworzenie nowych^[Efektem tego jest też coraz większa popularność modeli subskrypcyjnych - https://en.wikipedia.org/wiki/Subscription_business_model.].
 Ułatwia to też budowę nowych rozwiązań na podstawie już istniejących^[https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants].
-Współcześnie programowanie pozwala na wykonywanie trylionów (10^18^) operacji arytmetycznych na sekundę^[Przecięty człowiek jest w stanie wykonać około pół operacji na sekundę - https://en.wikipedia.org/wiki/Computer_performance_by_orders_of_magnitude.].
+Współcześnie programowanie umożliwia wykonywanie trylionów (10^18^) operacji arytmetycznych na sekundę^[Przecięty człowiek jest w stanie wykonać około pół operacji na sekundę - https://en.wikipedia.org/wiki/Computer_performance_by_orders_of_magnitude.].
 Pozwala to na znaczne zwiększenie wydajności dostępnych rozwiązań<!--księgowość-->, otwiera możliwość praktycznego wykorzystania istniejących idei<!--modele klimatu-->, lub też tworzenia nowych pomysłów<!--internet,sztucznainteligencja-->.
-Inną cechą programowania jest też jego prosta możliwość automatyzacji powtarzanych czynnośći oraz ułatwiona powtarzalność (ang. *reproducibility*)
+Inną cechą programowania jest też jego prosta możliwość automatyzacji powtarzanych czynności oraz ułatwiona powtarzalność (ang. *reproducibility*).
 Posiadając kod źródłowy danego oprogramowania lub skrypt wykonujący analizę danych, możliwe jest odtworzenie tego wyniku przez inną osobę na drugim końcu świata<!--pod pewnymi warunkami-->, lub też przez siebie samego po paru miesiącach.
 <!--...-->
 Ostatnią cechą programowania jest jego uniwersalność.
@@ -39,7 +39,7 @@ W efekcie zrozumienie i znajomość języków programowania jest cenną umieję
 Programowanie komputerowe ma obecnie już długą historię<!--^[footnote o programowaniu niekomputerowym-https://en.wikipedia.org/wiki/History_of_programming_languages]--> - pierwszy język programowania Plankalkül powstał w latach 1943-1945^[https://en.wikipedia.org/wiki/Plankalk%C3%BCl].
 Fortran, stworzony w roku 1957, jest nadal używany współcześnie do wielu celów, między innymi wymagających dużej wydajności obliczeń hydrologicznych, prognozowania pogody czy modelowania klimatu.
 Programowanie ewoluowało i nadal ewoluuje wraz z rozwojem dostępności i możliwości komputerów.
-Pojawiły się nowe pradygmaty<!--^[wyjaśnij]--> programowania oraz wiele nowych języków.
+Pojawiły się nowe paradygmaty<!--^[wyjaśnij]--> programowania oraz wiele nowych języków.
 W tym samym czasie narosło również wiele mitów dotyczących programowania^[Zobacz porównanie oczekiwań i rzeczywistej pracy programisty na https://www.youtube.com/watch?v=HluANRwPyNo.].
 
 Jednym z mitów jest to, że programowanie polega tylko siedzeniu przed ekranem komputera i wpisywaniu do niego kolejnych linii kodu.
@@ -54,7 +54,7 @@ Innym aspektem programowania jest tworzenie dokumentacji.
 Dokumentacja jest też cenna dla twórców programu, szczególnie kiedy konieczne jest użycie czy modyfikacja programu kilka miesięcy po jego ostatnim użyciu.
 Programy komputerowe są też zazwyczaj w dużej sieci powiązań z już istniejącymi bibliotekami czy oprogramowaniem.
 Zmiana w tych bibliotekach czy oprogramowaniu może skutkować nie zawsze oczekiwanymi zmianami w stworzonym programie.
-Częścią programowania jest też utrzymywanie istniejącego kodu źródłowego oraz jego ulepszanie.
+Częścią programowania jest również utrzymywanie istniejącego kodu źródłowego oraz jego ulepszanie.
 Programiści do swojej pracy wykorzystują też odpowiednie wspierające ich narzędzia, takie jak edytory kodu źródłowego, debugery, zintegrowane środowiska programistyczne czy systemy kontroli wersji.
 
 Mitem również jest przekonanie, że programowanie to męskie zajęcie.
@@ -66,7 +66,7 @@ Jej algorytm do obliczenia liczb Bernoulliego nie został jednak przetestowany, 
 Ponad wiek później, gdy istniały już techniczne możliwości tworzenia komputerów, programowanie było uważane za kobiecy zawód^[https://www.history.com/news/coding-used-to-be-a-womans-job-so-it-was-paid-less-and-undervalued] (Rycina \@ref(fig:marghamil)).
 Z uwagi na szereg czynników społecznych i historycznych^[http://www.smbc-comics.com/?id=1883], w latach 1970 nastąpiło odwrócenie proporcji w tym zawodzie.
 Obecnie podejmowanych jest szereg inicjatyw, które mają na celu zachęcić kobiety do programowania.
-Wsród nich można wymienić działania organizacji [R-Ladies](https://rladies.org/), [PyLadies](https://www.pyladies.com/), czy [girls.js](https://girlsjs.pl/).
+Wśród nich można wymienić działania organizacji [R-Ladies](https://rladies.org/), [PyLadies](https://www.pyladies.com/), czy [girls.js](https://girlsjs.pl/).
 Mit programisty mężczyzny jest też powiązany z wymienionym kilka akapitów niżej mitem samotnego programisty.
 
 (ref:marghamil) Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które on i jej zespół stworzył na potrzeby misji Apollo. Źródło: https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg
@@ -102,7 +102,7 @@ Dodatkowo, podstawowe aspekty programowania są bardzo cenne w zawodach, w któr
 
 Kolejny mitem jest mit programisty geniusza.
 W tym micie programują tylko osoby, która ma nadludzką pamięć oraz wyróżniającą wiedzę matematyczną.
-Oczywiście, takie cechy przydają się w programowaniu, ale nie są one wymagane do programowania.
+Oczywiście, takie cechy przydają się w programowaniu, ale nie są one wymagane do niego wymagane.
 W programowaniu częściej od dobrej pamięci przydaje się umiejętność szybkiego znalezienia rozwiązania czy odpowiedzi na problem w internecie. 
 Programista nie musi znać na pamięć setek różnych poleceń i funkcji, ważne że umie je zidentyfikować.
 Natomiast zamiast głębokiej wiedzy matematycznej do większości zadań programistycznych wystarczy podstawowa znajomość algebry<!---->.
@@ -145,7 +145,7 @@ Jednym z nich jest sposób wykonywania kodu - to czy kod w danym języku jest ko
 Kompilacja kodu (np. C czy Java) polega na jego tłumaczeniu do postaci języka maszynowego.
 W efekcie zapewnia to wysoką wydajność programu, ale za to kod jest ściśle powiązany z daną platformą sprzętową.
 Programowanie w językach kompilowanych jest zazwyczaj bardziej złożone i trudniejsze w nich jest odnajdywanie błędów (tzw. debugging).
-Interpretowane języki programowania, często również nazywane językami skryptowymi, (np. R czy Python) charakteryzuje to,
+Interpretowane języki programowania (np. R czy Python), często również nazywane językami skryptowymi,  charakteryzuje to,
 że w momencie uruchomienia kod jest zamieniany na postać zrozumiałą dla komputera i od razu wykonywany.
 W efekcie można szybko zobaczyć efekt zmian. 
 Wadą tego typu języków jest ich zmniejszona wydajność w porównany do języków kompilowanych.
@@ -206,7 +206,7 @@ W sekcji \@ref(resources) można znaleźć listę różnorodnych materiałów, k
 Istnieje także wiele wprowadzających materiałów do nauki innych języków.
 Przykładowo, osoby zainteresowane nauką Pythona mogą skorzystać z istniejących książek (@gries2017practical oraz @guzdial2016introduction), czy też kursów [Software Carpentry](http://swcarpentry.github.io/python-novice-inflammation/) oraz [Python Course](https://www.python-course.eu/python3_course.php). 
 W pracy programistycznej przydaje się również często znajomość linii komend.
-Tutaj również można użyć materiałów z kursu [Software Carpentry](https://swcarpentry.github.io/shell-novice/) lub książki [The Unix Workbench ](https://seankross.com/the-unix-workbench/) [@krossUnixWorkbench2017].
+Tutaj również można użyć materiałów z kursu [Software Carpentry](https://swcarpentry.github.io/shell-novice/) lub książki [The Unix Workbench](https://seankross.com/the-unix-workbench/) [@krossUnixWorkbench2017].
 
 <!-- https://rstudio.cloud/learn/primers -->
 <!-- http://jarekj.home.amu.edu.pl/?page_id=36 -->
