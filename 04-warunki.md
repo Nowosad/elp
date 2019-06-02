@@ -11,6 +11,7 @@ Celem wyrażeń warunkowych jest wykonywanie różnego zadania w zależności od
 
 Wyrażenie `if` opiera się o spełnienie (lub niespełnienie) danego warunku.
 Jeżeli dany warunek jest spełniony, kod wewnątrz wyrażenia `if()` jest wykonywany.
+W przeciwnym razie cały blok kodu jest pomijany.
 
 
 ```r
@@ -23,7 +24,7 @@ Wyrażenie `if` oczekuje, że warunek jest wektorem logicznym o długości jeden
 Istnieje szereg sposób uzyskania wektora logicznego w R, jednym z nich jest zastosowanie porównania wartości.
 
 W poniższym przykładzie wyrażenie `if()` sprawdza czy wartość obiektu `temperatura` jest wyższa niż 0.
-W przypadku, gdy ten warunek jest spełniony (czyli jest `TRUE`), wyświetlany jest tekst `"Dodatnia"`.
+W przypadku, gdy ten warunek jest spełniony (czyli przyjmuje `TRUE`), wyświetlany jest tekst `"Dodatnia"`.
 
 
 ```r
@@ -48,7 +49,7 @@ if (temperatura > 0) {
 
 `if (warunek) spelniony else niespelniony`</div>\EndKnitrBlock{rmdinfo}
 
-## Warunki zagnieżdzone
+## Warunki zagnieżdżone
 
 Działanie wyrażenia `if` może być połączone z dodatkowymi wyrażeniami `else if` oraz `else`.
 Te dwa wyrażenia wymagają najpierw wywołania wyrażenia `if()`. 
@@ -87,9 +88,9 @@ Operator   Wyjaśnienie
 >, <       Większy/Mniejszy niż           
 >=, <=     Większy/Mniejszy niż lub równy 
 
-Wyrażenie `if()` oczekuje wektora logiczego o długości jeden. 
+Wyrażenie `if()` oczekuje wektora logicznego o długości jeden. 
 Często jednak efektem porównania może być wektor o większej długości.
-Przykładowo, porównanie operatorem `==` daje w wyniku wektor o długości trzy, a porówanie z użyciem `%in%` skutkuje wektorem o długości jeden.
+Przykładowo, porównanie operatorem `==` daje w wyniku wektor o długości trzy, a porównanie z użyciem `%in%` skutkuje wektorem o długości jeden.
 
 
 ```r
@@ -190,7 +191,7 @@ pogoda("nie wiem")
 #> Dzisiaj nie mamy pomiarów temperatury.
 ```
 
-Wyrażenia warunkowe można też wielokrotnie zagnieżdzać wewnątrz zdefiniowanej funkcji.
+Wyrażenia warunkowe można też wielokrotnie zagnieżdżać wewnątrz zdefiniowanej funkcji.
 
 
 ```r
@@ -246,4 +247,4 @@ Jeżeli tylko jedna lub trzy ze zmiennych ma wartość `TRUE` wyświetl tekst `"
 4) Napisz funkcję, która przyjmuje dwie zmienne numeryczne `x` i `y`.
 Jeżeli wszystkie wartości zmiennej `x` są większe od `y` wyświetl tekst `"Zwycięstwo."`, a w przeciwnym razie wyświetl tekst `"Porażka."`.
 5) Napisz funkcję, która przyjmuje dwie zmienne numeryczne `populacja` i `powierzchnia`.
-Jeżeli wartości gęstości zaludnienia (liczba osób na jednostkę powierchni) jest wyższa niż 123 wyświetl tekst `"Wartość powyżej średniej dla Polski."`.
+Jeżeli wartości gęstości zaludnienia (liczba osób na jednostkę powierzchni) jest wyższa niż 123 wyświetl tekst `"Wartość powyżej średniej dla Polski."`.

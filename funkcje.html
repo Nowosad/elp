@@ -174,7 +174,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a><ul>
 <li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
-<li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagniezdzone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdzone</a></li>
+<li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagniezdzone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdżone</a></li>
 <li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porownania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
 <li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wwwf"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach</a></li>
 <li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zadania-3"><i class="fa fa-check"></i><b>4.5</b> Zadania</a></li>
@@ -493,34 +493,34 @@ Kolejnym krokiem jest zapisanie tego algorytmu w wybranym języku lub językach 
 <!--kodowanie tekstu-->
 <p>Skrypt w R to plik testowy z rozszerzeniem <code>.R</code>, który zawiera szereg linii kodu w celu uzyskania konkretnego efektu.
 Może on zawierać zaledwie kilka jak i setki linii kodu w zależności od złożoności postawionego problemu.
-Zobaczmy jak wyglądają skrypty na prostym przykładzie - przeliczania wartości ze skali Fahrenheita na skalę Celsjusza.
+Zobaczmy jak wyglądają skrypty na prostym przykładzie - przeliczania wartości temperatury w stopniach ze skali Fahrenheita na skalę Celsjusza.
 Otrzymaliśmy informację, że w “mieście A” temperatura w stopniach Fahrenheita wynosi 75.</p>
-<pre class="sourceCode r"><code class="sourceCode r">miasto_a =<span class="st"> </span><span class="dv">75</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">miasto_a_f =<span class="st"> </span><span class="dv">75</span></code></pre>
 <p>Pierwszym naszym krokiem powinno być dowiedzenie się jaka jest relacja pomiędzy skalą Fahrenheita na skalą Celsjusza.</p>
 <p><span class="math display">\[T_{Celsjusz} = \frac{T_{Fahrenheit} - 32}{1.8}\]</span></p>
 <p>Następnie powyższy wzór można przepisać do postaci kodu w języku R oraz podstawić do niego wartość temperatury w stopniach Fahrenheita w mieście A.
 Ostatnim etapem jest wyświetlenie uzyskanego wyniku - temperatura w mieście A wynosi ok. 24 stopnie Celsjusza.</p>
-<pre class="sourceCode r"><code class="sourceCode r">miasto_a_c =<span class="st"> </span>(miasto_a <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span>
+<pre class="sourceCode r"><code class="sourceCode r">miasto_a_c =<span class="st"> </span>(miasto_a_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span>
 miasto_a_c
 <span class="co">#&gt; [1] 23.9</span></code></pre>
 <p>Powyższe kroki można również zapisać do pliku tekstowego.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># plik przeliczanie-temp.R</span>
-miasto_a =<span class="st"> </span><span class="dv">75</span>
-miasto_a_c =<span class="st"> </span>(miasto_a <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span>
+miasto_a_f =<span class="st"> </span><span class="dv">75</span>
+miasto_a_c =<span class="st"> </span>(miasto_a_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span>
 miasto_a_c</code></pre>
 <p>Co można zrobić jeżeli mamy więcej podobnych pomiarów, które chcemy wykonać?
 Najprostszą opcją jest użycie kopiuj/wklej i powielenie tego samego kodu, a później naniesienie małych zmian, np. nazw obiektów.
 <!-- ^[o wekrtoryzacji] -->
 <!-- or use data.frame? --></p>
-<pre class="sourceCode r"><code class="sourceCode r">miasto_a =<span class="st"> </span><span class="dv">75</span>
-miasto_b =<span class="st"> </span><span class="dv">110</span>
-miasto_c =<span class="st"> </span><span class="dv">0</span>
-miasto_a_c =<span class="st"> </span>(miasto_a <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span>
-miasto_b_c =<span class="st"> </span>(miasto_b <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span>
-miasto_c_c =<span class="st"> </span>(miasto_c <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">miasto_a_f =<span class="st"> </span><span class="dv">75</span>
+miasto_b_f =<span class="st"> </span><span class="dv">110</span>
+miasto_c_f =<span class="st"> </span><span class="dv">0</span>
+miasto_a_c =<span class="st"> </span>(miasto_a_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span>
+miasto_b_c =<span class="st"> </span>(miasto_b_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span>
+miasto_c_c =<span class="st"> </span>(miasto_c_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></code></pre>
 <p>Powyższe podejście jest poprawne, ale ma ono kilka wad:</p>
 <ul>
-<li>Łatwo jest o popełnie jakiegoś prostego błędu lub literówki podczas adaptacji kodu (np. można zapomnieć zmienić nazwę jakiejś zmiennej).</li>
+<li>Łatwo jest o popełnienie jakiegoś prostego błędu lub literówki podczas adaptacji kodu (np. można zapomnieć zmienić nazwę jakiejś zmiennej).</li>
 <li>Jeżeli obliczenia zajmują więcej niż kilka linii kodu - wówczas kopiowanie go znacznie powiększa tworzony skrypt i utrudnia jego czytelność.</li>
 <li>Poprawienie kodu w przypadku zauważenia błędu w procedurze obliczeniowej jest czasochłonne.</li>
 </ul>
@@ -584,7 +584,7 @@ Trzy podstawowe z nich to:</p>
 <li>Ostrzeżenia (ang. <em>warnings</em>)</li>
 <li>Wiadomości (ang. <em>messages</em>)</li>
 </ol>
-<p>Błedy oznaczają, że wykonanie danej funkcji nie może być kontynuowane i przerwane jest jej działanie.
+<p>Błędy oznaczają, że wykonanie danej funkcji nie może być kontynuowane i przerwane jest jej działanie.
 Przykładowo, w poniższym kodzie podjęta została próba wyliczenia logarytmu naturalnego z tekstu <code>&quot;abecadło&quot;</code>.
 Takie obliczenie nie jest możliwe, w efekcie pojawił się komunikat błędu a kod nie został wykonany.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(<span class="st">&quot;abecadło&quot;</span>)
@@ -612,9 +612,9 @@ Co przedstawiają uzyskane wyniki?</li>
 <li>Zainstaluj pakiet <strong>magrittr</strong>.
 Spróbuj użyć operatora <code>%&gt;%</code> z tego pakietu na przykładzie z sekcji <a href="funkcje.html#kolejnosc-funkcji">3.3</a> dotyczącym wyliczania przekątnej prostokąta.</li>
 <li>Stwórz nowy plik skryptu R nazywający się <code>01_zadania-funkcje.R</code>.
-W tym pliku, stwórz nowy obiekt <code>poznan</code>, który przyjmuje wartość <code>8.4</code>, napisz przeliczenie wartości tego obiektu ze stopnii Celsjusza na stopnie Fahrenheita, a następnie wyświetl uzyskany wynik.
+W tym pliku, stwórz nowy obiekt <code>poznan</code>, który przyjmuje wartość <code>8.4</code>, napisz przeliczenie wartości tego obiektu ze stopni Celsjusza na stopnie Fahrenheita, a następnie wyświetl uzyskany wynik.
 Uwaga: pamiętaj o ustawieniu odpowiedniego kodowania znaków dla tego nowego pliku.</li>
-<li>Stwórz nową funkcję, która służy do przeliczania wartości ze stopnii Celsjusza na stopnie Fahrenheita.
+<li>Stwórz nową funkcję, która służy do przeliczania wartości ze stopni Celsjusza na stopnie Fahrenheita.
 Jak nazwiesz taką funkcję?</li>
 <li>Stwórz nową funkcję, która służy do przeliczania wartości z mil lądowych na kilometry.
 Jak nazwiesz taką funkcję?</li>
@@ -658,7 +658,7 @@ v =<span class="st"> </span><span class="dv">7</span></code></pre>
 <ol start="22">
 <li id="fn22"><p>Istnieje też szereg dodatkowych sposobów, wśród których najpopularniejszy polega na używaniu operatora <code>%&gt;%</code> z pakietu <strong>magrittr</strong> <span class="citation">(Bache and Wickham <a href="#ref-R-magrittr">2014</a>)</span>.<a href="funkcje.html#fnref22" class="footnote-back">↩</a></p></li>
 <li id="fn23"><p>Niektóre zbiory danych również posiadają swoje pliki pomocy.<a href="funkcje.html#fnref23" class="footnote-back">↩</a></p></li>
-<li id="fn24"><p><span class="citation">Wickham and Grolemund (<a href="#ref-wickham2016r">2016</a>)</span> radzą tworzyć nowe funkcje, gdy ten sam kod potwarza się co najmniej trzy razy.<a href="funkcje.html#fnref24" class="footnote-back">↩</a></p></li>
+<li id="fn24"><p><span class="citation">Wickham and Grolemund (<a href="#ref-wickham2016r">2016</a>)</span> radzą tworzyć nowe funkcje, gdy ten sam kod powtarza się co najmniej trzy razy.<a href="funkcje.html#fnref24" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

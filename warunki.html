@@ -174,7 +174,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a><ul>
 <li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
-<li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagniezdzone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdzone</a></li>
+<li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagniezdzone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdżone</a></li>
 <li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porownania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
 <li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wwwf"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach</a></li>
 <li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zadania-3"><i class="fa fa-check"></i><b>4.5</b> Zadania</a></li>
@@ -343,14 +343,15 @@ Celem wyrażeń warunkowych jest wykonywanie różnego zadania w zależności od
 <div id="warunki-1" class="section level2">
 <h2><span class="header-section-number">4.1</span> Warunki</h2>
 <p>Wyrażenie <code>if</code> opiera się o spełnienie (lub niespełnienie) danego warunku.
-Jeżeli dany warunek jest spełniony, kod wewnątrz wyrażenia <code>if()</code> jest wykonywany.</p>
+Jeżeli dany warunek jest spełniony, kod wewnątrz wyrażenia <code>if()</code> jest wykonywany.
+W przeciwnym razie cały blok kodu jest pomijany.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="cf">if</span> (warunek){
   jeżeli warunek spełniony to wykonaj operację
 }</code></pre>
 <p>Wyrażenie <code>if</code> oczekuje, że warunek jest wektorem logicznym o długości jeden, tj. takim który przyjmuje wartość <code>TRUE</code> lub <code>FALSE</code>.
 Istnieje szereg sposób uzyskania wektora logicznego w R, jednym z nich jest zastosowanie porównania wartości.</p>
 <p>W poniższym przykładzie wyrażenie <code>if()</code> sprawdza czy wartość obiektu <code>temperatura</code> jest wyższa niż 0.
-W przypadku, gdy ten warunek jest spełniony (czyli jest <code>TRUE</code>), wyświetlany jest tekst <code>&quot;Dodatnia&quot;</code>.</p>
+W przypadku, gdy ten warunek jest spełniony (czyli przyjmuje <code>TRUE</code>), wyświetlany jest tekst <code>&quot;Dodatnia&quot;</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">temperatura =<span class="st"> </span><span class="fl">5.4</span>
 <span class="cf">if</span> (temperatura <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {
   <span class="st">&quot;Dodatnia&quot;</span>
@@ -369,7 +370,7 @@ W przypadku, gdy ten warunek jest spełniony (czyli jest <code>TRUE</code>), wy�
 
 </div>
 <div id="warunki-zagniezdzone" class="section level2">
-<h2><span class="header-section-number">4.2</span> Warunki zagnieżdzone</h2>
+<h2><span class="header-section-number">4.2</span> Warunki zagnieżdżone</h2>
 <p>Działanie wyrażenia <code>if</code> może być połączone z dodatkowymi wyrażeniami <code>else if</code> oraz <code>else</code>.
 Te dwa wyrażenia wymagają najpierw wywołania wyrażenia <code>if()</code>.
 Jeżeli warunek w wyrażeniu <code>if()</code> jest równy <code>TRUE</code> to wykonywany jest kod w nim zawarty, a następnie obliczenie jest kończone.
@@ -421,9 +422,9 @@ Ich celem jest sprawdzanie pewnego warunku i zwrócenie wartości <code>TRUE</co
 </tr>
 </tbody>
 </table>
-<p>Wyrażenie <code>if()</code> oczekuje wektora logiczego o długości jeden.
+<p>Wyrażenie <code>if()</code> oczekuje wektora logicznego o długości jeden.
 Często jednak efektem porównania może być wektor o większej długości.
-Przykładowo, porównanie operatorem <code>==</code> daje w wyniku wektor o długości trzy, a porówanie z użyciem <code>%in%</code> skutkuje wektorem o długości jeden.</p>
+Przykładowo, porównanie operatorem <code>==</code> daje w wyniku wektor o długości trzy, a porównanie z użyciem <code>%in%</code> skutkuje wektorem o długości jeden.</p>
 <pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="dv">1</span>
 y =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)
 x <span class="op">==</span><span class="st"> </span>y
@@ -519,7 +520,7 @@ W tym przypadku, warto dodać wyrażenie <code>else</code>, którego efektem jes
 <span class="co">#&gt; Dzisiaj jest -20 stopni Celsjusza.</span>
 <span class="kw">pogoda</span>(<span class="st">&quot;nie wiem&quot;</span>)
 <span class="co">#&gt; Dzisiaj nie mamy pomiarów temperatury.</span></code></pre>
-<p>Wyrażenia warunkowe można też wielokrotnie zagnieżdzać wewnątrz zdefiniowanej funkcji.</p>
+<p>Wyrażenia warunkowe można też wielokrotnie zagnieżdżać wewnątrz zdefiniowanej funkcji.</p>
 <pre class="sourceCode r"><code class="sourceCode r">pogoda =<span class="st"> </span><span class="cf">function</span>(temperatura){
   <span class="cf">if</span> (<span class="kw">is.numeric</span>(temperatura)){
     <span class="kw">cat</span>(<span class="kw">paste</span>(<span class="st">&quot;Dzisiaj jest&quot;</span>, temperatura, <span class="st">&quot;stopni Celsjusza.</span><span class="ch">\n</span><span class="st">&quot;</span>))
@@ -565,7 +566,7 @@ Jeżeli tylko jedna lub trzy ze zmiennych ma wartość <code>TRUE</code> wyświe
 <li>Napisz funkcję, która przyjmuje dwie zmienne numeryczne <code>x</code> i <code>y</code>.
 Jeżeli wszystkie wartości zmiennej <code>x</code> są większe od <code>y</code> wyświetl tekst <code>&quot;Zwycięstwo.&quot;</code>, a w przeciwnym razie wyświetl tekst <code>&quot;Porażka.&quot;</code>.</li>
 <li>Napisz funkcję, która przyjmuje dwie zmienne numeryczne <code>populacja</code> i <code>powierzchnia</code>.
-Jeżeli wartości gęstości zaludnienia (liczba osób na jednostkę powierchni) jest wyższa niż 123 wyświetl tekst <code>&quot;Wartość powyżej średniej dla Polski.&quot;</code>.</li>
+Jeżeli wartości gęstości zaludnienia (liczba osób na jednostkę powierzchni) jest wyższa niż 123 wyświetl tekst <code>&quot;Wartość powyżej średniej dla Polski.&quot;</code>.</li>
 </ol>
 
 </div>

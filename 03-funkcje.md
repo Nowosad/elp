@@ -230,12 +230,12 @@ Kolejnym krokiem jest zapisanie tego algorytmu w wybranym języku lub językach 
 <!--kodowanie tekstu-->
 Skrypt w R to plik testowy z rozszerzeniem `.R`, który zawiera szereg linii kodu w celu uzyskania konkretnego efektu.
 Może on zawierać zaledwie kilka jak i setki linii kodu w zależności od złożoności postawionego problemu.
-Zobaczmy jak wyglądają skrypty na prostym przykładzie - przeliczania wartości ze skali Fahrenheita na skalę Celsjusza.
+Zobaczmy jak wyglądają skrypty na prostym przykładzie - przeliczania wartości temperatury w stopniach ze skali Fahrenheita na skalę Celsjusza.
 Otrzymaliśmy informację, że w "mieście A" temperatura w stopniach Fahrenheita wynosi 75.
 
 
 ```r
-miasto_a = 75
+miasto_a_f = 75
 ```
 
 Pierwszym naszym krokiem powinno być dowiedzenie się jaka jest relacja pomiędzy skalą Fahrenheita na skalą Celsjusza.
@@ -247,7 +247,7 @@ Ostatnim etapem jest wyświetlenie uzyskanego wyniku - temperatura w mieście A 
 
 
 ```r
-miasto_a_c = (miasto_a - 32) / 1.8
+miasto_a_c = (miasto_a_f - 32) / 1.8
 miasto_a_c
 #> [1] 23.9
 ```
@@ -257,8 +257,8 @@ Powyższe kroki można również zapisać do pliku tekstowego.
 
 ```r
 # plik przeliczanie-temp.R
-miasto_a = 75
-miasto_a_c = (miasto_a - 32) / 1.8
+miasto_a_f = 75
+miasto_a_c = (miasto_a_f - 32) / 1.8
 miasto_a_c
 ```
 
@@ -269,22 +269,22 @@ Najprostszą opcją jest użycie kopiuj/wklej i powielenie tego samego kodu, a p
 
 
 ```r
-miasto_a = 75
-miasto_b = 110
-miasto_c = 0
-miasto_a_c = (miasto_a - 32) / 1.8
-miasto_b_c = (miasto_b - 32) / 1.8
-miasto_c_c = (miasto_c - 32) / 1.8
+miasto_a_f = 75
+miasto_b_f = 110
+miasto_c_f = 0
+miasto_a_c = (miasto_a_f - 32) / 1.8
+miasto_b_c = (miasto_b_f - 32) / 1.8
+miasto_c_c = (miasto_c_f - 32) / 1.8
 ```
 
 Powyższe podejście jest poprawne, ale ma ono kilka wad:
 
-* Łatwo jest o popełnie jakiegoś prostego błędu lub literówki podczas adaptacji kodu (np. można zapomnieć zmienić nazwę jakiejś zmiennej).
+* Łatwo jest o popełnienie jakiegoś prostego błędu lub literówki podczas adaptacji kodu (np. można zapomnieć zmienić nazwę jakiejś zmiennej).
 * Jeżeli obliczenia zajmują więcej niż kilka linii kodu - wówczas kopiowanie go znacznie powiększa tworzony skrypt i utrudnia jego czytelność.
 * Poprawienie kodu w przypadku zauważenia błędu w procedurze obliczeniowej jest czasochłonne.
 
 To podejście jest też niezgodne z jedną z najważniejszych reguł w programowaniu - regułą DRY (Nie powtarzaj się, ang. *Don't Repeat Yourself*).
-Zamiast tworzenia skryptu w oparciu o kopiuj/wklej lepiej pomyśleć nad zbudowaniem odpowiedniej funkcji^[@wickham2016r radzą tworzyć nowe funkcje, gdy ten sam kod potwarza się co najmniej trzy razy.].
+Zamiast tworzenia skryptu w oparciu o kopiuj/wklej lepiej pomyśleć nad zbudowaniem odpowiedniej funkcji^[@wickham2016r radzą tworzyć nowe funkcje, gdy ten sam kod powtarza się co najmniej trzy razy.].
 
 ## Budowanie funkcji
 
@@ -373,7 +373,7 @@ Trzy podstawowe z nich to:
 2. Ostrzeżenia (ang. *warnings*)
 3. Wiadomości (ang. *messages*) 
 
-Błedy oznaczają, że wykonanie danej funkcji nie może być kontynuowane i przerwane jest jej działanie.
+Błędy oznaczają, że wykonanie danej funkcji nie może być kontynuowane i przerwane jest jej działanie.
 Przykładowo, w poniższym kodzie podjęta została próba wyliczenia logarytmu naturalnego z tekstu `"abecadło"`.
 Takie obliczenie nie jest możliwe, w efekcie pojawił się komunikat błędu a kod nie został wykonany.
 
@@ -417,9 +417,9 @@ Co przedstawiają uzyskane wyniki?
 2) Zainstaluj pakiet **magrittr**. 
 Spróbuj użyć operatora `%>%` z tego pakietu na przykładzie z sekcji \@ref(kolejnosc-funkcji) dotyczącym wyliczania przekątnej prostokąta.
 3) Stwórz nowy plik skryptu R nazywający się `01_zadania-funkcje.R`.
-W tym pliku, stwórz nowy obiekt `poznan`, który przyjmuje wartość `8.4`, napisz przeliczenie wartości tego obiektu ze stopnii Celsjusza na stopnie Fahrenheita, a następnie wyświetl uzyskany wynik.
+W tym pliku, stwórz nowy obiekt `poznan`, który przyjmuje wartość `8.4`, napisz przeliczenie wartości tego obiektu ze stopni Celsjusza na stopnie Fahrenheita, a następnie wyświetl uzyskany wynik.
 Uwaga: pamiętaj o ustawieniu odpowiedniego kodowania znaków dla tego nowego pliku.
-4) Stwórz nową funkcję, która służy do przeliczania wartości ze stopnii Celsjusza na stopnie Fahrenheita.
+4) Stwórz nową funkcję, która służy do przeliczania wartości ze stopni Celsjusza na stopnie Fahrenheita.
 Jak nazwiesz taką funkcję?
 5) Stwórz nową funkcję, która służy do przeliczania wartości z mil lądowych na kilometry.
 Jak nazwiesz taką funkcję?

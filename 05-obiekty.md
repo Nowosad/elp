@@ -198,7 +198,7 @@ a3 * b3
 ```
 
 Jak można szybko zaobserwować, mnożenie kolejnych elementów w ten sposób wymaga zapisania znacznie więcej kodu i jest trudniejsze do odczytania.
-Jest jeszcze trzecia możliwość użycie pętli (rozdział \@ref(petle)).
+Jest jeszcze trzecia możliwość -- użycie pętli (rozdział \@ref(petle)).
 
 
 ```r
@@ -210,7 +210,7 @@ y
 #> [1]  3 10 30
 ```
 
-Stworzony kod zajmuje mniej miejsca, ale nadal nie jest on bardzo łatwy do szybkiego zrozumienia.
+Stworzony tak kod zajmuje mniej miejsca, ale nadal nie jest on bardzo łatwy do szybkiego zrozumienia.
 
 Wektoryzacja ma też inną zaletę - obliczenia wykonywane w ten sposób są szybkie.
 W przypadku stosowania niektórych operacji, np. mnożenia czy dodawania, R wykorzystuje w tle (bez wiedzy użytkownika) zoptymalizowane funkcje zapisane w języku C lub Fortran.
@@ -265,8 +265,6 @@ Przykładowo, jeżeli nie znamy jakiejś wartości to jeżeli dodamy do niej 2 t
 ```r
 NA + 2
 #> [1] NA
-5 > NA
-#> [1] NA
 ```
 
 Podobnie będzie w sytuacji, gdy chcemy wyliczyć średnią na podstawie wektora, który zawiera wartość `NA`.
@@ -299,7 +297,7 @@ is.na(temperatura)
 `NULL` ma długość zero i nie posiada żadnych atrybutów. 
 Może on posłużyć np. do usuwania kolumn w ramkach danych.
 `NaN` (ang. *Not a Number*) oznacza wartość, która nie jest zdefiniowaną lub nie może być reprezentowana w inny sposób, przykładowo `0/0`.
-`Inf` i `-Inf` (ang. *Infinity*) jest wynikiem obliczeń, które dały bardzo dużą wartość dodatną lub ujemną, przykładowo `9^999`.</div>\EndKnitrBlock{rmdinfo}
+`Inf` i `-Inf` (ang. *Infinity*) jest wynikiem obliczeń, które dały bardzo dużą wartość dodatnią lub ujemną, przykładowo `9^999`.</div>\EndKnitrBlock{rmdinfo}
 
 ## Wydzielanie 
 
@@ -532,7 +530,7 @@ czynn
 ```
 
 Wektory czynnikowe są wewnętrznie w R reprezentowane jako wartości stałoprzecinkowe.
-Dodatkowo, posiadają one pewne informacje zaszyte w atrybutach, w tym wartości wszystkich kategorii oraz stwierdzenie posiadanej klasy [^Posiadanie attubutu `class` zamienia je w tak zwane obiekty S3, które zachowują się inaczej niż normalne wektory atomowe.].
+Dodatkowo, posiadają one pewne informacje zaszyte w atrybutach, w tym wartości wszystkich kategorii oraz stwierdzenie posiadanej klasy [^Posiadanie atrybutu `class` zamienia je w tak zwane obiekty S3, które zachowują się inaczej niż normalne wektory atomowe.].
 
 
 ```r
@@ -568,7 +566,7 @@ dzis
 #> [1] "2019-06-02"
 ```
 
-Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowia), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.
+Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowy), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.
 
 
 ```r

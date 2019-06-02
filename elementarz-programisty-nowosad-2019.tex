@@ -1422,12 +1422,12 @@ Kolejnym krokiem jest zapisanie tego algorytmu w wybranym języku lub językach 
 
 Skrypt w R to plik testowy z rozszerzeniem \texttt{.R}, który zawiera szereg linii kodu w celu uzyskania konkretnego efektu.
 Może on zawierać zaledwie kilka jak i setki linii kodu w zależności od złożoności postawionego problemu.
-Zobaczmy jak wyglądają skrypty na prostym przykładzie - przeliczania wartości ze skali Fahrenheita na skalę Celsjusza.
+Zobaczmy jak wyglądają skrypty na prostym przykładzie - przeliczania wartości temperatury w stopniach ze skali Fahrenheita na skalę Celsjusza.
 Otrzymaliśmy informację, że w ``mieście A'' temperatura w stopniach Fahrenheita wynosi 75.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{miasto_a =}\StringTok{ }\DecValTok{75}
+\NormalTok{miasto_a_f =}\StringTok{ }\DecValTok{75}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1440,7 +1440,7 @@ Ostatnim etapem jest wyświetlenie uzyskanego wyniku - temperatura w mieście A 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{miasto_a_c =}\StringTok{ }\NormalTok{(miasto_a }\OperatorTok{-}\StringTok{ }\DecValTok{32}\NormalTok{) }\OperatorTok{/}\StringTok{ }\FloatTok{1.8}
+\NormalTok{miasto_a_c =}\StringTok{ }\NormalTok{(miasto_a_f }\OperatorTok{-}\StringTok{ }\DecValTok{32}\NormalTok{) }\OperatorTok{/}\StringTok{ }\FloatTok{1.8}
 \NormalTok{miasto_a_c}
 \CommentTok{#> [1] 23.9}
 \end{Highlighting}
@@ -1451,8 +1451,8 @@ Powyższe kroki można również zapisać do pliku tekstowego.
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# plik przeliczanie-temp.R}
-\NormalTok{miasto_a =}\StringTok{ }\DecValTok{75}
-\NormalTok{miasto_a_c =}\StringTok{ }\NormalTok{(miasto_a }\OperatorTok{-}\StringTok{ }\DecValTok{32}\NormalTok{) }\OperatorTok{/}\StringTok{ }\FloatTok{1.8}
+\NormalTok{miasto_a_f =}\StringTok{ }\DecValTok{75}
+\NormalTok{miasto_a_c =}\StringTok{ }\NormalTok{(miasto_a_f }\OperatorTok{-}\StringTok{ }\DecValTok{32}\NormalTok{) }\OperatorTok{/}\StringTok{ }\FloatTok{1.8}
 \NormalTok{miasto_a_c}
 \end{Highlighting}
 \end{Shaded}
@@ -1462,12 +1462,12 @@ Najprostszą opcją jest użycie kopiuj/wklej i powielenie tego samego kodu, a p
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{miasto_a =}\StringTok{ }\DecValTok{75}
-\NormalTok{miasto_b =}\StringTok{ }\DecValTok{110}
-\NormalTok{miasto_c =}\StringTok{ }\DecValTok{0}
-\NormalTok{miasto_a_c =}\StringTok{ }\NormalTok{(miasto_a }\OperatorTok{-}\StringTok{ }\DecValTok{32}\NormalTok{) }\OperatorTok{/}\StringTok{ }\FloatTok{1.8}
-\NormalTok{miasto_b_c =}\StringTok{ }\NormalTok{(miasto_b }\OperatorTok{-}\StringTok{ }\DecValTok{32}\NormalTok{) }\OperatorTok{/}\StringTok{ }\FloatTok{1.8}
-\NormalTok{miasto_c_c =}\StringTok{ }\NormalTok{(miasto_c }\OperatorTok{-}\StringTok{ }\DecValTok{32}\NormalTok{) }\OperatorTok{/}\StringTok{ }\FloatTok{1.8}
+\NormalTok{miasto_a_f =}\StringTok{ }\DecValTok{75}
+\NormalTok{miasto_b_f =}\StringTok{ }\DecValTok{110}
+\NormalTok{miasto_c_f =}\StringTok{ }\DecValTok{0}
+\NormalTok{miasto_a_c =}\StringTok{ }\NormalTok{(miasto_a_f }\OperatorTok{-}\StringTok{ }\DecValTok{32}\NormalTok{) }\OperatorTok{/}\StringTok{ }\FloatTok{1.8}
+\NormalTok{miasto_b_c =}\StringTok{ }\NormalTok{(miasto_b_f }\OperatorTok{-}\StringTok{ }\DecValTok{32}\NormalTok{) }\OperatorTok{/}\StringTok{ }\FloatTok{1.8}
+\NormalTok{miasto_c_c =}\StringTok{ }\NormalTok{(miasto_c_f }\OperatorTok{-}\StringTok{ }\DecValTok{32}\NormalTok{) }\OperatorTok{/}\StringTok{ }\FloatTok{1.8}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1476,7 +1476,7 @@ Powyższe podejście jest poprawne, ale ma ono kilka wad:
 \begin{itemize}
 \tightlist
 \item
-  Łatwo jest o popełnie jakiegoś prostego błędu lub literówki podczas adaptacji kodu (np. można zapomnieć zmienić nazwę jakiejś zmiennej).
+  Łatwo jest o popełnienie jakiegoś prostego błędu lub literówki podczas adaptacji kodu (np. można zapomnieć zmienić nazwę jakiejś zmiennej).
 \item
   Jeżeli obliczenia zajmują więcej niż kilka linii kodu - wówczas kopiowanie go znacznie powiększa tworzony skrypt i utrudnia jego czytelność.
 \item
@@ -1484,7 +1484,7 @@ Powyższe podejście jest poprawne, ale ma ono kilka wad:
 \end{itemize}
 
 To podejście jest też niezgodne z jedną z najważniejszych reguł w programowaniu - regułą DRY (Nie powtarzaj się, ang. \emph{Don't Repeat Yourself}).
-Zamiast tworzenia skryptu w oparciu o kopiuj/wklej lepiej pomyśleć nad zbudowaniem odpowiedniej funkcji\footnote{\citet{wickham2016r} radzą tworzyć nowe funkcje, gdy ten sam kod potwarza się~co najmniej trzy razy.}.
+Zamiast tworzenia skryptu w oparciu o kopiuj/wklej lepiej pomyśleć nad zbudowaniem odpowiedniej funkcji\footnote{\citet{wickham2016r} radzą tworzyć nowe funkcje, gdy ten sam kod powtarza się~co najmniej trzy razy.}.
 
 \hypertarget{budowanie-funkcji}{%
 \section{Budowanie funkcji}\label{budowanie-funkcji}}
@@ -1587,7 +1587,7 @@ Trzy podstawowe z nich to:
   Wiadomości (ang. \emph{messages})
 \end{enumerate}
 
-Błedy oznaczają, że wykonanie danej funkcji nie może być kontynuowane i przerwane jest jej działanie.
+Błędy oznaczają, że wykonanie danej funkcji nie może być kontynuowane i przerwane jest jej działanie.
 Przykładowo, w poniższym kodzie podjęta została próba wyliczenia logarytmu naturalnego z tekstu \texttt{"abecadło"}.
 Takie obliczenie nie jest możliwe, w efekcie pojawił się~komunikat błędu a kod nie został wykonany.
 
@@ -1638,10 +1638,10 @@ Opis tworzenia komunikatów błędu, ostrzeżenia i wiadomości można znaleźć
   Spróbuj użyć operatora \texttt{\%\textgreater{}\%} z tego pakietu na przykładzie z sekcji \ref{kolejnosc-funkcji} dotyczącym wyliczania przekątnej prostokąta.
 \item
   Stwórz nowy plik skryptu R nazywający się \texttt{01\_zadania-funkcje.R}.
-  W tym pliku, stwórz nowy obiekt \texttt{poznan}, który przyjmuje wartość~\texttt{8.4}, napisz przeliczenie wartości tego obiektu ze stopnii Celsjusza na stopnie Fahrenheita, a następnie wyświetl uzyskany wynik.
+  W tym pliku, stwórz nowy obiekt \texttt{poznan}, który przyjmuje wartość~\texttt{8.4}, napisz przeliczenie wartości tego obiektu ze stopni Celsjusza na stopnie Fahrenheita, a następnie wyświetl uzyskany wynik.
   Uwaga: pamiętaj o ustawieniu odpowiedniego kodowania znaków dla tego nowego pliku.
 \item
-  Stwórz nową funkcję, która służy do przeliczania wartości ze stopnii Celsjusza na stopnie Fahrenheita.
+  Stwórz nową funkcję, która służy do przeliczania wartości ze stopni Celsjusza na stopnie Fahrenheita.
   Jak nazwiesz taką funkcję?
 \item
   Stwórz nową funkcję, która służy do przeliczania wartości z mil lądowych na kilometry.
@@ -1741,6 +1741,7 @@ Celem wyrażeń warunkowych jest wykonywanie różnego zadania w zależności od
 
 Wyrażenie \texttt{if} opiera się o spełnienie (lub niespełnienie) danego warunku.
 Jeżeli dany warunek jest spełniony, kod wewnątrz wyrażenia \texttt{if()} jest wykonywany.
+W przeciwnym razie cały blok kodu jest pomijany.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1754,7 +1755,7 @@ Wyrażenie \texttt{if} oczekuje, że warunek jest wektorem logicznym o długośc
 Istnieje szereg sposób uzyskania wektora logicznego w R, jednym z nich jest zastosowanie porównania wartości.
 
 W poniższym przykładzie wyrażenie \texttt{if()} sprawdza czy wartość~obiektu \texttt{temperatura} jest wyższa niż 0.
-W przypadku, gdy ten warunek jest spełniony (czyli jest \texttt{TRUE}), wyświetlany jest tekst \texttt{"Dodatnia"}.
+W przypadku, gdy ten warunek jest spełniony (czyli przyjmuje \texttt{TRUE}), wyświetlany jest tekst \texttt{"Dodatnia"}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1784,7 +1785,7 @@ Warunek \texttt{if} można też tworzyć w uproszczonej formie:
 \EndKnitrBlock{rmdinfo}
 
 \hypertarget{warunki-zagniezdzone}{%
-\section{Warunki zagnieżdzone}\label{warunki-zagniezdzone}}
+\section{Warunki zagnieżdżone}\label{warunki-zagniezdzone}}
 
 Działanie wyrażenia \texttt{if} może być połączone z dodatkowymi wyrażeniami \texttt{else\ if} oraz \texttt{else}.
 Te dwa wyrażenia wymagają najpierw wywołania wyrażenia \texttt{if()}.
@@ -1831,9 +1832,9 @@ Operator & Wyjaśnienie\\
 \end{tabular}
 \end{table}
 
-Wyrażenie \texttt{if()} oczekuje wektora logiczego o długości jeden.
+Wyrażenie \texttt{if()} oczekuje wektora logicznego o długości jeden.
 Często jednak efektem porównania może być wektor o większej długości.
-Przykładowo, porównanie operatorem \texttt{==} daje w wyniku wektor o długości trzy, a porówanie z użyciem \texttt{\%in\%} skutkuje wektorem o długości jeden.
+Przykładowo, porównanie operatorem \texttt{==} daje w wyniku wektor o długości trzy, a porównanie z użyciem \texttt{\%in\%} skutkuje wektorem o długości jeden.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1948,7 +1949,7 @@ W tym przypadku, warto dodać wyrażenie \texttt{else}, którego efektem jest ko
 \end{Highlighting}
 \end{Shaded}
 
-Wyrażenia warunkowe można też wielokrotnie zagnieżdzać wewnątrz zdefiniowanej funkcji.
+Wyrażenia warunkowe można też wielokrotnie zagnieżdżać wewnątrz zdefiniowanej funkcji.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2026,7 +2027,7 @@ Przykładowo, powyżej komunikat \texttt{"Ubierz\ się\ ciepło!"} jest wyświet
   Jeżeli wszystkie wartości zmiennej \texttt{x} są większe od \texttt{y} wyświetl tekst \texttt{"Zwycięstwo."}, a w przeciwnym razie wyświetl tekst \texttt{"Porażka."}.
 \item
   Napisz funkcję, która przyjmuje dwie zmienne numeryczne \texttt{populacja} i \texttt{powierzchnia}.
-  Jeżeli wartości gęstości zaludnienia (liczba osób na jednostkę powierchni) jest wyższa niż 123 wyświetl tekst \texttt{"Wartość\ powyżej\ średniej\ dla\ Polski."}.
+  Jeżeli wartości gęstości zaludnienia (liczba osób na jednostkę powierzchni) jest wyższa niż 123 wyświetl tekst \texttt{"Wartość\ powyżej\ średniej\ dla\ Polski."}.
 \end{enumerate}
 
 \hypertarget{proste-obiekty}{%
@@ -2273,7 +2274,7 @@ Alternatywnie można by ten problem rozbić na podelementy i je wymnożyć.
 \end{Shaded}
 
 Jak można szybko zaobserwować, mnożenie kolejnych elementów w ten sposób wymaga zapisania znacznie więcej kodu i jest trudniejsze do odczytania.
-Jest jeszcze trzecia możliwość użycie pętli (rozdział \ref{petle}).
+Jest jeszcze trzecia możliwość -- użycie pętli (rozdział \ref{petle}).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2286,7 +2287,7 @@ Jest jeszcze trzecia możliwość użycie pętli (rozdział \ref{petle}).
 \end{Highlighting}
 \end{Shaded}
 
-Stworzony kod zajmuje mniej miejsca, ale nadal nie jest on bardzo łatwy do szybkiego zrozumienia.
+Stworzony tak kod zajmuje mniej miejsca, ale nadal nie jest on bardzo łatwy do szybkiego zrozumienia.
 
 Wektoryzacja ma też~inną zaletę - obliczenia wykonywane w ten sposób są szybkie.
 W przypadku stosowania niektórych operacji, np. mnożenia czy dodawania, R wykorzystuje w tle (bez wiedzy użytkownika) zoptymalizowane funkcje zapisane w języku C lub Fortran.
@@ -2346,8 +2347,6 @@ Przykładowo, jeżeli nie znamy jakiejś wartości to jeżeli dodamy do niej 2 t
 \begin{Highlighting}[]
 \OtherTok{NA} \OperatorTok{+}\StringTok{ }\DecValTok{2}
 \CommentTok{#> [1] NA}
-\DecValTok{5} \OperatorTok{>}\StringTok{ }\OtherTok{NA}
-\CommentTok{#> [1] NA}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2385,7 +2384,7 @@ R posiada też kilka dodatkowych specjalnych obiektów, takich jak \texttt{NULL}
 \texttt{NULL} ma długość zero i nie posiada żadnych atrybutów.
 Może on posłużyć np. do usuwania kolumn w ramkach danych.
 \texttt{NaN} (ang. \emph{Not a Number}) oznacza wartość, która nie jest zdefiniowaną lub nie może być reprezentowana w inny sposób, przykładowo \texttt{0/0}.
-\texttt{Inf} i \texttt{-Inf} (ang. \emph{Infinity}) jest wynikiem obliczeń, które dały bardzo dużą wartość dodatną lub ujemną, przykładowo \texttt{9\^{}999}.
+\texttt{Inf} i \texttt{-Inf} (ang. \emph{Infinity}) jest wynikiem obliczeń, które dały bardzo dużą wartość dodatnią lub ujemną, przykładowo \texttt{9\^{}999}.
 \EndKnitrBlock{rmdinfo}
 
 \hypertarget{wydzielanie}{%
@@ -2646,7 +2645,7 @@ Zamiana wektora tekstowego na czynnikowy odbywa się z użyciem funkcji \texttt{
 \end{Shaded}
 
 Wektory czynnikowe są wewnętrznie w R reprezentowane jako wartości stałoprzecinkowe.
-Dodatkowo, posiadają one pewne informacje zaszyte w atrybutach, w tym wartości wszystkich kategorii oraz stwierdzenie posiadanej klasy {[}\^{}Posiadanie attubutu \texttt{class} zamienia je w tak zwane obiekty S3, które zachowują się inaczej niż normalne wektory atomowe.{]}.
+Dodatkowo, posiadają one pewne informacje zaszyte w atrybutach, w tym wartości wszystkich kategorii oraz stwierdzenie posiadanej klasy {[}\^{}Posiadanie atrybutu \texttt{class} zamienia je w tak zwane obiekty S3, które zachowują się inaczej niż normalne wektory atomowe.{]}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2686,7 +2685,7 @@ R ma wbudowaną reprezentację dat w postaci klasy \texttt{Date}.
 \end{Highlighting}
 \end{Shaded}
 
-Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowia), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.
+Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowy), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6167,7 +6166,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.620   0.000   0.624}
+\CommentTok{#>   0.616   0.000   0.614}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6226,8 +6225,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile) 1.57us 1.73us   495654.     117KB}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 1.16us 1.27us   724014.     221KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile) 1.52us 1.75us   486845.     117KB}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 1.14us 1.26us   728368.     221KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
@@ -6270,14 +6269,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 467ms  479ms      2.09     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 774us  802us   1057.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 479ms  488ms      2.05     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 786us  818us   1013.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 16.69 operacji na sekundę, przy aż 19.99 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 16.4 operacji na sekundę, przy aż 19.99 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \begin{verbatim}
@@ -6292,14 +6291,14 @@ Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) raz
 #> # A tibble: 8 x 7
 #>   expression       x      min   median `itr/sec`
 #>   <bch:expr>   <dbl> <bch:tm> <bch:tm>     <dbl>
-#> 1 mi_do_km1(l)    10   3.94us   4.46us 204223.  
-#> 2 mi_do_km2(l)    10   1.79us   1.99us 462968.  
-#> 3 mi_do_km1(l)   100  66.39us  71.27us  13422.  
-#> 4 mi_do_km2(l)   100   8.49us   9.52us  95673.  
-#> 5 mi_do_km1(l)  1000   4.32ms   4.59ms    216.  
-#> 6 mi_do_km2(l)  1000  76.81us  81.17us  11751.  
-#> 7 mi_do_km1(l) 10000 526.92ms 526.92ms      1.90
-#> 8 mi_do_km2(l) 10000 788.05us 825.51us   1087.  
+#> 1 mi_do_km1(l)    10   3.95us   4.66us 197282.  
+#> 2 mi_do_km2(l)    10   1.78us   2.01us 470518.  
+#> 3 mi_do_km1(l)   100  67.05us  73.58us  12843.  
+#> 4 mi_do_km2(l)   100   8.47us   9.43us  99560.  
+#> 5 mi_do_km1(l)  1000    4.3ms   4.73ms    209.  
+#> 6 mi_do_km2(l)  1000  76.89us   83.1us  11497.  
+#> 7 mi_do_km1(l) 10000 573.41ms 573.41ms      1.74
+#> 8 mi_do_km2(l) 10000 891.05us 960.01us    908.  
 #> # ... with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 \end{verbatim}
