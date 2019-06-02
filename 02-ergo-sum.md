@@ -171,7 +171,7 @@ z9
 <!-- Floating-point arithmetic is a feature of computer programming.  -->
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Operatory użyte w tym rozdziale, np. `+`, `*`, `^`, `%%` to też są funkcje, ale zapisane w skrótowej formie ułatwiającej z nimi pracę.
-Te operatory można też użyć jako normalne funkcje poprzez dodanie znaku zwanego grawisem - "\\`", np. `2 + 2` można też zapisać jako `\\`+\\`(2, 2)`.
+Te operatory można też użyć jako normalne funkcje poprzez dodanie znaku zwanego grawisem - "`` ` ``", np. `2 + 2` można też zapisać jako ``` `+`(2, 2)```.
 </div>\EndKnitrBlock{rmdinfo}
 
 ## IDE
