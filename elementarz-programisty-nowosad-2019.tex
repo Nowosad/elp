@@ -201,7 +201,7 @@
 \providecommand{\subtitle}[1]{}
 \subtitle{Wstęp do programowania używając R}
 \author{Jakub Nowosad}
-\date{2019-06-01}
+\date{2019-06-02}
 
 \let\BeginKnitrBlock\begin \let\EndKnitrBlock\end
 \begin{document}
@@ -232,17 +232,17 @@ Więcej informacji \url{http://nowosad.github.io/elp/} \\
 \addcontentsline{toc}{chapter}{O książce}
 
 \textbf{Elementarz programisty: Wstęp do programowania używając R} ma na celu wprowadzenie do podstaw działania w języku R.
-W pierszej części, ``Podstawy'', opisuje ona w jaki sposób wykonywać proste operacje w R, czym są obiekty oraz jak tworzyć funkcje, które je przetwarzają.
+W pierwszej części, ``Podstawy'', opisuje ona w jaki sposób wykonywać proste operacje w R, czym są obiekty oraz jak tworzyć funkcje, które je przetwarzają.
 Ta część zawiera także omówienie podstawowych narzędzi pozwalających na sterowanie przepływem informacji, takich jak wyrażenia warunkowe i pętle, metod działania na tekście, oraz sposobów wczytywania i zapisywania plików w różnych formatach.
 Druga część, ``Narzędzia'', buduje na wiedzy zdobytej w części pierwszej i rozszerza ją.
 Zawiera ona informacje na temat tworzenia funkcji przyjaznych użytkownikom oraz to w jaki sposób tworzyć odpowiednie komunikaty błędów, ostrzeżeń czy wiadomości.
 W tej części następuje też prezentacja metod analizy kodu, takich jak testy jednostkowe, benchmarking i profiling.
-Oprócz informacji ściśle powiązanych z R, \textbf{Elementarz programisty} ma także rozdział poświęcony systemom kontroli wersji - uniweralnym narzędziom używanym przez programistów różnych języków.
-Część ``Narzędzia'' kończy rozdział integrujący wiedzę z całej książki w postaci omówienia kolejnych kroków dotyczących tworzenia pakiektów R.
+Oprócz informacji ściśle powiązanych z R, \textbf{Elementarz programisty} ma także rozdział poświęcony systemom kontroli wersji - uniwersalnym narzędziom używanym przez programistów różnych języków.
+Część ``Narzędzia'' kończy rozdział integrujący wiedzę z całej książki w postaci omówienia kolejnych kroków dotyczących tworzenia pakietów R.
 \textbf{Elementarz programisty} zawiera też szereg praktycznych porad oraz wiele odnośników do dodatkowych materiałów, takich jak książki, blogi, kursy, czy strony internetowe.
 Wszystkie rozdziały w tej książce dodatkowo zawierają zadania, które pozwalają na sprawdzenie i utrwalenie wiedzy.
-Ksiązka ta jest przeznaczona zarówno dla osób bez znajomości języków programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R.
-Wiedza uzyskana poprzez używanie tej książki daje podstawy do wykorzystywania R do różnorodnych celów, od analizy danych i opracowań statystyczych, poprzez tworzenie wykresów i wizualizacji, kończąc na aplikacjach specyficznych dla danej dziedziny.
+Książka ta jest przeznaczona zarówno dla osób bez znajomości języków programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R.
+Wiedza uzyskana poprzez używanie tej książki daje podstawy do wykorzystywania R do różnorodnych celów, od analizy danych i opracowań statystycznych, poprzez tworzenie wykresów i wizualizacji, kończąc na aplikacjach specyficznych dla danej dziedziny.
 
 Aktualna wersja książki znajduje się pod adresem \url{https://nowosad.github.io/elp/}.
 Jeżeli używasz tej książki, zacytuj ją jako:
@@ -264,11 +264,11 @@ Ta książka jest dostępna na licencji Creative Commons Uznanie autorstwa - Uż
 Do odtworzenia przykładów oraz do wykonania zadań zawartych w tej książce konieczne jest posiadanie aktualnej wersji \textbf{R}.
 Pod adresem \url{https://cloud.r-project.org/} można znaleźć~instrukcje instalacji R dla systemów Windows, Mac OS i Linux.
 
-W niektórych rodziałach użyte zostanie zintegrowane środowisko programistyczne \textbf{RStudio}.
+W niektórych rozdziałach użyte zostanie zintegrowane środowisko programistyczne \textbf{RStudio}.
 Można je zainstalować korzystając ze strony \url{https://www.rstudio.com/products/rstudio/download/\#download}.
 
 Aspekty dotyczące kontroli wersji zostaną omówione używając oprogramowania \textbf{Git}.
-Zalecanym sposobem installacji Git na Windows jest wersja ze strony \url{https://gitforwindows.org/}.
+Zalecanym sposobem instalacji Git na Windows jest wersja ze strony \url{https://gitforwindows.org/}.
 Instrukcja instalacji na system Mac OS znajduje się~pod adresem \url{https://happygitwithr.com/install-git.html\#macos}.
 Wersję Linuxową można zainstalować używając poniższej linii kodu:
 
@@ -2683,7 +2683,7 @@ R ma wbudowaną reprezentację dat w postaci klasy \texttt{Date}.
 \begin{Highlighting}[]
 \NormalTok{dzis =}\StringTok{ }\KeywordTok{Sys.Date}\NormalTok{()}
 \NormalTok{dzis}
-\CommentTok{#> [1] "2019-06-01"}
+\CommentTok{#> [1] "2019-06-02"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2706,11 +2706,11 @@ Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji \texttt{unclass(
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{unclass}\NormalTok{(dzis)}
-\CommentTok{#> [1] 18048}
+\CommentTok{#> [1] 18049}
 \end{Highlighting}
 \end{Shaded}
 
-Wynik, 18048, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
+Wynik, 18049, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
 
 \begin{Shaded}
@@ -6168,7 +6168,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>    0.62    0.00    0.62}
+\CommentTok{#>   0.640   0.000   0.637}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6225,10 +6225,10 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \NormalTok{)}
 \NormalTok{wynik_}\DecValTok{1}
 \CommentTok{#> # A tibble: 2 x 6}
-\CommentTok{#>   expression            min median `itr/sec` mem_alloc}
-\CommentTok{#>   <bch:expr>          <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile) 1.5us 1.68us   501937.     117KB}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 1.1us 1.22us   766274.     221KB}
+\CommentTok{#>   expression             min median `itr/sec` mem_alloc}
+\CommentTok{#>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>}
+\CommentTok{#> 1 mi_do_km1(odl_mile)  1.6us 1.83us   448283.     117KB}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 1.19us 1.33us   666610.     221KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
@@ -6271,14 +6271,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 464ms  467ms      2.14     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 776us  799us   1051.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 500ms  500ms      2.00     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 783us  828us   1013.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 17.12 operacji na sekundę, przy aż 19.97 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 15.99 operacji na sekundę, przy aż 19.99 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \begin{verbatim}
@@ -6293,14 +6293,14 @@ Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) raz
 #> # A tibble: 8 x 7
 #>   expression       x      min   median `itr/sec`
 #>   <bch:expr>   <dbl> <bch:tm> <bch:tm>     <dbl>
-#> 1 mi_do_km1(l)    10   3.88us   4.38us 211229.  
-#> 2 mi_do_km2(l)    10   1.76us   1.97us 474622.  
-#> 3 mi_do_km1(l)   100  66.19us  70.56us  13513.  
-#> 4 mi_do_km2(l)   100   8.45us   9.45us  97481.  
-#> 5 mi_do_km1(l)  1000   4.28ms   4.54ms    216.  
-#> 6 mi_do_km2(l)  1000   76.9us  80.67us  11910.  
-#> 7 mi_do_km1(l) 10000 532.98ms 532.98ms      1.88
-#> 8 mi_do_km2(l) 10000 782.52us 821.74us   1078.  
+#> 1 mi_do_km1(l)    10      4us   4.63us 187795.  
+#> 2 mi_do_km2(l)    10   1.83us   2.04us 442574.  
+#> 3 mi_do_km1(l)   100  66.12us  72.71us  12522.  
+#> 4 mi_do_km2(l)   100   8.49us   9.22us 101216.  
+#> 5 mi_do_km1(l)  1000   4.33ms    4.5ms    218.  
+#> 6 mi_do_km2(l)  1000  76.97us  82.52us  11262.  
+#> 7 mi_do_km1(l) 10000 612.58ms 612.58ms      1.63
+#> 8 mi_do_km2(l) 10000 793.66us 822.87us   1085.  
 #> # ... with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 \end{verbatim}
