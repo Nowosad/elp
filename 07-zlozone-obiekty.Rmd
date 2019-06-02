@@ -11,7 +11,7 @@ Macierze są używane do różnorodnych obliczeń matematycznych i statystyczny
 W uproszczeniu można o nich myśleć jako o reprezentacji komputerowej zdjęcia lub mapy.
 
 ```{block2 type="rmdinfo"}
-W R istnieją też wielowiarowe obiekty podobne do macierzy zwane matrycami (ang. *array*).
+W R istnieją też wielowymiarowe obiekty podobne do macierzy zwane matrycami (ang. *array*).
 ```
 
 ### Tworzenie
@@ -53,7 +53,7 @@ typeof(macierz2)
 ```
 
 Wektory atomowe mają tylko jeden wymiar więc ich długość oznacza liczbę elementów i może być sprawdzona używając funkcji `length()`.
-W przypadku macierzy możliwe jest dodatowo sprawdzenie liczby występujących wierszy (`nrow`) i kolumn (`ncol`).
+W przypadku macierzy możliwe jest dodatkowo sprawdzenie liczby występujących wierszy (`nrow`) i kolumn (`ncol`).
 
 ```{r}
 nrow(macierz2)
@@ -103,7 +103,7 @@ macierz2[, c(1, 3)]
 ```
 
 Wszystkie pozostałe sposoby wydzielania opisane dla wektorów w sekcji \@ref(wydzielanie) działają również na macierzach.
-Możeliwe jest więc używanie wektora logicznego czy nazw kolumn.
+Możliwe jest więc używanie wektora logicznego czy nazw kolumn.
 
 ```{r}
 macierz2[, c(TRUE, FALSE, TRUE)]
@@ -116,14 +116,14 @@ macierz2[, c("a", "c")]
 W przypadku macierzy występują jednak dwa wymiary - możliwe jest połączenie macierzy wierszami lub kolumnami.
 W efekcie istnieją do tego dwie oddzielne funkcje `rbind()` i `cbind()`.
 
-Pierwsza z nich łączy macierze wierszami.
+Pierwsza z nich łączy macierze wierszami, a liczba kolumn pozostaje niezmieniona.
 
 ```{r}
 macierz3 = rbind(macierz1, macierz2)
 macierz3
 ```
 
-Druga dokleja obiekty kolumnami.
+Druga dokleja obiekty kolumnami bez zmiany liczby wierszy.
 
 ```{r}
 macierz4 = cbind(macierz1, macierz2)
@@ -138,7 +138,7 @@ W przypadku, gdy chcemy połączyć kilka wektorów różnych typów działają 
 
 Ramki danych (ang. *data frame*) mają dużo podobieństw z macierzami. 
 Są to obiekty dwuwymiarowe, składające się z kolumn i wierszy. 
-Główną różnicą pomiędzy macierzą a ramką danych jest to, że pierwsza z nich przyjmuje tylko dane jednego typu, podczas gdy druga może się składać z danych róznych typów.
+Główną różnicą pomiędzy macierzą a ramką danych jest to, że pierwsza z nich przyjmuje tylko dane jednego typu, podczas gdy druga może się składać z danych rożnych typów.
 
 Ramka danych jest zbudowana z kolumn (wektorów) o równej długości.
 <!-- a data frame is a list of equal-length vectors -->
@@ -161,8 +161,8 @@ ramka1
 
 W powyższym przykładzie, `ramka1` składa się z czterech kolumn o długości trzy. 
 Każda z tych kolumn ma inny typ - logiczny, liczby całkowitej, liczby zmiennoprzecinkowej oraz znakowy.
-Domyślnie funkcja `data.frame` wykonuje jeszcze jedną operację w tle - zamienia ona wszystkie dane o type znakowym na typ czynnikowy (sekcja \@ref(fac)).
-W większości przypadków nie jest to porządane działanie - dlatego też warto wyłączyć tę konwersję używając argumentu `stringsAsFactors = FALSE`.
+Domyślnie funkcja `data.frame` wykonuje jeszcze jedną operację w tle - zamienia ona wszystkie dane o typie znakowym na typ czynnikowy (sekcja \@ref(fac)).
+W większości przypadków nie jest to pożądane działanie - dlatego też warto wyłączyć tę konwersję używając argumentu `stringsAsFactors = FALSE`.
 
 ```{block2 type="rmdinfo"}
 Obiekty klasy ramka danych są też zazwyczaj wynikiem wczytywania zewnętrznych plików do R, np. w formacie `.csv` czy `.xlsx`.
@@ -177,7 +177,7 @@ Oficjalnie klasa ramki danych jest określana jako `data.frame`.
 class(ramka1)
 ```
 
-Sprawdzenie struktury ramki danych pozwala na szybkie poznanie kilku róznych cech wejściowego obiektu.
+Sprawdzenie struktury ramki danych pozwala na szybkie poznanie kilku rożnych cech wejściowego obiektu.
 Pierwszą informacją jest klasa obiektu (`data.frame`), liczba wierszy (`3 obs.` - trzy obserwacje) i liczba kolumn (`4 variables` - cztery zmienne).
 Następnie, dla kolejnych kolumn są określane ich nazwy, typy danych oraz przykładowe wartości.
 
@@ -219,7 +219,7 @@ ramka1$zmi
 ramka1$zna
 ```
 
-W efekcie otrzymywany jest jednak inna klasa - w powyższych przykładzach są to wektory.
+W efekcie otrzymywany jest jednak inna klasa - w powyższych przykładach są to wektory.
 
 W przypadku ramek danych operator `[]` wymaga podania dwóch argumentów - jednego dla wierszy (obserwacji) oraz jednego dla kolumn (zmiennych) - `[wiersze, kolumny]`.
 
@@ -310,7 +310,7 @@ lista1
 
 Przykładowa powyższa lista składa się z czterech elementów, o długości jeden, dwa lub trzy,  i o różnorodnych typach danych.
 
-Inną ważną właściwością list jest możliwość ich zagnieżdzania - jedna lista może przechowywać kolejną, która jest w stanie przechowywać następną... Z tego powodu listy są czasami nazywane wektorami rekurencyjnymi.
+Inną ważną właściwością list jest możliwość ich zagnieżdżania - jedna lista może przechowywać kolejną, która jest w stanie przechowywać następną... Z tego powodu listy są czasami nazywane wektorami rekurencyjnymi.
 
 ```{r}
 zlozona_lista1 = list(list(list(lista1)))
@@ -319,7 +319,7 @@ str(zlozona_lista1)
 
 ### Podstawowe funkcje
 
-Listy są przedstawane jako klasa `list`.
+Listy są przedstawiane jako klasa `list`.
 
 ```{r}
 class(lista1)
@@ -337,7 +337,7 @@ Listy nie zawierają wierszy czy kolumn, dlatego do sprawdzenia liczby elementó
 length(lista1)
 ```
 
-Kolejne elementy znajdujące się w liście mogą przyjmować wbrane nazwy.
+Kolejne elementy znajdujące się w liście mogą przyjmować wybrane nazwy.
 Można je sprawdzić czy zmienić używając funkcji `names()`.
 
 ```{r}
@@ -348,7 +348,7 @@ names(lista1)
 
 ### Łączenie
 
-Łączenie list może odbywać się na dwa postawowe sposoby.
+Łączenie list może odbywać się na dwa podstawowe sposoby.
 W pierwszym, używając funkcji `c()` następuje dołączenie elementów jednej listy do drugiej.
 
 ```{r}
@@ -412,8 +412,8 @@ lista1$zna
 
 ## Zmiany klas
 
-R ma też szereg pomocnicznych służących do zmian istniejących klas. 
-Te funcje rozpoczynają się od `as.` a następnie zawierają nazwę klasy do której chcemy przetworzyć wejściowy obiekt, np. `as.vector()`, `as.matrix()`, `as.data.frame()`, `as.list()`.
+R ma też szereg pomocniczych służących do zmian istniejących klas. 
+Te funkcje rozpoczynają się od `as.` a następnie zawierają nazwę klasy do której chcemy przetworzyć wejściowy obiekt, np. `as.vector()`, `as.matrix()`, `as.data.frame()`, `as.list()`.
 
 Działanie tych funkcji jednak jest bardzo różne w zależności o klasy wejściowego obiektu.
 Zobaczmy to na przykładzie obiektu `macierz1`.
@@ -455,8 +455,7 @@ str(lista_z_r1)
 ## Inne klasy obiektów {#inne-klasy}
 
 W tym oraz \@ref(proste-obiekty) rozdziale zostały wymienione i opisane cztery podstawowe klasy obiektów w R - wektory atomowe, macierze, natomiast listy i ramki danych.
-R zawiera jednak znacznie więcej klas obiektów, a co więcej - każda osoba może stworzyć swoją własną klasę obiektów.
-<!-- ref to tworzenie klas? -->
+R zawiera jednak znacznie więcej klas obiektów, a co więcej - każda osoba może stworzyć swoją własną klasę obiektów (sekcja \@ref(oop)).
 
 Poniżej zostały stworzone trzy nowe wektory - znakowy (`wek_tkt`), numeryczny (`wek_num`) i dat (`wek_dat`).
 
@@ -491,13 +490,9 @@ Przykładowo, funkcja `mean()` ma pięć metod:
 - `.default` - domyślna metoda
 
 W momencie, gdy funkcja otrzyma jakiś obiekt, sprawdzana jest jego klasa i jeżeli istnieje metoda dla tego obiektu to wówczas jest ona używana.
-Natomiat w sytuacji, gdy dla danej klasy obiektu nie ma istniejącej metody, używana jest domyślna metoda (`.default`).
+Natomiast w sytuacji, gdy dla danej klasy obiektu nie ma istniejącej metody, używana jest domyślna metoda (`.default`).
 
 Jak widać w powyższym przykładzie, nowe klasy obiektów oraz nowe metody są tworzone, aby ułatwić pracę na innych niż domyślne strukturach danych.
-
-<!-- https://www.njtierney.com/post/2016/11/06/simple-s3-post/ -->
-<!-- ... -->
-<!-- reference?? -->
 
 ## Zadania
 
