@@ -31,17 +31,17 @@ is_html = knitr::is_html_output()
 <a href="http://nowosad.github.io/elp/"><img src="cover/cover_lr.png" width="250" height="375" alt="Cover image" align="right" style="margin: 0 1em 0 1em" /></a> 
 
 **Elementarz programisty: Wstęp do programowania używając R** ma na celu wprowadzenie do podstaw działania w języku R. 
-W pierszej części, "Podstawy", opisuje ona w jaki sposób wykonywać proste operacje w R, czym są obiekty oraz jak tworzyć funkcje, które je przetwarzają.
+W pierwszej części, "Podstawy", opisuje ona w jaki sposób wykonywać proste operacje w R, czym są obiekty oraz jak tworzyć funkcje, które je przetwarzają.
 Ta część zawiera także omówienie podstawowych narzędzi pozwalających na sterowanie przepływem informacji, takich jak wyrażenia warunkowe i pętle, metod działania na tekście, oraz sposobów wczytywania i zapisywania plików w różnych formatach.
 Druga część, "Narzędzia", buduje na wiedzy zdobytej w części pierwszej i rozszerza ją.
 Zawiera ona informacje na temat tworzenia funkcji przyjaznych użytkownikom oraz to w jaki sposób tworzyć odpowiednie komunikaty błędów, ostrzeżeń czy wiadomości.
 W tej części następuje też prezentacja metod analizy kodu, takich jak testy jednostkowe, benchmarking i profiling.
-Oprócz informacji ściśle powiązanych z R, **Elementarz programisty** ma także rozdział poświęcony systemom kontroli wersji - uniweralnym narzędziom używanym przez programistów różnych języków.
-Część "Narzędzia" kończy rozdział integrujący wiedzę z całej książki w postaci omówienia kolejnych kroków dotyczących tworzenia pakiektów R.
+Oprócz informacji ściśle powiązanych z R, **Elementarz programisty** ma także rozdział poświęcony systemom kontroli wersji - uniwersalnym narzędziom używanym przez programistów różnych języków.
+Część "Narzędzia" kończy rozdział integrujący wiedzę z całej książki w postaci omówienia kolejnych kroków dotyczących tworzenia pakietów R.
 **Elementarz programisty** zawiera też szereg praktycznych porad oraz wiele odnośników do dodatkowych materiałów, takich jak książki, blogi, kursy, czy strony internetowe.
 Wszystkie rozdziały w tej książce dodatkowo zawierają zadania, które pozwalają na sprawdzenie i utrwalenie wiedzy.
-Ksiązka ta jest przeznaczona zarówno dla osób bez znajomości języków programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R.
-Wiedza uzyskana poprzez używanie tej książki daje podstawy do wykorzystywania R do różnorodnych celów, od analizy danych i opracowań statystyczych, poprzez tworzenie wykresów i wizualizacji, kończąc na aplikacjach specyficznych dla danej dziedziny.
+Książka ta jest przeznaczona zarówno dla osób bez znajomości języków programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R.
+Wiedza uzyskana poprzez używanie tej książki daje podstawy do wykorzystywania R do różnorodnych celów, od analizy danych i opracowań statystycznych, poprzez tworzenie wykresów i wizualizacji, kończąc na aplikacjach specyficznych dla danej dziedziny.
 
 ```{r echo=FALSE, eval=FALSE}
 # automatically create a bib database for R packages
@@ -74,14 +74,14 @@ Zachęcam również do zgłaszania wszelkich uwag, błędów, pomysłów oraz ko
 Do odtworzenia przykładów oraz do wykonania zadań zawartych w tej książce konieczne jest posiadanie aktualnej wersji **R**. 
 Pod adresem https://cloud.r-project.org/ można znaleźć instrukcje instalacji R dla systemów Windows, Mac OS i Linux.
 
-W niektórych rodziałach użyte zostanie zintegrowane środowisko programistyczne **RStudio**.
+W niektórych rozdziałach użyte zostanie zintegrowane środowisko programistyczne **RStudio**.
 Można je zainstalować korzystając ze strony https://www.rstudio.com/products/rstudio/download/#download.
 <!-- https://rstudio-education.github.io/hopr/starting.html -->
 <!--pakiety-->
 <!-- dane -->
 
 Aspekty dotyczące kontroli wersji zostaną omówione używając oprogramowania **Git**.
-Zalecanym sposobem installacji Git na Windows jest wersja ze strony https://gitforwindows.org/.
+Zalecanym sposobem instalacji Git na Windows jest wersja ze strony https://gitforwindows.org/.
 Instrukcja instalacji na system Mac OS znajduje się pod adresem https://happygitwithr.com/install-git.html#macos.
 Wersję Linuxową można zainstalować używając poniższej linii kodu:
 
