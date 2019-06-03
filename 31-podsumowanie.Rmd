@@ -83,7 +83,6 @@ readxl::read_excel("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.x
   ggplot2::ggplot(ggplot2::aes(data, wartosc)) +
   ggplot2::geom_line() +
   ggplot2::facet_grid(zmienna~nazwa_stacji, scale = "free_y")
-  
 ```
 ```{r, echo=FALSE, eval=FALSE}
 p1 = readr::read_csv("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv") %>% 
