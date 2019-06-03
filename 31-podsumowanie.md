@@ -105,7 +105,6 @@ readxl::read_excel("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.x
   ggplot2::ggplot(ggplot2::aes(data, wartosc)) +
   ggplot2::geom_line() +
   ggplot2::facet_grid(zmienna~nazwa_stacji, scale = "free_y")
-  
 ```
 
 <div class="figure" style="text-align: center">
