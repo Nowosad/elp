@@ -82,7 +82,7 @@ readxl::read_excel("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.x
   dplyr::mutate(data = as.Date(paste(rok, miesiac, dzien, sep = "-"))) %>% 
   ggplot2::ggplot(ggplot2::aes(data, wartosc)) +
   ggplot2::geom_line() +
-  ggplot2::facet_grid(zmienna~nazwa_stacji, scale = "free_y") + 
+  ggplot2::facet_grid(zmienna~nazwa_stacji, scale = "free_y")
   
 ```
 ```{r, echo=FALSE, eval=FALSE}
