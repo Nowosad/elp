@@ -102,7 +102,7 @@ Dodatkowo, podstawowe aspekty programowania są bardzo cenne w zawodach, w któr
 
 Kolejny mitem jest mit programisty geniusza.
 W tym micie programują tylko osoby, która ma nadludzką pamięć oraz wyróżniającą wiedzę matematyczną.
-Oczywiście, takie cechy przydają się w programowaniu, ale nie są one wymagane do niego wymagane.
+Oczywiście, takie cechy przydają się w programowaniu, ale nie są do niego wymagane.
 W programowaniu częściej od dobrej pamięci przydaje się umiejętność szybkiego znalezienia rozwiązania czy odpowiedzi na problem w internecie. 
 Programista nie musi znać na pamięć setek różnych poleceń i funkcji, ważne że umie je zidentyfikować.
 Natomiast zamiast głębokiej wiedzy matematycznej do większości zadań programistycznych wystarczy podstawowa znajomość algebry<!---->.
