@@ -467,3 +467,106 @@ Przykładowo, sąsiadem litery "A" są litery "E" i "B".
 
 12) Przepisz powyższą funkcję, aby wykorzystywała sąsiedztwo oparte także o wspólne punkty (ang. *8-neighborhood*).
 Przykładowo, sąsiadem litery "A" są litery "E", "B" i "F".
+
+
+```{r sol8, echo=FALSE, eval=FALSE}
+## Zadanie 1
+# Tekst "Działa" zostanie wywołany 3 razy
+
+## Zadanie 2
+# Tekst "Działa" zostanie wywołany 12 razy
+
+## Zadanie 3
+# Tekst "Działa" zostanie wywołany 2 razy
+
+## Zadanie 4
+# Tekst "Działa" zostanie wywołany 12 razy
+
+## Zadanie 5
+# Tekst "Działa" zostanie wywołany 10 razy
+
+## Zadanie 6
+pomiary_f_lista = list(
+  miastoA = c(61, 14, 21),
+  miastoB = c(43, 52, 30),
+  miastoC = c(41, 42, 33)
+)
+pomiary_f_lista
+
+pomiary_c_lista = vector("list", length = length(pomiary_f_lista))
+for (i in seq_along(pomiary_f_lista)) {
+  pomiary_c_lista[[i]] = ((pomiary_f_lista[[i]] - 32) / 1.8)
+}
+pomiary_c_lista
+
+## Zadanie 7 (to improve)
+pomiary_c1_lista = vector("list", length = length(pomiary_f_lista))
+i = 1
+while (i <= length(pomiary_f_lista)) {
+  pomiary_c1_lista[[i]] = (pomiary_f_lista[[i]] - 32) / 1.8
+  i = i + 1
+}
+pomiary_c1_lista
+
+## Zadanie 8
+odl_mile = list(142, 63, 121)
+odl_km = function(odl_mile) {
+  odl_mile * 1.609
+}
+odl_km_lisa = lapply(odl_mile, FUN = odl_km)
+odl_km_lisa
+
+## Zadanie 9
+pomiary = list(
+  miastoA = c(61, 14, 21),
+  miastoB = c(43, 52, 30),
+  miastoC = c(41, 42, 33)
+)
+pomiary
+
+pomiary = data.frame(
+  miastoA = c(6.1, 1.4,-2.1),
+  miastoB = c(4.3, 5.2, 3.0),
+  miastoC = c(4.1, 4.2, 3.3)
+)
+pomiary
+
+max_row = vector(length = nrow(pomiary))
+for (i in seq_len(nrow(pomiary))) {
+  max_row[i] = max(pomiary[i,])
+}
+max_row
+
+max_col = vector(length = ncol(pomiary))
+for (i in seq_len(ncol(pomiary))) {
+  max_col[i] = max(pomiary[, i])
+}
+max_col
+
+## Zadanie 10
+apply(pomiary, 1, max)
+apply(pomiary, 2, max)
+
+## Zadanie 11 (to improve)
+m = matrix(LETTERS[1:24], ncol = 6, nrow = 4)
+m
+
+neigh_4 = function(x) {
+  for (i in seq_len(ncol(x))) {
+    for (j in seq_len(nrow(x))) {
+      main = x[j, i]
+      n1_i = i - 1
+      n1_j = j - 1
+      n1 =  x[n1_j, n1_i]
+      
+      cat("Główna litera: ", main,
+          " Sąsiad 1:", n1, "\n")
+    }
+  }
+}
+
+neigh_4(m)
+
+## Zadanie 12 (to improve)
+```
+

@@ -512,7 +512,7 @@ Pierwsza kolumna `data` zawiera datę z dziś, wczoraj i przedwczoraj, a kolumna
 Kolumna `tmin` zawiera wartości `5.3`, `4.6`, `2.9`, a kolumna `tmax` zawiera wartości `11.1`, `14.6`, `9`.
 8) Połącz dwie stworzone ramki danych `ra1` i `ra2` tworząc obiekt `ra3`. 
 Używając obiektu `ra3` wylicz średnią temperaturę dla każdego wiersza i wpisz ją w nową kolumnę `tmean`.
-9) Zmień nazwę drugiej kolumny w obiekcie `ra3` na `"tmaks"`, a trzeciej na `"tsr"`.
+9) Zmień nazwę kolumny zawierającej wartości temperatury maksymalnej w obiekcie `ra3` na `"tmaks"`, a kolumny zawierającej wartości temperatury średniej na `"tsr"`.
 10) Wyświetl tylko te daty dla których średnia temperatura była wyższa niż 8.
 11) Stwórz nową listę, `li1`, która zawiera trzy elementy.
 Pierwszy element to wektor liczb od 10 do 0, drugi element to obiekt `ma4`, a trzeci element to obiekt `ra3`.
@@ -520,3 +520,75 @@ Pierwszy element to wektor liczb od 10 do 0, drugi element to obiekt `ma4`, a tr
 13) Wylicz średnią wartość z kolumny `"tsr"` z trzeciego elementu listy.
 14) Zamień obiekt `ramka1` utworzony w tym rozdziale na macierz. 
 Co jest efektem zamiany klasy?
+
+```{r sol7, echo=FALSE, eval=FALSE}
+## Zadanie 1
+ma1 = matrix(0:11, nrow = 3, ncol = 4)
+ma1
+ma2 = matrix(2, nrow = 3, ncol = 4)
+ma2
+ma3 = matrix(sample(1:3), nrow = 3, ncol = 4)
+ma3
+
+## Zadanie 2 (to improve)
+ma1 + ma2
+ma1 * ma2
+ma1 / ma2
+ma1 ^ ma2
+ma1 + ma3
+ma1 * ma3
+ma1 / ma3
+ma1 ^ ma3
+
+## Zadanie 3
+ma1[1, ]
+ma1[, 4]
+ma1[1, 4]
+
+## Zadania 4
+ma3[ma3 > 2]
+
+## Zadanie 5
+ma4 = cbind(ma1, ma3)
+ma4
+
+## Zadanie 6
+ra1 = data.frame(
+  data = c(Sys.Date(), Sys.Date() - 1, Sys.Date() - 2),
+  miasto = c("Poznań", "Poznań", "Poznań")
+)
+ra1
+
+## Zadanie 7
+ra2 = data.frame(tmin = c(5.3, 4.6, 2.9),
+                 tmax = c(11.1, 14.6, 9))
+ra2
+
+## Zadanie 8
+ra3 = cbind(ra1, ra2)
+ra3
+ra3$tavg = rowMeans(ra3[c("tmin", "tmax")])
+ra3
+
+## Zadanie 9
+colnames(ra3)[c(4, 5)] = c("tmaks", "tsr")
+ra3
+
+## Zadanie 10
+ra3[, ra3$tsr > 8]$data
+
+## Zadanie 11
+li1 = list(c(10:0),
+           c(ma4),
+           c(ra3))
+li1
+
+## Zadanie 12
+wektor_1 = li1[[1]]
+wektor_1
+
+## Zadanie 13 (to improve)
+
+## Zadanie 14 (to improve)
+```
+

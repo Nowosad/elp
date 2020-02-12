@@ -268,3 +268,8 @@ Aby ją odczytać należy stworzyć odwrotność jej zawartości, tj. pierwsza l
 Napisz funkcję, która odszyfruje tą wiadomość.
 
 <!-- pobierz, zamien, zapisz, usun stary plik -->
+
+```{r sol9, echo=FALSE, eval=FALSE}
+
+```
+

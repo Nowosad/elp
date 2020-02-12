@@ -280,3 +280,118 @@ Działanie której linii kodu zabiera najwięcej czasu?
 1) Używając pakietu **bench** porównaj czas działania funkcji `gdzie_naj()` i `gdzie_naj2()`.
 Która z nich jest szybsza?
 Która z nich zużywa mniej zasobów?
+
+```{r}
+## Zadania1
+set.seed(2019-05-08)
+mat = matrix(c(sample(
+  1:10, size = 25, replace = TRUE
+)),
+ncol = 5, nrow = 5)
+mat
+
+gdzie_naj = function(x) {
+  if (!is.matrix(x)) {
+    stop("There is no matrix")
+  }
+  largestValue = 0
+  rowWithLargestValue = ""
+  for (i in 1:ncol(x)) {
+    currentResult = 0
+    for (j in 1:nrow(x)) {
+      currentResult = currentResult + x[i, j]
+    }
+    if (currentResult > largestValue) {
+      largestValue = currentResult
+      rowWithLargestValue = i
+    }
+    return (c(i, largestValue))
+  }
+}
+
+## Zadanie 2 (to impr)
+# install.packages("testthat")
+library(testthat)
+
+expect_error(gdzie_naj(1))
+expect_equal(gdzie_naj(mat)[2], 41)
+expect_equal(gdzie_naj(mat)[1], 1)
+
+mat1 = matrix(c(sample(1:100000000, size = 100000, replace = TRUE)),
+              ncol = 10000, nrow = 10000)
+
+## Zadanie 3
+# install.packages("profvis")
+library(profvis)
+
+profvis({
+  x = matrix(c(sample(
+    1:100000000, size = 100000, replace = TRUE
+  )),
+  ncol = 10000, nrow = 10000)
+  if (!is.matrix(x)) {
+    stop("There is no matrix")
+  }
+  largestValue = 0
+  rowWithLargestValue = ""
+  for (i in 1:ncol(x)) {
+    currentResult = 0
+    for (j in 1:nrow(x)) {
+      currentResult = currentResult + x[i, j]
+    }
+    if (currentResult > largestValue) {
+      largestValue = currentResult
+      rowWithLargestValue = i
+    }
+    return (c(i,
+              largestValue))
+  }
+})
+
+profvis({
+  x = matrix(c(sample(
+    1:100000000, size = 100000, replace = TRUE
+  )),
+  ncol = 10000, nrow = 10000)
+  if (!is.matrix(x)) {
+    stop("There is no matrix")
+  }
+  largestValue = 0
+  rowWithLargestValue = ""
+  rowSums = rowSums(x)
+  for (i in 1:nrow(x)) {
+    if (rowSums[i] > largestValue) {
+      largestValue = rowSums[i]
+      rowWithLargestValue = i
+    }
+  }
+  return (c(i,
+            largestValue))
+})
+
+## Zadanie 4
+gdzie_naj2 = function(x) {
+  if (!is.matrix(x)) {
+    stop("There is no matrix")
+  }
+  largestValue = 0
+  rowWithLargestValue = ""
+  rowSums = rowSums(x)
+  for (i in 1:nrow(x)) {
+    if (rowSums[i] > largestValue) {
+      largestValue = rowSums[i]
+      rowWithLargestValue = i
+    }
+  }
+  return (c(i,
+            largestValue))
+}
+
+## Zadanie 5 (to impr)
+# install.packages("bench")
+library(bench)
+
+system.time(gdzie_naj(mat1))
+system.time(gdzie_naj2(mat1))
+```
+

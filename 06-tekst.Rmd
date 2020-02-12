@@ -514,3 +514,67 @@ wsp = c("52°24′N 16°55′E", "53°08′07″N 23°08′44″E", "39°6′N 8
 7) Stwórz funkcję, która przyjmując przykładowe dane z poprzedniego zadania zamieni współrzędne na format w postaci stopni dziesiętnych (np. `52°24′N` w formacie DMS to `52.4` w stopniach dziesiętnych). 
 <!-- match hex colors, examples :#abs, #f0, #BADA55, #COFFEE https://www.youtube.com/watch?v=EkluES9Rvak -->
 
+```{r sol6, echo=FALSE, eval=FALSE}
+## Zadanie 1 (to improve)
+tekst1 = "TERYT 18; podkarpackie; Rzeszów; 0.2 He; A"
+str_sub(tekst1, start = -5, end = -4)
+tekst2 = "TERYT 22; pomorskie;   Gdańsk; 12 C ; B"
+str_sub(tekst2, start = -5, end = -4)
+
+## Zadanie 2
+horoskop = function (name, month) {
+  if ((month %% 2) == 0) {
+    print (paste("Osoba o imieniu ", name, " będzie miała jutro szczęście"))
+  } else {
+    print (paste("Osoba o imieniu ", name, " będzie miała jutro nieszczęście"))
+  }
+}
+
+x = "Mikołaj"
+horoskop(x, 5)
+
+x = "Niemikołaj"
+horoskop(x, 6)
+
+## Zadanie 3
+horoskop2 = function (name, month) {
+  firstLetter = c("K", "M", "Z")
+  if (toupper(substr(name, 1, 1)) %in% firstLetter) {
+    print (paste("Osoba o imieniu ", name, " będzie miała jutro szczęście"))
+  }
+  else {
+    if ((month %% 2) == 0) {
+      print (paste("Osoba o imieniu ", name, " będzie miała jutro szczęście"))
+    } else {
+      print (paste("Osoba o imieniu ", name, " będzie miała jutro nieszczęście"))
+    }
+  }
+}
+x = "Mikołaj"
+horoskop2(x, 5)
+
+x = "Niemikołaj"
+horoskop2(x, 6)
+
+x = "Niemikołaj"
+horoskop2(x, 7)
+
+## Zadanie 4 (to improve)
+pomiary = c("2019-03-11: 23.5, 19/03/12: 12.7, 2019.03.13: 11.1, 2019-marzec-14: 14.3")
+pomiary
+
+## Zadanie 5 (to improve)
+pomiary2 = stringr::str_replace_all(pomiary, "(\\d{4})\\.(\\d{2})\\.", "\\1-\\2-")
+pomiary2
+wartosci = str_extract_all(pomiary2, pattern = "[1-9]+[\\.]+[1-9]+")
+wartosci
+
+## Zadanie 6 (to improve)
+wsp = c("52°24′N 16°55′E", "53°08′07″N 23°08′44″E", "39°6′N 84°31′W")
+
+wsp1 = str_extract_all(wsp, pattern = ".[0-9]\\°+")
+wsp1
+
+## Zadanie 7
+```
+
