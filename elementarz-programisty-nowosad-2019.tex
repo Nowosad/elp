@@ -4496,7 +4496,7 @@ Jak widać w powyższym przykładzie, nowe klasy obiektów oraz nowe metody są~
   Połącz dwie stworzone ramki danych \texttt{ra1} i \texttt{ra2} tworząc obiekt \texttt{ra3}.
   Używając obiektu \texttt{ra3} wylicz średnią temperaturę dla każdego wiersza i wpisz ją w nową kolumnę \texttt{tmean}.
 \item
-  Zmień nazwę drugiej kolumny w obiekcie \texttt{ra3} na \texttt{"tmaks"}, a trzeciej na \texttt{"tsr"}.
+  Zmień nazwę kolumny zawierającej wartości temperatury maksymalnej w obiekcie \texttt{ra3} na \texttt{"tmaks"}, a kolumny zawierającej wartości temperatury średniej na \texttt{"tsr"}.
 \item
   Wyświetl tylko te daty dla których średnia temperatura była wyższa niż 8.
 \item
@@ -6180,7 +6180,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.437   0.001   0.438}
+\CommentTok{#>   0.433   0.000   0.433}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6239,8 +6239,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression               min median `itr/sec`}
 \CommentTok{#>   <bch:expr>          <bch:tm> <bch:>     <dbl>}
-\CommentTok{#> 1 mi_do_km1(odl_mile)   1.25us 1.44us   575266.}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 916.07ns 1.13us   686329.}
+\CommentTok{#> 1 mi_do_km1(odl_mile)   1.26us 1.42us   583884.}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 943.89ns 1.14us   697459.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
@@ -6284,14 +6284,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 415ms  418ms      2.39     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 759us  795us   1093.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 427ms  428ms      2.34     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 765us  828us   1067.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 20.32 operacji na sekundę, przy aż 23.98 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 19.87 operacji na sekundę, przy aż 21.97 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \begin{verbatim}
@@ -6306,14 +6306,14 @@ Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) raz
 #> # A tibble: 8 x 7
 #>   expression       x      min   median `itr/sec`
 #>   <bch:expr>   <dbl> <bch:tm> <bch:tm>     <dbl>
-#> 1 mi_do_km1(l)    10   3.23us   3.73us 247478.  
-#> 2 mi_do_km2(l)    10   1.47us    1.7us 535884.  
-#> 3 mi_do_km1(l)   100  55.63us  60.76us  15469.  
-#> 4 mi_do_km2(l)   100   7.42us   8.59us 110203.  
-#> 5 mi_do_km1(l)  1000    3.8ms   3.94ms    247.  
-#> 6 mi_do_km2(l)  1000  68.29us   76.9us  12350.  
-#> 7 mi_do_km1(l) 10000 405.34ms 407.51ms      2.45
-#> 8 mi_do_km2(l) 10000 721.57us 791.93us   1102.  
+#> 1 mi_do_km1(l)    10   3.23us   3.73us 243263.  
+#> 2 mi_do_km2(l)    10    1.5us   1.74us 519958.  
+#> 3 mi_do_km1(l)   100  56.21us  61.83us  14971.  
+#> 4 mi_do_km2(l)   100   7.45us   8.75us 107464.  
+#> 5 mi_do_km1(l)  1000   3.83ms   3.98ms    246.  
+#> 6 mi_do_km2(l)  1000  68.31us  77.82us  12137.  
+#> 7 mi_do_km1(l) 10000 416.78ms 416.79ms      2.40
+#> 8 mi_do_km2(l) 10000 743.17us    807us   1086.  
 #> # ... with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 \end{verbatim}

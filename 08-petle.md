@@ -542,3 +542,7 @@ Przykładowo, sąsiadem litery "A" są litery "E" i "B".
 
 12) Przepisz powyższą funkcję, aby wykorzystywała sąsiedztwo oparte także o wspólne punkty (ang. *8-neighborhood*).
 Przykładowo, sąsiadem litery "A" są litery "E", "B" i "F".
+
+
+
+

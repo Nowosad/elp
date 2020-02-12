@@ -781,7 +781,7 @@ Pierwsza kolumna `data` zawiera datę z dziś, wczoraj i przedwczoraj, a kolumna
 Kolumna `tmin` zawiera wartości `5.3`, `4.6`, `2.9`, a kolumna `tmax` zawiera wartości `11.1`, `14.6`, `9`.
 8) Połącz dwie stworzone ramki danych `ra1` i `ra2` tworząc obiekt `ra3`. 
 Używając obiektu `ra3` wylicz średnią temperaturę dla każdego wiersza i wpisz ją w nową kolumnę `tmean`.
-9) Zmień nazwę drugiej kolumny w obiekcie `ra3` na `"tmaks"`, a trzeciej na `"tsr"`.
+9) Zmień nazwę kolumny zawierającej wartości temperatury maksymalnej w obiekcie `ra3` na `"tmaks"`, a kolumny zawierającej wartości temperatury średniej na `"tsr"`.
 10) Wyświetl tylko te daty dla których średnia temperatura była wyższa niż 8.
 11) Stwórz nową listę, `li1`, która zawiera trzy elementy.
 Pierwszy element to wektor liczb od 10 do 0, drugi element to obiekt `ma4`, a trzeci element to obiekt `ra3`.
@@ -789,3 +789,6 @@ Pierwszy element to wektor liczb od 10 do 0, drugi element to obiekt `ma4`, a tr
 13) Wylicz średnią wartość z kolumny `"tsr"` z trzeciego elementu listy.
 14) Zamień obiekt `ramka1` utworzony w tym rozdziale na macierz. 
 Co jest efektem zamiany klasy?
+
+
+

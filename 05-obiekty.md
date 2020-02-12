@@ -717,3 +717,7 @@ pomiary[pomiary <= 0] = NA
 Przesłała ona Tobie taki wektor - `c(-5.2, 3.0, 1.1, "zaspałem", 6.4, 2.2)`.
 Jakiej klasy jest ten wektor a jaka powinna być jego klasa, aby możliwe było wykonywanie na niej obliczeń, np. wyliczanie średniej?
 Jak to można uzyskać?
+
+
+
+
