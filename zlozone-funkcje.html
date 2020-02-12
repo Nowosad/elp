@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>10 Złożone funkcje | Elementarz programisty</title>
   <meta name="description" content="10 Złożone funkcje | Elementarz programisty" />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="10 Złożone funkcje | Elementarz programisty" />
   <meta property="og:type" content="book" />
@@ -24,15 +24,15 @@
 <meta name="author" content="Jakub Nowosad" />
 
 
-<meta name="date" content="2019-06-04" />
+<meta name="date" content="2020-02-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="io.html">
-<link rel="next" href="analiza-kodu.html">
+<link rel="prev" href="io.html"/>
+<link rel="next" href="analiza-kodu.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -40,6 +40,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -55,7 +58,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; position: absolute; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -132,9 +134,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a><ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#wymagania-wstepne"><i class="fa fa-check"></i>Wymagania wstępne</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#styl-ksiazki"><i class="fa fa-check"></i>Styl książki</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#podziekowania"><i class="fa fa-check"></i>Podziękowania</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#wymagania-wstępne"><i class="fa fa-check"></i>Wymagania wstępne</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#styl-książki"><i class="fa fa-check"></i>Styl książki</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#podziękowania"><i class="fa fa-check"></i>Podziękowania</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a><ul>
 <li class="chapter" data-level="1.1" data-path="wprowadzenie.html"><a href="wprowadzenie.html#mity-programistyczne"><i class="fa fa-check"></i><b>1.1</b> Mity programistyczne</a></li>
@@ -144,7 +146,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>I Podstawy</b></span></li>
 <li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a><ul>
-<li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrazenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia</a></li>
+<li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrażenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia</a></li>
 <li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="ergosum.html"><a href="ergosum.html#operator-przypisania"><i class="fa fa-check"></i><b>2.2.1</b> Operator przypisania</a></li>
 <li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dzialania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach</a></li>
@@ -152,9 +154,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="ergosum.html"><a href="ergosum.html#ide"><i class="fa fa-check"></i><b>2.3</b> IDE</a></li>
 <li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a><ul>
 <li class="chapter" data-level="2.4.1" data-path="ergosum.html"><a href="ergosum.html#nazwy-obiektow"><i class="fa fa-check"></i><b>2.4.1</b> Nazwy obiektów</a></li>
-<li class="chapter" data-level="2.4.2" data-path="ergosum.html"><a href="ergosum.html#odstepy"><i class="fa fa-check"></i><b>2.4.2</b> Odstępy</a></li>
+<li class="chapter" data-level="2.4.2" data-path="ergosum.html"><a href="ergosum.html#odstępy"><i class="fa fa-check"></i><b>2.4.2</b> Odstępy</a></li>
 <li class="chapter" data-level="2.4.3" data-path="ergosum.html"><a href="ergosum.html#komentarze"><i class="fa fa-check"></i><b>2.4.3</b> Komentarze</a></li>
-<li class="chapter" data-level="2.4.4" data-path="ergosum.html"><a href="ergosum.html#nazwy-plikow"><i class="fa fa-check"></i><b>2.4.4</b> Nazwy plików</a></li>
+<li class="chapter" data-level="2.4.4" data-path="ergosum.html"><a href="ergosum.html#nazwy-plików"><i class="fa fa-check"></i><b>2.4.4</b> Nazwy plików</a></li>
 <li class="chapter" data-level="2.4.5" data-path="ergosum.html"><a href="ergosum.html#daty"><i class="fa fa-check"></i><b>2.4.5</b> Daty</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="ergosum.html"><a href="ergosum.html#resources"><i class="fa fa-check"></i><b>2.5</b> Dodatkowe materiały</a></li>
@@ -167,21 +169,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="funkcje.html"><a href="funkcje.html#dokumentacja-funkcji"><i class="fa fa-check"></i><b>3.4</b> Dokumentacja funkcji</a></li>
 <li class="chapter" data-level="3.5" data-path="funkcje.html"><a href="funkcje.html#pakiety"><i class="fa fa-check"></i><b>3.5</b> Pakiety</a></li>
 <li class="chapter" data-level="3.6" data-path="funkcje.html"><a href="funkcje.html#algorytmy"><i class="fa fa-check"></i><b>3.6</b> Algorytmy</a></li>
-<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptow"><i class="fa fa-check"></i><b>3.7</b> Tworzenie skryptów</a></li>
+<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptów"><i class="fa fa-check"></i><b>3.7</b> Tworzenie skryptów</a></li>
 <li class="chapter" data-level="3.8" data-path="funkcje.html"><a href="funkcje.html#budowanie-funkcji"><i class="fa fa-check"></i><b>3.8</b> Budowanie funkcji</a></li>
 <li class="chapter" data-level="3.9" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.9</b> Komunikaty</a></li>
 <li class="chapter" data-level="3.10" data-path="funkcje.html"><a href="funkcje.html#zadania-2"><i class="fa fa-check"></i><b>3.10</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a><ul>
 <li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
-<li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagniezdzone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdżone</a></li>
-<li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porownania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
+<li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagnieżdżone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdżone</a></li>
+<li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porównania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
 <li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wwwf"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach</a></li>
 <li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zadania-3"><i class="fa fa-check"></i><b>4.5</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a><ul>
 <li class="chapter" data-level="5.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wektory"><i class="fa fa-check"></i><b>5.1</b> Wektory</a></li>
-<li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wasciwosci-wektorow"><i class="fa fa-check"></i><b>5.2</b> Właściwości wektorów</a></li>
+<li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#właściwości-wektorów"><i class="fa fa-check"></i><b>5.2</b> Właściwości wektorów</a></li>
 <li class="chapter" data-level="5.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#pf-vector"><i class="fa fa-check"></i><b>5.3</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="5.4" data-path="proste-obiekty.html"><a href="proste-obiekty.html#dzialania-na-wektorach"><i class="fa fa-check"></i><b>5.4</b> Działania na wektorach</a></li>
 <li class="chapter" data-level="5.5" data-path="proste-obiekty.html"><a href="proste-obiekty.html#na"><i class="fa fa-check"></i><b>5.5</b> Brakujące wartości</a></li>
@@ -189,7 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.7" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wip-vector"><i class="fa fa-check"></i><b>5.7</b> Wydzielanie i przypisanie</a></li>
 <li class="chapter" data-level="5.8" data-path="proste-obiekty.html"><a href="proste-obiekty.html#mo-vector"><i class="fa fa-check"></i><b>5.8</b> Modyfikowanie obiektów</a></li>
 <li class="chapter" data-level="5.9" data-path="proste-obiekty.html"><a href="proste-obiekty.html#lpto-vector"><i class="fa fa-check"></i><b>5.9</b> Łączenie podstawowych typów obiektów</a></li>
-<li class="chapter" data-level="5.10" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zmiana-typow-obiektow"><i class="fa fa-check"></i><b>5.10</b> Zmiana typów obiektów</a></li>
+<li class="chapter" data-level="5.10" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zmiana-typów-obiektów"><i class="fa fa-check"></i><b>5.10</b> Zmiana typów obiektów</a></li>
 <li class="chapter" data-level="5.11" data-path="proste-obiekty.html"><a href="proste-obiekty.html#fac"><i class="fa fa-check"></i><b>5.11</b> Wektory czynnikowe</a></li>
 <li class="chapter" data-level="5.12" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ate"><i class="fa fa-check"></i><b>5.12</b> Wektory dat</a></li>
 <li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ime"><i class="fa fa-check"></i><b>5.13</b> Wektory czasu</a></li>
@@ -197,12 +199,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a><ul>
 <li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#reprezentacja-tekstu"><i class="fa fa-check"></i><b>6.1</b> Reprezentacja tekstu</a></li>
-<li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekscie"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście</a></li>
+<li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekście"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście</a></li>
 <li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wt"><i class="fa fa-check"></i><b>6.3</b> Wydzielanie tekstu</a></li>
-<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wyrazenia-regularne"><i class="fa fa-check"></i><b>6.4</b> Wyrażenia regularne</a></li>
+<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wyrażenia-regularne"><i class="fa fa-check"></i><b>6.4</b> Wyrażenia regularne</a></li>
 <li class="chapter" data-level="6.5" data-path="tekst.html"><a href="tekst.html#wtregex"><i class="fa fa-check"></i><b>6.5</b> Wydzielanie tekstu - regex</a></li>
 <li class="chapter" data-level="6.6" data-path="tekst.html"><a href="tekst.html#zamiana-tekstu---regex"><i class="fa fa-check"></i><b>6.6</b> Zamiana tekstu - regex</a></li>
-<li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plikow"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików</a></li>
+<li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plików"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików</a></li>
 <li class="chapter" data-level="6.8" data-path="tekst.html"><a href="tekst.html#zadania-5"><i class="fa fa-check"></i><b>6.8</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a><ul>
@@ -210,18 +212,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie"><i class="fa fa-check"></i><b>7.1.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.1.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje"><i class="fa fa-check"></i><b>7.1.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.1.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-1"><i class="fa fa-check"></i><b>7.1.3</b> Wydzielanie</a></li>
-<li class="chapter" data-level="7.1.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#aczenie"><i class="fa fa-check"></i><b>7.1.4</b> Łączenie</a></li>
+<li class="chapter" data-level="7.1.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie"><i class="fa fa-check"></i><b>7.1.4</b> Łączenie</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a><ul>
 <li class="chapter" data-level="7.2.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-1"><i class="fa fa-check"></i><b>7.2.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.2.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-1"><i class="fa fa-check"></i><b>7.2.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.2.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-df"><i class="fa fa-check"></i><b>7.2.3</b> Wydzielanie</a></li>
-<li class="chapter" data-level="7.2.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#aczenie-1"><i class="fa fa-check"></i><b>7.2.4</b> Łączenie</a></li>
+<li class="chapter" data-level="7.2.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-1"><i class="fa fa-check"></i><b>7.2.4</b> Łączenie</a></li>
 </ul></li>
 <li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-2"><i class="fa fa-check"></i><b>7.3.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.3.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-2"><i class="fa fa-check"></i><b>7.3.2</b> Podstawowe funkcje</a></li>
-<li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#aczenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie</a></li>
+<li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie</a></li>
 <li class="chapter" data-level="7.3.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-list"><i class="fa fa-check"></i><b>7.3.4</b> Wydzielanie</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zmiany-klas"><i class="fa fa-check"></i><b>7.4</b> Zmiany klas</a></li>
@@ -230,7 +232,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a><ul>
 <li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a><ul>
-<li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#skadnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia</a></li>
+<li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#składnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia</a></li>
 <li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#for-example"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
 <li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach</a></li>
 </ul></li>
@@ -240,10 +242,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a><ul>
 <li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy</a></li>
-<li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#dziaania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.2</b> Działania na plikach i folderach</a></li>
+<li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#działania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.2</b> Działania na plikach i folderach</a></li>
 <li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#dane-internetowe"><i class="fa fa-check"></i><b>9.3</b> Dane internetowe</a></li>
-<li class="chapter" data-level="9.4" data-path="io.html"><a href="io.html#wczytywanie-plikow-tekstowych"><i class="fa fa-check"></i><b>9.4</b> Wczytywanie plików tekstowych</a></li>
-<li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#zapisywanie-plikow-tekstowych"><i class="fa fa-check"></i><b>9.5</b> Zapisywanie plików tekstowych</a></li>
+<li class="chapter" data-level="9.4" data-path="io.html"><a href="io.html#wczytywanie-plików-tekstowych"><i class="fa fa-check"></i><b>9.4</b> Wczytywanie plików tekstowych</a></li>
+<li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#zapisywanie-plików-tekstowych"><i class="fa fa-check"></i><b>9.5</b> Zapisywanie plików tekstowych</a></li>
 <li class="chapter" data-level="9.6" data-path="io.html"><a href="io.html#formaty-r"><i class="fa fa-check"></i><b>9.6</b> Formaty R</a></li>
 <li class="chapter" data-level="9.7" data-path="io.html"><a href="io.html#arkusze-kalkulacyjne"><i class="fa fa-check"></i><b>9.7</b> Arkusze kalkulacyjne</a></li>
 <li class="chapter" data-level="9.8" data-path="io.html"><a href="io.html#inne-formaty"><i class="fa fa-check"></i><b>9.8</b> Inne formaty</a></li>
@@ -281,14 +283,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>12.2</b> GitHub</a><ul>
 <li class="chapter" data-level="12.2.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#tworzenie-zdanego-repo"><i class="fa fa-check"></i><b>12.2.1</b> Tworzenie zdanego repo</a></li>
 <li class="chapter" data-level="12.2.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-github"><i class="fa fa-check"></i><b>12.2.2</b> Repozytorium GitHub</a></li>
-<li class="chapter" data-level="12.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-mozliwosci-github"><i class="fa fa-check"></i><b>12.2.3</b> Dodatkowe możliwości GitHub</a></li>
+<li class="chapter" data-level="12.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-możliwości-github"><i class="fa fa-check"></i><b>12.2.3</b> Dodatkowe możliwości GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="12.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rstudio-git"><i class="fa fa-check"></i><b>12.3</b> Kontrola wersji w RStudio</a></li>
 <li class="chapter" data-level="12.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>12.4</b> Sposoby pracy z systemem Git</a><ul>
 <li class="chapter" data-level="12.4.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#nowy-projekt"><i class="fa fa-check"></i><b>12.4.1</b> Nowy projekt</a></li>
 <li class="chapter" data-level="12.4.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#istniejacy-projekt"><i class="fa fa-check"></i><b>12.4.2</b> Istniejący projekt</a></li>
 </ul></li>
-<li class="chapter" data-level="12.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#problemy-z-kontrola-wersji"><i class="fa fa-check"></i><b>12.5</b> Problemy z kontrolą wersji</a></li>
+<li class="chapter" data-level="12.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#problemy-z-kontrolą-wersji"><i class="fa fa-check"></i><b>12.5</b> Problemy z kontrolą wersji</a></li>
 <li class="chapter" data-level="12.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zadania-11"><i class="fa fa-check"></i><b>12.6</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>13</b> Pakiety</a><ul>
@@ -297,12 +299,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>13.3</b> Rozwijanie pakietu</a></li>
 <li class="chapter" data-level="13.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-i-dokumentacja-funkcji"><i class="fa fa-check"></i><b>13.4</b> Tworzenie i dokumentacja funkcji</a></li>
 <li class="chapter" data-level="13.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>13.5</b> Opis pakietu</a></li>
-<li class="chapter" data-level="13.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zaleznosci"><i class="fa fa-check"></i><b>13.6</b> Zależności</a></li>
+<li class="chapter" data-level="13.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zależności"><i class="fa fa-check"></i><b>13.6</b> Zależności</a></li>
 <li class="chapter" data-level="13.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#sprawdzanie-pakietu"><i class="fa fa-check"></i><b>13.7</b> Sprawdzanie pakietu</a></li>
 <li class="chapter" data-level="13.8" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#instalowanie-pakietu"><i class="fa fa-check"></i><b>13.8</b> Instalowanie pakietu</a></li>
 <li class="chapter" data-level="13.9" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-pakietu"><i class="fa fa-check"></i><b>13.9</b> Dokumentacja pakietu</a></li>
 <li class="chapter" data-level="13.10" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#wbudowane-testy"><i class="fa fa-check"></i><b>13.10</b> Wbudowane testy</a></li>
-<li class="chapter" data-level="13.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietow"><i class="fa fa-check"></i><b>13.11</b> Publikowanie pakietów</a></li>
+<li class="chapter" data-level="13.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietów"><i class="fa fa-check"></i><b>13.11</b> Publikowanie pakietów</a></li>
 <li class="chapter" data-level="13.12" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zadania-12"><i class="fa fa-check"></i><b>13.12</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>14</b> Podsumowanie</a><ul>
@@ -359,26 +361,26 @@ Podobnie należy zadbać o spójną kolejność podobnych argumentów w funkcjac
 <p>Stabilność typu oznacza, że używając jednej klasy danych wejściowych funkcja zawsze zwróci obiekt jednej klasy.
 Poniższy przykład użycia funkcji <code>grep()</code> pokazuje, że nie ma ona stabilności typu.
 Zalecane jest unikanie tworzenia funkcji bez stabilności typu.</p>
-<pre class="sourceCode r"><code class="sourceCode r">tekst =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kołdra&quot;</span>, <span class="st">&quot;kordła&quot;</span>, <span class="st">&quot;pościel&quot;</span>)
-<span class="kw">grep</span>(<span class="st">&quot;^[k].&quot;</span>, <span class="dt">x =</span> tekst)
-<span class="co">#&gt; [1] 1 2</span>
-<span class="kw">grep</span>(<span class="st">&quot;^[k].&quot;</span>, <span class="dt">x =</span> tekst, <span class="dt">value =</span> <span class="ot">TRUE</span>)
-<span class="co">#&gt; [1] &quot;kołdra&quot; &quot;kordła&quot;</span></code></pre>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb278-1" data-line-number="1">tekst =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kołdra&quot;</span>, <span class="st">&quot;kordła&quot;</span>, <span class="st">&quot;pościel&quot;</span>)</a>
+<a class="sourceLine" id="cb278-2" data-line-number="2"><span class="kw">grep</span>(<span class="st">&quot;^[k].&quot;</span>, <span class="dt">x =</span> tekst)</a>
+<a class="sourceLine" id="cb278-3" data-line-number="3"><span class="co">#&gt; [1] 1 2</span></a>
+<a class="sourceLine" id="cb278-4" data-line-number="4"><span class="kw">grep</span>(<span class="st">&quot;^[k].&quot;</span>, <span class="dt">x =</span> tekst, <span class="dt">value =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb278-5" data-line-number="5"><span class="co">#&gt; [1] &quot;kołdra&quot; &quot;kordła&quot;</span></a></code></pre></div>
 <p>Dodatkowym elementem API może być określenie domyślnych parametrów funkcji.
 Poniższa funkcja, <code>potegowanie()</code> ma na celu podnoszenie wartości wejściowego wektora (<code>x</code>) do wybranej potęgi (<code>w</code>).
 Domyślamy się jednak, że większość użytkowników jest zainteresowana używaniem tej funkcji do podnoszenia wartości do drugiej potęgi i dlatego też ustalamy, że domyślnie argument <code>w</code> przyjmuje wartość 2.</p>
-<pre class="sourceCode r"><code class="sourceCode r">potegowanie =<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">w =</span> <span class="dv">2</span>){
-  x <span class="op">^</span><span class="st"> </span>w
-}</code></pre>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb279-1" data-line-number="1">potegowanie =<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">w =</span> <span class="dv">2</span>){</a>
+<a class="sourceLine" id="cb279-2" data-line-number="2">  x <span class="op">^</span><span class="st"> </span>w</a>
+<a class="sourceLine" id="cb279-3" data-line-number="3">}</a></code></pre></div>
 <p>W tej sytuacji, gdy użytkownik poda tylko jeden argument do funkcji <code>potegowanie()</code> to podany wektor zostanie podniesiony do kwadratu.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">potegowanie</span>(<span class="dv">2</span>)
-<span class="co">#&gt; [1] 4</span></code></pre>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb280-1" data-line-number="1"><span class="kw">potegowanie</span>(<span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb280-2" data-line-number="2"><span class="co">#&gt; [1] 4</span></a></code></pre></div>
 <p>Będzie to identyczne z działaniem funkcji, gdy użytkownik ręcznie zdefiniuje drugi argument jako dwa (<code>w = 2</code>).</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">potegowanie</span>(<span class="dv">2</span>, <span class="dt">w =</span> <span class="dv">2</span>)
-<span class="co">#&gt; [1] 4</span></code></pre>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb281-1" data-line-number="1"><span class="kw">potegowanie</span>(<span class="dv">2</span>, <span class="dt">w =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb281-2" data-line-number="2"><span class="co">#&gt; [1] 4</span></a></code></pre></div>
 <p>W sytuacji, gdy użytkownika interesuje inna wartość <code>w</code> niż domyślna, może on ją zmodyfikować i otrzyma odpowiedni wynik.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">potegowanie</span>(<span class="dv">2</span>, <span class="dt">w =</span> <span class="dv">3</span>)
-<span class="co">#&gt; [1] 8</span></code></pre>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb282-1" data-line-number="1"><span class="kw">potegowanie</span>(<span class="dv">2</span>, <span class="dt">w =</span> <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb282-2" data-line-number="2"><span class="co">#&gt; [1] 8</span></a></code></pre></div>
 <!-- elipsis -->
 <!-- https://adv-r.hadley.nz/functions.html#fun-dot-dot-dot -->
 <!-- Zasięg widoczności (ang. *scoping*) -->
@@ -397,19 +399,19 @@ Oczywiście te wymienione formy można łączyć.</p>
 Żadnej użytkownik nie chce czekać na zakończenie wykonywania długiej funkcji zanim dostanie komunikat błędu.
 Więcej informacji o strukturze komunikatów błędów można znaleźć na <a href="https://style.tidyverse.org/error-messages.html" class="uri">https://style.tidyverse.org/error-messages.html</a>.</p>
 <p>Do zatrzymania działania funkcji i wyświetlenia komunikatu błędu służy <code>stop()</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stop</span>(<span class="st">&quot;To jest komunikat błędu.&quot;</span>)
-<span class="co">#&gt; Error in eval(expr, envir, enclos): To jest komunikat błędu.</span></code></pre>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb283-1" data-line-number="1"><span class="kw">stop</span>(<span class="st">&quot;To jest komunikat błędu.&quot;</span>)</a>
+<a class="sourceLine" id="cb283-2" data-line-number="2"><span class="co">#&gt; Error in eval(expr, envir, enclos): To jest komunikat błędu.</span></a></code></pre></div>
 <p>Ostrzeżenia mogą być używane w wielu różnorodnych sytuacjach, np. kiedy chcesz poinformować użytkowników o tym, że dana funkcja zostanie wygaszona lub przeniesiona do innego pakietu.
 <!-- Ostrzeżenia są też stosowane w przypadkach, gdy  -->
 Komunikaty ostrzeżenia tworzyć się używając funkcji <code>warning()</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">warning</span>(<span class="st">&quot;To jest komunikat ostrzeżenia.&quot;</span>)
-<span class="co">#&gt; Warning: To jest komunikat ostrzeżenia.</span></code></pre>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb284-1" data-line-number="1"><span class="kw">warning</span>(<span class="st">&quot;To jest komunikat ostrzeżenia.&quot;</span>)</a>
+<a class="sourceLine" id="cb284-2" data-line-number="2"><span class="co">#&gt; Warning: To jest komunikat ostrzeżenia.</span></a></code></pre></div>
 <p>Wiadomości mają na celu poinformowanie użytkownika na temat działania pakietu lub funkcji.
 Są one wykorzystywane podczas wczytywania niektórych pakietów.<!--..-->
 Innym przykładem jest informowanie na temat działania funkcji w tle - pobierania danych, zapisywania do pliku, czy przeliczania cząstkowych parametrów.
 Do wyświetlenia wiadomości służy funkcja <code>message()</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">message</span>(<span class="st">&quot;To jest komunikat wiadomości.&quot;</span>)
-<span class="co">#&gt; To jest komunikat wiadomości.</span></code></pre>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb285-1" data-line-number="1"><span class="kw">message</span>(<span class="st">&quot;To jest komunikat wiadomości.&quot;</span>)</a>
+<a class="sourceLine" id="cb285-2" data-line-number="2"><span class="co">#&gt; To jest komunikat wiadomości.</span></a></code></pre></div>
 
 <div class="rmdinfo">
 Działanie funkcji <code>message()</code> jest zbliżone do funkcji <code>cat()</code> czy <code>print()</code>.
@@ -419,30 +421,30 @@ Rolą funkcji <code>message()</code> jest przekazanie informacji od twórcy do u
 
 <p>Przykład użycia trzech podstawowych rodzajów komunikatów można zobaczyć w poniższej funkcji <code>minus_1()</code>.
 Ta funkcja przyjmuje wartość numeryczną, od której odejmuje jeden, a na końcu zwraca wartość bezwzględną (<code>abs(x - 1)</code>).</p>
-<pre class="sourceCode r"><code class="sourceCode r">minus_<span class="dv">1</span> =<span class="st"> </span><span class="cf">function</span>(x){
-  <span class="cf">if</span>(<span class="kw">is.character</span>(x)){
-    <span class="kw">stop</span>(<span class="st">&quot;Argument `x` musi być zmienną numeryczną, a nie znakową.&quot;</span>)
-  } <span class="cf">else</span> <span class="cf">if</span>(<span class="kw">is.logical</span>(x)){
-    <span class="kw">warning</span>(<span class="kw">paste</span>(<span class="st">&quot;Argument `x` jest zmienną logiczną.&quot;</span>,
-                  <span class="st">&quot;Czy nie chcesz użyć zmiennej numerycznej?&quot;</span>))
-  } <span class="cf">else</span> {
-    <span class="kw">message</span>(<span class="st">&quot;Wow. Argument `x` jest oczekiwaną zmienną numeryczną.&quot;</span>)
-  }
-  <span class="kw">abs</span>(x <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)
-}</code></pre>
+<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb286-1" data-line-number="1">minus_<span class="dv">1</span> =<span class="st"> </span><span class="cf">function</span>(x){</a>
+<a class="sourceLine" id="cb286-2" data-line-number="2">  <span class="cf">if</span>(<span class="kw">is.character</span>(x)){</a>
+<a class="sourceLine" id="cb286-3" data-line-number="3">    <span class="kw">stop</span>(<span class="st">&quot;Argument `x` musi być zmienną numeryczną, a nie znakową.&quot;</span>)</a>
+<a class="sourceLine" id="cb286-4" data-line-number="4">  } <span class="cf">else</span> <span class="cf">if</span>(<span class="kw">is.logical</span>(x)){</a>
+<a class="sourceLine" id="cb286-5" data-line-number="5">    <span class="kw">warning</span>(<span class="kw">paste</span>(<span class="st">&quot;Argument `x` jest zmienną logiczną.&quot;</span>,</a>
+<a class="sourceLine" id="cb286-6" data-line-number="6">                  <span class="st">&quot;Czy nie chcesz użyć zmiennej numerycznej?&quot;</span>))</a>
+<a class="sourceLine" id="cb286-7" data-line-number="7">  } <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb286-8" data-line-number="8">    <span class="kw">message</span>(<span class="st">&quot;Wow. Argument `x` jest oczekiwaną zmienną numeryczną.&quot;</span>)</a>
+<a class="sourceLine" id="cb286-9" data-line-number="9">  }</a>
+<a class="sourceLine" id="cb286-10" data-line-number="10">  <span class="kw">abs</span>(x <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb286-11" data-line-number="11">}</a></code></pre></div>
 <p>W przypadku, gdy użytkownik wprowadzi jako wejście wektor tekstowy (<code>if(is.character(x))</code>) to działanie funkcji zostanie przerwane i pojawi się odpowiedni komunikat błędu.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">minus_1</span>(<span class="st">&quot;kot&quot;</span>)
-<span class="co">#&gt; Error in minus_1(&quot;kot&quot;): Argument `x` musi być zmienną numeryczną, a nie znakową.</span></code></pre>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb287-1" data-line-number="1"><span class="kw">minus_1</span>(<span class="st">&quot;kot&quot;</span>)</a>
+<a class="sourceLine" id="cb287-2" data-line-number="2"><span class="co">#&gt; Error in minus_1(&quot;kot&quot;): Argument `x` musi być zmienną numeryczną, a nie znakową.</span></a></code></pre></div>
 <p>Jeżeli jako argument <code>x</code> zostanie podany wektor logiczny (<code>else if(is.logical(x))</code>) to pojawi się komunikat ostrzeżenia, ale dalsze obliczanie zostanie wykonane.
 W tym przypadku wartość <code>TRUE</code> zostanie najpierw zamieniona na jeden a <code>FALSE</code> na zero, następnie od tych wartości zostanie odjęte jeden, a na końcu zostaną one zamienione na wartości bezwzględne.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">minus_1</span>(<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>))
-<span class="co">#&gt; Warning in minus_1(c(TRUE, FALSE)): Argument `x` jest zmienną logiczną. Czy</span>
-<span class="co">#&gt; nie chcesz użyć zmiennej numerycznej?</span>
-<span class="co">#&gt; [1] 0 1</span></code></pre>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb288-1" data-line-number="1"><span class="kw">minus_1</span>(<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>))</a>
+<a class="sourceLine" id="cb288-2" data-line-number="2"><span class="co">#&gt; Warning in minus_1(c(TRUE, FALSE)): Argument `x` jest zmienną logiczną. Czy nie</span></a>
+<a class="sourceLine" id="cb288-3" data-line-number="3"><span class="co">#&gt; chcesz użyć zmiennej numerycznej?</span></a>
+<a class="sourceLine" id="cb288-4" data-line-number="4"><span class="co">#&gt; [1] 0 1</span></a></code></pre></div>
 <p>Po wprowadzeniu wartości numerycznych do funkcji <code>minus_1()</code> pojawi się tekst wiadomości, po którym nastąpi wyliczenie kodu <code>abs(x - 1)</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">minus_1</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">-6</span>))
-<span class="co">#&gt; Wow. Argument `x` jest oczekiwaną zmienną numeryczną.</span>
-<span class="co">#&gt; [1] 0 1 5 7</span></code></pre>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb289-1" data-line-number="1"><span class="kw">minus_1</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">-6</span>))</a>
+<a class="sourceLine" id="cb289-2" data-line-number="2"><span class="co">#&gt; Wow. Argument `x` jest oczekiwaną zmienną numeryczną.</span></a>
+<a class="sourceLine" id="cb289-3" data-line-number="3"><span class="co">#&gt; [1] 0 1 5 7</span></a></code></pre></div>
 <!-- http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/10/006_wyjatki.html -->
 <p>Złożone funkcje opierają się o inne istniejące funkcje.
 W powyższym przykładzie, <code>minus_1()</code> używał, między innymi funkcji <code>-</code> do odejmowania czy <code>abs</code> do wyliczania wartości bezwzględnej.
@@ -456,34 +458,34 @@ R pozwala na ignorowanie wystąpienia błędu używając funkcji <code>try()</co
 <p><code>tryCatch()</code> stara się uruchomić jakiś wskazany kod, a w przypadku pojawienia się błędu wykonuje alternatywne obliczenia.
 Można to zobaczyć na poniższym przykładzie, gdzie najpierw sprawdzona zostałaby linia <code>kod do uruchomienia</code> i dopiero gdyby ona skutkowała błędem zostałaby uruchomiona linia <code>wykonaj kod w przypadku wystąpienia błędu</code>.
 <!-- https://adv-r.hadley.nz/conditions.html#conditions --></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">tryCatch</span>(
-  <span class="dt">error =</span> <span class="cf">function</span>(e) {
-    wykonaj kod w przypadku wystąpienia błędu
-  },
-  kod do uruchomienia 
-)</code></pre>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb290-1" data-line-number="1"><span class="kw">tryCatch</span>(</a>
+<a class="sourceLine" id="cb290-2" data-line-number="2">  <span class="dt">error =</span> <span class="cf">function</span>(e) {</a>
+<a class="sourceLine" id="cb290-3" data-line-number="3">    wykonaj kod w przypadku wystąpienia błędu</a>
+<a class="sourceLine" id="cb290-4" data-line-number="4">  },</a>
+<a class="sourceLine" id="cb290-5" data-line-number="5">  kod do uruchomienia </a>
+<a class="sourceLine" id="cb290-6" data-line-number="6">)</a></code></pre></div>
 <p>Działanie <code>tryCatch</code> w praktyce jest pokazane w funkcji <code>log_safe()</code>.
 Stara się ona wyliczyć logarytm naturalny (<code>log()</code>) z wartości argumentu <code>x</code>, a w przypadku gdyby napotkała błąd zwróci ona wartość <code>NA</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">log_safe =<span class="st"> </span><span class="cf">function</span>(x){
-  <span class="kw">tryCatch</span>(
-  <span class="dt">error =</span> <span class="cf">function</span>(e) {
-    <span class="ot">NA</span>
-  },
-  <span class="kw">log</span>(x)
-  )
-}</code></pre>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb291-1" data-line-number="1">log_safe =<span class="st"> </span><span class="cf">function</span>(x){</a>
+<a class="sourceLine" id="cb291-2" data-line-number="2">  <span class="kw">tryCatch</span>(</a>
+<a class="sourceLine" id="cb291-3" data-line-number="3">  <span class="dt">error =</span> <span class="cf">function</span>(e) {</a>
+<a class="sourceLine" id="cb291-4" data-line-number="4">    <span class="ot">NA</span></a>
+<a class="sourceLine" id="cb291-5" data-line-number="5">  },</a>
+<a class="sourceLine" id="cb291-6" data-line-number="6">  <span class="kw">log</span>(x)</a>
+<a class="sourceLine" id="cb291-7" data-line-number="7">  )</a>
+<a class="sourceLine" id="cb291-8" data-line-number="8">}</a></code></pre></div>
 <p>Sprawdźmy jej zachowanie na dwóch przykładach.
 W pierwszym oryginalna funkcja <code>log()</code> jak i nowa <code>log_safe()</code> otrzymają poprawne dane wejściowe - wektor numeryczny.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(<span class="dv">10</span>)
-<span class="co">#&gt; [1] 2.3</span>
-<span class="kw">log_safe</span>(<span class="dv">10</span>)
-<span class="co">#&gt; [1] 2.3</span></code></pre>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb292-1" data-line-number="1"><span class="kw">log</span>(<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb292-2" data-line-number="2"><span class="co">#&gt; [1] 2.3</span></a>
+<a class="sourceLine" id="cb292-3" data-line-number="3"><span class="kw">log_safe</span>(<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb292-4" data-line-number="4"><span class="co">#&gt; [1] 2.3</span></a></code></pre></div>
 <p>W tym przypadku obie zwracają dokładnie taki sam wynik.
 Jeżeli jednak jako dane wejściowe wprowadzimy wektor znakowy to oryginalna funkcja zwróci błąd, a nasza funkcja jedynie wartość <code>NA</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(<span class="st">&quot;abecadło&quot;</span>)
-<span class="co">#&gt; Error in log(&quot;abecadło&quot;): non-numeric argument to mathematical function</span></code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log_safe</span>(<span class="st">&quot;abecadło&quot;</span>)
-<span class="co">#&gt; [1] NA</span></code></pre>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb293-1" data-line-number="1"><span class="kw">log</span>(<span class="st">&quot;abecadło&quot;</span>)</a>
+<a class="sourceLine" id="cb293-2" data-line-number="2"><span class="co">#&gt; Error in log(&quot;abecadło&quot;): non-numeric argument to mathematical function</span></a></code></pre></div>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb294-1" data-line-number="1"><span class="kw">log_safe</span>(<span class="st">&quot;abecadło&quot;</span>)</a>
+<a class="sourceLine" id="cb294-2" data-line-number="2"><span class="co">#&gt; [1] NA</span></a></code></pre></div>
 
 <div class="rmdinfo">
 Dodatkowo istnieje funkcja <code>withCallingHandlers()</code>, która jest używana w przypadku działania na ostrzeżeniach.
@@ -511,21 +513,21 @@ Przykład metody był pokazany w sekcji <a href="zlozone-obiekty.html#inne-klasy
 <p>Poniżej stworzono nową macierz <code>x</code>, która składa się z dwóch kolumn i dwóch wierszy oraz wartości 0, 0, 2 i 3.
 Ma ona na celu reprezentowanie figury geometrycznej - prostokąta.
 W najprostszej postaci prostokąt można opisać używając czterech współrzędnych - najmniejszej wartości położenia na osi x (np., <code>0</code>), najmniejszej wartości położenia na osi y (np., <code>0</code>), największej wartości położenia na osi x (np., <code>2</code>), oraz największej wartości położenia na osi y (np., <code>3</code>).</p>
-<pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="dt">ncol =</span> <span class="dv">2</span>)
-x
-<span class="co">#&gt;      [,1] [,2]</span>
-<span class="co">#&gt; [1,]    0    2</span>
-<span class="co">#&gt; [2,]    0    3</span></code></pre>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb295-1" data-line-number="1">x =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="dt">ncol =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb295-2" data-line-number="2">x</a>
+<a class="sourceLine" id="cb295-3" data-line-number="3"><span class="co">#&gt;      [,1] [,2]</span></a>
+<a class="sourceLine" id="cb295-4" data-line-number="4"><span class="co">#&gt; [1,]    0    2</span></a>
+<a class="sourceLine" id="cb295-5" data-line-number="5"><span class="co">#&gt; [2,]    0    3</span></a></code></pre></div>
 <p>Do sprawdzenia klasy obiektu w systemie S3 służy funkcja <code>class()</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(x)
-<span class="co">#&gt; [1] &quot;matrix&quot;</span></code></pre>
+<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb296-1" data-line-number="1"><span class="kw">class</span>(x)</a>
+<a class="sourceLine" id="cb296-2" data-line-number="2"><span class="co">#&gt; [1] &quot;matrix&quot;</span></a></code></pre></div>
 <p>W efekcie upewniamy się, że klasa naszego obiektu <code>x</code> to matrix.
 System S3 pozwala na prostą zmianę lub dodanie nazwy klasy używając funkcji <code>structure()</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">y =<span class="st"> </span><span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb297-1" data-line-number="1">y =<span class="st"> </span><span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)</a></code></pre></div>
 <p>Wynikiem działania tej funkcji z argumentem <code>class = &quot;prostokat&quot;</code> jest nowy obiekt <code>y</code>.
 W momencie, gdy sprawdzimy jego klasę, okaże się że nie jest to już matrix ale prostokat.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(y)
-<span class="co">#&gt; [1] &quot;prostokat&quot;</span></code></pre>
+<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb298-1" data-line-number="1"><span class="kw">class</span>(y)</a>
+<a class="sourceLine" id="cb298-2" data-line-number="2"><span class="co">#&gt; [1] &quot;prostokat&quot;</span></a></code></pre></div>
 </div>
 <div id="metody" class="section level3">
 <h3><span class="header-section-number">10.3.2</span> Metody</h3>
@@ -536,36 +538,36 @@ Możliwe jest zarówno dodanie nowej metody do istniejącej funkcji, jak i stwor
 <p>W tym wypadku interesuje nas możliwość policzenia powierzchni.
 Możemy do tego celu stworzyć nową funkcję w systemie S3 o nazwie <code>powierzchnia</code>.
 Pierwszym krokiem musi być określenie, że nasza funkcja ma być oparta o system S3 używając poniższej formy.</p>
-<pre class="sourceCode r"><code class="sourceCode r">powierzchnia =<span class="st"> </span><span class="cf">function</span>(x) {
-  <span class="kw">UseMethod</span>(<span class="st">&quot;powierzchnia&quot;</span>)
-}</code></pre>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb299-1" data-line-number="1">powierzchnia =<span class="st"> </span><span class="cf">function</span>(x) {</a>
+<a class="sourceLine" id="cb299-2" data-line-number="2">  <span class="kw">UseMethod</span>(<span class="st">&quot;powierzchnia&quot;</span>)</a>
+<a class="sourceLine" id="cb299-3" data-line-number="3">}</a></code></pre></div>
 <p>Drugim krokiem jest zdefiniowanie funkcji do wyliczania powierzchni prostokąta.
 Określa ona najpierw długości boków a i b, a następnie wymnaża je w celu wyliczenia powierzchni.</p>
-<pre class="sourceCode r"><code class="sourceCode r">powierzchnia.prostokat =<span class="st"> </span><span class="cf">function</span>(x){
-  a =<span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">1</span>] <span class="co">#wyliczenie długości boku a</span>
-  b =<span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">1</span>] <span class="co">#wyliczenie długości boku b</span>
-  a <span class="op">*</span><span class="st"> </span>b                 <span class="co">#wyliczenie powierzchni prostokąta</span>
-}</code></pre>
+<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb300-1" data-line-number="1">powierzchnia.prostokat =<span class="st"> </span><span class="cf">function</span>(x){</a>
+<a class="sourceLine" id="cb300-2" data-line-number="2">  a =<span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">1</span>] <span class="co">#wyliczenie długości boku a</span></a>
+<a class="sourceLine" id="cb300-3" data-line-number="3">  b =<span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">1</span>] <span class="co">#wyliczenie długości boku b</span></a>
+<a class="sourceLine" id="cb300-4" data-line-number="4">  a <span class="op">*</span><span class="st"> </span>b                 <span class="co">#wyliczenie powierzchni prostokąta</span></a>
+<a class="sourceLine" id="cb300-5" data-line-number="5">}</a></code></pre></div>
 <p>Nazwa powyższej funkcji wygląda jakby składała się z dwóch słów oddzielonych kropką - <code>powierzchnia.prostokat</code>.
 W rzeczywistości jednak nazwa funkcji to tylko <code>powierzchnia</code>, a kropka sugeruje że kolejny po niej wyraz to klasa obiektu jaki przyjmie funkcja.
 Jest to, innymi słowy, definicja metody.
 Nowa funkcja <code>powierzchnia</code> zadziała w powyższy sposób tylko w wypadku otrzymania jako dane wejściowe obiektu klasy <code>prostokat</code>.</p>
 <p>Sprawdźmy to na dwóch przykładach - obiektu <code>y</code> (klasa <code>prostokat</code>) i <code>x</code> (klasa <code>matrix</code>).</p>
-<pre class="sourceCode r"><code class="sourceCode r">y
-<span class="co">#&gt;      [,1] [,2]</span>
-<span class="co">#&gt; [1,]    0    2</span>
-<span class="co">#&gt; [2,]    0    3</span>
-<span class="co">#&gt; attr(,&quot;class&quot;)</span>
-<span class="co">#&gt; [1] &quot;prostokat&quot;</span>
-<span class="kw">powierzchnia</span>(y)
-<span class="co">#&gt; [1] 6</span></code></pre>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb301-1" data-line-number="1">y</a>
+<a class="sourceLine" id="cb301-2" data-line-number="2"><span class="co">#&gt;      [,1] [,2]</span></a>
+<a class="sourceLine" id="cb301-3" data-line-number="3"><span class="co">#&gt; [1,]    0    2</span></a>
+<a class="sourceLine" id="cb301-4" data-line-number="4"><span class="co">#&gt; [2,]    0    3</span></a>
+<a class="sourceLine" id="cb301-5" data-line-number="5"><span class="co">#&gt; attr(,&quot;class&quot;)</span></a>
+<a class="sourceLine" id="cb301-6" data-line-number="6"><span class="co">#&gt; [1] &quot;prostokat&quot;</span></a>
+<a class="sourceLine" id="cb301-7" data-line-number="7"><span class="kw">powierzchnia</span>(y)</a>
+<a class="sourceLine" id="cb301-8" data-line-number="8"><span class="co">#&gt; [1] 6</span></a></code></pre></div>
 <p>W przypadku, gdy nasz obiekt wejściowy jest klasy <code>prostokat</code> to funkcja jest wykonywana zgodnie z metodą <code>powierzchnia.prostokat()</code>,</p>
-<pre class="sourceCode r"><code class="sourceCode r">x
-<span class="co">#&gt;      [,1] [,2]</span>
-<span class="co">#&gt; [1,]    0    2</span>
-<span class="co">#&gt; [2,]    0    3</span>
-<span class="kw">powierzchnia</span>(x)
-<span class="co">#&gt; Error in UseMethod(&quot;powierzchnia&quot;): no applicable method for &#39;powierzchnia&#39; applied to an object of class &quot;c(&#39;matrix&#39;, &#39;double&#39;, &#39;numeric&#39;)&quot;</span></code></pre>
+<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb302-1" data-line-number="1">x</a>
+<a class="sourceLine" id="cb302-2" data-line-number="2"><span class="co">#&gt;      [,1] [,2]</span></a>
+<a class="sourceLine" id="cb302-3" data-line-number="3"><span class="co">#&gt; [1,]    0    2</span></a>
+<a class="sourceLine" id="cb302-4" data-line-number="4"><span class="co">#&gt; [2,]    0    3</span></a>
+<a class="sourceLine" id="cb302-5" data-line-number="5"><span class="kw">powierzchnia</span>(x)</a>
+<a class="sourceLine" id="cb302-6" data-line-number="6"><span class="co">#&gt; Error in UseMethod(&quot;powierzchnia&quot;): no applicable method for &#39;powierzchnia&#39; applied to an object of class &quot;c(&#39;matrix&#39;, &#39;double&#39;, &#39;numeric&#39;)&quot;</span></a></code></pre></div>
 <p>Natomiast, gdy obiekt wejściowy będzie innej klasy to pojawi się komunikat błędu sugerujący, że nie istnieje metoda dla tej klasy pozwalająca na otrzymanie wyniku.</p>
 <p>Dodatkowo, oprócz tworzenia metod dla każdej klasy oddzielnie możliwe jest stworzenie metody domyślnej poprzez <code>nazwafunkcji.default</code>.
 W przypadku, gdy dla obiektu wejściowego nie istnieje metoda to wówczas wykonywana jest metoda domyślna (<code>default</code>).
@@ -578,12 +580,12 @@ stop(“Funkcja <code>powierzchnia</code> ma wsparcie tylko dla obiektów o klas
 </div>
 
 <p>Sprawdźmy działanie domyślnej metody podając macierz jako obiekt wejściowy.</p>
-<pre class="sourceCode r"><code class="sourceCode r">x
-<span class="co">#&gt;      [,1] [,2]</span>
-<span class="co">#&gt; [1,]    0    2</span>
-<span class="co">#&gt; [2,]    0    3</span>
-<span class="kw">powierzchnia</span>(x)
-<span class="co">#&gt; Error in UseMethod(&quot;powierzchnia&quot;): no applicable method for &#39;powierzchnia&#39; applied to an object of class &quot;c(&#39;matrix&#39;, &#39;double&#39;, &#39;numeric&#39;)&quot;</span></code></pre>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb303-1" data-line-number="1">x</a>
+<a class="sourceLine" id="cb303-2" data-line-number="2"><span class="co">#&gt;      [,1] [,2]</span></a>
+<a class="sourceLine" id="cb303-3" data-line-number="3"><span class="co">#&gt; [1,]    0    2</span></a>
+<a class="sourceLine" id="cb303-4" data-line-number="4"><span class="co">#&gt; [2,]    0    3</span></a>
+<a class="sourceLine" id="cb303-5" data-line-number="5"><span class="kw">powierzchnia</span>(x)</a>
+<a class="sourceLine" id="cb303-6" data-line-number="6"><span class="co">#&gt; Error in UseMethod(&quot;powierzchnia&quot;): no applicable method for &#39;powierzchnia&#39; applied to an object of class &quot;c(&#39;matrix&#39;, &#39;double&#39;, &#39;numeric&#39;)&quot;</span></a></code></pre></div>
 </div>
 <div id="konstruktory" class="section level3">
 <h3><span class="header-section-number">10.3.3</span> Konstruktory</h3>
@@ -597,41 +599,41 @@ Dlatego też ważnym elementem jest stworzenie konstruktora - funkcji, której c
 <li>Czy minimalna wartość współrzędnej y jest mniejsza od maksymalnej?</li>
 </ul>
 <p>Po tych sprawdzeniach następuje zbudowanie nowej macierzy oraz dodanie nazwy klasy.</p>
-<pre class="sourceCode r"><code class="sourceCode r">nowy_prostokat =<span class="st"> </span><span class="cf">function</span>(xmin, ymin, xmax, ymax){
-  vals =<span class="st"> </span><span class="kw">c</span>(xmin, ymin, xmax, ymax)
-  <span class="cf">if</span> (<span class="op">!</span>(<span class="kw">is.numeric</span>(vals))){
-    <span class="kw">stop</span>(<span class="st">&quot;Wszystkie argumenty muszą być typu numerycznego&quot;</span>)
-  }
-  <span class="cf">if</span> (<span class="op">!</span><span class="kw">all</span>(<span class="kw">c</span>(<span class="kw">length</span>(xmin), <span class="kw">length</span>(ymin), <span class="kw">length</span>(xmax), <span class="kw">length</span>(ymax)) <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)){
-    <span class="kw">stop</span>(<span class="st">&quot;Każdy z argumentów może przyjmować tylko jedną wartość&quot;</span>)
-  }
-  x_range =<span class="st"> </span>vals[<span class="dv">3</span>] <span class="op">-</span><span class="st"> </span>vals[<span class="dv">1</span>]
-  <span class="cf">if</span> (x_range <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span>){
-    <span class="kw">stop</span>(<span class="st">&quot;`xmax` musi przyjmować wartość większą niż `xmin`&quot;</span>)
-  }
-  y_range =<span class="st"> </span>vals[<span class="dv">4</span>] <span class="op">-</span><span class="st"> </span>vals[<span class="dv">2</span>]
-  <span class="cf">if</span> (y_range <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span>) {
-    <span class="kw">stop</span>(<span class="st">&quot;`ymax` musi przyjmować wartość większą niż `ymin`&quot;</span>)
-  }
-  x =<span class="st"> </span><span class="kw">matrix</span>(vals, <span class="dt">ncol =</span> <span class="dv">2</span>)
-  <span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)
-}</code></pre>
+<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb304-1" data-line-number="1">nowy_prostokat =<span class="st"> </span><span class="cf">function</span>(xmin, ymin, xmax, ymax){</a>
+<a class="sourceLine" id="cb304-2" data-line-number="2">  vals =<span class="st"> </span><span class="kw">c</span>(xmin, ymin, xmax, ymax)</a>
+<a class="sourceLine" id="cb304-3" data-line-number="3">  <span class="cf">if</span> (<span class="op">!</span>(<span class="kw">is.numeric</span>(vals))){</a>
+<a class="sourceLine" id="cb304-4" data-line-number="4">    <span class="kw">stop</span>(<span class="st">&quot;Wszystkie argumenty muszą być typu numerycznego&quot;</span>)</a>
+<a class="sourceLine" id="cb304-5" data-line-number="5">  }</a>
+<a class="sourceLine" id="cb304-6" data-line-number="6">  <span class="cf">if</span> (<span class="op">!</span><span class="kw">all</span>(<span class="kw">c</span>(<span class="kw">length</span>(xmin), <span class="kw">length</span>(ymin), <span class="kw">length</span>(xmax), <span class="kw">length</span>(ymax)) <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)){</a>
+<a class="sourceLine" id="cb304-7" data-line-number="7">    <span class="kw">stop</span>(<span class="st">&quot;Każdy z argumentów może przyjmować tylko jedną wartość&quot;</span>)</a>
+<a class="sourceLine" id="cb304-8" data-line-number="8">  }</a>
+<a class="sourceLine" id="cb304-9" data-line-number="9">  x_range =<span class="st"> </span>vals[<span class="dv">3</span>] <span class="op">-</span><span class="st"> </span>vals[<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb304-10" data-line-number="10">  <span class="cf">if</span> (x_range <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span>){</a>
+<a class="sourceLine" id="cb304-11" data-line-number="11">    <span class="kw">stop</span>(<span class="st">&quot;`xmax` musi przyjmować wartość większą niż `xmin`&quot;</span>)</a>
+<a class="sourceLine" id="cb304-12" data-line-number="12">  }</a>
+<a class="sourceLine" id="cb304-13" data-line-number="13">  y_range =<span class="st"> </span>vals[<span class="dv">4</span>] <span class="op">-</span><span class="st"> </span>vals[<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb304-14" data-line-number="14">  <span class="cf">if</span> (y_range <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb304-15" data-line-number="15">    <span class="kw">stop</span>(<span class="st">&quot;`ymax` musi przyjmować wartość większą niż `ymin`&quot;</span>)</a>
+<a class="sourceLine" id="cb304-16" data-line-number="16">  }</a>
+<a class="sourceLine" id="cb304-17" data-line-number="17">  x =<span class="st"> </span><span class="kw">matrix</span>(vals, <span class="dt">ncol =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb304-18" data-line-number="18">  <span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)</a>
+<a class="sourceLine" id="cb304-19" data-line-number="19">}</a></code></pre></div>
 <p>Sprawdźmy działanie tego konstruktora na dwóch przypadkach.
 W pierwszym podajmy poprawne, sprawdzone wcześniej wartości.</p>
-<pre class="sourceCode r"><code class="sourceCode r">nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>)
-nowy_p
-<span class="co">#&gt;      [,1] [,2]</span>
-<span class="co">#&gt; [1,]    0    2</span>
-<span class="co">#&gt; [2,]    0    3</span>
-<span class="co">#&gt; attr(,&quot;class&quot;)</span>
-<span class="co">#&gt; [1] &quot;prostokat&quot;</span></code></pre>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb305-1" data-line-number="1">nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb305-2" data-line-number="2">nowy_p</a>
+<a class="sourceLine" id="cb305-3" data-line-number="3"><span class="co">#&gt;      [,1] [,2]</span></a>
+<a class="sourceLine" id="cb305-4" data-line-number="4"><span class="co">#&gt; [1,]    0    2</span></a>
+<a class="sourceLine" id="cb305-5" data-line-number="5"><span class="co">#&gt; [2,]    0    3</span></a>
+<a class="sourceLine" id="cb305-6" data-line-number="6"><span class="co">#&gt; attr(,&quot;class&quot;)</span></a>
+<a class="sourceLine" id="cb305-7" data-line-number="7"><span class="co">#&gt; [1] &quot;prostokat&quot;</span></a></code></pre></div>
 <p>Konstruktor <code>nowy_prostokat()</code> działa bez problemu, zwracając nowy obiekt <code>nowy_p</code> o klasie <code>prostokat</code>.
 Warto od razu zobaczyć, czy ten obiekt zadziała poprawnie w funkcji <code>powierzchnia()</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">powierzchnia</span>(nowy_p)
-<span class="co">#&gt; [1] 6</span></code></pre>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb306-1" data-line-number="1"><span class="kw">powierzchnia</span>(nowy_p)</a>
+<a class="sourceLine" id="cb306-2" data-line-number="2"><span class="co">#&gt; [1] 6</span></a></code></pre></div>
 <p>W przypadku, gdy do konstruktora zostaną podane niepoprawne wartości wejściowe pojawi się odpowiedni komunikat błędu.</p>
-<pre class="sourceCode r"><code class="sourceCode r">nowy_p2 =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">7</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">0</span>)
-<span class="co">#&gt; Error in nowy_prostokat(7, 0, 6, 0): `xmax` musi przyjmować wartość większą niż `xmin`</span></code></pre>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb307-1" data-line-number="1">nowy_p2 =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">7</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb307-2" data-line-number="2"><span class="co">#&gt; Error in nowy_prostokat(7, 0, 6, 0): `xmax` musi przyjmować wartość większą niż `xmin`</span></a></code></pre></div>
 <!-- block - konstuktor, walidator, helper -->
 <!-- https://adv-r.hadley.nz/s3.html#s3-classes -->
 <!-- methods -->
@@ -674,11 +676,13 @@ Zastanów się jakie powinny być wartości argumentów wejściowych i napisz we
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -686,12 +690,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -703,6 +706,10 @@ gitbook.start({
 "text": "Edit"
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -724,8 +731,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

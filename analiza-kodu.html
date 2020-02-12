@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>11 Analiza kodu | Elementarz programisty</title>
   <meta name="description" content="11 Analiza kodu | Elementarz programisty" />
-  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="11 Analiza kodu | Elementarz programisty" />
   <meta property="og:type" content="book" />
@@ -24,15 +24,15 @@
 <meta name="author" content="Jakub Nowosad" />
 
 
-<meta name="date" content="2019-06-04" />
+<meta name="date" content="2020-02-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="zlozone-funkcje.html">
-<link rel="next" href="kontrola-wersji.html">
+<link rel="prev" href="zlozone-funkcje.html"/>
+<link rel="next" href="kontrola-wersji.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -40,6 +40,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -55,7 +58,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; position: absolute; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -132,9 +134,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a><ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#wymagania-wstepne"><i class="fa fa-check"></i>Wymagania wstępne</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#styl-ksiazki"><i class="fa fa-check"></i>Styl książki</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#podziekowania"><i class="fa fa-check"></i>Podziękowania</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#wymagania-wstępne"><i class="fa fa-check"></i>Wymagania wstępne</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#styl-książki"><i class="fa fa-check"></i>Styl książki</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#podziękowania"><i class="fa fa-check"></i>Podziękowania</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a><ul>
 <li class="chapter" data-level="1.1" data-path="wprowadzenie.html"><a href="wprowadzenie.html#mity-programistyczne"><i class="fa fa-check"></i><b>1.1</b> Mity programistyczne</a></li>
@@ -144,7 +146,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>I Podstawy</b></span></li>
 <li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a><ul>
-<li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrazenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia</a></li>
+<li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrażenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia</a></li>
 <li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="ergosum.html"><a href="ergosum.html#operator-przypisania"><i class="fa fa-check"></i><b>2.2.1</b> Operator przypisania</a></li>
 <li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dzialania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach</a></li>
@@ -152,9 +154,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="ergosum.html"><a href="ergosum.html#ide"><i class="fa fa-check"></i><b>2.3</b> IDE</a></li>
 <li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a><ul>
 <li class="chapter" data-level="2.4.1" data-path="ergosum.html"><a href="ergosum.html#nazwy-obiektow"><i class="fa fa-check"></i><b>2.4.1</b> Nazwy obiektów</a></li>
-<li class="chapter" data-level="2.4.2" data-path="ergosum.html"><a href="ergosum.html#odstepy"><i class="fa fa-check"></i><b>2.4.2</b> Odstępy</a></li>
+<li class="chapter" data-level="2.4.2" data-path="ergosum.html"><a href="ergosum.html#odstępy"><i class="fa fa-check"></i><b>2.4.2</b> Odstępy</a></li>
 <li class="chapter" data-level="2.4.3" data-path="ergosum.html"><a href="ergosum.html#komentarze"><i class="fa fa-check"></i><b>2.4.3</b> Komentarze</a></li>
-<li class="chapter" data-level="2.4.4" data-path="ergosum.html"><a href="ergosum.html#nazwy-plikow"><i class="fa fa-check"></i><b>2.4.4</b> Nazwy plików</a></li>
+<li class="chapter" data-level="2.4.4" data-path="ergosum.html"><a href="ergosum.html#nazwy-plików"><i class="fa fa-check"></i><b>2.4.4</b> Nazwy plików</a></li>
 <li class="chapter" data-level="2.4.5" data-path="ergosum.html"><a href="ergosum.html#daty"><i class="fa fa-check"></i><b>2.4.5</b> Daty</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="ergosum.html"><a href="ergosum.html#resources"><i class="fa fa-check"></i><b>2.5</b> Dodatkowe materiały</a></li>
@@ -167,21 +169,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="funkcje.html"><a href="funkcje.html#dokumentacja-funkcji"><i class="fa fa-check"></i><b>3.4</b> Dokumentacja funkcji</a></li>
 <li class="chapter" data-level="3.5" data-path="funkcje.html"><a href="funkcje.html#pakiety"><i class="fa fa-check"></i><b>3.5</b> Pakiety</a></li>
 <li class="chapter" data-level="3.6" data-path="funkcje.html"><a href="funkcje.html#algorytmy"><i class="fa fa-check"></i><b>3.6</b> Algorytmy</a></li>
-<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptow"><i class="fa fa-check"></i><b>3.7</b> Tworzenie skryptów</a></li>
+<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptów"><i class="fa fa-check"></i><b>3.7</b> Tworzenie skryptów</a></li>
 <li class="chapter" data-level="3.8" data-path="funkcje.html"><a href="funkcje.html#budowanie-funkcji"><i class="fa fa-check"></i><b>3.8</b> Budowanie funkcji</a></li>
 <li class="chapter" data-level="3.9" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.9</b> Komunikaty</a></li>
 <li class="chapter" data-level="3.10" data-path="funkcje.html"><a href="funkcje.html#zadania-2"><i class="fa fa-check"></i><b>3.10</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a><ul>
 <li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
-<li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagniezdzone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdżone</a></li>
-<li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porownania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
+<li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagnieżdżone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdżone</a></li>
+<li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porównania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
 <li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wwwf"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach</a></li>
 <li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zadania-3"><i class="fa fa-check"></i><b>4.5</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a><ul>
 <li class="chapter" data-level="5.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wektory"><i class="fa fa-check"></i><b>5.1</b> Wektory</a></li>
-<li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wasciwosci-wektorow"><i class="fa fa-check"></i><b>5.2</b> Właściwości wektorów</a></li>
+<li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#właściwości-wektorów"><i class="fa fa-check"></i><b>5.2</b> Właściwości wektorów</a></li>
 <li class="chapter" data-level="5.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#pf-vector"><i class="fa fa-check"></i><b>5.3</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="5.4" data-path="proste-obiekty.html"><a href="proste-obiekty.html#dzialania-na-wektorach"><i class="fa fa-check"></i><b>5.4</b> Działania na wektorach</a></li>
 <li class="chapter" data-level="5.5" data-path="proste-obiekty.html"><a href="proste-obiekty.html#na"><i class="fa fa-check"></i><b>5.5</b> Brakujące wartości</a></li>
@@ -189,7 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.7" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wip-vector"><i class="fa fa-check"></i><b>5.7</b> Wydzielanie i przypisanie</a></li>
 <li class="chapter" data-level="5.8" data-path="proste-obiekty.html"><a href="proste-obiekty.html#mo-vector"><i class="fa fa-check"></i><b>5.8</b> Modyfikowanie obiektów</a></li>
 <li class="chapter" data-level="5.9" data-path="proste-obiekty.html"><a href="proste-obiekty.html#lpto-vector"><i class="fa fa-check"></i><b>5.9</b> Łączenie podstawowych typów obiektów</a></li>
-<li class="chapter" data-level="5.10" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zmiana-typow-obiektow"><i class="fa fa-check"></i><b>5.10</b> Zmiana typów obiektów</a></li>
+<li class="chapter" data-level="5.10" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zmiana-typów-obiektów"><i class="fa fa-check"></i><b>5.10</b> Zmiana typów obiektów</a></li>
 <li class="chapter" data-level="5.11" data-path="proste-obiekty.html"><a href="proste-obiekty.html#fac"><i class="fa fa-check"></i><b>5.11</b> Wektory czynnikowe</a></li>
 <li class="chapter" data-level="5.12" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ate"><i class="fa fa-check"></i><b>5.12</b> Wektory dat</a></li>
 <li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ime"><i class="fa fa-check"></i><b>5.13</b> Wektory czasu</a></li>
@@ -197,12 +199,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a><ul>
 <li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#reprezentacja-tekstu"><i class="fa fa-check"></i><b>6.1</b> Reprezentacja tekstu</a></li>
-<li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekscie"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście</a></li>
+<li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekście"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście</a></li>
 <li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wt"><i class="fa fa-check"></i><b>6.3</b> Wydzielanie tekstu</a></li>
-<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wyrazenia-regularne"><i class="fa fa-check"></i><b>6.4</b> Wyrażenia regularne</a></li>
+<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wyrażenia-regularne"><i class="fa fa-check"></i><b>6.4</b> Wyrażenia regularne</a></li>
 <li class="chapter" data-level="6.5" data-path="tekst.html"><a href="tekst.html#wtregex"><i class="fa fa-check"></i><b>6.5</b> Wydzielanie tekstu - regex</a></li>
 <li class="chapter" data-level="6.6" data-path="tekst.html"><a href="tekst.html#zamiana-tekstu---regex"><i class="fa fa-check"></i><b>6.6</b> Zamiana tekstu - regex</a></li>
-<li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plikow"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików</a></li>
+<li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plików"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików</a></li>
 <li class="chapter" data-level="6.8" data-path="tekst.html"><a href="tekst.html#zadania-5"><i class="fa fa-check"></i><b>6.8</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a><ul>
@@ -210,18 +212,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie"><i class="fa fa-check"></i><b>7.1.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.1.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje"><i class="fa fa-check"></i><b>7.1.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.1.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-1"><i class="fa fa-check"></i><b>7.1.3</b> Wydzielanie</a></li>
-<li class="chapter" data-level="7.1.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#aczenie"><i class="fa fa-check"></i><b>7.1.4</b> Łączenie</a></li>
+<li class="chapter" data-level="7.1.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie"><i class="fa fa-check"></i><b>7.1.4</b> Łączenie</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a><ul>
 <li class="chapter" data-level="7.2.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-1"><i class="fa fa-check"></i><b>7.2.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.2.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-1"><i class="fa fa-check"></i><b>7.2.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.2.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-df"><i class="fa fa-check"></i><b>7.2.3</b> Wydzielanie</a></li>
-<li class="chapter" data-level="7.2.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#aczenie-1"><i class="fa fa-check"></i><b>7.2.4</b> Łączenie</a></li>
+<li class="chapter" data-level="7.2.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-1"><i class="fa fa-check"></i><b>7.2.4</b> Łączenie</a></li>
 </ul></li>
 <li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-2"><i class="fa fa-check"></i><b>7.3.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.3.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-2"><i class="fa fa-check"></i><b>7.3.2</b> Podstawowe funkcje</a></li>
-<li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#aczenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie</a></li>
+<li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie</a></li>
 <li class="chapter" data-level="7.3.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-list"><i class="fa fa-check"></i><b>7.3.4</b> Wydzielanie</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zmiany-klas"><i class="fa fa-check"></i><b>7.4</b> Zmiany klas</a></li>
@@ -230,7 +232,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a><ul>
 <li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a><ul>
-<li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#skadnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia</a></li>
+<li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#składnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia</a></li>
 <li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#for-example"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
 <li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach</a></li>
 </ul></li>
@@ -240,10 +242,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a><ul>
 <li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy</a></li>
-<li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#dziaania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.2</b> Działania na plikach i folderach</a></li>
+<li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#działania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.2</b> Działania na plikach i folderach</a></li>
 <li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#dane-internetowe"><i class="fa fa-check"></i><b>9.3</b> Dane internetowe</a></li>
-<li class="chapter" data-level="9.4" data-path="io.html"><a href="io.html#wczytywanie-plikow-tekstowych"><i class="fa fa-check"></i><b>9.4</b> Wczytywanie plików tekstowych</a></li>
-<li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#zapisywanie-plikow-tekstowych"><i class="fa fa-check"></i><b>9.5</b> Zapisywanie plików tekstowych</a></li>
+<li class="chapter" data-level="9.4" data-path="io.html"><a href="io.html#wczytywanie-plików-tekstowych"><i class="fa fa-check"></i><b>9.4</b> Wczytywanie plików tekstowych</a></li>
+<li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#zapisywanie-plików-tekstowych"><i class="fa fa-check"></i><b>9.5</b> Zapisywanie plików tekstowych</a></li>
 <li class="chapter" data-level="9.6" data-path="io.html"><a href="io.html#formaty-r"><i class="fa fa-check"></i><b>9.6</b> Formaty R</a></li>
 <li class="chapter" data-level="9.7" data-path="io.html"><a href="io.html#arkusze-kalkulacyjne"><i class="fa fa-check"></i><b>9.7</b> Arkusze kalkulacyjne</a></li>
 <li class="chapter" data-level="9.8" data-path="io.html"><a href="io.html#inne-formaty"><i class="fa fa-check"></i><b>9.8</b> Inne formaty</a></li>
@@ -281,14 +283,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>12.2</b> GitHub</a><ul>
 <li class="chapter" data-level="12.2.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#tworzenie-zdanego-repo"><i class="fa fa-check"></i><b>12.2.1</b> Tworzenie zdanego repo</a></li>
 <li class="chapter" data-level="12.2.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-github"><i class="fa fa-check"></i><b>12.2.2</b> Repozytorium GitHub</a></li>
-<li class="chapter" data-level="12.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-mozliwosci-github"><i class="fa fa-check"></i><b>12.2.3</b> Dodatkowe możliwości GitHub</a></li>
+<li class="chapter" data-level="12.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-możliwości-github"><i class="fa fa-check"></i><b>12.2.3</b> Dodatkowe możliwości GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="12.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rstudio-git"><i class="fa fa-check"></i><b>12.3</b> Kontrola wersji w RStudio</a></li>
 <li class="chapter" data-level="12.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>12.4</b> Sposoby pracy z systemem Git</a><ul>
 <li class="chapter" data-level="12.4.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#nowy-projekt"><i class="fa fa-check"></i><b>12.4.1</b> Nowy projekt</a></li>
 <li class="chapter" data-level="12.4.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#istniejacy-projekt"><i class="fa fa-check"></i><b>12.4.2</b> Istniejący projekt</a></li>
 </ul></li>
-<li class="chapter" data-level="12.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#problemy-z-kontrola-wersji"><i class="fa fa-check"></i><b>12.5</b> Problemy z kontrolą wersji</a></li>
+<li class="chapter" data-level="12.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#problemy-z-kontrolą-wersji"><i class="fa fa-check"></i><b>12.5</b> Problemy z kontrolą wersji</a></li>
 <li class="chapter" data-level="12.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zadania-11"><i class="fa fa-check"></i><b>12.6</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>13</b> Pakiety</a><ul>
@@ -297,12 +299,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>13.3</b> Rozwijanie pakietu</a></li>
 <li class="chapter" data-level="13.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-i-dokumentacja-funkcji"><i class="fa fa-check"></i><b>13.4</b> Tworzenie i dokumentacja funkcji</a></li>
 <li class="chapter" data-level="13.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>13.5</b> Opis pakietu</a></li>
-<li class="chapter" data-level="13.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zaleznosci"><i class="fa fa-check"></i><b>13.6</b> Zależności</a></li>
+<li class="chapter" data-level="13.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zależności"><i class="fa fa-check"></i><b>13.6</b> Zależności</a></li>
 <li class="chapter" data-level="13.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#sprawdzanie-pakietu"><i class="fa fa-check"></i><b>13.7</b> Sprawdzanie pakietu</a></li>
 <li class="chapter" data-level="13.8" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#instalowanie-pakietu"><i class="fa fa-check"></i><b>13.8</b> Instalowanie pakietu</a></li>
 <li class="chapter" data-level="13.9" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-pakietu"><i class="fa fa-check"></i><b>13.9</b> Dokumentacja pakietu</a></li>
 <li class="chapter" data-level="13.10" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#wbudowane-testy"><i class="fa fa-check"></i><b>13.10</b> Wbudowane testy</a></li>
-<li class="chapter" data-level="13.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietow"><i class="fa fa-check"></i><b>13.11</b> Publikowanie pakietów</a></li>
+<li class="chapter" data-level="13.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietów"><i class="fa fa-check"></i><b>13.11</b> Publikowanie pakietów</a></li>
 <li class="chapter" data-level="13.12" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zadania-12"><i class="fa fa-check"></i><b>13.12</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>14</b> Podsumowanie</a><ul>
@@ -349,46 +351,46 @@ W tym momencie wystarczy już tylko stworzyć nową implementację i użyć wcze
 Dadzą one informację, czy efekt działania jest taki jaki oczekujemy, a w przeciwnym razie wskażą gdzie pojawił się błąd.
 Istnieje też dodatkowa reguła - jeżeli znajdziesz błąd w kodzie od razu napisz test jednostkowy.</p>
 <p>Zobaczmy jak działają testy jednostkowe na przykładzie funkcji <code>nowy_prostokat()</code> oraz <code>powierzchnia()</code> stworzonych w sekcji <a href="zlozone-funkcje.html#oop">10.3</a>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">nowy_prostokat =<span class="st"> </span><span class="cf">function</span>(xmin, ymin, xmax, ymax){
-  <span class="cf">if</span> (<span class="op">!</span><span class="kw">all</span>(<span class="kw">c</span>(<span class="kw">length</span>(xmin), <span class="kw">length</span>(ymin), <span class="kw">length</span>(xmax), <span class="kw">length</span>(ymax)) <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)){
-    <span class="kw">stop</span>(<span class="st">&quot;Każdy z argumentów może przyjmować tylko jedną wartość&quot;</span>)
-  }
-  vals =<span class="st"> </span><span class="kw">c</span>(xmin, ymin, xmax, ymax)
-  <span class="cf">if</span> (<span class="op">!</span>(<span class="kw">is.numeric</span>(vals))){
-    <span class="kw">stop</span>(<span class="st">&quot;Wszystkie argumenty muszą być typu numerycznego&quot;</span>)
-  }
-  x =<span class="st"> </span><span class="kw">matrix</span>(vals, <span class="dt">ncol =</span> <span class="dv">2</span>)
-  <span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)
-}
-powierzchnia =<span class="st"> </span><span class="cf">function</span>(x) {
-  <span class="kw">UseMethod</span>(<span class="st">&quot;powierzchnia&quot;</span>)
-}
-powierzchnia.prostokat =<span class="st"> </span><span class="cf">function</span>(x){
-  a =<span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">1</span>]
-  b =<span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">1</span>]
-  a <span class="op">*</span><span class="st"> </span>b
-}</code></pre>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb308-1" data-line-number="1">nowy_prostokat =<span class="st"> </span><span class="cf">function</span>(xmin, ymin, xmax, ymax){</a>
+<a class="sourceLine" id="cb308-2" data-line-number="2">  <span class="cf">if</span> (<span class="op">!</span><span class="kw">all</span>(<span class="kw">c</span>(<span class="kw">length</span>(xmin), <span class="kw">length</span>(ymin), <span class="kw">length</span>(xmax), <span class="kw">length</span>(ymax)) <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)){</a>
+<a class="sourceLine" id="cb308-3" data-line-number="3">    <span class="kw">stop</span>(<span class="st">&quot;Każdy z argumentów może przyjmować tylko jedną wartość&quot;</span>)</a>
+<a class="sourceLine" id="cb308-4" data-line-number="4">  }</a>
+<a class="sourceLine" id="cb308-5" data-line-number="5">  vals =<span class="st"> </span><span class="kw">c</span>(xmin, ymin, xmax, ymax)</a>
+<a class="sourceLine" id="cb308-6" data-line-number="6">  <span class="cf">if</span> (<span class="op">!</span>(<span class="kw">is.numeric</span>(vals))){</a>
+<a class="sourceLine" id="cb308-7" data-line-number="7">    <span class="kw">stop</span>(<span class="st">&quot;Wszystkie argumenty muszą być typu numerycznego&quot;</span>)</a>
+<a class="sourceLine" id="cb308-8" data-line-number="8">  }</a>
+<a class="sourceLine" id="cb308-9" data-line-number="9">  x =<span class="st"> </span><span class="kw">matrix</span>(vals, <span class="dt">ncol =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb308-10" data-line-number="10">  <span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)</a>
+<a class="sourceLine" id="cb308-11" data-line-number="11">}</a>
+<a class="sourceLine" id="cb308-12" data-line-number="12">powierzchnia =<span class="st"> </span><span class="cf">function</span>(x) {</a>
+<a class="sourceLine" id="cb308-13" data-line-number="13">  <span class="kw">UseMethod</span>(<span class="st">&quot;powierzchnia&quot;</span>)</a>
+<a class="sourceLine" id="cb308-14" data-line-number="14">}</a>
+<a class="sourceLine" id="cb308-15" data-line-number="15">powierzchnia.prostokat =<span class="st"> </span><span class="cf">function</span>(x){</a>
+<a class="sourceLine" id="cb308-16" data-line-number="16">  a =<span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb308-17" data-line-number="17">  b =<span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb308-18" data-line-number="18">  a <span class="op">*</span><span class="st"> </span>b</a>
+<a class="sourceLine" id="cb308-19" data-line-number="19">}</a></code></pre></div>
 <p>Jednym z możliwych narzędzi do testów jednostkowych w R jest pakiet <strong>testthat</strong> <span class="citation">(Wickham <a href="#ref-R-testthat">2019</a><a href="#ref-R-testthat">b</a>)</span>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(testthat)</code></pre>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb309-1" data-line-number="1"><span class="kw">library</span>(testthat)</a></code></pre></div>
 <p>Zawiera on szereg funkcji sprawdzających czy działanie naszych funkcji jest zgodne z oczekiwaniem.
 Funkcje w tym pakiecie rozpoczynają się od prefiksu <code>expect_</code> (oczekuj).</p>
 <p>W przypadku funkcji <code>powierzchnia()</code> oczekujemy, że wynik będzie zawierał tylko jeden element.
 Możemy to sprawdzić za pomocą funkcji <code>expect_length()</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">5</span>)
-<span class="kw">expect_length</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">1</span>)</code></pre>
+<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb310-1" data-line-number="1">nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb310-2" data-line-number="2"><span class="kw">expect_length</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">1</span>)</a></code></pre></div>
 <p>Jeżeli wynik ma długość jeden to wówczas nic się nie stane.
 W przeciwnym razie pojawi się komunikat błędu.</p>
 <p>Wiemy, że powierzchnia naszego przykładowego obiektu <code>nowy_p</code> to 30.
 Do sprawdzenia, czy nasza funkcja daje na tym obiekcie dokładnie taki wynik możemy użyć <code>expect_equal()</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">expect_equal</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">30</span>)</code></pre>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb311-1" data-line-number="1"><span class="kw">expect_equal</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">30</span>)</a></code></pre></div>
 <p>W momencie, gdy wynik jest zgodny to nie nastąpi żadna reakcja, a w przeciwnym razie wystąpi błąd.
 W pakiecie <strong>testthat</strong> istnieją inne funkcje podobne do <code>expect_equal()</code>.
 Przykładowo, funkcja <code>expect_identical()</code> sprawdza nie tylko podobieństwo wartości, ale też to czy klasa wyników jest taka sama.</p>
 <p>Aby sprawdzić czy nasza funkcja na pewno zwróci błąd w przypadku podania niepoprawnych danych wejściowych możemy użyć funkcji <code>expect_error()</code>.
 Jej działanie jest przedstawione poniżej.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">expect_error</span>(<span class="kw">nowy_prostokat</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="st">&quot;a&quot;</span>))
-<span class="kw">expect_error</span>(<span class="kw">nowy_prostokat</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">6</span>))
-<span class="co">#&gt; Error: `nowy_prostokat(1, 2, 3, 6)` did not throw an error.</span></code></pre>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb312-1" data-line-number="1"><span class="kw">expect_error</span>(<span class="kw">nowy_prostokat</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="st">&quot;a&quot;</span>))</a>
+<a class="sourceLine" id="cb312-2" data-line-number="2"><span class="kw">expect_error</span>(<span class="kw">nowy_prostokat</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">6</span>))</a>
+<a class="sourceLine" id="cb312-3" data-line-number="3"><span class="co">#&gt; Error: `nowy_prostokat(1, 2, 3, 6)` did not throw an error.</span></a></code></pre></div>
 <p>W przypadku, gdy wywołanie funkcji zwróci błąd, <code>expect_error()</code> nic nie zwróci.
 Natomiast, jeżeli wywołania funkcji nie zwróci błędu, <code>expect_error()</code> zatrzyma swoje działanie i zwróci komunikat.
 Odpowiednikami <code>expect_error()</code> dla ostrzeżeń jest <code>expect_warning()</code>, a dla wiadomości <code>expect_message()</code>.</p>
@@ -411,16 +413,16 @@ Dzięki profilowaniu można określić fragmenty kodu, które można poprawić w
 <p>Poniżej znajduje się zawartość pliku <code>R/moja_funkcja.R</code>.
 Jego działanie polega na stworzeniu wektora od 1 do 9999999 (obiekt <code>x</code>), wektora od 1 do 19999998 co 2 (obiekt <code>y</code>), połączenie tych wektorów do ramki danych (obiekt <code>df</code>), wyliczenie sumy wartości dla każdego wiersza (obiekt <code>z</code>), a na końcu wyliczenie średniej z obiektu <code>z</code>.
 Która z tych linii zabiera najwięcej czasu a która najmniej?</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># plik R/moja_funkcja.R</span>
-x =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">9999999</span>
-y =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">19999998</span>, <span class="dt">by =</span> <span class="dv">2</span>)
-df =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y)
-z =<span class="st"> </span><span class="kw">rowSums</span>(df)
-<span class="kw">mean</span>(z)</code></pre>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb313-1" data-line-number="1"><span class="co"># plik R/moja_funkcja.R</span></a>
+<a class="sourceLine" id="cb313-2" data-line-number="2">x =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">9999999</span></a>
+<a class="sourceLine" id="cb313-3" data-line-number="3">y =<span class="st"> </span><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">19999998</span>, <span class="dt">by =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb313-4" data-line-number="4">df =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y)</a>
+<a class="sourceLine" id="cb313-5" data-line-number="5">z =<span class="st"> </span><span class="kw">rowSums</span>(df)</a>
+<a class="sourceLine" id="cb313-6" data-line-number="6"><span class="kw">mean</span>(z)</a></code></pre></div>
 <p>Profilowanie kodu R można wykonać używając funkcji <code>profvis()</code> z pakietu <strong>profvis</strong> <span class="citation">(Chang and Luraschi <a href="#ref-R-profvis">2018</a>)</span>.
 Przyjmuje ona kod lub funkcję, która ma zostać profilowana.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(profvis)
-<span class="kw">profvis</span>(<span class="kw">source</span>(<span class="st">&quot;R/moja_funkcja.R&quot;</span>))</code></pre>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb314-1" data-line-number="1"><span class="kw">library</span>(profvis)</a>
+<a class="sourceLine" id="cb314-2" data-line-number="2"><span class="kw">profvis</span>(<span class="kw">source</span>(<span class="st">&quot;R/moja_funkcja.R&quot;</span>))</a></code></pre></div>
 <p>W powyższym przypadku nastąpiło profilowanie kodu zawartego w skrypcie <code>R/moja_funkcja.R</code>.
 Efektem działania jest interaktywne podsumowanie pokazujące zużycie pamięci oraz czas poświęcony dla kolejnych linii kodu (rycina <a href="analiza-kodu.html#fig:profvis">11.1</a>).</p>
 <div class="figure" style="text-align: center"><span id="fig:profvis"></span>
@@ -450,50 +452,50 @@ Ostatnia linia, wyliczająca średnią, zabrała ok. 10ms.</p>
 <p>Benchmarking oznacza określanie wydajności danej operacji czy funkcji.
 Wydajność może być określona na wiele różnych sposobów, w tym najprostszym jest czas wykonania pewnego kodu.
 Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej funkcji <code>system.time()</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(kod_do_wykonania)</code></pre>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb315-1" data-line-number="1"><span class="kw">system.time</span>(kod_do_wykonania)</a></code></pre></div>
 <p>Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))
-<span class="co">#&gt;    user  system elapsed </span>
-<span class="co">#&gt;   0.624   0.000   0.624</span></code></pre>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb316-1" data-line-number="1"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))</a>
+<a class="sourceLine" id="cb316-2" data-line-number="2"><span class="co">#&gt;    user  system elapsed </span></a>
+<a class="sourceLine" id="cb316-3" data-line-number="3"><span class="co">#&gt;   0.435   0.000   0.435</span></a></code></pre></div>
 <p>W efekcie dostajemy trzy wartości - <code>user</code>, <code>system</code> i <code>elapsed</code>. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.</p>
 <p>Benchmarking jest często używany w sytuacji, gdy istnieje kilka funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
 Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.</p>
 <p>W sekcji <a href="petle.html#for-example">8.1.2</a> stworzyliśmy kilka wersji pętli <code>for</code> pozwalającej na przeliczanie wartości z mil lądowych na kilometry.
 Pierwsza z nich, tutaj zdefiniowana jako funkcja <code>mi_do_km1</code>, tworzy pusty wektor o długości 0, do którego następie doklejane są kolejne przeliczone wartości.</p>
-<pre class="sourceCode r"><code class="sourceCode r">mi_do_km1 =<span class="st"> </span><span class="cf">function</span>(odl_mile){
-  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="dv">0</span>)
-  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
-    odl_km =<span class="st"> </span><span class="kw">c</span>(odl_km, odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)
-  }
-  odl_km
-}</code></pre>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb317-1" data-line-number="1">mi_do_km1 =<span class="st"> </span><span class="cf">function</span>(odl_mile){</a>
+<a class="sourceLine" id="cb317-2" data-line-number="2">  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb317-3" data-line-number="3">  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {</a>
+<a class="sourceLine" id="cb317-4" data-line-number="4">    odl_km =<span class="st"> </span><span class="kw">c</span>(odl_km, odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)</a>
+<a class="sourceLine" id="cb317-5" data-line-number="5">  }</a>
+<a class="sourceLine" id="cb317-6" data-line-number="6">  odl_km</a>
+<a class="sourceLine" id="cb317-7" data-line-number="7">}</a></code></pre></div>
 <p>Druga, tutaj zdefiniowana jako funkcja <code>mi_do_km2</code>, tworzy pusty wektor o oczekiwanej długości wyniku.
 Następnie kolejne przeliczone wartości są wstawiane w odpowiednie miejsca wektora wynikowego.</p>
-<pre class="sourceCode r"><code class="sourceCode r">mi_do_km2 =<span class="st"> </span><span class="cf">function</span>(odl_mile){
-  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))
-  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {
-    odl_km[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>
-  }
-  odl_km
-}</code></pre>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb318-1" data-line-number="1">mi_do_km2 =<span class="st"> </span><span class="cf">function</span>(odl_mile){</a>
+<a class="sourceLine" id="cb318-2" data-line-number="2">  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))</a>
+<a class="sourceLine" id="cb318-3" data-line-number="3">  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {</a>
+<a class="sourceLine" id="cb318-4" data-line-number="4">    odl_km[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span></a>
+<a class="sourceLine" id="cb318-5" data-line-number="5">  }</a>
+<a class="sourceLine" id="cb318-6" data-line-number="6">  odl_km</a>
+<a class="sourceLine" id="cb318-7" data-line-number="7">}</a></code></pre></div>
 <p>Dwie powyższe funkcje można porównać używając <code>system.time()</code>.
 Nie zawsze jednak to wystarczy - ta sama funkcja wykonana dwa razy może mieć różny czas obliczeń.<!--why??-->
 Dodatkowo, oprócz czasu wykonywania funkcji może nas interesować zużycie zasobów, takich jak pamięć operacyjna.
 Do takiego celu powstała funkcja <code>mark()</code> z pakietu <strong>bench</strong> <span class="citation">(Hester <a href="#ref-R-bench">2019</a>)</span>, która wykonuje funkcje wiele razy przed zwróceniem wyniku.</p>
 <p>Przyjmuje ona wywołania funkcji, które chcemy porównać.
 Poniżej nastąpi porównanie funkcji <code>mi_do_km1</code> i <code>mi_do_km2</code>, w przypadku gdy jako dane wejściowe zostanie podana lista z wartościami 142, 63, 121.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(bench)
-odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)
-wynik_<span class="dv">1</span> =<span class="st"> </span><span class="kw">mark</span>(
-  <span class="kw">mi_do_km1</span>(odl_mile),
-  <span class="kw">mi_do_km2</span>(odl_mile)
-)
-wynik_<span class="dv">1</span>
-<span class="co">#&gt; # A tibble: 2 x 6</span>
-<span class="co">#&gt;   expression               min   median `itr/sec` mem_alloc `gc/sec`</span>
-<span class="co">#&gt;   &lt;bch:expr&gt;          &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1(odl_mile)   1.55µs   1.77µs   475870.     117KB        0</span>
-<span class="co">#&gt; 2 mi_do_km2(odl_mile)   1.15µs   1.29µs   710642.     221KB        0</span></code></pre>
+<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb319-1" data-line-number="1"><span class="kw">library</span>(bench)</a>
+<a class="sourceLine" id="cb319-2" data-line-number="2">odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</a>
+<a class="sourceLine" id="cb319-3" data-line-number="3">wynik_<span class="dv">1</span> =<span class="st"> </span><span class="kw">mark</span>(</a>
+<a class="sourceLine" id="cb319-4" data-line-number="4">  <span class="kw">mi_do_km1</span>(odl_mile),</a>
+<a class="sourceLine" id="cb319-5" data-line-number="5">  <span class="kw">mi_do_km2</span>(odl_mile)</a>
+<a class="sourceLine" id="cb319-6" data-line-number="6">)</a>
+<a class="sourceLine" id="cb319-7" data-line-number="7">wynik_<span class="dv">1</span></a>
+<a class="sourceLine" id="cb319-8" data-line-number="8"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
+<a class="sourceLine" id="cb319-9" data-line-number="9"><span class="co">#&gt;   expression               min   median `itr/sec` mem_alloc `gc/sec`</span></a>
+<a class="sourceLine" id="cb319-10" data-line-number="10"><span class="co">#&gt;   &lt;bch:expr&gt;          &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb319-11" data-line-number="11"><span class="co">#&gt; 1 mi_do_km1(odl_mile)   1.27µs   1.42µs   583034.     117KB        0</span></a>
+<a class="sourceLine" id="cb319-12" data-line-number="12"><span class="co">#&gt; 2 mi_do_km2(odl_mile) 903.03ns   1.06µs   719873.     221KB        0</span></a></code></pre></div>
 <p>Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
 Zawiera ona szereg charakterystyk, w tym:</p>
 <ul>
@@ -508,21 +510,20 @@ Zawiera ona szereg charakterystyk, w tym:</p>
 <p>Wynik działania funkcji <code>mark()</code> pozwala na zauważenie, że na tym przykładzie funkcja <code>mi_do_km2</code> jest ok. 30% szybsza od <code>mi_do_km1</code>.
 Czasami możliwe jest, że jakaś funkcja działa relatywnie szybko na małych danych, ale dużo wolniej na większych danych wejściowych.
 Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na większej liście, np. z wartościami od 0 do 10000 co 1.</p>
-<pre class="sourceCode r"><code class="sourceCode r">odl_mile2 =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10000</span>)
-wynik_<span class="dv">2</span> =<span class="st"> </span><span class="kw">mark</span>(
-  <span class="kw">mi_do_km1</span>(odl_mile2),
-  <span class="kw">mi_do_km2</span>(odl_mile2)
-)
-<span class="co">#&gt; Warning: Some expressions had a GC in every iteration; so filtering is</span>
-<span class="co">#&gt; disabled.</span>
-wynik_<span class="dv">2</span>
-<span class="co">#&gt; # A tibble: 2 x 6</span>
-<span class="co">#&gt;   expression                min   median `itr/sec` mem_alloc `gc/sec`</span>
-<span class="co">#&gt;   &lt;bch:expr&gt;           &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 mi_do_km1(odl_mile2)    466ms    470ms      2.13     382MB     17.0</span>
-<span class="co">#&gt; 2 mi_do_km2(odl_mile2)    811µs    847µs    982.      78.2KB     18.0</span></code></pre>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb320-1" data-line-number="1">odl_mile2 =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10000</span>)</a>
+<a class="sourceLine" id="cb320-2" data-line-number="2">wynik_<span class="dv">2</span> =<span class="st"> </span><span class="kw">mark</span>(</a>
+<a class="sourceLine" id="cb320-3" data-line-number="3">  <span class="kw">mi_do_km1</span>(odl_mile2),</a>
+<a class="sourceLine" id="cb320-4" data-line-number="4">  <span class="kw">mi_do_km2</span>(odl_mile2)</a>
+<a class="sourceLine" id="cb320-5" data-line-number="5">)</a>
+<a class="sourceLine" id="cb320-6" data-line-number="6"><span class="co">#&gt; Warning: Some expressions had a GC in every iteration; so filtering is disabled.</span></a>
+<a class="sourceLine" id="cb320-7" data-line-number="7">wynik_<span class="dv">2</span></a>
+<a class="sourceLine" id="cb320-8" data-line-number="8"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
+<a class="sourceLine" id="cb320-9" data-line-number="9"><span class="co">#&gt;   expression                min   median `itr/sec` mem_alloc `gc/sec`</span></a>
+<a class="sourceLine" id="cb320-10" data-line-number="10"><span class="co">#&gt;   &lt;bch:expr&gt;           &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb320-11" data-line-number="11"><span class="co">#&gt; 1 mi_do_km1(odl_mile2)    420ms    423ms      2.36     382MB     20.1</span></a>
+<a class="sourceLine" id="cb320-12" data-line-number="12"><span class="co">#&gt; 2 mi_do_km2(odl_mile2)    747µs    795µs   1089.      78.2KB     22.0</span></a></code></pre></div>
 <p>W tym przypadku różnica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
-Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 17.01 operacji na sekundę, przy aż 17.99 operacji na sekundę funkcji <code>mi_do_km2</code>.
+Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 20.09 operacji na sekundę, przy aż 21.97 operacji na sekundę funkcji <code>mi_do_km2</code>.
 Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż <code>mi_do_km2</code>.</p>
 <pre><code>#&gt; Running with:
 #&gt;       x
@@ -530,19 +531,18 @@ Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) r
 #&gt; 2   100
 #&gt; 3  1000
 #&gt; 4 10000
-#&gt; Warning: Some expressions had a GC in every iteration; so filtering is
-#&gt; disabled.
+#&gt; Warning: Some expressions had a GC in every iteration; so filtering is disabled.
 #&gt; # A tibble: 8 x 7
 #&gt;   expression       x      min   median `itr/sec` mem_alloc `gc/sec`
 #&gt;   &lt;bch:expr&gt;   &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-#&gt; 1 mi_do_km1(l)    10    3.9µs   4.57µs 199415.          0B     39.9
-#&gt; 2 mi_do_km2(l)    10   1.77µs   2.02µs 456723.          0B      0  
-#&gt; 3 mi_do_km1(l)   100  66.27µs  72.58µs  12954.     43.16KB     14.6
-#&gt; 4 mi_do_km2(l)   100   8.49µs   9.28µs 103167.        856B     20.6
-#&gt; 5 mi_do_km1(l)  1000   4.35ms   4.67ms    211.      3.87MB     20.1
-#&gt; 6 mi_do_km2(l)  1000  76.95µs  82.15µs  11488.      7.87KB     20.4
-#&gt; 7 mi_do_km1(l) 10000 582.02ms 582.02ms      1.72  382.04MB     13.7
-#&gt; 8 mi_do_km2(l) 10000 794.23µs 823.43µs   1065.     78.18KB     20.0</code></pre>
+#&gt; 1 mi_do_km1(l)    10   3.19µs   3.77µs 238183.          0B     47.6
+#&gt; 2 mi_do_km2(l)    10   1.46µs   1.69µs 530718.          0B      0  
+#&gt; 3 mi_do_km1(l)   100  56.31µs  61.66µs  14995.     43.16KB     17.0
+#&gt; 4 mi_do_km2(l)   100   7.33µs   8.74µs 106044.        856B     21.2
+#&gt; 5 mi_do_km1(l)  1000   3.77ms   4.04ms    244.      3.87MB     22.2
+#&gt; 6 mi_do_km2(l)  1000  69.62µs  78.06µs  11999.      7.87KB     24.8
+#&gt; 7 mi_do_km1(l) 10000 410.22ms 412.26ms      2.43  382.04MB     21.8
+#&gt; 8 mi_do_km2(l) 10000 734.04µs 796.01µs   1092.     78.18KB     26.0</code></pre>
 </div>
 <div id="zadania-10" class="section level2">
 <h2><span class="header-section-number">11.4</span> Zadania</h2>
@@ -550,16 +550,16 @@ Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) r
 <li>Korzystając z wiedzy z rozdziału <a href="petle.html#petle">8</a> dotyczącej pętli <code>for</code>, napisz funkcję <code>gdzie_naj()</code>, która przyjmuje na wejściu macierz z wartościami numerycznymi, wylicza sumę wartości dla każdego wiersza, a następnie zwraca numer wiersza z najwyższą sumą wartości.
 Przykładowe dane wejściowe do tej funkcji to:</li>
 </ol>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">2019-05-08</span>)
-mat =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">size =</span> <span class="dv">25</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)),
-             <span class="dt">ncol =</span> <span class="dv">5</span>, <span class="dt">nrow =</span> <span class="dv">5</span>)
-mat
-<span class="co">#&gt;      [,1] [,2] [,3] [,4] [,5]</span>
-<span class="co">#&gt; [1,]    6    1    2    4    6</span>
-<span class="co">#&gt; [2,]    9    9    9    5    5</span>
-<span class="co">#&gt; [3,]    2    6    4    8   10</span>
-<span class="co">#&gt; [4,]    4    6    1    2    5</span>
-<span class="co">#&gt; [5,]    2   10    6    4    9</span></code></pre>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb322-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">2019-05-08</span>)</a>
+<a class="sourceLine" id="cb322-2" data-line-number="2">mat =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">size =</span> <span class="dv">25</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)),</a>
+<a class="sourceLine" id="cb322-3" data-line-number="3">             <span class="dt">ncol =</span> <span class="dv">5</span>, <span class="dt">nrow =</span> <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb322-4" data-line-number="4">mat</a>
+<a class="sourceLine" id="cb322-5" data-line-number="5"><span class="co">#&gt;      [,1] [,2] [,3] [,4] [,5]</span></a>
+<a class="sourceLine" id="cb322-6" data-line-number="6"><span class="co">#&gt; [1,]    6    1    2    4    6</span></a>
+<a class="sourceLine" id="cb322-7" data-line-number="7"><span class="co">#&gt; [2,]    9    9    9    5    5</span></a>
+<a class="sourceLine" id="cb322-8" data-line-number="8"><span class="co">#&gt; [3,]    2    6    4    8   10</span></a>
+<a class="sourceLine" id="cb322-9" data-line-number="9"><span class="co">#&gt; [4,]    4    6    1    2    5</span></a>
+<a class="sourceLine" id="cb322-10" data-line-number="10"><span class="co">#&gt; [5,]    2   10    6    4    9</span></a></code></pre></div>
 <ol style="list-style-type: decimal">
 <li><p>Dodaj do powyższej funkcji odpowiednie komunikaty błędów czy ostrzeżeń (sekcja <a href="zlozone-funkcje.html#obsluga-komunikatow">10.2</a>), pojawiające się w zależności od rodzaju wprowadzonych danych wejściowych.</p></li>
 <li><p>Napisz testy jednostkowe sprawdzające (1) czy błędy pojawiają się w odpowiednich sytuacjach oraz (2) czy funkcja zwraca prawidłową wartość.</p></li>
@@ -692,11 +692,13 @@ Która z nich zużywa mniej zasobów?</p></li>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -704,12 +706,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -721,6 +722,10 @@ gitbook.start({
 "text": "Edit"
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -742,8 +747,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

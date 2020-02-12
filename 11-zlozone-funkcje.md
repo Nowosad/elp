@@ -162,8 +162,8 @@ W tym przypadku wartość `TRUE` zostanie najpierw zamieniona na jeden a `FALSE
 
 ```r
 minus_1(c(TRUE, FALSE))
-#> Warning in minus_1(c(TRUE, FALSE)): Argument `x` jest zmienną logiczną. Czy
-#> nie chcesz użyć zmiennej numerycznej?
+#> Warning in minus_1(c(TRUE, FALSE)): Argument `x` jest zmienną logiczną. Czy nie
+#> chcesz użyć zmiennej numerycznej?
 #> [1] 0 1
 ```
 

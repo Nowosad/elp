@@ -388,12 +388,11 @@ Aby uzyskać wszystkie przypadki spełniające określony wzorzec należy użyć
 ```r
 str_extract_all(tekst_pomiary, pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*")
 #> [[1]]
-#>  [1] "Wrocław"   ""          ""          ""          ""         
-#>  [6] ""          ""          ""          ""          "Bydgoszcz"
-#> [11] ""          ""          ""          ""          ""         
-#> [16] ""          ""          ""          "Toruń"     ""         
-#> [21] ""          ""          ""          ""          ""         
-#> [26] ""          ""          "Lublin"    ""          ""         
+#>  [1] "Wrocław"   ""          ""          ""          ""          ""         
+#>  [7] ""          ""          ""          "Bydgoszcz" ""          ""         
+#> [13] ""          ""          ""          ""          ""          ""         
+#> [19] "Toruń"     ""          ""          ""          ""          ""         
+#> [25] ""          ""          ""          "Lublin"    ""          ""         
 #> [31] ""          ""          ""          ""          ""
 ```
 
@@ -427,8 +426,8 @@ Nadal interesuje nas wydzielenie nazw miast, więc próbujemy użyć kodu, któr
 ```r
 str_extract_all(tekst_pomiary2, pattern = "[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+")
 #> [[1]]
-#> [1] "Wrocław"      "Bydgoszcz"    "Toruń"        "Lublin"      
-#> [5] "Gorzów"       "Wielkopolski" "Zielona"      "Góra"
+#> [1] "Wrocław"      "Bydgoszcz"    "Toruń"        "Lublin"       "Gorzów"      
+#> [6] "Wielkopolski" "Zielona"      "Góra"
 ```
 
 Niestety w efekcie otrzymujemy osiem elementów, gdzie `"Gorzów"` jest innym elementem niż `"Wielkopolski"`.
@@ -544,10 +543,9 @@ Przykładowo poniższa linia kodu wyświetla wszystkie pliki znajdujące się w 
 
 ```r
 dir("pliki")
-#>  [1] "dane_meteo.csv"  "dane_meteo.rds"  "dane_meteo.xlsx"
-#>  [4] "dane_meteo2.csv" "dokument.docx"   "kod.R"          
-#>  [7] "list.txt"        "mapa.png"        "obrazek.png"    
-#> [10] "zdjecie.jpg"
+#>  [1] "dane_meteo.csv"  "dane_meteo.rds"  "dane_meteo.xlsx" "dane_meteo2.csv"
+#>  [5] "dokument.docx"   "kod.R"           "list.txt"        "mapa.png"       
+#>  [9] "obrazek.png"     "zdjecie.jpg"
 ```
 
 W przypadku, gdy interesują nas tylko pliki o wybranym rozszerzeniu możemy użyć argumentu `pattern` i zdefiniować wzorzec.

@@ -194,6 +194,20 @@
 
 \let\oldmaketitle\maketitle
 \AtBeginDocument{\let\maketitle\relax}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
@@ -201,7 +215,7 @@
 \providecommand{\subtitle}[1]{}
 \subtitle{Wstęp do programowania używając R}
 \author{Jakub Nowosad}
-\date{2019-06-04}
+\date{2020-02-12}
 
 \let\BeginKnitrBlock\begin \let\EndKnitrBlock\end
 \begin{document}
@@ -227,8 +241,8 @@ Więcej informacji \url{http://nowosad.github.io/elp/} \\
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{o-ksiazce}{%
-\chapter*{O książce}\label{o-ksiazce}}
+\hypertarget{o-ksiux105ux17cce}{%
+\chapter*{O książce}\label{o-ksiux105ux17cce}}
 \addcontentsline{toc}{chapter}{O książce}
 
 \textbf{Elementarz programisty: Wstęp do programowania używając R} ma na celu wprowadzenie do podstaw działania w języku R.
@@ -257,8 +271,8 @@ Zachęcam również do zgłaszania wszelkich uwag, błędów, pomysłów oraz ko
 
 Ta książka jest dostępna na licencji Creative Commons Uznanie autorstwa - Użycie niekomercyjne - Bez utworów zależnych 4.0 Międzynarodowe.
 
-\hypertarget{wymagania-wstepne}{%
-\section*{Wymagania wstępne}\label{wymagania-wstepne}}
+\hypertarget{wymagania-wstux119pne}{%
+\section*{Wymagania wstępne}\label{wymagania-wstux119pne}}
 \addcontentsline{toc}{section}{Wymagania wstępne}
 
 Do odtworzenia przykładów oraz do wykonania zadań zawartych w tej książce konieczne jest posiadanie aktualnej wersji \textbf{R}.
@@ -282,8 +296,8 @@ sudo apt install git
 sudo dnf install git
 \end{verbatim}
 
-\hypertarget{styl-ksiazki}{%
-\section*{Styl książki}\label{styl-ksiazki}}
+\hypertarget{styl-ksiux105ux17cki}{%
+\section*{Styl książki}\label{styl-ksiux105ux17cki}}
 \addcontentsline{toc}{section}{Styl książki}
 
 W całej książce stosowana jest konwencja, w której \texttt{fun()} oznacza funkcje, \texttt{obi} oznacza nazwy obiektów, nazwy zmiennych oraz argumentów funkcji, a \texttt{sci/} oznacza ścieżki do plików.
@@ -306,8 +320,8 @@ Dodatkowo, ikona kompasu na szarym tle przedstawia dodatkowe informacje, alterna
 Tutaj może znaleźć~się~dodatkowa informacja, alternatywny sposób użycia funkcji, czy też~wskazówka.
 \EndKnitrBlock{rmdinfo}
 
-\hypertarget{podziekowania}{%
-\section*{Podziękowania}\label{podziekowania}}
+\hypertarget{podziux119kowania}{%
+\section*{Podziękowania}\label{podziux119kowania}}
 \addcontentsline{toc}{section}{Podziękowania}
 
 Książka została stworzona w R \citep{R-base} z wykorzystaniem pakietów \textbf{bookdown} \citep{R-bookdown}, \textbf{rmarkdown} \citep{R-rmarkdown}, \textbf{knitr} \citep{R-knitr} oraz programu \href{http://pandoc.org/}{Pandoc}.
@@ -568,8 +582,8 @@ Komendy są najpierw sprawdzanie pod kontekstem ich poprawności.
 Polega to na określeniu, np. czy podana funkcja lub inny obiekt istnieje, czy nie zostały użyte niedozwolone znaki, lub czy wszystkie nawiasy czy cudzysłowy zostały zamknięte.
 Języki programowania są w tym aspekcie bardziej bezwzględne niż języki naturalne - nie potrafią one zrozumieć wyrażeń zawierających nawet niewielkie błędy takie jak, np. użycie dużej litery zamiast małej.
 
-\hypertarget{wyrazenia}{%
-\section{Wyrażenia}\label{wyrazenia}}
+\hypertarget{wyraux17cenia}{%
+\section{Wyrażenia}\label{wyraux17cenia}}
 
 Podstawowe działania arytmetyczne, dodawanie, odejmowane, mnożenie i dzielenie, są również często używane w wielu językach programowania.
 Dla każdej z tych operacji istnieje odpowiedni operator w R.
@@ -796,11 +810,11 @@ Aby stworzyć pierwszy projekt RStudio, należy:
   Kliknąć \texttt{Create\ Project}.
 \end{enumerate}
 
-\begin{table}[t]
+\begin{table}
 
 \caption{\label{tab:rstudiosk}Podstawowe skróty klawiaturowe w RStudio}
 \centering
-\begin{tabular}{>{\raggedright\arraybackslash}p{12em}>{\raggedright\arraybackslash}p{18em}}
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{12em}>{\raggedright\arraybackslash}p{18em}}
 \toprule
 Skrót & Wyjaśnienie\\
 \midrule
@@ -852,8 +866,8 @@ Nazwa obiektu nie może zaczynać się od liczby, ani nie może używać specjal
 Dodatkowo należy uważać, żeby nowa nazwa obiektu nie nadpisała istniejącego obiektu lub funkcji.
 Nie powinno nazywać się obiektów tak jak istniejące funkcje, np. \texttt{c}, \texttt{t}, \texttt{table}, itd.
 
-\hypertarget{odstepy}{%
-\subsection{Odstępy}\label{odstepy}}
+\hypertarget{odstux119py}{%
+\subsection{Odstępy}\label{odstux119py}}
 
 Odstępy pełnią bardzo ważną funkcję przy pisaniu kodu, podobnie jak odstępy przy pisaniu tekstu.
 Wyobraź sobie czytanie powieści, w której nie ma żadnych odstępów między słowami czy rozdziałami.
@@ -922,8 +936,8 @@ Do komentowania w języku R służy operator \texttt{\#}.
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{nazwy-plikow}{%
-\subsection{Nazwy plików}\label{nazwy-plikow}}
+\hypertarget{nazwy-plikuxf3w}{%
+\subsection{Nazwy plików}\label{nazwy-plikuxf3w}}
 
 Nazwy plików powinny spełniać trzy wymagania - być~łatwe (i) do odczytania przez komputer, (ii) do odczytania przez człowieka, (iii) do posortowania.
 
@@ -1417,8 +1431,8 @@ Podobnie jak w przepisie kucharskim, algorytmy wymagają posiadania odpowiednich
 Tworzenie nowych algorytmów często zaczyna się od narysowania schematu procedury działania lub też pseudokodu.
 Kolejnym krokiem jest zapisanie tego algorytmu w wybranym języku lub językach programowania w formie skryptu (sekcja \ref{tworzenie-skryptow}) lub funkcji (sekcja \ref{budowanie-funkcji}).
 
-\hypertarget{tworzenie-skryptow}{%
-\section{Tworzenie skryptów}\label{tworzenie-skryptow}}
+\hypertarget{tworzenie-skryptuxf3w}{%
+\section{Tworzenie skryptów}\label{tworzenie-skryptuxf3w}}
 
 Skrypt w R to plik testowy z rozszerzeniem \texttt{.R}, który zawiera szereg linii kodu w celu uzyskania konkretnego efektu.
 Może on zawierać zaledwie kilka jak i setki linii kodu w zależności od złożoności postawionego problemu.
@@ -1784,8 +1798,8 @@ Warunek \texttt{if} można też tworzyć w uproszczonej formie:
 \texttt{if\ (warunek)\ spelniony\ else\ niespelniony}
 \EndKnitrBlock{rmdinfo}
 
-\hypertarget{warunki-zagniezdzone}{%
-\section{Warunki zagnieżdżone}\label{warunki-zagniezdzone}}
+\hypertarget{warunki-zagnieux17cdux17cone}{%
+\section{Warunki zagnieżdżone}\label{warunki-zagnieux17cdux17cone}}
 
 Działanie wyrażenia \texttt{if} może być połączone z dodatkowymi wyrażeniami \texttt{else\ if} oraz \texttt{else}.
 Te dwa wyrażenia wymagają najpierw wywołania wyrażenia \texttt{if()}.
@@ -1809,17 +1823,17 @@ W przypadku, gdy wyrażenie \texttt{if()} otrzyma wartość \texttt{FALSE}, to k
 Wyrażenie \texttt{else\ if()} różni się od \texttt{else} tym, że wymaga ono określenia jaki warunek ma być spełniony.
 W przypadku \texttt{else} wyliczane są wszystkie przypadki, które nie spełniają wcześniejszych warunków.
 
-\hypertarget{operatory-porownania}{%
-\section{Operatory porównania}\label{operatory-porownania}}
+\hypertarget{operatory-poruxf3wnania}{%
+\section{Operatory porównania}\label{operatory-poruxf3wnania}}
 
 W tabeli \ref{tab:operators} można znaleźć listę podstawowych operatorów porównania.
 Ich celem jest sprawdzanie pewnego warunku i zwrócenie wartości \texttt{TRUE} lub \texttt{FALSE}.
 
-\begin{table}[t]
+\begin{table}
 
 \caption{\label{tab:operators}Operatory porównania.}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}[t]{ll}
 \toprule
 Operator & Wyjaśnienie\\
 \midrule
@@ -1849,11 +1863,11 @@ Przykładowo, porównanie operatorem \texttt{==} daje w wyniku wektor o długoś
 
 Sterowanie tym, żeby uzyskany wynik miał oczekiwaną długość jeden może się odbywać też z pomocą operatorów logicznych i funkcji pomocniczych (tabela \ref{tab:operators2}).
 
-\begin{table}[t]
+\begin{table}
 
 \caption{\label{tab:operators2}Operatory logiczne i funkcje pomocniczne.}
 \centering
-\begin{tabular}{ll}
+\begin{tabular}[t]{ll}
 \toprule
 Operator & Wyjaśnienie\\
 \midrule
@@ -2118,8 +2132,8 @@ W R one nie występują, zamiast nich stosowane są wektory o długości jeden.
 
 Dodatkowo, istnieje wiele dodatkowych, rzadziej spotykane typów wektorów - czynnikowy (ang. \emph{factor}), dat (ang. \emph{date}) i czasu (ang. \emph{date-time}) (sekcje \ref{fac}, \ref{ate} i \ref{ime}).
 
-\hypertarget{wasciwosci-wektorow}{%
-\section{Właściwości wektorów}\label{wasciwosci-wektorow}}
+\hypertarget{wux142aux15bciwoux15bci-wektoruxf3w}{%
+\section{Właściwości wektorów}\label{wux142aux15bciwoux15bci-wektoruxf3w}}
 
 Każdy wektor ma trzy właściwości - typ, długość i atrybuty.
 Typ może być sprawdzony używając funkcji \texttt{typeof()}.
@@ -2600,8 +2614,8 @@ W sytuacji, gdy którykolwiek element będzie tekstem, cały wektor zostaje zami
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{zmiana-typow-obiektow}{%
-\section{Zmiana typów obiektów}\label{zmiana-typow-obiektow}}
+\hypertarget{zmiana-typuxf3w-obiektuxf3w}{%
+\section{Zmiana typów obiektów}\label{zmiana-typuxf3w-obiektuxf3w}}
 
 Do zmiany typu obiektu\footnote{Taka operacja często jest określana jako rzutowanie.} służą funkcje \texttt{as.logical()}, \texttt{as.integer()}, \texttt{as.double()}, oraz \texttt{as.character()}.
 
@@ -2681,7 +2695,7 @@ R ma wbudowaną reprezentację dat w postaci klasy \texttt{Date}.
 \begin{Highlighting}[]
 \NormalTok{dzis =}\StringTok{ }\KeywordTok{Sys.Date}\NormalTok{()}
 \NormalTok{dzis}
-\CommentTok{#> [1] "2019-06-04"}
+\CommentTok{#> [1] "2020-02-12"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2704,11 +2718,11 @@ Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji \texttt{unclass(
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{unclass}\NormalTok{(dzis)}
-\CommentTok{#> [1] 18051}
+\CommentTok{#> [1] 18304}
 \end{Highlighting}
 \end{Shaded}
 
-Wynik, 18051, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
+Wynik, 18304, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
 
 \begin{Shaded}
@@ -2947,8 +2961,8 @@ Oznacza on, że wykonanie kodu nie może zostać zakończone.
 
 W takiej sytuacji należy nacisnąć klawisz Esc, aby przerwać wykonywanie operacji, a następnie poprawić wpisany kod.
 
-\hypertarget{podstawowe-operacje-na-tekscie}{%
-\section{Podstawowe operacje na tekście}\label{podstawowe-operacje-na-tekscie}}
+\hypertarget{podstawowe-operacje-na-tekux15bcie}{%
+\section{Podstawowe operacje na tekście}\label{podstawowe-operacje-na-tekux15bcie}}
 
 Jedną z podstawowych operacji na wektorach znakowych jest ich łączenie.
 Do tego celu służy funkcja \texttt{paste()}\footnote{Odpowiednikiem funkcji \texttt{paste()} w pakiecie \textbf{stringr} jest funkcja \texttt{str\_c()}}.
@@ -3116,8 +3130,8 @@ Natomiast poniżej wybrany jest tekst zaczynający się na siódmym znaku od ko�
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{wyrazenia-regularne}{%
-\section{Wyrażenia regularne}\label{wyrazenia-regularne}}
+\hypertarget{wyraux17cenia-regularne}{%
+\section{Wyrażenia regularne}\label{wyraux17cenia-regularne}}
 
 Sprawdzanie czy dany tekst występuje w wektorze można wykonać używając funkcji \texttt{str\_detect()}.
 
@@ -3493,8 +3507,8 @@ Do tego celu można zdefiniować wzorzec jaki chcemy usunąć, a jako jego zamia
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{wyszukiwanie-plikow}{%
-\section{Wyszukiwanie plików}\label{wyszukiwanie-plikow}}
+\hypertarget{wyszukiwanie-plikuxf3w}{%
+\section{Wyszukiwanie plików}\label{wyszukiwanie-plikuxf3w}}
 
 Umiejętności związane z obsługą wyrażeń regularnych przydają się też w przypadku wyszukiwania plików zawierających określony tekst w nazwie lub specyficzne rozszerzenie.
 Jest to szczególnie przydatne, gdy posiadamy wiele plików na komputerze, które chcemy następnie przetwarzać w sposób automatyczny.
@@ -3794,8 +3808,8 @@ Możliwe jest więc używanie wektora logicznego czy nazw kolumn.
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{aczenie}{%
-\subsection{Łączenie}\label{aczenie}}
+\hypertarget{ux142ux105czenie}{%
+\subsection{Łączenie}\label{ux142ux105czenie}}
 
 Łączenie wektorów odbywa się używając jednej funkcji \texttt{c()}.
 W przypadku macierzy występują jednak dwa wymiary - możliwe jest połączenie macierzy wierszami lub kolumnami.
@@ -4030,8 +4044,8 @@ Używając tej funkcji powyższe zapytanie można przestawić jako:
 Podobnie jak w przypadku wektorów (sekcje \ref{wip-vector} i \ref{mo-vector}), wydzielanie ramek danych może służyć do wyświetlenia wybranych wartości, ale też~ich wydzielenia i przypisania oraz modyfikowania.
 \EndKnitrBlock{rmdinfo}
 
-\hypertarget{aczenie-1}{%
-\subsection{Łączenie}\label{aczenie-1}}
+\hypertarget{ux142ux105czenie-1}{%
+\subsection{Łączenie}\label{ux142ux105czenie-1}}
 
 Łączenie ramek danych przypomina łączenie macierzy używając funkcji \texttt{rbind()} i \texttt{cbind()}.
 Jednocześnie należy pamiętać, że łączenie wierszy (\texttt{rbind()}) wymaga posiadania kolumn o tych samych nazwach w obu obiektach.
@@ -4185,8 +4199,8 @@ Można je sprawdzić czy zmienić używając funkcji \texttt{names()}.
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{aczenie-2}{%
-\subsection{Łączenie}\label{aczenie-2}}
+\hypertarget{ux142ux105czenie-2}{%
+\subsection{Łączenie}\label{ux142ux105czenie-2}}
 
 Łączenie list może odbywać się na dwa podstawowe sposoby.
 W pierwszym, używając funkcji \texttt{c()} następuje dołączenie elementów jednej listy do drugiej.
@@ -4429,7 +4443,7 @@ Metoda to sposób w jaki zachowuje się funkcja w zależności od tego jakiej kl
 \begin{Highlighting}[]
 \KeywordTok{methods}\NormalTok{(mean)}
 \CommentTok{#> [1] mean.Date     mean.default  mean.difftime}
-\CommentTok{#> [4] mean.POSIXct  mean.POSIXlt }
+\CommentTok{#> [4] mean.POSIXct  mean.POSIXlt  mean.quosure*}
 \CommentTok{#> see '?methods' for accessing help and source code}
 \end{Highlighting}
 \end{Shaded}
@@ -4510,8 +4524,8 @@ Język R pozwala na stosowanie zarówno paradygmatu imperatywnego jak i paradygm
 
 Pęlta \texttt{for} jest jednym z najczęściej używanych wyrażeń w językach programowania\footnote{\url{https://en.wikipedia.org/wiki/For_loop}}, którego celem jest powtórzenie pewnej operacji o znaną liczbę razy.
 
-\hypertarget{skadnia}{%
-\subsection{Składnia}\label{skadnia}}
+\hypertarget{skux142adnia}{%
+\subsection{Składnia}\label{skux142adnia}}
 
 Pęlta \texttt{for} jest zbudowana z dwóch elementów: nagłówka określającego powtórzenia, oraz ciała zawierającego obliczenia.
 
@@ -5156,8 +5170,8 @@ Używanie ścieżek względnych jest rekomendowane, ponieważ znacząco upraszcz
 Prawy ukośnik jest rekomendowany, ponieważ działa on zarówno na Windowsach, jak i komputerach z systemami MacOS czy Linux.
 \EndKnitrBlock{rmdinfo}
 
-\hypertarget{dziaania-na-plikach-i-folderach}{%
-\section{Działania na plikach i folderach}\label{dziaania-na-plikach-i-folderach}}
+\hypertarget{dziaux142ania-na-plikach-i-folderach}{%
+\section{Działania na plikach i folderach}\label{dziaux142ania-na-plikach-i-folderach}}
 
 Z poziomu R możliwe jest również zarządzanie folderami i plikami na dysku.
 Do tworzenia nowych folderów służy funkcja \texttt{dir.create()}, np. \texttt{dir.create("dane")} stworzy nowy podfolder o nazwie \texttt{"dane"}.
@@ -5188,8 +5202,8 @@ Należy w niej podać adres URL pliku do pobrania, oraz nazwę pliku do zapisani
 W efekcie plik \texttt{dane\_meteo\_url.csv} zostanie zapisany w folderze \texttt{pliki}.
 Funkcja \texttt{download.file()} ma też szereg dodatkowych argumentów, między innymi \texttt{method} określającą metodę pobierania danych oraz \texttt{mode} określający sposób zapisu pliku.
 
-\hypertarget{wczytywanie-plikow-tekstowych}{%
-\section{Wczytywanie plików tekstowych}\label{wczytywanie-plikow-tekstowych}}
+\hypertarget{wczytywanie-plikuxf3w-tekstowych}{%
+\section{Wczytywanie plików tekstowych}\label{wczytywanie-plikuxf3w-tekstowych}}
 
 Podstawowymi sposobami przechowywania informacji są pliki tekstowe i binarne.
 Przykładowo, pliki tekstowe mogą przechowywać dane w postaci tabelarycznej, a jednym z najczęściej używanych formatów tekstowych jest CSV (ang. \emph{comma-separated values}).
@@ -5258,8 +5272,8 @@ Funkcja \texttt{readLines()} wczytuje kolejne linie z pliku tekstowego.
 Efektem jej działania w przeciwieństwie do poprzednich funkcji nie jest ramka danych, ale wektor tekstowy, gdzie każdy kolejny element wektora to tekst z kolejnych linii.
 \EndKnitrBlock{rmdinfo}
 
-\hypertarget{zapisywanie-plikow-tekstowych}{%
-\section{Zapisywanie plików tekstowych}\label{zapisywanie-plikow-tekstowych}}
+\hypertarget{zapisywanie-plikuxf3w-tekstowych}{%
+\section{Zapisywanie plików tekstowych}\label{zapisywanie-plikuxf3w-tekstowych}}
 
 Plik \texttt{pliki/dane\_meteo.csv} zawiera pomiary ze stacji Poznań oraz Zakopane.
 W przypadku, gdy interesują nas tylko informacje dla Poznania możemy wydzielić odpowiednie wiersze używając funkcji \texttt{subset()} (sekcja \ref{wydzielanie-df}).
@@ -5472,8 +5486,8 @@ Dostęp do baz danych w R możliwy jest używając pakietu \textbf{DBI} \citep{R
   Napisz funkcję, która odszyfruje tą wiadomość.
 \end{enumerate}
 
-\hypertarget{part-narzedzia}{%
-\part{Narzędzia}\label{part-narzedzia}}
+\hypertarget{part-narzux119dzia}{%
+\part{Narzędzia}\label{part-narzux119dzia}}
 
 \hypertarget{zlozone-funkcje}{%
 \chapter{Złożone funkcje}\label{zlozone-funkcje}}
@@ -6166,7 +6180,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.628   0.000   0.627}
+\CommentTok{#>   0.437   0.001   0.438}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6223,11 +6237,12 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \NormalTok{)}
 \NormalTok{wynik_}\DecValTok{1}
 \CommentTok{#> # A tibble: 2 x 6}
-\CommentTok{#>   expression             min median `itr/sec` mem_alloc}
-\CommentTok{#>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile) 1.52us 1.74us   480790.     117KB}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 1.15us 1.31us   688218.     221KB}
-\CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
+\CommentTok{#>   expression               min median `itr/sec`}
+\CommentTok{#>   <bch:expr>          <bch:tm> <bch:>     <dbl>}
+\CommentTok{#> 1 mi_do_km1(odl_mile)   1.25us 1.44us   575266.}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 916.07ns 1.13us   686329.}
+\CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
+\CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6269,14 +6284,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 501ms  501ms      2.00     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 780us  821us   1010.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 415ms  418ms      2.39     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 759us  795us   1093.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 15.96 operacji na sekundę, przy aż 19.99 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 20.32 operacji na sekundę, przy aż 23.98 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \begin{verbatim}
@@ -6291,14 +6306,14 @@ Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) raz
 #> # A tibble: 8 x 7
 #>   expression       x      min   median `itr/sec`
 #>   <bch:expr>   <dbl> <bch:tm> <bch:tm>     <dbl>
-#> 1 mi_do_km1(l)    10    3.9us    4.5us 201649.  
-#> 2 mi_do_km2(l)    10   1.78us   2.03us 456141.  
-#> 3 mi_do_km1(l)   100  66.55us  74.57us  12499.  
-#> 4 mi_do_km2(l)   100   8.46us   9.23us 101710.  
-#> 5 mi_do_km1(l)  1000   4.21ms   4.41ms    225.  
-#> 6 mi_do_km2(l)  1000  77.17us  83.11us  11487.  
-#> 7 mi_do_km1(l) 10000 525.32ms 525.32ms      1.90
-#> 8 mi_do_km2(l) 10000 797.09us 841.23us    782.  
+#> 1 mi_do_km1(l)    10   3.23us   3.73us 247478.  
+#> 2 mi_do_km2(l)    10   1.47us    1.7us 535884.  
+#> 3 mi_do_km1(l)   100  55.63us  60.76us  15469.  
+#> 4 mi_do_km2(l)   100   7.42us   8.59us 110203.  
+#> 5 mi_do_km1(l)  1000    3.8ms   3.94ms    247.  
+#> 6 mi_do_km2(l)  1000  68.29us   76.9us  12350.  
+#> 7 mi_do_km1(l) 10000 405.34ms 407.51ms      2.45
+#> 8 mi_do_km2(l) 10000 721.57us 791.93us   1102.  
 #> # ... with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 \end{verbatim}
@@ -6636,8 +6651,8 @@ Wygląd okna repozytorium zmienia się po dodaniu pierwszej zawartości (rycina 
 Teraz możliwe jest podejrzenie występujących tam plików (w tym momencie jedynie plik \texttt{README.md}), zmian jakie zaszły w repozytorium (klikając na \emph{commit}), istniejących rozgałęzień (klikając na \emph{branch}) oraz wiele innych.
 Pod zieloną ikoną \emph{Clone or download} można dodatkowo znaleźć ścieżkę do tego zdalnego repozytorium.
 
-\hypertarget{dodatkowe-mozliwosci-github}{%
-\subsection{Dodatkowe możliwości GitHub}\label{dodatkowe-mozliwosci-github}}
+\hypertarget{dodatkowe-moux17cliwoux15bci-github}{%
+\subsection{Dodatkowe możliwości GitHub}\label{dodatkowe-moux17cliwoux15bci-github}}
 
 W prawym górnym rogu okna repozytorium (rycina \ref{fig:gh-new-repo4}) znajdują się trzy ikony - \emph{Watch}, \emph{Star}, \emph{Fork}.
 Pierwsza z nich pozwala na określenie czy chcemy dostawać powiadomienia na temat dyskusji prowadzonych wewnątrz danego repozytorium, takich jak utworzenie nowej sprawy.
@@ -6758,8 +6773,8 @@ Następnie należy przekopiować do tego projektu wszystkie już istniejące pli
 
 Kolejne etapy pracy wyglądają identycznie jak w poprzedniej sekcji.
 
-\hypertarget{problemy-z-kontrola-wersji}{%
-\section{Problemy z kontrolą wersji}\label{problemy-z-kontrola-wersji}}
+\hypertarget{problemy-z-kontrolux105-wersji}{%
+\section{Problemy z kontrolą wersji}\label{problemy-z-kontrolux105-wersji}}
 
 W ramach jednego projektu często posiadamy wiele plików z długą historią zmian, do tego nanoszonych przez szereg różnych osób.
 Jest to sytuacja w której dość prosto o wystąpienie problemów czy nieoczekiwanych (przez użytkownika) zachowań systemu kontroli wersji Git.
@@ -7073,8 +7088,8 @@ Określenie pakietu jako oprogramowania zamkniętego odbywa się poprzez dodanie
 
 Plik \texttt{DESCRIPTION} należy regularnie uaktualniać, np. zmieniać numer wersji po naniesionych zmianach w kodzie, czy dodawać nowych autorów, jeżeli tacy się pojawili.
 
-\hypertarget{zaleznosci}{%
-\section{Zależności}\label{zaleznosci}}
+\hypertarget{zaleux17cnoux15bci}{%
+\section{Zależności}\label{zaleux17cnoux15bci}}
 
 Istnieje jedna ważna różnica pomiędzy tworzeniem funkcji w skryptach a tworzeniem jej wewnątrz pakietu - w pakietach nie można używać dołączania pakietów za pomocą funkcji \texttt{library()}.
 Zamiast tego możliwe jest definiowanie każdej zewnętrznej funkcji używając operatora \texttt{::}.\footnote{Istnieją również inne możliwości, np. użycie znaczników \texttt{@import} lub \texttt{@importFrom}.}
@@ -7212,8 +7227,8 @@ Przykładowy plik \texttt{tests/testthat/test-powierzchnia.R} może wyglądać w
 Po napisaniu testów można sprawdzić czy wszystkie z nich dają odpowiedni wynik używając \texttt{devtools::test()}\footnote{Testy są też automatycznie uruchamiane podczas sprawdzania pakietu (\ref{sprawdzanie-pakietu})}.
 W efekcie wyświetlone zostaną wszystkie testy i zostanie wskazane, które z nich się nie powiodły i należy je poprawić.
 
-\hypertarget{publikowanie-pakietow}{%
-\section{Publikowanie pakietów}\label{publikowanie-pakietow}}
+\hypertarget{publikowanie-pakietuxf3w}{%
+\section{Publikowanie pakietów}\label{publikowanie-pakietuxf3w}}
 
 Nowo utworzony pakiet w R można od razu umieścić na wybranym serwisie internetowym wspierającym kontrolę wersji takim jak GitHub, GitLab, czy BitBucket (rozdział \ref{kontrola-wersji}), gdzie nazwa repozytorium będzie identyczna jak nazwa pakietu.
 Dodatkowo, gdy napisaliśmy plik \texttt{README.md} użytkownicy mogą dowiedzieć się do czego ten pakiet służy, jak go zainstalować i użyć w podstawowy sposób.

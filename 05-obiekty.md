@@ -131,10 +131,9 @@ Argument `by` określa co ile wartości w ciągu mają rosnąć od wartości poc
 
 ```r
 seq(1, 365, by = 7)
-#>  [1]   1   8  15  22  29  36  43  50  57  64  71  78  85  92  99 106 113
-#> [18] 120 127 134 141 148 155 162 169 176 183 190 197 204 211 218 225 232
-#> [35] 239 246 253 260 267 274 281 288 295 302 309 316 323 330 337 344 351
-#> [52] 358 365
+#>  [1]   1   8  15  22  29  36  43  50  57  64  71  78  85  92  99 106 113 120 127
+#> [20] 134 141 148 155 162 169 176 183 190 197 204 211 218 225 232 239 246 253 260
+#> [39] 267 274 281 288 295 302 309 316 323 330 337 344 351 358 365
 ```
 
 Alternatywnie, argument `length.out` ustala jakiej długości ma być wynikowy ciąg, a na podstawie tego tworzone są wartości w równych odstępach.
@@ -563,7 +562,7 @@ R ma wbudowaną reprezentację dat w postaci klasy `Date`.
 ```r
 dzis = Sys.Date()
 dzis
-#> [1] "2019-06-04"
+#> [1] "2020-02-12"
 ```
 
 Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowy), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.
@@ -584,10 +583,10 @@ Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji `unclass()`.
 
 ```r
 unclass(dzis)
-#> [1] 18051
+#> [1] 18304
 ```
 
-Wynik, 18051, oznacza liczbę dni od 1970-01-01.^[https://en.wikipedia.org/wiki/Unix_time]
+Wynik, 18304, oznacza liczbę dni od 1970-01-01.^[https://en.wikipedia.org/wiki/Unix_time]
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
 
 
