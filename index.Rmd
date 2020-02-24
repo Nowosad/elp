@@ -109,7 +109,7 @@ kod
 #> wynik użycia kodu
 ```
 
-Dodatkowo, ikona kompasu na szarym tle przedstawia dodatkowe informacje, alternatywne sposoby użycia funkcji, czy też wskazówki.
+Dodatkowo, ikona kompasu przedstawia dodatkowe informacje, alternatywne sposoby użycia funkcji, czy też wskazówki.
 
 ```{block2, type='rmdinfo'}
 Tutaj może znaleźć się dodatkowa informacja, alternatywny sposób użycia funkcji, czy też wskazówka.
