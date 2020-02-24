@@ -24,6 +24,7 @@ setwd("C:/Users/jakub/Documenty/elp/") #Windows
 
 ```{block2 type="rmdinfo"}
 Ustawienie folderu roboczego ma też miejsce przy tworzeniu nowego lub otwieraniu istniejącego projektu RStudio.
+Dlatego też, używanie projektów RStudio jest rekomendowane przy pracy z R.
 ```
 
 Folder roboczy jest ważny ponieważ pozwala na korzystanie z względnej ścieżki.
