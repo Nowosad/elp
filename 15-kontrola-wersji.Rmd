@@ -304,7 +304,7 @@ Zalecane jest, aby powyższą czynność wykonywać nawet wiele razy dziennie.
 
 ```{block2 type="rmdinfo"}
 Często w folderze projektu możesz posiadać pliki, których nie chcesz dodawać do repozytorium.
-W takiej sytuacji dodaj ich nazwy do pliku `gitignore` i staną się one niewidoczne dla systemu Git.
+W takiej sytuacji dodaj ich nazwy do pliku `.gitignore` i staną się one niewidoczne dla systemu Git.
 ```
 
 Efektem powyższej operacji jest posiadanie zatwierdzonych zmian w lokalnym repozytorium, ale jeszcze ich brak w repozytorium zdalnym.
