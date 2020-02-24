@@ -15,7 +15,9 @@ Dodatkowo, nastąpi także wprowadzenie do kolejnego paradygmatu programowania -
 ## API
 
 Interfejs programistyczny aplikacji (ang. *application programming interface*, API) to zbiór sposobów komunikacji pomiędzy różnymi komponentami oprogramowania.
-Inaczej mówiąc API określa w jaki sposób następuje interakcja z kodem.
+Najszerzej mówiąc API określa w jaki sposób następuje interakcja z kodem i my w tej sekcji skupimy się na tej definicji. 
+Warto jednak pamiętać, że często osoby, które używają tego skrótu mają tak na prawdę na myśli RESTful API, czyli API które powala na komunikację pomiędzy komputerami poprzez protokół HTTP.
+
 Dobrze zaprojektowane API uławia zarówno rozwijanie oprogramowania, jak i jego używanie.
 Podstawowe elementy przemyślanego API w R obejmują nazwy funkcji, ich argumenty, oraz tzw. stabilność typu (ang. *type stability*).
 
@@ -316,7 +318,7 @@ Dodatkowo, oprócz tworzenia metod dla każdej klasy oddzielnie możliwe jest st
 W przypadku, gdy dla obiektu wejściowego nie istnieje metoda to wówczas wykonywana jest metoda domyślna (`default`).
 Poniżej dodano metodę domyślną - w przypadku, gdy dla wejściowego obiektu nie ma metody to pojawi się poniższy komunikat błędu.
 
-```{block2 type="rmdinfo"}
+```{r}
 powierzchnia.default = function(x) {
   stop("Funkcja `powierzchnia` ma wsparcie tylko dla obiektów o klasie `prostokąt`")
 }
