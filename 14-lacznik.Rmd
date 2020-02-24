@@ -70,4 +70,8 @@
 <!-- ## Python -->
 <!-- reticulate -->
 
+<!-- ## Unix commands -->
+<!-- https://neowaylabs.github.io/programming/unix-shell-for-data-scientists/?utm_source=hackernewsletter&utm_medium=email&utm_term=data -->
+<!-- https://missing.csail.mit.edu/ -->
+
 <!-- ## Zadania -->
