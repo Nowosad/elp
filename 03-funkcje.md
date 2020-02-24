@@ -225,7 +225,7 @@ Podobnie jak w przepisie kucharskim, algorytmy wymagają posiadania odpowiednich
 Tworzenie nowych algorytmów często zaczyna się od narysowania schematu procedury działania lub też pseudokodu. 
 Kolejnym krokiem jest zapisanie tego algorytmu w wybranym języku lub językach programowania<!--^[Łączenie różnych języków programowania jest wyjaśnione w rozdziale \@ref(lacznik)]--> w formie skryptu (sekcja \@ref(tworzenie-skryptow)) lub funkcji (sekcja \@ref(budowanie-funkcji)).
 
-## Tworzenie skryptów
+## Tworzenie skryptów {#tworzenie-skryptow}
 
 <!--kodowanie tekstu-->
 Skrypt w R to plik testowy z rozszerzeniem `.R`, który zawiera szereg linii kodu w celu uzyskania konkretnego efektu.

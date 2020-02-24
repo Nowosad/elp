@@ -169,7 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="funkcje.html"><a href="funkcje.html#dokumentacja-funkcji"><i class="fa fa-check"></i><b>3.4</b> Dokumentacja funkcji</a></li>
 <li class="chapter" data-level="3.5" data-path="funkcje.html"><a href="funkcje.html#pakiety"><i class="fa fa-check"></i><b>3.5</b> Pakiety</a></li>
 <li class="chapter" data-level="3.6" data-path="funkcje.html"><a href="funkcje.html#algorytmy"><i class="fa fa-check"></i><b>3.6</b> Algorytmy</a></li>
-<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptów"><i class="fa fa-check"></i><b>3.7</b> Tworzenie skryptów</a></li>
+<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptow"><i class="fa fa-check"></i><b>3.7</b> Tworzenie skryptów</a></li>
 <li class="chapter" data-level="3.8" data-path="funkcje.html"><a href="funkcje.html#budowanie-funkcji"><i class="fa fa-check"></i><b>3.8</b> Budowanie funkcji</a></li>
 <li class="chapter" data-level="3.9" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.9</b> Komunikaty</a></li>
 <li class="chapter" data-level="3.10" data-path="funkcje.html"><a href="funkcje.html#zadania-2"><i class="fa fa-check"></i><b>3.10</b> Zadania</a></li>
@@ -296,9 +296,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>13</b> Pakiety</a><ul>
 <li class="chapter" data-level="13.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#nazwa-pakietu"><i class="fa fa-check"></i><b>13.1</b> Nazwa pakietu</a></li>
 <li class="chapter" data-level="13.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-szkieletu-pakietu"><i class="fa fa-check"></i><b>13.2</b> Tworzenie szkieletu pakietu</a></li>
-<li class="chapter" data-level="13.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>13.3</b> Rozwijanie pakietu</a></li>
-<li class="chapter" data-level="13.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-i-dokumentacja-funkcji"><i class="fa fa-check"></i><b>13.4</b> Tworzenie i dokumentacja funkcji</a></li>
-<li class="chapter" data-level="13.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>13.5</b> Opis pakietu</a></li>
+<li class="chapter" data-level="13.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>13.3</b> Opis pakietu</a></li>
+<li class="chapter" data-level="13.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>13.4</b> Rozwijanie pakietu</a></li>
+<li class="chapter" data-level="13.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-i-dokumentacja-funkcji"><i class="fa fa-check"></i><b>13.5</b> Tworzenie i dokumentacja funkcji</a></li>
 <li class="chapter" data-level="13.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zależności"><i class="fa fa-check"></i><b>13.6</b> Zależności</a></li>
 <li class="chapter" data-level="13.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#sprawdzanie-pakietu"><i class="fa fa-check"></i><b>13.7</b> Sprawdzanie pakietu</a></li>
 <li class="chapter" data-level="13.8" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#instalowanie-pakietu"><i class="fa fa-check"></i><b>13.8</b> Instalowanie pakietu</a></li>
@@ -456,7 +456,7 @@ Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej fu
 <p>Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.</p>
 <div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb316-1" data-line-number="1"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))</a>
 <a class="sourceLine" id="cb316-2" data-line-number="2"><span class="co">#&gt;    user  system elapsed </span></a>
-<a class="sourceLine" id="cb316-3" data-line-number="3"><span class="co">#&gt;    0.44    0.00    0.44</span></a></code></pre></div>
+<a class="sourceLine" id="cb316-3" data-line-number="3"><span class="co">#&gt;   0.436   0.000   0.436</span></a></code></pre></div>
 <p>W efekcie dostajemy trzy wartości - <code>user</code>, <code>system</code> i <code>elapsed</code>. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.</p>
 <p>Benchmarking jest często używany w sytuacji, gdy istnieje kilka funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
 Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.</p>
@@ -494,8 +494,8 @@ Poniżej nastąpi porównanie funkcji <code>mi_do_km1</code> i <code>mi_do_km2</
 <a class="sourceLine" id="cb319-8" data-line-number="8"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
 <a class="sourceLine" id="cb319-9" data-line-number="9"><span class="co">#&gt;   expression               min   median `itr/sec` mem_alloc `gc/sec`</span></a>
 <a class="sourceLine" id="cb319-10" data-line-number="10"><span class="co">#&gt;   &lt;bch:expr&gt;          &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb319-11" data-line-number="11"><span class="co">#&gt; 1 mi_do_km1(odl_mile)   1.29µs   1.46µs   562654.     117KB        0</span></a>
-<a class="sourceLine" id="cb319-12" data-line-number="12"><span class="co">#&gt; 2 mi_do_km2(odl_mile) 957.05ns   1.13µs   690922.     221KB        0</span></a></code></pre></div>
+<a class="sourceLine" id="cb319-11" data-line-number="11"><span class="co">#&gt; 1 mi_do_km1(odl_mile)   1.27µs   1.45µs   576858.     117KB        0</span></a>
+<a class="sourceLine" id="cb319-12" data-line-number="12"><span class="co">#&gt; 2 mi_do_km2(odl_mile) 930.97ns   1.09µs   696613.     221KB        0</span></a></code></pre></div>
 <p>Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
 Zawiera ona szereg charakterystyk, w tym:</p>
 <ul>
@@ -520,10 +520,10 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 <a class="sourceLine" id="cb320-8" data-line-number="8"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
 <a class="sourceLine" id="cb320-9" data-line-number="9"><span class="co">#&gt;   expression                min   median `itr/sec` mem_alloc `gc/sec`</span></a>
 <a class="sourceLine" id="cb320-10" data-line-number="10"><span class="co">#&gt;   &lt;bch:expr&gt;           &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb320-11" data-line-number="11"><span class="co">#&gt; 1 mi_do_km1(odl_mile2)    436ms    443ms      2.26     382MB     19.2</span></a>
-<a class="sourceLine" id="cb320-12" data-line-number="12"><span class="co">#&gt; 2 mi_do_km2(odl_mile2)    764µs    829µs   1038.      78.2KB     22.0</span></a></code></pre></div>
+<a class="sourceLine" id="cb320-11" data-line-number="11"><span class="co">#&gt; 1 mi_do_km1(odl_mile2)    389ms    398ms      2.51     382MB     21.4</span></a>
+<a class="sourceLine" id="cb320-12" data-line-number="12"><span class="co">#&gt; 2 mi_do_km2(odl_mile2)    735µs    780µs   1139.      78.2KB     24.0</span></a></code></pre></div>
 <p>W tym przypadku różnica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
-Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 19.18 operacji na sekundę, przy aż 22 operacji na sekundę funkcji <code>mi_do_km2</code>.
+Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 21.37 operacji na sekundę, przy aż 23.98 operacji na sekundę funkcji <code>mi_do_km2</code>.
 Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż <code>mi_do_km2</code>.</p>
 <pre><code>#&gt; Running with:
 #&gt;       x
@@ -535,14 +535,14 @@ Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) r
 #&gt; # A tibble: 8 x 7
 #&gt;   expression       x      min   median `itr/sec` mem_alloc `gc/sec`
 #&gt;   &lt;bch:expr&gt;   &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-#&gt; 1 mi_do_km1(l)    10   3.26µs   3.87µs 233964.          0B     46.8
-#&gt; 2 mi_do_km2(l)    10   1.51µs   1.74µs 523259.          0B     52.3
-#&gt; 3 mi_do_km1(l)   100  56.55µs  63.17µs  14821.     43.16KB     19.5
-#&gt; 4 mi_do_km2(l)   100   7.43µs   9.07µs 104244.        856B     20.9
-#&gt; 5 mi_do_km1(l)  1000   3.89ms   4.11ms    239.      3.87MB     21.9
-#&gt; 6 mi_do_km2(l)  1000  69.93µs  78.69µs  12003.      7.87KB     24.8
-#&gt; 7 mi_do_km1(l) 10000 424.03ms 427.62ms      2.34  382.04MB     21.0
-#&gt; 8 mi_do_km2(l) 10000 743.49µs 831.75µs   1051.     78.18KB     24.0</code></pre>
+#&gt; 1 mi_do_km1(l)    10   3.26µs   3.71µs 251698.          0B     25.2
+#&gt; 2 mi_do_km2(l)    10   1.51µs    1.7µs 538097.          0B     53.8
+#&gt; 3 mi_do_km1(l)   100  56.09µs  60.75µs  15488.     43.16KB     19.2
+#&gt; 4 mi_do_km2(l)   100   7.48µs   8.77µs 107138.        856B     21.4
+#&gt; 5 mi_do_km1(l)  1000   3.75ms   3.93ms    251.      3.87MB     24.4
+#&gt; 6 mi_do_km2(l)  1000  69.03µs  76.53µs  12377.      7.87KB     24.3
+#&gt; 7 mi_do_km1(l) 10000 405.82ms 409.53ms      2.44  382.04MB     22.0
+#&gt; 8 mi_do_km2(l) 10000 723.43µs 788.63µs   1114.     78.18KB     26.0</code></pre>
 </div>
 <div id="zadania-10" class="section level2">
 <h2><span class="header-section-number">11.4</span> Zadania</h2>
@@ -579,6 +579,7 @@ Która z nich zużywa mniej zasobów?</p></li>
 <!-- 4. fix an error and add tests  -->
 <!-- ref intro -->
 <!-- resources -->
+<!-- https://rstats.wtf/debugging-r-code.html -->
 <!-- https://rstudio-education.github.io/hopr/debug.html -->
 <!-- https://jennybc.github.io/wtf-2019-rsc/debugging.pdf -->
 <!-- https://blog.davisvaughan.com/2019/04/05/debug-r-package-with-cpp/ -->
@@ -659,6 +660,9 @@ Która z nich zużywa mniej zasobów?</p></li>
 <!-- http://thecoatlessprofessor.com/programming/unofficial-rcpp-api-documentation/#minmax -->
 <!-- ## Python -->
 <!-- reticulate -->
+<!-- ## Unix commands -->
+<!-- https://neowaylabs.github.io/programming/unix-shell-for-data-scientists/?utm_source=hackernewsletter&utm_medium=email&utm_term=data -->
+<!-- https://missing.csail.mit.edu/ -->
 <!-- ## Zadania -->
 
 </div>

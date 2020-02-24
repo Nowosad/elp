@@ -322,7 +322,7 @@ Teraz można dodać wiadomość opisująca zmiany jakie zaszły, oraz ją zatwie
 Zalecane jest, aby powyższą czynność wykonywać nawet wiele razy dziennie.
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Często w folderze projektu możesz posiadać pliki, których nie chcesz dodawać do repozytorium.
-W takiej sytuacji dodaj ich nazwy do pliku `gitignore` i staną się one niewidoczne dla systemu Git.</div>\EndKnitrBlock{rmdinfo}
+W takiej sytuacji dodaj ich nazwy do pliku `.gitignore` i staną się one niewidoczne dla systemu Git.</div>\EndKnitrBlock{rmdinfo}
 
 Efektem powyższej operacji jest posiadanie zatwierdzonych zmian w lokalnym repozytorium, ale jeszcze ich brak w repozytorium zdalnym.
 Kolejnym krokiem jest przesłanie zmian na zdalne repozytorium.

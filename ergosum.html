@@ -169,7 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.4" data-path="funkcje.html"><a href="funkcje.html#dokumentacja-funkcji"><i class="fa fa-check"></i><b>3.4</b> Dokumentacja funkcji</a></li>
 <li class="chapter" data-level="3.5" data-path="funkcje.html"><a href="funkcje.html#pakiety"><i class="fa fa-check"></i><b>3.5</b> Pakiety</a></li>
 <li class="chapter" data-level="3.6" data-path="funkcje.html"><a href="funkcje.html#algorytmy"><i class="fa fa-check"></i><b>3.6</b> Algorytmy</a></li>
-<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptów"><i class="fa fa-check"></i><b>3.7</b> Tworzenie skryptów</a></li>
+<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptow"><i class="fa fa-check"></i><b>3.7</b> Tworzenie skryptów</a></li>
 <li class="chapter" data-level="3.8" data-path="funkcje.html"><a href="funkcje.html#budowanie-funkcji"><i class="fa fa-check"></i><b>3.8</b> Budowanie funkcji</a></li>
 <li class="chapter" data-level="3.9" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.9</b> Komunikaty</a></li>
 <li class="chapter" data-level="3.10" data-path="funkcje.html"><a href="funkcje.html#zadania-2"><i class="fa fa-check"></i><b>3.10</b> Zadania</a></li>
@@ -296,9 +296,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>13</b> Pakiety</a><ul>
 <li class="chapter" data-level="13.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#nazwa-pakietu"><i class="fa fa-check"></i><b>13.1</b> Nazwa pakietu</a></li>
 <li class="chapter" data-level="13.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-szkieletu-pakietu"><i class="fa fa-check"></i><b>13.2</b> Tworzenie szkieletu pakietu</a></li>
-<li class="chapter" data-level="13.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>13.3</b> Rozwijanie pakietu</a></li>
-<li class="chapter" data-level="13.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-i-dokumentacja-funkcji"><i class="fa fa-check"></i><b>13.4</b> Tworzenie i dokumentacja funkcji</a></li>
-<li class="chapter" data-level="13.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>13.5</b> Opis pakietu</a></li>
+<li class="chapter" data-level="13.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>13.3</b> Opis pakietu</a></li>
+<li class="chapter" data-level="13.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>13.4</b> Rozwijanie pakietu</a></li>
+<li class="chapter" data-level="13.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-i-dokumentacja-funkcji"><i class="fa fa-check"></i><b>13.5</b> Tworzenie i dokumentacja funkcji</a></li>
 <li class="chapter" data-level="13.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zależności"><i class="fa fa-check"></i><b>13.6</b> Zależności</a></li>
 <li class="chapter" data-level="13.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#sprawdzanie-pakietu"><i class="fa fa-check"></i><b>13.7</b> Sprawdzanie pakietu</a></li>
 <li class="chapter" data-level="13.8" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#instalowanie-pakietu"><i class="fa fa-check"></i><b>13.8</b> Instalowanie pakietu</a></li>
@@ -446,9 +446,18 @@ Te operatory można też użyć jako normalne funkcje poprzez dodanie znaku zwan
 </div>
 <div id="ide" class="section level2">
 <h2><span class="header-section-number">2.3</span> IDE</h2>
-<p>RStudio to zintegrowane środowisko programistyczne (ang. <em>Integrated Development Environment</em>, IDE) dla R.
-<!-- wyjaśnienie -->
-Jest to program, który zawiera bardzo wiele użytecznych funkcjonalności ułatwiających programowanie, takich jak wbudowany edytor, podświetlanie składni, automatyczne uzupełnianie kodu, itd.</p>
+<p>Zintegrowane środowisko programistyczne (ang. <em>Integrated Development Environment</em>, IDE) to program ułatwiający pisanie kodu.
+Zawiera on wiele użytecznych funkcjonalności, takich jak wbudowany edytor i konsola, podświetlanie składni, automatyczne uzupełnianie kodu, itd.
+Bez IDE kod musi być pisany w jednym programie, a następnie kopiowany i uruchamiany w innym.</p>
+<p>Do popularnych IDE dla R należą:</p>
+<ul>
+<li>RStudio</li>
+<li>Emacs + ESS</li>
+<li>vim + Nvim-R</li>
+<li>Visual Studio + RTVS</li>
+</ul>
+<p>W tej książce będzimy korzystać z pierwszego z nich.
+RStudio to zintegrowane środowisko programistyczne pierwotnie stworzone dla R.</p>
 
 <div class="rmdinfo">
 RStudio to nie jest to samo co R.
@@ -477,6 +486,9 @@ Ułatwia on przenoszenie kodu pomiędzy różnymi komputerami, a także daje dos
 <li>Jeżeli możliwe, to wybrać też opcję <code>Create a git repository</code>.</li>
 <li>Kliknąć <code>Create Project</code>.</li>
 </ol>
+<p>W ten sposób zostanie utworzony nowy folder wraz z plikiem o nazwie projektu z rozszerzeniem <code>.Rproj</code>, np. <code>programowanie1.Rproj</code>.
+Ten folder staje się też od razu folderem roboczym (więcej na ten temat znajdziesz w rozdziale <a href="io.html#io">9</a>).
+Otwarcie wcześniej stworzonego projektu ma miejsce poprzez uruchomienie pliku z rozszerzeniem <code>.Rproj</code> lub też wybór projektu w prawym górnym rogu RStudio.</p>
 <table>
 <caption><span id="tab:rstudiosk">Tabela 2.1: </span>Podstawowe skróty klawiaturowe w RStudio</caption>
 <thead>
@@ -660,6 +672,7 @@ Z ratunkiem w tej kwestii przychodzi norma <a href="https://en.wikipedia.org/wik
 <li><a href="https://rstudio-education.github.io/hopr/" class="uri">https://rstudio-education.github.io/hopr/</a> <span class="citation">(Grolemund <a href="#ref-grolemund2014hands">2014</a>)</span></li>
 <li><a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a> <span class="citation">(Wickham and Grolemund <a href="#ref-wickham2016r">2016</a>)</span></li>
 <li><a href="https://csgillespie.github.io/efficientR/" class="uri">https://csgillespie.github.io/efficientR/</a> <span class="citation">(Gillespie and Lovelace <a href="#ref-gillespie2016efficient">2016</a>)</span></li>
+<li><a href="https://rstats.wtf/" class="uri">https://rstats.wtf/</a> <span class="citation">(<span class="citeproc-not-found" data-reference-id="rstatswtf"><strong>???</strong></span>)</span></li>
 <li><a href="https://adv-r.hadley.nz" class="uri">https://adv-r.hadley.nz</a> <span class="citation">(Wickham <a href="#ref-wickham2014advanced">2014</a>)</span></li>
 <li><a href="https://geocompr.robinlovelace.net/" class="uri">https://geocompr.robinlovelace.net/</a> <span class="citation">(Lovelace, Nowosad, and Muenchow <a href="#ref-lovelace2019geocomputation">2019</a>)</span></li>
 </ul>
@@ -730,10 +743,12 @@ Ile PLN musisz wydać?
 Wylicz to w R.</li>
 <li>Masz trapez o długości podstaw <code>a = 5</code> i <code>b = 6</code> oraz wysokości <code>h = 3</code>.
 Stwórz nowy obiekt <code>pole_trapezu</code>, który zawiera obliczone pole tego trapezu.</li>
-<li>Wraz z grupą znajomych planujesz zamówić pizzę z dostawą i macie na to przeznaczonych 50 PLN.
+<li><p>Wraz z grupą znajomych planujesz zamówić pizzę z dostawą i macie na to przeznaczonych 50 PLN.
 Pizza o średnicy 30 cm kosztuje 23,5 PLN, a pizza o średnicy 50 cm kosztuje 50 PLN.
 Wylicz w R, czy bardziej opłaca się kupno dwóch małych pizz czy jednej dużej.
-<!--zadanie z poprawą stylu--></li>
+<!--zadanie z poprawą stylu--></p></li>
+<li><p>Przejrzyj linki zawarte w tym rozdziale, w szczególności R-bloggers i R Weekly.
+Znajdź jeden lub dwa przykłady zastosowania R, które uważasz za ciekawe lub interesujące.</p></li>
 </ol>
 
 </div>

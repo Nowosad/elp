@@ -176,9 +176,19 @@ Te operatory można też użyć jako normalne funkcje poprzez dodanie znaku zwan
 
 ## IDE
 
-RStudio to zintegrowane środowisko programistyczne (ang. *Integrated Development Environment*, IDE) dla R.
-<!-- wyjaśnienie -->
-Jest to program, który zawiera bardzo wiele użytecznych funkcjonalności ułatwiających programowanie, takich jak wbudowany edytor, podświetlanie składni, automatyczne uzupełnianie kodu, itd.
+Zintegrowane środowisko programistyczne (ang. *Integrated Development Environment*, IDE) to program ułatwiający pisanie kodu. 
+Zawiera on wiele użytecznych funkcjonalności, takich jak wbudowany edytor i konsola, podświetlanie składni, automatyczne uzupełnianie kodu, itd.
+Bez IDE kod musi być pisany w jednym programie, a następnie kopiowany i uruchamiany w innym.
+
+Do popularnych IDE dla R należą:
+
+- RStudio
+- Emacs + ESS
+- vim + Nvim-R
+- Visual Studio + RTVS
+
+W tej książce będzimy korzystać z pierwszego z nich.
+RStudio to zintegrowane środowisko programistyczne pierwotnie stworzone dla R.
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">RStudio to nie jest to samo co R. 
 R jest językiem programowania, podczas gdy RStudio to aplikacja ułatwiająca pisanie kodu.
@@ -206,6 +216,9 @@ Aby stworzyć pierwszy projekt RStudio, należy:
 5. Jeżeli możliwe, to wybrać też opcję `Create a git repository`.
 6. Kliknąć `Create Project`.
 
+W ten sposób zostanie utworzony nowy folder wraz z plikiem o nazwie projektu z rozszerzeniem `.Rproj`, np. `programowanie1.Rproj`.
+Ten folder staje się też od razu folderem roboczym (więcej na ten temat znajdziesz w rozdziale \@ref(io)).
+Otwarcie wcześniej stworzonego projektu ma miejsce poprzez uruchomienie pliku z rozszerzeniem `.Rproj` lub też wybór projektu w prawym górnym rogu RStudio.
 
 
 Table: (\#tab:rstudiosk)Podstawowe skróty klawiaturowe w RStudio
@@ -404,6 +417,7 @@ Angielskie książki:
 - https://rstudio-education.github.io/hopr/ [@grolemund2014hands]
 - https://r4ds.had.co.nz/ [@wickham2016r]
 - https://csgillespie.github.io/efficientR/ [@gillespie2016efficient]
+- https://rstats.wtf/ [@rstatswtf]
 - https://adv-r.hadley.nz [@wickham2014advanced]
 - https://geocompr.robinlovelace.net/ [@lovelace2019geocomputation]
 
@@ -479,3 +493,5 @@ Wylicz w R, czy bardziej opłaca się kupno dwóch małych pizz czy jednej duże
 
 
 
+5) Przejrzyj linki zawarte w tym rozdziale, w szczególności R-bloggers i R Weekly.
+Znajdź jeden lub dwa przykłady zastosowania R, które uważasz za ciekawe lub interesujące.

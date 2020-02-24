@@ -46,7 +46,7 @@ Wiedza uzyskana poprzez używanie tej książki daje podstawy do wykorzystywania
 Aktualna wersja książki znajduje się pod adresem https://nowosad.github.io/elp/. 
 Jeżeli używasz tej książki, zacytuj ją jako:
 
-- Nowosad, J., (2019). Elementarz programisty: wstęp do programowania używając R. Poznań: Space A. Online: https://nowosad.github.io/elp/
+- Nowosad, J., (2020). Elementarz programisty: wstęp do programowania używając R. Poznań: Space A. Online: https://nowosad.github.io/elp/
 
 Zachęcam również do zgłaszania wszelkich uwag, błędów, pomysłów oraz komentarzy na stronie https://github.com/nowosad/elp/issues.
 

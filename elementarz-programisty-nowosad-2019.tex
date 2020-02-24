@@ -264,7 +264,7 @@ Jeżeli używasz tej książki, zacytuj ją jako:
 \begin{itemize}
 \tightlist
 \item
-  Nowosad, J., (2019). Elementarz programisty: wstęp do programowania używając R. Poznań: Space A. Online: \url{https://nowosad.github.io/elp/}
+  Nowosad, J., (2020). Elementarz programisty: wstęp do programowania używając R. Poznań: Space A. Online: \url{https://nowosad.github.io/elp/}
 \end{itemize}
 
 Zachęcam również do zgłaszania wszelkich uwag, błędów, pomysłów oraz komentarzy na stronie \url{https://github.com/nowosad/elp/issues}.
@@ -765,8 +765,26 @@ Te operatory można też użyć jako normalne funkcje poprzez dodanie znaku zwan
 \hypertarget{ide}{%
 \section{IDE}\label{ide}}
 
-RStudio to zintegrowane środowisko programistyczne (ang. \emph{Integrated Development Environment}, IDE) dla R.
-Jest to program, który zawiera bardzo wiele użytecznych funkcjonalności ułatwiających programowanie, takich jak wbudowany edytor, podświetlanie składni, automatyczne uzupełnianie kodu, itd.
+Zintegrowane środowisko programistyczne (ang. \emph{Integrated Development Environment}, IDE) to program ułatwiający pisanie kodu.
+Zawiera on wiele użytecznych funkcjonalności, takich jak wbudowany edytor i konsola, podświetlanie składni, automatyczne uzupełnianie kodu, itd.
+Bez IDE kod musi być pisany w jednym programie, a następnie kopiowany i uruchamiany w innym.
+
+Do popularnych IDE dla R należą:
+
+\begin{itemize}
+\tightlist
+\item
+  RStudio
+\item
+  Emacs + ESS
+\item
+  vim + Nvim-R
+\item
+  Visual Studio + RTVS
+\end{itemize}
+
+W tej książce będzimy korzystać z pierwszego z nich.
+RStudio to zintegrowane środowisko programistyczne pierwotnie stworzone dla R.
 
 \BeginKnitrBlock{rmdinfo}
 RStudio to nie jest to samo co R.
@@ -809,6 +827,10 @@ Aby stworzyć pierwszy projekt RStudio, należy:
 \item
   Kliknąć \texttt{Create\ Project}.
 \end{enumerate}
+
+W ten sposób zostanie utworzony nowy folder wraz z plikiem o nazwie projektu z rozszerzeniem \texttt{.Rproj}, np. \texttt{programowanie1.Rproj}.
+Ten folder staje się też od razu folderem roboczym (więcej na ten temat znajdziesz w rozdziale \ref{io}).
+Otwarcie wcześniej stworzonego projektu ma miejsce poprzez uruchomienie pliku z rozszerzeniem \texttt{.Rproj} lub też wybór projektu w prawym górnym rogu RStudio.
 
 \begin{table}
 
@@ -1044,6 +1066,8 @@ Angielskie książki:
 \item
   \url{https://csgillespie.github.io/efficientR/} \citep{gillespie2016efficient}
 \item
+  \url{https://rstats.wtf/} \citep{rstatswtf}
+\item
   \url{https://adv-r.hadley.nz} \citep{wickham2014advanced}
 \item
   \url{https://geocompr.robinlovelace.net/} \citep{lovelace2019geocomputation}
@@ -1151,7 +1175,6 @@ Rozwiązując poniższe zadania oraz pozostałe zadania z tej książki staraj s
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
 \setcounter{enumi}{1}
-\tightlist
 \item
   Jedziesz na krótkie wakacje i planujesz na nie zabrać 500 EUR.
   Aktualny kurs kupna EUR wynosi 4,31.
@@ -1164,6 +1187,9 @@ Rozwiązując poniższe zadania oraz pozostałe zadania z tej książki staraj s
   Wraz z grupą znajomych planujesz zamówić pizzę z dostawą i macie na to przeznaczonych 50 PLN.
   Pizza o średnicy 30 cm kosztuje 23,5 PLN, a pizza o średnicy 50 cm kosztuje 50 PLN.
   Wylicz w R, czy bardziej opłaca się kupno dwóch małych pizz czy jednej dużej.
+\item
+  Przejrzyj linki zawarte w tym rozdziale, w szczególności R-bloggers i R Weekly.
+  Znajdź jeden lub dwa przykłady zastosowania R, które uważasz za ciekawe lub interesujące.
 \end{enumerate}
 
 \hypertarget{funkcje}{%
@@ -1431,8 +1457,8 @@ Podobnie jak w przepisie kucharskim, algorytmy wymagają posiadania odpowiednich
 Tworzenie nowych algorytmów często zaczyna się od narysowania schematu procedury działania lub też pseudokodu.
 Kolejnym krokiem jest zapisanie tego algorytmu w wybranym języku lub językach programowania w formie skryptu (sekcja \ref{tworzenie-skryptow}) lub funkcji (sekcja \ref{budowanie-funkcji}).
 
-\hypertarget{tworzenie-skryptuxf3w}{%
-\section{Tworzenie skryptów}\label{tworzenie-skryptuxf3w}}
+\hypertarget{tworzenie-skryptow}{%
+\section{Tworzenie skryptów}\label{tworzenie-skryptow}}
 
 Skrypt w R to plik testowy z rozszerzeniem \texttt{.R}, który zawiera szereg linii kodu w celu uzyskania konkretnego efektu.
 Może on zawierać zaledwie kilka jak i setki linii kodu w zależności od złożoności postawionego problemu.
@@ -3163,7 +3189,7 @@ Wzorzec zdefiniowany w tej sposób jest czuły na wielkość znaków dlatego te�
 
 W celu ułatwienia wyszukiwania złożonych fraz powstały wyrażenia regularne.
 Wyrażenia regularne (ang. \emph{regular expressions}), często określane jako \emph{regex} to sposób opisywanie wzorców tekstu.
-Używając wyrażeń regularnych możliwe jest, między innymi, znajdowanie tekstu lub zamienienie, który spełnia wymagane warunki.
+Używając wyrażeń regularnych możliwe jest wyszukiwanie, zamienianie, walidowanie i wydzielanie tekstu, który spełnia wymagane warunki.
 Wyrażenia regularne są powszechnie używane w wyszukiwarkach internetowych, edytorach tekstu, oraz wielu językach programowania.
 
 Wyrażenia regularne opierają się o stosowanie szeregu operatorów (metaznaków) wymienionych w tabeli \ref{tab:regexoperators}.
@@ -5156,6 +5182,7 @@ Zmienić folder roboczy można za pomocą skrótu \emph{Ctrl+Shift+H} w RStudio 
 
 \BeginKnitrBlock{rmdinfo}
 Ustawienie folderu roboczego ma też miejsce przy tworzeniu nowego lub otwieraniu istniejącego projektu RStudio.
+Dlatego też, używanie projektów RStudio jest rekomendowane przy pracy z R.
 \EndKnitrBlock{rmdinfo}
 
 Folder roboczy jest ważny ponieważ pozwala na korzystanie z względnej ścieżki.
@@ -6180,7 +6207,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.432   0.000   0.432}
+\CommentTok{#>    0.43    0.00    0.43}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6239,8 +6266,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression               min median `itr/sec`}
 \CommentTok{#>   <bch:expr>          <bch:tm> <bch:>     <dbl>}
-\CommentTok{#> 1 mi_do_km1(odl_mile)   1.28us 1.45us   572756.}
-\CommentTok{#> 2 mi_do_km2(odl_mile)  919.1ns 1.12us   703029.}
+\CommentTok{#> 1 mi_do_km1(odl_mile)   1.32us 1.43us   602186.}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 974.98ns  1.1us   731915.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
@@ -6284,14 +6311,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 452ms  456ms      2.19     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 766us  841us   1006.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 391ms  392ms      2.55     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 730us  785us   1122.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 18.62 operacji na sekundę, przy aż 21.86 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 21.68 operacji na sekundę, przy aż 24 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \begin{verbatim}
@@ -6306,14 +6333,14 @@ Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) raz
 #> # A tibble: 8 x 7
 #>   expression       x      min   median `itr/sec`
 #>   <bch:expr>   <dbl> <bch:tm> <bch:tm>     <dbl>
-#> 1 mi_do_km1(l)    10   3.28us   3.94us 228862.  
-#> 2 mi_do_km2(l)    10   1.49us   1.77us 510086.  
-#> 3 mi_do_km1(l)   100  55.97us  63.14us  14840.  
-#> 4 mi_do_km2(l)   100   7.42us      9us 103619.  
-#> 5 mi_do_km1(l)  1000   3.86ms   4.09ms    240.  
-#> 6 mi_do_km2(l)  1000  68.26us   80.1us  11774.  
-#> 7 mi_do_km1(l) 10000 420.43ms 432.79ms      2.31
-#> 8 mi_do_km2(l) 10000 757.36us 858.42us    997.  
+#> 1 mi_do_km1(l)    10   3.28us   3.75us 245376.  
+#> 2 mi_do_km2(l)    10   1.53us   1.74us 525404.  
+#> 3 mi_do_km1(l)   100  55.83us  60.19us  15575.  
+#> 4 mi_do_km2(l)   100   7.44us   8.59us 109838.  
+#> 5 mi_do_km1(l)  1000   3.73ms   3.86ms    257.  
+#> 6 mi_do_km2(l)  1000  67.98us  75.26us  12690.  
+#> 7 mi_do_km1(l) 10000  393.9ms 395.98ms      2.53
+#> 8 mi_do_km2(l) 10000    777us 831.46us   1062.  
 #> # ... with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 \end{verbatim}
@@ -6738,7 +6765,7 @@ Zalecane jest, aby powyższą czynność wykonywać nawet wiele razy dziennie.
 
 \BeginKnitrBlock{rmdinfo}
 Często w folderze projektu możesz posiadać pliki, których nie chcesz dodawać do repozytorium.
-W takiej sytuacji dodaj ich nazwy do pliku \texttt{gitignore} i staną się one niewidoczne dla systemu Git.
+W takiej sytuacji dodaj ich nazwy do pliku \texttt{.gitignore} i staną się one niewidoczne dla systemu Git.
 \EndKnitrBlock{rmdinfo}
 
 Efektem powyższej operacji jest posiadanie zatwierdzonych zmian w lokalnym repozytorium, ale jeszcze ich brak w repozytorium zdalnym.
@@ -6930,91 +6957,6 @@ Najważniejsze nowe pliki to:
 
 Dodatkowo w prawym górnym panelu RStudio pojawi się nowy panel ``Build''.
 
-\hypertarget{rozwijanie-pakietu}{%
-\section{Rozwijanie pakietu}\label{rozwijanie-pakietu}}
-
-Rozwój pakietu R może opierać się na kilku poniższych krokach:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Tworzenie/modyfikowanie kodu
-\item
-  Używanie funkcji \texttt{devtools::load\_all()}, która dodaje nowe/zmodyfikowane funkcje do R
-\item
-  Sprawdzenie czy funkcja działa zgodnie z oczekiwaniami na kilku przykładach
-\item
-  Dodanie testów jednostkowych (sekcja \ref{wbudowane-testy}) na podstawie stworzonych przykładów
-\item
-  Modyfikacja wersji oprogramowania
-\item
-  Powtórzenie powyższych czynności
-\end{enumerate}
-
-\hypertarget{tworzenie-i-dokumentacja-funkcji}{%
-\section{Tworzenie i dokumentacja funkcji}\label{tworzenie-i-dokumentacja-funkcji}}
-
-W sekcji \ref{budowanie-funkcji} stworzyliśmy nową funkcję \texttt{konwersja\_temp()} przeliczającą temperaturę ze stopni Fahrenheita na stopnie Celsjusza.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{konwersja_temp =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(temperatura_f)\{}
-\NormalTok{    (temperatura_f }\OperatorTok{-}\StringTok{ }\DecValTok{32}\NormalTok{) }\OperatorTok{/}\StringTok{ }\FloatTok{1.8}
-\NormalTok{\}}
-\end{Highlighting}
-\end{Shaded}
-
-Umieszczenie tej funkcji w nowym pakiecie R odbywa się poprzez zapisanie tego kodu jako skrypt R (np. \texttt{konwersja\_temp.R}) w folderze \texttt{R/}.
-
-Funkcje zawarte w pakietach muszą także posiadać odpowiednią dokumentację, zawierającą, między innymi, tytuł funkcji, opis jej działania, wyjaśnienie kolejnych argumentów funkcji, oraz przykłady jej działania.
-Linie obejmujące dokumentację funkcji rozpoczynają się od znaków \texttt{\#\textquotesingle{}}, a tworzenie dokumentacji funkcji odbywa się poprzez wypełnianie treści dla kolejnych znaczników (np. \texttt{@example} określa występowanie przykładu).
-
-Przykładowy plik \texttt{R/konwersja\_temp.R} może wyglądać następująco:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{#' Konwersja temperatur}
-\CommentTok{#'}
-\CommentTok{#' @description Funkcja sluzaca do konwersji temperatury }
-\CommentTok{#'   ze stopni Fahrenheita do stopni Celsjusza.}
-\CommentTok{#'}
-\CommentTok{#' @param temperatura_f wektor zawierajacy wartosci temperatury }
-\CommentTok{#'   w stopniach Fahrenheita}
-\CommentTok{#'}
-\CommentTok{#' @return wektor numeryczny}
-\CommentTok{#' @export}
-\CommentTok{#'}
-\CommentTok{#' @examples}
-\CommentTok{#' konwersja_temp(75)}
-\CommentTok{#' konwersja_temp(110)}
-\CommentTok{#' konwersja_temp(0)}
-\CommentTok{#' konwersja_temp(c(0, 75, 110))}
-\NormalTok{konwersja_temp =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(temperatura_f)\{}
-\NormalTok{  (temperatura_f }\OperatorTok{-}\StringTok{ }\DecValTok{32}\NormalTok{) }\OperatorTok{/}\StringTok{ }\FloatTok{1.8}
-\NormalTok{\}}
-\end{Highlighting}
-\end{Shaded}
-
-Pierwsza linia w tym pliku określa tytuł danej funkcji.
-Kolejny element rozpoczynający się od znacznika \texttt{@description} zawiera krótki opis tego, co funkcja robi.
-Następnie zazwyczaj wypisane są wszystkie argumenty danej funkcji używając kolejnych znaczników \texttt{@param}.
-Znacznik \texttt{@return} pozwala na przekazanie informacji o tym co jest zwracane jako efekt działania funkcji.
-Przedostatnim znacznikiem w powyższym przypadku jest \texttt{@export}.
-Oznacza on, że ta funkcja będzie widoczna dla każdego użytkownika tego pakietu po użyciu \texttt{library(mojpakiet)}.
-Bez tego znacznika funkcja byłaby tylko widoczna wewnątrz pakietu.
-Ostatni znacznik, \texttt{@examples}, wypisuje kolejne przykłady działania funkcji.
-
-Wybór \texttt{More\ -\textgreater{}\ Document} w panelu ``Build'' (inaczej wywołanie funkcji \texttt{devtools::document()} lub użycie skrótu CTRL+SHIFT+D) spowoduje zbudowanie pliku dokumentacji w folderze \texttt{man}, np. \texttt{man/konwersja\_temp.Rd}.
-Pliki dokumentacji będą zawsze tworzone w ten sposób - nie należy ich modyfikować ręcznie.
-Zbudowanie pliku dokumentacji pozwala teraz na jej podejrzenie poprzez wywołanie pliku pomocy naszej funkcji:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{?konwersja_temp}
-\end{Highlighting}
-\end{Shaded}
-
 \hypertarget{opis-pakietu}{%
 \section{Opis pakietu}\label{opis-pakietu}}
 
@@ -7087,6 +7029,97 @@ Określenie pakietu jako oprogramowania zamkniętego odbywa się poprzez dodanie
 \end{Shaded}
 
 Plik \texttt{DESCRIPTION} należy regularnie uaktualniać, np. zmieniać numer wersji po naniesionych zmianach w kodzie, czy dodawać nowych autorów, jeżeli tacy się pojawili.
+
+\hypertarget{rozwijanie-pakietu}{%
+\section{Rozwijanie pakietu}\label{rozwijanie-pakietu}}
+
+Rozwój pakietu R może opierać się na kilku poniższych krokach:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Tworzenie/modyfikowanie kodu
+\item
+  Używanie funkcji \texttt{devtools::load\_all()}, która dodaje nowe/zmodyfikowane funkcje do R
+\item
+  Sprawdzenie czy funkcja działa zgodnie z oczekiwaniami na kilku przykładach
+\item
+  Dodanie testów jednostkowych (sekcja \ref{wbudowane-testy}) na podstawie stworzonych przykładów
+\item
+  Uaktualnienie dokumentacji tworzonego/modyfkowanego kodu
+\item
+  Wygenerowanie plików z dokumentacją używając \texttt{devtools::document()}
+\item
+  Sprawdzenie czy pakiet nie posiada żadnych problemów używając \texttt{devtools::check()}
+\item
+  Modyfikacja wersji oprogramowania w pliku \texttt{DESCRIPTION}
+\item
+  Powtórzenie powyższych czynności
+\end{enumerate}
+
+\hypertarget{tworzenie-i-dokumentacja-funkcji}{%
+\section{Tworzenie i dokumentacja funkcji}\label{tworzenie-i-dokumentacja-funkcji}}
+
+W sekcji \ref{budowanie-funkcji} stworzyliśmy nową funkcję \texttt{konwersja\_temp()} przeliczającą temperaturę ze stopni Fahrenheita na stopnie Celsjusza.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{konwersja_temp =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(temperatura_f)\{}
+\NormalTok{    (temperatura_f }\OperatorTok{-}\StringTok{ }\DecValTok{32}\NormalTok{) }\OperatorTok{/}\StringTok{ }\FloatTok{1.8}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Umieszczenie tej funkcji w nowym pakiecie R odbywa się poprzez zapisanie tego kodu jako skrypt R (np. \texttt{konwersja\_temp.R}) w folderze \texttt{R/}.
+
+Funkcje zawarte w pakietach muszą także posiadać odpowiednią dokumentację, zawierającą, między innymi, tytuł funkcji, opis jej działania, wyjaśnienie kolejnych argumentów funkcji, oraz przykłady jej działania.
+Linie obejmujące dokumentację funkcji rozpoczynają się od znaków \texttt{\#\textquotesingle{}}, a tworzenie dokumentacji funkcji odbywa się poprzez wypełnianie treści dla kolejnych znaczników (np. \texttt{@example} określa występowanie przykładu).
+
+Przykładowy plik \texttt{R/konwersja\_temp.R} może wyglądać następująco:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#' Konwersja temperatur}
+\CommentTok{#'}
+\CommentTok{#' @description Funkcja sluzaca do konwersji temperatury }
+\CommentTok{#'   ze stopni Fahrenheita do stopni Celsjusza.}
+\CommentTok{#'}
+\CommentTok{#' @param temperatura_f wektor zawierajacy wartosci temperatury }
+\CommentTok{#'   w stopniach Fahrenheita}
+\CommentTok{#'}
+\CommentTok{#' @return wektor numeryczny}
+\CommentTok{#' @export}
+\CommentTok{#'}
+\CommentTok{#' @examples}
+\CommentTok{#' konwersja_temp(75)}
+\CommentTok{#' konwersja_temp(110)}
+\CommentTok{#' konwersja_temp(0)}
+\CommentTok{#' konwersja_temp(c(0, 75, 110))}
+\NormalTok{konwersja_temp =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(temperatura_f)\{}
+\NormalTok{  (temperatura_f }\OperatorTok{-}\StringTok{ }\DecValTok{32}\NormalTok{) }\OperatorTok{/}\StringTok{ }\FloatTok{1.8}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Pierwsza linia w tym pliku określa tytuł danej funkcji.
+Kolejny element rozpoczynający się od znacznika \texttt{@description} zawiera krótki opis tego, co funkcja robi.
+Następnie zazwyczaj wypisane są wszystkie argumenty danej funkcji używając kolejnych znaczników \texttt{@param}.
+Znacznik \texttt{@return} pozwala na przekazanie informacji o tym co jest zwracane jako efekt działania funkcji.
+Przedostatnim znacznikiem w powyższym przypadku jest \texttt{@export}.
+Oznacza on, że ta funkcja będzie widoczna dla każdego użytkownika tego pakietu po użyciu \texttt{library(mojpakiet)}.
+Bez tego znacznika funkcja byłaby tylko widoczna wewnątrz pakietu.
+Ostatni znacznik, \texttt{@examples}, wypisuje kolejne przykłady działania funkcji.
+
+Wybór \texttt{More\ -\textgreater{}\ Document} w panelu ``Build'' (inaczej wywołanie funkcji \texttt{devtools::document()} lub użycie skrótu CTRL+SHIFT+D) spowoduje zbudowanie pliku dokumentacji w folderze \texttt{man}, np. \texttt{man/konwersja\_temp.Rd}.
+Pliki dokumentacji będą zawsze tworzone w ten sposób - nie należy ich modyfikować ręcznie.
+Zbudowanie pliku dokumentacji pozwala teraz na jej podejrzenie poprzez wywołanie pliku pomocy naszej funkcji:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{?konwersja_temp}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{zaleux17cnoux15bci}{%
 \section{Zależności}\label{zaleux17cnoux15bci}}

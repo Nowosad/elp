@@ -11,6 +11,7 @@
 <!-- ref intro -->
 
 <!-- resources -->
+<!-- https://rstats.wtf/debugging-r-code.html -->
 <!-- https://rstudio-education.github.io/hopr/debug.html -->
 <!-- https://jennybc.github.io/wtf-2019-rsc/debugging.pdf -->
 <!-- https://blog.davisvaughan.com/2019/04/05/debug-r-package-with-cpp/ -->

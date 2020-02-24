@@ -222,7 +222,7 @@ str_detect(tekst3, pattern = "lena")
 
 W celu ułatwienia wyszukiwania złożonych fraz powstały wyrażenia regularne.
 Wyrażenia regularne (ang. *regular expressions*), często określane jako *regex* to sposób opisywanie wzorców tekstu. 
-Używając wyrażeń regularnych możliwe jest, między innymi, znajdowanie tekstu lub zamienienie, który spełnia wymagane warunki.
+Używając wyrażeń regularnych możliwe jest wyszukiwanie, zamienianie, walidowanie i wydzielanie tekstu, który spełnia wymagane warunki.
 Wyrażenia regularne są powszechnie używane w wyszukiwarkach internetowych, edytorach tekstu, oraz wielu językach programowania.
 
 Wyrażenia regularne opierają się o stosowanie szeregu operatorów (metaznaków) wymienionych w tabeli \@ref(tab:regexoperators).
