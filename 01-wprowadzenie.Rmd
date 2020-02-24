@@ -22,7 +22,7 @@ Nie możliwe było wykucie zbroi raz, a następnie natychmiastowe powielenie jej
 We współczesnym świecie, jedna aplikacja może być sprzedana (lub rozpowszechniona) wiele razy, a często większy nacisk kładzie się na rozbudowę i ulepszanie istniejących popularnych aplikacji niż tworzenie nowych^[Efektem tego jest też coraz większa popularność modeli subskrypcyjnych - https://en.wikipedia.org/wiki/Subscription_business_model.].
 Ułatwia to też budowę nowych rozwiązań na podstawie już istniejących^[https://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants].
 Współcześnie programowanie umożliwia wykonywanie trylionów (10^18^) operacji arytmetycznych na sekundę^[Przecięty człowiek jest w stanie wykonać około pół operacji na sekundę - https://en.wikipedia.org/wiki/Computer_performance_by_orders_of_magnitude.].
-Pozwala to na znaczne zwiększenie wydajności dostępnych rozwiązań<!--księgowość-->, otwiera możliwość praktycznego wykorzystania istniejących idei<!--modele klimatu-->, lub też tworzenia nowych pomysłów<!--internet,sztucznainteligencja-->.
+Pozwala to na znaczne zwiększenie wydajności dostępnych rozwiązań (np. księgowość), otwiera możliwość praktycznego wykorzystania istniejących idei (np. modele klimatu), lub też tworzenia nowych pomysłów (np. internet).
 Inną cechą programowania jest też jego prosta możliwość automatyzacji powtarzanych czynności oraz ułatwiona powtarzalność (ang. *reproducibility*).
 Posiadając kod źródłowy danego oprogramowania lub skrypt wykonujący analizę danych, możliwe jest odtworzenie tego wyniku przez inną osobę na drugim końcu świata<!--pod pewnymi warunkami-->, lub też przez siebie samego po paru miesiącach.
 <!--...-->
@@ -65,7 +65,7 @@ Jej algorytm do obliczenia liczb Bernoulliego nie został jednak przetestowany, 
 Ponad wiek później, gdy istniały już techniczne możliwości tworzenia komputerów, programowanie było uważane za kobiecy zawód^[https://www.history.com/news/coding-used-to-be-a-womans-job-so-it-was-paid-less-and-undervalued] (Rycina \@ref(fig:marghamil)).
 Z uwagi na szereg czynników społecznych i historycznych^[http://www.smbc-comics.com/?id=1883], w latach 1970 nastąpiło odwrócenie proporcji w tym zawodzie.
 Obecnie podejmowanych jest szereg inicjatyw, które mają na celu zachęcić kobiety do programowania.
-Wśród nich można wymienić działania organizacji [R-Ladies](https://rladies.org/), [PyLadies](https://www.pyladies.com/), czy [girls.js](https://girlsjs.pl/).
+Wśród nich można wymienić działania organizacji [R-Ladies](https://rladies.org/), [PyLadies](https://www.pyladies.com/), [girls.js](https://girlsjs.pl/), czy [Women in Machine Learning & Data Science](http://wimlds.org/).
 Mit programisty mężczyzny jest też powiązany z wymienionym kilka akapitów niżej mitem samotnego programisty.
 
 (ref:marghamil) Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które on i jej zespół stworzył na potrzeby misji Apollo. Źródło: https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg
@@ -126,6 +126,7 @@ Języki programowania składają się ze zbioru reguł syntaktycznych (składni)
 Składnia (forma) mówi o tym jakie symbole są dostępne w danym języku oraz jak te symbole mogą być łączone w większe struktury.
 Semantyka (treść) natomiast definiuje znaczenie poszczególnych symboli.
 <!--przykłady-->
+
 W przeciwieństwie do języków naturalnych, języki programowania wymagają wysokiej precyzji.
 Mówiąc w języku naturalnym możemy popełnić jakiś błąd (np. gramatyczny czy składniowy) i nadal być łatwo zrozumianym przez otoczenie.
 Języki programowania nie akceptują takich błędów i nie są w stanie wykonać danego polecenia. 
