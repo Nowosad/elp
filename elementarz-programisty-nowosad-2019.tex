@@ -5520,8 +5520,8 @@ Dostęp do baz danych w R możliwy jest używając pakietu \textbf{DBI} \citep{R
 \chapter{Złożone funkcje}\label{zlozone-funkcje}}
 
 Funkcje są podstawą działania w językach programowania.
-Rozdział \ref{funkcje} wprowadził do podstawowych kwestii związanych z funkcjami - jak się używa wbudowanych funkcji oraz jak się~tworzy proste nowe funkcje.
-Tworzenie bardziej złożonych funkcji czy też~zbiorów funkcji wymaga przemyślenia tego nie tylko jak się będą one nazywać, ale też~tego jak mogą~one zostać użyte przez inne osoby.
+Rozdział \ref{funkcje} wprowadził do podstawowych kwestii związanych z funkcjami - jak się używa wbudowanych funkcji oraz jak się tworzy proste nowe funkcje.
+Tworzenie bardziej złożonych funkcji czy też zbiorów funkcji wymaga przemyślenia tego nie tylko jak się będą one nazywać, ale też tego jak mogą one zostać użyte przez inne osoby.
 W tym rozdziale zostanie podanych kilka porad w jaki sposób budować funkcje przyjazne innym użytkownikom oraz w jaki sposób tworzyć odpowiednie komunikaty błędów, ostrzeżeń czy wiadomości.
 Dodatkowo, nastąpi także wprowadzenie do kolejnego paradygmatu programowania - programowania obiektowego.
 
@@ -5529,7 +5529,9 @@ Dodatkowo, nastąpi także wprowadzenie do kolejnego paradygmatu programowania -
 \section{API}\label{api}}
 
 Interfejs programistyczny aplikacji (ang. \emph{application programming interface}, API) to zbiór sposobów komunikacji pomiędzy różnymi komponentami oprogramowania.
-Inaczej mówiąc API określa w jaki sposób następuje interakcja z kodem.
+Najszerzej mówiąc API określa w jaki sposób następuje interakcja z kodem i my w tej sekcji skupimy się na tej definicji.
+Warto jednak pamiętać, że często osoby, które używają tego skrótu mają tak na prawdę na myśli RESTful API, czyli API które powala na komunikację pomiędzy komputerami poprzez protokół HTTP.
+
 Dobrze zaprojektowane API uławia zarówno rozwijanie oprogramowania, jak i jego używanie.
 Podstawowe elementy przemyślanego API w R obejmują nazwy funkcji, ich argumenty, oraz tzw. stabilność typu (ang. \emph{type stability}).
 
@@ -5558,7 +5560,7 @@ Zalecane jest unikanie tworzenia funkcji bez stabilności typu.
 
 Dodatkowym elementem API może być określenie domyślnych parametrów funkcji.
 Poniższa funkcja, \texttt{potegowanie()} ma na celu podnoszenie wartości wejściowego wektora (\texttt{x}) do wybranej potęgi (\texttt{w}).
-Domyślamy się jednak, że większość użytkowników jest zainteresowana używaniem tej funkcji do podnoszenia wartości do drugiej potęgi i dlatego też~ustalamy, że domyślnie argument \texttt{w} przyjmuje wartość 2.
+Domyślamy się jednak, że większość użytkowników jest zainteresowana używaniem tej funkcji do podnoszenia wartości do drugiej potęgi i dlatego też ustalamy, że domyślnie argument \texttt{w} przyjmuje wartość 2.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5666,7 +5668,7 @@ Ta funkcja przyjmuje wartość numeryczną, od której odejmuje jeden, a na koń
 \end{Highlighting}
 \end{Shaded}
 
-W przypadku, gdy użytkownik wprowadzi jako wejście wektor tekstowy (\texttt{if(is.character(x))}) to działanie funkcji zostanie przerwane i pojawi się~odpowiedni komunikat błędu.
+W przypadku, gdy użytkownik wprowadzi jako wejście wektor tekstowy (\texttt{if(is.character(x))}) to działanie funkcji zostanie przerwane i pojawi się odpowiedni komunikat błędu.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5676,7 +5678,7 @@ W przypadku, gdy użytkownik wprowadzi jako wejście wektor tekstowy (\texttt{if
 \end{Shaded}
 
 Jeżeli jako argument \texttt{x} zostanie podany wektor logiczny (\texttt{else\ if(is.logical(x))}) to pojawi się komunikat ostrzeżenia, ale dalsze obliczanie zostanie wykonane.
-W tym przypadku wartość~\texttt{TRUE} zostanie najpierw zamieniona na jeden a \texttt{FALSE} na zero, następnie od tych wartości zostanie odjęte jeden, a na końcu zostaną one zamienione na wartości bezwzględne.
+W tym przypadku wartość \texttt{TRUE} zostanie najpierw zamieniona na jeden a \texttt{FALSE} na zero, następnie od tych wartości zostanie odjęte jeden, a na końcu zostaną one zamienione na wartości bezwzględne.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5688,7 +5690,7 @@ W tym przypadku wartość~\texttt{TRUE} zostanie najpierw zamieniona na jeden a 
 \end{Highlighting}
 \end{Shaded}
 
-Po wprowadzeniu wartości numerycznych do funkcji \texttt{minus\_1()} pojawi się~tekst wiadomości, po którym nastąpi wyliczenie kodu \texttt{abs(x\ -\ 1)}.
+Po wprowadzeniu wartości numerycznych do funkcji \texttt{minus\_1()} pojawi się tekst wiadomości, po którym nastąpi wyliczenie kodu \texttt{abs(x\ -\ 1)}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5701,13 +5703,13 @@ Po wprowadzeniu wartości numerycznych do funkcji \texttt{minus\_1()} pojawi si�
 Złożone funkcje opierają się o inne istniejące funkcje.
 W powyższym przykładzie, \texttt{minus\_1()} używał, między innymi funkcji \texttt{-} do odejmowania czy \texttt{abs} do wyliczania wartości bezwzględnej.
 Czasami spodziewamy się, że wartość wprowadzona przez użytkownika może spowodować wystąpienie wewnętrznego błędu i jednocześnie wiemy jak to naprawić.
-W takich sytuacjach przydaje się~funkcja \texttt{tryCatch()}.
+W takich sytuacjach przydaje się funkcja \texttt{tryCatch()}.
 
 \BeginKnitrBlock{rmdinfo}
 R pozwala na ignorowanie wystąpienia błędu używając funkcji \texttt{try()}, ignorowanie ostrzeżeń z \texttt{suppressWarnings()} oraz wiadomości z \texttt{suppressMessages()}.
 \EndKnitrBlock{rmdinfo}
 
-\texttt{tryCatch()} stara się~uruchomić jakiś wskazany kod, a w przypadku pojawienia się~błędu wykonuje alternatywne obliczenia.
+\texttt{tryCatch()} stara się uruchomić jakiś wskazany kod, a w przypadku pojawienia się błędu wykonuje alternatywne obliczenia.
 Można to zobaczyć na poniższym przykładzie, gdzie najpierw sprawdzona zostałaby linia \texttt{kod\ do\ uruchomienia} i dopiero gdyby ona skutkowała błędem zostałaby uruchomiona linia \texttt{wykonaj\ kod\ w\ przypadku\ wystąpienia\ błędu}.
 
 \begin{Shaded}
@@ -5722,7 +5724,7 @@ Można to zobaczyć na poniższym przykładzie, gdzie najpierw sprawdzona zosta�
 \end{Shaded}
 
 Działanie \texttt{tryCatch} w praktyce jest pokazane w funkcji \texttt{log\_safe()}.
-Stara się~ona wyliczyć logarytm naturalny (\texttt{log()}) z wartości argumentu \texttt{x}, a w przypadku gdyby napotkała błąd zwróci ona wartość \texttt{NA}.
+Stara się ona wyliczyć logarytm naturalny (\texttt{log()}) z wartości argumentu \texttt{x}, a w przypadku gdyby napotkała błąd zwróci ona wartość \texttt{NA}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5779,17 +5781,17 @@ Polega on na definiowaniu obiektów danej klasy posiadających pewną określon�
 R pozwala również na stosowanie paradygmatu obiektowego.
 Co więcej, w tym języku istnieje kilka różnych systemów programowania obiektowego, między innymi S3, S4 czy R6.
 Każdy z nich charakteryzuje inny sposób tworzenia obiektów czy ich zachowań.
-W tym rozdziale skupimy się~na najczęściej używanego systemu S3.
+W tym rozdziale skupimy się na najczęściej używanego systemu S3.
 
 Dwa najważniejsze elementy tego systemu to klasy i metody.
 Klasa obejmuje obiekty o podobnej strukturze, które posiadają specjalną informację o nazwie klasy.
 Metoda natomiast to sposób zachowania funkcji w przypadku napotkania obiektu danej klasy.
-Przykład metody był pokazany w sekcji \ref{inne-klasy}, gdzie funkcja \texttt{mean()} zachowywała się~różnie w zależności od klasy danych wejściowych.
+Przykład metody był pokazany w sekcji \ref{inne-klasy}, gdzie funkcja \texttt{mean()} zachowywała się różnie w zależności od klasy danych wejściowych.
 
 \hypertarget{klasy}{%
 \subsection{Klasy}\label{klasy}}
 
-Poniżej stworzono nową macierz \texttt{x}, która składa się~z dwóch kolumn i dwóch wierszy oraz wartości 0, 0, 2 i 3.
+Poniżej stworzono nową macierz \texttt{x}, która składa się z dwóch kolumn i dwóch wierszy oraz wartości 0, 0, 2 i 3.
 Ma ona na celu reprezentowanie figury geometrycznej - prostokąta.
 W najprostszej postaci prostokąt można opisać używając czterech współrzędnych - najmniejszej wartości położenia na osi x (np., \texttt{0}), najmniejszej wartości położenia na osi y (np., \texttt{0}), największej wartości położenia na osi x (np., \texttt{2}), oraz największej wartości położenia na osi y (np., \texttt{3}).
 
@@ -5896,17 +5898,19 @@ W przypadku, gdy nasz obiekt wejściowy jest klasy \texttt{prostokat} to funkcja
 \end{Highlighting}
 \end{Shaded}
 
-Natomiast, gdy obiekt wejściowy będzie innej klasy to pojawi się~komunikat błędu sugerujący, że nie istnieje metoda dla tej klasy pozwalająca na otrzymanie wyniku.
+Natomiast, gdy obiekt wejściowy będzie innej klasy to pojawi się komunikat błędu sugerujący, że nie istnieje metoda dla tej klasy pozwalająca na otrzymanie wyniku.
 
 Dodatkowo, oprócz tworzenia metod dla każdej klasy oddzielnie możliwe jest stworzenie metody domyślnej poprzez \texttt{nazwafunkcji.default}.
 W przypadku, gdy dla obiektu wejściowego nie istnieje metoda to wówczas wykonywana jest metoda domyślna (\texttt{default}).
 Poniżej dodano metodę domyślną - w przypadku, gdy dla wejściowego obiektu nie ma metody to pojawi się poniższy komunikat błędu.
 
-\BeginKnitrBlock{rmdinfo}
-powierzchnia.default = function(x) \{
-stop(``Funkcja \texttt{powierzchnia} ma wsparcie tylko dla obiektów o klasie \texttt{prostokąt}'')
-\}
-\EndKnitrBlock{rmdinfo}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{powierzchnia.default =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x) \{}
+  \KeywordTok{stop}\NormalTok{(}\StringTok{"Funkcja `powierzchnia` ma wsparcie tylko dla obiektów o klasie `prostokąt`"}\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
 
 Sprawdźmy działanie domyślnej metody podając macierz jako obiekt wejściowy.
 
@@ -5917,7 +5921,7 @@ Sprawdźmy działanie domyślnej metody podając macierz jako obiekt wejściowy.
 \CommentTok{#> [1,]    0    2}
 \CommentTok{#> [2,]    0    3}
 \KeywordTok{powierzchnia}\NormalTok{(x)}
-\CommentTok{#> Error in UseMethod("powierzchnia"): no applicable method for 'powierzchnia' applied to an object of class "c('matrix', 'double', 'numeric')"}
+\CommentTok{#> Error in powierzchnia.default(x): Funkcja `powierzchnia` ma wsparcie tylko dla obiektów o klasie `prostokąt`}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5927,7 +5931,7 @@ Sprawdźmy działanie domyślnej metody podając macierz jako obiekt wejściowy.
 Trudno oczekiwać od użytkownika, że bez żadnych pomyłek stworzy obiekt klasy, który wymyśliliśmy, a następnie użyje funkcji \texttt{structure()}, aby dodać odpowiednią nazwę klasy.
 Dlatego też ważnym elementem jest stworzenie konstruktora - funkcji, której celem jest zbudowanie poprawnego obiektu naszej klasy, a w przypadku podania złych argumentów wejściowych poinformowanie użytkownika co jest nie tak.
 
-Poniżej znajduje się~konstruktor o nazwie \texttt{nowy\_prostokąt()}. Przyjmuje on wartości czterech współrzędnych, a następnie wykonuje szereg sprawdzeń ich poprawności:
+Poniżej znajduje się konstruktor o nazwie \texttt{nowy\_prostokąt()}. Przyjmuje on wartości czterech współrzędnych, a następnie wykonuje szereg sprawdzeń ich poprawności:
 
 \begin{itemize}
 \tightlist
@@ -6018,7 +6022,7 @@ W przypadku, gdy do konstruktora zostaną podane niepoprawne wartości wejściow
   Dodaj konstruktor pozwalający innym użytkownikom na tworzenie obiektów klasy \texttt{"trojkat"}.
   Zastanów się jakie powinny być wartości argumentów wejściowych i napisz wewnątrz konstruktora odpowiednie sprawdzenia używając komunikatów błędów, ostrzeżeń czy też wiadomości.
 \item
-  Stwórz metodę~pozwalającą na wyliczanie powierzchni trójkąta.
+  Stwórz metodę pozwalającą na wyliczanie powierzchni trójkąta.
 \item
   Stwórz metodę pozwalającą na określanie współrzędnych centroidu trójkąta.
 \end{enumerate}
@@ -6207,7 +6211,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>    0.43    0.00    0.43}
+\CommentTok{#>   0.438   0.000   0.439}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6266,8 +6270,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression               min median `itr/sec`}
 \CommentTok{#>   <bch:expr>          <bch:tm> <bch:>     <dbl>}
-\CommentTok{#> 1 mi_do_km1(odl_mile)   1.32us 1.43us   602186.}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 974.98ns  1.1us   731915.}
+\CommentTok{#> 1 mi_do_km1(odl_mile)   1.23us 1.42us   568167.}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 898.96ns 1.08us   726635.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
@@ -6311,14 +6315,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 391ms  392ms      2.55     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 730us  785us   1122.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 438ms  440ms      2.27     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 758us  818us   1056.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 21.68 operacji na sekundę, przy aż 24 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 19.34 operacji na sekundę, przy aż 22 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \begin{verbatim}
@@ -6333,14 +6337,14 @@ Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) raz
 #> # A tibble: 8 x 7
 #>   expression       x      min   median `itr/sec`
 #>   <bch:expr>   <dbl> <bch:tm> <bch:tm>     <dbl>
-#> 1 mi_do_km1(l)    10   3.28us   3.75us 245376.  
-#> 2 mi_do_km2(l)    10   1.53us   1.74us 525404.  
-#> 3 mi_do_km1(l)   100  55.83us  60.19us  15575.  
-#> 4 mi_do_km2(l)   100   7.44us   8.59us 109838.  
-#> 5 mi_do_km1(l)  1000   3.73ms   3.86ms    257.  
-#> 6 mi_do_km2(l)  1000  67.98us  75.26us  12690.  
-#> 7 mi_do_km1(l) 10000  393.9ms 395.98ms      2.53
-#> 8 mi_do_km2(l) 10000    777us 831.46us   1062.  
+#> 1 mi_do_km1(l)    10    3.2us   3.75us 241862.  
+#> 2 mi_do_km2(l)    10   1.47us   1.73us 519906.  
+#> 3 mi_do_km1(l)   100  55.83us  62.59us  14757.  
+#> 4 mi_do_km2(l)   100   7.38us   8.71us 107897.  
+#> 5 mi_do_km1(l)  1000   3.81ms   3.99ms    248.  
+#> 6 mi_do_km2(l)  1000  67.67us  78.33us  12017.  
+#> 7 mi_do_km1(l) 10000 410.79ms 423.07ms      2.36
+#> 8 mi_do_km2(l) 10000 742.61us 813.85us   1053.  
 #> # ... with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 \end{verbatim}
@@ -7264,6 +7268,7 @@ W efekcie wyświetlone zostaną wszystkie testy i zostanie wskazane, które z ni
 \section{Publikowanie pakietów}\label{publikowanie-pakietuxf3w}}
 
 Nowo utworzony pakiet w R można od razu umieścić na wybranym serwisie internetowym wspierającym kontrolę wersji takim jak GitHub, GitLab, czy BitBucket (rozdział \ref{kontrola-wersji}), gdzie nazwa repozytorium będzie identyczna jak nazwa pakietu.
+Można to zrobić poprzez zainicjowanie repozytorium Git używając \texttt{usethis::use\_git()}, a następnie wysłanie pakietu do repozytorium GitHub poprzez \texttt{usethis::use\_github()}\footnote{Wymaga to jednak wygenerowania tokena - opis jak to zrobić można znaleźć pod adresem \url{https://debruine.github.io/tutorials/packages.html\#github-access-token}}.
 Dodatkowo, gdy napisaliśmy plik \texttt{README.md} użytkownicy mogą dowiedzieć się do czego ten pakiet służy, jak go zainstalować i użyć w podstawowy sposób.
 Teraz konieczna jest promocja tego pakietu w sytuacji, gdy chcemy zainteresować inne osoby jego użyciem.
 Taka promocja może odbywać się poprzez ogłoszenie stworzenia tego pakietu na Twitterze używając hasztagu \texttt{\#rstats}, czy też napisaniu wpisu na blogu opisującego ten pakiet.

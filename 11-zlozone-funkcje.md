@@ -4,8 +4,8 @@
 # Złożone funkcje {#zlozone-funkcje}
 
 Funkcje są podstawą działania w językach programowania.
-Rozdział \@ref(funkcje) wprowadził do podstawowych kwestii związanych z funkcjami - jak się używa wbudowanych funkcji oraz jak się tworzy proste nowe funkcje.
-Tworzenie bardziej złożonych funkcji czy też zbiorów funkcji wymaga przemyślenia tego nie tylko jak się będą one nazywać, ale też tego jak mogą one zostać użyte przez inne osoby.
+Rozdział \@ref(funkcje) wprowadził do podstawowych kwestii związanych z funkcjami - jak się używa wbudowanych funkcji oraz jak się tworzy proste nowe funkcje.
+Tworzenie bardziej złożonych funkcji czy też zbiorów funkcji wymaga przemyślenia tego nie tylko jak się będą one nazywać, ale też tego jak mogą one zostać użyte przez inne osoby.
 W tym rozdziale zostanie podanych kilka porad w jaki sposób budować funkcje przyjazne innym użytkownikom oraz w jaki sposób tworzyć odpowiednie komunikaty błędów, ostrzeżeń czy wiadomości.
 Dodatkowo, nastąpi także wprowadzenie do kolejnego paradygmatu programowania - programowania obiektowego.
 
@@ -16,7 +16,9 @@ Dodatkowo, nastąpi także wprowadzenie do kolejnego paradygmatu programowania -
 ## API
 
 Interfejs programistyczny aplikacji (ang. *application programming interface*, API) to zbiór sposobów komunikacji pomiędzy różnymi komponentami oprogramowania.
-Inaczej mówiąc API określa w jaki sposób następuje interakcja z kodem.
+Najszerzej mówiąc API określa w jaki sposób następuje interakcja z kodem i my w tej sekcji skupimy się na tej definicji. 
+Warto jednak pamiętać, że często osoby, które używają tego skrótu mają tak na prawdę na myśli RESTful API, czyli API które powala na komunikację pomiędzy komputerami poprzez protokół HTTP.
+
 Dobrze zaprojektowane API uławia zarówno rozwijanie oprogramowania, jak i jego używanie.
 Podstawowe elementy przemyślanego API w R obejmują nazwy funkcji, ich argumenty, oraz tzw. stabilność typu (ang. *type stability*).
 
@@ -44,7 +46,7 @@ grep("^[k].", x = tekst, value = TRUE)
 
 Dodatkowym elementem API może być określenie domyślnych parametrów funkcji.
 Poniższa funkcja, `potegowanie()` ma na celu podnoszenie wartości wejściowego wektora (`x`) do wybranej potęgi (`w`).
-Domyślamy się jednak, że większość użytkowników jest zainteresowana używaniem tej funkcji do podnoszenia wartości do drugiej potęgi i dlatego też ustalamy, że domyślnie argument `w` przyjmuje wartość 2.
+Domyślamy się jednak, że większość użytkowników jest zainteresowana używaniem tej funkcji do podnoszenia wartości do drugiej potęgi i dlatego też ustalamy, że domyślnie argument `w` przyjmuje wartość 2.
 
 
 ```r
@@ -148,7 +150,7 @@ minus_1 = function(x){
 }
 ```
 
-W przypadku, gdy użytkownik wprowadzi jako wejście wektor tekstowy (`if(is.character(x))`) to działanie funkcji zostanie przerwane i pojawi się odpowiedni komunikat błędu.
+W przypadku, gdy użytkownik wprowadzi jako wejście wektor tekstowy (`if(is.character(x))`) to działanie funkcji zostanie przerwane i pojawi się odpowiedni komunikat błędu.
 
 
 ```r
@@ -157,7 +159,7 @@ minus_1("kot")
 ```
 
 Jeżeli jako argument `x` zostanie podany wektor logiczny (`else if(is.logical(x))`) to pojawi się komunikat ostrzeżenia, ale dalsze obliczanie zostanie wykonane.
-W tym przypadku wartość `TRUE` zostanie najpierw zamieniona na jeden a `FALSE` na zero, następnie od tych wartości zostanie odjęte jeden, a na końcu zostaną one zamienione na wartości bezwzględne.
+W tym przypadku wartość `TRUE` zostanie najpierw zamieniona na jeden a `FALSE` na zero, następnie od tych wartości zostanie odjęte jeden, a na końcu zostaną one zamienione na wartości bezwzględne.
 
 
 ```r
@@ -167,7 +169,7 @@ minus_1(c(TRUE, FALSE))
 #> [1] 0 1
 ```
 
-Po wprowadzeniu wartości numerycznych do funkcji `minus_1()` pojawi się tekst wiadomości, po którym nastąpi wyliczenie kodu `abs(x - 1)`.
+Po wprowadzeniu wartości numerycznych do funkcji `minus_1()` pojawi się tekst wiadomości, po którym nastąpi wyliczenie kodu `abs(x - 1)`.
 
 
 ```r
@@ -181,11 +183,11 @@ minus_1(c(1, 0, 6, -6))
 Złożone funkcje opierają się o inne istniejące funkcje. 
 W powyższym przykładzie, `minus_1()` używał, między innymi funkcji `-` do odejmowania czy `abs` do wyliczania wartości bezwzględnej.
 Czasami spodziewamy się, że wartość wprowadzona przez użytkownika może spowodować wystąpienie wewnętrznego błędu i jednocześnie wiemy jak to naprawić.
-W takich sytuacjach przydaje się funkcja `tryCatch()`.
+W takich sytuacjach przydaje się funkcja `tryCatch()`.
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">R pozwala na ignorowanie wystąpienia błędu używając funkcji `try()`, ignorowanie ostrzeżeń z `suppressWarnings()` oraz wiadomości z `suppressMessages()`.</div>\EndKnitrBlock{rmdinfo}
 
-`tryCatch()` stara się uruchomić jakiś wskazany kod, a w przypadku pojawienia się błędu wykonuje alternatywne obliczenia.
+`tryCatch()` stara się uruchomić jakiś wskazany kod, a w przypadku pojawienia się błędu wykonuje alternatywne obliczenia.
 Można to zobaczyć na poniższym przykładzie, gdzie najpierw sprawdzona zostałaby linia `kod do uruchomienia` i dopiero gdyby ona skutkowała błędem zostałaby uruchomiona linia `wykonaj kod w przypadku wystąpienia błędu`.
 <!-- https://adv-r.hadley.nz/conditions.html#conditions -->
 
@@ -200,7 +202,7 @@ tryCatch(
 ```
 
 Działanie `tryCatch` w praktyce jest pokazane w funkcji `log_safe()`.
-Stara się ona wyliczyć logarytm naturalny (`log()`) z wartości argumentu `x`, a w przypadku gdyby napotkała błąd zwróci ona wartość `NA`.
+Stara się ona wyliczyć logarytm naturalny (`log()`) z wartości argumentu `x`, a w przypadku gdyby napotkała błąd zwróci ona wartość `NA`.
 
 
 ```r
@@ -254,16 +256,16 @@ Polega on na definiowaniu obiektów danej klasy posiadających pewną określon�
 R pozwala również na stosowanie paradygmatu obiektowego.
 Co więcej, w tym języku istnieje kilka różnych systemów programowania obiektowego, między innymi S3, S4 czy R6.
 Każdy z nich charakteryzuje inny sposób tworzenia obiektów czy ich zachowań.
-W tym rozdziale skupimy się na najczęściej używanego systemu S3.
+W tym rozdziale skupimy się na najczęściej używanego systemu S3.
 
 Dwa najważniejsze elementy tego systemu to klasy i metody.
 Klasa obejmuje obiekty o podobnej strukturze, które posiadają specjalną informację o nazwie klasy.
 Metoda natomiast to sposób zachowania funkcji w przypadku napotkania obiektu danej klasy. 
-Przykład metody był pokazany w sekcji \@ref(inne-klasy), gdzie funkcja `mean()` zachowywała się różnie w zależności od klasy danych wejściowych.
+Przykład metody był pokazany w sekcji \@ref(inne-klasy), gdzie funkcja `mean()` zachowywała się różnie w zależności od klasy danych wejściowych.
 
 ### Klasy
 
-Poniżej stworzono nową macierz `x`, która składa się z dwóch kolumn i dwóch wierszy oraz wartości 0, 0, 2 i 3.
+Poniżej stworzono nową macierz `x`, która składa się z dwóch kolumn i dwóch wierszy oraz wartości 0, 0, 2 i 3.
 Ma ona na celu reprezentowanie figury geometrycznej - prostokąta.
 W najprostszej postaci prostokąt można opisać używając czterech współrzędnych - najmniejszej wartości położenia na osi x (np., `0`), najmniejszej wartości położenia na osi y (np., `0`), największej wartości położenia na osi x (np., `2`), oraz największej wartości położenia na osi y (np., `3`).
 
@@ -363,15 +365,18 @@ powierzchnia(x)
 #> Error in UseMethod("powierzchnia"): no applicable method for 'powierzchnia' applied to an object of class "c('matrix', 'double', 'numeric')"
 ```
 
-Natomiast, gdy obiekt wejściowy będzie innej klasy to pojawi się komunikat błędu sugerujący, że nie istnieje metoda dla tej klasy pozwalająca na otrzymanie wyniku.
+Natomiast, gdy obiekt wejściowy będzie innej klasy to pojawi się komunikat błędu sugerujący, że nie istnieje metoda dla tej klasy pozwalająca na otrzymanie wyniku.
 
 Dodatkowo, oprócz tworzenia metod dla każdej klasy oddzielnie możliwe jest stworzenie metody domyślnej poprzez `nazwafunkcji.default`. 
 W przypadku, gdy dla obiektu wejściowego nie istnieje metoda to wówczas wykonywana jest metoda domyślna (`default`).
 Poniżej dodano metodę domyślną - w przypadku, gdy dla wejściowego obiektu nie ma metody to pojawi się poniższy komunikat błędu.
 
-\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">powierzchnia.default = function(x) {
+
+```r
+powierzchnia.default = function(x) {
   stop("Funkcja `powierzchnia` ma wsparcie tylko dla obiektów o klasie `prostokąt`")
-}</div>\EndKnitrBlock{rmdinfo}
+}
+```
 
 Sprawdźmy działanie domyślnej metody podając macierz jako obiekt wejściowy.
 
@@ -382,7 +387,7 @@ x
 #> [1,]    0    2
 #> [2,]    0    3
 powierzchnia(x)
-#> Error in UseMethod("powierzchnia"): no applicable method for 'powierzchnia' applied to an object of class "c('matrix', 'double', 'numeric')"
+#> Error in powierzchnia.default(x): Funkcja `powierzchnia` ma wsparcie tylko dla obiektów o klasie `prostokąt`
 ```
 
 ### Konstruktory
@@ -390,7 +395,7 @@ powierzchnia(x)
 Trudno oczekiwać od użytkownika, że bez żadnych pomyłek stworzy obiekt klasy, który wymyśliliśmy, a następnie użyje funkcji `structure()`, aby dodać odpowiednią nazwę klasy.
 Dlatego też ważnym elementem jest stworzenie konstruktora - funkcji, której celem jest zbudowanie poprawnego obiektu naszej klasy, a w przypadku podania złych argumentów wejściowych poinformowanie użytkownika co jest nie tak.
 
-Poniżej znajduje się konstruktor o nazwie `nowy_prostokąt()`. Przyjmuje on wartości czterech współrzędnych, a następnie wykonuje szereg sprawdzeń ich poprawności:
+Poniżej znajduje się konstruktor o nazwie `nowy_prostokąt()`. Przyjmuje on wartości czterech współrzędnych, a następnie wykonuje szereg sprawdzeń ich poprawności:
 
 - Czy wszystkie argumenty są typu numerycznego?
 - Czy każdy argument ma tylko jeden element?
@@ -473,7 +478,7 @@ W jaki sposób trójkąty będą reprezentowane w tej nowej klasie?
 1) Dodaj konstruktor pozwalający innym użytkownikom na tworzenie obiektów klasy `"trojkat"`. 
 Zastanów się jakie powinny być wartości argumentów wejściowych i napisz wewnątrz konstruktora odpowiednie sprawdzenia używając komunikatów błędów, ostrzeżeń czy też wiadomości.
 
-1) Stwórz metodę pozwalającą na wyliczanie powierzchni trójkąta.
+1) Stwórz metodę pozwalającą na wyliczanie powierzchni trójkąta.
 
 1) Stwórz metodę pozwalającą na określanie współrzędnych centroidu trójkąta.
 

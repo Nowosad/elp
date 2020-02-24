@@ -338,8 +338,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="zlozone-funkcje" class="section level1">
 <h1><span class="header-section-number">10</span> Złożone funkcje</h1>
 <p>Funkcje są podstawą działania w językach programowania.
-Rozdział <a href="funkcje.html#funkcje">3</a> wprowadził do podstawowych kwestii związanych z funkcjami - jak się używa wbudowanych funkcji oraz jak się tworzy proste nowe funkcje.
-Tworzenie bardziej złożonych funkcji czy też zbiorów funkcji wymaga przemyślenia tego nie tylko jak się będą one nazywać, ale też tego jak mogą one zostać użyte przez inne osoby.
+Rozdział <a href="funkcje.html#funkcje">3</a> wprowadził do podstawowych kwestii związanych z funkcjami - jak się używa wbudowanych funkcji oraz jak się tworzy proste nowe funkcje.
+Tworzenie bardziej złożonych funkcji czy też zbiorów funkcji wymaga przemyślenia tego nie tylko jak się będą one nazywać, ale też tego jak mogą one zostać użyte przez inne osoby.
 W tym rozdziale zostanie podanych kilka porad w jaki sposób budować funkcje przyjazne innym użytkownikom oraz w jaki sposób tworzyć odpowiednie komunikaty błędów, ostrzeżeń czy wiadomości.
 Dodatkowo, nastąpi także wprowadzenie do kolejnego paradygmatu programowania - programowania obiektowego.</p>
 <!-- solve a single problem -->
@@ -348,8 +348,9 @@ Dodatkowo, nastąpi także wprowadzenie do kolejnego paradygmatu programowania -
 <div id="api" class="section level2">
 <h2><span class="header-section-number">10.1</span> API</h2>
 <p>Interfejs programistyczny aplikacji (ang. <em>application programming interface</em>, API) to zbiór sposobów komunikacji pomiędzy różnymi komponentami oprogramowania.
-Inaczej mówiąc API określa w jaki sposób następuje interakcja z kodem.
-Dobrze zaprojektowane API uławia zarówno rozwijanie oprogramowania, jak i jego używanie.
+Najszerzej mówiąc API określa w jaki sposób następuje interakcja z kodem i my w tej sekcji skupimy się na tej definicji.
+Warto jednak pamiętać, że często osoby, które używają tego skrótu mają tak na prawdę na myśli RESTful API, czyli API które powala na komunikację pomiędzy komputerami poprzez protokół HTTP.</p>
+<p>Dobrze zaprojektowane API uławia zarówno rozwijanie oprogramowania, jak i jego używanie.
 Podstawowe elementy przemyślanego API w R obejmują nazwy funkcji, ich argumenty, oraz tzw. stabilność typu (ang. <em>type stability</em>).</p>
 <p>Funkcje wewnątrz pojedynczego pakietu powinny być nazywane konsekwentnie używając tylko jednej konwencji nazywania (sekcja <a href="ergosum.html#nazwy-obiektow">2.4.1</a>).
 Sama nazwa powinna w zwięzły sposób przekazywać jakie jest działanie funkcji.
@@ -368,7 +369,7 @@ Zalecane jest unikanie tworzenia funkcji bez stabilności typu.</p>
 <a class="sourceLine" id="cb278-5" data-line-number="5"><span class="co">#&gt; [1] &quot;kołdra&quot; &quot;kordła&quot;</span></a></code></pre></div>
 <p>Dodatkowym elementem API może być określenie domyślnych parametrów funkcji.
 Poniższa funkcja, <code>potegowanie()</code> ma na celu podnoszenie wartości wejściowego wektora (<code>x</code>) do wybranej potęgi (<code>w</code>).
-Domyślamy się jednak, że większość użytkowników jest zainteresowana używaniem tej funkcji do podnoszenia wartości do drugiej potęgi i dlatego też ustalamy, że domyślnie argument <code>w</code> przyjmuje wartość 2.</p>
+Domyślamy się jednak, że większość użytkowników jest zainteresowana używaniem tej funkcji do podnoszenia wartości do drugiej potęgi i dlatego też ustalamy, że domyślnie argument <code>w</code> przyjmuje wartość 2.</p>
 <div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb279-1" data-line-number="1">potegowanie =<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">w =</span> <span class="dv">2</span>){</a>
 <a class="sourceLine" id="cb279-2" data-line-number="2">  x <span class="op">^</span><span class="st"> </span>w</a>
 <a class="sourceLine" id="cb279-3" data-line-number="3">}</a></code></pre></div>
@@ -432,16 +433,16 @@ Ta funkcja przyjmuje wartość numeryczną, od której odejmuje jeden, a na koń
 <a class="sourceLine" id="cb286-9" data-line-number="9">  }</a>
 <a class="sourceLine" id="cb286-10" data-line-number="10">  <span class="kw">abs</span>(x <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)</a>
 <a class="sourceLine" id="cb286-11" data-line-number="11">}</a></code></pre></div>
-<p>W przypadku, gdy użytkownik wprowadzi jako wejście wektor tekstowy (<code>if(is.character(x))</code>) to działanie funkcji zostanie przerwane i pojawi się odpowiedni komunikat błędu.</p>
+<p>W przypadku, gdy użytkownik wprowadzi jako wejście wektor tekstowy (<code>if(is.character(x))</code>) to działanie funkcji zostanie przerwane i pojawi się odpowiedni komunikat błędu.</p>
 <div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb287-1" data-line-number="1"><span class="kw">minus_1</span>(<span class="st">&quot;kot&quot;</span>)</a>
 <a class="sourceLine" id="cb287-2" data-line-number="2"><span class="co">#&gt; Error in minus_1(&quot;kot&quot;): Argument `x` musi być zmienną numeryczną, a nie znakową.</span></a></code></pre></div>
 <p>Jeżeli jako argument <code>x</code> zostanie podany wektor logiczny (<code>else if(is.logical(x))</code>) to pojawi się komunikat ostrzeżenia, ale dalsze obliczanie zostanie wykonane.
-W tym przypadku wartość <code>TRUE</code> zostanie najpierw zamieniona na jeden a <code>FALSE</code> na zero, następnie od tych wartości zostanie odjęte jeden, a na końcu zostaną one zamienione na wartości bezwzględne.</p>
+W tym przypadku wartość <code>TRUE</code> zostanie najpierw zamieniona na jeden a <code>FALSE</code> na zero, następnie od tych wartości zostanie odjęte jeden, a na końcu zostaną one zamienione na wartości bezwzględne.</p>
 <div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb288-1" data-line-number="1"><span class="kw">minus_1</span>(<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>))</a>
 <a class="sourceLine" id="cb288-2" data-line-number="2"><span class="co">#&gt; Warning in minus_1(c(TRUE, FALSE)): Argument `x` jest zmienną logiczną. Czy nie</span></a>
 <a class="sourceLine" id="cb288-3" data-line-number="3"><span class="co">#&gt; chcesz użyć zmiennej numerycznej?</span></a>
 <a class="sourceLine" id="cb288-4" data-line-number="4"><span class="co">#&gt; [1] 0 1</span></a></code></pre></div>
-<p>Po wprowadzeniu wartości numerycznych do funkcji <code>minus_1()</code> pojawi się tekst wiadomości, po którym nastąpi wyliczenie kodu <code>abs(x - 1)</code>.</p>
+<p>Po wprowadzeniu wartości numerycznych do funkcji <code>minus_1()</code> pojawi się tekst wiadomości, po którym nastąpi wyliczenie kodu <code>abs(x - 1)</code>.</p>
 <div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb289-1" data-line-number="1"><span class="kw">minus_1</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">-6</span>))</a>
 <a class="sourceLine" id="cb289-2" data-line-number="2"><span class="co">#&gt; Wow. Argument `x` jest oczekiwaną zmienną numeryczną.</span></a>
 <a class="sourceLine" id="cb289-3" data-line-number="3"><span class="co">#&gt; [1] 0 1 5 7</span></a></code></pre></div>
@@ -449,13 +450,13 @@ W tym przypadku wartość <code>TRUE</code> zostanie najpierw zamieniona na jed
 <p>Złożone funkcje opierają się o inne istniejące funkcje.
 W powyższym przykładzie, <code>minus_1()</code> używał, między innymi funkcji <code>-</code> do odejmowania czy <code>abs</code> do wyliczania wartości bezwzględnej.
 Czasami spodziewamy się, że wartość wprowadzona przez użytkownika może spowodować wystąpienie wewnętrznego błędu i jednocześnie wiemy jak to naprawić.
-W takich sytuacjach przydaje się funkcja <code>tryCatch()</code>.</p>
+W takich sytuacjach przydaje się funkcja <code>tryCatch()</code>.</p>
 
 <div class="rmdinfo">
 R pozwala na ignorowanie wystąpienia błędu używając funkcji <code>try()</code>, ignorowanie ostrzeżeń z <code>suppressWarnings()</code> oraz wiadomości z <code>suppressMessages()</code>.
 </div>
 
-<p><code>tryCatch()</code> stara się uruchomić jakiś wskazany kod, a w przypadku pojawienia się błędu wykonuje alternatywne obliczenia.
+<p><code>tryCatch()</code> stara się uruchomić jakiś wskazany kod, a w przypadku pojawienia się błędu wykonuje alternatywne obliczenia.
 Można to zobaczyć na poniższym przykładzie, gdzie najpierw sprawdzona zostałaby linia <code>kod do uruchomienia</code> i dopiero gdyby ona skutkowała błędem zostałaby uruchomiona linia <code>wykonaj kod w przypadku wystąpienia błędu</code>.
 <!-- https://adv-r.hadley.nz/conditions.html#conditions --></p>
 <div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb290-1" data-line-number="1"><span class="kw">tryCatch</span>(</a>
@@ -465,7 +466,7 @@ Można to zobaczyć na poniższym przykładzie, gdzie najpierw sprawdzona zosta�
 <a class="sourceLine" id="cb290-5" data-line-number="5">  kod do uruchomienia </a>
 <a class="sourceLine" id="cb290-6" data-line-number="6">)</a></code></pre></div>
 <p>Działanie <code>tryCatch</code> w praktyce jest pokazane w funkcji <code>log_safe()</code>.
-Stara się ona wyliczyć logarytm naturalny (<code>log()</code>) z wartości argumentu <code>x</code>, a w przypadku gdyby napotkała błąd zwróci ona wartość <code>NA</code>.</p>
+Stara się ona wyliczyć logarytm naturalny (<code>log()</code>) z wartości argumentu <code>x</code>, a w przypadku gdyby napotkała błąd zwróci ona wartość <code>NA</code>.</p>
 <div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb291-1" data-line-number="1">log_safe =<span class="st"> </span><span class="cf">function</span>(x){</a>
 <a class="sourceLine" id="cb291-2" data-line-number="2">  <span class="kw">tryCatch</span>(</a>
 <a class="sourceLine" id="cb291-3" data-line-number="3">  <span class="dt">error =</span> <span class="cf">function</span>(e) {</a>
@@ -503,14 +504,14 @@ Polega on na definiowaniu obiektów danej klasy posiadających pewną określon�
 <p>R pozwala również na stosowanie paradygmatu obiektowego.
 Co więcej, w tym języku istnieje kilka różnych systemów programowania obiektowego, między innymi S3, S4 czy R6.
 Każdy z nich charakteryzuje inny sposób tworzenia obiektów czy ich zachowań.
-W tym rozdziale skupimy się na najczęściej używanego systemu S3.</p>
+W tym rozdziale skupimy się na najczęściej używanego systemu S3.</p>
 <p>Dwa najważniejsze elementy tego systemu to klasy i metody.
 Klasa obejmuje obiekty o podobnej strukturze, które posiadają specjalną informację o nazwie klasy.
 Metoda natomiast to sposób zachowania funkcji w przypadku napotkania obiektu danej klasy.
-Przykład metody był pokazany w sekcji <a href="zlozone-obiekty.html#inne-klasy">7.5</a>, gdzie funkcja <code>mean()</code> zachowywała się różnie w zależności od klasy danych wejściowych.</p>
+Przykład metody był pokazany w sekcji <a href="zlozone-obiekty.html#inne-klasy">7.5</a>, gdzie funkcja <code>mean()</code> zachowywała się różnie w zależności od klasy danych wejściowych.</p>
 <div id="klasy" class="section level3">
 <h3><span class="header-section-number">10.3.1</span> Klasy</h3>
-<p>Poniżej stworzono nową macierz <code>x</code>, która składa się z dwóch kolumn i dwóch wierszy oraz wartości 0, 0, 2 i 3.
+<p>Poniżej stworzono nową macierz <code>x</code>, która składa się z dwóch kolumn i dwóch wierszy oraz wartości 0, 0, 2 i 3.
 Ma ona na celu reprezentowanie figury geometrycznej - prostokąta.
 W najprostszej postaci prostokąt można opisać używając czterech współrzędnych - najmniejszej wartości położenia na osi x (np., <code>0</code>), najmniejszej wartości położenia na osi y (np., <code>0</code>), największej wartości położenia na osi x (np., <code>2</code>), oraz największej wartości położenia na osi y (np., <code>3</code>).</p>
 <div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb295-1" data-line-number="1">x =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="dt">ncol =</span> <span class="dv">2</span>)</a>
@@ -568,30 +569,26 @@ Nowa funkcja <code>powierzchnia</code> zadziała w powyższy sposób tylko w wyp
 <a class="sourceLine" id="cb302-4" data-line-number="4"><span class="co">#&gt; [2,]    0    3</span></a>
 <a class="sourceLine" id="cb302-5" data-line-number="5"><span class="kw">powierzchnia</span>(x)</a>
 <a class="sourceLine" id="cb302-6" data-line-number="6"><span class="co">#&gt; Error in UseMethod(&quot;powierzchnia&quot;): no applicable method for &#39;powierzchnia&#39; applied to an object of class &quot;c(&#39;matrix&#39;, &#39;double&#39;, &#39;numeric&#39;)&quot;</span></a></code></pre></div>
-<p>Natomiast, gdy obiekt wejściowy będzie innej klasy to pojawi się komunikat błędu sugerujący, że nie istnieje metoda dla tej klasy pozwalająca na otrzymanie wyniku.</p>
+<p>Natomiast, gdy obiekt wejściowy będzie innej klasy to pojawi się komunikat błędu sugerujący, że nie istnieje metoda dla tej klasy pozwalająca na otrzymanie wyniku.</p>
 <p>Dodatkowo, oprócz tworzenia metod dla każdej klasy oddzielnie możliwe jest stworzenie metody domyślnej poprzez <code>nazwafunkcji.default</code>.
 W przypadku, gdy dla obiektu wejściowego nie istnieje metoda to wówczas wykonywana jest metoda domyślna (<code>default</code>).
 Poniżej dodano metodę domyślną - w przypadku, gdy dla wejściowego obiektu nie ma metody to pojawi się poniższy komunikat błędu.</p>
-
-<div class="rmdinfo">
-powierzchnia.default = function(x) {
-stop(“Funkcja <code>powierzchnia</code> ma wsparcie tylko dla obiektów o klasie <code>prostokąt</code>”)
-}
-</div>
-
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb303-1" data-line-number="1">powierzchnia.default =<span class="st"> </span><span class="cf">function</span>(x) {</a>
+<a class="sourceLine" id="cb303-2" data-line-number="2">  <span class="kw">stop</span>(<span class="st">&quot;Funkcja `powierzchnia` ma wsparcie tylko dla obiektów o klasie `prostokąt`&quot;</span>)</a>
+<a class="sourceLine" id="cb303-3" data-line-number="3">}</a></code></pre></div>
 <p>Sprawdźmy działanie domyślnej metody podając macierz jako obiekt wejściowy.</p>
-<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb303-1" data-line-number="1">x</a>
-<a class="sourceLine" id="cb303-2" data-line-number="2"><span class="co">#&gt;      [,1] [,2]</span></a>
-<a class="sourceLine" id="cb303-3" data-line-number="3"><span class="co">#&gt; [1,]    0    2</span></a>
-<a class="sourceLine" id="cb303-4" data-line-number="4"><span class="co">#&gt; [2,]    0    3</span></a>
-<a class="sourceLine" id="cb303-5" data-line-number="5"><span class="kw">powierzchnia</span>(x)</a>
-<a class="sourceLine" id="cb303-6" data-line-number="6"><span class="co">#&gt; Error in UseMethod(&quot;powierzchnia&quot;): no applicable method for &#39;powierzchnia&#39; applied to an object of class &quot;c(&#39;matrix&#39;, &#39;double&#39;, &#39;numeric&#39;)&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb304-1" data-line-number="1">x</a>
+<a class="sourceLine" id="cb304-2" data-line-number="2"><span class="co">#&gt;      [,1] [,2]</span></a>
+<a class="sourceLine" id="cb304-3" data-line-number="3"><span class="co">#&gt; [1,]    0    2</span></a>
+<a class="sourceLine" id="cb304-4" data-line-number="4"><span class="co">#&gt; [2,]    0    3</span></a>
+<a class="sourceLine" id="cb304-5" data-line-number="5"><span class="kw">powierzchnia</span>(x)</a>
+<a class="sourceLine" id="cb304-6" data-line-number="6"><span class="co">#&gt; Error in powierzchnia.default(x): Funkcja `powierzchnia` ma wsparcie tylko dla obiektów o klasie `prostokąt`</span></a></code></pre></div>
 </div>
 <div id="konstruktory" class="section level3">
 <h3><span class="header-section-number">10.3.3</span> Konstruktory</h3>
 <p>Trudno oczekiwać od użytkownika, że bez żadnych pomyłek stworzy obiekt klasy, który wymyśliliśmy, a następnie użyje funkcji <code>structure()</code>, aby dodać odpowiednią nazwę klasy.
 Dlatego też ważnym elementem jest stworzenie konstruktora - funkcji, której celem jest zbudowanie poprawnego obiektu naszej klasy, a w przypadku podania złych argumentów wejściowych poinformowanie użytkownika co jest nie tak.</p>
-<p>Poniżej znajduje się konstruktor o nazwie <code>nowy_prostokąt()</code>. Przyjmuje on wartości czterech współrzędnych, a następnie wykonuje szereg sprawdzeń ich poprawności:</p>
+<p>Poniżej znajduje się konstruktor o nazwie <code>nowy_prostokąt()</code>. Przyjmuje on wartości czterech współrzędnych, a następnie wykonuje szereg sprawdzeń ich poprawności:</p>
 <ul>
 <li>Czy wszystkie argumenty są typu numerycznego?</li>
 <li>Czy każdy argument ma tylko jeden element?</li>
@@ -599,41 +596,41 @@ Dlatego też ważnym elementem jest stworzenie konstruktora - funkcji, której c
 <li>Czy minimalna wartość współrzędnej y jest mniejsza od maksymalnej?</li>
 </ul>
 <p>Po tych sprawdzeniach następuje zbudowanie nowej macierzy oraz dodanie nazwy klasy.</p>
-<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb304-1" data-line-number="1">nowy_prostokat =<span class="st"> </span><span class="cf">function</span>(xmin, ymin, xmax, ymax){</a>
-<a class="sourceLine" id="cb304-2" data-line-number="2">  vals =<span class="st"> </span><span class="kw">c</span>(xmin, ymin, xmax, ymax)</a>
-<a class="sourceLine" id="cb304-3" data-line-number="3">  <span class="cf">if</span> (<span class="op">!</span>(<span class="kw">is.numeric</span>(vals))){</a>
-<a class="sourceLine" id="cb304-4" data-line-number="4">    <span class="kw">stop</span>(<span class="st">&quot;Wszystkie argumenty muszą być typu numerycznego&quot;</span>)</a>
-<a class="sourceLine" id="cb304-5" data-line-number="5">  }</a>
-<a class="sourceLine" id="cb304-6" data-line-number="6">  <span class="cf">if</span> (<span class="op">!</span><span class="kw">all</span>(<span class="kw">c</span>(<span class="kw">length</span>(xmin), <span class="kw">length</span>(ymin), <span class="kw">length</span>(xmax), <span class="kw">length</span>(ymax)) <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)){</a>
-<a class="sourceLine" id="cb304-7" data-line-number="7">    <span class="kw">stop</span>(<span class="st">&quot;Każdy z argumentów może przyjmować tylko jedną wartość&quot;</span>)</a>
-<a class="sourceLine" id="cb304-8" data-line-number="8">  }</a>
-<a class="sourceLine" id="cb304-9" data-line-number="9">  x_range =<span class="st"> </span>vals[<span class="dv">3</span>] <span class="op">-</span><span class="st"> </span>vals[<span class="dv">1</span>]</a>
-<a class="sourceLine" id="cb304-10" data-line-number="10">  <span class="cf">if</span> (x_range <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span>){</a>
-<a class="sourceLine" id="cb304-11" data-line-number="11">    <span class="kw">stop</span>(<span class="st">&quot;`xmax` musi przyjmować wartość większą niż `xmin`&quot;</span>)</a>
-<a class="sourceLine" id="cb304-12" data-line-number="12">  }</a>
-<a class="sourceLine" id="cb304-13" data-line-number="13">  y_range =<span class="st"> </span>vals[<span class="dv">4</span>] <span class="op">-</span><span class="st"> </span>vals[<span class="dv">2</span>]</a>
-<a class="sourceLine" id="cb304-14" data-line-number="14">  <span class="cf">if</span> (y_range <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span>) {</a>
-<a class="sourceLine" id="cb304-15" data-line-number="15">    <span class="kw">stop</span>(<span class="st">&quot;`ymax` musi przyjmować wartość większą niż `ymin`&quot;</span>)</a>
-<a class="sourceLine" id="cb304-16" data-line-number="16">  }</a>
-<a class="sourceLine" id="cb304-17" data-line-number="17">  x =<span class="st"> </span><span class="kw">matrix</span>(vals, <span class="dt">ncol =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb304-18" data-line-number="18">  <span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)</a>
-<a class="sourceLine" id="cb304-19" data-line-number="19">}</a></code></pre></div>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb305-1" data-line-number="1">nowy_prostokat =<span class="st"> </span><span class="cf">function</span>(xmin, ymin, xmax, ymax){</a>
+<a class="sourceLine" id="cb305-2" data-line-number="2">  vals =<span class="st"> </span><span class="kw">c</span>(xmin, ymin, xmax, ymax)</a>
+<a class="sourceLine" id="cb305-3" data-line-number="3">  <span class="cf">if</span> (<span class="op">!</span>(<span class="kw">is.numeric</span>(vals))){</a>
+<a class="sourceLine" id="cb305-4" data-line-number="4">    <span class="kw">stop</span>(<span class="st">&quot;Wszystkie argumenty muszą być typu numerycznego&quot;</span>)</a>
+<a class="sourceLine" id="cb305-5" data-line-number="5">  }</a>
+<a class="sourceLine" id="cb305-6" data-line-number="6">  <span class="cf">if</span> (<span class="op">!</span><span class="kw">all</span>(<span class="kw">c</span>(<span class="kw">length</span>(xmin), <span class="kw">length</span>(ymin), <span class="kw">length</span>(xmax), <span class="kw">length</span>(ymax)) <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)){</a>
+<a class="sourceLine" id="cb305-7" data-line-number="7">    <span class="kw">stop</span>(<span class="st">&quot;Każdy z argumentów może przyjmować tylko jedną wartość&quot;</span>)</a>
+<a class="sourceLine" id="cb305-8" data-line-number="8">  }</a>
+<a class="sourceLine" id="cb305-9" data-line-number="9">  x_range =<span class="st"> </span>vals[<span class="dv">3</span>] <span class="op">-</span><span class="st"> </span>vals[<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb305-10" data-line-number="10">  <span class="cf">if</span> (x_range <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span>){</a>
+<a class="sourceLine" id="cb305-11" data-line-number="11">    <span class="kw">stop</span>(<span class="st">&quot;`xmax` musi przyjmować wartość większą niż `xmin`&quot;</span>)</a>
+<a class="sourceLine" id="cb305-12" data-line-number="12">  }</a>
+<a class="sourceLine" id="cb305-13" data-line-number="13">  y_range =<span class="st"> </span>vals[<span class="dv">4</span>] <span class="op">-</span><span class="st"> </span>vals[<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb305-14" data-line-number="14">  <span class="cf">if</span> (y_range <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span>) {</a>
+<a class="sourceLine" id="cb305-15" data-line-number="15">    <span class="kw">stop</span>(<span class="st">&quot;`ymax` musi przyjmować wartość większą niż `ymin`&quot;</span>)</a>
+<a class="sourceLine" id="cb305-16" data-line-number="16">  }</a>
+<a class="sourceLine" id="cb305-17" data-line-number="17">  x =<span class="st"> </span><span class="kw">matrix</span>(vals, <span class="dt">ncol =</span> <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb305-18" data-line-number="18">  <span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)</a>
+<a class="sourceLine" id="cb305-19" data-line-number="19">}</a></code></pre></div>
 <p>Sprawdźmy działanie tego konstruktora na dwóch przypadkach.
 W pierwszym podajmy poprawne, sprawdzone wcześniej wartości.</p>
-<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb305-1" data-line-number="1">nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb305-2" data-line-number="2">nowy_p</a>
-<a class="sourceLine" id="cb305-3" data-line-number="3"><span class="co">#&gt;      [,1] [,2]</span></a>
-<a class="sourceLine" id="cb305-4" data-line-number="4"><span class="co">#&gt; [1,]    0    2</span></a>
-<a class="sourceLine" id="cb305-5" data-line-number="5"><span class="co">#&gt; [2,]    0    3</span></a>
-<a class="sourceLine" id="cb305-6" data-line-number="6"><span class="co">#&gt; attr(,&quot;class&quot;)</span></a>
-<a class="sourceLine" id="cb305-7" data-line-number="7"><span class="co">#&gt; [1] &quot;prostokat&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb306-1" data-line-number="1">nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb306-2" data-line-number="2">nowy_p</a>
+<a class="sourceLine" id="cb306-3" data-line-number="3"><span class="co">#&gt;      [,1] [,2]</span></a>
+<a class="sourceLine" id="cb306-4" data-line-number="4"><span class="co">#&gt; [1,]    0    2</span></a>
+<a class="sourceLine" id="cb306-5" data-line-number="5"><span class="co">#&gt; [2,]    0    3</span></a>
+<a class="sourceLine" id="cb306-6" data-line-number="6"><span class="co">#&gt; attr(,&quot;class&quot;)</span></a>
+<a class="sourceLine" id="cb306-7" data-line-number="7"><span class="co">#&gt; [1] &quot;prostokat&quot;</span></a></code></pre></div>
 <p>Konstruktor <code>nowy_prostokat()</code> działa bez problemu, zwracając nowy obiekt <code>nowy_p</code> o klasie <code>prostokat</code>.
 Warto od razu zobaczyć, czy ten obiekt zadziała poprawnie w funkcji <code>powierzchnia()</code>.</p>
-<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb306-1" data-line-number="1"><span class="kw">powierzchnia</span>(nowy_p)</a>
-<a class="sourceLine" id="cb306-2" data-line-number="2"><span class="co">#&gt; [1] 6</span></a></code></pre></div>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb307-1" data-line-number="1"><span class="kw">powierzchnia</span>(nowy_p)</a>
+<a class="sourceLine" id="cb307-2" data-line-number="2"><span class="co">#&gt; [1] 6</span></a></code></pre></div>
 <p>W przypadku, gdy do konstruktora zostaną podane niepoprawne wartości wejściowe pojawi się odpowiedni komunikat błędu.</p>
-<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb307-1" data-line-number="1">nowy_p2 =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">7</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb307-2" data-line-number="2"><span class="co">#&gt; Error in nowy_prostokat(7, 0, 6, 0): `xmax` musi przyjmować wartość większą niż `xmin`</span></a></code></pre></div>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb308-1" data-line-number="1">nowy_p2 =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">7</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb308-2" data-line-number="2"><span class="co">#&gt; Error in nowy_prostokat(7, 0, 6, 0): `xmax` musi przyjmować wartość większą niż `xmin`</span></a></code></pre></div>
 <!-- block - konstuktor, walidator, helper -->
 <!-- https://adv-r.hadley.nz/s3.html#s3-classes -->
 <!-- methods -->
@@ -652,7 +649,7 @@ W jaki sposób trójkąty będą reprezentowane w tej nowej klasie?
 (Podpowiedź: w zależności od podjętej decyzji nowa klasa może być oparta o wektory, macierze lub ramki danych.)</p></li>
 <li><p>Dodaj konstruktor pozwalający innym użytkownikom na tworzenie obiektów klasy <code>&quot;trojkat&quot;</code>.
 Zastanów się jakie powinny być wartości argumentów wejściowych i napisz wewnątrz konstruktora odpowiednie sprawdzenia używając komunikatów błędów, ostrzeżeń czy też wiadomości.</p></li>
-<li><p>Stwórz metodę pozwalającą na wyliczanie powierzchni trójkąta.</p></li>
+<li><p>Stwórz metodę pozwalającą na wyliczanie powierzchni trójkąta.</p></li>
 <li><p>Stwórz metodę pozwalającą na określanie współrzędnych centroidu trójkąta.</p></li>
 </ol>
 <!-- 8. napisz testy dla 6 i 7 -->

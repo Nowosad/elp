@@ -346,6 +346,7 @@ W efekcie wyświetlone zostaną wszystkie testy i zostanie wskazane, które z ni
 ## Publikowanie pakietów
 
 Nowo utworzony pakiet w R można od razu umieścić na wybranym serwisie internetowym wspierającym kontrolę wersji takim jak GitHub, GitLab, czy BitBucket (rozdział \@ref(kontrola-wersji)), gdzie nazwa repozytorium będzie identyczna jak nazwa pakietu.
+Można to zrobić poprzez zainicjowanie repozytorium Git używając `usethis::use_git()`, a następnie wysłanie pakietu do repozytorium GitHub poprzez `usethis::use_github()`^[Wymaga to jednak wygenerowania tokena - opis jak to zrobić można znaleźć pod adresem https://debruine.github.io/tutorials/packages.html#github-access-token].
 <!--adds links to descr-->
 Dodatkowo, gdy napisaliśmy plik `README.md` użytkownicy mogą dowiedzieć się do czego ten pakiet służy, jak go zainstalować i użyć w podstawowy sposób.
 Teraz konieczna jest promocja tego pakietu w sytuacji, gdy chcemy zainteresować inne osoby jego użyciem. 
