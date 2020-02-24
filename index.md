@@ -93,7 +93,7 @@ kod
 #> wynik użycia kodu
 ```
 
-Dodatkowo, ikona kompasu na szarym tle przedstawia dodatkowe informacje, alternatywne sposoby użycia funkcji, czy też wskazówki.
+Dodatkowo, ikona kompasu przedstawia dodatkowe informacje, alternatywne sposoby użycia funkcji, czy też wskazówki.
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Tutaj może znaleźć się dodatkowa informacja, alternatywny sposób użycia funkcji, czy też wskazówka.</div>\EndKnitrBlock{rmdinfo}
 
