@@ -192,6 +192,7 @@ str_sub(tekst1, start = -7, end = -1)
 <!-- https://github.com/richierocks/rebus/blob/master/README.md -->
 <!-- https://www.garrickadenbuie.com/project/regexplain/ -->
 <!-- https://github.com/kevinushey/rex -->
+<!-- https://blog.rsquaredacademy.com/regular-expression-in-r/ -->
 
 
 

@@ -210,4 +210,12 @@ Powstaje też ciągle wiele nowych języków, z których tylko niewielka częś�
 Te języki często wprowadzają nowe podejścia i koncepcje, które później mają bezpośredni wpływ na zmiany w istniejących językach.
 Języki programowania są też stosowane coraz częściej w wielu codzienne używanych sprzętach, w tym samochodach czy lodówkach (ang. *internet of things*, IOT).
 
+<!--PORADY -->
+<!-- - Don’t try to learn everything at once. -->
+<!-- - Separate problems into achievable chunks.  -->
+<!-- - Don’t be afraid to break things. -->
+<!-- - Never repeat anything more than once. -->
+<!-- - take breaks -->
+<!-- - work in team -->
+
 Powodzenia w dalszej przygodzie z programowaniem!
