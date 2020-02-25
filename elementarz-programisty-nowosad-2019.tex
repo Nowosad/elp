@@ -215,7 +215,7 @@
 \providecommand{\subtitle}[1]{}
 \subtitle{Wstęp do programowania używając R}
 \author{Jakub Nowosad}
-\date{2020-02-24}
+\date{2020-02-25}
 
 \let\BeginKnitrBlock\begin \let\EndKnitrBlock\end
 \begin{document}
@@ -229,7 +229,7 @@
 
 \thispagestyle{empty}
 \vspace*{\fill}
-Wydanie pierwsze, Poznań 2019 \\
+Wydanie pierwsze, Poznań 2020 \\
 Space A \\
 Książka wydana na licencji Creative Commons BY \& SA \\
 Więcej informacji \url{http://nowosad.github.io/elp/} \\
@@ -2722,7 +2722,7 @@ R ma wbudowaną reprezentację dat w postaci klasy \texttt{Date}.
 \begin{Highlighting}[]
 \NormalTok{dzis =}\StringTok{ }\KeywordTok{Sys.Date}\NormalTok{()}
 \NormalTok{dzis}
-\CommentTok{#> [1] "2020-02-24"}
+\CommentTok{#> [1] "2020-02-25"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2745,11 +2745,11 @@ Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji \texttt{unclass(
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{unclass}\NormalTok{(dzis)}
-\CommentTok{#> [1] 18316}
+\CommentTok{#> [1] 18317}
 \end{Highlighting}
 \end{Shaded}
 
-Wynik, 18316, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
+Wynik, 18317, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
 
 \begin{Shaded}
@@ -6212,7 +6212,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.429   0.000   0.429}
+\CommentTok{#>   0.431   0.000   0.432}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6269,12 +6269,11 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \NormalTok{)}
 \NormalTok{wynik_}\DecValTok{1}
 \CommentTok{#> # A tibble: 2 x 6}
-\CommentTok{#>   expression               min median `itr/sec`}
-\CommentTok{#>   <bch:expr>          <bch:tm> <bch:>     <dbl>}
-\CommentTok{#> 1 mi_do_km1(odl_mile)   1.31us 1.45us   567282.}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 965.08ns  1.1us   700858.}
-\CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
-\CommentTok{#> #   `gc/sec` <dbl>}
+\CommentTok{#>   expression              min median `itr/sec` mem_alloc}
+\CommentTok{#>   <bch:expr>          <bch:t> <bch:>     <dbl> <bch:byt>}
+\CommentTok{#> 1 mi_do_km1(odl_mile)   1.3us 1.43us   584864.     117KB}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 988.9ns 1.14us   708589.     221KB}
+\CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6316,14 +6315,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 393ms  394ms      2.54     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 739us  788us   1118.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 402ms  402ms      2.48     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 740us  785us   1122.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 21.58 operacji na sekundę, przy aż 24 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 21.12 operacji na sekundę, przy aż 24 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \begin{verbatim}
@@ -6338,14 +6337,14 @@ Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) raz
 #> # A tibble: 8 x 7
 #>   expression       x      min   median `itr/sec`
 #>   <bch:expr>   <dbl> <bch:tm> <bch:tm>     <dbl>
-#> 1 mi_do_km1(l)    10   3.25us   3.71us 249112.  
-#> 2 mi_do_km2(l)    10   1.53us   1.72us 533255.  
-#> 3 mi_do_km1(l)   100     56us  60.17us  15733.  
-#> 4 mi_do_km2(l)   100   7.39us   8.49us 111738.  
-#> 5 mi_do_km1(l)  1000   3.76ms   3.86ms    257.  
-#> 6 mi_do_km2(l)  1000  67.83us  75.64us  12603.  
-#> 7 mi_do_km1(l) 10000 407.26ms 409.57ms      2.44
-#> 8 mi_do_km2(l) 10000 871.47us  951.7us    929.  
+#> 1 mi_do_km1(l)    10   3.23us   3.85us 210162.  
+#> 2 mi_do_km2(l)    10   1.56us   1.75us 521232.  
+#> 3 mi_do_km1(l)   100  55.52us  60.76us  15495.  
+#> 4 mi_do_km2(l)   100   7.49us   8.66us 109393.  
+#> 5 mi_do_km1(l)  1000   3.72ms   3.91ms    255.  
+#> 6 mi_do_km2(l)  1000  67.39us  75.95us  12454.  
+#> 7 mi_do_km1(l) 10000 408.21ms 409.01ms      2.44
+#> 8 mi_do_km2(l) 10000 735.26us 783.25us   1119.  
 #> # ... with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 \end{verbatim}
