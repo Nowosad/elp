@@ -487,8 +487,8 @@ pole_trapezu = 0.5 * (a + b) * h
 pole_trapezu
 
 ## Zadanie 4
-r1 = 15  #promień pizzy 1
-r2 = 25  #promień pizzy 2
+r1 = 30 / 2  #promień pizzy 1
+r2 = 50 / 2  #promień pizzy 2
 pizza_30 = 23.5
 pizza_50 = 50
 p1 = 3.14 * r1^2 #pole pizzy 1
