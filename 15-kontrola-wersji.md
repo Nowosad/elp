@@ -1,4 +1,3 @@
-
 # Kontrola wersji {#kontrola-wersji}
 
 Systemy kontroli wersji to narzędzia pozwalające na zapamiętywaniu zmian zachodzących w plikach.

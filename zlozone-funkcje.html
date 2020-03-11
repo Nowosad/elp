@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>10 Złożone funkcje | Elementarz programisty</title>
   <meta name="description" content="10 Złożone funkcje | Elementarz programisty" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="10 Złożone funkcje | Elementarz programisty" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Jakub Nowosad" />
 
 
-<meta name="date" content="2020-03-02" />
+<meta name="date" content="2020-03-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -439,9 +439,10 @@ Ta funkcja przyjmuje wartość numeryczną, od której odejmuje jeden, a na koń
 <p>Jeżeli jako argument <code>x</code> zostanie podany wektor logiczny (<code>else if(is.logical(x))</code>) to pojawi się komunikat ostrzeżenia, ale dalsze obliczanie zostanie wykonane.
 W tym przypadku wartość <code>TRUE</code> zostanie najpierw zamieniona na jeden a <code>FALSE</code> na zero, następnie od tych wartości zostanie odjęte jeden, a na końcu zostaną one zamienione na wartości bezwzględne.</p>
 <div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb288-1" data-line-number="1"><span class="kw">minus_1</span>(<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>))</a>
-<a class="sourceLine" id="cb288-2" data-line-number="2"><span class="co">#&gt; Warning in minus_1(c(TRUE, FALSE)): Argument `x` jest zmienną logiczną. Czy nie</span></a>
-<a class="sourceLine" id="cb288-3" data-line-number="3"><span class="co">#&gt; chcesz użyć zmiennej numerycznej?</span></a>
-<a class="sourceLine" id="cb288-4" data-line-number="4"><span class="co">#&gt; [1] 0 1</span></a></code></pre></div>
+<a class="sourceLine" id="cb288-2" data-line-number="2"><span class="co">#&gt; Warning in minus_1(c(TRUE, FALSE)): Argument `x`</span></a>
+<a class="sourceLine" id="cb288-3" data-line-number="3"><span class="co">#&gt; jest zmienną logiczną. Czy nie chcesz użyć zmiennej</span></a>
+<a class="sourceLine" id="cb288-4" data-line-number="4"><span class="co">#&gt; numerycznej?</span></a>
+<a class="sourceLine" id="cb288-5" data-line-number="5"><span class="co">#&gt; [1] 0 1</span></a></code></pre></div>
 <p>Po wprowadzeniu wartości numerycznych do funkcji <code>minus_1()</code> pojawi się tekst wiadomości, po którym nastąpi wyliczenie kodu <code>abs(x - 1)</code>.</p>
 <div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb289-1" data-line-number="1"><span class="kw">minus_1</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">-6</span>))</a>
 <a class="sourceLine" id="cb289-2" data-line-number="2"><span class="co">#&gt; Wow. Argument `x` jest oczekiwaną zmienną numeryczną.</span></a>

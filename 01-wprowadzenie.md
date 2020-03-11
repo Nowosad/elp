@@ -1,4 +1,3 @@
-
 # Wprowadzenie {#wprowadzenie}
 
 Żyjemy obecnie w epoce trzeciej rewolucji przemysłowej^[Niektórzy wydzielają już nawet obecny czas jako czwartą rewolucję przemysłową - https://en.wikipedia.org/wiki/Industry_4.0.], zwanej inaczej rewolucją cyfrową.

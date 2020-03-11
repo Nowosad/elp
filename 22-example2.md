@@ -1,4 +1,3 @@
-
 <!-- # Tworzenie zbioru funkcji -->
 
 <!-- 2. stworzenie zbioru funkcji -->

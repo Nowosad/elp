@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 Tekst | Elementarz programisty</title>
   <meta name="description" content="6 Tekst | Elementarz programisty" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 Tekst | Elementarz programisty" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Jakub Nowosad" />
 
 
-<meta name="date" content="2020-03-02" />
+<meta name="date" content="2020-03-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -589,12 +589,15 @@ Funkcja <code>str_extract()</code> jest leniwa - po znalezieniu pierwszego pasuj
 <p>Aby uzyskać wszystkie przypadki spełniające określony wzorzec należy użyć funkcji <code>str_extract_all()</code>.</p>
 <div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb163-1" data-line-number="1"><span class="kw">str_extract_all</span>(tekst_pomiary, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)</a>
 <a class="sourceLine" id="cb163-2" data-line-number="2"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb163-3" data-line-number="3"><span class="co">#&gt;  [1] &quot;Wrocław&quot;   &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span></a>
-<a class="sourceLine" id="cb163-4" data-line-number="4"><span class="co">#&gt;  [7] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;Bydgoszcz&quot; &quot;&quot;          &quot;&quot;         </span></a>
-<a class="sourceLine" id="cb163-5" data-line-number="5"><span class="co">#&gt; [13] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span></a>
-<a class="sourceLine" id="cb163-6" data-line-number="6"><span class="co">#&gt; [19] &quot;Toruń&quot;     &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span></a>
-<a class="sourceLine" id="cb163-7" data-line-number="7"><span class="co">#&gt; [25] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;Lublin&quot;    &quot;&quot;          &quot;&quot;         </span></a>
-<a class="sourceLine" id="cb163-8" data-line-number="8"><span class="co">#&gt; [31] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;</span></a></code></pre></div>
+<a class="sourceLine" id="cb163-3" data-line-number="3"><span class="co">#&gt;  [1] &quot;Wrocław&quot;   &quot;&quot;          &quot;&quot;          &quot;&quot;         </span></a>
+<a class="sourceLine" id="cb163-4" data-line-number="4"><span class="co">#&gt;  [5] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span></a>
+<a class="sourceLine" id="cb163-5" data-line-number="5"><span class="co">#&gt;  [9] &quot;&quot;          &quot;Bydgoszcz&quot; &quot;&quot;          &quot;&quot;         </span></a>
+<a class="sourceLine" id="cb163-6" data-line-number="6"><span class="co">#&gt; [13] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span></a>
+<a class="sourceLine" id="cb163-7" data-line-number="7"><span class="co">#&gt; [17] &quot;&quot;          &quot;&quot;          &quot;Toruń&quot;     &quot;&quot;         </span></a>
+<a class="sourceLine" id="cb163-8" data-line-number="8"><span class="co">#&gt; [21] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span></a>
+<a class="sourceLine" id="cb163-9" data-line-number="9"><span class="co">#&gt; [25] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;Lublin&quot;   </span></a>
+<a class="sourceLine" id="cb163-10" data-line-number="10"><span class="co">#&gt; [29] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span></a>
+<a class="sourceLine" id="cb163-11" data-line-number="11"><span class="co">#&gt; [33] &quot;&quot;          &quot;&quot;          &quot;&quot;</span></a></code></pre></div>
 <p>Efektem jej działania są wszystkie nazwy miast z wektora <code>tekst_pomiary</code>, ale też wiele elementów pustych.
 Dlaczego?
 W powyższym wzorcu użyliśmy metaznaku <code>*</code>, który szuka wystąpienia zdefiniowanych znaków zero lub więcej razy.
@@ -611,24 +614,27 @@ Metaznak <code>*</code> w przypadku, gdy zdefiniowanego znaku nie ma (wystąpił
 <p>Nadal interesuje nas wydzielenie nazw miast, więc próbujemy użyć kodu, który stworzyliśmy powyżej.</p>
 <div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb166-1" data-line-number="1"><span class="kw">str_extract_all</span>(tekst_pomiary2, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+&quot;</span>)</a>
 <a class="sourceLine" id="cb166-2" data-line-number="2"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb166-3" data-line-number="3"><span class="co">#&gt; [1] &quot;Wrocław&quot;      &quot;Bydgoszcz&quot;    &quot;Toruń&quot;        &quot;Lublin&quot;       &quot;Gorzów&quot;      </span></a>
-<a class="sourceLine" id="cb166-4" data-line-number="4"><span class="co">#&gt; [6] &quot;Wielkopolski&quot; &quot;Zielona&quot;      &quot;Góra&quot;</span></a></code></pre></div>
+<a class="sourceLine" id="cb166-3" data-line-number="3"><span class="co">#&gt; [1] &quot;Wrocław&quot;      &quot;Bydgoszcz&quot;    &quot;Toruń&quot;       </span></a>
+<a class="sourceLine" id="cb166-4" data-line-number="4"><span class="co">#&gt; [4] &quot;Lublin&quot;       &quot;Gorzów&quot;       &quot;Wielkopolski&quot;</span></a>
+<a class="sourceLine" id="cb166-5" data-line-number="5"><span class="co">#&gt; [7] &quot;Zielona&quot;      &quot;Góra&quot;</span></a></code></pre></div>
 <p>Niestety w efekcie otrzymujemy osiem elementów, gdzie <code>&quot;Gorzów&quot;</code> jest innym elementem niż <code>&quot;Wielkopolski&quot;</code>.
 Zdefiniowany przez nas wzorzec nie brał pod uwagę możliwości wystąpienia spacji.
 Możemy naprawić tę sytuację w poniższy sposób.</p>
 <div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb167-1" data-line-number="1"><span class="kw">str_extract_all</span>(tekst_pomiary2, </a>
 <a class="sourceLine" id="cb167-2" data-line-number="2">       <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[</span><span class="ch">\\</span><span class="st">s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)</a>
 <a class="sourceLine" id="cb167-3" data-line-number="3"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb167-4" data-line-number="4"><span class="co">#&gt; [1] &quot;Wrocław&quot;             &quot;Bydgoszcz&quot;           &quot;Toruń&quot;              </span></a>
-<a class="sourceLine" id="cb167-5" data-line-number="5"><span class="co">#&gt; [4] &quot;Lublin&quot;              &quot;Gorzów Wielkopolski&quot; &quot;Zielona Góra&quot;</span></a></code></pre></div>
+<a class="sourceLine" id="cb167-4" data-line-number="4"><span class="co">#&gt; [1] &quot;Wrocław&quot;             &quot;Bydgoszcz&quot;          </span></a>
+<a class="sourceLine" id="cb167-5" data-line-number="5"><span class="co">#&gt; [3] &quot;Toruń&quot;               &quot;Lublin&quot;             </span></a>
+<a class="sourceLine" id="cb167-6" data-line-number="6"><span class="co">#&gt; [5] &quot;Gorzów Wielkopolski&quot; &quot;Zielona Góra&quot;</span></a></code></pre></div>
 <p>Teraz szukamy wystąpienia liter co najmniej raz lub więcej (<code>+</code>), następnie wystąpienia spacji zero razy lub raz (<code>[\\s]?</code>) i kończymy na sprawdzeniu wystąpienia tekstu zero razy lub więcej (<code>*</code>).</p>
 <p>Podobnie jak w każdym powyższym przypadku, efekt działania funkcji może być użyty do stworzenia nowego obiektu.</p>
 <div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb168-1" data-line-number="1">miasta_pomiary2 =<span class="st"> </span><span class="kw">str_extract_all</span>(tekst_pomiary2,</a>
 <a class="sourceLine" id="cb168-2" data-line-number="2">       <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[</span><span class="ch">\\</span><span class="st">s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)</a>
 <a class="sourceLine" id="cb168-3" data-line-number="3">miasta_pomiary2</a>
 <a class="sourceLine" id="cb168-4" data-line-number="4"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb168-5" data-line-number="5"><span class="co">#&gt; [1] &quot;Wrocław&quot;             &quot;Bydgoszcz&quot;           &quot;Toruń&quot;              </span></a>
-<a class="sourceLine" id="cb168-6" data-line-number="6"><span class="co">#&gt; [4] &quot;Lublin&quot;              &quot;Gorzów Wielkopolski&quot; &quot;Zielona Góra&quot;</span></a></code></pre></div>
+<a class="sourceLine" id="cb168-5" data-line-number="5"><span class="co">#&gt; [1] &quot;Wrocław&quot;             &quot;Bydgoszcz&quot;          </span></a>
+<a class="sourceLine" id="cb168-6" data-line-number="6"><span class="co">#&gt; [3] &quot;Toruń&quot;               &quot;Lublin&quot;             </span></a>
+<a class="sourceLine" id="cb168-7" data-line-number="7"><span class="co">#&gt; [5] &quot;Gorzów Wielkopolski&quot; &quot;Zielona Góra&quot;</span></a></code></pre></div>
 </div>
 <div id="zamiana-tekstu---regex" class="section level2">
 <h2><span class="header-section-number">6.6</span> Zamiana tekstu - regex</h2>
@@ -678,9 +684,11 @@ Jest to szczególnie przydatne, gdy posiadamy wiele plików na komputerze, któr
 <p>Do wyświetlania nazw plików znajdujących się w wybranym folderze służy funkcja <code>dir()</code>.
 Przykładowo poniższa linia kodu wyświetla wszystkie pliki znajdujące się w folderze <code>&quot;pliki&quot;</code><a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>.</p>
 <div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb176-1" data-line-number="1"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>)</a>
-<a class="sourceLine" id="cb176-2" data-line-number="2"><span class="co">#&gt;  [1] &quot;dane_meteo.csv&quot;  &quot;dane_meteo.rds&quot;  &quot;dane_meteo.xlsx&quot; &quot;dane_meteo2.csv&quot;</span></a>
-<a class="sourceLine" id="cb176-3" data-line-number="3"><span class="co">#&gt;  [5] &quot;dokument.docx&quot;   &quot;kod.R&quot;           &quot;list.txt&quot;        &quot;mapa.png&quot;       </span></a>
-<a class="sourceLine" id="cb176-4" data-line-number="4"><span class="co">#&gt;  [9] &quot;obrazek.png&quot;     &quot;zdjecie.jpg&quot;</span></a></code></pre></div>
+<a class="sourceLine" id="cb176-2" data-line-number="2"><span class="co">#&gt;  [1] &quot;dane_meteo.csv&quot;  &quot;dane_meteo.rds&quot; </span></a>
+<a class="sourceLine" id="cb176-3" data-line-number="3"><span class="co">#&gt;  [3] &quot;dane_meteo.xlsx&quot; &quot;dane_meteo2.csv&quot;</span></a>
+<a class="sourceLine" id="cb176-4" data-line-number="4"><span class="co">#&gt;  [5] &quot;dokument.docx&quot;   &quot;kod.R&quot;          </span></a>
+<a class="sourceLine" id="cb176-5" data-line-number="5"><span class="co">#&gt;  [7] &quot;list.txt&quot;        &quot;mapa.png&quot;       </span></a>
+<a class="sourceLine" id="cb176-6" data-line-number="6"><span class="co">#&gt;  [9] &quot;obrazek.png&quot;     &quot;zdjecie.jpg&quot;</span></a></code></pre></div>
 <p>W przypadku, gdy interesują nas tylko pliki o wybranym rozszerzeniu możemy użyć argumentu <code>pattern</code> i zdefiniować wzorzec.</p>
 <div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb177-1" data-line-number="1"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.png$&quot;</span>)</a>
 <a class="sourceLine" id="cb177-2" data-line-number="2"><span class="co">#&gt; [1] &quot;mapa.png&quot;    &quot;obrazek.png&quot;</span></a></code></pre></div>
@@ -691,7 +699,8 @@ Metaznak <code>$</code> użyty w tym przypadku zapobiega sytuacji, gdy tekst <co
 <a class="sourceLine" id="cb178-2" data-line-number="2"><span class="co">#&gt; [1] &quot;mapa.png&quot;    &quot;obrazek.png&quot; &quot;zdjecie.jpg&quot;</span></a></code></pre></div>
 <p>Domyślnie funkcja <code>dir()</code> pokazuje zawartość wybranego folderu, aby jednak poznać jego pełną ścieżkę względną należy określić argument <code>full.names</code> na <code>TRUE</code>.</p>
 <div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb179-1" data-line-number="1"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.(png|jpg)$&quot;</span>, <span class="dt">full.names =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb179-2" data-line-number="2"><span class="co">#&gt; [1] &quot;pliki/mapa.png&quot;    &quot;pliki/obrazek.png&quot; &quot;pliki/zdjecie.jpg&quot;</span></a></code></pre></div>
+<a class="sourceLine" id="cb179-2" data-line-number="2"><span class="co">#&gt; [1] &quot;pliki/mapa.png&quot;    &quot;pliki/obrazek.png&quot;</span></a>
+<a class="sourceLine" id="cb179-3" data-line-number="3"><span class="co">#&gt; [3] &quot;pliki/zdjecie.jpg&quot;</span></a></code></pre></div>
 </div>
 <div id="zadania-5" class="section level2">
 <h2><span class="header-section-number">6.8</span> Zadania</h2>

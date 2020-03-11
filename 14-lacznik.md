@@ -1,4 +1,3 @@
-
 <!-- # Łącznik {#lacznik} -->
 
 <!-- intro o r jako jezyku laczacym inne -->

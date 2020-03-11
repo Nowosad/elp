@@ -1,4 +1,3 @@
-
 # (PART) Podstawy {-}
 
 # Start R {#ergosum}

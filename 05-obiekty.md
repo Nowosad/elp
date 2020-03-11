@@ -1,4 +1,3 @@
-
 # Proste obiekty {#proste-obiekty}
 
 Obiekty w R można podzielić na proste (homogeniczne) i złożone (heterogeniczne). 
@@ -131,9 +130,11 @@ Argument `by` określa co ile wartości w ciągu mają rosnąć od wartości poc
 
 ```r
 seq(1, 365, by = 7)
-#>  [1]   1   8  15  22  29  36  43  50  57  64  71  78  85  92  99 106 113 120 127
-#> [20] 134 141 148 155 162 169 176 183 190 197 204 211 218 225 232 239 246 253 260
-#> [39] 267 274 281 288 295 302 309 316 323 330 337 344 351 358 365
+#>  [1]   1   8  15  22  29  36  43  50  57  64  71  78  85
+#> [14]  92  99 106 113 120 127 134 141 148 155 162 169 176
+#> [27] 183 190 197 204 211 218 225 232 239 246 253 260 267
+#> [40] 274 281 288 295 302 309 316 323 330 337 344 351 358
+#> [53] 365
 ```
 
 Alternatywnie, argument `length.out` ustala jakiej długości ma być wynikowy ciąg, a na podstawie tego tworzone są wartości w równych odstępach.
@@ -141,7 +142,8 @@ Alternatywnie, argument `length.out` ustala jakiej długości ma być wynikowy 
 
 ```r
 seq(1, 365, length.out = 10)
-#>  [1]   1.0  41.4  81.9 122.3 162.8 203.2 243.7 284.1 324.6 365.0
+#>  [1]   1.0  41.4  81.9 122.3 162.8 203.2 243.7 284.1
+#>  [9] 324.6 365.0
 ```
 
 Funkcja `rep` służy powielaniu zadanej wartości podaną liczbę razy.
@@ -222,8 +224,8 @@ W takiej sytuacji pojawi się też poniższy komunikat ostrzeżenia.
 a = c(1, 2, 3)
 d = c(3, 5)
 a * d
-#> Warning in a * d: longer object length is not a multiple of shorter object
-#> length
+#> Warning in a * d: longer object length is not a multiple
+#> of shorter object length
 #> [1]  3 10  9
 ```
 
@@ -562,7 +564,7 @@ R ma wbudowaną reprezentację dat w postaci klasy `Date`.
 ```r
 dzis = Sys.Date()
 dzis
-#> [1] "2020-03-02"
+#> [1] "2020-03-11"
 ```
 
 Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowy), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.
@@ -583,10 +585,10 @@ Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji `unclass()`.
 
 ```r
 unclass(dzis)
-#> [1] 18323
+#> [1] 18332
 ```
 
-Wynik, 18323, oznacza liczbę dni od 1970-01-01.^[https://en.wikipedia.org/wiki/Unix_time]
+Wynik, 18332, oznacza liczbę dni od 1970-01-01.^[https://en.wikipedia.org/wiki/Unix_time]
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
 
 
@@ -675,7 +677,7 @@ Ile możliwości udało się Tobie znaleźć?
 <!-- 7) przeskaluj wartosci -->
 7) Inna osoba również wykonywała pomiary temperatury w tym samym czasie.
 Jej pomierzone wartości to -1.1, 4,2, 2,4, 3,1, 7,1, 4,2 stopni Celsjusza.
-Dodaj te wartości do obiektu `pomiary`.
+Dołącz te wartości do obiektu `pomiary`.
 8) Stwórz nowy wektor `nazwy_stacji` zawierający nazwę Twojej stacji pomiarowej (`"Punkt 31"`) oraz stacji drugiej osoby (`"Stacja Thule"`), którego długość ma być równa długości wektora `pomiary`. 
 Wektor `nazwy_stacji` powinien być klasy czynnikowej.
 9) Stwórz nowy wektor `daty_pomiarow` zawierający rok, miesiąc i dzień pomiarów w wektorze `pomiary`.

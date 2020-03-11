@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>14 Podsumowanie | Elementarz programisty</title>
   <meta name="description" content="14 Podsumowanie | Elementarz programisty" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="14 Podsumowanie | Elementarz programisty" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Jakub Nowosad" />
 
 
-<meta name="date" content="2020-03-02" />
+<meta name="date" content="2020-03-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -351,19 +351,26 @@ Możemy to zobaczyć na poniższym przykładzie danych meteorologicznych dla Poz
 <div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb352-1" data-line-number="1">met =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv&quot;</span>,</a>
 <a class="sourceLine" id="cb352-2" data-line-number="2">             <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb352-3" data-line-number="3"><span class="kw">head</span>(met)</a>
-<a class="sourceLine" id="cb352-4" data-line-number="4"><span class="co">#&gt;   kod_stacji nazwa_stacji  rok miesiac dzien tavg precip</span></a>
-<a class="sourceLine" id="cb352-5" data-line-number="5"><span class="co">#&gt; 1  352160330       POZNAŃ 2017       1     1  1.4    0.0</span></a>
-<a class="sourceLine" id="cb352-6" data-line-number="6"><span class="co">#&gt; 2  352160330       POZNAŃ 2017       1     2  0.1    0.0</span></a>
-<a class="sourceLine" id="cb352-7" data-line-number="7"><span class="co">#&gt; 3  352160330       POZNAŃ 2017       1     3  0.5    4.8</span></a>
-<a class="sourceLine" id="cb352-8" data-line-number="8"><span class="co">#&gt; 4  352160330       POZNAŃ 2017       1     4  1.5    2.3</span></a>
-<a class="sourceLine" id="cb352-9" data-line-number="9"><span class="co">#&gt; 5  352160330       POZNAŃ 2017       1     5 -3.5    0.0</span></a>
-<a class="sourceLine" id="cb352-10" data-line-number="10"><span class="co">#&gt; 6  352160330       POZNAŃ 2017       1     6 -8.4    0.0</span></a></code></pre></div>
+<a class="sourceLine" id="cb352-4" data-line-number="4"><span class="co">#&gt;   kod_stacji nazwa_stacji  rok miesiac dzien tavg</span></a>
+<a class="sourceLine" id="cb352-5" data-line-number="5"><span class="co">#&gt; 1  352160330       POZNAŃ 2017       1     1  1.4</span></a>
+<a class="sourceLine" id="cb352-6" data-line-number="6"><span class="co">#&gt; 2  352160330       POZNAŃ 2017       1     2  0.1</span></a>
+<a class="sourceLine" id="cb352-7" data-line-number="7"><span class="co">#&gt; 3  352160330       POZNAŃ 2017       1     3  0.5</span></a>
+<a class="sourceLine" id="cb352-8" data-line-number="8"><span class="co">#&gt; 4  352160330       POZNAŃ 2017       1     4  1.5</span></a>
+<a class="sourceLine" id="cb352-9" data-line-number="9"><span class="co">#&gt; 5  352160330       POZNAŃ 2017       1     5 -3.5</span></a>
+<a class="sourceLine" id="cb352-10" data-line-number="10"><span class="co">#&gt; 6  352160330       POZNAŃ 2017       1     6 -8.4</span></a>
+<a class="sourceLine" id="cb352-11" data-line-number="11"><span class="co">#&gt;   precip</span></a>
+<a class="sourceLine" id="cb352-12" data-line-number="12"><span class="co">#&gt; 1    0.0</span></a>
+<a class="sourceLine" id="cb352-13" data-line-number="13"><span class="co">#&gt; 2    0.0</span></a>
+<a class="sourceLine" id="cb352-14" data-line-number="14"><span class="co">#&gt; 3    4.8</span></a>
+<a class="sourceLine" id="cb352-15" data-line-number="15"><span class="co">#&gt; 4    2.3</span></a>
+<a class="sourceLine" id="cb352-16" data-line-number="16"><span class="co">#&gt; 5    0.0</span></a>
+<a class="sourceLine" id="cb352-17" data-line-number="17"><span class="co">#&gt; 6    0.0</span></a></code></pre></div>
 <p>Wewnątrz obiektu <code>met</code> znajdują się kolumny <code>tavg</code> (określająca średnią dobową temperaturę powietrza w stopniach Celsjusza) oraz <code>nazwa_stacji</code> (“POZNAŃ” lub “ZAKOPANE”).
 Do porównania wartości temperatury pomiędzy stacjami może posłużyć wykres pudełkowy, stworzony przy pomocy funkcji <code>boxplot()</code> (rycina <a href="podsumowanie.html#fig:plotex">14.1</a>).
 Poniżej zdefiniowano, która zmienna ma zostać zwizualizowana (<code>tavg</code>) w podziale na jakie grupy (<code>nazwa_stacji</code>) z jakiego zbioru danych (<code>met</code>)<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.</p>
 <div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb353-1" data-line-number="1"><span class="kw">boxplot</span>(tavg <span class="op">~</span><span class="st"> </span>nazwa_stacji, <span class="dt">data =</span> met)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:plotex"></span>
-<img src="figures/plotex-1.png" alt="Przykład wykresu utworzonego przy pomocy funkcji boxplot()." width="\textwidth" />
+<img src="31-podsumowanie_files/figure-html/plotex-1.png" alt="Przykład wykresu utworzonego przy pomocy funkcji boxplot()." width="\textwidth" />
 <p class="caption">
 Rycina 14.1: Przykład wykresu utworzonego przy pomocy funkcji boxplot().
 </p>
@@ -384,7 +391,7 @@ Przykładowo, do stworzenia wykresu pudełkowego służy <code>geom_boxplot()</c
 <div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb354-1" data-line-number="1"><span class="kw">library</span>(ggplot2)</a>
 <a class="sourceLine" id="cb354-2" data-line-number="2"><span class="kw">ggplot</span>(met, <span class="kw">aes</span>(nazwa_stacji, tavg)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>()</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:ggplotex"></span>
-<img src="figures/ggplotex-1.png" alt="Przykład wykresu utworzonego z użyciem pakietu ggplot2." width="\textwidth" />
+<img src="31-podsumowanie_files/figure-html/ggplotex-1.png" alt="Przykład wykresu utworzonego z użyciem pakietu ggplot2." width="\textwidth" />
 <p class="caption">
 Rycina 14.2: Przykład wykresu utworzonego z użyciem pakietu ggplot2.
 </p>

@@ -1,4 +1,3 @@
-
 <!-- # (PART) Przykłady {-} -->
 
 <!-- # Analiza danych -->

@@ -1,4 +1,3 @@
-
 # Wyrażenia warunkowe {#warunki}
 
 Języki programowania opierają się o dwa podstawowe narzędzia pozwalające na sterowanie przepływem operacji.

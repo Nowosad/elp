@@ -1,4 +1,3 @@
-
 # Analiza kodu {#analiza-kodu}
 
 Programując naszym celem jest tworzenie funkcji, które są zarówno poprawne oraz wydajne (zwracają wynik szybko).
@@ -174,7 +173,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 ```r
 system.time(mean(1:100000000))
 #>    user  system elapsed 
-#>   0.435   0.000   0.434
+#>   0.429   0.000   0.430
 ```
 
 W efekcie dostajemy trzy wartości - `user`, `system` i `elapsed`. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.
@@ -228,10 +227,12 @@ wynik_1 = mark(
 )
 wynik_1
 #> # A tibble: 2 x 6
-#>   expression               min   median `itr/sec` mem_alloc `gc/sec`
-#>   <bch:expr>          <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 mi_do_km1(odl_mile)   1.22µs    1.4µs   589959.     117KB        0
-#> 2 mi_do_km2(odl_mile) 924.11ns   1.05µs   752254.     221KB        0
+#>   expression               min median `itr/sec`
+#>   <bch:expr>          <bch:tm> <bch:>     <dbl>
+#> 1 mi_do_km1(odl_mile)   1.28µs 1.43µs   590043.
+#> 2 mi_do_km2(odl_mile) 988.02ns 1.12µs   708739.
+#> # … with 2 more variables: mem_alloc <bch:byt>,
+#> #   `gc/sec` <dbl>
 ```
 
 Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
@@ -256,17 +257,19 @@ wynik_2 = mark(
   mi_do_km1(odl_mile2),
   mi_do_km2(odl_mile2)
 )
-#> Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+#> Warning: Some expressions had a GC in every iteration;
+#> so filtering is disabled.
 wynik_2
 #> # A tibble: 2 x 6
-#>   expression                min   median `itr/sec` mem_alloc `gc/sec`
-#>   <bch:expr>           <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 mi_do_km1(odl_mile2)    397ms    406ms      2.46     382MB     20.9
-#> 2 mi_do_km2(odl_mile2)    736µs    791µs   1111.      78.2KB     24.0
+#>   expression             min median `itr/sec` mem_alloc
+#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>
+#> 1 mi_do_km1(odl_mile2) 411ms  421ms      2.37     382MB
+#> 2 mi_do_km2(odl_mile2) 753µs  799µs   1096.      78.2KB
+#> # … with 1 more variable: `gc/sec` <dbl>
 ```
 
 W tym przypadku różnica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
-Funkcja `mi_do_km1` jest w stanie wykonać tylko 20.92 operacji na sekundę, przy aż 23.98 operacji na sekundę funkcji `mi_do_km2`.
+Funkcja `mi_do_km1` jest w stanie wykonać tylko 20.17 operacji na sekundę, przy aż 23.99 operacji na sekundę funkcji `mi_do_km2`.
 Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
 
 
@@ -277,18 +280,21 @@ Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej
 #> 2   100
 #> 3  1000
 #> 4 10000
-#> Warning: Some expressions had a GC in every iteration; so filtering is disabled.
+#> Warning: Some expressions had a GC in every iteration;
+#> so filtering is disabled.
 #> # A tibble: 8 x 7
-#>   expression       x      min   median `itr/sec` mem_alloc `gc/sec`
-#>   <bch:expr>   <dbl> <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>
-#> 1 mi_do_km1(l)    10    3.2µs   3.73µs 241808.          0B     48.4
-#> 2 mi_do_km2(l)    10   1.45µs   1.68µs 532355.          0B     53.2
-#> 3 mi_do_km1(l)   100  56.06µs  61.15µs  15262.     43.16KB     19.5
-#> 4 mi_do_km2(l)   100   7.42µs   8.73µs 107889.        856B     21.6
-#> 5 mi_do_km1(l)  1000   3.75ms   3.95ms    249.      3.87MB     21.8
-#> 6 mi_do_km2(l)  1000  69.27µs  76.83µs  12225.      7.87KB     27.0
-#> 7 mi_do_km1(l) 10000  393.9ms 394.86ms      2.53  382.04MB     22.8
-#> 8 mi_do_km2(l) 10000  708.7µs 782.04µs   1121.     78.18KB     26.0
+#>   expression       x      min   median `itr/sec`
+#>   <bch:expr>   <dbl> <bch:tm> <bch:tm>     <dbl>
+#> 1 mi_do_km1(l)    10   3.26µs   3.81µs 241528.  
+#> 2 mi_do_km2(l)    10   1.53µs   1.76µs 509543.  
+#> 3 mi_do_km1(l)   100  56.83µs  61.77µs  15247.  
+#> 4 mi_do_km2(l)   100   7.52µs   8.69µs 109269.  
+#> 5 mi_do_km1(l)  1000   3.79ms   3.96ms    249.  
+#> 6 mi_do_km2(l)  1000  69.71µs  78.26µs  12120.  
+#> 7 mi_do_km1(l) 10000 419.37ms 420.83ms      2.38
+#> 8 mi_do_km2(l) 10000 755.22µs 809.76µs   1081.  
+#> # … with 2 more variables: mem_alloc <bch:byt>,
+#> #   `gc/sec` <dbl>
 ```
 
 

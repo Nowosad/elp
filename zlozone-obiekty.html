@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>7 Złożone obiekty | Elementarz programisty</title>
   <meta name="description" content="7 Złożone obiekty | Elementarz programisty" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="7 Złożone obiekty | Elementarz programisty" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Jakub Nowosad" />
 
 
-<meta name="date" content="2020-03-02" />
+<meta name="date" content="2020-03-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -839,8 +839,8 @@ R zawiera jednak znacznie więcej klas obiektów, a co więcej - każda osoba mo
 <p>Czy można na nich wyliczyć średnią w ten sam sposób?
 Raczej nie - wyliczenie średniej z tekstu nie jest jednoznacznie możliwe, wyliczenie średniej z wartości numerycznych powinno dać wartość numeryczną, a wyliczenie średniej z dat - również datę.</p>
 <div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb230-1" data-line-number="1"><span class="kw">mean</span>(wek_tkt)</a>
-<a class="sourceLine" id="cb230-2" data-line-number="2"><span class="co">#&gt; Warning in mean.default(wek_tkt): argument is not numeric or logical: returning</span></a>
-<a class="sourceLine" id="cb230-3" data-line-number="3"><span class="co">#&gt; NA</span></a>
+<a class="sourceLine" id="cb230-2" data-line-number="2"><span class="co">#&gt; Warning in mean.default(wek_tkt): argument is not</span></a>
+<a class="sourceLine" id="cb230-3" data-line-number="3"><span class="co">#&gt; numeric or logical: returning NA</span></a>
 <a class="sourceLine" id="cb230-4" data-line-number="4"><span class="co">#&gt; [1] NA</span></a>
 <a class="sourceLine" id="cb230-5" data-line-number="5"><span class="kw">mean</span>(wek_num)</a>
 <a class="sourceLine" id="cb230-6" data-line-number="6"><span class="co">#&gt; [1] 6</span></a>
@@ -850,8 +850,8 @@ Raczej nie - wyliczenie średniej z tekstu nie jest jednoznacznie możliwe, wyli
 Jest to możliwe dzięki tzw. metodom (ang. <em>methods</em>).
 Metoda to sposób w jaki zachowuje się funkcja w zależności od tego jakiej klasy będzie obiekt wejściowy.</p>
 <div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb231-1" data-line-number="1"><span class="kw">methods</span>(mean)</a>
-<a class="sourceLine" id="cb231-2" data-line-number="2"><span class="co">#&gt; [1] mean.Date     mean.default  mean.difftime mean.POSIXct  mean.POSIXlt </span></a>
-<a class="sourceLine" id="cb231-3" data-line-number="3"><span class="co">#&gt; [6] mean.quosure*</span></a>
+<a class="sourceLine" id="cb231-2" data-line-number="2"><span class="co">#&gt; [1] mean.Date     mean.default  mean.difftime</span></a>
+<a class="sourceLine" id="cb231-3" data-line-number="3"><span class="co">#&gt; [4] mean.POSIXct  mean.POSIXlt  mean.quosure*</span></a>
 <a class="sourceLine" id="cb231-4" data-line-number="4"><span class="co">#&gt; see &#39;?methods&#39; for accessing help and source code</span></a></code></pre></div>
 <p>Przykładowo, funkcja <code>mean()</code> ma pięć metod:</p>
 <ul>

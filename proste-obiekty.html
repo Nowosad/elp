@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Proste obiekty | Elementarz programisty</title>
   <meta name="description" content="5 Proste obiekty | Elementarz programisty" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Proste obiekty | Elementarz programisty" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Jakub Nowosad" />
 
 
-<meta name="date" content="2020-03-02" />
+<meta name="date" content="2020-03-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -421,12 +421,15 @@ Obie te liczby mogą być wektorami o długości jeden.
 Dodatkowo ta funkcja wymaga zdefiniowania jeszcze jednego argumentu, np. <code>by</code> lub <code>length.out</code>.
 Argument <code>by</code> określa co ile wartości w ciągu mają rosnąć od wartości początkowej.</p>
 <div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" data-line-number="1"><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">365</span>, <span class="dt">by =</span> <span class="dv">7</span>)</a>
-<a class="sourceLine" id="cb81-2" data-line-number="2"><span class="co">#&gt;  [1]   1   8  15  22  29  36  43  50  57  64  71  78  85  92  99 106 113 120 127</span></a>
-<a class="sourceLine" id="cb81-3" data-line-number="3"><span class="co">#&gt; [20] 134 141 148 155 162 169 176 183 190 197 204 211 218 225 232 239 246 253 260</span></a>
-<a class="sourceLine" id="cb81-4" data-line-number="4"><span class="co">#&gt; [39] 267 274 281 288 295 302 309 316 323 330 337 344 351 358 365</span></a></code></pre></div>
+<a class="sourceLine" id="cb81-2" data-line-number="2"><span class="co">#&gt;  [1]   1   8  15  22  29  36  43  50  57  64  71  78  85</span></a>
+<a class="sourceLine" id="cb81-3" data-line-number="3"><span class="co">#&gt; [14]  92  99 106 113 120 127 134 141 148 155 162 169 176</span></a>
+<a class="sourceLine" id="cb81-4" data-line-number="4"><span class="co">#&gt; [27] 183 190 197 204 211 218 225 232 239 246 253 260 267</span></a>
+<a class="sourceLine" id="cb81-5" data-line-number="5"><span class="co">#&gt; [40] 274 281 288 295 302 309 316 323 330 337 344 351 358</span></a>
+<a class="sourceLine" id="cb81-6" data-line-number="6"><span class="co">#&gt; [53] 365</span></a></code></pre></div>
 <p>Alternatywnie, argument <code>length.out</code> ustala jakiej długości ma być wynikowy ciąg, a na podstawie tego tworzone są wartości w równych odstępach.</p>
 <div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" data-line-number="1"><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">365</span>, <span class="dt">length.out =</span> <span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb82-2" data-line-number="2"><span class="co">#&gt;  [1]   1.0  41.4  81.9 122.3 162.8 203.2 243.7 284.1 324.6 365.0</span></a></code></pre></div>
+<a class="sourceLine" id="cb82-2" data-line-number="2"><span class="co">#&gt;  [1]   1.0  41.4  81.9 122.3 162.8 203.2 243.7 284.1</span></a>
+<a class="sourceLine" id="cb82-3" data-line-number="3"><span class="co">#&gt;  [9] 324.6 365.0</span></a></code></pre></div>
 <p>Funkcja <code>rep</code> służy powielaniu zadanej wartości podaną liczbę razy.
 W poniższym przykładzie, wartość 11 jest powielona 4 razy.</p>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1"><span class="kw">rep</span>(<span class="dv">11</span>, <span class="dv">4</span>)</a>
@@ -475,8 +478,8 @@ W takiej sytuacji pojawi się też poniższy komunikat ostrzeżenia.</p>
 <div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" data-line-number="1">a =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</a>
 <a class="sourceLine" id="cb88-2" data-line-number="2">d =<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>)</a>
 <a class="sourceLine" id="cb88-3" data-line-number="3">a <span class="op">*</span><span class="st"> </span>d</a>
-<a class="sourceLine" id="cb88-4" data-line-number="4"><span class="co">#&gt; Warning in a * d: longer object length is not a multiple of shorter object</span></a>
-<a class="sourceLine" id="cb88-5" data-line-number="5"><span class="co">#&gt; length</span></a>
+<a class="sourceLine" id="cb88-4" data-line-number="4"><span class="co">#&gt; Warning in a * d: longer object length is not a multiple</span></a>
+<a class="sourceLine" id="cb88-5" data-line-number="5"><span class="co">#&gt; of shorter object length</span></a>
 <a class="sourceLine" id="cb88-6" data-line-number="6"><span class="co">#&gt; [1]  3 10  9</span></a></code></pre></div>
 <p>Więcej informacji na temat wektoryzowania kodu można znaleźć w rozdziale <a href="petle.html#petle">8</a>.</p>
 </div>
@@ -677,7 +680,7 @@ Dodatkowo, posiadają one pewne informacje zaszyte w atrybutach, w tym wartości
 <p>R ma wbudowaną reprezentację dat w postaci klasy <code>Date</code>.</p>
 <div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" data-line-number="1">dzis =<span class="st"> </span><span class="kw">Sys.Date</span>()</a>
 <a class="sourceLine" id="cb117-2" data-line-number="2">dzis</a>
-<a class="sourceLine" id="cb117-3" data-line-number="3"><span class="co">#&gt; [1] &quot;2020-03-02&quot;</span></a></code></pre></div>
+<a class="sourceLine" id="cb117-3" data-line-number="3"><span class="co">#&gt; [1] &quot;2020-03-11&quot;</span></a></code></pre></div>
 <p>Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowy), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.</p>
 <div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" data-line-number="1"><span class="kw">typeof</span>(dzis)</a>
 <a class="sourceLine" id="cb118-2" data-line-number="2"><span class="co">#&gt; [1] &quot;double&quot;</span></a>
@@ -688,8 +691,8 @@ Dodatkowo, posiadają one pewne informacje zaszyte w atrybutach, w tym wartości
 <a class="sourceLine" id="cb118-7" data-line-number="7"><span class="co">#&gt; [1] &quot;Date&quot;</span></a></code></pre></div>
 <p>Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji <code>unclass()</code>.</p>
 <div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" data-line-number="1"><span class="kw">unclass</span>(dzis)</a>
-<a class="sourceLine" id="cb119-2" data-line-number="2"><span class="co">#&gt; [1] 18323</span></a></code></pre></div>
-<p>Wynik, 18323, oznacza liczbę dni od 1970-01-01.<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>
+<a class="sourceLine" id="cb119-2" data-line-number="2"><span class="co">#&gt; [1] 18332</span></a></code></pre></div>
+<p>Wynik, 18332, oznacza liczbę dni od 1970-01-01.<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.</p>
 <div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" data-line-number="1">stara_data =<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;1912-04-13&quot;</span>)</a>
 <a class="sourceLine" id="cb120-2" data-line-number="2"><span class="kw">unclass</span>(stara_data)</a>
@@ -752,7 +755,7 @@ Ile możliwości udało się Tobie znaleźć?</li>
 <!-- 7) przeskaluj wartosci --></li>
 <li>Inna osoba również wykonywała pomiary temperatury w tym samym czasie.
 Jej pomierzone wartości to -1.1, 4,2, 2,4, 3,1, 7,1, 4,2 stopni Celsjusza.
-Dodaj te wartości do obiektu <code>pomiary</code>.</li>
+Dołącz te wartości do obiektu <code>pomiary</code>.</li>
 <li>Stwórz nowy wektor <code>nazwy_stacji</code> zawierający nazwę Twojej stacji pomiarowej (<code>&quot;Punkt 31&quot;</code>) oraz stacji drugiej osoby (<code>&quot;Stacja Thule&quot;</code>), którego długość ma być równa długości wektora <code>pomiary</code>.
 Wektor <code>nazwy_stacji</code> powinien być klasy czynnikowej.</li>
 <li>Stwórz nowy wektor <code>daty_pomiarow</code> zawierający rok, miesiąc i dzień pomiarów w wektorze <code>pomiary</code>.</li>

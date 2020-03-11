@@ -1,4 +1,3 @@
-
 # Powtarzanie {#petle}
 
 W sekcji \@ref(jezyki-programowania) zostały wspomniane różne istniejące paradygmaty programowania.

@@ -1,4 +1,3 @@
-
 # Podsumowanie {#podsumowanie}
 
 Nie jest możliwe, aby jedna książka wyczerpująco pokazywała wszystkie elementy języka programowania i podawała wszelkie jego możliwości i zastosowania. 
@@ -20,13 +19,20 @@ Możemy to zobaczyć na poniższym przykładzie danych meteorologicznych dla Poz
 met = read.csv("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv",
              stringsAsFactors = FALSE)
 head(met)
-#>   kod_stacji nazwa_stacji  rok miesiac dzien tavg precip
-#> 1  352160330       POZNAŃ 2017       1     1  1.4    0.0
-#> 2  352160330       POZNAŃ 2017       1     2  0.1    0.0
-#> 3  352160330       POZNAŃ 2017       1     3  0.5    4.8
-#> 4  352160330       POZNAŃ 2017       1     4  1.5    2.3
-#> 5  352160330       POZNAŃ 2017       1     5 -3.5    0.0
-#> 6  352160330       POZNAŃ 2017       1     6 -8.4    0.0
+#>   kod_stacji nazwa_stacji  rok miesiac dzien tavg
+#> 1  352160330       POZNAŃ 2017       1     1  1.4
+#> 2  352160330       POZNAŃ 2017       1     2  0.1
+#> 3  352160330       POZNAŃ 2017       1     3  0.5
+#> 4  352160330       POZNAŃ 2017       1     4  1.5
+#> 5  352160330       POZNAŃ 2017       1     5 -3.5
+#> 6  352160330       POZNAŃ 2017       1     6 -8.4
+#>   precip
+#> 1    0.0
+#> 2    0.0
+#> 3    4.8
+#> 4    2.3
+#> 5    0.0
+#> 6    0.0
 ```
 
 Wewnątrz obiektu `met` znajdują się kolumny `tavg` (określająca średnią dobową temperaturę powietrza w stopniach Celsjusza) oraz `nazwa_stacji` ("POZNAŃ" lub "ZAKOPANE").
@@ -39,7 +45,7 @@ boxplot(tavg ~ nazwa_stacji, data = met)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="figures/plotex-1.png" alt="Przykład wykresu utworzonego przy pomocy funkcji boxplot()." width="\textwidth" />
+<img src="31-podsumowanie_files/figure-html/plotex-1.png" alt="Przykład wykresu utworzonego przy pomocy funkcji boxplot()." width="\textwidth" />
 <p class="caption">(\#fig:plotex)Przykład wykresu utworzonego przy pomocy funkcji boxplot().</p>
 </div>
 
@@ -66,7 +72,7 @@ ggplot(met, aes(nazwa_stacji, tavg)) + geom_boxplot()
 ```
 
 <div class="figure" style="text-align: center">
-<img src="figures/ggplotex-1.png" alt="Przykład wykresu utworzonego z użyciem pakietu ggplot2." width="\textwidth" />
+<img src="31-podsumowanie_files/figure-html/ggplotex-1.png" alt="Przykład wykresu utworzonego z użyciem pakietu ggplot2." width="\textwidth" />
 <p class="caption">(\#fig:ggplotex)Przykład wykresu utworzonego z użyciem pakietu ggplot2.</p>
 </div>
 

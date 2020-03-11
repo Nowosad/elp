@@ -1,4 +1,3 @@
-
 <!-- # Debugowanie {#debugging} -->
 
 <!-- proces: -->

@@ -1,4 +1,3 @@
-
 # Funkcje {#funkcje}
 
 Funkcje to programy, który przyjmują pewne argumenty, przetwarzają je i zwracają jakiś wynik.

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>9 Wczytywanie i zapisywanie plików | Elementarz programisty</title>
   <meta name="description" content="9 Wczytywanie i zapisywanie plików | Elementarz programisty" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="9 Wczytywanie i zapisywanie plików | Elementarz programisty" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Jakub Nowosad" />
 
 
-<meta name="date" content="2020-03-02" />
+<meta name="date" content="2020-03-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -548,14 +548,15 @@ Dodatkowe argumenty tej funkcji pozwalają, np. na zdefiniowanie arkusza do wczy
 <a class="sourceLine" id="cb277-2" data-line-number="2">meteo_z_xl =<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;pliki/dane_meteo.xlsx&quot;</span>)</a>
 <a class="sourceLine" id="cb277-3" data-line-number="3"><span class="kw">head</span>(meteo_z_xl)</a>
 <a class="sourceLine" id="cb277-4" data-line-number="4"><span class="co">#&gt; # A tibble: 6 x 7</span></a>
-<a class="sourceLine" id="cb277-5" data-line-number="5"><span class="co">#&gt;   kod_stacji nazwa_stacji   rok miesiac dzien  tavg precip</span></a>
-<a class="sourceLine" id="cb277-6" data-line-number="6"><span class="co">#&gt;        &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb277-7" data-line-number="7"><span class="co">#&gt; 1  352160330 POZNAŃ        2017       1     1   1.4    0  </span></a>
-<a class="sourceLine" id="cb277-8" data-line-number="8"><span class="co">#&gt; 2  352160330 POZNAŃ        2017       1     2   0.1    0  </span></a>
-<a class="sourceLine" id="cb277-9" data-line-number="9"><span class="co">#&gt; 3  352160330 POZNAŃ        2017       1     3   0.5    4.8</span></a>
-<a class="sourceLine" id="cb277-10" data-line-number="10"><span class="co">#&gt; 4  352160330 POZNAŃ        2017       1     4   1.5    2.3</span></a>
-<a class="sourceLine" id="cb277-11" data-line-number="11"><span class="co">#&gt; 5  352160330 POZNAŃ        2017       1     5  -3.5    0  </span></a>
-<a class="sourceLine" id="cb277-12" data-line-number="12"><span class="co">#&gt; 6  352160330 POZNAŃ        2017       1     6  -8.4    0</span></a></code></pre></div>
+<a class="sourceLine" id="cb277-5" data-line-number="5"><span class="co">#&gt;   kod_stacji nazwa_stacji   rok miesiac dzien  tavg</span></a>
+<a class="sourceLine" id="cb277-6" data-line-number="6"><span class="co">#&gt;        &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb277-7" data-line-number="7"><span class="co">#&gt; 1  352160330 POZNAŃ        2017       1     1   1.4</span></a>
+<a class="sourceLine" id="cb277-8" data-line-number="8"><span class="co">#&gt; 2  352160330 POZNAŃ        2017       1     2   0.1</span></a>
+<a class="sourceLine" id="cb277-9" data-line-number="9"><span class="co">#&gt; 3  352160330 POZNAŃ        2017       1     3   0.5</span></a>
+<a class="sourceLine" id="cb277-10" data-line-number="10"><span class="co">#&gt; 4  352160330 POZNAŃ        2017       1     4   1.5</span></a>
+<a class="sourceLine" id="cb277-11" data-line-number="11"><span class="co">#&gt; 5  352160330 POZNAŃ        2017       1     5  -3.5</span></a>
+<a class="sourceLine" id="cb277-12" data-line-number="12"><span class="co">#&gt; 6  352160330 POZNAŃ        2017       1     6  -8.4</span></a>
+<a class="sourceLine" id="cb277-13" data-line-number="13"><span class="co">#&gt; # … with 1 more variable: precip &lt;dbl&gt;</span></a></code></pre></div>
 <p>Do zapisania ramki danych do formatu Excel można użyć funkcji <code>write_xlsx()</code> z pakietu <strong>writexl</strong> <span class="citation">(Ooms <a href="#ref-R-writexl">2018</a>)</span><a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>.</p>
 <!-- block problemy z excelem jak daty -->
 </div>
