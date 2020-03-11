@@ -533,7 +533,7 @@ Ile możliwości udało się Tobie znaleźć?
 <!-- 7) przeskaluj wartosci -->
 7) Inna osoba również wykonywała pomiary temperatury w tym samym czasie.
 Jej pomierzone wartości to -1.1, 4,2, 2,4, 3,1, 7,1, 4,2 stopni Celsjusza.
-Dodaj te wartości do obiektu `pomiary`.
+Dołącz te wartości do obiektu `pomiary`.
 8) Stwórz nowy wektor `nazwy_stacji` zawierający nazwę Twojej stacji pomiarowej (`"Punkt 31"`) oraz stacji drugiej osoby (`"Stacja Thule"`), którego długość ma być równa długości wektora `pomiary`. 
 Wektor `nazwy_stacji` powinien być klasy czynnikowej.
 9) Stwórz nowy wektor `daty_pomiarow` zawierający rok, miesiąc i dzień pomiarów w wektorze `pomiary`.
