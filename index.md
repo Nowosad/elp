@@ -3,6 +3,7 @@ title: "Elementarz programisty"
 subtitle: "Wstęp do programowania używając R"
 author: "Jakub Nowosad"
 date: "2020-03-25"
+description: "Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R."
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: scrbook
@@ -14,7 +15,6 @@ bibliography: [references.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: nowosad/elp
-description: ""
 graphics: yes
 links-as-notes: true
 cover-image: "cover/cover.png"
