@@ -6212,7 +6212,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.429   0.000   0.429}
+\CommentTok{#>   0.429   0.000   0.430}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6271,8 +6271,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression               min median `itr/sec`}
 \CommentTok{#>   <bch:expr>          <bch:tm> <bch:>     <dbl>}
-\CommentTok{#> 1 mi_do_km1(odl_mile)   1.28us 1.42us   595893.}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 942.03ns 1.06us   738212.}
+\CommentTok{#> 1 mi_do_km1(odl_mile)   1.25us 1.43us   592128.}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 928.99ns 1.07us   751358.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
@@ -6316,14 +6316,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 400ms  404ms      2.48     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 743us  785us   1121.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 408ms  411ms      2.43     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 745us  798us   1103.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 21.07 operacji na sekundę, przy aż 23.99 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 20.66 operacji na sekundę, przy aż 23.76 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \begin{verbatim}
@@ -6338,14 +6338,14 @@ Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) raz
 #> # A tibble: 8 x 7
 #>   expression       x      min   median `itr/sec`
 #>   <bch:expr>   <dbl> <bch:tm> <bch:tm>     <dbl>
-#> 1 mi_do_km1(l)    10   3.24us   3.75us 241774.  
-#> 2 mi_do_km2(l)    10   1.47us   1.67us 548575.  
-#> 3 mi_do_km1(l)   100  55.84us  60.63us  15423.  
-#> 4 mi_do_km2(l)   100    7.6us   8.72us 108517.  
-#> 5 mi_do_km1(l)  1000   3.78ms    3.9ms    252.  
-#> 6 mi_do_km2(l)  1000  70.22us  78.86us  12036.  
-#> 7 mi_do_km1(l) 10000 396.63ms 400.59ms      2.50
-#> 8 mi_do_km2(l) 10000  750.2us 817.96us   1082.  
+#> 1 mi_do_km1(l)    10   3.23us   3.79us 240729.  
+#> 2 mi_do_km2(l)    10    1.5us   1.72us 531427.  
+#> 3 mi_do_km1(l)   100  56.23us  61.27us  15201.  
+#> 4 mi_do_km2(l)   100    7.4us    8.6us 109190.  
+#> 5 mi_do_km1(l)  1000   3.77ms   3.91ms    251.  
+#> 6 mi_do_km2(l)  1000  67.65us   76.1us  12433.  
+#> 7 mi_do_km1(l) 10000 408.74ms  410.3ms      2.44
+#> 8 mi_do_km2(l) 10000 726.58us 795.87us   1094.  
 #> # ... with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 \end{verbatim}

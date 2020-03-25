@@ -17,7 +17,7 @@ link-citations: yes
 github-repo: nowosad/elp
 graphics: yes
 links-as-notes: true
-cover-image: "cover/cover.png"
+cover-image: "/cover/cover.png"
 url: 'https\://nowosad.github.io/elp'
 ---
 
