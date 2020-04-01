@@ -215,7 +215,7 @@
 \providecommand{\subtitle}[1]{}
 \subtitle{Wstęp do programowania używając R}
 \author{Jakub Nowosad}
-\date{2020-03-25}
+\date{2020-04-01}
 
 \let\BeginKnitrBlock\begin \let\EndKnitrBlock\end
 \begin{document}
@@ -2722,7 +2722,7 @@ R ma wbudowaną reprezentację dat w postaci klasy \texttt{Date}.
 \begin{Highlighting}[]
 \NormalTok{dzis =}\StringTok{ }\KeywordTok{Sys.Date}\NormalTok{()}
 \NormalTok{dzis}
-\CommentTok{#> [1] "2020-03-25"}
+\CommentTok{#> [1] "2020-04-01"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2745,11 +2745,11 @@ Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji \texttt{unclass(
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{unclass}\NormalTok{(dzis)}
-\CommentTok{#> [1] 18346}
+\CommentTok{#> [1] 18353}
 \end{Highlighting}
 \end{Shaded}
 
-Wynik, 18346, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
+Wynik, 18353, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
 
 \begin{Shaded}
@@ -6212,7 +6212,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.429   0.000   0.430}
+\CommentTok{#>   0.428   0.000   0.427}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6271,8 +6271,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression               min median `itr/sec`}
 \CommentTok{#>   <bch:expr>          <bch:tm> <bch:>     <dbl>}
-\CommentTok{#> 1 mi_do_km1(odl_mile)   1.25us 1.43us   592128.}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 928.99ns 1.07us   751358.}
+\CommentTok{#> 1 mi_do_km1(odl_mile)   1.25us 1.41us   609956.}
+\CommentTok{#> 2 mi_do_km2(odl_mile)    917ns 1.03us   912935.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
@@ -6316,14 +6316,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 408ms  411ms      2.43     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 745us  798us   1103.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 382ms  384ms      2.61     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 724us  777us   1130.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 20.66 operacji na sekundę, przy aż 23.76 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 22.15 operacji na sekundę, przy aż 25.73 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \begin{verbatim}
@@ -6338,28 +6338,20 @@ Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) raz
 #> # A tibble: 8 x 7
 #>   expression       x      min   median `itr/sec`
 #>   <bch:expr>   <dbl> <bch:tm> <bch:tm>     <dbl>
-#> 1 mi_do_km1(l)    10   3.23us   3.79us 240729.  
-#> 2 mi_do_km2(l)    10    1.5us   1.72us 531427.  
-#> 3 mi_do_km1(l)   100  56.23us  61.27us  15201.  
-#> 4 mi_do_km2(l)   100    7.4us    8.6us 109190.  
-#> 5 mi_do_km1(l)  1000   3.77ms   3.91ms    251.  
-#> 6 mi_do_km2(l)  1000  67.65us   76.1us  12433.  
-#> 7 mi_do_km1(l) 10000 408.74ms  410.3ms      2.44
-#> 8 mi_do_km2(l) 10000 726.58us 795.87us   1094.  
+#> 1 mi_do_km1(l)    10    3.2us   3.73us 249103.  
+#> 2 mi_do_km2(l)    10   1.46us   1.66us 560011.  
+#> 3 mi_do_km1(l)   100  55.85us  60.05us  15827.  
+#> 4 mi_do_km2(l)   100   7.38us   8.34us 113932.  
+#> 5 mi_do_km1(l)  1000    3.7ms   3.78ms    260.  
+#> 6 mi_do_km2(l)  1000  67.43us  74.02us  13020.  
+#> 7 mi_do_km1(l) 10000 379.05ms 386.63ms      2.59
+#> 8 mi_do_km2(l) 10000  707.2us 767.04us   1127.  
 #> # ... with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 \end{verbatim}
 
 \hypertarget{zadania-10}{%
 \section{Zadania}\label{zadania-10}}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi})}
-\tightlist
-\item
-  Korzystając z wiedzy z rozdziału \ref{petle} dotyczącej pętli \texttt{for}, napisz funkcję \texttt{gdzie\_naj()}, która przyjmuje na wejściu macierz z wartościami numerycznymi, wylicza sumę wartości dla każdego wiersza, a następnie zwraca numer wiersza z najwyższą sumą wartości.
-  Przykładowe dane wejściowe do tej funkcji to:
-\end{enumerate}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6378,6 +6370,9 @@ Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) raz
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
+\item
+  Korzystając z wiedzy z rozdziału \ref{petle} dotyczącej pętli \texttt{for}, napisz funkcję \texttt{gdzie\_naj()}, która przyjmuje na wejściu macierz z wartościami numerycznymi, wylicza sumę wartości dla każdego wiersza, a następnie zwraca numer wiersza z najwyższą sumą wartości.
+  Przykładowe dane wejściowe do tej funkcji znajdują się~nad tym zadaniem.
 \item
   Dodaj do powyższej funkcji odpowiednie komunikaty błędów czy ostrzeżeń (sekcja \ref{obsluga-komunikatow}), pojawiające się~w zależności od rodzaju wprowadzonych danych wejściowych.
 \item

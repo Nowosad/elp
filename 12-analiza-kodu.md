@@ -229,8 +229,8 @@ wynik_1
 #> # A tibble: 2 x 6
 #>   expression               min median `itr/sec`
 #>   <bch:expr>          <bch:tm> <bch:>     <dbl>
-#> 1 mi_do_km1(odl_mile)   1.29µs 1.45µs   590054.
-#> 2 mi_do_km2(odl_mile) 947.97ns 1.07µs   749184.
+#> 1 mi_do_km1(odl_mile)   1.26µs 1.68µs   527000.
+#> 2 mi_do_km2(odl_mile)  958.1ns 1.07µs   850304.
 #> # … with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 ```
@@ -263,13 +263,13 @@ wynik_2
 #> # A tibble: 2 x 6
 #>   expression             min median `itr/sec` mem_alloc
 #>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>
-#> 1 mi_do_km1(odl_mile2) 390ms  394ms      2.54     382MB
-#> 2 mi_do_km2(odl_mile2) 738µs  782µs   1129.      78.2KB
+#> 1 mi_do_km1(odl_mile2) 390ms  390ms      2.56     382MB
+#> 2 mi_do_km2(odl_mile2) 740µs  785µs   1127.      78.2KB
 #> # … with 1 more variable: `gc/sec` <dbl>
 ```
 
 W tym przypadku różnica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
-Funkcja `mi_do_km1` jest w stanie wykonać tylko 21.56 operacji na sekundę, przy aż 23.99 operacji na sekundę funkcji `mi_do_km2`.
+Funkcja `mi_do_km1` jest w stanie wykonać tylko 21.78 operacji na sekundę, przy aż 25.97 operacji na sekundę funkcji `mi_do_km2`.
 Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
 
 
@@ -285,14 +285,14 @@ Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej
 #> # A tibble: 8 x 7
 #>   expression       x      min   median `itr/sec`
 #>   <bch:expr>   <dbl> <bch:tm> <bch:tm>     <dbl>
-#> 1 mi_do_km1(l)    10   3.28µs   3.81µs 241954.  
-#> 2 mi_do_km2(l)    10    1.5µs    1.7µs 542373.  
-#> 3 mi_do_km1(l)   100  56.09µs  60.93µs  15426.  
-#> 4 mi_do_km2(l)   100   7.44µs   8.69µs 109498.  
-#> 5 mi_do_km1(l)  1000   3.75ms   3.86ms    255.  
-#> 6 mi_do_km2(l)  1000  68.95µs  76.32µs  12452.  
-#> 7 mi_do_km1(l) 10000 405.52ms 410.69ms      2.43
-#> 8 mi_do_km2(l) 10000 727.99µs 789.98µs   1109.  
+#> 1 mi_do_km1(l)    10   3.22µs    3.7µs 250728.  
+#> 2 mi_do_km2(l)    10    1.5µs   1.87µs 517084.  
+#> 3 mi_do_km1(l)   100  55.32µs  59.44µs  16075.  
+#> 4 mi_do_km2(l)   100   7.44µs   8.37µs 112360.  
+#> 5 mi_do_km1(l)  1000   3.68ms    3.8ms    259.  
+#> 6 mi_do_km2(l)  1000  67.86µs  75.01µs  12822.  
+#> 7 mi_do_km1(l) 10000 387.55ms 397.01ms      2.52
+#> 8 mi_do_km2(l) 10000 711.53µs  768.1µs   1147.  
 #> # … with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 ```
@@ -302,9 +302,6 @@ Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej
 
 
 ## Zadania
-
-1) Korzystając z wiedzy z rozdziału \@ref(petle) dotyczącej pętli `for`, napisz funkcję `gdzie_naj()`, która przyjmuje na wejściu macierz z wartościami numerycznymi, wylicza sumę wartości dla każdego wiersza, a następnie zwraca numer wiersza z najwyższą sumą wartości.
-Przykładowe dane wejściowe do tej funkcji to:
 
 
 ```r
@@ -319,6 +316,9 @@ mat
 #> [4,]    4    6    1    2    5
 #> [5,]    2   10    6    4    9
 ```
+
+1) Korzystając z wiedzy z rozdziału \@ref(petle) dotyczącej pętli `for`, napisz funkcję `gdzie_naj()`, która przyjmuje na wejściu macierz z wartościami numerycznymi, wylicza sumę wartości dla każdego wiersza, a następnie zwraca numer wiersza z najwyższą sumą wartości.
+Przykładowe dane wejściowe do tej funkcji znajdują się nad tym zadaniem.
 
 1) Dodaj do powyższej funkcji odpowiednie komunikaty błędów czy ostrzeżeń (sekcja \@ref(obsluga-komunikatow)), pojawiające się w zależności od rodzaju wprowadzonych danych wejściowych.
 
