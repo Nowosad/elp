@@ -258,15 +258,15 @@ ggplot2::autoplot(porownanie)
 
 ## Zadania
 
-1) Korzystając z wiedzy z rozdziału \@ref(petle) dotyczącej pętli `for`, napisz funkcję `gdzie_naj()`, która przyjmuje na wejściu macierz z wartościami numerycznymi, wylicza sumę wartości dla każdego wiersza, a następnie zwraca numer wiersza z najwyższą sumą wartości.
-Przykładowe dane wejściowe do tej funkcji to:
-
 ```{r}
 set.seed(2019-05-08)
 mat = matrix(c(sample(1:10, size = 25, replace = TRUE)),
              ncol = 5, nrow = 5)
 mat
 ```
+
+1) Korzystając z wiedzy z rozdziału \@ref(petle) dotyczącej pętli `for`, napisz funkcję `gdzie_naj()`, która przyjmuje na wejściu macierz z wartościami numerycznymi, wylicza sumę wartości dla każdego wiersza, a następnie zwraca numer wiersza z najwyższą sumą wartości.
+Przykładowe dane wejściowe do tej funkcji znajdują się nad tym zadaniem.
 
 1) Dodaj do powyższej funkcji odpowiednie komunikaty błędów czy ostrzeżeń (sekcja \@ref(obsluga-komunikatow)), pojawiające się w zależności od rodzaju wprowadzonych danych wejściowych.
 
