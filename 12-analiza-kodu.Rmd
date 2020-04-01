@@ -237,7 +237,7 @@ wynik_2
 ```
 
 W tym przypadku różnica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
-Funkcja `mi_do_km1` jest w stanie wykonać tylko `r round(unclass(wynik_2[[1, 6]]), 2)` operacji na sekundę, przy aż `r round(unclass(wynik_2[[2, 6]]), 2)` operacji na sekundę funkcji `mi_do_km2`.
+Funkcja `mi_do_km1` jest w stanie wykonać tylko `r round(unclass(wynik_2[[1, 4]]), 2)` operacji na sekundę, przy aż `r round(unclass(wynik_2[[2, 4]]), 2)` operacji na sekundę funkcji `mi_do_km2`.
 Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
 
 ```{r, echo=FALSE}
