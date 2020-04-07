@@ -24,7 +24,7 @@
 <meta name="author" content="Jakub Nowosad" />
 
 
-<meta name="date" content="2020-04-01" />
+<meta name="date" content="2020-04-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -456,7 +456,7 @@ Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej fu
 <p>Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.</p>
 <div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb317-1" data-line-number="1"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))</a>
 <a class="sourceLine" id="cb317-2" data-line-number="2"><span class="co">#&gt;    user  system elapsed </span></a>
-<a class="sourceLine" id="cb317-3" data-line-number="3"><span class="co">#&gt;   0.428   0.000   0.428</span></a></code></pre></div>
+<a class="sourceLine" id="cb317-3" data-line-number="3"><span class="co">#&gt;   0.431   0.000   0.431</span></a></code></pre></div>
 <p>W efekcie dostajemy trzy wartości - <code>user</code>, <code>system</code> i <code>elapsed</code>. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.</p>
 <p>Benchmarking jest często używany w sytuacji, gdy istnieje kilka funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
 Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.</p>
@@ -494,8 +494,8 @@ Poniżej nastąpi porównanie funkcji <code>mi_do_km1</code> i <code>mi_do_km2</
 <a class="sourceLine" id="cb320-8" data-line-number="8"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
 <a class="sourceLine" id="cb320-9" data-line-number="9"><span class="co">#&gt;   expression               min median `itr/sec`</span></a>
 <a class="sourceLine" id="cb320-10" data-line-number="10"><span class="co">#&gt;   &lt;bch:expr&gt;          &lt;bch:tm&gt; &lt;bch:&gt;     &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb320-11" data-line-number="11"><span class="co">#&gt; 1 mi_do_km1(odl_mile)   1.29µs  1.5µs   564586.</span></a>
-<a class="sourceLine" id="cb320-12" data-line-number="12"><span class="co">#&gt; 2 mi_do_km2(odl_mile) 966.95ns 1.09µs   842352.</span></a>
+<a class="sourceLine" id="cb320-11" data-line-number="11"><span class="co">#&gt; 1 mi_do_km1(odl_mile)   1.32µs 1.47µs   579250.</span></a>
+<a class="sourceLine" id="cb320-12" data-line-number="12"><span class="co">#&gt; 2 mi_do_km2(odl_mile) 987.09ns  1.1µs   822071.</span></a>
 <a class="sourceLine" id="cb320-13" data-line-number="13"><span class="co">#&gt; # … with 2 more variables: mem_alloc &lt;bch:byt&gt;,</span></a>
 <a class="sourceLine" id="cb320-14" data-line-number="14"><span class="co">#&gt; #   `gc/sec` &lt;dbl&gt;</span></a></code></pre></div>
 <p>Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
@@ -523,46 +523,25 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 <a class="sourceLine" id="cb321-9" data-line-number="9"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
 <a class="sourceLine" id="cb321-10" data-line-number="10"><span class="co">#&gt;   expression             min median `itr/sec` mem_alloc</span></a>
 <a class="sourceLine" id="cb321-11" data-line-number="11"><span class="co">#&gt;   &lt;bch:expr&gt;           &lt;bch&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span></a>
-<a class="sourceLine" id="cb321-12" data-line-number="12"><span class="co">#&gt; 1 mi_do_km1(odl_mile2) 405ms  408ms      2.45     382MB</span></a>
-<a class="sourceLine" id="cb321-13" data-line-number="13"><span class="co">#&gt; 2 mi_do_km2(odl_mile2) 742µs  782µs   1110.      78.2KB</span></a>
+<a class="sourceLine" id="cb321-12" data-line-number="12"><span class="co">#&gt; 1 mi_do_km1(odl_mile2) 411ms  412ms      2.43     382MB</span></a>
+<a class="sourceLine" id="cb321-13" data-line-number="13"><span class="co">#&gt; 2 mi_do_km2(odl_mile2) 752µs  792µs   1114.      78.2KB</span></a>
 <a class="sourceLine" id="cb321-14" data-line-number="14"><span class="co">#&gt; # … with 1 more variable: `gc/sec` &lt;dbl&gt;</span></a></code></pre></div>
 <p>W tym przypadku różnica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
-Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 2.45 operacji na sekundę, przy aż 1109.55 operacji na sekundę funkcji <code>mi_do_km2</code>.
+Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 2.43 operacji na sekundę, przy aż 1113.63 operacji na sekundę funkcji <code>mi_do_km2</code>.
 Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż <code>mi_do_km2</code>.</p>
-<pre><code>#&gt; Running with:
-#&gt;       x
-#&gt; 1    10
-#&gt; 2   100
-#&gt; 3  1000
-#&gt; 4 10000
-#&gt; Warning: Some expressions had a GC in every iteration;
-#&gt; so filtering is disabled.
-#&gt; # A tibble: 8 x 7
-#&gt;   expression       x      min   median `itr/sec`
-#&gt;   &lt;bch:expr&gt;   &lt;dbl&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt;
-#&gt; 1 mi_do_km1(l)    10   3.28µs   3.82µs 238270.  
-#&gt; 2 mi_do_km2(l)    10   1.53µs   1.75µs 523230.  
-#&gt; 3 mi_do_km1(l)   100  56.32µs  60.34µs  15546.  
-#&gt; 4 mi_do_km2(l)   100   7.45µs   8.61µs 109073.  
-#&gt; 5 mi_do_km1(l)  1000   3.76ms   3.85ms    255.  
-#&gt; 6 mi_do_km2(l)  1000  68.38µs  76.79µs  12391.  
-#&gt; 7 mi_do_km1(l) 10000 422.39ms 427.65ms      2.34
-#&gt; 8 mi_do_km2(l) 10000 727.85µs 786.46µs   1077.  
-#&gt; # … with 2 more variables: mem_alloc &lt;bch:byt&gt;,
-#&gt; #   `gc/sec` &lt;dbl&gt;</code></pre>
 </div>
 <div id="zadania-10" class="section level2">
 <h2><span class="header-section-number">11.4</span> Zadania</h2>
-<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb323-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">2019-05-08</span>)</a>
-<a class="sourceLine" id="cb323-2" data-line-number="2">mat =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">size =</span> <span class="dv">25</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)),</a>
-<a class="sourceLine" id="cb323-3" data-line-number="3">             <span class="dt">ncol =</span> <span class="dv">5</span>, <span class="dt">nrow =</span> <span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb323-4" data-line-number="4">mat</a>
-<a class="sourceLine" id="cb323-5" data-line-number="5"><span class="co">#&gt;      [,1] [,2] [,3] [,4] [,5]</span></a>
-<a class="sourceLine" id="cb323-6" data-line-number="6"><span class="co">#&gt; [1,]    6    1    2    4    6</span></a>
-<a class="sourceLine" id="cb323-7" data-line-number="7"><span class="co">#&gt; [2,]    9    9    9    5    5</span></a>
-<a class="sourceLine" id="cb323-8" data-line-number="8"><span class="co">#&gt; [3,]    2    6    4    8   10</span></a>
-<a class="sourceLine" id="cb323-9" data-line-number="9"><span class="co">#&gt; [4,]    4    6    1    2    5</span></a>
-<a class="sourceLine" id="cb323-10" data-line-number="10"><span class="co">#&gt; [5,]    2   10    6    4    9</span></a></code></pre></div>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb322-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">2019-05-08</span>)</a>
+<a class="sourceLine" id="cb322-2" data-line-number="2">mat =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">size =</span> <span class="dv">25</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)),</a>
+<a class="sourceLine" id="cb322-3" data-line-number="3">             <span class="dt">ncol =</span> <span class="dv">5</span>, <span class="dt">nrow =</span> <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb322-4" data-line-number="4">mat</a>
+<a class="sourceLine" id="cb322-5" data-line-number="5"><span class="co">#&gt;      [,1] [,2] [,3] [,4] [,5]</span></a>
+<a class="sourceLine" id="cb322-6" data-line-number="6"><span class="co">#&gt; [1,]    6    1    2    4    6</span></a>
+<a class="sourceLine" id="cb322-7" data-line-number="7"><span class="co">#&gt; [2,]    9    9    9    5    5</span></a>
+<a class="sourceLine" id="cb322-8" data-line-number="8"><span class="co">#&gt; [3,]    2    6    4    8   10</span></a>
+<a class="sourceLine" id="cb322-9" data-line-number="9"><span class="co">#&gt; [4,]    4    6    1    2    5</span></a>
+<a class="sourceLine" id="cb322-10" data-line-number="10"><span class="co">#&gt; [5,]    2   10    6    4    9</span></a></code></pre></div>
 <ol style="list-style-type: decimal">
 <li><p>Korzystając z wiedzy z rozdziału <a href="petle.html#petle">8</a> dotyczącej pętli <code>for</code>, napisz funkcję <code>gdzie_naj()</code>, która przyjmuje na wejściu macierz z wartościami numerycznymi, wylicza sumę wartości dla każdego wiersza, a następnie zwraca numer wiersza z najwyższą sumą wartości.
 Przykładowe dane wejściowe do tej funkcji znajdują się nad tym zadaniem.</p></li>
