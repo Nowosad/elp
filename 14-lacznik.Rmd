@@ -125,12 +125,17 @@ library(reticulate)
 <!-- setting Python version -->
 <!-- four types of connections with Python -->
 
+<!-- Type Conversions -->
+<!-- Importing Modules -->
+<!-- Getting Help -->
+
 https://rstudio.github.io/reticulate/
 
 ## Unix commands
 
-
-
+<!-- https://github.com/microsoft/terminal -->
+<!-- http://www.makoweabc.pl/2009/12/os-x-terminal-jak-go-uruchomic-krok-po-kroku/ -->
+<!-- https://ubuntu.com/tutorials/command-line-for-beginners#1-overview -->
 <!-- https://neowaylabs.github.io/programming/unix-shell-for-data-scientists/?utm_source=hackernewsletter&utm_medium=email&utm_term=data -->
 <!-- https://missing.csail.mit.edu/ -->
 
