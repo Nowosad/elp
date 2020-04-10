@@ -51,6 +51,11 @@ Rcpp::cppFunction(rcpp_fun)
 ```
 
 ```{r}
+odl_mile = list(142, 63, 121)
+mi_do_km3(odl_mile)
+```
+
+```{r}
 odl_mile2 = as.list(0:10000)
 wynik = bench::mark(
   mi_do_km2(odl_mile2),
@@ -65,15 +70,15 @@ wynik
 
 <!-- header file -->
 
-```{Rcpp}
+```{Rcpp, eval = FALSE}
 #include <Rcpp.h>
 ```
 
-```{Rcpp}
-using namespace Rcpp ;
+```{Rcpp, eval = FALSE}
+using namespace Rcpp;
 ```
 
-```{Rcpp}
+```{Rcpp, eval = FALSE}
 // [[Rcpp::export]]
 ```
 
@@ -81,16 +86,24 @@ using namespace Rcpp ;
 
 ```{Rcpp}
 #include <Rcpp.h>
-using namespace Rcpp ;
+using namespace Rcpp;
 // [[Rcpp::export]]
-codecodecode
+List mi_do_km3(List odl_mile){
+  int odl_mile_len = odl_mile.size();
+  List result(odl_mile_len);
+  for (int i = 0; i < odl_mile_len; i++){
+    result[i] = odl_mile[i] * 1.609;
+  }
+  return(result);
+}
 ```
 
-```{r, eval=FALSE}
+```{r}
 library(Rcpp)
-sourceCpp("kod.cpp")
+sourceCpp("mi_do_km3.cpp")
 
-codecodecode(5)
+odl_mile = list(142, 63, 121)
+mi_do_km3(odl_mile)
 ```
 
 <!-- note - packages -->
@@ -104,9 +117,20 @@ codecodecode(5)
 <!-- reticulate -->
 
 [@R-reticulate]
+
+```{r}
+library(reticulate)
+```
+
+<!-- setting Python version -->
+<!-- four types of connections with Python -->
+
 https://rstudio.github.io/reticulate/
 
 ## Unix commands
+
+
+
 <!-- https://neowaylabs.github.io/programming/unix-shell-for-data-scientists/?utm_source=hackernewsletter&utm_medium=email&utm_term=data -->
 <!-- https://missing.csail.mit.edu/ -->
 
