@@ -133,6 +133,19 @@ https://rstudio.github.io/reticulate/
 
 ## Unix commands
 
+
+<!-- https://stackoverflow.com/questions/48605776/difference-between-system-and-system2-in-r-capture-file-names-in-variable -->
+<!-- https://stackoverflow.com/questions/5745886/r-and-system-calls -->
+<!-- https://tomaztsql.wordpress.com/2020/01/06/working-with-system-commands-in-r/ -->
+<!-- https://joongsup.rbind.io/post/2018/02/05/run-system-commands-or-shell-sripts-from-an-interactive-r-session/ -->
+
+<!-- grep -->
+<!-- cat -->
+<!-- find -->
+<!-- head/tail -->
+<!-- awk -->
+<!-- man -->
+
 <!-- https://github.com/microsoft/terminal -->
 <!-- http://www.makoweabc.pl/2009/12/os-x-terminal-jak-go-uruchomic-krok-po-kroku/ -->
 <!-- https://ubuntu.com/tutorials/command-line-for-beginners#1-overview -->
