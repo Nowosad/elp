@@ -1,17 +1,47 @@
-<!-- # Łącznik {#lacznik} -->
+# Łącznik {#lacznik}
 
 <!-- intro o r jako jezyku laczacym inne -->
 <!-- intro o innych łącznikach -->
 
-<!-- ## C++ -->
+## C++
 
 <!-- Rcpp -->
-<!-- [@R-Rcpp] -->
+[@R-Rcpp]
 
-<!-- ```{r} -->
-<!-- library(Rcpp) -->
-<!-- ``` -->
+```{r}
+library(Rcpp)
+```
 
+```{r}
+mi_do_km2 = function(odl_mile){
+  odl_km = vector("list", length = length(odl_mile))
+  for (i in seq_along(odl_mile)) {
+    odl_km[[i]] = odl_mile[[i]] * 1.609
+  }
+  odl_km
+}
+```
+
+```{r}
+rcpp_fun = "List mi_do_km3(List odl_mile){
+  int odl_mile_len = odl_mile.size();
+  List result(odl_mile_len);
+  for (int i = 0; i < odl_mile_len; i++){
+    result[i] = odl_mile[i] * 1.609;
+  }
+  return(result);
+}"
+Rcpp::cppFunction(rcpp_fun)
+```
+
+```{r}
+odl_mile2 = as.list(0:10000)
+wynik = bench::mark(
+  mi_do_km2(odl_mile2),
+  mi_do_km3(odl_mile2)
+)
+wynik
+```
 
 <!-- ### Podstawy C++ -->
 
@@ -67,11 +97,11 @@
 <!-- https://csgillespie.github.io/efficientR/performance.html#rcpp -->
 <!-- http://thecoatlessprofessor.com/programming/unofficial-rcpp-api-documentation/#minmax -->
 
-<!-- ## Python -->
+## Python
 <!-- reticulate -->
 
-<!-- ## Unix commands -->
+## Unix commands
 <!-- https://neowaylabs.github.io/programming/unix-shell-for-data-scientists/?utm_source=hackernewsletter&utm_medium=email&utm_term=data -->
 <!-- https://missing.csail.mit.edu/ -->
 
-<!-- ## Zadania -->
+## Zadania
