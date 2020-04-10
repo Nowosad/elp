@@ -54,8 +54,8 @@ knitr::write_bib(c(.packages(),
                    "RSQLite", "RPostgreSQL", "DBI",
                    "landscapemetrics", "bench", "profvis",
                    "usethis", "testthat", "available",
-                   "pkgdown", "remotes", "Rcpp", "ggplot2",
-                   "wesanderson", "tmap", "dplyr",
+                   "pkgdown", "remotes", "Rcpp", "reticulate",
+                   "ggplot2", "wesanderson", "tmap", "dplyr",
                    "tidyr"),
                    "packages.bib")
 ```
