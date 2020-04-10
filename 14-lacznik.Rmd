@@ -2,15 +2,31 @@
 
 <!-- intro o r jako jezyku laczacym inne -->
 <!-- intro o innych łącznikach -->
+<!-- rust, java, javascript, ?? -->
 
 ## C++
 
 <!-- Rcpp -->
+<!-- intro to Cpp -->
+<!-- https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-introduction.pdf -->
+<!-- data type -->
+<!-- scalars -->
+<!-- semicolons -->
+<!-- loops -->
+<!-- many more -->
 [@R-Rcpp]
 
 ```{r}
 library(Rcpp)
 ```
+
+### evalCpp
+
+```{r, eval=FALSE}
+evalCpp('')
+```
+
+### cppFunction
 
 ```{r}
 mi_do_km2 = function(odl_mile){
@@ -43,52 +59,39 @@ wynik = bench::mark(
 wynik
 ```
 
-<!-- ### Podstawy C++ -->
+### .cpp
 
-<!-- intro to Cpp -->
-<!-- https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-introduction.pdf -->
-<!-- data type -->
-<!-- scalars -->
-<!-- semicolons -->
-<!-- loops -->
-<!-- many more -->
-
-<!-- ### evalCpp -->
-
-<!-- ### cppFunction -->
-
-<!-- ### .cpp -->
+<!-- ref to \@ref(tworzenie-pakietow) -->
 
 <!-- header file -->
 
-<!-- ``` -->
-<!-- #include <Rcpp.h> -->
-<!-- ``` -->
+```{Rcpp}
+#include <Rcpp.h>
+```
 
-<!-- ``` -->
-<!-- using namespace Rcpp ; -->
-<!-- ``` -->
+```{Rcpp}
+using namespace Rcpp ;
+```
 
-
-<!-- ``` -->
-<!-- // [[Rcpp::export]] -->
-<!-- ``` -->
+```{Rcpp}
+// [[Rcpp::export]]
+```
 
 <!-- internal vs exported functions -->
 
-<!-- ``` -->
-<!-- #include <Rcpp.h> -->
-<!-- using namespace Rcpp ; -->
-<!-- // [[Rcpp::export]] -->
-<!-- codecodecode -->
-<!-- ``` -->
+```{Rcpp}
+#include <Rcpp.h>
+using namespace Rcpp ;
+// [[Rcpp::export]]
+codecodecode
+```
 
-<!-- ```{r, eval=FALSE} -->
-<!-- library(Rcpp) -->
-<!-- sourceCpp("kod.cpp") -->
+```{r, eval=FALSE}
+library(Rcpp)
+sourceCpp("kod.cpp")
 
-<!-- codecodecode(5) -->
-<!-- ``` -->
+codecodecode(5)
+```
 
 <!-- note - packages -->
 <!-- indexing starts at 0 -->
@@ -99,6 +102,9 @@ wynik
 
 ## Python
 <!-- reticulate -->
+
+[@R-reticulate]
+https://rstudio.github.io/reticulate/
 
 ## Unix commands
 <!-- https://neowaylabs.github.io/programming/unix-shell-for-data-scientists/?utm_source=hackernewsletter&utm_medium=email&utm_term=data -->
