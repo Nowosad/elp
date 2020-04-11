@@ -17,7 +17,19 @@ W przypadku potrzeby zadania pytania, lepszym pomysłem jest opublikowanie go na
 
 Tworzenie kodu możliwego do odtworzenia problemu (powtarzalnych przykładów) jest też pomocne w przypadku, gdy my piszemy nowe skrypty i funkcje i napotkamy na błędy.
 Jest to często część debugowania (ang. *debugging*) - procesu rozwiązywania problemów i błędów w oprogramowaniu.
-Istnieje wiele potencjalnych taktyk debugowania kodu, w tym debugowanie używając funkcji print, czy też debugowanie interaktywne.
+Istnieje wiele potencjalnych taktyk debugowania kodu, w tym debugowanie używając funkcji takich jak print (sekcja \@ref()), czy też debugowanie interaktywne (sekcja \@ref()).
+
+<!-- resources -->
+<!-- https://rstats.wtf/debugging-r-code.html -->
+<!-- https://rstudio-education.github.io/hopr/debug.html -->
+<!-- https://jennybc.github.io/wtf-2019-rsc/debugging.pdf -->
+<!-- https://blog.davisvaughan.com/2019/04/05/debug-r-package-with-cpp/ -->
+<!-- https://bookdown.org/rdpeng/RProgDA/debugging.html -->
+<!-- https://adv-r.hadley.nz/debugging.html -->
+<!-- https://www.youtube.com/watch?time_continue=1&v=R3-IMGyNJY4 -->
+<!-- https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio -->
+<!-- http://kevinushey.github.io/blog/2015/04/13/debugging-with-lldb/ -->
+<!-- https://github.com/wch/r-debug/blob/master/debugging-r.md -->
 
 ## Powtarzalne przykłady {#reprex}
 
@@ -141,18 +153,6 @@ Nie powinien to być jednak ostatni krok.
 
 Należy jeszcze upewnić się, że nowa wersja kodu nie tylko przestaje zwracać błędy, ale też daje poprawne wyniki.
 Często odbywa się to poprzez wykonanie wcześniej stworzony testów jednostkowych (sekcja \@ref(testy-jednostkowe)).
-
-<!-- resources -->
-<!-- https://rstats.wtf/debugging-r-code.html -->
-<!-- https://rstudio-education.github.io/hopr/debug.html -->
-<!-- https://jennybc.github.io/wtf-2019-rsc/debugging.pdf -->
-<!-- https://blog.davisvaughan.com/2019/04/05/debug-r-package-with-cpp/ -->
-<!-- https://bookdown.org/rdpeng/RProgDA/debugging.html -->
-<!-- https://adv-r.hadley.nz/debugging.html -->
-<!-- https://www.youtube.com/watch?time_continue=1&v=R3-IMGyNJY4 -->
-<!-- https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio -->
-<!-- http://kevinushey.github.io/blog/2015/04/13/debugging-with-lldb/ -->
-<!-- https://github.com/wch/r-debug/blob/master/debugging-r.md -->
 
 ## Podstawowe podejście do debugowania
 
