@@ -373,8 +373,8 @@ Pełniejszy opis komend systemu Git można znaleźć pod adresem <a href="https:
 <p>Kolejnym krokiem po instalacji systemu Git<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a> jest jego konfiguracja.
 Można ją wykonać używając wbudowanego terminala (Mac OS i Linux) lub terminala dodanego podczas instalacji systemu Git (Windows).
 Polega ona na podaniu nazwy użytkownika (np. <code>&quot;Imie Nazwisko&quot;</code>) oraz jego adresu email (<code>&quot;email@portal.com&quot;</code>).</p>
-<div class="sourceCode" id="cb342"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb342-1" data-line-number="1"><span class="fu">git</span> config --global user.name <span class="st">&quot;imie nazwisko&quot;</span></a>
-<a class="sourceLine" id="cb342-2" data-line-number="2"><span class="fu">git</span> config --global user.email <span class="st">&quot;email&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb343-1" data-line-number="1"><span class="fu">git</span> config --global user.name <span class="st">&quot;imie nazwisko&quot;</span></a>
+<a class="sourceLine" id="cb343-2" data-line-number="2"><span class="fu">git</span> config --global user.email <span class="st">&quot;email&quot;</span></a></code></pre></div>
 </div>
 <div id="repozytorium" class="section level3">
 <h3><span class="header-section-number">13.1.2</span> Repozytorium</h3>
@@ -383,8 +383,8 @@ Jest to folder, który przechowuje wszystkie pliki i foldery w ramach jednego pr
 Dodatkowo wewnątrz repozytorium znajduje się ukryty folder <code>.git</code>, który zawiera informację o historii i zmianach każdego z naszych plików.
 Repozytorium może znajdować się na dysku naszego komputera (wtedy jest nazywane repozytorium lokalnym) lub też na serwerze w internecie (określane jako repozytorium zdalne (ang. <em>remote</em>)).
 Istnieje wiele serwisów internetowych pozwalających na tworzenie, przechowywanie i edycję repozytoriów zdalnych, między innymi <a href="https://github.com/">GitHub</a> (przybliżony w sekcji <a href="kontrola-wersji.html#github">13.2</a>), <a href="https://gitlab.com/">GitLab</a>, czy <a href="https://bitbucket.org/">BitBucket</a>.</p>
-<div class="sourceCode" id="cb343"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb343-1" data-line-number="1"><span class="co"># określenie obecnego katalogu jako repozytorium Git</span></a>
-<a class="sourceLine" id="cb343-2" data-line-number="2"><span class="fu">git</span> init                  </a></code></pre></div>
+<div class="sourceCode" id="cb344"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb344-1" data-line-number="1"><span class="co"># określenie obecnego katalogu jako repozytorium Git</span></a>
+<a class="sourceLine" id="cb344-2" data-line-number="2"><span class="fu">git</span> init                  </a></code></pre></div>
 </div>
 <div id="dodawanie-zmian" class="section level3">
 <h3><span class="header-section-number">13.1.3</span> Dodawanie zmian</h3>
@@ -393,17 +393,17 @@ Po pewnym czasie możemy stwierdzić, że dodaliśmy nową funkcjonalność do f
 Wtedy należy (po zapisaniu również pliku na dysku) dodać te zmiany do systemu Git.
 Po dodaniu zmian są one przechowywane w miejscu określanym jako <em>Index</em>.
 Działa ono jak poczekalnia - w tym momencie zmiany jeszcze nie są potwierdzone, ale możemy sprawdzić co zmieniło się od ostatniego zatwierdzenia zmian.</p>
-<div class="sourceCode" id="cb344"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb344-1" data-line-number="1"><span class="co"># dodanie pojedynczego pliku</span></a>
-<a class="sourceLine" id="cb344-2" data-line-number="2"><span class="fu">git</span> add sciezka_do_pliku  </a>
-<a class="sourceLine" id="cb344-3" data-line-number="3"><span class="co"># dodanie wszystkich plików </span></a>
-<a class="sourceLine" id="cb344-4" data-line-number="4"><span class="fu">git</span> add --all                    </a></code></pre></div>
+<div class="sourceCode" id="cb345"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb345-1" data-line-number="1"><span class="co"># dodanie pojedynczego pliku</span></a>
+<a class="sourceLine" id="cb345-2" data-line-number="2"><span class="fu">git</span> add sciezka_do_pliku  </a>
+<a class="sourceLine" id="cb345-3" data-line-number="3"><span class="co"># dodanie wszystkich plików </span></a>
+<a class="sourceLine" id="cb345-4" data-line-number="4"><span class="fu">git</span> add --all                    </a></code></pre></div>
 </div>
 <div id="sprawdzanie-zmian" class="section level3">
 <h3><span class="header-section-number">13.1.4</span> Sprawdzanie zmian</h3>
 <p>Zanim zatwierdzimy zmiany można je sprawdzić.
 W ten sposób dla każdej linii tekstu (kodu) otrzymuje się informacje co zostało dodane lub usunięte.</p>
-<div class="sourceCode" id="cb345"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb345-1" data-line-number="1"><span class="co"># sprawdzenie dodanych zmian</span></a>
-<a class="sourceLine" id="cb345-2" data-line-number="2"><span class="fu">git</span> diff                  </a></code></pre></div>
+<div class="sourceCode" id="cb346"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb346-1" data-line-number="1"><span class="co"># sprawdzenie dodanych zmian</span></a>
+<a class="sourceLine" id="cb346-2" data-line-number="2"><span class="fu">git</span> diff                  </a></code></pre></div>
 </div>
 <div id="zatwierdzanie-zmian" class="section level3">
 <h3><span class="header-section-number">13.1.5</span> Zatwierdzanie zmian</h3>
@@ -414,8 +414,8 @@ Wymaga to dodania wiadomości, która opisuje wprowadzone zmiany.
 <!-- https://github.com/erlang/otp/wiki/writing-good-commit-messages -->
 <!-- https://code.likeagirl.io/useful-tips-for-writing-better-git-commit-messages-808770609503 -->
 <!-- HEAD --></p>
-<div class="sourceCode" id="cb346"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb346-1" data-line-number="1"><span class="co"># zatwierdzenie dodanych zmian</span></a>
-<a class="sourceLine" id="cb346-2" data-line-number="2"><span class="fu">git</span> commit -m <span class="st">&quot;opis wprowadzonych zmian&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb347"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb347-1" data-line-number="1"><span class="co"># zatwierdzenie dodanych zmian</span></a>
+<a class="sourceLine" id="cb347-2" data-line-number="2"><span class="fu">git</span> commit -m <span class="st">&quot;opis wprowadzonych zmian&quot;</span></a></code></pre></div>
 </div>
 <div id="branches" class="section level3">
 <h3><span class="header-section-number">13.1.6</span> Rozgałęzienia</h3>
@@ -423,22 +423,22 @@ Wymaga to dodania wiadomości, która opisuje wprowadzone zmiany.
 Wtedy edycja poprawnego kodu może nie przynieść najlepszych wyników - co jeżeli nasz pomysł się jednak nie sprawdzi?
 Lepszą możliwością jest użycie rozgałęzień (ang. <em>branches</em>) w systemie Git.
 Domyślnie nowe repozytorium posiada już jedną gałąź nazwaną <code>master</code>.</p>
-<div class="sourceCode" id="cb347"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb347-1" data-line-number="1"><span class="co"># wypisanie wszystkich rozgałęzień</span></a>
-<a class="sourceLine" id="cb347-2" data-line-number="2"><span class="fu">git</span> branch</a></code></pre></div>
+<div class="sourceCode" id="cb348"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb348-1" data-line-number="1"><span class="co"># wypisanie wszystkich rozgałęzień</span></a>
+<a class="sourceLine" id="cb348-2" data-line-number="2"><span class="fu">git</span> branch</a></code></pre></div>
 <p>Kolejnym krokiem jest utworzenie nowego rozgałęzienia.
 W efekcie tego działania nowa gałąź staje się odniesieniem do istniejącego stanu obecnej gałęzi.</p>
-<div class="sourceCode" id="cb348"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb348-1" data-line-number="1"><span class="co"># utworzenie nowego rozgałęzienia</span></a>
-<a class="sourceLine" id="cb348-2" data-line-number="2"><span class="fu">git</span> branch nazwa_nowej_galezi</a></code></pre></div>
+<div class="sourceCode" id="cb349"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb349-1" data-line-number="1"><span class="co"># utworzenie nowego rozgałęzienia</span></a>
+<a class="sourceLine" id="cb349-2" data-line-number="2"><span class="fu">git</span> branch nazwa_nowej_galezi</a></code></pre></div>
 <p>Co ważne utworzenie nowego rozgałęzienia nie powoduje przejście do niego - należy to samodzielnie wykonać.</p>
-<div class="sourceCode" id="cb349"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb349-1" data-line-number="1"><span class="co"># przejście do innego rozgałęzienia</span></a>
-<a class="sourceLine" id="cb349-2" data-line-number="2"><span class="fu">git</span> checkout nazwa_nowej_galezi</a></code></pre></div>
+<div class="sourceCode" id="cb350"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb350-1" data-line-number="1"><span class="co"># przejście do innego rozgałęzienia</span></a>
+<a class="sourceLine" id="cb350-2" data-line-number="2"><span class="fu">git</span> checkout nazwa_nowej_galezi</a></code></pre></div>
 <p>W tym momencie możliwe jest testowanie różnych możliwości ulepszenia istniejącego kodu bez obawy, że wpłynie to na jego działającą wersję.
 Po stwierdzeniu, że nasze zmiany są odpowiednie należy je dodać (sekcja <a href="kontrola-wersji.html#dodawanie-zmian">13.1.3</a>) i zatwierdzić (sekcja <a href="kontrola-wersji.html#zatwierdzanie-zmian">13.1.5</a>).
 Teraz można powrócić do głównej gałęzi (<code>master</code>) i dołączyć zmiany stworzone w innej gałęzi.</p>
-<div class="sourceCode" id="cb350"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb350-1" data-line-number="1"><span class="co"># powrót do głównej gałęzi</span></a>
-<a class="sourceLine" id="cb350-2" data-line-number="2"><span class="fu">git</span> checkout master</a>
-<a class="sourceLine" id="cb350-3" data-line-number="3"><span class="co"># połączenie wybranego rozgałęzienia z obecnym</span></a>
-<a class="sourceLine" id="cb350-4" data-line-number="4"><span class="fu">git</span> merge nazwa_nowej_galezi</a></code></pre></div>
+<div class="sourceCode" id="cb351"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb351-1" data-line-number="1"><span class="co"># powrót do głównej gałęzi</span></a>
+<a class="sourceLine" id="cb351-2" data-line-number="2"><span class="fu">git</span> checkout master</a>
+<a class="sourceLine" id="cb351-3" data-line-number="3"><span class="co"># połączenie wybranego rozgałęzienia z obecnym</span></a>
+<a class="sourceLine" id="cb351-4" data-line-number="4"><span class="fu">git</span> merge nazwa_nowej_galezi</a></code></pre></div>
 <!-- block merge conflicts -->
 </div>
 <div id="repozytorium-zdalne" class="section level3">
@@ -446,20 +446,20 @@ Teraz można powrócić do głównej gałęzi (<code>master</code>) i dołączy�
 <p>System Git ma wiele zalet w przypadku samodzielnej pracy na własnym komputerze<!--np.-->, zyski z jego używania są jednak znacznie większe, gdy nasze repozytoria mają też zdalne odpowiedniki.</p>
 <p>Łączenie się ze zdalnymi repozytoriami może nastąpić na dwa sposoby.
 W pierwszym z nich repozytorium zdane już istnieje, a my chcemy się do niego podłączyć i je pobrać.</p>
-<div class="sourceCode" id="cb351"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb351-1" data-line-number="1"><span class="co"># pobranie kopii istniejącego zdalnego repo</span></a>
-<a class="sourceLine" id="cb351-2" data-line-number="2"><span class="fu">git</span> clone sciezka_do_zdalnego_repo</a></code></pre></div>
+<div class="sourceCode" id="cb352"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb352-1" data-line-number="1"><span class="co"># pobranie kopii istniejącego zdalnego repo</span></a>
+<a class="sourceLine" id="cb352-2" data-line-number="2"><span class="fu">git</span> clone sciezka_do_zdalnego_repo</a></code></pre></div>
 <p>Drugim sposobem jest posiadanie istniejącego, lokalnego repozytorium, a następnie dodanie do niego adresu zdalnego repozytorium.
 <!-- ssh vs https --></p>
-<div class="sourceCode" id="cb352"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb352-1" data-line-number="1"><span class="co"># dodanie ścieżki do zdalnego repo</span></a>
-<a class="sourceLine" id="cb352-2" data-line-number="2"><span class="fu">git</span> remote add origin sciezka_do_zdalnego_repo</a></code></pre></div>
+<div class="sourceCode" id="cb353"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb353-1" data-line-number="1"><span class="co"># dodanie ścieżki do zdalnego repo</span></a>
+<a class="sourceLine" id="cb353-2" data-line-number="2"><span class="fu">git</span> remote add origin sciezka_do_zdalnego_repo</a></code></pre></div>
 <!-- zmiana z git remote set-url origin git@github.com:User/UserRepo.git -->
 </div>
 <div id="wysylanie-zmian" class="section level3">
 <h3><span class="header-section-number">13.1.8</span> Wysyłanie zmian</h3>
 <p>Obecne dodane i zatwierdzone zmiany znajdują się jedynie w repozytorium lokalnym.
 Konieczne jest ich wysłanie do zdalnego repozytorium.</p>
-<div class="sourceCode" id="cb353"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb353-1" data-line-number="1"><span class="co"># wysyłanie zmian do zdalnego repo</span></a>
-<a class="sourceLine" id="cb353-2" data-line-number="2"><span class="fu">git</span> push</a></code></pre></div>
+<div class="sourceCode" id="cb354"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb354-1" data-line-number="1"><span class="co"># wysyłanie zmian do zdalnego repo</span></a>
+<a class="sourceLine" id="cb354-2" data-line-number="2"><span class="fu">git</span> push</a></code></pre></div>
 <!--skrót od git push origin master -->
 </div>
 <div id="aktualizowanie-zmian" class="section level3">
@@ -468,8 +468,8 @@ Konieczne jest ich wysłanie do zdalnego repozytorium.</p>
 Możliwe jest określenie, że inne osoby mogą nanosić zmiany w zdalnych repozytoriach.
 Dodatkowo, jedna osoba może zmieniać zdalne repozytoria używając różnych komputerów.
 Konieczne jest więc aktualizowanie zmian, które zaszły w zdalnym repozytorium na lokalnym komputerze.</p>
-<div class="sourceCode" id="cb354"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb354-1" data-line-number="1"><span class="co"># aktualizowanie zmian ze zdalnego repo</span></a>
-<a class="sourceLine" id="cb354-2" data-line-number="2"><span class="fu">git</span> pull</a></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb355-1" data-line-number="1"><span class="co"># aktualizowanie zmian ze zdalnego repo</span></a>
+<a class="sourceLine" id="cb355-2" data-line-number="2"><span class="fu">git</span> pull</a></code></pre></div>
 </div>
 </div>
 <div id="github" class="section level2">
@@ -625,15 +625,15 @@ Następnie należy przekopiować do tego projektu wszystkie już istniejące pli
 <p>W ramach jednego projektu często posiadamy wiele plików z długą historią zmian, do tego nanoszonych przez szereg różnych osób.
 Jest to sytuacja w której dość prosto o wystąpienie problemów czy nieoczekiwanych (przez użytkownika) zachowań systemu kontroli wersji Git.</p>
 <p>Jednym z najczęstszych problemów jest pojawienie się poniższego komunikatu podczas próby wysyłania zmian do zdalnego repozytorium.</p>
-<div class="sourceCode" id="cb355"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb355-1" data-line-number="1"><span class="op">&gt;&gt;&gt;</span> <span class="fu">git</span> push</a>
-<a class="sourceLine" id="cb355-2" data-line-number="2"><span class="ex">To</span> https://github.com/YOU/REPO.git</a>
-<a class="sourceLine" id="cb355-3" data-line-number="3"> ! [<span class="ex">rejected</span>]        master -<span class="op">&gt;</span> master (fetch first)</a>
-<a class="sourceLine" id="cb355-4" data-line-number="4"><span class="ex">error</span>: failed to push some refs to <span class="st">&#39;https://github.com/YOU/REPO.git&#39;</span></a>
-<a class="sourceLine" id="cb355-5" data-line-number="5"><span class="ex">hint</span>: Updates were rejected because the remote contains work that you do</a>
-<a class="sourceLine" id="cb355-6" data-line-number="6"><span class="ex">hint</span>: not have locally. This is usually caused by another repository pushing</a>
-<a class="sourceLine" id="cb355-7" data-line-number="7"><span class="ex">hint</span>: to the same ref. You may want to first integrate the remote changes</a>
-<a class="sourceLine" id="cb355-8" data-line-number="8"><span class="ex">hint</span>: (e.g., <span class="st">&#39;git pull ...&#39;</span>) <span class="ex">before</span> pushing again.</a>
-<a class="sourceLine" id="cb355-9" data-line-number="9"><span class="ex">hint</span>: See the <span class="st">&#39;Note about fast-forwards&#39;</span> in <span class="st">&#39;git push --help&#39;</span> for details.</a></code></pre></div>
+<div class="sourceCode" id="cb356"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb356-1" data-line-number="1"><span class="op">&gt;&gt;&gt;</span> <span class="fu">git</span> push</a>
+<a class="sourceLine" id="cb356-2" data-line-number="2"><span class="ex">To</span> https://github.com/YOU/REPO.git</a>
+<a class="sourceLine" id="cb356-3" data-line-number="3"> ! [<span class="ex">rejected</span>]        master -<span class="op">&gt;</span> master (fetch first)</a>
+<a class="sourceLine" id="cb356-4" data-line-number="4"><span class="ex">error</span>: failed to push some refs to <span class="st">&#39;https://github.com/YOU/REPO.git&#39;</span></a>
+<a class="sourceLine" id="cb356-5" data-line-number="5"><span class="ex">hint</span>: Updates were rejected because the remote contains work that you do</a>
+<a class="sourceLine" id="cb356-6" data-line-number="6"><span class="ex">hint</span>: not have locally. This is usually caused by another repository pushing</a>
+<a class="sourceLine" id="cb356-7" data-line-number="7"><span class="ex">hint</span>: to the same ref. You may want to first integrate the remote changes</a>
+<a class="sourceLine" id="cb356-8" data-line-number="8"><span class="ex">hint</span>: (e.g., <span class="st">&#39;git pull ...&#39;</span>) <span class="ex">before</span> pushing again.</a>
+<a class="sourceLine" id="cb356-9" data-line-number="9"><span class="ex">hint</span>: See the <span class="st">&#39;Note about fast-forwards&#39;</span> in <span class="st">&#39;git push --help&#39;</span> for details.</a></code></pre></div>
 <p>Oznacza on, że w repozytorium zdalnym są jakieś zmiany, których nie ma lokalnie.
 Prawdopodobnie wynikają one z kwestii, że inna osoba przesłała swoje zmiany do zdalnego repozytorium lub też pliki były zmienione i przesłane przez ciebie na innym komputerze.
 Najczęściej w takiej sytuacji wystarczy aktualizowanie zmian ze zdalnego repo (ikona strzałki w dół), a następnie ponowienie próby wysłania zmian.

@@ -6212,7 +6212,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.429   0.000   0.427}
+\CommentTok{#>   0.428   0.000   0.428}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6271,8 +6271,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression               min median `itr/sec`}
 \CommentTok{#>   <bch:expr>          <bch:tm> <bch:>     <dbl>}
-\CommentTok{#> 1 mi_do_km1(odl_mile)   1.25us 1.39us   610049.}
-\CommentTok{#> 2 mi_do_km2(odl_mile)  919.1ns 1.02us   924572.}
+\CommentTok{#> 1 mi_do_km1(odl_mile)   1.56us 1.75us   497070.}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 915.02ns 1.05us   879642.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
@@ -6316,14 +6316,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 360ms  363ms      2.75     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 696us  743us   1224.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 373ms  377ms      2.65     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 725us  769us   1157.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.75 operacji na sekundę, przy aż 1224.03 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.65 operacji na sekundę, przy aż 1157.41 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zadania-10}{%
@@ -6604,23 +6604,35 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression                  min median `itr/sec`}
 \CommentTok{#>   <bch:expr>                <bch> <bch:>     <dbl>}
-\CommentTok{#> 1 mile_na_km(odl_mile2)     700us  741us     1252.}
-\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 377us  407us     2436.}
+\CommentTok{#> 1 mile_na_km(odl_mile2)     741us  770us     1258.}
+\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 392us  421us     2345.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
-Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.82 raza mniejszy.
+Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.83 raza mniejszy.
 
 \hypertarget{sourceCpp}{%
 \subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}
 
+Powyższy przykład sprawdza się w przypadku małych fragmentów kodu C++.
+W momencie jednak, gdy kod staje się bardziej złożony, znacznie lepsze jest umieszczczenie go w oddzielnym pliku o rozszerzeniu \texttt{.cpp}.
+Taki plik może też być umieszczony wewnątrz pakietu R (rozdział \ref{tworzenie-pakietow}).
+
+Używanie kod C++ z pliku z poziomu R wymaga jednak pewnych dodatkowych działań.
+Konieczne jest dodane do tego pliku kilku linii nagłówków, które umożliwią interakcję pomiędzy C++ a R.
+
+Pierwsza z nich ma na celu umożliwenie dostępu do funkcji z pakietu \textbf{Rcpp}, poprzez podanie nazwy pliku \texttt{Rcpp.h} w linii \texttt{\#include}.
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \PreprocessorTok{#include }\ImportTok{<Rcpp.h>}
 \end{Highlighting}
 \end{Shaded}
+
+Dalej, opcjonalnie można dodać również linię \texttt{using\ namespace\ Rcpp;}.
+W przeciwnym razie każde wywołanie funkcji z pakietu \textbf{Rcpp} (np., \texttt{List}) musielibyśmy poprzedzać \texttt{Rcpp::} (np., \texttt{Rcpp::List}).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6628,18 +6640,23 @@ Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był
 \end{Highlighting}
 \end{Shaded}
 
+Ostatnią kwestią przed dodaniem kodu funkcji C++ jest zdecydowanie czy konkretną funkcję chcemy udostępnić i używać w R.
+Gdybyśmy nie dodali poniższego kodu, funkcja nie byłaby widoczna z poziomu R.
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{// [[Rcpp::export]]}
 \end{Highlighting}
 \end{Shaded}
 
+Kompletny kod funkcji można zobaczyć poniżej.
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \PreprocessorTok{#include }\ImportTok{<Rcpp.h>}
 \KeywordTok{using} \KeywordTok{namespace}\NormalTok{ Rcpp;}
 \CommentTok{// [[Rcpp::export]]}
-\NormalTok{List mi_do_km3(List odl_mile)\{}
+\NormalTok{List mile_na_km_cpp(List odl_mile)\{}
   \DataTypeTok{int}\NormalTok{ odl_mile_len = odl_mile.size();}
 \NormalTok{  List result(odl_mile_len);}
   \ControlFlowTok{for}\NormalTok{ (}\DataTypeTok{int}\NormalTok{ i = }\DecValTok{0}\NormalTok{; i < odl_mile_len; i++)\{}
@@ -6650,13 +6667,20 @@ Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był
 \end{Highlighting}
 \end{Shaded}
 
+Można go zapisać do pliku \texttt{.cpp}, np. \texttt{mile\_na\_km\_cpp.cpp}, a następnie skompilować i udostępnić dla R z użyciem funkcji \texttt{sourceCpp()}.
+
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(Rcpp)}
-\KeywordTok{sourceCpp}\NormalTok{(}\StringTok{"mi_do_km3.cpp"}\NormalTok{)}
+\KeywordTok{sourceCpp}\NormalTok{(}\StringTok{"mile_na_km_cpp.cpp"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
+Teraz też możliwe jest jego sprawdzenie na przykładowym obiekcie:
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \NormalTok{odl_mile =}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DecValTok{142}\NormalTok{, }\DecValTok{63}\NormalTok{, }\DecValTok{121}\NormalTok{)}
-\KeywordTok{mi_do_km3}\NormalTok{(odl_mile)}
+\KeywordTok{mile_na_km_cpp}\NormalTok{(odl_mile)}
 \CommentTok{#> [[1]]}
 \CommentTok{#> [1] 228}
 \CommentTok{#> }
