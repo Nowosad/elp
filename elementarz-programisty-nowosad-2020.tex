@@ -6212,7 +6212,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.428   0.000   0.428}
+\CommentTok{#>   0.426   0.000   0.426}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6271,8 +6271,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression               min median `itr/sec`}
 \CommentTok{#>   <bch:expr>          <bch:tm> <bch:>     <dbl>}
-\CommentTok{#> 1 mi_do_km1(odl_mile)   1.56us 1.75us   497070.}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 915.02ns 1.05us   879642.}
+\CommentTok{#> 1 mi_do_km1(odl_mile)   1.27us  1.4us   615828.}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 905.01ns 1.02us   921207.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
@@ -6316,14 +6316,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 373ms  377ms      2.65     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 725us  769us   1157.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 387ms  387ms      2.59     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 743us  780us   1153.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.65 operacji na sekundę, przy aż 1157.41 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.59 operacji na sekundę, przy aż 1152.86 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zadania-10}{%
@@ -6373,7 +6373,8 @@ W tym rozdziale skupimy się jednak na przykładach łączenia R z innymi, popul
 \hypertarget{cpp}{%
 \section{C++}\label{cpp}}
 
-C++ jest jednym z najczęściej używanych kompilowanych języków programowania. Jest to spowodowane kilkoma zaletami tego języka, w tym jego wysoką wydajnością, niezależnością od konkretnej platformy systemowej, czy uniwersalnością.
+C++ jest jednym z najczęściej używanych kompilowanych języków programowania.
+Jest to spowodowane kilkoma zaletami tego języka, w tym jego wysoką wydajnością, niezależnością od konkretnej platformy systemowej, czy uniwersalnością.
 
 Język C++ posiada zarówno wiele podobnych do R konstrukcji i koncepcji, ale też różni się w pewnych kluczowych koncepcjach.
 Najważniejsze cechy C++, które wyróżniają go od R i które warto znać na początku:
@@ -6443,7 +6444,7 @@ Odnosząc się do punktów z wcześniej wymienionej listy:
 \end{itemize}
 
 Obecnie ponad dwa tysiące pakietów R łączy się z językiem C++ używając pakietu \textbf{Rcpp} \citep{R-Rcpp}.
-Często dodanie języka C++ do pakietu R ma na celu przyspieszenie pewnych wymagających obliczeniowo zadań.
+Dodanie języka C++ do pakietu R często ma na celu przyspieszenie pewnych wymagających obliczeniowo zadań lub połączenie R z isniejącymi zewnętrznymi bibliotekami napisanymi w C++.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6452,6 +6453,9 @@ Często dodanie języka C++ do pakietu R ma na celu przyspieszenie pewnych wymag
 \end{Shaded}
 
 Pakiet \textbf{Rcpp} pozwala na zarówno wywoływanie kodu C++ wewnątrz skryptów R (sekcja \ref{cppFunction}), jak używając zewnętrznych plików o rozszerzeniu \texttt{.cpp} (sekcja \ref{sourceCpp}).
+
+Ta część książki ma na celu pokazanie zupełnych podstaw łączenia R z C++.
+Więcej informacji na ten temat można znaleść na stronie \url{http://www.rcpp.org/}, w \href{https://adv-r.hadley.nz/rcpp.html}{rozdziale Rewriting R code in C++} książki \citet{wickham2014advanced}, {[}sekcji Rcpp{]} książki \citet{gillespie2016efficient}, oraz na stronie \href{https://thecoatlessprofessor.com/programming/cpp/unofficial-rcpp-api-documentation}{Unofficial Rcpp API Documentation}.
 
 \hypertarget{cppFunction}{%
 \subsection{Wywoływanie kodu C++ wewnątrz skryptu R}\label{cppFunction}}
@@ -6604,14 +6608,14 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression                  min median `itr/sec`}
 \CommentTok{#>   <bch:expr>                <bch> <bch:>     <dbl>}
-\CommentTok{#> 1 mile_na_km(odl_mile2)     741us  770us     1258.}
-\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 392us  421us     2345.}
+\CommentTok{#> 1 mile_na_km(odl_mile2)     738us  771us     1260.}
+\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 404us  433us     2296.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
-Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.83 raza mniejszy.
+Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.78 raza mniejszy.
 
 \hypertarget{sourceCpp}{%
 \subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}

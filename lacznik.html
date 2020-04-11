@@ -353,7 +353,8 @@ W tym rozdziale skupimy się jednak na przykładach łączenia R z innymi, popul
 <!-- rust, java, javascript, ?? -->
 <div id="cpp" class="section level2">
 <h2><span class="header-section-number">12.1</span> C++</h2>
-<p>C++ jest jednym z najczęściej używanych kompilowanych języków programowania. Jest to spowodowane kilkoma zaletami tego języka, w tym jego wysoką wydajnością, niezależnością od konkretnej platformy systemowej, czy uniwersalnością.</p>
+<p>C++ jest jednym z najczęściej używanych kompilowanych języków programowania.
+Jest to spowodowane kilkoma zaletami tego języka, w tym jego wysoką wydajnością, niezależnością od konkretnej platformy systemowej, czy uniwersalnością.</p>
 <p>Język C++ posiada zarówno wiele podobnych do R konstrukcji i koncepcji, ale też różni się w pewnych kluczowych koncepcjach.
 Najważniejsze cechy C++, które wyróżniają go od R i które warto znać na początku:</p>
 <ul>
@@ -390,10 +391,12 @@ Nie dotyczy to linii definujących powstanie funkcji, rozpoczynających i kończ
 W R użycie funkcji <code>return()</code> było opcjonalne.</li>
 </ul>
 <p>Obecnie ponad dwa tysiące pakietów R łączy się z językiem C++ używając pakietu <strong>Rcpp</strong> <span class="citation">(Eddelbuettel et al. <a href="#ref-R-Rcpp">2020</a>)</span>.
-Często dodanie języka C++ do pakietu R ma na celu przyspieszenie pewnych wymagających obliczeniowo zadań.</p>
+Dodanie języka C++ do pakietu R często ma na celu przyspieszenie pewnych wymagających obliczeniowo zadań lub połączenie R z isniejącymi zewnętrznymi bibliotekami napisanymi w C++.</p>
 <div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb325-1" data-line-number="1"><span class="kw">library</span>(Rcpp)</a></code></pre></div>
 <!-- https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-introduction.pdf  -->
 <p>Pakiet <strong>Rcpp</strong> pozwala na zarówno wywoływanie kodu C++ wewnątrz skryptów R (sekcja <a href="lacznik.html#cppFunction">12.1.1</a>), jak używając zewnętrznych plików o rozszerzeniu <code>.cpp</code> (sekcja <a href="lacznik.html#sourceCpp">12.1.2</a>).</p>
+<p>Ta część książki ma na celu pokazanie zupełnych podstaw łączenia R z C++.
+Więcej informacji na ten temat można znaleść na stronie <a href="http://www.rcpp.org/" class="uri">http://www.rcpp.org/</a>, w <a href="https://adv-r.hadley.nz/rcpp.html">rozdziale Rewriting R code in C++</a> książki <span class="citation">Wickham (<a href="#ref-wickham2014advanced">2014</a>)</span>, [sekcji Rcpp] książki <span class="citation">Gillespie and Lovelace (<a href="#ref-gillespie2016efficient">2016</a>)</span>, oraz na stronie <a href="https://thecoatlessprofessor.com/programming/cpp/unofficial-rcpp-api-documentation">Unofficial Rcpp API Documentation</a>.</p>
 <div id="cppFunction" class="section level3">
 <h3><span class="header-section-number">12.1.1</span> Wywoływanie kodu C++ wewnątrz skryptu R</h3>
 <p>W przypadku krótkich fragmentów kodu C++ możliwe jest umieszczenie ich wewnątrz skryptu R jako obiekt tekstowy.
@@ -483,11 +486,11 @@ Jest to odpowiednik kodu <code>i = i + 1</code>.</p>
 <a class="sourceLine" id="cb335-7" data-line-number="7"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
 <a class="sourceLine" id="cb335-8" data-line-number="8"><span class="co">#&gt;   expression                  min median `itr/sec`</span></a>
 <a class="sourceLine" id="cb335-9" data-line-number="9"><span class="co">#&gt;   &lt;bch:expr&gt;                &lt;bch&gt; &lt;bch:&gt;     &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb335-10" data-line-number="10"><span class="co">#&gt; 1 mile_na_km(odl_mile2)     722µs  769µs     1261.</span></a>
-<a class="sourceLine" id="cb335-11" data-line-number="11"><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2) 386µs  417µs     2378.</span></a>
+<a class="sourceLine" id="cb335-10" data-line-number="10"><span class="co">#&gt; 1 mile_na_km(odl_mile2)     740µs  769µs     1266.</span></a>
+<a class="sourceLine" id="cb335-11" data-line-number="11"><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2) 402µs  431µs     2307.</span></a>
 <a class="sourceLine" id="cb335-12" data-line-number="12"><span class="co">#&gt; # … with 2 more variables: mem_alloc &lt;bch:byt&gt;,</span></a>
 <a class="sourceLine" id="cb335-13" data-line-number="13"><span class="co">#&gt; #   `gc/sec` &lt;dbl&gt;</span></a></code></pre></div>
-<p>Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.84 raza mniejszy.</p>
+<p>Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.78 raza mniejszy.</p>
 </div>
 <div id="sourceCpp" class="section level3">
 <h3><span class="header-section-number">12.1.2</span> Wywoływanie kodu z plików .cpp</h3>
@@ -571,8 +574,14 @@ Gdybyśmy nie dodali poniższego kodu, funkcja nie byłaby widoczna z poziomu R.
 <div id="ref-R-Rcpp">
 <p>Eddelbuettel, Dirk, Romain Francois, JJ Allaire, Kevin Ushey, Qiang Kou, Nathan Russell, Douglas Bates, and John Chambers. 2020. <em>Rcpp: Seamless R and C++ Integration</em>. <a href="https://CRAN.R-project.org/package=Rcpp" class="uri">https://CRAN.R-project.org/package=Rcpp</a>.</p>
 </div>
+<div id="ref-gillespie2016efficient">
+<p>Gillespie, Colin, and Robin Lovelace. 2016. <em>Efficient R Programming: A Practical Guide to Smarter Programming</em>. &quot; O’Reilly Media, Inc.&quot;.</p>
+</div>
 <div id="ref-R-reticulate">
 <p>Ushey, Kevin, JJ Allaire, and Yuan Tang. 2019. <em>Reticulate: Interface to ’Python’</em>. <a href="https://CRAN.R-project.org/package=reticulate" class="uri">https://CRAN.R-project.org/package=reticulate</a>.</p>
+</div>
+<div id="ref-wickham2014advanced">
+<p>Wickham, Hadley. 2014. <em>Advanced R</em>. Chapman and Hall/CRC.</p>
 </div>
 </div>
             </section>

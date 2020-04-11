@@ -9,7 +9,8 @@ W tym rozdziale skupimy się jednak na przykładach łączenia R z innymi, popul
 
 ## C++ {#cpp}
 
-C++ jest jednym z najczęściej używanych kompilowanych języków programowania. Jest to spowodowane kilkoma zaletami tego języka, w tym jego wysoką wydajnością, niezależnością od konkretnej platformy systemowej, czy uniwersalnością.
+C++ jest jednym z najczęściej używanych kompilowanych języków programowania.
+Jest to spowodowane kilkoma zaletami tego języka, w tym jego wysoką wydajnością, niezależnością od konkretnej platformy systemowej, czy uniwersalnością.
 
 Język C++ posiada zarówno wiele podobnych do R konstrukcji i koncepcji, ale też różni się w pewnych kluczowych koncepcjach. 
 Najważniejsze cechy C++, które wyróżniają go od R i które warto znać na początku:
@@ -57,7 +58,7 @@ Nie dotyczy to linii definujących powstanie funkcji, rozpoczynających i kończ
 W R użycie funkcji `return()` było opcjonalne.
 
 Obecnie ponad dwa tysiące pakietów R łączy się z językiem C++ używając pakietu **Rcpp** [@R-Rcpp].
-Często dodanie języka C++ do pakietu R ma na celu przyspieszenie pewnych  wymagających obliczeniowo zadań.
+Dodanie języka C++ do pakietu R często ma na celu przyspieszenie pewnych  wymagających obliczeniowo zadań lub połączenie R z isniejącymi zewnętrznymi bibliotekami napisanymi w C++.
 
 
 ```r
@@ -67,6 +68,9 @@ library(Rcpp)
 <!-- https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-introduction.pdf  -->
 
 Pakiet **Rcpp** pozwala na zarówno wywoływanie kodu C++ wewnątrz skryptów R (sekcja \@ref(cppFunction)), jak używając zewnętrznych plików o rozszerzeniu `.cpp` (sekcja \@ref(sourceCpp)).
+
+Ta część książki ma na celu pokazanie zupełnych podstaw łączenia R z C++.
+Więcej informacji na ten temat można znaleść na stronie http://www.rcpp.org/, w [rozdziale Rewriting R code in C++](https://adv-r.hadley.nz/rcpp.html) książki @wickham2014advanced, [sekcji Rcpp] książki @gillespie2016efficient, oraz na stronie [Unofficial Rcpp API Documentation](https://thecoatlessprofessor.com/programming/cpp/unofficial-rcpp-api-documentation).
 
 ### Wywoływanie kodu C++ wewnątrz skryptu R {#cppFunction}
 
@@ -209,13 +213,13 @@ wynik
 #> # A tibble: 2 x 6
 #>   expression                  min median `itr/sec`
 #>   <bch:expr>                <bch> <bch:>     <dbl>
-#> 1 mile_na_km(odl_mile2)     722µs  769µs     1261.
-#> 2 mile_na_km_cpp(odl_mile2) 386µs  417µs     2378.
+#> 1 mile_na_km(odl_mile2)     740µs  769µs     1266.
+#> 2 mile_na_km_cpp(odl_mile2) 402µs  431µs     2307.
 #> # … with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 ```
 
-Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.84 raza mniejszy.
+Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.78 raza mniejszy.
 
 ### Wywoływanie kodu z plików .cpp {#sourceCpp}
 
