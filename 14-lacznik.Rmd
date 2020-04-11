@@ -189,30 +189,40 @@ Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był
 
 ### Wywoływanie kodu z plików .cpp {#sourceCpp}
 
-<!--  -->
-<!-- ref to \@ref(tworzenie-pakietow) -->
+Powyższy przykład sprawdza się w przypadku małych fragmentów kodu C++.
+W momencie jednak, gdy kod staje się bardziej złożony, znacznie lepsze jest umieszczczenie go w oddzielnym pliku o rozszerzeniu `.cpp`.
+Taki plik może też być umieszczony wewnątrz pakietu R (rozdział  \@ref(tworzenie-pakietow)).
 
-<!-- header file -->
+Używanie kod C++ z pliku z poziomu R wymaga jednak pewnych dodatkowych działań.
+Konieczne jest dodane do tego pliku kilku linii nagłówków, które umożliwią interakcję pomiędzy C++ a R.
+
+Pierwsza z nich ma na celu umożliwenie dostępu do funkcji z pakietu **Rcpp**, poprzez podanie nazwy pliku `Rcpp.h` w linii `#include`.
 
 ```{Rcpp, eval = FALSE}
 #include <Rcpp.h>
 ```
 
+Dalej, opcjonalnie można dodać również linię `using namespace Rcpp;`. 
+W przeciwnym razie każde wywołanie funkcji z pakietu **Rcpp** (np., `List`) musielibyśmy poprzedzać `Rcpp::` (np., `Rcpp::List`).
+
 ```{Rcpp, eval = FALSE}
 using namespace Rcpp;
 ```
+
+Ostatnią kwestią przed dodaniem kodu funkcji C++ jest zdecydowanie czy konkretną funkcję chcemy udostępnić i używać w R.
+Gdybyśmy nie dodali poniższego kodu, funkcja nie byłaby widoczna z poziomu R.
 
 ```{Rcpp, eval = FALSE}
 // [[Rcpp::export]]
 ```
 
-<!-- internal vs exported functions -->
+Kompletny kod funkcji można zobaczyć poniżej.
 
 ```{Rcpp}
 #include <Rcpp.h>
 using namespace Rcpp;
 // [[Rcpp::export]]
-List mi_do_km3(List odl_mile){
+List mile_na_km_cpp(List odl_mile){
   int odl_mile_len = odl_mile.size();
   List result(odl_mile_len);
   for (int i = 0; i < odl_mile_len; i++){
@@ -222,20 +232,18 @@ List mi_do_km3(List odl_mile){
 }
 ```
 
-```{r}
-library(Rcpp)
-sourceCpp("mi_do_km3.cpp")
+Można go zapisać do pliku `.cpp`, np. `mile_na_km_cpp.cpp`, a następnie skompilować i udostępnić dla R z użyciem funkcji `sourceCpp()`.
 
-odl_mile = list(142, 63, 121)
-mi_do_km3(odl_mile)
+```{r}
+sourceCpp("mile_na_km_cpp.cpp")
 ```
 
-<!-- note - packages -->
-<!-- indexing starts at 0 -->
+Teraz też możliwe jest jego sprawdzenie na przykładowym obiekcie:
 
-<!-- https://adv-r.hadley.nz/rcpp.html -->
-<!-- https://csgillespie.github.io/efficientR/performance.html#rcpp -->
-<!-- http://thecoatlessprofessor.com/programming/unofficial-rcpp-api-documentation/#minmax -->
+```{r}
+odl_mile = list(142, 63, 121)
+mile_na_km_cpp(odl_mile)
+```
 
 ## Python
 <!-- reticulate -->
