@@ -17,7 +17,7 @@ W przypadku potrzeby zadania pytania, lepszym pomysłem jest opublikowanie go na
 
 Tworzenie kodu możliwego do odtworzenia problemu (powtarzalnych przykładów) jest też pomocne w przypadku, gdy my piszemy nowe skrypty i funkcje i napotkamy na błędy.
 Jest to często część debugowania (ang. *debugging*) - procesu rozwiązywania problemów i błędów w oprogramowaniu.
-Istnieje wiele potencjalnych taktyk debugowania kodu, w tym debugowanie używając funkcji takich jak print (sekcja \@ref(debuging-print)), czy też debugowanie interaktywne (sekcja \@ref(debuging-interactive)).
+Istnieje wiele potencjalnych taktyk debugowania kodu, w tym debugowanie używając funkcji takich jak print (sekcja \@ref(debuging-print)), czy też debuggera (sekcja \@ref(debugger)).
 
 Więcej na temat debugowania kodu w R można dowiedzieć się więcej z prezentacji Jenny Bryan pt. [Object of type 'closure' is not subsettable](https://github.com/jennybc/debugging), [rozdziału Debugging R code] książki @rstatswtf, oraz [rozdziału Debugging] książki @wickham2016r.
 Dodatkowo, na stronach [Debugging an R Package with C++](https://blog.davisvaughan.com/2019/04/05/debug-r-package-with-cpp/), [Debugging C/C++ code that interfaces with R](https://github.com/wch/r-debug/blob/master/debugging-r.md), oraz [Debugging with LLDB](http://kevinushey.github.io/blog/2015/04/13/debugging-with-lldb/) można przeczytać na temat debugowania kodu C++ łączącego się z R.
@@ -127,7 +127,7 @@ Teraz należy jeszcze raz spróbować użyć kodu zwracającego błąd, aby się
 Drugi krok obejmuje zlokalizowanie dokładnego miejsca w którym błąd powstaje. 
 Może to być konkretna linia kodu, miejsce w pętli, a czasem nawet wywołanie innej zewnętrznej funkcji.
 Ten krok można wykonać na wiele sposobów. 
-Dwa z nich, debugowanie używając funkcji takich jak print (sekcja \@ref(debuging-print)) i debugowanie interaktywne (sekcja \@ref(debuging-interactive)), są opisane w tym rozdziale.
+Dwa z nich, debugowanie używając funkcji takich jak print (sekcja \@ref(debuging-print)) i debugowanie interaktywne (sekcja \@ref(debugger)), są opisane w tym rozdziale.
 
 W trzecim kroku należy usunąć wcześniej zlokalizowany błąd.
 Nie powinien to być jednak ostatni krok.
@@ -137,7 +137,10 @@ Często odbywa się to poprzez wykonanie wcześniej stworzony testów jednostkow
 
 ## Podstawowe podejście do debugowania {#debuging-print}
 
+Klasycznym podejściem do debugowania jest dodanie funkcji `print()` pokazującej wartości obiektów w okolicy potencjalnego źródła błędu.
 
+
+A first approach to debug a program is to add print statements around where you have detected the problem, and keep iterating until you have extracted enough information to understand what is responsible for the issue.
 
 <!-- `print()`, `cat()` - small objects -->
 <!-- `str()` - large object trunct -->
@@ -145,7 +148,7 @@ Często odbywa się to poprzez wykonanie wcześniej stworzony testów jednostkow
 
 <!-- `traceback()` - bottom to top -->
 
-## Interaktywne debugowanie {#debuging-interactive}
+## Debugger {#debugger}
 
 <!-- ## inside R -->
 
