@@ -24,100 +24,90 @@ Dodatkowo, na stronach [Debugging an R Package with C++](https://blog.davisvaugh
 
 ## Powtarzalne przykłady {#reprex}
 
-Powtarzalny przykład oznacza fragment kodu, który może być odtworzony przez inną osobę na innym komputerze/przez siebie samego w przyszłości.
+Powtarzalny przykład oznacza fragment kodu, który może być odtworzony przez inną osobę na innym komputerze lub przez siebie samego w przyszłości.
 Może on służyć pokazaniu poprawnego rozwiązania, wskazaniu na błędy w funkcjach, lub też jako załącznik do prośby o pomoc z kodem.
 Powtarzalny przykład powinien składać się przynajmniej z:
 
-- Z małego zbioru danych wystarczającego do odtworzenia obliczeń.
-- Krótkiego kodu, który może być uruchomiony na powyższym zbiorze danych.
+- Z małego zbioru danych lub obiektu zawierającego dane wystarczającego do odtworzenia obliczeń
+- Krótkiego kodu, który może być uruchomiony na powyższym zbiorze danych
 
 Czasem ważne są też dodatkowe informacje o używanej wersji R, posiadanym systemie operacyjnym, wersjach używanych pakietów, etc. 
 Można do tego użyć funkcji `sessionInfo()` 
 
 ### Pakiet **reprex**
 
-Stworzenie powtarzalnego przykładu w R może zostać ułatwione używając pakietu **reprex**. 
-Ten pakiet uruchamia wybraną część kodu, wykonuje kolejne operacje, a następnie zapisuje uzyskany wynik do schowka.
-
-Pakiet **reprex** można zainstalować poprzez funkcję `install.packages()`:
-
-```{r 17-appendix-reprex-1, eval = FALSE}
-install.packages("reprex")
-```
+Stworzenie powtarzalnego przykładu w R może zostać ułatwione używając pakietu **reprex** [@R-reprex]. 
+Ten pakiet uruchamia wybraną część kodu w nowej sesji R uruchomionej w tle, wykonuje kolejne operacje, a następnie zapisuje uzyskany wynik do schowka.
 
 Główną funkcją w tym pakiecie jest `reprex()`.
-Funkcję `reprex()` można też użyć poprzez wpisanie kodu wewnątrz tej funkcji lub też poprzez wybranie opcji `Reprex selection` z menu Addins w RStudio.
+Funkcję `reprex()` można użyć poprzez wpisanie kodu wewnątrz tej funkcji lub też poprzez wybranie opcji `Reprex selection` z menu Addins w RStudio.
 Możliwe jest również stworzenie powtarzalnego przykładu na podstawie skryptu R:
 
 ```{r 17-appendix-reprex-2, eval=FALSE}
 reprex(input = "moj_skrypt.R")
 ```
 
+Więcej informacji na temat powtarzalnych przykładów oraz pakietu **reprex** można znaleźć na [oficjalnej stronie pakietu reprex](https://reprex.tidyverse.org/index.html), oraz stronach [So you’ve been asked to make a reprex](https://www.jessemaegan.com/post/so-you-ve-been-asked-to-make-a-reprex/), [How to make a great R reproducible example](https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example), [Magic reprex](https://www.njtierney.com/post/2017/01/11/magic-reprex/), [reprex: help me help you!](https://speakerdeck.com/jennybc/reprex-help-me-help-you), oraz [Get help!](https://www.tidyverse.org/help/#reprex).
+
 ### Tworzenie powtarzalnego przykładu
 
-#### Prosty przykład
+Działanie pakietu **reprex**  można zobaczyć poniżej.
+Tworzymy dwa obiekty `x` i `y`, przypisujemy im wartości, a następnie je mnożymy przez siebie.
 
-Sprawdźmy działanie pakietu **reprex** na prostym przykładzie - tworzymy dwa obiekty `x` i `y`, nadajemy im wartości a następnie mnożymy je przez siebie:
+```{r}
+x = 1
+y = 5
+x * y
+```
+
+Ten sam kod umieszczony w funkcji `reprex()` wygląda w ten sposób:
 
 ```{r 17-appendix-reprex-3, eval=FALSE}
 library(reprex)
 reprex({
-        x = 1
-        y = 5
-        x * y
+  x = 1
+  y = 5
+  x * y
 })
 ```
 
-Po jego uruchomieniu otrzymujemy wynik zapisany w schowku jako Markdown oraz w postaci wyświetlonego HTMLa:
+Wynik działania powyższego kodu zapisywany jest w schowku jako Markdown oraz w postaci wyświetlonego pliku HTML:
 
-![](figs/reprex1.png)
+```{r, echo=FALSE}
+knitr::include_graphics("figures/reprex1.png")
+```
 
-#### Złożony przykład
+Kolejny powtarzalny przykład pochodzi z rozdziału \@ref(tekst), gdzie naszym celem było określenie które elementy wektora `tekst3` rozpoczynają się od dużej litery `L`.
 
-Spróbujmy teraz trochę bardziej skomplikowanego przykładu.
-Naszym celem jest stworzenie mapy punktowej temperatury na podstawie obiektu **punkty**.
-Powtarzalny przykład może posłużyć do szybkiego określenia problemów z kodem:
-
-```{r 17-appendix-reprex-4, eval=FALSE}
-library(reprex)
+```{r, eval=FALSE}
 reprex({
-        library(sf)
-        data(punkty)
-        plot(punkty["temperatura"])
+  teskt3 = c("Magdalena", "Lena", "1Lena.csv", "LLena", "Helena", "Anna", "99")
+  str_detect(tekst3, pattern = "^L")
 })
 ```
 
+Niestety zwraca on błąd.
 Powyższy kod ma dwa problemy - czy jesteś w stanie je wskazać?
 
-![](figs/reprex2.png)
+```{r, echo=FALSE}
+knitr::include_graphics("figures/reprex2.png")
+```
 
-Odpowiedź - ten kod nie jest w pełni samowystarczalny - brakuje tam dołączenia pakietu **geostatbook**, który zawiera zbiór danych `punkty`.
-Drugi problem to użyta zmienna do wizualizacji - `"temperatura"` nie istnieje w zbiorze danych `punkty`. 
-Zamiast niej powinna być użyta poprawna nazwa zmiennej - `"temp"`.
-Naprawiona wersja tego kodu znajduje się poniżej:
+Odpowiedź - ten kod nie jest w pełni samowystarczalny - brakuje tam dołączenia pakietu **stringr**, który zawiera funkcję `str_detect()`.
+Drugi problem to literówka w obiekcie `teskt3`.
+Naprawiona wersja tego kodu znajduje się poniżej:
 
-```{r 17-appendix-reprex-5, eval=FALSE}
-library(reprex)
+```{r, eval=FALSE}
 reprex({
-        library(sf)
-        library(geostatbook)
-        data(punkty)
-        plot(punkty["temp"])
+  library(stringr)
+  tekst3 = c("Magdalena", "Lena", "1Lena.csv", "LLena", "Helena", "Anna", "99")
+  str_detect(tekst3, pattern = "^L")
 })
 ```
 
-![](figs/reprex3.png)
-
-W efekcie otrzymujemy nie tylko kod użyty do obliczeń, ale również wynikową grafikę.
-
-#### Więcej informacji
-
-- [Oficjalna strona pakietu reprex](https://reprex.tidyverse.org/index.html)
-- [So you’ve been asked to make a reprex](https://www.jessemaegan.com/post/so-you-ve-been-asked-to-make-a-reprex/)
-- [How to make a great R reproducible example](https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example)
-- [Magic reprex](https://www.njtierney.com/post/2017/01/11/magic-reprex/)
-- [reprex: help me help you!](https://speakerdeck.com/jennybc/reprex-help-me-help-you)
-- [Get help!](https://www.tidyverse.org/help/#reprex)
+```{r, echo=FALSE}
+knitr::include_graphics("figures/reprex3.png")
+```
 
 ## Proces debugowania
 
@@ -131,13 +121,13 @@ Można jednak określić kilka kroków, które mogą znacząco ułatwić debugow
 
 W pierwszym kroku warto się upewnić, że napotkany błąd nie jest spowodowany przez inne obiekty w środowisku R. 
 Należy wyczyścić środowisko R używając `rm(list = ls())` a następnie zresetować sesję R (CTRL+SHIFT+F10 w RStudio).
-Warto też wydzielić z kodu najmniejszy fragment, który pozwala na odtworzenie błędu. 
+Warto też wydzielić z kodu najmniejszy fragment, który pozwala na odtworzenie błędu (*powtarzalny przykład*). 
 Teraz należy jeszcze raz spróbować użyć kodu zwracającego błąd, aby się upewnić, że dalej istnieje.
 
 Drugi krok obejmuje zlokalizowanie dokładnego miejsca w którym błąd powstaje. 
 Może to być konkretna linia kodu, miejsce w pętli, a czasem nawet wywołanie innej zewnętrznej funkcji.
 Ten krok można wykonać na wiele sposobów. 
-Dwa z nich, AAA i BBB, są opisane w tym rozdziale.
+Dwa z nich, debugowanie używając funkcji takich jak print (sekcja \@ref(debuging-print)) i debugowanie interaktywne (sekcja \@ref(debuging-interactive)), są opisane w tym rozdziale.
 
 W trzecim kroku należy usunąć wcześniej zlokalizowany błąd.
 Nie powinien to być jednak ostatni krok.
