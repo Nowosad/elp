@@ -12,7 +12,7 @@ W tym rozdziale skupimy się jednak na przykładach łączenia R z innymi, popul
 C++ jest jednym z najczęściej używanych kompilowanych języków programowania. Jest to spowodowane kilkoma zaletami tego języka, w tym jego wysoką wydajnością, niezależnością od konkretnej platformy systemowej, czy uniwersalnością.
 
 Język C++ posiada zarówno wiele podobnych do R konstrukcji i koncepcji, ale też różni się w pewnych kluczowych koncepcjach. 
-Najważniejsze cechy C++, które wyróżniają go od R warto znać na początku:
+Najważniejsze cechy C++, które wyróżniają go od R i które warto znać na początku:
 
 - Jest językiem kompilowanym
 - Pozwala na używanie tylko `=` jako operatora przypisania
@@ -66,18 +66,53 @@ library(Rcpp)
 
 <!-- https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-introduction.pdf  -->
 
-### evalCpp
+Pakiet **Rcpp** pozwala na zarówno wywoływanie kodu C++ wewnątrz skryptów R (sekcja \@ref(cppFunction)), jak używając zewnętrznych plików o rozszerzeniu `.cpp` (sekcja \@ref(sourceCpp)).
+
+### Wywoływanie kodu C++ wewnątrz skryptu R {#cppFunction}
+
+W przypadku krótkich fragmentów kodu C++ możliwe jest umieszczenie ich wewnątrz skryptu R jako obiekt tekstowy.
+Poniższej stworzono nowy obiekt `rcpp_fun1`, który zawiera wcześniejszą funkcję C++.
 
 
 ```r
-evalCpp('')
+rcpp_fun1 = "
+double konwersja_temp_cpp(double temperatura_f){
+  double temperatura_c = (temperatura_f - 32) / 1.8;
+  return temperatura_c;
+}
+"
 ```
 
-### cppFunction
+W kolejnym kroku konieczne jest skompilowanie powyższego kodu i stworzenie połączenia pomiędzy nim a R za pomocą funkcji `cppFunction()`.
 
 
 ```r
-mi_do_km2 = function(odl_mile){
+cppFunction(rcpp_fun1)
+```
+
+Od tego momentu możliwe jest korzystanie z funkcji `konwersja_temp_cpp()`.
+Możemy sprawdzić jej działanie poprzez podanie wybranej przez nas wartości, na przykład `75`.
+
+
+```r
+konwersja_temp_cpp(75)
+#> [1] 23.9
+```
+
+Warto jednak nadal pamiętać, że powyższa funkcja nie jest zwektoryzowana - możliwe jest podanie w niej tylko obiektu o długości 1.
+W przypadku zadeklarowania dłuższego obiektu wejściowego otrzymamy błąd:
+
+
+```r
+konwersja_temp_cpp(c(0, 75, 110))
+#> Error in konwersja_temp_cpp(c(0, 75, 110)): Expecting a single value: [extent=3].
+```
+
+W sekcji \@ref(zastosowanie-w-funkcjach) stworzyliśmy funkcję `mile_na_km()`, która przyjmuje i zwraca obiekt o klasie lista i zamienia wartości elementów tej listy z mil lądowych na kilometry. 
+
+
+```r
+mile_na_km = function(odl_mile) {
   odl_km = vector("list", length = length(odl_mile))
   for (i in seq_along(odl_mile)) {
     odl_km[[i]] = odl_mile[[i]] * 1.609
@@ -86,23 +121,59 @@ mi_do_km2 = function(odl_mile){
 }
 ```
 
+Ta sama funkcja w języku C++ może wyglądać w ten sposób:
+
 
 ```r
-rcpp_fun = "List mi_do_km3(List odl_mile){
+rcpp_fun2 = "List mile_na_km_cpp(List odl_mile){
   int odl_mile_len = odl_mile.size();
   List result(odl_mile_len);
   for (int i = 0; i < odl_mile_len; i++){
     result[i] = odl_mile[i] * 1.609;
   }
-  return(result);
+  return result;
 }"
-Rcpp::cppFunction(rcpp_fun)
+```
+
+Zawiera ona szereg różnic od kodu R.
+Oprócz definicji typów, używania średnika i operatora `return`, widać tutaj także inną metodę wywołania funkcji oraz inny sposób definiowania pętli `for`.
+
+Zadaniem linii `int odl_mile_len = odl_mile.size();` jest stworzenie nowej zmiennej skalarnej (`odl_mile_len`) o typie integer (`int`).
+Ta nowa zmienna jest wynikiem działania funkcji `size()`, która jest odpowiednikiem używanej w R `length()`.
+W przypadku używania R wywołanie funkcji ma jednak postać, w której podajemy nazwę funkcji, a następnie w nawiasie okrągłym obiekt wejściowy.
+C++ pozwala też na inny sposób wywoływania funkcji - używając wbudowanych metod.
+Odbywa się to poprzez podanie nazwy obiektu (`odl_mile`), a następnie po kropce (`.`) podania nazwy funkcji (`size()`).
+
+W C++ pętle można definiować używając poniższej składni:
+
+
+```cpp
+for (inicjalizacja zmiennej; warunek zakończenia; aktualizacja zmiennej) {
+  // Kod do wykonania
+}
+```
+
+Po pierwsze należy przekazać w miejscu `inicjalizacja zmiennej` stworzenie zmiennej, na podstawie której będzie oparta pętla.
+`int i = 0` oznacza, że tworzymy zmienną o typie integer `i`, która przyjmuje wartość 0.
+Jest to spowodowane ważną różnicą między C++ a R - w tym pierwszym języku liczenie rozpoczynamy od 0.
+Przykładowo w C++, `a[0]` pozwoli na wybranie pierwszego elementu z wektora `a`.
+Drugim elementem jest `warunek trwania`, czyli określenie do kiedy pęlta trwa.
+`i < odl_mile_len` oznacza, że pętla będzie działała tak długo aż `i` będzie mniejsze niż `odl_mile_len`.
+Ostatni element, `aktualizacja zmiennej`, mówi co ma się stać ze stworzoną zmienną po każdym przebiegu pętli.
+`i++` to skrót w języku C++ mówiący, że z każdą pętlą wartość `i` będzie rosła o 1.
+Jest to odpowiednik kodu `i = i + 1`.
+
+W powyższej składni też widać sposób definiowania komentarzy w języku C++ używając operatora `//`.
+
+
+```r
+Rcpp::cppFunction(rcpp_fun2)
 ```
 
 
 ```r
 odl_mile = list(142, 63, 121)
-mi_do_km3(odl_mile)
+mile_na_km_cpp(odl_mile)
 #> [[1]]
 #> [1] 228
 #> 
@@ -117,20 +188,24 @@ mi_do_km3(odl_mile)
 ```r
 odl_mile2 = as.list(0:10000)
 wynik = bench::mark(
-  mi_do_km2(odl_mile2),
-  mi_do_km3(odl_mile2)
+  mile_na_km(odl_mile2),
+  mile_na_km_cpp(odl_mile2)
 )
 wynik
 #> # A tibble: 2 x 6
-#>   expression             min median `itr/sec` mem_alloc
-#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>
-#> 1 mi_do_km2(odl_mile2) 720µs  759µs     1278.   599.2KB
-#> 2 mi_do_km3(odl_mile2) 390µs  435µs     2293.    85.9KB
-#> # … with 1 more variable: `gc/sec` <dbl>
+#>   expression                  min median `itr/sec`
+#>   <bch:expr>                <bch> <bch:>     <dbl>
+#> 1 mile_na_km(odl_mile2)     742µs  782µs     1242.
+#> 2 mile_na_km_cpp(odl_mile2) 393µs  427µs     2329.
+#> # … with 2 more variables: mem_alloc <bch:byt>,
+#> #   `gc/sec` <dbl>
 ```
 
-### .cpp
 
+
+### Wywoływanie kodu z plików .cpp {#sourceCpp}
+
+<!--  -->
 <!-- ref to \@ref(tworzenie-pakietow) -->
 
 <!-- header file -->

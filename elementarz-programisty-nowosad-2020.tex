@@ -6212,7 +6212,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.426   0.000   0.427}
+\CommentTok{#>   0.429   0.000   0.429}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6271,8 +6271,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression               min median `itr/sec`}
 \CommentTok{#>   <bch:expr>          <bch:tm> <bch:>     <dbl>}
-\CommentTok{#> 1 mi_do_km1(odl_mile)   1.29us 1.43us   611481.}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 942.03ns 1.04us   900797.}
+\CommentTok{#> 1 mi_do_km1(odl_mile)   1.26us 1.42us   592374.}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 925.04ns 1.03us   899365.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
@@ -6316,14 +6316,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 383ms  386ms      2.59     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 705us  740us   1235.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 378ms  384ms      2.60     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 741us  785us   1130.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.59 operacji na sekundę, przy aż 1235.46 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.6 operacji na sekundę, przy aż 1129.89 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zadania-10}{%
@@ -6376,7 +6376,7 @@ W tym rozdziale skupimy się jednak na przykładach łączenia R z innymi, popul
 C++ jest jednym z najczęściej używanych kompilowanych języków programowania. Jest to spowodowane kilkoma zaletami tego języka, w tym jego wysoką wydajnością, niezależnością od konkretnej platformy systemowej, czy uniwersalnością.
 
 Język C++ posiada zarówno wiele podobnych do R konstrukcji i koncepcji, ale też różni się w pewnych kluczowych koncepcjach.
-Najważniejsze cechy C++, które wyróżniają go od R warto znać na początku:
+Najważniejsze cechy C++, które wyróżniają go od R i które warto znać na początku:
 
 \begin{itemize}
 \tightlist
@@ -6451,21 +6451,58 @@ Często dodanie języka C++ do pakietu R ma na celu przyspieszenie pewnych wymag
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{evalcpp}{%
-\subsection{evalCpp}\label{evalcpp}}
+Pakiet \textbf{Rcpp} pozwala na zarówno wywoływanie kodu C++ wewnątrz skryptów R (sekcja \ref{cppFunction}), jak używając zewnętrznych plików o rozszerzeniu \texttt{.cpp} (sekcja \ref{sourceCpp}).
+
+\hypertarget{cppFunction}{%
+\subsection{Wywoływanie kodu C++ wewnątrz skryptu R}\label{cppFunction}}
+
+W przypadku krótkich fragmentów kodu C++ możliwe jest umieszczenie ich wewnątrz skryptu R jako obiekt tekstowy.
+Poniższej stworzono nowy obiekt \texttt{rcpp\_fun1}, który zawiera wcześniejszą funkcję C++.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{evalCpp}\NormalTok{(}\StringTok{''}\NormalTok{)}
+\NormalTok{rcpp_fun1 =}\StringTok{ "}
+\StringTok{double konwersja_temp_cpp(double temperatura_f)\{}
+\StringTok{  double temperatura_c = (temperatura_f - 32) / 1.8;}
+\StringTok{  return temperatura_c;}
+\StringTok{\}}
+\StringTok{"}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{cppfunction}{%
-\subsection{cppFunction}\label{cppfunction}}
+W kolejnym kroku konieczne jest skompilowanie powyższego kodu i stworzenie połączenia pomiędzy nim a R za pomocą funkcji \texttt{cppFunction()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{mi_do_km2 =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(odl_mile)\{}
+\KeywordTok{cppFunction}\NormalTok{(rcpp_fun1)}
+\end{Highlighting}
+\end{Shaded}
+
+Od tego momentu możliwe jest korzystanie z funkcji \texttt{konwersja\_temp\_cpp()}.
+Możemy sprawdzić jej działanie poprzez podanie wybranej przez nas wartości, na przykład \texttt{75}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{konwersja_temp_cpp}\NormalTok{(}\DecValTok{75}\NormalTok{)}
+\CommentTok{#> [1] 23.9}
+\end{Highlighting}
+\end{Shaded}
+
+Warto jednak nadal pamiętać, że powyższa funkcja nie jest zwektoryzowana - możliwe jest podanie w niej tylko obiektu o długości 1.
+W przypadku zadeklarowania dłuższego obiektu wejściowego otrzymamy błąd:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{konwersja_temp_cpp}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{75}\NormalTok{, }\DecValTok{110}\NormalTok{))}
+\CommentTok{#> Error in konwersja_temp_cpp(c(0, 75, 110)): Expecting a single value: [extent=3].}
+\end{Highlighting}
+\end{Shaded}
+
+W sekcji \ref{zastosowanie-w-funkcjach} stworzyliśmy funkcję \texttt{mile\_na\_km()}, która przyjmuje i zwraca obiekt o klasie lista i zamienia wartości elementów tej listy z mil lądowych na kilometry.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mile_na_km =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(odl_mile) \{}
 \NormalTok{  odl_km =}\StringTok{ }\KeywordTok{vector}\NormalTok{(}\StringTok{"list"}\NormalTok{, }\DataTypeTok{length =} \KeywordTok{length}\NormalTok{(odl_mile))}
   \ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \KeywordTok{seq_along}\NormalTok{(odl_mile)) \{}
 \NormalTok{    odl_km[[i]] =}\StringTok{ }\NormalTok{odl_mile[[i]] }\OperatorTok{*}\StringTok{ }\FloatTok{1.609}
@@ -6475,24 +6512,62 @@ Często dodanie języka C++ do pakietu R ma na celu przyspieszenie pewnych wymag
 \end{Highlighting}
 \end{Shaded}
 
+Ta sama funkcja w języku C++ może wyglądać w ten sposób:
+
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{rcpp_fun =}\StringTok{ "List mi_do_km3(List odl_mile)\{}
+\NormalTok{rcpp_fun2 =}\StringTok{ "List mile_na_km_cpp(List odl_mile)\{}
 \StringTok{  int odl_mile_len = odl_mile.size();}
 \StringTok{  List result(odl_mile_len);}
 \StringTok{  for (int i = 0; i < odl_mile_len; i++)\{}
 \StringTok{    result[i] = odl_mile[i] * 1.609;}
 \StringTok{  \}}
-\StringTok{  return(result);}
+\StringTok{  return result;}
 \StringTok{\}"}
-\NormalTok{Rcpp}\OperatorTok{::}\KeywordTok{cppFunction}\NormalTok{(rcpp_fun)}
+\end{Highlighting}
+\end{Shaded}
+
+Zawiera ona szereg różnic od kodu R.
+Oprócz definicji typów, używania średnika i operatora \texttt{return}, widać tutaj także inną metodę wywołania funkcji oraz inny sposób definiowania pętli \texttt{for}.
+
+Zadaniem linii \texttt{int\ odl\_mile\_len\ =\ odl\_mile.size();} jest stworzenie nowej zmiennej skalarnej (\texttt{odl\_mile\_len}) o typie integer (\texttt{int}).
+Ta nowa zmienna jest wynikiem działania funkcji \texttt{size()}, która jest odpowiednikiem używanej w R \texttt{length()}.
+W przypadku używania R wywołanie funkcji ma jednak postać, w której podajemy nazwę funkcji, a następnie w nawiasie okrągłym obiekt wejściowy.
+C++ pozwala też na inny sposób wywoływania funkcji - używając wbudowanych metod.
+Odbywa się to poprzez podanie nazwy obiektu (\texttt{odl\_mile}), a następnie po kropce (\texttt{.}) podania nazwy funkcji (\texttt{size()}).
+
+W C++ pętle można definiować używając poniższej składni:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ControlFlowTok{for}\NormalTok{ (inicjalizacja zmiennej; warunek zakończenia; aktualizacja zmiennej) \{}
+  \CommentTok{// Kod do wykonania}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Po pierwsze należy przekazać w miejscu \texttt{inicjalizacja\ zmiennej} stworzenie zmiennej, na podstawie której będzie oparta pętla.
+\texttt{int\ i\ =\ 0} oznacza, że tworzymy zmienną o typie integer \texttt{i}, która przyjmuje wartość 0.
+Jest to spowodowane ważną różnicą między C++ a R - w tym pierwszym języku liczenie rozpoczynamy od 0.
+Przykładowo w C++, \texttt{a{[}0{]}} pozwoli na wybranie pierwszego elementu z wektora \texttt{a}.
+Drugim elementem jest \texttt{warunek\ trwania}, czyli określenie do kiedy pęlta trwa.
+\texttt{i\ \textless{}\ odl\_mile\_len} oznacza, że pętla będzie działała tak długo aż \texttt{i} będzie mniejsze niż \texttt{odl\_mile\_len}.
+Ostatni element, \texttt{aktualizacja\ zmiennej}, mówi co ma się stać ze stworzoną zmienną po każdym przebiegu pętli.
+\texttt{i++} to skrót w języku C++ mówiący, że z każdą pętlą wartość \texttt{i} będzie rosła o 1.
+Jest to odpowiednik kodu \texttt{i\ =\ i\ +\ 1}.
+
+W powyższej składni też widać sposób definiowania komentarzy w języku C++ używając operatora \texttt{//}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Rcpp}\OperatorTok{::}\KeywordTok{cppFunction}\NormalTok{(rcpp_fun2)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{odl_mile =}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DecValTok{142}\NormalTok{, }\DecValTok{63}\NormalTok{, }\DecValTok{121}\NormalTok{)}
-\KeywordTok{mi_do_km3}\NormalTok{(odl_mile)}
+\KeywordTok{mile_na_km_cpp}\NormalTok{(odl_mile)}
 \CommentTok{#> [[1]]}
 \CommentTok{#> [1] 228}
 \CommentTok{#> }
@@ -6508,21 +6583,22 @@ Często dodanie języka C++ do pakietu R ma na celu przyspieszenie pewnych wymag
 \begin{Highlighting}[]
 \NormalTok{odl_mile2 =}\StringTok{ }\KeywordTok{as.list}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\DecValTok{10000}\NormalTok{)}
 \NormalTok{wynik =}\StringTok{ }\NormalTok{bench}\OperatorTok{::}\KeywordTok{mark}\NormalTok{(}
-  \KeywordTok{mi_do_km2}\NormalTok{(odl_mile2),}
-  \KeywordTok{mi_do_km3}\NormalTok{(odl_mile2)}
+  \KeywordTok{mile_na_km}\NormalTok{(odl_mile2),}
+  \KeywordTok{mile_na_km_cpp}\NormalTok{(odl_mile2)}
 \NormalTok{)}
 \NormalTok{wynik}
 \CommentTok{#> # A tibble: 2 x 6}
-\CommentTok{#>   expression             min median `itr/sec` mem_alloc}
-\CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km2(odl_mile2) 720us  763us     1264.   599.2KB}
-\CommentTok{#> 2 mi_do_km3(odl_mile2) 384us  419us     2383.    85.9KB}
-\CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
+\CommentTok{#>   expression                  min median `itr/sec`}
+\CommentTok{#>   <bch:expr>                <bch> <bch:>     <dbl>}
+\CommentTok{#> 1 mile_na_km(odl_mile2)     741us  776us     1251.}
+\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 389us  437us     2265.}
+\CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
+\CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{cpp-1}{%
-\subsection{.cpp}\label{cpp-1}}
+\hypertarget{sourceCpp}{%
+\subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}
 
 \begin{Shaded}
 \begin{Highlighting}[]

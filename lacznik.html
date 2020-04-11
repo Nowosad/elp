@@ -270,9 +270,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="12" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>12</b> Łącznik</a><ul>
 <li class="chapter" data-level="12.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>12.1</b> C++</a><ul>
-<li class="chapter" data-level="12.1.1" data-path="lacznik.html"><a href="lacznik.html#evalcpp"><i class="fa fa-check"></i><b>12.1.1</b> evalCpp</a></li>
-<li class="chapter" data-level="12.1.2" data-path="lacznik.html"><a href="lacznik.html#cppfunction"><i class="fa fa-check"></i><b>12.1.2</b> cppFunction</a></li>
-<li class="chapter" data-level="12.1.3" data-path="lacznik.html"><a href="lacznik.html#cpp-1"><i class="fa fa-check"></i><b>12.1.3</b> .cpp</a></li>
+<li class="chapter" data-level="12.1.1" data-path="lacznik.html"><a href="lacznik.html#cppFunction"><i class="fa fa-check"></i><b>12.1.1</b> Wywoływanie kodu C++ wewnątrz skryptu R</a></li>
+<li class="chapter" data-level="12.1.2" data-path="lacznik.html"><a href="lacznik.html#sourceCpp"><i class="fa fa-check"></i><b>12.1.2</b> Wywoływanie kodu z plików .cpp</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="lacznik.html"><a href="lacznik.html#python"><i class="fa fa-check"></i><b>12.2</b> Python</a></li>
 <li class="chapter" data-level="12.3" data-path="lacznik.html"><a href="lacznik.html#powloka-systemowa"><i class="fa fa-check"></i><b>12.3</b> Powłoka systemowa</a></li>
@@ -356,7 +355,7 @@ W tym rozdziale skupimy się jednak na przykładach łączenia R z innymi, popul
 <h2><span class="header-section-number">12.1</span> C++</h2>
 <p>C++ jest jednym z najczęściej używanych kompilowanych języków programowania. Jest to spowodowane kilkoma zaletami tego języka, w tym jego wysoką wydajnością, niezależnością od konkretnej platformy systemowej, czy uniwersalnością.</p>
 <p>Język C++ posiada zarówno wiele podobnych do R konstrukcji i koncepcji, ale też różni się w pewnych kluczowych koncepcjach.
-Najważniejsze cechy C++, które wyróżniają go od R warto znać na początku:</p>
+Najważniejsze cechy C++, które wyróżniają go od R i które warto znać na początku:</p>
 <ul>
 <li>Jest językiem kompilowanym</li>
 <li>Pozwala na używanie tylko <code>=</code> jako operatora przypisania</li>
@@ -394,83 +393,123 @@ W R użycie funkcji <code>return()</code> było opcjonalne.</li>
 Często dodanie języka C++ do pakietu R ma na celu przyspieszenie pewnych wymagających obliczeniowo zadań.</p>
 <div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb325-1" data-line-number="1"><span class="kw">library</span>(Rcpp)</a></code></pre></div>
 <!-- https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-introduction.pdf  -->
-<div id="evalcpp" class="section level3">
-<h3><span class="header-section-number">12.1.1</span> evalCpp</h3>
-<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb326-1" data-line-number="1"><span class="kw">evalCpp</span>(<span class="st">&#39;&#39;</span>)</a></code></pre></div>
+<p>Pakiet <strong>Rcpp</strong> pozwala na zarówno wywoływanie kodu C++ wewnątrz skryptów R (sekcja <a href="lacznik.html#cppFunction">12.1.1</a>), jak używając zewnętrznych plików o rozszerzeniu <code>.cpp</code> (sekcja <a href="lacznik.html#sourceCpp">12.1.2</a>).</p>
+<div id="cppFunction" class="section level3">
+<h3><span class="header-section-number">12.1.1</span> Wywoływanie kodu C++ wewnątrz skryptu R</h3>
+<p>W przypadku krótkich fragmentów kodu C++ możliwe jest umieszczenie ich wewnątrz skryptu R jako obiekt tekstowy.
+Poniższej stworzono nowy obiekt <code>rcpp_fun1</code>, który zawiera wcześniejszą funkcję C++.</p>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb326-1" data-line-number="1">rcpp_fun1 =<span class="st"> &quot;</span></a>
+<a class="sourceLine" id="cb326-2" data-line-number="2"><span class="st">double konwersja_temp_cpp(double temperatura_f){</span></a>
+<a class="sourceLine" id="cb326-3" data-line-number="3"><span class="st">  double temperatura_c = (temperatura_f - 32) / 1.8;</span></a>
+<a class="sourceLine" id="cb326-4" data-line-number="4"><span class="st">  return temperatura_c;</span></a>
+<a class="sourceLine" id="cb326-5" data-line-number="5"><span class="st">}</span></a>
+<a class="sourceLine" id="cb326-6" data-line-number="6"><span class="st">&quot;</span></a></code></pre></div>
+<p>W kolejnym kroku konieczne jest skompilowanie powyższego kodu i stworzenie połączenia pomiędzy nim a R za pomocą funkcji <code>cppFunction()</code>.</p>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb327-1" data-line-number="1"><span class="kw">cppFunction</span>(rcpp_fun1)</a></code></pre></div>
+<p>Od tego momentu możliwe jest korzystanie z funkcji <code>konwersja_temp_cpp()</code>.
+Możemy sprawdzić jej działanie poprzez podanie wybranej przez nas wartości, na przykład <code>75</code>.</p>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb328-1" data-line-number="1"><span class="kw">konwersja_temp_cpp</span>(<span class="dv">75</span>)</a>
+<a class="sourceLine" id="cb328-2" data-line-number="2"><span class="co">#&gt; [1] 23.9</span></a></code></pre></div>
+<p>Warto jednak nadal pamiętać, że powyższa funkcja nie jest zwektoryzowana - możliwe jest podanie w niej tylko obiektu o długości 1.
+W przypadku zadeklarowania dłuższego obiektu wejściowego otrzymamy błąd:</p>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb329-1" data-line-number="1"><span class="kw">konwersja_temp_cpp</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">75</span>, <span class="dv">110</span>))</a>
+<a class="sourceLine" id="cb329-2" data-line-number="2"><span class="co">#&gt; Error in konwersja_temp_cpp(c(0, 75, 110)): Expecting a single value: [extent=3].</span></a></code></pre></div>
+<p>W sekcji <a href="petle.html#zastosowanie-w-funkcjach">8.1.3</a> stworzyliśmy funkcję <code>mile_na_km()</code>, która przyjmuje i zwraca obiekt o klasie lista i zamienia wartości elementów tej listy z mil lądowych na kilometry.</p>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb330-1" data-line-number="1">mile_na_km =<span class="st"> </span><span class="cf">function</span>(odl_mile) {</a>
+<a class="sourceLine" id="cb330-2" data-line-number="2">  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))</a>
+<a class="sourceLine" id="cb330-3" data-line-number="3">  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {</a>
+<a class="sourceLine" id="cb330-4" data-line-number="4">    odl_km[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span></a>
+<a class="sourceLine" id="cb330-5" data-line-number="5">  }</a>
+<a class="sourceLine" id="cb330-6" data-line-number="6">  odl_km</a>
+<a class="sourceLine" id="cb330-7" data-line-number="7">}</a></code></pre></div>
+<p>Ta sama funkcja w języku C++ może wyglądać w ten sposób:</p>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb331-1" data-line-number="1">rcpp_fun2 =<span class="st"> &quot;List mile_na_km_cpp(List odl_mile){</span></a>
+<a class="sourceLine" id="cb331-2" data-line-number="2"><span class="st">  int odl_mile_len = odl_mile.size();</span></a>
+<a class="sourceLine" id="cb331-3" data-line-number="3"><span class="st">  List result(odl_mile_len);</span></a>
+<a class="sourceLine" id="cb331-4" data-line-number="4"><span class="st">  for (int i = 0; i &lt; odl_mile_len; i++){</span></a>
+<a class="sourceLine" id="cb331-5" data-line-number="5"><span class="st">    result[i] = odl_mile[i] * 1.609;</span></a>
+<a class="sourceLine" id="cb331-6" data-line-number="6"><span class="st">  }</span></a>
+<a class="sourceLine" id="cb331-7" data-line-number="7"><span class="st">  return result;</span></a>
+<a class="sourceLine" id="cb331-8" data-line-number="8"><span class="st">}&quot;</span></a></code></pre></div>
+<p>Zawiera ona szereg różnic od kodu R.
+Oprócz definicji typów, używania średnika i operatora <code>return</code>, widać tutaj także inną metodę wywołania funkcji oraz inny sposób definiowania pętli <code>for</code>.</p>
+<p>Zadaniem linii <code>int odl_mile_len = odl_mile.size();</code> jest stworzenie nowej zmiennej skalarnej (<code>odl_mile_len</code>) o typie integer (<code>int</code>).
+Ta nowa zmienna jest wynikiem działania funkcji <code>size()</code>, która jest odpowiednikiem używanej w R <code>length()</code>.
+W przypadku używania R wywołanie funkcji ma jednak postać, w której podajemy nazwę funkcji, a następnie w nawiasie okrągłym obiekt wejściowy.
+C++ pozwala też na inny sposób wywoływania funkcji - używając wbudowanych metod.
+Odbywa się to poprzez podanie nazwy obiektu (<code>odl_mile</code>), a następnie po kropce (<code>.</code>) podania nazwy funkcji (<code>size()</code>).</p>
+<p>W C++ pętle można definiować używając poniższej składni:</p>
+<div class="sourceCode" id="cb332"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb332-1" data-line-number="1"><span class="cf">for</span> (inicjalizacja zmiennej; warunek zakończenia; aktualizacja zmiennej) {</a>
+<a class="sourceLine" id="cb332-2" data-line-number="2">  <span class="co">// Kod do wykonania</span></a>
+<a class="sourceLine" id="cb332-3" data-line-number="3">}</a></code></pre></div>
+<p>Po pierwsze należy przekazać w miejscu <code>inicjalizacja zmiennej</code> stworzenie zmiennej, na podstawie której będzie oparta pętla.
+<code>int i = 0</code> oznacza, że tworzymy zmienną o typie integer <code>i</code>, która przyjmuje wartość 0.
+Jest to spowodowane ważną różnicą między C++ a R - w tym pierwszym języku liczenie rozpoczynamy od 0.
+Przykładowo w C++, <code>a[0]</code> pozwoli na wybranie pierwszego elementu z wektora <code>a</code>.
+Drugim elementem jest <code>warunek trwania</code>, czyli określenie do kiedy pęlta trwa.
+<code>i &lt; odl_mile_len</code> oznacza, że pętla będzie działała tak długo aż <code>i</code> będzie mniejsze niż <code>odl_mile_len</code>.
+Ostatni element, <code>aktualizacja zmiennej</code>, mówi co ma się stać ze stworzoną zmienną po każdym przebiegu pętli.
+<code>i++</code> to skrót w języku C++ mówiący, że z każdą pętlą wartość <code>i</code> będzie rosła o 1.
+Jest to odpowiednik kodu <code>i = i + 1</code>.</p>
+<p>W powyższej składni też widać sposób definiowania komentarzy w języku C++ używając operatora <code>//</code>.</p>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb333-1" data-line-number="1">Rcpp<span class="op">::</span><span class="kw">cppFunction</span>(rcpp_fun2)</a></code></pre></div>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb334-1" data-line-number="1">odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</a>
+<a class="sourceLine" id="cb334-2" data-line-number="2"><span class="kw">mile_na_km_cpp</span>(odl_mile)</a>
+<a class="sourceLine" id="cb334-3" data-line-number="3"><span class="co">#&gt; [[1]]</span></a>
+<a class="sourceLine" id="cb334-4" data-line-number="4"><span class="co">#&gt; [1] 228</span></a>
+<a class="sourceLine" id="cb334-5" data-line-number="5"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb334-6" data-line-number="6"><span class="co">#&gt; [[2]]</span></a>
+<a class="sourceLine" id="cb334-7" data-line-number="7"><span class="co">#&gt; [1] 101</span></a>
+<a class="sourceLine" id="cb334-8" data-line-number="8"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb334-9" data-line-number="9"><span class="co">#&gt; [[3]]</span></a>
+<a class="sourceLine" id="cb334-10" data-line-number="10"><span class="co">#&gt; [1] 195</span></a></code></pre></div>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb335-1" data-line-number="1">odl_mile2 =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10000</span>)</a>
+<a class="sourceLine" id="cb335-2" data-line-number="2">wynik =<span class="st"> </span>bench<span class="op">::</span><span class="kw">mark</span>(</a>
+<a class="sourceLine" id="cb335-3" data-line-number="3">  <span class="kw">mile_na_km</span>(odl_mile2),</a>
+<a class="sourceLine" id="cb335-4" data-line-number="4">  <span class="kw">mile_na_km_cpp</span>(odl_mile2)</a>
+<a class="sourceLine" id="cb335-5" data-line-number="5">)</a>
+<a class="sourceLine" id="cb335-6" data-line-number="6">wynik</a>
+<a class="sourceLine" id="cb335-7" data-line-number="7"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
+<a class="sourceLine" id="cb335-8" data-line-number="8"><span class="co">#&gt;   expression                  min median `itr/sec`</span></a>
+<a class="sourceLine" id="cb335-9" data-line-number="9"><span class="co">#&gt;   &lt;bch:expr&gt;                &lt;bch&gt; &lt;bch:&gt;     &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb335-10" data-line-number="10"><span class="co">#&gt; 1 mile_na_km(odl_mile2)     742µs  782µs     1242.</span></a>
+<a class="sourceLine" id="cb335-11" data-line-number="11"><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2) 393µs  427µs     2329.</span></a>
+<a class="sourceLine" id="cb335-12" data-line-number="12"><span class="co">#&gt; # … with 2 more variables: mem_alloc &lt;bch:byt&gt;,</span></a>
+<a class="sourceLine" id="cb335-13" data-line-number="13"><span class="co">#&gt; #   `gc/sec` &lt;dbl&gt;</span></a></code></pre></div>
 </div>
-<div id="cppfunction" class="section level3">
-<h3><span class="header-section-number">12.1.2</span> cppFunction</h3>
-<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb327-1" data-line-number="1">mi_do_km2 =<span class="st"> </span><span class="cf">function</span>(odl_mile){</a>
-<a class="sourceLine" id="cb327-2" data-line-number="2">  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))</a>
-<a class="sourceLine" id="cb327-3" data-line-number="3">  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {</a>
-<a class="sourceLine" id="cb327-4" data-line-number="4">    odl_km[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span></a>
-<a class="sourceLine" id="cb327-5" data-line-number="5">  }</a>
-<a class="sourceLine" id="cb327-6" data-line-number="6">  odl_km</a>
-<a class="sourceLine" id="cb327-7" data-line-number="7">}</a></code></pre></div>
-<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb328-1" data-line-number="1">rcpp_fun =<span class="st"> &quot;List mi_do_km3(List odl_mile){</span></a>
-<a class="sourceLine" id="cb328-2" data-line-number="2"><span class="st">  int odl_mile_len = odl_mile.size();</span></a>
-<a class="sourceLine" id="cb328-3" data-line-number="3"><span class="st">  List result(odl_mile_len);</span></a>
-<a class="sourceLine" id="cb328-4" data-line-number="4"><span class="st">  for (int i = 0; i &lt; odl_mile_len; i++){</span></a>
-<a class="sourceLine" id="cb328-5" data-line-number="5"><span class="st">    result[i] = odl_mile[i] * 1.609;</span></a>
-<a class="sourceLine" id="cb328-6" data-line-number="6"><span class="st">  }</span></a>
-<a class="sourceLine" id="cb328-7" data-line-number="7"><span class="st">  return(result);</span></a>
-<a class="sourceLine" id="cb328-8" data-line-number="8"><span class="st">}&quot;</span></a>
-<a class="sourceLine" id="cb328-9" data-line-number="9">Rcpp<span class="op">::</span><span class="kw">cppFunction</span>(rcpp_fun)</a></code></pre></div>
-<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb329-1" data-line-number="1">odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</a>
-<a class="sourceLine" id="cb329-2" data-line-number="2"><span class="kw">mi_do_km3</span>(odl_mile)</a>
-<a class="sourceLine" id="cb329-3" data-line-number="3"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb329-4" data-line-number="4"><span class="co">#&gt; [1] 228</span></a>
-<a class="sourceLine" id="cb329-5" data-line-number="5"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb329-6" data-line-number="6"><span class="co">#&gt; [[2]]</span></a>
-<a class="sourceLine" id="cb329-7" data-line-number="7"><span class="co">#&gt; [1] 101</span></a>
-<a class="sourceLine" id="cb329-8" data-line-number="8"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb329-9" data-line-number="9"><span class="co">#&gt; [[3]]</span></a>
-<a class="sourceLine" id="cb329-10" data-line-number="10"><span class="co">#&gt; [1] 195</span></a></code></pre></div>
-<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb330-1" data-line-number="1">odl_mile2 =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10000</span>)</a>
-<a class="sourceLine" id="cb330-2" data-line-number="2">wynik =<span class="st"> </span>bench<span class="op">::</span><span class="kw">mark</span>(</a>
-<a class="sourceLine" id="cb330-3" data-line-number="3">  <span class="kw">mi_do_km2</span>(odl_mile2),</a>
-<a class="sourceLine" id="cb330-4" data-line-number="4">  <span class="kw">mi_do_km3</span>(odl_mile2)</a>
-<a class="sourceLine" id="cb330-5" data-line-number="5">)</a>
-<a class="sourceLine" id="cb330-6" data-line-number="6">wynik</a>
-<a class="sourceLine" id="cb330-7" data-line-number="7"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
-<a class="sourceLine" id="cb330-8" data-line-number="8"><span class="co">#&gt;   expression             min median `itr/sec` mem_alloc</span></a>
-<a class="sourceLine" id="cb330-9" data-line-number="9"><span class="co">#&gt;   &lt;bch:expr&gt;           &lt;bch&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span></a>
-<a class="sourceLine" id="cb330-10" data-line-number="10"><span class="co">#&gt; 1 mi_do_km2(odl_mile2) 720µs  759µs     1278.   599.2KB</span></a>
-<a class="sourceLine" id="cb330-11" data-line-number="11"><span class="co">#&gt; 2 mi_do_km3(odl_mile2) 390µs  435µs     2293.    85.9KB</span></a>
-<a class="sourceLine" id="cb330-12" data-line-number="12"><span class="co">#&gt; # … with 1 more variable: `gc/sec` &lt;dbl&gt;</span></a></code></pre></div>
-</div>
-<div id="cpp-1" class="section level3">
-<h3><span class="header-section-number">12.1.3</span> .cpp</h3>
+<div id="sourceCpp" class="section level3">
+<h3><span class="header-section-number">12.1.2</span> Wywoływanie kodu z plików .cpp</h3>
+<!--  -->
 <!-- ref to \@ref(tworzenie-pakietow) -->
 <!-- header file -->
-<div class="sourceCode" id="cb331"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb331-1" data-line-number="1"><span class="pp">#include </span><span class="im">&lt;Rcpp.h&gt;</span></a></code></pre></div>
-<div class="sourceCode" id="cb332"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb332-1" data-line-number="1"><span class="kw">using</span> <span class="kw">namespace</span> Rcpp;</a></code></pre></div>
-<div class="sourceCode" id="cb333"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb333-1" data-line-number="1"><span class="co">// [[Rcpp::export]]</span></a></code></pre></div>
+<div class="sourceCode" id="cb336"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb336-1" data-line-number="1"><span class="pp">#include </span><span class="im">&lt;Rcpp.h&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb337"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb337-1" data-line-number="1"><span class="kw">using</span> <span class="kw">namespace</span> Rcpp;</a></code></pre></div>
+<div class="sourceCode" id="cb338"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb338-1" data-line-number="1"><span class="co">// [[Rcpp::export]]</span></a></code></pre></div>
 <!-- internal vs exported functions -->
-<div class="sourceCode" id="cb334"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb334-1" data-line-number="1"><span class="pp">#include </span><span class="im">&lt;Rcpp.h&gt;</span></a>
-<a class="sourceLine" id="cb334-2" data-line-number="2"><span class="kw">using</span> <span class="kw">namespace</span> Rcpp;</a>
-<a class="sourceLine" id="cb334-3" data-line-number="3"><span class="co">// [[Rcpp::export]]</span></a>
-<a class="sourceLine" id="cb334-4" data-line-number="4">List mi_do_km3(List odl_mile){</a>
-<a class="sourceLine" id="cb334-5" data-line-number="5">  <span class="dt">int</span> odl_mile_len = odl_mile.size();</a>
-<a class="sourceLine" id="cb334-6" data-line-number="6">  List result(odl_mile_len);</a>
-<a class="sourceLine" id="cb334-7" data-line-number="7">  <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; odl_mile_len; i++){</a>
-<a class="sourceLine" id="cb334-8" data-line-number="8">    result[i] = odl_mile[i] * <span class="fl">1.609</span>;</a>
-<a class="sourceLine" id="cb334-9" data-line-number="9">  }</a>
-<a class="sourceLine" id="cb334-10" data-line-number="10">  <span class="cf">return</span>(result);</a>
-<a class="sourceLine" id="cb334-11" data-line-number="11">}</a></code></pre></div>
-<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb335-1" data-line-number="1"><span class="kw">library</span>(Rcpp)</a>
-<a class="sourceLine" id="cb335-2" data-line-number="2"><span class="kw">sourceCpp</span>(<span class="st">&quot;mi_do_km3.cpp&quot;</span>)</a>
-<a class="sourceLine" id="cb335-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb335-4" data-line-number="4">odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</a>
-<a class="sourceLine" id="cb335-5" data-line-number="5"><span class="kw">mi_do_km3</span>(odl_mile)</a>
-<a class="sourceLine" id="cb335-6" data-line-number="6"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb335-7" data-line-number="7"><span class="co">#&gt; [1] 228</span></a>
-<a class="sourceLine" id="cb335-8" data-line-number="8"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb335-9" data-line-number="9"><span class="co">#&gt; [[2]]</span></a>
-<a class="sourceLine" id="cb335-10" data-line-number="10"><span class="co">#&gt; [1] 101</span></a>
-<a class="sourceLine" id="cb335-11" data-line-number="11"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb335-12" data-line-number="12"><span class="co">#&gt; [[3]]</span></a>
-<a class="sourceLine" id="cb335-13" data-line-number="13"><span class="co">#&gt; [1] 195</span></a></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb339-1" data-line-number="1"><span class="pp">#include </span><span class="im">&lt;Rcpp.h&gt;</span></a>
+<a class="sourceLine" id="cb339-2" data-line-number="2"><span class="kw">using</span> <span class="kw">namespace</span> Rcpp;</a>
+<a class="sourceLine" id="cb339-3" data-line-number="3"><span class="co">// [[Rcpp::export]]</span></a>
+<a class="sourceLine" id="cb339-4" data-line-number="4">List mi_do_km3(List odl_mile){</a>
+<a class="sourceLine" id="cb339-5" data-line-number="5">  <span class="dt">int</span> odl_mile_len = odl_mile.size();</a>
+<a class="sourceLine" id="cb339-6" data-line-number="6">  List result(odl_mile_len);</a>
+<a class="sourceLine" id="cb339-7" data-line-number="7">  <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; odl_mile_len; i++){</a>
+<a class="sourceLine" id="cb339-8" data-line-number="8">    result[i] = odl_mile[i] * <span class="fl">1.609</span>;</a>
+<a class="sourceLine" id="cb339-9" data-line-number="9">  }</a>
+<a class="sourceLine" id="cb339-10" data-line-number="10">  <span class="cf">return</span>(result);</a>
+<a class="sourceLine" id="cb339-11" data-line-number="11">}</a></code></pre></div>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb340-1" data-line-number="1"><span class="kw">library</span>(Rcpp)</a>
+<a class="sourceLine" id="cb340-2" data-line-number="2"><span class="kw">sourceCpp</span>(<span class="st">&quot;mi_do_km3.cpp&quot;</span>)</a>
+<a class="sourceLine" id="cb340-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb340-4" data-line-number="4">odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</a>
+<a class="sourceLine" id="cb340-5" data-line-number="5"><span class="kw">mi_do_km3</span>(odl_mile)</a>
+<a class="sourceLine" id="cb340-6" data-line-number="6"><span class="co">#&gt; [[1]]</span></a>
+<a class="sourceLine" id="cb340-7" data-line-number="7"><span class="co">#&gt; [1] 228</span></a>
+<a class="sourceLine" id="cb340-8" data-line-number="8"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb340-9" data-line-number="9"><span class="co">#&gt; [[2]]</span></a>
+<a class="sourceLine" id="cb340-10" data-line-number="10"><span class="co">#&gt; [1] 101</span></a>
+<a class="sourceLine" id="cb340-11" data-line-number="11"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb340-12" data-line-number="12"><span class="co">#&gt; [[3]]</span></a>
+<a class="sourceLine" id="cb340-13" data-line-number="13"><span class="co">#&gt; [1] 195</span></a></code></pre></div>
 <!-- note - packages -->
 <!-- indexing starts at 0 -->
 <!-- https://adv-r.hadley.nz/rcpp.html -->
@@ -482,7 +521,7 @@ Często dodanie języka C++ do pakietu R ma na celu przyspieszenie pewnych wymag
 <h2><span class="header-section-number">12.2</span> Python</h2>
 <!-- reticulate -->
 <p><span class="citation">(Ushey, Allaire, and Tang <a href="#ref-R-reticulate">2019</a>)</span></p>
-<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb336-1" data-line-number="1"><span class="kw">library</span>(reticulate)</a></code></pre></div>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb341-1" data-line-number="1"><span class="kw">library</span>(reticulate)</a></code></pre></div>
 <!-- setting Python version -->
 <!-- four types of connections with Python -->
 <!-- Type Conversions -->
