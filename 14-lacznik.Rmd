@@ -63,13 +63,42 @@ library(Rcpp)
 
 <!-- https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-introduction.pdf  -->
 
-### evalCpp
+Pakiet **Rcpp** pozwala na zarówno wywoływanie kodu C++ wewnątrz skryptów R (sekcja \@ref(cppFunction)), jak używając zewnętrznych plików o rozszerzeniu `.cpp` (sekcja \@ref(sourceCpp)).
 
-```{r, eval=FALSE}
-evalCpp('')
+### Wywoływanie kodu C++ wewnątrz skryptu R {#cppFunction}
+
+W przypadku krótkich fragmentów kodu C++ możliwe jest umieszczenie ich wewnątrz skryptu R jako obiekt tekstowy.
+Poniższej stworzono nowy obiekt `rcpp_fun1`, który zawiera wcześniejszą funkcję C++.
+
+```{r}
+rcpp_fun1 = "
+double konwersja_temp_cpp(double temperatura_f){
+  double temperatura_c = (temperatura_f - 32) / 1.8;
+  return temperatura_c;
+}
+"
 ```
 
-### cppFunction
+W kolejnym kroku konieczne jest skompilowanie powyższego kodu i stworzenie połączenia pomiędzy nim a R za pomocą funkcji `cppFunction()`.
+
+```{r}
+cppFunction(rcpp_fun1)
+```
+
+Od tego momentu możliwe jest korzystanie z funkcji `konwersja_temp_cpp()`.
+Możemy sprawdzić jej działanie poprzez podanie wybranej przez nas wartości, na przykład `75`.
+
+```{r}
+konwersja_temp_cpp(75)
+```
+
+Warto jednak nadal pamiętać, że powyższa funkcja nie jest zwektoryzowana - możliwe jest podanie w niej tylko obiektu o długości 1.
+W przypadku zadeklarowania dłuższego obiektu wejściowego otrzymamy błąd:
+
+```{r, error=TRUE}
+konwersja_temp_cpp(c(0, 75, 110))
+```
+
 
 ```{r}
 mi_do_km2 = function(odl_mile){
@@ -107,8 +136,11 @@ wynik = bench::mark(
 wynik
 ```
 
-### .cpp
 
+
+### Wywoływanie kodu z plików .cpp {#sourceCpp}
+
+<!--  -->
 <!-- ref to \@ref(tworzenie-pakietow) -->
 
 <!-- header file -->
