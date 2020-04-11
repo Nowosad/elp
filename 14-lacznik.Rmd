@@ -2,9 +2,14 @@
 
 <!-- intro o r jako jezyku laczacym inne -->
 <!-- intro o innych łącznikach -->
+R ma bezpośrednio wbudowane mechanizmy łączenia kodu R z kodem napisanym w językach C i Fortan.
+W tym rozdziale skupimy się jednak na przykładach łączenia R z innymi,  popularniejszymi współcześnie językami programowania C++ i Pythonem (sekcje \@ref(cpp) i \@ref(python)) oraz z systemową linią komend (sekcja \@ref(powloka-systemowa)).
+
 <!-- rust, java, javascript, ?? -->
 
-## C++
+## C++ {#cpp}
+
+
 
 <!-- Rcpp -->
 <!-- intro to Cpp -->
@@ -131,7 +136,7 @@ library(reticulate)
 
 https://rstudio.github.io/reticulate/
 
-## Unix commands
+## Powłoka systemowa {#powloka-systemowa}
 
 
 <!-- https://stackoverflow.com/questions/48605776/difference-between-system-and-system2-in-r-capture-file-names-in-variable -->
