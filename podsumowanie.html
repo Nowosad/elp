@@ -24,7 +24,7 @@
 <meta name="author" content="Jakub Nowosad" />
 
 
-<meta name="date" content="2020-04-07" />
+<meta name="date" content="2020-04-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -382,7 +382,7 @@ Domyślnie, gdy użytkownik poda wartości numeryczne dla argumentów <code>x</c
 Jej zachowanie i wynik będzie jednak inne w zależności od tego jakiej klasy będzie obiekt wejściowy, przykładowo inaczej wyświetlony zostanie model liniowy, efekt grupowania hierarchicznego, czy też wynik testu statystycznego.
 <!-- (więcej na temat metod można przeczytać w sekcji \@ref(inne-klasy) oraz \@ref(oop)) --></p>
 <p>Oprócz wbudowanych <!--uproszczenie--> w R funkcji graficznych, istnieje też szereg dodatkowych pakietów służących do wizualizacji danych.
-Wśród nich najpopularniejszym jest <strong>ggplot2</strong> <span class="citation">(Wickham, Chang, et al. <a href="#ref-R-ggplot2">2019</a>)</span>.
+Wśród nich najpopularniejszym jest <strong>ggplot2</strong> <span class="citation">(Wickham, Chang, et al. <a href="#ref-R-ggplot2">2020</a>)</span>.
 Ten pakiet jest implementacją założeń zawartych w książce Grammar of Graphics <span class="citation">(Wilkinson <a href="#ref-wilkinsonGrammarGraphics2005">2005</a>)</span><!--moremoremore-->.
 Główną funkcją tego pakietu jest <code>ggplot()</code>, która przyjmuje dane wejściowe w postaci ramki danych.
 Wewnątrz tej funkcji następuje wywołanie kolejnej funkcji <code>aes</code>, gdzie definiowane są kolejne kolumny, które mają być wyświetlone na osiach wykresów oraz określają kolor, kształt, wielkość i inne elementy.
@@ -406,11 +406,11 @@ Dodatkowo, ramka danych, jeden z podstawowych obiektów w R, może być utożsam
 Ta forma obiektu, złożonego z kolumn (zmienne) i wierszy (obserwacje), jest reprezentacją, która uławia czyszczenie, przetwarzanie i analizowanie danych.</p>
 <p>Inną przyczyną popularności R do analizy danych jest grupa pakietów zbiorczo określana jako <em>tidyverse</em>.
 Jest to spójny zbiór pakietów pozwalających na wykonywanie kolejnych czynności analizy danych.
-Na samym początku obejmuje to pakiety poświęcone wczytywaniu danych w różnych formatach, w tym poznane w rozdziale <a href="io.html#io">9</a> pakiety <strong>readr</strong> <span class="citation">(Wickham, Hester, and Francois <a href="#ref-R-readr">2018</a>)</span> oraz <strong>readxl</strong> <span class="citation">(Wickham and Bryan <a href="#ref-R-readxl">2019</a><a href="#ref-R-readxl">a</a>)</span>.
+Na samym początku obejmuje to pakiety poświęcone wczytywaniu danych w różnych formatach, w tym poznane w rozdziale <a href="io.html#io">9</a> pakiety <strong>readr</strong> <span class="citation">(Wickham, Hester, and Francois <a href="#ref-R-readr">2018</a>)</span> oraz <strong>readxl</strong> <span class="citation">(Wickham and Bryan <a href="#ref-R-readxl">2019</a>)</span>.
 Kolejnym krokiem jest porządkowanie danych, polegające, na przykład, na zmianie struktury ramki danych gdzie wartości jakiejś zmiennej stają się nazwami kolumn.
-W tym etapie można użyć pakiet <strong>tidyr</strong> <span class="citation">(Wickham and Henry <a href="#ref-R-tidyr">2019</a>)</span>.</p>
-<p>Dane w odpowiedniej postaci można następnie przetwarzać, np. tworzyć nowe zmienne na postawie przeliczania już istniejących czy też wyliczać ich podsumowania używając pakietu <strong>dplyr</strong> <span class="citation">(Wickham, François, et al. <a href="#ref-R-dplyr">2019</a>)</span>.
-Tak przetworzone dane następnie są często wizualizowane używając pakietu <strong>ggplot2</strong> <span class="citation">(Wickham, Chang, et al. <a href="#ref-R-ggplot2">2019</a>)</span> lub też w ich oparciu budowane są <a href="https://github.com/tidymodels/tidymodels">modele</a>.
+W tym etapie można użyć pakiet <strong>tidyr</strong> <span class="citation">(Wickham and Henry <a href="#ref-R-tidyr">2020</a>)</span>.</p>
+<p>Dane w odpowiedniej postaci można następnie przetwarzać, np. tworzyć nowe zmienne na postawie przeliczania już istniejących czy też wyliczać ich podsumowania używając pakietu <strong>dplyr</strong> <span class="citation">(Wickham, François, et al. <a href="#ref-R-dplyr">2020</a>)</span>.
+Tak przetworzone dane następnie są często wizualizowane używając pakietu <strong>ggplot2</strong> <span class="citation">(Wickham, Chang, et al. <a href="#ref-R-ggplot2">2020</a>)</span> lub też w ich oparciu budowane są <a href="https://github.com/tidymodels/tidymodels">modele</a>.
 Ma to na celu zrozumienie posiadanych danych oraz zależności czy zjawisk które opisują.</p>
 <!-- FIG? -->
 <p>W ramach grupy pakietów <strong>tidyverse</strong> często stosuje się operator <code>%&gt;%</code> (ang. <em>pipe</em>) z pakietu <strong>magrittr</strong> <span class="citation">(Bache and Wickham <a href="#ref-R-magrittr">2014</a>)</span>.
@@ -479,7 +479,7 @@ Większość pakietów R jest otwartoźródłowych - ich kod jest dostępny onli
 Kod pakietów R można, między innymi, znaleźć w serwisie GitHub.
 Wszystkie pakiety znajdujące się w repozytorium CRAN można znaleźć pod adresem <a href="https://github.com/cran" class="uri">https://github.com/cran</a>.
 Inną możliwością jest samodzielne wyszukanie kodu pakietu używając wyszukiwarki GitHub - <a href="https://github.com/search" class="uri">https://github.com/search</a>.</p>
-<p>Przykładowo, pod adresem <a href="https://github.com/karthik/wesanderson" class="uri">https://github.com/karthik/wesanderson</a> znajduje się kod źródłowy pakietu <strong>wesanderson</strong> <span class="citation">(Ram and Wickham <a href="#ref-R-wesanderson">2018</a>)</span>.
+<p>Przykładowo, pod adresem <a href="https://github.com/karthik/wesanderson" class="uri">https://github.com/karthik/wesanderson</a> znajduje się kod źródłowy pakietu <strong>wesanderson</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-wesanderson"><strong>???</strong></span>)</span>.
 Ten pakiet zawiera funkcje tworzące palety kolorystyczne inspirowane filmami reżysera <a href="https://en.wikipedia.org/wiki/Wes_Anderson">Wesa Andersona</a>.
 Kod R będący podstawą działania tego pakietu znajduje się w folderze <code>R/</code><a href="#fn67" class="footnote-ref" id="fnref67"><sup>67</sup></a>.
 Dodatkowo, niektóre pakietu zawierają kod z innych języków programowania (np. C lub C++), który wymaga wcześniejszej kompilacji.
@@ -505,7 +505,7 @@ Wśród nich można wyróżnić znajomość linii komend i jej możliwości <spa
 <p>Innym kierunkiem działań może być nauka kolejnego języka programowania - najlepiej takiego, którego główne zastosowanie różni się od R.
 Może to być przykładowo język kompilowany, taki jak C, C++ lub Rust, którego efektem będzie bardziej wydajny<!--...--> program.
 Co ważne, kod napisany w tych językach można łączyć z kodem R.
-R posiada wbudowany interfejs do używania kodu napisanego w C (rozdział 5 z dokumentacji <a href="https://cran.r-project.org/doc/manuals/R-exts.html#System-and-foreign-language-interfaces">Writing R Extensions</a> <span class="citation">(R Core Team <a href="#ref-team1999writing">2019</a><a href="#ref-team1999writing">b</a>)</span>), łączenie kodu napisanego w C++ ułatwia znacząco pakiet <strong>Rcpp</strong> (<span class="citation">Eddelbuettel et al. (<a href="#ref-R-Rcpp">2019</a>)</span>; więcej informacji w rozdziale <a href="https://adv-r.hadley.nz/rcpp.html">“Rewriting R code in C++”</a> książki Advanced R <span class="citation">(Wickham <a href="#ref-wickham2014advanced">2014</a>)</span>), a wskazówki dotyczące łączenia kodu Rust można znaleźć w repozytorium <a href="https://github.com/r-rust/hellorust" class="uri">https://github.com/r-rust/hellorust</a>.
+R posiada wbudowany interfejs do używania kodu napisanego w C (rozdział 5 z dokumentacji <a href="https://cran.r-project.org/doc/manuals/R-exts.html#System-and-foreign-language-interfaces">Writing R Extensions</a> <span class="citation">(R Core Team <a href="#ref-team1999writing">2019</a>)</span>), łączenie kodu napisanego w C++ ułatwia znacząco pakiet <strong>Rcpp</strong> (<span class="citation">Eddelbuettel et al. (<a href="#ref-R-Rcpp">2020</a>)</span>; więcej informacji w rozdziale <a href="https://adv-r.hadley.nz/rcpp.html">“Rewriting R code in C++”</a> książki Advanced R <span class="citation">(Wickham <a href="#ref-wickham2014advanced">2014</a>)</span>), a wskazówki dotyczące łączenia kodu Rust można znaleźć w repozytorium <a href="https://github.com/r-rust/hellorust" class="uri">https://github.com/r-rust/hellorust</a>.
 W efekcie użytkownik może korzystać z interaktywności R, wykonując dowolne linie kodu, ale część z nich może używać wydajniejszych funkcji napisanych w językach kompilowanych.
 Alternatywną drogą może być nauka języków używanych do tworzenia i rozwijania aplikacji internetowych, w tym JavaScript czy PHP.</p>
 <p>Pomimo już znaczącej historii, języki programowania nadal mają wiele nowego do zaoferowania.
@@ -538,7 +538,7 @@ Języki programowania są też stosowane coraz częściej w wielu codzienne u�
 <p>Cormen, Thomas H, Charles E Leiserson, Ronald L Rivest, and Clifford Stein. 2009. <em>Introduction to Algorithms</em>. MIT press.</p>
 </div>
 <div id="ref-R-Rcpp">
-<p>Eddelbuettel, Dirk, Romain Francois, JJ Allaire, Kevin Ushey, Qiang Kou, Nathan Russell, Douglas Bates, and John Chambers. 2019. <em>Rcpp: Seamless R and C++ Integration</em>. <a href="https://CRAN.R-project.org/package=Rcpp" class="uri">https://CRAN.R-project.org/package=Rcpp</a>.</p>
+<p>Eddelbuettel, Dirk, Romain Francois, JJ Allaire, Kevin Ushey, Qiang Kou, Nathan Russell, Douglas Bates, and John Chambers. 2020. <em>Rcpp: Seamless R and C++ Integration</em>. <a href="https://CRAN.R-project.org/package=Rcpp" class="uri">https://CRAN.R-project.org/package=Rcpp</a>.</p>
 </div>
 <div id="ref-forta2013sams">
 <p>Forta, Ben. 2013. <em>Sams Teach Yourself SQL in 10 Minutes</em>. Pearson Education.</p>
@@ -549,11 +549,8 @@ Języki programowania są też stosowane coraz częściej w wielu codzienne u�
 <div id="ref-lovelace2019geocomputation">
 <p>Lovelace, R, J Nowosad, and J Muenchow. 2019. <em>Geocomputation with R</em>. Chapman and Hall/CRC Press.</p>
 </div>
-<div id="ref-R-wesanderson">
-<p>Ram, Karthik, and Hadley Wickham. 2018. <em>Wesanderson: A Wes Anderson Palette Generator</em>. <a href="https://CRAN.R-project.org/package=wesanderson" class="uri">https://CRAN.R-project.org/package=wesanderson</a>.</p>
-</div>
 <div id="ref-team1999writing">
-<p>R Core Team. 2019b. <em>Writing R Extensions</em>. R Foundation for Statistical Computing.</p>
+<p>R Core Team. 2019. <em>Writing R Extensions</em>. R Foundation for Statistical Computing.</p>
 </div>
 <div id="ref-032157351X">
 <p>Sedgewick, Robert, and Kevin Wayne. 2011. <em>Algorithms (4th Edition)</em>. Addison-Wesley Professional.</p>
@@ -565,19 +562,19 @@ Języki programowania są też stosowane coraz częściej w wielu codzienne u�
 <p>Wickham, Hadley. 2014. <em>Advanced R</em>. Chapman and Hall/CRC.</p>
 </div>
 <div id="ref-R-readxl">
-<p>Wickham, Hadley, and Jennifer Bryan. 2019a. <em>Readxl: Read Excel Files</em>. <a href="https://CRAN.R-project.org/package=readxl" class="uri">https://CRAN.R-project.org/package=readxl</a>.</p>
+<p>Wickham, Hadley, and Jennifer Bryan. 2019. <em>Readxl: Read Excel Files</em>. <a href="https://CRAN.R-project.org/package=readxl" class="uri">https://CRAN.R-project.org/package=readxl</a>.</p>
 </div>
 <div id="ref-R-ggplot2">
-<p>Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, and Hiroaki Yutani. 2019. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>.</p>
+<p>Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey Dunnington. 2020. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2" class="uri">https://CRAN.R-project.org/package=ggplot2</a>.</p>
 </div>
 <div id="ref-R-dplyr">
-<p>Wickham, Hadley, Romain François, Lionel Henry, and Kirill Müller. 2019. <em>Dplyr: A Grammar of Data Manipulation</em>. <a href="https://CRAN.R-project.org/package=dplyr" class="uri">https://CRAN.R-project.org/package=dplyr</a>.</p>
+<p>Wickham, Hadley, Romain François, Lionel Henry, and Kirill Müller. 2020. <em>Dplyr: A Grammar of Data Manipulation</em>.</p>
 </div>
 <div id="ref-wickham2016r">
 <p>Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. &quot; O’Reilly Media, Inc.&quot;.</p>
 </div>
 <div id="ref-R-tidyr">
-<p>Wickham, Hadley, and Lionel Henry. 2019. <em>Tidyr: Easily Tidy Data with ’Spread()’ and ’Gather()’ Functions</em>.</p>
+<p>Wickham, Hadley, and Lionel Henry. 2020. <em>Tidyr: Tidy Messy Data</em>. <a href="https://CRAN.R-project.org/package=tidyr" class="uri">https://CRAN.R-project.org/package=tidyr</a>.</p>
 </div>
 <div id="ref-R-readr">
 <p>Wickham, Hadley, Jim Hester, and Romain Francois. 2018. <em>Readr: Read Rectangular Text Data</em>. <a href="https://CRAN.R-project.org/package=readr" class="uri">https://CRAN.R-project.org/package=readr</a>.</p>
