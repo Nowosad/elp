@@ -113,7 +113,7 @@ mile_na_km = function(odl_mile) {
 
 Ta sama funkcja w języku C++ może wyglądać w ten sposób:
 
-```{Rcpp}
+```{Rcpp, eval = FALSE}
 List mile_na_km_cpp(List odl_mile){
   int odl_mile_len = odl_mile.size();
   List result(odl_mile_len);
@@ -151,7 +151,9 @@ Ostatni element, `aktualizacja zmiennej`, mówi co ma się stać ze stworzoną z
 `i++` to skrót w języku C++ mówiący, że z każdą pętlą wartość `i` będzie rosła o 1.
 Jest to odpowiednik kodu `i = i + 1`.
 
-W powyższej składni też widać sposób definiowania komentarzy w języku C++ używając operatora `//`.
+W powyższej składni też widać sposób definiowania komentarzy w języku C++, gdzie używa się operatora `//`.
+
+Zainicjujmy funkcję C++ `mile_na_km_cpp()` używając `cppFunction()`.
 
 ```{r}
 rcpp_fun2 = "List mile_na_km_cpp(List odl_mile){
@@ -162,16 +164,17 @@ rcpp_fun2 = "List mile_na_km_cpp(List odl_mile){
   }
   return result;
 }"
+cppFunction(rcpp_fun2)
 ```
 
-```{r}
-Rcpp::cppFunction(rcpp_fun2)
-```
+Możemy sprawdzić jej działanie na przykładowym wektore `odl_mile` używając kodu poniżej.
 
 ```{r}
 odl_mile = list(142, 63, 121)
 mile_na_km_cpp(odl_mile)
 ```
+
+Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy o długości `r length(as.list(0:10000))` i funkcji `mark()` z pakietu **bench**.
 
 ```{r}
 odl_mile2 = as.list(0:10000)
@@ -182,7 +185,7 @@ wynik = bench::mark(
 wynik
 ```
 
-
+Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około `r round(as.numeric(wynik["median"][[1]][1] / wynik["median"][[1]][2]), 2)` raza mniejszy.
 
 ### Wywoływanie kodu z plików .cpp {#sourceCpp}
 
