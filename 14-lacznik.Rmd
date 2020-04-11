@@ -269,18 +269,26 @@ https://rstudio.github.io/reticulate/
 
 ## Powłoka systemowa {#powloka-systemowa}
 
+Współcześnie kontaktujemy się z komputerami najczęściej używając przeróżnych  interfejsów graficznych poprzez kliknięcia myszką czy naciśnięcia klawiatury. 
+Jednocześnie większość systemów operacyjnych posiada swoje powłoki systemowe (ang. *shell*).
+Pełnią one rolę pośrednika pomiędzy systemem operacyjnym a użytkownikiem i pozwalają one uruchamiać programy, sterować nimi poprzez wprowadzanie poleceń, czy zwracać wyniki ich działania.
+
+R pozwala na łączenie się z powłoką systemową używając funkcji `system2()`^[W R istnieje również funkcja `system()`, która jest mniej uniwersalna niż `system2()` i różni się od niej składnią].
+
+```{r}
+system2("ls")
+```
+
 
 <!-- https://stackoverflow.com/questions/48605776/difference-between-system-and-system2-in-r-capture-file-names-in-variable -->
 <!-- https://stackoverflow.com/questions/5745886/r-and-system-calls -->
 <!-- https://tomaztsql.wordpress.com/2020/01/06/working-with-system-commands-in-r/ -->
 <!-- https://joongsup.rbind.io/post/2018/02/05/run-system-commands-or-shell-sripts-from-an-interactive-r-session/ -->
 
-<!-- grep -->
-<!-- cat -->
-<!-- find -->
-<!-- head/tail -->
-<!-- awk -->
-<!-- man -->
+```{r, eval=FALSE}
+system("moj_bash_skrypt.sh")
+```
+
 
 <!-- https://github.com/microsoft/terminal -->
 <!-- http://www.makoweabc.pl/2009/12/os-x-terminal-jak-go-uruchomic-krok-po-kroku/ -->
