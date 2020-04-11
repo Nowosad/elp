@@ -22,7 +22,8 @@ install:
   - R -e "install.packages('testthat')"
   - R -e "install.packages('ggplot2')"
   - R -e "install.packages('reticulate')"
-  - R -e "tinytex::install_tinytex()"
+  - R -e "tinytex::reinstall_tinytex()"
+  #- R -e "tinytex::install_tinytex()"
 
 script:
   - make both
