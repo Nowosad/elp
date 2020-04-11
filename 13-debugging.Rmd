@@ -1,6 +1,20 @@
 # Debugowanie {#debugging}
 
-Debugowanie (ang. *debugging*) to proces rozwiązywania problemów i błędów w oprogramowaniu.
+Używając pakietów i funkcji stworzonych przez inne osoby możemy czasem znaleźć się w sytuacji, gdy zamiast wyniku otrzymujemy komunikat błędu.
+Warto wówczas upewnić się czy nie napisaliśmy żadnej literówki i podaliśmy odpowiednie argumenty funkcji.
+Konieczne kolejne kroki mogą obejmować sprawdzenie pliku pomocy danej funkcji, czy też skopiowanie najważniejszego fragmentu błędu i wklejenie go do wyszukiwarki internetowej. 
+Isnieje szansa, że ktoś już wcześniej napotkał ten problem, zadał pytanie i otrzymał na nie odpowiedź w internecie (np, na https://stackoverflow.com/).
+
+Czasem się może jednak okazać, że odkryliśmy nowy problem - warto go wtedy zgłosić do twórców pakietu.
+Wiele pakietów na platformie CRAN zawiera sekcję *BugReports*, gdzie można znaleźć link do zgłaszania błędów.
+Przykładowo, pakiet **stringr** jest opisany pod adresem https://cran.r-project.org/package=stringr i w jego sekcji *BugReports* znajduje się odnośnik do https://github.com/tidyverse/stringr/issues.
+W przypadku zgłaszania błędów zazwyczaj nie należy pisać bardzo długich opisów czy wklejać cały kod, który został napisany.
+Konieczne jest natomiast przygotowanie powtarzalnego przykładu (ang. *reproducible example*), czyli minimalnego kodu możliwego do odtworzenia problemu na innym komputerze (sekcja \@ref(reprex)).
+Warto jednak pamiętać, że sekcja *Issue* na platformie Github służy głównie do zgłaszania problemów, a nie do zadawania pytań.
+W przypadku potrzeby zadania pytania, lepszym pomysłem jest opublikowanie go na https://stackoverflow.com/,
+
+Tworzenie kodu możliwego do odtworzenia problemu (powtarzalnych przykładów) jest też pomocne w przypadku, gdy my piszemy nowe skrypty i funkcje i napotkamy na błędy.
+Jest to często część debugowania (ang. *debugging*) - procesu rozwiązywania problemów i błędów w oprogramowaniu.
 Istnieje wiele potencjalnych taktyk debugowania kodu, w tym debugowanie używając funkcji print, czy też debugowanie interaktywne.
 
 <!-- Reprodukcja błędu -->
@@ -108,10 +122,7 @@ W efekcie otrzymujemy nie tylko kod użyty do obliczeń, ale również wynikową
 - [Get help!](https://www.tidyverse.org/help/#reprex)
 
 
-<!-- proces: -->
-<!-- 1. szukaj błędu - ktoś inny - google + stackoverflow -->
-<!-- 2. reprex -> stackoverflow -->
-<!-- 3. debug -> find an error -->
+
 
 <!-- 4. fix an error and add tests  -->
 
