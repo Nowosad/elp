@@ -138,13 +138,11 @@ Często odbywa się to poprzez wykonanie wcześniej stworzony testów jednostkow
 ## Podstawowe podejście do debugowania {#debuging-print}
 
 Klasycznym podejściem do debugowania jest dodanie funkcji `print()` pokazującej wartości obiektów w okolicy potencjalnego źródła błędu.
+Dalej warto zaplanować jakie testy kodu wykonać, aby wyłapać dokładne miejsce wystąpnienia błędu.
+Trzeba też zapisywać potencjalne wyniki.
+Takie systematyczne podejście może zaoszczędzić dużo czasu w porównaniu do losowego testowania różnych wartości w kodzie.
 
-
-A first approach to debug a program is to add print statements around where you have detected the problem, and keep iterating until you have extracted enough information to understand what is responsible for the issue.
-
-<!-- `print()`, `cat()` - small objects -->
-<!-- `str()` - large object trunct -->
-<!-- test values -->
+Oprócz funkcji można też wykorzystać funkcję `cat()` w przypadku małych obiektów lub funkcję `str()` w przypadku większych obiektów.
 
 <!-- `traceback()` - bottom to top -->
 
