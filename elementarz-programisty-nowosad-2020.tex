@@ -6212,7 +6212,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.426   0.000   0.426}
+\CommentTok{#>   0.432   0.000   0.432}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6271,8 +6271,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression               min median `itr/sec`}
 \CommentTok{#>   <bch:expr>          <bch:tm> <bch:>     <dbl>}
-\CommentTok{#> 1 mi_do_km1(odl_mile)   1.27us  1.4us   615828.}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 905.01ns 1.02us   921207.}
+\CommentTok{#> 1 mi_do_km1(odl_mile)   1.31us 1.48us   577581.}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 944.01ns 1.05us   886075.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
@@ -6316,14 +6316,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 387ms  387ms      2.59     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 743us  780us   1153.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 394ms  399ms      2.51     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 762us  797us   1104.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.59 operacji na sekundę, przy aż 1152.86 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.51 operacji na sekundę, przy aż 1104.34 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zadania-10}{%
@@ -6608,14 +6608,14 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression                  min median `itr/sec`}
 \CommentTok{#>   <bch:expr>                <bch> <bch:>     <dbl>}
-\CommentTok{#> 1 mile_na_km(odl_mile2)     738us  771us     1260.}
-\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 404us  433us     2296.}
+\CommentTok{#> 1 mile_na_km(odl_mile2)     744us  787us     1233.}
+\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 409us  437us     2266.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
-Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.78 raza mniejszy.
+Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.8 raza mniejszy.
 
 \hypertarget{sourceCpp}{%
 \subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}
@@ -6711,6 +6711,22 @@ Teraz też możliwe jest jego sprawdzenie na przykładowym obiekcie:
 
 \hypertarget{powloka-systemowa}{%
 \section{Powłoka systemowa}\label{powloka-systemowa}}
+
+Współcześnie kontaktujemy się z komputerami najczęściej używając przeróżnych interfejsów graficznych poprzez kliknięcia myszką czy naciśnięcia klawiatury.
+Jednocześnie większość systemów operacyjnych posiada swoje powłoki systemowe (ang. \emph{shell}).
+Pełnią one rolę pośrednika pomiędzy systemem operacyjnym a użytkownikiem i pozwalają one uruchamiać programy, sterować nimi poprzez wprowadzanie poleceń, czy zwracać wyniki ich działania.
+
+R pozwala na łączenie się z powłoką systemową używając funkcji \texttt{system2()}\footnote{W R istnieje również funkcja \texttt{system()}, która jest mniej uniwersalna niż \texttt{system2()} i różni się od niej składnią}.
+W ten sposób możliwe jest zarówno wywoływanie poleceń wbudowanych w powłokę systemową, uruchomianie skryptów powłoki systemowej (np. \texttt{system2("moj\_bash\_skrypt.sh")}), czy też zewnętrznych aplikacji (w taki sposób pakiet \textbf{rgrass7} \citep{R-rgrass7} łączy się z programem \href{https://grass.osgeo.org/}{GRASS GIS}).
+
+Przykładowo, w systemach opartych o UNIX polecenie \texttt{wc} pozwoli na określenie liczby wyrazów w wybranym pliku.
+Używając \texttt{system2()} oraz polecenia \texttt{wc} możemy sprawdzić ile wyrazów znajduje się w tym rozdziale książki.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{system2}\NormalTok{(}\StringTok{"wc"}\NormalTok{, }\DataTypeTok{args =} \StringTok{"-l 14-lacznik.Rmd"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{zadania-11}{%
 \section{Zadania}\label{zadania-11}}

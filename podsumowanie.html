@@ -357,27 +357,27 @@ Celem tego rozdziału jest wskazanie co można zrobić dalej na podstawie uzyska
 <h2><span class="header-section-number">15.1</span> Grafika</h2>
 <p>Jedną z najczęściej wymienianych zalet R są jego rozbudowane narzędzia do tworzenia wykresów.
 Możemy to zobaczyć na poniższym przykładzie danych meteorologicznych dla Poznania i Zakopanego z roku 2017.</p>
-<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb371-1" data-line-number="1">met =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv&quot;</span>,</a>
-<a class="sourceLine" id="cb371-2" data-line-number="2">             <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb371-3" data-line-number="3"><span class="kw">head</span>(met)</a>
-<a class="sourceLine" id="cb371-4" data-line-number="4"><span class="co">#&gt;   kod_stacji nazwa_stacji  rok miesiac dzien tavg</span></a>
-<a class="sourceLine" id="cb371-5" data-line-number="5"><span class="co">#&gt; 1  352160330       POZNAŃ 2017       1     1  1.4</span></a>
-<a class="sourceLine" id="cb371-6" data-line-number="6"><span class="co">#&gt; 2  352160330       POZNAŃ 2017       1     2  0.1</span></a>
-<a class="sourceLine" id="cb371-7" data-line-number="7"><span class="co">#&gt; 3  352160330       POZNAŃ 2017       1     3  0.5</span></a>
-<a class="sourceLine" id="cb371-8" data-line-number="8"><span class="co">#&gt; 4  352160330       POZNAŃ 2017       1     4  1.5</span></a>
-<a class="sourceLine" id="cb371-9" data-line-number="9"><span class="co">#&gt; 5  352160330       POZNAŃ 2017       1     5 -3.5</span></a>
-<a class="sourceLine" id="cb371-10" data-line-number="10"><span class="co">#&gt; 6  352160330       POZNAŃ 2017       1     6 -8.4</span></a>
-<a class="sourceLine" id="cb371-11" data-line-number="11"><span class="co">#&gt;   precip</span></a>
-<a class="sourceLine" id="cb371-12" data-line-number="12"><span class="co">#&gt; 1    0.0</span></a>
-<a class="sourceLine" id="cb371-13" data-line-number="13"><span class="co">#&gt; 2    0.0</span></a>
-<a class="sourceLine" id="cb371-14" data-line-number="14"><span class="co">#&gt; 3    4.8</span></a>
-<a class="sourceLine" id="cb371-15" data-line-number="15"><span class="co">#&gt; 4    2.3</span></a>
-<a class="sourceLine" id="cb371-16" data-line-number="16"><span class="co">#&gt; 5    0.0</span></a>
-<a class="sourceLine" id="cb371-17" data-line-number="17"><span class="co">#&gt; 6    0.0</span></a></code></pre></div>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb372-1" data-line-number="1">met =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv&quot;</span>,</a>
+<a class="sourceLine" id="cb372-2" data-line-number="2">             <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb372-3" data-line-number="3"><span class="kw">head</span>(met)</a>
+<a class="sourceLine" id="cb372-4" data-line-number="4"><span class="co">#&gt;   kod_stacji nazwa_stacji  rok miesiac dzien tavg</span></a>
+<a class="sourceLine" id="cb372-5" data-line-number="5"><span class="co">#&gt; 1  352160330       POZNAŃ 2017       1     1  1.4</span></a>
+<a class="sourceLine" id="cb372-6" data-line-number="6"><span class="co">#&gt; 2  352160330       POZNAŃ 2017       1     2  0.1</span></a>
+<a class="sourceLine" id="cb372-7" data-line-number="7"><span class="co">#&gt; 3  352160330       POZNAŃ 2017       1     3  0.5</span></a>
+<a class="sourceLine" id="cb372-8" data-line-number="8"><span class="co">#&gt; 4  352160330       POZNAŃ 2017       1     4  1.5</span></a>
+<a class="sourceLine" id="cb372-9" data-line-number="9"><span class="co">#&gt; 5  352160330       POZNAŃ 2017       1     5 -3.5</span></a>
+<a class="sourceLine" id="cb372-10" data-line-number="10"><span class="co">#&gt; 6  352160330       POZNAŃ 2017       1     6 -8.4</span></a>
+<a class="sourceLine" id="cb372-11" data-line-number="11"><span class="co">#&gt;   precip</span></a>
+<a class="sourceLine" id="cb372-12" data-line-number="12"><span class="co">#&gt; 1    0.0</span></a>
+<a class="sourceLine" id="cb372-13" data-line-number="13"><span class="co">#&gt; 2    0.0</span></a>
+<a class="sourceLine" id="cb372-14" data-line-number="14"><span class="co">#&gt; 3    4.8</span></a>
+<a class="sourceLine" id="cb372-15" data-line-number="15"><span class="co">#&gt; 4    2.3</span></a>
+<a class="sourceLine" id="cb372-16" data-line-number="16"><span class="co">#&gt; 5    0.0</span></a>
+<a class="sourceLine" id="cb372-17" data-line-number="17"><span class="co">#&gt; 6    0.0</span></a></code></pre></div>
 <p>Wewnątrz obiektu <code>met</code> znajdują się kolumny <code>tavg</code> (określająca średnią dobową temperaturę powietrza w stopniach Celsjusza) oraz <code>nazwa_stacji</code> (“POZNAŃ” lub “ZAKOPANE”).
 Do porównania wartości temperatury pomiędzy stacjami może posłużyć wykres pudełkowy, stworzony przy pomocy funkcji <code>boxplot()</code> (rycina <a href="podsumowanie.html#fig:plotex">15.1</a>).
-Poniżej zdefiniowano, która zmienna ma zostać zwizualizowana (<code>tavg</code>) w podziale na jakie grupy (<code>nazwa_stacji</code>) z jakiego zbioru danych (<code>met</code>)<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.</p>
-<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb372-1" data-line-number="1"><span class="kw">boxplot</span>(tavg <span class="op">~</span><span class="st"> </span>nazwa_stacji, <span class="dt">data =</span> met)</a></code></pre></div>
+Poniżej zdefiniowano, która zmienna ma zostać zwizualizowana (<code>tavg</code>) w podziale na jakie grupy (<code>nazwa_stacji</code>) z jakiego zbioru danych (<code>met</code>)<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a>.</p>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb373-1" data-line-number="1"><span class="kw">boxplot</span>(tavg <span class="op">~</span><span class="st"> </span>nazwa_stacji, <span class="dt">data =</span> met)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:plotex"></span>
 <img src="31-podsumowanie_files/figure-html/plotex-1.png" alt="Przykład wykresu utworzonego przy pomocy funkcji boxplot()." width="\textwidth" />
 <p class="caption">
@@ -397,8 +397,8 @@ Główną funkcją tego pakietu jest <code>ggplot()</code>, która przyjmuje dan
 Wewnątrz tej funkcji następuje wywołanie kolejnej funkcji <code>aes</code>, gdzie definiowane są kolejne kolumny, które mają być wyświetlone na osiach wykresów oraz określają kolor, kształt, wielkość i inne elementy.
 Kolejnym krokiem jest określenie typu wykresu poprzez połączenie poprzedniej funkcji (używając operatora <code>+</code>) z jedną z wielu funkcji rozpoczynających się od <code>geom_</code>.
 Przykładowo, do stworzenia wykresu pudełkowego służy <code>geom_boxplot()</code> (rycina <a href="podsumowanie.html#fig:ggplotex">15.2</a>).</p>
-<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb373-1" data-line-number="1"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb373-2" data-line-number="2"><span class="kw">ggplot</span>(met, <span class="kw">aes</span>(nazwa_stacji, tavg)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb374-1" data-line-number="1"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb374-2" data-line-number="2"><span class="kw">ggplot</span>(met, <span class="kw">aes</span>(nazwa_stacji, tavg)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>()</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:ggplotex"></span>
 <img src="31-podsumowanie_files/figure-html/ggplotex-1.png" alt="Przykład wykresu utworzonego z użyciem pakietu ggplot2." width="\textwidth" />
 <p class="caption">
@@ -409,7 +409,7 @@ Rycina 15.2: Przykład wykresu utworzonego z użyciem pakietu ggplot2.
 </div>
 <div id="analiza-danych" class="section level2">
 <h2><span class="header-section-number">15.2</span> Analiza danych</h2>
-<p>R jest jednym z języków programowania najczęściej używanych w analizie danych<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a>.
+<p>R jest jednym z języków programowania najczęściej używanych w analizie danych<a href="#fn63" class="footnote-ref" id="fnref63"><sup>63</sup></a>.
 Jest to wynikiem szeregu przyczyn, w tym dużej liczby wbudowanych w R funkcji statystycznych oraz graficznych.
 Dodatkowo, ramka danych, jeden z podstawowych obiektów w R, może być utożsamiany z arkuszem kalkulacyjnym czy tabelą z bazy danych - najpopularniejszych form przechowywania różnorakich danych.
 Ta forma obiektu, złożonego z kolumn (zmienne) i wierszy (obserwacje), jest reprezentacją, która uławia czyszczenie, przetwarzanie i analizowanie danych.</p>
@@ -427,13 +427,13 @@ Pozwala on na łączenie kilku oddzielnych funkcji w jedno zapytanie.
 Działanie tego operatora polega na tym, że wynik jednej działania jednej funkcji staje się automatycznie pierwszym argumentem w kolejnej funkcji (rycina <a href="podsumowanie.html#fig:tidyverse-example">15.3</a>).
 <!-- footnote o wywołaniu funkcji -->
 <!-- KOD? --></p>
-<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb374-1" data-line-number="1"><span class="kw">library</span>(magrittr)</a>
-<a class="sourceLine" id="cb374-2" data-line-number="2">readxl<span class="op">::</span><span class="kw">read_excel</span>(<span class="st">&quot;https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.xlsx&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb374-3" data-line-number="3"><span class="st">  </span>tidyr<span class="op">::</span><span class="kw">gather</span>(<span class="dt">key =</span> <span class="st">&quot;zmienna&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;wartosc&quot;</span>, tavg<span class="op">:</span>precip) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb374-4" data-line-number="4"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">data =</span> <span class="kw">as.Date</span>(<span class="kw">paste</span>(rok, miesiac, dzien, <span class="dt">sep =</span> <span class="st">&quot;-&quot;</span>))) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb374-5" data-line-number="5"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(ggplot2<span class="op">::</span><span class="kw">aes</span>(data, wartosc)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb374-6" data-line-number="6"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">geom_line</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb374-7" data-line-number="7"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">facet_grid</span>(zmienna<span class="op">~</span>nazwa_stacji, <span class="dt">scale =</span> <span class="st">&quot;free_y&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb375-1" data-line-number="1"><span class="kw">library</span>(magrittr)</a>
+<a class="sourceLine" id="cb375-2" data-line-number="2">readxl<span class="op">::</span><span class="kw">read_excel</span>(<span class="st">&quot;https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.xlsx&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb375-3" data-line-number="3"><span class="st">  </span>tidyr<span class="op">::</span><span class="kw">gather</span>(<span class="dt">key =</span> <span class="st">&quot;zmienna&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;wartosc&quot;</span>, tavg<span class="op">:</span>precip) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb375-4" data-line-number="4"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">data =</span> <span class="kw">as.Date</span>(<span class="kw">paste</span>(rok, miesiac, dzien, <span class="dt">sep =</span> <span class="st">&quot;-&quot;</span>))) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb375-5" data-line-number="5"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(ggplot2<span class="op">::</span><span class="kw">aes</span>(data, wartosc)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb375-6" data-line-number="6"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">geom_line</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb375-7" data-line-number="7"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">facet_grid</span>(zmienna<span class="op">~</span>nazwa_stacji, <span class="dt">scale =</span> <span class="st">&quot;free_y&quot;</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:tidyverse-example"></span>
 <img src="images/tidyverse-example.png" alt="Przykład wyniku użycia pakietów z grupy tidyverse." width="\textwidth" />
 <p class="caption">
@@ -444,7 +444,7 @@ Rycina 15.3: Przykład wyniku użycia pakietów z grupy tidyverse.
 <!-- rmarkdown -->
 <p>Zrozumienie zależności czy zjawisk jest bardzo rzadko ostatnim etapem - równie istotne jest przekazanie tych wyników wybranej grupie odbiorców<!--communicate--> w odpowiedni sposób.
 Do tego celu może posłużyć R Markdown (jego podstawy zostały opisane w sekcji <a href="tworzenie-pakietow.html#dokumentacja-pakietu">14.9</a>)
-R Markdown pozwala na tworzenie dokumentów w różnych formatach (html, pdf, docx, itd.), prezentacji, stron internetowych, książek<a href="#fn63" class="footnote-ref" id="fnref63"><sup>63</sup></a> i wiele innych.
+R Markdown pozwala na tworzenie dokumentów w różnych formatach (html, pdf, docx, itd.), prezentacji, stron internetowych, książek<a href="#fn64" class="footnote-ref" id="fnref64"><sup>64</sup></a> i wiele innych.
 Po szczegółowe instrukcje jak używać tego języka warto zajrzeć do książki
 <a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a> <span class="citation">(Xie, Allaire, and Grolemund <a href="#ref-xieMarkdownDefinitiveGuide2018">2018</a>)</span>.</p>
 </div>
@@ -454,18 +454,18 @@ Po szczegółowe instrukcje jak używać tego języka warto zajrzeć do książk
 <!-- ... -->
 W związku z czym, w R istnieje także znacząca liczba pakietów stworzonych do bardziej specjalistycznych i szczegółowych celów.
 Można to zobaczyć przeglądając tzw. <em>task views</em> - listy pakietów zagregowane według podobnej tematyki znajdujące się pod adresem <a href="https://cran.r-project.org/web/views/" class="uri">https://cran.r-project.org/web/views/</a>.
-Obejmuje to bardzo szeroki przekrój tematów - od list poświęconych projektowaniu prób klinicznych, poprzez przetwarzanie języka naturalnego, skończywszy na ekonometrii i analizach finansowych<a href="#fn64" class="footnote-ref" id="fnref64"><sup>64</sup></a>.</p>
+Obejmuje to bardzo szeroki przekrój tematów - od list poświęconych projektowaniu prób klinicznych, poprzez przetwarzanie języka naturalnego, skończywszy na ekonometrii i analizach finansowych<a href="#fn65" class="footnote-ref" id="fnref65"><sup>65</sup></a>.</p>
 <!-- maps -->
 <p>Wśród tych list znajduje się także jedna poświęcona analizie danych przestrzennych.
 Opisuje ona, między innymi, takie pakiety jak <strong>sf</strong>, pozwalający na wczytywanie, przetwarzanie i zapisywanie danych wektorowych czy <strong>tmap</strong> ułatwiający tworzenie map.
 Na poniższym przykładzie następuje dołączenie tych pakietów oraz wczytanie zbioru danych <code>World</code> zawierającego poligony krajów na świecie i podstawowe informacje o nich.
 Dalej następuje dodanie tych danych do wyświetlenia i wybór odwzorowania przestrzennego<!--footnote--> używając funkcji <code>tm_shape()</code>, po czym te dane są wyświetlone w postaci poligonów (funkcja <code>tm_polygons()</code>), gdzie kolory poligonów wynikają z ich wartości w kolumnie <code>life_exp</code> a tytuł legendy jest wybrany przez nas (rycina <a href="podsumowanie.html#fig:tmap-example">15.4</a>).</p>
-<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb375-1" data-line-number="1"><span class="kw">library</span>(sf)</a>
-<a class="sourceLine" id="cb375-2" data-line-number="2"><span class="kw">library</span>(tmap)</a>
-<a class="sourceLine" id="cb375-3" data-line-number="3"><span class="kw">data</span>(World)</a>
-<a class="sourceLine" id="cb375-4" data-line-number="4"><span class="kw">tm_shape</span>(World, <span class="dt">projection =</span> <span class="st">&quot;robin&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb375-5" data-line-number="5"><span class="st">    </span><span class="kw">tm_polygons</span>(<span class="dt">col =</span> <span class="st">&quot;life_exp&quot;</span>, </a>
-<a class="sourceLine" id="cb375-6" data-line-number="6">                <span class="dt">title =</span> <span class="st">&quot;Oczekiwana dalsza </span><span class="ch">\n</span><span class="st">długość życia&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb376-1" data-line-number="1"><span class="kw">library</span>(sf)</a>
+<a class="sourceLine" id="cb376-2" data-line-number="2"><span class="kw">library</span>(tmap)</a>
+<a class="sourceLine" id="cb376-3" data-line-number="3"><span class="kw">data</span>(World)</a>
+<a class="sourceLine" id="cb376-4" data-line-number="4"><span class="kw">tm_shape</span>(World, <span class="dt">projection =</span> <span class="st">&quot;robin&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb376-5" data-line-number="5"><span class="st">    </span><span class="kw">tm_polygons</span>(<span class="dt">col =</span> <span class="st">&quot;life_exp&quot;</span>, </a>
+<a class="sourceLine" id="cb376-6" data-line-number="6">                <span class="dt">title =</span> <span class="st">&quot;Oczekiwana dalsza </span><span class="ch">\n</span><span class="st">długość życia&quot;</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:tmap-example"></span>
 <img src="images/tmap-example.png" alt="Przykład działania pakietu tmap." width="\textwidth" />
 <p class="caption">
@@ -483,14 +483,14 @@ Nauka języka programowania przebiega wówczas naturalnie - wraz ze znaleziskiem
 <!-- tidy eval -->
 <!-- how to keep up-to-date--></p>
 <p>Często jednak, nie jesteśmy w stanie stwierdzić czy ten sposób rozwiązania jest optymalny, lub też napotykamy sytuacje w których nie wiemy jak się do nich odnieść.
-Wówczas szczególnie istotna jest inna umiejętność - czytania kodu innych osób<a href="#fn65" class="footnote-ref" id="fnref65"><sup>65</sup></a>.
-Większość pakietów R jest otwartoźródłowych - ich kod jest dostępny online i każda chętna osoba ma do niego dostęp<a href="#fn66" class="footnote-ref" id="fnref66"><sup>66</sup></a>.
+Wówczas szczególnie istotna jest inna umiejętność - czytania kodu innych osób<a href="#fn66" class="footnote-ref" id="fnref66"><sup>66</sup></a>.
+Większość pakietów R jest otwartoźródłowych - ich kod jest dostępny online i każda chętna osoba ma do niego dostęp<a href="#fn67" class="footnote-ref" id="fnref67"><sup>67</sup></a>.
 Kod pakietów R można, między innymi, znaleźć w serwisie GitHub.
 Wszystkie pakiety znajdujące się w repozytorium CRAN można znaleźć pod adresem <a href="https://github.com/cran" class="uri">https://github.com/cran</a>.
 Inną możliwością jest samodzielne wyszukanie kodu pakietu używając wyszukiwarki GitHub - <a href="https://github.com/search" class="uri">https://github.com/search</a>.</p>
 <p>Przykładowo, pod adresem <a href="https://github.com/karthik/wesanderson" class="uri">https://github.com/karthik/wesanderson</a> znajduje się kod źródłowy pakietu <strong>wesanderson</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R-wesanderson"><strong>???</strong></span>)</span>.
 Ten pakiet zawiera funkcje tworzące palety kolorystyczne inspirowane filmami reżysera <a href="https://en.wikipedia.org/wiki/Wes_Anderson">Wesa Andersona</a>.
-Kod R będący podstawą działania tego pakietu znajduje się w folderze <code>R/</code><a href="#fn67" class="footnote-ref" id="fnref67"><sup>67</sup></a>.
+Kod R będący podstawą działania tego pakietu znajduje się w folderze <code>R/</code><a href="#fn68" class="footnote-ref" id="fnref68"><sup>68</sup></a>.
 Dodatkowo, niektóre pakietu zawierają kod z innych języków programowania (np. C lub C++), który wymaga wcześniejszej kompilacji.
 Taki kod znajduje się w folderze <code>src/</code>.</p>
 </div>
@@ -501,7 +501,7 @@ Obejmuje to też wiele innych czynności, takich jak stosowanie optymalnych algo
 Istnieje wiele książek poświęconych kwestii algorytmów, wśród których najbardziej popularne to Introduction to Algorithms <span class="citation">(Cormen et al. <a href="#ref-cormen2009introduction">2009</a>)</span>, The Algorithm Design Manual <span class="citation">(Skiena <a href="#ref-skienaAlgorithmDesignManual2008">2008</a>)</span> czy Algorithms <span class="citation">(Sedgewick and Wayne <a href="#ref-032157351X">2011</a>)</span>.
 Podstawowym narzędziem programistycznym jest program do pisania kodu.
 Może to być zarówno prosty edytor tekstu, taki jak <a href="https://notepad-plus-plus.org/">Notepad++</a>, <a href="https://www.sublimetext.com/">Sublime Text</a>, lub <a href="https://atom.io/">Atom</a> czy też bardziej złożone zintegrowane środowisko programistyczne (IDE).
-O ile narzędzia z tej pierwszej grupy są uniwersalne to w przypadku wyboru IDE warto zdecydować się na zintegrowane środowisko programistyczne odpowiednie dla używanego języka programowania<a href="#fn68" class="footnote-ref" id="fnref68"><sup>68</sup></a>.</p>
+O ile narzędzia z tej pierwszej grupy są uniwersalne to w przypadku wyboru IDE warto zdecydować się na zintegrowane środowisko programistyczne odpowiednie dla używanego języka programowania<a href="#fn69" class="footnote-ref" id="fnref69"><sup>69</sup></a>.</p>
 <p>Programowanie często obejmuje pracę w zespole.
 Wówczas jednym ze sposobów dbania o jakość tworzonego produktu może być inspekcja kodu (ang. <em>code review</em>).
 Polega ona na tym, że zmiany naniesione w kodzie są przekazywane innej osobie, która sprawdza go pod kątem błędów, spójności, stylu, zgodności z istniejącymi rozwiązaniami, itd.
@@ -597,14 +597,14 @@ Języki programowania są też stosowane coraz częściej w wielu codzienne u�
 </div>
 <div class="footnotes">
 <hr />
-<ol start="61">
-<li id="fn61"><p>Kod <code>tavg ~ nazwa_stacji</code> można inaczej odczytać jako <code>tavg</code> w zależności od <code>nazwa_stacji</code>.<a href="podsumowanie.html#fnref61" class="footnote-back">↩</a></p></li>
-<li id="fn62"><p>Analiza danych często jest określana również jako <a href="https://en.wikipedia.org/wiki/Data_science">data science</a>.<a href="podsumowanie.html#fnref62" class="footnote-back">↩</a></p></li>
-<li id="fn63"><p>Ta książka również powstała używająć R Markdown.<a href="podsumowanie.html#fnref63" class="footnote-back">↩</a></p></li>
-<li id="fn64"><p>Dodatkowo istnieje specjalne repozytorium Bioconductor poświęcone pakietom R dotyczącym zagadnień bioinformatycznych.<a href="podsumowanie.html#fnref64" class="footnote-back">↩</a></p></li>
-<li id="fn65"><p>Read the Source, Luke.<a href="podsumowanie.html#fnref65" class="footnote-back">↩</a></p></li>
-<li id="fn67"><p>Szczególnie <code>R/colors.R</code>.<a href="podsumowanie.html#fnref67" class="footnote-back">↩</a></p></li>
-<li id="fn68"><p><a href="https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments" class="uri">https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments</a><a href="podsumowanie.html#fnref68" class="footnote-back">↩</a></p></li>
+<ol start="62">
+<li id="fn62"><p>Kod <code>tavg ~ nazwa_stacji</code> można inaczej odczytać jako <code>tavg</code> w zależności od <code>nazwa_stacji</code>.<a href="podsumowanie.html#fnref62" class="footnote-back">↩</a></p></li>
+<li id="fn63"><p>Analiza danych często jest określana również jako <a href="https://en.wikipedia.org/wiki/Data_science">data science</a>.<a href="podsumowanie.html#fnref63" class="footnote-back">↩</a></p></li>
+<li id="fn64"><p>Ta książka również powstała używająć R Markdown.<a href="podsumowanie.html#fnref64" class="footnote-back">↩</a></p></li>
+<li id="fn65"><p>Dodatkowo istnieje specjalne repozytorium Bioconductor poświęcone pakietom R dotyczącym zagadnień bioinformatycznych.<a href="podsumowanie.html#fnref65" class="footnote-back">↩</a></p></li>
+<li id="fn66"><p>Read the Source, Luke.<a href="podsumowanie.html#fnref66" class="footnote-back">↩</a></p></li>
+<li id="fn68"><p>Szczególnie <code>R/colors.R</code>.<a href="podsumowanie.html#fnref68" class="footnote-back">↩</a></p></li>
+<li id="fn69"><p><a href="https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments" class="uri">https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments</a><a href="podsumowanie.html#fnref69" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

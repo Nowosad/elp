@@ -213,13 +213,13 @@ wynik
 #> # A tibble: 2 x 6
 #>   expression                  min median `itr/sec`
 #>   <bch:expr>                <bch> <bch:>     <dbl>
-#> 1 mile_na_km(odl_mile2)     740µs  769µs     1266.
-#> 2 mile_na_km_cpp(odl_mile2) 402µs  431µs     2307.
+#> 1 mile_na_km(odl_mile2)     756µs  794µs     1221.
+#> 2 mile_na_km_cpp(odl_mile2) 404µs  437µs     2259.
 #> # … with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 ```
 
-Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.78 raza mniejszy.
+Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.82 raza mniejszy.
 
 ### Wywoływanie kodu z plików .cpp {#sourceCpp}
 
@@ -314,23 +314,25 @@ https://rstudio.github.io/reticulate/
 
 ## Powłoka systemowa {#powloka-systemowa}
 
+Współcześnie kontaktujemy się z komputerami najczęściej używając przeróżnych  interfejsów graficznych poprzez kliknięcia myszką czy naciśnięcia klawiatury. 
+Jednocześnie większość systemów operacyjnych posiada swoje powłoki systemowe (ang. *shell*).
+Pełnią one rolę pośrednika pomiędzy systemem operacyjnym a użytkownikiem i pozwalają one uruchamiać programy, sterować nimi poprzez wprowadzanie poleceń, czy zwracać wyniki ich działania.
+
+R pozwala na łączenie się z powłoką systemową używając funkcji `system2()`^[W R istnieje również funkcja `system()`, która jest mniej uniwersalna niż `system2()` i różni się od niej składnią].
+W ten sposób możliwe jest zarówno wywoływanie poleceń wbudowanych w powłokę systemową, uruchomianie skryptów powłoki systemowej (np. `system2("moj_bash_skrypt.sh")`), czy też zewnętrznych aplikacji (w taki sposób pakiet **rgrass7** [@R-rgrass7] łączy się z programem [GRASS GIS](https://grass.osgeo.org/)).
+
+Przykładowo, w systemach opartych o UNIX polecenie `wc` pozwoli na określenie liczby wyrazów w wybranym pliku.
+Używając `system2()` oraz polecenia `wc` możemy sprawdzić ile wyrazów znajduje się w tym rozdziale książki.
+
+
+```r
+system2("wc", args = "-l 14-lacznik.Rmd")
+```
 
 <!-- https://stackoverflow.com/questions/48605776/difference-between-system-and-system2-in-r-capture-file-names-in-variable -->
 <!-- https://stackoverflow.com/questions/5745886/r-and-system-calls -->
 <!-- https://tomaztsql.wordpress.com/2020/01/06/working-with-system-commands-in-r/ -->
 <!-- https://joongsup.rbind.io/post/2018/02/05/run-system-commands-or-shell-sripts-from-an-interactive-r-session/ -->
-
-<!-- grep -->
-<!-- cat -->
-<!-- find -->
-<!-- head/tail -->
-<!-- awk -->
-<!-- man -->
-
-<!-- https://github.com/microsoft/terminal -->
-<!-- http://www.makoweabc.pl/2009/12/os-x-terminal-jak-go-uruchomic-krok-po-kroku/ -->
-<!-- https://ubuntu.com/tutorials/command-line-for-beginners#1-overview -->
-<!-- https://neowaylabs.github.io/programming/unix-shell-for-data-scientists/?utm_source=hackernewsletter&utm_medium=email&utm_term=data -->
 <!-- https://missing.csail.mit.edu/ -->
 
 ## Zadania
