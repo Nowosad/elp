@@ -3,27 +3,39 @@
 <!-- intro o r jako jezyku laczacym inne -->
 <!-- intro o innych łącznikach -->
 R ma bezpośrednio wbudowane mechanizmy łączenia kodu R z kodem napisanym w językach C i Fortan.
-W tym rozdziale skupimy się jednak na przykładach łączenia R z innymi,  popularniejszymi współcześnie językami programowania C++ i Pythonem (sekcje \@ref(cpp) i \@ref(python)) oraz z systemową linią komend (sekcja \@ref(powloka-systemowa)).
+W tym rozdziale skupimy się jednak na przykładach łączenia R z innymi, popularniejszymi współcześnie językami programowania C++ i Pythonem (sekcje \@ref(cpp) i \@ref(python)) oraz z systemową linią komend (sekcja \@ref(powloka-systemowa)).
 
 <!-- rust, java, javascript, ?? -->
 
 ## C++ {#cpp}
 
+C++ jest jednym z najczęściej używanych kompilowanych języków programowania. Jest to spowodowane kilkoma zaletami tego języka, w tym jego wysoką wydajnością, niezależnością od konkretnej platformy systemowej, czy uniwersalnością.
 
+Język C++ posiada zarówno wiele podobnych do R konstrukcji i koncepcji, ale też różni się w pewnych kluczowych koncepcjach. 
+Najważniejsze cechy C++, które wyróżniają go od R warto znać na początku:
+
+- Jest językiem kompilowanym
+- Zakłada głównie statyczną kontrolę typów 
+- Posiada typ skalarny
+- Większość linii kodu należy kończyć znakiem średnika `;`
 
 <!-- Rcpp -->
 <!-- intro to Cpp -->
-<!-- https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-introduction.pdf -->
+<!-- -->
 <!-- data type -->
 <!-- scalars -->
 <!-- semicolons -->
 <!-- loops -->
 <!-- many more -->
-[@R-Rcpp]
+
+Obecnie ponad dwa tysiące pakietów R łączy się z językiem C++ używając pakietu **Rcpp** [@R-Rcpp].
+Często dodanie języka C++ do pakietu R ma na celu przyspieszenie pewnych  wymagających obliczeniowo zadań.
 
 ```{r}
 library(Rcpp)
 ```
+
+https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-introduction.pdf 
 
 ### evalCpp
 
