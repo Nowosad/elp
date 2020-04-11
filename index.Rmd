@@ -43,7 +43,7 @@ Wszystkie rozdziały w tej książce dodatkowo zawierają zadania, które pozwal
 Książka ta jest przeznaczona zarówno dla osób bez znajomości języków programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R.
 Wiedza uzyskana poprzez używanie tej książki daje podstawy do wykorzystywania R do różnorodnych celów, od analizy danych i opracowań statystycznych, poprzez tworzenie wykresów i wizualizacji, kończąc na aplikacjach specyficznych dla danej dziedziny.
 
-```{r echo=FALSE, eval=FALSE}
+```{r a, echo=FALSE, eval=FALSE}
 # automatically create a bib database for R packages
 knitr::write_bib(c(.packages(),
                    "bookdown", "knitr", "rmarkdown",
@@ -56,7 +56,7 @@ knitr::write_bib(c(.packages(),
                    "usethis", "testthat", "available",
                    "pkgdown", "remotes", "Rcpp", "reticulate",
                    "ggplot2", "wesanderson", "tmap", "dplyr",
-                   "tidyr", "rgrass7"),
+                   "tidyr", "rgrass7", "reprex"),
                    "packages.bib")
 ```
 
