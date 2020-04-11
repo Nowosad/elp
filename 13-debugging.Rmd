@@ -17,7 +17,7 @@ W przypadku potrzeby zadania pytania, lepszym pomysłem jest opublikowanie go na
 
 Tworzenie kodu możliwego do odtworzenia problemu (powtarzalnych przykładów) jest też pomocne w przypadku, gdy my piszemy nowe skrypty i funkcje i napotkamy na błędy.
 Jest to często część debugowania (ang. *debugging*) - procesu rozwiązywania problemów i błędów w oprogramowaniu.
-Istnieje wiele potencjalnych taktyk debugowania kodu, w tym debugowanie używając funkcji takich jak print (sekcja \@ref()), czy też debugowanie interaktywne (sekcja \@ref()).
+Istnieje wiele potencjalnych taktyk debugowania kodu, w tym debugowanie używając funkcji takich jak print (sekcja \@ref(debuging-print)), czy też debugowanie interaktywne (sekcja \@ref(debuging-interactive)).
 
 <!-- resources -->
 <!-- https://rstats.wtf/debugging-r-code.html -->
@@ -154,7 +154,9 @@ Nie powinien to być jednak ostatni krok.
 Należy jeszcze upewnić się, że nowa wersja kodu nie tylko przestaje zwracać błędy, ale też daje poprawne wyniki.
 Często odbywa się to poprzez wykonanie wcześniej stworzony testów jednostkowych (sekcja \@ref(testy-jednostkowe)).
 
-## Podstawowe podejście do debugowania
+## Podstawowe podejście do debugowania {#debuging-print}
+
+
 
 <!-- `print()`, `cat()` - small objects -->
 <!-- `str()` - large object trunct -->
@@ -162,7 +164,7 @@ Często odbywa się to poprzez wykonanie wcześniej stworzony testów jednostkow
 
 <!-- `traceback()` - bottom to top -->
 
-## Interaktywne debugowanie
+## Interaktywne debugowanie {#debuging-interactive}
 
 <!-- ## inside R -->
 
