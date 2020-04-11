@@ -56,7 +56,7 @@ knitr::write_bib(c(.packages(),
                    "usethis", "testthat", "available",
                    "pkgdown", "remotes", "Rcpp", "reticulate",
                    "ggplot2", "wesanderson", "tmap", "dplyr",
-                   "tidyr"),
+                   "tidyr", "rgrass7"),
                    "packages.bib")
 ```
 
