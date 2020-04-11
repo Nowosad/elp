@@ -13,16 +13,11 @@ Konieczne jest natomiast przygotowanie powtarzalnego przykładu (ang. *reproduci
 Warto jednak pamiętać, że sekcja *Issue* na platformie Github służy głównie do zgłaszania problemów, a nie do zadawania pytań.
 W przypadku potrzeby zadania pytania, lepszym pomysłem jest opublikowanie go na https://stackoverflow.com/,
 
+<!-- https://en.wikipedia.org/wiki/Debugging#/media/File:H96566k.jpg -->
+
 Tworzenie kodu możliwego do odtworzenia problemu (powtarzalnych przykładów) jest też pomocne w przypadku, gdy my piszemy nowe skrypty i funkcje i napotkamy na błędy.
 Jest to często część debugowania (ang. *debugging*) - procesu rozwiązywania problemów i błędów w oprogramowaniu.
 Istnieje wiele potencjalnych taktyk debugowania kodu, w tym debugowanie używając funkcji print, czy też debugowanie interaktywne.
-
-<!-- Reprodukcja błędu -->
-<!-- Wyizolowanie źródła błędu -->
-<!-- Identyfikacja przyczyny awarii -->
-<!-- Usunięcie defektu -->
-<!-- Weryfikacja powodzenia naprawy -->
-
 
 ## Powtarzalne przykłady {#reprex}
 
@@ -121,12 +116,31 @@ W efekcie otrzymujemy nie tylko kod użyty do obliczeń, ale również wynikową
 - [reprex: help me help you!](https://speakerdeck.com/jennybc/reprex-help-me-help-you)
 - [Get help!](https://www.tidyverse.org/help/#reprex)
 
+## Proces debugowania
 
+Nie ma uniwersalnego procesu debugowania, który działa dla każdego napotkanego problemu programistycznego. 
+Można jednak określić kilka kroków, które mogą znacząco ułatwić debugowanie:
 
+1. Powtarzalność błędu
+2. Identyfikacja przyczyny błędu
+3. Usunięcie błędu
+4. Weryfikacja naprawy błędu i jej konsekwencji
 
-<!-- 4. fix an error and add tests  -->
+W pierwszym kroku warto się upewnić, że napotkany błąd nie jest spowodowany przez inne obiekty w środowisku R. 
+Należy wyczyścić środowisko R używając `rm(list = ls())` a następnie zresetować sesję R (CTRL+SHIFT+F10 w RStudio).
+Warto też wydzielić z kodu najmniejszy fragment, który pozwala na odtworzenie błędu. 
+Teraz należy jeszcze raz spróbować użyć kodu zwracającego błąd, aby się upewnić, że dalej istnieje.
 
-<!-- ref intro -->
+Drugi krok obejmuje zlokalizowanie dokładnego miejsca w którym błąd powstaje. 
+Może to być konkretna linia kodu, miejsce w pętli, a czasem nawet wywołanie innej zewnętrznej funkcji.
+Ten krok można wykonać na wiele sposobów. 
+Dwa z nich, AAA i BBB, są opisane w tym rozdziale.
+
+W trzecim kroku należy usunąć wcześniej zlokalizowany błąd.
+Nie powinien to być jednak ostatni krok.
+
+Należy jeszcze upewnić się, że nowa wersja kodu nie tylko przestaje zwracać błędy, ale też daje poprawne wyniki.
+Często odbywa się to poprzez wykonanie wcześniej stworzony testów jednostkowych (sekcja \@ref(testy-jednostkowe)).
 
 <!-- resources -->
 <!-- https://rstats.wtf/debugging-r-code.html -->
