@@ -45,7 +45,7 @@ Odnosząc się do punktów z wcześniej wymienionej listy:
 Nie jest możliwe wykonywanie tego kodu linia po linii
 - Pozwala na używanie tylko `=` jako operatora przypisania - nie możemy w nim użyć operatora `<-` czy `->`
 - Zakłada głównie statyczną kontrolę typów - w powyższym przykładzie musieliśmy zadeklarować, że nasza funkcja `konwersja_temp_cpp`, nasz argument `temperatura_f` oraz zmienna `temperatura_c` będzie typu `double`. Zrobiliśmy to poprzez dodanie nazwy typu przed nazwą funkcji/argumentu/zmiennej. 
-Co ważne, w tym języku też typy (zazwyczaj) nie są automatycznie konwertowane do innych typów jak ma to miejsce w R (sekcja \@ref(#lpto-vector)). 
+Co ważne, w tym języku też typy (zazwyczaj) nie są automatycznie konwertowane do innych typów jak ma to miejsce w R (sekcja \@ref(lpto-vector)). 
 - Posiada typ skalarny - `double` może przechowywać tylko jedną wartość. 
 - Domyślnie nie używa wektoryzacji - powyższa funkcja `konwersja_temp_cpp()` zwróci błąd `Expecting a single value` w przypadku podania wektora numerycznego jako obiekt wejściowy.
 Aby użyć wektor wartości na wejściu konieczne jest napisane pętli lub użycie innych podobnych konstrukcji.
