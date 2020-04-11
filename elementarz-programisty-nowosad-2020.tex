@@ -6212,7 +6212,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.428   0.000   0.427}
+\CommentTok{#>   0.426   0.000   0.427}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6271,8 +6271,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression               min median `itr/sec`}
 \CommentTok{#>   <bch:expr>          <bch:tm> <bch:>     <dbl>}
-\CommentTok{#> 1 mi_do_km1(odl_mile)   1.25us  1.4us   608695.}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 950.07ns 1.06us   878422.}
+\CommentTok{#> 1 mi_do_km1(odl_mile)   1.29us 1.43us   611481.}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 942.03ns 1.04us   900797.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
@@ -6316,14 +6316,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 403ms  404ms      2.48     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 749us  787us   1123.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 383ms  386ms      2.59     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 705us  740us   1235.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.48 operacji na sekundę, przy aż 1122.89 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.59 operacji na sekundę, przy aż 1235.46 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zadania-10}{%
@@ -6367,10 +6367,83 @@ Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) raz
 \hypertarget{lacznik}{%
 \chapter{Łącznik}\label{lacznik}}
 
-\hypertarget{c}{%
-\section{C++}\label{c}}
+R ma bezpośrednio wbudowane mechanizmy łączenia kodu R z kodem napisanym w językach C i Fortan.
+W tym rozdziale skupimy się jednak na przykładach łączenia R z innymi, popularniejszymi współcześnie językami programowania C++ i Pythonem (sekcje \ref{cpp} i \ref{python}) oraz z systemową linią komend (sekcja \ref{powloka-systemowa}).
 
-\citep{R-Rcpp}
+\hypertarget{cpp}{%
+\section{C++}\label{cpp}}
+
+C++ jest jednym z najczęściej używanych kompilowanych języków programowania. Jest to spowodowane kilkoma zaletami tego języka, w tym jego wysoką wydajnością, niezależnością od konkretnej platformy systemowej, czy uniwersalnością.
+
+Język C++ posiada zarówno wiele podobnych do R konstrukcji i koncepcji, ale też różni się w pewnych kluczowych koncepcjach.
+Najważniejsze cechy C++, które wyróżniają go od R warto znać na początku:
+
+\begin{itemize}
+\tightlist
+\item
+  Jest językiem kompilowanym
+\item
+  Pozwala na używanie tylko \texttt{=} jako operatora przypisania
+\item
+  Zakłada głównie statyczną kontrolę typów
+\item
+  Posiada typ skalarny
+\item
+  Domyślnie nie używa wektoryzacji
+\item
+  Większość linii kodu należy kończyć znakiem średnika \texttt{;}
+\item
+  Konieczne jest zwracanie wartości używając \texttt{return}
+\end{itemize}
+
+Przykładowy kod R do przeliczania temperatury ze stopnii Fahrenheita na Celsjusza wygląda w poniższy sposób (sekcja \ref{budowanie-funkcji}):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{konwersja_temp =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(temperatura_f)\{}
+\NormalTok{    (temperatura_f }\OperatorTok{-}\StringTok{ }\DecValTok{32}\NormalTok{) }\OperatorTok{/}\StringTok{ }\FloatTok{1.8}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+To samo obliczenie wykonane w języku C++ może wyglądać w ten sposób:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{double}\NormalTok{ konwersja_temp_cpp(}\DataTypeTok{double}\NormalTok{ temperatura_f)\{}
+  \DataTypeTok{double}\NormalTok{ temperatura_c = (temperatura_f - }\DecValTok{32}\NormalTok{) / }\FloatTok{1.8}\NormalTok{;}
+  \ControlFlowTok{return}\NormalTok{ temperatura_c;}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Odnosząc się do punktów z wcześniej wymienionej listy:
+
+\begin{itemize}
+\tightlist
+\item
+  Jest językiem kompilowanym - gdybyśmy chcieli użyć powyższą funkcję jako program C++ musielibyśmy stworzyć kolejną funkcję \texttt{main()}, a następnie skompilować kod.
+  Nie jest możliwe wykonywanie tego kodu linia po linii
+\item
+  Pozwala na używanie tylko \texttt{=} jako operatora przypisania - nie możemy w nim użyć operatora \texttt{\textless{}-} czy \texttt{-\textgreater{}}
+\item
+  Zakłada głównie statyczną kontrolę typów - w powyższym przykładzie musieliśmy zadeklarować, że nasza funkcja \texttt{konwersja\_temp\_cpp}, nasz argument \texttt{temperatura\_f} oraz zmienna \texttt{temperatura\_c} będzie typu \texttt{double}. Zrobiliśmy to poprzez dodanie nazwy typu przed nazwą funkcji/argumentu/zmiennej.
+  Co ważne, w tym języku też typy (zazwyczaj) nie są automatycznie konwertowane do innych typów jak ma to miejsce w R (sekcja @ref(\#lpto-vector)).
+\item
+  Posiada typ skalarny - \texttt{double} może przechowywać tylko jedną wartość.
+\item
+  Domyślnie nie używa wektoryzacji - powyższa funkcja \texttt{konwersja\_temp\_cpp()} zwróci błąd \texttt{Expecting\ a\ single\ value} w przypadku podania wektora numerycznego jako obiekt wejściowy.
+  Aby użyć wektor wartości na wejściu konieczne jest napisane pętli lub użycie innych podobnych konstrukcji.
+\item
+  Większość linii kodu należy kończyć znakiem średnika \texttt{;}.
+  Nie dotyczy to linii definujących powstanie funkcji, rozpoczynających i kończących pętle czy wyrażenia warunkowe
+\item
+  Konieczne jest zwracanie wartości używając \texttt{return}.
+  W R użycie funkcji \texttt{return()} było opcjonalne.
+\end{itemize}
+
+Obecnie ponad dwa tysiące pakietów R łączy się z językiem C++ używając pakietu \textbf{Rcpp} \citep{R-Rcpp}.
+Często dodanie języka C++ do pakietu R ma na celu przyspieszenie pewnych wymagających obliczeniowo zadań.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6442,14 +6515,14 @@ Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) raz
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km2(odl_mile2) 786us  824us     1157.   599.2KB}
-\CommentTok{#> 2 mi_do_km3(odl_mile2) 419us  465us     2129.    85.9KB}
+\CommentTok{#> 1 mi_do_km2(odl_mile2) 720us  763us     1264.   599.2KB}
+\CommentTok{#> 2 mi_do_km3(odl_mile2) 384us  419us     2383.    85.9KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{cpp}{%
-\subsection{.cpp}\label{cpp}}
+\hypertarget{cpp-1}{%
+\subsection{.cpp}\label{cpp-1}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6516,8 +6589,8 @@ Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) raz
 
 \url{https://rstudio.github.io/reticulate/}
 
-\hypertarget{unix-commands}{%
-\section{Unix commands}\label{unix-commands}}
+\hypertarget{powloka-systemowa}{%
+\section{Powłoka systemowa}\label{powloka-systemowa}}
 
 \hypertarget{zadania-11}{%
 \section{Zadania}\label{zadania-11}}

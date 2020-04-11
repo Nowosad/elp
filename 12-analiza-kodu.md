@@ -229,8 +229,8 @@ wynik_1
 #> # A tibble: 2 x 6
 #>   expression               min median `itr/sec`
 #>   <bch:expr>          <bch:tm> <bch:>     <dbl>
-#> 1 mi_do_km1(odl_mile)   1.29µs 1.43µs   599250.
-#> 2 mi_do_km2(odl_mile) 940.99ns 1.05µs   887584.
+#> 1 mi_do_km1(odl_mile)   1.29µs 1.39µs   619211.
+#> 2 mi_do_km2(odl_mile) 961.12ns 1.06µs   890730.
 #> # … with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 ```
@@ -263,13 +263,13 @@ wynik_2
 #> # A tibble: 2 x 6
 #>   expression             min median `itr/sec` mem_alloc
 #>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>
-#> 1 mi_do_km1(odl_mile2) 385ms  386ms      2.59     382MB
-#> 2 mi_do_km2(odl_mile2) 751µs  790µs   1122.      78.2KB
+#> 1 mi_do_km1(odl_mile2) 364ms  367ms      2.72     382MB
+#> 2 mi_do_km2(odl_mile2) 701µs  740µs   1230.      78.2KB
 #> # … with 1 more variable: `gc/sec` <dbl>
 ```
 
 W tym przypadku różnica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
-Funkcja `mi_do_km1` jest w stanie wykonać tylko 2.59 operacji na sekundę, przy aż 1121.81 operacji na sekundę funkcji `mi_do_km2`.
+Funkcja `mi_do_km1` jest w stanie wykonać tylko 2.72 operacji na sekundę, przy aż 1230.47 operacji na sekundę funkcji `mi_do_km2`.
 Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
 
 

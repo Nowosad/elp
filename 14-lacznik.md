@@ -2,24 +2,69 @@
 
 <!-- intro o r jako jezyku laczacym inne -->
 <!-- intro o innych łącznikach -->
+R ma bezpośrednio wbudowane mechanizmy łączenia kodu R z kodem napisanym w językach C i Fortan.
+W tym rozdziale skupimy się jednak na przykładach łączenia R z innymi, popularniejszymi współcześnie językami programowania C++ i Pythonem (sekcje \@ref(cpp) i \@ref(python)) oraz z systemową linią komend (sekcja \@ref(powloka-systemowa)).
+
 <!-- rust, java, javascript, ?? -->
 
-## C++
+## C++ {#cpp}
 
-<!-- Rcpp -->
-<!-- intro to Cpp -->
-<!-- https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-introduction.pdf -->
-<!-- data type -->
-<!-- scalars -->
-<!-- semicolons -->
-<!-- loops -->
-<!-- many more -->
-[@R-Rcpp]
+C++ jest jednym z najczęściej używanych kompilowanych języków programowania. Jest to spowodowane kilkoma zaletami tego języka, w tym jego wysoką wydajnością, niezależnością od konkretnej platformy systemowej, czy uniwersalnością.
+
+Język C++ posiada zarówno wiele podobnych do R konstrukcji i koncepcji, ale też różni się w pewnych kluczowych koncepcjach. 
+Najważniejsze cechy C++, które wyróżniają go od R warto znać na początku:
+
+- Jest językiem kompilowanym
+- Pozwala na używanie tylko `=` jako operatora przypisania
+- Zakłada głównie statyczną kontrolę typów 
+- Posiada typ skalarny
+- Domyślnie nie używa wektoryzacji
+- Większość linii kodu należy kończyć znakiem średnika `;`
+- Konieczne jest zwracanie wartości używając `return`
+
+Przykładowy kod R do przeliczania temperatury ze stopnii Fahrenheita na Celsjusza wygląda w poniższy sposób (sekcja \@ref(budowanie-funkcji)):
+
+
+```r
+konwersja_temp = function(temperatura_f){
+    (temperatura_f - 32) / 1.8
+}
+```
+
+To samo obliczenie wykonane w języku C++ może wyglądać w ten sposób:
+
+
+```cpp
+double konwersja_temp_cpp(double temperatura_f){
+  double temperatura_c = (temperatura_f - 32) / 1.8;
+  return temperatura_c;
+}
+```
+
+Odnosząc się do punktów z wcześniej wymienionej listy:
+
+- Jest językiem kompilowanym - gdybyśmy chcieli użyć powyższą funkcję jako program C++ musielibyśmy stworzyć kolejną funkcję `main()`, a następnie skompilować kod. 
+Nie jest możliwe wykonywanie tego kodu linia po linii
+- Pozwala na używanie tylko `=` jako operatora przypisania - nie możemy w nim użyć operatora `<-` czy `->`
+- Zakłada głównie statyczną kontrolę typów - w powyższym przykładzie musieliśmy zadeklarować, że nasza funkcja `konwersja_temp_cpp`, nasz argument `temperatura_f` oraz zmienna `temperatura_c` będzie typu `double`. Zrobiliśmy to poprzez dodanie nazwy typu przed nazwą funkcji/argumentu/zmiennej. 
+Co ważne, w tym języku też typy (zazwyczaj) nie są automatycznie konwertowane do innych typów jak ma to miejsce w R (sekcja \@ref(#lpto-vector)). 
+- Posiada typ skalarny - `double` może przechowywać tylko jedną wartość. 
+- Domyślnie nie używa wektoryzacji - powyższa funkcja `konwersja_temp_cpp()` zwróci błąd `Expecting a single value` w przypadku podania wektora numerycznego jako obiekt wejściowy.
+Aby użyć wektor wartości na wejściu konieczne jest napisane pętli lub użycie innych podobnych konstrukcji.
+- Większość linii kodu należy kończyć znakiem średnika `;`. 
+Nie dotyczy to linii definujących powstanie funkcji, rozpoczynających i kończących pętle czy wyrażenia warunkowe
+- Konieczne jest zwracanie wartości używając `return`. 
+W R użycie funkcji `return()` było opcjonalne.
+
+Obecnie ponad dwa tysiące pakietów R łączy się z językiem C++ używając pakietu **Rcpp** [@R-Rcpp].
+Często dodanie języka C++ do pakietu R ma na celu przyspieszenie pewnych  wymagających obliczeniowo zadań.
 
 
 ```r
 library(Rcpp)
 ```
+
+<!-- https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-introduction.pdf  -->
 
 ### evalCpp
 
@@ -79,8 +124,8 @@ wynik
 #> # A tibble: 2 x 6
 #>   expression             min median `itr/sec` mem_alloc
 #>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>
-#> 1 mi_do_km2(odl_mile2) 775µs  810µs     1205.   599.2KB
-#> 2 mi_do_km3(odl_mile2) 412µs  452µs     2206.    85.9KB
+#> 1 mi_do_km2(odl_mile2) 720µs  759µs     1278.   599.2KB
+#> 2 mi_do_km3(odl_mile2) 390µs  435µs     2293.    85.9KB
 #> # … with 1 more variable: `gc/sec` <dbl>
 ```
 
@@ -165,7 +210,7 @@ library(reticulate)
 
 https://rstudio.github.io/reticulate/
 
-## Unix commands
+## Powłoka systemowa {#powloka-systemowa}
 
 
 <!-- https://stackoverflow.com/questions/48605776/difference-between-system-and-system2-in-r-capture-file-names-in-variable -->

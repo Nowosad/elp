@@ -269,13 +269,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zadania-10"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>12</b> Łącznik</a><ul>
-<li class="chapter" data-level="12.1" data-path="lacznik.html"><a href="lacznik.html#c"><i class="fa fa-check"></i><b>12.1</b> C++</a><ul>
+<li class="chapter" data-level="12.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>12.1</b> C++</a><ul>
 <li class="chapter" data-level="12.1.1" data-path="lacznik.html"><a href="lacznik.html#evalcpp"><i class="fa fa-check"></i><b>12.1.1</b> evalCpp</a></li>
 <li class="chapter" data-level="12.1.2" data-path="lacznik.html"><a href="lacznik.html#cppfunction"><i class="fa fa-check"></i><b>12.1.2</b> cppFunction</a></li>
-<li class="chapter" data-level="12.1.3" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>12.1.3</b> .cpp</a></li>
+<li class="chapter" data-level="12.1.3" data-path="lacznik.html"><a href="lacznik.html#cpp-1"><i class="fa fa-check"></i><b>12.1.3</b> .cpp</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="lacznik.html"><a href="lacznik.html#python"><i class="fa fa-check"></i><b>12.2</b> Python</a></li>
-<li class="chapter" data-level="12.3" data-path="lacznik.html"><a href="lacznik.html#unix-commands"><i class="fa fa-check"></i><b>12.3</b> Unix commands</a></li>
+<li class="chapter" data-level="12.3" data-path="lacznik.html"><a href="lacznik.html#powloka-systemowa"><i class="fa fa-check"></i><b>12.3</b> Powłoka systemowa</a></li>
 <li class="chapter" data-level="12.4" data-path="lacznik.html"><a href="lacznik.html#zadania-11"><i class="fa fa-check"></i><b>12.4</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>13</b> Kontrola wersji</a><ul>
@@ -358,27 +358,27 @@ Celem tego rozdziału jest wskazanie co można zrobić dalej na podstawie uzyska
 <h2><span class="header-section-number">15.1</span> Grafika</h2>
 <p>Jedną z najczęściej wymienianych zalet R są jego rozbudowane narzędzia do tworzenia wykresów.
 Możemy to zobaczyć na poniższym przykładzie danych meteorologicznych dla Poznania i Zakopanego z roku 2017.</p>
-<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb363-1" data-line-number="1">met =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv&quot;</span>,</a>
-<a class="sourceLine" id="cb363-2" data-line-number="2">             <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb363-3" data-line-number="3"><span class="kw">head</span>(met)</a>
-<a class="sourceLine" id="cb363-4" data-line-number="4"><span class="co">#&gt;   kod_stacji nazwa_stacji  rok miesiac dzien tavg</span></a>
-<a class="sourceLine" id="cb363-5" data-line-number="5"><span class="co">#&gt; 1  352160330       POZNAŃ 2017       1     1  1.4</span></a>
-<a class="sourceLine" id="cb363-6" data-line-number="6"><span class="co">#&gt; 2  352160330       POZNAŃ 2017       1     2  0.1</span></a>
-<a class="sourceLine" id="cb363-7" data-line-number="7"><span class="co">#&gt; 3  352160330       POZNAŃ 2017       1     3  0.5</span></a>
-<a class="sourceLine" id="cb363-8" data-line-number="8"><span class="co">#&gt; 4  352160330       POZNAŃ 2017       1     4  1.5</span></a>
-<a class="sourceLine" id="cb363-9" data-line-number="9"><span class="co">#&gt; 5  352160330       POZNAŃ 2017       1     5 -3.5</span></a>
-<a class="sourceLine" id="cb363-10" data-line-number="10"><span class="co">#&gt; 6  352160330       POZNAŃ 2017       1     6 -8.4</span></a>
-<a class="sourceLine" id="cb363-11" data-line-number="11"><span class="co">#&gt;   precip</span></a>
-<a class="sourceLine" id="cb363-12" data-line-number="12"><span class="co">#&gt; 1    0.0</span></a>
-<a class="sourceLine" id="cb363-13" data-line-number="13"><span class="co">#&gt; 2    0.0</span></a>
-<a class="sourceLine" id="cb363-14" data-line-number="14"><span class="co">#&gt; 3    4.8</span></a>
-<a class="sourceLine" id="cb363-15" data-line-number="15"><span class="co">#&gt; 4    2.3</span></a>
-<a class="sourceLine" id="cb363-16" data-line-number="16"><span class="co">#&gt; 5    0.0</span></a>
-<a class="sourceLine" id="cb363-17" data-line-number="17"><span class="co">#&gt; 6    0.0</span></a></code></pre></div>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb365-1" data-line-number="1">met =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv&quot;</span>,</a>
+<a class="sourceLine" id="cb365-2" data-line-number="2">             <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb365-3" data-line-number="3"><span class="kw">head</span>(met)</a>
+<a class="sourceLine" id="cb365-4" data-line-number="4"><span class="co">#&gt;   kod_stacji nazwa_stacji  rok miesiac dzien tavg</span></a>
+<a class="sourceLine" id="cb365-5" data-line-number="5"><span class="co">#&gt; 1  352160330       POZNAŃ 2017       1     1  1.4</span></a>
+<a class="sourceLine" id="cb365-6" data-line-number="6"><span class="co">#&gt; 2  352160330       POZNAŃ 2017       1     2  0.1</span></a>
+<a class="sourceLine" id="cb365-7" data-line-number="7"><span class="co">#&gt; 3  352160330       POZNAŃ 2017       1     3  0.5</span></a>
+<a class="sourceLine" id="cb365-8" data-line-number="8"><span class="co">#&gt; 4  352160330       POZNAŃ 2017       1     4  1.5</span></a>
+<a class="sourceLine" id="cb365-9" data-line-number="9"><span class="co">#&gt; 5  352160330       POZNAŃ 2017       1     5 -3.5</span></a>
+<a class="sourceLine" id="cb365-10" data-line-number="10"><span class="co">#&gt; 6  352160330       POZNAŃ 2017       1     6 -8.4</span></a>
+<a class="sourceLine" id="cb365-11" data-line-number="11"><span class="co">#&gt;   precip</span></a>
+<a class="sourceLine" id="cb365-12" data-line-number="12"><span class="co">#&gt; 1    0.0</span></a>
+<a class="sourceLine" id="cb365-13" data-line-number="13"><span class="co">#&gt; 2    0.0</span></a>
+<a class="sourceLine" id="cb365-14" data-line-number="14"><span class="co">#&gt; 3    4.8</span></a>
+<a class="sourceLine" id="cb365-15" data-line-number="15"><span class="co">#&gt; 4    2.3</span></a>
+<a class="sourceLine" id="cb365-16" data-line-number="16"><span class="co">#&gt; 5    0.0</span></a>
+<a class="sourceLine" id="cb365-17" data-line-number="17"><span class="co">#&gt; 6    0.0</span></a></code></pre></div>
 <p>Wewnątrz obiektu <code>met</code> znajdują się kolumny <code>tavg</code> (określająca średnią dobową temperaturę powietrza w stopniach Celsjusza) oraz <code>nazwa_stacji</code> (“POZNAŃ” lub “ZAKOPANE”).
 Do porównania wartości temperatury pomiędzy stacjami może posłużyć wykres pudełkowy, stworzony przy pomocy funkcji <code>boxplot()</code> (rycina <a href="podsumowanie.html#fig:plotex">15.1</a>).
 Poniżej zdefiniowano, która zmienna ma zostać zwizualizowana (<code>tavg</code>) w podziale na jakie grupy (<code>nazwa_stacji</code>) z jakiego zbioru danych (<code>met</code>)<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.</p>
-<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb364-1" data-line-number="1"><span class="kw">boxplot</span>(tavg <span class="op">~</span><span class="st"> </span>nazwa_stacji, <span class="dt">data =</span> met)</a></code></pre></div>
+<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb366-1" data-line-number="1"><span class="kw">boxplot</span>(tavg <span class="op">~</span><span class="st"> </span>nazwa_stacji, <span class="dt">data =</span> met)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:plotex"></span>
 <img src="31-podsumowanie_files/figure-html/plotex-1.png" alt="Przykład wykresu utworzonego przy pomocy funkcji boxplot()." width="\textwidth" />
 <p class="caption">
@@ -398,8 +398,8 @@ Główną funkcją tego pakietu jest <code>ggplot()</code>, która przyjmuje dan
 Wewnątrz tej funkcji następuje wywołanie kolejnej funkcji <code>aes</code>, gdzie definiowane są kolejne kolumny, które mają być wyświetlone na osiach wykresów oraz określają kolor, kształt, wielkość i inne elementy.
 Kolejnym krokiem jest określenie typu wykresu poprzez połączenie poprzedniej funkcji (używając operatora <code>+</code>) z jedną z wielu funkcji rozpoczynających się od <code>geom_</code>.
 Przykładowo, do stworzenia wykresu pudełkowego służy <code>geom_boxplot()</code> (rycina <a href="podsumowanie.html#fig:ggplotex">15.2</a>).</p>
-<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb365-1" data-line-number="1"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb365-2" data-line-number="2"><span class="kw">ggplot</span>(met, <span class="kw">aes</span>(nazwa_stacji, tavg)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb367-1" data-line-number="1"><span class="kw">library</span>(ggplot2)</a>
+<a class="sourceLine" id="cb367-2" data-line-number="2"><span class="kw">ggplot</span>(met, <span class="kw">aes</span>(nazwa_stacji, tavg)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>()</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:ggplotex"></span>
 <img src="31-podsumowanie_files/figure-html/ggplotex-1.png" alt="Przykład wykresu utworzonego z użyciem pakietu ggplot2." width="\textwidth" />
 <p class="caption">
@@ -428,13 +428,13 @@ Pozwala on na łączenie kilku oddzielnych funkcji w jedno zapytanie.
 Działanie tego operatora polega na tym, że wynik jednej działania jednej funkcji staje się automatycznie pierwszym argumentem w kolejnej funkcji (rycina <a href="podsumowanie.html#fig:tidyverse-example">15.3</a>).
 <!-- footnote o wywołaniu funkcji -->
 <!-- KOD? --></p>
-<div class="sourceCode" id="cb366"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb366-1" data-line-number="1"><span class="kw">library</span>(magrittr)</a>
-<a class="sourceLine" id="cb366-2" data-line-number="2">readxl<span class="op">::</span><span class="kw">read_excel</span>(<span class="st">&quot;https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.xlsx&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb366-3" data-line-number="3"><span class="st">  </span>tidyr<span class="op">::</span><span class="kw">gather</span>(<span class="dt">key =</span> <span class="st">&quot;zmienna&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;wartosc&quot;</span>, tavg<span class="op">:</span>precip) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb366-4" data-line-number="4"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">data =</span> <span class="kw">as.Date</span>(<span class="kw">paste</span>(rok, miesiac, dzien, <span class="dt">sep =</span> <span class="st">&quot;-&quot;</span>))) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb366-5" data-line-number="5"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(ggplot2<span class="op">::</span><span class="kw">aes</span>(data, wartosc)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb366-6" data-line-number="6"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">geom_line</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb366-7" data-line-number="7"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">facet_grid</span>(zmienna<span class="op">~</span>nazwa_stacji, <span class="dt">scale =</span> <span class="st">&quot;free_y&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb368-1" data-line-number="1"><span class="kw">library</span>(magrittr)</a>
+<a class="sourceLine" id="cb368-2" data-line-number="2">readxl<span class="op">::</span><span class="kw">read_excel</span>(<span class="st">&quot;https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.xlsx&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb368-3" data-line-number="3"><span class="st">  </span>tidyr<span class="op">::</span><span class="kw">gather</span>(<span class="dt">key =</span> <span class="st">&quot;zmienna&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;wartosc&quot;</span>, tavg<span class="op">:</span>precip) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb368-4" data-line-number="4"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">data =</span> <span class="kw">as.Date</span>(<span class="kw">paste</span>(rok, miesiac, dzien, <span class="dt">sep =</span> <span class="st">&quot;-&quot;</span>))) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb368-5" data-line-number="5"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(ggplot2<span class="op">::</span><span class="kw">aes</span>(data, wartosc)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb368-6" data-line-number="6"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">geom_line</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb368-7" data-line-number="7"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">facet_grid</span>(zmienna<span class="op">~</span>nazwa_stacji, <span class="dt">scale =</span> <span class="st">&quot;free_y&quot;</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:tidyverse-example"></span>
 <img src="images/tidyverse-example.png" alt="Przykład wyniku użycia pakietów z grupy tidyverse." width="\textwidth" />
 <p class="caption">
@@ -461,12 +461,12 @@ Obejmuje to bardzo szeroki przekrój tematów - od list poświęconych projektow
 Opisuje ona, między innymi, takie pakiety jak <strong>sf</strong>, pozwalający na wczytywanie, przetwarzanie i zapisywanie danych wektorowych czy <strong>tmap</strong> ułatwiający tworzenie map.
 Na poniższym przykładzie następuje dołączenie tych pakietów oraz wczytanie zbioru danych <code>World</code> zawierającego poligony krajów na świecie i podstawowe informacje o nich.
 Dalej następuje dodanie tych danych do wyświetlenia i wybór odwzorowania przestrzennego<!--footnote--> używając funkcji <code>tm_shape()</code>, po czym te dane są wyświetlone w postaci poligonów (funkcja <code>tm_polygons()</code>), gdzie kolory poligonów wynikają z ich wartości w kolumnie <code>life_exp</code> a tytuł legendy jest wybrany przez nas (rycina <a href="podsumowanie.html#fig:tmap-example">15.4</a>).</p>
-<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb367-1" data-line-number="1"><span class="kw">library</span>(sf)</a>
-<a class="sourceLine" id="cb367-2" data-line-number="2"><span class="kw">library</span>(tmap)</a>
-<a class="sourceLine" id="cb367-3" data-line-number="3"><span class="kw">data</span>(World)</a>
-<a class="sourceLine" id="cb367-4" data-line-number="4"><span class="kw">tm_shape</span>(World, <span class="dt">projection =</span> <span class="st">&quot;robin&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb367-5" data-line-number="5"><span class="st">    </span><span class="kw">tm_polygons</span>(<span class="dt">col =</span> <span class="st">&quot;life_exp&quot;</span>, </a>
-<a class="sourceLine" id="cb367-6" data-line-number="6">                <span class="dt">title =</span> <span class="st">&quot;Oczekiwana dalsza </span><span class="ch">\n</span><span class="st">długość życia&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb369-1" data-line-number="1"><span class="kw">library</span>(sf)</a>
+<a class="sourceLine" id="cb369-2" data-line-number="2"><span class="kw">library</span>(tmap)</a>
+<a class="sourceLine" id="cb369-3" data-line-number="3"><span class="kw">data</span>(World)</a>
+<a class="sourceLine" id="cb369-4" data-line-number="4"><span class="kw">tm_shape</span>(World, <span class="dt">projection =</span> <span class="st">&quot;robin&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb369-5" data-line-number="5"><span class="st">    </span><span class="kw">tm_polygons</span>(<span class="dt">col =</span> <span class="st">&quot;life_exp&quot;</span>, </a>
+<a class="sourceLine" id="cb369-6" data-line-number="6">                <span class="dt">title =</span> <span class="st">&quot;Oczekiwana dalsza </span><span class="ch">\n</span><span class="st">długość życia&quot;</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:tmap-example"></span>
 <img src="images/tmap-example.png" alt="Przykład działania pakietu tmap." width="\textwidth" />
 <p class="caption">
