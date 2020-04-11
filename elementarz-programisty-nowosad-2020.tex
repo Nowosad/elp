@@ -6212,7 +6212,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.427   0.000   0.427}
+\CommentTok{#>   0.428   0.000   0.427}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6271,8 +6271,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression               min median `itr/sec`}
 \CommentTok{#>   <bch:expr>          <bch:tm> <bch:>     <dbl>}
-\CommentTok{#> 1 mi_do_km1(odl_mile)   1.31us 1.45us   592820.}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 987.09ns 1.11us   845432.}
+\CommentTok{#> 1 mi_do_km1(odl_mile)   1.25us  1.4us   608695.}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 950.07ns 1.06us   878422.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
@@ -6316,14 +6316,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 396ms  403ms      2.48     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 751us  787us   1126.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 403ms  404ms      2.48     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 749us  787us   1123.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.48 operacji na sekundę, przy aż 1126.4 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.48 operacji na sekundę, przy aż 1122.89 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zadania-10}{%
@@ -6363,6 +6363,164 @@ Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) raz
   Która z nich jest szybsza?
   Która z nich zużywa mniej zasobów?
 \end{enumerate}
+
+\hypertarget{lacznik}{%
+\chapter{Łącznik}\label{lacznik}}
+
+\hypertarget{c}{%
+\section{C++}\label{c}}
+
+\citep{R-Rcpp}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(Rcpp)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{evalcpp}{%
+\subsection{evalCpp}\label{evalcpp}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{evalCpp}\NormalTok{(}\StringTok{''}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{cppfunction}{%
+\subsection{cppFunction}\label{cppfunction}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mi_do_km2 =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(odl_mile)\{}
+\NormalTok{  odl_km =}\StringTok{ }\KeywordTok{vector}\NormalTok{(}\StringTok{"list"}\NormalTok{, }\DataTypeTok{length =} \KeywordTok{length}\NormalTok{(odl_mile))}
+  \ControlFlowTok{for}\NormalTok{ (i }\ControlFlowTok{in} \KeywordTok{seq_along}\NormalTok{(odl_mile)) \{}
+\NormalTok{    odl_km[[i]] =}\StringTok{ }\NormalTok{odl_mile[[i]] }\OperatorTok{*}\StringTok{ }\FloatTok{1.609}
+\NormalTok{  \}}
+\NormalTok{  odl_km}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{rcpp_fun =}\StringTok{ "List mi_do_km3(List odl_mile)\{}
+\StringTok{  int odl_mile_len = odl_mile.size();}
+\StringTok{  List result(odl_mile_len);}
+\StringTok{  for (int i = 0; i < odl_mile_len; i++)\{}
+\StringTok{    result[i] = odl_mile[i] * 1.609;}
+\StringTok{  \}}
+\StringTok{  return(result);}
+\StringTok{\}"}
+\NormalTok{Rcpp}\OperatorTok{::}\KeywordTok{cppFunction}\NormalTok{(rcpp_fun)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{odl_mile =}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DecValTok{142}\NormalTok{, }\DecValTok{63}\NormalTok{, }\DecValTok{121}\NormalTok{)}
+\KeywordTok{mi_do_km3}\NormalTok{(odl_mile)}
+\CommentTok{#> [[1]]}
+\CommentTok{#> [1] 228}
+\CommentTok{#> }
+\CommentTok{#> [[2]]}
+\CommentTok{#> [1] 101}
+\CommentTok{#> }
+\CommentTok{#> [[3]]}
+\CommentTok{#> [1] 195}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{odl_mile2 =}\StringTok{ }\KeywordTok{as.list}\NormalTok{(}\DecValTok{0}\OperatorTok{:}\DecValTok{10000}\NormalTok{)}
+\NormalTok{wynik =}\StringTok{ }\NormalTok{bench}\OperatorTok{::}\KeywordTok{mark}\NormalTok{(}
+  \KeywordTok{mi_do_km2}\NormalTok{(odl_mile2),}
+  \KeywordTok{mi_do_km3}\NormalTok{(odl_mile2)}
+\NormalTok{)}
+\NormalTok{wynik}
+\CommentTok{#> # A tibble: 2 x 6}
+\CommentTok{#>   expression             min median `itr/sec` mem_alloc}
+\CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
+\CommentTok{#> 1 mi_do_km2(odl_mile2) 786us  824us     1157.   599.2KB}
+\CommentTok{#> 2 mi_do_km3(odl_mile2) 419us  465us     2129.    85.9KB}
+\CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{cpp}{%
+\subsection{.cpp}\label{cpp}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{#include }\ImportTok{<Rcpp.h>}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{using} \KeywordTok{namespace}\NormalTok{ Rcpp;}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{// [[Rcpp::export]]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{#include }\ImportTok{<Rcpp.h>}
+\KeywordTok{using} \KeywordTok{namespace}\NormalTok{ Rcpp;}
+\CommentTok{// [[Rcpp::export]]}
+\NormalTok{List mi_do_km3(List odl_mile)\{}
+  \DataTypeTok{int}\NormalTok{ odl_mile_len = odl_mile.size();}
+\NormalTok{  List result(odl_mile_len);}
+  \ControlFlowTok{for}\NormalTok{ (}\DataTypeTok{int}\NormalTok{ i = }\DecValTok{0}\NormalTok{; i < odl_mile_len; i++)\{}
+\NormalTok{    result[i] = odl_mile[i] * }\FloatTok{1.609}\NormalTok{;}
+\NormalTok{  \}}
+  \ControlFlowTok{return}\NormalTok{(result);}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(Rcpp)}
+\KeywordTok{sourceCpp}\NormalTok{(}\StringTok{"mi_do_km3.cpp"}\NormalTok{)}
+
+\NormalTok{odl_mile =}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DecValTok{142}\NormalTok{, }\DecValTok{63}\NormalTok{, }\DecValTok{121}\NormalTok{)}
+\KeywordTok{mi_do_km3}\NormalTok{(odl_mile)}
+\CommentTok{#> [[1]]}
+\CommentTok{#> [1] 228}
+\CommentTok{#> }
+\CommentTok{#> [[2]]}
+\CommentTok{#> [1] 101}
+\CommentTok{#> }
+\CommentTok{#> [[3]]}
+\CommentTok{#> [1] 195}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{python}{%
+\section{Python}\label{python}}
+
+\citep{R-reticulate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(reticulate)}
+\end{Highlighting}
+\end{Shaded}
+
+\url{https://rstudio.github.io/reticulate/}
+
+\hypertarget{unix-commands}{%
+\section{Unix commands}\label{unix-commands}}
+
+\hypertarget{zadania-11}{%
+\section{Zadania}\label{zadania-11}}
 
 \hypertarget{kontrola-wersji}{%
 \chapter{Kontrola wersji}\label{kontrola-wersji}}
@@ -6810,8 +6968,8 @@ Do ogólnego wprowadzenia do systemu Git może posłużyć darmowa książka onl
 Git jest również bardzo popularnym tematem na serwisie stackoverflow, gdzie można znaleźć~\href{https://stackoverflow.com/questions/tagged/git}{pytania i odpowiedzi na różnorodne tematy z nim związane}.
 Więcej odnośników do materiałów związanych z sytemem Git i serwisem GitHub można znaleźć na stronach \href{https://help.github.com/en/articles/git-and-github-learning-resources}{pomocy GitHub}.
 
-\hypertarget{zadania-11}{%
-\section{Zadania}\label{zadania-11}}
+\hypertarget{zadania-12}{%
+\section{Zadania}\label{zadania-12}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -7252,8 +7410,8 @@ W efekcie zostanie utworzony folder \texttt{docs/} zawierający stronę internet
 W przypadku, gdy pakiet znajduje się na GitHubie możliwe jest wyświetlenie tej strony pod adresem \texttt{https://\textless{}nazwauzytkownika\textgreater{}.github.io/\textless{}nazwapakietu\textgreater{}/}.
 Aby ta strona była dostępna w internecie należy na platformie GitHub wejść w zakładkę settings, następnie znaleźć część określoną jako GitHub Pages, i określić Source jako ``master branch /docs folder''.
 
-\hypertarget{zadania-12}{%
-\section{Zadania}\label{zadania-12}}
+\hypertarget{zadania-13}{%
+\section{Zadania}\label{zadania-13}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
