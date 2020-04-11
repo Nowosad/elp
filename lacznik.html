@@ -380,7 +380,7 @@ Najważniejsze cechy C++, które wyróżniają go od R i które warto znać na p
 Nie jest możliwe wykonywanie tego kodu linia po linii</li>
 <li>Pozwala na używanie tylko <code>=</code> jako operatora przypisania - nie możemy w nim użyć operatora <code>&lt;-</code> czy <code>-&gt;</code></li>
 <li>Zakłada głównie statyczną kontrolę typów - w powyższym przykładzie musieliśmy zadeklarować, że nasza funkcja <code>konwersja_temp_cpp</code>, nasz argument <code>temperatura_f</code> oraz zmienna <code>temperatura_c</code> będzie typu <code>double</code>. Zrobiliśmy to poprzez dodanie nazwy typu przed nazwą funkcji/argumentu/zmiennej.
-Co ważne, w tym języku też typy (zazwyczaj) nie są automatycznie konwertowane do innych typów jak ma to miejsce w R (sekcja @ref(#lpto-vector)).</li>
+Co ważne, w tym języku też typy (zazwyczaj) nie są automatycznie konwertowane do innych typów jak ma to miejsce w R (sekcja <a href="proste-obiekty.html#lpto-vector">5.9</a>).</li>
 <li>Posiada typ skalarny - <code>double</code> może przechowywać tylko jedną wartość.</li>
 <li>Domyślnie nie używa wektoryzacji - powyższa funkcja <code>konwersja_temp_cpp()</code> zwróci błąd <code>Expecting a single value</code> w przypadku podania wektora numerycznego jako obiekt wejściowy.
 Aby użyć wektor wartości na wejściu konieczne jest napisane pętli lub użycie innych podobnych konstrukcji.</li>
@@ -423,14 +423,14 @@ W przypadku zadeklarowania dłuższego obiektu wejściowego otrzymamy błąd:</p
 <a class="sourceLine" id="cb330-6" data-line-number="6">  odl_km</a>
 <a class="sourceLine" id="cb330-7" data-line-number="7">}</a></code></pre></div>
 <p>Ta sama funkcja w języku C++ może wyglądać w ten sposób:</p>
-<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb331-1" data-line-number="1">rcpp_fun2 =<span class="st"> &quot;List mile_na_km_cpp(List odl_mile){</span></a>
-<a class="sourceLine" id="cb331-2" data-line-number="2"><span class="st">  int odl_mile_len = odl_mile.size();</span></a>
-<a class="sourceLine" id="cb331-3" data-line-number="3"><span class="st">  List result(odl_mile_len);</span></a>
-<a class="sourceLine" id="cb331-4" data-line-number="4"><span class="st">  for (int i = 0; i &lt; odl_mile_len; i++){</span></a>
-<a class="sourceLine" id="cb331-5" data-line-number="5"><span class="st">    result[i] = odl_mile[i] * 1.609;</span></a>
-<a class="sourceLine" id="cb331-6" data-line-number="6"><span class="st">  }</span></a>
-<a class="sourceLine" id="cb331-7" data-line-number="7"><span class="st">  return result;</span></a>
-<a class="sourceLine" id="cb331-8" data-line-number="8"><span class="st">}&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb331"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb331-1" data-line-number="1">List mile_na_km_cpp(List odl_mile){</a>
+<a class="sourceLine" id="cb331-2" data-line-number="2">  <span class="dt">int</span> odl_mile_len = odl_mile.size();</a>
+<a class="sourceLine" id="cb331-3" data-line-number="3">  List result(odl_mile_len);</a>
+<a class="sourceLine" id="cb331-4" data-line-number="4">  <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; odl_mile_len; i++){</a>
+<a class="sourceLine" id="cb331-5" data-line-number="5">    result[i] = odl_mile[i] * <span class="fl">1.609</span>;</a>
+<a class="sourceLine" id="cb331-6" data-line-number="6">  }</a>
+<a class="sourceLine" id="cb331-7" data-line-number="7">  <span class="cf">return</span> result;</a>
+<a class="sourceLine" id="cb331-8" data-line-number="8">}</a></code></pre></div>
 <p>Zawiera ona szereg różnic od kodu R.
 Oprócz definicji typów, używania średnika i operatora <code>return</code>, widać tutaj także inną metodę wywołania funkcji oraz inny sposób definiowania pętli <code>for</code>.</p>
 <p>Zadaniem linii <code>int odl_mile_len = odl_mile.size();</code> jest stworzenie nowej zmiennej skalarnej (<code>odl_mile_len</code>) o typie integer (<code>int</code>).
@@ -451,8 +451,18 @@ Drugim elementem jest <code>warunek trwania</code>, czyli określenie do kiedy p
 Ostatni element, <code>aktualizacja zmiennej</code>, mówi co ma się stać ze stworzoną zmienną po każdym przebiegu pętli.
 <code>i++</code> to skrót w języku C++ mówiący, że z każdą pętlą wartość <code>i</code> będzie rosła o 1.
 Jest to odpowiednik kodu <code>i = i + 1</code>.</p>
-<p>W powyższej składni też widać sposób definiowania komentarzy w języku C++ używając operatora <code>//</code>.</p>
-<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb333-1" data-line-number="1">Rcpp<span class="op">::</span><span class="kw">cppFunction</span>(rcpp_fun2)</a></code></pre></div>
+<p>W powyższej składni też widać sposób definiowania komentarzy w języku C++, gdzie używa się operatora <code>//</code>.</p>
+<p>Zainicjujmy funkcję C++ <code>mile_na_km_cpp()</code> używając <code>cppFunction()</code>.</p>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb333-1" data-line-number="1">rcpp_fun2 =<span class="st"> &quot;List mile_na_km_cpp(List odl_mile){</span></a>
+<a class="sourceLine" id="cb333-2" data-line-number="2"><span class="st">  int odl_mile_len = odl_mile.size();</span></a>
+<a class="sourceLine" id="cb333-3" data-line-number="3"><span class="st">  List result(odl_mile_len);</span></a>
+<a class="sourceLine" id="cb333-4" data-line-number="4"><span class="st">  for (int i = 0; i &lt; odl_mile_len; i++){</span></a>
+<a class="sourceLine" id="cb333-5" data-line-number="5"><span class="st">    result[i] = odl_mile[i] * 1.609;</span></a>
+<a class="sourceLine" id="cb333-6" data-line-number="6"><span class="st">  }</span></a>
+<a class="sourceLine" id="cb333-7" data-line-number="7"><span class="st">  return result;</span></a>
+<a class="sourceLine" id="cb333-8" data-line-number="8"><span class="st">}&quot;</span></a>
+<a class="sourceLine" id="cb333-9" data-line-number="9"><span class="kw">cppFunction</span>(rcpp_fun2)</a></code></pre></div>
+<p>Możemy sprawdzić jej działanie na przykładowym wektore <code>odl_mile</code> używając kodu poniżej.</p>
 <div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb334-1" data-line-number="1">odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</a>
 <a class="sourceLine" id="cb334-2" data-line-number="2"><span class="kw">mile_na_km_cpp</span>(odl_mile)</a>
 <a class="sourceLine" id="cb334-3" data-line-number="3"><span class="co">#&gt; [[1]]</span></a>
@@ -463,6 +473,7 @@ Jest to odpowiednik kodu <code>i = i + 1</code>.</p>
 <a class="sourceLine" id="cb334-8" data-line-number="8"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb334-9" data-line-number="9"><span class="co">#&gt; [[3]]</span></a>
 <a class="sourceLine" id="cb334-10" data-line-number="10"><span class="co">#&gt; [1] 195</span></a></code></pre></div>
+<p>Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy o długości 10001 i funkcji <code>mark()</code> z pakietu <strong>bench</strong>.</p>
 <div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb335-1" data-line-number="1">odl_mile2 =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10000</span>)</a>
 <a class="sourceLine" id="cb335-2" data-line-number="2">wynik =<span class="st"> </span>bench<span class="op">::</span><span class="kw">mark</span>(</a>
 <a class="sourceLine" id="cb335-3" data-line-number="3">  <span class="kw">mile_na_km</span>(odl_mile2),</a>
@@ -472,10 +483,11 @@ Jest to odpowiednik kodu <code>i = i + 1</code>.</p>
 <a class="sourceLine" id="cb335-7" data-line-number="7"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
 <a class="sourceLine" id="cb335-8" data-line-number="8"><span class="co">#&gt;   expression                  min median `itr/sec`</span></a>
 <a class="sourceLine" id="cb335-9" data-line-number="9"><span class="co">#&gt;   &lt;bch:expr&gt;                &lt;bch&gt; &lt;bch:&gt;     &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb335-10" data-line-number="10"><span class="co">#&gt; 1 mile_na_km(odl_mile2)     742µs  782µs     1242.</span></a>
-<a class="sourceLine" id="cb335-11" data-line-number="11"><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2) 393µs  427µs     2329.</span></a>
+<a class="sourceLine" id="cb335-10" data-line-number="10"><span class="co">#&gt; 1 mile_na_km(odl_mile2)     702µs  739µs     1311.</span></a>
+<a class="sourceLine" id="cb335-11" data-line-number="11"><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2) 383µs  409µs     2425.</span></a>
 <a class="sourceLine" id="cb335-12" data-line-number="12"><span class="co">#&gt; # … with 2 more variables: mem_alloc &lt;bch:byt&gt;,</span></a>
 <a class="sourceLine" id="cb335-13" data-line-number="13"><span class="co">#&gt; #   `gc/sec` &lt;dbl&gt;</span></a></code></pre></div>
+<p>Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.8 raza mniejszy.</p>
 </div>
 <div id="sourceCpp" class="section level3">
 <h3><span class="header-section-number">12.1.2</span> Wywoływanie kodu z plików .cpp</h3>

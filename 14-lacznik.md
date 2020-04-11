@@ -47,7 +47,7 @@ Odnosząc się do punktów z wcześniej wymienionej listy:
 Nie jest możliwe wykonywanie tego kodu linia po linii
 - Pozwala na używanie tylko `=` jako operatora przypisania - nie możemy w nim użyć operatora `<-` czy `->`
 - Zakłada głównie statyczną kontrolę typów - w powyższym przykładzie musieliśmy zadeklarować, że nasza funkcja `konwersja_temp_cpp`, nasz argument `temperatura_f` oraz zmienna `temperatura_c` będzie typu `double`. Zrobiliśmy to poprzez dodanie nazwy typu przed nazwą funkcji/argumentu/zmiennej. 
-Co ważne, w tym języku też typy (zazwyczaj) nie są automatycznie konwertowane do innych typów jak ma to miejsce w R (sekcja \@ref(#lpto-vector)). 
+Co ważne, w tym języku też typy (zazwyczaj) nie są automatycznie konwertowane do innych typów jak ma to miejsce w R (sekcja \@ref(lpto-vector)). 
 - Posiada typ skalarny - `double` może przechowywać tylko jedną wartość. 
 - Domyślnie nie używa wektoryzacji - powyższa funkcja `konwersja_temp_cpp()` zwróci błąd `Expecting a single value` w przypadku podania wektora numerycznego jako obiekt wejściowy.
 Aby użyć wektor wartości na wejściu konieczne jest napisane pętli lub użycie innych podobnych konstrukcji.
@@ -124,15 +124,15 @@ mile_na_km = function(odl_mile) {
 Ta sama funkcja w języku C++ może wyglądać w ten sposób:
 
 
-```r
-rcpp_fun2 = "List mile_na_km_cpp(List odl_mile){
+```cpp
+List mile_na_km_cpp(List odl_mile){
   int odl_mile_len = odl_mile.size();
   List result(odl_mile_len);
   for (int i = 0; i < odl_mile_len; i++){
     result[i] = odl_mile[i] * 1.609;
   }
   return result;
-}"
+}
 ```
 
 Zawiera ona szereg różnic od kodu R.
@@ -163,12 +163,24 @@ Ostatni element, `aktualizacja zmiennej`, mówi co ma się stać ze stworzoną z
 `i++` to skrót w języku C++ mówiący, że z każdą pętlą wartość `i` będzie rosła o 1.
 Jest to odpowiednik kodu `i = i + 1`.
 
-W powyższej składni też widać sposób definiowania komentarzy w języku C++ używając operatora `//`.
+W powyższej składni też widać sposób definiowania komentarzy w języku C++, gdzie używa się operatora `//`.
+
+Zainicjujmy funkcję C++ `mile_na_km_cpp()` używając `cppFunction()`.
 
 
 ```r
-Rcpp::cppFunction(rcpp_fun2)
+rcpp_fun2 = "List mile_na_km_cpp(List odl_mile){
+  int odl_mile_len = odl_mile.size();
+  List result(odl_mile_len);
+  for (int i = 0; i < odl_mile_len; i++){
+    result[i] = odl_mile[i] * 1.609;
+  }
+  return result;
+}"
+cppFunction(rcpp_fun2)
 ```
+
+Możemy sprawdzić jej działanie na przykładowym wektore `odl_mile` używając kodu poniżej.
 
 
 ```r
@@ -184,6 +196,8 @@ mile_na_km_cpp(odl_mile)
 #> [1] 195
 ```
 
+Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy o długości 10001 i funkcji `mark()` z pakietu **bench**.
+
 
 ```r
 odl_mile2 = as.list(0:10000)
@@ -195,13 +209,13 @@ wynik
 #> # A tibble: 2 x 6
 #>   expression                  min median `itr/sec`
 #>   <bch:expr>                <bch> <bch:>     <dbl>
-#> 1 mile_na_km(odl_mile2)     742µs  782µs     1242.
-#> 2 mile_na_km_cpp(odl_mile2) 393µs  427µs     2329.
+#> 1 mile_na_km(odl_mile2)     702µs  739µs     1311.
+#> 2 mile_na_km_cpp(odl_mile2) 383µs  409µs     2425.
 #> # … with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 ```
 
-
+Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.8 raza mniejszy.
 
 ### Wywoływanie kodu z plików .cpp {#sourceCpp}
 
