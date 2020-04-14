@@ -1,39 +1,38 @@
 <!DOCTYPE html>
-<html >
-
+<html lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>12 Debugowanie | Elementarz programisty</title>
-  <meta name="description" content="12 Debugowanie | Elementarz programisty">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="12 Debugowanie | Elementarz programisty" />
   <meta property="og:type" content="book" />
-  
-  
-  
-  <meta name="github-repo" content="nowosad/my-minimal-bookdown" />
+  <meta property="og:url" content="https://nowosad.github.io/elp" />
+  <meta property="og:image" content="https://nowosad.github.io/elp/cover/cover.png" />
+  <meta property="og:description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
+  <meta name="github-repo" content="nowosad/elp" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="12 Debugowanie | Elementarz programisty" />
   
+  <meta name="twitter:description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
+  <meta name="twitter:image" content="https://nowosad.github.io/elp/cover/cover.png" />
+
+<meta name="author" content="Jakub Nowosad" />
+
+
+<meta name="date" content="2020-04-14" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<meta name="author" content="Jakub Nowosad">
-
-
-<meta name="date" content="2019-05-06">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  
-  
-<link rel="prev" href="analiza-kodu.html">
-<link rel="next" href="lacznik.html">
+<link rel="prev" href="analiza-kodu.html"/>
+<link rel="next" href="lacznik.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -41,6 +40,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -56,7 +58,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; position: absolute; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -129,13 +130,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Wstęp do programowania w R</a></li>
+<li><a href="./">Elementarz programisty</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a><ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#wymagania-wstepne"><i class="fa fa-check"></i>Wymagania wstępne</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#styl-ksiazki"><i class="fa fa-check"></i>Styl książki</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#podziekowania"><i class="fa fa-check"></i>Podziękowania</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#wymagania-wstępne"><i class="fa fa-check"></i>Wymagania wstępne</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#styl-książki"><i class="fa fa-check"></i>Styl książki</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#podziękowania"><i class="fa fa-check"></i>Podziękowania</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a><ul>
 <li class="chapter" data-level="1.1" data-path="wprowadzenie.html"><a href="wprowadzenie.html#mity-programistyczne"><i class="fa fa-check"></i><b>1.1</b> Mity programistyczne</a></li>
@@ -145,7 +146,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>I Podstawy</b></span></li>
 <li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a><ul>
-<li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrazenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia</a></li>
+<li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrażenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia</a></li>
 <li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="ergosum.html"><a href="ergosum.html#operator-przypisania"><i class="fa fa-check"></i><b>2.2.1</b> Operator przypisania</a></li>
 <li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dzialania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach</a></li>
@@ -153,9 +154,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="ergosum.html"><a href="ergosum.html#ide"><i class="fa fa-check"></i><b>2.3</b> IDE</a></li>
 <li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a><ul>
 <li class="chapter" data-level="2.4.1" data-path="ergosum.html"><a href="ergosum.html#nazwy-obiektow"><i class="fa fa-check"></i><b>2.4.1</b> Nazwy obiektów</a></li>
-<li class="chapter" data-level="2.4.2" data-path="ergosum.html"><a href="ergosum.html#odstepy"><i class="fa fa-check"></i><b>2.4.2</b> Odstępy</a></li>
+<li class="chapter" data-level="2.4.2" data-path="ergosum.html"><a href="ergosum.html#odstępy"><i class="fa fa-check"></i><b>2.4.2</b> Odstępy</a></li>
 <li class="chapter" data-level="2.4.3" data-path="ergosum.html"><a href="ergosum.html#komentarze"><i class="fa fa-check"></i><b>2.4.3</b> Komentarze</a></li>
-<li class="chapter" data-level="2.4.4" data-path="ergosum.html"><a href="ergosum.html#nazwy-plikow"><i class="fa fa-check"></i><b>2.4.4</b> Nazwy plików</a></li>
+<li class="chapter" data-level="2.4.4" data-path="ergosum.html"><a href="ergosum.html#nazwy-plików"><i class="fa fa-check"></i><b>2.4.4</b> Nazwy plików</a></li>
 <li class="chapter" data-level="2.4.5" data-path="ergosum.html"><a href="ergosum.html#daty"><i class="fa fa-check"></i><b>2.4.5</b> Daty</a></li>
 </ul></li>
 <li class="chapter" data-level="2.5" data-path="ergosum.html"><a href="ergosum.html#resources"><i class="fa fa-check"></i><b>2.5</b> Dodatkowe materiały</a></li>
@@ -175,14 +176,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a><ul>
 <li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
-<li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagniezdzone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdzone</a></li>
-<li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porownania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
+<li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagnieżdżone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdżone</a></li>
+<li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porównania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
 <li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wwwf"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach</a></li>
 <li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zadania-3"><i class="fa fa-check"></i><b>4.5</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a><ul>
 <li class="chapter" data-level="5.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wektory"><i class="fa fa-check"></i><b>5.1</b> Wektory</a></li>
-<li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wasciwosci-wektorow"><i class="fa fa-check"></i><b>5.2</b> Właściwości wektorów</a></li>
+<li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#właściwości-wektorów"><i class="fa fa-check"></i><b>5.2</b> Właściwości wektorów</a></li>
 <li class="chapter" data-level="5.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#pf-vector"><i class="fa fa-check"></i><b>5.3</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="5.4" data-path="proste-obiekty.html"><a href="proste-obiekty.html#dzialania-na-wektorach"><i class="fa fa-check"></i><b>5.4</b> Działania na wektorach</a></li>
 <li class="chapter" data-level="5.5" data-path="proste-obiekty.html"><a href="proste-obiekty.html#na"><i class="fa fa-check"></i><b>5.5</b> Brakujące wartości</a></li>
@@ -190,7 +191,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.7" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wip-vector"><i class="fa fa-check"></i><b>5.7</b> Wydzielanie i przypisanie</a></li>
 <li class="chapter" data-level="5.8" data-path="proste-obiekty.html"><a href="proste-obiekty.html#mo-vector"><i class="fa fa-check"></i><b>5.8</b> Modyfikowanie obiektów</a></li>
 <li class="chapter" data-level="5.9" data-path="proste-obiekty.html"><a href="proste-obiekty.html#lpto-vector"><i class="fa fa-check"></i><b>5.9</b> Łączenie podstawowych typów obiektów</a></li>
-<li class="chapter" data-level="5.10" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zmiana-typow-obiektow"><i class="fa fa-check"></i><b>5.10</b> Zmiana typów obiektów</a></li>
+<li class="chapter" data-level="5.10" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zmiana-typów-obiektów"><i class="fa fa-check"></i><b>5.10</b> Zmiana typów obiektów</a></li>
 <li class="chapter" data-level="5.11" data-path="proste-obiekty.html"><a href="proste-obiekty.html#fac"><i class="fa fa-check"></i><b>5.11</b> Wektory czynnikowe</a></li>
 <li class="chapter" data-level="5.12" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ate"><i class="fa fa-check"></i><b>5.12</b> Wektory dat</a></li>
 <li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ime"><i class="fa fa-check"></i><b>5.13</b> Wektory czasu</a></li>
@@ -198,12 +199,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a><ul>
 <li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#reprezentacja-tekstu"><i class="fa fa-check"></i><b>6.1</b> Reprezentacja tekstu</a></li>
-<li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekscie"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście</a></li>
+<li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekście"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście</a></li>
 <li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wt"><i class="fa fa-check"></i><b>6.3</b> Wydzielanie tekstu</a></li>
-<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wyrazenia-regularne"><i class="fa fa-check"></i><b>6.4</b> Wyrażenia regularne</a></li>
+<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wyrażenia-regularne"><i class="fa fa-check"></i><b>6.4</b> Wyrażenia regularne</a></li>
 <li class="chapter" data-level="6.5" data-path="tekst.html"><a href="tekst.html#wtregex"><i class="fa fa-check"></i><b>6.5</b> Wydzielanie tekstu - regex</a></li>
 <li class="chapter" data-level="6.6" data-path="tekst.html"><a href="tekst.html#zamiana-tekstu---regex"><i class="fa fa-check"></i><b>6.6</b> Zamiana tekstu - regex</a></li>
-<li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plikow"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików</a></li>
+<li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plików"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików</a></li>
 <li class="chapter" data-level="6.8" data-path="tekst.html"><a href="tekst.html#zadania-5"><i class="fa fa-check"></i><b>6.8</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a><ul>
@@ -211,18 +212,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie"><i class="fa fa-check"></i><b>7.1.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.1.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje"><i class="fa fa-check"></i><b>7.1.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.1.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-1"><i class="fa fa-check"></i><b>7.1.3</b> Wydzielanie</a></li>
-<li class="chapter" data-level="7.1.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#aczenie"><i class="fa fa-check"></i><b>7.1.4</b> Łączenie</a></li>
+<li class="chapter" data-level="7.1.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie"><i class="fa fa-check"></i><b>7.1.4</b> Łączenie</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a><ul>
 <li class="chapter" data-level="7.2.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-1"><i class="fa fa-check"></i><b>7.2.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.2.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-1"><i class="fa fa-check"></i><b>7.2.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.2.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-df"><i class="fa fa-check"></i><b>7.2.3</b> Wydzielanie</a></li>
-<li class="chapter" data-level="7.2.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#aczenie-1"><i class="fa fa-check"></i><b>7.2.4</b> Łączenie</a></li>
+<li class="chapter" data-level="7.2.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-1"><i class="fa fa-check"></i><b>7.2.4</b> Łączenie</a></li>
 </ul></li>
 <li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-2"><i class="fa fa-check"></i><b>7.3.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.3.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-2"><i class="fa fa-check"></i><b>7.3.2</b> Podstawowe funkcje</a></li>
-<li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#aczenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie</a></li>
+<li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie</a></li>
 <li class="chapter" data-level="7.3.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-list"><i class="fa fa-check"></i><b>7.3.4</b> Wydzielanie</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zmiany-klas"><i class="fa fa-check"></i><b>7.4</b> Zmiany klas</a></li>
@@ -231,7 +232,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a><ul>
 <li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a><ul>
-<li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#skadnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia</a></li>
+<li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#składnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia</a></li>
 <li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#for-example"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
 <li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach</a></li>
 </ul></li>
@@ -241,10 +242,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a><ul>
 <li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy</a></li>
-<li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#dziaania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.2</b> Działania na plikach i folderach</a></li>
+<li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#działania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.2</b> Działania na plikach i folderach</a></li>
 <li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#dane-internetowe"><i class="fa fa-check"></i><b>9.3</b> Dane internetowe</a></li>
-<li class="chapter" data-level="9.4" data-path="io.html"><a href="io.html#wczytywanie-plikow-tekstowych"><i class="fa fa-check"></i><b>9.4</b> Wczytywanie plików tekstowych</a></li>
-<li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#zapisywanie-plikow-tekstowych"><i class="fa fa-check"></i><b>9.5</b> Zapisywanie plików tekstowych</a></li>
+<li class="chapter" data-level="9.4" data-path="io.html"><a href="io.html#wczytywanie-plików-tekstowych"><i class="fa fa-check"></i><b>9.4</b> Wczytywanie plików tekstowych</a></li>
+<li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#zapisywanie-plików-tekstowych"><i class="fa fa-check"></i><b>9.5</b> Zapisywanie plików tekstowych</a></li>
 <li class="chapter" data-level="9.6" data-path="io.html"><a href="io.html#formaty-r"><i class="fa fa-check"></i><b>9.6</b> Formaty R</a></li>
 <li class="chapter" data-level="9.7" data-path="io.html"><a href="io.html#arkusze-kalkulacyjne"><i class="fa fa-check"></i><b>9.7</b> Arkusze kalkulacyjne</a></li>
 <li class="chapter" data-level="9.8" data-path="io.html"><a href="io.html#inne-formaty"><i class="fa fa-check"></i><b>9.8</b> Inne formaty</a></li>
@@ -253,7 +254,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>II Narzędzia</b></span></li>
 <li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a><ul>
 <li class="chapter" data-level="10.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>10.1</b> API</a></li>
-<li class="chapter" data-level="10.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsuga-komunikatow"><i class="fa fa-check"></i><b>10.2</b> Obsługa komunikatów</a></li>
+<li class="chapter" data-level="10.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsluga-komunikatow"><i class="fa fa-check"></i><b>10.2</b> Obsługa komunikatów</a></li>
 <li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe</a><ul>
 <li class="chapter" data-level="10.3.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#klasy"><i class="fa fa-check"></i><b>10.3.1</b> Klasy</a></li>
 <li class="chapter" data-level="10.3.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#metody"><i class="fa fa-check"></i><b>10.3.2</b> Metody</a></li>
@@ -263,24 +264,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu</a><ul>
 <li class="chapter" data-level="11.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.1</b> Testy jednostkowe</a></li>
-<li class="chapter" data-level="11.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>11.2</b> Benchmarking</a></li>
-<li class="chapter" data-level="11.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>11.3</b> Profiling</a></li>
+<li class="chapter" data-level="11.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>11.2</b> Profiling</a></li>
+<li class="chapter" data-level="11.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>11.3</b> Benchmarking</a></li>
 <li class="chapter" data-level="11.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zadania-10"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie</a><ul>
-<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#podstawowe-podejscie-do-debugowania"><i class="fa fa-check"></i><b>12.1</b> Podstawowe podejście do debugowania</a></li>
-<li class="chapter" data-level="12.2" data-path="debugging.html"><a href="debugging.html#interaktywne-debugowanie"><i class="fa fa-check"></i><b>12.2</b> Interaktywne debugowanie</a></li>
-<li class="chapter" data-level="12.3" data-path="debugging.html"><a href="debugging.html#zadania-11"><i class="fa fa-check"></i><b>12.3</b> Zadania</a></li>
+<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="debugging.html"><a href="debugging.html#pakiet-reprex"><i class="fa fa-check"></i><b>12.1.1</b> Pakiet <strong>reprex</strong></a></li>
+<li class="chapter" data-level="12.1.2" data-path="debugging.html"><a href="debugging.html#tworzenie-powtarzalnego-przykładu"><i class="fa fa-check"></i><b>12.1.2</b> Tworzenie powtarzalnego przykładu</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="debugging.html"><a href="debugging.html#proces-debugowania"><i class="fa fa-check"></i><b>12.2</b> Proces debugowania</a></li>
+<li class="chapter" data-level="12.3" data-path="debugging.html"><a href="debugging.html#debuging-print"><i class="fa fa-check"></i><b>12.3</b> Podstawowe podejście do debugowania</a></li>
+<li class="chapter" data-level="12.4" data-path="debugging.html"><a href="debugging.html#debugger"><i class="fa fa-check"></i><b>12.4</b> Debugger</a></li>
+<li class="chapter" data-level="12.5" data-path="debugging.html"><a href="debugging.html#zadania-11"><i class="fa fa-check"></i><b>12.5</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik</a><ul>
-<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#c"><i class="fa fa-check"></i><b>13.1</b> C++</a><ul>
-<li class="chapter" data-level="13.1.1" data-path="lacznik.html"><a href="lacznik.html#podstawy-c"><i class="fa fa-check"></i><b>13.1.1</b> Podstawy C++</a></li>
-<li class="chapter" data-level="13.1.2" data-path="lacznik.html"><a href="lacznik.html#evalcpp"><i class="fa fa-check"></i><b>13.1.2</b> evalCpp</a></li>
-<li class="chapter" data-level="13.1.3" data-path="lacznik.html"><a href="lacznik.html#cppfunction"><i class="fa fa-check"></i><b>13.1.3</b> cppFunction</a></li>
-<li class="chapter" data-level="13.1.4" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1.4</b> .cpp</a></li>
+<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++</a><ul>
+<li class="chapter" data-level="13.1.1" data-path="lacznik.html"><a href="lacznik.html#cppFunction"><i class="fa fa-check"></i><b>13.1.1</b> Wywoływanie kodu C++ wewnątrz skryptu R</a></li>
+<li class="chapter" data-level="13.1.2" data-path="lacznik.html"><a href="lacznik.html#sourceCpp"><i class="fa fa-check"></i><b>13.1.2</b> Wywoływanie kodu z plików .cpp</a></li>
 </ul></li>
 <li class="chapter" data-level="13.2" data-path="lacznik.html"><a href="lacznik.html#python"><i class="fa fa-check"></i><b>13.2</b> Python</a></li>
-<li class="chapter" data-level="13.3" data-path="lacznik.html"><a href="lacznik.html#zadania-12"><i class="fa fa-check"></i><b>13.3</b> Zadania</a></li>
+<li class="chapter" data-level="13.3" data-path="lacznik.html"><a href="lacznik.html#powloka-systemowa"><i class="fa fa-check"></i><b>13.3</b> Powłoka systemowa</a></li>
+<li class="chapter" data-level="13.4" data-path="lacznik.html"><a href="lacznik.html#zadania-12"><i class="fa fa-check"></i><b>13.4</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji</a><ul>
 <li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git</a><ul>
@@ -297,35 +302,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub</a><ul>
 <li class="chapter" data-level="14.2.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#tworzenie-zdanego-repo"><i class="fa fa-check"></i><b>14.2.1</b> Tworzenie zdanego repo</a></li>
 <li class="chapter" data-level="14.2.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-github"><i class="fa fa-check"></i><b>14.2.2</b> Repozytorium GitHub</a></li>
-<li class="chapter" data-level="14.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-mozliwosci-github"><i class="fa fa-check"></i><b>14.2.3</b> Dodatkowe możliwości GitHub</a></li>
+<li class="chapter" data-level="14.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-możliwości-github"><i class="fa fa-check"></i><b>14.2.3</b> Dodatkowe możliwości GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="14.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rstudio-git"><i class="fa fa-check"></i><b>14.3</b> Kontrola wersji w RStudio</a></li>
 <li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git</a><ul>
 <li class="chapter" data-level="14.4.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#nowy-projekt"><i class="fa fa-check"></i><b>14.4.1</b> Nowy projekt</a></li>
 <li class="chapter" data-level="14.4.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#istniejacy-projekt"><i class="fa fa-check"></i><b>14.4.2</b> Istniejący projekt</a></li>
 </ul></li>
-<li class="chapter" data-level="14.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#problemy-z-kontrola-wersji"><i class="fa fa-check"></i><b>14.5</b> Problemy z kontrolą wersji</a></li>
+<li class="chapter" data-level="14.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#problemy-z-kontrolą-wersji"><i class="fa fa-check"></i><b>14.5</b> Problemy z kontrolą wersji</a></li>
 <li class="chapter" data-level="14.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zadania-13"><i class="fa fa-check"></i><b>14.6</b> Zadania</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a><ul>
 <li class="chapter" data-level="15.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#nazwa-pakietu"><i class="fa fa-check"></i><b>15.1</b> Nazwa pakietu</a></li>
 <li class="chapter" data-level="15.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-szkieletu-pakietu"><i class="fa fa-check"></i><b>15.2</b> Tworzenie szkieletu pakietu</a></li>
-<li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>15.3</b> Rozwijanie pakietu</a></li>
-<li class="chapter" data-level="15.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-i-dokumentacja-funkcji"><i class="fa fa-check"></i><b>15.4</b> Tworzenie i dokumentacja funkcji</a></li>
-<li class="chapter" data-level="15.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>15.5</b> Opis pakietu</a></li>
-<li class="chapter" data-level="15.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zaleznosci"><i class="fa fa-check"></i><b>15.6</b> Zależności</a></li>
+<li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>15.3</b> Opis pakietu</a></li>
+<li class="chapter" data-level="15.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>15.4</b> Rozwijanie pakietu</a></li>
+<li class="chapter" data-level="15.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-i-dokumentacja-funkcji"><i class="fa fa-check"></i><b>15.5</b> Tworzenie i dokumentacja funkcji</a></li>
+<li class="chapter" data-level="15.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zależności"><i class="fa fa-check"></i><b>15.6</b> Zależności</a></li>
 <li class="chapter" data-level="15.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#sprawdzanie-pakietu"><i class="fa fa-check"></i><b>15.7</b> Sprawdzanie pakietu</a></li>
 <li class="chapter" data-level="15.8" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#instalowanie-pakietu"><i class="fa fa-check"></i><b>15.8</b> Instalowanie pakietu</a></li>
 <li class="chapter" data-level="15.9" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-pakietu"><i class="fa fa-check"></i><b>15.9</b> Dokumentacja pakietu</a></li>
 <li class="chapter" data-level="15.10" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#wbudowane-testy"><i class="fa fa-check"></i><b>15.10</b> Wbudowane testy</a></li>
-<li class="chapter" data-level="15.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietow"><i class="fa fa-check"></i><b>15.11</b> Publikowanie pakietów</a></li>
+<li class="chapter" data-level="15.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietów"><i class="fa fa-check"></i><b>15.11</b> Publikowanie pakietów</a></li>
 <li class="chapter" data-level="15.12" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zadania-14"><i class="fa fa-check"></i><b>15.12</b> Zadania</a></li>
 </ul></li>
-<li class="part"><span><b>III Przykłady</b></span></li>
-<li class="chapter" data-level="16" data-path="analiza-danych.html"><a href="analiza-danych.html"><i class="fa fa-check"></i><b>16</b> Analiza danych</a></li>
-<li class="chapter" data-level="17" data-path="tworzenie-zbioru-funkcji.html"><a href="tworzenie-zbioru-funkcji.html"><i class="fa fa-check"></i><b>17</b> Tworzenie zbioru funkcji</a></li>
-<li class="chapter" data-level="18" data-path="tworzenie-pakietu.html"><a href="tworzenie-pakietu.html"><i class="fa fa-check"></i><b>18</b> Tworzenie pakietu</a></li>
-<li class="chapter" data-level="19" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>19</b> Podsumowanie</a></li>
+<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie</a><ul>
+<li class="chapter" data-level="16.1" data-path="podsumowanie.html"><a href="podsumowanie.html#grafika"><i class="fa fa-check"></i><b>16.1</b> Grafika</a></li>
+<li class="chapter" data-level="16.2" data-path="podsumowanie.html"><a href="podsumowanie.html#analiza-danych"><i class="fa fa-check"></i><b>16.2</b> Analiza danych</a></li>
+<li class="chapter" data-level="16.3" data-path="podsumowanie.html"><a href="podsumowanie.html#inne-zastosowania"><i class="fa fa-check"></i><b>16.3</b> Inne zastosowania</a></li>
+<li class="chapter" data-level="16.4" data-path="podsumowanie.html"><a href="podsumowanie.html#programowanie-w-r"><i class="fa fa-check"></i><b>16.4</b> Programowanie w R</a></li>
+<li class="chapter" data-level="16.5" data-path="podsumowanie.html"><a href="podsumowanie.html#co-dalej"><i class="fa fa-check"></i><b>16.5</b> Co dalej?</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
 <li class="divider"></li>
 <li><a href="https://nowosad.github.io/">Jakub Nowosad</a></li>
@@ -349,31 +356,114 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="debugging" class="section level1">
 <h1><span class="header-section-number">12</span> Debugowanie</h1>
-<!-- proces: -->
-<!-- 1. szukaj błędu - ktoś inny - google + stackoverflow -->
-<!-- 2. reprex -> stackoverflow -->
-<!-- 3. debug -> find an error -->
-<!-- 4. fix an error and add tests  -->
-<!-- ref intro -->
-<!-- resources -->
-<!-- https://rstudio-education.github.io/hopr/debug.html -->
-<!-- https://jennybc.github.io/wtf-2019-rsc/debugging.pdf -->
-<!-- https://blog.davisvaughan.com/2019/04/05/debug-r-package-with-cpp/ -->
-<!-- https://bookdown.org/rdpeng/RProgDA/debugging.html -->
-<!-- https://adv-r.hadley.nz/debugging.html -->
-<!-- https://www.youtube.com/watch?time_continue=1&v=R3-IMGyNJY4 -->
-<!-- https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio -->
-<!-- http://kevinushey.github.io/blog/2015/04/13/debugging-with-lldb/ -->
-<!-- https://github.com/wch/r-debug/blob/master/debugging-r.md -->
-<div id="podstawowe-podejscie-do-debugowania" class="section level2">
-<h2><span class="header-section-number">12.1</span> Podstawowe podejście do debugowania</h2>
-<!-- `print()`, `cat()` - small objects -->
-<!-- `str()` - large object trunct -->
-<!-- test values -->
+<p>Używając pakietów i funkcji stworzonych przez inne osoby możemy czasem znaleźć się w sytuacji, gdy zamiast wyniku otrzymujemy komunikat błędu.
+Warto wówczas upewnić się czy nie napisaliśmy żadnej literówki i podaliśmy odpowiednie argumenty funkcji.
+Konieczne kolejne kroki mogą obejmować sprawdzenie pliku pomocy danej funkcji, czy też skopiowanie najważniejszego fragmentu błędu i wklejenie go do wyszukiwarki internetowej.
+Isnieje szansa, że ktoś już wcześniej napotkał ten problem, zadał pytanie i otrzymał na nie odpowiedź w internecie (np, na <a href="https://stackoverflow.com/" class="uri">https://stackoverflow.com/</a>).</p>
+<p>Czasem się może jednak okazać, że odkryliśmy nowy problem - warto go wtedy zgłosić do twórców pakietu.
+Wiele pakietów na platformie CRAN zawiera sekcję <em>BugReports</em>, gdzie można znaleźć link do zgłaszania błędów.
+Przykładowo, pakiet <strong>stringr</strong> jest opisany pod adresem <a href="https://cran.r-project.org/package=stringr" class="uri">https://cran.r-project.org/package=stringr</a> i w jego sekcji <em>BugReports</em> znajduje się odnośnik do <a href="https://github.com/tidyverse/stringr/issues" class="uri">https://github.com/tidyverse/stringr/issues</a>.
+W przypadku zgłaszania błędów zazwyczaj nie należy pisać bardzo długich opisów czy wklejać cały kod, który został napisany.
+Konieczne jest natomiast przygotowanie powtarzalnego przykładu (ang. <em>reproducible example</em>), czyli minimalnego kodu możliwego do odtworzenia problemu na innym komputerze (sekcja <a href="debugging.html#reprex">12.1</a>).
+Warto jednak pamiętać, że sekcja <em>Issue</em> na platformie Github służy głównie do zgłaszania problemów, a nie do zadawania pytań.
+W przypadku potrzeby zadania pytania, lepszym pomysłem jest opublikowanie go na <a href="https://stackoverflow.com/" class="uri">https://stackoverflow.com/</a>,</p>
+<!-- https://en.wikipedia.org/wiki/Debugging#/media/File:H96566k.jpg -->
+<p>Tworzenie kodu możliwego do odtworzenia problemu (powtarzalnych przykładów) jest też pomocne w przypadku, gdy my piszemy nowe skrypty i funkcje i napotkamy na błędy.
+Jest to często część debugowania (ang. <em>debugging</em>) - procesu rozwiązywania problemów i błędów w oprogramowaniu.
+Istnieje wiele potencjalnych taktyk debugowania kodu, w tym debugowanie używając funkcji takich jak print (sekcja <a href="debugging.html#debuging-print">12.3</a>), czy też debuggera (sekcja <a href="debugging.html#debugger">12.4</a>).</p>
+<p>Więcej na temat debugowania kodu w R można dowiedzieć się więcej z prezentacji Jenny Bryan pt. <a href="https://github.com/jennybc/debugging">Object of type ‘closure’ is not subsettable</a>, [rozdziału Debugging R code] książki <span class="citation">Jennifer Bryan and Hester (<a href="#ref-rstatswtf">2019</a>)</span>, oraz [rozdziału Debugging] książki <span class="citation">Wickham and Grolemund (<a href="#ref-wickham2016r">2016</a>)</span>.
+Dodatkowo, na stronach <a href="https://blog.davisvaughan.com/2019/04/05/debug-r-package-with-cpp/">Debugging an R Package with C++</a>, <a href="https://github.com/wch/r-debug/blob/master/debugging-r.md">Debugging C/C++ code that interfaces with R</a>, oraz <a href="http://kevinushey.github.io/blog/2015/04/13/debugging-with-lldb/">Debugging with LLDB</a> można przeczytać na temat debugowania kodu C++ łączącego się z R.</p>
+<div id="reprex" class="section level2">
+<h2><span class="header-section-number">12.1</span> Powtarzalne przykłady</h2>
+<p>Powtarzalny przykład oznacza fragment kodu, który może być odtworzony przez inną osobę na innym komputerze lub przez siebie samego w przyszłości.
+Może on służyć pokazaniu poprawnego rozwiązania, wskazaniu na błędy w funkcjach, lub też jako załącznik do prośby o pomoc z kodem.
+Powtarzalny przykład powinien składać się przynajmniej z:</p>
+<ul>
+<li>Z małego zbioru danych lub obiektu zawierającego dane wystarczającego do odtworzenia obliczeń</li>
+<li>Krótkiego kodu, który może być uruchomiony na powyższym zbiorze danych</li>
+</ul>
+<p>Czasem ważne są też dodatkowe informacje o używanej wersji R, posiadanym systemie operacyjnym, wersjach używanych pakietów, etc.
+Można do tego użyć funkcji <code>sessionInfo()</code></p>
+<div id="pakiet-reprex" class="section level3">
+<h3><span class="header-section-number">12.1.1</span> Pakiet <strong>reprex</strong></h3>
+<p>Stworzenie powtarzalnego przykładu w R może zostać ułatwione używając pakietu <strong>reprex</strong> <span class="citation">(Jennifer Bryan et al. <a href="#ref-R-reprex">2019</a>)</span>.
+Ten pakiet uruchamia wybraną część kodu w nowej sesji R uruchomionej w tle, wykonuje kolejne operacje, a następnie zapisuje uzyskany wynik do schowka.</p>
+<p>Główną funkcją w tym pakiecie jest <code>reprex()</code>.
+Funkcję <code>reprex()</code> można użyć poprzez wpisanie kodu wewnątrz tej funkcji lub też poprzez wybranie opcji <code>Reprex selection</code> z menu Addins w RStudio.
+Możliwe jest również stworzenie powtarzalnego przykładu na podstawie skryptu R:</p>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb323-1" data-line-number="1"><span class="kw">reprex</span>(<span class="dt">input =</span> <span class="st">&quot;moj_skrypt.R&quot;</span>)</a></code></pre></div>
+<p>Więcej informacji na temat powtarzalnych przykładów oraz pakietu <strong>reprex</strong> można znaleźć na <a href="https://reprex.tidyverse.org/index.html">oficjalnej stronie pakietu reprex</a>, oraz stronach <a href="https://www.jessemaegan.com/post/so-you-ve-been-asked-to-make-a-reprex/">So you’ve been asked to make a reprex</a>, <a href="https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example">How to make a great R reproducible example</a>, <a href="https://www.njtierney.com/post/2017/01/11/magic-reprex/">Magic reprex</a>, <a href="https://speakerdeck.com/jennybc/reprex-help-me-help-you">reprex: help me help you!</a>, oraz <a href="https://www.tidyverse.org/help/#reprex">Get help!</a>.</p>
+</div>
+<div id="tworzenie-powtarzalnego-przykładu" class="section level3">
+<h3><span class="header-section-number">12.1.2</span> Tworzenie powtarzalnego przykładu</h3>
+<p>Działanie pakietu <strong>reprex</strong> można zobaczyć poniżej.
+Tworzymy dwa obiekty <code>x</code> i <code>y</code>, przypisujemy im wartości, a następnie je mnożymy przez siebie.</p>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb324-1" data-line-number="1">x =<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb324-2" data-line-number="2">y =<span class="st"> </span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb324-3" data-line-number="3">x <span class="op">*</span><span class="st"> </span>y</a>
+<a class="sourceLine" id="cb324-4" data-line-number="4"><span class="co">#&gt; [1] 5</span></a></code></pre></div>
+<p>Ten sam kod umieszczony w funkcji <code>reprex()</code> wygląda w ten sposób:</p>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb325-1" data-line-number="1"><span class="kw">library</span>(reprex)</a>
+<a class="sourceLine" id="cb325-2" data-line-number="2"><span class="kw">reprex</span>({</a>
+<a class="sourceLine" id="cb325-3" data-line-number="3">  x =<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb325-4" data-line-number="4">  y =<span class="st"> </span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb325-5" data-line-number="5">  x <span class="op">*</span><span class="st"> </span>y</a>
+<a class="sourceLine" id="cb325-6" data-line-number="6">})</a></code></pre></div>
+<p>Wynik działania powyższego kodu zapisywany jest w schowku jako Markdown oraz w postaci wyświetlonego pliku HTML:</p>
+<p><img src="figures/reprex1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p>Kolejny powtarzalny przykład pochodzi z rozdziału <a href="tekst.html#tekst">6</a>, gdzie naszym celem było określenie które elementy wektora <code>tekst3</code> rozpoczynają się od dużej litery <code>L</code>.</p>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb326-1" data-line-number="1"><span class="kw">reprex</span>({</a>
+<a class="sourceLine" id="cb326-2" data-line-number="2">  teskt3 =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Magdalena&quot;</span>, <span class="st">&quot;Lena&quot;</span>, <span class="st">&quot;1Lena.csv&quot;</span>, <span class="st">&quot;LLena&quot;</span>, <span class="st">&quot;Helena&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;99&quot;</span>)</a>
+<a class="sourceLine" id="cb326-3" data-line-number="3">  <span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;^L&quot;</span>)</a>
+<a class="sourceLine" id="cb326-4" data-line-number="4">})</a></code></pre></div>
+<p>Niestety zwraca on błąd.
+Powyższy kod ma dwa problemy - czy jesteś w stanie je wskazać?</p>
+<p><img src="figures/reprex2.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p>Odpowiedź - ten kod nie jest w pełni samowystarczalny - brakuje tam dołączenia pakietu <strong>stringr</strong>, który zawiera funkcję <code>str_detect()</code>.
+Drugi problem to literówka w obiekcie <code>teskt3</code>.
+Naprawiona wersja tego kodu znajduje się poniżej:</p>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb327-1" data-line-number="1"><span class="kw">reprex</span>({</a>
+<a class="sourceLine" id="cb327-2" data-line-number="2">  <span class="kw">library</span>(stringr)</a>
+<a class="sourceLine" id="cb327-3" data-line-number="3">  tekst3 =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Magdalena&quot;</span>, <span class="st">&quot;Lena&quot;</span>, <span class="st">&quot;1Lena.csv&quot;</span>, <span class="st">&quot;LLena&quot;</span>, <span class="st">&quot;Helena&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;99&quot;</span>)</a>
+<a class="sourceLine" id="cb327-4" data-line-number="4">  <span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;^L&quot;</span>)</a>
+<a class="sourceLine" id="cb327-5" data-line-number="5">})</a></code></pre></div>
+<p><img src="figures/reprex3.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="proces-debugowania" class="section level2">
+<h2><span class="header-section-number">12.2</span> Proces debugowania</h2>
+<p>Nie ma uniwersalnego procesu debugowania, który działa dla każdego napotkanego problemu programistycznego.
+Można jednak określić kilka kroków, które mogą znacząco ułatwić debugowanie:</p>
+<ol style="list-style-type: decimal">
+<li>Powtarzalność błędu</li>
+<li>Identyfikacja przyczyny błędu</li>
+<li>Usunięcie błędu</li>
+<li>Weryfikacja naprawy błędu i jej konsekwencji</li>
+</ol>
+<p>W pierwszym kroku warto się upewnić, że napotkany błąd nie jest spowodowany przez inne obiekty w środowisku R.
+Należy wyczyścić środowisko R używając <code>rm(list = ls())</code> a następnie zresetować sesję R (CTRL+SHIFT+F10 w RStudio).
+Warto też wydzielić z kodu najmniejszy fragment, który pozwala na odtworzenie błędu (<em>powtarzalny przykład</em>).
+Teraz należy jeszcze raz spróbować użyć kodu zwracającego błąd, aby się upewnić, że dalej istnieje.</p>
+<p>Drugi krok obejmuje zlokalizowanie dokładnego miejsca w którym błąd powstaje.
+Może to być konkretna linia kodu, miejsce w pętli, a czasem nawet wywołanie innej zewnętrznej funkcji.
+Ten krok można wykonać na wiele sposobów.
+Dwa z nich, debugowanie używając funkcji takich jak print (sekcja <a href="debugging.html#debuging-print">12.3</a>) i debugowanie interaktywne (sekcja <a href="debugging.html#debugger">12.4</a>), są opisane w tym rozdziale.</p>
+<p>W trzecim kroku należy usunąć wcześniej zlokalizowany błąd.
+Nie powinien to być jednak ostatni krok.</p>
+<p>Należy jeszcze upewnić się, że nowa wersja kodu nie tylko przestaje zwracać błędy, ale też daje poprawne wyniki.
+Często odbywa się to poprzez wykonanie wcześniej stworzony testów jednostkowych (sekcja <a href="analiza-kodu.html#testy-jednostkowe">11.1</a>).</p>
+</div>
+<div id="debuging-print" class="section level2">
+<h2><span class="header-section-number">12.3</span> Podstawowe podejście do debugowania</h2>
+<p>Klasycznym podejściem do debugowania jest dodanie funkcji <code>print()</code> pokazującej wartości obiektów w okolicy potencjalnego źródła błędu.
+Dalej warto zaplanować jakie testy kodu wykonać, aby wyłapać dokładne miejsce wystąpnienia błędu.
+Trzeba też zapisywać potencjalne wyniki.
+Takie systematyczne podejście może zaoszczędzić dużo czasu w porównaniu do losowego testowania różnych wartości w kodzie.</p>
+<p>Oprócz funkcji można też wykorzystać funkcję <code>cat()</code> w przypadku małych obiektów lub funkcję <code>str()</code> w przypadku większych obiektów.</p>
 <!-- `traceback()` - bottom to top -->
 </div>
-<div id="interaktywne-debugowanie" class="section level2">
-<h2><span class="header-section-number">12.2</span> Interaktywne debugowanie</h2>
+<div id="debugger" class="section level2">
+<h2><span class="header-section-number">12.4</span> Debugger</h2>
 <!-- ## inside R -->
 <!-- `browser()` -->
 <!-- `n` - next statement -->
@@ -388,10 +478,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- `debug()`, `trace()`, `recover()` -->
 </div>
 <div id="zadania-11" class="section level2">
-<h2><span class="header-section-number">12.3</span> Zadania</h2>
+<h2><span class="header-section-number">12.5</span> Zadania</h2>
 <!-- create debugging examples - .R files -->
 <!-- https://github.com/jimhester/wtf-debugging -->
 
+</div>
+</div>
+<h3>Bibliografia</h3>
+<div id="refs" class="references">
+<div id="ref-rstatswtf">
+<p>Bryan, Jennifer, and Jim Hester. 2019. <em>What They Forgot to Teach You About R</em>.</p>
+</div>
+<div id="ref-R-reprex">
+<p>Bryan, Jennifer, Jim Hester, David Robinson, and Hadley Wickham. 2019. <em>Reprex: Prepare Reproducible Example Code via the Clipboard</em>. <a href="https://CRAN.R-project.org/package=reprex" class="uri">https://CRAN.R-project.org/package=reprex</a>.</p>
+</div>
+<div id="ref-wickham2016r">
+<p>Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. &quot; O’Reilly Media, Inc.&quot;.</p>
 </div>
 </div>
             </section>
@@ -405,11 +507,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -417,12 +521,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -430,14 +533,18 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Nowosad/my-minimal-bookdown/edit/master/13-debugging.Rmd",
+"link": "https://github.com/Nowosad/elp/edit/master/13-debugging.Rmd",
 "text": "Edit"
 },
 "history": {
 "link": null,
 "text": null
 },
-"download": ["wstep_do_progr_w_r_nowosad_2019.pdf", "wstep_do_progr_w_r_nowosad_2019.epub"],
+"view": {
+"link": null,
+"text": null
+},
+"download": ["elementarz-programisty-nowosad-2020.pdf"],
 "toc": {
 "collapse": "section"
 },
@@ -455,8 +562,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

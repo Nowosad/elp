@@ -215,7 +215,7 @@
 \providecommand{\subtitle}[1]{}
 \subtitle{Wstęp do programowania używając R}
 \author{Jakub Nowosad}
-\date{2020-04-11}
+\date{2020-04-14}
 
 \let\BeginKnitrBlock\begin \let\EndKnitrBlock\end
 \begin{document}
@@ -2722,7 +2722,7 @@ R ma wbudowaną reprezentację dat w postaci klasy \texttt{Date}.
 \begin{Highlighting}[]
 \NormalTok{dzis =}\StringTok{ }\KeywordTok{Sys.Date}\NormalTok{()}
 \NormalTok{dzis}
-\CommentTok{#> [1] "2020-04-11"}
+\CommentTok{#> [1] "2020-04-14"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2745,11 +2745,11 @@ Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji \texttt{unclass(
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{unclass}\NormalTok{(dzis)}
-\CommentTok{#> [1] 18363}
+\CommentTok{#> [1] 18366}
 \end{Highlighting}
 \end{Shaded}
 
-Wynik, 18363, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
+Wynik, 18366, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
 
 \begin{Shaded}
@@ -6212,7 +6212,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.432   0.000   0.432}
+\CommentTok{#>   0.427   0.000   0.427}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6271,8 +6271,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression               min median `itr/sec`}
 \CommentTok{#>   <bch:expr>          <bch:tm> <bch:>     <dbl>}
-\CommentTok{#> 1 mi_do_km1(odl_mile)   1.31us 1.48us   577581.}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 944.01ns 1.05us   886075.}
+\CommentTok{#> 1 mi_do_km1(odl_mile)   1.28us  1.4us   618143.}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 966.01ns 1.06us   888782.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
@@ -6316,14 +6316,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 394ms  399ms      2.51     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 762us  797us   1104.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 385ms  390ms      2.56     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 733us  765us   1191.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.51 operacji na sekundę, przy aż 1104.34 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.56 operacji na sekundę, przy aż 1190.87 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zadania-10}{%
@@ -6363,6 +6363,180 @@ Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) raz
   Która z nich jest szybsza?
   Która z nich zużywa mniej zasobów?
 \end{enumerate}
+
+\hypertarget{debugging}{%
+\chapter{Debugowanie}\label{debugging}}
+
+Używając pakietów i funkcji stworzonych przez inne osoby możemy czasem znaleźć się w sytuacji, gdy zamiast wyniku otrzymujemy komunikat błędu.
+Warto wówczas upewnić się czy nie napisaliśmy żadnej literówki i podaliśmy odpowiednie argumenty funkcji.
+Konieczne kolejne kroki mogą obejmować sprawdzenie pliku pomocy danej funkcji, czy też skopiowanie najważniejszego fragmentu błędu i wklejenie go do wyszukiwarki internetowej.
+Isnieje szansa, że ktoś już wcześniej napotkał ten problem, zadał pytanie i otrzymał na nie odpowiedź w internecie (np, na \url{https://stackoverflow.com/}).
+
+Czasem się może jednak okazać, że odkryliśmy nowy problem - warto go wtedy zgłosić do twórców pakietu.
+Wiele pakietów na platformie CRAN zawiera sekcję \emph{BugReports}, gdzie można znaleźć link do zgłaszania błędów.
+Przykładowo, pakiet \textbf{stringr} jest opisany pod adresem \url{https://cran.r-project.org/package=stringr} i w jego sekcji \emph{BugReports} znajduje się odnośnik do \url{https://github.com/tidyverse/stringr/issues}.
+W przypadku zgłaszania błędów zazwyczaj nie należy pisać bardzo długich opisów czy wklejać cały kod, który został napisany.
+Konieczne jest natomiast przygotowanie powtarzalnego przykładu (ang. \emph{reproducible example}), czyli minimalnego kodu możliwego do odtworzenia problemu na innym komputerze (sekcja \ref{reprex}).
+Warto jednak pamiętać, że sekcja \emph{Issue} na platformie Github służy głównie do zgłaszania problemów, a nie do zadawania pytań.
+W przypadku potrzeby zadania pytania, lepszym pomysłem jest opublikowanie go na \url{https://stackoverflow.com/},
+
+Tworzenie kodu możliwego do odtworzenia problemu (powtarzalnych przykładów) jest też pomocne w przypadku, gdy my piszemy nowe skrypty i funkcje i napotkamy na błędy.
+Jest to często część debugowania (ang. \emph{debugging}) - procesu rozwiązywania problemów i błędów w oprogramowaniu.
+Istnieje wiele potencjalnych taktyk debugowania kodu, w tym debugowanie używając funkcji takich jak print (sekcja \ref{debuging-print}), czy też debuggera (sekcja \ref{debugger}).
+
+Więcej na temat debugowania kodu w R można dowiedzieć się więcej z prezentacji Jenny Bryan pt. \href{https://github.com/jennybc/debugging}{Object of type `closure' is not subsettable}, {[}rozdziału Debugging R code{]} książki \citet{rstatswtf}, oraz {[}rozdziału Debugging{]} książki \citet{wickham2016r}.
+Dodatkowo, na stronach \href{https://blog.davisvaughan.com/2019/04/05/debug-r-package-with-cpp/}{Debugging an R Package with C++}, \href{https://github.com/wch/r-debug/blob/master/debugging-r.md}{Debugging C/C++ code that interfaces with R}, oraz \href{http://kevinushey.github.io/blog/2015/04/13/debugging-with-lldb/}{Debugging with LLDB} można przeczytać na temat debugowania kodu C++ łączącego się z R.
+
+\hypertarget{reprex}{%
+\section{Powtarzalne przykłady}\label{reprex}}
+
+Powtarzalny przykład oznacza fragment kodu, który może być odtworzony przez inną osobę na innym komputerze lub przez siebie samego w przyszłości.
+Może on służyć pokazaniu poprawnego rozwiązania, wskazaniu na błędy w funkcjach, lub też jako załącznik do prośby o pomoc z kodem.
+Powtarzalny przykład powinien składać się przynajmniej z:
+
+\begin{itemize}
+\tightlist
+\item
+  Z małego zbioru danych lub obiektu zawierającego dane wystarczającego do odtworzenia obliczeń
+\item
+  Krótkiego kodu, który może być uruchomiony na powyższym zbiorze danych
+\end{itemize}
+
+Czasem ważne są też dodatkowe informacje o używanej wersji R, posiadanym systemie operacyjnym, wersjach używanych pakietów, etc.
+Można do tego użyć funkcji \texttt{sessionInfo()}
+
+\hypertarget{pakiet-reprex}{%
+\subsection{\texorpdfstring{Pakiet \textbf{reprex}}{Pakiet reprex}}\label{pakiet-reprex}}
+
+Stworzenie powtarzalnego przykładu w R może zostać ułatwione używając pakietu \textbf{reprex} \citep{R-reprex}.
+Ten pakiet uruchamia wybraną część kodu w nowej sesji R uruchomionej w tle, wykonuje kolejne operacje, a następnie zapisuje uzyskany wynik do schowka.
+
+Główną funkcją w tym pakiecie jest \texttt{reprex()}.
+Funkcję \texttt{reprex()} można użyć poprzez wpisanie kodu wewnątrz tej funkcji lub też poprzez wybranie opcji \texttt{Reprex\ selection} z menu Addins w RStudio.
+Możliwe jest również stworzenie powtarzalnego przykładu na podstawie skryptu R:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{reprex}\NormalTok{(}\DataTypeTok{input =} \StringTok{"moj_skrypt.R"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Więcej informacji na temat powtarzalnych przykładów oraz pakietu \textbf{reprex} można znaleźć na \href{https://reprex.tidyverse.org/index.html}{oficjalnej stronie pakietu reprex}, oraz stronach \href{https://www.jessemaegan.com/post/so-you-ve-been-asked-to-make-a-reprex/}{So you've been asked to make a reprex}, \href{https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example}{How to make a great R reproducible example}, \href{https://www.njtierney.com/post/2017/01/11/magic-reprex/}{Magic reprex}, \href{https://speakerdeck.com/jennybc/reprex-help-me-help-you}{reprex: help me help you!}, oraz \href{https://www.tidyverse.org/help/\#reprex}{Get help!}.
+
+\hypertarget{tworzenie-powtarzalnego-przykux142adu}{%
+\subsection{Tworzenie powtarzalnego przykładu}\label{tworzenie-powtarzalnego-przykux142adu}}
+
+Działanie pakietu \textbf{reprex} można zobaczyć poniżej.
+Tworzymy dwa obiekty \texttt{x} i \texttt{y}, przypisujemy im wartości, a następnie je mnożymy przez siebie.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x =}\StringTok{ }\DecValTok{1}
+\NormalTok{y =}\StringTok{ }\DecValTok{5}
+\NormalTok{x }\OperatorTok{*}\StringTok{ }\NormalTok{y}
+\CommentTok{#> [1] 5}
+\end{Highlighting}
+\end{Shaded}
+
+Ten sam kod umieszczony w funkcji \texttt{reprex()} wygląda w ten sposób:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(reprex)}
+\KeywordTok{reprex}\NormalTok{(\{}
+\NormalTok{  x =}\StringTok{ }\DecValTok{1}
+\NormalTok{  y =}\StringTok{ }\DecValTok{5}
+\NormalTok{  x }\OperatorTok{*}\StringTok{ }\NormalTok{y}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+Wynik działania powyższego kodu zapisywany jest w schowku jako Markdown oraz w postaci wyświetlonego pliku HTML:
+
+\begin{center}\includegraphics[width=\textwidth]{figures/reprex1} \end{center}
+
+Kolejny powtarzalny przykład pochodzi z rozdziału \ref{tekst}, gdzie naszym celem było określenie które elementy wektora \texttt{tekst3} rozpoczynają się od dużej litery \texttt{L}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{reprex}\NormalTok{(\{}
+\NormalTok{  teskt3 =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Magdalena"}\NormalTok{, }\StringTok{"Lena"}\NormalTok{, }\StringTok{"1Lena.csv"}\NormalTok{, }\StringTok{"LLena"}\NormalTok{, }\StringTok{"Helena"}\NormalTok{, }\StringTok{"Anna"}\NormalTok{, }\StringTok{"99"}\NormalTok{)}
+  \KeywordTok{str_detect}\NormalTok{(tekst3, }\DataTypeTok{pattern =} \StringTok{"^L"}\NormalTok{)}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+Niestety zwraca on błąd.
+Powyższy kod ma dwa problemy - czy jesteś w stanie je wskazać?
+
+\begin{center}\includegraphics[width=\textwidth]{figures/reprex2} \end{center}
+
+Odpowiedź - ten kod nie jest w pełni samowystarczalny - brakuje tam dołączenia pakietu \textbf{stringr}, który zawiera funkcję \texttt{str\_detect()}.
+Drugi problem to literówka w obiekcie \texttt{teskt3}.
+Naprawiona wersja tego kodu znajduje się poniżej:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{reprex}\NormalTok{(\{}
+  \KeywordTok{library}\NormalTok{(stringr)}
+\NormalTok{  tekst3 =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Magdalena"}\NormalTok{, }\StringTok{"Lena"}\NormalTok{, }\StringTok{"1Lena.csv"}\NormalTok{, }\StringTok{"LLena"}\NormalTok{, }\StringTok{"Helena"}\NormalTok{, }\StringTok{"Anna"}\NormalTok{, }\StringTok{"99"}\NormalTok{)}
+  \KeywordTok{str_detect}\NormalTok{(tekst3, }\DataTypeTok{pattern =} \StringTok{"^L"}\NormalTok{)}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=\textwidth]{figures/reprex3} \end{center}
+
+\hypertarget{proces-debugowania}{%
+\section{Proces debugowania}\label{proces-debugowania}}
+
+Nie ma uniwersalnego procesu debugowania, który działa dla każdego napotkanego problemu programistycznego.
+Można jednak określić kilka kroków, które mogą znacząco ułatwić debugowanie:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Powtarzalność błędu
+\item
+  Identyfikacja przyczyny błędu
+\item
+  Usunięcie błędu
+\item
+  Weryfikacja naprawy błędu i jej konsekwencji
+\end{enumerate}
+
+W pierwszym kroku warto się upewnić, że napotkany błąd nie jest spowodowany przez inne obiekty w środowisku R.
+Należy wyczyścić środowisko R używając \texttt{rm(list\ =\ ls())} a następnie zresetować sesję R (CTRL+SHIFT+F10 w RStudio).
+Warto też wydzielić z kodu najmniejszy fragment, który pozwala na odtworzenie błędu (\emph{powtarzalny przykład}).
+Teraz należy jeszcze raz spróbować użyć kodu zwracającego błąd, aby się upewnić, że dalej istnieje.
+
+Drugi krok obejmuje zlokalizowanie dokładnego miejsca w którym błąd powstaje.
+Może to być konkretna linia kodu, miejsce w pętli, a czasem nawet wywołanie innej zewnętrznej funkcji.
+Ten krok można wykonać na wiele sposobów.
+Dwa z nich, debugowanie używając funkcji takich jak print (sekcja \ref{debuging-print}) i debugowanie interaktywne (sekcja \ref{debugger}), są opisane w tym rozdziale.
+
+W trzecim kroku należy usunąć wcześniej zlokalizowany błąd.
+Nie powinien to być jednak ostatni krok.
+
+Należy jeszcze upewnić się, że nowa wersja kodu nie tylko przestaje zwracać błędy, ale też daje poprawne wyniki.
+Często odbywa się to poprzez wykonanie wcześniej stworzony testów jednostkowych (sekcja \ref{testy-jednostkowe}).
+
+\hypertarget{debuging-print}{%
+\section{Podstawowe podejście do debugowania}\label{debuging-print}}
+
+Klasycznym podejściem do debugowania jest dodanie funkcji \texttt{print()} pokazującej wartości obiektów w okolicy potencjalnego źródła błędu.
+Dalej warto zaplanować jakie testy kodu wykonać, aby wyłapać dokładne miejsce wystąpnienia błędu.
+Trzeba też zapisywać potencjalne wyniki.
+Takie systematyczne podejście może zaoszczędzić dużo czasu w porównaniu do losowego testowania różnych wartości w kodzie.
+
+Oprócz funkcji można też wykorzystać funkcję \texttt{cat()} w przypadku małych obiektów lub funkcję \texttt{str()} w przypadku większych obiektów.
+
+\hypertarget{debugger}{%
+\section{Debugger}\label{debugger}}
+
+\hypertarget{zadania-11}{%
+\section{Zadania}\label{zadania-11}}
 
 \hypertarget{lacznik}{%
 \chapter{Łącznik}\label{lacznik}}
@@ -6455,7 +6629,7 @@ Dodanie języka C++ do pakietu R często ma na celu przyspieszenie pewnych wymag
 Pakiet \textbf{Rcpp} pozwala na zarówno wywoływanie kodu C++ wewnątrz skryptów R (sekcja \ref{cppFunction}), jak używając zewnętrznych plików o rozszerzeniu \texttt{.cpp} (sekcja \ref{sourceCpp}).
 
 Ta część książki ma na celu pokazanie zupełnych podstaw łączenia R z C++.
-Więcej informacji na ten temat można znaleść na stronie \url{http://www.rcpp.org/}, w \href{https://adv-r.hadley.nz/rcpp.html}{rozdziale Rewriting R code in C++} książki \citet{wickham2014advanced}, {[}sekcji Rcpp{]} książki \citet{gillespie2016efficient}, oraz na stronie \href{https://thecoatlessprofessor.com/programming/cpp/unofficial-rcpp-api-documentation}{Unofficial Rcpp API Documentation}.
+Więcej informacji na ten temat można znaleść na stronie \url{http://www.rcpp.org/}, w \href{https://adv-r.hadley.nz/rcpp.html}{rozdziale Rewriting R code in C++} książki \citet{wickham2014advanced}, \href{https://csgillespie.github.io/efficientR/rcpp.html}{sekcji Rcpp} książki \citet{gillespie2016efficient}, oraz na stronie \href{https://thecoatlessprofessor.com/programming/cpp/unofficial-rcpp-api-documentation}{Unofficial Rcpp API Documentation}.
 
 \hypertarget{cppFunction}{%
 \subsection{Wywoływanie kodu C++ wewnątrz skryptu R}\label{cppFunction}}
@@ -6608,14 +6782,14 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression                  min median `itr/sec`}
 \CommentTok{#>   <bch:expr>                <bch> <bch:>     <dbl>}
-\CommentTok{#> 1 mile_na_km(odl_mile2)     744us  787us     1233.}
-\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 409us  437us     2266.}
+\CommentTok{#> 1 mile_na_km(odl_mile2)     727us  760us     1276.}
+\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 395us  426us     2321.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
-Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.8 raza mniejszy.
+Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.78 raza mniejszy.
 
 \hypertarget{sourceCpp}{%
 \subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}
@@ -6728,8 +6902,8 @@ Używając \texttt{system2()} oraz polecenia \texttt{wc} możemy sprawdzić ile 
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{zadania-11}{%
-\section{Zadania}\label{zadania-11}}
+\hypertarget{zadania-12}{%
+\section{Zadania}\label{zadania-12}}
 
 \hypertarget{kontrola-wersji}{%
 \chapter{Kontrola wersji}\label{kontrola-wersji}}
@@ -7177,8 +7351,8 @@ Do ogólnego wprowadzenia do systemu Git może posłużyć darmowa książka onl
 Git jest również bardzo popularnym tematem na serwisie stackoverflow, gdzie można znaleźć~\href{https://stackoverflow.com/questions/tagged/git}{pytania i odpowiedzi na różnorodne tematy z nim związane}.
 Więcej odnośników do materiałów związanych z sytemem Git i serwisem GitHub można znaleźć na stronach \href{https://help.github.com/en/articles/git-and-github-learning-resources}{pomocy GitHub}.
 
-\hypertarget{zadania-12}{%
-\section{Zadania}\label{zadania-12}}
+\hypertarget{zadania-13}{%
+\section{Zadania}\label{zadania-13}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -7619,8 +7793,8 @@ W efekcie zostanie utworzony folder \texttt{docs/} zawierający stronę internet
 W przypadku, gdy pakiet znajduje się na GitHubie możliwe jest wyświetlenie tej strony pod adresem \texttt{https://\textless{}nazwauzytkownika\textgreater{}.github.io/\textless{}nazwapakietu\textgreater{}/}.
 Aby ta strona była dostępna w internecie należy na platformie GitHub wejść w zakładkę settings, następnie znaleźć część określoną jako GitHub Pages, i określić Source jako ``master branch /docs folder''.
 
-\hypertarget{zadania-13}{%
-\section{Zadania}\label{zadania-13}}
+\hypertarget{zadania-14}{%
+\section{Zadania}\label{zadania-14}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
