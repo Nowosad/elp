@@ -135,6 +135,15 @@ Nie powinien to być jednak ostatni krok.
 Należy jeszcze upewnić się, że nowa wersja kodu nie tylko przestaje zwracać błędy, ale też daje poprawne wyniki.
 Często odbywa się to poprzez wykonanie wcześniej stworzony testów jednostkowych (sekcja \@ref(testy-jednostkowe)).
 
+<!--
+@_ColinFay: Top 3 debugging tips:
+
+1. It's probably a typo
+2. It's probably a missing parenthesis
+3. It's probably a missing comma
+Shared via TweetCaster 
+-->
+
 ## Podstawowe podejście do debugowania {#debuging-print}
 
 Klasycznym podejściem do debugowania jest dodanie funkcji `print()` pokazującej wartości obiektów w okolicy potencjalnego źródła błędu.
