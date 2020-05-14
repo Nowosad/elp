@@ -48,7 +48,7 @@ Sprawdzenie jakiej klasy jest podany obiekt odbywa się używając funkcji `clas
 
 ```r
 class(macierz2)
-#> [1] "matrix"
+#> [1] "matrix" "array"
 ```
 
 Więcej informacji na temat obiektu można poznać używając funkcji `str()`. 
@@ -650,7 +650,7 @@ macierz1
 #> [3,]    3    7   11
 #> [4,]    4    8   12
 class(macierz1)
-#> [1] "matrix"
+#> [1] "matrix" "array"
 ```
 
 Jego zamiana na ramkę danych odbywa się używając funkcji `as.data.frame()`.

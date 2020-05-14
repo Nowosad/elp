@@ -283,10 +283,10 @@ Do sprawdzenia klasy obiektu w systemie S3 służy funkcja `class()`.
 
 ```r
 class(x)
-#> [1] "matrix"
+#> [1] "matrix" "array"
 ```
 
-W efekcie upewniamy się, że klasa naszego obiektu `x` to matrix.
+W efekcie upewniamy się, że klasa naszego obiektu `x` to matrix, array.
 System S3 pozwala na prostą zmianę lub dodanie nazwy klasy używając funkcji `structure()`.
 
 
@@ -295,7 +295,7 @@ y = structure(x, class = "prostokat")
 ```
 
 Wynikiem działania tej funkcji z argumentem `class = "prostokat"` jest nowy obiekt `y`.
-W momencie, gdy sprawdzimy jego klasę, okaże się że nie jest to już matrix ale prostokat.
+W momencie, gdy sprawdzimy jego klasę, okaże się że nie jest to już matrix, array ale prostokat.
 
 
 ```r
@@ -362,7 +362,7 @@ x
 #> [1,]    0    2
 #> [2,]    0    3
 powierzchnia(x)
-#> Error in UseMethod("powierzchnia"): no applicable method for 'powierzchnia' applied to an object of class "c('matrix', 'double', 'numeric')"
+#> Error in UseMethod("powierzchnia"): no applicable method for 'powierzchnia' applied to an object of class "c('matrix', 'array', 'double', 'numeric')"
 ```
 
 Natomiast, gdy obiekt wejściowy będzie innej klasy to pojawi się komunikat błędu sugerujący, że nie istnieje metoda dla tej klasy pozwalająca na otrzymanie wyniku.

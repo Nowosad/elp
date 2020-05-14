@@ -215,7 +215,7 @@
 \providecommand{\subtitle}[1]{}
 \subtitle{Wstęp do programowania używając R}
 \author{Jakub Nowosad}
-\date{2020-04-14}
+\date{2020-05-14}
 
 \let\BeginKnitrBlock\begin \let\EndKnitrBlock\end
 \begin{document}
@@ -2722,7 +2722,7 @@ R ma wbudowaną reprezentację dat w postaci klasy \texttt{Date}.
 \begin{Highlighting}[]
 \NormalTok{dzis =}\StringTok{ }\KeywordTok{Sys.Date}\NormalTok{()}
 \NormalTok{dzis}
-\CommentTok{#> [1] "2020-04-14"}
+\CommentTok{#> [1] "2020-05-14"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2745,11 +2745,11 @@ Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji \texttt{unclass(
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{unclass}\NormalTok{(dzis)}
-\CommentTok{#> [1] 18366}
+\CommentTok{#> [1] 18396}
 \end{Highlighting}
 \end{Shaded}
 
-Wynik, 18366, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
+Wynik, 18396, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
 
 \begin{Shaded}
@@ -3711,7 +3711,7 @@ Sprawdzenie jakiej klasy jest podany obiekt odbywa się używając funkcji \text
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{class}\NormalTok{(macierz2)}
-\CommentTok{#> [1] "matrix"}
+\CommentTok{#> [1] "matrix" "array"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -4366,7 +4366,7 @@ Zobaczmy to na przykładzie obiektu \texttt{macierz1}.
 \CommentTok{#> [3,]    3    7   11}
 \CommentTok{#> [4,]    4    8   12}
 \KeywordTok{class}\NormalTok{(macierz1)}
-\CommentTok{#> [1] "matrix"}
+\CommentTok{#> [1] "matrix" "array"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5283,7 +5283,7 @@ W takich sytuacjach można użyć funkcji \texttt{read.table()}, która zawiera 
 \KeywordTok{str}\NormalTok{(meteo)}
 \CommentTok{#> 'data.frame':    730 obs. of  7 variables:}
 \CommentTok{#>  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...}
-\CommentTok{#>  $ nazwa_stacji: Factor w/ 2 levels "POZNAŃ","ZAKOPANE": 1 1 1 1 1 1 1 1 1 1 ...}
+\CommentTok{#>  $ nazwa_stacji: chr  "POZNAŃ" "POZNAŃ" "POZNAŃ" "POZNAŃ" ...}
 \CommentTok{#>  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...}
 \CommentTok{#>  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...}
 \CommentTok{#>  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...}
@@ -5312,7 +5312,7 @@ W przypadku, gdy interesują nas tylko informacje dla Poznania możemy wydzieli�
 \KeywordTok{str}\NormalTok{(meteo_pzn)}
 \CommentTok{#> 'data.frame':    365 obs. of  7 variables:}
 \CommentTok{#>  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...}
-\CommentTok{#>  $ nazwa_stacji: Factor w/ 2 levels "POZNAŃ","ZAKOPANE": 1 1 1 1 1 1 1 1 1 1 ...}
+\CommentTok{#>  $ nazwa_stacji: chr  "POZNAŃ" "POZNAŃ" "POZNAŃ" "POZNAŃ" ...}
 \CommentTok{#>  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...}
 \CommentTok{#>  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...}
 \CommentTok{#>  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...}
@@ -5811,11 +5811,11 @@ Do sprawdzenia klasy obiektu w systemie S3 służy funkcja \texttt{class()}.
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{class}\NormalTok{(x)}
-\CommentTok{#> [1] "matrix"}
+\CommentTok{#> [1] "matrix" "array"}
 \end{Highlighting}
 \end{Shaded}
 
-W efekcie upewniamy się, że klasa naszego obiektu \texttt{x} to matrix.
+W efekcie upewniamy się, że klasa naszego obiektu \texttt{x} to matrix, array.
 System S3 pozwala na prostą zmianę lub dodanie nazwy klasy używając funkcji \texttt{structure()}.
 
 \begin{Shaded}
@@ -5825,7 +5825,7 @@ System S3 pozwala na prostą zmianę lub dodanie nazwy klasy używając funkcji 
 \end{Shaded}
 
 Wynikiem działania tej funkcji z argumentem \texttt{class\ =\ "prostokat"} jest nowy obiekt \texttt{y}.
-W momencie, gdy sprawdzimy jego klasę, okaże się że nie jest to już matrix ale prostokat.
+W momencie, gdy sprawdzimy jego klasę, okaże się że nie jest to już matrix, array ale prostokat.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5895,7 +5895,7 @@ W przypadku, gdy nasz obiekt wejściowy jest klasy \texttt{prostokat} to funkcja
 \CommentTok{#> [1,]    0    2}
 \CommentTok{#> [2,]    0    3}
 \KeywordTok{powierzchnia}\NormalTok{(x)}
-\CommentTok{#> Error in UseMethod("powierzchnia"): no applicable method for 'powierzchnia' applied to an object of class "c('matrix', 'double', 'numeric')"}
+\CommentTok{#> Error in UseMethod("powierzchnia"): no applicable method for 'powierzchnia' applied to an object of class "c('matrix', 'array', 'double', 'numeric')"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6212,7 +6212,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.427   0.000   0.427}
+\CommentTok{#>   0.475   0.001   0.476}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6269,12 +6269,11 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \NormalTok{)}
 \NormalTok{wynik_}\DecValTok{1}
 \CommentTok{#> # A tibble: 2 x 6}
-\CommentTok{#>   expression               min median `itr/sec`}
-\CommentTok{#>   <bch:expr>          <bch:tm> <bch:>     <dbl>}
-\CommentTok{#> 1 mi_do_km1(odl_mile)   1.28us  1.4us   618143.}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 966.01ns 1.06us   888782.}
-\CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
-\CommentTok{#> #   `gc/sec` <dbl>}
+\CommentTok{#>   expression             min median `itr/sec` mem_alloc}
+\CommentTok{#>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>}
+\CommentTok{#> 1 mi_do_km1(odl_mile) 1.46us 1.63us   545842.     117KB}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 1.15us 1.33us   665341.     224KB}
+\CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6316,14 +6315,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 385ms  390ms      2.56     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 733us  765us   1191.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 465ms  475ms      2.11     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 804us  827us   1093.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.56 operacji na sekundę, przy aż 1190.87 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.11 operacji na sekundę, przy aż 1093.38 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zadania-10}{%
@@ -6782,14 +6781,14 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression                  min median `itr/sec`}
 \CommentTok{#>   <bch:expr>                <bch> <bch:>     <dbl>}
-\CommentTok{#> 1 mile_na_km(odl_mile2)     727us  760us     1276.}
-\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 395us  426us     2321.}
+\CommentTok{#> 1 mile_na_km(odl_mile2)     804us  826us     1167.}
+\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 406us  429us     2286.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
-Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.78 raza mniejszy.
+Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.93 raza mniejszy.
 
 \hypertarget{sourceCpp}{%
 \subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}

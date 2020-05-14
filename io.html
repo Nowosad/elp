@@ -24,7 +24,7 @@
 <meta name="author" content="Jakub Nowosad" />
 
 
-<meta name="date" content="2020-04-14" />
+<meta name="date" content="2020-05-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -448,7 +448,7 @@ W takich sytuacjach można użyć funkcji <code>read.table()</code>, która zawi
 <a class="sourceLine" id="cb268-4" data-line-number="4"><span class="kw">str</span>(meteo)</a>
 <a class="sourceLine" id="cb268-5" data-line-number="5"><span class="co">#&gt; &#39;data.frame&#39;:    730 obs. of  7 variables:</span></a>
 <a class="sourceLine" id="cb268-6" data-line-number="6"><span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span></a>
-<a class="sourceLine" id="cb268-7" data-line-number="7"><span class="co">#&gt;  $ nazwa_stacji: Factor w/ 2 levels &quot;POZNAŃ&quot;,&quot;ZAKOPANE&quot;: 1 1 1 1 1 1 1 1 1 1 ...</span></a>
+<a class="sourceLine" id="cb268-7" data-line-number="7"><span class="co">#&gt;  $ nazwa_stacji: chr  &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; ...</span></a>
 <a class="sourceLine" id="cb268-8" data-line-number="8"><span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span></a>
 <a class="sourceLine" id="cb268-9" data-line-number="9"><span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span></a>
 <a class="sourceLine" id="cb268-10" data-line-number="10"><span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span></a>
@@ -472,7 +472,7 @@ W przypadku, gdy interesują nas tylko informacje dla Poznania możemy wydzieli�
 <a class="sourceLine" id="cb269-2" data-line-number="2"><span class="kw">str</span>(meteo_pzn)</a>
 <a class="sourceLine" id="cb269-3" data-line-number="3"><span class="co">#&gt; &#39;data.frame&#39;:    365 obs. of  7 variables:</span></a>
 <a class="sourceLine" id="cb269-4" data-line-number="4"><span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span></a>
-<a class="sourceLine" id="cb269-5" data-line-number="5"><span class="co">#&gt;  $ nazwa_stacji: Factor w/ 2 levels &quot;POZNAŃ&quot;,&quot;ZAKOPANE&quot;: 1 1 1 1 1 1 1 1 1 1 ...</span></a>
+<a class="sourceLine" id="cb269-5" data-line-number="5"><span class="co">#&gt;  $ nazwa_stacji: chr  &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; ...</span></a>
 <a class="sourceLine" id="cb269-6" data-line-number="6"><span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span></a>
 <a class="sourceLine" id="cb269-7" data-line-number="7"><span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span></a>
 <a class="sourceLine" id="cb269-8" data-line-number="8"><span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span></a>
