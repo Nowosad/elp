@@ -250,9 +250,21 @@ mile_na_km_cpp(odl_mile)
 ```
 
 ## Python
-<!-- reticulate -->
+
+Python jest współcześnie najpopularniejszym językiem programowania.<!--REF-->
+Podobnie jak R, ten język jest interpretowalny, otwarty, i można uruchomić na różnych systemach operacyjnych (Windows, Mac OS i Linux).
+Jest to uniwersalny język programowania znajdujący zastosowanie od aplikacji internetowych, poprzez pisanie skryptów sterujących innym oprogramowaniem (jak np. QGIS), aż do projektów związanych ze sztuczną inteligencją i uczeniem maszynowym. 
+
+Różni się on od R szeregiem cech, wśród których na samym początku można zauważyć, że Python:
+
+- Ma inne wbudowane typy danych
+- Obowiązkowe stosowanie wcięć jako elementu języka
+- Inny sposób pracy na obiektach. 
+<!-- Przykładowo,  -->
 
 [@R-reticulate]
+
+Pełną dokumentację tego pakietu wraz z szeregiem przykładów można znaleźć pod adresem https://rstudio.github.io/reticulate/. 
 
 ```{r}
 library(reticulate)
