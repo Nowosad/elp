@@ -215,9 +215,8 @@
 \providecommand{\subtitle}[1]{}
 \subtitle{Wstęp do programowania używając R}
 \author{Jakub Nowosad}
-\date{2020-05-14}
+\date{2020-06-17}
 
-\let\BeginKnitrBlock\begin \let\EndKnitrBlock\end
 \begin{document}
 \maketitle
 
@@ -316,9 +315,13 @@ Może on zawierać komentarze (rozpoczynające się of znaku \texttt{\#}), kod o
 
 Dodatkowo, ikona kompasu przedstawia dodatkowe informacje, alternatywne sposoby użycia funkcji, czy też~wskazówki.
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Tutaj może znaleźć~się~dodatkowa informacja, alternatywny sposób użycia funkcji, czy też~wskazówka.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 \hypertarget{podziux119kowania}{%
 \section*{Podziękowania}\label{podziux119kowania}}
@@ -699,11 +702,15 @@ W poniższych czterech przypadkach obiekt \texttt{x} został przetworzony używa
 \end{Highlighting}
 \end{Shaded}
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Część języków programowania, np. C, wymaga zadeklarowania zmiennej przed jej użyciem poprzez podanie jej typu i nazwy.
 Wybór typu zmiennej w tych językach może mieć widoczne konsekwencje.
 Przykładowo, jeżeli obiekt \texttt{x} zostanie zadeklarowany jako liczba całkowita (integer), wynikiem dzielenia \texttt{x\ /\ 4} będzie \texttt{1} zamiast \texttt{1.75}.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 Działania na obiektach mogą też się odbywać używając innych operatorów oraz różnorodnych funkcji.
 Przykładowo, operator zapisywany jako \texttt{\%\%} to modulo, którego celem jest określanie reszty z dzielenia.
@@ -758,10 +765,14 @@ Ta funkcja łączy krótsze wektory w dłuższe wektory.
 \end{Highlighting}
 \end{Shaded}
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Operatory użyte w tym rozdziale, np. \texttt{+}, \texttt{*}, \texttt{\^{}}, \texttt{\%\%} to też są funkcje, ale zapisane w skrótowej formie ułatwiającej z nimi pracę.
 Te operatory można też użyć jako normalne funkcje poprzez dodanie znaku zwanego grawisem - ``\texttt{\textasciigrave{}}'', np. \texttt{2\ +\ 2} można też~zapisać jako \texttt{\textasciigrave{}+\textasciigrave{}(2,\ 2)}.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 \hypertarget{ide}{%
 \section{IDE}\label{ide}}
@@ -787,12 +798,16 @@ Do popularnych IDE dla R należą:
 W tej książce będzimy korzystać z pierwszego z nich.
 RStudio to zintegrowane środowisko programistyczne pierwotnie stworzone dla R.
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 RStudio to nie jest to samo co R.
 R jest językiem programowania, podczas gdy RStudio to aplikacja ułatwiająca pisanie kodu.
 Możliwe jest używanie R bez RStudio, ale RStudio bez R nie pełni już~swojej roli.
 Częstą analogią~jest porównanie samochodowe, w którym R jest opisywany jako silnik a RStudio jako deska rozdzielcza.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 \begin{figure}[H]
 
@@ -1007,7 +1022,9 @@ Dodatkowo wskazane jest dodanie wartości numerycznych przed nazwą pliku, jeże
 \end{Highlighting}
 \end{Shaded}
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Kodowanie znaków (ang. \emph{character encodings}) jest to sposób sposób prezentacji znaków.
 Istnieje szereg różnych standardów kodowania znaków.
 Standard ASCII przyporządkowuje liczbom z zakresu 0-127 litery alfabetu angielskiego, cyfry, znaki przestankowe i inne symbole oraz polecenia.
@@ -1017,7 +1034,9 @@ Alternatywnie do systemu Microsoftu powstał też~zbiór standardów ISO, przyk�
 W efekcie oznacza to, że otworzenie tekstu z innego komputera, na komputerze z ``polskim'' kodowaniem znaków może spowodować pojawienie się~tzw. ``krzaczków''.
 Aby uniknąć takiej sytuacji powstał system kodowania UTF-8, który zawiera w sobie ponad milion różnych znaków.
 Jest on obecnie zalecanym standardem na całym świecie.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 \hypertarget{daty}{%
 \subsection{Daty}\label{daty}}
@@ -1098,13 +1117,17 @@ Kursy:
   Lista kursów dotyczących R na platformie edX - \url{https://www.edx.org/course?search_query=r}
 \end{itemize}
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Pisanie kodu oraz jego dokumentowanie opiera się~w znacznym stopniu na wprowadzaniu znaków na klawiaturze do komputera.
 Warto jest więc aby robić to w sposób \href{https://csgillespie.github.io/efficientR/introduction.html\#touch-typing}{efektywny}, czyli taki w którym używamy wszystkich palców u rąk a nasz wzrok nie jest skupiony na klawiaturze.
 Takie pisanie nazwa się~pisaniem bezwzrokowym (ang. \emph{touch typing}).
 Pisanie bezwzrokowe ma szereg reguł, które wymagają przestawienia się~ze starych nawyków oraz pewnego treningu.
 Na szczęście istnieje wiele internetowych zasobów, które ułatwiają naukę takiego pisania, między innymi strona \href{https://www.typingclub.com/}{TypingClub}.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 Serwisy internetowe:
 
@@ -1403,7 +1426,9 @@ W przypadku instalacji pakietu w R z platformy GitHub należy podać nazwę uży
 
 Podobnie jak instalowanie programów na komputerze - zainstalowanie pakietu odbywa się tylko jeden raz.
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Istnieją dwa główne formy, w których rozpowszechniane są pakiety R - postać źródłowa (ang. \emph{source packages}) i postać binarna (ang. \emph{binary packages}).
 Postać źródłowa zawiera kod źródłowy pakietu, który musi zostać następnie skompilowany na komputerze użytkownika.
 Skompilowanie pakietu na podstawie kodu źródłowego może wymagać posiadania odpowiednich bibliotek na komputerze, np. \href{https://cran.r-project.org/bin/windows/Rtools/}{Rtools} dla systemu Windows czy też narzędzia Xcode dla Mac OS.
@@ -1411,7 +1436,9 @@ Dodatkowo, instalacja w ten sposób zabiera więcej czasu.
 Postać binarna została już wcześniej skompilowana na zewnętrznym komputerze (np. w repozytorium CRAN)
 Jest ona dostępna dla systemów Windows i Mac OS.
 Niestety, nie wszystkie pakiety (lub ich wersje) posiadają postać binarną i wymagana jest ich kompilacja.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 Użycie wybranego pakietu wymaga dołączenia go do R za pomocą funkcji \texttt{library()}.
 Dołączenie wybranych pakietów do R robimy po każdym uruchomieniu R.
@@ -1443,10 +1470,14 @@ Po drugie można bezpośrednio zdefiniować z jakiego pakietu pochodzi konkretna
 \end{Highlighting}
 \end{Shaded}
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Operator \texttt{::} może być też pomocny w przypadku, gdy kilka pakietów ma funkcję o tej samej nazwie.
 Wówczas, aby kod został poprawnie wykonany, warto podać nie tylko nazwę funkcji ale też nazwę pakietu z jakiego ona pochodzi.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 \hypertarget{algorytmy}{%
 \section{Algorytmy}\label{algorytmy}}
@@ -1819,11 +1850,15 @@ W przeciwnym razie, gdy warunek nie jest spełniony (czyli ma wartość \texttt{
 \end{Highlighting}
 \end{Shaded}
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Warunek \texttt{if} można też tworzyć w uproszczonej formie:
 
 \texttt{if\ (warunek)\ spelniony\ else\ niespelniony}
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 \hypertarget{warunki-zagnieux17cdux17cone}{%
 \section{Warunki zagnieżdżone}\label{warunki-zagnieux17cdux17cone}}
@@ -1935,12 +1970,16 @@ Możliwe jest też łączenie bardziej złożonych zapytań używając operatora
 Powyżej nastąpiło sprawdzenie czy element z obiektu \texttt{x} znajduje się w obiekcie \texttt{y}, a następnie czy element z obiektu \texttt{z} nie znajduje się w obiekcie \texttt{y}.
 Po wykonaniu ich sprawdzeń nastąpiło ich połączenie używając operatora \texttt{\textbar{}\textbar{}}, który daje wartość~\texttt{TRUE}, gdy chociaż jedno z zapytań jest prawdziwe.
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 W R istnieją dwa dodatkowe operatory logiczne \texttt{\&} i \texttt{\textbar{}}, które są zwektoryzowaną wersją operatorów \texttt{\&\&} i \texttt{\textbar{}\textbar{}}.
 Pierwsze dwa porównują wszystkie elementy zadanych wektorów i ich wynikiem może być wektor o długości większej niż 1.
 Operatory \texttt{\&\&} i \texttt{\textbar{}\textbar{}} porównują tylko pierwszy element każdego wektora, a w efekcie zawsze zwracają tylko jedną wartość.
 Dodatkowo, to one są zazwyczaj używane w wyrażeniach warunkowych.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 \hypertarget{wwwf}{%
 \section{Wyrażenia warunkowe w funkcjach}\label{wwwf}}
@@ -2152,10 +2191,14 @@ Wektor może przyjmować jeden z czterech podstawowych typów\footnote{Istnieją
 
 Wektory przedstawiające liczby stałoprzecinkowe i zmiennoprzecinkowe są często łączone i wspólnie określane jako wektory numeryczne (ang. \emph{numeric}).
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Wiele języków programowania posiada zmienne skalarne (tzw. skalary), czyli takie które mogą przyjmować tylko jedną wartość.
 W R one nie występują, zamiast nich stosowane są wektory o długości jeden.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 Dodatkowo, istnieje wiele dodatkowych, rzadziej spotykane typów wektorów - czynnikowy (ang. \emph{factor}), dat (ang. \emph{date}) i czasu (ang. \emph{date-time}) (sekcje \ref{fac}, \ref{ate} i \ref{ime}).
 
@@ -2420,13 +2463,17 @@ Do sprawdzenia czy w wektorze znajduje się wartość \texttt{NA} służy funkcj
 \end{Highlighting}
 \end{Shaded}
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 R posiada też kilka dodatkowych specjalnych obiektów, takich jak \texttt{NULL}, \texttt{NaN}, \texttt{Inf} oraz \texttt{-Inf}.
 \texttt{NULL} ma długość zero i nie posiada żadnych atrybutów.
 Może on posłużyć np. do usuwania kolumn w ramkach danych.
 \texttt{NaN} (ang. \emph{Not a Number}) oznacza wartość, która nie jest zdefiniowaną lub nie może być reprezentowana w inny sposób, przykładowo \texttt{0/0}.
 \texttt{Inf} i \texttt{-Inf} (ang. \emph{Infinity}) jest wynikiem obliczeń, które dały bardzo dużą wartość dodatnią lub ujemną, przykładowo \texttt{9\^{}999}.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 \hypertarget{wydzielanie}{%
 \section{Wydzielanie}\label{wydzielanie}}
@@ -2722,7 +2769,7 @@ R ma wbudowaną reprezentację dat w postaci klasy \texttt{Date}.
 \begin{Highlighting}[]
 \NormalTok{dzis =}\StringTok{ }\KeywordTok{Sys.Date}\NormalTok{()}
 \NormalTok{dzis}
-\CommentTok{#> [1] "2020-05-14"}
+\CommentTok{#> [1] "2020-06-17"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2745,11 +2792,11 @@ Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji \texttt{unclass(
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{unclass}\NormalTok{(dzis)}
-\CommentTok{#> [1] 18396}
+\CommentTok{#> [1] 18430}
 \end{Highlighting}
 \end{Shaded}
 
-Wynik, 18396, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
+Wynik, 18430, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
 
 \begin{Shaded}
@@ -2828,9 +2875,13 @@ W poniższym przykładzie nastąpiła zmiana strefy czasowej z czasu środkowoeu
 
 Więcej informacji na temat stref czasowych używanych w R można znaleźć~w pliku pomocy \texttt{?timezones}.
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 R posiada też dodatkowe klasy specjalne, np \texttt{POSIXlt} przechowująca informacje o dacie w postaci listy oraz \texttt{difftime} reprezentująca czas trwania.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 \hypertarget{zadania-4}{%
 \section{Zadania}\label{zadania-4}}
@@ -3667,9 +3718,13 @@ Od wektorów różnią się jednak tym, że są dwuwymiarowe - wartości ułożo
 Macierze są~używane do różnorodnych obliczeń matematycznych i statystycznych.
 W uproszczeniu można o nich myśleć jako o reprezentacji komputerowej zdjęcia lub mapy.
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 W R istnieją też wielowymiarowe obiekty podobne do macierzy zwane matrycami (ang. \emph{array}).
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 \hypertarget{tworzenie}{%
 \subsection{Tworzenie}\label{tworzenie}}
@@ -3874,9 +3929,13 @@ Druga dokleja obiekty kolumnami bez zmiany liczby wierszy.
 \end{Highlighting}
 \end{Shaded}
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 W przypadku, gdy chcemy połączyć kilka wektorów różnych typów działają dokładnie takie same reguły jak w przypadku wektorów atomowych (sekcja \ref{lpto-vector}).
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 \hypertarget{df}{%
 \section{Ramki danych}\label{df}}
@@ -3914,10 +3973,14 @@ Każda z tych kolumn ma inny typ - logiczny, liczby całkowitej, liczby zmiennop
 Domyślnie funkcja \texttt{data.frame} wykonuje jeszcze jedną operację w tle - zamienia ona wszystkie dane o typie znakowym na typ czynnikowy (sekcja \ref{fac}).
 W większości przypadków nie jest to pożądane działanie - dlatego też warto wyłączyć tę konwersję używając argumentu \texttt{stringsAsFactors\ =\ FALSE}.
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Obiekty klasy ramka danych są też zazwyczaj wynikiem wczytywania zewnętrznych plików do R, np. w formacie \texttt{.csv} czy \texttt{.xlsx}.
 Więcej informacji na ten temat można znaleźć~w rozdziale \ref{io}.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 \hypertarget{podstawowe-funkcje-1}{%
 \subsection{Podstawowe funkcje}\label{podstawowe-funkcje-1}}
@@ -4067,9 +4130,13 @@ Używając tej funkcji powyższe zapytanie można przestawić jako:
 \end{Highlighting}
 \end{Shaded}
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Podobnie jak w przypadku wektorów (sekcje \ref{wip-vector} i \ref{mo-vector}), wydzielanie ramek danych może służyć do wyświetlenia wybranych wartości, ale też~ich wydzielenia i przypisania oraz modyfikowania.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 \hypertarget{ux142ux105czenie-1}{%
 \subsection{Łączenie}\label{ux142ux105czenie-1}}
@@ -4112,11 +4179,15 @@ Ograniczeniem łącznia kolumn jest posiadanie tej samej długości każdej kolu
 \end{Highlighting}
 \end{Shaded}
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Funkcje \texttt{rbind()} i \texttt{cbind()} łączą obiekty nie zmieniając kolejności występujących w nich wartości.
 Bardziej zaawansowanymi sposobami łączenia ramek danych są różnorodne operacje łączenia (ang. \emph{joins}), np. \texttt{left\_join()} czy \texttt{inner\_join()} z pakietu \textbf{dplyr}.
 Więcej na ten temat można znaleźć~w rozdziale \href{https://r4ds.had.co.nz/relational-data.html}{``Relational data''} książki Advanced R \citep{wickham2014advanced}.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 \hypertarget{listy}{%
 \section{Listy}\label{listy}}
@@ -4622,11 +4693,15 @@ Kolejnym krokiem jest odpowiednie ustawienie jakie wartości będzie przyjmować
 
 Powyższy nagłówek pętli \texttt{for}, \texttt{for\ (i\ in\ 1:3)}, określa, że nasz obiekt \texttt{i} przyjmie najpierw wartość 1, wykona obliczenie wewnątrz pętli, następnie \texttt{i} przyjmie wartość 2, znów wykona obliczenie, a na końcu \texttt{i} przyjmie wartość 3 i obliczenie zostanie wykonane po raz ostatni.
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Tradycyjnie zmienna w pętli \texttt{for} nazywana jest \texttt{i}, a w przypadku zagnieżdżonych pętli druga zmienna nazywana jest \texttt{j}.
 Nazywanie zmiennych w ten sposób nie jest jednak obowiązkowe.
 W powyższym przypadku możliwe byłoby nazwanie zmiennej, np. \texttt{pomiar}: \texttt{for\ (pomiar\ in\ odl\_mile)\ \{...\}}.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 Użyty wyżej kod wykonuje nasz cel, ale wymaga od nas zawsze deklaracji dotyczącej tego jakie wartości ma przyjąć obiekt \texttt{i}.
 W przypadku, gdy obiekt wejściowy \texttt{odl\_mile} będzie krótszy lub dłuższy niż trzy elementy, będziemy musieli ręcznie zmienić nagłówek pętli \texttt{for}.
@@ -4653,13 +4728,17 @@ Poniższy kod nie wymaga już od nas ręcznego wprowadzania kolejnych położeń
 \end{Highlighting}
 \end{Shaded}
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Często w takich sytuacjach używana jest konstrukcja \texttt{1:length()}, np. \texttt{1:length(old\_mile)}.
 Zadziała ona poprawnie w powyższym przypadku, ale nie jest ona uniwersalna.
 Konstrukcja \texttt{1:length()} może wywołać problemy w kodzie, gdy wejściowy obiekt jest pusty.
 \texttt{for\ (i\ in\ 1:length(NULL))\{...\}} wykona pętlę \texttt{for} dwa razy, podczas gdy w rzeczywistości nie powinna ona zostać w ogóle wykonana.
 Funkcja \texttt{seq\_along()} jest odporna na ten problem - \texttt{seq\_along(NULL)} nie wykona pętli ani razu.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 Wcześniejsze przykłady wyświetlały przeliczone na kilometry kolejne elementy listy \texttt{odl\_mile}.
 Możliwe było zobaczenie nowych wartości, ale nie zostawały one w pamięci komputera - w efekcie nie można było wykorzystać wyników działania pętli \texttt{for} w przyszłości.
@@ -4831,13 +4910,17 @@ Dodatkowo możemy sprawdzić ile zajęło to dni.
 \end{Highlighting}
 \end{Shaded}
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Inne istniejące rodzaje pętli to pętla \texttt{repeat} oraz pętla \texttt{do}.
 Pętla \texttt{repeat} powtarza pewien kod aż do momentu przerwania go przez użytkownika (np. użycie klawisza Esc) lub do pojawienia się~komendy \texttt{break}.
 Działanie pętli \texttt{do} natomiast wygląda w następujący sposób:
 \texttt{do\ \{wykonuj\ operację\}\ while\ (warunek)}.
 Pętla \texttt{do} nie występuje w R.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 Dodatkowe informacje na temat pętli for and while można znaleźć~w sekcji \href{https://adv-r.hadley.nz/control-flow.html\#loops}{Loops} książki Advanced R \citep{wickham2014advanced}
 
@@ -4878,7 +4961,9 @@ W paradygmacie funkcyjnym natomiast naszym pierwszym krokiem jest stworzenie fun
 \end{Highlighting}
 \end{Shaded}
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Funkcje użyte w programowaniu funkcyjnym muszą spełniać dwa warunki:
 
 \begin{enumerate}
@@ -4890,7 +4975,9 @@ Funkcje użyte w programowaniu funkcyjnym muszą spełniać dwa warunki:
 \item
   Funkcja nie może mieć efektów ubocznych (ang. \emph{side-effects}), czyli wykonywać jakiegoś działania w tle, jak np. wyświetlanie czy zapisywanie na dysk.
 \end{enumerate}
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 Powyższa funkcja \texttt{konwersja\_f\_to\_c()} działa poprawnie na wektorach wartości, ale niestety nie jest w stanie zwrócić wyniku w przypadku listy, co obrazuje komunikat błędu.
 
@@ -4904,10 +4991,14 @@ Powyższa funkcja \texttt{konwersja\_f\_to\_c()} działa poprawnie na wektorach 
 Języki obsługujące programowanie funkcyjne posiadają jednak szereg narzędzi do przetwarzania funkcji, które zbiorczo są nazywane funkcjonałami (ang. \emph{functional}).
 Funkcjonały to funkcje, które przyjmują inne funkcje jako argumenty.
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 W R istnieje cała rodzina funkcji poświęcona programowaniu funkcyjnemu.
 Oprócz najczęściej używanych, \texttt{lapply()} i \texttt{apply()}, istnieją również takie funkcje jak \texttt{sapply()}, \texttt{vapply()}, \texttt{tapply()}, \texttt{mapply()} i inne.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 Jednym z podstawowych funkcjonałów w R jest \texttt{lapply()}.
 Funkcjonał \texttt{lapply()} przyjmuje jako pierwszy argument wektor atomowy lub listę, a następnie przetwarza go używając funkcji podanej jako drugi argument \texttt{FUN}.
@@ -4998,11 +5089,15 @@ Podobne obliczenie, ale dla kolejnych wierszy można uzyskać zamieniając argum
 \end{Highlighting}
 \end{Shaded}
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Pakiet \textbf{purrr} oferuje ulepszone i rozszerzone narzędzia do programowania funkcyjnego \citep{R-purrr}.
 Przykładowo, odpowiednikiem funkcji \texttt{lapply()} w pakiecie \textbf{purrr} jest funkcja \texttt{map()}.
 Ma ona dodatkowo kilka kolejnych wariantów, np. \texttt{map\_df()} - która przyjmuje jako wejście listy, ale zwraca ramki danych, czy \texttt{map\_dbl()} - która również przyjmuje listy, ale zwraca wartości zmiennoprzecinkowe.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 \hypertarget{zadania-7}{%
 \section{Zadania}\label{zadania-7}}
@@ -5181,10 +5276,14 @@ Zmienić folder roboczy można za pomocą skrótu \emph{Ctrl+Shift+H} w RStudio 
 \end{Highlighting}
 \end{Shaded}
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Ustawienie folderu roboczego ma też miejsce przy tworzeniu nowego lub otwieraniu istniejącego projektu RStudio.
 Dlatego też, używanie projektów RStudio jest rekomendowane przy pracy z R.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 Folder roboczy jest ważny ponieważ pozwala na korzystanie z względnej ścieżki.
 Ścieżka względna oznacza określanie ścieżki pliku w odniesieniu do istniejącego folderu roboczego, podczas, gdy ścieżka bezwzględna opisuje pełne położenie pliku.
@@ -5193,10 +5292,14 @@ Z poziomu R ten plik jest widoczny zarówno jako \texttt{home/jakub/Documents/el
 Używanie ścieżek względnych jest rekomendowane, ponieważ znacząco upraszcza pracę, gdy dane/obliczenia przenosi się pomiędzy różnymi komputerami lub gdy współpracuje się z innymi osobami.
 Ścieżki względne są też używane w połączeniu z systemami kontroli wersji (rozdział \ref{kontrola-wersji}).
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Ścieżki folderów w systemach Windows są domyślnie rozdzielane ukośnikiem wstecznym (\texttt{\textbackslash{}}, ang. \emph{backslash}), jednak R pozwala także na użycie prawego ukośnika (\texttt{/}, ang. \emph{slash}).
 Prawy ukośnik jest rekomendowany, ponieważ działa on zarówno na Windowsach, jak i komputerach z systemami MacOS czy Linux.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 \hypertarget{dziaux142ania-na-plikach-i-folderach}{%
 \section{Działania na plikach i folderach}\label{dziaux142ania-na-plikach-i-folderach}}
@@ -5292,13 +5395,17 @@ W takich sytuacjach można użyć funkcji \texttt{read.table()}, która zawiera 
 \end{Highlighting}
 \end{Shaded}
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 R posiada kilka dodatkowych funkcji pozwalających na odczytywanie plików tekstowych, tj. \texttt{read.delim()}, \texttt{read.delim2()}, \texttt{read.fwf()}, czy \texttt{readLines()}.
 Funkcje \texttt{read.delim()} oraz \texttt{read.delim2()} są odpowiednikami \texttt{read.csv()} i \texttt{read.csv2()} dla plików, gdzie kolejne zmienne są oddzielane tabulatorami.
 Funkcja \texttt{read.fwf()} służy do odczytywania danych o ustalonej długości kolejnych zmiennych.
 Funkcja \texttt{readLines()} wczytuje kolejne linie z pliku tekstowego.
 Efektem jej działania w przeciwieństwie do poprzednich funkcji nie jest ramka danych, ale wektor tekstowy, gdzie każdy kolejny element wektora to tekst z kolejnych linii.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 \hypertarget{zapisywanie-plikuxf3w-tekstowych}{%
 \section{Zapisywanie plików tekstowych}\label{zapisywanie-plikuxf3w-tekstowych}}
@@ -5332,11 +5439,15 @@ Dodatkowo możliwe jest pominięcie zapisania nazw wierszy (\texttt{row.names\ =
 \end{Highlighting}
 \end{Shaded}
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Funkcje \texttt{read.csv()} czy \texttt{write.csv()} są domyślnie dostępne w języku R.
 Ich wydajność nie jest niestety najlepsza w przypadku plików tekstowych o dużej wielkości.
 W takich przypadkach warto użyć alternatywnych funkcji, np. \texttt{read\_csv()} i \texttt{write\_csv()} z pakietu \textbf{readr} \citep{R-readr} lub \texttt{fread()} i \texttt{fwrite()} z pakietu \textbf{data.table} \citep{R-data.table}.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 \hypertarget{formaty-r}{%
 \section{Formaty R}\label{formaty-r}}
@@ -5393,9 +5504,13 @@ Ponowne wczytanie obiektu można wykonać używając funkcji \texttt{readRDS()}.
 
 Powyżej można zobaczyć, że została zachowana wcześniejsza zmiana - kolumna \texttt{nazwa\_stacji} nadal jest reprezentowana poprzez wektor czynnikowy.
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Dodatkowo możliwe jest zapisywanie wielu obiektów do jednego pliku w formacie o rozszerzeniu \texttt{.rda} a następnie ich odczytanie używając wbudowanych funkcji \texttt{save()} i \texttt{load()}.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 Pakiety to zorganizowany zbiór funkcji rozszerzający możliwości R (sekcja \ref{pakiety}).
 Istotnym elementem każdego pakietu jest jego dokumentacja, która ułatwia użytkownikom zrozumienie i wykorzystanie możliwości danego pakietu.
@@ -5644,11 +5759,15 @@ Do wyświetlenia wiadomości służy funkcja \texttt{message()}.
 \end{Highlighting}
 \end{Shaded}
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Działanie funkcji \texttt{message()} jest zbliżone do funkcji \texttt{cat()} czy \texttt{print()}.
 Różni je jednak cel w jakim są użyte.
 Rolą funkcji \texttt{message()} jest przekazanie informacji od twórcy do użytkownika, natomiast celem funkcji tj. \texttt{cat()} jest zapytanie użytkownika w pewnej kwestii.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 Przykład użycia trzech podstawowych rodzajów komunikatów można zobaczyć w poniższej funkcji \texttt{minus\_1()}.
 Ta funkcja przyjmuje wartość numeryczną, od której odejmuje jeden, a na końcu zwraca wartość bezwzględną (\texttt{abs(x\ -\ 1)}).
@@ -5706,9 +5825,13 @@ W powyższym przykładzie, \texttt{minus\_1()} używał, między innymi funkcji 
 Czasami spodziewamy się, że wartość wprowadzona przez użytkownika może spowodować wystąpienie wewnętrznego błędu i jednocześnie wiemy jak to naprawić.
 W takich sytuacjach przydaje się funkcja \texttt{tryCatch()}.
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 R pozwala na ignorowanie wystąpienia błędu używając funkcji \texttt{try()}, ignorowanie ostrzeżeń z \texttt{suppressWarnings()} oraz wiadomości z \texttt{suppressMessages()}.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 \texttt{tryCatch()} stara się uruchomić jakiś wskazany kod, a w przypadku pojawienia się błędu wykonuje alternatywne obliczenia.
 Można to zobaczyć na poniższym przykładzie, gdzie najpierw sprawdzona zostałaby linia \texttt{kod\ do\ uruchomienia} i dopiero gdyby ona skutkowała błędem zostałaby uruchomiona linia \texttt{wykonaj\ kod\ w\ przypadku\ wystąpienia\ błędu}.
@@ -5769,9 +5892,13 @@ Jeżeli jednak jako dane wejściowe wprowadzimy wektor znakowy to oryginalna fun
 \end{Highlighting}
 \end{Shaded}
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Dodatkowo istnieje funkcja \texttt{withCallingHandlers()}, która jest używana w przypadku działania na ostrzeżeniach.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 \hypertarget{oop}{%
 \section{Programowanie obiektowe}\label{oop}}
@@ -6212,7 +6339,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.475   0.001   0.476}
+\CommentTok{#>   0.474   0.000   0.474}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6271,8 +6398,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile) 1.46us 1.63us   545842.     117KB}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 1.15us 1.33us   665341.     224KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile) 1.55us 1.71us   502268.     117KB}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 1.29us 1.42us   635335.     224KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
@@ -6315,14 +6442,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 465ms  475ms      2.11     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 804us  827us   1093.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 457ms  463ms      2.16     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 791us  813us   1105.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.11 operacji na sekundę, przy aż 1093.38 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.16 operacji na sekundę, przy aż 1104.63 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zadania-10}{%
@@ -6781,14 +6908,14 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression                  min median `itr/sec`}
 \CommentTok{#>   <bch:expr>                <bch> <bch:>     <dbl>}
-\CommentTok{#> 1 mile_na_km(odl_mile2)     804us  826us     1167.}
-\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 406us  429us     2286.}
+\CommentTok{#> 1 mile_na_km(odl_mile2)     794us  817us     1159.}
+\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 405us  425us     2285.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
-Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.93 raza mniejszy.
+Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.92 raza mniejszy.
 
 \hypertarget{sourceCpp}{%
 \subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}
@@ -6872,7 +6999,25 @@ Teraz też możliwe jest jego sprawdzenie na przykładowym obiekcie:
 \hypertarget{python}{%
 \section{Python}\label{python}}
 
+Python jest współcześnie najpopularniejszym językiem programowania.
+Podobnie jak R, ten język jest interpretowalny, otwarty, i można uruchomić na różnych systemach operacyjnych (Windows, Mac OS i Linux).
+Jest to uniwersalny język programowania znajdujący zastosowanie od aplikacji internetowych, poprzez pisanie skryptów sterujących innym oprogramowaniem (jak np. QGIS), aż do projektów związanych ze sztuczną inteligencją i uczeniem maszynowym.
+
+Różni się on od R szeregiem cech, wśród których na samym początku można zauważyć, że Python:
+
+\begin{itemize}
+\tightlist
+\item
+  Ma inne wbudowane typy danych
+\item
+  Obowiązkowe stosowanie wcięć jako elementu języka
+\item
+  Inny sposób pracy na obiektach.
+\end{itemize}
+
 \citep{R-reticulate}
+
+Pełną dokumentację tego pakietu wraz z szeregiem przykładów można znaleźć pod adresem \url{https://rstudio.github.io/reticulate/}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7279,10 +7424,14 @@ Można to zrobić klikając pole \emph{Staged} przy wybranych plikach oraz nast�
 Teraz można dodać wiadomość opisująca zmiany jakie zaszły, oraz ją zatwierdzić klikając przycisk \emph{Commit}.
 Zalecane jest, aby powyższą czynność wykonywać nawet wiele razy dziennie.
 
-\BeginKnitrBlock{rmdinfo}
+\begin{rmdinfo}
+\begin{rmdinfo}
+
 Często w folderze projektu możesz posiadać pliki, których nie chcesz dodawać do repozytorium.
 W takiej sytuacji dodaj ich nazwy do pliku \texttt{.gitignore} i staną się one niewidoczne dla systemu Git.
-\EndKnitrBlock{rmdinfo}
+
+\end{rmdinfo}
+\end{rmdinfo}
 
 Efektem powyższej operacji jest posiadanie zatwierdzonych zmian w lokalnym repozytorium, ale jeszcze ich brak w repozytorium zdalnym.
 Kolejnym krokiem jest przesłanie zmian na zdalne repozytorium.

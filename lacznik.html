@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>13 Łącznik | Elementarz programisty</title>
   <meta name="description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="13 Łącznik | Elementarz programisty" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Jakub Nowosad" />
 
 
-<meta name="date" content="2020-05-14" />
+<meta name="date" content="2020-06-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -496,11 +496,11 @@ Jest to odpowiednik kodu <code>i = i + 1</code>.</p>
 <a class="sourceLine" id="cb340-7" data-line-number="7"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
 <a class="sourceLine" id="cb340-8" data-line-number="8"><span class="co">#&gt;   expression                  min median `itr/sec`</span></a>
 <a class="sourceLine" id="cb340-9" data-line-number="9"><span class="co">#&gt;   &lt;bch:expr&gt;                &lt;bch&gt; &lt;bch:&gt;     &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb340-10" data-line-number="10"><span class="co">#&gt; 1 mile_na_km(odl_mile2)     808µs  843µs     1102.</span></a>
-<a class="sourceLine" id="cb340-11" data-line-number="11"><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2) 414µs  440µs     2216.</span></a>
+<a class="sourceLine" id="cb340-10" data-line-number="10"><span class="co">#&gt; 1 mile_na_km(odl_mile2)     798µs  822µs     1172.</span></a>
+<a class="sourceLine" id="cb340-11" data-line-number="11"><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2) 409µs  432µs     2249.</span></a>
 <a class="sourceLine" id="cb340-12" data-line-number="12"><span class="co">#&gt; # … with 2 more variables: mem_alloc &lt;bch:byt&gt;,</span></a>
 <a class="sourceLine" id="cb340-13" data-line-number="13"><span class="co">#&gt; #   `gc/sec` &lt;dbl&gt;</span></a></code></pre></div>
-<p>Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.92 raza mniejszy.</p>
+<p>Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.9 raza mniejszy.</p>
 </div>
 <div id="sourceCpp" class="section level3">
 <h3><span class="header-section-number">13.1.2</span> Wywoływanie kodu z plików .cpp</h3>
@@ -546,8 +546,18 @@ Gdybyśmy nie dodali poniższego kodu, funkcja nie byłaby widoczna z poziomu R.
 </div>
 <div id="python" class="section level2">
 <h2><span class="header-section-number">13.2</span> Python</h2>
-<!-- reticulate -->
+<p>Python jest współcześnie najpopularniejszym językiem programowania.<!--REF-->
+Podobnie jak R, ten język jest interpretowalny, otwarty, i można uruchomić na różnych systemach operacyjnych (Windows, Mac OS i Linux).
+Jest to uniwersalny język programowania znajdujący zastosowanie od aplikacji internetowych, poprzez pisanie skryptów sterujących innym oprogramowaniem (jak np. QGIS), aż do projektów związanych ze sztuczną inteligencją i uczeniem maszynowym.</p>
+<p>Różni się on od R szeregiem cech, wśród których na samym początku można zauważyć, że Python:</p>
+<ul>
+<li>Ma inne wbudowane typy danych</li>
+<li>Obowiązkowe stosowanie wcięć jako elementu języka</li>
+<li>Inny sposób pracy na obiektach.
+<!-- Przykładowo,  --></li>
+</ul>
 <p><span class="citation">(Ushey, Allaire, and Tang <a href="#ref-R-reticulate">2020</a>)</span></p>
+<p>Pełną dokumentację tego pakietu wraz z szeregiem przykładów można znaleźć pod adresem <a href="https://rstudio.github.io/reticulate/" class="uri">https://rstudio.github.io/reticulate/</a>.</p>
 <div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb347-1" data-line-number="1"><span class="kw">library</span>(reticulate)</a></code></pre></div>
 <!-- setting Python version -->
 <!-- four types of connections with Python -->

@@ -213,13 +213,13 @@ wynik
 #> # A tibble: 2 x 6
 #>   expression                  min median `itr/sec`
 #>   <bch:expr>                <bch> <bch:>     <dbl>
-#> 1 mile_na_km(odl_mile2)     808µs  843µs     1102.
-#> 2 mile_na_km_cpp(odl_mile2) 414µs  440µs     2216.
+#> 1 mile_na_km(odl_mile2)     798µs  822µs     1172.
+#> 2 mile_na_km_cpp(odl_mile2) 409µs  432µs     2249.
 #> # … with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 ```
 
-Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.92 raza mniejszy.
+Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.9 raza mniejszy.
 
 ### Wywoływanie kodu z plików .cpp {#sourceCpp}
 
@@ -294,9 +294,21 @@ mile_na_km_cpp(odl_mile)
 ```
 
 ## Python
-<!-- reticulate -->
+
+Python jest współcześnie najpopularniejszym językiem programowania.<!--REF-->
+Podobnie jak R, ten język jest interpretowalny, otwarty, i można uruchomić na różnych systemach operacyjnych (Windows, Mac OS i Linux).
+Jest to uniwersalny język programowania znajdujący zastosowanie od aplikacji internetowych, poprzez pisanie skryptów sterujących innym oprogramowaniem (jak np. QGIS), aż do projektów związanych ze sztuczną inteligencją i uczeniem maszynowym. 
+
+Różni się on od R szeregiem cech, wśród których na samym początku można zauważyć, że Python:
+
+- Ma inne wbudowane typy danych
+- Obowiązkowe stosowanie wcięć jako elementu języka
+- Inny sposób pracy na obiektach. 
+<!-- Przykładowo,  -->
 
 [@R-reticulate]
+
+Pełną dokumentację tego pakietu wraz z szeregiem przykładów można znaleźć pod adresem https://rstudio.github.io/reticulate/. 
 
 
 ```r
