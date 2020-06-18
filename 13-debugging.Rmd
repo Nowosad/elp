@@ -205,23 +205,23 @@ traceback()
 #> 1: fun3(-1)
 ```
 
-Czytamy jej wynik od dołu do góry, dowiadują się, że wywołanie funkcji `fun3(-1)` skończyło się błędem wewnątrz funkcji `inch_to_mm(x)`, a dokładnie linią `stop("Wartość poniżej 0 nie jest możliwa")`.
+Czytamy jej wynik od dołu do góry, dowiadując się, że wywołanie funkcji `fun3(-1)` skończyło się błędem wewnątrz funkcji `inch_to_mm(x)`, a dokładnie w linii `stop("Wartość poniżej 0 nie jest możliwa")`.
 Posiadając tę wiedzę możemy przejść do funkcji `inch_to_mm()` i zmienić ją zgodnie z naszymi potrzebami.
 
 Alternatywną możliwością do funkcji `traceback()` jest włączenie opcji interaktywnego debuggera w RStudio.
-Pierwszym krokiem jest włączenie tzw. Error Inspectora, co można zrobić w menu `Debug -> On Error -> Error Inspector`.
+Pierwszym krokiem jest włączenie tzw. Error Inspectora, co można zrobić w menu RStudio `Debug -> On Error -> Error Inspector`.
+Teraz po wykonaniu kodu `fun3(-1)` otrzymamy nie tylko komunikat błędu, ale także dwie nowe ikony "Show Traceback" i "Rerun with Debug".
 
 ```{r, echo=FALSE}
 knitr::include_graphics("figures/debugger1.png")
 ```
 
-Teraz po wykonaniu kodu `fun3(-1)` otrzymamy nie tylko komunikat błędu, ale także dwie nowe ikony "Show Traceback" i "Rerun with Debug".
 Pierwsza z nich wywołuje działanie wcześniej opisanej funkcji `traceback()`.
 Druga, "Rerun with Debug", uruchamia interaktywny debugger. 
-W tym momencie cały kod jest ponownie uruchamiany i zatrzymywanyw miejscu gdzie błąd powstał. 
+W tym momencie cały kod jest ponownie wykonywany i zatrzymywany w miejscu gdzie błąd powstał. 
 Teraz w oknie Environment można znaleźć dwie grupy informacji: istniejące obiekty oraz Traceback pokazujący w krórym kroku obliczeń jesteśmy. 
 Dodatkowo konsola R wygląda inaczej niż zwykle. 
-Pod informacją o błędzie wyświetił się tekst `Browse[1]>`, a nad oknem konsoli pojawił się szereg ikon.
+Pod informacją o błędzie wyświetił się tekst `Browse[1]>`, a nad oknem konsoli pojawił się szereg ikon:
 
 ```{r, echo=FALSE}
 knitr::include_graphics("figures/debugger2.png")
@@ -245,8 +245,7 @@ Domyślnie interaktywny debugger aktywowany jest w przypadku wywołania błędu.
 Możemy go jednak zastosować, gdy chcemy się dowiedzieć jakie obiekty i ich wartości znajdują się w konkretnym miejscu działania naszej funkcji. 
 Wtedy konieczne jest zasygnalizowanie, gdzie chcemy aby debugger został aktywowany, co możemy zrobić na dwa podstawowe sposoby.
 Pierwszy z nich polega na dodaniu przed interesującym nas miejscem linii kodu z funkcją `browser()`, druga natomiast polega na kliknięciu w RStudio na lewo od numeru interesującej nas linii kodu. 
-Wówczas pojawi się czerwona kropka, tzw. "breakpoint", sygnalizująca, że w tym miejscu zostanie uruchomiony debugger i będziemy mogli sprawdzić stan działania programu.
-
+Wówczas pojawi się czerwona kropka, tzw. "breakpoint", sygnalizująca, że w tym miejscu zostanie uruchomiony debugger i będziemy mogli sprawdzić stan działania programu. 
 Inne możliwości wywołania interaktywnego debuggera dają takie funkcje jak `debug()`, `trace()` i `recover()`.^[Wyjaśnienie działania tych funkcji można znaleźć w prezentacji Jima Hestera Introduction to debugging in R and RStudio, której nagranie jest pod adresem https://www.youtube.com/watch?v=r7oBeEyN2jQ]
 
 ## Zadania
