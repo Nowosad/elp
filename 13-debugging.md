@@ -151,6 +151,9 @@ Oprócz funkcji `print()` można też wykorzystać funkcję `cat()` w przypadku 
 R posiada także wbudowany debugger - program analizujący kod w celu odnalezienia zawartych w nim błędów.
 Pozwala on na wejście do środka wykonywanych funkcji, śledzenie i edycję wartości poszczególnych obiektów oraz wykonywanie kodu linia po linii.
 
+Dla przykładu stwórzmy nową funkcję `inch_to_mm()`, która zamienia wartości z cali na milimetry.
+Dodatkowo sprawdza ona czy podana wartość (argument `x`) jest mniejsza niż zero i w takim wypadku wywołuje ona błąd.
+
 
 ```r
 inch_to_mm = function(x) {
@@ -161,46 +164,64 @@ inch_to_mm = function(x) {
 }
 ```
 
+Dodatkowo, wyobrażmy sobie, że funkcja `inch_to_mm()` jest używana w obliczeniach jakiejś kolejnej funkcji `fun1()`, która jest używana w obliczeniach funkcji `fun2()`, a ta w funkcji `fun3()`.
 
 
 ```r
 fun1 = function(x){
-  fun2(x)
+  inch_to_mm(x)
 }
 fun2 = function(x){
-  fun3(x)
+  fun1(x)
 }
 fun3 = function(x){
-  inch_to_mm(x)
+  fun2(x)
 }
 ```
 
+Powyższe funkcje jedynie wywołują siebie nawzajem, ale w typowej sytuacji składałyby się one z wielu linii kodu i wykonywałby szereg operacji.
+Załóżmy teraz, że chcemy wykonać i otrzymać wynik działania `fun3()` dla podanego argumentu `1`.
+
 
 ```r
-fun1(1)
+fun3(1)
 #> [1] 25.4
 ```
 
+W tym przypadku po chwili otrzymujemy poprawny wynik 25.4.
+Możliwa jest jednak sytuacja, gdy my, nasi użytkownicy, albo inny program poda na wejściu wartość, która kończy się błędem, np. `-1`. 
+
 
 ```r
-fun1(-1)
+fun3(-1)
 #> Error in inch_to_mm(x): Wartość poniżej 0 nie jest możliwa
 ```
+
+Otrzymujemy komunikat błędu, ale nie wiemy wynikiem działania jakiej funkcji jest ten błąd. 
+Przykładowo, chcemy zezwolić naszym użytkownikom na podawanie wartości ujemnych - musimy poprawić jakieś miejsce w kodzie, ale nie wiemy gdzie.
+Z pomocą tutaj może przyjść funkcja `traceback()`.
 
 
 ```r
 traceback()
-#> No traceback available
+#> 3: stop("Wartość poniżej 0 nie jest możliwa") at #3
+#> 2: inch_to_mm(x) at #2
+#> 1: fun3(-1)
 ```
 
-Debug -> On Error -> Error Inspector
+Czytamy jej wynik od dołu do góry, dowiadują się, że wywołanie funkcji `fun3(-1)` skończyło się błędem wewnątrz funkcji `inch_to_mm(x)`, a dokładnie linią `stop("Wartość poniżej 0 nie jest możliwa")`.
+Posiadając tę wiedzę możemy przejść do funkcji `inch_to_mm()` i zmienić ją zgodnie z naszymi potrzebami.
+
+Alternatywną możliwością do funkcji `traceback()` jest włączenie opcji interaktywnego debuggera w RStudio.
+Pierwszym krokiem jest włączenie tzw. Error Inspectora, co można zrobić w menu `Debug -> On Error -> Error Inspector`.
 
 <img src="figures/debugger1.png" width="\textwidth" style="display: block; margin: auto;" />
 
-Interaktywny debugger w RStudio można uruchomić klikając na "Rerun with Debug".
+Teraz po wykonaniu kodu `fun3(-1)` otrzymamy nie tylko komunikat błędu, ale także dwie nowe ikony "Show Traceback"` i "Rerun with Debug".
+Pierwsza z nich wywołuje działanie wcześniej opisanej funkcji `traceback()`.
+Druga, "Rerun with Debug", uruchamia interaktywny debugger. 
 W tym momencie cały kod jest ponownie uruchamiany i zatrzymywanyw miejscu gdzie błąd powstał. 
-Teraz w oknie Environment można znaleźć dwie grupy informacji: istniejące obiekty oraz Traceback zawierający ... . <!-- add later-->
-
+Teraz w oknie Environment można znaleźć dwie grupy informacji: istniejące obiekty oraz Traceback pokazujący w krórym kroku obliczeń jesteśmy. 
 Dodatkowo konsola R wygląda inaczej niż zwykle. 
 Pod informacją o błędzie wyświetił się tekst `Browse[1]>`, a nad oknem konsoli pojawił się szereg ikon.
 

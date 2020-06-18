@@ -466,34 +466,45 @@ Takie systematyczne podejście może zaoszczędzić dużo czasu w porównaniu do
 <h2><span class="header-section-number">12.4</span> Debugger</h2>
 <p>R posiada także wbudowany debugger - program analizujący kod w celu odnalezienia zawartych w nim błędów.
 Pozwala on na wejście do środka wykonywanych funkcji, śledzenie i edycję wartości poszczególnych obiektów oraz wykonywanie kodu linia po linii.</p>
+<p>Dla przykładu stwórzmy nową funkcję <code>inch_to_mm()</code>, która zamienia wartości z cali na milimetry.
+Dodatkowo sprawdza ona czy podana wartość (argument <code>x</code>) jest mniejsza niż zero i w takim wypadku wywołuje ona błąd.</p>
 <div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb328-1" data-line-number="1">inch_to_mm =<span class="st"> </span><span class="cf">function</span>(x) {</a>
 <a class="sourceLine" id="cb328-2" data-line-number="2">  <span class="cf">if</span> (x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>){</a>
 <a class="sourceLine" id="cb328-3" data-line-number="3">    <span class="kw">stop</span>(<span class="st">&quot;Wartość poniżej 0 nie jest możliwa&quot;)</span></a>
 <a class="sourceLine" id="cb328-4" data-line-number="4"><span class="st">  }</span></a>
 <a class="sourceLine" id="cb328-5" data-line-number="5"><span class="st">  x * 25.4</span></a>
 <a class="sourceLine" id="cb328-6" data-line-number="6"><span class="st">}</span></a></code></pre></div>
+<p>Dodatkowo, wyobrażmy sobie, że funkcja <code>inch_to_mm()</code> jest używana w obliczeniach jakiejś kolejnej funkcji <code>fun1()</code>, która jest używana w obliczeniach funkcji <code>fun2()</code>, a ta w funkcji <code>fun3()</code>.</p>
 <div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb329-1" data-line-number="1">fun1 =<span class="st"> </span><span class="cf">function</span>(x){</a>
-<a class="sourceLine" id="cb329-2" data-line-number="2">  <span class="kw">fun2</span>(x)</a>
+<a class="sourceLine" id="cb329-2" data-line-number="2">  <span class="kw">inch_to_mm</span>(x)</a>
 <a class="sourceLine" id="cb329-3" data-line-number="3">}</a>
 <a class="sourceLine" id="cb329-4" data-line-number="4">fun2 =<span class="st"> </span><span class="cf">function</span>(x){</a>
-<a class="sourceLine" id="cb329-5" data-line-number="5">  <span class="kw">fun3</span>(x)</a>
+<a class="sourceLine" id="cb329-5" data-line-number="5">  <span class="kw">fun1</span>(x)</a>
 <a class="sourceLine" id="cb329-6" data-line-number="6">}</a>
 <a class="sourceLine" id="cb329-7" data-line-number="7">fun3 =<span class="st"> </span><span class="cf">function</span>(x){</a>
-<a class="sourceLine" id="cb329-8" data-line-number="8">  <span class="kw">inch_to_mm</span>(x)</a>
+<a class="sourceLine" id="cb329-8" data-line-number="8">  <span class="kw">fun2</span>(x)</a>
 <a class="sourceLine" id="cb329-9" data-line-number="9">}</a></code></pre></div>
-<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb330-1" data-line-number="1"><span class="kw">fun1</span>(<span class="dv">1</span>)</a>
+<p>Powyższe funkcje jedynie wywołują siebie nawzajem, ale w typowej sytuacji składałyby się one z wielu linii kodu i wykonywałby szereg operacji.
+Załóżmy teraz, że chcemy wykonać i otrzymać wynik działania <code>fun3()</code> dla podanego argumentu <code>1</code>.</p>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb330-1" data-line-number="1"><span class="kw">fun3</span>(<span class="dv">1</span>)</a>
 <a class="sourceLine" id="cb330-2" data-line-number="2"><span class="co">#&gt; [1] 25.4</span></a></code></pre></div>
-<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb331-1" data-line-number="1"><span class="kw">fun1</span>(<span class="op">-</span><span class="dv">1</span>)</a>
+<p>W tym przypadku po chwili otrzymujemy poprawny wynik 25.4.
+Możliwa jest jednak sytuacja, gdy my, nasi użytkownicy, albo inny program poda na wejściu wartość, która kończy się błędem, np. <code>-1</code>.</p>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb331-1" data-line-number="1"><span class="kw">fun3</span>(<span class="op">-</span><span class="dv">1</span>)</a>
 <a class="sourceLine" id="cb331-2" data-line-number="2"><span class="co">#&gt; Error in inch_to_mm(x): Wartość poniżej 0 nie jest możliwa</span></a></code></pre></div>
+<p>Otrzymujemy komunikat błędu, ale nie wiemy wynikiem działania jakiej funkcji jest ten błąd.
+Przykładowo, chcemy zezwolić naszym użytkownikom na podawanie wartości ujemnych - musimy poprawić jakieś miejsce w kodzie, ale nie wiemy gdzie.
+Z pomocą tutaj może przyjść funkcja <code>traceback()</code>.</p>
 <div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb332-1" data-line-number="1"><span class="kw">traceback</span>()</a>
-<a class="sourceLine" id="cb332-2" data-line-number="2"><span class="co">#&gt; No traceback available</span></a></code></pre></div>
-<p>Debug -&gt; On Error -&gt; Error Inspector</p>
+<a class="sourceLine" id="cb332-2" data-line-number="2"><span class="co">#&gt; 3: stop(&quot;Wartość poniżej 0 nie jest możliwa&quot;) at #3</span></a>
+<a class="sourceLine" id="cb332-3" data-line-number="3"><span class="co">#&gt; 2: inch_to_mm(x) at #2</span></a>
+<a class="sourceLine" id="cb332-4" data-line-number="4"><span class="co">#&gt; 1: fun3(-1)</span></a></code></pre></div>
+<p>Czytamy jej wynik od dołu do góry, dowiadują się, że wywołanie funkcji <code>fun3(-1)</code> skończyło się błędem wewnątrz funkcji <code>inch_to_mm(x)</code>, a dokładnie linią <code>stop(&quot;Wartość poniżej 0 nie jest możliwa&quot;)</code>.
+Posiadając tę wiedzę możemy przejść do funkcji <code>inch_to_mm()</code> i zmienić ją zgodnie z naszymi potrzebami.</p>
+<p>Alternatywną możliwością do funkcji <code>traceback()</code> jest włączenie opcji interaktywnego debuggera w RStudio.
+Pierwszym krokiem jest włączenie tzw. Error Inspectora, co można zrobić w menu <code>Debug -&gt; On Error -&gt; Error Inspector</code>.</p>
 <p><img src="figures/debugger1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
-<p>Interaktywny debugger w RStudio można uruchomić klikając na “Rerun with Debug”.
-W tym momencie cały kod jest ponownie uruchamiany i zatrzymywanyw miejscu gdzie błąd powstał.
-Teraz w oknie Environment można znaleźć dwie grupy informacji: istniejące obiekty oraz Traceback zawierający … . <!-- add later--></p>
-<p>Dodatkowo konsola R wygląda inaczej niż zwykle.
-Pod informacją o błędzie wyświetił się tekst <code>Browse[1]&gt;</code>, a nad oknem konsoli pojawił się szereg ikon.</p>
+<p>Teraz po wykonaniu kodu <code>fun3(-1)</code> otrzymamy nie tylko komunikat błędu, ale także dwie nowe ikony “Show Traceback”<code>i &quot;Rerun with Debug&quot;. Pierwsza z nich wywołuje działanie wcześniej opisanej funkcji</code>traceback()<code>. Druga, &quot;Rerun with Debug&quot;, uruchamia interaktywny debugger.  W tym momencie cały kod jest ponownie uruchamiany i zatrzymywanyw miejscu gdzie błąd powstał.  Teraz w oknie Environment można znaleźć dwie grupy informacji: istniejące obiekty oraz Traceback pokazujący w krórym kroku obliczeń jesteśmy.  Dodatkowo konsola R wygląda inaczej niż zwykle.  Pod informacją o błędzie wyświetił się tekst</code>Browse[1]&gt;`, a nad oknem konsoli pojawił się szereg ikon.</p>
 <p><img src="figures/debugger2.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <ul>
 <li>Pierwsza ikona “Next”, skrót klawiaturowy <code>n</code>, wykonuje kolejny krok obliczeń</li>
