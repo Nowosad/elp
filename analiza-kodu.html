@@ -513,8 +513,8 @@ Poniżej nastąpi porównanie funkcji <code>mi_do_km1</code> i <code>mi_do_km2</
 <a class="sourceLine" id="cb320-8" data-line-number="8"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
 <a class="sourceLine" id="cb320-9" data-line-number="9"><span class="co">#&gt;   expression             min median `itr/sec` mem_alloc</span></a>
 <a class="sourceLine" id="cb320-10" data-line-number="10"><span class="co">#&gt;   &lt;bch:expr&gt;          &lt;bch:&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span></a>
-<a class="sourceLine" id="cb320-11" data-line-number="11"><span class="co">#&gt; 1 mi_do_km1(odl_mile)  1.5µs  2.1µs   408124.     117KB</span></a>
-<a class="sourceLine" id="cb320-12" data-line-number="12"><span class="co">#&gt; 2 mi_do_km2(odl_mile) 1.53µs 1.75µs   506389.     224KB</span></a>
+<a class="sourceLine" id="cb320-11" data-line-number="11"><span class="co">#&gt; 1 mi_do_km1(odl_mile) 1.46µs 1.67µs   508782.     117KB</span></a>
+<a class="sourceLine" id="cb320-12" data-line-number="12"><span class="co">#&gt; 2 mi_do_km2(odl_mile) 1.55µs 1.76µs   500026.     224KB</span></a>
 <a class="sourceLine" id="cb320-13" data-line-number="13"><span class="co">#&gt; # … with 1 more variable: `gc/sec` &lt;dbl&gt;</span></a></code></pre></div>
 <p>Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
 Zawiera ona szereg charakterystyk, w tym:</p>
@@ -541,11 +541,11 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 <a class="sourceLine" id="cb321-9" data-line-number="9"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
 <a class="sourceLine" id="cb321-10" data-line-number="10"><span class="co">#&gt;   expression             min median `itr/sec` mem_alloc</span></a>
 <a class="sourceLine" id="cb321-11" data-line-number="11"><span class="co">#&gt;   &lt;bch:expr&gt;           &lt;bch&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span></a>
-<a class="sourceLine" id="cb321-12" data-line-number="12"><span class="co">#&gt; 1 mi_do_km1(odl_mile2) 468ms  483ms      2.07     382MB</span></a>
-<a class="sourceLine" id="cb321-13" data-line-number="13"><span class="co">#&gt; 2 mi_do_km2(odl_mile2) 815µs  838µs   1043.      78.2KB</span></a>
+<a class="sourceLine" id="cb321-12" data-line-number="12"><span class="co">#&gt; 1 mi_do_km1(odl_mile2) 476ms  487ms      2.05     382MB</span></a>
+<a class="sourceLine" id="cb321-13" data-line-number="13"><span class="co">#&gt; 2 mi_do_km2(odl_mile2) 816µs  837µs   1025.      78.2KB</span></a>
 <a class="sourceLine" id="cb321-14" data-line-number="14"><span class="co">#&gt; # … with 1 more variable: `gc/sec` &lt;dbl&gt;</span></a></code></pre></div>
 <p>W tym przypadku różnica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
-Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 2.07 operacji na sekundę, przy aż 1042.54 operacji na sekundę funkcji <code>mi_do_km2</code>.
+Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 2.05 operacji na sekundę, przy aż 1024.82 operacji na sekundę funkcji <code>mi_do_km2</code>.
 Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż <code>mi_do_km2</code>.</p>
 </div>
 <div id="zadania-10" class="section level2">

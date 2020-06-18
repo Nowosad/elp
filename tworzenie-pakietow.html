@@ -381,7 +381,7 @@ Można to przykładowo zrobić używając pakietu <strong>available</strong> <sp
 Znacznie w tym może pomóc pakiet <strong>usethis</strong> <span class="citation">(Wickham and Bryan <a href="#ref-R-usethis">2020</a>)</span>, który zawiera szereg funkcji ułatwiających budowanie pakietów R.</p>
 <div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb369-1" data-line-number="1"><span class="kw">library</span>(usethis)</a></code></pre></div>
 <p>Do stworzenia szkieletu pakietu służy funkcja <code>create_packages()</code>, w której należy podać ścieżkę do nowego pakietu.<!-- package.skeleton()  Never use this! -->
-W tej ścieżce ostatnia nazwa folderu określa również nazwę pakietu.<a href="#fn54" class="footnote-ref" id="fnref54"><sup>54</sup></a></p>
+W tej ścieżce ostatnia nazwa folderu określa również nazwę pakietu.<a href="#fn55" class="footnote-ref" id="fnref55"><sup>55</sup></a></p>
 <div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb370-1" data-line-number="1">usethis<span class="op">::</span><span class="kw">create_package</span>(<span class="st">&quot;~/Documents/mojpakiet&quot;</span>)</a></code></pre></div>
 <p>W efekcie działania powyższej funkcji stworzony zostanie nowy folder <code>mojpakiet</code> zawierający kilka plików oraz otwarty zostanie nowy projekt RStudio zawierający ten pakiet.
 Najważniejsze nowe pliki to:</p>
@@ -411,7 +411,7 @@ Ten plik i jego zawartość jest tworzona automatycznie</li>
 <a class="sourceLine" id="cb371-12" data-line-number="12"><span class="fu">Encoding:</span><span class="at"> UTF-8</span></a>
 <a class="sourceLine" id="cb371-13" data-line-number="13"><span class="fu">LazyData:</span><span class="at"> true</span></a>
 <a class="sourceLine" id="cb371-14" data-line-number="14"><span class="fu">RoxygenNote:</span><span class="at"> 6.1.1</span></a></code></pre></div>
-<p>Tytuł pakietu (<code>Title:</code>) w jednym krótkim zdaniu (sloganie) określa do czego służy ten pakiet.<a href="#fn55" class="footnote-ref" id="fnref55"><sup>55</sup></a>
+<p>Tytuł pakietu (<code>Title:</code>) w jednym krótkim zdaniu (sloganie) określa do czego służy ten pakiet.<a href="#fn56" class="footnote-ref" id="fnref56"><sup>56</sup></a>
 Składa się on ze słów rozpoczynających się z dużej litery.</p>
 <p>Wersja pakietu (<code>Version:</code>) pozwala jego użytkownikom na zobaczenie, czy korzystają z aktualnej wersji pakietu.
 Zalecanym sposobem określania wersji pakietu jest stosowanie trzech liczb <code>pierwsza.druga.trzecia</code>, np. <code>0.9.1</code>.
@@ -427,7 +427,7 @@ Dodatkowo ta osoba posiada dwie role przy tworzeniu tego pakietu <code>&quot;cre
 Pierwsza rola, <code>&quot;cre&quot;</code>, informuje że ta osoba jest twórcą i konserwatorem tego pakietu.
 Ona jest odpowiedzialna za pracę pakietu.
 Druga rola, <code>&quot;aut&quot;</code>, jest nadawana osom, które wniosły bardzo duży wkład w kod zawarty w pakiecie.
-Inne często używane role to <code>&quot;ctb&quot;</code> określająca osoby, które wniosły mniejszy wkład w kod (np. drobne zmiany) oraz <code>&quot;cph&quot;</code> określająca osoby czy instytucje będące posiadaczami praw autorskich (np. firma zatrudniająca autora kodu albo autor biblioteki, która została wewnętrznie użyta).<a href="#fn56" class="footnote-ref" id="fnref56"><sup>56</sup></a>
+Inne często używane role to <code>&quot;ctb&quot;</code> określająca osoby, które wniosły mniejszy wkład w kod (np. drobne zmiany) oraz <code>&quot;cph&quot;</code> określająca osoby czy instytucje będące posiadaczami praw autorskich (np. firma zatrudniająca autora kodu albo autor biblioteki, która została wewnętrznie użyta).<a href="#fn57" class="footnote-ref" id="fnref57"><sup>57</sup></a>
 Dodanie kolejnych osób odbywa się poprzez łączenie ich funkcją <code>c()</code>.</p>
 <div class="sourceCode" id="cb372"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb372-1" data-line-number="1"><span class="fu">Authors@R:</span><span class="at"> c(</span></a>
 <a class="sourceLine" id="cb372-2" data-line-number="2">    person(<span class="st">&quot;Imie&quot;</span>, <span class="st">&quot;Nazwisko&quot;</span>, role = c(<span class="st">&quot;cre&quot;</span>, <span class="st">&quot;aut&quot;</span>), email = <span class="st">&quot;email1@example.com&quot;</span>),</a>
@@ -519,10 +519,10 @@ Zbudowanie pliku dokumentacji pozwala teraz na jej podejrzenie poprzez wywołani
 <div id="zależności" class="section level2">
 <h2><span class="header-section-number">15.6</span> Zależności</h2>
 <p>Istnieje jedna ważna różnica pomiędzy tworzeniem funkcji w skryptach a tworzeniem jej wewnątrz pakietu - w pakietach nie można używać dołączania pakietów za pomocą funkcji <code>library()</code>.
-Zamiast tego możliwe jest definiowanie każdej zewnętrznej funkcji używając operatora <code>::</code>.<a href="#fn57" class="footnote-ref" id="fnref57"><sup>57</sup></a></p>
+Zamiast tego możliwe jest definiowanie każdej zewnętrznej funkcji używając operatora <code>::</code>.<a href="#fn58" class="footnote-ref" id="fnref58"><sup>58</sup></a></p>
 <!-- przykład -->
 <p>Dodatkowo każda zależność z zewnętrznym pakietem musi być określona w pliku <code>DESCRIPTION</code>.
-Jest to możliwe używając wpisów <code>Imports:</code> oraz <code>Suggests:</code>, przykładowo:<a href="#fn58" class="footnote-ref" id="fnref58"><sup>58</sup></a></p>
+Jest to możliwe używając wpisów <code>Imports:</code> oraz <code>Suggests:</code>, przykładowo:<a href="#fn59" class="footnote-ref" id="fnref59"><sup>59</sup></a></p>
 <div class="sourceCode" id="cb377"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb377-1" data-line-number="1"><span class="fu">Imports:</span></a>
 <a class="sourceLine" id="cb377-2" data-line-number="2">  stringr,</a>
 <a class="sourceLine" id="cb377-3" data-line-number="3">  readr</a>
@@ -555,7 +555,7 @@ Pakiety mogą być dokumentowane używając kilku różnych rodzajów plików, n
 Każdy z nich ma swój cel.</p>
 <p>Plik <code>README.Rmd</code> można stworzyć za pomocą funkcji <code>usethis::use_readme_rmd()</code>.
 W efekcie będzie się on znajdować się w głównym folderze pakietu.
-Ten plik powinien zawierać:<a href="#fn59" class="footnote-ref" id="fnref59"><sup>59</sup></a></p>
+Ten plik powinien zawierać:<a href="#fn60" class="footnote-ref" id="fnref60"><sup>60</sup></a></p>
 <ol style="list-style-type: decimal">
 <li>Nazwę pakietu</li>
 <li>Opis do czego pakiet służy</li>
@@ -616,7 +616,7 @@ Przykładowy plik <code>tests/testthat/test-powierzchnia.R</code> może wygląda
 <a class="sourceLine" id="cb380-11" data-line-number="11"><span class="kw">test_that</span>(<span class="st">&quot;wystepuja odpowiednie bledy&quot;</span>, {</a>
 <a class="sourceLine" id="cb380-12" data-line-number="12">  <span class="kw">expect_error</span>(<span class="kw">nowy_prostokat</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="st">&quot;a&quot;</span>))</a>
 <a class="sourceLine" id="cb380-13" data-line-number="13">})</a></code></pre></div>
-<p>Po napisaniu testów można sprawdzić czy wszystkie z nich dają odpowiedni wynik używając <code>devtools::test()</code><a href="#fn60" class="footnote-ref" id="fnref60"><sup>60</sup></a>.
+<p>Po napisaniu testów można sprawdzić czy wszystkie z nich dają odpowiedni wynik używając <code>devtools::test()</code><a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.
 W efekcie wyświetlone zostaną wszystkie testy i zostanie wskazane, które z nich się nie powiodły i należy je poprawić.</p>
 <!-- why? -->
 <!-- block -->
@@ -626,7 +626,7 @@ W efekcie wyświetlone zostaną wszystkie testy i zostanie wskazane, które z ni
 <div id="publikowanie-pakietów" class="section level2">
 <h2><span class="header-section-number">15.11</span> Publikowanie pakietów</h2>
 <p>Nowo utworzony pakiet w R można od razu umieścić na wybranym serwisie internetowym wspierającym kontrolę wersji takim jak GitHub, GitLab, czy BitBucket (rozdział <a href="kontrola-wersji.html#kontrola-wersji">14</a>), gdzie nazwa repozytorium będzie identyczna jak nazwa pakietu.
-Można to zrobić poprzez zainicjowanie repozytorium Git używając <code>usethis::use_git()</code>, a następnie wysłanie pakietu do repozytorium GitHub poprzez <code>usethis::use_github()</code><a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.
+Można to zrobić poprzez zainicjowanie repozytorium Git używając <code>usethis::use_git()</code>, a następnie wysłanie pakietu do repozytorium GitHub poprzez <code>usethis::use_github()</code><a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a>.
 <!--adds links to descr-->
 Dodatkowo, gdy napisaliśmy plik <code>README.md</code> użytkownicy mogą dowiedzieć się do czego ten pakiet służy, jak go zainstalować i użyć w podstawowy sposób.
 Teraz konieczna jest promocja tego pakietu w sytuacji, gdy chcemy zainteresować inne osoby jego użyciem.
@@ -735,15 +735,15 @@ Dodaj do niej krótki opis tego co robi ten pakiet, a następnie przedstaw przyk
 </div>
 <div class="footnotes">
 <hr />
-<ol start="54">
-<li id="fn54"><p>Funkcja również <code>create_packages()</code> sama tworzy nowy folder, jeżeli on wcześniej nie istniał.<a href="tworzenie-pakietow.html#fnref54" class="footnote-back">↩</a></p></li>
-<li id="fn55"><p>Tytuły pakietów można znaleźć, np. w panelu “Packages” w RStudio.<a href="tworzenie-pakietow.html#fnref55" class="footnote-back">↩</a></p></li>
-<li id="fn56"><p>Pełną listę dostępnych ról można znaleźć pod adresem <a href="http://www.loc.gov/marc/relators/relaterm.html" class="uri">http://www.loc.gov/marc/relators/relaterm.html</a>.<a href="tworzenie-pakietow.html#fnref56" class="footnote-back">↩</a></p></li>
-<li id="fn57"><p>Istnieją również inne możliwości, np. użycie znaczników <code>@import</code> lub <code>@importFrom</code>.<a href="tworzenie-pakietow.html#fnref57" class="footnote-back">↩</a></p></li>
-<li id="fn58"><p>Istnieją również inne wpisy, takie jak <code>Depends:</code>, <code>LinkingTo:</code>, czy <code>Enhances:</code>.<a href="tworzenie-pakietow.html#fnref58" class="footnote-back">↩</a></p></li>
-<li id="fn59"><p>Dodatkowe elementy to oznaki (ang. <em>badges</em>) pokazujące, np. status pakietu, liczbę jego pobrań i wiele innych.<a href="tworzenie-pakietow.html#fnref59" class="footnote-back">↩</a></p></li>
-<li id="fn60"><p>Testy są też automatycznie uruchamiane podczas sprawdzania pakietu (<a href="tworzenie-pakietow.html#sprawdzanie-pakietu">15.7</a>)<a href="tworzenie-pakietow.html#fnref60" class="footnote-back">↩</a></p></li>
-<li id="fn61"><p>Wymaga to jednak wygenerowania tokena - opis jak to zrobić można znaleźć pod adresem <a href="https://debruine.github.io/tutorials/packages.html#github-access-token" class="uri">https://debruine.github.io/tutorials/packages.html#github-access-token</a><a href="tworzenie-pakietow.html#fnref61" class="footnote-back">↩</a></p></li>
+<ol start="55">
+<li id="fn55"><p>Funkcja również <code>create_packages()</code> sama tworzy nowy folder, jeżeli on wcześniej nie istniał.<a href="tworzenie-pakietow.html#fnref55" class="footnote-back">↩</a></p></li>
+<li id="fn56"><p>Tytuły pakietów można znaleźć, np. w panelu “Packages” w RStudio.<a href="tworzenie-pakietow.html#fnref56" class="footnote-back">↩</a></p></li>
+<li id="fn57"><p>Pełną listę dostępnych ról można znaleźć pod adresem <a href="http://www.loc.gov/marc/relators/relaterm.html" class="uri">http://www.loc.gov/marc/relators/relaterm.html</a>.<a href="tworzenie-pakietow.html#fnref57" class="footnote-back">↩</a></p></li>
+<li id="fn58"><p>Istnieją również inne możliwości, np. użycie znaczników <code>@import</code> lub <code>@importFrom</code>.<a href="tworzenie-pakietow.html#fnref58" class="footnote-back">↩</a></p></li>
+<li id="fn59"><p>Istnieją również inne wpisy, takie jak <code>Depends:</code>, <code>LinkingTo:</code>, czy <code>Enhances:</code>.<a href="tworzenie-pakietow.html#fnref59" class="footnote-back">↩</a></p></li>
+<li id="fn60"><p>Dodatkowe elementy to oznaki (ang. <em>badges</em>) pokazujące, np. status pakietu, liczbę jego pobrań i wiele innych.<a href="tworzenie-pakietow.html#fnref60" class="footnote-back">↩</a></p></li>
+<li id="fn61"><p>Testy są też automatycznie uruchamiane podczas sprawdzania pakietu (<a href="tworzenie-pakietow.html#sprawdzanie-pakietu">15.7</a>)<a href="tworzenie-pakietow.html#fnref61" class="footnote-back">↩</a></p></li>
+<li id="fn62"><p>Wymaga to jednak wygenerowania tokena - opis jak to zrobić można znaleźć pod adresem <a href="https://debruine.github.io/tutorials/packages.html#github-access-token" class="uri">https://debruine.github.io/tutorials/packages.html#github-access-token</a><a href="tworzenie-pakietow.html#fnref62" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

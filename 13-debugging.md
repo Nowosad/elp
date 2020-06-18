@@ -236,21 +236,21 @@ Pod informacją o błędzie wyświetił się tekst `Browse[1]>`, a nad oknem kon
 - Czwarta ikona, `c`, wyłącza interaktywny debugger ale pozwala na dalsze wykonywanie działań wewnątrz funkcji
 - Ostatnia ikona, `Q`, kończy działanie debuggera
 
+Uzyskane informacje z debuggera pozwalają nie tylko na zrozumienie, gdzie jest miejsce w którym błąd się pojawia, ale także jakie są wtedy wartości naszych obiektów. 
 Teraz w konsoli możemy wpisać `ls.str()` co pozwala sprawdzić jakie obiekty znajdują się w pamięci komputera w tej sesji R. 
 Możemy się o tym też dowiedzieć w oknie Environment.
 
-Uzyskane informacje z debuggera pozwalają nie tylko na zrozumienie, gdzie jest miejsce w którym błąd się pojawia, ale także jakie są wtedy wartości naszych obiektów. 
-Przykładowo, możliwa jest sytuacja, że wartość naszego obiektu została gdzieś po drodze zmieniona i musimy to naprawić.
-Interaktywny debugger daje także możliwość zamiany wartości obiektów i sprawdzenie czy naprawiają one błąd. 
-Wpisanie `x = 10` zamieni wartość obiektu `x` na `10`, 
+<!-- Przykładowo, możliwa jest sytuacja, że wartość naszego obiektu została gdzieś po drodze zmieniona i musimy to naprawić. -->
+<!-- Interaktywny debugger daje także możliwość zamiany wartości obiektów i sprawdzenie czy naprawiają one błąd.  -->
+<!-- Wpisanie `x = 10` zamieni wartość obiektu `x` na `10`,  -->
 
-Pozwala to na zrozumienie 
-<!-- browser() -->
-<!-- + brakepoints -->
+Domyślnie interaktywny debugger aktywowany jest w przypadku wywołania błędu.
+Możemy go jednak zastosować, gdy chcemy się dowiedzieć jakie obiekty i ich wartości znajdują się w konkretnym miejscu działania naszej funkcji. 
+Wtedy konieczne jest zasygnalizowanie, gdzie chcemy aby debugger został aktywowany, co możemy zrobić na dwa podstawowe sposoby.
+Pierwszy z nich polega na dodaniu przed interesującym nas miejscem linii kodu z funkcją `browser()`, druga natomiast polega na kliknięciu w RStudio na lewo od numeru interesującej nas linii kodu. 
+Wówczas pojawi się czerwona kropka, tzw. "breakpoint", sygnalizująca, że w tym miejscu zostanie uruchomiony debugger i będziemy mogli sprawdzić stan działania programu.
 
-<!-- ## inside R 2-->
-
-<!-- `debug()`, `trace()`, `recover()` -->
+Inne możliwości wywołania interaktywnego debuggera dają takie funkcje jak `debug()`, `trace()` i `recover()`.^[Wyjaśnienie działania tych funkcji można znaleźć w prezentacji Jima Hestera Introduction to debugging in R and RStudio, której nagranie jest pod adresem https://www.youtube.com/watch?v=r7oBeEyN2jQ]
 
 ## Zadania
 

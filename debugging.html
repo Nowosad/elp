@@ -522,17 +522,18 @@ Pod informacją o błędzie wyświetił się tekst <code>Browse[1]&gt;</code>, a
 <li>Czwarta ikona, <code>c</code>, wyłącza interaktywny debugger ale pozwala na dalsze wykonywanie działań wewnątrz funkcji</li>
 <li>Ostatnia ikona, <code>Q</code>, kończy działanie debuggera</li>
 </ul>
-<p>Teraz w konsoli możemy wpisać <code>ls.str()</code> co pozwala sprawdzić jakie obiekty znajdują się w pamięci komputera w tej sesji R.
-Możemy się o tym też dowiedzieć w oknie Environment.</p>
 <p>Uzyskane informacje z debuggera pozwalają nie tylko na zrozumienie, gdzie jest miejsce w którym błąd się pojawia, ale także jakie są wtedy wartości naszych obiektów.
-Przykładowo, możliwa jest sytuacja, że wartość naszego obiektu została gdzieś po drodze zmieniona i musimy to naprawić.
-Interaktywny debugger daje także możliwość zamiany wartości obiektów i sprawdzenie czy naprawiają one błąd.
-Wpisanie <code>x = 10</code> zamieni wartość obiektu <code>x</code> na <code>10</code>,</p>
-<p>Pozwala to na zrozumienie
-<!-- browser() -->
-<!-- + brakepoints --></p>
-<!-- ## inside R 2-->
-<!-- `debug()`, `trace()`, `recover()` -->
+Teraz w konsoli możemy wpisać <code>ls.str()</code> co pozwala sprawdzić jakie obiekty znajdują się w pamięci komputera w tej sesji R.
+Możemy się o tym też dowiedzieć w oknie Environment.</p>
+<!-- Przykładowo, możliwa jest sytuacja, że wartość naszego obiektu została gdzieś po drodze zmieniona i musimy to naprawić. -->
+<!-- Interaktywny debugger daje także możliwość zamiany wartości obiektów i sprawdzenie czy naprawiają one błąd.  -->
+<!-- Wpisanie `x = 10` zamieni wartość obiektu `x` na `10`,  -->
+<p>Domyślnie interaktywny debugger aktywowany jest w przypadku wywołania błędu.
+Możemy go jednak zastosować, gdy chcemy się dowiedzieć jakie obiekty i ich wartości znajdują się w konkretnym miejscu działania naszej funkcji.
+Wtedy konieczne jest zasygnalizowanie, gdzie chcemy aby debugger został aktywowany, co możemy zrobić na dwa podstawowe sposoby.
+Pierwszy z nich polega na dodaniu przed interesującym nas miejscem linii kodu z funkcją <code>browser()</code>, druga natomiast polega na kliknięciu w RStudio na lewo od numeru interesującej nas linii kodu.
+Wówczas pojawi się czerwona kropka, tzw. “breakpoint”, sygnalizująca, że w tym miejscu zostanie uruchomiony debugger i będziemy mogli sprawdzić stan działania programu.</p>
+<p>Inne możliwości wywołania interaktywnego debuggera dają takie funkcje jak <code>debug()</code>, <code>trace()</code> i <code>recover()</code>.<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a></p>
 </div>
 <div id="zadania-11" class="section level2">
 <h2><span class="header-section-number">12.5</span> Zadania</h2>
@@ -552,6 +553,12 @@ Wpisanie <code>x = 10</code> zamieni wartość obiektu <code>x</code> na <code>1
 <div id="ref-wickham2016r">
 <p>Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. &quot; O’Reilly Media, Inc.&quot;.</p>
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="46">
+<li id="fn46"><p>Wyjaśnienie działania tych funkcji można znaleźć w prezentacji Jima Hestera Introduction to debugging in R and RStudio, której nagranie jest pod adresem <a href="https://www.youtube.com/watch?v=r7oBeEyN2jQ" class="uri">https://www.youtube.com/watch?v=r7oBeEyN2jQ</a><a href="debugging.html#fnref46" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 

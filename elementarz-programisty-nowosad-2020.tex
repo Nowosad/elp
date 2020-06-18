@@ -6339,7 +6339,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.474   0.000   0.474}
+\CommentTok{#>   0.478   0.000   0.479}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6398,8 +6398,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile) 1.41us 1.61us   523551.     117KB}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 1.14us  1.3us   684317.     224KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile) 1.47us  1.7us   496473.     117KB}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 1.16us 1.69us   467023.     224KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
@@ -6442,14 +6442,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 473ms  482ms      2.07     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 811us  840us   1042.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 482ms  489ms      2.05     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 810us  838us   1013.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.07 operacji na sekundę, przy aż 1041.89 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.05 operacji na sekundę, przy aż 1013.29 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zadania-10}{%
@@ -6762,15 +6762,17 @@ Pod informacją o błędzie wyświetił się tekst \texttt{Browse{[}1{]}\textgre
   Ostatnia ikona, \texttt{Q}, kończy działanie debuggera
 \end{itemize}
 
+Uzyskane informacje z debuggera pozwalają nie tylko na zrozumienie, gdzie jest miejsce w którym błąd się pojawia, ale także jakie są wtedy wartości naszych obiektów.
 Teraz w konsoli możemy wpisać \texttt{ls.str()} co pozwala sprawdzić jakie obiekty znajdują się w pamięci komputera w tej sesji R.
 Możemy się o tym też dowiedzieć w oknie Environment.
 
-Uzyskane informacje z debuggera pozwalają nie tylko na zrozumienie, gdzie jest miejsce w którym błąd się pojawia, ale także jakie są wtedy wartości naszych obiektów.
-Przykładowo, możliwa jest sytuacja, że wartość naszego obiektu została gdzieś po drodze zmieniona i musimy to naprawić.
-Interaktywny debugger daje także możliwość zamiany wartości obiektów i sprawdzenie czy naprawiają one błąd.
-Wpisanie \texttt{x\ =\ 10} zamieni wartość obiektu \texttt{x} na \texttt{10},
+Domyślnie interaktywny debugger aktywowany jest w przypadku wywołania błędu.
+Możemy go jednak zastosować, gdy chcemy się dowiedzieć jakie obiekty i ich wartości znajdują się w konkretnym miejscu działania naszej funkcji.
+Wtedy konieczne jest zasygnalizowanie, gdzie chcemy aby debugger został aktywowany, co możemy zrobić na dwa podstawowe sposoby.
+Pierwszy z nich polega na dodaniu przed interesującym nas miejscem linii kodu z funkcją \texttt{browser()}, druga natomiast polega na kliknięciu w RStudio na lewo od numeru interesującej nas linii kodu.
+Wówczas pojawi się czerwona kropka, tzw. ``breakpoint'', sygnalizująca, że w tym miejscu zostanie uruchomiony debugger i będziemy mogli sprawdzić stan działania programu.
 
-Pozwala to na zrozumienie
+Inne możliwości wywołania interaktywnego debuggera dają takie funkcje jak \texttt{debug()}, \texttt{trace()} i \texttt{recover()}.\footnote{Wyjaśnienie działania tych funkcji można znaleźć w prezentacji Jima Hestera Introduction to debugging in R and RStudio, której nagranie jest pod adresem \url{https://www.youtube.com/watch?v=r7oBeEyN2jQ}}
 
 \hypertarget{zadania-11}{%
 \section{Zadania}\label{zadania-11}}
@@ -7019,8 +7021,8 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression                  min median `itr/sec`}
 \CommentTok{#>   <bch:expr>                <bch> <bch:>     <dbl>}
-\CommentTok{#> 1 mile_na_km(odl_mile2)     802us  825us     1168.}
-\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 415us  442us     2164.}
+\CommentTok{#> 1 mile_na_km(odl_mile2)     816us  840us     1144.}
+\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 424us  449us     2165.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}

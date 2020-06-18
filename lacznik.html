@@ -496,11 +496,11 @@ Jest to odpowiednik kodu <code>i = i + 1</code>.</p>
 <a class="sourceLine" id="cb345-7" data-line-number="7"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
 <a class="sourceLine" id="cb345-8" data-line-number="8"><span class="co">#&gt;   expression                  min median `itr/sec`</span></a>
 <a class="sourceLine" id="cb345-9" data-line-number="9"><span class="co">#&gt;   &lt;bch:expr&gt;                &lt;bch&gt; &lt;bch:&gt;     &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb345-10" data-line-number="10"><span class="co">#&gt; 1 mile_na_km(odl_mile2)     815µs  839µs     1148.</span></a>
-<a class="sourceLine" id="cb345-11" data-line-number="11"><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2) 420µs  441µs     2204.</span></a>
+<a class="sourceLine" id="cb345-10" data-line-number="10"><span class="co">#&gt; 1 mile_na_km(odl_mile2)     804µs  832µs     1160.</span></a>
+<a class="sourceLine" id="cb345-11" data-line-number="11"><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2) 419µs  445µs     2184.</span></a>
 <a class="sourceLine" id="cb345-12" data-line-number="12"><span class="co">#&gt; # … with 2 more variables: mem_alloc &lt;bch:byt&gt;,</span></a>
 <a class="sourceLine" id="cb345-13" data-line-number="13"><span class="co">#&gt; #   `gc/sec` &lt;dbl&gt;</span></a></code></pre></div>
-<p>Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.9 raza mniejszy.</p>
+<p>Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.87 raza mniejszy.</p>
 </div>
 <div id="sourceCpp" class="section level3">
 <h3><span class="header-section-number">13.1.2</span> Wywoływanie kodu z plików .cpp</h3>
@@ -575,7 +575,7 @@ Istnieje także możliwość połączenia tych języków w drugą stronę, przyk
 <p>Współcześnie kontaktujemy się z komputerami najczęściej używając przeróżnych interfejsów graficznych poprzez kliknięcia myszką czy naciśnięcia klawiatury.
 Jednocześnie większość systemów operacyjnych posiada swoje powłoki systemowe (ang. <em>shell</em>).
 Pełnią one rolę pośrednika pomiędzy systemem operacyjnym a użytkownikiem i pozwalają one uruchamiać programy, sterować nimi poprzez wprowadzanie poleceń, czy zwracać wyniki ich działania.</p>
-<p>R pozwala na łączenie się z powłoką systemową używając funkcji <code>system2()</code><a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a>.
+<p>R pozwala na łączenie się z powłoką systemową używając funkcji <code>system2()</code><a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a>.
 W ten sposób możliwe jest zarówno wywoływanie poleceń wbudowanych w powłokę systemową, uruchomianie skryptów powłoki systemowej (np. <code>system2(&quot;moj_bash_skrypt.sh&quot;)</code>), czy też zewnętrznych aplikacji (w taki sposób pakiet <strong>rgrass7</strong> <span class="citation">(Bivand <a href="#ref-R-rgrass7">2019</a>)</span> łączy się z programem <a href="https://grass.osgeo.org/">GRASS GIS</a>).</p>
 <p>Przykładowo, w systemach opartych o UNIX polecenie <code>wc</code> pozwoli na określenie liczby wyrazów w wybranym pliku.
 Używając <code>system2()</code> oraz polecenia <code>wc</code> możemy sprawdzić ile wyrazów znajduje się w tym rozdziale książki.</p>
@@ -611,8 +611,8 @@ Używając <code>system2()</code> oraz polecenia <code>wc</code> możemy sprawdz
 </div>
 <div class="footnotes">
 <hr />
-<ol start="46">
-<li id="fn46"><p>W R istnieje również funkcja <code>system()</code>, która jest mniej uniwersalna niż <code>system2()</code> i różni się od niej składnią<a href="lacznik.html#fnref46" class="footnote-back">↩</a></p></li>
+<ol start="47">
+<li id="fn47"><p>W R istnieje również funkcja <code>system()</code>, która jest mniej uniwersalna niż <code>system2()</code> i różni się od niej składnią<a href="lacznik.html#fnref47" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
