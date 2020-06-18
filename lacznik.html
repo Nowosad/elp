@@ -496,11 +496,11 @@ Jest to odpowiednik kodu <code>i = i + 1</code>.</p>
 <a class="sourceLine" id="cb345-7" data-line-number="7"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
 <a class="sourceLine" id="cb345-8" data-line-number="8"><span class="co">#&gt;   expression                  min median `itr/sec`</span></a>
 <a class="sourceLine" id="cb345-9" data-line-number="9"><span class="co">#&gt;   &lt;bch:expr&gt;                &lt;bch&gt; &lt;bch:&gt;     &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb345-10" data-line-number="10"><span class="co">#&gt; 1 mile_na_km(odl_mile2)     813µs  841µs     1147.</span></a>
-<a class="sourceLine" id="cb345-11" data-line-number="11"><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2) 426µs  455µs     2147.</span></a>
+<a class="sourceLine" id="cb345-10" data-line-number="10"><span class="co">#&gt; 1 mile_na_km(odl_mile2)     807µs  830µs     1161.</span></a>
+<a class="sourceLine" id="cb345-11" data-line-number="11"><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2) 424µs  447µs     2171.</span></a>
 <a class="sourceLine" id="cb345-12" data-line-number="12"><span class="co">#&gt; # … with 2 more variables: mem_alloc &lt;bch:byt&gt;,</span></a>
 <a class="sourceLine" id="cb345-13" data-line-number="13"><span class="co">#&gt; #   `gc/sec` &lt;dbl&gt;</span></a></code></pre></div>
-<p>Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.85 raza mniejszy.</p>
+<p>Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.86 raza mniejszy.</p>
 </div>
 <div id="sourceCpp" class="section level3">
 <h3><span class="header-section-number">13.1.2</span> Wywoływanie kodu z plików .cpp</h3>
@@ -588,6 +588,17 @@ Używając <code>system2()</code> oraz polecenia <code>wc</code> możemy sprawdz
 </div>
 <div id="zadania-12" class="section level2">
 <h2><span class="header-section-number">13.4</span> Zadania</h2>
+<ol style="list-style-type: decimal">
+<li>Napisz funkcję <code>f_to_c_r()</code> w języku R do przeliczania wartości ze stopni Fahrenheita na stopnie Celsjusza.
+Funkcja ta powinna przyjmować wektor wartości, np. <code>c(0, 75, 110)</code> i także zwracać wektor na wyjściu.</li>
+<li>Stwórz nowy plik <code>f_to_c_c.cpp</code> zawierający funkcję C++ do przeliczania wartości ze stopni Fahrenheita na stopnie Celsjusza.
+W przeciwieństwie do kodu przedstawionego w funkcji <code>konwersja_temp_cpp()</code> powyżej, nowa funkcja powinna pozwalać na przeliczanie wektorów numerycznych składających się z wielu wartości.
+Sprawdź działanie tej funkcji z poziomu R.</li>
+<li>(Dodatkowo) Stwórz moduł Pythona <code>f_to_c_p.py</code> również przeliczający wartości ze stopni Fahrenheita na stopnie Celsjusza.
+Sprawdź działanie tego modułu z poziomu R.</li>
+<li>Stwórz wektor numeryczny od -1000 do 1000 co 0.5.
+Sprawdź prędkość działania funkcji stworzonych we wcześniejszych zadaniach używając funkcji <code>mark()</code> z pakietu <strong>bench</strong>.</li>
+</ol>
 
 </div>
 </div>

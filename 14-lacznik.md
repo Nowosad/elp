@@ -213,13 +213,13 @@ wynik
 #> # A tibble: 2 x 6
 #>   expression                  min median `itr/sec`
 #>   <bch:expr>                <bch> <bch:>     <dbl>
-#> 1 mile_na_km(odl_mile2)     813µs  841µs     1147.
-#> 2 mile_na_km_cpp(odl_mile2) 426µs  455µs     2147.
+#> 1 mile_na_km(odl_mile2)     807µs  830µs     1161.
+#> 2 mile_na_km_cpp(odl_mile2) 424µs  447µs     2171.
 #> # … with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 ```
 
-Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.85 raza mniejszy.
+Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.86 raza mniejszy.
 
 ### Wywoływanie kodu z plików .cpp {#sourceCpp}
 
@@ -344,3 +344,13 @@ system2("wc", args = "-l 14-lacznik.Rmd")
 <!-- https://missing.csail.mit.edu/ -->
 
 ## Zadania
+
+1. Napisz funkcję `f_to_c_r()` w języku R do przeliczania wartości ze stopni Fahrenheita na stopnie Celsjusza.
+Funkcja ta powinna przyjmować wektor wartości, np. `c(0, 75, 110)` i także zwracać wektor na wyjściu.
+2. Stwórz nowy plik `f_to_c_c.cpp` zawierający funkcję C++ do przeliczania wartości ze stopni Fahrenheita na stopnie Celsjusza.
+W przeciwieństwie do kodu przedstawionego w funkcji `konwersja_temp_cpp()` powyżej, nowa funkcja powinna pozwalać na przeliczanie wektorów numerycznych składających się z wielu wartości.
+Sprawdź działanie tej funkcji z poziomu R.
+3. (Dodatkowo) Stwórz moduł Pythona `f_to_c_p.py` również przeliczający wartości ze stopni Fahrenheita na stopnie Celsjusza.
+Sprawdź działanie tego modułu z poziomu R.
+4. Stwórz wektor numeryczny od -1000 do 1000 co 0.5. 
+Sprawdź prędkość działania funkcji stworzonych we wcześniejszych zadaniach używając funkcji `mark()` z pakietu **bench**.
