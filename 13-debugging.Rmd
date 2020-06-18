@@ -152,10 +152,13 @@ R posiada także wbudowany debugger - program analizujący kod w celu odnalezien
 Pozwala on na wejście do środka wykonywanych funkcji, śledzenie i edycję wartości poszczególnych obiektów oraz wykonywanie kodu linia po linii.
 
 Dla przykładu stwórzmy nową funkcję `inch_to_mm()`, która zamienia wartości z cali na milimetry.
-Dodatkowo sprawdza ona czy podana wartość (argument `x`) jest mniejsza niż zero i w takim wypadku wywołuje ona błąd.
+Dodatkowo sprawdza ona czy podana wartość (argument `x`) nie jest numeryczna oraz czy jest mniejsza niż zero i w takich wypadkach wywołuje ona błąd.
 
 ```{r}
 inch_to_mm = function(x) {
+  if (!is.numeric(x)){
+    stop("Podana wartość nie jest numeryczna")
+  }
   if (x < 0){
     stop("Wartość poniżej 0 nie jest możliwa")
   }
@@ -212,7 +215,7 @@ Pierwszym krokiem jest włączenie tzw. Error Inspectora, co można zrobić w me
 knitr::include_graphics("figures/debugger1.png")
 ```
 
-Teraz po wykonaniu kodu `fun3(-1)` otrzymamy nie tylko komunikat błędu, ale także dwie nowe ikony "Show Traceback"` i "Rerun with Debug".
+Teraz po wykonaniu kodu `fun3(-1)` otrzymamy nie tylko komunikat błędu, ale także dwie nowe ikony "Show Traceback" i "Rerun with Debug".
 Pierwsza z nich wywołuje działanie wcześniej opisanej funkcji `traceback()`.
 Druga, "Rerun with Debug", uruchamia interaktywny debugger. 
 W tym momencie cały kod jest ponownie uruchamiany i zatrzymywanyw miejscu gdzie błąd powstał. 
@@ -229,18 +232,17 @@ knitr::include_graphics("figures/debugger2.png")
 - Trzecia ikona, `f`, kończy działanie obecnej funkcji lub pętli
 - Czwarta ikona, `c`, wyłącza interaktywny debugger ale pozwala na dalsze wykonywanie działań wewnątrz funkcji
 - Ostatnia ikona, `Q`, kończy działanie debuggera
-<!-- ## inside R -->
 
-<!-- `browser()` -->
+Teraz w konsoli możemy wpisać `ls.str()` co pozwala sprawdzić jakie obiekty znajdują się w pamięci komputera w tej sesji R. 
+Możemy się o tym też dowiedzieć w oknie Environment.
 
-<!-- `n` - next statement -->
-<!-- `c` - continue -->
-<!-- `s` step into function call -->
-<!-- `f` finish loop/funciton -->
-<!-- `where` previous calls -->
-<!-- `Q` quit debugger -->
+Uzyskane informacje z debuggera pozwalają nie tylko na zrozumienie, gdzie jest miejsce w którym błąd się pojawia, ale także jakie są wtedy wartości naszych obiektów. 
+Przykładowo, możliwa jest sytuacja, że wartość naszego obiektu została gdzieś po drodze zmieniona i musimy to naprawić.
+Interaktywny debugger daje także możliwość zamiany wartości obiektów i sprawdzenie czy naprawiają one błąd. 
+Wpisanie `x = 10` zamieni wartość obiektu `x` na `10`, 
 
-<!-- + RStudio gui -->
+Pozwala to na zrozumienie 
+<!-- browser() -->
 <!-- + brakepoints -->
 
 <!-- ## inside R 2-->
