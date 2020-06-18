@@ -299,3 +299,13 @@ system2("wc", args = "-l 14-lacznik.Rmd")
 <!-- https://missing.csail.mit.edu/ -->
 
 ## Zadania
+
+1. Napisz funkcję `f_to_c_r()` w języku R do przeliczania wartości ze stopni Fahrenheita na stopnie Celsjusza.
+Funkcja ta powinna przyjmować wektor wartości, np. `c(0, 75, 110)` i także zwracać wektor na wyjściu.
+2. Stwórz nowy plik `f_to_c_c.cpp` zawierający funkcję C++ do przeliczania wartości ze stopni Fahrenheita na stopnie Celsjusza.
+W przeciwieństwie do kodu przedstawionego w funkcji `konwersja_temp_cpp()` powyżej, nowa funkcja powinna pozwalać na przeliczanie wektorów numerycznych składających się z wielu wartości.
+Sprawdź działanie tej funkcji z poziomu R.
+3. (Dodatkowo) Stwórz moduł Pythona `f_to_c_p.py` również przeliczający wartości ze stopni Fahrenheita na stopnie Celsjusza.
+Sprawdź działanie tego modułu z poziomu R.
+4. Stwórz wektor numeryczny od -1000 do 1000 co 0.5. 
+Sprawdź prędkość działania funkcji stworzonych we wcześniejszych zadaniach używając funkcji `mark()` z pakietu **bench**.
