@@ -173,7 +173,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 ```r
 system.time(mean(1:100000000))
 #>    user  system elapsed 
-#>   0.475   0.000   0.475
+#>   0.475   0.000   0.476
 ```
 
 W efekcie dostajemy trzy wartości - `user`, `system` i `elapsed`. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.
@@ -229,8 +229,8 @@ wynik_1
 #> # A tibble: 2 x 6
 #>   expression             min median `itr/sec` mem_alloc
 #>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>
-#> 1 mi_do_km1(odl_mile) 1.46µs 1.73µs   499756.     117KB
-#> 2 mi_do_km2(odl_mile) 1.16µs 1.33µs   664027.     224KB
+#> 1 mi_do_km1(odl_mile)  1.5µs  2.1µs   408124.     117KB
+#> 2 mi_do_km2(odl_mile) 1.53µs 1.75µs   506389.     224KB
 #> # … with 1 more variable: `gc/sec` <dbl>
 ```
 
@@ -262,13 +262,13 @@ wynik_2
 #> # A tibble: 2 x 6
 #>   expression             min median `itr/sec` mem_alloc
 #>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>
-#> 1 mi_do_km1(odl_mile2) 474ms  484ms      2.07     382MB
-#> 2 mi_do_km2(odl_mile2) 821µs  841µs   1019.      78.2KB
+#> 1 mi_do_km1(odl_mile2) 468ms  483ms      2.07     382MB
+#> 2 mi_do_km2(odl_mile2) 815µs  838µs   1043.      78.2KB
 #> # … with 1 more variable: `gc/sec` <dbl>
 ```
 
 W tym przypadku różnica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
-Funkcja `mi_do_km1` jest w stanie wykonać tylko 2.07 operacji na sekundę, przy aż 1018.68 operacji na sekundę funkcji `mi_do_km2`.
+Funkcja `mi_do_km1` jest w stanie wykonać tylko 2.07 operacji na sekundę, przy aż 1042.54 operacji na sekundę funkcji `mi_do_km2`.
 Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
 
 

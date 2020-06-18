@@ -6339,7 +6339,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.475   0.001   0.476}
+\CommentTok{#>   0.474   0.000   0.474}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6398,8 +6398,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile) 1.46us 1.67us   505915.     117KB}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 1.19us  1.4us   637169.     224KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile) 1.41us 1.61us   523551.     117KB}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 1.14us  1.3us   684317.     224KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
@@ -6442,14 +6442,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 483ms  484ms      2.07     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 812us  846us   1005.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 473ms  482ms      2.07     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 811us  840us   1042.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.07 operacji na sekundę, przy aż 1005.35 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.07 operacji na sekundę, przy aż 1041.89 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zadania-10}{%
@@ -6665,11 +6665,14 @@ R posiada także wbudowany debugger - program analizujący kod w celu odnalezien
 Pozwala on na wejście do środka wykonywanych funkcji, śledzenie i edycję wartości poszczególnych obiektów oraz wykonywanie kodu linia po linii.
 
 Dla przykładu stwórzmy nową funkcję \texttt{inch\_to\_mm()}, która zamienia wartości z cali na milimetry.
-Dodatkowo sprawdza ona czy podana wartość (argument \texttt{x}) jest mniejsza niż zero i w takim wypadku wywołuje ona błąd.
+Dodatkowo sprawdza ona czy podana wartość (argument \texttt{x}) nie jest numeryczna oraz czy jest mniejsza niż zero i w takich wypadkach wywołuje ona błąd.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{inch_to_mm =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x) \{}
+  \ControlFlowTok{if}\NormalTok{ (}\OperatorTok{!}\KeywordTok{is.numeric}\NormalTok{(x))\{}
+    \KeywordTok{stop}\NormalTok{(}\StringTok{"Podana wartość nie jest numeryczna"}\NormalTok{)}
+\NormalTok{  \}}
   \ControlFlowTok{if}\NormalTok{ (x }\OperatorTok{<}\StringTok{ }\DecValTok{0}\NormalTok{)\{}
     \KeywordTok{stop}\NormalTok{(}\StringTok{"Wartość poniżej 0 nie jest możliwa")}
 \StringTok{  \}}
@@ -6735,7 +6738,13 @@ Pierwszym krokiem jest włączenie tzw. Error Inspectora, co można zrobić w me
 
 \begin{center}\includegraphics[width=\textwidth]{figures/debugger1} \end{center}
 
-Teraz po wykonaniu kodu \texttt{fun3(-1)} otrzymamy nie tylko komunikat błędu, ale także dwie nowe ikony ``Show Traceback''\texttt{i\ "Rerun\ with\ Debug".\ Pierwsza\ z\ nich\ wywołuje\ działanie\ wcześniej\ opisanej\ funkcji}traceback()\texttt{.\ Druga,\ "Rerun\ with\ Debug",\ uruchamia\ interaktywny\ debugger.\ \ W\ tym\ momencie\ cały\ kod\ jest\ ponownie\ uruchamiany\ i\ zatrzymywanyw\ miejscu\ gdzie\ błąd\ powstał.\ \ Teraz\ w\ oknie\ Environment\ można\ znaleźć\ dwie\ grupy\ informacji:\ istniejące\ obiekty\ oraz\ Traceback\ pokazujący\ w\ krórym\ kroku\ obliczeń\ jesteśmy.\ \ Dodatkowo\ konsola\ R\ wygląda\ inaczej\ niż\ zwykle.\ \ Pod\ informacją\ o\ błędzie\ wyświetił\ się\ tekst}Browse{[}1{]}\textgreater{}`, a nad oknem konsoli pojawił się szereg ikon.
+Teraz po wykonaniu kodu \texttt{fun3(-1)} otrzymamy nie tylko komunikat błędu, ale także dwie nowe ikony ``Show Traceback'' i ``Rerun with Debug''.
+Pierwsza z nich wywołuje działanie wcześniej opisanej funkcji \texttt{traceback()}.
+Druga, ``Rerun with Debug'', uruchamia interaktywny debugger.
+W tym momencie cały kod jest ponownie uruchamiany i zatrzymywanyw miejscu gdzie błąd powstał.
+Teraz w oknie Environment można znaleźć dwie grupy informacji: istniejące obiekty oraz Traceback pokazujący w krórym kroku obliczeń jesteśmy.
+Dodatkowo konsola R wygląda inaczej niż zwykle.
+Pod informacją o błędzie wyświetił się tekst \texttt{Browse{[}1{]}\textgreater{}}, a nad oknem konsoli pojawił się szereg ikon.
 
 \begin{center}\includegraphics[width=\textwidth]{figures/debugger2} \end{center}
 
@@ -6752,6 +6761,16 @@ Teraz po wykonaniu kodu \texttt{fun3(-1)} otrzymamy nie tylko komunikat błędu,
 \item
   Ostatnia ikona, \texttt{Q}, kończy działanie debuggera
 \end{itemize}
+
+Teraz w konsoli możemy wpisać \texttt{ls.str()} co pozwala sprawdzić jakie obiekty znajdują się w pamięci komputera w tej sesji R.
+Możemy się o tym też dowiedzieć w oknie Environment.
+
+Uzyskane informacje z debuggera pozwalają nie tylko na zrozumienie, gdzie jest miejsce w którym błąd się pojawia, ale także jakie są wtedy wartości naszych obiektów.
+Przykładowo, możliwa jest sytuacja, że wartość naszego obiektu została gdzieś po drodze zmieniona i musimy to naprawić.
+Interaktywny debugger daje także możliwość zamiany wartości obiektów i sprawdzenie czy naprawiają one błąd.
+Wpisanie \texttt{x\ =\ 10} zamieni wartość obiektu \texttt{x} na \texttt{10},
+
+Pozwala to na zrozumienie
 
 \hypertarget{zadania-11}{%
 \section{Zadania}\label{zadania-11}}
@@ -7000,14 +7019,14 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression                  min median `itr/sec`}
 \CommentTok{#>   <bch:expr>                <bch> <bch:>     <dbl>}
-\CommentTok{#> 1 mile_na_km(odl_mile2)     817us  845us     1142.}
-\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 418us  449us     2169.}
+\CommentTok{#> 1 mile_na_km(odl_mile2)     802us  825us     1168.}
+\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 415us  442us     2164.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
-Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.88 raza mniejszy.
+Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.87 raza mniejszy.
 
 \hypertarget{sourceCpp}{%
 \subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}

@@ -467,13 +467,16 @@ Takie systematyczne podejście może zaoszczędzić dużo czasu w porównaniu do
 <p>R posiada także wbudowany debugger - program analizujący kod w celu odnalezienia zawartych w nim błędów.
 Pozwala on na wejście do środka wykonywanych funkcji, śledzenie i edycję wartości poszczególnych obiektów oraz wykonywanie kodu linia po linii.</p>
 <p>Dla przykładu stwórzmy nową funkcję <code>inch_to_mm()</code>, która zamienia wartości z cali na milimetry.
-Dodatkowo sprawdza ona czy podana wartość (argument <code>x</code>) jest mniejsza niż zero i w takim wypadku wywołuje ona błąd.</p>
+Dodatkowo sprawdza ona czy podana wartość (argument <code>x</code>) nie jest numeryczna oraz czy jest mniejsza niż zero i w takich wypadkach wywołuje ona błąd.</p>
 <div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb328-1" data-line-number="1">inch_to_mm =<span class="st"> </span><span class="cf">function</span>(x) {</a>
-<a class="sourceLine" id="cb328-2" data-line-number="2">  <span class="cf">if</span> (x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>){</a>
-<a class="sourceLine" id="cb328-3" data-line-number="3">    <span class="kw">stop</span>(<span class="st">&quot;Wartość poniżej 0 nie jest możliwa&quot;)</span></a>
-<a class="sourceLine" id="cb328-4" data-line-number="4"><span class="st">  }</span></a>
-<a class="sourceLine" id="cb328-5" data-line-number="5"><span class="st">  x * 25.4</span></a>
-<a class="sourceLine" id="cb328-6" data-line-number="6"><span class="st">}</span></a></code></pre></div>
+<a class="sourceLine" id="cb328-2" data-line-number="2">  <span class="cf">if</span> (<span class="op">!</span><span class="kw">is.numeric</span>(x)){</a>
+<a class="sourceLine" id="cb328-3" data-line-number="3">    <span class="kw">stop</span>(<span class="st">&quot;Podana wartość nie jest numeryczna&quot;</span>)</a>
+<a class="sourceLine" id="cb328-4" data-line-number="4">  }</a>
+<a class="sourceLine" id="cb328-5" data-line-number="5">  <span class="cf">if</span> (x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>){</a>
+<a class="sourceLine" id="cb328-6" data-line-number="6">    <span class="kw">stop</span>(<span class="st">&quot;Wartość poniżej 0 nie jest możliwa&quot;)</span></a>
+<a class="sourceLine" id="cb328-7" data-line-number="7"><span class="st">  }</span></a>
+<a class="sourceLine" id="cb328-8" data-line-number="8"><span class="st">  x * 25.4</span></a>
+<a class="sourceLine" id="cb328-9" data-line-number="9"><span class="st">}</span></a></code></pre></div>
 <p>Dodatkowo, wyobrażmy sobie, że funkcja <code>inch_to_mm()</code> jest używana w obliczeniach jakiejś kolejnej funkcji <code>fun1()</code>, która jest używana w obliczeniach funkcji <code>fun2()</code>, a ta w funkcji <code>fun3()</code>.</p>
 <div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb329-1" data-line-number="1">fun1 =<span class="st"> </span><span class="cf">function</span>(x){</a>
 <a class="sourceLine" id="cb329-2" data-line-number="2">  <span class="kw">inch_to_mm</span>(x)</a>
@@ -504,25 +507,30 @@ Posiadając tę wiedzę możemy przejść do funkcji <code>inch_to_mm()</code> i
 <p>Alternatywną możliwością do funkcji <code>traceback()</code> jest włączenie opcji interaktywnego debuggera w RStudio.
 Pierwszym krokiem jest włączenie tzw. Error Inspectora, co można zrobić w menu <code>Debug -&gt; On Error -&gt; Error Inspector</code>.</p>
 <p><img src="figures/debugger1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
-<p>Teraz po wykonaniu kodu <code>fun3(-1)</code> otrzymamy nie tylko komunikat błędu, ale także dwie nowe ikony “Show Traceback”<code>i &quot;Rerun with Debug&quot;. Pierwsza z nich wywołuje działanie wcześniej opisanej funkcji</code>traceback()<code>. Druga, &quot;Rerun with Debug&quot;, uruchamia interaktywny debugger.  W tym momencie cały kod jest ponownie uruchamiany i zatrzymywanyw miejscu gdzie błąd powstał.  Teraz w oknie Environment można znaleźć dwie grupy informacji: istniejące obiekty oraz Traceback pokazujący w krórym kroku obliczeń jesteśmy.  Dodatkowo konsola R wygląda inaczej niż zwykle.  Pod informacją o błędzie wyświetił się tekst</code>Browse[1]&gt;`, a nad oknem konsoli pojawił się szereg ikon.</p>
+<p>Teraz po wykonaniu kodu <code>fun3(-1)</code> otrzymamy nie tylko komunikat błędu, ale także dwie nowe ikony “Show Traceback” i “Rerun with Debug”.
+Pierwsza z nich wywołuje działanie wcześniej opisanej funkcji <code>traceback()</code>.
+Druga, “Rerun with Debug”, uruchamia interaktywny debugger.
+W tym momencie cały kod jest ponownie uruchamiany i zatrzymywanyw miejscu gdzie błąd powstał.
+Teraz w oknie Environment można znaleźć dwie grupy informacji: istniejące obiekty oraz Traceback pokazujący w krórym kroku obliczeń jesteśmy.
+Dodatkowo konsola R wygląda inaczej niż zwykle.
+Pod informacją o błędzie wyświetił się tekst <code>Browse[1]&gt;</code>, a nad oknem konsoli pojawił się szereg ikon.</p>
 <p><img src="figures/debugger2.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <ul>
 <li>Pierwsza ikona “Next”, skrót klawiaturowy <code>n</code>, wykonuje kolejny krok obliczeń</li>
 <li>Druga ikona, <code>s</code>, działa podobnie do “Next”, z tym wyjątkiem, że gdy kolejny krok obliczeń jest funkcją to wtedy pozwala ona na wejście do tej funkcji i sprawdzenie jej interaktywnie</li>
 <li>Trzecia ikona, <code>f</code>, kończy działanie obecnej funkcji lub pętli</li>
 <li>Czwarta ikona, <code>c</code>, wyłącza interaktywny debugger ale pozwala na dalsze wykonywanie działań wewnątrz funkcji</li>
-<li>Ostatnia ikona, <code>Q</code>, kończy działanie debuggera
-<!-- ## inside R --></li>
+<li>Ostatnia ikona, <code>Q</code>, kończy działanie debuggera</li>
 </ul>
-<!-- `browser()` -->
-<!-- `n` - next statement -->
-<!-- `c` - continue -->
-<!-- `s` step into function call -->
-<!-- `f` finish loop/funciton -->
-<!-- `where` previous calls -->
-<!-- `Q` quit debugger -->
-<!-- + RStudio gui -->
-<!-- + brakepoints -->
+<p>Teraz w konsoli możemy wpisać <code>ls.str()</code> co pozwala sprawdzić jakie obiekty znajdują się w pamięci komputera w tej sesji R.
+Możemy się o tym też dowiedzieć w oknie Environment.</p>
+<p>Uzyskane informacje z debuggera pozwalają nie tylko na zrozumienie, gdzie jest miejsce w którym błąd się pojawia, ale także jakie są wtedy wartości naszych obiektów.
+Przykładowo, możliwa jest sytuacja, że wartość naszego obiektu została gdzieś po drodze zmieniona i musimy to naprawić.
+Interaktywny debugger daje także możliwość zamiany wartości obiektów i sprawdzenie czy naprawiają one błąd.
+Wpisanie <code>x = 10</code> zamieni wartość obiektu <code>x</code> na <code>10</code>,</p>
+<p>Pozwala to na zrozumienie
+<!-- browser() -->
+<!-- + brakepoints --></p>
 <!-- ## inside R 2-->
 <!-- `debug()`, `trace()`, `recover()` -->
 </div>
