@@ -370,7 +370,7 @@ W przypadku potrzeby zadania pytania, lepszym pomysłem jest opublikowanie go na
 <!-- https://en.wikipedia.org/wiki/Debugging#/media/File:H96566k.jpg -->
 <p>Tworzenie kodu możliwego do odtworzenia problemu (powtarzalnych przykładów) jest też pomocne w przypadku, gdy my piszemy nowe skrypty i funkcje i napotkamy na błędy.
 Jest to często część debugowania (ang. <em>debugging</em>) - procesu rozwiązywania problemów i błędów w oprogramowaniu.
-Istnieje wiele potencjalnych taktyk debugowania kodu, w tym debugowanie używając funkcji takich jak print (sekcja <a href="debugging.html#debuging-print">12.3</a>), czy też debuggera (sekcja <a href="debugging.html#debugger">12.4</a>).</p>
+Istnieje wiele potencjalnych taktyk debugowania kodu, w tym debugowanie używając funkcji takich jak <code>print()</code> (sekcja <a href="debugging.html#debuging-print">12.3</a>), czy też debuggera (sekcja <a href="debugging.html#debugger">12.4</a>).</p>
 <p>Więcej na temat debugowania kodu w R można dowiedzieć się więcej z prezentacji Jenny Bryan pt. <a href="https://github.com/jennybc/debugging">Object of type ‘closure’ is not subsettable</a>, [rozdziału Debugging R code] książki <span class="citation">Jennifer Bryan and Hester (<a href="#ref-rstatswtf">2019</a>)</span>, oraz [rozdziału Debugging] książki <span class="citation">Wickham and Grolemund (<a href="#ref-wickham2016r">2016</a>)</span>.
 Dodatkowo, na stronach <a href="https://blog.davisvaughan.com/2019/04/05/debug-r-package-with-cpp/">Debugging an R Package with C++</a>, <a href="https://github.com/wch/r-debug/blob/master/debugging-r.md">Debugging C/C++ code that interfaces with R</a>, oraz <a href="http://kevinushey.github.io/blog/2015/04/13/debugging-with-lldb/">Debugging with LLDB</a> można przeczytać na temat debugowania kodu C++ łączącego się z R.</p>
 <div id="reprex" class="section level2">
@@ -452,14 +452,6 @@ Dwa z nich, debugowanie używając funkcji takich jak print (sekcja <a href="deb
 Nie powinien to być jednak ostatni krok.</p>
 <p>Należy jeszcze upewnić się, że nowa wersja kodu nie tylko przestaje zwracać błędy, ale też daje poprawne wyniki.
 Często odbywa się to poprzez wykonanie wcześniej stworzony testów jednostkowych (sekcja <a href="analiza-kodu.html#testy-jednostkowe">11.1</a>).</p>
-<!--
-@_ColinFay: Top 3 debugging tips:
-
-1. It's probably a typo
-2. It's probably a missing parenthesis
-3. It's probably a missing comma
-Shared via TweetCaster 
--->
 </div>
 <div id="debuging-print" class="section level2">
 <h2><span class="header-section-number">12.3</span> Podstawowe podejście do debugowania</h2>
@@ -467,12 +459,50 @@ Shared via TweetCaster
 Dalej warto zaplanować jakie testy kodu wykonać, aby wyłapać dokładne miejsce wystąpnienia błędu.
 Trzeba też zapisywać potencjalne wyniki.
 Takie systematyczne podejście może zaoszczędzić dużo czasu w porównaniu do losowego testowania różnych wartości w kodzie.</p>
-<p>Oprócz funkcji można też wykorzystać funkcję <code>cat()</code> w przypadku małych obiektów lub funkcję <code>str()</code> w przypadku większych obiektów.</p>
+<p>Oprócz funkcji <code>print()</code> można też wykorzystać funkcję <code>cat()</code> w przypadku małych obiektów lub funkcję <code>str()</code> w przypadku większych obiektów.</p>
 <!-- `traceback()` - bottom to top -->
 </div>
 <div id="debugger" class="section level2">
 <h2><span class="header-section-number">12.4</span> Debugger</h2>
-<!-- ## inside R -->
+<p>R posiada także wbudowany debugger - program analizujący kod w celu odnalezienia zawartych w nim błędów.
+Pozwala on na wejście do środka wykonywanych funkcji, śledzenie i edycję wartości poszczególnych obiektów oraz wykonywanie kodu linia po linii.</p>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb328-1" data-line-number="1">inch_to_mm =<span class="st"> </span><span class="cf">function</span>(x) {</a>
+<a class="sourceLine" id="cb328-2" data-line-number="2">  <span class="cf">if</span> (x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>){</a>
+<a class="sourceLine" id="cb328-3" data-line-number="3">    <span class="kw">stop</span>(<span class="st">&quot;Wartość poniżej 0 nie jest możliwa&quot;)</span></a>
+<a class="sourceLine" id="cb328-4" data-line-number="4"><span class="st">  }</span></a>
+<a class="sourceLine" id="cb328-5" data-line-number="5"><span class="st">  x * 25.4</span></a>
+<a class="sourceLine" id="cb328-6" data-line-number="6"><span class="st">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb329-1" data-line-number="1">fun1 =<span class="st"> </span><span class="cf">function</span>(x){</a>
+<a class="sourceLine" id="cb329-2" data-line-number="2">  <span class="kw">fun2</span>(x)</a>
+<a class="sourceLine" id="cb329-3" data-line-number="3">}</a>
+<a class="sourceLine" id="cb329-4" data-line-number="4">fun2 =<span class="st"> </span><span class="cf">function</span>(x){</a>
+<a class="sourceLine" id="cb329-5" data-line-number="5">  <span class="kw">fun3</span>(x)</a>
+<a class="sourceLine" id="cb329-6" data-line-number="6">}</a>
+<a class="sourceLine" id="cb329-7" data-line-number="7">fun3 =<span class="st"> </span><span class="cf">function</span>(x){</a>
+<a class="sourceLine" id="cb329-8" data-line-number="8">  <span class="kw">inch_to_mm</span>(x)</a>
+<a class="sourceLine" id="cb329-9" data-line-number="9">}</a></code></pre></div>
+<div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb330-1" data-line-number="1"><span class="kw">fun1</span>(<span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb330-2" data-line-number="2"><span class="co">#&gt; [1] 25.4</span></a></code></pre></div>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb331-1" data-line-number="1"><span class="kw">fun1</span>(<span class="op">-</span><span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb331-2" data-line-number="2"><span class="co">#&gt; Error in inch_to_mm(x): Wartość poniżej 0 nie jest możliwa</span></a></code></pre></div>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb332-1" data-line-number="1"><span class="kw">traceback</span>()</a>
+<a class="sourceLine" id="cb332-2" data-line-number="2"><span class="co">#&gt; No traceback available</span></a></code></pre></div>
+<p>Debug -&gt; On Error -&gt; Error Inspector</p>
+<p><img src="figures/debugger1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p>Interaktywny debugger w RStudio można uruchomić klikając na “Rerun with Debug”.
+W tym momencie cały kod jest ponownie uruchamiany i zatrzymywanyw miejscu gdzie błąd powstał.
+Teraz w oknie Environment można znaleźć dwie grupy informacji: istniejące obiekty oraz Traceback zawierający … . <!-- add later--></p>
+<p>Dodatkowo konsola R wygląda inaczej niż zwykle.
+Pod informacją o błędzie wyświetił się tekst <code>Browse[1]&gt;</code>, a nad oknem konsoli pojawił się szereg ikon.</p>
+<p><img src="figures/debugger2.png" width="\textwidth" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Pierwsza ikona “Next”, skrót klawiaturowy <code>n</code>, wykonuje kolejny krok obliczeń</li>
+<li>Druga ikona, <code>s</code>, działa podobnie do “Next”, z tym wyjątkiem, że gdy kolejny krok obliczeń jest funkcją to wtedy pozwala ona na wejście do tej funkcji i sprawdzenie jej interaktywnie</li>
+<li>Trzecia ikona, <code>f</code>, kończy działanie obecnej funkcji lub pętli</li>
+<li>Czwarta ikona, <code>c</code>, wyłącza interaktywny debugger ale pozwala na dalsze wykonywanie działań wewnątrz funkcji</li>
+<li>Ostatnia ikona, <code>Q</code>, kończy działanie debuggera
+<!-- ## inside R --></li>
+</ul>
 <!-- `browser()` -->
 <!-- `n` - next statement -->
 <!-- `c` - continue -->

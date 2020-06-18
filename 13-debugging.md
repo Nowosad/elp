@@ -17,7 +17,7 @@ W przypadku potrzeby zadania pytania, lepszym pomysłem jest opublikowanie go na
 
 Tworzenie kodu możliwego do odtworzenia problemu (powtarzalnych przykładów) jest też pomocne w przypadku, gdy my piszemy nowe skrypty i funkcje i napotkamy na błędy.
 Jest to często część debugowania (ang. *debugging*) - procesu rozwiązywania problemów i błędów w oprogramowaniu.
-Istnieje wiele potencjalnych taktyk debugowania kodu, w tym debugowanie używając funkcji takich jak print (sekcja \@ref(debuging-print)), czy też debuggera (sekcja \@ref(debugger)).
+Istnieje wiele potencjalnych taktyk debugowania kodu, w tym debugowanie używając funkcji takich jak `print()` (sekcja \@ref(debuging-print)), czy też debuggera (sekcja \@ref(debugger)).
 
 Więcej na temat debugowania kodu w R można dowiedzieć się więcej z prezentacji Jenny Bryan pt. [Object of type 'closure' is not subsettable](https://github.com/jennybc/debugging), [rozdziału Debugging R code] książki @rstatswtf, oraz [rozdziału Debugging] książki @wickham2016r.
 Dodatkowo, na stronach [Debugging an R Package with C++](https://blog.davisvaughan.com/2019/04/05/debug-r-package-with-cpp/), [Debugging C/C++ code that interfaces with R](https://github.com/wch/r-debug/blob/master/debugging-r.md), oraz [Debugging with LLDB](http://kevinushey.github.io/blog/2015/04/13/debugging-with-lldb/) można przeczytać na temat debugowania kodu C++ łączącego się z R.
@@ -135,15 +135,6 @@ Nie powinien to być jednak ostatni krok.
 Należy jeszcze upewnić się, że nowa wersja kodu nie tylko przestaje zwracać błędy, ale też daje poprawne wyniki.
 Często odbywa się to poprzez wykonanie wcześniej stworzony testów jednostkowych (sekcja \@ref(testy-jednostkowe)).
 
-<!--
-@_ColinFay: Top 3 debugging tips:
-
-1. It's probably a typo
-2. It's probably a missing parenthesis
-3. It's probably a missing comma
-Shared via TweetCaster 
--->
-
 ## Podstawowe podejście do debugowania {#debuging-print}
 
 Klasycznym podejściem do debugowania jest dodanie funkcji `print()` pokazującej wartości obiektów w okolicy potencjalnego źródła błędu.
@@ -151,12 +142,75 @@ Dalej warto zaplanować jakie testy kodu wykonać, aby wyłapać dokładne miejs
 Trzeba też zapisywać potencjalne wyniki.
 Takie systematyczne podejście może zaoszczędzić dużo czasu w porównaniu do losowego testowania różnych wartości w kodzie.
 
-Oprócz funkcji można też wykorzystać funkcję `cat()` w przypadku małych obiektów lub funkcję `str()` w przypadku większych obiektów.
+Oprócz funkcji `print()` można też wykorzystać funkcję `cat()` w przypadku małych obiektów lub funkcję `str()` w przypadku większych obiektów.
 
 <!-- `traceback()` - bottom to top -->
 
 ## Debugger {#debugger}
 
+R posiada także wbudowany debugger - program analizujący kod w celu odnalezienia zawartych w nim błędów.
+Pozwala on na wejście do środka wykonywanych funkcji, śledzenie i edycję wartości poszczególnych obiektów oraz wykonywanie kodu linia po linii.
+
+
+```r
+inch_to_mm = function(x) {
+  if (x < 0){
+    stop("Wartość poniżej 0 nie jest możliwa")
+  }
+  x * 25.4
+}
+```
+
+
+
+```r
+fun1 = function(x){
+  fun2(x)
+}
+fun2 = function(x){
+  fun3(x)
+}
+fun3 = function(x){
+  inch_to_mm(x)
+}
+```
+
+
+```r
+fun1(1)
+#> [1] 25.4
+```
+
+
+```r
+fun1(-1)
+#> Error in inch_to_mm(x): Wartość poniżej 0 nie jest możliwa
+```
+
+
+```r
+traceback()
+#> No traceback available
+```
+
+Debug -> On Error -> Error Inspector
+
+<img src="figures/debugger1.png" width="\textwidth" style="display: block; margin: auto;" />
+
+Interaktywny debugger w RStudio można uruchomić klikając na "Rerun with Debug".
+W tym momencie cały kod jest ponownie uruchamiany i zatrzymywanyw miejscu gdzie błąd powstał. 
+Teraz w oknie Environment można znaleźć dwie grupy informacji: istniejące obiekty oraz Traceback zawierający ... . <!-- add later-->
+
+Dodatkowo konsola R wygląda inaczej niż zwykle. 
+Pod informacją o błędzie wyświetił się tekst `Browse[1]>`, a nad oknem konsoli pojawił się szereg ikon.
+
+<img src="figures/debugger2.png" width="\textwidth" style="display: block; margin: auto;" />
+
+- Pierwsza ikona "Next", skrót klawiaturowy `n`, wykonuje kolejny krok obliczeń
+- Druga ikona, `s`, działa podobnie do "Next", z tym wyjątkiem, że gdy kolejny krok obliczeń jest funkcją to wtedy pozwala ona na wejście do tej funkcji i sprawdzenie jej interaktywnie
+- Trzecia ikona, `f`, kończy działanie obecnej funkcji lub pętli
+- Czwarta ikona, `c`, wyłącza interaktywny debugger ale pozwala na dalsze wykonywanie działań wewnątrz funkcji
+- Ostatnia ikona, `Q`, kończy działanie debuggera
 <!-- ## inside R -->
 
 <!-- `browser()` -->

@@ -6339,7 +6339,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.476   0.000   0.476}
+\CommentTok{#>   0.475   0.001   0.475}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6398,8 +6398,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile) 1.45us 1.76us   466453.     117KB}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 1.14us 1.33us   667013.     224KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile)  1.5us 1.71us   499328.     117KB}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 1.16us 1.32us   667601.     224KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
@@ -6442,14 +6442,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 508ms  508ms      1.97     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 814us  843us   1020.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 500ms  500ms      2.00     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 820us  845us   1023.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 1.97 operacji na sekundę, przy aż 1019.78 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2 operacji na sekundę, przy aż 1022.8 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zadania-10}{%
@@ -6508,7 +6508,7 @@ W przypadku potrzeby zadania pytania, lepszym pomysłem jest opublikowanie go na
 
 Tworzenie kodu możliwego do odtworzenia problemu (powtarzalnych przykładów) jest też pomocne w przypadku, gdy my piszemy nowe skrypty i funkcje i napotkamy na błędy.
 Jest to często część debugowania (ang. \emph{debugging}) - procesu rozwiązywania problemów i błędów w oprogramowaniu.
-Istnieje wiele potencjalnych taktyk debugowania kodu, w tym debugowanie używając funkcji takich jak print (sekcja \ref{debuging-print}), czy też debuggera (sekcja \ref{debugger}).
+Istnieje wiele potencjalnych taktyk debugowania kodu, w tym debugowanie używając funkcji takich jak \texttt{print()} (sekcja \ref{debuging-print}), czy też debuggera (sekcja \ref{debugger}).
 
 Więcej na temat debugowania kodu w R można dowiedzieć się więcej z prezentacji Jenny Bryan pt. \href{https://github.com/jennybc/debugging}{Object of type `closure' is not subsettable}, {[}rozdziału Debugging R code{]} książki \citet{rstatswtf}, oraz {[}rozdziału Debugging{]} książki \citet{wickham2016r}.
 Dodatkowo, na stronach \href{https://blog.davisvaughan.com/2019/04/05/debug-r-package-with-cpp/}{Debugging an R Package with C++}, \href{https://github.com/wch/r-debug/blob/master/debugging-r.md}{Debugging C/C++ code that interfaces with R}, oraz \href{http://kevinushey.github.io/blog/2015/04/13/debugging-with-lldb/}{Debugging with LLDB} można przeczytać na temat debugowania kodu C++ łączącego się z R.
@@ -6656,10 +6656,86 @@ Dalej warto zaplanować jakie testy kodu wykonać, aby wyłapać dokładne miejs
 Trzeba też zapisywać potencjalne wyniki.
 Takie systematyczne podejście może zaoszczędzić dużo czasu w porównaniu do losowego testowania różnych wartości w kodzie.
 
-Oprócz funkcji można też wykorzystać funkcję \texttt{cat()} w przypadku małych obiektów lub funkcję \texttt{str()} w przypadku większych obiektów.
+Oprócz funkcji \texttt{print()} można też wykorzystać funkcję \texttt{cat()} w przypadku małych obiektów lub funkcję \texttt{str()} w przypadku większych obiektów.
 
 \hypertarget{debugger}{%
 \section{Debugger}\label{debugger}}
+
+R posiada także wbudowany debugger - program analizujący kod w celu odnalezienia zawartych w nim błędów.
+Pozwala on na wejście do środka wykonywanych funkcji, śledzenie i edycję wartości poszczególnych obiektów oraz wykonywanie kodu linia po linii.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{inch_to_mm =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x) \{}
+  \ControlFlowTok{if}\NormalTok{ (x }\OperatorTok{<}\StringTok{ }\DecValTok{0}\NormalTok{)\{}
+    \KeywordTok{stop}\NormalTok{(}\StringTok{"Wartość poniżej 0 nie jest możliwa")}
+\StringTok{  \}}
+\StringTok{  x * 25.4}
+\StringTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fun1 =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{}
+  \KeywordTok{fun2}\NormalTok{(x)}
+\NormalTok{\}}
+\NormalTok{fun2 =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{}
+  \KeywordTok{fun3}\NormalTok{(x)}
+\NormalTok{\}}
+\NormalTok{fun3 =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{}
+  \KeywordTok{inch_to_mm}\NormalTok{(x)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{fun1}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\CommentTok{#> [1] 25.4}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{fun1}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{)}
+\CommentTok{#> Error in inch_to_mm(x): Wartość poniżej 0 nie jest możliwa}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{traceback}\NormalTok{()}
+\CommentTok{#> No traceback available}
+\end{Highlighting}
+\end{Shaded}
+
+Debug -\textgreater{} On Error -\textgreater{} Error Inspector
+
+\begin{center}\includegraphics[width=\textwidth]{figures/debugger1} \end{center}
+
+Interaktywny debugger w RStudio można uruchomić klikając na ``Rerun with Debug''.
+W tym momencie cały kod jest ponownie uruchamiany i zatrzymywanyw miejscu gdzie błąd powstał.
+Teraz w oknie Environment można znaleźć dwie grupy informacji: istniejące obiekty oraz Traceback zawierający \ldots{} .
+
+Dodatkowo konsola R wygląda inaczej niż zwykle.
+Pod informacją o błędzie wyświetił się tekst \texttt{Browse{[}1{]}\textgreater{}}, a nad oknem konsoli pojawił się szereg ikon.
+
+\begin{center}\includegraphics[width=\textwidth]{figures/debugger2} \end{center}
+
+\begin{itemize}
+\tightlist
+\item
+  Pierwsza ikona ``Next'', skrót klawiaturowy \texttt{n}, wykonuje kolejny krok obliczeń
+\item
+  Druga ikona, \texttt{s}, działa podobnie do ``Next'', z tym wyjątkiem, że gdy kolejny krok obliczeń jest funkcją to wtedy pozwala ona na wejście do tej funkcji i sprawdzenie jej interaktywnie
+\item
+  Trzecia ikona, \texttt{f}, kończy działanie obecnej funkcji lub pętli
+\item
+  Czwarta ikona, \texttt{c}, wyłącza interaktywny debugger ale pozwala na dalsze wykonywanie działań wewnątrz funkcji
+\item
+  Ostatnia ikona, \texttt{Q}, kończy działanie debuggera
+\end{itemize}
 
 \hypertarget{zadania-11}{%
 \section{Zadania}\label{zadania-11}}
@@ -6908,14 +6984,14 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression                  min median `itr/sec`}
 \CommentTok{#>   <bch:expr>                <bch> <bch:>     <dbl>}
-\CommentTok{#> 1 mile_na_km(odl_mile2)     824us  851us     1115.}
-\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 427us  455us     2138.}
+\CommentTok{#> 1 mile_na_km(odl_mile2)     820us  842us     1123.}
+\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 420us  452us     2154.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
-Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.87 raza mniejszy.
+Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.86 raza mniejszy.
 
 \hypertarget{sourceCpp}{%
 \subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}

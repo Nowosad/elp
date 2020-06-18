@@ -379,10 +379,10 @@ Można to przykładowo zrobić używając pakietu <strong>available</strong> <sp
 <h2><span class="header-section-number">15.2</span> Tworzenie szkieletu pakietu</h2>
 <p>Kolejnym krokiem jest stworzenie szkieletu pakietu, czyli zorganizowanego zbioru plików i folderów, do których później należy dodać odpowiednie informacje i funkcje.
 Znacznie w tym może pomóc pakiet <strong>usethis</strong> <span class="citation">(Wickham and Bryan <a href="#ref-R-usethis">2020</a>)</span>, który zawiera szereg funkcji ułatwiających budowanie pakietów R.</p>
-<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb364-1" data-line-number="1"><span class="kw">library</span>(usethis)</a></code></pre></div>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb369-1" data-line-number="1"><span class="kw">library</span>(usethis)</a></code></pre></div>
 <p>Do stworzenia szkieletu pakietu służy funkcja <code>create_packages()</code>, w której należy podać ścieżkę do nowego pakietu.<!-- package.skeleton()  Never use this! -->
 W tej ścieżce ostatnia nazwa folderu określa również nazwę pakietu.<a href="#fn54" class="footnote-ref" id="fnref54"><sup>54</sup></a></p>
-<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb365-1" data-line-number="1">usethis<span class="op">::</span><span class="kw">create_package</span>(<span class="st">&quot;~/Documents/mojpakiet&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb370-1" data-line-number="1">usethis<span class="op">::</span><span class="kw">create_package</span>(<span class="st">&quot;~/Documents/mojpakiet&quot;</span>)</a></code></pre></div>
 <p>W efekcie działania powyższej funkcji stworzony zostanie nowy folder <code>mojpakiet</code> zawierający kilka plików oraz otwarty zostanie nowy projekt RStudio zawierający ten pakiet.
 Najważniejsze nowe pliki to:</p>
 <ol style="list-style-type: decimal">
@@ -397,20 +397,20 @@ Ten plik i jego zawartość jest tworzona automatycznie</li>
 <div id="opis-pakietu" class="section level2">
 <h2><span class="header-section-number">15.3</span> Opis pakietu</h2>
 <p>Plik <code>DESCRIPTION</code> zawiera opis (metadane) pakietu, w tym jego nazwę, tytuł, wersję, autorów, opis, czy licencję.</p>
-<div class="sourceCode" id="cb366"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb366-1" data-line-number="1"><span class="fu">Package:</span><span class="at"> mojpakiet</span></a>
-<a class="sourceLine" id="cb366-2" data-line-number="2"><span class="fu">Title:</span><span class="at"> Moje Funkcje Robiace Wszystko</span></a>
-<a class="sourceLine" id="cb366-3" data-line-number="3"><span class="fu">Version:</span><span class="at"> 0.0.1</span></a>
-<a class="sourceLine" id="cb366-4" data-line-number="4"><span class="fu">Authors@R:</span><span class="at"> </span></a>
-<a class="sourceLine" id="cb366-5" data-line-number="5">    person(given = <span class="st">&quot;Imie&quot;</span>,</a>
-<a class="sourceLine" id="cb366-6" data-line-number="6">           family = <span class="st">&quot;Nazwisko&quot;</span>,</a>
-<a class="sourceLine" id="cb366-7" data-line-number="7">           role = c(<span class="st">&quot;cre&quot;</span>, <span class="st">&quot;aut&quot;</span>),</a>
-<a class="sourceLine" id="cb366-8" data-line-number="8">           email = <span class="st">&quot;imie.nazwisko@example.com&quot;</span>)</a>
-<a class="sourceLine" id="cb366-9" data-line-number="9"><span class="fu">Description:</span><span class="at"> Tworzenie, przeliczanie i wyliczanie wszystkiego. </span></a>
-<a class="sourceLine" id="cb366-10" data-line-number="10">    Czasami nawet więcej.</a>
-<a class="sourceLine" id="cb366-11" data-line-number="11"><span class="fu">License:</span><span class="at"> CC0</span></a>
-<a class="sourceLine" id="cb366-12" data-line-number="12"><span class="fu">Encoding:</span><span class="at"> UTF-8</span></a>
-<a class="sourceLine" id="cb366-13" data-line-number="13"><span class="fu">LazyData:</span><span class="at"> true</span></a>
-<a class="sourceLine" id="cb366-14" data-line-number="14"><span class="fu">RoxygenNote:</span><span class="at"> 6.1.1</span></a></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb371-1" data-line-number="1"><span class="fu">Package:</span><span class="at"> mojpakiet</span></a>
+<a class="sourceLine" id="cb371-2" data-line-number="2"><span class="fu">Title:</span><span class="at"> Moje Funkcje Robiace Wszystko</span></a>
+<a class="sourceLine" id="cb371-3" data-line-number="3"><span class="fu">Version:</span><span class="at"> 0.0.1</span></a>
+<a class="sourceLine" id="cb371-4" data-line-number="4"><span class="fu">Authors@R:</span><span class="at"> </span></a>
+<a class="sourceLine" id="cb371-5" data-line-number="5">    person(given = <span class="st">&quot;Imie&quot;</span>,</a>
+<a class="sourceLine" id="cb371-6" data-line-number="6">           family = <span class="st">&quot;Nazwisko&quot;</span>,</a>
+<a class="sourceLine" id="cb371-7" data-line-number="7">           role = c(<span class="st">&quot;cre&quot;</span>, <span class="st">&quot;aut&quot;</span>),</a>
+<a class="sourceLine" id="cb371-8" data-line-number="8">           email = <span class="st">&quot;imie.nazwisko@example.com&quot;</span>)</a>
+<a class="sourceLine" id="cb371-9" data-line-number="9"><span class="fu">Description:</span><span class="at"> Tworzenie, przeliczanie i wyliczanie wszystkiego. </span></a>
+<a class="sourceLine" id="cb371-10" data-line-number="10">    Czasami nawet więcej.</a>
+<a class="sourceLine" id="cb371-11" data-line-number="11"><span class="fu">License:</span><span class="at"> CC0</span></a>
+<a class="sourceLine" id="cb371-12" data-line-number="12"><span class="fu">Encoding:</span><span class="at"> UTF-8</span></a>
+<a class="sourceLine" id="cb371-13" data-line-number="13"><span class="fu">LazyData:</span><span class="at"> true</span></a>
+<a class="sourceLine" id="cb371-14" data-line-number="14"><span class="fu">RoxygenNote:</span><span class="at"> 6.1.1</span></a></code></pre></div>
 <p>Tytuł pakietu (<code>Title:</code>) w jednym krótkim zdaniu (sloganie) określa do czego służy ten pakiet.<a href="#fn55" class="footnote-ref" id="fnref55"><sup>55</sup></a>
 Składa się on ze słów rozpoczynających się z dużej litery.</p>
 <p>Wersja pakietu (<code>Version:</code>) pozwala jego użytkownikom na zobaczenie, czy korzystają z aktualnej wersji pakietu.
@@ -429,10 +429,10 @@ Ona jest odpowiedzialna za pracę pakietu.
 Druga rola, <code>&quot;aut&quot;</code>, jest nadawana osom, które wniosły bardzo duży wkład w kod zawarty w pakiecie.
 Inne często używane role to <code>&quot;ctb&quot;</code> określająca osoby, które wniosły mniejszy wkład w kod (np. drobne zmiany) oraz <code>&quot;cph&quot;</code> określająca osoby czy instytucje będące posiadaczami praw autorskich (np. firma zatrudniająca autora kodu albo autor biblioteki, która została wewnętrznie użyta).<a href="#fn56" class="footnote-ref" id="fnref56"><sup>56</sup></a>
 Dodanie kolejnych osób odbywa się poprzez łączenie ich funkcją <code>c()</code>.</p>
-<div class="sourceCode" id="cb367"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb367-1" data-line-number="1"><span class="fu">Authors@R:</span><span class="at"> c(</span></a>
-<a class="sourceLine" id="cb367-2" data-line-number="2">    person(<span class="st">&quot;Imie&quot;</span>, <span class="st">&quot;Nazwisko&quot;</span>, role = c(<span class="st">&quot;cre&quot;</span>, <span class="st">&quot;aut&quot;</span>), email = <span class="st">&quot;email1@example.com&quot;</span>),</a>
-<a class="sourceLine" id="cb367-3" data-line-number="3">    person(<span class="st">&quot;Imie2&quot;</span>, <span class="st">&quot;Nazwisko2&quot;</span>, role = <span class="st">&quot;aut&quot;</span>, email = <span class="st">&quot;email2@example.com&quot;</span>)</a>
-<a class="sourceLine" id="cb367-4" data-line-number="4">)</a></code></pre></div>
+<div class="sourceCode" id="cb372"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb372-1" data-line-number="1"><span class="fu">Authors@R:</span><span class="at"> c(</span></a>
+<a class="sourceLine" id="cb372-2" data-line-number="2">    person(<span class="st">&quot;Imie&quot;</span>, <span class="st">&quot;Nazwisko&quot;</span>, role = c(<span class="st">&quot;cre&quot;</span>, <span class="st">&quot;aut&quot;</span>), email = <span class="st">&quot;email1@example.com&quot;</span>),</a>
+<a class="sourceLine" id="cb372-3" data-line-number="3">    person(<span class="st">&quot;Imie2&quot;</span>, <span class="st">&quot;Nazwisko2&quot;</span>, role = <span class="st">&quot;aut&quot;</span>, email = <span class="st">&quot;email2@example.com&quot;</span>)</a>
+<a class="sourceLine" id="cb372-4" data-line-number="4">)</a></code></pre></div>
 <p>Licencja (<code>License:</code>) określa warunki korzystania z pakietu przez inne osoby.
 W bardzo dużym skrócie licencje oprogramowania można podzielić na licencje otwarte (<em>open-source</em>) oraz zamknięte (<em>proprietary</em>).
 Najpopularniejsze licencje otwarte używane w pakietach R to licencja <code>CC0</code>, <code>MIT</code> oraz <code>GPL</code>.
@@ -444,9 +444,9 @@ Trzecia z licencji otwartych, <code>GPL</code> (ang. <em>GNU General Public Lice
 Ważną cechą tej licencji jest wymaganie, że wszelkie prace oparte o kod w licencji <code>GPL</code> również muszą mieć licencję <code>GPL</code>
 Oprogramowanie zamknięte może również przyjmować wiele form (np. freeware czy też oprogramowanie komercyjne).
 Określenie pakietu jako oprogramowania zamkniętego odbywa się poprzez dodanie informacji, że licencja znajduje się w pliku <code>LICENSE</code> (<code>License: file LICENSE</code>), a następnie stworzenie pliku tekstowego o tej nazwie zawierającego odpowiednią modyfikację poniższego tekstu:</p>
-<div class="sourceCode" id="cb368"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb368-1" data-line-number="1">Proprietary </a>
-<a class="sourceLine" id="cb368-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb368-3" data-line-number="3">Do not distribute outside of NAZWA MOJEJ FIRMY.</a></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb373-1" data-line-number="1">Proprietary </a>
+<a class="sourceLine" id="cb373-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb373-3" data-line-number="3">Do not distribute outside of NAZWA MOJEJ FIRMY.</a></code></pre></div>
 <!-- linki do licencji -->
 <!-- http://choosealicense.com/licenses/ -->
 <!-- https://tldrlegal.com/ -->
@@ -473,32 +473,32 @@ Określenie pakietu jako oprogramowania zamkniętego odbywa się poprzez dodanie
 <div id="tworzenie-i-dokumentacja-funkcji" class="section level2">
 <h2><span class="header-section-number">15.5</span> Tworzenie i dokumentacja funkcji</h2>
 <p>W sekcji <a href="funkcje.html#budowanie-funkcji">3.8</a> stworzyliśmy nową funkcję <code>konwersja_temp()</code> przeliczającą temperaturę ze stopni Fahrenheita na stopnie Celsjusza.</p>
-<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb369-1" data-line-number="1">konwersja_temp =<span class="st"> </span><span class="cf">function</span>(temperatura_f){</a>
-<a class="sourceLine" id="cb369-2" data-line-number="2">    (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></a>
-<a class="sourceLine" id="cb369-3" data-line-number="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb374-1" data-line-number="1">konwersja_temp =<span class="st"> </span><span class="cf">function</span>(temperatura_f){</a>
+<a class="sourceLine" id="cb374-2" data-line-number="2">    (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></a>
+<a class="sourceLine" id="cb374-3" data-line-number="3">}</a></code></pre></div>
 <p>Umieszczenie tej funkcji w nowym pakiecie R odbywa się poprzez zapisanie tego kodu jako skrypt R (np. <code>konwersja_temp.R</code>) w folderze <code>R/</code>.</p>
 <p>Funkcje zawarte w pakietach muszą także posiadać odpowiednią dokumentację, zawierającą, między innymi, tytuł funkcji, opis jej działania, wyjaśnienie kolejnych argumentów funkcji, oraz przykłady jej działania.
 Linie obejmujące dokumentację funkcji rozpoczynają się od znaków <code>#'</code>, a tworzenie dokumentacji funkcji odbywa się poprzez wypełnianie treści dla kolejnych znaczników (np. <code>@example</code> określa występowanie przykładu).</p>
 <p>Przykładowy plik <code>R/konwersja_temp.R</code> może wyglądać następująco:</p>
-<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb370-1" data-line-number="1"><span class="co">#&#39; Konwersja temperatur</span></a>
-<a class="sourceLine" id="cb370-2" data-line-number="2"><span class="co">#&#39;</span></a>
-<a class="sourceLine" id="cb370-3" data-line-number="3"><span class="co">#&#39; @description Funkcja sluzaca do konwersji temperatury </span></a>
-<a class="sourceLine" id="cb370-4" data-line-number="4"><span class="co">#&#39;   ze stopni Fahrenheita do stopni Celsjusza.</span></a>
-<a class="sourceLine" id="cb370-5" data-line-number="5"><span class="co">#&#39;</span></a>
-<a class="sourceLine" id="cb370-6" data-line-number="6"><span class="co">#&#39; @param temperatura_f wektor zawierajacy wartosci temperatury </span></a>
-<a class="sourceLine" id="cb370-7" data-line-number="7"><span class="co">#&#39;   w stopniach Fahrenheita</span></a>
-<a class="sourceLine" id="cb370-8" data-line-number="8"><span class="co">#&#39;</span></a>
-<a class="sourceLine" id="cb370-9" data-line-number="9"><span class="co">#&#39; @return wektor numeryczny</span></a>
-<a class="sourceLine" id="cb370-10" data-line-number="10"><span class="co">#&#39; @export</span></a>
-<a class="sourceLine" id="cb370-11" data-line-number="11"><span class="co">#&#39;</span></a>
-<a class="sourceLine" id="cb370-12" data-line-number="12"><span class="co">#&#39; @examples</span></a>
-<a class="sourceLine" id="cb370-13" data-line-number="13"><span class="co">#&#39; konwersja_temp(75)</span></a>
-<a class="sourceLine" id="cb370-14" data-line-number="14"><span class="co">#&#39; konwersja_temp(110)</span></a>
-<a class="sourceLine" id="cb370-15" data-line-number="15"><span class="co">#&#39; konwersja_temp(0)</span></a>
-<a class="sourceLine" id="cb370-16" data-line-number="16"><span class="co">#&#39; konwersja_temp(c(0, 75, 110))</span></a>
-<a class="sourceLine" id="cb370-17" data-line-number="17">konwersja_temp =<span class="st"> </span><span class="cf">function</span>(temperatura_f){</a>
-<a class="sourceLine" id="cb370-18" data-line-number="18">  (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></a>
-<a class="sourceLine" id="cb370-19" data-line-number="19">}</a></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb375-1" data-line-number="1"><span class="co">#&#39; Konwersja temperatur</span></a>
+<a class="sourceLine" id="cb375-2" data-line-number="2"><span class="co">#&#39;</span></a>
+<a class="sourceLine" id="cb375-3" data-line-number="3"><span class="co">#&#39; @description Funkcja sluzaca do konwersji temperatury </span></a>
+<a class="sourceLine" id="cb375-4" data-line-number="4"><span class="co">#&#39;   ze stopni Fahrenheita do stopni Celsjusza.</span></a>
+<a class="sourceLine" id="cb375-5" data-line-number="5"><span class="co">#&#39;</span></a>
+<a class="sourceLine" id="cb375-6" data-line-number="6"><span class="co">#&#39; @param temperatura_f wektor zawierajacy wartosci temperatury </span></a>
+<a class="sourceLine" id="cb375-7" data-line-number="7"><span class="co">#&#39;   w stopniach Fahrenheita</span></a>
+<a class="sourceLine" id="cb375-8" data-line-number="8"><span class="co">#&#39;</span></a>
+<a class="sourceLine" id="cb375-9" data-line-number="9"><span class="co">#&#39; @return wektor numeryczny</span></a>
+<a class="sourceLine" id="cb375-10" data-line-number="10"><span class="co">#&#39; @export</span></a>
+<a class="sourceLine" id="cb375-11" data-line-number="11"><span class="co">#&#39;</span></a>
+<a class="sourceLine" id="cb375-12" data-line-number="12"><span class="co">#&#39; @examples</span></a>
+<a class="sourceLine" id="cb375-13" data-line-number="13"><span class="co">#&#39; konwersja_temp(75)</span></a>
+<a class="sourceLine" id="cb375-14" data-line-number="14"><span class="co">#&#39; konwersja_temp(110)</span></a>
+<a class="sourceLine" id="cb375-15" data-line-number="15"><span class="co">#&#39; konwersja_temp(0)</span></a>
+<a class="sourceLine" id="cb375-16" data-line-number="16"><span class="co">#&#39; konwersja_temp(c(0, 75, 110))</span></a>
+<a class="sourceLine" id="cb375-17" data-line-number="17">konwersja_temp =<span class="st"> </span><span class="cf">function</span>(temperatura_f){</a>
+<a class="sourceLine" id="cb375-18" data-line-number="18">  (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></a>
+<a class="sourceLine" id="cb375-19" data-line-number="19">}</a></code></pre></div>
 <p>Pierwsza linia w tym pliku określa tytuł danej funkcji.
 Kolejny element rozpoczynający się od znacznika <code>@description</code> zawiera krótki opis tego, co funkcja robi.
 Następnie zazwyczaj wypisane są wszystkie argumenty danej funkcji używając kolejnych znaczników <code>@param</code>.
@@ -511,7 +511,7 @@ Ostatni znacznik, <code>@examples</code>, wypisuje kolejne przykłady działania
 <p>Wybór <code>More -&gt; Document</code> w panelu “Build” (inaczej wywołanie funkcji <code>devtools::document()</code> lub użycie skrótu CTRL+SHIFT+D) spowoduje zbudowanie pliku dokumentacji w folderze <code>man</code>, np. <code>man/konwersja_temp.Rd</code>.
 Pliki dokumentacji będą zawsze tworzone w ten sposób - nie należy ich modyfikować ręcznie.
 Zbudowanie pliku dokumentacji pozwala teraz na jej podejrzenie poprzez wywołanie pliku pomocy naszej funkcji:</p>
-<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb371-1" data-line-number="1">?konwersja_temp</a></code></pre></div>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb376-1" data-line-number="1">?konwersja_temp</a></code></pre></div>
 <!-- printscreen -->
 <!-- roxygen2 -->
 <!-- https://r-pkgs.org/data.html#documenting-data -->
@@ -523,11 +523,11 @@ Zamiast tego możliwe jest definiowanie każdej zewnętrznej funkcji używając 
 <!-- przykład -->
 <p>Dodatkowo każda zależność z zewnętrznym pakietem musi być określona w pliku <code>DESCRIPTION</code>.
 Jest to możliwe używając wpisów <code>Imports:</code> oraz <code>Suggests:</code>, przykładowo:<a href="#fn58" class="footnote-ref" id="fnref58"><sup>58</sup></a></p>
-<div class="sourceCode" id="cb372"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb372-1" data-line-number="1"><span class="fu">Imports:</span></a>
-<a class="sourceLine" id="cb372-2" data-line-number="2">  stringr,</a>
-<a class="sourceLine" id="cb372-3" data-line-number="3">  readr</a>
-<a class="sourceLine" id="cb372-4" data-line-number="4"><span class="fu">Suggests:</span></a>
-<a class="sourceLine" id="cb372-5" data-line-number="5">  readxl</a></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb377-1" data-line-number="1"><span class="fu">Imports:</span></a>
+<a class="sourceLine" id="cb377-2" data-line-number="2">  stringr,</a>
+<a class="sourceLine" id="cb377-3" data-line-number="3">  readr</a>
+<a class="sourceLine" id="cb377-4" data-line-number="4"><span class="fu">Suggests:</span></a>
+<a class="sourceLine" id="cb377-5" data-line-number="5">  readxl</a></code></pre></div>
 <p><code>Imports:</code> określa pakiety, które muszą być zainstalowane, aby tworzony pakiet mógł zadziałać.
 Jeżeli wymienione tutaj pakiety nie będą znajdować się na komputerze użytkownika to zostaną one automatycznie doinstalowane podczas instalacji naszego pakietu.
 <code>Suggests:</code> wymienia pakiety, które pomagają w użytkowaniu naszego pakietu, np. takie które zawierają testowe dane.
@@ -594,28 +594,28 @@ Przykład szablonu pliku <code>NEWS.md</code> można znaleźć pod adresem <a hr
 Takie testy można również wbudować wewnątrz pakietu - w efekcie, gdy naniesiemy w nim jakieś zmiany możemy sprawdzić czy otrzymujemy takie same wyniki.</p>
 <p>Pierwszym krokiem do używania wbudowanych testów jest ustawienie odpowiedniej infrastruktury używając funkcji <code>use_testthat()</code>.
 Powoduje ona dodanie pakietu <strong>testthat</strong> do wpisu <code>Suggests:</code>, stworzenie folderów <code>tests/</code> i <code>tests/testthat/</code> oraz pliku <code>tests/testthat.R</code>.</p>
-<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb374-1" data-line-number="1"><span class="kw">use_testthat</span>()</a>
-<a class="sourceLine" id="cb374-2" data-line-number="2"><span class="co">#&gt; ✔ Adding &#39;testthat&#39; to Suggests field in DESCRIPTION</span></a>
-<a class="sourceLine" id="cb374-3" data-line-number="3"><span class="co">#&gt; ✔ Creating &#39;tests/testthat/&#39;</span></a>
-<a class="sourceLine" id="cb374-4" data-line-number="4"><span class="co">#&gt; ✔ Writing &#39;tests/testthat.R&#39;</span></a></code></pre></div>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb379-1" data-line-number="1"><span class="kw">use_testthat</span>()</a>
+<a class="sourceLine" id="cb379-2" data-line-number="2"><span class="co">#&gt; ✔ Adding &#39;testthat&#39; to Suggests field in DESCRIPTION</span></a>
+<a class="sourceLine" id="cb379-3" data-line-number="3"><span class="co">#&gt; ✔ Creating &#39;tests/testthat/&#39;</span></a>
+<a class="sourceLine" id="cb379-4" data-line-number="4"><span class="co">#&gt; ✔ Writing &#39;tests/testthat.R&#39;</span></a></code></pre></div>
 <p>Teraz możliwe jest napisanie testów jednostkowych.
 Zazwyczaj polega to na stworzeniu oddzielnego pliku dla każdej funkcji z naszego pakietu.
 Przykładowo, nasz pakiet zawiera funkcję <code>powierzchnia()</code>, dlatego też do jego testowania możemy stworzyć nowy plik <code>tests/testthat/test-powierzchnia.R</code>.
 Wewnątrz tego pliku należy sprawdzać kolejne aspekty działania kodu używając funkcji <code>test_that()</code>, gdzie należy podać (1) opis tego co jest sprawdzane i (2) testy wewnątrz nawiasów klamrowych (zobacz sekcję <a href="analiza-kodu.html#testy-jednostkowe">11.1</a>).
 Przykładowy plik <code>tests/testthat/test-powierzchnia.R</code> może wyglądać w ten sposób:</p>
-<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb375-1" data-line-number="1">nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb375-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb375-3" data-line-number="3"><span class="kw">test_that</span>(<span class="st">&quot;struktura wyniku jest poprawna&quot;</span>, {</a>
-<a class="sourceLine" id="cb375-4" data-line-number="4">  <span class="kw">expect_length</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb375-5" data-line-number="5">})</a>
-<a class="sourceLine" id="cb375-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb375-7" data-line-number="7"><span class="kw">test_that</span>(<span class="st">&quot;wartosc wyniku jest poprawna&quot;</span>, {</a>
-<a class="sourceLine" id="cb375-8" data-line-number="8">  <span class="kw">expect_equal</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">30</span>)</a>
-<a class="sourceLine" id="cb375-9" data-line-number="9">})</a>
-<a class="sourceLine" id="cb375-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb375-11" data-line-number="11"><span class="kw">test_that</span>(<span class="st">&quot;wystepuja odpowiednie bledy&quot;</span>, {</a>
-<a class="sourceLine" id="cb375-12" data-line-number="12">  <span class="kw">expect_error</span>(<span class="kw">nowy_prostokat</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="st">&quot;a&quot;</span>))</a>
-<a class="sourceLine" id="cb375-13" data-line-number="13">})</a></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb380-1" data-line-number="1">nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb380-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb380-3" data-line-number="3"><span class="kw">test_that</span>(<span class="st">&quot;struktura wyniku jest poprawna&quot;</span>, {</a>
+<a class="sourceLine" id="cb380-4" data-line-number="4">  <span class="kw">expect_length</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb380-5" data-line-number="5">})</a>
+<a class="sourceLine" id="cb380-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb380-7" data-line-number="7"><span class="kw">test_that</span>(<span class="st">&quot;wartosc wyniku jest poprawna&quot;</span>, {</a>
+<a class="sourceLine" id="cb380-8" data-line-number="8">  <span class="kw">expect_equal</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">30</span>)</a>
+<a class="sourceLine" id="cb380-9" data-line-number="9">})</a>
+<a class="sourceLine" id="cb380-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb380-11" data-line-number="11"><span class="kw">test_that</span>(<span class="st">&quot;wystepuja odpowiednie bledy&quot;</span>, {</a>
+<a class="sourceLine" id="cb380-12" data-line-number="12">  <span class="kw">expect_error</span>(<span class="kw">nowy_prostokat</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="st">&quot;a&quot;</span>))</a>
+<a class="sourceLine" id="cb380-13" data-line-number="13">})</a></code></pre></div>
 <p>Po napisaniu testów można sprawdzić czy wszystkie z nich dają odpowiedni wynik używając <code>devtools::test()</code><a href="#fn60" class="footnote-ref" id="fnref60"><sup>60</sup></a>.
 W efekcie wyświetlone zostaną wszystkie testy i zostanie wskazane, które z nich się nie powiodły i należy je poprawić.</p>
 <!-- why? -->
