@@ -213,8 +213,8 @@ wynik
 #> # A tibble: 2 x 6
 #>   expression                  min median `itr/sec`
 #>   <bch:expr>                <bch> <bch:>     <dbl>
-#> 1 mile_na_km(odl_mile2)     807µs  830µs     1161.
-#> 2 mile_na_km_cpp(odl_mile2) 424µs  447µs     2171.
+#> 1 mile_na_km(odl_mile2)     809µs  832µs     1152.
+#> 2 mile_na_km_cpp(odl_mile2) 424µs  446µs     2179.
 #> # … with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 ```

@@ -19,7 +19,7 @@ Tworzenie kodu możliwego do odtworzenia problemu (powtarzalnych przykładów) j
 Jest to często część debugowania (ang. *debugging*) - procesu rozwiązywania problemów i błędów w oprogramowaniu.
 Istnieje wiele potencjalnych taktyk debugowania kodu, w tym debugowanie używając funkcji takich jak `print()` (sekcja \@ref(debuging-print)), czy też debuggera (sekcja \@ref(debugger)).
 
-Więcej na temat debugowania kodu w R można dowiedzieć się więcej z prezentacji Jenny Bryan pt. [Object of type 'closure' is not subsettable](https://github.com/jennybc/debugging), [rozdziału Debugging R code] książki @rstatswtf, oraz [rozdziału Debugging] książki @wickham2016r.
+Więcej na temat debugowania kodu w R można dowiedzieć się więcej z prezentacji Jenny Bryan pt. [Object of type 'closure' is not subsettable](https://github.com/jennybc/debugging), [rozdziału Debugging R code](https://rstats.wtf/debugging-r-code.html) książki @rstatswtf, oraz [rozdziału Debugging](https://adv-r.hadley.nz/debugging.html) książki @wickham2016r.
 Dodatkowo, na stronach [Debugging an R Package with C++](https://blog.davisvaughan.com/2019/04/05/debug-r-package-with-cpp/), [Debugging C/C++ code that interfaces with R](https://github.com/wch/r-debug/blob/master/debugging-r.md), oraz [Debugging with LLDB](http://kevinushey.github.io/blog/2015/04/13/debugging-with-lldb/) można przeczytać na temat debugowania kodu C++ łączącego się z R.
 
 ## Powtarzalne przykłady {#reprex}
