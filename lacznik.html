@@ -24,7 +24,7 @@
 <meta name="author" content="Jakub Nowosad" />
 
 
-<meta name="date" content="2020-06-17" />
+<meta name="date" content="2020-06-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -496,11 +496,11 @@ Jest to odpowiednik kodu <code>i = i + 1</code>.</p>
 <a class="sourceLine" id="cb340-7" data-line-number="7"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
 <a class="sourceLine" id="cb340-8" data-line-number="8"><span class="co">#&gt;   expression                  min median `itr/sec`</span></a>
 <a class="sourceLine" id="cb340-9" data-line-number="9"><span class="co">#&gt;   &lt;bch:expr&gt;                &lt;bch&gt; &lt;bch:&gt;     &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb340-10" data-line-number="10"><span class="co">#&gt; 1 mile_na_km(odl_mile2)     798µs  822µs     1172.</span></a>
-<a class="sourceLine" id="cb340-11" data-line-number="11"><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2) 409µs  432µs     2249.</span></a>
+<a class="sourceLine" id="cb340-10" data-line-number="10"><span class="co">#&gt; 1 mile_na_km(odl_mile2)     834µs  859µs     1120.</span></a>
+<a class="sourceLine" id="cb340-11" data-line-number="11"><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2) 425µs  456µs     2128.</span></a>
 <a class="sourceLine" id="cb340-12" data-line-number="12"><span class="co">#&gt; # … with 2 more variables: mem_alloc &lt;bch:byt&gt;,</span></a>
 <a class="sourceLine" id="cb340-13" data-line-number="13"><span class="co">#&gt; #   `gc/sec` &lt;dbl&gt;</span></a></code></pre></div>
-<p>Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.9 raza mniejszy.</p>
+<p>Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.88 raza mniejszy.</p>
 </div>
 <div id="sourceCpp" class="section level3">
 <h3><span class="header-section-number">13.1.2</span> Wywoływanie kodu z plików .cpp</h3>
@@ -551,20 +551,24 @@ Podobnie jak R, ten język jest interpretowalny, otwarty, i można uruchomić na
 Jest to uniwersalny język programowania znajdujący zastosowanie od aplikacji internetowych, poprzez pisanie skryptów sterujących innym oprogramowaniem (jak np. QGIS), aż do projektów związanych ze sztuczną inteligencją i uczeniem maszynowym.</p>
 <p>Różni się on od R szeregiem cech, wśród których na samym początku można zauważyć, że Python:</p>
 <ul>
-<li>Ma inne wbudowane typy danych</li>
-<li>Obowiązkowe stosowanie wcięć jako elementu języka</li>
-<li>Inny sposób pracy na obiektach.
+<li>Ma inne wbudowane typy danych.
+Przykładowo, wektor atomowy w R odpowiada podobnemu typowi - liście w Pythonie.</li>
+<li>Obowiązkowe jest stosowanie wcięć jako elementu języka.
+W R stosowanie wcięć jest rekomendowane, ale nie wymagane.
+W Pythonie kod bez opowiednich wcięć nie zadziała.</li>
+<li>Ma inny sposób pracy na obiektach.
 <!-- Przykładowo,  --></li>
+<li>Stosuje indeksowanie zaczynające się od 0.
+W Pythonie wybranie pierwszego i trzeciego elementu z listy wymaga podania wartości indeksu 0 i 2.</li>
 </ul>
-<p><span class="citation">(Ushey, Allaire, and Tang <a href="#ref-R-reticulate">2020</a>)</span></p>
-<p>Pełną dokumentację tego pakietu wraz z szeregiem przykładów można znaleźć pod adresem <a href="https://rstudio.github.io/reticulate/" class="uri">https://rstudio.github.io/reticulate/</a>.</p>
-<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb347-1" data-line-number="1"><span class="kw">library</span>(reticulate)</a></code></pre></div>
-<!-- setting Python version -->
-<!-- four types of connections with Python -->
-<!-- Type Conversions -->
-<!-- Importing Modules -->
-<!-- Getting Help -->
-<p><a href="https://rstudio.github.io/reticulate/" class="uri">https://rstudio.github.io/reticulate/</a></p>
+<p>Python także pozwala na tworzenie i udostępnianie modułów i pakietów rozszerzających możliwości tego języka.
+Czasem podczas pracy nad jakimś projektem w R może okazać się, że konieczne jest zastosowanie rozwiązania, którego w R nie ma, a jego implementacja wymagałaby znaczącego wkładu czasowego.
+Pomocny w takiej chwili może okazać się jeden z wielu pakietów Pythona.
+Aby go użyć, nie musimy jednak opuszczać R i przenosić wszystkich elementów programu do innego języka.
+Polecenia Pythona można wywołać z poziomu R używając pakietu o nazwie <strong>reticulate</strong> <span class="citation">(Ushey, Allaire, and Tang <a href="#ref-R-reticulate">2020</a>)</span>.
+Może to mieć miejsce w czterech trybach: (1) stosowania poleceń <a href="https://rstudio.github.io/reticulate/#python-in-r-markdown">Pythona w R Markdown</a>, (2) importowania modułów Pythona do R, (3) uruchomiania skryptów Pythona w R, oraz (4) interaktywnego korzystania z konsoli Pythona wewnątrz R wraz z dostępem do tworzonych obiektów.
+Pełną dokumentację tego pakietu wraz z szeregiem przykładów można znaleźć pod adresem <a href="https://rstudio.github.io/reticulate/" class="uri">https://rstudio.github.io/reticulate/</a>.
+Istnieje także możliwość połączenia tych języków w drugą stronę, przykładowo używając <a href="https://rpy2.github.io/">modułu <strong>rpy2</strong></a>.</p>
 </div>
 <div id="powloka-systemowa" class="section level2">
 <h2><span class="header-section-number">13.3</span> Powłoka systemowa</h2>
@@ -575,7 +579,7 @@ Pełnią one rolę pośrednika pomiędzy systemem operacyjnym a użytkownikiem i
 W ten sposób możliwe jest zarówno wywoływanie poleceń wbudowanych w powłokę systemową, uruchomianie skryptów powłoki systemowej (np. <code>system2(&quot;moj_bash_skrypt.sh&quot;)</code>), czy też zewnętrznych aplikacji (w taki sposób pakiet <strong>rgrass7</strong> <span class="citation">(Bivand <a href="#ref-R-rgrass7">2019</a>)</span> łączy się z programem <a href="https://grass.osgeo.org/">GRASS GIS</a>).</p>
 <p>Przykładowo, w systemach opartych o UNIX polecenie <code>wc</code> pozwoli na określenie liczby wyrazów w wybranym pliku.
 Używając <code>system2()</code> oraz polecenia <code>wc</code> możemy sprawdzić ile wyrazów znajduje się w tym rozdziale książki.</p>
-<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb348-1" data-line-number="1"><span class="kw">system2</span>(<span class="st">&quot;wc&quot;</span>, <span class="dt">args =</span> <span class="st">&quot;-l 14-lacznik.Rmd&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb347-1" data-line-number="1"><span class="kw">system2</span>(<span class="st">&quot;wc&quot;</span>, <span class="dt">args =</span> <span class="st">&quot;-l 14-lacznik.Rmd&quot;</span>)</a></code></pre></div>
 <!-- https://stackoverflow.com/questions/48605776/difference-between-system-and-system2-in-r-capture-file-names-in-variable -->
 <!-- https://stackoverflow.com/questions/5745886/r-and-system-calls -->
 <!-- https://tomaztsql.wordpress.com/2020/01/06/working-with-system-commands-in-r/ -->

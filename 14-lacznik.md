@@ -213,13 +213,13 @@ wynik
 #> # A tibble: 2 x 6
 #>   expression                  min median `itr/sec`
 #>   <bch:expr>                <bch> <bch:>     <dbl>
-#> 1 mile_na_km(odl_mile2)     798µs  822µs     1172.
-#> 2 mile_na_km_cpp(odl_mile2) 409µs  432µs     2249.
+#> 1 mile_na_km(odl_mile2)     834µs  859µs     1120.
+#> 2 mile_na_km_cpp(odl_mile2) 425µs  456µs     2128.
 #> # … with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 ```
 
-Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.9 raza mniejszy.
+Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.88 raza mniejszy.
 
 ### Wywoływanie kodu z plików .cpp {#sourceCpp}
 
@@ -301,28 +301,24 @@ Jest to uniwersalny język programowania znajdujący zastosowanie od aplikacji i
 
 Różni się on od R szeregiem cech, wśród których na samym początku można zauważyć, że Python:
 
-- Ma inne wbudowane typy danych
-- Obowiązkowe stosowanie wcięć jako elementu języka
-- Inny sposób pracy na obiektach. 
+- Ma inne wbudowane typy danych. 
+Przykładowo, wektor atomowy w R odpowiada podobnemu typowi - liście w Pythonie.
+- Obowiązkowe jest stosowanie wcięć jako elementu języka.
+W R stosowanie wcięć jest rekomendowane, ale nie wymagane.
+W Pythonie kod bez opowiednich wcięć nie zadziała.
+- Ma inny sposób pracy na obiektach. 
 <!-- Przykładowo,  -->
+- Stosuje indeksowanie zaczynające się od 0.
+W Pythonie wybranie pierwszego i trzeciego elementu z listy wymaga podania wartości indeksu 0 i 2.
 
-[@R-reticulate]
-
+Python także pozwala na tworzenie i udostępnianie modułów i pakietów rozszerzających możliwości tego języka.
+Czasem podczas pracy nad jakimś projektem w R może okazać się, że konieczne jest zastosowanie rozwiązania, którego w R nie ma, a jego implementacja wymagałaby znaczącego wkładu czasowego.
+Pomocny w takiej chwili może okazać się jeden z wielu pakietów Pythona. 
+Aby go użyć, nie musimy jednak opuszczać R i przenosić wszystkich elementów programu do innego języka.
+Polecenia Pythona można wywołać z poziomu R używając pakietu o nazwie **reticulate** [@R-reticulate].
+Może to mieć miejsce w czterech trybach: (1) stosowania poleceń [Pythona w R Markdown](https://rstudio.github.io/reticulate/#python-in-r-markdown), (2) importowania modułów Pythona do R, (3) uruchomiania skryptów Pythona w R, oraz (4) interaktywnego korzystania z konsoli Pythona wewnątrz R wraz z dostępem do tworzonych obiektów.
 Pełną dokumentację tego pakietu wraz z szeregiem przykładów można znaleźć pod adresem https://rstudio.github.io/reticulate/. 
-
-
-```r
-library(reticulate)
-```
-
-<!-- setting Python version -->
-<!-- four types of connections with Python -->
-
-<!-- Type Conversions -->
-<!-- Importing Modules -->
-<!-- Getting Help -->
-
-https://rstudio.github.io/reticulate/
+Istnieje także możliwość połączenia tych języków w drugą stronę, przykładowo używając [modułu **rpy2**](https://rpy2.github.io/).
 
 ## Powłoka systemowa {#powloka-systemowa}
 

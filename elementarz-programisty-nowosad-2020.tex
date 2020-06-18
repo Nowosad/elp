@@ -215,7 +215,7 @@
 \providecommand{\subtitle}[1]{}
 \subtitle{Wstęp do programowania używając R}
 \author{Jakub Nowosad}
-\date{2020-06-17}
+\date{2020-06-18}
 
 \begin{document}
 \maketitle
@@ -2769,7 +2769,7 @@ R ma wbudowaną reprezentację dat w postaci klasy \texttt{Date}.
 \begin{Highlighting}[]
 \NormalTok{dzis =}\StringTok{ }\KeywordTok{Sys.Date}\NormalTok{()}
 \NormalTok{dzis}
-\CommentTok{#> [1] "2020-06-17"}
+\CommentTok{#> [1] "2020-06-18"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2792,11 +2792,11 @@ Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji \texttt{unclass(
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{unclass}\NormalTok{(dzis)}
-\CommentTok{#> [1] 18430}
+\CommentTok{#> [1] 18431}
 \end{Highlighting}
 \end{Shaded}
 
-Wynik, 18430, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
+Wynik, 18431, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
 
 \begin{Shaded}
@@ -6339,7 +6339,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.474   0.000   0.474}
+\CommentTok{#>   0.476   0.000   0.476}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6398,8 +6398,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile) 1.55us 1.71us   502268.     117KB}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 1.29us 1.42us   635335.     224KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile) 1.45us 1.76us   466453.     117KB}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 1.14us 1.33us   667013.     224KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
@@ -6442,14 +6442,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 457ms  463ms      2.16     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 791us  813us   1105.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 508ms  508ms      1.97     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 814us  843us   1020.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.16 operacji na sekundę, przy aż 1104.63 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 1.97 operacji na sekundę, przy aż 1019.78 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zadania-10}{%
@@ -6908,14 +6908,14 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression                  min median `itr/sec`}
 \CommentTok{#>   <bch:expr>                <bch> <bch:>     <dbl>}
-\CommentTok{#> 1 mile_na_km(odl_mile2)     794us  817us     1159.}
-\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 405us  425us     2285.}
+\CommentTok{#> 1 mile_na_km(odl_mile2)     824us  851us     1115.}
+\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 427us  455us     2138.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
-Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.92 raza mniejszy.
+Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.87 raza mniejszy.
 
 \hypertarget{sourceCpp}{%
 \subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}
@@ -7008,24 +7008,27 @@ Różni się on od R szeregiem cech, wśród których na samym początku można 
 \begin{itemize}
 \tightlist
 \item
-  Ma inne wbudowane typy danych
+  Ma inne wbudowane typy danych.
+  Przykładowo, wektor atomowy w R odpowiada podobnemu typowi - liście w Pythonie.
 \item
-  Obowiązkowe stosowanie wcięć jako elementu języka
+  Obowiązkowe jest stosowanie wcięć jako elementu języka.
+  W R stosowanie wcięć jest rekomendowane, ale nie wymagane.
+  W Pythonie kod bez opowiednich wcięć nie zadziała.
 \item
-  Inny sposób pracy na obiektach.
+  Ma inny sposób pracy na obiektach.
+\item
+  Stosuje indeksowanie zaczynające się od 0.
+  W Pythonie wybranie pierwszego i trzeciego elementu z listy wymaga podania wartości indeksu 0 i 2.
 \end{itemize}
 
-\citep{R-reticulate}
-
+Python także pozwala na tworzenie i udostępnianie modułów i pakietów rozszerzających możliwości tego języka.
+Czasem podczas pracy nad jakimś projektem w R może okazać się, że konieczne jest zastosowanie rozwiązania, którego w R nie ma, a jego implementacja wymagałaby znaczącego wkładu czasowego.
+Pomocny w takiej chwili może okazać się jeden z wielu pakietów Pythona.
+Aby go użyć, nie musimy jednak opuszczać R i przenosić wszystkich elementów programu do innego języka.
+Polecenia Pythona można wywołać z poziomu R używając pakietu o nazwie \textbf{reticulate} \citep{R-reticulate}.
+Może to mieć miejsce w czterech trybach: (1) stosowania poleceń \href{https://rstudio.github.io/reticulate/\#python-in-r-markdown}{Pythona w R Markdown}, (2) importowania modułów Pythona do R, (3) uruchomiania skryptów Pythona w R, oraz (4) interaktywnego korzystania z konsoli Pythona wewnątrz R wraz z dostępem do tworzonych obiektów.
 Pełną dokumentację tego pakietu wraz z szeregiem przykładów można znaleźć pod adresem \url{https://rstudio.github.io/reticulate/}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(reticulate)}
-\end{Highlighting}
-\end{Shaded}
-
-\url{https://rstudio.github.io/reticulate/}
+Istnieje także możliwość połączenia tych języków w drugą stronę, przykładowo używając \href{https://rpy2.github.io/}{modułu \textbf{rpy2}}.
 
 \hypertarget{powloka-systemowa}{%
 \section{Powłoka systemowa}\label{powloka-systemowa}}
