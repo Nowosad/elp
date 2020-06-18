@@ -177,7 +177,7 @@ fun3 = function(x){
 fun1(1)
 ```
 
-```{r}
+```{r, error=TRUE}
 fun1(-1)
 ```
 
