@@ -502,18 +502,18 @@ Z pomocą tutaj może przyjść funkcja <code>traceback()</code>.</p>
 <a class="sourceLine" id="cb332-2" data-line-number="2"><span class="co">#&gt; 3: stop(&quot;Wartość poniżej 0 nie jest możliwa&quot;) at #3</span></a>
 <a class="sourceLine" id="cb332-3" data-line-number="3"><span class="co">#&gt; 2: inch_to_mm(x) at #2</span></a>
 <a class="sourceLine" id="cb332-4" data-line-number="4"><span class="co">#&gt; 1: fun3(-1)</span></a></code></pre></div>
-<p>Czytamy jej wynik od dołu do góry, dowiadują się, że wywołanie funkcji <code>fun3(-1)</code> skończyło się błędem wewnątrz funkcji <code>inch_to_mm(x)</code>, a dokładnie linią <code>stop(&quot;Wartość poniżej 0 nie jest możliwa&quot;)</code>.
+<p>Czytamy jej wynik od dołu do góry, dowiadując się, że wywołanie funkcji <code>fun3(-1)</code> skończyło się błędem wewnątrz funkcji <code>inch_to_mm(x)</code>, a dokładnie w linii <code>stop(&quot;Wartość poniżej 0 nie jest możliwa&quot;)</code>.
 Posiadając tę wiedzę możemy przejść do funkcji <code>inch_to_mm()</code> i zmienić ją zgodnie z naszymi potrzebami.</p>
 <p>Alternatywną możliwością do funkcji <code>traceback()</code> jest włączenie opcji interaktywnego debuggera w RStudio.
-Pierwszym krokiem jest włączenie tzw. Error Inspectora, co można zrobić w menu <code>Debug -&gt; On Error -&gt; Error Inspector</code>.</p>
+Pierwszym krokiem jest włączenie tzw. Error Inspectora, co można zrobić w menu RStudio <code>Debug -&gt; On Error -&gt; Error Inspector</code>.
+Teraz po wykonaniu kodu <code>fun3(-1)</code> otrzymamy nie tylko komunikat błędu, ale także dwie nowe ikony “Show Traceback” i “Rerun with Debug”.</p>
 <p><img src="figures/debugger1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
-<p>Teraz po wykonaniu kodu <code>fun3(-1)</code> otrzymamy nie tylko komunikat błędu, ale także dwie nowe ikony “Show Traceback” i “Rerun with Debug”.
-Pierwsza z nich wywołuje działanie wcześniej opisanej funkcji <code>traceback()</code>.
+<p>Pierwsza z nich wywołuje działanie wcześniej opisanej funkcji <code>traceback()</code>.
 Druga, “Rerun with Debug”, uruchamia interaktywny debugger.
-W tym momencie cały kod jest ponownie uruchamiany i zatrzymywanyw miejscu gdzie błąd powstał.
+W tym momencie cały kod jest ponownie wykonywany i zatrzymywany w miejscu gdzie błąd powstał.
 Teraz w oknie Environment można znaleźć dwie grupy informacji: istniejące obiekty oraz Traceback pokazujący w krórym kroku obliczeń jesteśmy.
 Dodatkowo konsola R wygląda inaczej niż zwykle.
-Pod informacją o błędzie wyświetił się tekst <code>Browse[1]&gt;</code>, a nad oknem konsoli pojawił się szereg ikon.</p>
+Pod informacją o błędzie wyświetił się tekst <code>Browse[1]&gt;</code>, a nad oknem konsoli pojawił się szereg ikon:</p>
 <p><img src="figures/debugger2.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <ul>
 <li>Pierwsza ikona “Next”, skrót klawiaturowy <code>n</code>, wykonuje kolejny krok obliczeń</li>
@@ -532,8 +532,8 @@ Możemy się o tym też dowiedzieć w oknie Environment.</p>
 Możemy go jednak zastosować, gdy chcemy się dowiedzieć jakie obiekty i ich wartości znajdują się w konkretnym miejscu działania naszej funkcji.
 Wtedy konieczne jest zasygnalizowanie, gdzie chcemy aby debugger został aktywowany, co możemy zrobić na dwa podstawowe sposoby.
 Pierwszy z nich polega na dodaniu przed interesującym nas miejscem linii kodu z funkcją <code>browser()</code>, druga natomiast polega na kliknięciu w RStudio na lewo od numeru interesującej nas linii kodu.
-Wówczas pojawi się czerwona kropka, tzw. “breakpoint”, sygnalizująca, że w tym miejscu zostanie uruchomiony debugger i będziemy mogli sprawdzić stan działania programu.</p>
-<p>Inne możliwości wywołania interaktywnego debuggera dają takie funkcje jak <code>debug()</code>, <code>trace()</code> i <code>recover()</code>.<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a></p>
+Wówczas pojawi się czerwona kropka, tzw. “breakpoint”, sygnalizująca, że w tym miejscu zostanie uruchomiony debugger i będziemy mogli sprawdzić stan działania programu.
+Inne możliwości wywołania interaktywnego debuggera dają takie funkcje jak <code>debug()</code>, <code>trace()</code> i <code>recover()</code>.<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a></p>
 </div>
 <div id="zadania-11" class="section level2">
 <h2><span class="header-section-number">12.5</span> Zadania</h2>
