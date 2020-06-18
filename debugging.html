@@ -460,26 +460,27 @@ Dalej warto zaplanować jakie testy kodu wykonać, aby wyłapać dokładne miejs
 Trzeba też zapisywać potencjalne wyniki.
 Takie systematyczne podejście może zaoszczędzić dużo czasu w porównaniu do losowego testowania różnych wartości w kodzie.</p>
 <p>Oprócz funkcji <code>print()</code> można też wykorzystać funkcję <code>cat()</code> w przypadku małych obiektów lub funkcję <code>str()</code> w przypadku większych obiektów.</p>
-<!-- `traceback()` - bottom to top -->
 </div>
 <div id="debugger" class="section level2">
 <h2><span class="header-section-number">12.4</span> Debugger</h2>
 <p>R posiada także wbudowany debugger - program analizujący kod w celu odnalezienia zawartych w nim błędów.
 Pozwala on na wejście do środka wykonywanych funkcji, śledzenie i edycję wartości poszczególnych obiektów oraz wykonywanie kodu linia po linii.</p>
-<p>Dla przykładu stwórzmy nową funkcję <code>inch_to_mm()</code>, która zamienia wartości z cali na milimetry.
+<p>Dla przykładu stwórzmy nową funkcję <code>f_to_c()</code>, która zamienia wartości ze stopni Fahrenheita na stopnie Celsjusza.
 Dodatkowo sprawdza ona czy podana wartość (argument <code>x</code>) nie jest numeryczna oraz czy jest mniejsza niż zero i w takich wypadkach wywołuje ona błąd.</p>
-<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb328-1" data-line-number="1">inch_to_mm =<span class="st"> </span><span class="cf">function</span>(x) {</a>
+<div class="sourceCode" id="cb328"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb328-1" data-line-number="1">f_to_c =<span class="st"> </span><span class="cf">function</span>(x) {</a>
 <a class="sourceLine" id="cb328-2" data-line-number="2">  <span class="cf">if</span> (<span class="op">!</span><span class="kw">is.numeric</span>(x)){</a>
 <a class="sourceLine" id="cb328-3" data-line-number="3">    <span class="kw">stop</span>(<span class="st">&quot;Podana wartość nie jest numeryczna&quot;</span>)</a>
 <a class="sourceLine" id="cb328-4" data-line-number="4">  }</a>
 <a class="sourceLine" id="cb328-5" data-line-number="5">  <span class="cf">if</span> (x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>){</a>
 <a class="sourceLine" id="cb328-6" data-line-number="6">    <span class="kw">stop</span>(<span class="st">&quot;Wartość poniżej 0 nie jest możliwa&quot;)</span></a>
 <a class="sourceLine" id="cb328-7" data-line-number="7"><span class="st">  }</span></a>
-<a class="sourceLine" id="cb328-8" data-line-number="8"><span class="st">  x * 25.4</span></a>
-<a class="sourceLine" id="cb328-9" data-line-number="9"><span class="st">}</span></a></code></pre></div>
-<p>Dodatkowo, wyobrażmy sobie, że funkcja <code>inch_to_mm()</code> jest używana w obliczeniach jakiejś kolejnej funkcji <code>fun1()</code>, która jest używana w obliczeniach funkcji <code>fun2()</code>, a ta w funkcji <code>fun3()</code>.</p>
+<a class="sourceLine" id="cb328-8" data-line-number="8"><span class="st">  y = x - 32</span></a>
+<a class="sourceLine" id="cb328-9" data-line-number="9"><span class="st">  y = y / 1.8</span></a>
+<a class="sourceLine" id="cb328-10" data-line-number="10"><span class="st">  y</span></a>
+<a class="sourceLine" id="cb328-11" data-line-number="11"><span class="st">}</span></a></code></pre></div>
+<p>Dodatkowo, wyobrażmy sobie, że funkcja <code>f_to_c()</code> jest używana w obliczeniach jakiejś kolejnej funkcji <code>fun1()</code>, która jest używana w obliczeniach funkcji <code>fun2()</code>, a ta w funkcji <code>fun3()</code>.</p>
 <div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb329-1" data-line-number="1">fun1 =<span class="st"> </span><span class="cf">function</span>(x){</a>
-<a class="sourceLine" id="cb329-2" data-line-number="2">  <span class="kw">inch_to_mm</span>(x)</a>
+<a class="sourceLine" id="cb329-2" data-line-number="2">  <span class="kw">f_to_c</span>(x)</a>
 <a class="sourceLine" id="cb329-3" data-line-number="3">}</a>
 <a class="sourceLine" id="cb329-4" data-line-number="4">fun2 =<span class="st"> </span><span class="cf">function</span>(x){</a>
 <a class="sourceLine" id="cb329-5" data-line-number="5">  <span class="kw">fun1</span>(x)</a>
@@ -490,11 +491,11 @@ Dodatkowo sprawdza ona czy podana wartość (argument <code>x</code>) nie jest n
 <p>Powyższe funkcje jedynie wywołują siebie nawzajem, ale w typowej sytuacji składałyby się one z wielu linii kodu i wykonywałby szereg operacji.
 Załóżmy teraz, że chcemy wykonać i otrzymać wynik działania <code>fun3()</code> dla podanego argumentu <code>1</code>.</p>
 <div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb330-1" data-line-number="1"><span class="kw">fun3</span>(<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb330-2" data-line-number="2"><span class="co">#&gt; [1] 25.4</span></a></code></pre></div>
-<p>W tym przypadku po chwili otrzymujemy poprawny wynik 25.4.
+<a class="sourceLine" id="cb330-2" data-line-number="2"><span class="co">#&gt; [1] -17.2</span></a></code></pre></div>
+<p>W tym przypadku po chwili otrzymujemy poprawny wynik -17.222.
 Możliwa jest jednak sytuacja, gdy my, nasi użytkownicy, albo inny program poda na wejściu wartość, która kończy się błędem, np. <code>-1</code>.</p>
 <div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb331-1" data-line-number="1"><span class="kw">fun3</span>(<span class="op">-</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb331-2" data-line-number="2"><span class="co">#&gt; Error in inch_to_mm(x): Wartość poniżej 0 nie jest możliwa</span></a></code></pre></div>
+<a class="sourceLine" id="cb331-2" data-line-number="2"><span class="co">#&gt; Error in f_to_c(x): Wartość poniżej 0 nie jest możliwa</span></a></code></pre></div>
 <p>Otrzymujemy komunikat błędu, ale nie wiemy wynikiem działania jakiej funkcji jest ten błąd.
 Przykładowo, chcemy zezwolić naszym użytkownikom na podawanie wartości ujemnych - musimy poprawić jakieś miejsce w kodzie, ale nie wiemy gdzie.
 Z pomocą tutaj może przyjść funkcja <code>traceback()</code>.</p>
@@ -537,8 +538,14 @@ Inne możliwości wywołania interaktywnego debuggera dają takie funkcje jak <c
 </div>
 <div id="zadania-11" class="section level2">
 <h2><span class="header-section-number">12.5</span> Zadania</h2>
-<!-- create debugging examples - .R files -->
-<!-- https://github.com/jimhester/wtf-debugging -->
+<ol style="list-style-type: decimal">
+<li><!--reprex --></li>
+<li>Włącz Error Inspectora w RStudio na stałe (<code>Debug -&gt; On Error -&gt; Error Inspector</code>).
+Kolejny raz gdy pojawi się błąd w Twoim kodzie, użyj opcji “Show Traceback” i “Rerun with Debug”.
+Czy pomogło to w rozwiązaniu problemu?</li>
+<li><!-- create debugging examples - .R files -->
+<!-- https://github.com/jimhester/wtf-debugging --></li>
+</ol>
 
 </div>
 </div>

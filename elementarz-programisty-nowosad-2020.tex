@@ -6339,7 +6339,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.475   0.000   0.474}
+\CommentTok{#>    0.48    0.00    0.48}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6398,8 +6398,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile) 1.49us  1.7us   502462.     117KB}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 1.21us 1.38us   639689.     224KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile) 1.47us 1.73us   491144.     117KB}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 1.11us 1.37us   632098.     224KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
@@ -6442,14 +6442,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 467ms  469ms      2.13     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 806us  830us   1043.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 488ms  492ms      2.03     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 818us  846us   1008.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.13 operacji na sekundę, przy aż 1042.61 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.03 operacji na sekundę, przy aż 1007.59 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zadania-10}{%
@@ -6664,29 +6664,31 @@ Oprócz funkcji \texttt{print()} można też wykorzystać funkcję \texttt{cat()
 R posiada także wbudowany debugger - program analizujący kod w celu odnalezienia zawartych w nim błędów.
 Pozwala on na wejście do środka wykonywanych funkcji, śledzenie i edycję wartości poszczególnych obiektów oraz wykonywanie kodu linia po linii.
 
-Dla przykładu stwórzmy nową funkcję \texttt{inch\_to\_mm()}, która zamienia wartości z cali na milimetry.
+Dla przykładu stwórzmy nową funkcję \texttt{f\_to\_c()}, która zamienia wartości ze stopni Fahrenheita na stopnie Celsjusza.
 Dodatkowo sprawdza ona czy podana wartość (argument \texttt{x}) nie jest numeryczna oraz czy jest mniejsza niż zero i w takich wypadkach wywołuje ona błąd.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{inch_to_mm =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x) \{}
+\NormalTok{f_to_c =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x) \{}
   \ControlFlowTok{if}\NormalTok{ (}\OperatorTok{!}\KeywordTok{is.numeric}\NormalTok{(x))\{}
     \KeywordTok{stop}\NormalTok{(}\StringTok{"Podana wartość nie jest numeryczna"}\NormalTok{)}
 \NormalTok{  \}}
   \ControlFlowTok{if}\NormalTok{ (x }\OperatorTok{<}\StringTok{ }\DecValTok{0}\NormalTok{)\{}
     \KeywordTok{stop}\NormalTok{(}\StringTok{"Wartość poniżej 0 nie jest możliwa")}
 \StringTok{  \}}
-\StringTok{  x * 25.4}
+\StringTok{  y = x - 32}
+\StringTok{  y = y / 1.8}
+\StringTok{  y}
 \StringTok{\}}
 \end{Highlighting}
 \end{Shaded}
 
-Dodatkowo, wyobrażmy sobie, że funkcja \texttt{inch\_to\_mm()} jest używana w obliczeniach jakiejś kolejnej funkcji \texttt{fun1()}, która jest używana w obliczeniach funkcji \texttt{fun2()}, a ta w funkcji \texttt{fun3()}.
+Dodatkowo, wyobrażmy sobie, że funkcja \texttt{f\_to\_c()} jest używana w obliczeniach jakiejś kolejnej funkcji \texttt{fun1()}, która jest używana w obliczeniach funkcji \texttt{fun2()}, a ta w funkcji \texttt{fun3()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{fun1 =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{}
-  \KeywordTok{inch_to_mm}\NormalTok{(x)}
+  \KeywordTok{f_to_c}\NormalTok{(x)}
 \NormalTok{\}}
 \NormalTok{fun2 =}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{}
   \KeywordTok{fun1}\NormalTok{(x)}
@@ -6703,17 +6705,17 @@ Załóżmy teraz, że chcemy wykonać i otrzymać wynik działania \texttt{fun3(
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{fun3}\NormalTok{(}\DecValTok{1}\NormalTok{)}
-\CommentTok{#> [1] 25.4}
+\CommentTok{#> [1] -17.2}
 \end{Highlighting}
 \end{Shaded}
 
-W tym przypadku po chwili otrzymujemy poprawny wynik 25.4.
+W tym przypadku po chwili otrzymujemy poprawny wynik -17.222.
 Możliwa jest jednak sytuacja, gdy my, nasi użytkownicy, albo inny program poda na wejściu wartość, która kończy się błędem, np. \texttt{-1}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{fun3}\NormalTok{(}\OperatorTok{-}\DecValTok{1}\NormalTok{)}
-\CommentTok{#> Error in inch_to_mm(x): Wartość poniżej 0 nie jest możliwa}
+\CommentTok{#> Error in f_to_c(x): Wartość poniżej 0 nie jest możliwa}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6775,6 +6777,16 @@ Inne możliwości wywołania interaktywnego debuggera dają takie funkcje jak \t
 
 \hypertarget{zadania-11}{%
 \section{Zadania}\label{zadania-11}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+\item
+  Włącz Error Inspectora w RStudio na stałe (\texttt{Debug\ -\textgreater{}\ On\ Error\ -\textgreater{}\ Error\ Inspector}).
+  Kolejny raz gdy pojawi się błąd w Twoim kodzie, użyj opcji ``Show Traceback'' i ``Rerun with Debug''.
+  Czy pomogło to w rozwiązaniu problemu?
+\item
+\end{enumerate}
 
 \hypertarget{lacznik}{%
 \chapter{Łącznik}\label{lacznik}}
@@ -7020,14 +7032,14 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression                  min median `itr/sec`}
 \CommentTok{#>   <bch:expr>                <bch> <bch:>     <dbl>}
-\CommentTok{#> 1 mile_na_km(odl_mile2)     808us  830us     1162.}
-\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 410us  435us     2235.}
+\CommentTok{#> 1 mile_na_km(odl_mile2)     821us  849us     1137.}
+\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 428us  460us     2117.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
-Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.91 raza mniejszy.
+Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.85 raza mniejszy.
 
 \hypertarget{sourceCpp}{%
 \subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}

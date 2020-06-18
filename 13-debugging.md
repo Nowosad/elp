@@ -144,35 +144,35 @@ Takie systematyczne podejście może zaoszczędzić dużo czasu w porównaniu do
 
 Oprócz funkcji `print()` można też wykorzystać funkcję `cat()` w przypadku małych obiektów lub funkcję `str()` w przypadku większych obiektów.
 
-<!-- `traceback()` - bottom to top -->
-
 ## Debugger {#debugger}
 
 R posiada także wbudowany debugger - program analizujący kod w celu odnalezienia zawartych w nim błędów.
 Pozwala on na wejście do środka wykonywanych funkcji, śledzenie i edycję wartości poszczególnych obiektów oraz wykonywanie kodu linia po linii.
 
-Dla przykładu stwórzmy nową funkcję `inch_to_mm()`, która zamienia wartości z cali na milimetry.
+Dla przykładu stwórzmy nową funkcję `f_to_c()`, która zamienia wartości ze stopni Fahrenheita na stopnie Celsjusza.
 Dodatkowo sprawdza ona czy podana wartość (argument `x`) nie jest numeryczna oraz czy jest mniejsza niż zero i w takich wypadkach wywołuje ona błąd.
 
 
 ```r
-inch_to_mm = function(x) {
+f_to_c = function(x) {
   if (!is.numeric(x)){
     stop("Podana wartość nie jest numeryczna")
   }
   if (x < 0){
     stop("Wartość poniżej 0 nie jest możliwa")
   }
-  x * 25.4
+  y = x - 32
+  y = y / 1.8
+  y
 }
 ```
 
-Dodatkowo, wyobrażmy sobie, że funkcja `inch_to_mm()` jest używana w obliczeniach jakiejś kolejnej funkcji `fun1()`, która jest używana w obliczeniach funkcji `fun2()`, a ta w funkcji `fun3()`.
+Dodatkowo, wyobrażmy sobie, że funkcja `f_to_c()` jest używana w obliczeniach jakiejś kolejnej funkcji `fun1()`, która jest używana w obliczeniach funkcji `fun2()`, a ta w funkcji `fun3()`.
 
 
 ```r
 fun1 = function(x){
-  inch_to_mm(x)
+  f_to_c(x)
 }
 fun2 = function(x){
   fun1(x)
@@ -188,16 +188,16 @@ Załóżmy teraz, że chcemy wykonać i otrzymać wynik działania `fun3()` dla 
 
 ```r
 fun3(1)
-#> [1] 25.4
+#> [1] -17.2
 ```
 
-W tym przypadku po chwili otrzymujemy poprawny wynik 25.4.
+W tym przypadku po chwili otrzymujemy poprawny wynik -17.222.
 Możliwa jest jednak sytuacja, gdy my, nasi użytkownicy, albo inny program poda na wejściu wartość, która kończy się błędem, np. `-1`. 
 
 
 ```r
 fun3(-1)
-#> Error in inch_to_mm(x): Wartość poniżej 0 nie jest możliwa
+#> Error in f_to_c(x): Wartość poniżej 0 nie jest możliwa
 ```
 
 Otrzymujemy komunikat błędu, ale nie wiemy wynikiem działania jakiej funkcji jest ten błąd. 
@@ -253,5 +253,10 @@ Inne możliwości wywołania interaktywnego debuggera dają takie funkcje jak `d
 
 ## Zadania
 
+1. <!--reprex -->
+2. Włącz Error Inspectora w RStudio na stałe (`Debug -> On Error -> Error Inspector`).
+Kolejny raz gdy pojawi się błąd w Twoim kodzie, użyj opcji "Show Traceback" i "Rerun with Debug".
+Czy pomogło to w rozwiązaniu problemu?
+3. 
 <!-- create debugging examples - .R files -->
 <!-- https://github.com/jimhester/wtf-debugging -->
