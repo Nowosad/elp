@@ -6339,7 +6339,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>    0.48    0.00    0.48}
+\CommentTok{#>   0.475   0.000   0.475}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6398,8 +6398,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile) 1.47us 1.73us   491144.     117KB}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 1.11us 1.37us   632098.     224KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile) 1.93us 2.14us   405907.     117KB}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 1.57us 1.79us   499721.     224KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
@@ -6442,14 +6442,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 488ms  492ms      2.03     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 818us  846us   1008.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 475ms  475ms      2.10     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 794us  820us   1088.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.03 operacji na sekundę, przy aż 1007.59 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.1 operacji na sekundę, przy aż 1087.67 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zadania-10}{%
@@ -6780,12 +6780,17 @@ Inne możliwości wywołania interaktywnego debuggera dają takie funkcje jak \t
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
+\tightlist
 \item
+  Stwórz powtarzalny przykład pokazujący działanie funkcji \texttt{f\_to\_c()} na wartościach wejściowych \texttt{10} oraz \texttt{"ciepło"}.
 \item
   Włącz Error Inspectora w RStudio na stałe (\texttt{Debug\ -\textgreater{}\ On\ Error\ -\textgreater{}\ Error\ Inspector}).
   Kolejny raz gdy pojawi się błąd w Twoim kodzie, użyj opcji ``Show Traceback'' i ``Rerun with Debug''.
   Czy pomogło to w rozwiązaniu problemu?
 \item
+  Zapisz funkcję \texttt{f\_to\_c()} stworzoną w tym rozdziale do pliku \texttt{f\_to\_c.R}.
+  Otwórz ten skrypt i ustaw ``breakpoint'' w linii \texttt{y\ =\ x\ -\ 32}.
+  Uruchom tę funkcję i sprawdź co będzie tego efektem.
 \end{enumerate}
 
 \hypertarget{lacznik}{%
@@ -7032,14 +7037,14 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression                  min median `itr/sec`}
 \CommentTok{#>   <bch:expr>                <bch> <bch:>     <dbl>}
-\CommentTok{#> 1 mile_na_km(odl_mile2)     821us  849us     1137.}
-\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 428us  460us     2117.}
+\CommentTok{#> 1 mile_na_km(odl_mile2)     806us  834us     1156.}
+\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 413us  431us     2248.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
-Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.85 raza mniejszy.
+Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.93 raza mniejszy.
 
 \hypertarget{sourceCpp}{%
 \subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}
