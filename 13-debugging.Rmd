@@ -250,10 +250,10 @@ Inne możliwości wywołania interaktywnego debuggera dają takie funkcje jak `d
 
 ## Zadania
 
-1. <!--reprex -->
+1. Stwórz powtarzalny przykład pokazujący działanie funkcji `f_to_c()` na wartościach wejściowych `10` oraz `"ciepło"`.
 2. Włącz Error Inspectora w RStudio na stałe (`Debug -> On Error -> Error Inspector`).
 Kolejny raz gdy pojawi się błąd w Twoim kodzie, użyj opcji "Show Traceback" i "Rerun with Debug".
 Czy pomogło to w rozwiązaniu problemu?
-3. 
-<!-- create debugging examples - .R files -->
-<!-- https://github.com/jimhester/wtf-debugging -->
+3. Zapisz funkcję `f_to_c()` stworzoną w tym rozdziale do pliku `f_to_c.R`.
+Otwórz ten skrypt i ustaw "breakpoint" w linii `y = x - 32`.
+Uruchom tę funkcję i sprawdź co będzie tego efektem.
