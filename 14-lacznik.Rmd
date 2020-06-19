@@ -3,9 +3,8 @@
 <!-- intro o r jako jezyku laczacym inne -->
 <!-- intro o innych łącznikach -->
 R ma bezpośrednio wbudowane mechanizmy łączenia kodu R z kodem napisanym w językach C i Fortan.
-W tym rozdziale skupimy się jednak na przykładach łączenia R z innymi, popularniejszymi współcześnie językami programowania C++ i Pythonem (sekcje \@ref(cpp) i \@ref(python)) oraz z systemową linią komend (sekcja \@ref(powloka-systemowa)).
-
-<!-- rust, java, javascript, ?? -->
+W tym rozdziale skupimy się jednak na przykładach łączenia R z innymi, popularnymi współcześnie językami programowania C++ i Pythonem (sekcje \@ref(cpp) i \@ref(python)) oraz z systemową linią komend (sekcja \@ref(powloka-systemowa)).
+Inne możliwe połączenia R to z językami takimi jak [Rust](https://github.com/r-rust/hellorust), [JavaScript](https://jeroen.cran.dev/V8/), czy [Java](http://www.rforge.net/rJava/).
 
 ## C++ {#cpp}
 
@@ -23,7 +22,7 @@ Najważniejsze cechy C++, które wyróżniają go od R i które warto znać na p
 - Większość linii kodu należy kończyć znakiem średnika `;`
 - Konieczne jest zwracanie wartości używając `return`
 
-Przykładowy kod R do przeliczania temperatury ze stopnii Fahrenheita na Celsjusza wygląda w poniższy sposób (sekcja \@ref(budowanie-funkcji)):
+Przykładowy kod R do przeliczania temperatury ze stopni Fahrenheita na Celsjusza wygląda w poniższy sposób (sekcja \@ref(budowanie-funkcji)):
 
 ```{r}
 konwersja_temp = function(temperatura_f){
@@ -51,12 +50,12 @@ Co ważne, w tym języku też typy (zazwyczaj) nie są automatycznie konwertowan
 - Domyślnie nie używa wektoryzacji - powyższa funkcja `konwersja_temp_cpp()` zwróci błąd `Expecting a single value` w przypadku podania wektora numerycznego jako obiekt wejściowy.
 Aby użyć wektor wartości na wejściu konieczne jest napisane pętli lub użycie innych podobnych konstrukcji.
 - Większość linii kodu należy kończyć znakiem średnika `;`. 
-Nie dotyczy to linii definujących powstanie funkcji, rozpoczynających i kończących pętle czy wyrażenia warunkowe
+Nie dotyczy to linii definiujących powstanie funkcji, rozpoczynających i kończących pętle czy wyrażenia warunkowe
 - Konieczne jest zwracanie wartości używając `return`. 
 W R użycie funkcji `return()` było opcjonalne.
 
 Obecnie ponad dwa tysiące pakietów R łączy się z językiem C++ używając pakietu **Rcpp** [@R-Rcpp].
-Dodanie języka C++ do pakietu R często ma na celu przyspieszenie pewnych  wymagających obliczeniowo zadań lub połączenie R z isniejącymi zewnętrznymi bibliotekami napisanymi w C++.
+Dodanie języka C++ do pakietu R często ma na celu przyspieszenie pewnych  wymagających obliczeniowo zadań lub połączenie R z istniejącymi zewnętrznymi bibliotekami napisanymi w C++.
 
 ```{r}
 library(Rcpp)
@@ -189,18 +188,18 @@ wynik = bench::mark(
 wynik
 ```
 
-Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około `r round(as.numeric(wynik["median"][[1]][1] / wynik["median"][[1]][2]), 2)` raza mniejszy.
+Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około `r round(as.numeric(wynik["median"][[1]][1] / wynik["median"][[1]][2]), 2)` raza mniejszy.
 
 ### Wywoływanie kodu z plików .cpp {#sourceCpp}
 
 Powyższy przykład sprawdza się w przypadku małych fragmentów kodu C++.
-W momencie jednak, gdy kod staje się bardziej złożony, znacznie lepsze jest umieszczczenie go w oddzielnym pliku o rozszerzeniu `.cpp`.
+W momencie jednak, gdy kod staje się bardziej złożony, znacznie lepsze jest umieszczenie go w oddzielnym pliku o rozszerzeniu `.cpp`.
 Taki plik może też być umieszczony wewnątrz pakietu R (rozdział  \@ref(tworzenie-pakietow)).
 
 Używanie kod C++ z pliku z poziomu R wymaga jednak pewnych dodatkowych działań.
 Konieczne jest dodane do tego pliku kilku linii nagłówków, które umożliwią interakcję pomiędzy C++ a R.
 
-Pierwsza z nich ma na celu umożliwenie dostępu do funkcji z pakietu **Rcpp**, poprzez podanie nazwy pliku `Rcpp.h` w linii `#include`.
+Pierwsza z nich ma na celu umożliwienie dostępu do funkcji z pakietu **Rcpp**, poprzez podanie nazwy pliku `Rcpp.h` w linii `#include`.
 
 ```{Rcpp, eval = FALSE}
 #include <Rcpp.h>
@@ -261,7 +260,7 @@ Różni się on od R szeregiem cech, wśród których na samym początku można 
 Przykładowo, wektor atomowy w R odpowiada podobnemu typowi - liście w Pythonie.
 - Obowiązkowe jest stosowanie wcięć jako elementu języka.
 W R stosowanie wcięć jest rekomendowane, ale nie wymagane.
-W Pythonie kod bez opowiednich wcięć nie zadziała.
+W Pythonie kod bez odpowiednich wcięć nie zadziała.
 - Ma inny sposób pracy na obiektach. 
 <!-- Przykładowo,  -->
 - Stosuje indeksowanie zaczynające się od 0.
@@ -282,7 +281,7 @@ Współcześnie kontaktujemy się z komputerami najczęściej używając przeró
 Jednocześnie większość systemów operacyjnych posiada swoje powłoki systemowe (ang. *shell*).
 Pełnią one rolę pośrednika pomiędzy systemem operacyjnym a użytkownikiem i pozwalają one uruchamiać programy, sterować nimi poprzez wprowadzanie poleceń, czy zwracać wyniki ich działania.
 
-R pozwala na łączenie się z powłoką systemową używając funkcji `system2()`^[W R istnieje również funkcja `system()`, która jest mniej uniwersalna niż `system2()` i różni się od niej składnią].
+R pozwala na łączenie się z powłoką systemową używając funkcji `system2()`.^[W R istnieje również funkcja `system()`, która jest mniej uniwersalna niż `system2()` i różni się od niej składnią]
 W ten sposób możliwe jest zarówno wywoływanie poleceń wbudowanych w powłokę systemową, uruchomianie skryptów powłoki systemowej (np. `system2("moj_bash_skrypt.sh")`), czy też zewnętrznych aplikacji (w taki sposób pakiet **rgrass7** [@R-rgrass7] łączy się z programem [GRASS GIS](https://grass.osgeo.org/)).
 
 Przykładowo, w systemach opartych o UNIX polecenie `wc` pozwoli na określenie liczby wyrazów w wybranym pliku.
