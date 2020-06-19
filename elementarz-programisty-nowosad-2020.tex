@@ -370,7 +370,7 @@ W efekcie zrozumienie i znajomość języków programowania jest cenną~umiejęt
 
 Programowanie komputerowe ma obecnie już~długą historię - pierwszy język programowania Plankalkül powstał w latach 1943-1945\footnote{\url{https://en.wikipedia.org/wiki/Plankalk\%C3\%BCl}}.
 Fortran, stworzony w roku 1957, jest nadal używany współcześnie do wielu celów, między innymi wymagających dużej wydajności obliczeń hydrologicznych, prognozowania pogody czy modelowania klimatu.
-Programowanie ewoluowało i nadal ewoluuje wraz z rozwojem dostępności i możliwości komputerów.
+Programowanie ewoluowało i nadal ewoluuje wraz z rozwojem dostępności i możliwości komputerów, ale także wraz ze zmieniającymi się~potrzebami.
 Pojawiły się nowe paradygmaty programowania oraz wiele nowych języków.
 W tym samym czasie narosło również wiele mitów dotyczących programowania\footnote{Zobacz porównanie oczekiwań i rzeczywistej pracy programisty na \url{https://www.youtube.com/watch?v=HluANRwPyNo}.}.
 
@@ -412,7 +412,7 @@ Mit programisty mężczyzny jest też powiązany z wymienionym kilka akapitów n
 
 Kolejny jest mit wielkiego produktu.
 Oznacza on, że po nauczeniu się~podstaw danego języka programowanie, jest się od razu w stanie stworzyć bardzo złożony program, np. nowy system operacyjny, skomplikowaną aplikację na telefon, czy grę komputerową.
-W rzeczywistości takie produkty opierają się o tysiące godzin pracy wielu programistów.
+W rzeczywistości takie produkty zazwyczaj opierają się o tysiące godzin pracy wielu programistów.
 Dodatkowo, nie są one tworzone od podstaw, ale używając szeregu dostępnych narzędzi, bibliotek i innych rozwiązań.
 Celem pisania kodu, więc nie powinno być stworzenie od zera bardzo złożonej aplikacji, lecz odpowiednie użycie istniejących rozwiązań.
 Jednocześnie pisanie złożonego oprogramowania wymaga uzyskania niezbędnego doświadczenia.
@@ -6340,7 +6340,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.475   0.000   0.475}
+\CommentTok{#>   0.492   0.000   0.491}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6399,8 +6399,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile) 1.47us 1.69us   501330.     117KB}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 1.15us 1.34us   667872.     224KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile) 1.46us 1.66us   510864.     117KB}
+\CommentTok{#> 2 mi_do_km2(odl_mile)  1.2us 1.37us   647877.     224KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
@@ -6443,14 +6443,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 497ms  498ms      2.01     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 813us  839us   1015.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 483ms  485ms      2.06     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 810us  830us   1058.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.01 operacji na sekundę, przy aż 1014.65 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.06 operacji na sekundę, przy aż 1057.81 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zadania-10}{%
@@ -6497,7 +6497,7 @@ Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) raz
 Używając pakietów i funkcji stworzonych przez inne osoby możemy czasem znaleźć się w sytuacji, gdy zamiast wyniku otrzymujemy komunikat błędu.
 Warto wówczas upewnić się czy nie napisaliśmy żadnej literówki i podaliśmy odpowiednie argumenty funkcji.
 Konieczne kolejne kroki mogą obejmować sprawdzenie pliku pomocy danej funkcji, czy też skopiowanie najważniejszego fragmentu błędu i wklejenie go do wyszukiwarki internetowej.
-Isnieje szansa, że ktoś już wcześniej napotkał ten problem, zadał pytanie i otrzymał na nie odpowiedź w internecie (np, na \url{https://stackoverflow.com/}).
+Istnieje szansa, że ktoś już wcześniej napotkał ten problem, zadał pytanie i otrzymał na nie odpowiedź w internecie (np, na \url{https://stackoverflow.com/}).
 
 Czasem się może jednak okazać, że odkryliśmy nowy problem - warto go wtedy zgłosić do twórców pakietu.
 Wiele pakietów na platformie CRAN zawiera sekcję \emph{BugReports}, gdzie można znaleźć link do zgłaszania błędów.
@@ -6530,7 +6530,7 @@ Powtarzalny przykład powinien składać się przynajmniej z:
 \end{itemize}
 
 Czasem ważne są też dodatkowe informacje o używanej wersji R, posiadanym systemie operacyjnym, wersjach używanych pakietów, etc.
-Można do tego użyć funkcji \texttt{sessionInfo()}
+Można do tego użyć funkcji \texttt{sessionInfo()}.
 
 \hypertarget{pakiet-reprex}{%
 \subsection{\texorpdfstring{Pakiet \textbf{reprex}}{Pakiet reprex}}\label{pakiet-reprex}}
@@ -6634,25 +6634,22 @@ Można jednak określić kilka kroków, które mogą znacząco ułatwić debugow
 \end{enumerate}
 
 W pierwszym kroku warto się upewnić, że napotkany błąd nie jest spowodowany przez inne obiekty w środowisku R.
-Należy wyczyścić środowisko R używając \texttt{rm(list\ =\ ls())} a następnie zresetować sesję R (CTRL+SHIFT+F10 w RStudio).
+Należy wyczyścić środowisko R używając \texttt{rm(list\ =\ ls())} a następnie zresetować sesję R (skrót CTRL+SHIFT+F10 w RStudio).
 Warto też wydzielić z kodu najmniejszy fragment, który pozwala na odtworzenie błędu (\emph{powtarzalny przykład}).
 Teraz należy jeszcze raz spróbować użyć kodu zwracającego błąd, aby się upewnić, że dalej istnieje.
-
 Drugi krok obejmuje zlokalizowanie dokładnego miejsca w którym błąd powstaje.
 Może to być konkretna linia kodu, miejsce w pętli, a czasem nawet wywołanie innej zewnętrznej funkcji.
 Ten krok można wykonać na wiele sposobów.
 Dwa z nich, debugowanie używając funkcji takich jak print (sekcja \ref{debuging-print}) i debugowanie interaktywne (sekcja \ref{debugger}), są opisane w tym rozdziale.
-
 W trzecim kroku należy usunąć wcześniej zlokalizowany błąd.
 Nie powinien to być jednak ostatni krok.
-
 Należy jeszcze upewnić się, że nowa wersja kodu nie tylko przestaje zwracać błędy, ale też daje poprawne wyniki.
 Często odbywa się to poprzez wykonanie wcześniej stworzony testów jednostkowych (sekcja \ref{testy-jednostkowe}).
 
 \hypertarget{debuging-print}{%
 \section{Podstawowe podejście do debugowania}\label{debuging-print}}
 
-Klasycznym podejściem do debugowania jest dodanie funkcji \texttt{print()} pokazującej wartości obiektów w okolicy potencjalnego źródła błędu.
+Klasycznym podejściem do debugowania jest dodanie funkcji \texttt{print()} pokazującej wartości obiektów w okolicy linii kodu, którą uznajemy za potencjalne źródło błędu.
 Dalej warto zaplanować jakie testy kodu wykonać, aby wyłapać dokładne miejsce wystąpnienia błędu.
 Trzeba też zapisywać potencjalne wyniki.
 Takie systematyczne podejście może zaoszczędzić dużo czasu w porównaniu do losowego testowania różnych wartości w kodzie.
@@ -6684,7 +6681,7 @@ Dodatkowo sprawdza ona czy podana wartość (argument \texttt{x}) nie jest numer
 \end{Highlighting}
 \end{Shaded}
 
-Dodatkowo, wyobrażmy sobie, że funkcja \texttt{f\_to\_c()} jest używana w obliczeniach jakiejś kolejnej funkcji \texttt{fun1()}, która jest używana w obliczeniach funkcji \texttt{fun2()}, a ta w funkcji \texttt{fun3()}.
+Dodatkowo, wyobraźmy sobie, że funkcja \texttt{f\_to\_c()} jest używana w obliczeniach jakiejś kolejnej funkcji \texttt{fun1()}, która jest używana w obliczeniach funkcji \texttt{fun2()}, a ta w funkcji \texttt{fun3()}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6710,7 +6707,7 @@ Załóżmy teraz, że chcemy wykonać i otrzymać wynik działania \texttt{fun3(
 \end{Highlighting}
 \end{Shaded}
 
-W tym przypadku po chwili otrzymujemy poprawny wynik -17.222.
+W tym przypadku po chwili otrzymujemy poprawny wynik -17.2.
 Możliwa jest jednak sytuacja, gdy my, nasi użytkownicy, albo inny program poda na wejściu wartość, która kończy się błędem, np. \texttt{-1}.
 
 \begin{Shaded}
@@ -6733,30 +6730,30 @@ Z pomocą tutaj może przyjść funkcja \texttt{traceback()}.
 \end{Highlighting}
 \end{Shaded}
 
-Czytamy jej wynik od dołu do góry, dowiadując się, że wywołanie funkcji \texttt{fun3(-1)} skończyło się błędem wewnątrz funkcji \texttt{inch\_to\_mm(x)}, a dokładnie w linii \texttt{stop("Wartość\ poniżej\ 0\ nie\ jest\ możliwa")}.
-Posiadając tę wiedzę możemy przejść do funkcji \texttt{inch\_to\_mm()} i zmienić ją zgodnie z naszymi potrzebami.
+Czytamy jej wynik od dołu do góry, dowiadując się, że wywołanie funkcji \texttt{fun3(-1)} skończyło się błędem wewnątrz funkcji \texttt{f\_to\_c(x)}, a dokładnie w linii \texttt{stop("Wartość\ poniżej\ 0\ nie\ jest\ możliwa")}.
+Posiadając tę wiedzę możemy przejść do funkcji \texttt{f\_to\_c()} i zmienić ją zgodnie z naszymi potrzebami.
 
 Alternatywną możliwością do funkcji \texttt{traceback()} jest włączenie opcji interaktywnego debuggera w RStudio.
 Pierwszym krokiem jest włączenie tzw. Error Inspectora, co można zrobić w menu RStudio \texttt{Debug\ -\textgreater{}\ On\ Error\ -\textgreater{}\ Error\ Inspector}.
-Teraz po wykonaniu kodu \texttt{fun3(-1)} otrzymamy nie tylko komunikat błędu, ale także dwie nowe ikony ``Show Traceback'' i ``Rerun with Debug''.
+Teraz po wykonaniu kodu \texttt{fun3(-1)} otrzymamy nie tylko komunikat błędu, ale także dwie nowe ikony \texttt{Show\ Traceback} i \texttt{Rerun\ with\ Debug}.
 
 \begin{center}\includegraphics[width=\textwidth]{figures/debugger1} \end{center}
 
 Pierwsza z nich wywołuje działanie wcześniej opisanej funkcji \texttt{traceback()}.
-Druga, ``Rerun with Debug'', uruchamia interaktywny debugger.
+Druga, \texttt{Rerun\ with\ Debug}, uruchamia interaktywny debugger.
 W tym momencie cały kod jest ponownie wykonywany i zatrzymywany w miejscu gdzie błąd powstał.
-Teraz w oknie Environment można znaleźć dwie grupy informacji: istniejące obiekty oraz Traceback pokazujący w krórym kroku obliczeń jesteśmy.
+Teraz w oknie Environment można znaleźć dwie grupy informacji: istniejące obiekty oraz Traceback pokazujący w którym kroku obliczeń jesteśmy.
 Dodatkowo konsola R wygląda inaczej niż zwykle.
-Pod informacją o błędzie wyświetił się tekst \texttt{Browse{[}1{]}\textgreater{}}, a nad oknem konsoli pojawił się szereg ikon:
+Pod informacją o błędzie wyświetlił się tekst \texttt{Browse{[}1{]}\textgreater{}}, a nad oknem konsoli pojawił się szereg ikon:
 
 \begin{center}\includegraphics[width=\textwidth]{figures/debugger2} \end{center}
 
 \begin{itemize}
 \tightlist
 \item
-  Pierwsza ikona ``Next'', skrót klawiaturowy \texttt{n}, wykonuje kolejny krok obliczeń
+  Pierwsza ikona \texttt{Next}, skrót klawiaturowy \texttt{n}, wykonuje kolejny krok obliczeń
 \item
-  Druga ikona, \texttt{s}, działa podobnie do ``Next'', z tym wyjątkiem, że gdy kolejny krok obliczeń jest funkcją to wtedy pozwala ona na wejście do tej funkcji i sprawdzenie jej interaktywnie
+  Druga ikona, \texttt{s}, działa podobnie do \texttt{Next}, z tym wyjątkiem, że gdy kolejny krok obliczeń jest funkcją to wtedy pozwala ona na wejście do tej funkcji i sprawdzenie jej interaktywnie
 \item
   Trzecia ikona, \texttt{f}, kończy działanie obecnej funkcji lub pętli
 \item
@@ -6786,7 +6783,7 @@ Inne możliwości wywołania interaktywnego debuggera dają takie funkcje jak \t
   Stwórz powtarzalny przykład pokazujący działanie funkcji \texttt{f\_to\_c()} na wartościach wejściowych \texttt{10} oraz \texttt{"ciepło"}.
 \item
   Włącz Error Inspectora w RStudio na stałe (\texttt{Debug\ -\textgreater{}\ On\ Error\ -\textgreater{}\ Error\ Inspector}).
-  Kolejny raz gdy pojawi się błąd w Twoim kodzie, użyj opcji ``Show Traceback'' i ``Rerun with Debug''.
+  Kolejny raz gdy pojawi się błąd w Twoim kodzie, użyj opcji \texttt{Show\ Traceback} i \texttt{Rerun\ with\ Debug}.
   Czy pomogło to w rozwiązaniu problemu?
 \item
   Zapisz funkcję \texttt{f\_to\_c()} stworzoną w tym rozdziale do pliku \texttt{f\_to\_c.R}.
@@ -6798,7 +6795,8 @@ Inne możliwości wywołania interaktywnego debuggera dają takie funkcje jak \t
 \chapter{Łącznik}\label{lacznik}}
 
 R ma bezpośrednio wbudowane mechanizmy łączenia kodu R z kodem napisanym w językach C i Fortan.
-W tym rozdziale skupimy się jednak na przykładach łączenia R z innymi, popularniejszymi współcześnie językami programowania C++ i Pythonem (sekcje \ref{cpp} i \ref{python}) oraz z systemową linią komend (sekcja \ref{powloka-systemowa}).
+W tym rozdziale skupimy się jednak na przykładach łączenia R z innymi, popularnymi współcześnie językami programowania C++ i Pythonem (sekcje \ref{cpp} i \ref{python}) oraz z systemową linią komend (sekcja \ref{powloka-systemowa}).
+Inne możliwe połączenia R to z językami takimi jak \href{https://github.com/r-rust/hellorust}{Rust}, \href{https://jeroen.cran.dev/V8/}{JavaScript}, czy \href{http://www.rforge.net/rJava/}{Java}.
 
 \hypertarget{cpp}{%
 \section{C++}\label{cpp}}
@@ -6827,7 +6825,7 @@ Najważniejsze cechy C++, które wyróżniają go od R i które warto znać na p
   Konieczne jest zwracanie wartości używając \texttt{return}
 \end{itemize}
 
-Przykładowy kod R do przeliczania temperatury ze stopnii Fahrenheita na Celsjusza wygląda w poniższy sposób (sekcja \ref{budowanie-funkcji}):
+Przykładowy kod R do przeliczania temperatury ze stopni Fahrenheita na Celsjusza wygląda w poniższy sposób (sekcja \ref{budowanie-funkcji}):
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6867,14 +6865,14 @@ Odnosząc się do punktów z wcześniej wymienionej listy:
   Aby użyć wektor wartości na wejściu konieczne jest napisane pętli lub użycie innych podobnych konstrukcji.
 \item
   Większość linii kodu należy kończyć znakiem średnika \texttt{;}.
-  Nie dotyczy to linii definujących powstanie funkcji, rozpoczynających i kończących pętle czy wyrażenia warunkowe
+  Nie dotyczy to linii definiujących powstanie funkcji, rozpoczynających i kończących pętle czy wyrażenia warunkowe
 \item
   Konieczne jest zwracanie wartości używając \texttt{return}.
   W R użycie funkcji \texttt{return()} było opcjonalne.
 \end{itemize}
 
 Obecnie ponad dwa tysiące pakietów R łączy się z językiem C++ używając pakietu \textbf{Rcpp} \citep{R-Rcpp}.
-Dodanie języka C++ do pakietu R często ma na celu przyspieszenie pewnych wymagających obliczeniowo zadań lub połączenie R z isniejącymi zewnętrznymi bibliotekami napisanymi w C++.
+Dodanie języka C++ do pakietu R często ma na celu przyspieszenie pewnych wymagających obliczeniowo zadań lub połączenie R z istniejącymi zewnętrznymi bibliotekami napisanymi w C++.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7038,26 +7036,26 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression                  min median `itr/sec`}
 \CommentTok{#>   <bch:expr>                <bch> <bch:>     <dbl>}
-\CommentTok{#> 1 mile_na_km(odl_mile2)     808us  839us     1148.}
-\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 420us  450us     2166.}
+\CommentTok{#> 1 mile_na_km(odl_mile2)     804us  830us     1162.}
+\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 404us  432us     2255.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
-Mimo otrzymalnia tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.87 raza mniejszy.
+Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.92 raza mniejszy.
 
 \hypertarget{sourceCpp}{%
 \subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}
 
 Powyższy przykład sprawdza się w przypadku małych fragmentów kodu C++.
-W momencie jednak, gdy kod staje się bardziej złożony, znacznie lepsze jest umieszczczenie go w oddzielnym pliku o rozszerzeniu \texttt{.cpp}.
+W momencie jednak, gdy kod staje się bardziej złożony, znacznie lepsze jest umieszczenie go w oddzielnym pliku o rozszerzeniu \texttt{.cpp}.
 Taki plik może też być umieszczony wewnątrz pakietu R (rozdział \ref{tworzenie-pakietow}).
 
 Używanie kod C++ z pliku z poziomu R wymaga jednak pewnych dodatkowych działań.
 Konieczne jest dodane do tego pliku kilku linii nagłówków, które umożliwią interakcję pomiędzy C++ a R.
 
-Pierwsza z nich ma na celu umożliwenie dostępu do funkcji z pakietu \textbf{Rcpp}, poprzez podanie nazwy pliku \texttt{Rcpp.h} w linii \texttt{\#include}.
+Pierwsza z nich ma na celu umożliwienie dostępu do funkcji z pakietu \textbf{Rcpp}, poprzez podanie nazwy pliku \texttt{Rcpp.h} w linii \texttt{\#include}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7143,7 +7141,7 @@ Różni się on od R szeregiem cech, wśród których na samym początku można 
 \item
   Obowiązkowe jest stosowanie wcięć jako elementu języka.
   W R stosowanie wcięć jest rekomendowane, ale nie wymagane.
-  W Pythonie kod bez opowiednich wcięć nie zadziała.
+  W Pythonie kod bez odpowiednich wcięć nie zadziała.
 \item
   Ma inny sposób pracy na obiektach.
 \item
@@ -7167,7 +7165,7 @@ Współcześnie kontaktujemy się z komputerami najczęściej używając przeró
 Jednocześnie większość systemów operacyjnych posiada swoje powłoki systemowe (ang. \emph{shell}).
 Pełnią one rolę pośrednika pomiędzy systemem operacyjnym a użytkownikiem i pozwalają one uruchamiać programy, sterować nimi poprzez wprowadzanie poleceń, czy zwracać wyniki ich działania.
 
-R pozwala na łączenie się z powłoką systemową używając funkcji \texttt{system2()}\footnote{W R istnieje również funkcja \texttt{system()}, która jest mniej uniwersalna niż \texttt{system2()} i różni się od niej składnią}.
+R pozwala na łączenie się z powłoką systemową używając funkcji \texttt{system2()}.\footnote{W R istnieje również funkcja \texttt{system()}, która jest mniej uniwersalna niż \texttt{system2()} i różni się od niej składnią}
 W ten sposób możliwe jest zarówno wywoływanie poleceń wbudowanych w powłokę systemową, uruchomianie skryptów powłoki systemowej (np. \texttt{system2("moj\_bash\_skrypt.sh")}), czy też zewnętrznych aplikacji (w taki sposób pakiet \textbf{rgrass7} \citep{R-rgrass7} łączy się z programem \href{https://grass.osgeo.org/}{GRASS GIS}).
 
 Przykładowo, w systemach opartych o UNIX polecenie \texttt{wc} pozwoli na określenie liczby wyrazów w wybranym pliku.

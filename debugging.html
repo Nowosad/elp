@@ -359,7 +359,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Używając pakietów i funkcji stworzonych przez inne osoby możemy czasem znaleźć się w sytuacji, gdy zamiast wyniku otrzymujemy komunikat błędu.
 Warto wówczas upewnić się czy nie napisaliśmy żadnej literówki i podaliśmy odpowiednie argumenty funkcji.
 Konieczne kolejne kroki mogą obejmować sprawdzenie pliku pomocy danej funkcji, czy też skopiowanie najważniejszego fragmentu błędu i wklejenie go do wyszukiwarki internetowej.
-Isnieje szansa, że ktoś już wcześniej napotkał ten problem, zadał pytanie i otrzymał na nie odpowiedź w internecie (np, na <a href="https://stackoverflow.com/" class="uri">https://stackoverflow.com/</a>).</p>
+Istnieje szansa, że ktoś już wcześniej napotkał ten problem, zadał pytanie i otrzymał na nie odpowiedź w internecie (np, na <a href="https://stackoverflow.com/" class="uri">https://stackoverflow.com/</a>).</p>
 <p>Czasem się może jednak okazać, że odkryliśmy nowy problem - warto go wtedy zgłosić do twórców pakietu.
 Wiele pakietów na platformie CRAN zawiera sekcję <em>BugReports</em>, gdzie można znaleźć link do zgłaszania błędów.
 Przykładowo, pakiet <strong>stringr</strong> jest opisany pod adresem <a href="https://cran.r-project.org/package=stringr" class="uri">https://cran.r-project.org/package=stringr</a> i w jego sekcji <em>BugReports</em> znajduje się odnośnik do <a href="https://github.com/tidyverse/stringr/issues" class="uri">https://github.com/tidyverse/stringr/issues</a>.
@@ -383,7 +383,7 @@ Powtarzalny przykład powinien składać się przynajmniej z:</p>
 <li>Krótkiego kodu, który może być uruchomiony na powyższym zbiorze danych</li>
 </ul>
 <p>Czasem ważne są też dodatkowe informacje o używanej wersji R, posiadanym systemie operacyjnym, wersjach używanych pakietów, etc.
-Można do tego użyć funkcji <code>sessionInfo()</code></p>
+Można do tego użyć funkcji <code>sessionInfo()</code>.</p>
 <div id="pakiet-reprex" class="section level3">
 <h3><span class="header-section-number">12.1.1</span> Pakiet <strong>reprex</strong></h3>
 <p>Stworzenie powtarzalnego przykładu w R może zostać ułatwione używając pakietu <strong>reprex</strong> <span class="citation">(Jennifer Bryan et al. <a href="#ref-R-reprex">2019</a>)</span>.
@@ -441,21 +441,21 @@ Można jednak określić kilka kroków, które mogą znacząco ułatwić debugow
 <li>Weryfikacja naprawy błędu i jej konsekwencji</li>
 </ol>
 <p>W pierwszym kroku warto się upewnić, że napotkany błąd nie jest spowodowany przez inne obiekty w środowisku R.
-Należy wyczyścić środowisko R używając <code>rm(list = ls())</code> a następnie zresetować sesję R (CTRL+SHIFT+F10 w RStudio).
+Należy wyczyścić środowisko R używając <code>rm(list = ls())</code> a następnie zresetować sesję R (skrót CTRL+SHIFT+F10 w RStudio).
 Warto też wydzielić z kodu najmniejszy fragment, który pozwala na odtworzenie błędu (<em>powtarzalny przykład</em>).
-Teraz należy jeszcze raz spróbować użyć kodu zwracającego błąd, aby się upewnić, że dalej istnieje.</p>
-<p>Drugi krok obejmuje zlokalizowanie dokładnego miejsca w którym błąd powstaje.
+Teraz należy jeszcze raz spróbować użyć kodu zwracającego błąd, aby się upewnić, że dalej istnieje.
+Drugi krok obejmuje zlokalizowanie dokładnego miejsca w którym błąd powstaje.
 Może to być konkretna linia kodu, miejsce w pętli, a czasem nawet wywołanie innej zewnętrznej funkcji.
 Ten krok można wykonać na wiele sposobów.
-Dwa z nich, debugowanie używając funkcji takich jak print (sekcja <a href="debugging.html#debuging-print">12.3</a>) i debugowanie interaktywne (sekcja <a href="debugging.html#debugger">12.4</a>), są opisane w tym rozdziale.</p>
-<p>W trzecim kroku należy usunąć wcześniej zlokalizowany błąd.
-Nie powinien to być jednak ostatni krok.</p>
-<p>Należy jeszcze upewnić się, że nowa wersja kodu nie tylko przestaje zwracać błędy, ale też daje poprawne wyniki.
+Dwa z nich, debugowanie używając funkcji takich jak print (sekcja <a href="debugging.html#debuging-print">12.3</a>) i debugowanie interaktywne (sekcja <a href="debugging.html#debugger">12.4</a>), są opisane w tym rozdziale.
+W trzecim kroku należy usunąć wcześniej zlokalizowany błąd.
+Nie powinien to być jednak ostatni krok.
+Należy jeszcze upewnić się, że nowa wersja kodu nie tylko przestaje zwracać błędy, ale też daje poprawne wyniki.
 Często odbywa się to poprzez wykonanie wcześniej stworzony testów jednostkowych (sekcja <a href="analiza-kodu.html#testy-jednostkowe">11.1</a>).</p>
 </div>
 <div id="debuging-print" class="section level2">
 <h2><span class="header-section-number">12.3</span> Podstawowe podejście do debugowania</h2>
-<p>Klasycznym podejściem do debugowania jest dodanie funkcji <code>print()</code> pokazującej wartości obiektów w okolicy potencjalnego źródła błędu.
+<p>Klasycznym podejściem do debugowania jest dodanie funkcji <code>print()</code> pokazującej wartości obiektów w okolicy linii kodu, którą uznajemy za potencjalne źródło błędu.
 Dalej warto zaplanować jakie testy kodu wykonać, aby wyłapać dokładne miejsce wystąpnienia błędu.
 Trzeba też zapisywać potencjalne wyniki.
 Takie systematyczne podejście może zaoszczędzić dużo czasu w porównaniu do losowego testowania różnych wartości w kodzie.</p>
@@ -478,7 +478,7 @@ Dodatkowo sprawdza ona czy podana wartość (argument <code>x</code>) nie jest n
 <a class="sourceLine" id="cb328-9" data-line-number="9"><span class="st">  y = y / 1.8</span></a>
 <a class="sourceLine" id="cb328-10" data-line-number="10"><span class="st">  y</span></a>
 <a class="sourceLine" id="cb328-11" data-line-number="11"><span class="st">}</span></a></code></pre></div>
-<p>Dodatkowo, wyobrażmy sobie, że funkcja <code>f_to_c()</code> jest używana w obliczeniach jakiejś kolejnej funkcji <code>fun1()</code>, która jest używana w obliczeniach funkcji <code>fun2()</code>, a ta w funkcji <code>fun3()</code>.</p>
+<p>Dodatkowo, wyobraźmy sobie, że funkcja <code>f_to_c()</code> jest używana w obliczeniach jakiejś kolejnej funkcji <code>fun1()</code>, która jest używana w obliczeniach funkcji <code>fun2()</code>, a ta w funkcji <code>fun3()</code>.</p>
 <div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb329-1" data-line-number="1">fun1 =<span class="st"> </span><span class="cf">function</span>(x){</a>
 <a class="sourceLine" id="cb329-2" data-line-number="2">  <span class="kw">f_to_c</span>(x)</a>
 <a class="sourceLine" id="cb329-3" data-line-number="3">}</a>
@@ -492,7 +492,7 @@ Dodatkowo sprawdza ona czy podana wartość (argument <code>x</code>) nie jest n
 Załóżmy teraz, że chcemy wykonać i otrzymać wynik działania <code>fun3()</code> dla podanego argumentu <code>1</code>.</p>
 <div class="sourceCode" id="cb330"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb330-1" data-line-number="1"><span class="kw">fun3</span>(<span class="dv">1</span>)</a>
 <a class="sourceLine" id="cb330-2" data-line-number="2"><span class="co">#&gt; [1] -17.2</span></a></code></pre></div>
-<p>W tym przypadku po chwili otrzymujemy poprawny wynik -17.222.
+<p>W tym przypadku po chwili otrzymujemy poprawny wynik -17.2.
 Możliwa jest jednak sytuacja, gdy my, nasi użytkownicy, albo inny program poda na wejściu wartość, która kończy się błędem, np. <code>-1</code>.</p>
 <div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb331-1" data-line-number="1"><span class="kw">fun3</span>(<span class="op">-</span><span class="dv">1</span>)</a>
 <a class="sourceLine" id="cb331-2" data-line-number="2"><span class="co">#&gt; Error in f_to_c(x): Wartość poniżej 0 nie jest możliwa</span></a></code></pre></div>
@@ -503,22 +503,22 @@ Z pomocą tutaj może przyjść funkcja <code>traceback()</code>.</p>
 <a class="sourceLine" id="cb332-2" data-line-number="2"><span class="co">#&gt; 3: stop(&quot;Wartość poniżej 0 nie jest możliwa&quot;) at #3</span></a>
 <a class="sourceLine" id="cb332-3" data-line-number="3"><span class="co">#&gt; 2: inch_to_mm(x) at #2</span></a>
 <a class="sourceLine" id="cb332-4" data-line-number="4"><span class="co">#&gt; 1: fun3(-1)</span></a></code></pre></div>
-<p>Czytamy jej wynik od dołu do góry, dowiadując się, że wywołanie funkcji <code>fun3(-1)</code> skończyło się błędem wewnątrz funkcji <code>inch_to_mm(x)</code>, a dokładnie w linii <code>stop(&quot;Wartość poniżej 0 nie jest możliwa&quot;)</code>.
-Posiadając tę wiedzę możemy przejść do funkcji <code>inch_to_mm()</code> i zmienić ją zgodnie z naszymi potrzebami.</p>
+<p>Czytamy jej wynik od dołu do góry, dowiadując się, że wywołanie funkcji <code>fun3(-1)</code> skończyło się błędem wewnątrz funkcji <code>f_to_c(x)</code>, a dokładnie w linii <code>stop(&quot;Wartość poniżej 0 nie jest możliwa&quot;)</code>.
+Posiadając tę wiedzę możemy przejść do funkcji <code>f_to_c()</code> i zmienić ją zgodnie z naszymi potrzebami.</p>
 <p>Alternatywną możliwością do funkcji <code>traceback()</code> jest włączenie opcji interaktywnego debuggera w RStudio.
 Pierwszym krokiem jest włączenie tzw. Error Inspectora, co można zrobić w menu RStudio <code>Debug -&gt; On Error -&gt; Error Inspector</code>.
-Teraz po wykonaniu kodu <code>fun3(-1)</code> otrzymamy nie tylko komunikat błędu, ale także dwie nowe ikony “Show Traceback” i “Rerun with Debug”.</p>
+Teraz po wykonaniu kodu <code>fun3(-1)</code> otrzymamy nie tylko komunikat błędu, ale także dwie nowe ikony <code>Show Traceback</code> i <code>Rerun with Debug</code>.</p>
 <p><img src="figures/debugger1.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <p>Pierwsza z nich wywołuje działanie wcześniej opisanej funkcji <code>traceback()</code>.
-Druga, “Rerun with Debug”, uruchamia interaktywny debugger.
+Druga, <code>Rerun with Debug</code>, uruchamia interaktywny debugger.
 W tym momencie cały kod jest ponownie wykonywany i zatrzymywany w miejscu gdzie błąd powstał.
-Teraz w oknie Environment można znaleźć dwie grupy informacji: istniejące obiekty oraz Traceback pokazujący w krórym kroku obliczeń jesteśmy.
+Teraz w oknie Environment można znaleźć dwie grupy informacji: istniejące obiekty oraz Traceback pokazujący w którym kroku obliczeń jesteśmy.
 Dodatkowo konsola R wygląda inaczej niż zwykle.
-Pod informacją o błędzie wyświetił się tekst <code>Browse[1]&gt;</code>, a nad oknem konsoli pojawił się szereg ikon:</p>
+Pod informacją o błędzie wyświetlił się tekst <code>Browse[1]&gt;</code>, a nad oknem konsoli pojawił się szereg ikon:</p>
 <p><img src="figures/debugger2.png" width="\textwidth" style="display: block; margin: auto;" /></p>
 <ul>
-<li>Pierwsza ikona “Next”, skrót klawiaturowy <code>n</code>, wykonuje kolejny krok obliczeń</li>
-<li>Druga ikona, <code>s</code>, działa podobnie do “Next”, z tym wyjątkiem, że gdy kolejny krok obliczeń jest funkcją to wtedy pozwala ona na wejście do tej funkcji i sprawdzenie jej interaktywnie</li>
+<li>Pierwsza ikona <code>Next</code>, skrót klawiaturowy <code>n</code>, wykonuje kolejny krok obliczeń</li>
+<li>Druga ikona, <code>s</code>, działa podobnie do <code>Next</code>, z tym wyjątkiem, że gdy kolejny krok obliczeń jest funkcją to wtedy pozwala ona na wejście do tej funkcji i sprawdzenie jej interaktywnie</li>
 <li>Trzecia ikona, <code>f</code>, kończy działanie obecnej funkcji lub pętli</li>
 <li>Czwarta ikona, <code>c</code>, wyłącza interaktywny debugger ale pozwala na dalsze wykonywanie działań wewnątrz funkcji</li>
 <li>Ostatnia ikona, <code>Q</code>, kończy działanie debuggera</li>
@@ -541,7 +541,7 @@ Inne możliwości wywołania interaktywnego debuggera dają takie funkcje jak <c
 <ol style="list-style-type: decimal">
 <li>Stwórz powtarzalny przykład pokazujący działanie funkcji <code>f_to_c()</code> na wartościach wejściowych <code>10</code> oraz <code>&quot;ciepło&quot;</code>.</li>
 <li>Włącz Error Inspectora w RStudio na stałe (<code>Debug -&gt; On Error -&gt; Error Inspector</code>).
-Kolejny raz gdy pojawi się błąd w Twoim kodzie, użyj opcji “Show Traceback” i “Rerun with Debug”.
+Kolejny raz gdy pojawi się błąd w Twoim kodzie, użyj opcji <code>Show Traceback</code> i <code>Rerun with Debug</code>.
 Czy pomogło to w rozwiązaniu problemu?</li>
 <li>Zapisz funkcję <code>f_to_c()</code> stworzoną w tym rozdziale do pliku <code>f_to_c.R</code>.
 Otwórz ten skrypt i ustaw “breakpoint” w linii <code>y = x - 32</code>.

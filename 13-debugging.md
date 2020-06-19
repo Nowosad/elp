@@ -3,7 +3,7 @@
 Używając pakietów i funkcji stworzonych przez inne osoby możemy czasem znaleźć się w sytuacji, gdy zamiast wyniku otrzymujemy komunikat błędu.
 Warto wówczas upewnić się czy nie napisaliśmy żadnej literówki i podaliśmy odpowiednie argumenty funkcji.
 Konieczne kolejne kroki mogą obejmować sprawdzenie pliku pomocy danej funkcji, czy też skopiowanie najważniejszego fragmentu błędu i wklejenie go do wyszukiwarki internetowej. 
-Isnieje szansa, że ktoś już wcześniej napotkał ten problem, zadał pytanie i otrzymał na nie odpowiedź w internecie (np, na https://stackoverflow.com/).
+Istnieje szansa, że ktoś już wcześniej napotkał ten problem, zadał pytanie i otrzymał na nie odpowiedź w internecie (np, na https://stackoverflow.com/).
 
 Czasem się może jednak okazać, że odkryliśmy nowy problem - warto go wtedy zgłosić do twórców pakietu.
 Wiele pakietów na platformie CRAN zawiera sekcję *BugReports*, gdzie można znaleźć link do zgłaszania błędów.
@@ -32,7 +32,7 @@ Powtarzalny przykład powinien składać się przynajmniej z:
 - Krótkiego kodu, który może być uruchomiony na powyższym zbiorze danych
 
 Czasem ważne są też dodatkowe informacje o używanej wersji R, posiadanym systemie operacyjnym, wersjach używanych pakietów, etc. 
-Można do tego użyć funkcji `sessionInfo()` 
+Można do tego użyć funkcji `sessionInfo()`.
 
 ### Pakiet **reprex**
 
@@ -120,24 +120,21 @@ Można jednak określić kilka kroków, które mogą znacząco ułatwić debugow
 4. Weryfikacja naprawy błędu i jej konsekwencji
 
 W pierwszym kroku warto się upewnić, że napotkany błąd nie jest spowodowany przez inne obiekty w środowisku R. 
-Należy wyczyścić środowisko R używając `rm(list = ls())` a następnie zresetować sesję R (CTRL+SHIFT+F10 w RStudio).
+Należy wyczyścić środowisko R używając `rm(list = ls())` a następnie zresetować sesję R (skrót CTRL+SHIFT+F10 w RStudio).
 Warto też wydzielić z kodu najmniejszy fragment, który pozwala na odtworzenie błędu (*powtarzalny przykład*). 
 Teraz należy jeszcze raz spróbować użyć kodu zwracającego błąd, aby się upewnić, że dalej istnieje.
-
 Drugi krok obejmuje zlokalizowanie dokładnego miejsca w którym błąd powstaje. 
 Może to być konkretna linia kodu, miejsce w pętli, a czasem nawet wywołanie innej zewnętrznej funkcji.
 Ten krok można wykonać na wiele sposobów. 
 Dwa z nich, debugowanie używając funkcji takich jak print (sekcja \@ref(debuging-print)) i debugowanie interaktywne (sekcja \@ref(debugger)), są opisane w tym rozdziale.
-
 W trzecim kroku należy usunąć wcześniej zlokalizowany błąd.
 Nie powinien to być jednak ostatni krok.
-
 Należy jeszcze upewnić się, że nowa wersja kodu nie tylko przestaje zwracać błędy, ale też daje poprawne wyniki.
 Często odbywa się to poprzez wykonanie wcześniej stworzony testów jednostkowych (sekcja \@ref(testy-jednostkowe)).
 
 ## Podstawowe podejście do debugowania {#debuging-print}
 
-Klasycznym podejściem do debugowania jest dodanie funkcji `print()` pokazującej wartości obiektów w okolicy potencjalnego źródła błędu.
+Klasycznym podejściem do debugowania jest dodanie funkcji `print()` pokazującej wartości obiektów w okolicy linii kodu, którą uznajemy za potencjalne źródło błędu.
 Dalej warto zaplanować jakie testy kodu wykonać, aby wyłapać dokładne miejsce wystąpnienia błędu.
 Trzeba też zapisywać potencjalne wyniki.
 Takie systematyczne podejście może zaoszczędzić dużo czasu w porównaniu do losowego testowania różnych wartości w kodzie.
@@ -167,7 +164,7 @@ f_to_c = function(x) {
 }
 ```
 
-Dodatkowo, wyobrażmy sobie, że funkcja `f_to_c()` jest używana w obliczeniach jakiejś kolejnej funkcji `fun1()`, która jest używana w obliczeniach funkcji `fun2()`, a ta w funkcji `fun3()`.
+Dodatkowo, wyobraźmy sobie, że funkcja `f_to_c()` jest używana w obliczeniach jakiejś kolejnej funkcji `fun1()`, która jest używana w obliczeniach funkcji `fun2()`, a ta w funkcji `fun3()`.
 
 
 ```r
@@ -191,7 +188,7 @@ fun3(1)
 #> [1] -17.2
 ```
 
-W tym przypadku po chwili otrzymujemy poprawny wynik -17.222.
+W tym przypadku po chwili otrzymujemy poprawny wynik -17.2.
 Możliwa jest jednak sytuacja, gdy my, nasi użytkownicy, albo inny program poda na wejściu wartość, która kończy się błędem, np. `-1`. 
 
 
@@ -212,26 +209,26 @@ traceback()
 #> 1: fun3(-1)
 ```
 
-Czytamy jej wynik od dołu do góry, dowiadując się, że wywołanie funkcji `fun3(-1)` skończyło się błędem wewnątrz funkcji `inch_to_mm(x)`, a dokładnie w linii `stop("Wartość poniżej 0 nie jest możliwa")`.
-Posiadając tę wiedzę możemy przejść do funkcji `inch_to_mm()` i zmienić ją zgodnie z naszymi potrzebami.
+Czytamy jej wynik od dołu do góry, dowiadując się, że wywołanie funkcji `fun3(-1)` skończyło się błędem wewnątrz funkcji `f_to_c(x)`, a dokładnie w linii `stop("Wartość poniżej 0 nie jest możliwa")`.
+Posiadając tę wiedzę możemy przejść do funkcji `f_to_c()` i zmienić ją zgodnie z naszymi potrzebami.
 
 Alternatywną możliwością do funkcji `traceback()` jest włączenie opcji interaktywnego debuggera w RStudio.
 Pierwszym krokiem jest włączenie tzw. Error Inspectora, co można zrobić w menu RStudio `Debug -> On Error -> Error Inspector`.
-Teraz po wykonaniu kodu `fun3(-1)` otrzymamy nie tylko komunikat błędu, ale także dwie nowe ikony "Show Traceback" i "Rerun with Debug".
+Teraz po wykonaniu kodu `fun3(-1)` otrzymamy nie tylko komunikat błędu, ale także dwie nowe ikony `Show Traceback` i `Rerun with Debug`.
 
 <img src="figures/debugger1.png" width="\textwidth" style="display: block; margin: auto;" />
 
 Pierwsza z nich wywołuje działanie wcześniej opisanej funkcji `traceback()`.
-Druga, "Rerun with Debug", uruchamia interaktywny debugger. 
+Druga, `Rerun with Debug`, uruchamia interaktywny debugger. 
 W tym momencie cały kod jest ponownie wykonywany i zatrzymywany w miejscu gdzie błąd powstał. 
-Teraz w oknie Environment można znaleźć dwie grupy informacji: istniejące obiekty oraz Traceback pokazujący w krórym kroku obliczeń jesteśmy. 
+Teraz w oknie Environment można znaleźć dwie grupy informacji: istniejące obiekty oraz Traceback pokazujący w którym kroku obliczeń jesteśmy. 
 Dodatkowo konsola R wygląda inaczej niż zwykle. 
-Pod informacją o błędzie wyświetił się tekst `Browse[1]>`, a nad oknem konsoli pojawił się szereg ikon:
+Pod informacją o błędzie wyświetlił się tekst `Browse[1]>`, a nad oknem konsoli pojawił się szereg ikon:
 
 <img src="figures/debugger2.png" width="\textwidth" style="display: block; margin: auto;" />
 
-- Pierwsza ikona "Next", skrót klawiaturowy `n`, wykonuje kolejny krok obliczeń
-- Druga ikona, `s`, działa podobnie do "Next", z tym wyjątkiem, że gdy kolejny krok obliczeń jest funkcją to wtedy pozwala ona na wejście do tej funkcji i sprawdzenie jej interaktywnie
+- Pierwsza ikona `Next`, skrót klawiaturowy `n`, wykonuje kolejny krok obliczeń
+- Druga ikona, `s`, działa podobnie do `Next`, z tym wyjątkiem, że gdy kolejny krok obliczeń jest funkcją to wtedy pozwala ona na wejście do tej funkcji i sprawdzenie jej interaktywnie
 - Trzecia ikona, `f`, kończy działanie obecnej funkcji lub pętli
 - Czwarta ikona, `c`, wyłącza interaktywny debugger ale pozwala na dalsze wykonywanie działań wewnątrz funkcji
 - Ostatnia ikona, `Q`, kończy działanie debuggera
@@ -255,7 +252,7 @@ Inne możliwości wywołania interaktywnego debuggera dają takie funkcje jak `d
 
 1. Stwórz powtarzalny przykład pokazujący działanie funkcji `f_to_c()` na wartościach wejściowych `10` oraz `"ciepło"`.
 2. Włącz Error Inspectora w RStudio na stałe (`Debug -> On Error -> Error Inspector`).
-Kolejny raz gdy pojawi się błąd w Twoim kodzie, użyj opcji "Show Traceback" i "Rerun with Debug".
+Kolejny raz gdy pojawi się błąd w Twoim kodzie, użyj opcji `Show Traceback` i `Rerun with Debug`.
 Czy pomogło to w rozwiązaniu problemu?
 3. Zapisz funkcję `f_to_c()` stworzoną w tym rozdziale do pliku `f_to_c.R`.
 Otwórz ten skrypt i ustaw "breakpoint" w linii `y = x - 32`.
