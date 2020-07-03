@@ -215,7 +215,7 @@
 \providecommand{\subtitle}[1]{}
 \subtitle{Wstęp do programowania używając R}
 \author{Jakub Nowosad}
-\date{2020-06-19}
+\date{}
 
 \begin{document}
 \maketitle
@@ -234,7 +234,7 @@ Książka wydana na licencji Creative Commons BY \& SA \\
 Więcej informacji \url{http://nowosad.github.io/elp/} \\
 \\
 \\
-% {\large ISBN: 978-83-953296-0-9}
+{\large ISBN: 978-83-953296-1-9}
 
 {
 \setcounter{tocdepth}{1}
@@ -264,7 +264,7 @@ Jeżeli używasz tej książki, zacytuj ją jako:
 \begin{itemize}
 \tightlist
 \item
-  Nowosad, J., (2020). Elementarz programisty: wstęp do programowania używając R. Poznań: Space A. Online: \url{https://nowosad.github.io/elp/}
+  Nowosad, J., (2020). Elementarz programisty: wstęp do programowania używając R. Poznań: Space A. Online: \url{https://nowosad.github.io/elp/}. ISBN: 978-83-953296-1-9
 \end{itemize}
 
 Zachęcam również do zgłaszania wszelkich uwag, błędów, pomysłów oraz komentarzy na stronie \url{https://github.com/nowosad/elp/issues}.
@@ -1169,8 +1169,8 @@ Meetups (spotkania początkujących i zaawansowanych użytkowników R):
   Trójmiasto - \url{https://www.meetup.com/Trojmiejska-Grupa-Entuzjastow-R/}
 \end{itemize}
 
-\hypertarget{zadania-1}{%
-\section{Zadania}\label{zadania-1}}
+\hypertarget{zadania}{%
+\section{Zadania}\label{zadania}}
 
 Rozwiązując poniższe zadania oraz pozostałe zadania z tej książki staraj się~stosować do stylu podanego w sekcji \ref{styl}.
 
@@ -1696,8 +1696,8 @@ Wiadomości pojawiają się, aby przekazać użytkownikowi jakąś informację.
 
 Opis tworzenia komunikatów błędu, ostrzeżenia i wiadomości można znaleźć~w rozdziale \ref{zlozone-funkcje}.
 
-\hypertarget{zadania-2}{%
-\section{Zadania}\label{zadania-2}}
+\hypertarget{zadania}{%
+\section{Zadania}\label{zadania}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -2056,8 +2056,8 @@ Wyrażenia warunkowe można też wielokrotnie zagnieżdżać wewnątrz zdefiniow
 
 Przykładowo, powyżej komunikat \texttt{"Ubierz\ się\ ciepło!"} jest wyświetlany w momencie, gdy spełnione zostaną dwa warunki - najpierw wejściowy obiekt \texttt{temperatura} musi być typu numerycznego, a następnie wartość tego obiektu musi być niższa niż 5.
 
-\hypertarget{zadania-3}{%
-\section{Zadania}\label{zadania-3}}
+\hypertarget{zadania}{%
+\section{Zadania}\label{zadania}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -2770,7 +2770,7 @@ R ma wbudowaną reprezentację dat w postaci klasy \texttt{Date}.
 \begin{Highlighting}[]
 \NormalTok{dzis =}\StringTok{ }\KeywordTok{Sys.Date}\NormalTok{()}
 \NormalTok{dzis}
-\CommentTok{#> [1] "2020-06-19"}
+\CommentTok{#> [1] "2020-07-03"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2793,11 +2793,11 @@ Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji \texttt{unclass(
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{unclass}\NormalTok{(dzis)}
-\CommentTok{#> [1] 18432}
+\CommentTok{#> [1] 18446}
 \end{Highlighting}
 \end{Shaded}
 
-Wynik, 18432, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
+Wynik, 18446, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
 
 \begin{Shaded}
@@ -2884,8 +2884,8 @@ R posiada też dodatkowe klasy specjalne, np \texttt{POSIXlt} przechowująca inf
 \end{rmdinfo}
 \end{rmdinfo}
 
-\hypertarget{zadania-4}{%
-\section{Zadania}\label{zadania-4}}
+\hypertarget{zadania}{%
+\section{Zadania}\label{zadania}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -3637,8 +3637,8 @@ Domyślnie funkcja \texttt{dir()} pokazuje zawartość wybranego folderu, aby je
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{zadania-5}{%
-\section{Zadania}\label{zadania-5}}
+\hypertarget{zadania}{%
+\section{Zadania}\label{zadania}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -3650,7 +3650,7 @@ Domyślnie funkcja \texttt{dir()} pokazuje zawartość wybranego folderu, aby je
 \begin{Shaded}
 \begin{Highlighting}[]
 \StringTok{"TERYT 18; podkarpackie; Rzeszów; 0.2 He; A"}
-\StringTok{"TERYT 22; pomorskie;   Gdańsk; 12 C ; B"}
+\StringTok{"TERYT 22; pomorskie;	Gdańsk; 12 C ; B"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -3828,8 +3828,8 @@ Może to pozwolić w przyszłości na wydzielanie konkretnych wartości na podst
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{wydzielanie-1}{%
-\subsection{Wydzielanie}\label{wydzielanie-1}}
+\hypertarget{wydzielanie}{%
+\subsection{Wydzielanie}\label{wydzielanie}}
 
 Podobnie jak w przypadku wektorów (rozdział \ref{proste-obiekty}), macierze można wydzielać używając operatora \texttt{{[}{]}}.
 W tym wypadku odbywa się to jednak w oparciu o dwa indeksy - jeden dla wiersza, drugi dla kolumny - \texttt{{[}wiersz,\ kolumna{]}}.
@@ -4002,7 +4002,7 @@ Następnie, dla kolejnych kolumn są określane ich nazwy, typy danych oraz przy
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{str}\NormalTok{(ramka1)}
-\CommentTok{#> 'data.frame':    3 obs. of  4 variables:}
+\CommentTok{#> 'data.frame':	3 obs. of  4 variables:}
 \CommentTok{#>  $ wek_log: logi  TRUE FALSE FALSE}
 \CommentTok{#>  $ wek_cal: int  5 -7 12}
 \CommentTok{#>  $ wek_zmi: num  5.3 -7.1 1.1}
@@ -4566,8 +4566,8 @@ Natomiast w sytuacji, gdy dla danej klasy obiektu nie ma istniejącej metody, u�
 
 Jak widać w powyższym przykładzie, nowe klasy obiektów oraz nowe metody są~tworzone, aby ułatwić pracę na innych niż domyślne strukturach danych.
 
-\hypertarget{zadania-6}{%
-\section{Zadania}\label{zadania-6}}
+\hypertarget{zadania}{%
+\section{Zadania}\label{zadania}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -5100,8 +5100,8 @@ Ma ona dodatkowo kilka kolejnych wariantów, np. \texttt{map\_df()} - która prz
 \end{rmdinfo}
 \end{rmdinfo}
 
-\hypertarget{zadania-7}{%
-\section{Zadania}\label{zadania-7}}
+\hypertarget{zadania}{%
+\section{Zadania}\label{zadania}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -5362,7 +5362,7 @@ W poniższych przykładzie dodatkowo ustalono argument \texttt{stringsAsFactors}
 \NormalTok{meteo =}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"pliki/dane_meteo.csv"}\NormalTok{, }
                  \DataTypeTok{stringsAsFactors =} \OtherTok{FALSE}\NormalTok{)}
 \KeywordTok{str}\NormalTok{(meteo)}
-\CommentTok{#> 'data.frame':    730 obs. of  7 variables:}
+\CommentTok{#> 'data.frame':	730 obs. of  7 variables:}
 \CommentTok{#>  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...}
 \CommentTok{#>  $ nazwa_stacji: chr  "POZNAŃ" "POZNAŃ" "POZNAŃ" "POZNAŃ" ...}
 \CommentTok{#>  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...}
@@ -5385,7 +5385,7 @@ W takich sytuacjach można użyć funkcji \texttt{read.table()}, która zawiera 
                    \DataTypeTok{sep =} \StringTok{","}\NormalTok{,}
                    \DataTypeTok{header =} \OtherTok{TRUE}\NormalTok{)}
 \KeywordTok{str}\NormalTok{(meteo)}
-\CommentTok{#> 'data.frame':    730 obs. of  7 variables:}
+\CommentTok{#> 'data.frame':	730 obs. of  7 variables:}
 \CommentTok{#>  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...}
 \CommentTok{#>  $ nazwa_stacji: chr  "POZNAŃ" "POZNAŃ" "POZNAŃ" "POZNAŃ" ...}
 \CommentTok{#>  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...}
@@ -5418,7 +5418,7 @@ W przypadku, gdy interesują nas tylko informacje dla Poznania możemy wydzieli�
 \begin{Highlighting}[]
 \NormalTok{meteo_pzn =}\StringTok{ }\KeywordTok{subset}\NormalTok{(meteo, nazwa_stacji }\OperatorTok{==}\StringTok{ "POZNAŃ"}\NormalTok{)}
 \KeywordTok{str}\NormalTok{(meteo_pzn)}
-\CommentTok{#> 'data.frame':    365 obs. of  7 variables:}
+\CommentTok{#> 'data.frame':	365 obs. of  7 variables:}
 \CommentTok{#>  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...}
 \CommentTok{#>  $ nazwa_stacji: chr  "POZNAŃ" "POZNAŃ" "POZNAŃ" "POZNAŃ" ...}
 \CommentTok{#>  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...}
@@ -5464,7 +5464,7 @@ Przykładowo, chcemy aby kolumna \texttt{nazwa\_stacji} była reprezentowana jak
 \begin{Highlighting}[]
 \NormalTok{meteo}\OperatorTok{$}\NormalTok{nazwa_stacji =}\StringTok{ }\KeywordTok{as.factor}\NormalTok{(meteo}\OperatorTok{$}\NormalTok{nazwa_stacji)}
 \KeywordTok{str}\NormalTok{(meteo)}
-\CommentTok{#> 'data.frame':    730 obs. of  7 variables:}
+\CommentTok{#> 'data.frame':	730 obs. of  7 variables:}
 \CommentTok{#>  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...}
 \CommentTok{#>  $ nazwa_stacji: Factor w/ 2 levels "POZNAŃ","ZAKOPANE": 1 1 1 1 1 1 1 1 1 1 ...}
 \CommentTok{#>  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...}
@@ -5492,7 +5492,7 @@ Ponowne wczytanie obiektu można wykonać używając funkcji \texttt{readRDS()}.
 \begin{Highlighting}[]
 \NormalTok{meteo_rds =}\StringTok{ }\KeywordTok{readRDS}\NormalTok{(}\StringTok{"pliki/dane_meteo.rds"}\NormalTok{)}
 \KeywordTok{str}\NormalTok{(meteo_rds)}
-\CommentTok{#> 'data.frame':    730 obs. of  7 variables:}
+\CommentTok{#> 'data.frame':	730 obs. of  7 variables:}
 \CommentTok{#>  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...}
 \CommentTok{#>  $ nazwa_stacji: Factor w/ 2 levels "POZNAŃ","ZAKOPANE": 1 1 1 1 1 1 1 1 1 1 ...}
 \CommentTok{#>  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...}
@@ -5601,8 +5601,8 @@ Powszechną sytuacją jest przechowywanie danych w różnego rodzaju bazach dany
 Ma to miejsce, kiedy dane są znacznej wielkości, mają złożone relacje, czy też muszą być jednocześnie dostępne dla wielu osób.
 Dostęp do baz danych w R możliwy jest używając pakietu \textbf{DBI} \citep{R-DBI} wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. \textbf{RPostgreSQL} dla baz PostgreSQL \citep{R-RPostgreSQL} czy \textbf{RSQLite} dla baz SQLite \citep{R-RSQLite}). \footnote{Więcej informacji o łączeniu się z bazami danych można znaleść na stronie \url{https://db.rstudio.com/getting-started/connect-to-database}.}
 
-\hypertarget{zadania-8}{%
-\section{Zadania}\label{zadania-8}}
+\hypertarget{zadania}{%
+\section{Zadania}\label{zadania}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -6134,8 +6134,8 @@ W przypadku, gdy do konstruktora zostaną podane niepoprawne wartości wejściow
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{zadania-9}{%
-\section{Zadania}\label{zadania-9}}
+\hypertarget{zadania}{%
+\section{Zadania}\label{zadania}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -6340,7 +6340,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.492   0.000   0.491}
+\CommentTok{#>   0.476   0.000   0.475}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6399,8 +6399,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile) 1.46us 1.66us   510864.     117KB}
-\CommentTok{#> 2 mi_do_km2(odl_mile)  1.2us 1.37us   647877.     224KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile) 1.46us 1.67us   506634.     117KB}
+\CommentTok{#> 2 mi_do_km2(odl_mile)  1.1us 1.31us   679683.     224KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
@@ -6443,18 +6443,18 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 483ms  485ms      2.06     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 810us  830us   1058.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 489ms  492ms      2.03     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 809us  842us   1009.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.06 operacji na sekundę, przy aż 1057.81 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.03 operacji na sekundę, przy aż 1008.91 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
-\hypertarget{zadania-10}{%
-\section{Zadania}\label{zadania-10}}
+\hypertarget{zadania}{%
+\section{Zadania}\label{zadania}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6773,8 +6773,8 @@ Pierwszy z nich polega na dodaniu przed interesującym nas miejscem linii kodu z
 Wówczas pojawi się czerwona kropka, tzw. ``breakpoint'', sygnalizująca, że w tym miejscu zostanie uruchomiony debugger i będziemy mogli sprawdzić stan działania programu.
 Inne możliwości wywołania interaktywnego debuggera dają takie funkcje jak \texttt{debug()}, \texttt{trace()} i \texttt{recover()}.\footnote{Wyjaśnienie działania tych funkcji można znaleźć w prezentacji Jima Hestera Introduction to debugging in R and RStudio, której nagranie jest pod adresem \url{https://www.youtube.com/watch?v=r7oBeEyN2jQ}}
 
-\hypertarget{zadania-11}{%
-\section{Zadania}\label{zadania-11}}
+\hypertarget{zadania}{%
+\section{Zadania}\label{zadania}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -7036,14 +7036,14 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression                  min median `itr/sec`}
 \CommentTok{#>   <bch:expr>                <bch> <bch:>     <dbl>}
-\CommentTok{#> 1 mile_na_km(odl_mile2)     804us  830us     1162.}
-\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 404us  432us     2255.}
+\CommentTok{#> 1 mile_na_km(odl_mile2)     810us  832us     1152.}
+\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 424us  449us     2169.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
-Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.92 raza mniejszy.
+Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.86 raza mniejszy.
 
 \hypertarget{sourceCpp}{%
 \subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}
@@ -7177,8 +7177,8 @@ Używając \texttt{system2()} oraz polecenia \texttt{wc} możemy sprawdzić ile 
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{zadania-12}{%
-\section{Zadania}\label{zadania-12}}
+\hypertarget{zadania}{%
+\section{Zadania}\label{zadania}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -7648,8 +7648,8 @@ Do ogólnego wprowadzenia do systemu Git może posłużyć darmowa książka onl
 Git jest również bardzo popularnym tematem na serwisie stackoverflow, gdzie można znaleźć~\href{https://stackoverflow.com/questions/tagged/git}{pytania i odpowiedzi na różnorodne tematy z nim związane}.
 Więcej odnośników do materiałów związanych z sytemem Git i serwisem GitHub można znaleźć na stronach \href{https://help.github.com/en/articles/git-and-github-learning-resources}{pomocy GitHub}.
 
-\hypertarget{zadania-13}{%
-\section{Zadania}\label{zadania-13}}
+\hypertarget{zadania}{%
+\section{Zadania}\label{zadania}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -8090,8 +8090,8 @@ W efekcie zostanie utworzony folder \texttt{docs/} zawierający stronę internet
 W przypadku, gdy pakiet znajduje się na GitHubie możliwe jest wyświetlenie tej strony pod adresem \texttt{https://\textless{}nazwauzytkownika\textgreater{}.github.io/\textless{}nazwapakietu\textgreater{}/}.
 Aby ta strona była dostępna w internecie należy na platformie GitHub wejść w zakładkę settings, następnie znaleźć część określoną jako GitHub Pages, i określić Source jako ``master branch /docs folder''.
 
-\hypertarget{zadania-14}{%
-\section{Zadania}\label{zadania-14}}
+\hypertarget{zadania}{%
+\section{Zadania}\label{zadania}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}

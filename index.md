@@ -2,7 +2,7 @@
 title: "Elementarz programisty"
 subtitle: "Wstęp do programowania używając R"
 author: "Jakub Nowosad"
-date: "2020-06-19"
+# date: "2020-07-03"
 description: "Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R."
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -46,7 +46,7 @@ Uzyskana wiedza z tej książki daje podstawy do wykorzystywania R do różnorod
 Aktualna wersja książki znajduje się pod adresem https://nowosad.github.io/elp/. 
 Jeżeli używasz tej książki, zacytuj ją jako:
 
-- Nowosad, J., (2020). Elementarz programisty: wstęp do programowania używając R. Poznań: Space A. Online: https://nowosad.github.io/elp/
+- Nowosad, J., (2020). Elementarz programisty: wstęp do programowania używając R. Poznań: Space A. Online: https://nowosad.github.io/elp/. ISBN: 978-83-953296-1-9
 
 Zachęcam również do zgłaszania wszelkich uwag, błędów, pomysłów oraz komentarzy na stronie https://github.com/nowosad/elp/issues.
 
