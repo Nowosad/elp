@@ -474,7 +474,7 @@ Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej fu
 <p>Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.</p>
 <div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb317-1" data-line-number="1"><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))</a>
 <a class="sourceLine" id="cb317-2" data-line-number="2"><span class="co">#&gt;    user  system elapsed </span></a>
-<a class="sourceLine" id="cb317-3" data-line-number="3"><span class="co">#&gt;   0.481   0.000   0.482</span></a></code></pre></div>
+<a class="sourceLine" id="cb317-3" data-line-number="3"><span class="co">#&gt;   0.503   0.000   0.503</span></a></code></pre></div>
 <p>W efekcie dostajemy trzy wartości - <code>user</code>, <code>system</code> i <code>elapsed</code>. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.</p>
 <p>Benchmarking jest często używany w sytuacji, gdy istnieje kilka funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
 Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.</p>
@@ -512,8 +512,8 @@ Poniżej nastąpi porównanie funkcji <code>mi_do_km1</code> i <code>mi_do_km2</
 <a class="sourceLine" id="cb320-8" data-line-number="8"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
 <a class="sourceLine" id="cb320-9" data-line-number="9"><span class="co">#&gt;   expression             min median `itr/sec` mem_alloc</span></a>
 <a class="sourceLine" id="cb320-10" data-line-number="10"><span class="co">#&gt;   &lt;bch:expr&gt;          &lt;bch:&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span></a>
-<a class="sourceLine" id="cb320-11" data-line-number="11"><span class="co">#&gt; 1 mi_do_km1(odl_mile) 1.53µs 1.78µs   472718.     117KB</span></a>
-<a class="sourceLine" id="cb320-12" data-line-number="12"><span class="co">#&gt; 2 mi_do_km2(odl_mile) 1.23µs 1.46µs   601072.     224KB</span></a>
+<a class="sourceLine" id="cb320-11" data-line-number="11"><span class="co">#&gt; 1 mi_do_km1(odl_mile) 1.53µs 1.76µs   488711.     117KB</span></a>
+<a class="sourceLine" id="cb320-12" data-line-number="12"><span class="co">#&gt; 2 mi_do_km2(odl_mile) 1.18µs 1.38µs   647006.     224KB</span></a>
 <a class="sourceLine" id="cb320-13" data-line-number="13"><span class="co">#&gt; # … with 1 more variable: `gc/sec` &lt;dbl&gt;</span></a></code></pre></div>
 <p>Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
 Zawiera ona szereg charakterystyk, w tym:</p>
@@ -540,11 +540,11 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 <a class="sourceLine" id="cb321-9" data-line-number="9"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
 <a class="sourceLine" id="cb321-10" data-line-number="10"><span class="co">#&gt;   expression             min median `itr/sec` mem_alloc</span></a>
 <a class="sourceLine" id="cb321-11" data-line-number="11"><span class="co">#&gt;   &lt;bch:expr&gt;           &lt;bch&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span></a>
-<a class="sourceLine" id="cb321-12" data-line-number="12"><span class="co">#&gt; 1 mi_do_km1(odl_mile2) 492ms  493ms      2.03     382MB</span></a>
-<a class="sourceLine" id="cb321-13" data-line-number="13"><span class="co">#&gt; 2 mi_do_km2(odl_mile2) 822µs  854µs    998.      78.2KB</span></a>
+<a class="sourceLine" id="cb321-12" data-line-number="12"><span class="co">#&gt; 1 mi_do_km1(odl_mile2) 552ms  552ms      1.81     382MB</span></a>
+<a class="sourceLine" id="cb321-13" data-line-number="13"><span class="co">#&gt; 2 mi_do_km2(odl_mile2) 825µs  853µs   1002.      78.2KB</span></a>
 <a class="sourceLine" id="cb321-14" data-line-number="14"><span class="co">#&gt; # … with 1 more variable: `gc/sec` &lt;dbl&gt;</span></a></code></pre></div>
 <p>W tym przypadku różnica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
-Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 2.03 operacji na sekundę, przy aż 997.68 operacji na sekundę funkcji <code>mi_do_km2</code>.
+Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 1.81 operacji na sekundę, przy aż 1002.43 operacji na sekundę funkcji <code>mi_do_km2</code>.
 Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż <code>mi_do_km2</code>.</p>
 </div>
 <div id="zadania" class="section level2">
@@ -645,6 +645,7 @@ gitbook.start({
 "collapse": "section"
 },
 "includes": {
+"before_body": "gt.html",
 "in_header": "ga.html"
 }
 });

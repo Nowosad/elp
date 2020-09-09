@@ -79,13 +79,13 @@ Ich celem jest sprawdzanie pewnego warunku i zwrócenie wartości `TRUE` lub `FA
 
 Table: (\#tab:operators)Operatory porównania.
 
-Operator   Wyjaśnienie                    
----------  -------------------------------
-==         Równy                          
-!=         Nie równy                      
-%in%       Zawiera się w                  
->, <       Większy/Mniejszy niż           
->=, <=     Większy/Mniejszy niż lub równy 
+|Operator |Wyjaśnienie                    |
+|:--------|:------------------------------|
+|==       |Równy                          |
+|!=       |Nie równy                      |
+|%in%     |Zawiera się w                  |
+|>, <     |Większy/Mniejszy niż           |
+|>=, <=   |Większy/Mniejszy niż lub równy |
 
 Wyrażenie `if()` oczekuje wektora logicznego o długości jeden. 
 Często jednak efektem porównania może być wektor o większej długości.
@@ -106,13 +106,13 @@ Sterowanie tym, żeby uzyskany wynik miał oczekiwaną długość jeden może si
 
 Table: (\#tab:operators2)Operatory logiczne i funkcje pomocniczne.
 
-Operator   Wyjaśnienie       
----------  ------------------
-!          Negacja (nie)     
-&&         Koniunkcja (i)    
-||         Alternatywa (lub) 
-all        Wszystkie         
-any        Którykolwiek      
+|Operator     |Wyjaśnienie       |
+|:------------|:-----------------|
+|!            |Negacja (nie)     |
+|&&           |Koniunkcja (i)    |
+|&#124;&#124; |Alternatywa (lub) |
+|all          |Wszystkie         |
+|any          |Którykolwiek      |
 
 Pozwalają one na sprawdzenie czy wszystkie (`all()`) lub którykolwiek (`any()`) z elementów obiektu przyjmuje wartość `TRUE`.
 

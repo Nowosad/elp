@@ -222,15 +222,15 @@ Otwarcie wcześniej stworzonego projektu ma miejsce poprzez uruchomienie pliku z
 
 Table: (\#tab:rstudiosk)Podstawowe skróty klawiaturowe w RStudio
 
-Skrót                                 Wyjaśnienie                                                   
-------------------------------------  --------------------------------------------------------------
-Ctrl+Enter                            Wykonuje wybraną linię kodu w skrypcie R                      
-Tab                                   Uzupełnia kod (podaje pasujące możliwości)                    
-F1                                    Wyświetla plik pomocy dla wybranej funkcji                    
-Ctrl+Shift+C                          Ustawia wybrane linie jako komentarz/odkomentuj fragment kodu 
-strzałka Góra/Dół (w oknie konsoli)   Wybiera wcześniej wpisany kod                                 
-Esc                                   Przerywa niedokończoną operację                               
-Shift+Alt+K                           Wyświetla listę skrótów klawiaturowych                        
+|Skrót                               |Wyjaśnienie                                                   |
+|:-----------------------------------|:-------------------------------------------------------------|
+|Ctrl+Enter                          |Wykonuje wybraną linię kodu w skrypcie R                      |
+|Tab                                 |Uzupełnia kod (podaje pasujące możliwości)                    |
+|F1                                  |Wyświetla plik pomocy dla wybranej funkcji                    |
+|Ctrl+Shift+C                        |Ustawia wybrane linie jako komentarz/odkomentuj fragment kodu |
+|strzałka Góra/Dół (w oknie konsoli) |Wybiera wcześniej wpisany kod                                 |
+|Esc                                 |Przerywa niedokończoną operację                               |
+|Shift+Alt+K                         |Wyświetla listę skrótów klawiaturowych                        |
 
 ## Styl
 
