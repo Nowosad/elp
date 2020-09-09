@@ -6211,7 +6211,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.502   0.000   0.502}
+\CommentTok{#>   0.497   0.002   0.498}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6270,8 +6270,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile)  1.8us 2.11us   409081.     117KB}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 1.49us 1.73us   511740.     224KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile)  1.5us 1.73us   489283.     117KB}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 1.17us 1.41us   634946.     224KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
@@ -6314,14 +6314,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 557ms  557ms      1.79     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 815us  849us   1037.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 572ms  572ms      1.75     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 829us  858us    990.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 1.79 operacji na sekundę, przy aż 1037.16 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 1.75 operacji na sekundę, przy aż 990.31 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zadania}{%
@@ -6907,14 +6907,14 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression                  min median `itr/sec`}
 \CommentTok{#>   <bch:expr>                <bch> <bch:>     <dbl>}
-\CommentTok{#> 1 mile_na_km(odl_mile2)     824us  842us     1145.}
-\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 431us  463us     2103.}
+\CommentTok{#> 1 mile_na_km(odl_mile2)     824us  853us     1128.}
+\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 448us  475us     2050.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
-Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.82 raza mniejszy.
+Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.8 raza mniejszy.
 
 \hypertarget{sourceCpp}{%
 \subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}
