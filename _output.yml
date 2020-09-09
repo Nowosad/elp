@@ -10,7 +10,7 @@ bookdown::gitbook:
     edit: https://github.com/Nowosad/elp/edit/master/%s
     download: ["pdf"]
     includes:
-        in_header: [ga.html, gt.html]
+        in_header: ga.html
 bookdown::pdf_book:
   includes:
     before_body: style/before_body.tex
