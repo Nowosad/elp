@@ -19,6 +19,8 @@ graphics: yes
 links-as-notes: true
 cover-image: "/cover/cover.png"
 url: 'https\://nowosad.github.io/elp'
+robots: "all,follow"
+googlebot: "index,follow,snippet,archive"
 ---
 
 
