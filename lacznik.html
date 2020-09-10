@@ -495,11 +495,11 @@ Jest to odpowiednik kodu <code>i = i + 1</code>.</p>
 <a class="sourceLine" id="cb345-7" data-line-number="7"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
 <a class="sourceLine" id="cb345-8" data-line-number="8"><span class="co">#&gt;   expression                  min median `itr/sec`</span></a>
 <a class="sourceLine" id="cb345-9" data-line-number="9"><span class="co">#&gt;   &lt;bch:expr&gt;                &lt;bch&gt; &lt;bch:&gt;     &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb345-10" data-line-number="10"><span class="co">#&gt; 1 mile_na_km(odl_mile2)     824µs  853µs     1129.</span></a>
-<a class="sourceLine" id="cb345-11" data-line-number="11"><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2) 448µs  475µs     2057.</span></a>
+<a class="sourceLine" id="cb345-10" data-line-number="10"><span class="co">#&gt; 1 mile_na_km(odl_mile2)     799µs  819µs     1176.</span></a>
+<a class="sourceLine" id="cb345-11" data-line-number="11"><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2) 423µs  442µs     2204.</span></a>
 <a class="sourceLine" id="cb345-12" data-line-number="12"><span class="co">#&gt; # … with 2 more variables: mem_alloc &lt;bch:byt&gt;,</span></a>
 <a class="sourceLine" id="cb345-13" data-line-number="13"><span class="co">#&gt; #   `gc/sec` &lt;dbl&gt;</span></a></code></pre></div>
-<p>Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.8 raza mniejszy.</p>
+<p>Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.85 raza mniejszy.</p>
 </div>
 <div id="sourceCpp" class="section level3">
 <h3><span class="header-section-number">13.1.2</span> Wywoływanie kodu z plików .cpp</h3>
