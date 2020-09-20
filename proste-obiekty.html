@@ -395,7 +395,7 @@ Wiele języków programowania posiada zmienne skalarne (tzw. skalary), czyli tak
 W R one nie występują, zamiast nich stosowane są wektory o długości jeden.
 </div>
 
-<p>Dodatkowo, istnieje wiele dodatkowych, rzadziej spotykane typów wektorów - czynnikowy (ang. <em>factor</em>), dat (ang. <em>date</em>) i czasu (ang. <em>date-time</em>) (sekcje <a href="proste-obiekty.html#fac">5.11</a>, <a href="proste-obiekty.html#ate">5.12</a> i <a href="proste-obiekty.html#ime">5.13</a>).</p>
+<p>Dodatkowo, istnieje wiele dodatkowych, rzadziej spotykanych typów wektorów - czynnikowy (ang. <em>factor</em>), dat (ang. <em>date</em>) i czasu (ang. <em>date-time</em>) (sekcje <a href="proste-obiekty.html#fac">5.11</a>, <a href="proste-obiekty.html#ate">5.12</a> i <a href="proste-obiekty.html#ime">5.13</a>).</p>
 </div>
 <div id="właściwości-wektorów" class="section level2">
 <h2><span class="header-section-number">5.2</span> Właściwości wektorów</h2>
@@ -698,7 +698,7 @@ Dodatkowo, posiadają one pewne informacje zaszyte w atrybutach, w tym wartości
 <p>R ma wbudowaną reprezentację dat w postaci klasy <code>Date</code>.</p>
 <div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" data-line-number="1">dzis =<span class="st"> </span><span class="kw">Sys.Date</span>()</a>
 <a class="sourceLine" id="cb117-2" data-line-number="2">dzis</a>
-<a class="sourceLine" id="cb117-3" data-line-number="3"><span class="co">#&gt; [1] &quot;2020-09-10&quot;</span></a></code></pre></div>
+<a class="sourceLine" id="cb117-3" data-line-number="3"><span class="co">#&gt; [1] &quot;2020-09-20&quot;</span></a></code></pre></div>
 <p>Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowy), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.</p>
 <div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb118-1" data-line-number="1"><span class="kw">typeof</span>(dzis)</a>
 <a class="sourceLine" id="cb118-2" data-line-number="2"><span class="co">#&gt; [1] &quot;double&quot;</span></a>
@@ -709,8 +709,8 @@ Dodatkowo, posiadają one pewne informacje zaszyte w atrybutach, w tym wartości
 <a class="sourceLine" id="cb118-7" data-line-number="7"><span class="co">#&gt; [1] &quot;Date&quot;</span></a></code></pre></div>
 <p>Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji <code>unclass()</code>.</p>
 <div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" data-line-number="1"><span class="kw">unclass</span>(dzis)</a>
-<a class="sourceLine" id="cb119-2" data-line-number="2"><span class="co">#&gt; [1] 18515</span></a></code></pre></div>
-<p>Wynik, 18515, oznacza liczbę dni od 1970-01-01.<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>
+<a class="sourceLine" id="cb119-2" data-line-number="2"><span class="co">#&gt; [1] 18525</span></a></code></pre></div>
+<p>Wynik, 18525, oznacza liczbę dni od 1970-01-01.<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.</p>
 <div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb120-1" data-line-number="1">stara_data =<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;1912-04-13&quot;</span>)</a>
 <a class="sourceLine" id="cb120-2" data-line-number="2"><span class="kw">unclass</span>(stara_data)</a>
