@@ -47,7 +47,7 @@ Wiele języków programowania posiada zmienne skalarne (tzw. skalary), czyli tak
 W R one nie występują, zamiast nich stosowane są wektory o długości jeden.
 ```
 
-Dodatkowo, istnieje wiele dodatkowych, rzadziej spotykane typów wektorów - czynnikowy (ang. *factor*), dat (ang. *date*) i czasu (ang. *date-time*) (sekcje \@ref(fac), \@ref(ate) i \@ref(ime)).
+Dodatkowo, istnieje wiele dodatkowych, rzadziej spotykanych typów wektorów - czynnikowy (ang. *factor*), dat (ang. *date*) i czasu (ang. *date-time*) (sekcje \@ref(fac), \@ref(ate) i \@ref(ime)).
 
 ## Właściwości wektorów
 
