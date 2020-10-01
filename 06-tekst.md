@@ -584,7 +584,7 @@ dir("pliki", pattern = "*\\.(png|jpg)$", full.names = TRUE)
 #> [3] "pliki/zdjecie.jpg"
 ```
 
-## Zadania
+## Zadania {#zad6}
 
 1) Plik tekstowy zawiera listę pomiarów, w której piąty i czwarty znak od końca oznacza symbol chemiczny pomierzonego pierwiastka, przykładowo:
 

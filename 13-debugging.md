@@ -248,7 +248,7 @@ Pierwszy z nich polega na dodaniu przed interesującym nas miejscem linii kodu z
 Wówczas pojawi się czerwona kropka, tzw. "breakpoint", sygnalizująca, że w tym miejscu zostanie uruchomiony debugger i będziemy mogli sprawdzić stan działania programu. 
 Inne możliwości wywołania interaktywnego debuggera dają takie funkcje jak `debug()`, `trace()` i `recover()`.^[Wyjaśnienie działania tych funkcji można znaleźć w prezentacji Jima Hestera Introduction to debugging in R and RStudio, której nagranie jest pod adresem https://www.youtube.com/watch?v=r7oBeEyN2jQ]
 
-## Zadania
+## Zadania {#zad13}
 
 1. Stwórz powtarzalny przykład pokazujący działanie funkcji `f_to_c()` na wartościach wejściowych `10` oraz `"ciepło"`.
 2. Włącz Error Inspectora w RStudio na stałe (`Debug -> On Error -> Error Inspector`).

@@ -210,7 +210,7 @@ Tutaj również można użyć materiałów z kursu [Software Carpentry](https://
 <!-- http://jarekj.home.amu.edu.pl/?page_id=36 -->
 <!-- https://speakerdeck.com/jennybc/zen-and-the-art-of-workflow-maintenance -->
 
-## Zadania
+## Zadania {#zad1}
 
 1) Pomyśl do czego jesteś w stanie wykorzystać programowanie w swoim życiu zawodowym lub prywatnym?
 2) Zastanów się nad mitami związanymi z programowaniem.

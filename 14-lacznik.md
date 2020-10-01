@@ -212,13 +212,13 @@ wynik
 #> # A tibble: 2 x 6
 #>   expression                  min median `itr/sec`
 #>   <bch:expr>                <bch> <bch:>     <dbl>
-#> 1 mile_na_km(odl_mile2)     811µs  835µs     1149.
-#> 2 mile_na_km_cpp(odl_mile2) 431µs  449µs     2160.
+#> 1 mile_na_km(odl_mile2)     819µs  848µs     1136.
+#> 2 mile_na_km_cpp(odl_mile2) 444µs  475µs     2048.
 #> # … with 2 more variables: mem_alloc <bch:byt>,
 #> #   `gc/sec` <dbl>
 ```
 
-Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.86 raza mniejszy.
+Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.79 raza mniejszy.
 
 ### Wywoływanie kodu z plików .cpp {#sourceCpp}
 
@@ -342,7 +342,7 @@ system2("wc", args = "-l 14-lacznik.Rmd")
 <!-- https://joongsup.rbind.io/post/2018/02/05/run-system-commands-or-shell-sripts-from-an-interactive-r-session/ -->
 <!-- https://missing.csail.mit.edu/ -->
 
-## Zadania
+## Zadania {#zad14}
 
 1. Napisz funkcję `f_to_c_r()` w języku R do przeliczania wartości ze stopni Fahrenheita na stopnie Celsjusza.
 Funkcja ta powinna przyjmować wektor wartości, np. `c(0, 75, 110)` i także zwracać wektor na wyjściu.

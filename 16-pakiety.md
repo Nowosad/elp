@@ -360,7 +360,7 @@ W efekcie zostanie utworzony folder `docs/` zawierający stronę internetową re
 W przypadku, gdy pakiet znajduje się na GitHubie możliwe jest wyświetlenie tej strony pod adresem `https://<nazwauzytkownika>.github.io/<nazwapakietu>/`.
 Aby ta strona była dostępna w internecie należy na platformie GitHub wejść w zakładkę settings, następnie znaleźć część określoną jako GitHub Pages, i określić Source jako "master branch /docs folder".
 
-## Zadania
+## Zadania {#zad16}
 
 1) Stwórz szkielet nowego pakietu R nazywającego się **konwerter**.
 

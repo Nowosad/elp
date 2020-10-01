@@ -442,7 +442,7 @@ Ma ona dodatkowo kilka kolejnych wariantów, np. `map_df()` - która przyjmuje j
 <!-- https://stackoverflow.com/questions/7142767/why-are-loops-slow-in-r -->
 <!-- https://adv-r.hadley.nz/functionals.html -->
 
-## Zadania
+## Zadania {#zad8}
 
 <!-- peer instruction - https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1006023&type=printable -->
 

@@ -215,7 +215,7 @@ pogoda("nie wiem")
 
 Przykładowo, powyżej komunikat `"Ubierz się ciepło!"` jest wyświetlany w momencie, gdy spełnione zostaną dwa warunki - najpierw wejściowy obiekt `temperatura` musi być typu numerycznego, a następnie wartość tego obiektu musi być niższa niż 5.
 
-## Zadania
+## Zadania {#zad4}
 
 1) Spójrz na poniższe przykłady, ale ich nie wykonuj.
 Co będzie wynikiem działania każdego z tych przykładów?

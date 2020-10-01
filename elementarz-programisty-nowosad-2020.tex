@@ -553,8 +553,8 @@ Przykładowo, osoby zainteresowane nauką Pythona mogą skorzystać z istniejąc
 W pracy programistycznej przydaje się również często znajomość linii komend.
 Tutaj również można użyć materiałów z kursu \href{https://swcarpentry.github.io/shell-novice/}{Software Carpentry} lub książki \href{https://seankross.com/the-unix-workbench/}{The Unix Workbench} \citep{krossUnixWorkbench2017}.
 
-\hypertarget{zadania}{%
-\section{Zadania}\label{zadania}}
+\hypertarget{zad1}{%
+\section{Zadania}\label{zad1}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -1144,8 +1144,8 @@ Meetups (spotkania początkujących i zaawansowanych użytkowników R):
   Trójmiasto - \url{https://www.meetup.com/Trojmiejska-Grupa-Entuzjastow-R/}
 \end{itemize}
 
-\hypertarget{zadania}{%
-\section{Zadania}\label{zadania}}
+\hypertarget{zad2}{%
+\section{Zadania}\label{zad2}}
 
 Rozwiązując poniższe zadania oraz pozostałe zadania z tej książki staraj się~stosować do stylu podanego w sekcji \ref{styl}.
 
@@ -1663,8 +1663,8 @@ Wiadomości pojawiają się, aby przekazać użytkownikowi jakąś informację.
 
 Opis tworzenia komunikatów błędu, ostrzeżenia i wiadomości można znaleźć~w rozdziale \ref{zlozone-funkcje}.
 
-\hypertarget{zadania}{%
-\section{Zadania}\label{zadania}}
+\hypertarget{zad3}{%
+\section{Zadania}\label{zad3}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -2015,8 +2015,8 @@ Wyrażenia warunkowe można też wielokrotnie zagnieżdżać wewnątrz zdefiniow
 
 Przykładowo, powyżej komunikat \texttt{"Ubierz\ się\ ciepło!"} jest wyświetlany w momencie, gdy spełnione zostaną dwa warunki - najpierw wejściowy obiekt \texttt{temperatura} musi być typu numerycznego, a następnie wartość tego obiektu musi być niższa niż 5.
 
-\hypertarget{zadania}{%
-\section{Zadania}\label{zadania}}
+\hypertarget{zad4}{%
+\section{Zadania}\label{zad4}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -2721,7 +2721,7 @@ R ma wbudowaną reprezentację dat w postaci klasy \texttt{Date}.
 \begin{Highlighting}[]
 \NormalTok{dzis =}\StringTok{ }\KeywordTok{Sys.Date}\NormalTok{()}
 \NormalTok{dzis}
-\CommentTok{#> [1] "2020-09-20"}
+\CommentTok{#> [1] "2020-10-01"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2744,11 +2744,11 @@ Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji \texttt{unclass(
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{unclass}\NormalTok{(dzis)}
-\CommentTok{#> [1] 18525}
+\CommentTok{#> [1] 18536}
 \end{Highlighting}
 \end{Shaded}
 
-Wynik, 18525, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
+Wynik, 18536, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
 
 \begin{Shaded}
@@ -2831,8 +2831,8 @@ Więcej informacji na temat stref czasowych używanych w R można znaleźć~w pl
 R posiada też dodatkowe klasy specjalne, np \texttt{POSIXlt} przechowująca informacje o dacie w postaci listy oraz \texttt{difftime} reprezentująca czas trwania.
 \end{rmdinfo}
 
-\hypertarget{zadania}{%
-\section{Zadania}\label{zadania}}
+\hypertarget{zad5}{%
+\section{Zadania}\label{zad5}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -3584,8 +3584,8 @@ Domyślnie funkcja \texttt{dir()} pokazuje zawartość wybranego folderu, aby je
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{zadania}{%
-\section{Zadania}\label{zadania}}
+\hypertarget{zad6}{%
+\section{Zadania}\label{zad6}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -4493,8 +4493,8 @@ Natomiast w sytuacji, gdy dla danej klasy obiektu nie ma istniejącej metody, u�
 
 Jak widać w powyższym przykładzie, nowe klasy obiektów oraz nowe metody są~tworzone, aby ułatwić pracę na innych niż domyślne strukturach danych.
 
-\hypertarget{zadania}{%
-\section{Zadania}\label{zadania}}
+\hypertarget{zad7}{%
+\section{Zadania}\label{zad7}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -5003,8 +5003,8 @@ Przykładowo, odpowiednikiem funkcji \texttt{lapply()} w pakiecie \textbf{purrr}
 Ma ona dodatkowo kilka kolejnych wariantów, np. \texttt{map\_df()} - która przyjmuje jako wejście listy, ale zwraca ramki danych, czy \texttt{map\_dbl()} - która również przyjmuje listy, ale zwraca wartości zmiennoprzecinkowe.
 \end{rmdinfo}
 
-\hypertarget{zadania}{%
-\section{Zadania}\label{zadania}}
+\hypertarget{zad8}{%
+\section{Zadania}\label{zad8}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -5484,8 +5484,8 @@ Powszechną sytuacją jest przechowywanie danych w różnego rodzaju bazach dany
 Ma to miejsce, kiedy dane są znacznej wielkości, mają złożone relacje, czy też muszą być jednocześnie dostępne dla wielu osób.
 Dostęp do baz danych w R możliwy jest używając pakietu \textbf{DBI} \citep{R-DBI} wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. \textbf{RPostgreSQL} dla baz PostgreSQL \citep{R-RPostgreSQL} czy \textbf{RSQLite} dla baz SQLite \citep{R-RSQLite}). \footnote{Więcej informacji o łączeniu się z bazami danych można znaleść na stronie \url{https://db.rstudio.com/getting-started/connect-to-database}.}
 
-\hypertarget{zadania}{%
-\section{Zadania}\label{zadania}}
+\hypertarget{zad9}{%
+\section{Zadania}\label{zad9}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -6005,8 +6005,8 @@ W przypadku, gdy do konstruktora zostaną podane niepoprawne wartości wejściow
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{zadania}{%
-\section{Zadania}\label{zadania}}
+\hypertarget{zad11}{%
+\section{Zadania}\label{zad11}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -6211,7 +6211,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.492   0.000   0.491}
+\CommentTok{#>   0.501   0.000   0.502}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6270,8 +6270,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile) 1.48us 1.69us   499049.     117KB}
-\CommentTok{#> 2 mi_do_km2(odl_mile) 1.15us 1.39us   632793.     224KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile) 1.48us 1.75us   480690.     117KB}
+\CommentTok{#> 2 mi_do_km2(odl_mile) 1.18us 1.39us   641333.     224KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
@@ -6314,18 +6314,18 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression             min median `itr/sec` mem_alloc}
 \CommentTok{#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 540ms  540ms      1.85     382MB}
-\CommentTok{#> 2 mi_do_km2(odl_mile2) 814us  839us   1023.      78.2KB}
+\CommentTok{#> 1 mi_do_km1(odl_mile2) 568ms  568ms      1.76     382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2) 832us  861us    987.      78.2KB}
 \CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 1.85 operacji na sekundę, przy aż 1022.9 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 1.76 operacji na sekundę, przy aż 986.75 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
-\hypertarget{zadania}{%
-\section{Zadania}\label{zadania}}
+\hypertarget{zad12}{%
+\section{Zadania}\label{zad12}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6644,8 +6644,8 @@ Pierwszy z nich polega na dodaniu przed interesującym nas miejscem linii kodu z
 Wówczas pojawi się czerwona kropka, tzw. ``breakpoint'', sygnalizująca, że w tym miejscu zostanie uruchomiony debugger i będziemy mogli sprawdzić stan działania programu.
 Inne możliwości wywołania interaktywnego debuggera dają takie funkcje jak \texttt{debug()}, \texttt{trace()} i \texttt{recover()}.\footnote{Wyjaśnienie działania tych funkcji można znaleźć w prezentacji Jima Hestera Introduction to debugging in R and RStudio, której nagranie jest pod adresem \url{https://www.youtube.com/watch?v=r7oBeEyN2jQ}}
 
-\hypertarget{zadania}{%
-\section{Zadania}\label{zadania}}
+\hypertarget{zad13}{%
+\section{Zadania}\label{zad13}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -6907,14 +6907,14 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{#> # A tibble: 2 x 6}
 \CommentTok{#>   expression                  min median `itr/sec`}
 \CommentTok{#>   <bch:expr>                <bch> <bch:>     <dbl>}
-\CommentTok{#> 1 mile_na_km(odl_mile2)     815us  840us     1136.}
-\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 428us  452us     2143.}
+\CommentTok{#> 1 mile_na_km(odl_mile2)     840us  866us     1114.}
+\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 452us  480us     2022.}
 \CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
 \CommentTok{#> #   `gc/sec` <dbl>}
 \end{Highlighting}
 \end{Shaded}
 
-Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.86 raza mniejszy.
+Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.8 raza mniejszy.
 
 \hypertarget{sourceCpp}{%
 \subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}
@@ -7048,8 +7048,8 @@ Używając \texttt{system2()} oraz polecenia \texttt{wc} możemy sprawdzić ile 
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{zadania}{%
-\section{Zadania}\label{zadania}}
+\hypertarget{zad14}{%
+\section{Zadania}\label{zad14}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -7515,8 +7515,8 @@ Do ogólnego wprowadzenia do systemu Git może posłużyć darmowa książka onl
 Git jest również bardzo popularnym tematem na serwisie stackoverflow, gdzie można znaleźć~\href{https://stackoverflow.com/questions/tagged/git}{pytania i odpowiedzi na różnorodne tematy z nim związane}.
 Więcej odnośników do materiałów związanych z sytemem Git i serwisem GitHub można znaleźć na stronach \href{https://help.github.com/en/articles/git-and-github-learning-resources}{pomocy GitHub}.
 
-\hypertarget{zadania}{%
-\section{Zadania}\label{zadania}}
+\hypertarget{zad15}{%
+\section{Zadania}\label{zad15}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -7957,8 +7957,8 @@ W efekcie zostanie utworzony folder \texttt{docs/} zawierający stronę internet
 W przypadku, gdy pakiet znajduje się na GitHubie możliwe jest wyświetlenie tej strony pod adresem \texttt{https://\textless{}nazwauzytkownika\textgreater{}.github.io/\textless{}nazwapakietu\textgreater{}/}.
 Aby ta strona była dostępna w internecie należy na platformie GitHub wejść w zakładkę settings, następnie znaleźć część określoną jako GitHub Pages, i określić Source jako ``master branch /docs folder''.
 
-\hypertarget{zadania}{%
-\section{Zadania}\label{zadania}}
+\hypertarget{zad16}{%
+\section{Zadania}\label{zad16}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
