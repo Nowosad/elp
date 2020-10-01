@@ -483,7 +483,7 @@ Domyślnie funkcja `dir()` pokazuje zawartość wybranego folderu, aby jednak po
 dir("pliki", pattern = "*\\.(png|jpg)$", full.names = TRUE)
 ```
 
-## Zadania
+## Zadania {#zad6}
 
 1) Plik tekstowy zawiera listę pomiarów, w której piąty i czwarty znak od końca oznacza symbol chemiczny pomierzonego pierwiastka, przykładowo:
 ```{r, eval=FALSE}

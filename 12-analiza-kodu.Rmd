@@ -254,9 +254,7 @@ porownanie
 ggplot2::autoplot(porownanie)
 ```
 
-
-
-## Zadania
+## Zadania {#zad12}
 
 ```{r}
 set.seed(2019-05-08)

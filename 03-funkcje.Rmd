@@ -358,7 +358,7 @@ inna_funkcja(15)
 
 Opis tworzenia komunikatów błędu, ostrzeżenia i wiadomości można znaleźć w rozdziale \@ref(zlozone-funkcje).
 
-## Zadania
+## Zadania {#zad3}
 
 1) Zobacz jak wygląda plik pomocy funkcji `mean()`.
 Wykonaj zawarte w nim przykłady.

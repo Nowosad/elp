@@ -239,7 +239,7 @@ Powszechną sytuacją jest przechowywanie danych w różnego rodzaju bazach dany
 Ma to miejsce, kiedy dane są znacznej wielkości, mają złożone relacje, czy też muszą być jednocześnie dostępne dla wielu osób.
 Dostęp do baz danych w R możliwy jest używając pakietu **DBI** [@R-DBI] wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. **RPostgreSQL** dla baz PostgreSQL [@R-RPostgreSQL] czy **RSQLite** dla baz SQLite [@R-RSQLite]). ^[Więcej informacji o łączeniu się z bazami danych można znaleść na stronie https://db.rstudio.com/getting-started/connect-to-database.]
 
-## Zadania
+## Zadania {#zad9}
 
 ```{r, eval=FALSE, echo=FALSE}
 pliki = dir("pliki", full.names = TRUE)

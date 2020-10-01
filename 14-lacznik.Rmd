@@ -297,7 +297,7 @@ system2("wc", args = "-l 14-lacznik.Rmd")
 <!-- https://joongsup.rbind.io/post/2018/02/05/run-system-commands-or-shell-sripts-from-an-interactive-r-session/ -->
 <!-- https://missing.csail.mit.edu/ -->
 
-## Zadania
+## Zadania {#zad14}
 
 1. Napisz funkcję `f_to_c_r()` w języku R do przeliczania wartości ze stopni Fahrenheita na stopnie Celsjusza.
 Funkcja ta powinna przyjmować wektor wartości, np. `c(0, 75, 110)` i także zwracać wektor na wyjściu.

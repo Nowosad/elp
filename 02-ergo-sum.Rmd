@@ -441,7 +441,7 @@ Meetups (spotkania początkujących i zaawansowanych użytkowników R):
 - Trójmiasto - https://www.meetup.com/Trojmiejska-Grupa-Entuzjastow-R/
 
 
-## Zadania
+## Zadania {#zad2}
 
 Rozwiązując poniższe zadania oraz pozostałe zadania z tej książki staraj się stosować do stylu podanego w sekcji \@ref(styl).
 

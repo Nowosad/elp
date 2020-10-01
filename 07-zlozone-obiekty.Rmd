@@ -494,7 +494,7 @@ Natomiast w sytuacji, gdy dla danej klasy obiektu nie ma istniejącej metody, u�
 
 Jak widać w powyższym przykładzie, nowe klasy obiektów oraz nowe metody są tworzone, aby ułatwić pracę na innych niż domyślne strukturach danych.
 
-## Zadania
+## Zadania {#zad7}
 
 <!-- dodaj zadania data science (aka dataset) -->
 
