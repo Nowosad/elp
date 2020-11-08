@@ -151,7 +151,7 @@ Wadą tego typu języków jest ich zmniejszona wydajność w porównany do języ
 Innym powszechnym podziałem języków programowania jest ich rozróżnianie na podstawie poziomu.
 Tutaj można wyróżnić języki od niskiego poziomu do wysokiego poziomu.
 Na najniższym poziomie jest język maszynowy, czyli taki w którym zapis programu wyrażony jest w postaci liczb binarnych.
-Powyżej są umieszczony jest język asemblera, w którym program jest zapisany poprzez serię instrukcji.
+Powyżej umieszczony jest język asemblera, w którym program jest zapisany poprzez serię instrukcji.
 Na najwyższym poziomie stawia się języki, które są wspomagane przez kompilator albo interpreter.
 
 Języki programowania można też rozróżnić ze względu na paradygmat programowania.

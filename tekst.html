@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 Tekst | Elementarz programisty</title>
   <meta name="description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 Tekst | Elementarz programisty" />
   <meta property="og:type" content="book" />
@@ -32,6 +32,7 @@
   
 <link rel="prev" href="proste-obiekty.html"/>
 <link rel="next" href="zlozone-obiekty.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,30 +50,32 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -81,9 +84,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -132,26 +135,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Elementarz programisty</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#wymagania-wstępne"><i class="fa fa-check"></i>Wymagania wstępne</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#styl-książki"><i class="fa fa-check"></i>Styl książki</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#podziękowania"><i class="fa fa-check"></i>Podziękowania</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a><ul>
+<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="wprowadzenie.html"><a href="wprowadzenie.html#mity-programistyczne"><i class="fa fa-check"></i><b>1.1</b> Mity programistyczne</a></li>
 <li class="chapter" data-level="1.2" data-path="wprowadzenie.html"><a href="wprowadzenie.html#jezyki-programowania"><i class="fa fa-check"></i><b>1.2</b> Języki programowania</a></li>
 <li class="chapter" data-level="1.3" data-path="wprowadzenie.html"><a href="wprowadzenie.html#r"><i class="fa fa-check"></i><b>1.3</b> R</a></li>
 <li class="chapter" data-level="1.4" data-path="wprowadzenie.html"><a href="wprowadzenie.html#zad1"><i class="fa fa-check"></i><b>1.4</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>I Podstawy</b></span></li>
-<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a><ul>
+<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrażenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia</a></li>
-<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a><ul>
+<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="ergosum.html"><a href="ergosum.html#operator-przypisania"><i class="fa fa-check"></i><b>2.2.1</b> Operator przypisania</a></li>
 <li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dzialania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="ergosum.html"><a href="ergosum.html#ide"><i class="fa fa-check"></i><b>2.3</b> IDE</a></li>
-<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a><ul>
+<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="ergosum.html"><a href="ergosum.html#nazwy-obiektow"><i class="fa fa-check"></i><b>2.4.1</b> Nazwy obiektów</a></li>
 <li class="chapter" data-level="2.4.2" data-path="ergosum.html"><a href="ergosum.html#odstępy"><i class="fa fa-check"></i><b>2.4.2</b> Odstępy</a></li>
 <li class="chapter" data-level="2.4.3" data-path="ergosum.html"><a href="ergosum.html#komentarze"><i class="fa fa-check"></i><b>2.4.3</b> Komentarze</a></li>
@@ -161,7 +169,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5" data-path="ergosum.html"><a href="ergosum.html#resources"><i class="fa fa-check"></i><b>2.5</b> Dodatkowe materiały</a></li>
 <li class="chapter" data-level="2.6" data-path="ergosum.html"><a href="ergosum.html#zad2"><i class="fa fa-check"></i><b>2.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a><ul>
+<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="funkcje.html"><a href="funkcje.html#struktura-funkcji"><i class="fa fa-check"></i><b>3.1</b> Struktura funkcji</a></li>
 <li class="chapter" data-level="3.2" data-path="funkcje.html"><a href="funkcje.html#wbudowane-funkcje"><i class="fa fa-check"></i><b>3.2</b> Wbudowane funkcje</a></li>
 <li class="chapter" data-level="3.3" data-path="funkcje.html"><a href="funkcje.html#kolejnosc-funkcji"><i class="fa fa-check"></i><b>3.3</b> Kolejność wykonywania funkcji</a></li>
@@ -173,14 +182,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.9" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.9</b> Komunikaty</a></li>
 <li class="chapter" data-level="3.10" data-path="funkcje.html"><a href="funkcje.html#zad3"><i class="fa fa-check"></i><b>3.10</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a><ul>
+<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
 <li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagnieżdżone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdżone</a></li>
 <li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porównania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
 <li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wwwf"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach</a></li>
 <li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zad4"><i class="fa fa-check"></i><b>4.5</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a><ul>
+<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wektory"><i class="fa fa-check"></i><b>5.1</b> Wektory</a></li>
 <li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#właściwości-wektorów"><i class="fa fa-check"></i><b>5.2</b> Właściwości wektorów</a></li>
 <li class="chapter" data-level="5.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#pf-vector"><i class="fa fa-check"></i><b>5.3</b> Podstawowe funkcje</a></li>
@@ -196,7 +207,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ime"><i class="fa fa-check"></i><b>5.13</b> Wektory czasu</a></li>
 <li class="chapter" data-level="5.14" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zad5"><i class="fa fa-check"></i><b>5.14</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a><ul>
+<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#reprezentacja-tekstu"><i class="fa fa-check"></i><b>6.1</b> Reprezentacja tekstu</a></li>
 <li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekście"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście</a></li>
 <li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wt"><i class="fa fa-check"></i><b>6.3</b> Wydzielanie tekstu</a></li>
@@ -206,20 +218,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plików"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików</a></li>
 <li class="chapter" data-level="6.8" data-path="tekst.html"><a href="tekst.html#zad6"><i class="fa fa-check"></i><b>6.8</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a><ul>
-<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a><ul>
+<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie"><i class="fa fa-check"></i><b>7.1.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.1.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje"><i class="fa fa-check"></i><b>7.1.2</b> Podstawowe funkcje</a></li>
-<li class="chapter" data-level="7.1.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie"><i class="fa fa-check"></i><b>7.1.3</b> Wydzielanie</a></li>
+<li class="chapter" data-level="7.1.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-1"><i class="fa fa-check"></i><b>7.1.3</b> Wydzielanie</a></li>
 <li class="chapter" data-level="7.1.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie"><i class="fa fa-check"></i><b>7.1.4</b> Łączenie</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a><ul>
+<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-1"><i class="fa fa-check"></i><b>7.2.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.2.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-1"><i class="fa fa-check"></i><b>7.2.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.2.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-df"><i class="fa fa-check"></i><b>7.2.3</b> Wydzielanie</a></li>
 <li class="chapter" data-level="7.2.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-1"><i class="fa fa-check"></i><b>7.2.4</b> Łączenie</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a><ul>
+<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-2"><i class="fa fa-check"></i><b>7.3.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.3.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-2"><i class="fa fa-check"></i><b>7.3.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie</a></li>
@@ -229,8 +245,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#inne-klasy"><i class="fa fa-check"></i><b>7.5</b> Inne klasy obiektów</a></li>
 <li class="chapter" data-level="7.6" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zad7"><i class="fa fa-check"></i><b>7.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a><ul>
-<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a><ul>
+<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#składnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia</a></li>
 <li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#for-example"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
 <li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach</a></li>
@@ -239,7 +257,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#prog-fun"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne</a></li>
 <li class="chapter" data-level="8.4" data-path="petle.html"><a href="petle.html#zad8"><i class="fa fa-check"></i><b>8.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a><ul>
+<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy</a></li>
 <li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#działania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.2</b> Działania na plikach i folderach</a></li>
 <li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#dane-internetowe"><i class="fa fa-check"></i><b>9.3</b> Dane internetowe</a></li>
@@ -251,24 +270,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.9" data-path="io.html"><a href="io.html#zad9"><i class="fa fa-check"></i><b>9.9</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>II Narzędzia</b></span></li>
-<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a><ul>
+<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>10.1</b> API</a></li>
 <li class="chapter" data-level="10.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsluga-komunikatow"><i class="fa fa-check"></i><b>10.2</b> Obsługa komunikatów</a></li>
-<li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe</a><ul>
+<li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe</a>
+<ul>
 <li class="chapter" data-level="10.3.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#klasy"><i class="fa fa-check"></i><b>10.3.1</b> Klasy</a></li>
 <li class="chapter" data-level="10.3.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#metody"><i class="fa fa-check"></i><b>10.3.2</b> Metody</a></li>
 <li class="chapter" data-level="10.3.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#konstruktory"><i class="fa fa-check"></i><b>10.3.3</b> Konstruktory</a></li>
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zad11"><i class="fa fa-check"></i><b>10.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu</a><ul>
+<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.1</b> Testy jednostkowe</a></li>
 <li class="chapter" data-level="11.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>11.2</b> Profiling</a></li>
 <li class="chapter" data-level="11.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>11.3</b> Benchmarking</a></li>
 <li class="chapter" data-level="11.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zad12"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie</a><ul>
-<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady</a><ul>
+<li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady</a>
+<ul>
 <li class="chapter" data-level="12.1.1" data-path="debugging.html"><a href="debugging.html#pakiet-reprex"><i class="fa fa-check"></i><b>12.1.1</b> Pakiet <strong>reprex</strong></a></li>
 <li class="chapter" data-level="12.1.2" data-path="debugging.html"><a href="debugging.html#tworzenie-powtarzalnego-przykładu"><i class="fa fa-check"></i><b>12.1.2</b> Tworzenie powtarzalnego przykładu</a></li>
 </ul></li>
@@ -277,8 +301,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="debugging.html"><a href="debugging.html#debugger"><i class="fa fa-check"></i><b>12.4</b> Debugger</a></li>
 <li class="chapter" data-level="12.5" data-path="debugging.html"><a href="debugging.html#zad13"><i class="fa fa-check"></i><b>12.5</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik</a><ul>
-<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++</a><ul>
+<li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++</a>
+<ul>
 <li class="chapter" data-level="13.1.1" data-path="lacznik.html"><a href="lacznik.html#cppFunction"><i class="fa fa-check"></i><b>13.1.1</b> Wywoływanie kodu C++ wewnątrz skryptu R</a></li>
 <li class="chapter" data-level="13.1.2" data-path="lacznik.html"><a href="lacznik.html#sourceCpp"><i class="fa fa-check"></i><b>13.1.2</b> Wywoływanie kodu z plików .cpp</a></li>
 </ul></li>
@@ -286,8 +312,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.3" data-path="lacznik.html"><a href="lacznik.html#powloka-systemowa"><i class="fa fa-check"></i><b>13.3</b> Powłoka systemowa</a></li>
 <li class="chapter" data-level="13.4" data-path="lacznik.html"><a href="lacznik.html#zad14"><i class="fa fa-check"></i><b>13.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji</a><ul>
-<li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git</a><ul>
+<li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git</a>
+<ul>
 <li class="chapter" data-level="14.1.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#konfiguracja-systemu-git"><i class="fa fa-check"></i><b>14.1.1</b> Konfiguracja systemu Git</a></li>
 <li class="chapter" data-level="14.1.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium"><i class="fa fa-check"></i><b>14.1.2</b> Repozytorium</a></li>
 <li class="chapter" data-level="14.1.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodawanie-zmian"><i class="fa fa-check"></i><b>14.1.3</b> Dodawanie zmian</a></li>
@@ -298,20 +326,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.1.8" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#wysylanie-zmian"><i class="fa fa-check"></i><b>14.1.8</b> Wysyłanie zmian</a></li>
 <li class="chapter" data-level="14.1.9" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#aktualizowanie-zmian"><i class="fa fa-check"></i><b>14.1.9</b> Aktualizowanie zmian</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub</a><ul>
+<li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub</a>
+<ul>
 <li class="chapter" data-level="14.2.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#tworzenie-zdanego-repo"><i class="fa fa-check"></i><b>14.2.1</b> Tworzenie zdanego repo</a></li>
 <li class="chapter" data-level="14.2.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-github"><i class="fa fa-check"></i><b>14.2.2</b> Repozytorium GitHub</a></li>
 <li class="chapter" data-level="14.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-możliwości-github"><i class="fa fa-check"></i><b>14.2.3</b> Dodatkowe możliwości GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="14.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rstudio-git"><i class="fa fa-check"></i><b>14.3</b> Kontrola wersji w RStudio</a></li>
-<li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git</a><ul>
+<li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git</a>
+<ul>
 <li class="chapter" data-level="14.4.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#nowy-projekt"><i class="fa fa-check"></i><b>14.4.1</b> Nowy projekt</a></li>
 <li class="chapter" data-level="14.4.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#istniejacy-projekt"><i class="fa fa-check"></i><b>14.4.2</b> Istniejący projekt</a></li>
 </ul></li>
 <li class="chapter" data-level="14.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#problemy-z-kontrolą-wersji"><i class="fa fa-check"></i><b>14.5</b> Problemy z kontrolą wersji</a></li>
 <li class="chapter" data-level="14.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zad15"><i class="fa fa-check"></i><b>14.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a><ul>
+<li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a>
+<ul>
 <li class="chapter" data-level="15.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#nazwa-pakietu"><i class="fa fa-check"></i><b>15.1</b> Nazwa pakietu</a></li>
 <li class="chapter" data-level="15.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-szkieletu-pakietu"><i class="fa fa-check"></i><b>15.2</b> Tworzenie szkieletu pakietu</a></li>
 <li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>15.3</b> Opis pakietu</a></li>
@@ -325,7 +356,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietów"><i class="fa fa-check"></i><b>15.11</b> Publikowanie pakietów</a></li>
 <li class="chapter" data-level="15.12" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zad16"><i class="fa fa-check"></i><b>15.12</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie</a><ul>
+<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie</a>
+<ul>
 <li class="chapter" data-level="16.1" data-path="podsumowanie.html"><a href="podsumowanie.html#grafika"><i class="fa fa-check"></i><b>16.1</b> Grafika</a></li>
 <li class="chapter" data-level="16.2" data-path="podsumowanie.html"><a href="podsumowanie.html#analiza-danych"><i class="fa fa-check"></i><b>16.2</b> Analiza danych</a></li>
 <li class="chapter" data-level="16.3" data-path="podsumowanie.html"><a href="podsumowanie.html#inne-zastosowania"><i class="fa fa-check"></i><b>16.3</b> Inne zastosowania</a></li>
@@ -353,17 +385,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tekst" class="section level1">
+<div id="tekst" class="section level1" number="6">
 <h1><span class="header-section-number">6</span> Tekst</h1>
 <p>Podstawowymi typami danych w R są wektory logiczne, numeryczne i znakowe (sekcja <a href="proste-obiekty.html#wektory">5.1</a>).
 Pierwsze z nich przyjmują dwie formy - <code>TRUE</code> i <code>FALSE</code>, przez co istnieje pewna skończona liczba operacji, które można na nich wykonać.
 Wektory numeryczne mogą przyjmować wiele form, ale najczęściej są one przetwarzanie używając podstawowych operacji arytmetycznych, takich jak dodawanie, odejmowanie, mnożenie czy dzielenie.
 Wektory znakowe są natomiast najbardziej zróżnicowane - mogę przyjmować różne formy (nawet w zależności od przyjętego alfabetu), w tym pozwalają one także na przechowywanie wartości logicznych czy numerycznych.</p>
 <p>Celem tego rozdziału jest przedstawienie najczęściej spotykanych operacji na tekście, takich jak jego wyszukiwanie, wydzielanie czy zamiana.
-Więcej na temat przetwarzania tekstu można znaleźć w rozdziale <a href="https://r4ds.had.co.nz/strings.html">“Strings”</a> książki R for Data Science <span class="citation">(Wickham and Grolemund <a href="#ref-wickham2016r">2016</a>)</span>.</p>
-<div id="reprezentacja-tekstu" class="section level2">
+Więcej na temat przetwarzania tekstu można znaleźć w rozdziale <a href="https://r4ds.had.co.nz/strings.html">“Strings”</a> książki R for Data Science <span class="citation">(Wickham and Grolemund <a href="#ref-wickham2016r" role="doc-biblioref">2016</a>)</span>.</p>
+<div id="reprezentacja-tekstu" class="section level2" number="6.1">
 <h2><span class="header-section-number">6.1</span> Reprezentacja tekstu</h2>
-<p>Typ znakowy jest określany poprzez użycie cudzysłowu <code>&quot;</code> lub <code>'</code>.
+<p>Typ znakowy jest określany poprzez użycie cudzysłowu <code>"</code> lub <code>'</code>.
 Ważne tutaj jest, aby rozpoczynać i kończyć tekst tym samym cudzysłowem.</p>
 <pre><code>t1 = &quot;kot&quot;
 t2 = &#39;pies&#39;
@@ -371,92 +403,92 @@ t3 = &#39;&quot;W teorii, teoria i praktyka są tym samym. W praktyce, nie są.&
 <p>W momencie, gdy tekst nie będzie kończył się cudzysłowem, wykonanie kodu jest niemożliwe.
 Wówczas zamiast znaku <code>&gt;</code>, oznaczającego nową linię wykonywanego kodu, pojawi się znak <code>+</code>.
 Oznacza on, że wykonanie kodu nie może zostać zakończone.</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" data-line-number="1"><span class="op">&gt;</span><span class="st"> &quot;Mój pierwszy alfabet</span></a>
-<a class="sourceLine" id="cb132-2" data-line-number="2"><span class="st">+</span></a>
-<a class="sourceLine" id="cb132-3" data-line-number="3"><span class="st">+</span></a></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="tekst.html#cb132-1"></a><span class="op">&gt;</span><span class="st"> &quot;Mój pierwszy alfabet</span></span>
+<span id="cb132-2"><a href="tekst.html#cb132-2"></a><span class="st">+</span></span>
+<span id="cb132-3"><a href="tekst.html#cb132-3"></a><span class="st">+</span></span></code></pre></div>
 <p>W takiej sytuacji należy nacisnąć klawisz Esc, aby przerwać wykonywanie operacji, a następnie poprawić wpisany kod.</p>
 </div>
-<div id="podstawowe-operacje-na-tekście" class="section level2">
+<div id="podstawowe-operacje-na-tekście" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> Podstawowe operacje na tekście</h2>
 <p>Jedną z podstawowych operacji na wektorach znakowych jest ich łączenie.
 Do tego celu służy funkcja <code>paste()</code><a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a>.</p>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb133-1" data-line-number="1"><span class="kw">paste</span>(<span class="st">&quot;t&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot; &quot;</span>, <span class="st">&quot;k&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot;t&quot;</span>)</a>
-<a class="sourceLine" id="cb133-2" data-line-number="2"><span class="co">#&gt; [1] &quot;t o   k o t&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="tekst.html#cb133-1"></a><span class="kw">paste</span>(<span class="st">&quot;t&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot; &quot;</span>, <span class="st">&quot;k&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot;t&quot;</span>)</span>
+<span id="cb133-2"><a href="tekst.html#cb133-2"></a><span class="co">#&gt; [1] &quot;t o   k o t&quot;</span></span></code></pre></div>
 <p>Efekt działania funkcji <code>paste()</code> jest jeden wektor tekstowy, który składa się z wejściowych wektorów oddzielonych domyślnie spacjami.
 Funkcja <code>paste()</code> ma jednak również dodatkowy argument <code>sep</code>, który pozwala na dowolne określanie separatora.
 Ostatnim argumentem tej funkcji jest <code>collapse</code>, który łączy elementy jednego wektora tekstowego.</p>
 <p>R oferuje też uproszczoną postać tej funkcji o nazwie <code>paste0()</code>, w której nie ma znaku separatora.</p>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb134-1" data-line-number="1"><span class="kw">paste0</span>(<span class="st">&quot;t&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot; &quot;</span>, <span class="st">&quot;k&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot;t&quot;</span>)</a>
-<a class="sourceLine" id="cb134-2" data-line-number="2"><span class="co">#&gt; [1] &quot;to kot&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="tekst.html#cb134-1"></a><span class="kw">paste0</span>(<span class="st">&quot;t&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot; &quot;</span>, <span class="st">&quot;k&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot;t&quot;</span>)</span>
+<span id="cb134-2"><a href="tekst.html#cb134-2"></a><span class="co">#&gt; [1] &quot;to kot&quot;</span></span></code></pre></div>
 <p>Te funkcje są używane w sytuacjach, gdy chcemy połączyć stały, znany tekst, wraz z tekstem wprowadzanym przez użytkownika lub pochodzącym z innego źródła.
-Poniżej stworzono dwie nowe zmienne <code>imie</code> i <code>wiek</code>, których treść złączono ze słowami <code>&quot;ma&quot;</code> i <code>&quot;lat.&quot;</code>.</p>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb135-1" data-line-number="1">imie =<span class="st"> &quot;Olek&quot;</span></a>
-<a class="sourceLine" id="cb135-2" data-line-number="2">wiek =<span class="st"> </span><span class="dv">77</span></a>
-<a class="sourceLine" id="cb135-3" data-line-number="3">tekst1 =<span class="st"> </span><span class="kw">paste</span>(imie, <span class="st">&quot;ma&quot;</span>, wiek, <span class="st">&quot;lat.&quot;</span>)</a>
-<a class="sourceLine" id="cb135-4" data-line-number="4">tekst1</a>
-<a class="sourceLine" id="cb135-5" data-line-number="5"><span class="co">#&gt; [1] &quot;Olek ma 77 lat.&quot;</span></a></code></pre></div>
+Poniżej stworzono dwie nowe zmienne <code>imie</code> i <code>wiek</code>, których treść złączono ze słowami <code>"ma"</code> i <code>"lat."</code>.</p>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="tekst.html#cb135-1"></a>imie =<span class="st"> &quot;Olek&quot;</span></span>
+<span id="cb135-2"><a href="tekst.html#cb135-2"></a>wiek =<span class="st"> </span><span class="dv">77</span></span>
+<span id="cb135-3"><a href="tekst.html#cb135-3"></a>tekst1 =<span class="st"> </span><span class="kw">paste</span>(imie, <span class="st">&quot;ma&quot;</span>, wiek, <span class="st">&quot;lat.&quot;</span>)</span>
+<span id="cb135-4"><a href="tekst.html#cb135-4"></a>tekst1</span>
+<span id="cb135-5"><a href="tekst.html#cb135-5"></a><span class="co">#&gt; [1] &quot;Olek ma 77 lat.&quot;</span></span></code></pre></div>
 <p>Takie konstrukcje są często używane w funkcjach.
 Powyższy przykład można by przepisać jako:</p>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb136-1" data-line-number="1">lata =<span class="st"> </span><span class="cf">function</span>(imie, wiek){</a>
-<a class="sourceLine" id="cb136-2" data-line-number="2">  <span class="kw">paste</span>(imie, <span class="st">&quot;ma&quot;</span>, wiek, <span class="st">&quot;lat.&quot;</span>)</a>
-<a class="sourceLine" id="cb136-3" data-line-number="3">}</a>
-<a class="sourceLine" id="cb136-4" data-line-number="4"><span class="kw">lata</span>(<span class="st">&quot;Asia&quot;</span>, <span class="dv">61</span>)</a>
-<a class="sourceLine" id="cb136-5" data-line-number="5"><span class="co">#&gt; [1] &quot;Asia ma 61 lat.&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="tekst.html#cb136-1"></a>lata =<span class="st"> </span><span class="cf">function</span>(imie, wiek){</span>
+<span id="cb136-2"><a href="tekst.html#cb136-2"></a>  <span class="kw">paste</span>(imie, <span class="st">&quot;ma&quot;</span>, wiek, <span class="st">&quot;lat.&quot;</span>)</span>
+<span id="cb136-3"><a href="tekst.html#cb136-3"></a>}</span>
+<span id="cb136-4"><a href="tekst.html#cb136-4"></a><span class="kw">lata</span>(<span class="st">&quot;Asia&quot;</span>, <span class="dv">61</span>)</span>
+<span id="cb136-5"><a href="tekst.html#cb136-5"></a><span class="co">#&gt; [1] &quot;Asia ma 61 lat.&quot;</span></span></code></pre></div>
 <p>Dodatkowo w R istnieje alternatywa dla <code>paste()</code> i <code>paste0()</code> w postaci funkcji <code>sprintf()</code>.</p>
 <p>Kolejne podstawowe funkcje, <code>toupper()</code> i <code>tolower()</code> zamieniają cały istniejący tekst na taki który posiada tylko duże lub małe litery.</p>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb137-1" data-line-number="1"><span class="kw">toupper</span>(tekst1)</a>
-<a class="sourceLine" id="cb137-2" data-line-number="2"><span class="co">#&gt; [1] &quot;OLEK MA 77 LAT.&quot;</span></a>
-<a class="sourceLine" id="cb137-3" data-line-number="3"><span class="kw">tolower</span>(tekst1)</a>
-<a class="sourceLine" id="cb137-4" data-line-number="4"><span class="co">#&gt; [1] &quot;olek ma 77 lat.&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="tekst.html#cb137-1"></a><span class="kw">toupper</span>(tekst1)</span>
+<span id="cb137-2"><a href="tekst.html#cb137-2"></a><span class="co">#&gt; [1] &quot;OLEK MA 77 LAT.&quot;</span></span>
+<span id="cb137-3"><a href="tekst.html#cb137-3"></a><span class="kw">tolower</span>(tekst1)</span>
+<span id="cb137-4"><a href="tekst.html#cb137-4"></a><span class="co">#&gt; [1] &quot;olek ma 77 lat.&quot;</span></span></code></pre></div>
 <p>Są one używane w sytuacjach, gdy posiadamy dane, w których jeden tekst jest podany w kilku formach i chcemy je ujednolicić.</p>
-<p>R posiada też wiele innych wbudowanych funkcji do obsługi tekstu (np. <code>grep()</code>)<!--API issues-->, ale istnieją też specjalne pakiety poświęcone temu zagadnieniu, w tym pakiet <strong>stringr</strong> <span class="citation">(Wickham <a href="#ref-R-stringr">2019</a>)</span>.</p>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb138-1" data-line-number="1"><span class="kw">library</span>(stringr)</a></code></pre></div>
+<p>R posiada też wiele innych wbudowanych funkcji do obsługi tekstu (np. <code>grep()</code>)<!--API issues-->, ale istnieją też specjalne pakiety poświęcone temu zagadnieniu, w tym pakiet <strong>stringr</strong> <span class="citation">(Wickham <a href="#ref-R-stringr" role="doc-biblioref">2019</a>)</span>.</p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="tekst.html#cb138-1"></a><span class="kw">library</span>(stringr)</span></code></pre></div>
 <p>Większość funkcji tego pakietu zaczyna się od prefiksu <code>str_</code> co ułatwia znajdowanie funkcji w tym pakiecie i zmniejsza szansę na nałożenie się funkcji o takiej samej nazwie z innego pakietu.</p>
 <p>Przykładową operacją na tekście jest jego sortowanie (czyli układanie alfabetycznie), do którego służy funkcja <code>str_sort()</code>.</p>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb139-1" data-line-number="1">tekst2 =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;czosnek&quot;</span>, <span class="st">&quot; hałas&quot;</span>, <span class="st">&quot;ćma &quot;</span>)</a>
-<a class="sourceLine" id="cb139-2" data-line-number="2">tekst2</a>
-<a class="sourceLine" id="cb139-3" data-line-number="3"><span class="co">#&gt; [1] &quot;czosnek&quot; &quot; hałas&quot;  &quot;ćma &quot;</span></a>
-<a class="sourceLine" id="cb139-4" data-line-number="4"><span class="kw">str_sort</span>(tekst2)</a>
-<a class="sourceLine" id="cb139-5" data-line-number="5"><span class="co">#&gt; [1] &quot; hałas&quot;  &quot;ćma &quot;    &quot;czosnek&quot;</span></a></code></pre></div>
-<p>W powyższym przykładzie oczekiwalibyśmy ułożenia, w których <code>&quot;hałas&quot;</code> byłby na ostatnim miejscu.
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="tekst.html#cb139-1"></a>tekst2 =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;czosnek&quot;</span>, <span class="st">&quot; hałas&quot;</span>, <span class="st">&quot;ćma &quot;</span>)</span>
+<span id="cb139-2"><a href="tekst.html#cb139-2"></a>tekst2</span>
+<span id="cb139-3"><a href="tekst.html#cb139-3"></a><span class="co">#&gt; [1] &quot;czosnek&quot; &quot; hałas&quot;  &quot;ćma &quot;</span></span>
+<span id="cb139-4"><a href="tekst.html#cb139-4"></a><span class="kw">str_sort</span>(tekst2)</span>
+<span id="cb139-5"><a href="tekst.html#cb139-5"></a><span class="co">#&gt; [1] &quot; hałas&quot;  &quot;ćma &quot;    &quot;czosnek&quot;</span></span></code></pre></div>
+<p>W powyższym przykładzie oczekiwalibyśmy ułożenia, w których <code>"hałas"</code> byłby na ostatnim miejscu.
 Nie jest tak z powodu istnienia z przodu tego wyrazu znaku niedrukowalnego - spacji.
 Aby usunąć spacje z przodu i tyłu tekstu można użyć funkcji <code>str_trim()</code>.</p>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb140-1" data-line-number="1">tekst2 =<span class="st"> </span><span class="kw">str_trim</span>(tekst2)</a>
-<a class="sourceLine" id="cb140-2" data-line-number="2">tekst2</a>
-<a class="sourceLine" id="cb140-3" data-line-number="3"><span class="co">#&gt; [1] &quot;czosnek&quot; &quot;hałas&quot;   &quot;ćma&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="tekst.html#cb140-1"></a>tekst2 =<span class="st"> </span><span class="kw">str_trim</span>(tekst2)</span>
+<span id="cb140-2"><a href="tekst.html#cb140-2"></a>tekst2</span>
+<span id="cb140-3"><a href="tekst.html#cb140-3"></a><span class="co">#&gt; [1] &quot;czosnek&quot; &quot;hałas&quot;   &quot;ćma&quot;</span></span></code></pre></div>
 <p>W tej chwili możemy użyć funkcji <code>str_sort()</code> jeszcze raz.</p>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb141-1" data-line-number="1"><span class="kw">str_sort</span>(tekst2)</a>
-<a class="sourceLine" id="cb141-2" data-line-number="2"><span class="co">#&gt; [1] &quot;ćma&quot;     &quot;czosnek&quot; &quot;hałas&quot;</span></a></code></pre></div>
-<p>Teraz <code>&quot;hałas&quot;</code> jest poprawnie na ostatnim miejscu, ale na pierwszej pozycji jest <code>&quot;ćma&quot;</code> zamiast <code>&quot;czosnek&quot;</code>.
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="tekst.html#cb141-1"></a><span class="kw">str_sort</span>(tekst2)</span>
+<span id="cb141-2"><a href="tekst.html#cb141-2"></a><span class="co">#&gt; [1] &quot;ćma&quot;     &quot;czosnek&quot; &quot;hałas&quot;</span></span></code></pre></div>
+<p>Teraz <code>"hałas"</code> jest poprawnie na ostatnim miejscu, ale na pierwszej pozycji jest <code>"ćma"</code> zamiast <code>"czosnek"</code>.
 Różne alfabety na świecie mają inne znaki oraz ich kolejność.
 Domyślnie funkcja <code>str_sort()</code> używa alfabetu angielskiego, co w efekcie powoduje niepoprawne ułożenie polskich znaków.
 Do rozwiązania tego problemu służy argument <code>locale</code>, w którym można określić jaki alfabet ma być używany.</p>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb142-1" data-line-number="1"><span class="kw">str_sort</span>(tekst2, <span class="dt">locale =</span> <span class="st">&quot;pl&quot;</span>)</a>
-<a class="sourceLine" id="cb142-2" data-line-number="2"><span class="co">#&gt; [1] &quot;czosnek&quot; &quot;ćma&quot;     &quot;hałas&quot;</span></a>
-<a class="sourceLine" id="cb142-3" data-line-number="3"><span class="kw">str_sort</span>(tekst2, <span class="dt">locale =</span> <span class="st">&quot;cs&quot;</span>)</a>
-<a class="sourceLine" id="cb142-4" data-line-number="4"><span class="co">#&gt; [1] &quot;ćma&quot;     &quot;czosnek&quot; &quot;hałas&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="tekst.html#cb142-1"></a><span class="kw">str_sort</span>(tekst2, <span class="dt">locale =</span> <span class="st">&quot;pl&quot;</span>)</span>
+<span id="cb142-2"><a href="tekst.html#cb142-2"></a><span class="co">#&gt; [1] &quot;czosnek&quot; &quot;ćma&quot;     &quot;hałas&quot;</span></span>
+<span id="cb142-3"><a href="tekst.html#cb142-3"></a><span class="kw">str_sort</span>(tekst2, <span class="dt">locale =</span> <span class="st">&quot;cs&quot;</span>)</span>
+<span id="cb142-4"><a href="tekst.html#cb142-4"></a><span class="co">#&gt; [1] &quot;ćma&quot;     &quot;czosnek&quot; &quot;hałas&quot;</span></span></code></pre></div>
 <p>Powyżej można zobaczyć dwa przykłady - ułożenia tekstu według polskiego i czeskiego alfabetu<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>.</p>
 </div>
-<div id="wt" class="section level2">
+<div id="wt" class="section level2" number="6.3">
 <h2><span class="header-section-number">6.3</span> Wydzielanie tekstu</h2>
 <p>Częstym przypadkiem jest potrzeba wydzielenia tylko fragmentu tekstu.
 W tej sekcji zostanie pokazane jak wydzielać tekst na podstawie pozycji, ale możliwe jest również wydzielanie tekstu na podstawie wzorca (zobacz sekcję <a href="tekst.html#wtregex">6.5</a>).
 Wydzielanie na podstawie pozycji jest używane w sytuacjach, gdy struktura wejściowego tekstu jest nam znana i stabilna, np. gdy interesuje nas wybranie fragmentu tekstu z automatycznie generowanych raportów.</p>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb143-1" data-line-number="1">tekst1 =<span class="st"> &quot;Olek ma 77 lat.&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="tekst.html#cb143-1"></a>tekst1 =<span class="st"> &quot;Olek ma 77 lat.&quot;</span></span></code></pre></div>
 <p>W przypadku wydzielania tekstu na podstawie pozycji należy określić pozycję pierwszego i ostatniego znaku, który nas interesuje.
 Można to zrobić na kilka sposobów.
 Pierwszy z nich polega na określeniu położenia znaków od lewej strony, np. poniższy kod wybiera tekst rozpoczynający się od 9 znaku i kończący się na znaku 15 włącznie.</p>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb144-1" data-line-number="1"><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">9</span>, <span class="dt">end =</span> <span class="dv">15</span>)</a>
-<a class="sourceLine" id="cb144-2" data-line-number="2"><span class="co">#&gt; [1] &quot;77 lat.&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="tekst.html#cb144-1"></a><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">9</span>, <span class="dt">end =</span> <span class="dv">15</span>)</span>
+<span id="cb144-2"><a href="tekst.html#cb144-2"></a><span class="co">#&gt; [1] &quot;77 lat.&quot;</span></span></code></pre></div>
 <p>Definiowanie pozycji może się też odbywać od prawej strony tekstu używając znaku <code>-</code>.</p>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb145-1" data-line-number="1"><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">9</span>, <span class="dt">end =</span> <span class="dv">-1</span>)</a>
-<a class="sourceLine" id="cb145-2" data-line-number="2"><span class="co">#&gt; [1] &quot;77 lat.&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="tekst.html#cb145-1"></a><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">9</span>, <span class="dt">end =</span> <span class="dv">-1</span>)</span>
+<span id="cb145-2"><a href="tekst.html#cb145-2"></a><span class="co">#&gt; [1] &quot;77 lat.&quot;</span></span></code></pre></div>
 <p>W powyższym przykładzie wybierany jest tekst zaczynający się na 9 znaku a kończący na pierwszym znaku od końca włącznie.
 Natomiast poniżej wybrany jest tekst zaczynający się na siódmym znaku od końca i kończący na pierwszym od końca włącznie.</p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb146-1" data-line-number="1"><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">-7</span>, <span class="dt">end =</span> <span class="dv">-1</span>)</a>
-<a class="sourceLine" id="cb146-2" data-line-number="2"><span class="co">#&gt; [1] &quot;77 lat.&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="tekst.html#cb146-1"></a><span class="kw">str_sub</span>(tekst1, <span class="dt">start =</span> <span class="dv">-7</span>, <span class="dt">end =</span> <span class="dv">-1</span>)</span>
+<span id="cb146-2"><a href="tekst.html#cb146-2"></a><span class="co">#&gt; [1] &quot;77 lat.&quot;</span></span></code></pre></div>
 </div>
-<div id="wyrażenia-regularne" class="section level2">
+<div id="wyrażenia-regularne" class="section level2" number="6.4">
 <h2><span class="header-section-number">6.4</span> Wyrażenia regularne</h2>
 <!-- https://github.com/VerbalExpressions/JSVerbalExpressions -->
 <!-- https://github.com/richierocks/rebus/blob/master/README.md -->
@@ -464,15 +496,15 @@ Natomiast poniżej wybrany jest tekst zaczynający się na siódmym znaku od ko�
 <!-- https://github.com/kevinushey/rex -->
 <!-- https://blog.rsquaredacademy.com/regular-expression-in-r/ -->
 <p>Sprawdzanie czy dany tekst występuje w wektorze można wykonać używając funkcji <code>str_detect()</code>.</p>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb147-1" data-line-number="1">tekst3 =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Magdalena&quot;</span>, <span class="st">&quot;Lena&quot;</span>, <span class="st">&quot;1Lena.csv&quot;</span>, <span class="st">&quot;LLena&quot;</span>, <span class="st">&quot;Helena&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;99&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="tekst.html#cb147-1"></a>tekst3 =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Magdalena&quot;</span>, <span class="st">&quot;Lena&quot;</span>, <span class="st">&quot;1Lena.csv&quot;</span>, <span class="st">&quot;LLena&quot;</span>, <span class="st">&quot;Helena&quot;</span>, <span class="st">&quot;Anna&quot;</span>, <span class="st">&quot;99&quot;</span>)</span></code></pre></div>
 <p>W takim wypadku konieczne jest zdefiniowanie argumentu <code>pattern</code>, czyli wzorca tekstowego, który nas interesuje.
-Aby znaleźć wszystkie wystąpienia (nawet fragmentaryczne) słowa <code>&quot;Lena&quot;</code> można użyć poniższego kodu.</p>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb148-1" data-line-number="1"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;Lena&quot;</span>)</a>
-<a class="sourceLine" id="cb148-2" data-line-number="2"><span class="co">#&gt; [1] FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE</span></a></code></pre></div>
+Aby znaleźć wszystkie wystąpienia (nawet fragmentaryczne) słowa <code>"Lena"</code> można użyć poniższego kodu.</p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="tekst.html#cb148-1"></a><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;Lena&quot;</span>)</span>
+<span id="cb148-2"><a href="tekst.html#cb148-2"></a><span class="co">#&gt; [1] FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE</span></span></code></pre></div>
 <p>Jego efektem będzie wektor logiczny wskazujący, które elementy zawierają wybrany wzorzec (<code>TRUE</code>) oraz które go nie zawierają (<code>FALSE</code>).
-Wzorzec zdefiniowany w tej sposób jest czuły na wielkość znaków dlatego też zapytanie używając <code>&quot;Lena&quot;</code> da inny wynik niż takie używając <code>&quot;lena&quot;</code>.</p>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb149-1" data-line-number="1"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;lena&quot;</span>)</a>
-<a class="sourceLine" id="cb149-2" data-line-number="2"><span class="co">#&gt; [1]  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE</span></a></code></pre></div>
+Wzorzec zdefiniowany w tej sposób jest czuły na wielkość znaków dlatego też zapytanie używając <code>"Lena"</code> da inny wynik niż takie używając <code>"lena"</code>.</p>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="tekst.html#cb149-1"></a><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;lena&quot;</span>)</span>
+<span id="cb149-2"><a href="tekst.html#cb149-2"></a><span class="co">#&gt; [1]  TRUE FALSE FALSE FALSE  TRUE FALSE FALSE</span></span></code></pre></div>
 <p>W celu ułatwienia wyszukiwania złożonych fraz powstały wyrażenia regularne.
 Wyrażenia regularne (ang. <em>regular expressions</em>), często określane jako <em>regex</em> to sposób opisywanie wzorców tekstu.
 Używając wyrażeń regularnych możliwe jest wyszukiwanie, zamienianie, walidowanie i wydzielanie tekstu, który spełnia wymagane warunki.
@@ -541,192 +573,192 @@ Wyrażenia regularne są powszechnie używane w wyszukiwarkach internetowych, ed
 W związku z tym, jeżeli chcemy wyszukać tekstu zawierającego specjalny znak, musimy użyć ukośnik wsteczny (<code>\</code>, ang. <em>backslash</em>).
 Istnieje wiele dodatkowych znaków specjalnych, np. <code>\n</code> - nowa linia, <code>\t</code> - tabulator, <code>\d</code> - każdy znak numeryczny (stałoprzecinkowy), <code>\s</code> - znak niedrukowalny, np. spacja, tabulator, nowa linia.</p>
 <p>Sprawdźmy działanie wyrażeń regularnych na kilku przykładach.
-W pierwszym z nich określiliśmy nasz wzorzec jako <code>&quot;^L&quot;</code>, co oznacza, że interesują nas tylko elementy wektora <code>tekst3</code> rozpoczynające się od dużej litery <code>L</code>.</p>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb150-1" data-line-number="1"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;^L&quot;</span>)</a>
-<a class="sourceLine" id="cb150-2" data-line-number="2"><span class="co">#&gt; [1] FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE</span></a></code></pre></div>
+W pierwszym z nich określiliśmy nasz wzorzec jako <code>"^L"</code>, co oznacza, że interesują nas tylko elementy wektora <code>tekst3</code> rozpoczynające się od dużej litery <code>L</code>.</p>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="tekst.html#cb150-1"></a><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;^L&quot;</span>)</span>
+<span id="cb150-2"><a href="tekst.html#cb150-2"></a><span class="co">#&gt; [1] FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE</span></span></code></pre></div>
 <p>Do określenia zakończenia wzorca służy metaznak <code>$</code>.
 Poniżej wyszukano elementy, które kończą się na <code>ena</code>.</p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb151-1" data-line-number="1"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;ena$&quot;</span>)</a>
-<a class="sourceLine" id="cb151-2" data-line-number="2"><span class="co">#&gt; [1]  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE</span></a></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="tekst.html#cb151-1"></a><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;ena$&quot;</span>)</span>
+<span id="cb151-2"><a href="tekst.html#cb151-2"></a><span class="co">#&gt; [1]  TRUE  TRUE FALSE  TRUE  TRUE FALSE FALSE</span></span></code></pre></div>
 <p>Operatory <code>()</code> i <code>|</code> można łączyć, aby zdefiniować alternatywy.
 Przykładowo, interesują nas elementy, które kończą się na <code>ena</code> lub <code>nna</code>.</p>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" data-line-number="1"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;(ena|nna)$&quot;</span>)</a>
-<a class="sourceLine" id="cb152-2" data-line-number="2"><span class="co">#&gt; [1]  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE</span></a></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="tekst.html#cb152-1"></a><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;(ena|nna)$&quot;</span>)</span>
+<span id="cb152-2"><a href="tekst.html#cb152-2"></a><span class="co">#&gt; [1]  TRUE  TRUE FALSE  TRUE  TRUE  TRUE FALSE</span></span></code></pre></div>
 <p>W wyrażeniach regularnych można też stosować pewne skrótowe polecenia.
 W poniższym przypadku interesują nas elementy, które zawierają jakiekolwiek znaki od małego <code>a</code> do małego <code>z</code> oraz dużego <code>A</code> do dużego <code>Z</code>.</p>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb153-1" data-line-number="1"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-Z]&quot;</span>)</a>
-<a class="sourceLine" id="cb153-2" data-line-number="2"><span class="co">#&gt; [1]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE</span></a></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="tekst.html#cb153-1"></a><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-Z]&quot;</span>)</span>
+<span id="cb153-2"><a href="tekst.html#cb153-2"></a><span class="co">#&gt; [1]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE</span></span></code></pre></div>
 <p>Podobnie można określać wartości numeryczne - np. tylko elementy zawierające wartości od <code>0</code> do <code>9</code>.</p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb154-1" data-line-number="1"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;[0-9]&quot;</span>)</a>
-<a class="sourceLine" id="cb154-2" data-line-number="2"><span class="co">#&gt; [1] FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE</span></a></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="tekst.html#cb154-1"></a><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;[0-9]&quot;</span>)</span>
+<span id="cb154-2"><a href="tekst.html#cb154-2"></a><span class="co">#&gt; [1] FALSE FALSE  TRUE FALSE FALSE FALSE  TRUE</span></span></code></pre></div>
 <p>Celem metaznaku <code>+</code> jest określenie, że poprzedni znak musi wystąpić jeden lub więcej razy.
 Poniżej interesują nas tylko takie elementy, w których litera <code>L</code> występuje raz lub więcej.</p>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb155-1" data-line-number="1"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;L+&quot;</span>)</a>
-<a class="sourceLine" id="cb155-2" data-line-number="2"><span class="co">#&gt; [1] FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE</span></a></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="tekst.html#cb155-1"></a><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;L+&quot;</span>)</span>
+<span id="cb155-2"><a href="tekst.html#cb155-2"></a><span class="co">#&gt; [1] FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE</span></span></code></pre></div>
 <p>W wyrażeniach regularnych metaznak <code>^</code> określa początek tekstu/linii, ale ma on też inne zastosowanie, gdy jest użyty w kwadratowym nawiasie.
 Przykładowo <code>[^L]</code> oznacza, że szukamy wszystkich elementów nie zawierających litery <code>L</code>.
 W poniższym przykładzie nie interesują nas elementy, które zaczynają się od jednej lub więcej litery <code>L</code>.</p>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb156-1" data-line-number="1"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;^[^L]+&quot;</span>)</a>
-<a class="sourceLine" id="cb156-2" data-line-number="2"><span class="co">#&gt; [1]  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE</span></a></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="tekst.html#cb156-1"></a><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;^[^L]+&quot;</span>)</span>
+<span id="cb156-2"><a href="tekst.html#cb156-2"></a><span class="co">#&gt; [1]  TRUE FALSE  TRUE FALSE  TRUE  TRUE  TRUE</span></span></code></pre></div>
 <p>Metaznak <code>.</code> służy do określania jakikolwiek znaku, a ukośnik wsteczny (<code>\</code>) służy do określania innych znaków specjalnych.
 Dlatego też, jeżeli chcemy wyszukać elementów zawierających kropki (<code>.</code>) musimy połączyć ukośnik wsteczny z tym znakiem.</p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb157-1" data-line-number="1"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;\.&quot;</span>)</a>
-<a class="sourceLine" id="cb157-2" data-line-number="2"><span class="co">#&gt; Error: &#39;\.&#39; is an unrecognized escape in character string starting &quot;&quot;\.&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="tekst.html#cb157-1"></a><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;\.&quot;</span>)</span>
+<span id="cb157-2"><a href="tekst.html#cb157-2"></a><span class="co">#&gt; Error: &#39;\.&#39; is an unrecognized escape in character string starting &quot;&quot;\.&quot;</span></span></code></pre></div>
 <p>Powyższy przykład daje jednak komunikat błędu - aby użyć ukośnik wsteczny do zasygnalizowania, że interesuje nas kropka musimy wprowadzić go dwa razy<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>.</p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb158-1" data-line-number="1"><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>)</a>
-<a class="sourceLine" id="cb158-2" data-line-number="2"><span class="co">#&gt; [1] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE</span></a></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="tekst.html#cb158-1"></a><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>)</span>
+<span id="cb158-2"><a href="tekst.html#cb158-2"></a><span class="co">#&gt; [1] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE</span></span></code></pre></div>
 <!-- block z popularnymi regex -->
 <p>Celem funkcji <code>str_detect()</code> jest wskazanie, który element spełnia dane zapytanie.
 Do wydzielenia elementu służy funkcja <code>str_subset()</code>.</p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb159-1" data-line-number="1"><span class="kw">str_subset</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>)</a>
-<a class="sourceLine" id="cb159-2" data-line-number="2"><span class="co">#&gt; [1] &quot;1Lena.csv&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="tekst.html#cb159-1"></a><span class="kw">str_subset</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>)</span>
+<span id="cb159-2"><a href="tekst.html#cb159-2"></a><span class="co">#&gt; [1] &quot;1Lena.csv&quot;</span></span></code></pre></div>
 <!-- https://stringr.tidyverse.org/articles/regular-expressions.html -->
 <p>Umiejętności używania wyrażeń regularnych można trenować używając różnych zasobów internetowych, np. strony <a href="https://regexr.com/" class="uri">https://regexr.com/</a>, <a href="https://regex101.com/" class="uri">https://regex101.com/</a>, czy <a href="https://regexcrossword.com/" class="uri">https://regexcrossword.com/</a>.
-Pomocne w zrozumieniu bardziej zaawansowanych elementów wyrażeń regularncych może być też prezentacja <a href="https://www.youtube.com/watch?v=EkluES9Rvak">Best of Fluent 2012: /Reg(exp){2}lained/: Demystifying Regular Expressions</a> oraz książka Mastering Regular Expressions <span class="citation">(Friedl <a href="#ref-friedl2006mastering">2006</a>)</span>.
+Pomocne w zrozumieniu bardziej zaawansowanych elementów wyrażeń regularncych może być też prezentacja <a href="https://www.youtube.com/watch?v=EkluES9Rvak">Best of Fluent 2012: /Reg(exp){2}lained/: Demystifying Regular Expressions</a> oraz książka Mastering Regular Expressions <span class="citation">(Friedl <a href="#ref-friedl2006mastering" role="doc-biblioref">2006</a>)</span>.
 <!-- https://www.rstudio.com/resources/cheatsheets/#stringr -->
 <!-- https://www.regular-expressions.info/dates.html?wlr=1 -->
 <!-- https://github.com/gadenbuie/regexplain --></p>
 </div>
-<div id="wtregex" class="section level2">
+<div id="wtregex" class="section level2" number="6.5">
 <h2><span class="header-section-number">6.5</span> Wydzielanie tekstu - regex</h2>
 <p>Innym często spotykanym problemem w pracy z tekstem jest posiadanie długiego elementu tekstowego, z którego chcemy tylko wydobyć pewien fragment.
 W sekcji <a href="tekst.html#wt">6.3</a> używaliśmy do tego pozycji, ale możemy zastosować również wzorce do tego celu.</p>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb160-1" data-line-number="1">tekst_pomiary =<span class="st"> &quot;Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="tekst.html#cb160-1"></a>tekst_pomiary =<span class="st"> &quot;Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3&quot;</span></span></code></pre></div>
 <p>Wektor <code>tekst_pomiary</code> zawiera tylko jeden element tekstowy, w którym wymienione są kolejne miasta i ich wartości.
 Wyobraźmy sobie, że interesują nas tylko nazwy miast zawarte w powyższym wektorze.
 Do wydzielania tekstu na podstawie wyrażeń regularnych służy funkcja <code>str_extract()</code>.</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb161-1" data-line-number="1"><span class="kw">str_extract</span>(tekst_pomiary, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-Z]*&quot;</span>)</a>
-<a class="sourceLine" id="cb161-2" data-line-number="2"><span class="co">#&gt; [1] &quot;Wroc&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="tekst.html#cb161-1"></a><span class="kw">str_extract</span>(tekst_pomiary, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-Z]*&quot;</span>)</span>
+<span id="cb161-2"><a href="tekst.html#cb161-2"></a><span class="co">#&gt; [1] &quot;Wroc&quot;</span></span></code></pre></div>
 <p>Podaliśmy jako wzorzec wszystkie litery od małego <code>a</code> do małego <code>z</code> oraz dużego <code>A</code> do dużego <code>Z</code>.
 Niestety w efekcie otrzymaliśmy tylko Wroc - taka definicja wzorca obejmuje tylko litery z angielskiego alfabetu.</p>
 <p>Aby to naprawić możemy dodać do tego wzorca polskie litery.</p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb162-1" data-line-number="1"><span class="kw">str_extract</span>(tekst_pomiary, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)</a>
-<a class="sourceLine" id="cb162-2" data-line-number="2"><span class="co">#&gt; [1] &quot;Wrocław&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="tekst.html#cb162-1"></a><span class="kw">str_extract</span>(tekst_pomiary, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)</span>
+<span id="cb162-2"><a href="tekst.html#cb162-2"></a><span class="co">#&gt; [1] &quot;Wrocław&quot;</span></span></code></pre></div>
 <p>Tym razem otrzymaliśmy pełną nazwę pierwszego miasta, ale nie żadnego kolejnego.
 Funkcja <code>str_extract()</code> jest leniwa - po znalezieniu pierwszego pasującego fragmentu przestaje ona szukać dalej i przekazuje wynik.</p>
 <p>Aby uzyskać wszystkie przypadki spełniające określony wzorzec należy użyć funkcji <code>str_extract_all()</code>.</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb163-1" data-line-number="1"><span class="kw">str_extract_all</span>(tekst_pomiary, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)</a>
-<a class="sourceLine" id="cb163-2" data-line-number="2"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb163-3" data-line-number="3"><span class="co">#&gt;  [1] &quot;Wrocław&quot;   &quot;&quot;          &quot;&quot;          &quot;&quot;         </span></a>
-<a class="sourceLine" id="cb163-4" data-line-number="4"><span class="co">#&gt;  [5] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span></a>
-<a class="sourceLine" id="cb163-5" data-line-number="5"><span class="co">#&gt;  [9] &quot;&quot;          &quot;Bydgoszcz&quot; &quot;&quot;          &quot;&quot;         </span></a>
-<a class="sourceLine" id="cb163-6" data-line-number="6"><span class="co">#&gt; [13] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span></a>
-<a class="sourceLine" id="cb163-7" data-line-number="7"><span class="co">#&gt; [17] &quot;&quot;          &quot;&quot;          &quot;Toruń&quot;     &quot;&quot;         </span></a>
-<a class="sourceLine" id="cb163-8" data-line-number="8"><span class="co">#&gt; [21] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span></a>
-<a class="sourceLine" id="cb163-9" data-line-number="9"><span class="co">#&gt; [25] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;Lublin&quot;   </span></a>
-<a class="sourceLine" id="cb163-10" data-line-number="10"><span class="co">#&gt; [29] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span></a>
-<a class="sourceLine" id="cb163-11" data-line-number="11"><span class="co">#&gt; [33] &quot;&quot;          &quot;&quot;          &quot;&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="tekst.html#cb163-1"></a><span class="kw">str_extract_all</span>(tekst_pomiary, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)</span>
+<span id="cb163-2"><a href="tekst.html#cb163-2"></a><span class="co">#&gt; [[1]]</span></span>
+<span id="cb163-3"><a href="tekst.html#cb163-3"></a><span class="co">#&gt;  [1] &quot;Wrocław&quot;   &quot;&quot;          &quot;&quot;          &quot;&quot;         </span></span>
+<span id="cb163-4"><a href="tekst.html#cb163-4"></a><span class="co">#&gt;  [5] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span></span>
+<span id="cb163-5"><a href="tekst.html#cb163-5"></a><span class="co">#&gt;  [9] &quot;&quot;          &quot;Bydgoszcz&quot; &quot;&quot;          &quot;&quot;         </span></span>
+<span id="cb163-6"><a href="tekst.html#cb163-6"></a><span class="co">#&gt; [13] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span></span>
+<span id="cb163-7"><a href="tekst.html#cb163-7"></a><span class="co">#&gt; [17] &quot;&quot;          &quot;&quot;          &quot;Toruń&quot;     &quot;&quot;         </span></span>
+<span id="cb163-8"><a href="tekst.html#cb163-8"></a><span class="co">#&gt; [21] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span></span>
+<span id="cb163-9"><a href="tekst.html#cb163-9"></a><span class="co">#&gt; [25] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;Lublin&quot;   </span></span>
+<span id="cb163-10"><a href="tekst.html#cb163-10"></a><span class="co">#&gt; [29] &quot;&quot;          &quot;&quot;          &quot;&quot;          &quot;&quot;         </span></span>
+<span id="cb163-11"><a href="tekst.html#cb163-11"></a><span class="co">#&gt; [33] &quot;&quot;          &quot;&quot;          &quot;&quot;</span></span></code></pre></div>
 <p>Efektem jej działania są wszystkie nazwy miast z wektora <code>tekst_pomiary</code>, ale też wiele elementów pustych.
 Dlaczego?
 W powyższym wzorcu użyliśmy metaznaku <code>*</code>, który szuka wystąpienia zdefiniowanych znaków zero lub więcej razy.
 Gdy napotkany jest zdefiniowany znak sprawdzane jest jego kolejne wystąpienie, aż do momentu, gdy pojawi się jakiś inny znak.
-W efekcie zwrócony został np. <code>&quot;Wrocław&quot;</code>.
+W efekcie zwrócony został np. <code>"Wrocław"</code>.
 Metaznak <code>*</code> w przypadku, gdy zdefiniowanego znaku nie ma (wystąpił zero razy) zwraca pusty element.</p>
 <p>Jeżeli interesują nas tylko fragmenty wektora zawierające tekst musimy użyć metaznaku <code>+</code>.</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb164-1" data-line-number="1"><span class="kw">str_extract_all</span>(tekst_pomiary, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+&quot;</span>)</a>
-<a class="sourceLine" id="cb164-2" data-line-number="2"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb164-3" data-line-number="3"><span class="co">#&gt; [1] &quot;Wrocław&quot;   &quot;Bydgoszcz&quot; &quot;Toruń&quot;     &quot;Lublin&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="tekst.html#cb164-1"></a><span class="kw">str_extract_all</span>(tekst_pomiary, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+&quot;</span>)</span>
+<span id="cb164-2"><a href="tekst.html#cb164-2"></a><span class="co">#&gt; [[1]]</span></span>
+<span id="cb164-3"><a href="tekst.html#cb164-3"></a><span class="co">#&gt; [1] &quot;Wrocław&quot;   &quot;Bydgoszcz&quot; &quot;Toruń&quot;     &quot;Lublin&quot;</span></span></code></pre></div>
 <p>Wyobrażmy sobie, że otrzymaliśmy rozszerzoną wersję poprzednich danych, która tym razem zawiera dwa dodatkowe miasta - Gorzów Wielkopolski i Zieloną Górę.</p>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb165-1" data-line-number="1">tekst_pomiary2 =<span class="st"> &quot;Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3, </span></a>
-<a class="sourceLine" id="cb165-2" data-line-number="2"><span class="st">Gorzów Wielkopolski: 20, Zielona Góra: 19&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="tekst.html#cb165-1"></a>tekst_pomiary2 =<span class="st"> &quot;Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3, </span></span>
+<span id="cb165-2"><a href="tekst.html#cb165-2"></a><span class="st">Gorzów Wielkopolski: 20, Zielona Góra: 19&quot;</span></span></code></pre></div>
 <p>Nadal interesuje nas wydzielenie nazw miast, więc próbujemy użyć kodu, który stworzyliśmy powyżej.</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb166-1" data-line-number="1"><span class="kw">str_extract_all</span>(tekst_pomiary2, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+&quot;</span>)</a>
-<a class="sourceLine" id="cb166-2" data-line-number="2"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb166-3" data-line-number="3"><span class="co">#&gt; [1] &quot;Wrocław&quot;      &quot;Bydgoszcz&quot;    &quot;Toruń&quot;       </span></a>
-<a class="sourceLine" id="cb166-4" data-line-number="4"><span class="co">#&gt; [4] &quot;Lublin&quot;       &quot;Gorzów&quot;       &quot;Wielkopolski&quot;</span></a>
-<a class="sourceLine" id="cb166-5" data-line-number="5"><span class="co">#&gt; [7] &quot;Zielona&quot;      &quot;Góra&quot;</span></a></code></pre></div>
-<p>Niestety w efekcie otrzymujemy osiem elementów, gdzie <code>&quot;Gorzów&quot;</code> jest innym elementem niż <code>&quot;Wielkopolski&quot;</code>.
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="tekst.html#cb166-1"></a><span class="kw">str_extract_all</span>(tekst_pomiary2, <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+&quot;</span>)</span>
+<span id="cb166-2"><a href="tekst.html#cb166-2"></a><span class="co">#&gt; [[1]]</span></span>
+<span id="cb166-3"><a href="tekst.html#cb166-3"></a><span class="co">#&gt; [1] &quot;Wrocław&quot;      &quot;Bydgoszcz&quot;    &quot;Toruń&quot;       </span></span>
+<span id="cb166-4"><a href="tekst.html#cb166-4"></a><span class="co">#&gt; [4] &quot;Lublin&quot;       &quot;Gorzów&quot;       &quot;Wielkopolski&quot;</span></span>
+<span id="cb166-5"><a href="tekst.html#cb166-5"></a><span class="co">#&gt; [7] &quot;Zielona&quot;      &quot;Góra&quot;</span></span></code></pre></div>
+<p>Niestety w efekcie otrzymujemy osiem elementów, gdzie <code>"Gorzów"</code> jest innym elementem niż <code>"Wielkopolski"</code>.
 Zdefiniowany przez nas wzorzec nie brał pod uwagę możliwości wystąpienia spacji.
 Możemy naprawić tę sytuację w poniższy sposób.</p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb167-1" data-line-number="1"><span class="kw">str_extract_all</span>(tekst_pomiary2, </a>
-<a class="sourceLine" id="cb167-2" data-line-number="2">       <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[</span><span class="ch">\\</span><span class="st">s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)</a>
-<a class="sourceLine" id="cb167-3" data-line-number="3"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb167-4" data-line-number="4"><span class="co">#&gt; [1] &quot;Wrocław&quot;             &quot;Bydgoszcz&quot;          </span></a>
-<a class="sourceLine" id="cb167-5" data-line-number="5"><span class="co">#&gt; [3] &quot;Toruń&quot;               &quot;Lublin&quot;             </span></a>
-<a class="sourceLine" id="cb167-6" data-line-number="6"><span class="co">#&gt; [5] &quot;Gorzów Wielkopolski&quot; &quot;Zielona Góra&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="tekst.html#cb167-1"></a><span class="kw">str_extract_all</span>(tekst_pomiary2, </span>
+<span id="cb167-2"><a href="tekst.html#cb167-2"></a>       <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[</span><span class="ch">\\</span><span class="st">s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)</span>
+<span id="cb167-3"><a href="tekst.html#cb167-3"></a><span class="co">#&gt; [[1]]</span></span>
+<span id="cb167-4"><a href="tekst.html#cb167-4"></a><span class="co">#&gt; [1] &quot;Wrocław&quot;             &quot;Bydgoszcz&quot;          </span></span>
+<span id="cb167-5"><a href="tekst.html#cb167-5"></a><span class="co">#&gt; [3] &quot;Toruń&quot;               &quot;Lublin&quot;             </span></span>
+<span id="cb167-6"><a href="tekst.html#cb167-6"></a><span class="co">#&gt; [5] &quot;Gorzów Wielkopolski&quot; &quot;Zielona Góra&quot;</span></span></code></pre></div>
 <p>Teraz szukamy wystąpienia liter co najmniej raz lub więcej (<code>+</code>), następnie wystąpienia spacji zero razy lub raz (<code>[\\s]?</code>) i kończymy na sprawdzeniu wystąpienia tekstu zero razy lub więcej (<code>*</code>).</p>
 <p>Podobnie jak w każdym powyższym przypadku, efekt działania funkcji może być użyty do stworzenia nowego obiektu.</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb168-1" data-line-number="1">miasta_pomiary2 =<span class="st"> </span><span class="kw">str_extract_all</span>(tekst_pomiary2,</a>
-<a class="sourceLine" id="cb168-2" data-line-number="2">       <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[</span><span class="ch">\\</span><span class="st">s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)</a>
-<a class="sourceLine" id="cb168-3" data-line-number="3">miasta_pomiary2</a>
-<a class="sourceLine" id="cb168-4" data-line-number="4"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb168-5" data-line-number="5"><span class="co">#&gt; [1] &quot;Wrocław&quot;             &quot;Bydgoszcz&quot;          </span></a>
-<a class="sourceLine" id="cb168-6" data-line-number="6"><span class="co">#&gt; [3] &quot;Toruń&quot;               &quot;Lublin&quot;             </span></a>
-<a class="sourceLine" id="cb168-7" data-line-number="7"><span class="co">#&gt; [5] &quot;Gorzów Wielkopolski&quot; &quot;Zielona Góra&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="tekst.html#cb168-1"></a>miasta_pomiary2 =<span class="st"> </span><span class="kw">str_extract_all</span>(tekst_pomiary2,</span>
+<span id="cb168-2"><a href="tekst.html#cb168-2"></a>       <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+[</span><span class="ch">\\</span><span class="st">s]?[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*&quot;</span>)</span>
+<span id="cb168-3"><a href="tekst.html#cb168-3"></a>miasta_pomiary2</span>
+<span id="cb168-4"><a href="tekst.html#cb168-4"></a><span class="co">#&gt; [[1]]</span></span>
+<span id="cb168-5"><a href="tekst.html#cb168-5"></a><span class="co">#&gt; [1] &quot;Wrocław&quot;             &quot;Bydgoszcz&quot;          </span></span>
+<span id="cb168-6"><a href="tekst.html#cb168-6"></a><span class="co">#&gt; [3] &quot;Toruń&quot;               &quot;Lublin&quot;             </span></span>
+<span id="cb168-7"><a href="tekst.html#cb168-7"></a><span class="co">#&gt; [5] &quot;Gorzów Wielkopolski&quot; &quot;Zielona Góra&quot;</span></span></code></pre></div>
 </div>
-<div id="zamiana-tekstu---regex" class="section level2">
+<div id="zamiana-tekstu---regex" class="section level2" number="6.6">
 <h2><span class="header-section-number">6.6</span> Zamiana tekstu - regex</h2>
 <p>Innym przykładem działania na tekście jest zamiana wybranych jego elementów.</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb169-1" data-line-number="1">tekst_pomiary3 =<span class="st"> &quot;Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="tekst.html#cb169-1"></a>tekst_pomiary3 =<span class="st"> &quot;Wrocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3&quot;</span></span></code></pre></div>
 <p>Powyższy obiekt <code>tekst_pomiary3</code> zawiera nazwy miast i wartości pomiarów przedstawione zgodnie z amerykańskim standardem, gdzie kropka oddziela wartości dziesiętne, a przecinek kolejne elementy.
 Aby zamienić wybrany wzorzec w tekście (np. kropkę na przecinek) możemy użyć funkcji <code>str_replace()</code>, w której podajemy obiekt tekstowy, szukany wzorzec oraz jego zamianę.</p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb170-1" data-line-number="1"><span class="kw">str_replace</span>(tekst_pomiary3, </a>
-<a class="sourceLine" id="cb170-2" data-line-number="2">            <span class="dt">pattern =</span> <span class="st">&quot;.&quot;</span>, </a>
-<a class="sourceLine" id="cb170-3" data-line-number="3">            <span class="dt">replacement =</span> <span class="st">&quot;,&quot;</span>)</a>
-<a class="sourceLine" id="cb170-4" data-line-number="4"><span class="co">#&gt; [1] &quot;,rocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="tekst.html#cb170-1"></a><span class="kw">str_replace</span>(tekst_pomiary3, </span>
+<span id="cb170-2"><a href="tekst.html#cb170-2"></a>            <span class="dt">pattern =</span> <span class="st">&quot;.&quot;</span>, </span>
+<span id="cb170-3"><a href="tekst.html#cb170-3"></a>            <span class="dt">replacement =</span> <span class="st">&quot;,&quot;</span>)</span>
+<span id="cb170-4"><a href="tekst.html#cb170-4"></a><span class="co">#&gt; [1] &quot;,rocław: 23.5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3&quot;</span></span></code></pre></div>
 <p>Efekt działania tego kodu nie jest jednak zgodny z naszymi oczekiwaniami.
 Zamiast zamiany wszystkich kropek na przecinki, nastąpiła zamiana pierwszego znaku w tekście (litery <code>W</code>) na przecinek.
 Wynika to ze znaczenia metaznaku <code>.</code>, który reprezentuje jakikolwiek znak oprócz nowej linii.
 Żeby naprawić tę sytuację musimy użyć ukośnika wstecznego.</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb171-1" data-line-number="1"><span class="kw">str_replace</span>(tekst_pomiary3, </a>
-<a class="sourceLine" id="cb171-2" data-line-number="2">            <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>, </a>
-<a class="sourceLine" id="cb171-3" data-line-number="3">            <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>)</a>
-<a class="sourceLine" id="cb171-4" data-line-number="4"><span class="co">#&gt; [1] &quot;Wrocław: 23,5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="tekst.html#cb171-1"></a><span class="kw">str_replace</span>(tekst_pomiary3, </span>
+<span id="cb171-2"><a href="tekst.html#cb171-2"></a>            <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>, </span>
+<span id="cb171-3"><a href="tekst.html#cb171-3"></a>            <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>)</span>
+<span id="cb171-4"><a href="tekst.html#cb171-4"></a><span class="co">#&gt; [1] &quot;Wrocław: 23,5, Bydgoszcz: 12.7, Toruń: 11.1, Lublin: 14.3&quot;</span></span></code></pre></div>
 <p>Funkcja <code>str_replace()</code>, podobnie jak <code>str_extract()</code>, jest leniwa i zamienia tylko pierwsze wystąpienie wzorca.
 Do zamiany wszystkich przypadków trzeba użyć funkcji <code>str_replace_all()</code>.</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb172-1" data-line-number="1"><span class="kw">str_replace_all</span>(tekst_pomiary3, </a>
-<a class="sourceLine" id="cb172-2" data-line-number="2">                <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>, </a>
-<a class="sourceLine" id="cb172-3" data-line-number="3">                <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>)</a>
-<a class="sourceLine" id="cb172-4" data-line-number="4"><span class="co">#&gt; [1] &quot;Wrocław: 23,5, Bydgoszcz: 12,7, Toruń: 11,1, Lublin: 14,3&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="tekst.html#cb172-1"></a><span class="kw">str_replace_all</span>(tekst_pomiary3, </span>
+<span id="cb172-2"><a href="tekst.html#cb172-2"></a>                <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>, </span>
+<span id="cb172-3"><a href="tekst.html#cb172-3"></a>                <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>)</span>
+<span id="cb172-4"><a href="tekst.html#cb172-4"></a><span class="co">#&gt; [1] &quot;Wrocław: 23,5, Bydgoszcz: 12,7, Toruń: 11,1, Lublin: 14,3&quot;</span></span></code></pre></div>
 <p>W przypadku, gdy interesuje nas zarówno zamiana kropek na przecinki oraz przecinków na średniki, musimy zacząć od tej drugiej zamiany.</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb173-1" data-line-number="1">tekst_pomiary4 =<span class="st"> </span><span class="kw">str_replace_all</span>(tekst_pomiary3,</a>
-<a class="sourceLine" id="cb173-2" data-line-number="2">                                 <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>,</a>
-<a class="sourceLine" id="cb173-3" data-line-number="3">                                 <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">;&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="tekst.html#cb173-1"></a>tekst_pomiary4 =<span class="st"> </span><span class="kw">str_replace_all</span>(tekst_pomiary3,</span>
+<span id="cb173-2"><a href="tekst.html#cb173-2"></a>                                 <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>,</span>
+<span id="cb173-3"><a href="tekst.html#cb173-3"></a>                                 <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">;&quot;</span>)</span></code></pre></div>
 <p>Nowy obiekt <code>tekst_pomiary4</code> oddziela kolejne miasta średnikami.
 Teraz na jego podstawie możliwa jest zamiana kropek na przecinki w sposób opisany powyżej.</p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb174-1" data-line-number="1"><span class="kw">str_replace_all</span>(tekst_pomiary4, </a>
-<a class="sourceLine" id="cb174-2" data-line-number="2">                <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>, </a>
-<a class="sourceLine" id="cb174-3" data-line-number="3">                <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>)</a>
-<a class="sourceLine" id="cb174-4" data-line-number="4"><span class="co">#&gt; [1] &quot;Wrocław: 23,5; Bydgoszcz: 12,7; Toruń: 11,1; Lublin: 14,3&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="tekst.html#cb174-1"></a><span class="kw">str_replace_all</span>(tekst_pomiary4, </span>
+<span id="cb174-2"><a href="tekst.html#cb174-2"></a>                <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>, </span>
+<span id="cb174-3"><a href="tekst.html#cb174-3"></a>                <span class="dt">replacement =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">,&quot;</span>)</span>
+<span id="cb174-4"><a href="tekst.html#cb174-4"></a><span class="co">#&gt; [1] &quot;Wrocław: 23,5; Bydgoszcz: 12,7; Toruń: 11,1; Lublin: 14,3&quot;</span></span></code></pre></div>
 <p>Funkcje jakie jak <code>str_replace()</code> czy <code>str_replace_all()</code> mogą być też stosowane do usuwania fragmentów tekstu.
-Do tego celu można zdefiniować wzorzec jaki chcemy usunąć, a jako jego zamianę tekst pusty (<code>&quot;&quot;</code>).</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb175-1" data-line-number="1"><span class="kw">str_replace_all</span>(tekst_pomiary4, </a>
-<a class="sourceLine" id="cb175-2" data-line-number="2">                <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+&quot;</span>,</a>
-<a class="sourceLine" id="cb175-3" data-line-number="3">                <span class="dt">replacement =</span> <span class="st">&quot;&quot;</span>)</a>
-<a class="sourceLine" id="cb175-4" data-line-number="4"><span class="co">#&gt; [1] &quot;: 23.5; : 12.7; : 11.1; : 14.3&quot;</span></a></code></pre></div>
+Do tego celu można zdefiniować wzorzec jaki chcemy usunąć, a jako jego zamianę tekst pusty (<code>""</code>).</p>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="tekst.html#cb175-1"></a><span class="kw">str_replace_all</span>(tekst_pomiary4, </span>
+<span id="cb175-2"><a href="tekst.html#cb175-2"></a>                <span class="dt">pattern =</span> <span class="st">&quot;[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+&quot;</span>,</span>
+<span id="cb175-3"><a href="tekst.html#cb175-3"></a>                <span class="dt">replacement =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb175-4"><a href="tekst.html#cb175-4"></a><span class="co">#&gt; [1] &quot;: 23.5; : 12.7; : 11.1; : 14.3&quot;</span></span></code></pre></div>
 </div>
-<div id="wyszukiwanie-plików" class="section level2">
+<div id="wyszukiwanie-plików" class="section level2" number="6.7">
 <h2><span class="header-section-number">6.7</span> Wyszukiwanie plików</h2>
 <p>Umiejętności związane z obsługą wyrażeń regularnych przydają się też w przypadku wyszukiwania plików zawierających określony tekst w nazwie lub specyficzne rozszerzenie.
 Jest to szczególnie przydatne, gdy posiadamy wiele plików na komputerze, które chcemy następnie przetwarzać w sposób automatyczny.</p>
 <p>Do wyświetlania nazw plików znajdujących się w wybranym folderze służy funkcja <code>dir()</code>.
-Przykładowo poniższa linia kodu wyświetla wszystkie pliki znajdujące się w folderze <code>&quot;pliki&quot;</code><a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>.</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb176-1" data-line-number="1"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>)</a>
-<a class="sourceLine" id="cb176-2" data-line-number="2"><span class="co">#&gt;  [1] &quot;dane_meteo.csv&quot;  &quot;dane_meteo.rds&quot; </span></a>
-<a class="sourceLine" id="cb176-3" data-line-number="3"><span class="co">#&gt;  [3] &quot;dane_meteo.xlsx&quot; &quot;dane_meteo2.csv&quot;</span></a>
-<a class="sourceLine" id="cb176-4" data-line-number="4"><span class="co">#&gt;  [5] &quot;dokument.docx&quot;   &quot;kod.R&quot;          </span></a>
-<a class="sourceLine" id="cb176-5" data-line-number="5"><span class="co">#&gt;  [7] &quot;list.txt&quot;        &quot;mapa.png&quot;       </span></a>
-<a class="sourceLine" id="cb176-6" data-line-number="6"><span class="co">#&gt;  [9] &quot;obrazek.png&quot;     &quot;zdjecie.jpg&quot;</span></a></code></pre></div>
+Przykładowo poniższa linia kodu wyświetla wszystkie pliki znajdujące się w folderze <code>"pliki"</code><a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>.</p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="tekst.html#cb176-1"></a><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>)</span>
+<span id="cb176-2"><a href="tekst.html#cb176-2"></a><span class="co">#&gt;  [1] &quot;dane_meteo.csv&quot;  &quot;dane_meteo.rds&quot; </span></span>
+<span id="cb176-3"><a href="tekst.html#cb176-3"></a><span class="co">#&gt;  [3] &quot;dane_meteo.xlsx&quot; &quot;dane_meteo2.csv&quot;</span></span>
+<span id="cb176-4"><a href="tekst.html#cb176-4"></a><span class="co">#&gt;  [5] &quot;dokument.docx&quot;   &quot;kod.R&quot;          </span></span>
+<span id="cb176-5"><a href="tekst.html#cb176-5"></a><span class="co">#&gt;  [7] &quot;list.txt&quot;        &quot;mapa.png&quot;       </span></span>
+<span id="cb176-6"><a href="tekst.html#cb176-6"></a><span class="co">#&gt;  [9] &quot;obrazek.png&quot;     &quot;zdjecie.jpg&quot;</span></span></code></pre></div>
 <p>W przypadku, gdy interesują nas tylko pliki o wybranym rozszerzeniu możemy użyć argumentu <code>pattern</code> i zdefiniować wzorzec.</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb177-1" data-line-number="1"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.png$&quot;</span>)</a>
-<a class="sourceLine" id="cb177-2" data-line-number="2"><span class="co">#&gt; [1] &quot;mapa.png&quot;    &quot;obrazek.png&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="tekst.html#cb177-1"></a><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.png$&quot;</span>)</span>
+<span id="cb177-2"><a href="tekst.html#cb177-2"></a><span class="co">#&gt; [1] &quot;mapa.png&quot;    &quot;obrazek.png&quot;</span></span></code></pre></div>
 <p>W powyższym przykładzie zostaną wybrane tylko pliki o jakiejkolwiek nazwie, ale kończące się na rozszerzenie <code>.png</code>.
 Metaznak <code>$</code> użyty w tym przypadku zapobiega sytuacji, gdy tekst <code>.png</code> znajduje się w środku nazwy pliku.</p>
 <p>Do znalezienia plików o kilku rozszerzeniach można użyć metaznaków <code>()</code> i <code>|</code>.</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" data-line-number="1"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.(png|jpg)$&quot;</span>)</a>
-<a class="sourceLine" id="cb178-2" data-line-number="2"><span class="co">#&gt; [1] &quot;mapa.png&quot;    &quot;obrazek.png&quot; &quot;zdjecie.jpg&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="tekst.html#cb178-1"></a><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.(png|jpg)$&quot;</span>)</span>
+<span id="cb178-2"><a href="tekst.html#cb178-2"></a><span class="co">#&gt; [1] &quot;mapa.png&quot;    &quot;obrazek.png&quot; &quot;zdjecie.jpg&quot;</span></span></code></pre></div>
 <p>Domyślnie funkcja <code>dir()</code> pokazuje zawartość wybranego folderu, aby jednak poznać jego pełną ścieżkę względną należy określić argument <code>full.names</code> na <code>TRUE</code>.</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb179-1" data-line-number="1"><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.(png|jpg)$&quot;</span>, <span class="dt">full.names =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb179-2" data-line-number="2"><span class="co">#&gt; [1] &quot;pliki/mapa.png&quot;    &quot;pliki/obrazek.png&quot;</span></a>
-<a class="sourceLine" id="cb179-3" data-line-number="3"><span class="co">#&gt; [3] &quot;pliki/zdjecie.jpg&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="tekst.html#cb179-1"></a><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;*</span><span class="ch">\\</span><span class="st">.(png|jpg)$&quot;</span>, <span class="dt">full.names =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb179-2"><a href="tekst.html#cb179-2"></a><span class="co">#&gt; [1] &quot;pliki/mapa.png&quot;    &quot;pliki/obrazek.png&quot;</span></span>
+<span id="cb179-3"><a href="tekst.html#cb179-3"></a><span class="co">#&gt; [3] &quot;pliki/zdjecie.jpg&quot;</span></span></code></pre></div>
 </div>
-<div id="zad6" class="section level2">
+<div id="zad6" class="section level2" number="6.8">
 <h2><span class="header-section-number">6.8</span> Zadania</h2>
 <ol style="list-style-type: decimal">
 <li>Plik tekstowy zawiera listę pomiarów, w której piąty i czwarty znak od końca oznacza symbol chemiczny pomierzonego pierwiastka, przykładowo:</li>
 </ol>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb180-1" data-line-number="1"><span class="st">&quot;TERYT 18; podkarpackie; Rzeszów; 0.2 He; A&quot;</span></a>
-<a class="sourceLine" id="cb180-2" data-line-number="2"><span class="st">&quot;TERYT 22; pomorskie;	Gdańsk; 12 C ; B&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="tekst.html#cb180-1"></a><span class="st">&quot;TERYT 18; podkarpackie; Rzeszów; 0.2 He; A&quot;</span></span>
+<span id="cb180-2"><a href="tekst.html#cb180-2"></a><span class="st">&quot;TERYT 22; pomorskie;   Gdańsk; 12 C ; B&quot;</span></span></code></pre></div>
 <p>Napisz kod, który będzie wydzielał symbole chemiczne pomierzonych pierwiastków.</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Napisz funkcję nazywającą się <code>horoskop</code>, która przyjmuje dwa argumenty <code>imie</code> (pierwsze imię, tekst) oraz <code>miesiac</code> (miesiąc urodzin, liczba).
@@ -736,7 +768,7 @@ Funkcja ma zwrócić tekst “Osoba o imieniu ‘imie’ będzie miała jutro sz
 W jaki sposób możliwe jest wydzielenie tylko dat w takiej sytuacji?
 Poniżej znajduje się fragment przykładowych danych wejściowych.</li>
 </ol>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb181-1" data-line-number="1"><span class="st">&quot;2019-03-11: 23.5, 19/03/12: 12.7, 2019.03.13: 11.1, 2019-marzec-14: 14.3&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="tekst.html#cb181-1"></a><span class="st">&quot;2019-03-11: 23.5, 19/03/12: 12.7, 2019.03.13: 11.1, 2019-marzec-14: 14.3&quot;</span></span></code></pre></div>
 <ol start="5" style="list-style-type: decimal">
 <li>Co należałoby zrobić, aby wydzielić tylko wartości pomiarów w powyższym przypadku?
 Stwórz nowy obiekt <code>wartosci</code> zawierający te pomiary.
@@ -745,7 +777,7 @@ Jakiej klasy powinien być wyjściowy obiekt?</li>
 Wydziel tylko wartości stopni z tej reprezentacji.
 Poniżej znajduje się fragment przykładowych danych wejściowych.</li>
 </ol>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb182-1" data-line-number="1">wsp =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;52°24′N 16°55′E&quot;</span>, <span class="st">&quot;53°08′07″N 23°08′44″E&quot;</span>, <span class="st">&quot;39°6′N 84°31′W&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="tekst.html#cb182-1"></a>wsp =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;52°24′N 16°55′E&quot;</span>, <span class="st">&quot;53°08′07″N 23°08′44″E&quot;</span>, <span class="st">&quot;39°6′N 84°31′W&quot;</span>)</span></code></pre></div>
 <ol start="7" style="list-style-type: decimal">
 <li>Stwórz funkcję, która przyjmując przykładowe dane z poprzedniego zadania zamieni współrzędne na format w postaci stopni dziesiętnych (np. <code>52°24′N</code> w formacie DMS to <code>52.4</code> w stopniach dziesiętnych).
 <!-- match hex colors, examples :#abs, #f0, #BADA55, #COFFEE https://www.youtube.com/watch?v=EkluES9Rvak --></li>
@@ -756,22 +788,22 @@ Poniżej znajduje się fragment przykładowych danych wejściowych.</li>
 <h3>Bibliografia</h3>
 <div id="refs" class="references">
 <div id="ref-friedl2006mastering">
-<p>Friedl, Jeffrey EF. 2006. <em>Mastering Regular Expressions</em>. &quot; O’Reilly Media, Inc.&quot;.</p>
+<p>Friedl, Jeffrey EF. 2006. <em>Mastering Regular Expressions</em>. " O’Reilly Media, Inc.".</p>
 </div>
 <div id="ref-R-stringr">
-<p>Wickham, Hadley. 2019. <em>Stringr: Simple, Consistent Wrappers for Common String Operations</em>. <a href="https://CRAN.R-project.org/package=stringr" class="uri">https://CRAN.R-project.org/package=stringr</a>.</p>
+<p>Wickham, Hadley. 2019. <em>Stringr: Simple, Consistent Wrappers for Common String Operations</em>. <a href="https://CRAN.R-project.org/package=stringr">https://CRAN.R-project.org/package=stringr</a>.</p>
 </div>
 <div id="ref-wickham2016r">
-<p>Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. &quot; O’Reilly Media, Inc.&quot;.</p>
+<p>Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. " O’Reilly Media, Inc.".</p>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="32">
-<li id="fn32"><p>Odpowiednikiem funkcji <code>paste()</code> w pakiecie <strong>stringr</strong> jest funkcja <code>str_c()</code><a href="tekst.html#fnref32" class="footnote-back">↩</a></p></li>
-<li id="fn33"><p><a href="https://en.wikipedia.org/wiki/Czech_orthography" class="uri">https://en.wikipedia.org/wiki/Czech_orthography</a><a href="tekst.html#fnref33" class="footnote-back">↩</a></p></li>
-<li id="fn34"><p><a href="https://xkcd.com/1638/" class="uri">https://xkcd.com/1638/</a><a href="tekst.html#fnref34" class="footnote-back">↩</a></p></li>
-<li id="fn35"><p>Folder o tej nazwie znajduje się w folderze roboczym.<a href="tekst.html#fnref35" class="footnote-back">↩</a></p></li>
+<li id="fn32"><p>Odpowiednikiem funkcji <code>paste()</code> w pakiecie <strong>stringr</strong> jest funkcja <code>str_c()</code><a href="tekst.html#fnref32" class="footnote-back">↩︎</a></p></li>
+<li id="fn33"><p><a href="https://en.wikipedia.org/wiki/Czech_orthography" class="uri">https://en.wikipedia.org/wiki/Czech_orthography</a><a href="tekst.html#fnref33" class="footnote-back">↩︎</a></p></li>
+<li id="fn34"><p><a href="https://xkcd.com/1638/" class="uri">https://xkcd.com/1638/</a><a href="tekst.html#fnref34" class="footnote-back">↩︎</a></p></li>
+<li id="fn35"><p>Folder o tej nazwie znajduje się w folderze roboczym.<a href="tekst.html#fnref35" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

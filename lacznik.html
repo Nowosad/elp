@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>13 Łącznik | Elementarz programisty</title>
   <meta name="description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="13 Łącznik | Elementarz programisty" />
   <meta property="og:type" content="book" />
@@ -32,6 +32,7 @@
   
 <link rel="prev" href="debugging.html"/>
 <link rel="next" href="kontrola-wersji.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,30 +50,32 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -81,9 +84,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -132,26 +135,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Elementarz programisty</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#wymagania-wstępne"><i class="fa fa-check"></i>Wymagania wstępne</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#styl-książki"><i class="fa fa-check"></i>Styl książki</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#podziękowania"><i class="fa fa-check"></i>Podziękowania</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a><ul>
+<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="wprowadzenie.html"><a href="wprowadzenie.html#mity-programistyczne"><i class="fa fa-check"></i><b>1.1</b> Mity programistyczne</a></li>
 <li class="chapter" data-level="1.2" data-path="wprowadzenie.html"><a href="wprowadzenie.html#jezyki-programowania"><i class="fa fa-check"></i><b>1.2</b> Języki programowania</a></li>
 <li class="chapter" data-level="1.3" data-path="wprowadzenie.html"><a href="wprowadzenie.html#r"><i class="fa fa-check"></i><b>1.3</b> R</a></li>
 <li class="chapter" data-level="1.4" data-path="wprowadzenie.html"><a href="wprowadzenie.html#zad1"><i class="fa fa-check"></i><b>1.4</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>I Podstawy</b></span></li>
-<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a><ul>
+<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrażenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia</a></li>
-<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a><ul>
+<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="ergosum.html"><a href="ergosum.html#operator-przypisania"><i class="fa fa-check"></i><b>2.2.1</b> Operator przypisania</a></li>
 <li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dzialania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="ergosum.html"><a href="ergosum.html#ide"><i class="fa fa-check"></i><b>2.3</b> IDE</a></li>
-<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a><ul>
+<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="ergosum.html"><a href="ergosum.html#nazwy-obiektow"><i class="fa fa-check"></i><b>2.4.1</b> Nazwy obiektów</a></li>
 <li class="chapter" data-level="2.4.2" data-path="ergosum.html"><a href="ergosum.html#odstępy"><i class="fa fa-check"></i><b>2.4.2</b> Odstępy</a></li>
 <li class="chapter" data-level="2.4.3" data-path="ergosum.html"><a href="ergosum.html#komentarze"><i class="fa fa-check"></i><b>2.4.3</b> Komentarze</a></li>
@@ -161,7 +169,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5" data-path="ergosum.html"><a href="ergosum.html#resources"><i class="fa fa-check"></i><b>2.5</b> Dodatkowe materiały</a></li>
 <li class="chapter" data-level="2.6" data-path="ergosum.html"><a href="ergosum.html#zad2"><i class="fa fa-check"></i><b>2.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a><ul>
+<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="funkcje.html"><a href="funkcje.html#struktura-funkcji"><i class="fa fa-check"></i><b>3.1</b> Struktura funkcji</a></li>
 <li class="chapter" data-level="3.2" data-path="funkcje.html"><a href="funkcje.html#wbudowane-funkcje"><i class="fa fa-check"></i><b>3.2</b> Wbudowane funkcje</a></li>
 <li class="chapter" data-level="3.3" data-path="funkcje.html"><a href="funkcje.html#kolejnosc-funkcji"><i class="fa fa-check"></i><b>3.3</b> Kolejność wykonywania funkcji</a></li>
@@ -173,14 +182,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.9" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.9</b> Komunikaty</a></li>
 <li class="chapter" data-level="3.10" data-path="funkcje.html"><a href="funkcje.html#zad3"><i class="fa fa-check"></i><b>3.10</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a><ul>
+<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
 <li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagnieżdżone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdżone</a></li>
 <li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porównania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
 <li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wwwf"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach</a></li>
 <li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zad4"><i class="fa fa-check"></i><b>4.5</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a><ul>
+<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wektory"><i class="fa fa-check"></i><b>5.1</b> Wektory</a></li>
 <li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#właściwości-wektorów"><i class="fa fa-check"></i><b>5.2</b> Właściwości wektorów</a></li>
 <li class="chapter" data-level="5.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#pf-vector"><i class="fa fa-check"></i><b>5.3</b> Podstawowe funkcje</a></li>
@@ -196,7 +207,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ime"><i class="fa fa-check"></i><b>5.13</b> Wektory czasu</a></li>
 <li class="chapter" data-level="5.14" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zad5"><i class="fa fa-check"></i><b>5.14</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a><ul>
+<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#reprezentacja-tekstu"><i class="fa fa-check"></i><b>6.1</b> Reprezentacja tekstu</a></li>
 <li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekście"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście</a></li>
 <li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wt"><i class="fa fa-check"></i><b>6.3</b> Wydzielanie tekstu</a></li>
@@ -206,20 +218,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plików"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików</a></li>
 <li class="chapter" data-level="6.8" data-path="tekst.html"><a href="tekst.html#zad6"><i class="fa fa-check"></i><b>6.8</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a><ul>
-<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a><ul>
+<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie"><i class="fa fa-check"></i><b>7.1.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.1.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje"><i class="fa fa-check"></i><b>7.1.2</b> Podstawowe funkcje</a></li>
-<li class="chapter" data-level="7.1.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie"><i class="fa fa-check"></i><b>7.1.3</b> Wydzielanie</a></li>
+<li class="chapter" data-level="7.1.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-1"><i class="fa fa-check"></i><b>7.1.3</b> Wydzielanie</a></li>
 <li class="chapter" data-level="7.1.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie"><i class="fa fa-check"></i><b>7.1.4</b> Łączenie</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a><ul>
+<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-1"><i class="fa fa-check"></i><b>7.2.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.2.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-1"><i class="fa fa-check"></i><b>7.2.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.2.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-df"><i class="fa fa-check"></i><b>7.2.3</b> Wydzielanie</a></li>
 <li class="chapter" data-level="7.2.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-1"><i class="fa fa-check"></i><b>7.2.4</b> Łączenie</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a><ul>
+<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-2"><i class="fa fa-check"></i><b>7.3.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.3.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-2"><i class="fa fa-check"></i><b>7.3.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie</a></li>
@@ -229,8 +245,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#inne-klasy"><i class="fa fa-check"></i><b>7.5</b> Inne klasy obiektów</a></li>
 <li class="chapter" data-level="7.6" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zad7"><i class="fa fa-check"></i><b>7.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a><ul>
-<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a><ul>
+<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#składnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia</a></li>
 <li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#for-example"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
 <li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach</a></li>
@@ -239,7 +257,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#prog-fun"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne</a></li>
 <li class="chapter" data-level="8.4" data-path="petle.html"><a href="petle.html#zad8"><i class="fa fa-check"></i><b>8.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a><ul>
+<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy</a></li>
 <li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#działania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.2</b> Działania na plikach i folderach</a></li>
 <li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#dane-internetowe"><i class="fa fa-check"></i><b>9.3</b> Dane internetowe</a></li>
@@ -251,24 +270,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.9" data-path="io.html"><a href="io.html#zad9"><i class="fa fa-check"></i><b>9.9</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>II Narzędzia</b></span></li>
-<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a><ul>
+<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>10.1</b> API</a></li>
 <li class="chapter" data-level="10.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsluga-komunikatow"><i class="fa fa-check"></i><b>10.2</b> Obsługa komunikatów</a></li>
-<li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe</a><ul>
+<li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe</a>
+<ul>
 <li class="chapter" data-level="10.3.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#klasy"><i class="fa fa-check"></i><b>10.3.1</b> Klasy</a></li>
 <li class="chapter" data-level="10.3.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#metody"><i class="fa fa-check"></i><b>10.3.2</b> Metody</a></li>
 <li class="chapter" data-level="10.3.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#konstruktory"><i class="fa fa-check"></i><b>10.3.3</b> Konstruktory</a></li>
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zad11"><i class="fa fa-check"></i><b>10.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu</a><ul>
+<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.1</b> Testy jednostkowe</a></li>
 <li class="chapter" data-level="11.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>11.2</b> Profiling</a></li>
 <li class="chapter" data-level="11.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>11.3</b> Benchmarking</a></li>
 <li class="chapter" data-level="11.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zad12"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie</a><ul>
-<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady</a><ul>
+<li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady</a>
+<ul>
 <li class="chapter" data-level="12.1.1" data-path="debugging.html"><a href="debugging.html#pakiet-reprex"><i class="fa fa-check"></i><b>12.1.1</b> Pakiet <strong>reprex</strong></a></li>
 <li class="chapter" data-level="12.1.2" data-path="debugging.html"><a href="debugging.html#tworzenie-powtarzalnego-przykładu"><i class="fa fa-check"></i><b>12.1.2</b> Tworzenie powtarzalnego przykładu</a></li>
 </ul></li>
@@ -277,8 +301,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="debugging.html"><a href="debugging.html#debugger"><i class="fa fa-check"></i><b>12.4</b> Debugger</a></li>
 <li class="chapter" data-level="12.5" data-path="debugging.html"><a href="debugging.html#zad13"><i class="fa fa-check"></i><b>12.5</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik</a><ul>
-<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++</a><ul>
+<li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++</a>
+<ul>
 <li class="chapter" data-level="13.1.1" data-path="lacznik.html"><a href="lacznik.html#cppFunction"><i class="fa fa-check"></i><b>13.1.1</b> Wywoływanie kodu C++ wewnątrz skryptu R</a></li>
 <li class="chapter" data-level="13.1.2" data-path="lacznik.html"><a href="lacznik.html#sourceCpp"><i class="fa fa-check"></i><b>13.1.2</b> Wywoływanie kodu z plików .cpp</a></li>
 </ul></li>
@@ -286,8 +312,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.3" data-path="lacznik.html"><a href="lacznik.html#powloka-systemowa"><i class="fa fa-check"></i><b>13.3</b> Powłoka systemowa</a></li>
 <li class="chapter" data-level="13.4" data-path="lacznik.html"><a href="lacznik.html#zad14"><i class="fa fa-check"></i><b>13.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji</a><ul>
-<li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git</a><ul>
+<li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git</a>
+<ul>
 <li class="chapter" data-level="14.1.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#konfiguracja-systemu-git"><i class="fa fa-check"></i><b>14.1.1</b> Konfiguracja systemu Git</a></li>
 <li class="chapter" data-level="14.1.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium"><i class="fa fa-check"></i><b>14.1.2</b> Repozytorium</a></li>
 <li class="chapter" data-level="14.1.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodawanie-zmian"><i class="fa fa-check"></i><b>14.1.3</b> Dodawanie zmian</a></li>
@@ -298,20 +326,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.1.8" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#wysylanie-zmian"><i class="fa fa-check"></i><b>14.1.8</b> Wysyłanie zmian</a></li>
 <li class="chapter" data-level="14.1.9" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#aktualizowanie-zmian"><i class="fa fa-check"></i><b>14.1.9</b> Aktualizowanie zmian</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub</a><ul>
+<li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub</a>
+<ul>
 <li class="chapter" data-level="14.2.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#tworzenie-zdanego-repo"><i class="fa fa-check"></i><b>14.2.1</b> Tworzenie zdanego repo</a></li>
 <li class="chapter" data-level="14.2.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-github"><i class="fa fa-check"></i><b>14.2.2</b> Repozytorium GitHub</a></li>
 <li class="chapter" data-level="14.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-możliwości-github"><i class="fa fa-check"></i><b>14.2.3</b> Dodatkowe możliwości GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="14.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rstudio-git"><i class="fa fa-check"></i><b>14.3</b> Kontrola wersji w RStudio</a></li>
-<li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git</a><ul>
+<li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git</a>
+<ul>
 <li class="chapter" data-level="14.4.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#nowy-projekt"><i class="fa fa-check"></i><b>14.4.1</b> Nowy projekt</a></li>
 <li class="chapter" data-level="14.4.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#istniejacy-projekt"><i class="fa fa-check"></i><b>14.4.2</b> Istniejący projekt</a></li>
 </ul></li>
 <li class="chapter" data-level="14.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#problemy-z-kontrolą-wersji"><i class="fa fa-check"></i><b>14.5</b> Problemy z kontrolą wersji</a></li>
 <li class="chapter" data-level="14.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zad15"><i class="fa fa-check"></i><b>14.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a><ul>
+<li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a>
+<ul>
 <li class="chapter" data-level="15.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#nazwa-pakietu"><i class="fa fa-check"></i><b>15.1</b> Nazwa pakietu</a></li>
 <li class="chapter" data-level="15.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-szkieletu-pakietu"><i class="fa fa-check"></i><b>15.2</b> Tworzenie szkieletu pakietu</a></li>
 <li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>15.3</b> Opis pakietu</a></li>
@@ -325,7 +356,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietów"><i class="fa fa-check"></i><b>15.11</b> Publikowanie pakietów</a></li>
 <li class="chapter" data-level="15.12" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zad16"><i class="fa fa-check"></i><b>15.12</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie</a><ul>
+<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie</a>
+<ul>
 <li class="chapter" data-level="16.1" data-path="podsumowanie.html"><a href="podsumowanie.html#grafika"><i class="fa fa-check"></i><b>16.1</b> Grafika</a></li>
 <li class="chapter" data-level="16.2" data-path="podsumowanie.html"><a href="podsumowanie.html#analiza-danych"><i class="fa fa-check"></i><b>16.2</b> Analiza danych</a></li>
 <li class="chapter" data-level="16.3" data-path="podsumowanie.html"><a href="podsumowanie.html#inne-zastosowania"><i class="fa fa-check"></i><b>16.3</b> Inne zastosowania</a></li>
@@ -353,14 +385,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="lacznik" class="section level1">
+<div id="lacznik" class="section level1" number="13">
 <h1><span class="header-section-number">13</span> Łącznik</h1>
 <!-- intro o r jako jezyku laczacym inne -->
 <!-- intro o innych łącznikach -->
 <p>R ma bezpośrednio wbudowane mechanizmy łączenia kodu R z kodem napisanym w językach C i Fortan.
 W tym rozdziale skupimy się jednak na przykładach łączenia R z innymi, popularnymi współcześnie językami programowania C++ i Pythonem (sekcje <a href="lacznik.html#cpp">13.1</a> i <a href="lacznik.html#python">13.2</a>) oraz z systemową linią komend (sekcja <a href="lacznik.html#powloka-systemowa">13.3</a>).
 Inne możliwe połączenia R to z językami takimi jak <a href="https://github.com/r-rust/hellorust">Rust</a>, <a href="https://jeroen.cran.dev/V8/">JavaScript</a>, czy <a href="http://www.rforge.net/rJava/">Java</a>.</p>
-<div id="cpp" class="section level2">
+<div id="cpp" class="section level2" number="13.1">
 <h2><span class="header-section-number">13.1</span> C++</h2>
 <p>C++ jest jednym z najczęściej używanych kompilowanych języków programowania.
 Jest to spowodowane kilkoma zaletami tego języka, w tym jego wysoką wydajnością, niezależnością od konkretnej platformy systemowej, czy uniwersalnością.</p>
@@ -376,14 +408,14 @@ Najważniejsze cechy C++, które wyróżniają go od R i które warto znać na p
 <li>Konieczne jest zwracanie wartości używając <code>return</code></li>
 </ul>
 <p>Przykładowy kod R do przeliczania temperatury ze stopni Fahrenheita na Celsjusza wygląda w poniższy sposób (sekcja <a href="funkcje.html#budowanie-funkcji">3.8</a>):</p>
-<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb333-1" data-line-number="1">konwersja_temp =<span class="st"> </span><span class="cf">function</span>(temperatura_f){</a>
-<a class="sourceLine" id="cb333-2" data-line-number="2">    (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></a>
-<a class="sourceLine" id="cb333-3" data-line-number="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="lacznik.html#cb333-1"></a>konwersja_temp =<span class="st"> </span><span class="cf">function</span>(temperatura_f){</span>
+<span id="cb333-2"><a href="lacznik.html#cb333-2"></a>    (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></span>
+<span id="cb333-3"><a href="lacznik.html#cb333-3"></a>}</span></code></pre></div>
 <p>To samo obliczenie wykonane w języku C++ może wyglądać w ten sposób:</p>
-<div class="sourceCode" id="cb334"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb334-1" data-line-number="1"><span class="dt">double</span> konwersja_temp_cpp(<span class="dt">double</span> temperatura_f){</a>
-<a class="sourceLine" id="cb334-2" data-line-number="2">  <span class="dt">double</span> temperatura_c = (temperatura_f - <span class="dv">32</span>) / <span class="fl">1.8</span>;</a>
-<a class="sourceLine" id="cb334-3" data-line-number="3">  <span class="cf">return</span> temperatura_c;</a>
-<a class="sourceLine" id="cb334-4" data-line-number="4">}</a></code></pre></div>
+<div class="sourceCode" id="cb334"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb334-1"><a href="lacznik.html#cb334-1"></a><span class="dt">double</span> konwersja_temp_cpp(<span class="dt">double</span> temperatura_f){</span>
+<span id="cb334-2"><a href="lacznik.html#cb334-2"></a>  <span class="dt">double</span> temperatura_c = (temperatura_f - <span class="dv">32</span>) / <span class="fl">1.8</span>;</span>
+<span id="cb334-3"><a href="lacznik.html#cb334-3"></a>  <span class="cf">return</span> temperatura_c;</span>
+<span id="cb334-4"><a href="lacznik.html#cb334-4"></a>}</span></code></pre></div>
 <p>Odnosząc się do punktów z wcześniej wymienionej listy:</p>
 <ul>
 <li>Jest językiem kompilowanym - gdybyśmy chcieli użyć powyższą funkcję jako program C++ musielibyśmy stworzyć kolejną funkcję <code>main()</code>, a następnie skompilować kod.
@@ -399,50 +431,50 @@ Nie dotyczy to linii definiujących powstanie funkcji, rozpoczynających i końc
 <li>Konieczne jest zwracanie wartości używając <code>return</code>.
 W R użycie funkcji <code>return()</code> było opcjonalne.</li>
 </ul>
-<p>Obecnie ponad dwa tysiące pakietów R łączy się z językiem C++ używając pakietu <strong>Rcpp</strong> <span class="citation">(Eddelbuettel et al. <a href="#ref-R-Rcpp">2020</a>)</span>.
+<p>Obecnie ponad dwa tysiące pakietów R łączy się z językiem C++ używając pakietu <strong>Rcpp</strong> <span class="citation">(Eddelbuettel et al. <a href="#ref-R-Rcpp" role="doc-biblioref">2020</a>)</span>.
 Dodanie języka C++ do pakietu R często ma na celu przyspieszenie pewnych wymagających obliczeniowo zadań lub połączenie R z istniejącymi zewnętrznymi bibliotekami napisanymi w C++.</p>
-<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb335-1" data-line-number="1"><span class="kw">library</span>(Rcpp)</a></code></pre></div>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="lacznik.html#cb335-1"></a><span class="kw">library</span>(Rcpp)</span></code></pre></div>
 <!-- https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-introduction.pdf  -->
 <p>Pakiet <strong>Rcpp</strong> pozwala na zarówno wywoływanie kodu C++ wewnątrz skryptów R (sekcja <a href="lacznik.html#cppFunction">13.1.1</a>), jak używając zewnętrznych plików o rozszerzeniu <code>.cpp</code> (sekcja <a href="lacznik.html#sourceCpp">13.1.2</a>).</p>
 <p>Ta część książki ma na celu pokazanie zupełnych podstaw łączenia R z C++.
-Więcej informacji na ten temat można znaleść na stronie <a href="http://www.rcpp.org/" class="uri">http://www.rcpp.org/</a>, w <a href="https://adv-r.hadley.nz/rcpp.html">rozdziale Rewriting R code in C++</a> książki <span class="citation">Wickham (<a href="#ref-wickham2014advanced">2014</a>)</span>, <a href="https://csgillespie.github.io/efficientR/rcpp.html">sekcji Rcpp</a> książki <span class="citation">Gillespie and Lovelace (<a href="#ref-gillespie2016efficient">2016</a>)</span>, oraz na stronie <a href="https://thecoatlessprofessor.com/programming/cpp/unofficial-rcpp-api-documentation">Unofficial Rcpp API Documentation</a>.</p>
-<div id="cppFunction" class="section level3">
+Więcej informacji na ten temat można znaleść na stronie <a href="http://www.rcpp.org/" class="uri">http://www.rcpp.org/</a>, w <a href="https://adv-r.hadley.nz/rcpp.html">rozdziale Rewriting R code in C++</a> książki <span class="citation">Wickham (<a href="#ref-wickham2014advanced" role="doc-biblioref">2014</a>)</span>, <a href="https://csgillespie.github.io/efficientR/rcpp.html">sekcji Rcpp</a> książki <span class="citation">Gillespie and Lovelace (<a href="#ref-gillespie2016efficient" role="doc-biblioref">2016</a>)</span>, oraz na stronie <a href="https://thecoatlessprofessor.com/programming/cpp/unofficial-rcpp-api-documentation">Unofficial Rcpp API Documentation</a>.</p>
+<div id="cppFunction" class="section level3" number="13.1.1">
 <h3><span class="header-section-number">13.1.1</span> Wywoływanie kodu C++ wewnątrz skryptu R</h3>
 <p>W przypadku krótkich fragmentów kodu C++ możliwe jest umieszczenie ich wewnątrz skryptu R jako obiekt tekstowy.
 Poniższej stworzono nowy obiekt <code>rcpp_fun1</code>, który zawiera wcześniejszą funkcję C++.</p>
-<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb336-1" data-line-number="1">rcpp_fun1 =<span class="st"> &quot;</span></a>
-<a class="sourceLine" id="cb336-2" data-line-number="2"><span class="st">double konwersja_temp_cpp(double temperatura_f){</span></a>
-<a class="sourceLine" id="cb336-3" data-line-number="3"><span class="st">  double temperatura_c = (temperatura_f - 32) / 1.8;</span></a>
-<a class="sourceLine" id="cb336-4" data-line-number="4"><span class="st">  return temperatura_c;</span></a>
-<a class="sourceLine" id="cb336-5" data-line-number="5"><span class="st">}</span></a>
-<a class="sourceLine" id="cb336-6" data-line-number="6"><span class="st">&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="lacznik.html#cb336-1"></a>rcpp_fun1 =<span class="st"> &quot;</span></span>
+<span id="cb336-2"><a href="lacznik.html#cb336-2"></a><span class="st">double konwersja_temp_cpp(double temperatura_f){</span></span>
+<span id="cb336-3"><a href="lacznik.html#cb336-3"></a><span class="st">  double temperatura_c = (temperatura_f - 32) / 1.8;</span></span>
+<span id="cb336-4"><a href="lacznik.html#cb336-4"></a><span class="st">  return temperatura_c;</span></span>
+<span id="cb336-5"><a href="lacznik.html#cb336-5"></a><span class="st">}</span></span>
+<span id="cb336-6"><a href="lacznik.html#cb336-6"></a><span class="st">&quot;</span></span></code></pre></div>
 <p>W kolejnym kroku konieczne jest skompilowanie powyższego kodu i stworzenie połączenia pomiędzy nim a R za pomocą funkcji <code>cppFunction()</code>.</p>
-<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb337-1" data-line-number="1"><span class="kw">cppFunction</span>(rcpp_fun1)</a></code></pre></div>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="lacznik.html#cb337-1"></a><span class="kw">cppFunction</span>(rcpp_fun1)</span></code></pre></div>
 <p>Od tego momentu możliwe jest korzystanie z funkcji <code>konwersja_temp_cpp()</code>.
 Możemy sprawdzić jej działanie poprzez podanie wybranej przez nas wartości, na przykład <code>75</code>.</p>
-<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb338-1" data-line-number="1"><span class="kw">konwersja_temp_cpp</span>(<span class="dv">75</span>)</a>
-<a class="sourceLine" id="cb338-2" data-line-number="2"><span class="co">#&gt; [1] 23.9</span></a></code></pre></div>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="lacznik.html#cb338-1"></a><span class="kw">konwersja_temp_cpp</span>(<span class="dv">75</span>)</span>
+<span id="cb338-2"><a href="lacznik.html#cb338-2"></a><span class="co">#&gt; [1] 23.9</span></span></code></pre></div>
 <p>Warto jednak nadal pamiętać, że powyższa funkcja nie jest zwektoryzowana - możliwe jest podanie w niej tylko obiektu o długości 1.
 W przypadku zadeklarowania dłuższego obiektu wejściowego otrzymamy błąd:</p>
-<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb339-1" data-line-number="1"><span class="kw">konwersja_temp_cpp</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">75</span>, <span class="dv">110</span>))</a>
-<a class="sourceLine" id="cb339-2" data-line-number="2"><span class="co">#&gt; Error in konwersja_temp_cpp(c(0, 75, 110)): Expecting a single value: [extent=3].</span></a></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="lacznik.html#cb339-1"></a><span class="kw">konwersja_temp_cpp</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">75</span>, <span class="dv">110</span>))</span>
+<span id="cb339-2"><a href="lacznik.html#cb339-2"></a><span class="co">#&gt; Error in konwersja_temp_cpp(c(0, 75, 110)): Expecting a single value: [extent=3].</span></span></code></pre></div>
 <p>W sekcji <a href="petle.html#zastosowanie-w-funkcjach">8.1.3</a> stworzyliśmy funkcję <code>mile_na_km()</code>, która przyjmuje i zwraca obiekt o klasie lista i zamienia wartości elementów tej listy z mil lądowych na kilometry.</p>
-<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb340-1" data-line-number="1">mile_na_km =<span class="st"> </span><span class="cf">function</span>(odl_mile) {</a>
-<a class="sourceLine" id="cb340-2" data-line-number="2">  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))</a>
-<a class="sourceLine" id="cb340-3" data-line-number="3">  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {</a>
-<a class="sourceLine" id="cb340-4" data-line-number="4">    odl_km[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span></a>
-<a class="sourceLine" id="cb340-5" data-line-number="5">  }</a>
-<a class="sourceLine" id="cb340-6" data-line-number="6">  odl_km</a>
-<a class="sourceLine" id="cb340-7" data-line-number="7">}</a></code></pre></div>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="lacznik.html#cb340-1"></a>mile_na_km =<span class="st"> </span><span class="cf">function</span>(odl_mile) {</span>
+<span id="cb340-2"><a href="lacznik.html#cb340-2"></a>  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))</span>
+<span id="cb340-3"><a href="lacznik.html#cb340-3"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {</span>
+<span id="cb340-4"><a href="lacznik.html#cb340-4"></a>    odl_km[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span></span>
+<span id="cb340-5"><a href="lacznik.html#cb340-5"></a>  }</span>
+<span id="cb340-6"><a href="lacznik.html#cb340-6"></a>  odl_km</span>
+<span id="cb340-7"><a href="lacznik.html#cb340-7"></a>}</span></code></pre></div>
 <p>Ta sama funkcja w języku C++ może wyglądać w ten sposób:</p>
-<div class="sourceCode" id="cb341"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb341-1" data-line-number="1">List mile_na_km_cpp(List odl_mile){</a>
-<a class="sourceLine" id="cb341-2" data-line-number="2">  <span class="dt">int</span> odl_mile_len = odl_mile.size();</a>
-<a class="sourceLine" id="cb341-3" data-line-number="3">  List result(odl_mile_len);</a>
-<a class="sourceLine" id="cb341-4" data-line-number="4">  <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; odl_mile_len; i++){</a>
-<a class="sourceLine" id="cb341-5" data-line-number="5">    result[i] = odl_mile[i] * <span class="fl">1.609</span>;</a>
-<a class="sourceLine" id="cb341-6" data-line-number="6">  }</a>
-<a class="sourceLine" id="cb341-7" data-line-number="7">  <span class="cf">return</span> result;</a>
-<a class="sourceLine" id="cb341-8" data-line-number="8">}</a></code></pre></div>
+<div class="sourceCode" id="cb341"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb341-1"><a href="lacznik.html#cb341-1"></a>List mile_na_km_cpp(List odl_mile){</span>
+<span id="cb341-2"><a href="lacznik.html#cb341-2"></a>  <span class="dt">int</span> odl_mile_len = odl_mile.size();</span>
+<span id="cb341-3"><a href="lacznik.html#cb341-3"></a>  List result(odl_mile_len);</span>
+<span id="cb341-4"><a href="lacznik.html#cb341-4"></a>  <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; odl_mile_len; i++){</span>
+<span id="cb341-5"><a href="lacznik.html#cb341-5"></a>    result[i] = odl_mile[i] * <span class="fl">1.609</span>;</span>
+<span id="cb341-6"><a href="lacznik.html#cb341-6"></a>  }</span>
+<span id="cb341-7"><a href="lacznik.html#cb341-7"></a>  <span class="cf">return</span> result;</span>
+<span id="cb341-8"><a href="lacznik.html#cb341-8"></a>}</span></code></pre></div>
 <p>Zawiera ona szereg różnic od kodu R.
 Oprócz definicji typów, używania średnika i operatora <code>return</code>, widać tutaj także inną metodę wywołania funkcji oraz inny sposób definiowania pętli <code>for</code>.</p>
 <p>Zadaniem linii <code>int odl_mile_len = odl_mile.size();</code> jest stworzenie nowej zmiennej skalarnej (<code>odl_mile_len</code>) o typie integer (<code>int</code>).
@@ -451,9 +483,9 @@ W przypadku używania R wywołanie funkcji ma jednak postać, w której podajemy
 C++ pozwala też na inny sposób wywoływania funkcji - używając wbudowanych metod.
 Odbywa się to poprzez podanie nazwy obiektu (<code>odl_mile</code>), a następnie po kropce (<code>.</code>) podania nazwy funkcji (<code>size()</code>).</p>
 <p>W C++ pętle można definiować używając poniższej składni:</p>
-<div class="sourceCode" id="cb342"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb342-1" data-line-number="1"><span class="cf">for</span> (inicjalizacja zmiennej; warunek zakończenia; aktualizacja zmiennej) {</a>
-<a class="sourceLine" id="cb342-2" data-line-number="2">  <span class="co">// Kod do wykonania</span></a>
-<a class="sourceLine" id="cb342-3" data-line-number="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb342"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb342-1"><a href="lacznik.html#cb342-1"></a><span class="cf">for</span> (inicjalizacja zmiennej; warunek zakończenia; aktualizacja zmiennej) {</span>
+<span id="cb342-2"><a href="lacznik.html#cb342-2"></a>  <span class="co">// Kod do wykonania</span></span>
+<span id="cb342-3"><a href="lacznik.html#cb342-3"></a>}</span></code></pre></div>
 <p>Po pierwsze należy przekazać w miejscu <code>inicjalizacja zmiennej</code> stworzenie zmiennej, na podstawie której będzie oparta pętla.
 <code>int i = 0</code> oznacza, że tworzymy zmienną o typie integer <code>i</code>, która przyjmuje wartość 0.
 Jest to spowodowane ważną różnicą między C++ a R - w tym pierwszym języku liczenie rozpoczynamy od 0.
@@ -465,43 +497,43 @@ Ostatni element, <code>aktualizacja zmiennej</code>, mówi co ma się stać ze s
 Jest to odpowiednik kodu <code>i = i + 1</code>.</p>
 <p>W powyższej składni też widać sposób definiowania komentarzy w języku C++, gdzie używa się operatora <code>//</code>.</p>
 <p>Zainicjujmy funkcję C++ <code>mile_na_km_cpp()</code> używając <code>cppFunction()</code>.</p>
-<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb343-1" data-line-number="1">rcpp_fun2 =<span class="st"> &quot;List mile_na_km_cpp(List odl_mile){</span></a>
-<a class="sourceLine" id="cb343-2" data-line-number="2"><span class="st">  int odl_mile_len = odl_mile.size();</span></a>
-<a class="sourceLine" id="cb343-3" data-line-number="3"><span class="st">  List result(odl_mile_len);</span></a>
-<a class="sourceLine" id="cb343-4" data-line-number="4"><span class="st">  for (int i = 0; i &lt; odl_mile_len; i++){</span></a>
-<a class="sourceLine" id="cb343-5" data-line-number="5"><span class="st">    result[i] = odl_mile[i] * 1.609;</span></a>
-<a class="sourceLine" id="cb343-6" data-line-number="6"><span class="st">  }</span></a>
-<a class="sourceLine" id="cb343-7" data-line-number="7"><span class="st">  return result;</span></a>
-<a class="sourceLine" id="cb343-8" data-line-number="8"><span class="st">}&quot;</span></a>
-<a class="sourceLine" id="cb343-9" data-line-number="9"><span class="kw">cppFunction</span>(rcpp_fun2)</a></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="lacznik.html#cb343-1"></a>rcpp_fun2 =<span class="st"> &quot;List mile_na_km_cpp(List odl_mile){</span></span>
+<span id="cb343-2"><a href="lacznik.html#cb343-2"></a><span class="st">  int odl_mile_len = odl_mile.size();</span></span>
+<span id="cb343-3"><a href="lacznik.html#cb343-3"></a><span class="st">  List result(odl_mile_len);</span></span>
+<span id="cb343-4"><a href="lacznik.html#cb343-4"></a><span class="st">  for (int i = 0; i &lt; odl_mile_len; i++){</span></span>
+<span id="cb343-5"><a href="lacznik.html#cb343-5"></a><span class="st">    result[i] = odl_mile[i] * 1.609;</span></span>
+<span id="cb343-6"><a href="lacznik.html#cb343-6"></a><span class="st">  }</span></span>
+<span id="cb343-7"><a href="lacznik.html#cb343-7"></a><span class="st">  return result;</span></span>
+<span id="cb343-8"><a href="lacznik.html#cb343-8"></a><span class="st">}&quot;</span></span>
+<span id="cb343-9"><a href="lacznik.html#cb343-9"></a><span class="kw">cppFunction</span>(rcpp_fun2)</span></code></pre></div>
 <p>Możemy sprawdzić jej działanie na przykładowym wektore <code>odl_mile</code> używając kodu poniżej.</p>
-<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb344-1" data-line-number="1">odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</a>
-<a class="sourceLine" id="cb344-2" data-line-number="2"><span class="kw">mile_na_km_cpp</span>(odl_mile)</a>
-<a class="sourceLine" id="cb344-3" data-line-number="3"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb344-4" data-line-number="4"><span class="co">#&gt; [1] 228</span></a>
-<a class="sourceLine" id="cb344-5" data-line-number="5"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb344-6" data-line-number="6"><span class="co">#&gt; [[2]]</span></a>
-<a class="sourceLine" id="cb344-7" data-line-number="7"><span class="co">#&gt; [1] 101</span></a>
-<a class="sourceLine" id="cb344-8" data-line-number="8"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb344-9" data-line-number="9"><span class="co">#&gt; [[3]]</span></a>
-<a class="sourceLine" id="cb344-10" data-line-number="10"><span class="co">#&gt; [1] 195</span></a></code></pre></div>
+<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="lacznik.html#cb344-1"></a>odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</span>
+<span id="cb344-2"><a href="lacznik.html#cb344-2"></a><span class="kw">mile_na_km_cpp</span>(odl_mile)</span>
+<span id="cb344-3"><a href="lacznik.html#cb344-3"></a><span class="co">#&gt; [[1]]</span></span>
+<span id="cb344-4"><a href="lacznik.html#cb344-4"></a><span class="co">#&gt; [1] 228</span></span>
+<span id="cb344-5"><a href="lacznik.html#cb344-5"></a><span class="co">#&gt; </span></span>
+<span id="cb344-6"><a href="lacznik.html#cb344-6"></a><span class="co">#&gt; [[2]]</span></span>
+<span id="cb344-7"><a href="lacznik.html#cb344-7"></a><span class="co">#&gt; [1] 101</span></span>
+<span id="cb344-8"><a href="lacznik.html#cb344-8"></a><span class="co">#&gt; </span></span>
+<span id="cb344-9"><a href="lacznik.html#cb344-9"></a><span class="co">#&gt; [[3]]</span></span>
+<span id="cb344-10"><a href="lacznik.html#cb344-10"></a><span class="co">#&gt; [1] 195</span></span></code></pre></div>
 <p>Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy o długości 10001 i funkcji <code>mark()</code> z pakietu <strong>bench</strong>.</p>
-<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb345-1" data-line-number="1">odl_mile2 =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10000</span>)</a>
-<a class="sourceLine" id="cb345-2" data-line-number="2">wynik =<span class="st"> </span>bench<span class="op">::</span><span class="kw">mark</span>(</a>
-<a class="sourceLine" id="cb345-3" data-line-number="3">  <span class="kw">mile_na_km</span>(odl_mile2),</a>
-<a class="sourceLine" id="cb345-4" data-line-number="4">  <span class="kw">mile_na_km_cpp</span>(odl_mile2)</a>
-<a class="sourceLine" id="cb345-5" data-line-number="5">)</a>
-<a class="sourceLine" id="cb345-6" data-line-number="6">wynik</a>
-<a class="sourceLine" id="cb345-7" data-line-number="7"><span class="co">#&gt; # A tibble: 2 x 6</span></a>
-<a class="sourceLine" id="cb345-8" data-line-number="8"><span class="co">#&gt;   expression                  min median `itr/sec`</span></a>
-<a class="sourceLine" id="cb345-9" data-line-number="9"><span class="co">#&gt;   &lt;bch:expr&gt;                &lt;bch&gt; &lt;bch:&gt;     &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb345-10" data-line-number="10"><span class="co">#&gt; 1 mile_na_km(odl_mile2)     819µs  848µs     1136.</span></a>
-<a class="sourceLine" id="cb345-11" data-line-number="11"><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2) 444µs  475µs     2048.</span></a>
-<a class="sourceLine" id="cb345-12" data-line-number="12"><span class="co">#&gt; # … with 2 more variables: mem_alloc &lt;bch:byt&gt;,</span></a>
-<a class="sourceLine" id="cb345-13" data-line-number="13"><span class="co">#&gt; #   `gc/sec` &lt;dbl&gt;</span></a></code></pre></div>
-<p>Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.79 raza mniejszy.</p>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="lacznik.html#cb345-1"></a>odl_mile2 =<span class="st"> </span><span class="kw">as.list</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">10000</span>)</span>
+<span id="cb345-2"><a href="lacznik.html#cb345-2"></a>wynik =<span class="st"> </span>bench<span class="op">::</span><span class="kw">mark</span>(</span>
+<span id="cb345-3"><a href="lacznik.html#cb345-3"></a>  <span class="kw">mile_na_km</span>(odl_mile2),</span>
+<span id="cb345-4"><a href="lacznik.html#cb345-4"></a>  <span class="kw">mile_na_km_cpp</span>(odl_mile2)</span>
+<span id="cb345-5"><a href="lacznik.html#cb345-5"></a>)</span>
+<span id="cb345-6"><a href="lacznik.html#cb345-6"></a>wynik</span>
+<span id="cb345-7"><a href="lacznik.html#cb345-7"></a><span class="co">#&gt; # A tibble: 2 x 6</span></span>
+<span id="cb345-8"><a href="lacznik.html#cb345-8"></a><span class="co">#&gt;   expression                  min median `itr/sec`</span></span>
+<span id="cb345-9"><a href="lacznik.html#cb345-9"></a><span class="co">#&gt;   &lt;bch:expr&gt;                &lt;bch&gt; &lt;bch:&gt;     &lt;dbl&gt;</span></span>
+<span id="cb345-10"><a href="lacznik.html#cb345-10"></a><span class="co">#&gt; 1 mile_na_km(odl_mile2)     816µs  841µs     1149.</span></span>
+<span id="cb345-11"><a href="lacznik.html#cb345-11"></a><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2) 437µs  460µs     2117.</span></span>
+<span id="cb345-12"><a href="lacznik.html#cb345-12"></a><span class="co">#&gt; # … with 2 more variables: mem_alloc &lt;bch:byt&gt;,</span></span>
+<span id="cb345-13"><a href="lacznik.html#cb345-13"></a><span class="co">#&gt; #   `gc/sec` &lt;dbl&gt;</span></span></code></pre></div>
+<p>Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.83 raza mniejszy.</p>
 </div>
-<div id="sourceCpp" class="section level3">
+<div id="sourceCpp" class="section level3" number="13.1.2">
 <h3><span class="header-section-number">13.1.2</span> Wywoływanie kodu z plików .cpp</h3>
 <p>Powyższy przykład sprawdza się w przypadku małych fragmentów kodu C++.
 W momencie jednak, gdy kod staje się bardziej złożony, znacznie lepsze jest umieszczenie go w oddzielnym pliku o rozszerzeniu <code>.cpp</code>.
@@ -509,41 +541,41 @@ Taki plik może też być umieszczony wewnątrz pakietu R (rozdział <a href="tw
 <p>Używanie kod C++ z pliku z poziomu R wymaga jednak pewnych dodatkowych działań.
 Konieczne jest dodane do tego pliku kilku linii nagłówków, które umożliwią interakcję pomiędzy C++ a R.</p>
 <p>Pierwsza z nich ma na celu umożliwienie dostępu do funkcji z pakietu <strong>Rcpp</strong>, poprzez podanie nazwy pliku <code>Rcpp.h</code> w linii <code>#include</code>.</p>
-<div class="sourceCode" id="cb346"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb346-1" data-line-number="1"><span class="pp">#include </span><span class="im">&lt;Rcpp.h&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb346"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb346-1"><a href="lacznik.html#cb346-1"></a><span class="pp">#include </span><span class="im">&lt;Rcpp.h&gt;</span></span></code></pre></div>
 <p>Dalej, opcjonalnie można dodać również linię <code>using namespace Rcpp;</code>.
 W przeciwnym razie każde wywołanie funkcji z pakietu <strong>Rcpp</strong> (np., <code>List</code>) musielibyśmy poprzedzać <code>Rcpp::</code> (np., <code>Rcpp::List</code>).</p>
-<div class="sourceCode" id="cb347"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb347-1" data-line-number="1"><span class="kw">using</span> <span class="kw">namespace</span> Rcpp;</a></code></pre></div>
+<div class="sourceCode" id="cb347"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb347-1"><a href="lacznik.html#cb347-1"></a><span class="kw">using</span> <span class="kw">namespace</span> Rcpp;</span></code></pre></div>
 <p>Ostatnią kwestią przed dodaniem kodu funkcji C++ jest zdecydowanie czy konkretną funkcję chcemy udostępnić i używać w R.
 Gdybyśmy nie dodali poniższego kodu, funkcja nie byłaby widoczna z poziomu R.</p>
-<div class="sourceCode" id="cb348"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb348-1" data-line-number="1"><span class="co">// [[Rcpp::export]]</span></a></code></pre></div>
+<div class="sourceCode" id="cb348"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb348-1"><a href="lacznik.html#cb348-1"></a><span class="co">// [[Rcpp::export]]</span></span></code></pre></div>
 <p>Kompletny kod funkcji można zobaczyć poniżej.</p>
-<div class="sourceCode" id="cb349"><pre class="sourceCode cpp"><code class="sourceCode cpp"><a class="sourceLine" id="cb349-1" data-line-number="1"><span class="pp">#include </span><span class="im">&lt;Rcpp.h&gt;</span></a>
-<a class="sourceLine" id="cb349-2" data-line-number="2"><span class="kw">using</span> <span class="kw">namespace</span> Rcpp;</a>
-<a class="sourceLine" id="cb349-3" data-line-number="3"><span class="co">// [[Rcpp::export]]</span></a>
-<a class="sourceLine" id="cb349-4" data-line-number="4">List mile_na_km_cpp(List odl_mile){</a>
-<a class="sourceLine" id="cb349-5" data-line-number="5">  <span class="dt">int</span> odl_mile_len = odl_mile.size();</a>
-<a class="sourceLine" id="cb349-6" data-line-number="6">  List result(odl_mile_len);</a>
-<a class="sourceLine" id="cb349-7" data-line-number="7">  <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; odl_mile_len; i++){</a>
-<a class="sourceLine" id="cb349-8" data-line-number="8">    result[i] = odl_mile[i] * <span class="fl">1.609</span>;</a>
-<a class="sourceLine" id="cb349-9" data-line-number="9">  }</a>
-<a class="sourceLine" id="cb349-10" data-line-number="10">  <span class="cf">return</span>(result);</a>
-<a class="sourceLine" id="cb349-11" data-line-number="11">}</a></code></pre></div>
+<div class="sourceCode" id="cb349"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb349-1"><a href="lacznik.html#cb349-1"></a><span class="pp">#include </span><span class="im">&lt;Rcpp.h&gt;</span></span>
+<span id="cb349-2"><a href="lacznik.html#cb349-2"></a><span class="kw">using</span> <span class="kw">namespace</span> Rcpp;</span>
+<span id="cb349-3"><a href="lacznik.html#cb349-3"></a><span class="co">// [[Rcpp::export]]</span></span>
+<span id="cb349-4"><a href="lacznik.html#cb349-4"></a>List mile_na_km_cpp(List odl_mile){</span>
+<span id="cb349-5"><a href="lacznik.html#cb349-5"></a>  <span class="dt">int</span> odl_mile_len = odl_mile.size();</span>
+<span id="cb349-6"><a href="lacznik.html#cb349-6"></a>  List result(odl_mile_len);</span>
+<span id="cb349-7"><a href="lacznik.html#cb349-7"></a>  <span class="cf">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; odl_mile_len; i++){</span>
+<span id="cb349-8"><a href="lacznik.html#cb349-8"></a>    result[i] = odl_mile[i] * <span class="fl">1.609</span>;</span>
+<span id="cb349-9"><a href="lacznik.html#cb349-9"></a>  }</span>
+<span id="cb349-10"><a href="lacznik.html#cb349-10"></a>  <span class="cf">return</span>(result);</span>
+<span id="cb349-11"><a href="lacznik.html#cb349-11"></a>}</span></code></pre></div>
 <p>Można go zapisać do pliku <code>.cpp</code>, np. <code>mile_na_km_cpp.cpp</code>, a następnie skompilować i udostępnić dla R z użyciem funkcji <code>sourceCpp()</code>.</p>
-<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb350-1" data-line-number="1"><span class="kw">sourceCpp</span>(<span class="st">&quot;mile_na_km_cpp.cpp&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="lacznik.html#cb350-1"></a><span class="kw">sourceCpp</span>(<span class="st">&quot;mile_na_km_cpp.cpp&quot;</span>)</span></code></pre></div>
 <p>Teraz też możliwe jest jego sprawdzenie na przykładowym obiekcie:</p>
-<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb351-1" data-line-number="1">odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</a>
-<a class="sourceLine" id="cb351-2" data-line-number="2"><span class="kw">mile_na_km_cpp</span>(odl_mile)</a>
-<a class="sourceLine" id="cb351-3" data-line-number="3"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb351-4" data-line-number="4"><span class="co">#&gt; [1] 228</span></a>
-<a class="sourceLine" id="cb351-5" data-line-number="5"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb351-6" data-line-number="6"><span class="co">#&gt; [[2]]</span></a>
-<a class="sourceLine" id="cb351-7" data-line-number="7"><span class="co">#&gt; [1] 101</span></a>
-<a class="sourceLine" id="cb351-8" data-line-number="8"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb351-9" data-line-number="9"><span class="co">#&gt; [[3]]</span></a>
-<a class="sourceLine" id="cb351-10" data-line-number="10"><span class="co">#&gt; [1] 195</span></a></code></pre></div>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="lacznik.html#cb351-1"></a>odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</span>
+<span id="cb351-2"><a href="lacznik.html#cb351-2"></a><span class="kw">mile_na_km_cpp</span>(odl_mile)</span>
+<span id="cb351-3"><a href="lacznik.html#cb351-3"></a><span class="co">#&gt; [[1]]</span></span>
+<span id="cb351-4"><a href="lacznik.html#cb351-4"></a><span class="co">#&gt; [1] 228</span></span>
+<span id="cb351-5"><a href="lacznik.html#cb351-5"></a><span class="co">#&gt; </span></span>
+<span id="cb351-6"><a href="lacznik.html#cb351-6"></a><span class="co">#&gt; [[2]]</span></span>
+<span id="cb351-7"><a href="lacznik.html#cb351-7"></a><span class="co">#&gt; [1] 101</span></span>
+<span id="cb351-8"><a href="lacznik.html#cb351-8"></a><span class="co">#&gt; </span></span>
+<span id="cb351-9"><a href="lacznik.html#cb351-9"></a><span class="co">#&gt; [[3]]</span></span>
+<span id="cb351-10"><a href="lacznik.html#cb351-10"></a><span class="co">#&gt; [1] 195</span></span></code></pre></div>
 </div>
 </div>
-<div id="python" class="section level2">
+<div id="python" class="section level2" number="13.2">
 <h2><span class="header-section-number">13.2</span> Python</h2>
 <p>Python jest współcześnie najpopularniejszym językiem programowania.<!--REF-->
 Podobnie jak R, ten język jest interpretowalny, otwarty, i można uruchomić na różnych systemach operacyjnych (Windows, Mac OS i Linux).
@@ -564,28 +596,28 @@ W Pythonie wybranie pierwszego i trzeciego elementu z listy wymaga podania warto
 Czasem podczas pracy nad jakimś projektem w R może okazać się, że konieczne jest zastosowanie rozwiązania, którego w R nie ma, a jego implementacja wymagałaby znaczącego wkładu czasowego.
 Pomocny w takiej chwili może okazać się jeden z wielu pakietów Pythona.
 Aby go użyć, nie musimy jednak opuszczać R i przenosić wszystkich elementów programu do innego języka.
-Polecenia Pythona można wywołać z poziomu R używając pakietu o nazwie <strong>reticulate</strong> <span class="citation">(Ushey, Allaire, and Tang <a href="#ref-R-reticulate">2020</a>)</span>.
+Polecenia Pythona można wywołać z poziomu R używając pakietu o nazwie <strong>reticulate</strong> <span class="citation">(Ushey, Allaire, and Tang <a href="#ref-R-reticulate" role="doc-biblioref">2020</a>)</span>.
 Może to mieć miejsce w czterech trybach: (1) stosowania poleceń <a href="https://rstudio.github.io/reticulate/#python-in-r-markdown">Pythona w R Markdown</a>, (2) importowania modułów Pythona do R, (3) uruchomiania skryptów Pythona w R, oraz (4) interaktywnego korzystania z konsoli Pythona wewnątrz R wraz z dostępem do tworzonych obiektów.
 Pełną dokumentację tego pakietu wraz z szeregiem przykładów można znaleźć pod adresem <a href="https://rstudio.github.io/reticulate/" class="uri">https://rstudio.github.io/reticulate/</a>.
 Istnieje także możliwość połączenia tych języków w drugą stronę, przykładowo używając <a href="https://rpy2.github.io/">modułu <strong>rpy2</strong></a>.</p>
 </div>
-<div id="powloka-systemowa" class="section level2">
+<div id="powloka-systemowa" class="section level2" number="13.3">
 <h2><span class="header-section-number">13.3</span> Powłoka systemowa</h2>
 <p>Współcześnie kontaktujemy się z komputerami najczęściej używając przeróżnych interfejsów graficznych poprzez kliknięcia myszką czy naciśnięcia klawiatury.
 Jednocześnie większość systemów operacyjnych posiada swoje powłoki systemowe (ang. <em>shell</em>).
 Pełnią one rolę pośrednika pomiędzy systemem operacyjnym a użytkownikiem i pozwalają one uruchamiać programy, sterować nimi poprzez wprowadzanie poleceń, czy zwracać wyniki ich działania.</p>
 <p>R pozwala na łączenie się z powłoką systemową używając funkcji <code>system2()</code>.<a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a>
-W ten sposób możliwe jest zarówno wywoływanie poleceń wbudowanych w powłokę systemową, uruchomianie skryptów powłoki systemowej (np. <code>system2(&quot;moj_bash_skrypt.sh&quot;)</code>), czy też zewnętrznych aplikacji (w taki sposób pakiet <strong>rgrass7</strong> <span class="citation">(Bivand <a href="#ref-R-rgrass7">2019</a>)</span> łączy się z programem <a href="https://grass.osgeo.org/">GRASS GIS</a>).</p>
+W ten sposób możliwe jest zarówno wywoływanie poleceń wbudowanych w powłokę systemową, uruchomianie skryptów powłoki systemowej (np. <code>system2("moj_bash_skrypt.sh")</code>), czy też zewnętrznych aplikacji (w taki sposób pakiet <strong>rgrass7</strong> <span class="citation">(Bivand <a href="#ref-R-rgrass7" role="doc-biblioref">2019</a>)</span> łączy się z programem <a href="https://grass.osgeo.org/">GRASS GIS</a>).</p>
 <p>Przykładowo, w systemach opartych o UNIX polecenie <code>wc</code> pozwoli na określenie liczby wyrazów w wybranym pliku.
 Używając <code>system2()</code> oraz polecenia <code>wc</code> możemy sprawdzić ile wyrazów znajduje się w tym rozdziale książki.</p>
-<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb352-1" data-line-number="1"><span class="kw">system2</span>(<span class="st">&quot;wc&quot;</span>, <span class="dt">args =</span> <span class="st">&quot;-l 14-lacznik.Rmd&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="lacznik.html#cb352-1"></a><span class="kw">system2</span>(<span class="st">&quot;wc&quot;</span>, <span class="dt">args =</span> <span class="st">&quot;-l 14-lacznik.Rmd&quot;</span>)</span></code></pre></div>
 <!-- https://stackoverflow.com/questions/48605776/difference-between-system-and-system2-in-r-capture-file-names-in-variable -->
 <!-- https://stackoverflow.com/questions/5745886/r-and-system-calls -->
 <!-- https://tomaztsql.wordpress.com/2020/01/06/working-with-system-commands-in-r/ -->
 <!-- https://joongsup.rbind.io/post/2018/02/05/run-system-commands-or-shell-sripts-from-an-interactive-r-session/ -->
 <!-- https://missing.csail.mit.edu/ -->
 </div>
-<div id="zad14" class="section level2">
+<div id="zad14" class="section level2" number="13.4">
 <h2><span class="header-section-number">13.4</span> Zadania</h2>
 <ol style="list-style-type: decimal">
 <li>Napisz funkcję <code>f_to_c_r()</code> w języku R do przeliczania wartości ze stopni Fahrenheita na stopnie Celsjusza.
@@ -610,10 +642,10 @@ Sprawdź prędkość działania funkcji stworzonych we wcześniejszych zadaniach
 <p>Eddelbuettel, Dirk, Romain Francois, JJ Allaire, Kevin Ushey, Qiang Kou, Nathan Russell, Douglas Bates, and John Chambers. 2020. <em>Rcpp: Seamless R and C++ Integration</em>.</p>
 </div>
 <div id="ref-gillespie2016efficient">
-<p>Gillespie, Colin, and Robin Lovelace. 2016. <em>Efficient R Programming: A Practical Guide to Smarter Programming</em>. &quot; O’Reilly Media, Inc.&quot;.</p>
+<p>Gillespie, Colin, and Robin Lovelace. 2016. <em>Efficient R Programming: A Practical Guide to Smarter Programming</em>. " O’Reilly Media, Inc.".</p>
 </div>
 <div id="ref-R-reticulate">
-<p>Ushey, Kevin, JJ Allaire, and Yuan Tang. 2020. <em>Reticulate: Interface to ’Python’</em>. <a href="https://CRAN.R-project.org/package=reticulate" class="uri">https://CRAN.R-project.org/package=reticulate</a>.</p>
+<p>Ushey, Kevin, JJ Allaire, and Yuan Tang. 2020. <em>Reticulate: Interface to ’Python’</em>. <a href="https://CRAN.R-project.org/package=reticulate">https://CRAN.R-project.org/package=reticulate</a>.</p>
 </div>
 <div id="ref-wickham2014advanced">
 <p>Wickham, Hadley. 2014. <em>Advanced R</em>. Chapman and Hall/CRC.</p>
@@ -622,7 +654,7 @@ Sprawdź prędkość działania funkcji stworzonych we wcześniejszych zadaniach
 <div class="footnotes">
 <hr />
 <ol start="47">
-<li id="fn47"><p>W R istnieje również funkcja <code>system()</code>, która jest mniej uniwersalna niż <code>system2()</code> i różni się od niej składnią<a href="lacznik.html#fnref47" class="footnote-back">↩</a></p></li>
+<li id="fn47"><p>W R istnieje również funkcja <code>system()</code>, która jest mniej uniwersalna niż <code>system2()</code> i różni się od niej składnią<a href="lacznik.html#fnref47" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

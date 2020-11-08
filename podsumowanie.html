@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>16 Podsumowanie | Elementarz programisty</title>
   <meta name="description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="16 Podsumowanie | Elementarz programisty" />
   <meta property="og:type" content="book" />
@@ -32,6 +32,7 @@
   
 <link rel="prev" href="tworzenie-pakietow.html"/>
 <link rel="next" href="bibliografia.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -49,30 +50,32 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -81,9 +84,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -132,26 +135,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Elementarz programisty</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#wymagania-wstępne"><i class="fa fa-check"></i>Wymagania wstępne</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#styl-książki"><i class="fa fa-check"></i>Styl książki</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#podziękowania"><i class="fa fa-check"></i>Podziękowania</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a><ul>
+<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="wprowadzenie.html"><a href="wprowadzenie.html#mity-programistyczne"><i class="fa fa-check"></i><b>1.1</b> Mity programistyczne</a></li>
 <li class="chapter" data-level="1.2" data-path="wprowadzenie.html"><a href="wprowadzenie.html#jezyki-programowania"><i class="fa fa-check"></i><b>1.2</b> Języki programowania</a></li>
 <li class="chapter" data-level="1.3" data-path="wprowadzenie.html"><a href="wprowadzenie.html#r"><i class="fa fa-check"></i><b>1.3</b> R</a></li>
 <li class="chapter" data-level="1.4" data-path="wprowadzenie.html"><a href="wprowadzenie.html#zad1"><i class="fa fa-check"></i><b>1.4</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>I Podstawy</b></span></li>
-<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a><ul>
+<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrażenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia</a></li>
-<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a><ul>
+<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="ergosum.html"><a href="ergosum.html#operator-przypisania"><i class="fa fa-check"></i><b>2.2.1</b> Operator przypisania</a></li>
 <li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dzialania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="ergosum.html"><a href="ergosum.html#ide"><i class="fa fa-check"></i><b>2.3</b> IDE</a></li>
-<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a><ul>
+<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="ergosum.html"><a href="ergosum.html#nazwy-obiektow"><i class="fa fa-check"></i><b>2.4.1</b> Nazwy obiektów</a></li>
 <li class="chapter" data-level="2.4.2" data-path="ergosum.html"><a href="ergosum.html#odstępy"><i class="fa fa-check"></i><b>2.4.2</b> Odstępy</a></li>
 <li class="chapter" data-level="2.4.3" data-path="ergosum.html"><a href="ergosum.html#komentarze"><i class="fa fa-check"></i><b>2.4.3</b> Komentarze</a></li>
@@ -161,7 +169,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5" data-path="ergosum.html"><a href="ergosum.html#resources"><i class="fa fa-check"></i><b>2.5</b> Dodatkowe materiały</a></li>
 <li class="chapter" data-level="2.6" data-path="ergosum.html"><a href="ergosum.html#zad2"><i class="fa fa-check"></i><b>2.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a><ul>
+<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="funkcje.html"><a href="funkcje.html#struktura-funkcji"><i class="fa fa-check"></i><b>3.1</b> Struktura funkcji</a></li>
 <li class="chapter" data-level="3.2" data-path="funkcje.html"><a href="funkcje.html#wbudowane-funkcje"><i class="fa fa-check"></i><b>3.2</b> Wbudowane funkcje</a></li>
 <li class="chapter" data-level="3.3" data-path="funkcje.html"><a href="funkcje.html#kolejnosc-funkcji"><i class="fa fa-check"></i><b>3.3</b> Kolejność wykonywania funkcji</a></li>
@@ -173,14 +182,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.9" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.9</b> Komunikaty</a></li>
 <li class="chapter" data-level="3.10" data-path="funkcje.html"><a href="funkcje.html#zad3"><i class="fa fa-check"></i><b>3.10</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a><ul>
+<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
 <li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagnieżdżone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdżone</a></li>
 <li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porównania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
 <li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wwwf"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach</a></li>
 <li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zad4"><i class="fa fa-check"></i><b>4.5</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a><ul>
+<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wektory"><i class="fa fa-check"></i><b>5.1</b> Wektory</a></li>
 <li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#właściwości-wektorów"><i class="fa fa-check"></i><b>5.2</b> Właściwości wektorów</a></li>
 <li class="chapter" data-level="5.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#pf-vector"><i class="fa fa-check"></i><b>5.3</b> Podstawowe funkcje</a></li>
@@ -196,7 +207,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ime"><i class="fa fa-check"></i><b>5.13</b> Wektory czasu</a></li>
 <li class="chapter" data-level="5.14" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zad5"><i class="fa fa-check"></i><b>5.14</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a><ul>
+<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#reprezentacja-tekstu"><i class="fa fa-check"></i><b>6.1</b> Reprezentacja tekstu</a></li>
 <li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekście"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście</a></li>
 <li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wt"><i class="fa fa-check"></i><b>6.3</b> Wydzielanie tekstu</a></li>
@@ -206,20 +218,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plików"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików</a></li>
 <li class="chapter" data-level="6.8" data-path="tekst.html"><a href="tekst.html#zad6"><i class="fa fa-check"></i><b>6.8</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a><ul>
-<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a><ul>
+<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie"><i class="fa fa-check"></i><b>7.1.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.1.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje"><i class="fa fa-check"></i><b>7.1.2</b> Podstawowe funkcje</a></li>
-<li class="chapter" data-level="7.1.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie"><i class="fa fa-check"></i><b>7.1.3</b> Wydzielanie</a></li>
+<li class="chapter" data-level="7.1.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-1"><i class="fa fa-check"></i><b>7.1.3</b> Wydzielanie</a></li>
 <li class="chapter" data-level="7.1.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie"><i class="fa fa-check"></i><b>7.1.4</b> Łączenie</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a><ul>
+<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-1"><i class="fa fa-check"></i><b>7.2.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.2.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-1"><i class="fa fa-check"></i><b>7.2.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.2.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-df"><i class="fa fa-check"></i><b>7.2.3</b> Wydzielanie</a></li>
 <li class="chapter" data-level="7.2.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-1"><i class="fa fa-check"></i><b>7.2.4</b> Łączenie</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a><ul>
+<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-2"><i class="fa fa-check"></i><b>7.3.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.3.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-2"><i class="fa fa-check"></i><b>7.3.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie</a></li>
@@ -229,8 +245,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#inne-klasy"><i class="fa fa-check"></i><b>7.5</b> Inne klasy obiektów</a></li>
 <li class="chapter" data-level="7.6" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zad7"><i class="fa fa-check"></i><b>7.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a><ul>
-<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a><ul>
+<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#składnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia</a></li>
 <li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#for-example"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
 <li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach</a></li>
@@ -239,7 +257,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#prog-fun"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne</a></li>
 <li class="chapter" data-level="8.4" data-path="petle.html"><a href="petle.html#zad8"><i class="fa fa-check"></i><b>8.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a><ul>
+<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy</a></li>
 <li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#działania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.2</b> Działania na plikach i folderach</a></li>
 <li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#dane-internetowe"><i class="fa fa-check"></i><b>9.3</b> Dane internetowe</a></li>
@@ -251,24 +270,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.9" data-path="io.html"><a href="io.html#zad9"><i class="fa fa-check"></i><b>9.9</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>II Narzędzia</b></span></li>
-<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a><ul>
+<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>10.1</b> API</a></li>
 <li class="chapter" data-level="10.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsluga-komunikatow"><i class="fa fa-check"></i><b>10.2</b> Obsługa komunikatów</a></li>
-<li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe</a><ul>
+<li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe</a>
+<ul>
 <li class="chapter" data-level="10.3.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#klasy"><i class="fa fa-check"></i><b>10.3.1</b> Klasy</a></li>
 <li class="chapter" data-level="10.3.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#metody"><i class="fa fa-check"></i><b>10.3.2</b> Metody</a></li>
 <li class="chapter" data-level="10.3.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#konstruktory"><i class="fa fa-check"></i><b>10.3.3</b> Konstruktory</a></li>
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zad11"><i class="fa fa-check"></i><b>10.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu</a><ul>
+<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.1</b> Testy jednostkowe</a></li>
 <li class="chapter" data-level="11.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>11.2</b> Profiling</a></li>
 <li class="chapter" data-level="11.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>11.3</b> Benchmarking</a></li>
 <li class="chapter" data-level="11.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zad12"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie</a><ul>
-<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady</a><ul>
+<li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady</a>
+<ul>
 <li class="chapter" data-level="12.1.1" data-path="debugging.html"><a href="debugging.html#pakiet-reprex"><i class="fa fa-check"></i><b>12.1.1</b> Pakiet <strong>reprex</strong></a></li>
 <li class="chapter" data-level="12.1.2" data-path="debugging.html"><a href="debugging.html#tworzenie-powtarzalnego-przykładu"><i class="fa fa-check"></i><b>12.1.2</b> Tworzenie powtarzalnego przykładu</a></li>
 </ul></li>
@@ -277,8 +301,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="debugging.html"><a href="debugging.html#debugger"><i class="fa fa-check"></i><b>12.4</b> Debugger</a></li>
 <li class="chapter" data-level="12.5" data-path="debugging.html"><a href="debugging.html#zad13"><i class="fa fa-check"></i><b>12.5</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik</a><ul>
-<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++</a><ul>
+<li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++</a>
+<ul>
 <li class="chapter" data-level="13.1.1" data-path="lacznik.html"><a href="lacznik.html#cppFunction"><i class="fa fa-check"></i><b>13.1.1</b> Wywoływanie kodu C++ wewnątrz skryptu R</a></li>
 <li class="chapter" data-level="13.1.2" data-path="lacznik.html"><a href="lacznik.html#sourceCpp"><i class="fa fa-check"></i><b>13.1.2</b> Wywoływanie kodu z plików .cpp</a></li>
 </ul></li>
@@ -286,8 +312,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.3" data-path="lacznik.html"><a href="lacznik.html#powloka-systemowa"><i class="fa fa-check"></i><b>13.3</b> Powłoka systemowa</a></li>
 <li class="chapter" data-level="13.4" data-path="lacznik.html"><a href="lacznik.html#zad14"><i class="fa fa-check"></i><b>13.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji</a><ul>
-<li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git</a><ul>
+<li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git</a>
+<ul>
 <li class="chapter" data-level="14.1.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#konfiguracja-systemu-git"><i class="fa fa-check"></i><b>14.1.1</b> Konfiguracja systemu Git</a></li>
 <li class="chapter" data-level="14.1.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium"><i class="fa fa-check"></i><b>14.1.2</b> Repozytorium</a></li>
 <li class="chapter" data-level="14.1.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodawanie-zmian"><i class="fa fa-check"></i><b>14.1.3</b> Dodawanie zmian</a></li>
@@ -298,20 +326,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.1.8" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#wysylanie-zmian"><i class="fa fa-check"></i><b>14.1.8</b> Wysyłanie zmian</a></li>
 <li class="chapter" data-level="14.1.9" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#aktualizowanie-zmian"><i class="fa fa-check"></i><b>14.1.9</b> Aktualizowanie zmian</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub</a><ul>
+<li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub</a>
+<ul>
 <li class="chapter" data-level="14.2.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#tworzenie-zdanego-repo"><i class="fa fa-check"></i><b>14.2.1</b> Tworzenie zdanego repo</a></li>
 <li class="chapter" data-level="14.2.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-github"><i class="fa fa-check"></i><b>14.2.2</b> Repozytorium GitHub</a></li>
 <li class="chapter" data-level="14.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-możliwości-github"><i class="fa fa-check"></i><b>14.2.3</b> Dodatkowe możliwości GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="14.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rstudio-git"><i class="fa fa-check"></i><b>14.3</b> Kontrola wersji w RStudio</a></li>
-<li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git</a><ul>
+<li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git</a>
+<ul>
 <li class="chapter" data-level="14.4.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#nowy-projekt"><i class="fa fa-check"></i><b>14.4.1</b> Nowy projekt</a></li>
 <li class="chapter" data-level="14.4.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#istniejacy-projekt"><i class="fa fa-check"></i><b>14.4.2</b> Istniejący projekt</a></li>
 </ul></li>
 <li class="chapter" data-level="14.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#problemy-z-kontrolą-wersji"><i class="fa fa-check"></i><b>14.5</b> Problemy z kontrolą wersji</a></li>
 <li class="chapter" data-level="14.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zad15"><i class="fa fa-check"></i><b>14.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a><ul>
+<li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a>
+<ul>
 <li class="chapter" data-level="15.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#nazwa-pakietu"><i class="fa fa-check"></i><b>15.1</b> Nazwa pakietu</a></li>
 <li class="chapter" data-level="15.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-szkieletu-pakietu"><i class="fa fa-check"></i><b>15.2</b> Tworzenie szkieletu pakietu</a></li>
 <li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>15.3</b> Opis pakietu</a></li>
@@ -325,7 +356,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietów"><i class="fa fa-check"></i><b>15.11</b> Publikowanie pakietów</a></li>
 <li class="chapter" data-level="15.12" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zad16"><i class="fa fa-check"></i><b>15.12</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie</a><ul>
+<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie</a>
+<ul>
 <li class="chapter" data-level="16.1" data-path="podsumowanie.html"><a href="podsumowanie.html#grafika"><i class="fa fa-check"></i><b>16.1</b> Grafika</a></li>
 <li class="chapter" data-level="16.2" data-path="podsumowanie.html"><a href="podsumowanie.html#analiza-danych"><i class="fa fa-check"></i><b>16.2</b> Analiza danych</a></li>
 <li class="chapter" data-level="16.3" data-path="podsumowanie.html"><a href="podsumowanie.html#inne-zastosowania"><i class="fa fa-check"></i><b>16.3</b> Inne zastosowania</a></li>
@@ -353,7 +385,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="podsumowanie" class="section level1">
+<div id="podsumowanie" class="section level1" number="16">
 <h1><span class="header-section-number">16</span> Podsumowanie</h1>
 <p>Nie jest możliwe, aby jedna książka wyczerpująco pokazywała wszystkie elementy języka programowania i podawała wszelkie jego możliwości i zastosowania.
 Jest to szczególnie nieosiągalne w przypadku takiego języka jak R, który posiada ogromny zbiór pakietów, oraz społeczność, która używa ten język na wiele sposobów<!--, co wpływa na jego ewolucję-->.
@@ -362,31 +394,31 @@ Celem tego rozdziału jest wskazanie co można zrobić dalej na podstawie uzyska
 <!-- W jaki sposób można najbardziej efektywnie użyć wiedzę z tej książki?  -->
 <!-- Stosując uzyskane umiejętności w praktyce.  -->
 <!-- Może to być... -->
-<div id="grafika" class="section level2">
+<div id="grafika" class="section level2" number="16.1">
 <h2><span class="header-section-number">16.1</span> Grafika</h2>
 <p>Jedną z najczęściej wymienianych zalet R są jego rozbudowane narzędzia do tworzenia wykresów.
 Możemy to zobaczyć na poniższym przykładzie danych meteorologicznych dla Poznania i Zakopanego z roku 2017.</p>
-<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb381-1" data-line-number="1">met =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv&quot;</span>,</a>
-<a class="sourceLine" id="cb381-2" data-line-number="2">             <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb381-3" data-line-number="3"><span class="kw">head</span>(met)</a>
-<a class="sourceLine" id="cb381-4" data-line-number="4"><span class="co">#&gt;   kod_stacji nazwa_stacji  rok miesiac dzien tavg</span></a>
-<a class="sourceLine" id="cb381-5" data-line-number="5"><span class="co">#&gt; 1  352160330       POZNAŃ 2017       1     1  1.4</span></a>
-<a class="sourceLine" id="cb381-6" data-line-number="6"><span class="co">#&gt; 2  352160330       POZNAŃ 2017       1     2  0.1</span></a>
-<a class="sourceLine" id="cb381-7" data-line-number="7"><span class="co">#&gt; 3  352160330       POZNAŃ 2017       1     3  0.5</span></a>
-<a class="sourceLine" id="cb381-8" data-line-number="8"><span class="co">#&gt; 4  352160330       POZNAŃ 2017       1     4  1.5</span></a>
-<a class="sourceLine" id="cb381-9" data-line-number="9"><span class="co">#&gt; 5  352160330       POZNAŃ 2017       1     5 -3.5</span></a>
-<a class="sourceLine" id="cb381-10" data-line-number="10"><span class="co">#&gt; 6  352160330       POZNAŃ 2017       1     6 -8.4</span></a>
-<a class="sourceLine" id="cb381-11" data-line-number="11"><span class="co">#&gt;   precip</span></a>
-<a class="sourceLine" id="cb381-12" data-line-number="12"><span class="co">#&gt; 1    0.0</span></a>
-<a class="sourceLine" id="cb381-13" data-line-number="13"><span class="co">#&gt; 2    0.0</span></a>
-<a class="sourceLine" id="cb381-14" data-line-number="14"><span class="co">#&gt; 3    4.8</span></a>
-<a class="sourceLine" id="cb381-15" data-line-number="15"><span class="co">#&gt; 4    2.3</span></a>
-<a class="sourceLine" id="cb381-16" data-line-number="16"><span class="co">#&gt; 5    0.0</span></a>
-<a class="sourceLine" id="cb381-17" data-line-number="17"><span class="co">#&gt; 6    0.0</span></a></code></pre></div>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="podsumowanie.html#cb381-1"></a>met =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv&quot;</span>,</span>
+<span id="cb381-2"><a href="podsumowanie.html#cb381-2"></a>             <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb381-3"><a href="podsumowanie.html#cb381-3"></a><span class="kw">head</span>(met)</span>
+<span id="cb381-4"><a href="podsumowanie.html#cb381-4"></a><span class="co">#&gt;   kod_stacji nazwa_stacji  rok miesiac dzien tavg</span></span>
+<span id="cb381-5"><a href="podsumowanie.html#cb381-5"></a><span class="co">#&gt; 1  352160330       POZNAŃ 2017       1     1  1.4</span></span>
+<span id="cb381-6"><a href="podsumowanie.html#cb381-6"></a><span class="co">#&gt; 2  352160330       POZNAŃ 2017       1     2  0.1</span></span>
+<span id="cb381-7"><a href="podsumowanie.html#cb381-7"></a><span class="co">#&gt; 3  352160330       POZNAŃ 2017       1     3  0.5</span></span>
+<span id="cb381-8"><a href="podsumowanie.html#cb381-8"></a><span class="co">#&gt; 4  352160330       POZNAŃ 2017       1     4  1.5</span></span>
+<span id="cb381-9"><a href="podsumowanie.html#cb381-9"></a><span class="co">#&gt; 5  352160330       POZNAŃ 2017       1     5 -3.5</span></span>
+<span id="cb381-10"><a href="podsumowanie.html#cb381-10"></a><span class="co">#&gt; 6  352160330       POZNAŃ 2017       1     6 -8.4</span></span>
+<span id="cb381-11"><a href="podsumowanie.html#cb381-11"></a><span class="co">#&gt;   precip</span></span>
+<span id="cb381-12"><a href="podsumowanie.html#cb381-12"></a><span class="co">#&gt; 1    0.0</span></span>
+<span id="cb381-13"><a href="podsumowanie.html#cb381-13"></a><span class="co">#&gt; 2    0.0</span></span>
+<span id="cb381-14"><a href="podsumowanie.html#cb381-14"></a><span class="co">#&gt; 3    4.8</span></span>
+<span id="cb381-15"><a href="podsumowanie.html#cb381-15"></a><span class="co">#&gt; 4    2.3</span></span>
+<span id="cb381-16"><a href="podsumowanie.html#cb381-16"></a><span class="co">#&gt; 5    0.0</span></span>
+<span id="cb381-17"><a href="podsumowanie.html#cb381-17"></a><span class="co">#&gt; 6    0.0</span></span></code></pre></div>
 <p>Wewnątrz obiektu <code>met</code> znajdują się kolumny <code>tavg</code> (określająca średnią dobową temperaturę powietrza w stopniach Celsjusza) oraz <code>nazwa_stacji</code> (“POZNAŃ” lub “ZAKOPANE”).
 Do porównania wartości temperatury pomiędzy stacjami może posłużyć wykres pudełkowy, stworzony przy pomocy funkcji <code>boxplot()</code> (rycina <a href="podsumowanie.html#fig:plotex">16.1</a>).
 Poniżej zdefiniowano, która zmienna ma zostać zwizualizowana (<code>tavg</code>) w podziale na jakie grupy (<code>nazwa_stacji</code>) z jakiego zbioru danych (<code>met</code>)<a href="#fn63" class="footnote-ref" id="fnref63"><sup>63</sup></a>.</p>
-<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb382-1" data-line-number="1"><span class="kw">boxplot</span>(tavg <span class="op">~</span><span class="st"> </span>nazwa_stacji, <span class="dt">data =</span> met)</a></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="podsumowanie.html#cb382-1"></a><span class="kw">boxplot</span>(tavg <span class="op">~</span><span class="st"> </span>nazwa_stacji, <span class="dt">data =</span> met)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:plotex"></span>
 <img src="31-podsumowanie_files/figure-html/plotex-1.png" alt="Przykład wykresu utworzonego przy pomocy funkcji boxplot()." width="\textwidth" />
 <p class="caption">
@@ -400,14 +432,14 @@ Domyślnie, gdy użytkownik poda wartości numeryczne dla argumentów <code>x</c
 Jej zachowanie i wynik będzie jednak inne w zależności od tego jakiej klasy będzie obiekt wejściowy, przykładowo inaczej wyświetlony zostanie model liniowy, efekt grupowania hierarchicznego, czy też wynik testu statystycznego.
 <!-- (więcej na temat metod można przeczytać w sekcji \@ref(inne-klasy) oraz \@ref(oop)) --></p>
 <p>Oprócz wbudowanych <!--uproszczenie--> w R funkcji graficznych, istnieje też szereg dodatkowych pakietów służących do wizualizacji danych.
-Wśród nich najpopularniejszym jest <strong>ggplot2</strong> <span class="citation">(Wickham, Chang, et al. <a href="#ref-R-ggplot2">2020</a>)</span>.
-Ten pakiet jest implementacją założeń zawartych w książce Grammar of Graphics <span class="citation">(Wilkinson <a href="#ref-wilkinsonGrammarGraphics2005">2005</a>)</span><!--moremoremore-->.
+Wśród nich najpopularniejszym jest <strong>ggplot2</strong> <span class="citation">(Wickham, Chang, et al. <a href="#ref-R-ggplot2" role="doc-biblioref">2020</a>)</span>.
+Ten pakiet jest implementacją założeń zawartych w książce Grammar of Graphics <span class="citation">(Wilkinson <a href="#ref-wilkinsonGrammarGraphics2005" role="doc-biblioref">2005</a>)</span><!--moremoremore-->.
 Główną funkcją tego pakietu jest <code>ggplot()</code>, która przyjmuje dane wejściowe w postaci ramki danych.
 Wewnątrz tej funkcji następuje wywołanie kolejnej funkcji <code>aes</code>, gdzie definiowane są kolejne kolumny, które mają być wyświetlone na osiach wykresów oraz określają kolor, kształt, wielkość i inne elementy.
 Kolejnym krokiem jest określenie typu wykresu poprzez połączenie poprzedniej funkcji (używając operatora <code>+</code>) z jedną z wielu funkcji rozpoczynających się od <code>geom_</code>.
 Przykładowo, do stworzenia wykresu pudełkowego służy <code>geom_boxplot()</code> (rycina <a href="podsumowanie.html#fig:ggplotex">16.2</a>).</p>
-<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb383-1" data-line-number="1"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb383-2" data-line-number="2"><span class="kw">ggplot</span>(met, <span class="kw">aes</span>(nazwa_stacji, tavg)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="podsumowanie.html#cb383-1"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb383-2"><a href="podsumowanie.html#cb383-2"></a><span class="kw">ggplot</span>(met, <span class="kw">aes</span>(nazwa_stacji, tavg)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>()</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:ggplotex"></span>
 <img src="31-podsumowanie_files/figure-html/ggplotex-1.png" alt="Przykład wykresu utworzonego z użyciem pakietu ggplot2." width="\textwidth" />
 <p class="caption">
@@ -416,7 +448,7 @@ Rycina 16.2: Przykład wykresu utworzonego z użyciem pakietu ggplot2.
 </div>
 <p>Pełna dokumentacja pakietu <strong>ggplot2</strong> znajduje się na stronie <a href="http://docs.ggplot2.org" class="uri">http://docs.ggplot2.org</a>.</p>
 </div>
-<div id="analiza-danych" class="section level2">
+<div id="analiza-danych" class="section level2" number="16.2">
 <h2><span class="header-section-number">16.2</span> Analiza danych</h2>
 <p>R jest jednym z języków programowania najczęściej używanych w analizie danych<a href="#fn64" class="footnote-ref" id="fnref64"><sup>64</sup></a>.
 Jest to wynikiem szeregu przyczyn, w tym dużej liczby wbudowanych w R funkcji statystycznych oraz graficznych.
@@ -424,40 +456,40 @@ Dodatkowo, ramka danych, jeden z podstawowych obiektów w R, może być utożsam
 Ta forma obiektu, złożonego z kolumn (zmienne) i wierszy (obserwacje), jest reprezentacją, która uławia czyszczenie, przetwarzanie i analizowanie danych.</p>
 <p>Inną przyczyną popularności R do analizy danych jest grupa pakietów zbiorczo określana jako <em>tidyverse</em>.
 Jest to spójny zbiór pakietów pozwalających na wykonywanie kolejnych czynności analizy danych.
-Na samym początku obejmuje to pakiety poświęcone wczytywaniu danych w różnych formatach, w tym poznane w rozdziale <a href="io.html#io">9</a> pakiety <strong>readr</strong> <span class="citation">(Wickham, Hester, and Francois <a href="#ref-R-readr">2018</a>)</span> oraz <strong>readxl</strong> <span class="citation">(Wickham and Bryan <a href="#ref-R-readxl">2019</a>)</span>.
+Na samym początku obejmuje to pakiety poświęcone wczytywaniu danych w różnych formatach, w tym poznane w rozdziale <a href="io.html#io">9</a> pakiety <strong>readr</strong> <span class="citation">(Wickham, Hester, and Francois <a href="#ref-R-readr" role="doc-biblioref">2018</a>)</span> oraz <strong>readxl</strong> <span class="citation">(Wickham and Bryan <a href="#ref-R-readxl" role="doc-biblioref">2019</a>)</span>.
 Kolejnym krokiem jest porządkowanie danych, polegające, na przykład, na zmianie struktury ramki danych gdzie wartości jakiejś zmiennej stają się nazwami kolumn.
-W tym etapie można użyć pakiet <strong>tidyr</strong> <span class="citation">(Wickham and Henry <a href="#ref-R-tidyr">2020</a>)</span>.</p>
-<p>Dane w odpowiedniej postaci można następnie przetwarzać, np. tworzyć nowe zmienne na postawie przeliczania już istniejących czy też wyliczać ich podsumowania używając pakietu <strong>dplyr</strong> <span class="citation">(Wickham, François, et al. <a href="#ref-R-dplyr">2020</a>)</span>.
-Tak przetworzone dane następnie są często wizualizowane używając pakietu <strong>ggplot2</strong> <span class="citation">(Wickham, Chang, et al. <a href="#ref-R-ggplot2">2020</a>)</span> lub też w ich oparciu budowane są <a href="https://github.com/tidymodels/tidymodels">modele</a>.
+W tym etapie można użyć pakiet <strong>tidyr</strong> <span class="citation">(Wickham and Henry <a href="#ref-R-tidyr" role="doc-biblioref">2020</a>)</span>.</p>
+<p>Dane w odpowiedniej postaci można następnie przetwarzać, np. tworzyć nowe zmienne na postawie przeliczania już istniejących czy też wyliczać ich podsumowania używając pakietu <strong>dplyr</strong> <span class="citation">(Wickham, François, et al. <a href="#ref-R-dplyr" role="doc-biblioref">2020</a>)</span>.
+Tak przetworzone dane następnie są często wizualizowane używając pakietu <strong>ggplot2</strong> <span class="citation">(Wickham, Chang, et al. <a href="#ref-R-ggplot2" role="doc-biblioref">2020</a>)</span> lub też w ich oparciu budowane są <a href="https://github.com/tidymodels/tidymodels">modele</a>.
 Ma to na celu zrozumienie posiadanych danych oraz zależności czy zjawisk które opisują.</p>
 <!-- FIG? -->
-<p>W ramach grupy pakietów <strong>tidyverse</strong> często stosuje się operator <code>%&gt;%</code> (ang. <em>pipe</em>) z pakietu <strong>magrittr</strong> <span class="citation">(Bache and Wickham <a href="#ref-R-magrittr">2014</a>)</span>.
+<p>W ramach grupy pakietów <strong>tidyverse</strong> często stosuje się operator <code>%&gt;%</code> (ang. <em>pipe</em>) z pakietu <strong>magrittr</strong> <span class="citation">(Bache and Wickham <a href="#ref-R-magrittr" role="doc-biblioref">2014</a>)</span>.
 Pozwala on na łączenie kilku oddzielnych funkcji w jedno zapytanie.
 Działanie tego operatora polega na tym, że wynik jednej działania jednej funkcji staje się automatycznie pierwszym argumentem w kolejnej funkcji (rycina <a href="podsumowanie.html#fig:tidyverse-example">16.3</a>).
 <!-- footnote o wywołaniu funkcji -->
 <!-- KOD? --></p>
-<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb384-1" data-line-number="1"><span class="kw">library</span>(magrittr)</a>
-<a class="sourceLine" id="cb384-2" data-line-number="2">readxl<span class="op">::</span><span class="kw">read_excel</span>(<span class="st">&quot;https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.xlsx&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb384-3" data-line-number="3"><span class="st">  </span>tidyr<span class="op">::</span><span class="kw">gather</span>(<span class="dt">key =</span> <span class="st">&quot;zmienna&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;wartosc&quot;</span>, tavg<span class="op">:</span>precip) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb384-4" data-line-number="4"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">data =</span> <span class="kw">as.Date</span>(<span class="kw">paste</span>(rok, miesiac, dzien, <span class="dt">sep =</span> <span class="st">&quot;-&quot;</span>))) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb384-5" data-line-number="5"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(ggplot2<span class="op">::</span><span class="kw">aes</span>(data, wartosc)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb384-6" data-line-number="6"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">geom_line</span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb384-7" data-line-number="7"><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">facet_grid</span>(zmienna<span class="op">~</span>nazwa_stacji, <span class="dt">scale =</span> <span class="st">&quot;free_y&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="podsumowanie.html#cb384-1"></a><span class="kw">library</span>(magrittr)</span>
+<span id="cb384-2"><a href="podsumowanie.html#cb384-2"></a>readxl<span class="op">::</span><span class="kw">read_excel</span>(<span class="st">&quot;https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.xlsx&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb384-3"><a href="podsumowanie.html#cb384-3"></a><span class="st">  </span>tidyr<span class="op">::</span><span class="kw">gather</span>(<span class="dt">key =</span> <span class="st">&quot;zmienna&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;wartosc&quot;</span>, tavg<span class="op">:</span>precip) <span class="op">%&gt;%</span></span>
+<span id="cb384-4"><a href="podsumowanie.html#cb384-4"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">data =</span> <span class="kw">as.Date</span>(<span class="kw">paste</span>(rok, miesiac, dzien, <span class="dt">sep =</span> <span class="st">&quot;-&quot;</span>))) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb384-5"><a href="podsumowanie.html#cb384-5"></a><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(ggplot2<span class="op">::</span><span class="kw">aes</span>(data, wartosc)) <span class="op">+</span></span>
+<span id="cb384-6"><a href="podsumowanie.html#cb384-6"></a><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">geom_line</span>() <span class="op">+</span></span>
+<span id="cb384-7"><a href="podsumowanie.html#cb384-7"></a><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">facet_grid</span>(zmienna<span class="op">~</span>nazwa_stacji, <span class="dt">scale =</span> <span class="st">&quot;free_y&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:tidyverse-example"></span>
 <img src="images/tidyverse-example.png" alt="Przykład wyniku użycia pakietów z grupy tidyverse." width="\textwidth" />
 <p class="caption">
 Rycina 16.3: Przykład wyniku użycia pakietów z grupy tidyverse.
 </p>
 </div>
-<p>Pełne wprowadzenie do koncepcji <em>tidyverse</em> można znaleźć w książce <a href="https://r4ds.had.co.nz/">R for Data Science</a> <span class="citation">(Wickham and Grolemund <a href="#ref-wickham2016r">2016</a>)</span>.</p>
+<p>Pełne wprowadzenie do koncepcji <em>tidyverse</em> można znaleźć w książce <a href="https://r4ds.had.co.nz/">R for Data Science</a> <span class="citation">(Wickham and Grolemund <a href="#ref-wickham2016r" role="doc-biblioref">2016</a>)</span>.</p>
 <!-- rmarkdown -->
 <p>Zrozumienie zależności czy zjawisk jest bardzo rzadko ostatnim etapem - równie istotne jest przekazanie tych wyników wybranej grupie odbiorców<!--communicate--> w odpowiedni sposób.
 Do tego celu może posłużyć R Markdown (jego podstawy zostały opisane w sekcji <a href="tworzenie-pakietow.html#dokumentacja-pakietu">15.9</a>)
 R Markdown pozwala na tworzenie dokumentów w różnych formatach (html, pdf, docx, itd.), prezentacji, stron internetowych, książek<a href="#fn65" class="footnote-ref" id="fnref65"><sup>65</sup></a> i wiele innych.
 Po szczegółowe instrukcje jak używać tego języka warto zajrzeć do książki
-<a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a> <span class="citation">(Xie, Allaire, and Grolemund <a href="#ref-xieMarkdownDefinitiveGuide2018">2018</a>)</span>.</p>
+<a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a> <span class="citation">(Xie, Allaire, and Grolemund <a href="#ref-xieMarkdownDefinitiveGuide2018" role="doc-biblioref">2018</a>)</span>.</p>
 </div>
-<div id="inne-zastosowania" class="section level2">
+<div id="inne-zastosowania" class="section level2" number="16.3">
 <h2><span class="header-section-number">16.3</span> Inne zastosowania</h2>
 <p>Wcześniejsze dwie sekcje pokazywały bardzo szerokie zastosowania R - analizować czy wizualizować można zarówno dane o temperaturze powietrza jak i wyniki wyborów prezydenckich.
 <!-- ... -->
@@ -469,21 +501,21 @@ Obejmuje to bardzo szeroki przekrój tematów - od list poświęconych projektow
 Opisuje ona, między innymi, takie pakiety jak <strong>sf</strong>, pozwalający na wczytywanie, przetwarzanie i zapisywanie danych wektorowych czy <strong>tmap</strong> ułatwiający tworzenie map.
 Na poniższym przykładzie następuje dołączenie tych pakietów oraz wczytanie zbioru danych <code>World</code> zawierającego poligony krajów na świecie i podstawowe informacje o nich.
 Dalej następuje dodanie tych danych do wyświetlenia i wybór odwzorowania przestrzennego<!--footnote--> używając funkcji <code>tm_shape()</code>, po czym te dane są wyświetlone w postaci poligonów (funkcja <code>tm_polygons()</code>), gdzie kolory poligonów wynikają z ich wartości w kolumnie <code>life_exp</code> a tytuł legendy jest wybrany przez nas (rycina <a href="podsumowanie.html#fig:tmap-example">16.4</a>).</p>
-<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb385-1" data-line-number="1"><span class="kw">library</span>(sf)</a>
-<a class="sourceLine" id="cb385-2" data-line-number="2"><span class="kw">library</span>(tmap)</a>
-<a class="sourceLine" id="cb385-3" data-line-number="3"><span class="kw">data</span>(World)</a>
-<a class="sourceLine" id="cb385-4" data-line-number="4"><span class="kw">tm_shape</span>(World, <span class="dt">projection =</span> <span class="st">&quot;robin&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb385-5" data-line-number="5"><span class="st">    </span><span class="kw">tm_polygons</span>(<span class="dt">col =</span> <span class="st">&quot;life_exp&quot;</span>, </a>
-<a class="sourceLine" id="cb385-6" data-line-number="6">                <span class="dt">title =</span> <span class="st">&quot;Oczekiwana dalsza </span><span class="ch">\n</span><span class="st">długość życia&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="podsumowanie.html#cb385-1"></a><span class="kw">library</span>(sf)</span>
+<span id="cb385-2"><a href="podsumowanie.html#cb385-2"></a><span class="kw">library</span>(tmap)</span>
+<span id="cb385-3"><a href="podsumowanie.html#cb385-3"></a><span class="kw">data</span>(World)</span>
+<span id="cb385-4"><a href="podsumowanie.html#cb385-4"></a><span class="kw">tm_shape</span>(World, <span class="dt">projection =</span> <span class="st">&quot;robin&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb385-5"><a href="podsumowanie.html#cb385-5"></a><span class="st">    </span><span class="kw">tm_polygons</span>(<span class="dt">col =</span> <span class="st">&quot;life_exp&quot;</span>, </span>
+<span id="cb385-6"><a href="podsumowanie.html#cb385-6"></a>                <span class="dt">title =</span> <span class="st">&quot;Oczekiwana dalsza </span><span class="ch">\n</span><span class="st">długość życia&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:tmap-example"></span>
 <img src="images/tmap-example.png" alt="Przykład działania pakietu tmap." width="\textwidth" />
 <p class="caption">
 Rycina 16.4: Przykład działania pakietu tmap.
 </p>
 </div>
-<p>Podstawy działania na danych przestrzennych zawiera książka <a href="https://geocompr.robinlovelace.net/">Geocomputation with R</a> <span class="citation">(Lovelace, Nowosad, and Muenchow <a href="#ref-lovelace2019geocomputation">2019</a>)</span>.</p>
+<p>Podstawy działania na danych przestrzennych zawiera książka <a href="https://geocompr.robinlovelace.net/">Geocomputation with R</a> <span class="citation">(Lovelace, Nowosad, and Muenchow <a href="#ref-lovelace2019geocomputation" role="doc-biblioref">2019</a>)</span>.</p>
 </div>
-<div id="programowanie-w-r" class="section level2">
+<div id="programowanie-w-r" class="section level2" number="16.4">
 <h2><span class="header-section-number">16.4</span> Programowanie w R</h2>
 <p>Wcześniejsze sekcje opisywały różne obszary zastosowań R, ale nie pokazywały w jaki sposób rozwijać umiejętności programowania w tym języku.
 Najprostszym sposobem jest używanie R jak najczęściej.
@@ -497,17 +529,17 @@ Większość pakietów R jest otwartoźródłowych - ich kod jest dostępny onli
 Kod pakietów R można, między innymi, znaleźć w serwisie GitHub.
 Wszystkie pakiety znajdujące się w repozytorium CRAN można znaleźć pod adresem <a href="https://github.com/cran" class="uri">https://github.com/cran</a>.
 Inną możliwością jest samodzielne wyszukanie kodu pakietu używając wyszukiwarki GitHub - <a href="https://github.com/search" class="uri">https://github.com/search</a>.</p>
-<p>Przykładowo, pod adresem <a href="https://github.com/karthik/wesanderson" class="uri">https://github.com/karthik/wesanderson</a> znajduje się kod źródłowy pakietu <strong>wesanderson</strong> <span class="citation">(Ram and Wickham <a href="#ref-R-wesanderson">2018</a>)</span>.
+<p>Przykładowo, pod adresem <a href="https://github.com/karthik/wesanderson" class="uri">https://github.com/karthik/wesanderson</a> znajduje się kod źródłowy pakietu <strong>wesanderson</strong> <span class="citation">(Ram and Wickham <a href="#ref-R-wesanderson" role="doc-biblioref">2018</a>)</span>.
 Ten pakiet zawiera funkcje tworzące palety kolorystyczne inspirowane filmami reżysera <a href="https://en.wikipedia.org/wiki/Wes_Anderson">Wesa Andersona</a>.
 Kod R będący podstawą działania tego pakietu znajduje się w folderze <code>R/</code><a href="#fn69" class="footnote-ref" id="fnref69"><sup>69</sup></a>.
 Dodatkowo, niektóre pakietu zawierają kod z innych języków programowania (np. C lub C++), który wymaga wcześniejszej kompilacji.
 Taki kod znajduje się w folderze <code>src/</code>.</p>
 </div>
-<div id="co-dalej" class="section level2">
+<div id="co-dalej" class="section level2" number="16.5">
 <h2><span class="header-section-number">16.5</span> Co dalej?</h2>
 <p>Programowanie to nie tylko pisanie kodu.
 Obejmuje to też wiele innych czynności, takich jak stosowanie optymalnych algorytmów czy narzędzi programistycznych.
-Istnieje wiele książek poświęconych kwestii algorytmów, wśród których najbardziej popularne to Introduction to Algorithms <span class="citation">(Cormen et al. <a href="#ref-cormen2009introduction">2009</a>)</span>, The Algorithm Design Manual <span class="citation">(Skiena <a href="#ref-skienaAlgorithmDesignManual2008">2008</a>)</span> czy Algorithms <span class="citation">(Sedgewick and Wayne <a href="#ref-032157351X">2011</a>)</span>.
+Istnieje wiele książek poświęconych kwestii algorytmów, wśród których najbardziej popularne to Introduction to Algorithms <span class="citation">(Cormen et al. <a href="#ref-cormen2009introduction" role="doc-biblioref">2009</a>)</span>, The Algorithm Design Manual <span class="citation">(Skiena <a href="#ref-skienaAlgorithmDesignManual2008" role="doc-biblioref">2008</a>)</span> czy Algorithms <span class="citation">(Sedgewick and Wayne <a href="#ref-032157351X" role="doc-biblioref">2011</a>)</span>.
 Podstawowym narzędziem programistycznym jest program do pisania kodu.
 Może to być zarówno prosty edytor tekstu, taki jak <a href="https://notepad-plus-plus.org/">Notepad++</a>, <a href="https://www.sublimetext.com/">Sublime Text</a>, lub <a href="https://atom.io/">Atom</a> czy też bardziej złożone zintegrowane środowisko programistyczne (IDE).
 O ile narzędzia z tej pierwszej grupy są uniwersalne to w przypadku wyboru IDE warto zdecydować się na zintegrowane środowisko programistyczne odpowiednie dla używanego języka programowania<a href="#fn70" class="footnote-ref" id="fnref70"><sup>70</sup></a>.</p>
@@ -517,13 +549,13 @@ Polega ona na tym, że zmiany naniesione w kodzie są przekazywane innej osobie
 Po inspekcji twórca kodu może dostać informację zwrotną, co jest dobre, a co wymaga poprawy.
 W efekcie, z jednej strony wyjściowy produkt jest lepszej jakości, a z drugiej strony programista uczy się i polepsza swoje umiejętności.</p>
 <p>Niezależnie od używanego języka istnieje również szereg narzędzi, których znajomość ułatwia lub czasem nawet umożliwia pracę.
-Wśród nich można wyróżnić znajomość linii komend i jej możliwości <span class="citation">(Kross <a href="#ref-krossUnixWorkbench2017">2017</a>)</span> oraz języka SQL służącego do tworzenia, edycji i zarządzania relacyjnymi bazami danych <span class="citation">(Beighley <a href="#ref-beighley2007head">2007</a>; Forta <a href="#ref-forta2013sams">2013</a>)</span>.
+Wśród nich można wyróżnić znajomość linii komend i jej możliwości <span class="citation">(Kross <a href="#ref-krossUnixWorkbench2017" role="doc-biblioref">2017</a>)</span> oraz języka SQL służącego do tworzenia, edycji i zarządzania relacyjnymi bazami danych <span class="citation">(Beighley <a href="#ref-beighley2007head" role="doc-biblioref">2007</a>; Forta <a href="#ref-forta2013sams" role="doc-biblioref">2013</a>)</span>.
 <!-- uczenie maszynowe -->
 <!-- zrównoleglanie (hcp) --></p>
 <p>Innym kierunkiem działań może być nauka kolejnego języka programowania - najlepiej takiego, którego główne zastosowanie różni się od R.
 Może to być przykładowo język kompilowany, taki jak C, C++ lub Rust, którego efektem będzie bardziej wydajny<!--...--> program.
 Co ważne, kod napisany w tych językach można łączyć z kodem R.
-R posiada wbudowany interfejs do używania kodu napisanego w C (rozdział 5 z dokumentacji <a href="https://cran.r-project.org/doc/manuals/R-exts.html#System-and-foreign-language-interfaces">Writing R Extensions</a> <span class="citation">(R Core Team <a href="#ref-team1999writing">2019</a>)</span>), łączenie kodu napisanego w C++ ułatwia znacząco pakiet <strong>Rcpp</strong> (<span class="citation">Eddelbuettel et al. (<a href="#ref-R-Rcpp">2020</a>)</span>; więcej informacji w rozdziale <a href="https://adv-r.hadley.nz/rcpp.html">“Rewriting R code in C++”</a> książki Advanced R <span class="citation">(Wickham <a href="#ref-wickham2014advanced">2014</a>)</span>), a wskazówki dotyczące łączenia kodu Rust można znaleźć w repozytorium <a href="https://github.com/r-rust/hellorust" class="uri">https://github.com/r-rust/hellorust</a>.
+R posiada wbudowany interfejs do używania kodu napisanego w C (rozdział 5 z dokumentacji <a href="https://cran.r-project.org/doc/manuals/R-exts.html#System-and-foreign-language-interfaces">Writing R Extensions</a> <span class="citation">(R Core Team <a href="#ref-team1999writing" role="doc-biblioref">2019</a>)</span>), łączenie kodu napisanego w C++ ułatwia znacząco pakiet <strong>Rcpp</strong> (<span class="citation">Eddelbuettel et al. (<a href="#ref-R-Rcpp" role="doc-biblioref">2020</a>)</span>; więcej informacji w rozdziale <a href="https://adv-r.hadley.nz/rcpp.html">“Rewriting R code in C++”</a> książki Advanced R <span class="citation">(Wickham <a href="#ref-wickham2014advanced" role="doc-biblioref">2014</a>)</span>), a wskazówki dotyczące łączenia kodu Rust można znaleźć w repozytorium <a href="https://github.com/r-rust/hellorust" class="uri">https://github.com/r-rust/hellorust</a>.
 W efekcie użytkownik może korzystać z interaktywności R, wykonując dowolne linie kodu, ale część z nich może używać wydajniejszych funkcji napisanych w językach kompilowanych.
 Alternatywną drogą może być nauka języków używanych do tworzenia i rozwijania aplikacji internetowych, w tym JavaScript czy PHP.</p>
 <p>Pomimo już znaczącej historii, języki programowania nadal mają wiele nowego do zaoferowania.
@@ -547,10 +579,10 @@ Języki programowania są też stosowane coraz częściej w wielu codzienne u�
 <h3>Bibliografia</h3>
 <div id="refs" class="references">
 <div id="ref-R-magrittr">
-<p>Bache, Stefan Milton, and Hadley Wickham. 2014. <em>Magrittr: A Forward-Pipe Operator for R</em>. <a href="https://CRAN.R-project.org/package=magrittr" class="uri">https://CRAN.R-project.org/package=magrittr</a>.</p>
+<p>Bache, Stefan Milton, and Hadley Wickham. 2014. <em>Magrittr: A Forward-Pipe Operator for R</em>. <a href="https://CRAN.R-project.org/package=magrittr">https://CRAN.R-project.org/package=magrittr</a>.</p>
 </div>
 <div id="ref-beighley2007head">
-<p>Beighley, Lynn. 2007. <em>Head First SQL: Your Brain on SQL–A Learner’s Guide</em>. &quot; O’Reilly Media, Inc.&quot;.</p>
+<p>Beighley, Lynn. 2007. <em>Head First SQL: Your Brain on SQL–A Learner’s Guide</em>. " O’Reilly Media, Inc.".</p>
 </div>
 <div id="ref-cormen2009introduction">
 <p>Cormen, Thomas H, Charles E Leiserson, Ronald L Rivest, and Clifford Stein. 2009. <em>Introduction to Algorithms</em>. MIT press.</p>
@@ -568,7 +600,7 @@ Języki programowania są też stosowane coraz częściej w wielu codzienne u�
 <p>Lovelace, R, J Nowosad, and J Muenchow. 2019. <em>Geocomputation with R</em>. Chapman and Hall/CRC Press.</p>
 </div>
 <div id="ref-R-wesanderson">
-<p>Ram, Karthik, and Hadley Wickham. 2018. <em>Wesanderson: A Wes Anderson Palette Generator</em>. <a href="https://CRAN.R-project.org/package=wesanderson" class="uri">https://CRAN.R-project.org/package=wesanderson</a>.</p>
+<p>Ram, Karthik, and Hadley Wickham. 2018. <em>Wesanderson: A Wes Anderson Palette Generator</em>. <a href="https://CRAN.R-project.org/package=wesanderson">https://CRAN.R-project.org/package=wesanderson</a>.</p>
 </div>
 <div id="ref-team1999writing">
 <p>R Core Team. 2019. <em>Writing R Extensions</em>. R Foundation for Statistical Computing.</p>
@@ -583,22 +615,22 @@ Języki programowania są też stosowane coraz częściej w wielu codzienne u�
 <p>Wickham, Hadley. 2014. <em>Advanced R</em>. Chapman and Hall/CRC.</p>
 </div>
 <div id="ref-R-readxl">
-<p>Wickham, Hadley, and Jennifer Bryan. 2019. <em>Readxl: Read Excel Files</em>. <a href="https://CRAN.R-project.org/package=readxl" class="uri">https://CRAN.R-project.org/package=readxl</a>.</p>
+<p>Wickham, Hadley, and Jennifer Bryan. 2019. <em>Readxl: Read Excel Files</em>. <a href="https://CRAN.R-project.org/package=readxl">https://CRAN.R-project.org/package=readxl</a>.</p>
 </div>
 <div id="ref-R-ggplot2">
-<p>Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey Dunnington. 2020. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2" class="uri">https://CRAN.R-project.org/package=ggplot2</a>.</p>
+<p>Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey Dunnington. 2020. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2">https://CRAN.R-project.org/package=ggplot2</a>.</p>
 </div>
 <div id="ref-R-dplyr">
 <p>Wickham, Hadley, Romain François, Lionel Henry, and Kirill Müller. 2020. <em>Dplyr: A Grammar of Data Manipulation</em>.</p>
 </div>
 <div id="ref-wickham2016r">
-<p>Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. &quot; O’Reilly Media, Inc.&quot;.</p>
+<p>Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. " O’Reilly Media, Inc.".</p>
 </div>
 <div id="ref-R-tidyr">
-<p>Wickham, Hadley, and Lionel Henry. 2020. <em>Tidyr: Tidy Messy Data</em>. <a href="https://CRAN.R-project.org/package=tidyr" class="uri">https://CRAN.R-project.org/package=tidyr</a>.</p>
+<p>Wickham, Hadley, and Lionel Henry. 2020. <em>Tidyr: Tidy Messy Data</em>. <a href="https://CRAN.R-project.org/package=tidyr">https://CRAN.R-project.org/package=tidyr</a>.</p>
 </div>
 <div id="ref-R-readr">
-<p>Wickham, Hadley, Jim Hester, and Romain Francois. 2018. <em>Readr: Read Rectangular Text Data</em>. <a href="https://CRAN.R-project.org/package=readr" class="uri">https://CRAN.R-project.org/package=readr</a>.</p>
+<p>Wickham, Hadley, Jim Hester, and Romain Francois. 2018. <em>Readr: Read Rectangular Text Data</em>. <a href="https://CRAN.R-project.org/package=readr">https://CRAN.R-project.org/package=readr</a>.</p>
 </div>
 <div id="ref-wilkinsonGrammarGraphics2005">
 <p>Wilkinson, Leland. 2005. <em>The Grammar of Graphics</em>. Springer.</p>
@@ -610,15 +642,15 @@ Języki programowania są też stosowane coraz częściej w wielu codzienne u�
 <div class="footnotes">
 <hr />
 <ol start="63">
-<li id="fn63"><p>Kod <code>tavg ~ nazwa_stacji</code> można inaczej odczytać jako <code>tavg</code> w zależności od <code>nazwa_stacji</code>.<a href="podsumowanie.html#fnref63" class="footnote-back">↩</a></p></li>
-<li id="fn64"><p>Analiza danych często jest określana również jako <a href="https://en.wikipedia.org/wiki/Data_science">data science</a>.<a href="podsumowanie.html#fnref64" class="footnote-back">↩</a></p></li>
-<li id="fn65"><p>Ta książka również powstała używająć R Markdown.<a href="podsumowanie.html#fnref65" class="footnote-back">↩</a></p></li>
-<li id="fn66"><p>Dodatkowo istnieje specjalne repozytorium Bioconductor poświęcone pakietom R dotyczącym zagadnień bioinformatycznych.<a href="podsumowanie.html#fnref66" class="footnote-back">↩</a></p></li>
-<li id="fn67"><p>Read the Source, Luke.<a href="podsumowanie.html#fnref67" class="footnote-back">↩</a></p></li>
+<li id="fn63"><p>Kod <code>tavg ~ nazwa_stacji</code> można inaczej odczytać jako <code>tavg</code> w zależności od <code>nazwa_stacji</code>.<a href="podsumowanie.html#fnref63" class="footnote-back">↩︎</a></p></li>
+<li id="fn64"><p>Analiza danych często jest określana również jako <a href="https://en.wikipedia.org/wiki/Data_science">data science</a>.<a href="podsumowanie.html#fnref64" class="footnote-back">↩︎</a></p></li>
+<li id="fn65"><p>Ta książka również powstała używająć R Markdown.<a href="podsumowanie.html#fnref65" class="footnote-back">↩︎</a></p></li>
+<li id="fn66"><p>Dodatkowo istnieje specjalne repozytorium Bioconductor poświęcone pakietom R dotyczącym zagadnień bioinformatycznych.<a href="podsumowanie.html#fnref66" class="footnote-back">↩︎</a></p></li>
+<li id="fn67"><p>Read the Source, Luke.<a href="podsumowanie.html#fnref67" class="footnote-back">↩︎</a></p></li>
 <li id="fn68"><p>Dostępny jest także kod źródłowy samego języka R.
-Można go znaleźć pod adresem <a href="https://github.com/wch/r-source" class="uri">https://github.com/wch/r-source</a>.<a href="podsumowanie.html#fnref68" class="footnote-back">↩</a></p></li>
-<li id="fn69"><p>Szczególnie <code>R/colors.R</code>.<a href="podsumowanie.html#fnref69" class="footnote-back">↩</a></p></li>
-<li id="fn70"><p><a href="https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments" class="uri">https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments</a><a href="podsumowanie.html#fnref70" class="footnote-back">↩</a></p></li>
+Można go znaleźć pod adresem <a href="https://github.com/wch/r-source" class="uri">https://github.com/wch/r-source</a>.<a href="podsumowanie.html#fnref68" class="footnote-back">↩︎</a></p></li>
+<li id="fn69"><p>Szczególnie <code>R/colors.R</code>.<a href="podsumowanie.html#fnref69" class="footnote-back">↩︎</a></p></li>
+<li id="fn70"><p><a href="https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments" class="uri">https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments</a><a href="podsumowanie.html#fnref70" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
