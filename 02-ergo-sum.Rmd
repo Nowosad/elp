@@ -244,7 +244,7 @@ bok_a
 bok_b
 
 # funkcja
-pole_prostokata
+pole_prostokata()
 ```
 
 Nazwa obiektu nie może zaczynać się od liczby, ani nie może używać specjalnych symboli, tj. `^`, `!`, `$`, `@`, `+`, `-`, `/`, czy `*`.
