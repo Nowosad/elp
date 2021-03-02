@@ -32,7 +32,7 @@
   
 <link rel="prev" href="wprowadzenie.html"/>
 <link rel="next" href="funkcje.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -537,45 +537,75 @@ Ułatwia on przenoszenie kodu pomiędzy różnymi komputerami, a także daje dos
 Ten folder staje się też od razu folderem roboczym (więcej na ten temat znajdziesz w rozdziale <a href="io.html#io">9</a>).
 Otwarcie wcześniej stworzonego projektu ma miejsce poprzez uruchomienie pliku z rozszerzeniem <code>.Rproj</code> lub też wybór projektu w prawym górnym rogu RStudio.</p>
 <table>
-<caption><span id="tab:rstudiosk">Tabela 2.1: </span>Podstawowe skróty klawiaturowe w RStudio</caption>
-<colgroup>
-<col width="36%" />
-<col width="63%" />
-</colgroup>
+<caption>
+<span id="tab:rstudiosk">Tabela 2.1: </span>Podstawowe skróty klawiaturowe w RStudio
+</caption>
 <thead>
-<tr class="header">
-<th align="left">Skrót</th>
-<th align="left">Wyjaśnienie</th>
+<tr>
+<th style="text-align:left;">
+Skrót
+</th>
+<th style="text-align:left;">
+Wyjaśnienie
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">Ctrl+Enter</td>
-<td align="left">Wykonuje wybraną linię kodu w skrypcie R</td>
+<tr>
+<td style="text-align:left;width: 12em; ">
+Ctrl+Enter
+</td>
+<td style="text-align:left;width: 18em; ">
+Wykonuje wybraną linię kodu w skrypcie R
+</td>
 </tr>
-<tr class="even">
-<td align="left">Tab</td>
-<td align="left">Uzupełnia kod (podaje pasujące możliwości)</td>
+<tr>
+<td style="text-align:left;width: 12em; ">
+Tab
+</td>
+<td style="text-align:left;width: 18em; ">
+Uzupełnia kod (podaje pasujące możliwości)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">F1</td>
-<td align="left">Wyświetla plik pomocy dla wybranej funkcji</td>
+<tr>
+<td style="text-align:left;width: 12em; ">
+F1
+</td>
+<td style="text-align:left;width: 18em; ">
+Wyświetla plik pomocy dla wybranej funkcji
+</td>
 </tr>
-<tr class="even">
-<td align="left">Ctrl+Shift+C</td>
-<td align="left">Ustawia wybrane linie jako komentarz/odkomentuj fragment kodu</td>
+<tr>
+<td style="text-align:left;width: 12em; ">
+Ctrl+Shift+C
+</td>
+<td style="text-align:left;width: 18em; ">
+Ustawia wybrane linie jako komentarz/odkomentuj fragment kodu
+</td>
 </tr>
-<tr class="odd">
-<td align="left">strzałka Góra/Dół (w oknie konsoli)</td>
-<td align="left">Wybiera wcześniej wpisany kod</td>
+<tr>
+<td style="text-align:left;width: 12em; ">
+strzałka Góra/Dół (w oknie konsoli)
+</td>
+<td style="text-align:left;width: 18em; ">
+Wybiera wcześniej wpisany kod
+</td>
 </tr>
-<tr class="even">
-<td align="left">Esc</td>
-<td align="left">Przerywa niedokończoną operację</td>
+<tr>
+<td style="text-align:left;width: 12em; ">
+Esc
+</td>
+<td style="text-align:left;width: 18em; ">
+Przerywa niedokończoną operację
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Shift+Alt+K</td>
-<td align="left">Wyświetla listę skrótów klawiaturowych</td>
+<tr>
+<td style="text-align:left;width: 12em; ">
+Shift+Alt+K
+</td>
+<td style="text-align:left;width: 18em; ">
+Wyświetla listę skrótów klawiaturowych
+</td>
 </tr>
 </tbody>
 </table>
@@ -602,7 +632,7 @@ Ważne, żeby nazwy obiektów ułatwiały zrozumienie ich zawartości.</p>
 <span id="cb17-3"><a href="ergosum.html#cb17-3"></a>bok_b</span>
 <span id="cb17-4"><a href="ergosum.html#cb17-4"></a></span>
 <span id="cb17-5"><a href="ergosum.html#cb17-5"></a><span class="co"># funkcja</span></span>
-<span id="cb17-6"><a href="ergosum.html#cb17-6"></a>pole_prostokata</span></code></pre></div>
+<span id="cb17-6"><a href="ergosum.html#cb17-6"></a><span class="kw">pole_prostokata</span>()</span></code></pre></div>
 <p>Nazwa obiektu nie może zaczynać się od liczby, ani nie może używać specjalnych symboli, tj. <code>^</code>, <code>!</code>, <code>$</code>, <code>@</code>, <code>+</code>, <code>-</code>, <code>/</code>, czy <code>*</code>.
 Dodatkowo należy uważać, żeby nowa nazwa obiektu nie nadpisała istniejącego obiektu lub funkcji.
 Nie powinno nazywać się obiektów tak jak istniejące funkcje, np. <code>c</code>, <code>t</code>, <code>table</code>, itd.</p>

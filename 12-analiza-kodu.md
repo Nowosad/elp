@@ -173,7 +173,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 ```r
 system.time(mean(1:100000000))
 #>    user  system elapsed 
-#>   0.498   0.000   0.499
+#>   0.509   0.000   0.509
 ```
 
 W efekcie dostajemy trzy wartości - `user`, `system` i `elapsed`. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.
@@ -227,11 +227,11 @@ wynik_1 = mark(
 )
 wynik_1
 #> # A tibble: 2 x 6
-#>   expression             min median `itr/sec` mem_alloc
-#>   <bch:expr>          <bch:> <bch:>     <dbl> <bch:byt>
-#> 1 mi_do_km1(odl_mile) 1.48µs 1.67µs   518860.     117KB
-#> 2 mi_do_km2(odl_mile) 1.18µs 1.37µs   695245.     224KB
-#> # … with 1 more variable: `gc/sec` <dbl>
+#>   expression              min median `itr/sec` mem_alloc
+#>   <bch:expr>          <bch:t> <bch:>     <dbl> <bch:byt>
+#> 1 mi_do_km1(odl_mile)  1.46µs 1.99µs   434629.     117KB
+#> 2 mi_do_km2(odl_mile)  1.21µs 1.38µs   679024.     224KB
+#> # … with 1 more variable: gc/sec <dbl>
 ```
 
 Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
@@ -260,15 +260,15 @@ wynik_2 = mark(
 #> so filtering is disabled.
 wynik_2
 #> # A tibble: 2 x 6
-#>   expression             min median `itr/sec` mem_alloc
-#>   <bch:expr>           <bch> <bch:>     <dbl> <bch:byt>
-#> 1 mi_do_km1(odl_mile2) 539ms  539ms      1.86     382MB
-#> 2 mi_do_km2(odl_mile2) 829µs  859µs   1044.      78.2KB
-#> # … with 1 more variable: `gc/sec` <dbl>
+#>   expression              min median `itr/sec` mem_alloc
+#>   <bch:expr>           <bch:> <bch:>     <dbl> <bch:byt>
+#> 1 mi_do_km1(odl_mile2)  493ms  494ms      2.03     382MB
+#> 2 mi_do_km2(odl_mile2)  810µs  836µs   1070.      78.2KB
+#> # … with 1 more variable: gc/sec <dbl>
 ```
 
 W tym przypadku różnica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
-Funkcja `mi_do_km1` jest w stanie wykonać tylko 1.86 operacji na sekundę, przy aż 1044.04 operacji na sekundę funkcji `mi_do_km2`.
+Funkcja `mi_do_km1` jest w stanie wykonać tylko 2.03 operacji na sekundę, przy aż 1069.78 operacji na sekundę funkcji `mi_do_km2`.
 Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
 
 

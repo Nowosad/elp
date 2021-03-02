@@ -219,18 +219,45 @@ W ten sposób zostanie utworzony nowy folder wraz z plikiem o nazwie projektu z 
 Ten folder staje się też od razu folderem roboczym (więcej na ten temat znajdziesz w rozdziale \@ref(io)).
 Otwarcie wcześniej stworzonego projektu ma miejsce poprzez uruchomienie pliku z rozszerzeniem `.Rproj` lub też wybór projektu w prawym górnym rogu RStudio.
 
-
-Table: (\#tab:rstudiosk)Podstawowe skróty klawiaturowe w RStudio
-
-|Skrót                               |Wyjaśnienie                                                   |
-|:-----------------------------------|:-------------------------------------------------------------|
-|Ctrl+Enter                          |Wykonuje wybraną linię kodu w skrypcie R                      |
-|Tab                                 |Uzupełnia kod (podaje pasujące możliwości)                    |
-|F1                                  |Wyświetla plik pomocy dla wybranej funkcji                    |
-|Ctrl+Shift+C                        |Ustawia wybrane linie jako komentarz/odkomentuj fragment kodu |
-|strzałka Góra/Dół (w oknie konsoli) |Wybiera wcześniej wpisany kod                                 |
-|Esc                                 |Przerywa niedokończoną operację                               |
-|Shift+Alt+K                         |Wyświetla listę skrótów klawiaturowych                        |
+<table>
+<caption>(\#tab:rstudiosk)Podstawowe skróty klawiaturowe w RStudio</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Skrót </th>
+   <th style="text-align:left;"> Wyjaśnienie </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;width: 12em; "> Ctrl+Enter </td>
+   <td style="text-align:left;width: 18em; "> Wykonuje wybraną linię kodu w skrypcie R </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 12em; "> Tab </td>
+   <td style="text-align:left;width: 18em; "> Uzupełnia kod (podaje pasujące możliwości) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 12em; "> F1 </td>
+   <td style="text-align:left;width: 18em; "> Wyświetla plik pomocy dla wybranej funkcji </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 12em; "> Ctrl+Shift+C </td>
+   <td style="text-align:left;width: 18em; "> Ustawia wybrane linie jako komentarz/odkomentuj fragment kodu </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 12em; "> strzałka Góra/Dół (w oknie konsoli) </td>
+   <td style="text-align:left;width: 18em; "> Wybiera wcześniej wpisany kod </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 12em; "> Esc </td>
+   <td style="text-align:left;width: 18em; "> Przerywa niedokończoną operację </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 12em; "> Shift+Alt+K </td>
+   <td style="text-align:left;width: 18em; "> Wyświetla listę skrótów klawiaturowych </td>
+  </tr>
+</tbody>
+</table>
 
 ## Styl
 
@@ -259,7 +286,7 @@ bok_a
 bok_b
 
 # funkcja
-pole_prostokata
+pole_prostokata()
 ```
 
 Nazwa obiektu nie może zaczynać się od liczby, ani nie może używać specjalnych symboli, tj. `^`, `!`, `$`, `@`, `+`, `-`, `/`, czy `*`.

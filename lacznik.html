@@ -32,7 +32,7 @@
   
 <link rel="prev" href="debugging.html"/>
 <link rel="next" href="kontrola-wersji.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
@@ -525,13 +525,13 @@ Jest to odpowiednik kodu <code>i = i + 1</code>.</p>
 <span id="cb345-5"><a href="lacznik.html#cb345-5"></a>)</span>
 <span id="cb345-6"><a href="lacznik.html#cb345-6"></a>wynik</span>
 <span id="cb345-7"><a href="lacznik.html#cb345-7"></a><span class="co">#&gt; # A tibble: 2 x 6</span></span>
-<span id="cb345-8"><a href="lacznik.html#cb345-8"></a><span class="co">#&gt;   expression                  min median `itr/sec`</span></span>
-<span id="cb345-9"><a href="lacznik.html#cb345-9"></a><span class="co">#&gt;   &lt;bch:expr&gt;                &lt;bch&gt; &lt;bch:&gt;     &lt;dbl&gt;</span></span>
-<span id="cb345-10"><a href="lacznik.html#cb345-10"></a><span class="co">#&gt; 1 mile_na_km(odl_mile2)     816µs  841µs     1149.</span></span>
-<span id="cb345-11"><a href="lacznik.html#cb345-11"></a><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2) 437µs  460µs     2117.</span></span>
+<span id="cb345-8"><a href="lacznik.html#cb345-8"></a><span class="co">#&gt;   expression                     min   median `itr/sec`</span></span>
+<span id="cb345-9"><a href="lacznik.html#cb345-9"></a><span class="co">#&gt;   &lt;bch:expr&gt;                &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt;</span></span>
+<span id="cb345-10"><a href="lacznik.html#cb345-10"></a><span class="co">#&gt; 1 mile_na_km(odl_mile2)        812µs    846µs     1143.</span></span>
+<span id="cb345-11"><a href="lacznik.html#cb345-11"></a><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2)    427µs    452µs     2174.</span></span>
 <span id="cb345-12"><a href="lacznik.html#cb345-12"></a><span class="co">#&gt; # … with 2 more variables: mem_alloc &lt;bch:byt&gt;,</span></span>
-<span id="cb345-13"><a href="lacznik.html#cb345-13"></a><span class="co">#&gt; #   `gc/sec` &lt;dbl&gt;</span></span></code></pre></div>
-<p>Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.83 raza mniejszy.</p>
+<span id="cb345-13"><a href="lacznik.html#cb345-13"></a><span class="co">#&gt; #   gc/sec &lt;dbl&gt;</span></span></code></pre></div>
+<p>Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.87 raza mniejszy.</p>
 </div>
 <div id="sourceCpp" class="section level3" number="13.1.2">
 <h3><span class="header-section-number">13.1.2</span> Wywoływanie kodu z plików .cpp</h3>
