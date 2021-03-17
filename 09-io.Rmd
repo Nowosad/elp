@@ -86,11 +86,9 @@ Po otworzeniu tego pliku w edytorze tekstu widzimy, że pierwszy jego wiersz zaw
 Dodatkowo można zobaczyć, że kolumny rozdzielane są przecinkami (`,`), natomiast wartości zmiennoprzecinkowe kropkami (`.`).
 
 Do wczytania tego pliku możemy użyć wbudowanej w R funkcji `read.csv()`, podając w niej bezwzględną lub względną ścieżkę do pliku.
-W poniższych przykładzie dodatkowo ustalono argument `stringsAsFactors` na `FALSE`, dzięki czemu kolumny z tekstem nie będą zamieniane na klasę czynnikową^[Takie defensywne zachowanie może oszczędzić pewnych problemów w przyszłości.].
 
 ```{r}
-meteo = read.csv("pliki/dane_meteo.csv", 
-                 stringsAsFactors = FALSE)
+meteo = read.csv("pliki/dane_meteo.csv")
 str(meteo)
 ```
 

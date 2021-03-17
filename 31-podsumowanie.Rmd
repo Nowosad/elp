@@ -15,8 +15,7 @@ Jedną z najczęściej wymienianych zalet R są jego rozbudowane narzędzia do t
 Możemy to zobaczyć na poniższym przykładzie danych meteorologicznych dla Poznania i Zakopanego z roku 2017.
 
 ```{r}
-met = read.csv("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv",
-             stringsAsFactors = FALSE)
+met = read.csv("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv")
 head(met)
 ```
 

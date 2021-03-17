@@ -154,15 +154,12 @@ Stworzenie nowej ramki danych możliwe jest używając funkcji `data.frame()`, w
 ramka1 = data.frame(wek_log = c(TRUE, FALSE, FALSE),
                     wek_cal = c(5L, -7L, 12L), 
                     wek_zmi = c(5.3, -7.1, 1.1), 
-                    wek_zna = c("kot", "pies", "nosorożec"),
-                    stringsAsFactors = FALSE)
+                    wek_zna = c("kot", "pies", "nosorożec"))
 ramka1
 ```
 
 W powyższym przykładzie, `ramka1` składa się z czterech kolumn o długości trzy. 
 Każda z tych kolumn ma inny typ - logiczny, liczby całkowitej, liczby zmiennoprzecinkowej oraz znakowy.
-Domyślnie funkcja `data.frame` wykonuje jeszcze jedną operację w tle - zamienia ona wszystkie dane o typie znakowym na typ czynnikowy (sekcja \@ref(fac)).
-W większości przypadków nie jest to pożądane działanie - dlatego też warto wyłączyć tę konwersję używając argumentu `stringsAsFactors = FALSE`.
 
 ```{block2 type="rmdinfo"}
 Obiekty klasy ramka danych są też zazwyczaj wynikiem wczytywania zewnętrznych plików do R, np. w formacie `.csv` czy `.xlsx`.
