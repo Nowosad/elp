@@ -230,7 +230,7 @@ writexl::write_xlsx(meteo_z_xl, "pliki/dane_meteo.xlsx")
 
 Powyżej można było zobaczyć jaki sposób można wczytać dane z różnorodnych plików tekstowych, R, czy arkuszy kalkulacyjnych.
 R pozwala jednocześnie na otworzenie wielu innych formatów plików używając dodatkowych pakietów.
-Przykładowo, hierarchiczne formaty danych można wczytać używając pakietu **jsonline** (format `.json`) [@R-jsonlite] czy **xml2** (format `.xml`) [@R-xml2], a formaty danych przestrzennych używając pakietu **sf** (dane wektorowe) [@R-sf] czy **raster** (dane rastrowe) [@R-raster].
+Przykładowo, hierarchiczne formaty danych można wczytać używając pakietu **jsonlite** (format `.json`) [@R-jsonlite] czy **xml2** (format `.xml`) [@R-xml2], a formaty danych przestrzennych używając pakietu **sf** (dane wektorowe) [@R-sf] czy **raster** (dane rastrowe) [@R-raster].
 Zestawienie zawierające dodatkowe przykłady można znaleźć pod adresem https://github.com/leeper/rio.
 
 Powszechną sytuacją jest przechowywanie danych w różnego rodzaju bazach danych.
