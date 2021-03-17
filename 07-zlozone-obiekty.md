@@ -222,8 +222,7 @@ Stworzenie nowej ramki danych możliwe jest używając funkcji `data.frame()`, w
 ramka1 = data.frame(wek_log = c(TRUE, FALSE, FALSE),
                     wek_cal = c(5L, -7L, 12L), 
                     wek_zmi = c(5.3, -7.1, 1.1), 
-                    wek_zna = c("kot", "pies", "nosorożec"),
-                    stringsAsFactors = FALSE)
+                    wek_zna = c("kot", "pies", "nosorożec"))
 ramka1
 #>   wek_log wek_cal wek_zmi   wek_zna
 #> 1    TRUE       5     5.3       kot
@@ -233,8 +232,6 @@ ramka1
 
 W powyższym przykładzie, `ramka1` składa się z czterech kolumn o długości trzy. 
 Każda z tych kolumn ma inny typ - logiczny, liczby całkowitej, liczby zmiennoprzecinkowej oraz znakowy.
-Domyślnie funkcja `data.frame` wykonuje jeszcze jedną operację w tle - zamienia ona wszystkie dane o typie znakowym na typ czynnikowy (sekcja \@ref(fac)).
-W większości przypadków nie jest to pożądane działanie - dlatego też warto wyłączyć tę konwersję używając argumentu `stringsAsFactors = FALSE`.
 
 \BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Obiekty klasy ramka danych są też zazwyczaj wynikiem wczytywania zewnętrznych plików do R, np. w formacie `.csv` czy `.xlsx`.
 Więcej informacji na ten temat można znaleźć w rozdziale \@ref(io).</div>\EndKnitrBlock{rmdinfo}
@@ -750,7 +747,7 @@ methods(mean)
 #> see '?methods' for accessing help and source code
 ```
 
-Przykładowo, funkcja `mean()` ma pięć metod:
+Przykładowo, funkcja `mean()` ma kilka metod:
 
 - `.Date` - obsługującą daty
 - `.difftime` - obsługującą czas trwania

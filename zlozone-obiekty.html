@@ -538,17 +538,14 @@ Ramki danych przypominają w swojej strukturze arkusze kalkulacyjne czy bazy dan
 <div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="zlozone-obiekty.html#cb197-1"></a>ramka1 =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">wek_log =</span> <span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>),</span>
 <span id="cb197-2"><a href="zlozone-obiekty.html#cb197-2"></a>                    <span class="dt">wek_cal =</span> <span class="kw">c</span>(5L, <span class="op">-</span>7L, 12L), </span>
 <span id="cb197-3"><a href="zlozone-obiekty.html#cb197-3"></a>                    <span class="dt">wek_zmi =</span> <span class="kw">c</span>(<span class="fl">5.3</span>, <span class="fl">-7.1</span>, <span class="fl">1.1</span>), </span>
-<span id="cb197-4"><a href="zlozone-obiekty.html#cb197-4"></a>                    <span class="dt">wek_zna =</span> <span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>, <span class="st">&quot;nosorożec&quot;</span>),</span>
-<span id="cb197-5"><a href="zlozone-obiekty.html#cb197-5"></a>                    <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb197-6"><a href="zlozone-obiekty.html#cb197-6"></a>ramka1</span>
-<span id="cb197-7"><a href="zlozone-obiekty.html#cb197-7"></a><span class="co">#&gt;   wek_log wek_cal wek_zmi   wek_zna</span></span>
-<span id="cb197-8"><a href="zlozone-obiekty.html#cb197-8"></a><span class="co">#&gt; 1    TRUE       5     5.3       kot</span></span>
-<span id="cb197-9"><a href="zlozone-obiekty.html#cb197-9"></a><span class="co">#&gt; 2   FALSE      -7    -7.1      pies</span></span>
-<span id="cb197-10"><a href="zlozone-obiekty.html#cb197-10"></a><span class="co">#&gt; 3   FALSE      12     1.1 nosorożec</span></span></code></pre></div>
+<span id="cb197-4"><a href="zlozone-obiekty.html#cb197-4"></a>                    <span class="dt">wek_zna =</span> <span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>, <span class="st">&quot;nosorożec&quot;</span>))</span>
+<span id="cb197-5"><a href="zlozone-obiekty.html#cb197-5"></a>ramka1</span>
+<span id="cb197-6"><a href="zlozone-obiekty.html#cb197-6"></a><span class="co">#&gt;   wek_log wek_cal wek_zmi   wek_zna</span></span>
+<span id="cb197-7"><a href="zlozone-obiekty.html#cb197-7"></a><span class="co">#&gt; 1    TRUE       5     5.3       kot</span></span>
+<span id="cb197-8"><a href="zlozone-obiekty.html#cb197-8"></a><span class="co">#&gt; 2   FALSE      -7    -7.1      pies</span></span>
+<span id="cb197-9"><a href="zlozone-obiekty.html#cb197-9"></a><span class="co">#&gt; 3   FALSE      12     1.1 nosorożec</span></span></code></pre></div>
 <p>W powyższym przykładzie, <code>ramka1</code> składa się z czterech kolumn o długości trzy.
-Każda z tych kolumn ma inny typ - logiczny, liczby całkowitej, liczby zmiennoprzecinkowej oraz znakowy.
-Domyślnie funkcja <code>data.frame</code> wykonuje jeszcze jedną operację w tle - zamienia ona wszystkie dane o typie znakowym na typ czynnikowy (sekcja <a href="proste-obiekty.html#fac">5.11</a>).
-W większości przypadków nie jest to pożądane działanie - dlatego też warto wyłączyć tę konwersję używając argumentu <code>stringsAsFactors = FALSE</code>.</p>
+Każda z tych kolumn ma inny typ - logiczny, liczby całkowitej, liczby zmiennoprzecinkowej oraz znakowy.</p>
 
 <div class="rmdinfo">
 Obiekty klasy ramka danych są też zazwyczaj wynikiem wczytywania zewnętrznych plików do R, np. w formacie <code>.csv</code> czy <code>.xlsx</code>.
@@ -898,7 +895,7 @@ Metoda to sposób w jaki zachowuje się funkcja w zależności od tego jakiej kl
 <span id="cb231-2"><a href="zlozone-obiekty.html#cb231-2"></a><span class="co">#&gt; [1] mean.Date     mean.default  mean.difftime</span></span>
 <span id="cb231-3"><a href="zlozone-obiekty.html#cb231-3"></a><span class="co">#&gt; [4] mean.POSIXct  mean.POSIXlt  mean.quosure*</span></span>
 <span id="cb231-4"><a href="zlozone-obiekty.html#cb231-4"></a><span class="co">#&gt; see &#39;?methods&#39; for accessing help and source code</span></span></code></pre></div>
-<p>Przykładowo, funkcja <code>mean()</code> ma pięć metod:</p>
+<p>Przykładowo, funkcja <code>mean()</code> ma kilka metod:</p>
 <ul>
 <li><code>.Date</code> - obsługującą daty</li>
 <li><code>.difftime</code> - obsługującą czas trwania</li>

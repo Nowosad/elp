@@ -454,19 +454,17 @@ Przykładowo, pliki tekstowe mogą przechowywać dane w postaci tabelarycznej, a
 <p>Zapisaliśmy ten plik jako <code>dane_meteo.csv</code> w podfolderze <code>pliki</code>, więc jego ścieżka względna to <code>"pliki/dane_meteo.csv"</code>.
 Po otworzeniu tego pliku w edytorze tekstu widzimy, że pierwszy jego wiersz zawiera nazwy kolumn, a następne wiersze to kolejne obserwacje.
 Dodatkowo można zobaczyć, że kolumny rozdzielane są przecinkami (<code>,</code>), natomiast wartości zmiennoprzecinkowe kropkami (<code>.</code>).</p>
-<p>Do wczytania tego pliku możemy użyć wbudowanej w R funkcji <code>read.csv()</code>, podając w niej bezwzględną lub względną ścieżkę do pliku.
-W poniższych przykładzie dodatkowo ustalono argument <code>stringsAsFactors</code> na <code>FALSE</code>, dzięki czemu kolumny z tekstem nie będą zamieniane na klasę czynnikową<a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a>.</p>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="io.html#cb267-1"></a>meteo =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;pliki/dane_meteo.csv&quot;</span>, </span>
-<span id="cb267-2"><a href="io.html#cb267-2"></a>                 <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb267-3"><a href="io.html#cb267-3"></a><span class="kw">str</span>(meteo)</span>
-<span id="cb267-4"><a href="io.html#cb267-4"></a><span class="co">#&gt; &#39;data.frame&#39;:    730 obs. of  7 variables:</span></span>
-<span id="cb267-5"><a href="io.html#cb267-5"></a><span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span></span>
-<span id="cb267-6"><a href="io.html#cb267-6"></a><span class="co">#&gt;  $ nazwa_stacji: chr  &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; ...</span></span>
-<span id="cb267-7"><a href="io.html#cb267-7"></a><span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span></span>
-<span id="cb267-8"><a href="io.html#cb267-8"></a><span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span></span>
-<span id="cb267-9"><a href="io.html#cb267-9"></a><span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span></span>
-<span id="cb267-10"><a href="io.html#cb267-10"></a><span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span></span>
-<span id="cb267-11"><a href="io.html#cb267-11"></a><span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span></span></code></pre></div>
+<p>Do wczytania tego pliku możemy użyć wbudowanej w R funkcji <code>read.csv()</code>, podając w niej bezwzględną lub względną ścieżkę do pliku.</p>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="io.html#cb267-1"></a>meteo =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;pliki/dane_meteo.csv&quot;</span>)</span>
+<span id="cb267-2"><a href="io.html#cb267-2"></a><span class="kw">str</span>(meteo)</span>
+<span id="cb267-3"><a href="io.html#cb267-3"></a><span class="co">#&gt; &#39;data.frame&#39;:    730 obs. of  7 variables:</span></span>
+<span id="cb267-4"><a href="io.html#cb267-4"></a><span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span></span>
+<span id="cb267-5"><a href="io.html#cb267-5"></a><span class="co">#&gt;  $ nazwa_stacji: chr  &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; ...</span></span>
+<span id="cb267-6"><a href="io.html#cb267-6"></a><span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span></span>
+<span id="cb267-7"><a href="io.html#cb267-7"></a><span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span></span>
+<span id="cb267-8"><a href="io.html#cb267-8"></a><span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span></span>
+<span id="cb267-9"><a href="io.html#cb267-9"></a><span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span></span>
+<span id="cb267-10"><a href="io.html#cb267-10"></a><span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span></span></code></pre></div>
 <p>Oprócz funkcji <code>read.csv()</code> istnieje również funkcja o nazwie <code>read.csv2()</code>.
 Pierwsza z nich jest przystosowana do wczytania danych dla których separator kolumn to <code>,</code> a separator dziesiętny to <code>.</code>, druga natomiast jest używana gdy wejściowe dane mają <code>;</code> jak separator kolumn i <code>,</code> jako separator dziesiętny.</p>
 <p>Czasem dane tekstowe posiadają inne znaki służące jako separatory, czy też nie posiadają nazw kolumn.
@@ -506,7 +504,7 @@ W przypadku, gdy interesują nas tylko informacje dla Poznania możemy wydzieli�
 <span id="cb269-8"><a href="io.html#cb269-8"></a><span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span></span>
 <span id="cb269-9"><a href="io.html#cb269-9"></a><span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span></span>
 <span id="cb269-10"><a href="io.html#cb269-10"></a><span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span></span></code></pre></div>
-<p>Następnie możemy zapisać obiekt <code>meteo_pzn</code> do nowego pliku używając funkcji <code>write.csv()</code><a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a>, poprzez podanie nazwy obiektu do zapisania oraz ścieżki zapisu wynikowego pliku.
+<p>Następnie możemy zapisać obiekt <code>meteo_pzn</code> do nowego pliku używając funkcji <code>write.csv()</code><a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a>, poprzez podanie nazwy obiektu do zapisania oraz ścieżki zapisu wynikowego pliku.
 Dodatkowo możliwe jest pominięcie zapisania nazw wierszy (<code>row.names = FALSE</code>).</p>
 <div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="io.html#cb270-1"></a><span class="kw">write.csv</span>(meteo_pzn,</span>
 <span id="cb270-2"><a href="io.html#cb270-2"></a>          <span class="dt">file =</span> <span class="st">&quot;pliki/dane_meteo_pzn.csv&quot;</span>,</span>
@@ -602,18 +600,18 @@ Dodatkowe argumenty tej funkcji pozwalają, np. na zdefiniowanie arkusza do wczy
 <span id="cb277-11"><a href="io.html#cb277-11"></a><span class="co">#&gt; 5  352160330 POZNAŃ        2017       1     5  -3.5</span></span>
 <span id="cb277-12"><a href="io.html#cb277-12"></a><span class="co">#&gt; 6  352160330 POZNAŃ        2017       1     6  -8.4</span></span>
 <span id="cb277-13"><a href="io.html#cb277-13"></a><span class="co">#&gt; # … with 1 more variable: precip &lt;dbl&gt;</span></span></code></pre></div>
-<p>Do zapisania ramki danych do formatu Excel można użyć funkcji <code>write_xlsx()</code> z pakietu <strong>writexl</strong> <span class="citation">(Ooms <a href="#ref-R-writexl" role="doc-biblioref">2019</a>)</span><a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>.</p>
+<p>Do zapisania ramki danych do formatu Excel można użyć funkcji <code>write_xlsx()</code> z pakietu <strong>writexl</strong> <span class="citation">(Ooms <a href="#ref-R-writexl" role="doc-biblioref">2019</a>)</span><a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a>.</p>
 <!-- block problemy z excelem jak daty -->
 </div>
 <div id="inne-formaty" class="section level2" number="9.8">
 <h2><span class="header-section-number">9.8</span> Inne formaty</h2>
 <p>Powyżej można było zobaczyć jaki sposób można wczytać dane z różnorodnych plików tekstowych, R, czy arkuszy kalkulacyjnych.
 R pozwala jednocześnie na otworzenie wielu innych formatów plików używając dodatkowych pakietów.
-Przykładowo, hierarchiczne formaty danych można wczytać używając pakietu <strong>jsonline</strong> (format <code>.json</code>) <span class="citation">(Ooms <a href="#ref-R-jsonlite" role="doc-biblioref">2020</a>)</span> czy <strong>xml2</strong> (format <code>.xml</code>) <span class="citation">(Wickham, Hester, and Ooms <a href="#ref-R-xml2" role="doc-biblioref">2020</a>)</span>, a formaty danych przestrzennych używając pakietu <strong>sf</strong> (dane wektorowe) <span class="citation">(Pebesma <a href="#ref-R-sf" role="doc-biblioref">2020</a>)</span> czy <strong>raster</strong> (dane rastrowe) <span class="citation">(Hijmans <a href="#ref-R-raster" role="doc-biblioref">2020</a>)</span>.
+Przykładowo, hierarchiczne formaty danych można wczytać używając pakietu <strong>jsonlite</strong> (format <code>.json</code>) <span class="citation">(Ooms <a href="#ref-R-jsonlite" role="doc-biblioref">2020</a>)</span> czy <strong>xml2</strong> (format <code>.xml</code>) <span class="citation">(Wickham, Hester, and Ooms <a href="#ref-R-xml2" role="doc-biblioref">2020</a>)</span>, a formaty danych przestrzennych używając pakietu <strong>sf</strong> (dane wektorowe) <span class="citation">(Pebesma <a href="#ref-R-sf" role="doc-biblioref">2020</a>)</span> czy <strong>raster</strong> (dane rastrowe) <span class="citation">(Hijmans <a href="#ref-R-raster" role="doc-biblioref">2020</a>)</span>.
 Zestawienie zawierające dodatkowe przykłady można znaleźć pod adresem <a href="https://github.com/leeper/rio" class="uri">https://github.com/leeper/rio</a>.</p>
 <p>Powszechną sytuacją jest przechowywanie danych w różnego rodzaju bazach danych.
 Ma to miejsce, kiedy dane są znacznej wielkości, mają złożone relacje, czy też muszą być jednocześnie dostępne dla wielu osób.
-Dostęp do baz danych w R możliwy jest używając pakietu <strong>DBI</strong> <span class="citation">(R Special Interest Group on Databases (R-SIG-DB), Wickham, and Müller <a href="#ref-R-DBI" role="doc-biblioref">2019</a>)</span> wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. <strong>RPostgreSQL</strong> dla baz PostgreSQL <span class="citation">(Conway et al. <a href="#ref-R-RPostgreSQL" role="doc-biblioref">2017</a>)</span> czy <strong>RSQLite</strong> dla baz SQLite <span class="citation">(Müller et al. <a href="#ref-R-RSQLite" role="doc-biblioref">2020</a>)</span>).<a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a></p>
+Dostęp do baz danych w R możliwy jest używając pakietu <strong>DBI</strong> <span class="citation">(R Special Interest Group on Databases (R-SIG-DB), Wickham, and Müller <a href="#ref-R-DBI" role="doc-biblioref">2019</a>)</span> wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. <strong>RPostgreSQL</strong> dla baz PostgreSQL <span class="citation">(Conway et al. <a href="#ref-R-RPostgreSQL" role="doc-biblioref">2017</a>)</span> czy <strong>RSQLite</strong> dla baz SQLite <span class="citation">(Müller et al. <a href="#ref-R-RSQLite" role="doc-biblioref">2020</a>)</span>).<a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a></p>
 </div>
 <div id="zad9" class="section level2" number="9.9">
 <h2><span class="header-section-number">9.9</span> Zadania</h2>
@@ -682,10 +680,9 @@ Napisz funkcję, która odszyfruje tą wiadomość.</p></li>
 <li id="fn38"><p>Jeżeli poprawnie ustawiliśmy folder roboczy.<a href="io.html#fnref38" class="footnote-back">↩︎</a></p></li>
 <li id="fn39"><p>Na komputerach z systemem Windows wymagane jest posiadanie zainstalowanego programu do rozpakowywania plików ZIP.<a href="io.html#fnref39" class="footnote-back">↩︎</a></p></li>
 <li id="fn40"><p>Funkcje takie jak <code>read.csv()</code> pozwalają na otworzenie pliku tekstowego bezpośrednio z adresu internetowego.<a href="io.html#fnref40" class="footnote-back">↩︎</a></p></li>
-<li id="fn41"><p>Takie defensywne zachowanie może oszczędzić pewnych problemów w przyszłości.<a href="io.html#fnref41" class="footnote-back">↩︎</a></p></li>
-<li id="fn42"><p>Istnieje również jej odpowiednik <code>write.csv2()</code>.<a href="io.html#fnref42" class="footnote-back">↩︎</a></p></li>
-<li id="fn43"><p>Po więcej informacji otwórz plik pomocy tej funkcji <code>?write_xlsx()</code>.<a href="io.html#fnref43" class="footnote-back">↩︎</a></p></li>
-<li id="fn44"><p>Więcej informacji o łączeniu się z bazami danych można znaleść na stronie <a href="https://db.rstudio.com/getting-started/connect-to-database" class="uri">https://db.rstudio.com/getting-started/connect-to-database</a>.<a href="io.html#fnref44" class="footnote-back">↩︎</a></p></li>
+<li id="fn41"><p>Istnieje również jej odpowiednik <code>write.csv2()</code>.<a href="io.html#fnref41" class="footnote-back">↩︎</a></p></li>
+<li id="fn42"><p>Po więcej informacji otwórz plik pomocy tej funkcji <code>?write_xlsx()</code>.<a href="io.html#fnref42" class="footnote-back">↩︎</a></p></li>
+<li id="fn43"><p>Więcej informacji o łączeniu się z bazami danych można znaleść na stronie <a href="https://db.rstudio.com/getting-started/connect-to-database" class="uri">https://db.rstudio.com/getting-started/connect-to-database</a>.<a href="io.html#fnref43" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

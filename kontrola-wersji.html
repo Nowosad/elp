@@ -392,26 +392,26 @@ Dzięki nim możemy sprawdzić nie tylko kiedy zmieniliśmy dany plik i kto go z
 Dodatkowo, mamy możliwość przywracania wersji pliku z wybranego czasu w całej historii jego zmian.</p>
 <p>Systemy kontroli wersji są bardzo powszechnie wykorzystywane przy tworzeniu wszelakiego rodzaju oprogramowania.
 Wynika to nie tylko z ich zalet wymienionych powyżej, ale również rozbudowanych możliwości pozwalających na zorganizowaną współpracę wielu osób nad jednym projektem.</p>
-<p>Istnieje wiele systemów kontroli wersji różniących się zarówno używaną terminologią, sposobem działania czy możliwościami.<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a>
+<p>Istnieje wiele systemów kontroli wersji różniących się zarówno używaną terminologią, sposobem działania czy możliwościami.<a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a>
 Współcześnie najbardziej popularnym systemem kontroli jest Git, któremu będzie poświęcona reszta tego rozdziału.
 Inne popularne systemy kontroli wersji to Concurrent Versions System (CVS), Mercurial czy Subversion (SVN).</p>
 <!-- gdzie wykorzystywaneC -->
 <div id="git" class="section level2" number="14.1">
 <h2><span class="header-section-number">14.1</span> Git</h2>
 <p>System Git jest niezależny od języka (lub języków) programowania, które używamy.
-Jego działanie oparte jest o system komend rozpoczynających się od słowa <code>git</code>, które należy wykonać w systemowym oknie konsoli.<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a>
+Jego działanie oparte jest o system komend rozpoczynających się od słowa <code>git</code>, które należy wykonać w systemowym oknie konsoli.<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a>
 Zrozumienie działania systemu Git wymaga także poznania kilku nowych terminów.</p>
 <p>System Git został zaprojektowany i jest używany głównie do kontroli wersji plików tekstowych.
 Dzięki temu możemy w prosty sposób zobaczyć, co do linii kodu, w którym miejscu zaszła zmiana.
 Dodatkowo przechowywanie plików tekstowych i ich zmian nie zajmuje dużo miejsca.
 Możliwe w systemie Git jest również przechowywanie kolejnych wersji plików binarnych (np. pliki dokumentów, arkusze kalkulacyjne, obrazki, itd.).
-W ich przypadku niestety nie można liczyć na dokładne sprawdzanie miejsc zmian, a także ich wielkość może powodować znaczne powiększanie się repozytorium.<a href="#fn50" class="footnote-ref" id="fnref50"><sup>50</sup></a></p>
+W ich przypadku niestety nie można liczyć na dokładne sprawdzanie miejsc zmian, a także ich wielkość może powodować znaczne powiększanie się repozytorium.<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a></p>
 <p>Git składa się z kilkudziesięciu komend, których działanie jest dalej uzależnione od podanych argumentów.
 Tutaj przedstawiony zostanie tylko podzbiór najczęściej używanych.
 Pełniejszy opis komend systemu Git można znaleźć pod adresem <a href="https://education.github.com/git-cheat-sheet-education.pdf" class="uri">https://education.github.com/git-cheat-sheet-education.pdf</a> lub <a href="http://rogerdudler.github.io/git-guide/index.pl.html" class="uri">http://rogerdudler.github.io/git-guide/index.pl.html</a>.</p>
 <div id="konfiguracja-systemu-git" class="section level3" number="14.1.1">
 <h3><span class="header-section-number">14.1.1</span> Konfiguracja systemu Git</h3>
-<p>Kolejnym krokiem po instalacji systemu Git<a href="#fn51" class="footnote-ref" id="fnref51"><sup>51</sup></a> jest jego konfiguracja.
+<p>Kolejnym krokiem po instalacji systemu Git<a href="#fn50" class="footnote-ref" id="fnref50"><sup>50</sup></a> jest jego konfiguracja.
 Można ją wykonać używając wbudowanego terminala (Mac OS i Linux) lub terminala dodanego podczas instalacji systemu Git (Windows).
 Polega ona na podaniu nazwy użytkownika (np. <code>"Imie Nazwisko"</code>) oraz jego adresu email (<code>"email@portal.com"</code>).</p>
 <div class="sourceCode" id="cb353"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb353-1"><a href="kontrola-wersji.html#cb353-1"></a><span class="fu">git</span> config --global user.name <span class="st">&quot;imie nazwisko&quot;</span></span>
@@ -420,7 +420,7 @@ Polega ona na podaniu nazwy użytkownika (np. <code>"Imie Nazwisko"</code>) oraz
 <div id="repozytorium" class="section level3" number="14.1.2">
 <h3><span class="header-section-number">14.1.2</span> Repozytorium</h3>
 <p>Podstawowym z nich jest repozytorium (ang. <em>repository</em>, często określane skrótowo jako repo).
-Jest to folder, który przechowuje wszystkie pliki i foldery w ramach jednego projektu.<a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a>
+Jest to folder, który przechowuje wszystkie pliki i foldery w ramach jednego projektu.<a href="#fn51" class="footnote-ref" id="fnref51"><sup>51</sup></a>
 Dodatkowo wewnątrz repozytorium znajduje się ukryty folder <code>.git</code>, który zawiera informację o historii i zmianach każdego z naszych plików.
 Repozytorium może znajdować się na dysku naszego komputera (wtedy jest nazywane repozytorium lokalnym) lub też na serwerze w internecie (określane jako repozytorium zdalne (ang. <em>remote</em>)).
 Istnieje wiele serwisów internetowych pozwalających na tworzenie, przechowywanie i edycję repozytoriów zdalnych, między innymi <a href="https://github.com/">GitHub</a> (przybliżony w sekcji <a href="kontrola-wersji.html#github">14.2</a>), <a href="https://gitlab.com/">GitLab</a>, czy <a href="https://bitbucket.org/">BitBucket</a>.</p>
@@ -580,7 +580,7 @@ Po jej kliknięciu następuje utworzenie kopii repozytorium innego użytkownika 
 <p>Oprócz dostępu do kodu i jego zmian, GitHub oferuje także szereg dodatkowych możliwości.
 Obejmuje to, między innymi, automatyczne wyświetlanie plików README, śledzenie spraw (ang. <em>issue tracking</em>), zapytania aktualizacyjne (ang. <em>pull request</em>), wizualizacje zmian, czy nawet tworzenie stron internetowych.
 Sprawy (ang. <em>issues</em>) to miejsce, gdzie twórcy mogą zapisywać swoje listy zadań dotyczące danej aplikacji, a użytkownicy mogą zgłaszać błędy czy propozycje ulepszeń.
-Zapytania aktualizacyjne są tworzone, np. w przypadku, gdy lokalnie zmieniliśmy zawartość repozytorium innego użytkownika<a href="#fn53" class="footnote-ref" id="fnref53"><sup>53</sup></a> i chcemy zaproponować żeby nasza zmiana została dołączona do oryginalnego repozytorium.
+Zapytania aktualizacyjne są tworzone, np. w przypadku, gdy lokalnie zmieniliśmy zawartość repozytorium innego użytkownika<a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a> i chcemy zaproponować żeby nasza zmiana została dołączona do oryginalnego repozytorium.
 W takiej sytuacji często opiera się to o (1) stworzenie rozwidlenia (ang. <em>fork</em>), (2) pobranie rozwidlenia jako lokalne repozytorium, (3) edycja lokalnego repozytorium, (4) zatwierdzenie zmian i wysłanie ich do zdalnego repozytorium (rozwidlenia), (5) zaproponowanie zapytania aktualizacyjnego.</p>
 <p>Możliwe jest również łączenie możliwości serwisu GitHub z innymi serwisami internetowymi, takimi jak <a href="https://travis-ci.org/">Travis CI</a>, <a href="https://codecov.io/">Codecov</a>, <a href="https://gitter.im/">Gitter</a> i <a href="https://github.com/marketplace">wiele innych</a>.</p>
 </div>
@@ -606,7 +606,7 @@ Dodatkowo, w RStudio pojawi się nowy panel “Git” (rycina <a href="kontrola
 Rycina 14.5: Panel Git w RStudio.
 </p>
 </div>
-<p>W tym panelu są wyświetlone (1) wszystkie pliki, które są w folderze projektu, ale nie w repozytorium Git (żółte ikony statusu), (2) pliki, które chcemy dodać do repozytorium (zielona ikona statusu), oraz (3) pliki, które są już w repozytorium, ale zostały zmodyfikowane (niebieska ikona statusu).<a href="#fn54" class="footnote-ref" id="fnref54"><sup>54</sup></a>
+<p>W tym panelu są wyświetlone (1) wszystkie pliki, które są w folderze projektu, ale nie w repozytorium Git (żółte ikony statusu), (2) pliki, które chcemy dodać do repozytorium (zielona ikona statusu), oraz (3) pliki, które są już w repozytorium, ale zostały zmodyfikowane (niebieska ikona statusu).<a href="#fn53" class="footnote-ref" id="fnref53"><sup>53</sup></a>
 Ten panel nie pokazuje plików, które nie zostały ostatnio zmienione.
 Pierwsza kolumna w tym panelu (<em>Staged</em>) domyślnie zawiera same nieodhaczone białe pola.
 Wybór tego pola (jego odhaczenie) jest równoznaczne z dodaniem zmian (więcej informacji można znaleźć w sekcji <a href="kontrola-wersji.html#dodawanie-zmian">14.1.3</a>).</p>
@@ -746,15 +746,15 @@ Co się w nim zmieniło?
 </div>
 <div class="footnotes">
 <hr />
-<ol start="48">
-<li id="fn48"><p><a href="https://en.wikipedia.org/wiki/Comparison_of_version-control_software#History_and_adoption" class="uri">https://en.wikipedia.org/wiki/Comparison_of_version-control_software#History_and_adoption</a><a href="kontrola-wersji.html#fnref48" class="footnote-back">↩︎</a></p></li>
-<li id="fn49"><p>Nie w oknie konsoli R.<a href="kontrola-wersji.html#fnref49" class="footnote-back">↩︎</a></p></li>
-<li id="fn50"><p>Między innymi z tego powodu internetowe serwisy kontroli wersji posiadają ograniczenia dotyczące wielkości plików.
-Przykładowo, GitHub ogranicza wielkość pojedynczych plików do 100MB.<a href="kontrola-wersji.html#fnref50" class="footnote-back">↩︎</a></p></li>
-<li id="fn51"><p>Instrukcje dotyczące instalacji Gita znajdują się we wstępie książki.<a href="kontrola-wersji.html#fnref51" class="footnote-back">↩︎</a></p></li>
-<li id="fn52"><p>W kontekście R, warto o tym myśleć jako o projekcie RStudio.<a href="kontrola-wersji.html#fnref52" class="footnote-back">↩︎</a></p></li>
-<li id="fn53"><p>Może to być zarówno dodanie nowej możliwości, naprawienie błędu w kodzie, czy nawet poprawienie literówki w dokumentacji.<a href="kontrola-wersji.html#fnref53" class="footnote-back">↩︎</a></p></li>
-<li id="fn54"><p>Możliwe są też inne sytuacje, np. czerwona ikona z literą R sugerująca zmianę nazwy pliku.<a href="kontrola-wersji.html#fnref54" class="footnote-back">↩︎</a></p></li>
+<ol start="47">
+<li id="fn47"><p><a href="https://en.wikipedia.org/wiki/Comparison_of_version-control_software#History_and_adoption" class="uri">https://en.wikipedia.org/wiki/Comparison_of_version-control_software#History_and_adoption</a><a href="kontrola-wersji.html#fnref47" class="footnote-back">↩︎</a></p></li>
+<li id="fn48"><p>Nie w oknie konsoli R.<a href="kontrola-wersji.html#fnref48" class="footnote-back">↩︎</a></p></li>
+<li id="fn49"><p>Między innymi z tego powodu internetowe serwisy kontroli wersji posiadają ograniczenia dotyczące wielkości plików.
+Przykładowo, GitHub ogranicza wielkość pojedynczych plików do 100MB.<a href="kontrola-wersji.html#fnref49" class="footnote-back">↩︎</a></p></li>
+<li id="fn50"><p>Instrukcje dotyczące instalacji Gita znajdują się we wstępie książki.<a href="kontrola-wersji.html#fnref50" class="footnote-back">↩︎</a></p></li>
+<li id="fn51"><p>W kontekście R, warto o tym myśleć jako o projekcie RStudio.<a href="kontrola-wersji.html#fnref51" class="footnote-back">↩︎</a></p></li>
+<li id="fn52"><p>Może to być zarówno dodanie nowej możliwości, naprawienie błędu w kodzie, czy nawet poprawienie literówki w dokumentacji.<a href="kontrola-wersji.html#fnref52" class="footnote-back">↩︎</a></p></li>
+<li id="fn53"><p>Możliwe są też inne sytuacje, np. czerwona ikona z literą R sugerująca zmianę nazwy pliku.<a href="kontrola-wersji.html#fnref53" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

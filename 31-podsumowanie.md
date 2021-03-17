@@ -16,8 +16,7 @@ Możemy to zobaczyć na poniższym przykładzie danych meteorologicznych dla Poz
 
 
 ```r
-met = read.csv("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv",
-             stringsAsFactors = FALSE)
+met = read.csv("https://github.com/Nowosad/elp/raw/master/pliki/dane_meteo.csv")
 head(met)
 #>   kod_stacji nazwa_stacji  rok miesiac dzien tavg
 #> 1  352160330       POZNAŃ 2017       1     1  1.4

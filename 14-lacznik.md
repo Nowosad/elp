@@ -212,13 +212,13 @@ wynik
 #> # A tibble: 2 x 6
 #>   expression                     min   median `itr/sec`
 #>   <bch:expr>                <bch:tm> <bch:tm>     <dbl>
-#> 1 mile_na_km(odl_mile2)        812µs    846µs     1143.
-#> 2 mile_na_km_cpp(odl_mile2)    427µs    452µs     2174.
+#> 1 mile_na_km(odl_mile2)        806µs    827µs     1161.
+#> 2 mile_na_km_cpp(odl_mile2)    417µs    445µs     2212.
 #> # … with 2 more variables: mem_alloc <bch:byt>,
 #> #   gc/sec <dbl>
 ```
 
-Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.87 raza mniejszy.
+Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.86 raza mniejszy.
 
 ### Wywoływanie kodu z plików .cpp {#sourceCpp}
 
