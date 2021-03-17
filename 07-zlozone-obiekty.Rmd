@@ -479,7 +479,7 @@ Metoda to sposób w jaki zachowuje się funkcja w zależności od tego jakiej kl
 methods(mean)
 ```
 
-Przykładowo, funkcja `mean()` ma pięć metod:
+Przykładowo, funkcja `mean()` ma kilka metod:
 
 - `.Date` - obsługującą daty
 - `.difftime` - obsługującą czas trwania
