@@ -412,26 +412,26 @@ Podobnie należy zadbać o spójną kolejność podobnych argumentów w funkcjac
 <p>Stabilność typu oznacza, że używając jednej klasy danych wejściowych funkcja zawsze zwróci obiekt jednej klasy.
 Poniższy przykład użycia funkcji <code>grep()</code> pokazuje, że nie ma ona stabilności typu.
 Zalecane jest unikanie tworzenia funkcji bez stabilności typu.</p>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="zlozone-funkcje.html#cb278-1"></a>tekst =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kołdra&quot;</span>, <span class="st">&quot;kordła&quot;</span>, <span class="st">&quot;pościel&quot;</span>)</span>
-<span id="cb278-2"><a href="zlozone-funkcje.html#cb278-2"></a><span class="kw">grep</span>(<span class="st">&quot;^[k].&quot;</span>, <span class="dt">x =</span> tekst)</span>
-<span id="cb278-3"><a href="zlozone-funkcje.html#cb278-3"></a><span class="co">#&gt; [1] 1 2</span></span>
-<span id="cb278-4"><a href="zlozone-funkcje.html#cb278-4"></a><span class="kw">grep</span>(<span class="st">&quot;^[k].&quot;</span>, <span class="dt">x =</span> tekst, <span class="dt">value =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb278-5"><a href="zlozone-funkcje.html#cb278-5"></a><span class="co">#&gt; [1] &quot;kołdra&quot; &quot;kordła&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="zlozone-funkcje.html#cb279-1"></a>tekst =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kołdra&quot;</span>, <span class="st">&quot;kordła&quot;</span>, <span class="st">&quot;pościel&quot;</span>)</span>
+<span id="cb279-2"><a href="zlozone-funkcje.html#cb279-2"></a><span class="kw">grep</span>(<span class="st">&quot;^[k].&quot;</span>, <span class="dt">x =</span> tekst)</span>
+<span id="cb279-3"><a href="zlozone-funkcje.html#cb279-3"></a><span class="co">#&gt; [1] 1 2</span></span>
+<span id="cb279-4"><a href="zlozone-funkcje.html#cb279-4"></a><span class="kw">grep</span>(<span class="st">&quot;^[k].&quot;</span>, <span class="dt">x =</span> tekst, <span class="dt">value =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb279-5"><a href="zlozone-funkcje.html#cb279-5"></a><span class="co">#&gt; [1] &quot;kołdra&quot; &quot;kordła&quot;</span></span></code></pre></div>
 <p>Dodatkowym elementem API może być określenie domyślnych parametrów funkcji.
 Poniższa funkcja, <code>potegowanie()</code> ma na celu podnoszenie wartości wejściowego wektora (<code>x</code>) do wybranej potęgi (<code>w</code>).
 Domyślamy się jednak, że większość użytkowników jest zainteresowana używaniem tej funkcji do podnoszenia wartości do drugiej potęgi i dlatego też ustalamy, że domyślnie argument <code>w</code> przyjmuje wartość 2.</p>
-<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="zlozone-funkcje.html#cb279-1"></a>potegowanie =<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">w =</span> <span class="dv">2</span>){</span>
-<span id="cb279-2"><a href="zlozone-funkcje.html#cb279-2"></a>  x <span class="op">^</span><span class="st"> </span>w</span>
-<span id="cb279-3"><a href="zlozone-funkcje.html#cb279-3"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="zlozone-funkcje.html#cb280-1"></a>potegowanie =<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">w =</span> <span class="dv">2</span>){</span>
+<span id="cb280-2"><a href="zlozone-funkcje.html#cb280-2"></a>  x <span class="op">^</span><span class="st"> </span>w</span>
+<span id="cb280-3"><a href="zlozone-funkcje.html#cb280-3"></a>}</span></code></pre></div>
 <p>W tej sytuacji, gdy użytkownik poda tylko jeden argument do funkcji <code>potegowanie()</code> to podany wektor zostanie podniesiony do kwadratu.</p>
-<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="zlozone-funkcje.html#cb280-1"></a><span class="kw">potegowanie</span>(<span class="dv">2</span>)</span>
-<span id="cb280-2"><a href="zlozone-funkcje.html#cb280-2"></a><span class="co">#&gt; [1] 4</span></span></code></pre></div>
-<p>Będzie to identyczne z działaniem funkcji, gdy użytkownik ręcznie zdefiniuje drugi argument jako dwa (<code>w = 2</code>).</p>
-<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="zlozone-funkcje.html#cb281-1"></a><span class="kw">potegowanie</span>(<span class="dv">2</span>, <span class="dt">w =</span> <span class="dv">2</span>)</span>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="zlozone-funkcje.html#cb281-1"></a><span class="kw">potegowanie</span>(<span class="dv">2</span>)</span>
 <span id="cb281-2"><a href="zlozone-funkcje.html#cb281-2"></a><span class="co">#&gt; [1] 4</span></span></code></pre></div>
+<p>Będzie to identyczne z działaniem funkcji, gdy użytkownik ręcznie zdefiniuje drugi argument jako dwa (<code>w = 2</code>).</p>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="zlozone-funkcje.html#cb282-1"></a><span class="kw">potegowanie</span>(<span class="dv">2</span>, <span class="dt">w =</span> <span class="dv">2</span>)</span>
+<span id="cb282-2"><a href="zlozone-funkcje.html#cb282-2"></a><span class="co">#&gt; [1] 4</span></span></code></pre></div>
 <p>W sytuacji, gdy użytkownika interesuje inna wartość <code>w</code> niż domyślna, może on ją zmodyfikować i otrzyma odpowiedni wynik.</p>
-<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="zlozone-funkcje.html#cb282-1"></a><span class="kw">potegowanie</span>(<span class="dv">2</span>, <span class="dt">w =</span> <span class="dv">3</span>)</span>
-<span id="cb282-2"><a href="zlozone-funkcje.html#cb282-2"></a><span class="co">#&gt; [1] 8</span></span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="zlozone-funkcje.html#cb283-1"></a><span class="kw">potegowanie</span>(<span class="dv">2</span>, <span class="dt">w =</span> <span class="dv">3</span>)</span>
+<span id="cb283-2"><a href="zlozone-funkcje.html#cb283-2"></a><span class="co">#&gt; [1] 8</span></span></code></pre></div>
 <!-- elipsis -->
 <!-- https://adv-r.hadley.nz/functions.html#fun-dot-dot-dot -->
 <!-- Zasięg widoczności (ang. *scoping*) -->
@@ -450,19 +450,19 @@ Oczywiście te wymienione formy można łączyć.</p>
 Żadnej użytkownik nie chce czekać na zakończenie wykonywania długiej funkcji zanim dostanie komunikat błędu.
 Więcej informacji o strukturze komunikatów błędów można znaleźć na <a href="https://style.tidyverse.org/error-messages.html" class="uri">https://style.tidyverse.org/error-messages.html</a>.</p>
 <p>Do zatrzymania działania funkcji i wyświetlenia komunikatu błędu służy <code>stop()</code>.</p>
-<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="zlozone-funkcje.html#cb283-1"></a><span class="kw">stop</span>(<span class="st">&quot;To jest komunikat błędu.&quot;</span>)</span>
-<span id="cb283-2"><a href="zlozone-funkcje.html#cb283-2"></a><span class="co">#&gt; Error in eval(expr, envir, enclos): To jest komunikat błędu.</span></span></code></pre></div>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="zlozone-funkcje.html#cb284-1"></a><span class="kw">stop</span>(<span class="st">&quot;To jest komunikat błędu.&quot;</span>)</span>
+<span id="cb284-2"><a href="zlozone-funkcje.html#cb284-2"></a><span class="co">#&gt; Error in eval(expr, envir, enclos): To jest komunikat błędu.</span></span></code></pre></div>
 <p>Ostrzeżenia mogą być używane w wielu różnorodnych sytuacjach, np. kiedy chcesz poinformować użytkowników o tym, że dana funkcja zostanie wygaszona lub przeniesiona do innego pakietu.
 <!-- Ostrzeżenia są też stosowane w przypadkach, gdy  -->
 Komunikaty ostrzeżenia tworzyć się używając funkcji <code>warning()</code>.</p>
-<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="zlozone-funkcje.html#cb284-1"></a><span class="kw">warning</span>(<span class="st">&quot;To jest komunikat ostrzeżenia.&quot;</span>)</span>
-<span id="cb284-2"><a href="zlozone-funkcje.html#cb284-2"></a><span class="co">#&gt; Warning: To jest komunikat ostrzeżenia.</span></span></code></pre></div>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="zlozone-funkcje.html#cb285-1"></a><span class="kw">warning</span>(<span class="st">&quot;To jest komunikat ostrzeżenia.&quot;</span>)</span>
+<span id="cb285-2"><a href="zlozone-funkcje.html#cb285-2"></a><span class="co">#&gt; Warning: To jest komunikat ostrzeżenia.</span></span></code></pre></div>
 <p>Wiadomości mają na celu poinformowanie użytkownika na temat działania pakietu lub funkcji.
 Są one wykorzystywane podczas wczytywania niektórych pakietów.<!--..-->
 Innym przykładem jest informowanie na temat działania funkcji w tle - pobierania danych, zapisywania do pliku, czy przeliczania cząstkowych parametrów.
 Do wyświetlenia wiadomości służy funkcja <code>message()</code>.</p>
-<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="zlozone-funkcje.html#cb285-1"></a><span class="kw">message</span>(<span class="st">&quot;To jest komunikat wiadomości.&quot;</span>)</span>
-<span id="cb285-2"><a href="zlozone-funkcje.html#cb285-2"></a><span class="co">#&gt; To jest komunikat wiadomości.</span></span></code></pre></div>
+<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="zlozone-funkcje.html#cb286-1"></a><span class="kw">message</span>(<span class="st">&quot;To jest komunikat wiadomości.&quot;</span>)</span>
+<span id="cb286-2"><a href="zlozone-funkcje.html#cb286-2"></a><span class="co">#&gt; To jest komunikat wiadomości.</span></span></code></pre></div>
 
 <div class="rmdinfo">
 Działanie funkcji <code>message()</code> jest zbliżone do funkcji <code>cat()</code> czy <code>print()</code>.
@@ -471,31 +471,31 @@ Rolą funkcji <code>message()</code> jest przekazanie informacji od twórcy do u
 </div>
 <p>Przykład użycia trzech podstawowych rodzajów komunikatów można zobaczyć w poniższej funkcji <code>minus_1()</code>.
 Ta funkcja przyjmuje wartość numeryczną, od której odejmuje jeden, a na końcu zwraca wartość bezwzględną (<code>abs(x - 1)</code>).</p>
-<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="zlozone-funkcje.html#cb286-1"></a>minus_<span class="dv">1</span> =<span class="st"> </span><span class="cf">function</span>(x){</span>
-<span id="cb286-2"><a href="zlozone-funkcje.html#cb286-2"></a>  <span class="cf">if</span>(<span class="kw">is.character</span>(x)){</span>
-<span id="cb286-3"><a href="zlozone-funkcje.html#cb286-3"></a>    <span class="kw">stop</span>(<span class="st">&quot;Argument `x` musi być zmienną numeryczną, a nie znakową.&quot;</span>)</span>
-<span id="cb286-4"><a href="zlozone-funkcje.html#cb286-4"></a>  } <span class="cf">else</span> <span class="cf">if</span>(<span class="kw">is.logical</span>(x)){</span>
-<span id="cb286-5"><a href="zlozone-funkcje.html#cb286-5"></a>    <span class="kw">warning</span>(<span class="kw">paste</span>(<span class="st">&quot;Argument `x` jest zmienną logiczną.&quot;</span>,</span>
-<span id="cb286-6"><a href="zlozone-funkcje.html#cb286-6"></a>                  <span class="st">&quot;Czy nie chcesz użyć zmiennej numerycznej?&quot;</span>))</span>
-<span id="cb286-7"><a href="zlozone-funkcje.html#cb286-7"></a>  } <span class="cf">else</span> {</span>
-<span id="cb286-8"><a href="zlozone-funkcje.html#cb286-8"></a>    <span class="kw">message</span>(<span class="st">&quot;Wow. Argument `x` jest oczekiwaną zmienną numeryczną.&quot;</span>)</span>
-<span id="cb286-9"><a href="zlozone-funkcje.html#cb286-9"></a>  }</span>
-<span id="cb286-10"><a href="zlozone-funkcje.html#cb286-10"></a>  <span class="kw">abs</span>(x <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)</span>
-<span id="cb286-11"><a href="zlozone-funkcje.html#cb286-11"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="zlozone-funkcje.html#cb287-1"></a>minus_<span class="dv">1</span> =<span class="st"> </span><span class="cf">function</span>(x){</span>
+<span id="cb287-2"><a href="zlozone-funkcje.html#cb287-2"></a>  <span class="cf">if</span>(<span class="kw">is.character</span>(x)){</span>
+<span id="cb287-3"><a href="zlozone-funkcje.html#cb287-3"></a>    <span class="kw">stop</span>(<span class="st">&quot;Argument `x` musi być zmienną numeryczną, a nie znakową.&quot;</span>)</span>
+<span id="cb287-4"><a href="zlozone-funkcje.html#cb287-4"></a>  } <span class="cf">else</span> <span class="cf">if</span>(<span class="kw">is.logical</span>(x)){</span>
+<span id="cb287-5"><a href="zlozone-funkcje.html#cb287-5"></a>    <span class="kw">warning</span>(<span class="kw">paste</span>(<span class="st">&quot;Argument `x` jest zmienną logiczną.&quot;</span>,</span>
+<span id="cb287-6"><a href="zlozone-funkcje.html#cb287-6"></a>                  <span class="st">&quot;Czy nie chcesz użyć zmiennej numerycznej?&quot;</span>))</span>
+<span id="cb287-7"><a href="zlozone-funkcje.html#cb287-7"></a>  } <span class="cf">else</span> {</span>
+<span id="cb287-8"><a href="zlozone-funkcje.html#cb287-8"></a>    <span class="kw">message</span>(<span class="st">&quot;Wow. Argument `x` jest oczekiwaną zmienną numeryczną.&quot;</span>)</span>
+<span id="cb287-9"><a href="zlozone-funkcje.html#cb287-9"></a>  }</span>
+<span id="cb287-10"><a href="zlozone-funkcje.html#cb287-10"></a>  <span class="kw">abs</span>(x <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)</span>
+<span id="cb287-11"><a href="zlozone-funkcje.html#cb287-11"></a>}</span></code></pre></div>
 <p>W przypadku, gdy użytkownik wprowadzi jako wejście wektor tekstowy (<code>if(is.character(x))</code>) to działanie funkcji zostanie przerwane i pojawi się odpowiedni komunikat błędu.</p>
-<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="zlozone-funkcje.html#cb287-1"></a><span class="kw">minus_1</span>(<span class="st">&quot;kot&quot;</span>)</span>
-<span id="cb287-2"><a href="zlozone-funkcje.html#cb287-2"></a><span class="co">#&gt; Error in minus_1(&quot;kot&quot;): Argument `x` musi być zmienną numeryczną, a nie znakową.</span></span></code></pre></div>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="zlozone-funkcje.html#cb288-1"></a><span class="kw">minus_1</span>(<span class="st">&quot;kot&quot;</span>)</span>
+<span id="cb288-2"><a href="zlozone-funkcje.html#cb288-2"></a><span class="co">#&gt; Error in minus_1(&quot;kot&quot;): Argument `x` musi być zmienną numeryczną, a nie znakową.</span></span></code></pre></div>
 <p>Jeżeli jako argument <code>x</code> zostanie podany wektor logiczny (<code>else if(is.logical(x))</code>) to pojawi się komunikat ostrzeżenia, ale dalsze obliczanie zostanie wykonane.
 W tym przypadku wartość <code>TRUE</code> zostanie najpierw zamieniona na jeden a <code>FALSE</code> na zero, następnie od tych wartości zostanie odjęte jeden, a na końcu zostaną one zamienione na wartości bezwzględne.</p>
-<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="zlozone-funkcje.html#cb288-1"></a><span class="kw">minus_1</span>(<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>))</span>
-<span id="cb288-2"><a href="zlozone-funkcje.html#cb288-2"></a><span class="co">#&gt; Warning in minus_1(c(TRUE, FALSE)): Argument `x`</span></span>
-<span id="cb288-3"><a href="zlozone-funkcje.html#cb288-3"></a><span class="co">#&gt; jest zmienną logiczną. Czy nie chcesz użyć zmiennej</span></span>
-<span id="cb288-4"><a href="zlozone-funkcje.html#cb288-4"></a><span class="co">#&gt; numerycznej?</span></span>
-<span id="cb288-5"><a href="zlozone-funkcje.html#cb288-5"></a><span class="co">#&gt; [1] 0 1</span></span></code></pre></div>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="zlozone-funkcje.html#cb289-1"></a><span class="kw">minus_1</span>(<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>))</span>
+<span id="cb289-2"><a href="zlozone-funkcje.html#cb289-2"></a><span class="co">#&gt; Warning in minus_1(c(TRUE, FALSE)): Argument `x`</span></span>
+<span id="cb289-3"><a href="zlozone-funkcje.html#cb289-3"></a><span class="co">#&gt; jest zmienną logiczną. Czy nie chcesz użyć zmiennej</span></span>
+<span id="cb289-4"><a href="zlozone-funkcje.html#cb289-4"></a><span class="co">#&gt; numerycznej?</span></span>
+<span id="cb289-5"><a href="zlozone-funkcje.html#cb289-5"></a><span class="co">#&gt; [1] 0 1</span></span></code></pre></div>
 <p>Po wprowadzeniu wartości numerycznych do funkcji <code>minus_1()</code> pojawi się tekst wiadomości, po którym nastąpi wyliczenie kodu <code>abs(x - 1)</code>.</p>
-<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="zlozone-funkcje.html#cb289-1"></a><span class="kw">minus_1</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">-6</span>))</span>
-<span id="cb289-2"><a href="zlozone-funkcje.html#cb289-2"></a><span class="co">#&gt; Wow. Argument `x` jest oczekiwaną zmienną numeryczną.</span></span>
-<span id="cb289-3"><a href="zlozone-funkcje.html#cb289-3"></a><span class="co">#&gt; [1] 0 1 5 7</span></span></code></pre></div>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="zlozone-funkcje.html#cb290-1"></a><span class="kw">minus_1</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">-6</span>))</span>
+<span id="cb290-2"><a href="zlozone-funkcje.html#cb290-2"></a><span class="co">#&gt; Wow. Argument `x` jest oczekiwaną zmienną numeryczną.</span></span>
+<span id="cb290-3"><a href="zlozone-funkcje.html#cb290-3"></a><span class="co">#&gt; [1] 0 1 5 7</span></span></code></pre></div>
 <!-- http://jarekj.home.amu.edu.pl/wp-content/uploads/2018/10/006_wyjatki.html -->
 <p>Złożone funkcje opierają się o inne istniejące funkcje.
 W powyższym przykładzie, <code>minus_1()</code> używał, między innymi funkcji <code>-</code> do odejmowania czy <code>abs</code> do wyliczania wartości bezwzględnej.
@@ -508,34 +508,34 @@ R pozwala na ignorowanie wystąpienia błędu używając funkcji <code>try()</co
 <p><code>tryCatch()</code> stara się uruchomić jakiś wskazany kod, a w przypadku pojawienia się błędu wykonuje alternatywne obliczenia.
 Można to zobaczyć na poniższym przykładzie, gdzie najpierw sprawdzona zostałaby linia <code>kod do uruchomienia</code> i dopiero gdyby ona skutkowała błędem zostałaby uruchomiona linia <code>wykonaj kod w przypadku wystąpienia błędu</code>.
 <!-- https://adv-r.hadley.nz/conditions.html#conditions --></p>
-<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="zlozone-funkcje.html#cb290-1"></a><span class="kw">tryCatch</span>(</span>
-<span id="cb290-2"><a href="zlozone-funkcje.html#cb290-2"></a>  <span class="dt">error =</span> <span class="cf">function</span>(e) {</span>
-<span id="cb290-3"><a href="zlozone-funkcje.html#cb290-3"></a>    wykonaj kod w przypadku wystąpienia błędu</span>
-<span id="cb290-4"><a href="zlozone-funkcje.html#cb290-4"></a>  },</span>
-<span id="cb290-5"><a href="zlozone-funkcje.html#cb290-5"></a>  kod do uruchomienia </span>
-<span id="cb290-6"><a href="zlozone-funkcje.html#cb290-6"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="zlozone-funkcje.html#cb291-1"></a><span class="kw">tryCatch</span>(</span>
+<span id="cb291-2"><a href="zlozone-funkcje.html#cb291-2"></a>  <span class="dt">error =</span> <span class="cf">function</span>(e) {</span>
+<span id="cb291-3"><a href="zlozone-funkcje.html#cb291-3"></a>    wykonaj kod w przypadku wystąpienia błędu</span>
+<span id="cb291-4"><a href="zlozone-funkcje.html#cb291-4"></a>  },</span>
+<span id="cb291-5"><a href="zlozone-funkcje.html#cb291-5"></a>  kod do uruchomienia </span>
+<span id="cb291-6"><a href="zlozone-funkcje.html#cb291-6"></a>)</span></code></pre></div>
 <p>Działanie <code>tryCatch</code> w praktyce jest pokazane w funkcji <code>log_safe()</code>.
 Stara się ona wyliczyć logarytm naturalny (<code>log()</code>) z wartości argumentu <code>x</code>, a w przypadku gdyby napotkała błąd zwróci ona wartość <code>NA</code>.</p>
-<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="zlozone-funkcje.html#cb291-1"></a>log_safe =<span class="st"> </span><span class="cf">function</span>(x){</span>
-<span id="cb291-2"><a href="zlozone-funkcje.html#cb291-2"></a>  <span class="kw">tryCatch</span>(</span>
-<span id="cb291-3"><a href="zlozone-funkcje.html#cb291-3"></a>  <span class="dt">error =</span> <span class="cf">function</span>(e) {</span>
-<span id="cb291-4"><a href="zlozone-funkcje.html#cb291-4"></a>    <span class="ot">NA</span></span>
-<span id="cb291-5"><a href="zlozone-funkcje.html#cb291-5"></a>  },</span>
-<span id="cb291-6"><a href="zlozone-funkcje.html#cb291-6"></a>  <span class="kw">log</span>(x)</span>
-<span id="cb291-7"><a href="zlozone-funkcje.html#cb291-7"></a>  )</span>
-<span id="cb291-8"><a href="zlozone-funkcje.html#cb291-8"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="zlozone-funkcje.html#cb292-1"></a>log_safe =<span class="st"> </span><span class="cf">function</span>(x){</span>
+<span id="cb292-2"><a href="zlozone-funkcje.html#cb292-2"></a>  <span class="kw">tryCatch</span>(</span>
+<span id="cb292-3"><a href="zlozone-funkcje.html#cb292-3"></a>  <span class="dt">error =</span> <span class="cf">function</span>(e) {</span>
+<span id="cb292-4"><a href="zlozone-funkcje.html#cb292-4"></a>    <span class="ot">NA</span></span>
+<span id="cb292-5"><a href="zlozone-funkcje.html#cb292-5"></a>  },</span>
+<span id="cb292-6"><a href="zlozone-funkcje.html#cb292-6"></a>  <span class="kw">log</span>(x)</span>
+<span id="cb292-7"><a href="zlozone-funkcje.html#cb292-7"></a>  )</span>
+<span id="cb292-8"><a href="zlozone-funkcje.html#cb292-8"></a>}</span></code></pre></div>
 <p>Sprawdźmy jej zachowanie na dwóch przykładach.
 W pierwszym oryginalna funkcja <code>log()</code> jak i nowa <code>log_safe()</code> otrzymają poprawne dane wejściowe - wektor numeryczny.</p>
-<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="zlozone-funkcje.html#cb292-1"></a><span class="kw">log</span>(<span class="dv">10</span>)</span>
-<span id="cb292-2"><a href="zlozone-funkcje.html#cb292-2"></a><span class="co">#&gt; [1] 2.3</span></span>
-<span id="cb292-3"><a href="zlozone-funkcje.html#cb292-3"></a><span class="kw">log_safe</span>(<span class="dv">10</span>)</span>
-<span id="cb292-4"><a href="zlozone-funkcje.html#cb292-4"></a><span class="co">#&gt; [1] 2.3</span></span></code></pre></div>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="zlozone-funkcje.html#cb293-1"></a><span class="kw">log</span>(<span class="dv">10</span>)</span>
+<span id="cb293-2"><a href="zlozone-funkcje.html#cb293-2"></a><span class="co">#&gt; [1] 2.3</span></span>
+<span id="cb293-3"><a href="zlozone-funkcje.html#cb293-3"></a><span class="kw">log_safe</span>(<span class="dv">10</span>)</span>
+<span id="cb293-4"><a href="zlozone-funkcje.html#cb293-4"></a><span class="co">#&gt; [1] 2.3</span></span></code></pre></div>
 <p>W tym przypadku obie zwracają dokładnie taki sam wynik.
 Jeżeli jednak jako dane wejściowe wprowadzimy wektor znakowy to oryginalna funkcja zwróci błąd, a nasza funkcja jedynie wartość <code>NA</code>.</p>
-<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="zlozone-funkcje.html#cb293-1"></a><span class="kw">log</span>(<span class="st">&quot;abecadło&quot;</span>)</span>
-<span id="cb293-2"><a href="zlozone-funkcje.html#cb293-2"></a><span class="co">#&gt; Error in log(&quot;abecadło&quot;): non-numeric argument to mathematical function</span></span></code></pre></div>
-<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="zlozone-funkcje.html#cb294-1"></a><span class="kw">log_safe</span>(<span class="st">&quot;abecadło&quot;</span>)</span>
-<span id="cb294-2"><a href="zlozone-funkcje.html#cb294-2"></a><span class="co">#&gt; [1] NA</span></span></code></pre></div>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="zlozone-funkcje.html#cb294-1"></a><span class="kw">log</span>(<span class="st">&quot;abecadło&quot;</span>)</span>
+<span id="cb294-2"><a href="zlozone-funkcje.html#cb294-2"></a><span class="co">#&gt; Error in log(&quot;abecadło&quot;): non-numeric argument to mathematical function</span></span></code></pre></div>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="zlozone-funkcje.html#cb295-1"></a><span class="kw">log_safe</span>(<span class="st">&quot;abecadło&quot;</span>)</span>
+<span id="cb295-2"><a href="zlozone-funkcje.html#cb295-2"></a><span class="co">#&gt; [1] NA</span></span></code></pre></div>
 
 <div class="rmdinfo">
 Dodatkowo istnieje funkcja <code>withCallingHandlers()</code>, która jest używana w przypadku działania na ostrzeżeniach.
@@ -562,21 +562,21 @@ Przykład metody był pokazany w sekcji <a href="zlozone-obiekty.html#inne-klasy
 <p>Poniżej stworzono nową macierz <code>x</code>, która składa się z dwóch kolumn i dwóch wierszy oraz wartości 0, 0, 2 i 3.
 Ma ona na celu reprezentowanie figury geometrycznej - prostokąta.
 W najprostszej postaci prostokąt można opisać używając czterech współrzędnych - najmniejszej wartości położenia na osi x (np., <code>0</code>), najmniejszej wartości położenia na osi y (np., <code>0</code>), największej wartości położenia na osi x (np., <code>2</code>), oraz największej wartości położenia na osi y (np., <code>3</code>).</p>
-<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="zlozone-funkcje.html#cb295-1"></a>x =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="dt">ncol =</span> <span class="dv">2</span>)</span>
-<span id="cb295-2"><a href="zlozone-funkcje.html#cb295-2"></a>x</span>
-<span id="cb295-3"><a href="zlozone-funkcje.html#cb295-3"></a><span class="co">#&gt;      [,1] [,2]</span></span>
-<span id="cb295-4"><a href="zlozone-funkcje.html#cb295-4"></a><span class="co">#&gt; [1,]    0    2</span></span>
-<span id="cb295-5"><a href="zlozone-funkcje.html#cb295-5"></a><span class="co">#&gt; [2,]    0    3</span></span></code></pre></div>
+<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="zlozone-funkcje.html#cb296-1"></a>x =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>), <span class="dt">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb296-2"><a href="zlozone-funkcje.html#cb296-2"></a>x</span>
+<span id="cb296-3"><a href="zlozone-funkcje.html#cb296-3"></a><span class="co">#&gt;      [,1] [,2]</span></span>
+<span id="cb296-4"><a href="zlozone-funkcje.html#cb296-4"></a><span class="co">#&gt; [1,]    0    2</span></span>
+<span id="cb296-5"><a href="zlozone-funkcje.html#cb296-5"></a><span class="co">#&gt; [2,]    0    3</span></span></code></pre></div>
 <p>Do sprawdzenia klasy obiektu w systemie S3 służy funkcja <code>class()</code>.</p>
-<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="zlozone-funkcje.html#cb296-1"></a><span class="kw">class</span>(x)</span>
-<span id="cb296-2"><a href="zlozone-funkcje.html#cb296-2"></a><span class="co">#&gt; [1] &quot;matrix&quot; &quot;array&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="zlozone-funkcje.html#cb297-1"></a><span class="kw">class</span>(x)</span>
+<span id="cb297-2"><a href="zlozone-funkcje.html#cb297-2"></a><span class="co">#&gt; [1] &quot;matrix&quot; &quot;array&quot;</span></span></code></pre></div>
 <p>W efekcie upewniamy się, że klasa naszego obiektu <code>x</code> to matrix, array.
 System S3 pozwala na prostą zmianę lub dodanie nazwy klasy używając funkcji <code>structure()</code>.</p>
-<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="zlozone-funkcje.html#cb297-1"></a>y =<span class="st"> </span><span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="zlozone-funkcje.html#cb298-1"></a>y =<span class="st"> </span><span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)</span></code></pre></div>
 <p>Wynikiem działania tej funkcji z argumentem <code>class = "prostokat"</code> jest nowy obiekt <code>y</code>.
 W momencie, gdy sprawdzimy jego klasę, okaże się że nie jest to już matrix, array ale prostokat.</p>
-<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="zlozone-funkcje.html#cb298-1"></a><span class="kw">class</span>(y)</span>
-<span id="cb298-2"><a href="zlozone-funkcje.html#cb298-2"></a><span class="co">#&gt; [1] &quot;prostokat&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="zlozone-funkcje.html#cb299-1"></a><span class="kw">class</span>(y)</span>
+<span id="cb299-2"><a href="zlozone-funkcje.html#cb299-2"></a><span class="co">#&gt; [1] &quot;prostokat&quot;</span></span></code></pre></div>
 </div>
 <div id="metody" class="section level3" number="10.3.2">
 <h3><span class="header-section-number">10.3.2</span> Metody</h3>
@@ -587,50 +587,50 @@ Możliwe jest zarówno dodanie nowej metody do istniejącej funkcji, jak i stwor
 <p>W tym wypadku interesuje nas możliwość policzenia powierzchni.
 Możemy do tego celu stworzyć nową funkcję w systemie S3 o nazwie <code>powierzchnia</code>.
 Pierwszym krokiem musi być określenie, że nasza funkcja ma być oparta o system S3 używając poniższej formy.</p>
-<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb299-1"><a href="zlozone-funkcje.html#cb299-1"></a>powierzchnia =<span class="st"> </span><span class="cf">function</span>(x) {</span>
-<span id="cb299-2"><a href="zlozone-funkcje.html#cb299-2"></a>  <span class="kw">UseMethod</span>(<span class="st">&quot;powierzchnia&quot;</span>)</span>
-<span id="cb299-3"><a href="zlozone-funkcje.html#cb299-3"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="zlozone-funkcje.html#cb300-1"></a>powierzchnia =<span class="st"> </span><span class="cf">function</span>(x) {</span>
+<span id="cb300-2"><a href="zlozone-funkcje.html#cb300-2"></a>  <span class="kw">UseMethod</span>(<span class="st">&quot;powierzchnia&quot;</span>)</span>
+<span id="cb300-3"><a href="zlozone-funkcje.html#cb300-3"></a>}</span></code></pre></div>
 <p>Drugim krokiem jest zdefiniowanie funkcji do wyliczania powierzchni prostokąta.
 Określa ona najpierw długości boków a i b, a następnie wymnaża je w celu wyliczenia powierzchni.</p>
-<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="zlozone-funkcje.html#cb300-1"></a>powierzchnia.prostokat =<span class="st"> </span><span class="cf">function</span>(x){</span>
-<span id="cb300-2"><a href="zlozone-funkcje.html#cb300-2"></a>  a =<span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">1</span>] <span class="co">#wyliczenie długości boku a</span></span>
-<span id="cb300-3"><a href="zlozone-funkcje.html#cb300-3"></a>  b =<span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">1</span>] <span class="co">#wyliczenie długości boku b</span></span>
-<span id="cb300-4"><a href="zlozone-funkcje.html#cb300-4"></a>  a <span class="op">*</span><span class="st"> </span>b                 <span class="co">#wyliczenie powierzchni prostokąta</span></span>
-<span id="cb300-5"><a href="zlozone-funkcje.html#cb300-5"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="zlozone-funkcje.html#cb301-1"></a>powierzchnia.prostokat =<span class="st"> </span><span class="cf">function</span>(x){</span>
+<span id="cb301-2"><a href="zlozone-funkcje.html#cb301-2"></a>  a =<span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">1</span>, <span class="dv">1</span>] <span class="co">#wyliczenie długości boku a</span></span>
+<span id="cb301-3"><a href="zlozone-funkcje.html#cb301-3"></a>  b =<span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">2</span>] <span class="op">-</span><span class="st"> </span>x[<span class="dv">2</span>, <span class="dv">1</span>] <span class="co">#wyliczenie długości boku b</span></span>
+<span id="cb301-4"><a href="zlozone-funkcje.html#cb301-4"></a>  a <span class="op">*</span><span class="st"> </span>b                 <span class="co">#wyliczenie powierzchni prostokąta</span></span>
+<span id="cb301-5"><a href="zlozone-funkcje.html#cb301-5"></a>}</span></code></pre></div>
 <p>Nazwa powyższej funkcji wygląda jakby składała się z dwóch słów oddzielonych kropką - <code>powierzchnia.prostokat</code>.
 W rzeczywistości jednak nazwa funkcji to tylko <code>powierzchnia</code>, a kropka sugeruje że kolejny po niej wyraz to klasa obiektu jaki przyjmie funkcja.
 Jest to, innymi słowy, definicja metody.
 Nowa funkcja <code>powierzchnia</code> zadziała w powyższy sposób tylko w wypadku otrzymania jako dane wejściowe obiektu klasy <code>prostokat</code>.</p>
 <p>Sprawdźmy to na dwóch przykładach - obiektu <code>y</code> (klasa <code>prostokat</code>) i <code>x</code> (klasa <code>matrix</code>).</p>
-<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="zlozone-funkcje.html#cb301-1"></a>y</span>
-<span id="cb301-2"><a href="zlozone-funkcje.html#cb301-2"></a><span class="co">#&gt;      [,1] [,2]</span></span>
-<span id="cb301-3"><a href="zlozone-funkcje.html#cb301-3"></a><span class="co">#&gt; [1,]    0    2</span></span>
-<span id="cb301-4"><a href="zlozone-funkcje.html#cb301-4"></a><span class="co">#&gt; [2,]    0    3</span></span>
-<span id="cb301-5"><a href="zlozone-funkcje.html#cb301-5"></a><span class="co">#&gt; attr(,&quot;class&quot;)</span></span>
-<span id="cb301-6"><a href="zlozone-funkcje.html#cb301-6"></a><span class="co">#&gt; [1] &quot;prostokat&quot;</span></span>
-<span id="cb301-7"><a href="zlozone-funkcje.html#cb301-7"></a><span class="kw">powierzchnia</span>(y)</span>
-<span id="cb301-8"><a href="zlozone-funkcje.html#cb301-8"></a><span class="co">#&gt; [1] 6</span></span></code></pre></div>
-<p>W przypadku, gdy nasz obiekt wejściowy jest klasy <code>prostokat</code> to funkcja jest wykonywana zgodnie z metodą <code>powierzchnia.prostokat()</code>,</p>
-<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="zlozone-funkcje.html#cb302-1"></a>x</span>
+<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="zlozone-funkcje.html#cb302-1"></a>y</span>
 <span id="cb302-2"><a href="zlozone-funkcje.html#cb302-2"></a><span class="co">#&gt;      [,1] [,2]</span></span>
 <span id="cb302-3"><a href="zlozone-funkcje.html#cb302-3"></a><span class="co">#&gt; [1,]    0    2</span></span>
 <span id="cb302-4"><a href="zlozone-funkcje.html#cb302-4"></a><span class="co">#&gt; [2,]    0    3</span></span>
-<span id="cb302-5"><a href="zlozone-funkcje.html#cb302-5"></a><span class="kw">powierzchnia</span>(x)</span>
-<span id="cb302-6"><a href="zlozone-funkcje.html#cb302-6"></a><span class="co">#&gt; Error in UseMethod(&quot;powierzchnia&quot;): no applicable method for &#39;powierzchnia&#39; applied to an object of class &quot;c(&#39;matrix&#39;, &#39;array&#39;, &#39;double&#39;, &#39;numeric&#39;)&quot;</span></span></code></pre></div>
+<span id="cb302-5"><a href="zlozone-funkcje.html#cb302-5"></a><span class="co">#&gt; attr(,&quot;class&quot;)</span></span>
+<span id="cb302-6"><a href="zlozone-funkcje.html#cb302-6"></a><span class="co">#&gt; [1] &quot;prostokat&quot;</span></span>
+<span id="cb302-7"><a href="zlozone-funkcje.html#cb302-7"></a><span class="kw">powierzchnia</span>(y)</span>
+<span id="cb302-8"><a href="zlozone-funkcje.html#cb302-8"></a><span class="co">#&gt; [1] 6</span></span></code></pre></div>
+<p>W przypadku, gdy nasz obiekt wejściowy jest klasy <code>prostokat</code> to funkcja jest wykonywana zgodnie z metodą <code>powierzchnia.prostokat()</code>,</p>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="zlozone-funkcje.html#cb303-1"></a>x</span>
+<span id="cb303-2"><a href="zlozone-funkcje.html#cb303-2"></a><span class="co">#&gt;      [,1] [,2]</span></span>
+<span id="cb303-3"><a href="zlozone-funkcje.html#cb303-3"></a><span class="co">#&gt; [1,]    0    2</span></span>
+<span id="cb303-4"><a href="zlozone-funkcje.html#cb303-4"></a><span class="co">#&gt; [2,]    0    3</span></span>
+<span id="cb303-5"><a href="zlozone-funkcje.html#cb303-5"></a><span class="kw">powierzchnia</span>(x)</span>
+<span id="cb303-6"><a href="zlozone-funkcje.html#cb303-6"></a><span class="co">#&gt; Error in UseMethod(&quot;powierzchnia&quot;): no applicable method for &#39;powierzchnia&#39; applied to an object of class &quot;c(&#39;matrix&#39;, &#39;array&#39;, &#39;double&#39;, &#39;numeric&#39;)&quot;</span></span></code></pre></div>
 <p>Natomiast, gdy obiekt wejściowy będzie innej klasy to pojawi się komunikat błędu sugerujący, że nie istnieje metoda dla tej klasy pozwalająca na otrzymanie wyniku.</p>
 <p>Dodatkowo, oprócz tworzenia metod dla każdej klasy oddzielnie możliwe jest stworzenie metody domyślnej poprzez <code>nazwafunkcji.default</code>.
 W przypadku, gdy dla obiektu wejściowego nie istnieje metoda to wówczas wykonywana jest metoda domyślna (<code>default</code>).
 Poniżej dodano metodę domyślną - w przypadku, gdy dla wejściowego obiektu nie ma metody to pojawi się poniższy komunikat błędu.</p>
-<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="zlozone-funkcje.html#cb303-1"></a>powierzchnia.default =<span class="st"> </span><span class="cf">function</span>(x) {</span>
-<span id="cb303-2"><a href="zlozone-funkcje.html#cb303-2"></a>  <span class="kw">stop</span>(<span class="st">&quot;Funkcja `powierzchnia` ma wsparcie tylko dla obiektów o klasie `prostokąt`&quot;</span>)</span>
-<span id="cb303-3"><a href="zlozone-funkcje.html#cb303-3"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="zlozone-funkcje.html#cb304-1"></a>powierzchnia.default =<span class="st"> </span><span class="cf">function</span>(x) {</span>
+<span id="cb304-2"><a href="zlozone-funkcje.html#cb304-2"></a>  <span class="kw">stop</span>(<span class="st">&quot;Funkcja `powierzchnia` ma wsparcie tylko dla obiektów o klasie `prostokąt`&quot;</span>)</span>
+<span id="cb304-3"><a href="zlozone-funkcje.html#cb304-3"></a>}</span></code></pre></div>
 <p>Sprawdźmy działanie domyślnej metody podając macierz jako obiekt wejściowy.</p>
-<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="zlozone-funkcje.html#cb304-1"></a>x</span>
-<span id="cb304-2"><a href="zlozone-funkcje.html#cb304-2"></a><span class="co">#&gt;      [,1] [,2]</span></span>
-<span id="cb304-3"><a href="zlozone-funkcje.html#cb304-3"></a><span class="co">#&gt; [1,]    0    2</span></span>
-<span id="cb304-4"><a href="zlozone-funkcje.html#cb304-4"></a><span class="co">#&gt; [2,]    0    3</span></span>
-<span id="cb304-5"><a href="zlozone-funkcje.html#cb304-5"></a><span class="kw">powierzchnia</span>(x)</span>
-<span id="cb304-6"><a href="zlozone-funkcje.html#cb304-6"></a><span class="co">#&gt; Error in powierzchnia.default(x): Funkcja `powierzchnia` ma wsparcie tylko dla obiektów o klasie `prostokąt`</span></span></code></pre></div>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="zlozone-funkcje.html#cb305-1"></a>x</span>
+<span id="cb305-2"><a href="zlozone-funkcje.html#cb305-2"></a><span class="co">#&gt;      [,1] [,2]</span></span>
+<span id="cb305-3"><a href="zlozone-funkcje.html#cb305-3"></a><span class="co">#&gt; [1,]    0    2</span></span>
+<span id="cb305-4"><a href="zlozone-funkcje.html#cb305-4"></a><span class="co">#&gt; [2,]    0    3</span></span>
+<span id="cb305-5"><a href="zlozone-funkcje.html#cb305-5"></a><span class="kw">powierzchnia</span>(x)</span>
+<span id="cb305-6"><a href="zlozone-funkcje.html#cb305-6"></a><span class="co">#&gt; Error in powierzchnia.default(x): Funkcja `powierzchnia` ma wsparcie tylko dla obiektów o klasie `prostokąt`</span></span></code></pre></div>
 </div>
 <div id="konstruktory" class="section level3" number="10.3.3">
 <h3><span class="header-section-number">10.3.3</span> Konstruktory</h3>
@@ -644,41 +644,41 @@ Dlatego też ważnym elementem jest stworzenie konstruktora - funkcji, której c
 <li>Czy minimalna wartość współrzędnej y jest mniejsza od maksymalnej?</li>
 </ul>
 <p>Po tych sprawdzeniach następuje zbudowanie nowej macierzy oraz dodanie nazwy klasy.</p>
-<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="zlozone-funkcje.html#cb305-1"></a>nowy_prostokat =<span class="st"> </span><span class="cf">function</span>(xmin, ymin, xmax, ymax){</span>
-<span id="cb305-2"><a href="zlozone-funkcje.html#cb305-2"></a>  vals =<span class="st"> </span><span class="kw">c</span>(xmin, ymin, xmax, ymax)</span>
-<span id="cb305-3"><a href="zlozone-funkcje.html#cb305-3"></a>  <span class="cf">if</span> (<span class="op">!</span>(<span class="kw">is.numeric</span>(vals))){</span>
-<span id="cb305-4"><a href="zlozone-funkcje.html#cb305-4"></a>    <span class="kw">stop</span>(<span class="st">&quot;Wszystkie argumenty muszą być typu numerycznego&quot;</span>)</span>
-<span id="cb305-5"><a href="zlozone-funkcje.html#cb305-5"></a>  }</span>
-<span id="cb305-6"><a href="zlozone-funkcje.html#cb305-6"></a>  <span class="cf">if</span> (<span class="op">!</span><span class="kw">all</span>(<span class="kw">c</span>(<span class="kw">length</span>(xmin), <span class="kw">length</span>(ymin), <span class="kw">length</span>(xmax), <span class="kw">length</span>(ymax)) <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)){</span>
-<span id="cb305-7"><a href="zlozone-funkcje.html#cb305-7"></a>    <span class="kw">stop</span>(<span class="st">&quot;Każdy z argumentów może przyjmować tylko jedną wartość&quot;</span>)</span>
-<span id="cb305-8"><a href="zlozone-funkcje.html#cb305-8"></a>  }</span>
-<span id="cb305-9"><a href="zlozone-funkcje.html#cb305-9"></a>  x_range =<span class="st"> </span>vals[<span class="dv">3</span>] <span class="op">-</span><span class="st"> </span>vals[<span class="dv">1</span>]</span>
-<span id="cb305-10"><a href="zlozone-funkcje.html#cb305-10"></a>  <span class="cf">if</span> (x_range <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span>){</span>
-<span id="cb305-11"><a href="zlozone-funkcje.html#cb305-11"></a>    <span class="kw">stop</span>(<span class="st">&quot;`xmax` musi przyjmować wartość większą niż `xmin`&quot;</span>)</span>
-<span id="cb305-12"><a href="zlozone-funkcje.html#cb305-12"></a>  }</span>
-<span id="cb305-13"><a href="zlozone-funkcje.html#cb305-13"></a>  y_range =<span class="st"> </span>vals[<span class="dv">4</span>] <span class="op">-</span><span class="st"> </span>vals[<span class="dv">2</span>]</span>
-<span id="cb305-14"><a href="zlozone-funkcje.html#cb305-14"></a>  <span class="cf">if</span> (y_range <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span>) {</span>
-<span id="cb305-15"><a href="zlozone-funkcje.html#cb305-15"></a>    <span class="kw">stop</span>(<span class="st">&quot;`ymax` musi przyjmować wartość większą niż `ymin`&quot;</span>)</span>
-<span id="cb305-16"><a href="zlozone-funkcje.html#cb305-16"></a>  }</span>
-<span id="cb305-17"><a href="zlozone-funkcje.html#cb305-17"></a>  x =<span class="st"> </span><span class="kw">matrix</span>(vals, <span class="dt">ncol =</span> <span class="dv">2</span>)</span>
-<span id="cb305-18"><a href="zlozone-funkcje.html#cb305-18"></a>  <span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)</span>
-<span id="cb305-19"><a href="zlozone-funkcje.html#cb305-19"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="zlozone-funkcje.html#cb306-1"></a>nowy_prostokat =<span class="st"> </span><span class="cf">function</span>(xmin, ymin, xmax, ymax){</span>
+<span id="cb306-2"><a href="zlozone-funkcje.html#cb306-2"></a>  vals =<span class="st"> </span><span class="kw">c</span>(xmin, ymin, xmax, ymax)</span>
+<span id="cb306-3"><a href="zlozone-funkcje.html#cb306-3"></a>  <span class="cf">if</span> (<span class="op">!</span>(<span class="kw">is.numeric</span>(vals))){</span>
+<span id="cb306-4"><a href="zlozone-funkcje.html#cb306-4"></a>    <span class="kw">stop</span>(<span class="st">&quot;Wszystkie argumenty muszą być typu numerycznego&quot;</span>)</span>
+<span id="cb306-5"><a href="zlozone-funkcje.html#cb306-5"></a>  }</span>
+<span id="cb306-6"><a href="zlozone-funkcje.html#cb306-6"></a>  <span class="cf">if</span> (<span class="op">!</span><span class="kw">all</span>(<span class="kw">c</span>(<span class="kw">length</span>(xmin), <span class="kw">length</span>(ymin), <span class="kw">length</span>(xmax), <span class="kw">length</span>(ymax)) <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)){</span>
+<span id="cb306-7"><a href="zlozone-funkcje.html#cb306-7"></a>    <span class="kw">stop</span>(<span class="st">&quot;Każdy z argumentów może przyjmować tylko jedną wartość&quot;</span>)</span>
+<span id="cb306-8"><a href="zlozone-funkcje.html#cb306-8"></a>  }</span>
+<span id="cb306-9"><a href="zlozone-funkcje.html#cb306-9"></a>  x_range =<span class="st"> </span>vals[<span class="dv">3</span>] <span class="op">-</span><span class="st"> </span>vals[<span class="dv">1</span>]</span>
+<span id="cb306-10"><a href="zlozone-funkcje.html#cb306-10"></a>  <span class="cf">if</span> (x_range <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span>){</span>
+<span id="cb306-11"><a href="zlozone-funkcje.html#cb306-11"></a>    <span class="kw">stop</span>(<span class="st">&quot;`xmax` musi przyjmować wartość większą niż `xmin`&quot;</span>)</span>
+<span id="cb306-12"><a href="zlozone-funkcje.html#cb306-12"></a>  }</span>
+<span id="cb306-13"><a href="zlozone-funkcje.html#cb306-13"></a>  y_range =<span class="st"> </span>vals[<span class="dv">4</span>] <span class="op">-</span><span class="st"> </span>vals[<span class="dv">2</span>]</span>
+<span id="cb306-14"><a href="zlozone-funkcje.html#cb306-14"></a>  <span class="cf">if</span> (y_range <span class="op">&lt;=</span><span class="st"> </span><span class="dv">0</span>) {</span>
+<span id="cb306-15"><a href="zlozone-funkcje.html#cb306-15"></a>    <span class="kw">stop</span>(<span class="st">&quot;`ymax` musi przyjmować wartość większą niż `ymin`&quot;</span>)</span>
+<span id="cb306-16"><a href="zlozone-funkcje.html#cb306-16"></a>  }</span>
+<span id="cb306-17"><a href="zlozone-funkcje.html#cb306-17"></a>  x =<span class="st"> </span><span class="kw">matrix</span>(vals, <span class="dt">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb306-18"><a href="zlozone-funkcje.html#cb306-18"></a>  <span class="kw">structure</span>(x, <span class="dt">class =</span> <span class="st">&quot;prostokat&quot;</span>)</span>
+<span id="cb306-19"><a href="zlozone-funkcje.html#cb306-19"></a>}</span></code></pre></div>
 <p>Sprawdźmy działanie tego konstruktora na dwóch przypadkach.
 W pierwszym podajmy poprawne, sprawdzone wcześniej wartości.</p>
-<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="zlozone-funkcje.html#cb306-1"></a>nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb306-2"><a href="zlozone-funkcje.html#cb306-2"></a>nowy_p</span>
-<span id="cb306-3"><a href="zlozone-funkcje.html#cb306-3"></a><span class="co">#&gt;      [,1] [,2]</span></span>
-<span id="cb306-4"><a href="zlozone-funkcje.html#cb306-4"></a><span class="co">#&gt; [1,]    0    2</span></span>
-<span id="cb306-5"><a href="zlozone-funkcje.html#cb306-5"></a><span class="co">#&gt; [2,]    0    3</span></span>
-<span id="cb306-6"><a href="zlozone-funkcje.html#cb306-6"></a><span class="co">#&gt; attr(,&quot;class&quot;)</span></span>
-<span id="cb306-7"><a href="zlozone-funkcje.html#cb306-7"></a><span class="co">#&gt; [1] &quot;prostokat&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="zlozone-funkcje.html#cb307-1"></a>nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb307-2"><a href="zlozone-funkcje.html#cb307-2"></a>nowy_p</span>
+<span id="cb307-3"><a href="zlozone-funkcje.html#cb307-3"></a><span class="co">#&gt;      [,1] [,2]</span></span>
+<span id="cb307-4"><a href="zlozone-funkcje.html#cb307-4"></a><span class="co">#&gt; [1,]    0    2</span></span>
+<span id="cb307-5"><a href="zlozone-funkcje.html#cb307-5"></a><span class="co">#&gt; [2,]    0    3</span></span>
+<span id="cb307-6"><a href="zlozone-funkcje.html#cb307-6"></a><span class="co">#&gt; attr(,&quot;class&quot;)</span></span>
+<span id="cb307-7"><a href="zlozone-funkcje.html#cb307-7"></a><span class="co">#&gt; [1] &quot;prostokat&quot;</span></span></code></pre></div>
 <p>Konstruktor <code>nowy_prostokat()</code> działa bez problemu, zwracając nowy obiekt <code>nowy_p</code> o klasie <code>prostokat</code>.
 Warto od razu zobaczyć, czy ten obiekt zadziała poprawnie w funkcji <code>powierzchnia()</code>.</p>
-<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="zlozone-funkcje.html#cb307-1"></a><span class="kw">powierzchnia</span>(nowy_p)</span>
-<span id="cb307-2"><a href="zlozone-funkcje.html#cb307-2"></a><span class="co">#&gt; [1] 6</span></span></code></pre></div>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="zlozone-funkcje.html#cb308-1"></a><span class="kw">powierzchnia</span>(nowy_p)</span>
+<span id="cb308-2"><a href="zlozone-funkcje.html#cb308-2"></a><span class="co">#&gt; [1] 6</span></span></code></pre></div>
 <p>W przypadku, gdy do konstruktora zostaną podane niepoprawne wartości wejściowe pojawi się odpowiedni komunikat błędu.</p>
-<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="zlozone-funkcje.html#cb308-1"></a>nowy_p2 =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">7</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">0</span>)</span>
-<span id="cb308-2"><a href="zlozone-funkcje.html#cb308-2"></a><span class="co">#&gt; Error in nowy_prostokat(7, 0, 6, 0): `xmax` musi przyjmować wartość większą niż `xmin`</span></span></code></pre></div>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="zlozone-funkcje.html#cb309-1"></a>nowy_p2 =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">7</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">0</span>)</span>
+<span id="cb309-2"><a href="zlozone-funkcje.html#cb309-2"></a><span class="co">#&gt; Error in nowy_prostokat(7, 0, 6, 0): `xmax` musi przyjmować wartość większą niż `xmin`</span></span></code></pre></div>
 <!-- block - konstuktor, walidator, helper -->
 <!-- https://adv-r.hadley.nz/s3.html#s3-classes -->
 <!-- methods -->

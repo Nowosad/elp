@@ -403,7 +403,7 @@ przygotowanie-danych.R
 obliczanie-sredniej.R
 ```
 
-\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Kodowanie znaków (ang. *character encodings*) jest to sposób sposób prezentacji znaków.
+\BeginKnitrBlock{rmdinfo}<div class="rmdinfo">Kodowanie znaków (ang. *character encodings*) jest to sposób prezentacji znaków.
 Istnieje szereg różnych standardów kodowania znaków.
 Standard ASCII przyporządkowuje liczbom z zakresu 0-127 litery alfabetu angielskiego, cyfry, znaki przestankowe i inne symbole oraz polecenia.
 Firma Microsoft stworzyła dodatkowo cały szereg standardów dla różnych języków. 

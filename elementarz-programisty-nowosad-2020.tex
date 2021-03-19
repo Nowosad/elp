@@ -1015,7 +1015,7 @@ Dodatkowo wskazane jest dodanie wartości numerycznych przed nazwą pliku, jeże
 \end{Shaded}
 
 \begin{rmdinfo}
-Kodowanie znaków (ang. \emph{character encodings}) jest to sposób sposób prezentacji znaków.
+Kodowanie znaków (ang. \emph{character encodings}) jest to sposób prezentacji znaków.
 Istnieje szereg różnych standardów kodowania znaków.
 Standard ASCII przyporządkowuje liczbom z zakresu 0-127 litery alfabetu angielskiego, cyfry, znaki przestankowe i inne symbole oraz polecenia.
 Firma Microsoft stworzyła dodatkowo cały szereg standardów dla różnych języków.
@@ -2729,7 +2729,7 @@ R ma wbudowaną reprezentację dat w postaci klasy \texttt{Date}.
 \begin{Highlighting}[]
 \NormalTok{dzis =}\StringTok{ }\KeywordTok{Sys.Date}\NormalTok{()}
 \NormalTok{dzis}
-\CommentTok{\#\textgreater{} [1] "2021{-}03{-}17"}
+\CommentTok{\#\textgreater{} [1] "2021{-}03{-}19"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2752,11 +2752,11 @@ Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji \texttt{unclass(
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{unclass}\NormalTok{(dzis)}
-\CommentTok{\#\textgreater{} [1] 18703}
+\CommentTok{\#\textgreater{} [1] 18705}
 \end{Highlighting}
 \end{Shaded}
 
-Wynik, 18703, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
+Wynik, 18705, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
 
 \begin{Shaded}
@@ -5274,6 +5274,24 @@ Do wczytania tego pliku możemy użyć wbudowanej w R funkcji \texttt{read.csv()
 Oprócz funkcji \texttt{read.csv()} istnieje również funkcja o nazwie \texttt{read.csv2()}.
 Pierwsza z nich jest przystosowana do wczytania danych dla których separator kolumn to \texttt{,} a separator dziesiętny to \texttt{.}, druga natomiast jest używana gdy wejściowe dane mają \texttt{;} jak separator kolumn i \texttt{,} jako separator dziesiętny.
 
+Pliki tekstowe mogą zawierać tekst używając różnych standardów kodowania znaków o których była mowa w rozdziale \ref{ergosum}.
+Czasem więc konieczne jest podane odpowiedniego kodowania używając argumentu \texttt{encoding}, co pozwoli na poprawne wczytanie pliku do R.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{meteo =}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"pliki/dane\_meteo.csv"}\NormalTok{, }\DataTypeTok{encoding =} \StringTok{"UTF{-}8"}\NormalTok{)}
+\KeywordTok{str}\NormalTok{(meteo)}
+\CommentTok{\#\textgreater{} \textquotesingle{}data.frame\textquotesingle{}:    730 obs. of  7 variables:}
+\CommentTok{\#\textgreater{}  $ kod\_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...}
+\CommentTok{\#\textgreater{}  $ nazwa\_stacji: chr  "POZNAŃ" "POZNAŃ" "POZNAŃ" "POZNAŃ" ...}
+\CommentTok{\#\textgreater{}  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...}
+\CommentTok{\#\textgreater{}  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...}
+\CommentTok{\#\textgreater{}  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...}
+\CommentTok{\#\textgreater{}  $ tavg        : num  1.4 0.1 0.5 1.5 {-}3.5 {-}8.4 {-}7.9 {-}7.7 {-}5.8 {-}5 ...}
+\CommentTok{\#\textgreater{}  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...}
+\end{Highlighting}
+\end{Shaded}
+
 Czasem dane tekstowe posiadają inne znaki służące jako separatory, czy też nie posiadają nazw kolumn.
 W takich sytuacjach można użyć funkcji \texttt{read.table()}, która zawiera cały szereg argumentów, które można dopasować, aby poprawnie wczytać dane tekstowe.
 
@@ -6214,7 +6232,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{\#\textgreater{}    user  system elapsed }
-\CommentTok{\#\textgreater{}   0.500   0.000   0.499}
+\CommentTok{\#\textgreater{}   0.500   0.000   0.501}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6273,8 +6291,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{\#\textgreater{} \# A tibble: 2 x 6}
 \CommentTok{\#\textgreater{}   expression              min median \textasciigrave{}itr/sec\textasciigrave{} mem\_alloc}
 \CommentTok{\#\textgreater{}   \textless{}bch:expr\textgreater{}          \textless{}bch:t\textgreater{} \textless{}bch:\textgreater{}     \textless{}dbl\textgreater{} \textless{}bch:byt\textgreater{}}
-\CommentTok{\#\textgreater{} 1 mi\_do\_km1(odl\_mile)  1.49us 1.76us   498985.     117KB}
-\CommentTok{\#\textgreater{} 2 mi\_do\_km2(odl\_mile)  1.16us 1.35us   704987.     224KB}
+\CommentTok{\#\textgreater{} 1 mi\_do\_km1(odl\_mile)  1.43us 1.66us   505483.     117KB}
+\CommentTok{\#\textgreater{} 2 mi\_do\_km2(odl\_mile)  1.09us 1.27us   751168.     224KB}
 \CommentTok{\#\textgreater{} \# ... with 1 more variable: gc/sec \textless{}dbl\textgreater{}}
 \end{Highlighting}
 \end{Shaded}
@@ -6317,14 +6335,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{\#\textgreater{} \# A tibble: 2 x 6}
 \CommentTok{\#\textgreater{}   expression              min median \textasciigrave{}itr/sec\textasciigrave{} mem\_alloc}
 \CommentTok{\#\textgreater{}   \textless{}bch:expr\textgreater{}           \textless{}bch:\textgreater{} \textless{}bch:\textgreater{}     \textless{}dbl\textgreater{} \textless{}bch:byt\textgreater{}}
-\CommentTok{\#\textgreater{} 1 mi\_do\_km1(odl\_mile2)  548ms  548ms      1.82     382MB}
-\CommentTok{\#\textgreater{} 2 mi\_do\_km2(odl\_mile2)  808us  835us    882.      78.2KB}
+\CommentTok{\#\textgreater{} 1 mi\_do\_km1(odl\_mile2)  536ms  536ms      1.86     382MB}
+\CommentTok{\#\textgreater{} 2 mi\_do\_km2(odl\_mile2)  797us  828us    902.      78.2KB}
 \CommentTok{\#\textgreater{} \# ... with 1 more variable: gc/sec \textless{}dbl\textgreater{}}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 1.82 operacji na sekundę, przy aż 881.91 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 1.86 operacji na sekundę, przy aż 901.68 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zad12}{%
@@ -6910,14 +6928,14 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{\#\textgreater{} \# A tibble: 2 x 6}
 \CommentTok{\#\textgreater{}   expression                     min   median \textasciigrave{}itr/sec\textasciigrave{}}
 \CommentTok{\#\textgreater{}   \textless{}bch:expr\textgreater{}                \textless{}bch:tm\textgreater{} \textless{}bch:tm\textgreater{}     \textless{}dbl\textgreater{}}
-\CommentTok{\#\textgreater{} 1 mile\_na\_km(odl\_mile2)        802us    826us     1166.}
-\CommentTok{\#\textgreater{} 2 mile\_na\_km\_cpp(odl\_mile2)    426us    452us     2181.}
+\CommentTok{\#\textgreater{} 1 mile\_na\_km(odl\_mile2)        804us    825us     1168.}
+\CommentTok{\#\textgreater{} 2 mile\_na\_km\_cpp(odl\_mile2)    418us    444us     2214.}
 \CommentTok{\#\textgreater{} \# ... with 2 more variables: mem\_alloc \textless{}bch:byt\textgreater{},}
 \CommentTok{\#\textgreater{} \#   gc/sec \textless{}dbl\textgreater{}}
 \end{Highlighting}
 \end{Shaded}
 
-Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.83 raza mniejszy.
+Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.86 raza mniejszy.
 
 \hypertarget{sourceCpp}{%
 \subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}
