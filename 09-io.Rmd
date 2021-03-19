@@ -95,6 +95,14 @@ str(meteo)
 Oprócz funkcji `read.csv()` istnieje również funkcja o nazwie `read.csv2()`. 
 Pierwsza z nich jest przystosowana do wczytania danych dla których separator kolumn to `,` a separator dziesiętny to `.`, druga natomiast jest używana gdy wejściowe dane mają `;` jak separator kolumn i `,` jako separator dziesiętny.
 
+Pliki tekstowe mogą zawierać tekst używając różnych standardów kodowania znaków o których była mowa w rozdziale \@ref(ergosum).
+Czasem więc konieczne jest podane odpowiedniego kodowania używając argumentu `encoding`, co pozwoli na poprawne wczytanie pliku do R.
+
+```{r}
+meteo = read.csv("pliki/dane_meteo.csv", encoding = "UTF-8")
+str(meteo)
+```
+
 Czasem dane tekstowe posiadają inne znaki służące jako separatory, czy też nie posiadają nazw kolumn.
 W takich sytuacjach można użyć funkcji `read.table()`, która zawiera cały szereg argumentów, które można dopasować, aby poprawnie wczytać dane tekstowe.
 
