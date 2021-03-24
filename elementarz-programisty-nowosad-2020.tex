@@ -2729,7 +2729,7 @@ R ma wbudowaną reprezentację dat w postaci klasy \texttt{Date}.
 \begin{Highlighting}[]
 \NormalTok{dzis =}\StringTok{ }\KeywordTok{Sys.Date}\NormalTok{()}
 \NormalTok{dzis}
-\CommentTok{\#\textgreater{} [1] "2021{-}03{-}22"}
+\CommentTok{\#\textgreater{} [1] "2021{-}03{-}24"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2752,11 +2752,11 @@ Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji \texttt{unclass(
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{unclass}\NormalTok{(dzis)}
-\CommentTok{\#\textgreater{} [1] 18708}
+\CommentTok{\#\textgreater{} [1] 18710}
 \end{Highlighting}
 \end{Shaded}
 
-Wynik, 18708, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
+Wynik, 18710, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
 
 \begin{Shaded}
@@ -3331,7 +3331,7 @@ Do wydzielenia elementu służy funkcja \texttt{str\_subset()}.
 \end{Shaded}
 
 Umiejętności używania wyrażeń regularnych można trenować używając różnych zasobów internetowych, np. strony \url{https://regexr.com/}, \url{https://regex101.com/}, czy \url{https://regexcrossword.com/}.
-Pomocne w zrozumieniu bardziej zaawansowanych elementów wyrażeń regularncych może być też prezentacja \href{https://www.youtube.com/watch?v=EkluES9Rvak}{Best of Fluent 2012: /Reg(exp)\{2\}lained/: Demystifying Regular Expressions} oraz książka Mastering Regular Expressions \citep{friedl2006mastering}.
+Pomocne w zrozumieniu bardziej zaawansowanych elementów wyrażeń regularnych może być też prezentacja \href{https://www.youtube.com/watch?v=EkluES9Rvak}{Best of Fluent 2012: /Reg(exp)\{2\}lained/: Demystifying Regular Expressions} oraz książka Mastering Regular Expressions \citep{friedl2006mastering}.
 
 \hypertarget{wtregex}{%
 \section{Wydzielanie tekstu - regex}\label{wtregex}}
@@ -6232,7 +6232,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{\#\textgreater{}    user  system elapsed }
-\CommentTok{\#\textgreater{}   0.501   0.000   0.501}
+\CommentTok{\#\textgreater{}     0.5     0.0     0.5}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6291,8 +6291,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{\#\textgreater{} \# A tibble: 2 x 6}
 \CommentTok{\#\textgreater{}   expression              min median \textasciigrave{}itr/sec\textasciigrave{} mem\_alloc}
 \CommentTok{\#\textgreater{}   \textless{}bch:expr\textgreater{}          \textless{}bch:t\textgreater{} \textless{}bch:\textgreater{}     \textless{}dbl\textgreater{} \textless{}bch:byt\textgreater{}}
-\CommentTok{\#\textgreater{} 1 mi\_do\_km1(odl\_mile)  1.49us 1.71us   500769.     117KB}
-\CommentTok{\#\textgreater{} 2 mi\_do\_km2(odl\_mile)  1.17us 1.33us   719443.     224KB}
+\CommentTok{\#\textgreater{} 1 mi\_do\_km1(odl\_mile)  1.51us 1.76us   483826.     117KB}
+\CommentTok{\#\textgreater{} 2 mi\_do\_km2(odl\_mile)   1.2us 1.38us   681282.     224KB}
 \CommentTok{\#\textgreater{} \# ... with 1 more variable: gc/sec \textless{}dbl\textgreater{}}
 \end{Highlighting}
 \end{Shaded}
@@ -6335,14 +6335,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{\#\textgreater{} \# A tibble: 2 x 6}
 \CommentTok{\#\textgreater{}   expression              min median \textasciigrave{}itr/sec\textasciigrave{} mem\_alloc}
 \CommentTok{\#\textgreater{}   \textless{}bch:expr\textgreater{}           \textless{}bch:\textgreater{} \textless{}bch:\textgreater{}     \textless{}dbl\textgreater{} \textless{}bch:byt\textgreater{}}
-\CommentTok{\#\textgreater{} 1 mi\_do\_km1(odl\_mile2)  540ms  540ms      1.85     382MB}
-\CommentTok{\#\textgreater{} 2 mi\_do\_km2(odl\_mile2)  800us  823us    928.      78.2KB}
+\CommentTok{\#\textgreater{} 1 mi\_do\_km1(odl\_mile2)  558ms  558ms      1.79     382MB}
+\CommentTok{\#\textgreater{} 2 mi\_do\_km2(odl\_mile2)  805us  842us    873.      78.2KB}
 \CommentTok{\#\textgreater{} \# ... with 1 more variable: gc/sec \textless{}dbl\textgreater{}}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 1.85 operacji na sekundę, przy aż 928.39 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 1.79 operacji na sekundę, przy aż 873.34 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zad12}{%
@@ -6928,14 +6928,14 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{\#\textgreater{} \# A tibble: 2 x 6}
 \CommentTok{\#\textgreater{}   expression                     min   median \textasciigrave{}itr/sec\textasciigrave{}}
 \CommentTok{\#\textgreater{}   \textless{}bch:expr\textgreater{}                \textless{}bch:tm\textgreater{} \textless{}bch:tm\textgreater{}     \textless{}dbl\textgreater{}}
-\CommentTok{\#\textgreater{} 1 mile\_na\_km(odl\_mile2)        806us    825us     1167.}
-\CommentTok{\#\textgreater{} 2 mile\_na\_km\_cpp(odl\_mile2)    414us    446us     2203.}
+\CommentTok{\#\textgreater{} 1 mile\_na\_km(odl\_mile2)        814us    834us     1150.}
+\CommentTok{\#\textgreater{} 2 mile\_na\_km\_cpp(odl\_mile2)    437us    458us     2145.}
 \CommentTok{\#\textgreater{} \# ... with 2 more variables: mem\_alloc \textless{}bch:byt\textgreater{},}
 \CommentTok{\#\textgreater{} \#   gc/sec \textless{}dbl\textgreater{}}
 \end{Highlighting}
 \end{Shaded}
 
-Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.85 raza mniejszy.
+Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.82 raza mniejszy.
 
 \hypertarget{sourceCpp}{%
 \subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}
