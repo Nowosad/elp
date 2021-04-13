@@ -521,7 +521,7 @@ Dodatkowo: spróbuj rozwiązać to zadanie używając pętli `repeat`.
 Użyj metod programowania funkcyjnego, żeby przeliczyć jej wartości na kilometry.
 
 9) Posiadasz ramkę danych `pomiary` zawierającą wartości temperatury dla kolejnych miast, która została przedstawiona w sekcji \@ref(prog-fun).
-Napisz dwie funkcje używając pętli `for` - jedna, która znajdzie drugą najwyższą wartość w każdym wierszu oraz druga, która znajdzie drugą najwyższą wartość w każdej kolumnie.
+Napisz dwie funkcje używając pętli `for` - jedna, która znajdzie drugą najwyższą wartość w każdym wierszu oraz druga, która znajdzie drugą najwyższą wartość w każdej kolumnie. (Tutaj może pomocna okazać się funkcja `sort()`.)
 
 10) Rozwiąż poprzednie zadanie korzystając z metod programowania funkcyjnego zamiast pętli `for`.
 

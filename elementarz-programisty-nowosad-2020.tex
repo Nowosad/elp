@@ -2729,7 +2729,7 @@ R ma wbudowaną reprezentację dat w postaci klasy \texttt{Date}.
 \begin{Highlighting}[]
 \NormalTok{dzis =}\StringTok{ }\KeywordTok{Sys.Date}\NormalTok{()}
 \NormalTok{dzis}
-\CommentTok{\#\textgreater{} [1] "2021{-}03{-}24"}
+\CommentTok{\#\textgreater{} [1] "2021{-}04{-}13"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2752,11 +2752,11 @@ Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji \texttt{unclass(
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{unclass}\NormalTok{(dzis)}
-\CommentTok{\#\textgreater{} [1] 18710}
+\CommentTok{\#\textgreater{} [1] 18730}
 \end{Highlighting}
 \end{Shaded}
 
-Wynik, 18710, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
+Wynik, 18730, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
 
 \begin{Shaded}
@@ -5123,7 +5123,7 @@ Ma ona dodatkowo kilka kolejnych wariantów, np. \texttt{map\_df()} - która prz
   Użyj metod programowania funkcyjnego, żeby przeliczyć jej wartości na kilometry.
 \item
   Posiadasz ramkę danych \texttt{pomiary} zawierającą wartości temperatury dla kolejnych miast, która została przedstawiona w sekcji \ref{prog-fun}.
-  Napisz dwie funkcje używając pętli \texttt{for} - jedna, która znajdzie drugą najwyższą wartość w każdym wierszu oraz druga, która znajdzie drugą najwyższą wartość w każdej kolumnie.
+  Napisz dwie funkcje używając pętli \texttt{for} - jedna, która znajdzie drugą najwyższą wartość w każdym wierszu oraz druga, która znajdzie drugą najwyższą wartość w każdej kolumnie. (Tutaj może pomocna okazać się funkcja \texttt{sort()}.)
 \item
   Rozwiąż poprzednie zadanie korzystając z metod programowania funkcyjnego zamiast pętli \texttt{for}.
 \item
@@ -6232,7 +6232,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{\#\textgreater{}    user  system elapsed }
-\CommentTok{\#\textgreater{}     0.5     0.0     0.5}
+\CommentTok{\#\textgreater{}   0.502   0.000   0.501}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6291,8 +6291,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{\#\textgreater{} \# A tibble: 2 x 6}
 \CommentTok{\#\textgreater{}   expression              min median \textasciigrave{}itr/sec\textasciigrave{} mem\_alloc}
 \CommentTok{\#\textgreater{}   \textless{}bch:expr\textgreater{}          \textless{}bch:t\textgreater{} \textless{}bch:\textgreater{}     \textless{}dbl\textgreater{} \textless{}bch:byt\textgreater{}}
-\CommentTok{\#\textgreater{} 1 mi\_do\_km1(odl\_mile)  1.51us 1.76us   483826.     117KB}
-\CommentTok{\#\textgreater{} 2 mi\_do\_km2(odl\_mile)   1.2us 1.38us   681282.     224KB}
+\CommentTok{\#\textgreater{} 1 mi\_do\_km1(odl\_mile)  1.45us 1.65us   517965.     117KB}
+\CommentTok{\#\textgreater{} 2 mi\_do\_km2(odl\_mile)  1.09us 1.31us   723340.     224KB}
 \CommentTok{\#\textgreater{} \# ... with 1 more variable: gc/sec \textless{}dbl\textgreater{}}
 \end{Highlighting}
 \end{Shaded}
@@ -6335,14 +6335,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{\#\textgreater{} \# A tibble: 2 x 6}
 \CommentTok{\#\textgreater{}   expression              min median \textasciigrave{}itr/sec\textasciigrave{} mem\_alloc}
 \CommentTok{\#\textgreater{}   \textless{}bch:expr\textgreater{}           \textless{}bch:\textgreater{} \textless{}bch:\textgreater{}     \textless{}dbl\textgreater{} \textless{}bch:byt\textgreater{}}
-\CommentTok{\#\textgreater{} 1 mi\_do\_km1(odl\_mile2)  558ms  558ms      1.79     382MB}
-\CommentTok{\#\textgreater{} 2 mi\_do\_km2(odl\_mile2)  805us  842us    873.      78.2KB}
+\CommentTok{\#\textgreater{} 1 mi\_do\_km1(odl\_mile2)  539ms  539ms      1.85     382MB}
+\CommentTok{\#\textgreater{} 2 mi\_do\_km2(odl\_mile2)  803us  824us    925.      78.2KB}
 \CommentTok{\#\textgreater{} \# ... with 1 more variable: gc/sec \textless{}dbl\textgreater{}}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 1.79 operacji na sekundę, przy aż 873.34 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 1.85 operacji na sekundę, przy aż 925.15 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zad12}{%
@@ -6928,14 +6928,14 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{\#\textgreater{} \# A tibble: 2 x 6}
 \CommentTok{\#\textgreater{}   expression                     min   median \textasciigrave{}itr/sec\textasciigrave{}}
 \CommentTok{\#\textgreater{}   \textless{}bch:expr\textgreater{}                \textless{}bch:tm\textgreater{} \textless{}bch:tm\textgreater{}     \textless{}dbl\textgreater{}}
-\CommentTok{\#\textgreater{} 1 mile\_na\_km(odl\_mile2)        814us    834us     1150.}
-\CommentTok{\#\textgreater{} 2 mile\_na\_km\_cpp(odl\_mile2)    437us    458us     2145.}
+\CommentTok{\#\textgreater{} 1 mile\_na\_km(odl\_mile2)        804us    822us     1169.}
+\CommentTok{\#\textgreater{} 2 mile\_na\_km\_cpp(odl\_mile2)    419us    441us     2237.}
 \CommentTok{\#\textgreater{} \# ... with 2 more variables: mem\_alloc \textless{}bch:byt\textgreater{},}
 \CommentTok{\#\textgreater{} \#   gc/sec \textless{}dbl\textgreater{}}
 \end{Highlighting}
 \end{Shaded}
 
-Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.82 raza mniejszy.
+Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.86 raza mniejszy.
 
 \hypertarget{sourceCpp}{%
 \subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}
