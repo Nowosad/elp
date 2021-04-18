@@ -728,7 +728,7 @@ Dodatkowo, posiadają one pewne informacje zaszyte w atrybutach, w tym wartości
 <p>R ma wbudowaną reprezentację dat w postaci klasy <code>Date</code>.</p>
 <div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="proste-obiekty.html#cb117-1"></a>dzis =<span class="st"> </span><span class="kw">Sys.Date</span>()</span>
 <span id="cb117-2"><a href="proste-obiekty.html#cb117-2"></a>dzis</span>
-<span id="cb117-3"><a href="proste-obiekty.html#cb117-3"></a><span class="co">#&gt; [1] &quot;2021-04-13&quot;</span></span></code></pre></div>
+<span id="cb117-3"><a href="proste-obiekty.html#cb117-3"></a><span class="co">#&gt; [1] &quot;2021-04-18&quot;</span></span></code></pre></div>
 <p>Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowy), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.</p>
 <div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="proste-obiekty.html#cb118-1"></a><span class="kw">typeof</span>(dzis)</span>
 <span id="cb118-2"><a href="proste-obiekty.html#cb118-2"></a><span class="co">#&gt; [1] &quot;double&quot;</span></span>
@@ -739,8 +739,8 @@ Dodatkowo, posiadają one pewne informacje zaszyte w atrybutach, w tym wartości
 <span id="cb118-7"><a href="proste-obiekty.html#cb118-7"></a><span class="co">#&gt; [1] &quot;Date&quot;</span></span></code></pre></div>
 <p>Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji <code>unclass()</code>.</p>
 <div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="proste-obiekty.html#cb119-1"></a><span class="kw">unclass</span>(dzis)</span>
-<span id="cb119-2"><a href="proste-obiekty.html#cb119-2"></a><span class="co">#&gt; [1] 18730</span></span></code></pre></div>
-<p>Wynik, 18730, oznacza liczbę dni od 1970-01-01.<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>
+<span id="cb119-2"><a href="proste-obiekty.html#cb119-2"></a><span class="co">#&gt; [1] 18735</span></span></code></pre></div>
+<p>Wynik, 18735, oznacza liczbę dni od 1970-01-01.<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.</p>
 <div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="proste-obiekty.html#cb120-1"></a>stara_data =<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;1912-04-13&quot;</span>)</span>
 <span id="cb120-2"><a href="proste-obiekty.html#cb120-2"></a><span class="kw">unclass</span>(stara_data)</span>

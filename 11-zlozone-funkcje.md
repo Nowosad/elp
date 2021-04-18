@@ -483,7 +483,3 @@ Zastanów się jakie powinny być wartości argumentów wejściowych i napisz we
 1) Stwórz metodę pozwalającą na określanie współrzędnych centroidu trójkąta.
 
 <!-- 8. napisz testy dla 6 i 7 -->
-
-
-
-

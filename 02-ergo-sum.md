@@ -516,8 +516,5 @@ Stwórz nowy obiekt `pole_trapezu`, który zawiera obliczone pole tego trapezu.
 Pizza o średnicy 30 cm kosztuje 23,5 PLN, a pizza o średnicy 50 cm kosztuje 50 PLN.
 Wylicz w R, czy bardziej opłaca się kupno dwóch małych pizz czy jednej dużej.
 <!--zadanie z poprawą stylu-->
-
-
-
 5) Przejrzyj linki zawarte w tym rozdziale, w szczególności R-bloggers i R Weekly.
 Znajdź jeden lub dwa przykłady zastosowania R, które uważasz za ciekawe lub interesujące.

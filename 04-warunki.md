@@ -247,5 +247,3 @@ Jeżeli tylko jedna lub trzy ze zmiennych ma wartość `TRUE` wyświetl tekst `"
 Jeżeli wszystkie wartości zmiennej `x` są większe od `y` wyświetl tekst `"Zwycięstwo."`, a w przeciwnym razie wyświetl tekst `"Porażka."`.
 5) Napisz funkcję, która przyjmuje dwie zmienne numeryczne `populacja` i `powierzchnia`.
 Jeżeli wartości gęstości zaludnienia (liczba osób na jednostkę powierzchni) jest wyższa niż 123 wyświetl tekst `"Wartość powyżej średniej dla Polski."`.
-
-

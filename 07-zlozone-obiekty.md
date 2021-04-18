@@ -785,6 +785,3 @@ Pierwszy element to wektor liczb od 10 do 0, drugi element to obiekt `ma4`, a tr
 13) Wylicz średnią wartość z kolumny `"tsr"` z trzeciego elementu listy.
 14) Zamień obiekt `ramka1` utworzony w tym rozdziale na macierz. 
 Co jest efektem zamiany klasy?
-
-
-
