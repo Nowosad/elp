@@ -39,7 +39,7 @@ Programowanie ewoluowało i nadal ewoluuje wraz z rozwojem dostępności i możl
 Pojawiły się nowe paradygmaty<!--^[wyjaśnij]--> programowania oraz wiele nowych języków.
 W tym samym czasie narosło również wiele mitów dotyczących programowania^[Zobacz porównanie oczekiwań i rzeczywistej pracy programisty na https://www.youtube.com/watch?v=HluANRwPyNo.].
 
-Jednym z mitów jest to, że programowanie polega tylko siedzeniu przed ekranem komputera i wpisywaniu do niego kolejnych linii kodu.
+Jednym z mitów jest to, że programowanie polega tylko na siedzeniu przed ekranem komputera i wpisywaniu do niego kolejnych linii kodu.
 <!-- mit, Coding is Simply the Act of Writing Code -->
 <!-- mit, Coding Starts and Ends With a Computer -->
 Jest to oczywiście istotna część pracy programistycznej, ale prawdopodobnie nie jest ona nawet dominująca w przeciętym dniu programisty.
@@ -66,7 +66,7 @@ Obecnie podejmowanych jest szereg inicjatyw, które mają na celu zachęcić kob
 Wśród nich można wymienić działania organizacji [R-Ladies](https://rladies.org/), [PyLadies](https://www.pyladies.com/), [girls.js](https://girlsjs.pl/), czy [Women in Machine Learning & Data Science](http://wimlds.org/).
 Mit programisty mężczyzny jest też powiązany z wymienionym kilka akapitów niżej mitem samotnego programisty.
 
-(ref:marghamil) Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które on i jej zespół stworzył na potrzeby misji Apollo. Źródło: https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg
+(ref:marghamil) Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które ona i jej zespół stworzył na potrzeby misji Apollo. Źródło: https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg
 
 ```{r marghamil, echo=FALSE, out.width="80%", fig.cap='(ref:marghamil)', fig.pos = "ht"}
 knitr::include_graphics("images/margaret-hamilton.png")
@@ -114,7 +114,7 @@ W efekcie zazwyczaj nie możliwe jest jednoznaczne określenie, które rozwiąza
 Istnieje jednak kilka reguł, z którymi zgadza się większość programistów. 
 Pierwsza z nich mówi, że wolny działający kod jest lepszy niż szybki niedziałający kod^[Parafrazując Donalda Kuntha "We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil. Yet we should not pass up our opportunities in that critical 3%."].
 Kolejna opiera się o zasadę DRY (nie powtarzaj się, ang. *Don't Repeat Yourself*), zalecającą unikanie różnego rodzaju powtórzeń wykonywanych przy programowaniu, np. używania tych samych fragmentów kodu w wielu miejscach.
-Ostatnia reguła mówi, żeby tworzyć pisać programy w sposób modularny, czyli taki w którym każda funkcja spełnia tylko jedno i nie więcej zadanie, a złożone funkcje składają się z szeregu prostych funkcji.
+Ostatnia reguła mówi, żeby pisać programy w sposób modularny, czyli taki w którym każda funkcja spełnia tylko jedno i nie więcej zadanie, a złożone funkcje składają się z szeregu prostych funkcji.
 
 ## Języki programowania {#jezyki-programowania}
 
