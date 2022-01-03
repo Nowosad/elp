@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>11 Analiza kodu | Elementarz programisty</title>
   <meta name="description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="11 Analiza kodu | Elementarz programisty" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://nowosad.github.io/elp" />
-  <meta property="og:image" content="https://nowosad.github.io/elp/cover/cover.png" />
+  <meta property="og:image" content="https://nowosad.github.io/elp//cover/cover.png" />
   <meta property="og:description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
   <meta name="github-repo" content="nowosad/elp" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="11 Analiza kodu | Elementarz programisty" />
   
   <meta name="twitter:description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
-  <meta name="twitter:image" content="https://nowosad.github.io/elp/cover/cover.png" />
+  <meta name="twitter:image" content="https://nowosad.github.io/elp//cover/cover.png" />
 
 <meta name="author" content="Jakub Nowosad" />
 
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="zlozone-funkcje.html"/>
 <link rel="next" href="debugging.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,8 +50,9 @@
 
 
 
-
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -118,6 +120,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 <link rel="stylesheet" href="style/style.css" type="text/css" />
 </head>
@@ -475,7 +478,7 @@ Przyjmuje ona kod lub funkcję, która ma zostać profilowana.</p>
 <span id="cb316-2"><a href="analiza-kodu.html#cb316-2"></a><span class="kw">profvis</span>(<span class="kw">source</span>(<span class="st">&quot;R/moja_funkcja.R&quot;</span>))</span></code></pre></div>
 <p>W powyższym przypadku nastąpiło profilowanie kodu zawartego w skrypcie <code>R/moja_funkcja.R</code>.
 Efektem działania jest interaktywne podsumowanie pokazujące zużycie pamięci oraz czas poświęcony dla kolejnych linii kodu (rycina <a href="analiza-kodu.html#fig:profvis">11.1</a>).</p>
-<div class="figure" style="text-align: center"><span id="fig:profvis"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:profvis"></span>
 <img src="images/profvis.png" alt="Zrzut ekranu przedstawiający wynik działania funkcji profvis()." width="\textwidth" />
 <p class="caption">
 Rycina 11.1: Zrzut ekranu przedstawiający wynik działania funkcji profvis().
@@ -506,7 +509,7 @@ Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej fu
 <p>Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.</p>
 <div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="analiza-kodu.html#cb318-1"></a><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))</span>
 <span id="cb318-2"><a href="analiza-kodu.html#cb318-2"></a><span class="co">#&gt;    user  system elapsed </span></span>
-<span id="cb318-3"><a href="analiza-kodu.html#cb318-3"></a><span class="co">#&gt;   0.500   0.000   0.499</span></span></code></pre></div>
+<span id="cb318-3"><a href="analiza-kodu.html#cb318-3"></a><span class="co">#&gt;   0.499   0.000   0.499</span></span></code></pre></div>
 <p>W efekcie dostajemy trzy wartości - <code>user</code>, <code>system</code> i <code>elapsed</code>. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.</p>
 <p>Benchmarking jest często używany w sytuacji, gdy istnieje kilka funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
 Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.</p>
@@ -541,11 +544,11 @@ Poniżej nastąpi porównanie funkcji <code>mi_do_km1</code> i <code>mi_do_km2</
 <span id="cb321-5"><a href="analiza-kodu.html#cb321-5"></a>  <span class="kw">mi_do_km2</span>(odl_mile)</span>
 <span id="cb321-6"><a href="analiza-kodu.html#cb321-6"></a>)</span>
 <span id="cb321-7"><a href="analiza-kodu.html#cb321-7"></a>wynik_<span class="dv">1</span></span>
-<span id="cb321-8"><a href="analiza-kodu.html#cb321-8"></a><span class="co">#&gt; # A tibble: 2 x 6</span></span>
+<span id="cb321-8"><a href="analiza-kodu.html#cb321-8"></a><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span id="cb321-9"><a href="analiza-kodu.html#cb321-9"></a><span class="co">#&gt;   expression              min median `itr/sec` mem_alloc</span></span>
 <span id="cb321-10"><a href="analiza-kodu.html#cb321-10"></a><span class="co">#&gt;   &lt;bch:expr&gt;          &lt;bch:t&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span></span>
-<span id="cb321-11"><a href="analiza-kodu.html#cb321-11"></a><span class="co">#&gt; 1 mi_do_km1(odl_mile)   1.5µs 1.69µs   498445.     117KB</span></span>
-<span id="cb321-12"><a href="analiza-kodu.html#cb321-12"></a><span class="co">#&gt; 2 mi_do_km2(odl_mile)  1.15µs 1.27µs   740738.     224KB</span></span>
+<span id="cb321-11"><a href="analiza-kodu.html#cb321-11"></a><span class="co">#&gt; 1 mi_do_km1(odl_mile)  1.83µs 1.99µs   451289.     117KB</span></span>
+<span id="cb321-12"><a href="analiza-kodu.html#cb321-12"></a><span class="co">#&gt; 2 mi_do_km2(odl_mile)  1.42µs 1.57µs   592385.     224KB</span></span>
 <span id="cb321-13"><a href="analiza-kodu.html#cb321-13"></a><span class="co">#&gt; # … with 1 more variable: gc/sec &lt;dbl&gt;</span></span></code></pre></div>
 <p>Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
 Zawiera ona szereg charakterystyk, w tym:</p>
@@ -569,14 +572,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 <span id="cb322-6"><a href="analiza-kodu.html#cb322-6"></a><span class="co">#&gt; Warning: Some expressions had a GC in every iteration;</span></span>
 <span id="cb322-7"><a href="analiza-kodu.html#cb322-7"></a><span class="co">#&gt; so filtering is disabled.</span></span>
 <span id="cb322-8"><a href="analiza-kodu.html#cb322-8"></a>wynik_<span class="dv">2</span></span>
-<span id="cb322-9"><a href="analiza-kodu.html#cb322-9"></a><span class="co">#&gt; # A tibble: 2 x 6</span></span>
+<span id="cb322-9"><a href="analiza-kodu.html#cb322-9"></a><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span id="cb322-10"><a href="analiza-kodu.html#cb322-10"></a><span class="co">#&gt;   expression              min median `itr/sec` mem_alloc</span></span>
 <span id="cb322-11"><a href="analiza-kodu.html#cb322-11"></a><span class="co">#&gt;   &lt;bch:expr&gt;           &lt;bch:&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span></span>
-<span id="cb322-12"><a href="analiza-kodu.html#cb322-12"></a><span class="co">#&gt; 1 mi_do_km1(odl_mile2)  491ms  492ms      2.03     382MB</span></span>
-<span id="cb322-13"><a href="analiza-kodu.html#cb322-13"></a><span class="co">#&gt; 2 mi_do_km2(odl_mile2)  802µs  834µs   1076.      78.2KB</span></span>
+<span id="cb322-12"><a href="analiza-kodu.html#cb322-12"></a><span class="co">#&gt; 1 mi_do_km1(odl_mile2)  546ms  546ms      1.83     382MB</span></span>
+<span id="cb322-13"><a href="analiza-kodu.html#cb322-13"></a><span class="co">#&gt; 2 mi_do_km2(odl_mile2)  810µs  930µs    921.      78.2KB</span></span>
 <span id="cb322-14"><a href="analiza-kodu.html#cb322-14"></a><span class="co">#&gt; # … with 1 more variable: gc/sec &lt;dbl&gt;</span></span></code></pre></div>
 <p>W tym przypadku różnica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
-Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 2.03 operacji na sekundę, przy aż 1075.94 operacji na sekundę funkcji <code>mi_do_km2</code>.
+Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 1.83 operacji na sekundę, przy aż 920.73 operacji na sekundę funkcji <code>mi_do_km2</code>.
 Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż <code>mi_do_km2</code>.</p>
 </div>
 <div id="zad12" class="section level2" number="11.4">
@@ -607,7 +610,7 @@ Która z nich zużywa mniej zasobów?</p></li>
 </div>
 </div>
 <h3>Bibliografia</h3>
-<div id="refs" class="references">
+<div id="refs" class="references hanging-indent">
 <div id="ref-R-profvis">
 <p>Chang, Winston, Javier Luraschi, and Timothy Mastny. 2019. <em>Profvis: Interactive Visualizations for Profiling R Code</em>. <a href="https://CRAN.R-project.org/package=profvis">https://CRAN.R-project.org/package=profvis</a>.</p>
 </div>
@@ -634,7 +637,6 @@ Która z nich zużywa mniej zasobów?</p></li>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -653,6 +655,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -673,6 +676,10 @@ gitbook.start({
 "text": null
 },
 "download": ["elementarz-programisty-nowosad-2020.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 },

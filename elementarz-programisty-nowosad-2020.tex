@@ -377,7 +377,7 @@ Programowanie ewoluowało i nadal ewoluuje wraz z rozwojem dostępności i możl
 Pojawiły się nowe paradygmaty programowania oraz wiele nowych języków.
 W tym samym czasie narosło również wiele mitów dotyczących programowania\footnote{Zobacz porównanie oczekiwań i rzeczywistej pracy programisty na \url{https://www.youtube.com/watch?v=HluANRwPyNo}.}.
 
-Jednym z mitów jest to, że programowanie polega tylko siedzeniu przed ekranem komputera i wpisywaniu do niego kolejnych linii kodu.
+Jednym z mitów jest to, że programowanie polega tylko na siedzeniu przed ekranem komputera i wpisywaniu do niego kolejnych linii kodu.
 Jest to oczywiście istotna część pracy programistycznej, ale prawdopodobnie nie jest ona nawet dominująca w przeciętym dniu programisty.
 Wcześniej konieczne jest zastanowienie się jaki problem rozwiązujemy oraz zaprojektowanie możliwego rozwiązania tego problemu.
 Stworzony kod może okazać się być nieprzystępny dla użytkownika, słabo zoptymalizowany, lub nawet błędny.
@@ -410,7 +410,7 @@ Mit programisty mężczyzny jest też powiązany z wymienionym kilka akapitów n
 
 }
 
-\caption{Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które on i jej zespół stworzył na potrzeby misji Apollo. Źródło: \url{https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg}}\label{fig:marghamil}
+\caption{Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które ona i jej zespół stworzył na potrzeby misji Apollo. Źródło: \url{https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg}}\label{fig:marghamil}
 \end{figure}
 
 Kolejny jest mit wielkiego produktu.
@@ -453,7 +453,7 @@ W efekcie zazwyczaj nie możliwe jest jednoznaczne określenie, które rozwiąza
 Istnieje jednak kilka reguł, z którymi zgadza się~większość programistów.
 Pierwsza z nich mówi, że wolny działający kod jest lepszy niż szybki niedziałający kod\footnote{Parafrazując Donalda Kuntha ``We should forget about small efficiencies, say about 97\% of the time: premature optimization is the root of all evil. Yet we should not pass up our opportunities in that critical 3\%.''}.
 Kolejna opiera się~o zasadę DRY (nie powtarzaj się, ang. \emph{Don't Repeat Yourself}), zalecającą unikanie różnego rodzaju powtórzeń wykonywanych przy programowaniu, np. używania tych samych fragmentów kodu w wielu miejscach.
-Ostatnia reguła mówi, żeby tworzyć pisać programy w sposób modularny, czyli taki w którym każda funkcja spełnia tylko jedno i nie więcej zadanie, a złożone funkcje składają się z szeregu prostych funkcji.
+Ostatnia reguła mówi, żeby pisać programy w sposób modularny, czyli taki w którym każda funkcja spełnia tylko jedno i nie więcej zadanie, a złożone funkcje składają się z szeregu prostych funkcji.
 
 \hypertarget{jezyki-programowania}{%
 \section{Języki programowania}\label{jezyki-programowania}}
@@ -2730,7 +2730,7 @@ R ma wbudowaną reprezentację dat w postaci klasy \texttt{Date}.
 \begin{Highlighting}[]
 \NormalTok{dzis =}\StringTok{ }\KeywordTok{Sys.Date}\NormalTok{()}
 \NormalTok{dzis}
-\CommentTok{\#\textgreater{} [1] "2021{-}04{-}18"}
+\CommentTok{\#\textgreater{} [1] "2022{-}01{-}03"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2753,11 +2753,11 @@ Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji \texttt{unclass(
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{unclass}\NormalTok{(dzis)}
-\CommentTok{\#\textgreater{} [1] 18735}
+\CommentTok{\#\textgreater{} [1] 18995}
 \end{Highlighting}
 \end{Shaded}
 
-Wynik, 18735, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
+Wynik, 18995, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
 
 \begin{Shaded}
@@ -6233,7 +6233,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{\#\textgreater{}    user  system elapsed }
-\CommentTok{\#\textgreater{}   0.501   0.000   0.502}
+\CommentTok{\#\textgreater{}   0.499   0.000   0.499}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6292,8 +6292,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{\#\textgreater{} \# A tibble: 2 x 6}
 \CommentTok{\#\textgreater{}   expression              min median \textasciigrave{}itr/sec\textasciigrave{} mem\_alloc}
 \CommentTok{\#\textgreater{}   \textless{}bch:expr\textgreater{}          \textless{}bch:t\textgreater{} \textless{}bch:\textgreater{}     \textless{}dbl\textgreater{} \textless{}bch:byt\textgreater{}}
-\CommentTok{\#\textgreater{} 1 mi\_do\_km1(odl\_mile)  1.42us 1.67us   516225.     117KB}
-\CommentTok{\#\textgreater{} 2 mi\_do\_km2(odl\_mile)  1.09us 1.27us   748029.     224KB}
+\CommentTok{\#\textgreater{} 1 mi\_do\_km1(odl\_mile)  1.48us 1.58us   549347.     117KB}
+\CommentTok{\#\textgreater{} 2 mi\_do\_km2(odl\_mile)  1.15us 1.26us   739231.     224KB}
 \CommentTok{\#\textgreater{} \# ... with 1 more variable: gc/sec \textless{}dbl\textgreater{}}
 \end{Highlighting}
 \end{Shaded}
@@ -6336,14 +6336,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{\#\textgreater{} \# A tibble: 2 x 6}
 \CommentTok{\#\textgreater{}   expression              min median \textasciigrave{}itr/sec\textasciigrave{} mem\_alloc}
 \CommentTok{\#\textgreater{}   \textless{}bch:expr\textgreater{}           \textless{}bch:\textgreater{} \textless{}bch:\textgreater{}     \textless{}dbl\textgreater{} \textless{}bch:byt\textgreater{}}
-\CommentTok{\#\textgreater{} 1 mi\_do\_km1(odl\_mile2)  547ms  547ms      1.83     382MB}
-\CommentTok{\#\textgreater{} 2 mi\_do\_km2(odl\_mile2)  809us  831us    899.      78.2KB}
+\CommentTok{\#\textgreater{} 1 mi\_do\_km1(odl\_mile2)  534ms  534ms      1.87     382MB}
+\CommentTok{\#\textgreater{} 2 mi\_do\_km2(odl\_mile2)  804us  831us   1017.      78.2KB}
 \CommentTok{\#\textgreater{} \# ... with 1 more variable: gc/sec \textless{}dbl\textgreater{}}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 1.83 operacji na sekundę, przy aż 899.27 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 1.87 operacji na sekundę, przy aż 1016.93 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zad12}{%
@@ -6929,8 +6929,8 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{\#\textgreater{} \# A tibble: 2 x 6}
 \CommentTok{\#\textgreater{}   expression                     min   median \textasciigrave{}itr/sec\textasciigrave{}}
 \CommentTok{\#\textgreater{}   \textless{}bch:expr\textgreater{}                \textless{}bch:tm\textgreater{} \textless{}bch:tm\textgreater{}     \textless{}dbl\textgreater{}}
-\CommentTok{\#\textgreater{} 1 mile\_na\_km(odl\_mile2)        808us    831us     1158.}
-\CommentTok{\#\textgreater{} 2 mile\_na\_km\_cpp(odl\_mile2)    421us    451us     2181.}
+\CommentTok{\#\textgreater{} 1 mile\_na\_km(odl\_mile2)        806us    836us     1116.}
+\CommentTok{\#\textgreater{} 2 mile\_na\_km\_cpp(odl\_mile2)    416us    455us     2172.}
 \CommentTok{\#\textgreater{} \# ... with 2 more variables: mem\_alloc \textless{}bch:byt\textgreater{},}
 \CommentTok{\#\textgreater{} \#   gc/sec \textless{}dbl\textgreater{}}
 \end{Highlighting}

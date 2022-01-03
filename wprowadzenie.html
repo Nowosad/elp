@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1 Wprowadzenie | Elementarz programisty</title>
   <meta name="description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1 Wprowadzenie | Elementarz programisty" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://nowosad.github.io/elp" />
-  <meta property="og:image" content="https://nowosad.github.io/elp/cover/cover.png" />
+  <meta property="og:image" content="https://nowosad.github.io/elp//cover/cover.png" />
   <meta property="og:description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
   <meta name="github-repo" content="nowosad/elp" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="1 Wprowadzenie | Elementarz programisty" />
   
   <meta name="twitter:description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
-  <meta name="twitter:image" content="https://nowosad.github.io/elp/cover/cover.png" />
+  <meta name="twitter:image" content="https://nowosad.github.io/elp//cover/cover.png" />
 
 <meta name="author" content="Jakub Nowosad" />
 
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="ergosum.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,8 +50,9 @@
 
 
 
-
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -118,6 +120,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 <link rel="stylesheet" href="style/style.css" type="text/css" />
 </head>
@@ -421,7 +424,7 @@ Fortran, stworzony w roku 1957, jest nadal używany współcześnie do wielu cel
 Programowanie ewoluowało i nadal ewoluuje wraz z rozwojem dostępności i możliwości komputerów, ale także wraz ze zmieniającymi się potrzebami.
 Pojawiły się nowe paradygmaty<!--^[wyjaśnij]--> programowania oraz wiele nowych języków.
 W tym samym czasie narosło również wiele mitów dotyczących programowania<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>.</p>
-<p>Jednym z mitów jest to, że programowanie polega tylko siedzeniu przed ekranem komputera i wpisywaniu do niego kolejnych linii kodu.
+<p>Jednym z mitów jest to, że programowanie polega tylko na siedzeniu przed ekranem komputera i wpisywaniu do niego kolejnych linii kodu.
 <!-- mit, Coding is Simply the Act of Writing Code -->
 <!-- mit, Coding Starts and Ends With a Computer -->
 Jest to oczywiście istotna część pracy programistycznej, ale prawdopodobnie nie jest ona nawet dominująca w przeciętym dniu programisty.
@@ -447,10 +450,10 @@ Obecnie podejmowanych jest szereg inicjatyw, które mają na celu zachęcić kob
 Wśród nich można wymienić działania organizacji <a href="https://rladies.org/">R-Ladies</a>, <a href="https://www.pyladies.com/">PyLadies</a>, <a href="https://girlsjs.pl/">girls.js</a>, czy <a href="http://wimlds.org/">Women in Machine Learning &amp; Data Science</a>.
 Mit programisty mężczyzny jest też powiązany z wymienionym kilka akapitów niżej mitem samotnego programisty.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:marghamil"></span>
-<img src="images/margaret-hamilton.png" alt="Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które on i jej zespół stworzył na potrzeby misji Apollo. Źródło: https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg" width="80%" />
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:marghamil"></span>
+<img src="images/margaret-hamilton.png" alt="Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które ona i jej zespół stworzył na potrzeby misji Apollo. Źródło: https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg" width="80%" />
 <p class="caption">
-Rycina 1.1: Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które on i jej zespół stworzył na potrzeby misji Apollo. Źródło: <a href="https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg" class="uri">https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg</a>
+Rycina 1.1: Margaret Hamilton stojąca w 1969 roku obok wydruków oprogramowania, które ona i jej zespół stworzył na potrzeby misji Apollo. Źródło: <a href="https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg" class="uri">https://commons.wikimedia.org/wiki/File:Margaret_Hamilton_-_restoration.jpg</a>
 </p>
 </div>
 <p>Kolejny jest mit wielkiego produktu.
@@ -491,7 +494,7 @@ W efekcie zazwyczaj nie możliwe jest jednoznaczne określenie, które rozwiąza
 Istnieje jednak kilka reguł, z którymi zgadza się większość programistów.
 Pierwsza z nich mówi, że wolny działający kod jest lepszy niż szybki niedziałający kod<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a>.
 Kolejna opiera się o zasadę DRY (nie powtarzaj się, ang. <em>Don’t Repeat Yourself</em>), zalecającą unikanie różnego rodzaju powtórzeń wykonywanych przy programowaniu, np. używania tych samych fragmentów kodu w wielu miejscach.
-Ostatnia reguła mówi, żeby tworzyć pisać programy w sposób modularny, czyli taki w którym każda funkcja spełnia tylko jedno i nie więcej zadanie, a złożone funkcje składają się z szeregu prostych funkcji.</p>
+Ostatnia reguła mówi, żeby pisać programy w sposób modularny, czyli taki w którym każda funkcja spełnia tylko jedno i nie więcej zadanie, a złożone funkcje składają się z szeregu prostych funkcji.</p>
 </div>
 <div id="jezyki-programowania" class="section level2" number="1.2">
 <h2><span class="header-section-number">1.2</span> Języki programowania</h2>
@@ -541,7 +544,7 @@ Przykładowo R wspiera zarówno paradygmat funkcyjny, ale zawiera też możliwo�
 <div id="r" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> R</h2>
 <p>W tej książce wprowadzenie do programowania opiera się o język <a href="https://www.r-project.org/">R</a> (Rycina <a href="wprowadzenie.html#fig:rlogo">1.2</a>).</p>
-<div class="figure" style="text-align: center"><span id="fig:rlogo"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:rlogo"></span>
 <img src="images/Rlogo.png" alt="Logo języka programowania R." width="25%" />
 <p class="caption">
 Rycina 1.2: Logo języka programowania R.
@@ -598,7 +601,7 @@ Jakie mają wady i zalety?</li>
 
 
 <h3>Bibliografia</h3>
-<div id="refs" class="references">
+<div id="refs" class="references hanging-indent">
 <div id="ref-burns2012r">
 <p>Burns, Patrick. 2012. <em>The R Inferno</em>. Lulu.com.</p>
 </div>
@@ -643,7 +646,6 @@ Jakie mają wady i zalety?</li>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -662,6 +664,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -682,6 +685,10 @@ gitbook.start({
 "text": null
 },
 "download": ["elementarz-programisty-nowosad-2020.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 },

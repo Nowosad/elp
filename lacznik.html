@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>13 Łącznik | Elementarz programisty</title>
   <meta name="description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="13 Łącznik | Elementarz programisty" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://nowosad.github.io/elp" />
-  <meta property="og:image" content="https://nowosad.github.io/elp/cover/cover.png" />
+  <meta property="og:image" content="https://nowosad.github.io/elp//cover/cover.png" />
   <meta property="og:description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
   <meta name="github-repo" content="nowosad/elp" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="13 Łącznik | Elementarz programisty" />
   
   <meta name="twitter:description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
-  <meta name="twitter:image" content="https://nowosad.github.io/elp/cover/cover.png" />
+  <meta name="twitter:image" content="https://nowosad.github.io/elp//cover/cover.png" />
 
 <meta name="author" content="Jakub Nowosad" />
 
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="debugging.html"/>
 <link rel="next" href="kontrola-wersji.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,8 +50,9 @@
 
 
 
-
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -118,6 +120,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 <link rel="stylesheet" href="style/style.css" type="text/css" />
 </head>
@@ -524,14 +527,14 @@ Jest to odpowiednik kodu <code>i = i + 1</code>.</p>
 <span id="cb346-4"><a href="lacznik.html#cb346-4"></a>  <span class="kw">mile_na_km_cpp</span>(odl_mile2)</span>
 <span id="cb346-5"><a href="lacznik.html#cb346-5"></a>)</span>
 <span id="cb346-6"><a href="lacznik.html#cb346-6"></a>wynik</span>
-<span id="cb346-7"><a href="lacznik.html#cb346-7"></a><span class="co">#&gt; # A tibble: 2 x 6</span></span>
+<span id="cb346-7"><a href="lacznik.html#cb346-7"></a><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span id="cb346-8"><a href="lacznik.html#cb346-8"></a><span class="co">#&gt;   expression                     min   median `itr/sec`</span></span>
 <span id="cb346-9"><a href="lacznik.html#cb346-9"></a><span class="co">#&gt;   &lt;bch:expr&gt;                &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt;</span></span>
-<span id="cb346-10"><a href="lacznik.html#cb346-10"></a><span class="co">#&gt; 1 mile_na_km(odl_mile2)        806µs    827µs     1162.</span></span>
-<span id="cb346-11"><a href="lacznik.html#cb346-11"></a><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2)    423µs    448µs     2198.</span></span>
+<span id="cb346-10"><a href="lacznik.html#cb346-10"></a><span class="co">#&gt; 1 mile_na_km(odl_mile2)        813µs   1.03ms     1022.</span></span>
+<span id="cb346-11"><a href="lacznik.html#cb346-11"></a><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2)    420µs 464.39µs     2101.</span></span>
 <span id="cb346-12"><a href="lacznik.html#cb346-12"></a><span class="co">#&gt; # … with 2 more variables: mem_alloc &lt;bch:byt&gt;,</span></span>
 <span id="cb346-13"><a href="lacznik.html#cb346-13"></a><span class="co">#&gt; #   gc/sec &lt;dbl&gt;</span></span></code></pre></div>
-<p>Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.85 raza mniejszy.</p>
+<p>Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 2.22 raza mniejszy.</p>
 </div>
 <div id="sourceCpp" class="section level3" number="13.1.2">
 <h3><span class="header-section-number">13.1.2</span> Wywoływanie kodu z plików .cpp</h3>
@@ -634,7 +637,7 @@ Sprawdź prędkość działania funkcji stworzonych we wcześniejszych zadaniach
 </div>
 </div>
 <h3>Bibliografia</h3>
-<div id="refs" class="references">
+<div id="refs" class="references hanging-indent">
 <div id="ref-R-rgrass7">
 <p>Bivand, Roger. 2019. <em>Rgrass7: Interface Between Grass 7 Geographical Information System and R</em>.</p>
 </div>
@@ -667,7 +670,6 @@ Sprawdź prędkość działania funkcji stworzonych we wcześniejszych zadaniach
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -686,6 +688,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -706,6 +709,10 @@ gitbook.start({
 "text": null
 },
 "download": ["elementarz-programisty-nowosad-2020.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 },

@@ -173,7 +173,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 ```r
 system.time(mean(1:100000000))
 #>    user  system elapsed 
-#>   0.500   0.000   0.499
+#>   0.499   0.000   0.499
 ```
 
 W efekcie dostajemy trzy wartości - `user`, `system` i `elapsed`. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.
@@ -226,11 +226,11 @@ wynik_1 = mark(
   mi_do_km2(odl_mile)
 )
 wynik_1
-#> # A tibble: 2 x 6
+#> # A tibble: 2 × 6
 #>   expression              min median `itr/sec` mem_alloc
 #>   <bch:expr>          <bch:t> <bch:>     <dbl> <bch:byt>
-#> 1 mi_do_km1(odl_mile)   1.5µs 1.69µs   498445.     117KB
-#> 2 mi_do_km2(odl_mile)  1.15µs 1.27µs   740738.     224KB
+#> 1 mi_do_km1(odl_mile)  1.83µs 1.99µs   451289.     117KB
+#> 2 mi_do_km2(odl_mile)  1.42µs 1.57µs   592385.     224KB
 #> # … with 1 more variable: gc/sec <dbl>
 ```
 
@@ -259,16 +259,16 @@ wynik_2 = mark(
 #> Warning: Some expressions had a GC in every iteration;
 #> so filtering is disabled.
 wynik_2
-#> # A tibble: 2 x 6
+#> # A tibble: 2 × 6
 #>   expression              min median `itr/sec` mem_alloc
 #>   <bch:expr>           <bch:> <bch:>     <dbl> <bch:byt>
-#> 1 mi_do_km1(odl_mile2)  491ms  492ms      2.03     382MB
-#> 2 mi_do_km2(odl_mile2)  802µs  834µs   1076.      78.2KB
+#> 1 mi_do_km1(odl_mile2)  546ms  546ms      1.83     382MB
+#> 2 mi_do_km2(odl_mile2)  810µs  930µs    921.      78.2KB
 #> # … with 1 more variable: gc/sec <dbl>
 ```
 
 W tym przypadku różnica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
-Funkcja `mi_do_km1` jest w stanie wykonać tylko 2.03 operacji na sekundę, przy aż 1075.94 operacji na sekundę funkcji `mi_do_km2`.
+Funkcja `mi_do_km1` jest w stanie wykonać tylko 1.83 operacji na sekundę, przy aż 920.73 operacji na sekundę funkcji `mi_do_km2`.
 Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
 
 

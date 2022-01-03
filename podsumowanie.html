@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>16 Podsumowanie | Elementarz programisty</title>
   <meta name="description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="16 Podsumowanie | Elementarz programisty" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://nowosad.github.io/elp" />
-  <meta property="og:image" content="https://nowosad.github.io/elp/cover/cover.png" />
+  <meta property="og:image" content="https://nowosad.github.io/elp//cover/cover.png" />
   <meta property="og:description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
   <meta name="github-repo" content="nowosad/elp" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="16 Podsumowanie | Elementarz programisty" />
   
   <meta name="twitter:description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
-  <meta name="twitter:image" content="https://nowosad.github.io/elp/cover/cover.png" />
+  <meta name="twitter:image" content="https://nowosad.github.io/elp//cover/cover.png" />
 
 <meta name="author" content="Jakub Nowosad" />
 
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="tworzenie-pakietow.html"/>
 <link rel="next" href="bibliografia.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,8 +50,9 @@
 
 
 
-
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -118,6 +120,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 <link rel="stylesheet" href="style/style.css" type="text/css" />
 </head>
@@ -418,7 +421,7 @@ Możemy to zobaczyć na poniższym przykładzie danych meteorologicznych dla Poz
 Do porównania wartości temperatury pomiędzy stacjami może posłużyć wykres pudełkowy, stworzony przy pomocy funkcji <code>boxplot()</code> (rycina <a href="podsumowanie.html#fig:plotex">16.1</a>).
 Poniżej zdefiniowano, która zmienna ma zostać zwizualizowana (<code>tavg</code>) w podziale na jakie grupy (<code>nazwa_stacji</code>) z jakiego zbioru danych (<code>met</code>)<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a>.</p>
 <div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="podsumowanie.html#cb383-1"></a><span class="kw">boxplot</span>(tavg <span class="op">~</span><span class="st"> </span>nazwa_stacji, <span class="dt">data =</span> met)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:plotex"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:plotex"></span>
 <img src="31-podsumowanie_files/figure-html/plotex-1.png" alt="Przykład wykresu utworzonego przy pomocy funkcji boxplot()." width="\textwidth" />
 <p class="caption">
 Rycina 16.1: Przykład wykresu utworzonego przy pomocy funkcji boxplot().
@@ -439,7 +442,7 @@ Kolejnym krokiem jest określenie typu wykresu poprzez połączenie poprzedniej 
 Przykładowo, do stworzenia wykresu pudełkowego służy <code>geom_boxplot()</code> (rycina <a href="podsumowanie.html#fig:ggplotex">16.2</a>).</p>
 <div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="podsumowanie.html#cb384-1"></a><span class="kw">library</span>(ggplot2)</span>
 <span id="cb384-2"><a href="podsumowanie.html#cb384-2"></a><span class="kw">ggplot</span>(met, <span class="kw">aes</span>(nazwa_stacji, tavg)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_boxplot</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:ggplotex"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:ggplotex"></span>
 <img src="31-podsumowanie_files/figure-html/ggplotex-1.png" alt="Przykład wykresu utworzonego z użyciem pakietu ggplot2." width="\textwidth" />
 <p class="caption">
 Rycina 16.2: Przykład wykresu utworzonego z użyciem pakietu ggplot2.
@@ -474,7 +477,7 @@ Działanie tego operatora polega na tym, że wynik jednej działania jednej funk
 <span id="cb385-5"><a href="podsumowanie.html#cb385-5"></a><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">ggplot</span>(ggplot2<span class="op">::</span><span class="kw">aes</span>(data, wartosc)) <span class="op">+</span></span>
 <span id="cb385-6"><a href="podsumowanie.html#cb385-6"></a><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">geom_line</span>() <span class="op">+</span></span>
 <span id="cb385-7"><a href="podsumowanie.html#cb385-7"></a><span class="st">  </span>ggplot2<span class="op">::</span><span class="kw">facet_grid</span>(zmienna<span class="op">~</span>nazwa_stacji, <span class="dt">scale =</span> <span class="st">&quot;free_y&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:tidyverse-example"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tidyverse-example"></span>
 <img src="images/tidyverse-example.png" alt="Przykład wyniku użycia pakietów z grupy tidyverse." width="\textwidth" />
 <p class="caption">
 Rycina 16.3: Przykład wyniku użycia pakietów z grupy tidyverse.
@@ -506,7 +509,7 @@ Dalej następuje dodanie tych danych do wyświetlenia i wybór odwzorowania prze
 <span id="cb386-4"><a href="podsumowanie.html#cb386-4"></a><span class="kw">tm_shape</span>(World, <span class="dt">projection =</span> <span class="st">&quot;robin&quot;</span>) <span class="op">+</span><span class="st"> </span></span>
 <span id="cb386-5"><a href="podsumowanie.html#cb386-5"></a><span class="st">    </span><span class="kw">tm_polygons</span>(<span class="dt">col =</span> <span class="st">&quot;life_exp&quot;</span>, </span>
 <span id="cb386-6"><a href="podsumowanie.html#cb386-6"></a>                <span class="dt">title =</span> <span class="st">&quot;Oczekiwana dalsza </span><span class="ch">\n</span><span class="st">długość życia&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:tmap-example"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:tmap-example"></span>
 <img src="images/tmap-example.png" alt="Przykład działania pakietu tmap." width="\textwidth" />
 <p class="caption">
 Rycina 16.4: Przykład działania pakietu tmap.
@@ -576,7 +579,7 @@ Języki programowania są też stosowane coraz częściej w wielu codzienne u�
 </div>
 </div>
 <h3>Bibliografia</h3>
-<div id="refs" class="references">
+<div id="refs" class="references hanging-indent">
 <div id="ref-R-magrittr">
 <p>Bache, Stefan Milton, and Hadley Wickham. 2014. <em>Magrittr: A Forward-Pipe Operator for R</em>. <a href="https://CRAN.R-project.org/package=magrittr">https://CRAN.R-project.org/package=magrittr</a>.</p>
 </div>
@@ -662,7 +665,6 @@ Można go znaleźć pod adresem <a href="https://github.com/wch/r-source" class=
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -681,6 +683,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -701,6 +704,10 @@ gitbook.start({
 "text": null
 },
 "download": ["elementarz-programisty-nowosad-2020.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 },

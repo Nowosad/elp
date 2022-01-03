@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>10 Złożone funkcje | Elementarz programisty</title>
   <meta name="description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="10 Złożone funkcje | Elementarz programisty" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://nowosad.github.io/elp" />
-  <meta property="og:image" content="https://nowosad.github.io/elp/cover/cover.png" />
+  <meta property="og:image" content="https://nowosad.github.io/elp//cover/cover.png" />
   <meta property="og:description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
   <meta name="github-repo" content="nowosad/elp" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="10 Złożone funkcje | Elementarz programisty" />
   
   <meta name="twitter:description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
-  <meta name="twitter:image" content="https://nowosad.github.io/elp/cover/cover.png" />
+  <meta name="twitter:image" content="https://nowosad.github.io/elp//cover/cover.png" />
 
 <meta name="author" content="Jakub Nowosad" />
 
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="io.html"/>
 <link rel="next" href="analiza-kodu.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,8 +50,9 @@
 
 
 
-
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -118,6 +120,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 <link rel="stylesheet" href="style/style.css" type="text/css" />
 </head>
@@ -705,7 +708,7 @@ Zastanów się jakie powinny być wartości argumentów wejściowych i napisz we
 </div>
 </div>
 <h3>Bibliografia</h3>
-<div id="refs" class="references">
+<div id="refs" class="references hanging-indent">
 <div id="ref-R-landscapemetrics">
 <p>Hesselbarth, Maximillian H. K., Marco Sciaini, Jakub Nowosad, and Sebastian Hanss. 2020. <em>Landscapemetrics: Landscape Metrics for Categorical Map Patterns</em>. <a href="https://CRAN.R-project.org/package=landscapemetrics">https://CRAN.R-project.org/package=landscapemetrics</a>.</p>
 </div>
@@ -720,7 +723,6 @@ Zastanów się jakie powinny być wartości argumentów wejściowych i napisz we
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -739,6 +741,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -759,6 +762,10 @@ gitbook.start({
 "text": null
 },
 "download": ["elementarz-programisty-nowosad-2020.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 },

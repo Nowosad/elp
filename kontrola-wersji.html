@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>14 Kontrola wersji | Elementarz programisty</title>
   <meta name="description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="14 Kontrola wersji | Elementarz programisty" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://nowosad.github.io/elp" />
-  <meta property="og:image" content="https://nowosad.github.io/elp/cover/cover.png" />
+  <meta property="og:image" content="https://nowosad.github.io/elp//cover/cover.png" />
   <meta property="og:description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
   <meta name="github-repo" content="nowosad/elp" />
 
@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="14 Kontrola wersji | Elementarz programisty" />
   
   <meta name="twitter:description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
-  <meta name="twitter:image" content="https://nowosad.github.io/elp/cover/cover.png" />
+  <meta name="twitter:image" content="https://nowosad.github.io/elp//cover/cover.png" />
 
 <meta name="author" content="Jakub Nowosad" />
 
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="lacznik.html"/>
 <link rel="next" href="tworzenie-pakietow.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,8 +50,9 @@
 
 
 
-
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -118,6 +120,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 <link rel="stylesheet" href="style/style.css" type="text/css" />
 </head>
@@ -523,7 +526,7 @@ Pod adresem <a href="https://github.com/join" class="uri">https://github.com/joi
 <h3><span class="header-section-number">14.2.1</span> Tworzenie zdanego repo</h3>
 <p>Posiadanie konta użytkownika pozwala na, między innymi, tworzenie nowych repozytoriów i zarządzanie nimi.
 Stworzenie nowego repozytorium odbywa się poprzez naciśnięcie zielonej ikony (rycina <a href="kontrola-wersji.html#fig:gh-new-repo">14.1</a>).</p>
-<div class="figure" style="text-align: center"><span id="fig:gh-new-repo"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:gh-new-repo"></span>
 <img src="images/gh-new-repo.png" alt="Ikona tworzenia nowego repozytorium GitHub." width="80%" />
 <p class="caption">
 Rycina 14.1: Ikona tworzenia nowego repozytorium GitHub.
@@ -531,14 +534,14 @@ Rycina 14.1: Ikona tworzenia nowego repozytorium GitHub.
 </div>
 <p>W kolejnym oknie (rycina <a href="kontrola-wersji.html#fig:gh-new-repo2">14.2</a>) należy podać nazwę nowego repozytorium oraz wybrać czy będzie ono publiczne czy prywatne.
 Dodatkowo możliwe jest dodanie opisu repozytorium (ang. <em>description</em>), pliku README, czy licencji.</p>
-<div class="figure" style="text-align: center"><span id="fig:gh-new-repo2"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:gh-new-repo2"></span>
 <img src="images/gh-new-repo2.png" alt="Okno tworzenia nowego repozytorium GitHub." width="80%" />
 <p class="caption">
 Rycina 14.2: Okno tworzenia nowego repozytorium GitHub.
 </p>
 </div>
 <p>Po wybraniu potwierdzenia (<em>Create repository</em>) utworzone zostanie nowe, puste repozytorium (rycina <a href="kontrola-wersji.html#fig:gh-new-repo3">14.3</a>).</p>
-<div class="figure" style="text-align: center"><span id="fig:gh-new-repo3"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:gh-new-repo3"></span>
 <img src="images/gh-new-repo3.png" alt="Nowe, puste repozytorium GitHub." width="80%" />
 <p class="caption">
 Rycina 14.3: Nowe, puste repozytorium GitHub.
@@ -561,7 +564,7 @@ Tutaj następuje tylko (1) dodanie ścieżki do zdalnego repozytorium oraz (2) w
 <div id="repozytorium-github" class="section level3" number="14.2.2">
 <h3><span class="header-section-number">14.2.2</span> Repozytorium GitHub</h3>
 <p>Wygląd okna repozytorium zmienia się po dodaniu pierwszej zawartości (rycina <a href="kontrola-wersji.html#fig:gh-new-repo4">14.4</a>).</p>
-<div class="figure" style="text-align: center"><span id="fig:gh-new-repo4"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:gh-new-repo4"></span>
 <img src="images/gh-new-repo4.png" alt="Repozytorium GitHub po dodaniu zawartości." width="80%" />
 <p class="caption">
 Rycina 14.4: Repozytorium GitHub po dodaniu zawartości.
@@ -600,7 +603,7 @@ Nazwane są one klientami Git, wśród których można wymienić <a href="https:
 </ol>
 <p>W efekcie zostanie utworzony nowy projekt RStudio (w tle wykonywane jest pobranie kopii istniejącego zdalnego repo - patrz sekcja <a href="kontrola-wersji.html#repozytorium-zdalne">14.1.7</a>), który jednocześnie jest lokalnym repozytorium Git.
 Dodatkowo, w RStudio pojawi się nowy panel “Git” (rycina <a href="kontrola-wersji.html#fig:rstudio-git">14.5</a>).</p>
-<div class="figure" style="text-align: center"><span id="fig:rstudio-git"></span>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:rstudio-git"></span>
 <img src="images/rstudio-git.png" alt="Panel Git w RStudio." width="80%" />
 <p class="caption">
 Rycina 14.5: Panel Git w RStudio.
@@ -733,7 +736,7 @@ Co się w nim zmieniło?
 </div>
 </div>
 <h3>Bibliografia</h3>
-<div id="refs" class="references">
+<div id="refs" class="references hanging-indent">
 <div id="ref-bryanHappyGitGitHub2019">
 <p>Bryan, Jenny, the STAT 545 TAs, and Jim Hester. 2019. <em>Happy Git and GitHub for the useR</em>.</p>
 </div>
@@ -767,7 +770,6 @@ Przykładowo, GitHub ogranicza wielkość pojedynczych plików do 100MB.<a href=
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -786,6 +788,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -806,6 +809,10 @@ gitbook.start({
 "text": null
 },
 "download": ["elementarz-programisty-nowosad-2020.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section"
 },
