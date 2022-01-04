@@ -10,11 +10,11 @@ Język R pozwala na stosowanie zarówno paradygmatu imperatywnego jak i paradygm
 
 ## Pętla for {#petla-for}
 
-Pęlta `for` jest jednym z najczęściej używanych wyrażeń w językach programowania^[https://en.wikipedia.org/wiki/For_loop], którego celem jest powtórzenie pewnej operacji o znaną liczbę razy.
+Pętla `for` jest jednym z najczęściej używanych wyrażeń w językach programowania^[https://en.wikipedia.org/wiki/For_loop], którego celem jest powtórzenie pewnej operacji o znaną liczbę razy.
 
 ### Składnia
 
-Pęlta `for` jest zbudowana z dwóch elementów: nagłówka określającego powtórzenia, oraz ciała zawierającego obliczenia.
+Pętla `for` jest zbudowana z dwóch elementów: nagłówka określającego powtórzenia, oraz ciała zawierającego obliczenia.
 
 ```{r, eval=FALSE}
 for (element in wektor) {
