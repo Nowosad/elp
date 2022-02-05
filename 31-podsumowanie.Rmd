@@ -48,7 +48,7 @@ library(ggplot2)
 ggplot(met, aes(nazwa_stacji, tavg)) + geom_boxplot()
 ```
 
-Pełna dokumentacja pakietu **ggplot2** znajduje się na stronie http://docs.ggplot2.org.
+Pełna dokumentacja pakietu **ggplot2** znajduje się na stronie https://ggplot2.tidyverse.org/.
 
 ## Analiza danych
 
