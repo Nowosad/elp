@@ -48,7 +48,7 @@ Możliwe jest również stworzenie powtarzalnego przykładu na podstawie skryptu
 reprex(input = "moj_skrypt.R")
 ```
 
-Więcej informacji na temat powtarzalnych przykładów oraz pakietu **reprex** można znaleźć na [oficjalnej stronie pakietu reprex](https://reprex.tidyverse.org/index.html), oraz stronach [So you’ve been asked to make a reprex](https://www.jessemaegan.com/post/so-you-ve-been-asked-to-make-a-reprex/), [How to make a great R reproducible example](https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example), [Magic reprex](https://www.njtierney.com/post/2017/01/11/magic-reprex/), [reprex: help me help you!](https://speakerdeck.com/jennybc/reprex-help-me-help-you), oraz [Get help!](https://www.tidyverse.org/help/#reprex).
+Więcej informacji na temat powtarzalnych przykładów oraz pakietu **reprex** można znaleźć na [oficjalnej stronie pakietu reprex](https://reprex.tidyverse.org/index.html), oraz stronach [So you’ve been asked to make a reprex](https://www.jessemaegan.com/blog/so-you-ve-been-asked-to-make-a-reprex/), [How to make a great R reproducible example](https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example), [Magic reprex](https://www.njtierney.com/post/2017/01/11/magic-reprex/), [reprex: help me help you!](https://speakerdeck.com/jennybc/reprex-help-me-help-you), oraz [Get help!](https://www.tidyverse.org/help/#reprex).
 
 ### Tworzenie powtarzalnego przykładu
 

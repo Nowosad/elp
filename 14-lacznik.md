@@ -69,7 +69,7 @@ library(Rcpp)
 Pakiet **Rcpp** pozwala na zarówno wywoływanie kodu C++ wewnątrz skryptów R (sekcja \@ref(cppFunction)), jak używając zewnętrznych plików o rozszerzeniu `.cpp` (sekcja \@ref(sourceCpp)).
 
 Ta część książki ma na celu pokazanie zupełnych podstaw łączenia R z C++.
-Więcej informacji na ten temat można znaleść na stronie http://www.rcpp.org/, w [rozdziale Rewriting R code in C++](https://adv-r.hadley.nz/rcpp.html) książki @wickham2014advanced, [sekcji Rcpp](https://csgillespie.github.io/efficientR/rcpp.html) książki @gillespie2016efficient, oraz na stronie [Unofficial Rcpp API Documentation](https://thecoatlessprofessor.com/programming/cpp/unofficial-rcpp-api-documentation).
+Więcej informacji na ten temat można znaleźć na stronie http://www.rcpp.org/, w [rozdziale Rewriting R code in C++](https://adv-r.hadley.nz/rcpp.html) książki @wickham2014advanced, [sekcji Rcpp](https://csgillespie.github.io/efficientR/performance.html#rcpp) książki @gillespie2016efficient, oraz na stronie [Unofficial Rcpp API Documentation](https://thecoatlessprofessor.com/programming/cpp/unofficial-rcpp-api-documentation).
 
 ### Wywoływanie kodu C++ wewnątrz skryptu R {#cppFunction}
 
@@ -212,13 +212,13 @@ wynik
 #> # A tibble: 2 × 6
 #>   expression                     min   median `itr/sec`
 #>   <bch:expr>                <bch:tm> <bch:tm>     <dbl>
-#> 1 mile_na_km(odl_mile2)        817µs    837µs     1152.
-#> 2 mile_na_km_cpp(odl_mile2)    412µs    443µs     2226.
+#> 1 mile_na_km(odl_mile2)        806µs    831µs     1165.
+#> 2 mile_na_km_cpp(odl_mile2)    413µs    446µs     2220.
 #> # … with 2 more variables: mem_alloc <bch:byt>,
 #> #   gc/sec <dbl>
 ```
 
-Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.89 raza mniejszy.
+Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.86 raza mniejszy.
 
 ### Wywoływanie kodu z plików .cpp {#sourceCpp}
 

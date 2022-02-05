@@ -440,7 +440,7 @@ Dodanie języka C++ do pakietu R często ma na celu przyspieszenie pewnych wymag
 <!-- https://cran.r-project.org/web/packages/Rcpp/vignettes/Rcpp-introduction.pdf  -->
 <p>Pakiet <strong>Rcpp</strong> pozwala na zarówno wywoływanie kodu C++ wewnątrz skryptów R (sekcja <a href="lacznik.html#cppFunction">13.1.1</a>), jak używając zewnętrznych plików o rozszerzeniu <code>.cpp</code> (sekcja <a href="lacznik.html#sourceCpp">13.1.2</a>).</p>
 <p>Ta część książki ma na celu pokazanie zupełnych podstaw łączenia R z C++.
-Więcej informacji na ten temat można znaleść na stronie <a href="http://www.rcpp.org/" class="uri">http://www.rcpp.org/</a>, w <a href="https://adv-r.hadley.nz/rcpp.html">rozdziale Rewriting R code in C++</a> książki <span class="citation">Wickham (<a href="#ref-wickham2014advanced" role="doc-biblioref">2014</a>)</span>, <a href="https://csgillespie.github.io/efficientR/rcpp.html">sekcji Rcpp</a> książki <span class="citation">Gillespie and Lovelace (<a href="#ref-gillespie2016efficient" role="doc-biblioref">2016</a>)</span>, oraz na stronie <a href="https://thecoatlessprofessor.com/programming/cpp/unofficial-rcpp-api-documentation">Unofficial Rcpp API Documentation</a>.</p>
+Więcej informacji na ten temat można znaleźć na stronie <a href="http://www.rcpp.org/" class="uri">http://www.rcpp.org/</a>, w <a href="https://adv-r.hadley.nz/rcpp.html">rozdziale Rewriting R code in C++</a> książki <span class="citation">Wickham (<a href="#ref-wickham2014advanced" role="doc-biblioref">2014</a>)</span>, <a href="https://csgillespie.github.io/efficientR/performance.html#rcpp">sekcji Rcpp</a> książki <span class="citation">Gillespie and Lovelace (<a href="#ref-gillespie2016efficient" role="doc-biblioref">2016</a>)</span>, oraz na stronie <a href="https://thecoatlessprofessor.com/programming/cpp/unofficial-rcpp-api-documentation">Unofficial Rcpp API Documentation</a>.</p>
 <div id="cppFunction" class="section level3" number="13.1.1">
 <h3><span class="header-section-number">13.1.1</span> Wywoływanie kodu C++ wewnątrz skryptu R</h3>
 <p>W przypadku krótkich fragmentów kodu C++ możliwe jest umieszczenie ich wewnątrz skryptu R jako obiekt tekstowy.
@@ -530,11 +530,11 @@ Jest to odpowiednik kodu <code>i = i + 1</code>.</p>
 <span id="cb346-7"><a href="lacznik.html#cb346-7"></a><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span id="cb346-8"><a href="lacznik.html#cb346-8"></a><span class="co">#&gt;   expression                     min   median `itr/sec`</span></span>
 <span id="cb346-9"><a href="lacznik.html#cb346-9"></a><span class="co">#&gt;   &lt;bch:expr&gt;                &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt;</span></span>
-<span id="cb346-10"><a href="lacznik.html#cb346-10"></a><span class="co">#&gt; 1 mile_na_km(odl_mile2)        817µs    837µs     1152.</span></span>
-<span id="cb346-11"><a href="lacznik.html#cb346-11"></a><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2)    412µs    443µs     2226.</span></span>
+<span id="cb346-10"><a href="lacznik.html#cb346-10"></a><span class="co">#&gt; 1 mile_na_km(odl_mile2)        806µs    831µs     1165.</span></span>
+<span id="cb346-11"><a href="lacznik.html#cb346-11"></a><span class="co">#&gt; 2 mile_na_km_cpp(odl_mile2)    413µs    446µs     2220.</span></span>
 <span id="cb346-12"><a href="lacznik.html#cb346-12"></a><span class="co">#&gt; # … with 2 more variables: mem_alloc &lt;bch:byt&gt;,</span></span>
 <span id="cb346-13"><a href="lacznik.html#cb346-13"></a><span class="co">#&gt; #   gc/sec &lt;dbl&gt;</span></span></code></pre></div>
-<p>Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.89 raza mniejszy.</p>
+<p>Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.86 raza mniejszy.</p>
 </div>
 <div id="sourceCpp" class="section level3" number="13.1.2">
 <h3><span class="header-section-number">13.1.2</span> Wywoływanie kodu z plików .cpp</h3>

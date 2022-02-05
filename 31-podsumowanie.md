@@ -75,7 +75,7 @@ ggplot(met, aes(nazwa_stacji, tavg)) + geom_boxplot()
 <p class="caption">(\#fig:ggplotex)Przykład wykresu utworzonego z użyciem pakietu ggplot2.</p>
 </div>
 
-Pełna dokumentacja pakietu **ggplot2** znajduje się na stronie http://docs.ggplot2.org.
+Pełna dokumentacja pakietu **ggplot2** znajduje się na stronie https://ggplot2.tidyverse.org/.
 
 ## Analiza danych
 

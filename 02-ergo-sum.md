@@ -432,10 +432,10 @@ wszelkie inne
 Polskie książki:
 
 - http://www.biecek.pl/R/ [@biecekPrzewodnikPoPakiecie2014]
-- http://www.gagolewski.com/publications/programowanier/ [@gagolewski2016programowanie]
+- https://github.com/gagolews/Programowanie_w_jezyku_R/ [@gagolewski2016programowanie]
 - https://helion.pl/ksiazki/jezyk-r-kompletny-zestaw-narzedzi-dla-analitykow-danych-hadley-wickham-garrett-grolemund,jezrko.htm#format/d [@wickham2016r]
 - https://helion.pl/ksiazki/wydajne-programowanie-w-r-praktyczny-przewodnik-po-lepszym-programowaniu-gillespie-colin-lovelace-robin,a_0491.htm#format/d [@gillespie2016efficient]
-- https://bookdown.org/nowosad/Geostatystyka/ [@nowosadGeostatystyka2019]
+- https://bookdown.org/nowosad/geostatystyka/ [@nowosadGeostatystyka2019]
 - http://www.enwo.pl/przetwarzanie/index.html [@czerneckiMetodyPrzetwarzaniaDanych2018]
 
 Angielskie książki:

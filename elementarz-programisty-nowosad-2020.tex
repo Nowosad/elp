@@ -1052,13 +1052,13 @@ Polskie książki:
 \item
   \url{http://www.biecek.pl/R/} \citep{biecekPrzewodnikPoPakiecie2014}
 \item
-  \url{http://www.gagolewski.com/publications/programowanier/} \citep{gagolewski2016programowanie}
+  \url{https://github.com/gagolews/Programowanie_w_jezyku_R/} \citep{gagolewski2016programowanie}
 \item
   \url{https://helion.pl/ksiazki/jezyk-r-kompletny-zestaw-narzedzi-dla-analitykow-danych-hadley-wickham-garrett-grolemund,jezrko.htm\#format/d} \citep{wickham2016r}
 \item
   \url{https://helion.pl/ksiazki/wydajne-programowanie-w-r-praktyczny-przewodnik-po-lepszym-programowaniu-gillespie-colin-lovelace-robin,a_0491.htm\#format/d} \citep{gillespie2016efficient}
 \item
-  \url{https://bookdown.org/nowosad/Geostatystyka/} \citep{nowosadGeostatystyka2019}
+  \url{https://bookdown.org/nowosad/geostatystyka/} \citep{nowosadGeostatystyka2019}
 \item
   \url{http://www.enwo.pl/przetwarzanie/index.html} \citep{czerneckiMetodyPrzetwarzaniaDanych2018}
 \end{itemize}
@@ -2730,7 +2730,7 @@ R ma wbudowaną reprezentację dat w postaci klasy \texttt{Date}.
 \begin{Highlighting}[]
 \NormalTok{dzis =}\StringTok{ }\KeywordTok{Sys.Date}\NormalTok{()}
 \NormalTok{dzis}
-\CommentTok{\#\textgreater{} [1] "2022{-}01{-}04"}
+\CommentTok{\#\textgreater{} [1] "2022{-}02{-}05"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2753,11 +2753,11 @@ Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji \texttt{unclass(
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{unclass}\NormalTok{(dzis)}
-\CommentTok{\#\textgreater{} [1] 18996}
+\CommentTok{\#\textgreater{} [1] 19028}
 \end{Highlighting}
 \end{Shaded}
 
-Wynik, 18996, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
+Wynik, 19028, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
 
 \begin{Shaded}
@@ -6233,7 +6233,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{\#\textgreater{}    user  system elapsed }
-\CommentTok{\#\textgreater{}   0.499   0.000   0.499}
+\CommentTok{\#\textgreater{}   0.484   0.000   0.485}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6292,8 +6292,8 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \CommentTok{\#\textgreater{} \# A tibble: 2 x 6}
 \CommentTok{\#\textgreater{}   expression              min median \textasciigrave{}itr/sec\textasciigrave{} mem\_alloc}
 \CommentTok{\#\textgreater{}   \textless{}bch:expr\textgreater{}          \textless{}bch:t\textgreater{} \textless{}bch:\textgreater{}     \textless{}dbl\textgreater{} \textless{}bch:byt\textgreater{}}
-\CommentTok{\#\textgreater{} 1 mi\_do\_km1(odl\_mile)  1.48us 1.58us   548994.     117KB}
-\CommentTok{\#\textgreater{} 2 mi\_do\_km2(odl\_mile)  1.12us 1.23us   752977.     224KB}
+\CommentTok{\#\textgreater{} 1 mi\_do\_km1(odl\_mile)   1.5us 1.62us   542241.     117KB}
+\CommentTok{\#\textgreater{} 2 mi\_do\_km2(odl\_mile)  1.16us 1.26us   741891.     224KB}
 \CommentTok{\#\textgreater{} \# ... with 1 more variable: gc/sec \textless{}dbl\textgreater{}}
 \end{Highlighting}
 \end{Shaded}
@@ -6336,14 +6336,14 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{\#\textgreater{} \# A tibble: 2 x 6}
 \CommentTok{\#\textgreater{}   expression              min median \textasciigrave{}itr/sec\textasciigrave{} mem\_alloc}
 \CommentTok{\#\textgreater{}   \textless{}bch:expr\textgreater{}           \textless{}bch:\textgreater{} \textless{}bch:\textgreater{}     \textless{}dbl\textgreater{} \textless{}bch:byt\textgreater{}}
-\CommentTok{\#\textgreater{} 1 mi\_do\_km1(odl\_mile2)  533ms  533ms      1.88     382MB}
-\CommentTok{\#\textgreater{} 2 mi\_do\_km2(odl\_mile2)  812us  842us   1012.      78.2KB}
+\CommentTok{\#\textgreater{} 1 mi\_do\_km1(odl\_mile2)  531ms  531ms      1.88     382MB}
+\CommentTok{\#\textgreater{} 2 mi\_do\_km2(odl\_mile2)  807us  833us   1026.      78.2KB}
 \CommentTok{\#\textgreater{} \# ... with 1 more variable: gc/sec \textless{}dbl\textgreater{}}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 1.88 operacji na sekundę, przy aż 1012.37 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 1.88 operacji na sekundę, przy aż 1025.94 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zad12}{%
@@ -6441,7 +6441,7 @@ Możliwe jest również stworzenie powtarzalnego przykładu na podstawie skryptu
 \end{Highlighting}
 \end{Shaded}
 
-Więcej informacji na temat powtarzalnych przykładów oraz pakietu \textbf{reprex} można znaleźć na \href{https://reprex.tidyverse.org/index.html}{oficjalnej stronie pakietu reprex}, oraz stronach \href{https://www.jessemaegan.com/post/so-you-ve-been-asked-to-make-a-reprex/}{So you've been asked to make a reprex}, \href{https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example}{How to make a great R reproducible example}, \href{https://www.njtierney.com/post/2017/01/11/magic-reprex/}{Magic reprex}, \href{https://speakerdeck.com/jennybc/reprex-help-me-help-you}{reprex: help me help you!}, oraz \href{https://www.tidyverse.org/help/\#reprex}{Get help!}.
+Więcej informacji na temat powtarzalnych przykładów oraz pakietu \textbf{reprex} można znaleźć na \href{https://reprex.tidyverse.org/index.html}{oficjalnej stronie pakietu reprex}, oraz stronach \href{https://www.jessemaegan.com/blog/so-you-ve-been-asked-to-make-a-reprex/}{So you've been asked to make a reprex}, \href{https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example}{How to make a great R reproducible example}, \href{https://www.njtierney.com/post/2017/01/11/magic-reprex/}{Magic reprex}, \href{https://speakerdeck.com/jennybc/reprex-help-me-help-you}{reprex: help me help you!}, oraz \href{https://www.tidyverse.org/help/\#reprex}{Get help!}.
 
 \hypertarget{tworzenie-powtarzalnego-przykux142adu}{%
 \subsection{Tworzenie powtarzalnego przykładu}\label{tworzenie-powtarzalnego-przykux142adu}}
@@ -6776,7 +6776,7 @@ Dodanie języka C++ do pakietu R często ma na celu przyspieszenie pewnych wymag
 Pakiet \textbf{Rcpp} pozwala na zarówno wywoływanie kodu C++ wewnątrz skryptów R (sekcja \ref{cppFunction}), jak używając zewnętrznych plików o rozszerzeniu \texttt{.cpp} (sekcja \ref{sourceCpp}).
 
 Ta część książki ma na celu pokazanie zupełnych podstaw łączenia R z C++.
-Więcej informacji na ten temat można znaleść na stronie \url{http://www.rcpp.org/}, w \href{https://adv-r.hadley.nz/rcpp.html}{rozdziale Rewriting R code in C++} książki \citet{wickham2014advanced}, \href{https://csgillespie.github.io/efficientR/rcpp.html}{sekcji Rcpp} książki \citet{gillespie2016efficient}, oraz na stronie \href{https://thecoatlessprofessor.com/programming/cpp/unofficial-rcpp-api-documentation}{Unofficial Rcpp API Documentation}.
+Więcej informacji na ten temat można znaleźć na stronie \url{http://www.rcpp.org/}, w \href{https://adv-r.hadley.nz/rcpp.html}{rozdziale Rewriting R code in C++} książki \citet{wickham2014advanced}, \href{https://csgillespie.github.io/efficientR/performance.html\#rcpp}{sekcji Rcpp} książki \citet{gillespie2016efficient}, oraz na stronie \href{https://thecoatlessprofessor.com/programming/cpp/unofficial-rcpp-api-documentation}{Unofficial Rcpp API Documentation}.
 
 \hypertarget{cppFunction}{%
 \subsection{Wywoływanie kodu C++ wewnątrz skryptu R}\label{cppFunction}}
@@ -6929,14 +6929,14 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \CommentTok{\#\textgreater{} \# A tibble: 2 x 6}
 \CommentTok{\#\textgreater{}   expression                     min   median \textasciigrave{}itr/sec\textasciigrave{}}
 \CommentTok{\#\textgreater{}   \textless{}bch:expr\textgreater{}                \textless{}bch:tm\textgreater{} \textless{}bch:tm\textgreater{}     \textless{}dbl\textgreater{}}
-\CommentTok{\#\textgreater{} 1 mile\_na\_km(odl\_mile2)        809us    825us     1172.}
-\CommentTok{\#\textgreater{} 2 mile\_na\_km\_cpp(odl\_mile2)    414us    445us     2220.}
+\CommentTok{\#\textgreater{} 1 mile\_na\_km(odl\_mile2)        807us    828us     1165.}
+\CommentTok{\#\textgreater{} 2 mile\_na\_km\_cpp(odl\_mile2)    414us    444us     2220.}
 \CommentTok{\#\textgreater{} \# ... with 2 more variables: mem\_alloc \textless{}bch:byt\textgreater{},}
 \CommentTok{\#\textgreater{} \#   gc/sec \textless{}dbl\textgreater{}}
 \end{Highlighting}
 \end{Shaded}
 
-Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.85 raza mniejszy.
+Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.87 raza mniejszy.
 
 \hypertarget{sourceCpp}{%
 \subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}
@@ -8122,7 +8122,7 @@ Przykładowo, do stworzenia wykresu pudełkowego służy \texttt{geom\_boxplot()
 \caption{Przykład wykresu utworzonego z użyciem pakietu ggplot2.}\label{fig:ggplotex}
 \end{figure}
 
-Pełna dokumentacja pakietu \textbf{ggplot2} znajduje się na stronie \url{http://docs.ggplot2.org}.
+Pełna dokumentacja pakietu \textbf{ggplot2} znajduje się na stronie \url{https://ggplot2.tidyverse.org/}.
 
 \hypertarget{analiza-danych}{%
 \section{Analiza danych}\label{analiza-danych}}
