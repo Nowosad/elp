@@ -414,7 +414,7 @@ Oznacza on, że wykonanie kodu nie może zostać zakończone.</p>
 <div id="podstawowe-operacje-na-tekście" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> Podstawowe operacje na tekście</h2>
 <p>Jedną z podstawowych operacji na wektorach znakowych jest ich łączenie.
-Do tego celu służy funkcja <code>paste()</code><a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a>.</p>
+Do tego celu służy funkcja <code>paste()</code><a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>.</p>
 <div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="tekst.html#cb133-1"></a><span class="kw">paste</span>(<span class="st">&quot;t&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot; &quot;</span>, <span class="st">&quot;k&quot;</span>, <span class="st">&quot;o&quot;</span>, <span class="st">&quot;t&quot;</span>)</span>
 <span id="cb133-2"><a href="tekst.html#cb133-2"></a><span class="co">#&gt; [1] &quot;t o   k o t&quot;</span></span></code></pre></div>
 <p>Efekt działania funkcji <code>paste()</code> jest jeden wektor tekstowy, który składa się z wejściowych wektorów oddzielonych domyślnie spacjami.
@@ -470,7 +470,7 @@ Do rozwiązania tego problemu służy argument <code>locale</code>, w którym mo
 <span id="cb142-2"><a href="tekst.html#cb142-2"></a><span class="co">#&gt; [1] &quot;czosnek&quot; &quot;ćma&quot;     &quot;hałas&quot;</span></span>
 <span id="cb142-3"><a href="tekst.html#cb142-3"></a><span class="kw">str_sort</span>(tekst2, <span class="dt">locale =</span> <span class="st">&quot;cs&quot;</span>)</span>
 <span id="cb142-4"><a href="tekst.html#cb142-4"></a><span class="co">#&gt; [1] &quot;ćma&quot;     &quot;czosnek&quot; &quot;hałas&quot;</span></span></code></pre></div>
-<p>Powyżej można zobaczyć dwa przykłady - ułożenia tekstu według polskiego i czeskiego alfabetu<a href="#fn33" class="footnote-ref" id="fnref33"><sup>33</sup></a>.</p>
+<p>Powyżej można zobaczyć dwa przykłady - ułożenia tekstu według polskiego i czeskiego alfabetu<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>.</p>
 </div>
 <div id="wt" class="section level2" number="6.3">
 <h2><span class="header-section-number">6.3</span> Wydzielanie tekstu</h2>
@@ -607,7 +607,7 @@ W poniższym przykładzie nie interesują nas elementy, które zaczynają się o
 Dlatego też, jeżeli chcemy wyszukać elementów zawierających kropki (<code>.</code>) musimy połączyć ukośnik wsteczny z tym znakiem.</p>
 <div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="tekst.html#cb157-1"></a><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;\.&quot;</span>)</span>
 <span id="cb157-2"><a href="tekst.html#cb157-2"></a><span class="co">#&gt; Error: &#39;\.&#39; is an unrecognized escape in character string starting &quot;&quot;\.&quot;</span></span></code></pre></div>
-<p>Powyższy przykład daje jednak komunikat błędu - aby użyć ukośnik wsteczny do zasygnalizowania, że interesuje nas kropka musimy wprowadzić go dwa razy<a href="#fn34" class="footnote-ref" id="fnref34"><sup>34</sup></a>.</p>
+<p>Powyższy przykład daje jednak komunikat błędu - aby użyć ukośnik wsteczny do zasygnalizowania, że interesuje nas kropka musimy wprowadzić go dwa razy<a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>.</p>
 <div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="tekst.html#cb158-1"></a><span class="kw">str_detect</span>(tekst3, <span class="dt">pattern =</span> <span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>)</span>
 <span id="cb158-2"><a href="tekst.html#cb158-2"></a><span class="co">#&gt; [1] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE</span></span></code></pre></div>
 <!-- block z popularnymi regex -->
@@ -735,7 +735,7 @@ Do tego celu można zdefiniować wzorzec jaki chcemy usunąć, a jako jego zamia
 <p>Umiejętności związane z obsługą wyrażeń regularnych przydają się też w przypadku wyszukiwania plików zawierających określony tekst w nazwie lub specyficzne rozszerzenie.
 Jest to szczególnie przydatne, gdy posiadamy wiele plików na komputerze, które chcemy następnie przetwarzać w sposób automatyczny.</p>
 <p>Do wyświetlania nazw plików znajdujących się w wybranym folderze służy funkcja <code>dir()</code>.
-Przykładowo poniższa linia kodu wyświetla wszystkie pliki znajdujące się w folderze <code>"pliki"</code><a href="#fn35" class="footnote-ref" id="fnref35"><sup>35</sup></a>.</p>
+Przykładowo poniższa linia kodu wyświetla wszystkie pliki znajdujące się w folderze <code>"pliki"</code><a href="#fn36" class="footnote-ref" id="fnref36"><sup>36</sup></a>.</p>
 <div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="tekst.html#cb176-1"></a><span class="kw">dir</span>(<span class="st">&quot;pliki&quot;</span>)</span>
 <span id="cb176-2"><a href="tekst.html#cb176-2"></a><span class="co">#&gt;  [1] &quot;dane_meteo.csv&quot;  &quot;dane_meteo.rds&quot; </span></span>
 <span id="cb176-3"><a href="tekst.html#cb176-3"></a><span class="co">#&gt;  [3] &quot;dane_meteo.xlsx&quot; &quot;dane_meteo2.csv&quot;</span></span>
@@ -802,11 +802,11 @@ Poniżej znajduje się fragment przykładowych danych wejściowych.</li>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="32">
-<li id="fn32"><p>Odpowiednikiem funkcji <code>paste()</code> w pakiecie <strong>stringr</strong> jest funkcja <code>str_c()</code><a href="tekst.html#fnref32" class="footnote-back">↩︎</a></p></li>
-<li id="fn33"><p><a href="https://en.wikipedia.org/wiki/Czech_orthography" class="uri">https://en.wikipedia.org/wiki/Czech_orthography</a><a href="tekst.html#fnref33" class="footnote-back">↩︎</a></p></li>
-<li id="fn34"><p><a href="https://xkcd.com/1638/" class="uri">https://xkcd.com/1638/</a><a href="tekst.html#fnref34" class="footnote-back">↩︎</a></p></li>
-<li id="fn35"><p>Folder o tej nazwie znajduje się w folderze roboczym.<a href="tekst.html#fnref35" class="footnote-back">↩︎</a></p></li>
+<ol start="33">
+<li id="fn33"><p>Odpowiednikiem funkcji <code>paste()</code> w pakiecie <strong>stringr</strong> jest funkcja <code>str_c()</code><a href="tekst.html#fnref33" class="footnote-back">↩︎</a></p></li>
+<li id="fn34"><p><a href="https://en.wikipedia.org/wiki/Czech_orthography" class="uri">https://en.wikipedia.org/wiki/Czech_orthography</a><a href="tekst.html#fnref34" class="footnote-back">↩︎</a></p></li>
+<li id="fn35"><p><a href="https://xkcd.com/1638/" class="uri">https://xkcd.com/1638/</a><a href="tekst.html#fnref35" class="footnote-back">↩︎</a></p></li>
+<li id="fn36"><p>Folder o tej nazwie znajduje się w folderze roboczym.<a href="tekst.html#fnref36" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

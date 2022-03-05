@@ -406,7 +406,7 @@ Wektor może przyjmować jeden z czterech podstawowych typów<a href="#fn25" cla
 <span id="cb71-2"><a href="proste-obiekty.html#cb71-2"></a>wek_log</span>
 <span id="cb71-3"><a href="proste-obiekty.html#cb71-3"></a><span class="co">#&gt; [1]  TRUE FALSE</span></span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
-<li>liczba całkowita (ang. <em>interger</em>)</li>
+<li>liczba całkowita (ang. <em>integer</em>)</li>
 </ol>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="proste-obiekty.html#cb72-1"></a>wek_cal =<span class="st"> </span><span class="kw">c</span>(5L, <span class="op">-</span>7L)</span>
 <span id="cb72-2"><a href="proste-obiekty.html#cb72-2"></a>wek_cal</span>
@@ -710,7 +710,7 @@ Wektory czynnikowe wspomagają określanie wartości dla kolejnych grup o tej sa
 <span id="cb114-3"><a href="proste-obiekty.html#cb114-3"></a><span class="co">#&gt; [1] Poznań   Kraków   Warszawa Poznań  </span></span>
 <span id="cb114-4"><a href="proste-obiekty.html#cb114-4"></a><span class="co">#&gt; Levels: Kraków Poznań Warszawa</span></span></code></pre></div>
 <p>Wektory czynnikowe są wewnętrznie w R reprezentowane jako wartości stałoprzecinkowe.
-Dodatkowo, posiadają one pewne informacje zaszyte w atrybutach, w tym wartości wszystkich kategorii oraz stwierdzenie posiadanej klasy [^Posiadanie atrybutu <code>class</code> zamienia je w tak zwane obiekty S3, które zachowują się inaczej niż normalne wektory atomowe.].</p>
+Dodatkowo, posiadają one pewne informacje zaszyte w atrybutach, w tym wartości wszystkich kategorii oraz stwierdzenie posiadanej klasy<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>.</p>
 <div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="proste-obiekty.html#cb115-1"></a><span class="kw">typeof</span>(czynn)</span>
 <span id="cb115-2"><a href="proste-obiekty.html#cb115-2"></a><span class="co">#&gt; [1] &quot;integer&quot;</span></span>
 <span id="cb115-3"><a href="proste-obiekty.html#cb115-3"></a><span class="kw">length</span>(czynn)</span>
@@ -731,7 +731,7 @@ Dodatkowo, posiadają one pewne informacje zaszyte w atrybutach, w tym wartości
 <p>R ma wbudowaną reprezentację dat w postaci klasy <code>Date</code>.</p>
 <div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="proste-obiekty.html#cb117-1"></a>dzis =<span class="st"> </span><span class="kw">Sys.Date</span>()</span>
 <span id="cb117-2"><a href="proste-obiekty.html#cb117-2"></a>dzis</span>
-<span id="cb117-3"><a href="proste-obiekty.html#cb117-3"></a><span class="co">#&gt; [1] &quot;2022-02-05&quot;</span></span></code></pre></div>
+<span id="cb117-3"><a href="proste-obiekty.html#cb117-3"></a><span class="co">#&gt; [1] &quot;2022-03-05&quot;</span></span></code></pre></div>
 <p>Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowy), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.</p>
 <div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="proste-obiekty.html#cb118-1"></a><span class="kw">typeof</span>(dzis)</span>
 <span id="cb118-2"><a href="proste-obiekty.html#cb118-2"></a><span class="co">#&gt; [1] &quot;double&quot;</span></span>
@@ -742,8 +742,8 @@ Dodatkowo, posiadają one pewne informacje zaszyte w atrybutach, w tym wartości
 <span id="cb118-7"><a href="proste-obiekty.html#cb118-7"></a><span class="co">#&gt; [1] &quot;Date&quot;</span></span></code></pre></div>
 <p>Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji <code>unclass()</code>.</p>
 <div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="proste-obiekty.html#cb119-1"></a><span class="kw">unclass</span>(dzis)</span>
-<span id="cb119-2"><a href="proste-obiekty.html#cb119-2"></a><span class="co">#&gt; [1] 19028</span></span></code></pre></div>
-<p>Wynik, 19028, oznacza liczbę dni od 1970-01-01.<a href="#fn29" class="footnote-ref" id="fnref29"><sup>29</sup></a>
+<span id="cb119-2"><a href="proste-obiekty.html#cb119-2"></a><span class="co">#&gt; [1] 19056</span></span></code></pre></div>
+<p>Wynik, 19056, oznacza liczbę dni od 1970-01-01.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a>
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.</p>
 <div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="proste-obiekty.html#cb120-1"></a>stara_data =<span class="st"> </span><span class="kw">as.Date</span>(<span class="st">&quot;1912-04-13&quot;</span>)</span>
 <span id="cb120-2"><a href="proste-obiekty.html#cb120-2"></a><span class="kw">unclass</span>(stara_data)</span>
@@ -757,7 +757,7 @@ W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez war
 <div id="ime" class="section level2" number="5.13">
 <h2><span class="header-section-number">5.13</span> Wektory czasu</h2>
 <p>W R istnieją również wbudowane reprezentacje dat i godzin (inaczej zwane data-czas, ang. <em>date-times</em>).
-Najczęściej używaną jest klasa <code>POSIXct</code>, która jest wektorem przedstawiającym liczbę sekund of 1970-01-01.<a href="#fn30" class="footnote-ref" id="fnref30"><sup>30</sup></a></p>
+Najczęściej używaną jest klasa <code>POSIXct</code>, która jest wektorem przedstawiającym liczbę sekund of 1970-01-01.<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a></p>
 <div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="proste-obiekty.html#cb122-1"></a>czas =<span class="st"> </span><span class="kw">as.POSIXct</span>(<span class="st">&quot;2011-02-02 10:33&quot;</span>, <span class="dt">tz =</span> <span class="st">&quot;CET&quot;</span>)</span>
 <span id="cb122-2"><a href="proste-obiekty.html#cb122-2"></a>czas</span>
 <span id="cb122-3"><a href="proste-obiekty.html#cb122-3"></a><span class="co">#&gt; [1] &quot;2011-02-02 10:33:00 CET&quot;</span></span></code></pre></div>
@@ -779,7 +779,7 @@ Najczęściej używaną jest klasa <code>POSIXct</code>, która jest wektorem pr
 <span id="cb124-4"><a href="proste-obiekty.html#cb124-4"></a><span class="co">#&gt; [1] &quot;CET&quot;</span></span></code></pre></div>
 <p>Ważnym elementem reprezentacji czasu jest określenie strefy czasowej.
 Można ją zdefiniować w funkcji <code>as.POSIXct()</code> używając argumentu <code>tz</code>, ale też można zmienić strefę czasową istniejącego wektora poprzez modyfikację jego atrybutów.
-W poniższym przykładzie nastąpiła zmiana strefy czasowej z czasu środkowoeuropejskiego (<code>"CET"</code>) na czas pacyficzny.<a href="#fn31" class="footnote-ref" id="fnref31"><sup>31</sup></a></p>
+W poniższym przykładzie nastąpiła zmiana strefy czasowej z czasu środkowoeuropejskiego (<code>"CET"</code>) na czas pacyficzny.<a href="#fn32" class="footnote-ref" id="fnref32"><sup>32</sup></a></p>
 <div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="proste-obiekty.html#cb125-1"></a><span class="kw">attributes</span>(czas)<span class="op">$</span>tzone =<span class="st"> &quot;America/Los_Angeles&quot;</span></span>
 <span id="cb125-2"><a href="proste-obiekty.html#cb125-2"></a>czas</span>
 <span id="cb125-3"><a href="proste-obiekty.html#cb125-3"></a><span class="co">#&gt; [1] &quot;2011-02-02 01:33:00 PST&quot;</span></span></code></pre></div>
@@ -859,9 +859,10 @@ Jak to można uzyskać?</li>
 <li id="fn26"><p>Liczby zmiennoprzecinkowe mogą być też reprezentowane poprzez notację naukową, np. 11111.2 może być zapisane jako 1.11112e4, a 0.00021 jako 2.1e-4.<a href="proste-obiekty.html#fnref26" class="footnote-back">↩︎</a></p></li>
 <li id="fn27"><p>Uproszczeniem funkcji <code>seq</code> jest operator <code>:</code> (np. <code>1:10</code>). W jego przypadku wartości zawsze zmieniają się o jeden.<a href="proste-obiekty.html#fnref27" class="footnote-back">↩︎</a></p></li>
 <li id="fn28"><p>Taka operacja często jest określana jako rzutowanie.<a href="proste-obiekty.html#fnref28" class="footnote-back">↩︎</a></p></li>
-<li id="fn29"><p><a href="https://en.wikipedia.org/wiki/Unix_time" class="uri">https://en.wikipedia.org/wiki/Unix_time</a><a href="proste-obiekty.html#fnref29" class="footnote-back">↩︎</a></p></li>
-<li id="fn30"><p>Wyświetlenie aktualnego czasu jest możliwe używając funkcji <code>Sys.time()</code>.<a href="proste-obiekty.html#fnref30" class="footnote-back">↩︎</a></p></li>
-<li id="fn31"><p><a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" class="uri">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a><a href="proste-obiekty.html#fnref31" class="footnote-back">↩︎</a></p></li>
+<li id="fn29"><p>Posiadanie atrybutu <code>class</code> zamienia je w tak zwane obiekty S3, które zachowują się inaczej niż normalne wektory atomowe.<a href="proste-obiekty.html#fnref29" class="footnote-back">↩︎</a></p></li>
+<li id="fn30"><p><a href="https://en.wikipedia.org/wiki/Unix_time" class="uri">https://en.wikipedia.org/wiki/Unix_time</a><a href="proste-obiekty.html#fnref30" class="footnote-back">↩︎</a></p></li>
+<li id="fn31"><p>Wyświetlenie aktualnego czasu jest możliwe używając funkcji <code>Sys.time()</code>.<a href="proste-obiekty.html#fnref31" class="footnote-back">↩︎</a></p></li>
+<li id="fn32"><p><a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" class="uri">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a><a href="proste-obiekty.html#fnref32" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

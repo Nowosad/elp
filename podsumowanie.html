@@ -419,7 +419,7 @@ Możemy to zobaczyć na poniższym przykładzie danych meteorologicznych dla Poz
 <span id="cb382-16"><a href="podsumowanie.html#cb382-16"></a><span class="co">#&gt; 6    0.0</span></span></code></pre></div>
 <p>Wewnątrz obiektu <code>met</code> znajdują się kolumny <code>tavg</code> (określająca średnią dobową temperaturę powietrza w stopniach Celsjusza) oraz <code>nazwa_stacji</code> (“POZNAŃ” lub “ZAKOPANE”).
 Do porównania wartości temperatury pomiędzy stacjami może posłużyć wykres pudełkowy, stworzony przy pomocy funkcji <code>boxplot()</code> (rycina <a href="podsumowanie.html#fig:plotex">16.1</a>).
-Poniżej zdefiniowano, która zmienna ma zostać zwizualizowana (<code>tavg</code>) w podziale na jakie grupy (<code>nazwa_stacji</code>) z jakiego zbioru danych (<code>met</code>)<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a>.</p>
+Poniżej zdefiniowano, która zmienna ma zostać zwizualizowana (<code>tavg</code>) w podziale na jakie grupy (<code>nazwa_stacji</code>) z jakiego zbioru danych (<code>met</code>)<a href="#fn63" class="footnote-ref" id="fnref63"><sup>63</sup></a>.</p>
 <div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="podsumowanie.html#cb383-1"></a><span class="kw">boxplot</span>(tavg <span class="op">~</span><span class="st"> </span>nazwa_stacji, <span class="dt">data =</span> met)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:plotex"></span>
 <img src="31-podsumowanie_files/figure-html/plotex-1.png" alt="Przykład wykresu utworzonego przy pomocy funkcji boxplot()." width="\textwidth" />
@@ -452,7 +452,7 @@ Rycina 16.2: Przykład wykresu utworzonego z użyciem pakietu ggplot2.
 </div>
 <div id="analiza-danych" class="section level2" number="16.2">
 <h2><span class="header-section-number">16.2</span> Analiza danych</h2>
-<p>R jest jednym z języków programowania najczęściej używanych w analizie danych<a href="#fn63" class="footnote-ref" id="fnref63"><sup>63</sup></a>.
+<p>R jest jednym z języków programowania najczęściej używanych w analizie danych<a href="#fn64" class="footnote-ref" id="fnref64"><sup>64</sup></a>.
 Jest to wynikiem szeregu przyczyn, w tym dużej liczby wbudowanych w R funkcji statystycznych oraz graficznych.
 Dodatkowo, ramka danych, jeden z podstawowych obiektów w R, może być utożsamiany z arkuszem kalkulacyjnym czy tabelą z bazy danych - najpopularniejszych form przechowywania różnorakich danych.
 Ta forma obiektu, złożonego z kolumn (zmienne) i wierszy (obserwacje), jest reprezentacją, która uławia czyszczenie, przetwarzanie i analizowanie danych.</p>
@@ -487,7 +487,7 @@ Rycina 16.3: Przykład wyniku użycia pakietów z grupy tidyverse.
 <!-- rmarkdown -->
 <p>Zrozumienie zależności czy zjawisk jest bardzo rzadko ostatnim etapem - równie istotne jest przekazanie tych wyników wybranej grupie odbiorców<!--communicate--> w odpowiedni sposób.
 Do tego celu może posłużyć R Markdown (jego podstawy zostały opisane w sekcji <a href="tworzenie-pakietow.html#dokumentacja-pakietu">15.9</a>)
-R Markdown pozwala na tworzenie dokumentów w różnych formatach (html, pdf, docx, itd.), prezentacji, stron internetowych, książek<a href="#fn64" class="footnote-ref" id="fnref64"><sup>64</sup></a> i wiele innych.
+R Markdown pozwala na tworzenie dokumentów w różnych formatach (html, pdf, docx, itd.), prezentacji, stron internetowych, książek<a href="#fn65" class="footnote-ref" id="fnref65"><sup>65</sup></a> i wiele innych.
 Po szczegółowe instrukcje jak używać tego języka warto zajrzeć do książki
 <a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a> <span class="citation">(Xie, Allaire, and Grolemund <a href="#ref-xieMarkdownDefinitiveGuide2018" role="doc-biblioref">2018</a>)</span>.</p>
 </div>
@@ -497,7 +497,7 @@ Po szczegółowe instrukcje jak używać tego języka warto zajrzeć do książk
 <!-- ... -->
 W związku z czym, w R istnieje także znacząca liczba pakietów stworzonych do bardziej specjalistycznych i szczegółowych celów.
 Można to zobaczyć przeglądając tzw. <em>task views</em> - listy pakietów zagregowane według podobnej tematyki znajdujące się pod adresem <a href="https://cran.r-project.org/web/views/" class="uri">https://cran.r-project.org/web/views/</a>.
-Obejmuje to bardzo szeroki przekrój tematów - od list poświęconych projektowaniu prób klinicznych, poprzez przetwarzanie języka naturalnego, skończywszy na ekonometrii i analizach finansowych<a href="#fn65" class="footnote-ref" id="fnref65"><sup>65</sup></a>.</p>
+Obejmuje to bardzo szeroki przekrój tematów - od list poświęconych projektowaniu prób klinicznych, poprzez przetwarzanie języka naturalnego, skończywszy na ekonometrii i analizach finansowych<a href="#fn66" class="footnote-ref" id="fnref66"><sup>66</sup></a>.</p>
 <!-- maps -->
 <p>Wśród tych list znajduje się także jedna poświęcona analizie danych przestrzennych.
 Opisuje ona, między innymi, takie pakiety jak <strong>sf</strong>, pozwalający na wczytywanie, przetwarzanie i zapisywanie danych wektorowych czy <strong>tmap</strong> ułatwiający tworzenie map.
@@ -526,14 +526,14 @@ Nauka języka programowania przebiega wówczas naturalnie - wraz ze znaleziskiem
 <!-- tidy eval -->
 <!-- how to keep up-to-date--></p>
 <p>Często jednak, nie jesteśmy w stanie stwierdzić czy ten sposób rozwiązania jest optymalny, lub też napotykamy sytuacje w których nie wiemy jak się do nich odnieść.
-Wówczas szczególnie istotna jest inna umiejętność - czytania kodu innych osób<a href="#fn66" class="footnote-ref" id="fnref66"><sup>66</sup></a>.
-Większość pakietów R jest otwartoźródłowych - ich kod jest dostępny online i każda chętna osoba ma do niego dostęp<a href="#fn67" class="footnote-ref" id="fnref67"><sup>67</sup></a>.
+Wówczas szczególnie istotna jest inna umiejętność - czytania kodu innych osób<a href="#fn67" class="footnote-ref" id="fnref67"><sup>67</sup></a>.
+Większość pakietów R jest otwartoźródłowych - ich kod jest dostępny online i każda chętna osoba ma do niego dostęp<a href="#fn68" class="footnote-ref" id="fnref68"><sup>68</sup></a>.
 Kod pakietów R można, między innymi, znaleźć w serwisie GitHub.
 Wszystkie pakiety znajdujące się w repozytorium CRAN można znaleźć pod adresem <a href="https://github.com/cran" class="uri">https://github.com/cran</a>.
 Inną możliwością jest samodzielne wyszukanie kodu pakietu używając wyszukiwarki GitHub - <a href="https://github.com/search" class="uri">https://github.com/search</a>.</p>
 <p>Przykładowo, pod adresem <a href="https://github.com/karthik/wesanderson" class="uri">https://github.com/karthik/wesanderson</a> znajduje się kod źródłowy pakietu <strong>wesanderson</strong> <span class="citation">(Ram and Wickham <a href="#ref-R-wesanderson" role="doc-biblioref">2018</a>)</span>.
 Ten pakiet zawiera funkcje tworzące palety kolorystyczne inspirowane filmami reżysera <a href="https://en.wikipedia.org/wiki/Wes_Anderson">Wesa Andersona</a>.
-Kod R będący podstawą działania tego pakietu znajduje się w folderze <code>R/</code><a href="#fn68" class="footnote-ref" id="fnref68"><sup>68</sup></a>.
+Kod R będący podstawą działania tego pakietu znajduje się w folderze <code>R/</code><a href="#fn69" class="footnote-ref" id="fnref69"><sup>69</sup></a>.
 Dodatkowo, niektóre pakietu zawierają kod z innych języków programowania (np. C lub C++), który wymaga wcześniejszej kompilacji.
 Taki kod znajduje się w folderze <code>src/</code>.</p>
 </div>
@@ -544,7 +544,7 @@ Obejmuje to też wiele innych czynności, takich jak stosowanie optymalnych algo
 Istnieje wiele książek poświęconych kwestii algorytmów, wśród których najbardziej popularne to Introduction to Algorithms <span class="citation">(Cormen et al. <a href="#ref-cormen2009introduction" role="doc-biblioref">2009</a>)</span>, The Algorithm Design Manual <span class="citation">(Skiena <a href="#ref-skienaAlgorithmDesignManual2008" role="doc-biblioref">2008</a>)</span> czy Algorithms <span class="citation">(Sedgewick and Wayne <a href="#ref-032157351X" role="doc-biblioref">2011</a>)</span>.
 Podstawowym narzędziem programistycznym jest program do pisania kodu.
 Może to być zarówno prosty edytor tekstu, taki jak <a href="https://notepad-plus-plus.org/">Notepad++</a>, <a href="https://www.sublimetext.com/">Sublime Text</a>, lub <a href="https://atom.io/">Atom</a> czy też bardziej złożone zintegrowane środowisko programistyczne (IDE).
-O ile narzędzia z tej pierwszej grupy są uniwersalne to w przypadku wyboru IDE warto zdecydować się na zintegrowane środowisko programistyczne odpowiednie dla używanego języka programowania<a href="#fn69" class="footnote-ref" id="fnref69"><sup>69</sup></a>.</p>
+O ile narzędzia z tej pierwszej grupy są uniwersalne to w przypadku wyboru IDE warto zdecydować się na zintegrowane środowisko programistyczne odpowiednie dla używanego języka programowania<a href="#fn70" class="footnote-ref" id="fnref70"><sup>70</sup></a>.</p>
 <p>Programowanie często obejmuje pracę w zespole.
 Wówczas jednym ze sposobów dbania o jakość tworzonego produktu może być inspekcja kodu (ang. <em>code review</em>).
 Polega ona na tym, że zmiany naniesione w kodzie są przekazywane innej osobie, która sprawdza go pod kątem błędów, spójności, stylu, zgodności z istniejącymi rozwiązaniami, itd.
@@ -643,16 +643,16 @@ Języki programowania są też stosowane coraz częściej w wielu codzienne u�
 </div>
 <div class="footnotes">
 <hr />
-<ol start="62">
-<li id="fn62"><p>Kod <code>tavg ~ nazwa_stacji</code> można inaczej odczytać jako <code>tavg</code> w zależności od <code>nazwa_stacji</code>.<a href="podsumowanie.html#fnref62" class="footnote-back">↩︎</a></p></li>
-<li id="fn63"><p>Analiza danych często jest określana również jako <a href="https://en.wikipedia.org/wiki/Data_science">data science</a>.<a href="podsumowanie.html#fnref63" class="footnote-back">↩︎</a></p></li>
-<li id="fn64"><p>Ta książka również powstała używająć R Markdown.<a href="podsumowanie.html#fnref64" class="footnote-back">↩︎</a></p></li>
-<li id="fn65"><p>Dodatkowo istnieje specjalne repozytorium Bioconductor poświęcone pakietom R dotyczącym zagadnień bioinformatycznych.<a href="podsumowanie.html#fnref65" class="footnote-back">↩︎</a></p></li>
-<li id="fn66"><p>Read the Source, Luke.<a href="podsumowanie.html#fnref66" class="footnote-back">↩︎</a></p></li>
-<li id="fn67"><p>Dostępny jest także kod źródłowy samego języka R.
-Można go znaleźć pod adresem <a href="https://github.com/wch/r-source" class="uri">https://github.com/wch/r-source</a>.<a href="podsumowanie.html#fnref67" class="footnote-back">↩︎</a></p></li>
-<li id="fn68"><p>Szczególnie <code>R/colors.R</code>.<a href="podsumowanie.html#fnref68" class="footnote-back">↩︎</a></p></li>
-<li id="fn69"><p><a href="https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments" class="uri">https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments</a><a href="podsumowanie.html#fnref69" class="footnote-back">↩︎</a></p></li>
+<ol start="63">
+<li id="fn63"><p>Kod <code>tavg ~ nazwa_stacji</code> można inaczej odczytać jako <code>tavg</code> w zależności od <code>nazwa_stacji</code>.<a href="podsumowanie.html#fnref63" class="footnote-back">↩︎</a></p></li>
+<li id="fn64"><p>Analiza danych często jest określana również jako <a href="https://en.wikipedia.org/wiki/Data_science">data science</a>.<a href="podsumowanie.html#fnref64" class="footnote-back">↩︎</a></p></li>
+<li id="fn65"><p>Ta książka również powstała używająć R Markdown.<a href="podsumowanie.html#fnref65" class="footnote-back">↩︎</a></p></li>
+<li id="fn66"><p>Dodatkowo istnieje specjalne repozytorium Bioconductor poświęcone pakietom R dotyczącym zagadnień bioinformatycznych.<a href="podsumowanie.html#fnref66" class="footnote-back">↩︎</a></p></li>
+<li id="fn67"><p>Read the Source, Luke.<a href="podsumowanie.html#fnref67" class="footnote-back">↩︎</a></p></li>
+<li id="fn68"><p>Dostępny jest także kod źródłowy samego języka R.
+Można go znaleźć pod adresem <a href="https://github.com/wch/r-source" class="uri">https://github.com/wch/r-source</a>.<a href="podsumowanie.html#fnref68" class="footnote-back">↩︎</a></p></li>
+<li id="fn69"><p>Szczególnie <code>R/colors.R</code>.<a href="podsumowanie.html#fnref69" class="footnote-back">↩︎</a></p></li>
+<li id="fn70"><p><a href="https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments" class="uri">https://en.wikipedia.org/wiki/Comparison_of_integrated_development_environments</a><a href="podsumowanie.html#fnref70" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

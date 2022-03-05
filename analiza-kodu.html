@@ -454,7 +454,7 @@ Odpowiednikami <code>expect_error()</code> dla ostrzeżeń jest <code>expect_war
 </div>
 <div id="profiling" class="section level2" number="11.2">
 <h2><span class="header-section-number">11.2</span> Profiling</h2>
-<p>Istnieją trzy podstawowe reguły optymalizacji kodu<a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a>:</p>
+<p>Istnieją trzy podstawowe reguły optymalizacji kodu<a href="#fn45" class="footnote-ref" id="fnref45"><sup>45</sup></a>:</p>
 <ol style="list-style-type: decimal">
 <li>Nie.</li>
 <li>Jeszcze nie.</li>
@@ -509,7 +509,7 @@ Do określenia ile czasu zajmuje działanie operacji można użyć wbudowanej fu
 <p>Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średniej wartości z sekwencji od 1 do 100000000.</p>
 <div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="analiza-kodu.html#cb318-1"></a><span class="kw">system.time</span>(<span class="kw">mean</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">100000000</span>))</span>
 <span id="cb318-2"><a href="analiza-kodu.html#cb318-2"></a><span class="co">#&gt;    user  system elapsed </span></span>
-<span id="cb318-3"><a href="analiza-kodu.html#cb318-3"></a><span class="co">#&gt;   0.486   0.001   0.485</span></span></code></pre></div>
+<span id="cb318-3"><a href="analiza-kodu.html#cb318-3"></a><span class="co">#&gt;   0.498   0.000   0.498</span></span></code></pre></div>
 <p>W efekcie dostajemy trzy wartości - <code>user</code>, <code>system</code> i <code>elapsed</code>. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.</p>
 <p>Benchmarking jest często używany w sytuacji, gdy istnieje kilka funkcji służących do tego samego celu (np. w różnych pakietach) i chcemy znaleźć tę, która ma najwyższą wydajność.
 Jest on też stosowany, gdy sami napisaliśmy kilka implementacji rozwiązania tego samego problemu i chcemy sprawdzić, które z nich jest najszybsze.</p>
@@ -547,8 +547,8 @@ Poniżej nastąpi porównanie funkcji <code>mi_do_km1</code> i <code>mi_do_km2</
 <span id="cb321-8"><a href="analiza-kodu.html#cb321-8"></a><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span id="cb321-9"><a href="analiza-kodu.html#cb321-9"></a><span class="co">#&gt;   expression              min median `itr/sec` mem_alloc</span></span>
 <span id="cb321-10"><a href="analiza-kodu.html#cb321-10"></a><span class="co">#&gt;   &lt;bch:expr&gt;          &lt;bch:t&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span></span>
-<span id="cb321-11"><a href="analiza-kodu.html#cb321-11"></a><span class="co">#&gt; 1 mi_do_km1(odl_mile)   1.5µs 1.58µs   570585.     117KB</span></span>
-<span id="cb321-12"><a href="analiza-kodu.html#cb321-12"></a><span class="co">#&gt; 2 mi_do_km2(odl_mile)  1.16µs 1.26µs   747438.     224KB</span></span>
+<span id="cb321-11"><a href="analiza-kodu.html#cb321-11"></a><span class="co">#&gt; 1 mi_do_km1(odl_mile)  1.51µs 1.62µs   564914.     117KB</span></span>
+<span id="cb321-12"><a href="analiza-kodu.html#cb321-12"></a><span class="co">#&gt; 2 mi_do_km2(odl_mile)  1.19µs 1.31µs   714330.     224KB</span></span>
 <span id="cb321-13"><a href="analiza-kodu.html#cb321-13"></a><span class="co">#&gt; # … with 1 more variable: gc/sec &lt;dbl&gt;</span></span></code></pre></div>
 <p>Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
 Zawiera ona szereg charakterystyk, w tym:</p>
@@ -575,11 +575,11 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 <span id="cb322-9"><a href="analiza-kodu.html#cb322-9"></a><span class="co">#&gt; # A tibble: 2 × 6</span></span>
 <span id="cb322-10"><a href="analiza-kodu.html#cb322-10"></a><span class="co">#&gt;   expression              min median `itr/sec` mem_alloc</span></span>
 <span id="cb322-11"><a href="analiza-kodu.html#cb322-11"></a><span class="co">#&gt;   &lt;bch:expr&gt;           &lt;bch:&gt; &lt;bch:&gt;     &lt;dbl&gt; &lt;bch:byt&gt;</span></span>
-<span id="cb322-12"><a href="analiza-kodu.html#cb322-12"></a><span class="co">#&gt; 1 mi_do_km1(odl_mile2)  528ms  528ms      1.89     382MB</span></span>
-<span id="cb322-13"><a href="analiza-kodu.html#cb322-13"></a><span class="co">#&gt; 2 mi_do_km2(odl_mile2)  808µs  831µs   1018.      78.2KB</span></span>
+<span id="cb322-12"><a href="analiza-kodu.html#cb322-12"></a><span class="co">#&gt; 1 mi_do_km1(odl_mile2)  530ms  530ms      1.89     382MB</span></span>
+<span id="cb322-13"><a href="analiza-kodu.html#cb322-13"></a><span class="co">#&gt; 2 mi_do_km2(odl_mile2)  817µs  839µs   1003.      78.2KB</span></span>
 <span id="cb322-14"><a href="analiza-kodu.html#cb322-14"></a><span class="co">#&gt; # … with 1 more variable: gc/sec &lt;dbl&gt;</span></span></code></pre></div>
 <p>W tym przypadku różnica pomiędzy <code>mi_do_km1</code> a <code>mi_do_km2</code> staje się dużo większa.
-Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 1.89 operacji na sekundę, przy aż 1017.88 operacji na sekundę funkcji <code>mi_do_km2</code>.
+Funkcja <code>mi_do_km1</code> jest w stanie wykonać tylko 1.89 operacji na sekundę, przy aż 1003.44 operacji na sekundę funkcji <code>mi_do_km2</code>.
 Dodatkowo, funkcja <code>mi_do_km1</code> potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż <code>mi_do_km2</code>.</p>
 </div>
 <div id="zad12" class="section level2" number="11.4">
@@ -623,8 +623,8 @@ Która z nich zużywa mniej zasobów?</p></li>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="44">
-<li id="fn44"><p><a href="http://www.moscowcoffeereview.com/programming/the-3-rules-of-optimization/" class="uri">http://www.moscowcoffeereview.com/programming/the-3-rules-of-optimization/</a><a href="analiza-kodu.html#fnref44" class="footnote-back">↩︎</a></p></li>
+<ol start="45">
+<li id="fn45"><p><a href="http://www.moscowcoffeereview.com/programming/the-3-rules-of-optimization/" class="uri">http://www.moscowcoffeereview.com/programming/the-3-rules-of-optimization/</a><a href="analiza-kodu.html#fnref45" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
