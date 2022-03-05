@@ -19,7 +19,7 @@ wek_log = c(TRUE, FALSE)
 wek_log
 ```
 
-2. liczba całkowita (ang. *interger*)
+2. liczba całkowita (ang. *integer*)
 
 ```{r}
 wek_cal = c(5L, -7L)
@@ -424,7 +424,7 @@ czynn
 ```
 
 Wektory czynnikowe są wewnętrznie w R reprezentowane jako wartości stałoprzecinkowe.
-Dodatkowo, posiadają one pewne informacje zaszyte w atrybutach, w tym wartości wszystkich kategorii oraz stwierdzenie posiadanej klasy [^Posiadanie atrybutu `class` zamienia je w tak zwane obiekty S3, które zachowują się inaczej niż normalne wektory atomowe.].
+Dodatkowo, posiadają one pewne informacje zaszyte w atrybutach, w tym wartości wszystkich kategorii oraz stwierdzenie posiadanej klasy^[Posiadanie atrybutu `class` zamienia je w tak zwane obiekty S3, które zachowują się inaczej niż normalne wektory atomowe.].
 
 ```{r}
 typeof(czynn)
