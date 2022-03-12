@@ -1,0 +1,58 @@
+on:
+  push:
+    branches:
+      main
+name: Render
+jobs:
+  bookdown:
+    name: Render
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        
+      - name: Prep all
+        run: |
+          chmod +x _build.sh _publish.sh
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v1
+
+      - name: Install pandoc
+        run: |
+          brew install pandoc
+
+      - name: Cache Renv packages
+        uses: actions/cache@v2
+        with:
+          path: $HOME/.local/share/renv
+          key: r-${{ hashFiles('renv.lock') }}
+          restore-keys: r-
+
+      - name: Cache bookdown results
+        uses: actions/cache@v2
+        with:
+          path: _bookdown_files
+          key: bookdown-${{ hashFiles('**/*Rmd') }}
+          restore-keys: bookdown-
+
+      - name: Install packages
+        run: |
+          R -e "install.packages('remotes')"
+          R -e "install.packages('tinytex')"
+          R -e "install.packages('rmarkdown')"
+          R -e "tinytex::install_tinytex()"
+          R -e "install.packages(c('bslib', 'downlit', 'xml2'))"
+          R -e "install.packages('renv')"
+          R -e "renv::restore()"
+
+      - name: Build site
+        run: |
+          make both
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_book
+          publish_branch: gh-pages
+          commit_message: 'Deploy commit: ${{ github.event.head_commit.message }}'
