@@ -16,6 +16,8 @@ jobs:
 
       - name: Install pandoc
         run: |
+          sudo cp fonts/ -r /usr/local/share/fonts
+          sudo fc-cache -f -v
           sudo apt install pandoc
           sudo apt install libcurl4-openssl-dev
 
