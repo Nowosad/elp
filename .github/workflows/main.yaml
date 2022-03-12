@@ -16,8 +16,8 @@ jobs:
 
       - name: Install pandoc
         run: |
-          apt install pandoc
-          apt install libcurl4-openssl-dev
+          sudo apt install pandoc
+          sudo apt install libcurl4-openssl-dev
 
       - name: Cache Renv packages
         uses: actions/cache@v2
