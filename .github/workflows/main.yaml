@@ -16,7 +16,8 @@ jobs:
 
       - name: Install pandoc
         run: |
-          brew install pandoc
+          apt install pandoc
+          apt install libcurl4-openssl-dev
 
       - name: Cache Renv packages
         uses: actions/cache@v2
