@@ -32,7 +32,6 @@
   
 <link rel="prev" href="tekst.html"/>
 <link rel="next" href="petle.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,34 +49,33 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -86,9 +84,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -138,236 +136,207 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Elementarz programisty</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#wymagania-wstępne"><i class="fa fa-check"></i>Wymagania wstępne</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#styl-książki"><i class="fa fa-check"></i>Styl książki</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#podziękowania"><i class="fa fa-check"></i>Podziękowania</a></li>
+<li><a href="index.html#o-książce">O książce<span></span></a><ul>
+<li><a href="index.html#wymagania-wstępne">Wymagania wstępne<span></span></a></li>
+<li><a href="index.html#styl-książki">Styl książki<span></span></a></li>
+<li><a href="index.html#podziękowania">Podziękowania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="wprowadzenie.html"><a href="wprowadzenie.html#mity-programistyczne"><i class="fa fa-check"></i><b>1.1</b> Mity programistyczne</a></li>
-<li class="chapter" data-level="1.2" data-path="wprowadzenie.html"><a href="wprowadzenie.html#jezyki-programowania"><i class="fa fa-check"></i><b>1.2</b> Języki programowania</a></li>
-<li class="chapter" data-level="1.3" data-path="wprowadzenie.html"><a href="wprowadzenie.html#r"><i class="fa fa-check"></i><b>1.3</b> R</a></li>
-<li class="chapter" data-level="1.4" data-path="wprowadzenie.html"><a href="wprowadzenie.html#zad1"><i class="fa fa-check"></i><b>1.4</b> Zadania</a></li>
+<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie<span></span></a><ul>
+<li class="chapter" data-level="1.1" data-path="wprowadzenie.html"><a href="wprowadzenie.html#mity-programistyczne"><i class="fa fa-check"></i><b>1.1</b> Mity programistyczne<span></span></a></li>
+<li class="chapter" data-level="1.2" data-path="wprowadzenie.html"><a href="wprowadzenie.html#jezyki-programowania"><i class="fa fa-check"></i><b>1.2</b> Języki programowania<span></span></a></li>
+<li class="chapter" data-level="1.3" data-path="wprowadzenie.html"><a href="wprowadzenie.html#r"><i class="fa fa-check"></i><b>1.3</b> R<span></span></a></li>
+<li class="chapter" data-level="1.4" data-path="wprowadzenie.html"><a href="wprowadzenie.html#zad1"><i class="fa fa-check"></i><b>1.4</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="part"><span><b>I Podstawy</b></span></li>
-<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrażenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia</a></li>
-<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a>
-<ul>
-<li class="chapter" data-level="2.2.1" data-path="ergosum.html"><a href="ergosum.html#operator-przypisania"><i class="fa fa-check"></i><b>2.2.1</b> Operator przypisania</a></li>
-<li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dzialania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach</a></li>
+<li class="part"><span><b>I Podstawy<span></span></b></span></li>
+<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R<span></span></a><ul>
+<li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrażenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia<span></span></a></li>
+<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty<span></span></a><ul>
+<li class="chapter" data-level="2.2.1" data-path="ergosum.html"><a href="ergosum.html#operator-przypisania"><i class="fa fa-check"></i><b>2.2.1</b> Operator przypisania<span></span></a></li>
+<li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dzialania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ergosum.html"><a href="ergosum.html#ide"><i class="fa fa-check"></i><b>2.3</b> IDE</a></li>
-<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a>
-<ul>
-<li class="chapter" data-level="2.4.1" data-path="ergosum.html"><a href="ergosum.html#nazwy-obiektow"><i class="fa fa-check"></i><b>2.4.1</b> Nazwy obiektów</a></li>
-<li class="chapter" data-level="2.4.2" data-path="ergosum.html"><a href="ergosum.html#odstępy"><i class="fa fa-check"></i><b>2.4.2</b> Odstępy</a></li>
-<li class="chapter" data-level="2.4.3" data-path="ergosum.html"><a href="ergosum.html#komentarze"><i class="fa fa-check"></i><b>2.4.3</b> Komentarze</a></li>
-<li class="chapter" data-level="2.4.4" data-path="ergosum.html"><a href="ergosum.html#nazwy-plików"><i class="fa fa-check"></i><b>2.4.4</b> Nazwy plików</a></li>
-<li class="chapter" data-level="2.4.5" data-path="ergosum.html"><a href="ergosum.html#daty"><i class="fa fa-check"></i><b>2.4.5</b> Daty</a></li>
+<li class="chapter" data-level="2.3" data-path="ergosum.html"><a href="ergosum.html#ide"><i class="fa fa-check"></i><b>2.3</b> IDE<span></span></a></li>
+<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl<span></span></a><ul>
+<li class="chapter" data-level="2.4.1" data-path="ergosum.html"><a href="ergosum.html#nazwy-obiektow"><i class="fa fa-check"></i><b>2.4.1</b> Nazwy obiektów<span></span></a></li>
+<li class="chapter" data-level="2.4.2" data-path="ergosum.html"><a href="ergosum.html#odstępy"><i class="fa fa-check"></i><b>2.4.2</b> Odstępy<span></span></a></li>
+<li class="chapter" data-level="2.4.3" data-path="ergosum.html"><a href="ergosum.html#komentarze"><i class="fa fa-check"></i><b>2.4.3</b> Komentarze<span></span></a></li>
+<li class="chapter" data-level="2.4.4" data-path="ergosum.html"><a href="ergosum.html#nazwy-plików"><i class="fa fa-check"></i><b>2.4.4</b> Nazwy plików<span></span></a></li>
+<li class="chapter" data-level="2.4.5" data-path="ergosum.html"><a href="ergosum.html#daty"><i class="fa fa-check"></i><b>2.4.5</b> Daty<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="ergosum.html"><a href="ergosum.html#resources"><i class="fa fa-check"></i><b>2.5</b> Dodatkowe materiały</a></li>
-<li class="chapter" data-level="2.6" data-path="ergosum.html"><a href="ergosum.html#zad2"><i class="fa fa-check"></i><b>2.6</b> Zadania</a></li>
+<li class="chapter" data-level="2.5" data-path="ergosum.html"><a href="ergosum.html#resources"><i class="fa fa-check"></i><b>2.5</b> Dodatkowe materiały<span></span></a></li>
+<li class="chapter" data-level="2.6" data-path="ergosum.html"><a href="ergosum.html#zad2"><i class="fa fa-check"></i><b>2.6</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="funkcje.html"><a href="funkcje.html#struktura-funkcji"><i class="fa fa-check"></i><b>3.1</b> Struktura funkcji</a></li>
-<li class="chapter" data-level="3.2" data-path="funkcje.html"><a href="funkcje.html#wbudowane-funkcje"><i class="fa fa-check"></i><b>3.2</b> Wbudowane funkcje</a></li>
-<li class="chapter" data-level="3.3" data-path="funkcje.html"><a href="funkcje.html#kolejnosc-funkcji"><i class="fa fa-check"></i><b>3.3</b> Kolejność wykonywania funkcji</a></li>
-<li class="chapter" data-level="3.4" data-path="funkcje.html"><a href="funkcje.html#dokumentacja-funkcji"><i class="fa fa-check"></i><b>3.4</b> Dokumentacja funkcji</a></li>
-<li class="chapter" data-level="3.5" data-path="funkcje.html"><a href="funkcje.html#pakiety"><i class="fa fa-check"></i><b>3.5</b> Pakiety</a></li>
-<li class="chapter" data-level="3.6" data-path="funkcje.html"><a href="funkcje.html#algorytmy"><i class="fa fa-check"></i><b>3.6</b> Algorytmy</a></li>
-<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptow"><i class="fa fa-check"></i><b>3.7</b> Tworzenie skryptów</a></li>
-<li class="chapter" data-level="3.8" data-path="funkcje.html"><a href="funkcje.html#budowanie-funkcji"><i class="fa fa-check"></i><b>3.8</b> Budowanie funkcji</a></li>
-<li class="chapter" data-level="3.9" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.9</b> Komunikaty</a></li>
-<li class="chapter" data-level="3.10" data-path="funkcje.html"><a href="funkcje.html#zad3"><i class="fa fa-check"></i><b>3.10</b> Zadania</a></li>
+<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje<span></span></a><ul>
+<li class="chapter" data-level="3.1" data-path="funkcje.html"><a href="funkcje.html#struktura-funkcji"><i class="fa fa-check"></i><b>3.1</b> Struktura funkcji<span></span></a></li>
+<li class="chapter" data-level="3.2" data-path="funkcje.html"><a href="funkcje.html#wbudowane-funkcje"><i class="fa fa-check"></i><b>3.2</b> Wbudowane funkcje<span></span></a></li>
+<li class="chapter" data-level="3.3" data-path="funkcje.html"><a href="funkcje.html#kolejnosc-funkcji"><i class="fa fa-check"></i><b>3.3</b> Kolejność wykonywania funkcji<span></span></a></li>
+<li class="chapter" data-level="3.4" data-path="funkcje.html"><a href="funkcje.html#dokumentacja-funkcji"><i class="fa fa-check"></i><b>3.4</b> Dokumentacja funkcji<span></span></a></li>
+<li class="chapter" data-level="3.5" data-path="funkcje.html"><a href="funkcje.html#pakiety"><i class="fa fa-check"></i><b>3.5</b> Pakiety<span></span></a></li>
+<li class="chapter" data-level="3.6" data-path="funkcje.html"><a href="funkcje.html#algorytmy"><i class="fa fa-check"></i><b>3.6</b> Algorytmy<span></span></a></li>
+<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptow"><i class="fa fa-check"></i><b>3.7</b> Tworzenie skryptów<span></span></a></li>
+<li class="chapter" data-level="3.8" data-path="funkcje.html"><a href="funkcje.html#budowanie-funkcji"><i class="fa fa-check"></i><b>3.8</b> Budowanie funkcji<span></span></a></li>
+<li class="chapter" data-level="3.9" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.9</b> Komunikaty<span></span></a></li>
+<li class="chapter" data-level="3.10" data-path="funkcje.html"><a href="funkcje.html#zad3"><i class="fa fa-check"></i><b>3.10</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
-<li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagnieżdżone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdżone</a></li>
-<li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porównania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
-<li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wwwf"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach</a></li>
-<li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zad4"><i class="fa fa-check"></i><b>4.5</b> Zadania</a></li>
+<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe<span></span></a><ul>
+<li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki<span></span></a></li>
+<li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagnieżdżone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdżone<span></span></a></li>
+<li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porównania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania<span></span></a></li>
+<li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wwwf"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach<span></span></a></li>
+<li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zad4"><i class="fa fa-check"></i><b>4.5</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wektory"><i class="fa fa-check"></i><b>5.1</b> Wektory</a></li>
-<li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#właściwości-wektorów"><i class="fa fa-check"></i><b>5.2</b> Właściwości wektorów</a></li>
-<li class="chapter" data-level="5.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#pf-vector"><i class="fa fa-check"></i><b>5.3</b> Podstawowe funkcje</a></li>
-<li class="chapter" data-level="5.4" data-path="proste-obiekty.html"><a href="proste-obiekty.html#dzialania-na-wektorach"><i class="fa fa-check"></i><b>5.4</b> Działania na wektorach</a></li>
-<li class="chapter" data-level="5.5" data-path="proste-obiekty.html"><a href="proste-obiekty.html#na"><i class="fa fa-check"></i><b>5.5</b> Brakujące wartości</a></li>
-<li class="chapter" data-level="5.6" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie"><i class="fa fa-check"></i><b>5.6</b> Wydzielanie</a></li>
-<li class="chapter" data-level="5.7" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wip-vector"><i class="fa fa-check"></i><b>5.7</b> Wydzielanie i przypisanie</a></li>
-<li class="chapter" data-level="5.8" data-path="proste-obiekty.html"><a href="proste-obiekty.html#mo-vector"><i class="fa fa-check"></i><b>5.8</b> Modyfikowanie obiektów</a></li>
-<li class="chapter" data-level="5.9" data-path="proste-obiekty.html"><a href="proste-obiekty.html#lpto-vector"><i class="fa fa-check"></i><b>5.9</b> Łączenie podstawowych typów obiektów</a></li>
-<li class="chapter" data-level="5.10" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zmiana-typów-obiektów"><i class="fa fa-check"></i><b>5.10</b> Zmiana typów obiektów</a></li>
-<li class="chapter" data-level="5.11" data-path="proste-obiekty.html"><a href="proste-obiekty.html#fac"><i class="fa fa-check"></i><b>5.11</b> Wektory czynnikowe</a></li>
-<li class="chapter" data-level="5.12" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ate"><i class="fa fa-check"></i><b>5.12</b> Wektory dat</a></li>
-<li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ime"><i class="fa fa-check"></i><b>5.13</b> Wektory czasu</a></li>
-<li class="chapter" data-level="5.14" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zad5"><i class="fa fa-check"></i><b>5.14</b> Zadania</a></li>
+<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty<span></span></a><ul>
+<li class="chapter" data-level="5.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wektory"><i class="fa fa-check"></i><b>5.1</b> Wektory<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#właściwości-wektorów"><i class="fa fa-check"></i><b>5.2</b> Właściwości wektorów<span></span></a></li>
+<li class="chapter" data-level="5.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#pf-vector"><i class="fa fa-check"></i><b>5.3</b> Podstawowe funkcje<span></span></a></li>
+<li class="chapter" data-level="5.4" data-path="proste-obiekty.html"><a href="proste-obiekty.html#dzialania-na-wektorach"><i class="fa fa-check"></i><b>5.4</b> Działania na wektorach<span></span></a></li>
+<li class="chapter" data-level="5.5" data-path="proste-obiekty.html"><a href="proste-obiekty.html#na"><i class="fa fa-check"></i><b>5.5</b> Brakujące wartości<span></span></a></li>
+<li class="chapter" data-level="5.6" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie"><i class="fa fa-check"></i><b>5.6</b> Wydzielanie<span></span></a></li>
+<li class="chapter" data-level="5.7" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wip-vector"><i class="fa fa-check"></i><b>5.7</b> Wydzielanie i przypisanie<span></span></a></li>
+<li class="chapter" data-level="5.8" data-path="proste-obiekty.html"><a href="proste-obiekty.html#mo-vector"><i class="fa fa-check"></i><b>5.8</b> Modyfikowanie obiektów<span></span></a></li>
+<li class="chapter" data-level="5.9" data-path="proste-obiekty.html"><a href="proste-obiekty.html#lpto-vector"><i class="fa fa-check"></i><b>5.9</b> Łączenie podstawowych typów obiektów<span></span></a></li>
+<li class="chapter" data-level="5.10" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zmiana-typów-obiektów"><i class="fa fa-check"></i><b>5.10</b> Zmiana typów obiektów<span></span></a></li>
+<li class="chapter" data-level="5.11" data-path="proste-obiekty.html"><a href="proste-obiekty.html#fac"><i class="fa fa-check"></i><b>5.11</b> Wektory czynnikowe<span></span></a></li>
+<li class="chapter" data-level="5.12" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ate"><i class="fa fa-check"></i><b>5.12</b> Wektory dat<span></span></a></li>
+<li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ime"><i class="fa fa-check"></i><b>5.13</b> Wektory czasu<span></span></a></li>
+<li class="chapter" data-level="5.14" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zad5"><i class="fa fa-check"></i><b>5.14</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#reprezentacja-tekstu"><i class="fa fa-check"></i><b>6.1</b> Reprezentacja tekstu</a></li>
-<li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekście"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście</a></li>
-<li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wt"><i class="fa fa-check"></i><b>6.3</b> Wydzielanie tekstu</a></li>
-<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wyrażenia-regularne"><i class="fa fa-check"></i><b>6.4</b> Wyrażenia regularne</a></li>
-<li class="chapter" data-level="6.5" data-path="tekst.html"><a href="tekst.html#wtregex"><i class="fa fa-check"></i><b>6.5</b> Wydzielanie tekstu - regex</a></li>
-<li class="chapter" data-level="6.6" data-path="tekst.html"><a href="tekst.html#zamiana-tekstu---regex"><i class="fa fa-check"></i><b>6.6</b> Zamiana tekstu - regex</a></li>
-<li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plików"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików</a></li>
-<li class="chapter" data-level="6.8" data-path="tekst.html"><a href="tekst.html#zad6"><i class="fa fa-check"></i><b>6.8</b> Zadania</a></li>
+<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst<span></span></a><ul>
+<li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#reprezentacja-tekstu"><i class="fa fa-check"></i><b>6.1</b> Reprezentacja tekstu<span></span></a></li>
+<li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekście"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście<span></span></a></li>
+<li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wt"><i class="fa fa-check"></i><b>6.3</b> Wydzielanie tekstu<span></span></a></li>
+<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wyrażenia-regularne"><i class="fa fa-check"></i><b>6.4</b> Wyrażenia regularne<span></span></a></li>
+<li class="chapter" data-level="6.5" data-path="tekst.html"><a href="tekst.html#wtregex"><i class="fa fa-check"></i><b>6.5</b> Wydzielanie tekstu - regex<span></span></a></li>
+<li class="chapter" data-level="6.6" data-path="tekst.html"><a href="tekst.html#zamiana-tekstu---regex"><i class="fa fa-check"></i><b>6.6</b> Zamiana tekstu - regex<span></span></a></li>
+<li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plików"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików<span></span></a></li>
+<li class="chapter" data-level="6.8" data-path="tekst.html"><a href="tekst.html#zad6"><i class="fa fa-check"></i><b>6.8</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a>
-<ul>
-<li class="chapter" data-level="7.1.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie"><i class="fa fa-check"></i><b>7.1.1</b> Tworzenie</a></li>
-<li class="chapter" data-level="7.1.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje"><i class="fa fa-check"></i><b>7.1.2</b> Podstawowe funkcje</a></li>
-<li class="chapter" data-level="7.1.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-1"><i class="fa fa-check"></i><b>7.1.3</b> Wydzielanie</a></li>
-<li class="chapter" data-level="7.1.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie"><i class="fa fa-check"></i><b>7.1.4</b> Łączenie</a></li>
+<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty<span></span></a><ul>
+<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze<span></span></a><ul>
+<li class="chapter" data-level="7.1.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie"><i class="fa fa-check"></i><b>7.1.1</b> Tworzenie<span></span></a></li>
+<li class="chapter" data-level="7.1.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje"><i class="fa fa-check"></i><b>7.1.2</b> Podstawowe funkcje<span></span></a></li>
+<li class="chapter" data-level="7.1.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-1"><i class="fa fa-check"></i><b>7.1.3</b> Wydzielanie<span></span></a></li>
+<li class="chapter" data-level="7.1.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie"><i class="fa fa-check"></i><b>7.1.4</b> Łączenie<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a>
-<ul>
-<li class="chapter" data-level="7.2.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-1"><i class="fa fa-check"></i><b>7.2.1</b> Tworzenie</a></li>
-<li class="chapter" data-level="7.2.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-1"><i class="fa fa-check"></i><b>7.2.2</b> Podstawowe funkcje</a></li>
-<li class="chapter" data-level="7.2.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-df"><i class="fa fa-check"></i><b>7.2.3</b> Wydzielanie</a></li>
-<li class="chapter" data-level="7.2.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-1"><i class="fa fa-check"></i><b>7.2.4</b> Łączenie</a></li>
+<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych<span></span></a><ul>
+<li class="chapter" data-level="7.2.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-1"><i class="fa fa-check"></i><b>7.2.1</b> Tworzenie<span></span></a></li>
+<li class="chapter" data-level="7.2.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-1"><i class="fa fa-check"></i><b>7.2.2</b> Podstawowe funkcje<span></span></a></li>
+<li class="chapter" data-level="7.2.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-df"><i class="fa fa-check"></i><b>7.2.3</b> Wydzielanie<span></span></a></li>
+<li class="chapter" data-level="7.2.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-1"><i class="fa fa-check"></i><b>7.2.4</b> Łączenie<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a>
-<ul>
-<li class="chapter" data-level="7.3.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-2"><i class="fa fa-check"></i><b>7.3.1</b> Tworzenie</a></li>
-<li class="chapter" data-level="7.3.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-2"><i class="fa fa-check"></i><b>7.3.2</b> Podstawowe funkcje</a></li>
-<li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie</a></li>
-<li class="chapter" data-level="7.3.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-list"><i class="fa fa-check"></i><b>7.3.4</b> Wydzielanie</a></li>
+<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy<span></span></a><ul>
+<li class="chapter" data-level="7.3.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-2"><i class="fa fa-check"></i><b>7.3.1</b> Tworzenie<span></span></a></li>
+<li class="chapter" data-level="7.3.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-2"><i class="fa fa-check"></i><b>7.3.2</b> Podstawowe funkcje<span></span></a></li>
+<li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie<span></span></a></li>
+<li class="chapter" data-level="7.3.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-list"><i class="fa fa-check"></i><b>7.3.4</b> Wydzielanie<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zmiany-klas"><i class="fa fa-check"></i><b>7.4</b> Zmiany klas</a></li>
-<li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#inne-klasy"><i class="fa fa-check"></i><b>7.5</b> Inne klasy obiektów</a></li>
-<li class="chapter" data-level="7.6" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zad7"><i class="fa fa-check"></i><b>7.6</b> Zadania</a></li>
+<li class="chapter" data-level="7.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zmiany-klas"><i class="fa fa-check"></i><b>7.4</b> Zmiany klas<span></span></a></li>
+<li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#inne-klasy"><i class="fa fa-check"></i><b>7.5</b> Inne klasy obiektów<span></span></a></li>
+<li class="chapter" data-level="7.6" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zad7"><i class="fa fa-check"></i><b>7.6</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a>
-<ul>
-<li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#składnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia</a></li>
-<li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#for-example"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
-<li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach</a></li>
+<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie<span></span></a><ul>
+<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for<span></span></a><ul>
+<li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#składnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia<span></span></a></li>
+<li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#for-example"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania<span></span></a></li>
+<li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="petle.html"><a href="petle.html#petla-while"><i class="fa fa-check"></i><b>8.2</b> Pętla while</a></li>
-<li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#prog-fun"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne</a></li>
-<li class="chapter" data-level="8.4" data-path="petle.html"><a href="petle.html#zad8"><i class="fa fa-check"></i><b>8.4</b> Zadania</a></li>
+<li class="chapter" data-level="8.2" data-path="petle.html"><a href="petle.html#petla-while"><i class="fa fa-check"></i><b>8.2</b> Pętla while<span></span></a></li>
+<li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#prog-fun"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne<span></span></a></li>
+<li class="chapter" data-level="8.4" data-path="petle.html"><a href="petle.html#zad8"><i class="fa fa-check"></i><b>8.4</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy</a></li>
-<li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#działania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.2</b> Działania na plikach i folderach</a></li>
-<li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#dane-internetowe"><i class="fa fa-check"></i><b>9.3</b> Dane internetowe</a></li>
-<li class="chapter" data-level="9.4" data-path="io.html"><a href="io.html#wczytywanie-plików-tekstowych"><i class="fa fa-check"></i><b>9.4</b> Wczytywanie plików tekstowych</a></li>
-<li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#zapisywanie-plików-tekstowych"><i class="fa fa-check"></i><b>9.5</b> Zapisywanie plików tekstowych</a></li>
-<li class="chapter" data-level="9.6" data-path="io.html"><a href="io.html#formaty-r"><i class="fa fa-check"></i><b>9.6</b> Formaty R</a></li>
-<li class="chapter" data-level="9.7" data-path="io.html"><a href="io.html#arkusze-kalkulacyjne"><i class="fa fa-check"></i><b>9.7</b> Arkusze kalkulacyjne</a></li>
-<li class="chapter" data-level="9.8" data-path="io.html"><a href="io.html#inne-formaty"><i class="fa fa-check"></i><b>9.8</b> Inne formaty</a></li>
-<li class="chapter" data-level="9.9" data-path="io.html"><a href="io.html#zad9"><i class="fa fa-check"></i><b>9.9</b> Zadania</a></li>
+<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików<span></span></a><ul>
+<li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy<span></span></a></li>
+<li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#działania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.2</b> Działania na plikach i folderach<span></span></a></li>
+<li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#dane-internetowe"><i class="fa fa-check"></i><b>9.3</b> Dane internetowe<span></span></a></li>
+<li class="chapter" data-level="9.4" data-path="io.html"><a href="io.html#wczytywanie-plików-tekstowych"><i class="fa fa-check"></i><b>9.4</b> Wczytywanie plików tekstowych<span></span></a></li>
+<li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#zapisywanie-plików-tekstowych"><i class="fa fa-check"></i><b>9.5</b> Zapisywanie plików tekstowych<span></span></a></li>
+<li class="chapter" data-level="9.6" data-path="io.html"><a href="io.html#formaty-r"><i class="fa fa-check"></i><b>9.6</b> Formaty R<span></span></a></li>
+<li class="chapter" data-level="9.7" data-path="io.html"><a href="io.html#arkusze-kalkulacyjne"><i class="fa fa-check"></i><b>9.7</b> Arkusze kalkulacyjne<span></span></a></li>
+<li class="chapter" data-level="9.8" data-path="io.html"><a href="io.html#inne-formaty"><i class="fa fa-check"></i><b>9.8</b> Inne formaty<span></span></a></li>
+<li class="chapter" data-level="9.9" data-path="io.html"><a href="io.html#zad9"><i class="fa fa-check"></i><b>9.9</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="part"><span><b>II Narzędzia</b></span></li>
-<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>10.1</b> API</a></li>
-<li class="chapter" data-level="10.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsluga-komunikatow"><i class="fa fa-check"></i><b>10.2</b> Obsługa komunikatów</a></li>
-<li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe</a>
-<ul>
-<li class="chapter" data-level="10.3.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#klasy"><i class="fa fa-check"></i><b>10.3.1</b> Klasy</a></li>
-<li class="chapter" data-level="10.3.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#metody"><i class="fa fa-check"></i><b>10.3.2</b> Metody</a></li>
-<li class="chapter" data-level="10.3.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#konstruktory"><i class="fa fa-check"></i><b>10.3.3</b> Konstruktory</a></li>
+<li class="part"><span><b>II Narzędzia<span></span></b></span></li>
+<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje<span></span></a><ul>
+<li class="chapter" data-level="10.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>10.1</b> API<span></span></a></li>
+<li class="chapter" data-level="10.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsluga-komunikatow"><i class="fa fa-check"></i><b>10.2</b> Obsługa komunikatów<span></span></a></li>
+<li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe<span></span></a><ul>
+<li class="chapter" data-level="10.3.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#klasy"><i class="fa fa-check"></i><b>10.3.1</b> Klasy<span></span></a></li>
+<li class="chapter" data-level="10.3.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#metody"><i class="fa fa-check"></i><b>10.3.2</b> Metody<span></span></a></li>
+<li class="chapter" data-level="10.3.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#konstruktory"><i class="fa fa-check"></i><b>10.3.3</b> Konstruktory<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zad11"><i class="fa fa-check"></i><b>10.4</b> Zadania</a></li>
+<li class="chapter" data-level="10.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zad11"><i class="fa fa-check"></i><b>10.4</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.1</b> Testy jednostkowe</a></li>
-<li class="chapter" data-level="11.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>11.2</b> Profiling</a></li>
-<li class="chapter" data-level="11.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>11.3</b> Benchmarking</a></li>
-<li class="chapter" data-level="11.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zad12"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
+<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu<span></span></a><ul>
+<li class="chapter" data-level="11.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.1</b> Testy jednostkowe<span></span></a></li>
+<li class="chapter" data-level="11.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>11.2</b> Profiling<span></span></a></li>
+<li class="chapter" data-level="11.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>11.3</b> Benchmarking<span></span></a></li>
+<li class="chapter" data-level="11.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zad12"><i class="fa fa-check"></i><b>11.4</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady</a>
-<ul>
-<li class="chapter" data-level="12.1.1" data-path="debugging.html"><a href="debugging.html#pakiet-reprex"><i class="fa fa-check"></i><b>12.1.1</b> Pakiet <strong>reprex</strong></a></li>
-<li class="chapter" data-level="12.1.2" data-path="debugging.html"><a href="debugging.html#tworzenie-powtarzalnego-przykładu"><i class="fa fa-check"></i><b>12.1.2</b> Tworzenie powtarzalnego przykładu</a></li>
+<li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie<span></span></a><ul>
+<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady<span></span></a><ul>
+<li class="chapter" data-level="12.1.1" data-path="debugging.html"><a href="debugging.html#pakiet-reprex"><i class="fa fa-check"></i><b>12.1.1</b> Pakiet <strong>reprex</strong><span></span></a></li>
+<li class="chapter" data-level="12.1.2" data-path="debugging.html"><a href="debugging.html#tworzenie-powtarzalnego-przykładu"><i class="fa fa-check"></i><b>12.1.2</b> Tworzenie powtarzalnego przykładu<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="debugging.html"><a href="debugging.html#proces-debugowania"><i class="fa fa-check"></i><b>12.2</b> Proces debugowania</a></li>
-<li class="chapter" data-level="12.3" data-path="debugging.html"><a href="debugging.html#debuging-print"><i class="fa fa-check"></i><b>12.3</b> Podstawowe podejście do debugowania</a></li>
-<li class="chapter" data-level="12.4" data-path="debugging.html"><a href="debugging.html#debugger"><i class="fa fa-check"></i><b>12.4</b> Debugger</a></li>
-<li class="chapter" data-level="12.5" data-path="debugging.html"><a href="debugging.html#zad13"><i class="fa fa-check"></i><b>12.5</b> Zadania</a></li>
+<li class="chapter" data-level="12.2" data-path="debugging.html"><a href="debugging.html#proces-debugowania"><i class="fa fa-check"></i><b>12.2</b> Proces debugowania<span></span></a></li>
+<li class="chapter" data-level="12.3" data-path="debugging.html"><a href="debugging.html#debuging-print"><i class="fa fa-check"></i><b>12.3</b> Podstawowe podejście do debugowania<span></span></a></li>
+<li class="chapter" data-level="12.4" data-path="debugging.html"><a href="debugging.html#debugger"><i class="fa fa-check"></i><b>12.4</b> Debugger<span></span></a></li>
+<li class="chapter" data-level="12.5" data-path="debugging.html"><a href="debugging.html#zad13"><i class="fa fa-check"></i><b>12.5</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik</a>
-<ul>
-<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++</a>
-<ul>
-<li class="chapter" data-level="13.1.1" data-path="lacznik.html"><a href="lacznik.html#cppFunction"><i class="fa fa-check"></i><b>13.1.1</b> Wywoływanie kodu C++ wewnątrz skryptu R</a></li>
-<li class="chapter" data-level="13.1.2" data-path="lacznik.html"><a href="lacznik.html#sourceCpp"><i class="fa fa-check"></i><b>13.1.2</b> Wywoływanie kodu z plików .cpp</a></li>
+<li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik<span></span></a><ul>
+<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++<span></span></a><ul>
+<li class="chapter" data-level="13.1.1" data-path="lacznik.html"><a href="lacznik.html#cppFunction"><i class="fa fa-check"></i><b>13.1.1</b> Wywoływanie kodu C++ wewnątrz skryptu R<span></span></a></li>
+<li class="chapter" data-level="13.1.2" data-path="lacznik.html"><a href="lacznik.html#sourceCpp"><i class="fa fa-check"></i><b>13.1.2</b> Wywoływanie kodu z plików .cpp<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="13.2" data-path="lacznik.html"><a href="lacznik.html#python"><i class="fa fa-check"></i><b>13.2</b> Python</a></li>
-<li class="chapter" data-level="13.3" data-path="lacznik.html"><a href="lacznik.html#powloka-systemowa"><i class="fa fa-check"></i><b>13.3</b> Powłoka systemowa</a></li>
-<li class="chapter" data-level="13.4" data-path="lacznik.html"><a href="lacznik.html#zad14"><i class="fa fa-check"></i><b>13.4</b> Zadania</a></li>
+<li class="chapter" data-level="13.2" data-path="lacznik.html"><a href="lacznik.html#python"><i class="fa fa-check"></i><b>13.2</b> Python<span></span></a></li>
+<li class="chapter" data-level="13.3" data-path="lacznik.html"><a href="lacznik.html#powloka-systemowa"><i class="fa fa-check"></i><b>13.3</b> Powłoka systemowa<span></span></a></li>
+<li class="chapter" data-level="13.4" data-path="lacznik.html"><a href="lacznik.html#zad14"><i class="fa fa-check"></i><b>13.4</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji</a>
-<ul>
-<li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git</a>
-<ul>
-<li class="chapter" data-level="14.1.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#konfiguracja-systemu-git"><i class="fa fa-check"></i><b>14.1.1</b> Konfiguracja systemu Git</a></li>
-<li class="chapter" data-level="14.1.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium"><i class="fa fa-check"></i><b>14.1.2</b> Repozytorium</a></li>
-<li class="chapter" data-level="14.1.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodawanie-zmian"><i class="fa fa-check"></i><b>14.1.3</b> Dodawanie zmian</a></li>
-<li class="chapter" data-level="14.1.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sprawdzanie-zmian"><i class="fa fa-check"></i><b>14.1.4</b> Sprawdzanie zmian</a></li>
-<li class="chapter" data-level="14.1.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zatwierdzanie-zmian"><i class="fa fa-check"></i><b>14.1.5</b> Zatwierdzanie zmian</a></li>
-<li class="chapter" data-level="14.1.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#branches"><i class="fa fa-check"></i><b>14.1.6</b> Rozgałęzienia</a></li>
-<li class="chapter" data-level="14.1.7" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-zdalne"><i class="fa fa-check"></i><b>14.1.7</b> Repozytorium zdalne</a></li>
-<li class="chapter" data-level="14.1.8" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#wysylanie-zmian"><i class="fa fa-check"></i><b>14.1.8</b> Wysyłanie zmian</a></li>
-<li class="chapter" data-level="14.1.9" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#aktualizowanie-zmian"><i class="fa fa-check"></i><b>14.1.9</b> Aktualizowanie zmian</a></li>
+<li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji<span></span></a><ul>
+<li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git<span></span></a><ul>
+<li class="chapter" data-level="14.1.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#konfiguracja-systemu-git"><i class="fa fa-check"></i><b>14.1.1</b> Konfiguracja systemu Git<span></span></a></li>
+<li class="chapter" data-level="14.1.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium"><i class="fa fa-check"></i><b>14.1.2</b> Repozytorium<span></span></a></li>
+<li class="chapter" data-level="14.1.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodawanie-zmian"><i class="fa fa-check"></i><b>14.1.3</b> Dodawanie zmian<span></span></a></li>
+<li class="chapter" data-level="14.1.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sprawdzanie-zmian"><i class="fa fa-check"></i><b>14.1.4</b> Sprawdzanie zmian<span></span></a></li>
+<li class="chapter" data-level="14.1.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zatwierdzanie-zmian"><i class="fa fa-check"></i><b>14.1.5</b> Zatwierdzanie zmian<span></span></a></li>
+<li class="chapter" data-level="14.1.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#branches"><i class="fa fa-check"></i><b>14.1.6</b> Rozgałęzienia<span></span></a></li>
+<li class="chapter" data-level="14.1.7" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-zdalne"><i class="fa fa-check"></i><b>14.1.7</b> Repozytorium zdalne<span></span></a></li>
+<li class="chapter" data-level="14.1.8" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#wysylanie-zmian"><i class="fa fa-check"></i><b>14.1.8</b> Wysyłanie zmian<span></span></a></li>
+<li class="chapter" data-level="14.1.9" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#aktualizowanie-zmian"><i class="fa fa-check"></i><b>14.1.9</b> Aktualizowanie zmian<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub</a>
-<ul>
-<li class="chapter" data-level="14.2.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#tworzenie-zdanego-repo"><i class="fa fa-check"></i><b>14.2.1</b> Tworzenie zdanego repo</a></li>
-<li class="chapter" data-level="14.2.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-github"><i class="fa fa-check"></i><b>14.2.2</b> Repozytorium GitHub</a></li>
-<li class="chapter" data-level="14.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-możliwości-github"><i class="fa fa-check"></i><b>14.2.3</b> Dodatkowe możliwości GitHub</a></li>
+<li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub<span></span></a><ul>
+<li class="chapter" data-level="14.2.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#tworzenie-zdanego-repo"><i class="fa fa-check"></i><b>14.2.1</b> Tworzenie zdanego repo<span></span></a></li>
+<li class="chapter" data-level="14.2.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-github"><i class="fa fa-check"></i><b>14.2.2</b> Repozytorium GitHub<span></span></a></li>
+<li class="chapter" data-level="14.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-możliwości-github"><i class="fa fa-check"></i><b>14.2.3</b> Dodatkowe możliwości GitHub<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="14.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rstudio-git"><i class="fa fa-check"></i><b>14.3</b> Kontrola wersji w RStudio</a></li>
-<li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git</a>
-<ul>
-<li class="chapter" data-level="14.4.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#nowy-projekt"><i class="fa fa-check"></i><b>14.4.1</b> Nowy projekt</a></li>
-<li class="chapter" data-level="14.4.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#istniejacy-projekt"><i class="fa fa-check"></i><b>14.4.2</b> Istniejący projekt</a></li>
+<li class="chapter" data-level="14.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rstudio-git"><i class="fa fa-check"></i><b>14.3</b> Kontrola wersji w RStudio<span></span></a></li>
+<li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git<span></span></a><ul>
+<li class="chapter" data-level="14.4.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#nowy-projekt"><i class="fa fa-check"></i><b>14.4.1</b> Nowy projekt<span></span></a></li>
+<li class="chapter" data-level="14.4.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#istniejacy-projekt"><i class="fa fa-check"></i><b>14.4.2</b> Istniejący projekt<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="14.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#problemy-z-kontrolą-wersji"><i class="fa fa-check"></i><b>14.5</b> Problemy z kontrolą wersji</a></li>
-<li class="chapter" data-level="14.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zad15"><i class="fa fa-check"></i><b>14.6</b> Zadania</a></li>
+<li class="chapter" data-level="14.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#problemy-z-kontrolą-wersji"><i class="fa fa-check"></i><b>14.5</b> Problemy z kontrolą wersji<span></span></a></li>
+<li class="chapter" data-level="14.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zad15"><i class="fa fa-check"></i><b>14.6</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a>
-<ul>
-<li class="chapter" data-level="15.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#nazwa-pakietu"><i class="fa fa-check"></i><b>15.1</b> Nazwa pakietu</a></li>
-<li class="chapter" data-level="15.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-szkieletu-pakietu"><i class="fa fa-check"></i><b>15.2</b> Tworzenie szkieletu pakietu</a></li>
-<li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>15.3</b> Opis pakietu</a></li>
-<li class="chapter" data-level="15.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>15.4</b> Rozwijanie pakietu</a></li>
-<li class="chapter" data-level="15.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-i-dokumentacja-funkcji"><i class="fa fa-check"></i><b>15.5</b> Tworzenie i dokumentacja funkcji</a></li>
-<li class="chapter" data-level="15.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zależności"><i class="fa fa-check"></i><b>15.6</b> Zależności</a></li>
-<li class="chapter" data-level="15.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#sprawdzanie-pakietu"><i class="fa fa-check"></i><b>15.7</b> Sprawdzanie pakietu</a></li>
-<li class="chapter" data-level="15.8" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#instalowanie-pakietu"><i class="fa fa-check"></i><b>15.8</b> Instalowanie pakietu</a></li>
-<li class="chapter" data-level="15.9" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-pakietu"><i class="fa fa-check"></i><b>15.9</b> Dokumentacja pakietu</a></li>
-<li class="chapter" data-level="15.10" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#wbudowane-testy"><i class="fa fa-check"></i><b>15.10</b> Wbudowane testy</a></li>
-<li class="chapter" data-level="15.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietów"><i class="fa fa-check"></i><b>15.11</b> Publikowanie pakietów</a></li>
-<li class="chapter" data-level="15.12" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zad16"><i class="fa fa-check"></i><b>15.12</b> Zadania</a></li>
+<li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety<span></span></a><ul>
+<li class="chapter" data-level="15.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#nazwa-pakietu"><i class="fa fa-check"></i><b>15.1</b> Nazwa pakietu<span></span></a></li>
+<li class="chapter" data-level="15.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-szkieletu-pakietu"><i class="fa fa-check"></i><b>15.2</b> Tworzenie szkieletu pakietu<span></span></a></li>
+<li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>15.3</b> Opis pakietu<span></span></a></li>
+<li class="chapter" data-level="15.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>15.4</b> Rozwijanie pakietu<span></span></a></li>
+<li class="chapter" data-level="15.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-i-dokumentacja-funkcji"><i class="fa fa-check"></i><b>15.5</b> Tworzenie i dokumentacja funkcji<span></span></a></li>
+<li class="chapter" data-level="15.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zależności"><i class="fa fa-check"></i><b>15.6</b> Zależności<span></span></a></li>
+<li class="chapter" data-level="15.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#sprawdzanie-pakietu"><i class="fa fa-check"></i><b>15.7</b> Sprawdzanie pakietu<span></span></a></li>
+<li class="chapter" data-level="15.8" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#instalowanie-pakietu"><i class="fa fa-check"></i><b>15.8</b> Instalowanie pakietu<span></span></a></li>
+<li class="chapter" data-level="15.9" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-pakietu"><i class="fa fa-check"></i><b>15.9</b> Dokumentacja pakietu<span></span></a></li>
+<li class="chapter" data-level="15.10" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#wbudowane-testy"><i class="fa fa-check"></i><b>15.10</b> Wbudowane testy<span></span></a></li>
+<li class="chapter" data-level="15.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietów"><i class="fa fa-check"></i><b>15.11</b> Publikowanie pakietów<span></span></a></li>
+<li class="chapter" data-level="15.12" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zad16"><i class="fa fa-check"></i><b>15.12</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie</a>
-<ul>
-<li class="chapter" data-level="16.1" data-path="podsumowanie.html"><a href="podsumowanie.html#grafika"><i class="fa fa-check"></i><b>16.1</b> Grafika</a></li>
-<li class="chapter" data-level="16.2" data-path="podsumowanie.html"><a href="podsumowanie.html#analiza-danych"><i class="fa fa-check"></i><b>16.2</b> Analiza danych</a></li>
-<li class="chapter" data-level="16.3" data-path="podsumowanie.html"><a href="podsumowanie.html#inne-zastosowania"><i class="fa fa-check"></i><b>16.3</b> Inne zastosowania</a></li>
-<li class="chapter" data-level="16.4" data-path="podsumowanie.html"><a href="podsumowanie.html#programowanie-w-r"><i class="fa fa-check"></i><b>16.4</b> Programowanie w R</a></li>
-<li class="chapter" data-level="16.5" data-path="podsumowanie.html"><a href="podsumowanie.html#co-dalej"><i class="fa fa-check"></i><b>16.5</b> Co dalej?</a></li>
+<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie<span></span></a><ul>
+<li class="chapter" data-level="16.1" data-path="podsumowanie.html"><a href="podsumowanie.html#grafika"><i class="fa fa-check"></i><b>16.1</b> Grafika<span></span></a></li>
+<li class="chapter" data-level="16.2" data-path="podsumowanie.html"><a href="podsumowanie.html#analiza-danych"><i class="fa fa-check"></i><b>16.2</b> Analiza danych<span></span></a></li>
+<li class="chapter" data-level="16.3" data-path="podsumowanie.html"><a href="podsumowanie.html#inne-zastosowania"><i class="fa fa-check"></i><b>16.3</b> Inne zastosowania<span></span></a></li>
+<li class="chapter" data-level="16.4" data-path="podsumowanie.html"><a href="podsumowanie.html#programowanie-w-r"><i class="fa fa-check"></i><b>16.4</b> Programowanie w R<span></span></a></li>
+<li class="chapter" data-level="16.5" data-path="podsumowanie.html"><a href="podsumowanie.html#co-dalej"><i class="fa fa-check"></i><b>16.5</b> Co dalej?<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
+<li><a href="bibliografia.html#bibliografia">Bibliografia<span></span></a></li>
 <li class="divider"></li>
 <li><a href="https://nowosad.github.io/">Jakub Nowosad</a></li>
 
@@ -388,12 +357,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="zlozone-obiekty" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Złożone obiekty</h1>
+<div id="zlozone-obiekty" class="section level1 hasAnchor">
+<h1><span class="header-section-number">7</span> Złożone obiekty<a href="zlozone-obiekty.html#zlozone-obiekty" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>W rozdziale <a href="proste-obiekty.html#proste-obiekty">5</a> omówiono wektory atomowe, które są obiektami jednowymiarowymi zawierającymi tylko jeden typ danych.
 Ten rozdział jest poświęcony pozostałymi trzema podstawowymi klasami obiektów w R - macierzami, ramkami danych i listami (sekcje <a href="zlozone-obiekty.html#macierze">7.1</a>, <a href="zlozone-obiekty.html#df">7.2</a>, i <a href="zlozone-obiekty.html#listy">7.3</a>).</p>
-<div id="macierze" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> Macierze</h2>
+<div id="macierze" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.1</span> Macierze<a href="zlozone-obiekty.html#macierze" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Macierze (ang. <em>matrix</em>), podobnie jak wektory, są obiektami homogenicznymi - jedna macierz może przyjmować dane tylko jednego typu.
 Od wektorów różnią się jednak tym, że są dwuwymiarowe - wartości ułożone są w kolejnych wierszach i kolumnach.
 Macierze są używane do różnorodnych obliczeń matematycznych i statystycznych.
@@ -402,131 +371,133 @@ W uproszczeniu można o nich myśleć jako o reprezentacji komputerowej zdjęcia
 <div class="rmdinfo">
 W R istnieją też wielowymiarowe obiekty podobne do macierzy zwane matrycami (ang. <em>array</em>).
 </div>
-<div id="tworzenie" class="section level3" number="7.1.1">
-<h3><span class="header-section-number">7.1.1</span> Tworzenie</h3>
+
+<div id="tworzenie" class="section level3 hasAnchor">
+<h3><span class="header-section-number">7.1.1</span> Tworzenie<a href="zlozone-obiekty.html#tworzenie" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Tworzenie macierzy odbywa się poprzez użycie funkcji <code>matrix()</code>, która przyjmuje wartości wektora jako pierwszy argument, a następnie informacje o wymiarach w postaci liczby wierszy (<code>nrow</code>) i liczby kolumn (<code>ncol</code>).</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="zlozone-obiekty.html#cb183-1"></a>macierz1 =<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">12</span>, <span class="dt">nrow =</span> <span class="dv">4</span>, <span class="dt">ncol =</span> <span class="dv">3</span>)</span>
-<span id="cb183-2"><a href="zlozone-obiekty.html#cb183-2"></a>macierz1</span>
-<span id="cb183-3"><a href="zlozone-obiekty.html#cb183-3"></a><span class="co">#&gt;      [,1] [,2] [,3]</span></span>
-<span id="cb183-4"><a href="zlozone-obiekty.html#cb183-4"></a><span class="co">#&gt; [1,]    1    5    9</span></span>
-<span id="cb183-5"><a href="zlozone-obiekty.html#cb183-5"></a><span class="co">#&gt; [2,]    2    6   10</span></span>
-<span id="cb183-6"><a href="zlozone-obiekty.html#cb183-6"></a><span class="co">#&gt; [3,]    3    7   11</span></span>
-<span id="cb183-7"><a href="zlozone-obiekty.html#cb183-7"></a><span class="co">#&gt; [4,]    4    8   12</span></span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb183-1" title="1">macierz1 =<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">12</span>, <span class="dt">nrow =</span> <span class="dv">4</span>, <span class="dt">ncol =</span> <span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb183-2" title="2">macierz1</a>
+<a class="sourceLine" id="cb183-3" title="3"><span class="co">#&gt;      [,1] [,2] [,3]</span></a>
+<a class="sourceLine" id="cb183-4" title="4"><span class="co">#&gt; [1,]    1    5    9</span></a>
+<a class="sourceLine" id="cb183-5" title="5"><span class="co">#&gt; [2,]    2    6   10</span></a>
+<a class="sourceLine" id="cb183-6" title="6"><span class="co">#&gt; [3,]    3    7   11</span></a>
+<a class="sourceLine" id="cb183-7" title="7"><span class="co">#&gt; [4,]    4    8   12</span></a></code></pre></div>
 <p>Domyślnie w R wartości wpisywane są do macierzy do kolejnych kolumn startując od lewej strony.
 Możliwe jest jednak ustawienie argumentu <code>byrow = TRUE</code> co powoduje wpisywanie podanych wartości dla kolejnych wierszy zamiast kolejnych kolumn.</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="zlozone-obiekty.html#cb184-1"></a>macierz2 =<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">12</span>, <span class="dt">nrow =</span> <span class="dv">4</span>, <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb184-2"><a href="zlozone-obiekty.html#cb184-2"></a>macierz2</span>
-<span id="cb184-3"><a href="zlozone-obiekty.html#cb184-3"></a><span class="co">#&gt;      [,1] [,2] [,3]</span></span>
-<span id="cb184-4"><a href="zlozone-obiekty.html#cb184-4"></a><span class="co">#&gt; [1,]    1    2    3</span></span>
-<span id="cb184-5"><a href="zlozone-obiekty.html#cb184-5"></a><span class="co">#&gt; [2,]    4    5    6</span></span>
-<span id="cb184-6"><a href="zlozone-obiekty.html#cb184-6"></a><span class="co">#&gt; [3,]    7    8    9</span></span>
-<span id="cb184-7"><a href="zlozone-obiekty.html#cb184-7"></a><span class="co">#&gt; [4,]   10   11   12</span></span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb184-1" title="1">macierz2 =<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">12</span>, <span class="dt">nrow =</span> <span class="dv">4</span>, <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb184-2" title="2">macierz2</a>
+<a class="sourceLine" id="cb184-3" title="3"><span class="co">#&gt;      [,1] [,2] [,3]</span></a>
+<a class="sourceLine" id="cb184-4" title="4"><span class="co">#&gt; [1,]    1    2    3</span></a>
+<a class="sourceLine" id="cb184-5" title="5"><span class="co">#&gt; [2,]    4    5    6</span></a>
+<a class="sourceLine" id="cb184-6" title="6"><span class="co">#&gt; [3,]    7    8    9</span></a>
+<a class="sourceLine" id="cb184-7" title="7"><span class="co">#&gt; [4,]   10   11   12</span></a></code></pre></div>
 </div>
-<div id="podstawowe-funkcje" class="section level3" number="7.1.2">
-<h3><span class="header-section-number">7.1.2</span> Podstawowe funkcje</h3>
+<div id="podstawowe-funkcje" class="section level3 hasAnchor">
+<h3><span class="header-section-number">7.1.2</span> Podstawowe funkcje<a href="zlozone-obiekty.html#podstawowe-funkcje" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Sprawdzenie jakiej klasy jest podany obiekt odbywa się używając funkcji <code>class()</code>.</p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="zlozone-obiekty.html#cb185-1"></a><span class="kw">class</span>(macierz2)</span>
-<span id="cb185-2"><a href="zlozone-obiekty.html#cb185-2"></a><span class="co">#&gt; [1] &quot;matrix&quot; &quot;array&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb185-1" title="1"><span class="kw">class</span>(macierz2)</a>
+<a class="sourceLine" id="cb185-2" title="2"><span class="co">#&gt; [1] &quot;matrix&quot; &quot;array&quot;</span></a></code></pre></div>
 <p>Więcej informacji na temat obiektu można poznać używając funkcji <code>str()</code>.
 Jej działanie na macierzy jest bardzo podobne do wyniku na wektorach (zobacz sekcję <a href="proste-obiekty.html#pf-vector">5.3</a>) - wyświetlony zostaje typ obiektu (np. <code>int</code>), jego wymiary (np. <code>[1:4, 1:3]</code>) i kilka przykładowych wartości (np. <code>1 4 7 10 2 5 8 11 3 6</code>).</p>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="zlozone-obiekty.html#cb186-1"></a><span class="kw">str</span>(macierz2)</span>
-<span id="cb186-2"><a href="zlozone-obiekty.html#cb186-2"></a><span class="co">#&gt;  int [1:4, 1:3] 1 4 7 10 2 5 8 11 3 6 ...</span></span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb186-1" title="1"><span class="kw">str</span>(macierz2)</a>
+<a class="sourceLine" id="cb186-2" title="2"><span class="co">#&gt;  int [1:4, 1:3] 1 4 7 10 2 5 8 11 3 6 ...</span></a></code></pre></div>
 <p>Macierz może przyjmować tylko jeden typ obiektów, co można sprawdzić używając funkcji <code>typeof()</code>.</p>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="zlozone-obiekty.html#cb187-1"></a><span class="kw">typeof</span>(macierz2)</span>
-<span id="cb187-2"><a href="zlozone-obiekty.html#cb187-2"></a><span class="co">#&gt; [1] &quot;integer&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb187-1" title="1"><span class="kw">typeof</span>(macierz2)</a>
+<a class="sourceLine" id="cb187-2" title="2"><span class="co">#&gt; [1] &quot;integer&quot;</span></a></code></pre></div>
 <p>Wektory atomowe mają tylko jeden wymiar więc ich długość oznacza liczbę elementów i może być sprawdzona używając funkcji <code>length()</code>.
 W przypadku macierzy możliwe jest dodatkowo sprawdzenie liczby występujących wierszy (<code>nrow</code>) i kolumn (<code>ncol</code>).</p>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="zlozone-obiekty.html#cb188-1"></a><span class="kw">nrow</span>(macierz2)</span>
-<span id="cb188-2"><a href="zlozone-obiekty.html#cb188-2"></a><span class="co">#&gt; [1] 4</span></span>
-<span id="cb188-3"><a href="zlozone-obiekty.html#cb188-3"></a><span class="kw">ncol</span>(macierz2)</span>
-<span id="cb188-4"><a href="zlozone-obiekty.html#cb188-4"></a><span class="co">#&gt; [1] 3</span></span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb188-1" title="1"><span class="kw">nrow</span>(macierz2)</a>
+<a class="sourceLine" id="cb188-2" title="2"><span class="co">#&gt; [1] 4</span></a>
+<a class="sourceLine" id="cb188-3" title="3"><span class="kw">ncol</span>(macierz2)</a>
+<a class="sourceLine" id="cb188-4" title="4"><span class="co">#&gt; [1] 3</span></a></code></pre></div>
 <p>Domyślnie macierze nie zawierają nazw kolumn ani wierszy.</p>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="zlozone-obiekty.html#cb189-1"></a><span class="kw">colnames</span>(macierz2)</span>
-<span id="cb189-2"><a href="zlozone-obiekty.html#cb189-2"></a><span class="co">#&gt; NULL</span></span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb189-1" title="1"><span class="kw">colnames</span>(macierz2)</a>
+<a class="sourceLine" id="cb189-2" title="2"><span class="co">#&gt; NULL</span></a></code></pre></div>
 <p>Sprawdzenie czy dodanie nazw kolumn jest jednak możliwe używając funkcji <code>colnames()</code>.
 Może to pozwolić w przyszłości na wydzielanie konkretnych wartości na podstawie nazw kolumn.</p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="zlozone-obiekty.html#cb190-1"></a><span class="kw">colnames</span>(macierz2) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
-<span id="cb190-2"><a href="zlozone-obiekty.html#cb190-2"></a>macierz2</span>
-<span id="cb190-3"><a href="zlozone-obiekty.html#cb190-3"></a><span class="co">#&gt;       a  b  c</span></span>
-<span id="cb190-4"><a href="zlozone-obiekty.html#cb190-4"></a><span class="co">#&gt; [1,]  1  2  3</span></span>
-<span id="cb190-5"><a href="zlozone-obiekty.html#cb190-5"></a><span class="co">#&gt; [2,]  4  5  6</span></span>
-<span id="cb190-6"><a href="zlozone-obiekty.html#cb190-6"></a><span class="co">#&gt; [3,]  7  8  9</span></span>
-<span id="cb190-7"><a href="zlozone-obiekty.html#cb190-7"></a><span class="co">#&gt; [4,] 10 11 12</span></span>
-<span id="cb190-8"><a href="zlozone-obiekty.html#cb190-8"></a><span class="kw">colnames</span>(macierz2)</span>
-<span id="cb190-9"><a href="zlozone-obiekty.html#cb190-9"></a><span class="co">#&gt; [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb190-1" title="1"><span class="kw">colnames</span>(macierz2) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)</a>
+<a class="sourceLine" id="cb190-2" title="2">macierz2</a>
+<a class="sourceLine" id="cb190-3" title="3"><span class="co">#&gt;       a  b  c</span></a>
+<a class="sourceLine" id="cb190-4" title="4"><span class="co">#&gt; [1,]  1  2  3</span></a>
+<a class="sourceLine" id="cb190-5" title="5"><span class="co">#&gt; [2,]  4  5  6</span></a>
+<a class="sourceLine" id="cb190-6" title="6"><span class="co">#&gt; [3,]  7  8  9</span></a>
+<a class="sourceLine" id="cb190-7" title="7"><span class="co">#&gt; [4,] 10 11 12</span></a>
+<a class="sourceLine" id="cb190-8" title="8"><span class="kw">colnames</span>(macierz2)</a>
+<a class="sourceLine" id="cb190-9" title="9"><span class="co">#&gt; [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</span></a></code></pre></div>
 <!-- `rownames()` - info about problems with rownames (block) -->
 </div>
-<div id="wydzielanie-1" class="section level3" number="7.1.3">
-<h3><span class="header-section-number">7.1.3</span> Wydzielanie</h3>
+<div id="wydzielanie-1" class="section level3 hasAnchor">
+<h3><span class="header-section-number">7.1.3</span> Wydzielanie<a href="zlozone-obiekty.html#wydzielanie-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Podobnie jak w przypadku wektorów (rozdział <a href="proste-obiekty.html#proste-obiekty">5</a>), macierze można wydzielać używając operatora <code>[]</code>.
 W tym wypadku odbywa się to jednak w oparciu o dwa indeksy - jeden dla wiersza, drugi dla kolumny - <code>[wiersz, kolumna]</code>.</p>
 <p>Przykładowo, poniżej zostaną wybrane tylko wartości znajdujące się w pierwszy i drugim wierszy oraz pierwszej i trzeciej kolumnie.</p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="zlozone-obiekty.html#cb191-1"></a>macierz2[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</span>
-<span id="cb191-2"><a href="zlozone-obiekty.html#cb191-2"></a><span class="co">#&gt;      a c</span></span>
-<span id="cb191-3"><a href="zlozone-obiekty.html#cb191-3"></a><span class="co">#&gt; [1,] 1 3</span></span>
-<span id="cb191-4"><a href="zlozone-obiekty.html#cb191-4"></a><span class="co">#&gt; [2,] 4 6</span></span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb191-1" title="1">macierz2[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</a>
+<a class="sourceLine" id="cb191-2" title="2"><span class="co">#&gt;      a c</span></a>
+<a class="sourceLine" id="cb191-3" title="3"><span class="co">#&gt; [1,] 1 3</span></a>
+<a class="sourceLine" id="cb191-4" title="4"><span class="co">#&gt; [2,] 4 6</span></a></code></pre></div>
 <p>Do wydzielania macierzy czy ramek danych też często przydatne jest używanie elementu pustego.
 Pozwala on na wybór wszystkich wartości w danym wymiarze.
 Na poniższy przykładzie zostały wybrane wiersze jeden i dwa oraz, z uwagi na element pusty, wszystkie kolumny.</p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="zlozone-obiekty.html#cb192-1"></a>macierz2[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), ]</span>
-<span id="cb192-2"><a href="zlozone-obiekty.html#cb192-2"></a><span class="co">#&gt;      a b c</span></span>
-<span id="cb192-3"><a href="zlozone-obiekty.html#cb192-3"></a><span class="co">#&gt; [1,] 1 2 3</span></span>
-<span id="cb192-4"><a href="zlozone-obiekty.html#cb192-4"></a><span class="co">#&gt; [2,] 4 5 6</span></span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb192-1" title="1">macierz2[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), ]</a>
+<a class="sourceLine" id="cb192-2" title="2"><span class="co">#&gt;      a b c</span></a>
+<a class="sourceLine" id="cb192-3" title="3"><span class="co">#&gt; [1,] 1 2 3</span></a>
+<a class="sourceLine" id="cb192-4" title="4"><span class="co">#&gt; [2,] 4 5 6</span></a></code></pre></div>
 <p>Element pusty można też zastosować do wybrania wszystkich wierszy.</p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="zlozone-obiekty.html#cb193-1"></a>macierz2[, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</span>
-<span id="cb193-2"><a href="zlozone-obiekty.html#cb193-2"></a><span class="co">#&gt;       a  c</span></span>
-<span id="cb193-3"><a href="zlozone-obiekty.html#cb193-3"></a><span class="co">#&gt; [1,]  1  3</span></span>
-<span id="cb193-4"><a href="zlozone-obiekty.html#cb193-4"></a><span class="co">#&gt; [2,]  4  6</span></span>
-<span id="cb193-5"><a href="zlozone-obiekty.html#cb193-5"></a><span class="co">#&gt; [3,]  7  9</span></span>
-<span id="cb193-6"><a href="zlozone-obiekty.html#cb193-6"></a><span class="co">#&gt; [4,] 10 12</span></span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb193-1" title="1">macierz2[, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</a>
+<a class="sourceLine" id="cb193-2" title="2"><span class="co">#&gt;       a  c</span></a>
+<a class="sourceLine" id="cb193-3" title="3"><span class="co">#&gt; [1,]  1  3</span></a>
+<a class="sourceLine" id="cb193-4" title="4"><span class="co">#&gt; [2,]  4  6</span></a>
+<a class="sourceLine" id="cb193-5" title="5"><span class="co">#&gt; [3,]  7  9</span></a>
+<a class="sourceLine" id="cb193-6" title="6"><span class="co">#&gt; [4,] 10 12</span></a></code></pre></div>
 <p>Wszystkie pozostałe sposoby wydzielania opisane dla wektorów w sekcji <a href="proste-obiekty.html#wydzielanie">5.6</a> działają również na macierzach.
 Możliwe jest więc używanie wektora logicznego czy nazw kolumn.</p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="zlozone-obiekty.html#cb194-1"></a>macierz2[, <span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)]</span>
-<span id="cb194-2"><a href="zlozone-obiekty.html#cb194-2"></a><span class="co">#&gt;       a  c</span></span>
-<span id="cb194-3"><a href="zlozone-obiekty.html#cb194-3"></a><span class="co">#&gt; [1,]  1  3</span></span>
-<span id="cb194-4"><a href="zlozone-obiekty.html#cb194-4"></a><span class="co">#&gt; [2,]  4  6</span></span>
-<span id="cb194-5"><a href="zlozone-obiekty.html#cb194-5"></a><span class="co">#&gt; [3,]  7  9</span></span>
-<span id="cb194-6"><a href="zlozone-obiekty.html#cb194-6"></a><span class="co">#&gt; [4,] 10 12</span></span>
-<span id="cb194-7"><a href="zlozone-obiekty.html#cb194-7"></a>macierz2[, <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;c&quot;</span>)]</span>
-<span id="cb194-8"><a href="zlozone-obiekty.html#cb194-8"></a><span class="co">#&gt;       a  c</span></span>
-<span id="cb194-9"><a href="zlozone-obiekty.html#cb194-9"></a><span class="co">#&gt; [1,]  1  3</span></span>
-<span id="cb194-10"><a href="zlozone-obiekty.html#cb194-10"></a><span class="co">#&gt; [2,]  4  6</span></span>
-<span id="cb194-11"><a href="zlozone-obiekty.html#cb194-11"></a><span class="co">#&gt; [3,]  7  9</span></span>
-<span id="cb194-12"><a href="zlozone-obiekty.html#cb194-12"></a><span class="co">#&gt; [4,] 10 12</span></span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb194-1" title="1">macierz2[, <span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>)]</a>
+<a class="sourceLine" id="cb194-2" title="2"><span class="co">#&gt;       a  c</span></a>
+<a class="sourceLine" id="cb194-3" title="3"><span class="co">#&gt; [1,]  1  3</span></a>
+<a class="sourceLine" id="cb194-4" title="4"><span class="co">#&gt; [2,]  4  6</span></a>
+<a class="sourceLine" id="cb194-5" title="5"><span class="co">#&gt; [3,]  7  9</span></a>
+<a class="sourceLine" id="cb194-6" title="6"><span class="co">#&gt; [4,] 10 12</span></a>
+<a class="sourceLine" id="cb194-7" title="7">macierz2[, <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;c&quot;</span>)]</a>
+<a class="sourceLine" id="cb194-8" title="8"><span class="co">#&gt;       a  c</span></a>
+<a class="sourceLine" id="cb194-9" title="9"><span class="co">#&gt; [1,]  1  3</span></a>
+<a class="sourceLine" id="cb194-10" title="10"><span class="co">#&gt; [2,]  4  6</span></a>
+<a class="sourceLine" id="cb194-11" title="11"><span class="co">#&gt; [3,]  7  9</span></a>
+<a class="sourceLine" id="cb194-12" title="12"><span class="co">#&gt; [4,] 10 12</span></a></code></pre></div>
 </div>
-<div id="łączenie" class="section level3" number="7.1.4">
-<h3><span class="header-section-number">7.1.4</span> Łączenie</h3>
+<div id="łączenie" class="section level3 hasAnchor">
+<h3><span class="header-section-number">7.1.4</span> Łączenie<a href="zlozone-obiekty.html#łączenie" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Łączenie wektorów odbywa się używając jednej funkcji <code>c()</code>.
 W przypadku macierzy występują jednak dwa wymiary - możliwe jest połączenie macierzy wierszami lub kolumnami.
 W efekcie istnieją do tego dwie oddzielne funkcje <code>rbind()</code> i <code>cbind()</code>.</p>
 <p>Pierwsza z nich łączy macierze wierszami, a liczba kolumn pozostaje niezmieniona.</p>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="zlozone-obiekty.html#cb195-1"></a>macierz3 =<span class="st"> </span><span class="kw">rbind</span>(macierz1, macierz2)</span>
-<span id="cb195-2"><a href="zlozone-obiekty.html#cb195-2"></a>macierz3</span>
-<span id="cb195-3"><a href="zlozone-obiekty.html#cb195-3"></a><span class="co">#&gt;       a  b  c</span></span>
-<span id="cb195-4"><a href="zlozone-obiekty.html#cb195-4"></a><span class="co">#&gt; [1,]  1  5  9</span></span>
-<span id="cb195-5"><a href="zlozone-obiekty.html#cb195-5"></a><span class="co">#&gt; [2,]  2  6 10</span></span>
-<span id="cb195-6"><a href="zlozone-obiekty.html#cb195-6"></a><span class="co">#&gt; [3,]  3  7 11</span></span>
-<span id="cb195-7"><a href="zlozone-obiekty.html#cb195-7"></a><span class="co">#&gt; [4,]  4  8 12</span></span>
-<span id="cb195-8"><a href="zlozone-obiekty.html#cb195-8"></a><span class="co">#&gt; [5,]  1  2  3</span></span>
-<span id="cb195-9"><a href="zlozone-obiekty.html#cb195-9"></a><span class="co">#&gt; [6,]  4  5  6</span></span>
-<span id="cb195-10"><a href="zlozone-obiekty.html#cb195-10"></a><span class="co">#&gt; [7,]  7  8  9</span></span>
-<span id="cb195-11"><a href="zlozone-obiekty.html#cb195-11"></a><span class="co">#&gt; [8,] 10 11 12</span></span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb195-1" title="1">macierz3 =<span class="st"> </span><span class="kw">rbind</span>(macierz1, macierz2)</a>
+<a class="sourceLine" id="cb195-2" title="2">macierz3</a>
+<a class="sourceLine" id="cb195-3" title="3"><span class="co">#&gt;       a  b  c</span></a>
+<a class="sourceLine" id="cb195-4" title="4"><span class="co">#&gt; [1,]  1  5  9</span></a>
+<a class="sourceLine" id="cb195-5" title="5"><span class="co">#&gt; [2,]  2  6 10</span></a>
+<a class="sourceLine" id="cb195-6" title="6"><span class="co">#&gt; [3,]  3  7 11</span></a>
+<a class="sourceLine" id="cb195-7" title="7"><span class="co">#&gt; [4,]  4  8 12</span></a>
+<a class="sourceLine" id="cb195-8" title="8"><span class="co">#&gt; [5,]  1  2  3</span></a>
+<a class="sourceLine" id="cb195-9" title="9"><span class="co">#&gt; [6,]  4  5  6</span></a>
+<a class="sourceLine" id="cb195-10" title="10"><span class="co">#&gt; [7,]  7  8  9</span></a>
+<a class="sourceLine" id="cb195-11" title="11"><span class="co">#&gt; [8,] 10 11 12</span></a></code></pre></div>
 <p>Druga dokleja obiekty kolumnami bez zmiany liczby wierszy.</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="zlozone-obiekty.html#cb196-1"></a>macierz4 =<span class="st"> </span><span class="kw">cbind</span>(macierz1, macierz2)</span>
-<span id="cb196-2"><a href="zlozone-obiekty.html#cb196-2"></a>macierz4</span>
-<span id="cb196-3"><a href="zlozone-obiekty.html#cb196-3"></a><span class="co">#&gt;              a  b  c</span></span>
-<span id="cb196-4"><a href="zlozone-obiekty.html#cb196-4"></a><span class="co">#&gt; [1,] 1 5  9  1  2  3</span></span>
-<span id="cb196-5"><a href="zlozone-obiekty.html#cb196-5"></a><span class="co">#&gt; [2,] 2 6 10  4  5  6</span></span>
-<span id="cb196-6"><a href="zlozone-obiekty.html#cb196-6"></a><span class="co">#&gt; [3,] 3 7 11  7  8  9</span></span>
-<span id="cb196-7"><a href="zlozone-obiekty.html#cb196-7"></a><span class="co">#&gt; [4,] 4 8 12 10 11 12</span></span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb196-1" title="1">macierz4 =<span class="st"> </span><span class="kw">cbind</span>(macierz1, macierz2)</a>
+<a class="sourceLine" id="cb196-2" title="2">macierz4</a>
+<a class="sourceLine" id="cb196-3" title="3"><span class="co">#&gt;              a  b  c</span></a>
+<a class="sourceLine" id="cb196-4" title="4"><span class="co">#&gt; [1,] 1 5  9  1  2  3</span></a>
+<a class="sourceLine" id="cb196-5" title="5"><span class="co">#&gt; [2,] 2 6 10  4  5  6</span></a>
+<a class="sourceLine" id="cb196-6" title="6"><span class="co">#&gt; [3,] 3 7 11  7  8  9</span></a>
+<a class="sourceLine" id="cb196-7" title="7"><span class="co">#&gt; [4,] 4 8 12 10 11 12</span></a></code></pre></div>
 
 <div class="rmdinfo">
 W przypadku, gdy chcemy połączyć kilka wektorów różnych typów działają dokładnie takie same reguły jak w przypadku wektorów atomowych (sekcja <a href="proste-obiekty.html#lpto-vector">5.9</a>).
 </div>
+
 </div>
 </div>
-<div id="df" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> Ramki danych</h2>
+<div id="df" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.2</span> Ramki danych<a href="zlozone-obiekty.html#df" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Ramki danych (ang. <em>data frame</em>) mają dużo podobieństw z macierzami.
 Są to obiekty dwuwymiarowe, składające się z kolumn i wierszy.
 Główną różnicą pomiędzy macierzą a ramką danych jest to, że pierwsza z nich przyjmuje tylko dane jednego typu, podczas gdy druga może się składać z danych rożnych typów.</p>
@@ -535,18 +506,18 @@ Główną różnicą pomiędzy macierzą a ramką danych jest to, że pierwsza z
 Ten typ obiektu jest głównie wykorzystywany do różnorodnej analizy danych.
 Ramki danych przypominają w swojej strukturze arkusze kalkulacyjne czy bazy danych.
 <!-- nested data frames footnote --></p>
-<div id="tworzenie-1" class="section level3" number="7.2.1">
-<h3><span class="header-section-number">7.2.1</span> Tworzenie</h3>
+<div id="tworzenie-1" class="section level3 hasAnchor">
+<h3><span class="header-section-number">7.2.1</span> Tworzenie<a href="zlozone-obiekty.html#tworzenie-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Stworzenie nowej ramki danych możliwe jest używając funkcji <code>data.frame()</code>, w której podawane są nazwy kolejnych kolumn (np. <code>wek_log</code>) oraz ich wartości (np. <code>c(TRUE, FALSE, FALSE)</code>).</p>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="zlozone-obiekty.html#cb197-1"></a>ramka1 =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">wek_log =</span> <span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>),</span>
-<span id="cb197-2"><a href="zlozone-obiekty.html#cb197-2"></a>                    <span class="dt">wek_cal =</span> <span class="kw">c</span>(5L, <span class="op">-</span>7L, 12L), </span>
-<span id="cb197-3"><a href="zlozone-obiekty.html#cb197-3"></a>                    <span class="dt">wek_zmi =</span> <span class="kw">c</span>(<span class="fl">5.3</span>, <span class="fl">-7.1</span>, <span class="fl">1.1</span>), </span>
-<span id="cb197-4"><a href="zlozone-obiekty.html#cb197-4"></a>                    <span class="dt">wek_zna =</span> <span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>, <span class="st">&quot;nosorożec&quot;</span>))</span>
-<span id="cb197-5"><a href="zlozone-obiekty.html#cb197-5"></a>ramka1</span>
-<span id="cb197-6"><a href="zlozone-obiekty.html#cb197-6"></a><span class="co">#&gt;   wek_log wek_cal wek_zmi   wek_zna</span></span>
-<span id="cb197-7"><a href="zlozone-obiekty.html#cb197-7"></a><span class="co">#&gt; 1    TRUE       5     5.3       kot</span></span>
-<span id="cb197-8"><a href="zlozone-obiekty.html#cb197-8"></a><span class="co">#&gt; 2   FALSE      -7    -7.1      pies</span></span>
-<span id="cb197-9"><a href="zlozone-obiekty.html#cb197-9"></a><span class="co">#&gt; 3   FALSE      12     1.1 nosorożec</span></span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb197-1" title="1">ramka1 =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">wek_log =</span> <span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>),</a>
+<a class="sourceLine" id="cb197-2" title="2">                    <span class="dt">wek_cal =</span> <span class="kw">c</span>(5L, <span class="op">-</span>7L, 12L), </a>
+<a class="sourceLine" id="cb197-3" title="3">                    <span class="dt">wek_zmi =</span> <span class="kw">c</span>(<span class="fl">5.3</span>, <span class="fl">-7.1</span>, <span class="fl">1.1</span>), </a>
+<a class="sourceLine" id="cb197-4" title="4">                    <span class="dt">wek_zna =</span> <span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>, <span class="st">&quot;nosorożec&quot;))</span></a>
+<a class="sourceLine" id="cb197-5" title="5"><span class="st">ramka1</span></a>
+<a class="sourceLine" id="cb197-6" title="6"><span class="st">#&gt;   wek_log wek_cal wek_zmi   wek_zna</span></a>
+<a class="sourceLine" id="cb197-7" title="7"><span class="st">#&gt; 1    TRUE       5     5.3       kot</span></a>
+<a class="sourceLine" id="cb197-8" title="8"><span class="st">#&gt; 2   FALSE      -7    -7.1      pies</span></a>
+<a class="sourceLine" id="cb197-9" title="9"><span class="st">#&gt; 3   FALSE      12     1.1 nosorożec</span></a></code></pre></div>
 <p>W powyższym przykładzie, <code>ramka1</code> składa się z czterech kolumn o długości trzy.
 Każda z tych kolumn ma inny typ - logiczny, liczby całkowitej, liczby zmiennoprzecinkowej oraz znakowy.</p>
 
@@ -554,350 +525,353 @@ Każda z tych kolumn ma inny typ - logiczny, liczby całkowitej, liczby zmiennop
 Obiekty klasy ramka danych są też zazwyczaj wynikiem wczytywania zewnętrznych plików do R, np. w formacie <code>.csv</code> czy <code>.xlsx</code>.
 Więcej informacji na ten temat można znaleźć w rozdziale <a href="io.html#io">9</a>.
 </div>
+
 </div>
-<div id="podstawowe-funkcje-1" class="section level3" number="7.2.2">
-<h3><span class="header-section-number">7.2.2</span> Podstawowe funkcje</h3>
+<div id="podstawowe-funkcje-1" class="section level3 hasAnchor">
+<h3><span class="header-section-number">7.2.2</span> Podstawowe funkcje<a href="zlozone-obiekty.html#podstawowe-funkcje-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Oficjalnie klasa ramki danych jest określana jako <code>data.frame</code>.</p>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="zlozone-obiekty.html#cb198-1"></a><span class="kw">class</span>(ramka1)</span>
-<span id="cb198-2"><a href="zlozone-obiekty.html#cb198-2"></a><span class="co">#&gt; [1] &quot;data.frame&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb198-1" title="1"><span class="kw">class</span>(ramka1)</a>
+<a class="sourceLine" id="cb198-2" title="2"><span class="co">#&gt; [1] &quot;data.frame&quot;</span></a></code></pre></div>
 <p>Sprawdzenie struktury ramki danych pozwala na szybkie poznanie kilku rożnych cech wejściowego obiektu.
 Pierwszą informacją jest klasa obiektu (<code>data.frame</code>), liczba wierszy (<code>3 obs.</code> - trzy obserwacje) i liczba kolumn (<code>4 variables</code> - cztery zmienne).
 Następnie, dla kolejnych kolumn są określane ich nazwy, typy danych oraz przykładowe wartości.</p>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="zlozone-obiekty.html#cb199-1"></a><span class="kw">str</span>(ramka1)</span>
-<span id="cb199-2"><a href="zlozone-obiekty.html#cb199-2"></a><span class="co">#&gt; &#39;data.frame&#39;:    3 obs. of  4 variables:</span></span>
-<span id="cb199-3"><a href="zlozone-obiekty.html#cb199-3"></a><span class="co">#&gt;  $ wek_log: logi  TRUE FALSE FALSE</span></span>
-<span id="cb199-4"><a href="zlozone-obiekty.html#cb199-4"></a><span class="co">#&gt;  $ wek_cal: int  5 -7 12</span></span>
-<span id="cb199-5"><a href="zlozone-obiekty.html#cb199-5"></a><span class="co">#&gt;  $ wek_zmi: num  5.3 -7.1 1.1</span></span>
-<span id="cb199-6"><a href="zlozone-obiekty.html#cb199-6"></a><span class="co">#&gt;  $ wek_zna: chr  &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb199-1" title="1"><span class="kw">str</span>(ramka1)</a>
+<a class="sourceLine" id="cb199-2" title="2"><span class="co">#&gt; &#39;data.frame&#39;:    3 obs. of  4 variables:</span></a>
+<a class="sourceLine" id="cb199-3" title="3"><span class="co">#&gt;  $ wek_log: logi  TRUE FALSE FALSE</span></a>
+<a class="sourceLine" id="cb199-4" title="4"><span class="co">#&gt;  $ wek_cal: int  5 -7 12</span></a>
+<a class="sourceLine" id="cb199-5" title="5"><span class="co">#&gt;  $ wek_zmi: num  5.3 -7.1 1.1</span></a>
+<a class="sourceLine" id="cb199-6" title="6"><span class="co">#&gt;  $ wek_zna: chr  &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></a></code></pre></div>
 <p>Podobnie jak w przypadku macierzy, ramki danych mają dwa wymiary, których długość można sprawdzić używając funkcji <code>nrow</code> i <code>ncol</code>.</p>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="zlozone-obiekty.html#cb200-1"></a><span class="kw">nrow</span>(ramka1)</span>
-<span id="cb200-2"><a href="zlozone-obiekty.html#cb200-2"></a><span class="co">#&gt; [1] 3</span></span>
-<span id="cb200-3"><a href="zlozone-obiekty.html#cb200-3"></a><span class="kw">ncol</span>(ramka1)</span>
-<span id="cb200-4"><a href="zlozone-obiekty.html#cb200-4"></a><span class="co">#&gt; [1] 4</span></span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb200-1" title="1"><span class="kw">nrow</span>(ramka1)</a>
+<a class="sourceLine" id="cb200-2" title="2"><span class="co">#&gt; [1] 3</span></a>
+<a class="sourceLine" id="cb200-3" title="3"><span class="kw">ncol</span>(ramka1)</a>
+<a class="sourceLine" id="cb200-4" title="4"><span class="co">#&gt; [1] 4</span></a></code></pre></div>
 <p>W przeciwieństwie jednak do macierzy, ramki danych zawsze posiadają nazwy kolumn.</p>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="zlozone-obiekty.html#cb201-1"></a><span class="kw">colnames</span>(ramka1)</span>
-<span id="cb201-2"><a href="zlozone-obiekty.html#cb201-2"></a><span class="co">#&gt; [1] &quot;wek_log&quot; &quot;wek_cal&quot; &quot;wek_zmi&quot; &quot;wek_zna&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb201-1" title="1"><span class="kw">colnames</span>(ramka1)</a>
+<a class="sourceLine" id="cb201-2" title="2"><span class="co">#&gt; [1] &quot;wek_log&quot; &quot;wek_cal&quot; &quot;wek_zmi&quot; &quot;wek_zna&quot;</span></a></code></pre></div>
 <p>Ich zmiana również jest możliwa używając funkcji <code>colnames()</code>.</p>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="zlozone-obiekty.html#cb202-1"></a><span class="kw">colnames</span>(ramka1) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;log&quot;</span>, <span class="st">&quot;cal&quot;</span>, <span class="st">&quot;zmi&quot;</span>, <span class="st">&quot;zna&quot;</span>)</span>
-<span id="cb202-2"><a href="zlozone-obiekty.html#cb202-2"></a>ramka1</span>
-<span id="cb202-3"><a href="zlozone-obiekty.html#cb202-3"></a><span class="co">#&gt;     log cal  zmi       zna</span></span>
-<span id="cb202-4"><a href="zlozone-obiekty.html#cb202-4"></a><span class="co">#&gt; 1  TRUE   5  5.3       kot</span></span>
-<span id="cb202-5"><a href="zlozone-obiekty.html#cb202-5"></a><span class="co">#&gt; 2 FALSE  -7 -7.1      pies</span></span>
-<span id="cb202-6"><a href="zlozone-obiekty.html#cb202-6"></a><span class="co">#&gt; 3 FALSE  12  1.1 nosorożec</span></span>
-<span id="cb202-7"><a href="zlozone-obiekty.html#cb202-7"></a><span class="kw">colnames</span>(ramka1)</span>
-<span id="cb202-8"><a href="zlozone-obiekty.html#cb202-8"></a><span class="co">#&gt; [1] &quot;log&quot; &quot;cal&quot; &quot;zmi&quot; &quot;zna&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb202-1" title="1"><span class="kw">colnames</span>(ramka1) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;log&quot;</span>, <span class="st">&quot;cal&quot;</span>, <span class="st">&quot;zmi&quot;</span>, <span class="st">&quot;zna&quot;</span>)</a>
+<a class="sourceLine" id="cb202-2" title="2">ramka1</a>
+<a class="sourceLine" id="cb202-3" title="3"><span class="co">#&gt;     log cal  zmi       zna</span></a>
+<a class="sourceLine" id="cb202-4" title="4"><span class="co">#&gt; 1  TRUE   5  5.3       kot</span></a>
+<a class="sourceLine" id="cb202-5" title="5"><span class="co">#&gt; 2 FALSE  -7 -7.1      pies</span></a>
+<a class="sourceLine" id="cb202-6" title="6"><span class="co">#&gt; 3 FALSE  12  1.1 nosorożec</span></a>
+<a class="sourceLine" id="cb202-7" title="7"><span class="kw">colnames</span>(ramka1)</a>
+<a class="sourceLine" id="cb202-8" title="8"><span class="co">#&gt; [1] &quot;log&quot; &quot;cal&quot; &quot;zmi&quot; &quot;zna&quot;</span></a></code></pre></div>
 <!-- `rownames()` - info about problems with rownames (block) -->
 </div>
-<div id="wydzielanie-df" class="section level3" number="7.2.3">
-<h3><span class="header-section-number">7.2.3</span> Wydzielanie</h3>
+<div id="wydzielanie-df" class="section level3 hasAnchor">
+<h3><span class="header-section-number">7.2.3</span> Wydzielanie<a href="zlozone-obiekty.html#wydzielanie-df" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Do wydzielania elementów z ramki danych może służyć kilka narzędzi, między innymi, operator <code>$</code>, operator <code>[]</code> oraz funkcja <code>subset()</code>.</p>
 <p>Operator <code>$</code> pozwala na wybranie zmiennej (kolumny) na podstawie jej nazwy.</p>
-<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="zlozone-obiekty.html#cb203-1"></a>ramka1<span class="op">$</span>zmi</span>
-<span id="cb203-2"><a href="zlozone-obiekty.html#cb203-2"></a><span class="co">#&gt; [1]  5.3 -7.1  1.1</span></span>
-<span id="cb203-3"><a href="zlozone-obiekty.html#cb203-3"></a>ramka1<span class="op">$</span>zna</span>
-<span id="cb203-4"><a href="zlozone-obiekty.html#cb203-4"></a><span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb203-1" title="1">ramka1<span class="op">$</span>zmi</a>
+<a class="sourceLine" id="cb203-2" title="2"><span class="co">#&gt; [1]  5.3 -7.1  1.1</span></a>
+<a class="sourceLine" id="cb203-3" title="3">ramka1<span class="op">$</span>zna</a>
+<a class="sourceLine" id="cb203-4" title="4"><span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span></a></code></pre></div>
 <p>W efekcie otrzymywany jest jednak inna klasa - w powyższych przykładach są to wektory.</p>
 <p>W przypadku ramek danych operator <code>[]</code> wymaga podania dwóch argumentów - jednego dla wierszy (obserwacji) oraz jednego dla kolumn (zmiennych) - <code>[wiersze, kolumny]</code>.</p>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="zlozone-obiekty.html#cb204-1"></a>ramka1[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)]</span>
-<span id="cb204-2"><a href="zlozone-obiekty.html#cb204-2"></a><span class="co">#&gt;     log cal</span></span>
-<span id="cb204-3"><a href="zlozone-obiekty.html#cb204-3"></a><span class="co">#&gt; 1  TRUE   5</span></span>
-<span id="cb204-4"><a href="zlozone-obiekty.html#cb204-4"></a><span class="co">#&gt; 3 FALSE  12</span></span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb204-1" title="1">ramka1[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)]</a>
+<a class="sourceLine" id="cb204-2" title="2"><span class="co">#&gt;     log cal</span></a>
+<a class="sourceLine" id="cb204-3" title="3"><span class="co">#&gt; 1  TRUE   5</span></a>
+<a class="sourceLine" id="cb204-4" title="4"><span class="co">#&gt; 3 FALSE  12</span></a></code></pre></div>
 <p>Do wydzielania można też wykorzystać operatory logiczne: <code>==</code>, <code>%in%</code>, <code>!=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&amp;</code>, <code>|</code>.</p>
-<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="zlozone-obiekty.html#cb205-1"></a>ramka1[ramka1<span class="op">$</span>zmi <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</span>
-<span id="cb205-2"><a href="zlozone-obiekty.html#cb205-2"></a><span class="co">#&gt;     log zmi</span></span>
-<span id="cb205-3"><a href="zlozone-obiekty.html#cb205-3"></a><span class="co">#&gt; 1  TRUE 5.3</span></span>
-<span id="cb205-4"><a href="zlozone-obiekty.html#cb205-4"></a><span class="co">#&gt; 3 FALSE 1.1</span></span></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb205-1" title="1">ramka1[ramka1<span class="op">$</span>zmi <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</a>
+<a class="sourceLine" id="cb205-2" title="2"><span class="co">#&gt;     log zmi</span></a>
+<a class="sourceLine" id="cb205-3" title="3"><span class="co">#&gt; 1  TRUE 5.3</span></a>
+<a class="sourceLine" id="cb205-4" title="4"><span class="co">#&gt; 3 FALSE 1.1</span></a></code></pre></div>
 <p>Powyżej wybrano tylko pierwszą i trzecią kolumnę oraz wiersze, dla których kolumna <code>zmi</code> miała wartość wyższą niż 0.</p>
 <p>Zapytania też można łączyć, np. wybierając tylko te wiersze gdzie wartość <code>cal</code> jest wyższa niż 6 lub niższa niż -6.</p>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="zlozone-obiekty.html#cb206-1"></a>ramka1[ramka1<span class="op">$</span>cal <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span> <span class="op">|</span><span class="st"> </span>ramka1<span class="op">$</span>cal <span class="op">&lt;</span><span class="st"> </span><span class="dv">-6</span>, ]</span>
-<span id="cb206-2"><a href="zlozone-obiekty.html#cb206-2"></a><span class="co">#&gt;     log cal  zmi       zna</span></span>
-<span id="cb206-3"><a href="zlozone-obiekty.html#cb206-3"></a><span class="co">#&gt; 2 FALSE  -7 -7.1      pies</span></span>
-<span id="cb206-4"><a href="zlozone-obiekty.html#cb206-4"></a><span class="co">#&gt; 3 FALSE  12  1.1 nosorożec</span></span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb206-1" title="1">ramka1[ramka1<span class="op">$</span>cal <span class="op">&gt;</span><span class="st"> </span><span class="dv">6</span> <span class="op">|</span><span class="st"> </span>ramka1<span class="op">$</span>cal <span class="op">&lt;</span><span class="st"> </span><span class="dv">-6</span>, ]</a>
+<a class="sourceLine" id="cb206-2" title="2"><span class="co">#&gt;     log cal  zmi       zna</span></a>
+<a class="sourceLine" id="cb206-3" title="3"><span class="co">#&gt; 2 FALSE  -7 -7.1      pies</span></a>
+<a class="sourceLine" id="cb206-4" title="4"><span class="co">#&gt; 3 FALSE  12  1.1 nosorożec</span></a></code></pre></div>
 <p>Poniżej wybrano natomiast wszystkie kolumny, ale tylko wiersz gdzie zmienna <code>zna</code> przyjęła wartość <code>"kot"</code>.</p>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="zlozone-obiekty.html#cb207-1"></a>ramka1[ramka1<span class="op">$</span>zna <span class="op">==</span><span class="st"> &quot;kot&quot;</span>, ]</span>
-<span id="cb207-2"><a href="zlozone-obiekty.html#cb207-2"></a><span class="co">#&gt;    log cal zmi zna</span></span>
-<span id="cb207-3"><a href="zlozone-obiekty.html#cb207-3"></a><span class="co">#&gt; 1 TRUE   5 5.3 kot</span></span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb207-1" title="1">ramka1[ramka1<span class="op">$</span>zna <span class="op">==</span><span class="st"> &quot;kot&quot;</span>, ]</a>
+<a class="sourceLine" id="cb207-2" title="2"><span class="co">#&gt;    log cal zmi zna</span></a>
+<a class="sourceLine" id="cb207-3" title="3"><span class="co">#&gt; 1 TRUE   5 5.3 kot</span></a></code></pre></div>
 <p>Aby wybrać więcej niż jedną zmienną należy użyć funkcji <code>%in%</code>.</p>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="zlozone-obiekty.html#cb208-1"></a>ramka1[ramka1<span class="op">$</span>zna <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>), ]</span>
-<span id="cb208-2"><a href="zlozone-obiekty.html#cb208-2"></a><span class="co">#&gt;     log cal  zmi  zna</span></span>
-<span id="cb208-3"><a href="zlozone-obiekty.html#cb208-3"></a><span class="co">#&gt; 1  TRUE   5  5.3  kot</span></span>
-<span id="cb208-4"><a href="zlozone-obiekty.html#cb208-4"></a><span class="co">#&gt; 2 FALSE  -7 -7.1 pies</span></span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb208-1" title="1">ramka1[ramka1<span class="op">$</span>zna <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>), ]</a>
+<a class="sourceLine" id="cb208-2" title="2"><span class="co">#&gt;     log cal  zmi  zna</span></a>
+<a class="sourceLine" id="cb208-3" title="3"><span class="co">#&gt; 1  TRUE   5  5.3  kot</span></a>
+<a class="sourceLine" id="cb208-4" title="4"><span class="co">#&gt; 2 FALSE  -7 -7.1 pies</span></a></code></pre></div>
 <p>Alternatywą do wydzielania ramek danych na podstawie zapytania logicznego jest użycie funkcji <code>subset()</code>.
 Używając tej funkcji powyższe zapytanie można przestawić jako:</p>
-<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="zlozone-obiekty.html#cb209-1"></a><span class="kw">subset</span>(ramka1, zna <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>))</span>
-<span id="cb209-2"><a href="zlozone-obiekty.html#cb209-2"></a><span class="co">#&gt;     log cal  zmi  zna</span></span>
-<span id="cb209-3"><a href="zlozone-obiekty.html#cb209-3"></a><span class="co">#&gt; 1  TRUE   5  5.3  kot</span></span>
-<span id="cb209-4"><a href="zlozone-obiekty.html#cb209-4"></a><span class="co">#&gt; 2 FALSE  -7 -7.1 pies</span></span></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb209-1" title="1"><span class="kw">subset</span>(ramka1, zna <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>))</a>
+<a class="sourceLine" id="cb209-2" title="2"><span class="co">#&gt;     log cal  zmi  zna</span></a>
+<a class="sourceLine" id="cb209-3" title="3"><span class="co">#&gt; 1  TRUE   5  5.3  kot</span></a>
+<a class="sourceLine" id="cb209-4" title="4"><span class="co">#&gt; 2 FALSE  -7 -7.1 pies</span></a></code></pre></div>
 
 <div class="rmdinfo">
 Podobnie jak w przypadku wektorów (sekcje <a href="proste-obiekty.html#wip-vector">5.7</a> i <a href="proste-obiekty.html#mo-vector">5.8</a>), wydzielanie ramek danych może służyć do wyświetlenia wybranych wartości, ale też ich wydzielenia i przypisania oraz modyfikowania.
 </div>
+
 </div>
-<div id="łączenie-1" class="section level3" number="7.2.4">
-<h3><span class="header-section-number">7.2.4</span> Łączenie</h3>
+<div id="łączenie-1" class="section level3 hasAnchor">
+<h3><span class="header-section-number">7.2.4</span> Łączenie<a href="zlozone-obiekty.html#łączenie-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Łączenie ramek danych przypomina łączenie macierzy używając funkcji <code>rbind()</code> i <code>cbind()</code>.
 Jednocześnie należy pamiętać, że łączenie wierszy (<code>rbind()</code>) wymaga posiadania kolumn o tych samych nazwach w obu obiektach.</p>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="zlozone-obiekty.html#cb210-1"></a>ramka2 =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">log =</span> <span class="ot">TRUE</span>, <span class="dt">cal =</span> 2L, <span class="dt">zmi =</span> <span class="fl">2.3</span>, <span class="dt">zna =</span> <span class="st">&quot;żółw&quot;</span>)</span>
-<span id="cb210-2"><a href="zlozone-obiekty.html#cb210-2"></a>ramka2</span>
-<span id="cb210-3"><a href="zlozone-obiekty.html#cb210-3"></a><span class="co">#&gt;    log cal zmi  zna</span></span>
-<span id="cb210-4"><a href="zlozone-obiekty.html#cb210-4"></a><span class="co">#&gt; 1 TRUE   2 2.3 żółw</span></span>
-<span id="cb210-5"><a href="zlozone-obiekty.html#cb210-5"></a></span>
-<span id="cb210-6"><a href="zlozone-obiekty.html#cb210-6"></a><span class="kw">rbind</span>(ramka1, ramka2)</span>
-<span id="cb210-7"><a href="zlozone-obiekty.html#cb210-7"></a><span class="co">#&gt;     log cal  zmi       zna</span></span>
-<span id="cb210-8"><a href="zlozone-obiekty.html#cb210-8"></a><span class="co">#&gt; 1  TRUE   5  5.3       kot</span></span>
-<span id="cb210-9"><a href="zlozone-obiekty.html#cb210-9"></a><span class="co">#&gt; 2 FALSE  -7 -7.1      pies</span></span>
-<span id="cb210-10"><a href="zlozone-obiekty.html#cb210-10"></a><span class="co">#&gt; 3 FALSE  12  1.1 nosorożec</span></span>
-<span id="cb210-11"><a href="zlozone-obiekty.html#cb210-11"></a><span class="co">#&gt; 4  TRUE   2  2.3      żółw</span></span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb210-1" title="1">ramka2 =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">log =</span> <span class="ot">TRUE</span>, <span class="dt">cal =</span> 2L, <span class="dt">zmi =</span> <span class="fl">2.3</span>, <span class="dt">zna =</span> <span class="st">&quot;żółw&quot;</span>)</a>
+<a class="sourceLine" id="cb210-2" title="2">ramka2</a>
+<a class="sourceLine" id="cb210-3" title="3"><span class="co">#&gt;    log cal zmi  zna</span></a>
+<a class="sourceLine" id="cb210-4" title="4"><span class="co">#&gt; 1 TRUE   2 2.3 żółw</span></a>
+<a class="sourceLine" id="cb210-5" title="5"></a>
+<a class="sourceLine" id="cb210-6" title="6"><span class="kw">rbind</span>(ramka1, ramka2)</a>
+<a class="sourceLine" id="cb210-7" title="7"><span class="co">#&gt;     log cal  zmi       zna</span></a>
+<a class="sourceLine" id="cb210-8" title="8"><span class="co">#&gt; 1  TRUE   5  5.3       kot</span></a>
+<a class="sourceLine" id="cb210-9" title="9"><span class="co">#&gt; 2 FALSE  -7 -7.1      pies</span></a>
+<a class="sourceLine" id="cb210-10" title="10"><span class="co">#&gt; 3 FALSE  12  1.1 nosorożec</span></a>
+<a class="sourceLine" id="cb210-11" title="11"><span class="co">#&gt; 4  TRUE   2  2.3      żółw</span></a></code></pre></div>
 <p>Ograniczeniem łącznia kolumn jest posiadanie tej samej długości każdej kolumny.</p>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="zlozone-obiekty.html#cb211-1"></a>ramka3 =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">zmi2 =</span> <span class="kw">c</span>(<span class="fl">4.3</span>, <span class="fl">2.6</span>, <span class="fl">7.4</span>))</span>
-<span id="cb211-2"><a href="zlozone-obiekty.html#cb211-2"></a>ramka3</span>
-<span id="cb211-3"><a href="zlozone-obiekty.html#cb211-3"></a><span class="co">#&gt;   zmi2</span></span>
-<span id="cb211-4"><a href="zlozone-obiekty.html#cb211-4"></a><span class="co">#&gt; 1  4.3</span></span>
-<span id="cb211-5"><a href="zlozone-obiekty.html#cb211-5"></a><span class="co">#&gt; 2  2.6</span></span>
-<span id="cb211-6"><a href="zlozone-obiekty.html#cb211-6"></a><span class="co">#&gt; 3  7.4</span></span>
-<span id="cb211-7"><a href="zlozone-obiekty.html#cb211-7"></a></span>
-<span id="cb211-8"><a href="zlozone-obiekty.html#cb211-8"></a><span class="kw">cbind</span>(ramka1, ramka3)</span>
-<span id="cb211-9"><a href="zlozone-obiekty.html#cb211-9"></a><span class="co">#&gt;     log cal  zmi       zna zmi2</span></span>
-<span id="cb211-10"><a href="zlozone-obiekty.html#cb211-10"></a><span class="co">#&gt; 1  TRUE   5  5.3       kot  4.3</span></span>
-<span id="cb211-11"><a href="zlozone-obiekty.html#cb211-11"></a><span class="co">#&gt; 2 FALSE  -7 -7.1      pies  2.6</span></span>
-<span id="cb211-12"><a href="zlozone-obiekty.html#cb211-12"></a><span class="co">#&gt; 3 FALSE  12  1.1 nosorożec  7.4</span></span></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb211-1" title="1">ramka3 =<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">zmi2 =</span> <span class="kw">c</span>(<span class="fl">4.3</span>, <span class="fl">2.6</span>, <span class="fl">7.4</span>))</a>
+<a class="sourceLine" id="cb211-2" title="2">ramka3</a>
+<a class="sourceLine" id="cb211-3" title="3"><span class="co">#&gt;   zmi2</span></a>
+<a class="sourceLine" id="cb211-4" title="4"><span class="co">#&gt; 1  4.3</span></a>
+<a class="sourceLine" id="cb211-5" title="5"><span class="co">#&gt; 2  2.6</span></a>
+<a class="sourceLine" id="cb211-6" title="6"><span class="co">#&gt; 3  7.4</span></a>
+<a class="sourceLine" id="cb211-7" title="7"></a>
+<a class="sourceLine" id="cb211-8" title="8"><span class="kw">cbind</span>(ramka1, ramka3)</a>
+<a class="sourceLine" id="cb211-9" title="9"><span class="co">#&gt;     log cal  zmi       zna zmi2</span></a>
+<a class="sourceLine" id="cb211-10" title="10"><span class="co">#&gt; 1  TRUE   5  5.3       kot  4.3</span></a>
+<a class="sourceLine" id="cb211-11" title="11"><span class="co">#&gt; 2 FALSE  -7 -7.1      pies  2.6</span></a>
+<a class="sourceLine" id="cb211-12" title="12"><span class="co">#&gt; 3 FALSE  12  1.1 nosorożec  7.4</span></a></code></pre></div>
 
 <div class="rmdinfo">
 Funkcje <code>rbind()</code> i <code>cbind()</code> łączą obiekty nie zmieniając kolejności występujących w nich wartości.
 Bardziej zaawansowanymi sposobami łączenia ramek danych są różnorodne operacje łączenia (ang. <em>joins</em>), np. <code>left_join()</code> czy <code>inner_join()</code> z pakietu <strong>dplyr</strong>.
-Więcej na ten temat można znaleźć w rozdziale <a href="https://r4ds.had.co.nz/relational-data.html">“Relational data”</a> książki Advanced R <span class="citation">(Wickham <a href="#ref-wickham2014advanced" role="doc-biblioref">2014</a>)</span>.
+Więcej na ten temat można znaleźć w rozdziale <a href="https://r4ds.had.co.nz/relational-data.html">“Relational data”</a> książki Advanced R <span class="citation">(Wickham <a href="#ref-wickham2014advanced">2014</a>)</span>.
+</div>
+
 </div>
 </div>
-</div>
-<div id="listy" class="section level2" number="7.3">
-<h2><span class="header-section-number">7.3</span> Listy</h2>
+<div id="listy" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.3</span> Listy<a href="zlozone-obiekty.html#listy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Ostatnią podstawową klasą obiektów w R są listy (ang. <em>list</em>).
 Ta klasa pozwala na przechowywanie obiektów o różnych typach i różnej długości.</p>
-<div id="tworzenie-2" class="section level3" number="7.3.1">
-<h3><span class="header-section-number">7.3.1</span> Tworzenie</h3>
+<div id="tworzenie-2" class="section level3 hasAnchor">
+<h3><span class="header-section-number">7.3.1</span> Tworzenie<a href="zlozone-obiekty.html#tworzenie-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Do tworzenia list służy funkcja <code>list()</code>, która przyjmuje jako argumenty kolejne obiekty, które mają się w niej znaleźć.</p>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="zlozone-obiekty.html#cb212-1"></a>lista1 =<span class="st"> </span><span class="kw">list</span>(<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>), </span>
-<span id="cb212-2"><a href="zlozone-obiekty.html#cb212-2"></a>              <span class="kw">c</span>(5L, <span class="op">-</span>7L),</span>
-<span id="cb212-3"><a href="zlozone-obiekty.html#cb212-3"></a>              <span class="kw">c</span>(<span class="fl">5.3</span>), </span>
-<span id="cb212-4"><a href="zlozone-obiekty.html#cb212-4"></a>              <span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>, <span class="st">&quot;nosorożec&quot;</span>))</span>
-<span id="cb212-5"><a href="zlozone-obiekty.html#cb212-5"></a>lista1</span>
-<span id="cb212-6"><a href="zlozone-obiekty.html#cb212-6"></a><span class="co">#&gt; [[1]]</span></span>
-<span id="cb212-7"><a href="zlozone-obiekty.html#cb212-7"></a><span class="co">#&gt; [1]  TRUE FALSE</span></span>
-<span id="cb212-8"><a href="zlozone-obiekty.html#cb212-8"></a><span class="co">#&gt; </span></span>
-<span id="cb212-9"><a href="zlozone-obiekty.html#cb212-9"></a><span class="co">#&gt; [[2]]</span></span>
-<span id="cb212-10"><a href="zlozone-obiekty.html#cb212-10"></a><span class="co">#&gt; [1]  5 -7</span></span>
-<span id="cb212-11"><a href="zlozone-obiekty.html#cb212-11"></a><span class="co">#&gt; </span></span>
-<span id="cb212-12"><a href="zlozone-obiekty.html#cb212-12"></a><span class="co">#&gt; [[3]]</span></span>
-<span id="cb212-13"><a href="zlozone-obiekty.html#cb212-13"></a><span class="co">#&gt; [1] 5.3</span></span>
-<span id="cb212-14"><a href="zlozone-obiekty.html#cb212-14"></a><span class="co">#&gt; </span></span>
-<span id="cb212-15"><a href="zlozone-obiekty.html#cb212-15"></a><span class="co">#&gt; [[4]]</span></span>
-<span id="cb212-16"><a href="zlozone-obiekty.html#cb212-16"></a><span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb212-1" title="1">lista1 =<span class="st"> </span><span class="kw">list</span>(<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>), </a>
+<a class="sourceLine" id="cb212-2" title="2">              <span class="kw">c</span>(5L, <span class="op">-</span>7L),</a>
+<a class="sourceLine" id="cb212-3" title="3">              <span class="kw">c</span>(<span class="fl">5.3</span>), </a>
+<a class="sourceLine" id="cb212-4" title="4">              <span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>, <span class="st">&quot;nosorożec&quot;))</span></a>
+<a class="sourceLine" id="cb212-5" title="5"><span class="st">lista1</span></a>
+<a class="sourceLine" id="cb212-6" title="6"><span class="st">#&gt; [[1]]</span></a>
+<a class="sourceLine" id="cb212-7" title="7"><span class="st">#&gt; [1]  TRUE FALSE</span></a>
+<a class="sourceLine" id="cb212-8" title="8"><span class="st">#&gt; </span></a>
+<a class="sourceLine" id="cb212-9" title="9"><span class="st">#&gt; [[2]]</span></a>
+<a class="sourceLine" id="cb212-10" title="10"><span class="st">#&gt; [1]  5 -7</span></a>
+<a class="sourceLine" id="cb212-11" title="11"><span class="st">#&gt; </span></a>
+<a class="sourceLine" id="cb212-12" title="12"><span class="st">#&gt; [[3]]</span></a>
+<a class="sourceLine" id="cb212-13" title="13"><span class="st">#&gt; [1] 5.3</span></a>
+<a class="sourceLine" id="cb212-14" title="14"><span class="st">#&gt; </span></a>
+<a class="sourceLine" id="cb212-15" title="15"><span class="st">#&gt; [[4]]</span></a>
+<a class="sourceLine" id="cb212-16" title="16"><span class="st">#&gt; [1] &quot;</span>kot<span class="st">&quot;       &quot;</span>pies<span class="st">&quot;      &quot;</span>nosorożec&quot;</a></code></pre></div>
 <p>Przykładowa powyższa lista składa się z czterech elementów, o długości jeden, dwa lub trzy, i o różnorodnych typach danych.</p>
 <p>Inną ważną właściwością list jest możliwość ich zagnieżdżania - jedna lista może przechowywać kolejną, która jest w stanie przechowywać następną… Z tego powodu listy są czasami nazywane wektorami rekurencyjnymi.</p>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="zlozone-obiekty.html#cb213-1"></a>zlozona_lista1 =<span class="st"> </span><span class="kw">list</span>(<span class="kw">list</span>(<span class="kw">list</span>(lista1)))</span>
-<span id="cb213-2"><a href="zlozone-obiekty.html#cb213-2"></a><span class="kw">str</span>(zlozona_lista1)</span>
-<span id="cb213-3"><a href="zlozone-obiekty.html#cb213-3"></a><span class="co">#&gt; List of 1</span></span>
-<span id="cb213-4"><a href="zlozone-obiekty.html#cb213-4"></a><span class="co">#&gt;  $ :List of 1</span></span>
-<span id="cb213-5"><a href="zlozone-obiekty.html#cb213-5"></a><span class="co">#&gt;   ..$ :List of 1</span></span>
-<span id="cb213-6"><a href="zlozone-obiekty.html#cb213-6"></a><span class="co">#&gt;   .. ..$ :List of 4</span></span>
-<span id="cb213-7"><a href="zlozone-obiekty.html#cb213-7"></a><span class="co">#&gt;   .. .. ..$ : logi [1:2] TRUE FALSE</span></span>
-<span id="cb213-8"><a href="zlozone-obiekty.html#cb213-8"></a><span class="co">#&gt;   .. .. ..$ : int [1:2] 5 -7</span></span>
-<span id="cb213-9"><a href="zlozone-obiekty.html#cb213-9"></a><span class="co">#&gt;   .. .. ..$ : num 5.3</span></span>
-<span id="cb213-10"><a href="zlozone-obiekty.html#cb213-10"></a><span class="co">#&gt;   .. .. ..$ : chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb213-1" title="1">zlozona_lista1 =<span class="st"> </span><span class="kw">list</span>(<span class="kw">list</span>(<span class="kw">list</span>(lista1)))</a>
+<a class="sourceLine" id="cb213-2" title="2"><span class="kw">str</span>(zlozona_lista1)</a>
+<a class="sourceLine" id="cb213-3" title="3"><span class="co">#&gt; List of 1</span></a>
+<a class="sourceLine" id="cb213-4" title="4"><span class="co">#&gt;  $ :List of 1</span></a>
+<a class="sourceLine" id="cb213-5" title="5"><span class="co">#&gt;   ..$ :List of 1</span></a>
+<a class="sourceLine" id="cb213-6" title="6"><span class="co">#&gt;   .. ..$ :List of 4</span></a>
+<a class="sourceLine" id="cb213-7" title="7"><span class="co">#&gt;   .. .. ..$ : logi [1:2] TRUE FALSE</span></a>
+<a class="sourceLine" id="cb213-8" title="8"><span class="co">#&gt;   .. .. ..$ : int [1:2] 5 -7</span></a>
+<a class="sourceLine" id="cb213-9" title="9"><span class="co">#&gt;   .. .. ..$ : num 5.3</span></a>
+<a class="sourceLine" id="cb213-10" title="10"><span class="co">#&gt;   .. .. ..$ : chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></a></code></pre></div>
 </div>
-<div id="podstawowe-funkcje-2" class="section level3" number="7.3.2">
-<h3><span class="header-section-number">7.3.2</span> Podstawowe funkcje</h3>
+<div id="podstawowe-funkcje-2" class="section level3 hasAnchor">
+<h3><span class="header-section-number">7.3.2</span> Podstawowe funkcje<a href="zlozone-obiekty.html#podstawowe-funkcje-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Listy są przedstawiane jako klasa <code>list</code>.</p>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="zlozone-obiekty.html#cb214-1"></a><span class="kw">class</span>(lista1)</span>
-<span id="cb214-2"><a href="zlozone-obiekty.html#cb214-2"></a><span class="co">#&gt; [1] &quot;list&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb214-1" title="1"><span class="kw">class</span>(lista1)</a>
+<a class="sourceLine" id="cb214-2" title="2"><span class="co">#&gt; [1] &quot;list&quot;</span></a></code></pre></div>
 <p>W ich wypadku funkcja <code>str()</code> wyświetla klasę (<code>List</code>), liczbę elementów w liście (<code>4</code>) oraz wypisuje kolejne elementy listy, ich typy, wymiary i przykładowe wartości.</p>
-<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="zlozone-obiekty.html#cb215-1"></a><span class="kw">str</span>(lista1)</span>
-<span id="cb215-2"><a href="zlozone-obiekty.html#cb215-2"></a><span class="co">#&gt; List of 4</span></span>
-<span id="cb215-3"><a href="zlozone-obiekty.html#cb215-3"></a><span class="co">#&gt;  $ : logi [1:2] TRUE FALSE</span></span>
-<span id="cb215-4"><a href="zlozone-obiekty.html#cb215-4"></a><span class="co">#&gt;  $ : int [1:2] 5 -7</span></span>
-<span id="cb215-5"><a href="zlozone-obiekty.html#cb215-5"></a><span class="co">#&gt;  $ : num 5.3</span></span>
-<span id="cb215-6"><a href="zlozone-obiekty.html#cb215-6"></a><span class="co">#&gt;  $ : chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb215-1" title="1"><span class="kw">str</span>(lista1)</a>
+<a class="sourceLine" id="cb215-2" title="2"><span class="co">#&gt; List of 4</span></a>
+<a class="sourceLine" id="cb215-3" title="3"><span class="co">#&gt;  $ : logi [1:2] TRUE FALSE</span></a>
+<a class="sourceLine" id="cb215-4" title="4"><span class="co">#&gt;  $ : int [1:2] 5 -7</span></a>
+<a class="sourceLine" id="cb215-5" title="5"><span class="co">#&gt;  $ : num 5.3</span></a>
+<a class="sourceLine" id="cb215-6" title="6"><span class="co">#&gt;  $ : chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></a></code></pre></div>
 <p>Listy nie zawierają wierszy czy kolumn, dlatego do sprawdzenia liczby elementów w liście służy tylko funkcja <code>length()</code>.</p>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="zlozone-obiekty.html#cb216-1"></a><span class="kw">length</span>(lista1)</span>
-<span id="cb216-2"><a href="zlozone-obiekty.html#cb216-2"></a><span class="co">#&gt; [1] 4</span></span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb216-1" title="1"><span class="kw">length</span>(lista1)</a>
+<a class="sourceLine" id="cb216-2" title="2"><span class="co">#&gt; [1] 4</span></a></code></pre></div>
 <p>Kolejne elementy znajdujące się w liście mogą przyjmować wybrane nazwy.
 Można je sprawdzić czy zmienić używając funkcji <code>names()</code>.</p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="zlozone-obiekty.html#cb217-1"></a><span class="kw">names</span>(lista1) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;log&quot;</span>, <span class="st">&quot;cal&quot;</span>, <span class="st">&quot;zmi&quot;</span>, <span class="st">&quot;zna&quot;</span>)</span>
-<span id="cb217-2"><a href="zlozone-obiekty.html#cb217-2"></a>lista1</span>
-<span id="cb217-3"><a href="zlozone-obiekty.html#cb217-3"></a><span class="co">#&gt; $log</span></span>
-<span id="cb217-4"><a href="zlozone-obiekty.html#cb217-4"></a><span class="co">#&gt; [1]  TRUE FALSE</span></span>
-<span id="cb217-5"><a href="zlozone-obiekty.html#cb217-5"></a><span class="co">#&gt; </span></span>
-<span id="cb217-6"><a href="zlozone-obiekty.html#cb217-6"></a><span class="co">#&gt; $cal</span></span>
-<span id="cb217-7"><a href="zlozone-obiekty.html#cb217-7"></a><span class="co">#&gt; [1]  5 -7</span></span>
-<span id="cb217-8"><a href="zlozone-obiekty.html#cb217-8"></a><span class="co">#&gt; </span></span>
-<span id="cb217-9"><a href="zlozone-obiekty.html#cb217-9"></a><span class="co">#&gt; $zmi</span></span>
-<span id="cb217-10"><a href="zlozone-obiekty.html#cb217-10"></a><span class="co">#&gt; [1] 5.3</span></span>
-<span id="cb217-11"><a href="zlozone-obiekty.html#cb217-11"></a><span class="co">#&gt; </span></span>
-<span id="cb217-12"><a href="zlozone-obiekty.html#cb217-12"></a><span class="co">#&gt; $zna</span></span>
-<span id="cb217-13"><a href="zlozone-obiekty.html#cb217-13"></a><span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span></span>
-<span id="cb217-14"><a href="zlozone-obiekty.html#cb217-14"></a><span class="kw">names</span>(lista1)</span>
-<span id="cb217-15"><a href="zlozone-obiekty.html#cb217-15"></a><span class="co">#&gt; [1] &quot;log&quot; &quot;cal&quot; &quot;zmi&quot; &quot;zna&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb217-1" title="1"><span class="kw">names</span>(lista1) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;log&quot;</span>, <span class="st">&quot;cal&quot;</span>, <span class="st">&quot;zmi&quot;</span>, <span class="st">&quot;zna&quot;</span>)</a>
+<a class="sourceLine" id="cb217-2" title="2">lista1</a>
+<a class="sourceLine" id="cb217-3" title="3"><span class="co">#&gt; $log</span></a>
+<a class="sourceLine" id="cb217-4" title="4"><span class="co">#&gt; [1]  TRUE FALSE</span></a>
+<a class="sourceLine" id="cb217-5" title="5"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb217-6" title="6"><span class="co">#&gt; $cal</span></a>
+<a class="sourceLine" id="cb217-7" title="7"><span class="co">#&gt; [1]  5 -7</span></a>
+<a class="sourceLine" id="cb217-8" title="8"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb217-9" title="9"><span class="co">#&gt; $zmi</span></a>
+<a class="sourceLine" id="cb217-10" title="10"><span class="co">#&gt; [1] 5.3</span></a>
+<a class="sourceLine" id="cb217-11" title="11"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb217-12" title="12"><span class="co">#&gt; $zna</span></a>
+<a class="sourceLine" id="cb217-13" title="13"><span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span></a>
+<a class="sourceLine" id="cb217-14" title="14"><span class="kw">names</span>(lista1)</a>
+<a class="sourceLine" id="cb217-15" title="15"><span class="co">#&gt; [1] &quot;log&quot; &quot;cal&quot; &quot;zmi&quot; &quot;zna&quot;</span></a></code></pre></div>
 </div>
-<div id="łączenie-2" class="section level3" number="7.3.3">
-<h3><span class="header-section-number">7.3.3</span> Łączenie</h3>
+<div id="łączenie-2" class="section level3 hasAnchor">
+<h3><span class="header-section-number">7.3.3</span> Łączenie<a href="zlozone-obiekty.html#łączenie-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Łączenie list może odbywać się na dwa podstawowe sposoby.
 W pierwszym, używając funkcji <code>c()</code> następuje dołączenie elementów jednej listy do drugiej.</p>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="zlozone-obiekty.html#cb218-1"></a>lista2 =<span class="st"> </span><span class="kw">c</span>(lista1, lista1)</span>
-<span id="cb218-2"><a href="zlozone-obiekty.html#cb218-2"></a><span class="kw">str</span>(lista2)</span>
-<span id="cb218-3"><a href="zlozone-obiekty.html#cb218-3"></a><span class="co">#&gt; List of 8</span></span>
-<span id="cb218-4"><a href="zlozone-obiekty.html#cb218-4"></a><span class="co">#&gt;  $ log: logi [1:2] TRUE FALSE</span></span>
-<span id="cb218-5"><a href="zlozone-obiekty.html#cb218-5"></a><span class="co">#&gt;  $ cal: int [1:2] 5 -7</span></span>
-<span id="cb218-6"><a href="zlozone-obiekty.html#cb218-6"></a><span class="co">#&gt;  $ zmi: num 5.3</span></span>
-<span id="cb218-7"><a href="zlozone-obiekty.html#cb218-7"></a><span class="co">#&gt;  $ zna: chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></span>
-<span id="cb218-8"><a href="zlozone-obiekty.html#cb218-8"></a><span class="co">#&gt;  $ log: logi [1:2] TRUE FALSE</span></span>
-<span id="cb218-9"><a href="zlozone-obiekty.html#cb218-9"></a><span class="co">#&gt;  $ cal: int [1:2] 5 -7</span></span>
-<span id="cb218-10"><a href="zlozone-obiekty.html#cb218-10"></a><span class="co">#&gt;  $ zmi: num 5.3</span></span>
-<span id="cb218-11"><a href="zlozone-obiekty.html#cb218-11"></a><span class="co">#&gt;  $ zna: chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb218-1" title="1">lista2 =<span class="st"> </span><span class="kw">c</span>(lista1, lista1)</a>
+<a class="sourceLine" id="cb218-2" title="2"><span class="kw">str</span>(lista2)</a>
+<a class="sourceLine" id="cb218-3" title="3"><span class="co">#&gt; List of 8</span></a>
+<a class="sourceLine" id="cb218-4" title="4"><span class="co">#&gt;  $ log: logi [1:2] TRUE FALSE</span></a>
+<a class="sourceLine" id="cb218-5" title="5"><span class="co">#&gt;  $ cal: int [1:2] 5 -7</span></a>
+<a class="sourceLine" id="cb218-6" title="6"><span class="co">#&gt;  $ zmi: num 5.3</span></a>
+<a class="sourceLine" id="cb218-7" title="7"><span class="co">#&gt;  $ zna: chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></a>
+<a class="sourceLine" id="cb218-8" title="8"><span class="co">#&gt;  $ log: logi [1:2] TRUE FALSE</span></a>
+<a class="sourceLine" id="cb218-9" title="9"><span class="co">#&gt;  $ cal: int [1:2] 5 -7</span></a>
+<a class="sourceLine" id="cb218-10" title="10"><span class="co">#&gt;  $ zmi: num 5.3</span></a>
+<a class="sourceLine" id="cb218-11" title="11"><span class="co">#&gt;  $ zna: chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></a></code></pre></div>
 <p>Efektem nadal jest jedna lista, ale składająca się z większej liczby elementów.</p>
 <p>Drugim sposobem jest użycie funkcji <code>list()</code>.
 W tym przypadku tworzona jest nowa, nadrzędna lista, która zawiera dwie wcześniejsze listy.</p>
-<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="zlozone-obiekty.html#cb219-1"></a>lista3 =<span class="st"> </span><span class="kw">list</span>(lista1, lista1)</span>
-<span id="cb219-2"><a href="zlozone-obiekty.html#cb219-2"></a><span class="kw">str</span>(lista3)</span>
-<span id="cb219-3"><a href="zlozone-obiekty.html#cb219-3"></a><span class="co">#&gt; List of 2</span></span>
-<span id="cb219-4"><a href="zlozone-obiekty.html#cb219-4"></a><span class="co">#&gt;  $ :List of 4</span></span>
-<span id="cb219-5"><a href="zlozone-obiekty.html#cb219-5"></a><span class="co">#&gt;   ..$ log: logi [1:2] TRUE FALSE</span></span>
-<span id="cb219-6"><a href="zlozone-obiekty.html#cb219-6"></a><span class="co">#&gt;   ..$ cal: int [1:2] 5 -7</span></span>
-<span id="cb219-7"><a href="zlozone-obiekty.html#cb219-7"></a><span class="co">#&gt;   ..$ zmi: num 5.3</span></span>
-<span id="cb219-8"><a href="zlozone-obiekty.html#cb219-8"></a><span class="co">#&gt;   ..$ zna: chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></span>
-<span id="cb219-9"><a href="zlozone-obiekty.html#cb219-9"></a><span class="co">#&gt;  $ :List of 4</span></span>
-<span id="cb219-10"><a href="zlozone-obiekty.html#cb219-10"></a><span class="co">#&gt;   ..$ log: logi [1:2] TRUE FALSE</span></span>
-<span id="cb219-11"><a href="zlozone-obiekty.html#cb219-11"></a><span class="co">#&gt;   ..$ cal: int [1:2] 5 -7</span></span>
-<span id="cb219-12"><a href="zlozone-obiekty.html#cb219-12"></a><span class="co">#&gt;   ..$ zmi: num 5.3</span></span>
-<span id="cb219-13"><a href="zlozone-obiekty.html#cb219-13"></a><span class="co">#&gt;   ..$ zna: chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb219-1" title="1">lista3 =<span class="st"> </span><span class="kw">list</span>(lista1, lista1)</a>
+<a class="sourceLine" id="cb219-2" title="2"><span class="kw">str</span>(lista3)</a>
+<a class="sourceLine" id="cb219-3" title="3"><span class="co">#&gt; List of 2</span></a>
+<a class="sourceLine" id="cb219-4" title="4"><span class="co">#&gt;  $ :List of 4</span></a>
+<a class="sourceLine" id="cb219-5" title="5"><span class="co">#&gt;   ..$ log: logi [1:2] TRUE FALSE</span></a>
+<a class="sourceLine" id="cb219-6" title="6"><span class="co">#&gt;   ..$ cal: int [1:2] 5 -7</span></a>
+<a class="sourceLine" id="cb219-7" title="7"><span class="co">#&gt;   ..$ zmi: num 5.3</span></a>
+<a class="sourceLine" id="cb219-8" title="8"><span class="co">#&gt;   ..$ zna: chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></a>
+<a class="sourceLine" id="cb219-9" title="9"><span class="co">#&gt;  $ :List of 4</span></a>
+<a class="sourceLine" id="cb219-10" title="10"><span class="co">#&gt;   ..$ log: logi [1:2] TRUE FALSE</span></a>
+<a class="sourceLine" id="cb219-11" title="11"><span class="co">#&gt;   ..$ cal: int [1:2] 5 -7</span></a>
+<a class="sourceLine" id="cb219-12" title="12"><span class="co">#&gt;   ..$ zmi: num 5.3</span></a>
+<a class="sourceLine" id="cb219-13" title="13"><span class="co">#&gt;   ..$ zna: chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></a></code></pre></div>
 </div>
-<div id="wydzielanie-list" class="section level3" number="7.3.4">
-<h3><span class="header-section-number">7.3.4</span> Wydzielanie</h3>
+<div id="wydzielanie-list" class="section level3 hasAnchor">
+<h3><span class="header-section-number">7.3.4</span> Wydzielanie<a href="zlozone-obiekty.html#wydzielanie-list" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Wydzielanie list może mieć miejsce używając jednego z trzech operatorów - <code>[]</code>, <code>[[]]</code>, oraz <code>$</code>.</p>
 <p>Operator <code>[]</code> wydziela wybrane elementy z listy, ale jednocześnie dalej zwraca w wyniku obiekt klasy lista.
 Wyobraź sobie, że masz torbę zawierający cztery przedmioty (<em>listę zawierającą cztery elementy</em>) i chcesz zostawić w plecaku tylko pierwszy i drugi z nich.</p>
-<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="zlozone-obiekty.html#cb220-1"></a>lista4 =<span class="st"> </span>lista1[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)]</span>
-<span id="cb220-2"><a href="zlozone-obiekty.html#cb220-2"></a>lista4</span>
-<span id="cb220-3"><a href="zlozone-obiekty.html#cb220-3"></a><span class="co">#&gt; $log</span></span>
-<span id="cb220-4"><a href="zlozone-obiekty.html#cb220-4"></a><span class="co">#&gt; [1]  TRUE FALSE</span></span>
-<span id="cb220-5"><a href="zlozone-obiekty.html#cb220-5"></a><span class="co">#&gt; </span></span>
-<span id="cb220-6"><a href="zlozone-obiekty.html#cb220-6"></a><span class="co">#&gt; $cal</span></span>
-<span id="cb220-7"><a href="zlozone-obiekty.html#cb220-7"></a><span class="co">#&gt; [1]  5 -7</span></span>
-<span id="cb220-8"><a href="zlozone-obiekty.html#cb220-8"></a><span class="kw">str</span>(lista4)</span>
-<span id="cb220-9"><a href="zlozone-obiekty.html#cb220-9"></a><span class="co">#&gt; List of 2</span></span>
-<span id="cb220-10"><a href="zlozone-obiekty.html#cb220-10"></a><span class="co">#&gt;  $ log: logi [1:2] TRUE FALSE</span></span>
-<span id="cb220-11"><a href="zlozone-obiekty.html#cb220-11"></a><span class="co">#&gt;  $ cal: int [1:2] 5 -7</span></span></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb220-1" title="1">lista4 =<span class="st"> </span>lista1[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)]</a>
+<a class="sourceLine" id="cb220-2" title="2">lista4</a>
+<a class="sourceLine" id="cb220-3" title="3"><span class="co">#&gt; $log</span></a>
+<a class="sourceLine" id="cb220-4" title="4"><span class="co">#&gt; [1]  TRUE FALSE</span></a>
+<a class="sourceLine" id="cb220-5" title="5"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb220-6" title="6"><span class="co">#&gt; $cal</span></a>
+<a class="sourceLine" id="cb220-7" title="7"><span class="co">#&gt; [1]  5 -7</span></a>
+<a class="sourceLine" id="cb220-8" title="8"><span class="kw">str</span>(lista4)</a>
+<a class="sourceLine" id="cb220-9" title="9"><span class="co">#&gt; List of 2</span></a>
+<a class="sourceLine" id="cb220-10" title="10"><span class="co">#&gt;  $ log: logi [1:2] TRUE FALSE</span></a>
+<a class="sourceLine" id="cb220-11" title="11"><span class="co">#&gt;  $ cal: int [1:2] 5 -7</span></a></code></pre></div>
 <p>W efekcie wynikowy obiekt nadal jest listą, ale z mniejszą liczbą elementów.</p>
 <p>Do wydobycia wartości z listy służą operatory <code>[[]]</code> oraz <code>$</code>.
 Pierwszy z nich wydobywa wartości na podstawie ich położenia i w efekcie otrzymywany jest obiekt znajdujący się wewnątrz listy.
 W poniższym przykładzie, wydzielany jest czwarty element z obiektu <code>lista1</code>.</p>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="zlozone-obiekty.html#cb221-1"></a>lista5 =<span class="st"> </span>lista1[[<span class="dv">4</span>]]</span>
-<span id="cb221-2"><a href="zlozone-obiekty.html#cb221-2"></a>lista5</span>
-<span id="cb221-3"><a href="zlozone-obiekty.html#cb221-3"></a><span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span></span>
-<span id="cb221-4"><a href="zlozone-obiekty.html#cb221-4"></a><span class="kw">str</span>(lista5)</span>
-<span id="cb221-5"><a href="zlozone-obiekty.html#cb221-5"></a><span class="co">#&gt;  chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb221-1" title="1">lista5 =<span class="st"> </span>lista1[[<span class="dv">4</span>]]</a>
+<a class="sourceLine" id="cb221-2" title="2">lista5</a>
+<a class="sourceLine" id="cb221-3" title="3"><span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span></a>
+<a class="sourceLine" id="cb221-4" title="4"><span class="kw">str</span>(lista5)</a>
+<a class="sourceLine" id="cb221-5" title="5"><span class="co">#&gt;  chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></a></code></pre></div>
 <p>Czwarty element w <code>lista1</code> jest wektorem znakowym o długości trzy.
 W przypadku, gdy wybrany element listy jest innej klasy to jest on również zwracany.
 Poniżej drugi element <code>listy3</code> jest również listą - wyobraź to sobie jako wyciągnięcie jednej torby, która znajduje się wewnątrz innej.</p>
-<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="zlozone-obiekty.html#cb222-1"></a>lista6 =<span class="st"> </span>lista3[[<span class="dv">2</span>]]</span>
-<span id="cb222-2"><a href="zlozone-obiekty.html#cb222-2"></a>lista6</span>
-<span id="cb222-3"><a href="zlozone-obiekty.html#cb222-3"></a><span class="co">#&gt; $log</span></span>
-<span id="cb222-4"><a href="zlozone-obiekty.html#cb222-4"></a><span class="co">#&gt; [1]  TRUE FALSE</span></span>
-<span id="cb222-5"><a href="zlozone-obiekty.html#cb222-5"></a><span class="co">#&gt; </span></span>
-<span id="cb222-6"><a href="zlozone-obiekty.html#cb222-6"></a><span class="co">#&gt; $cal</span></span>
-<span id="cb222-7"><a href="zlozone-obiekty.html#cb222-7"></a><span class="co">#&gt; [1]  5 -7</span></span>
-<span id="cb222-8"><a href="zlozone-obiekty.html#cb222-8"></a><span class="co">#&gt; </span></span>
-<span id="cb222-9"><a href="zlozone-obiekty.html#cb222-9"></a><span class="co">#&gt; $zmi</span></span>
-<span id="cb222-10"><a href="zlozone-obiekty.html#cb222-10"></a><span class="co">#&gt; [1] 5.3</span></span>
-<span id="cb222-11"><a href="zlozone-obiekty.html#cb222-11"></a><span class="co">#&gt; </span></span>
-<span id="cb222-12"><a href="zlozone-obiekty.html#cb222-12"></a><span class="co">#&gt; $zna</span></span>
-<span id="cb222-13"><a href="zlozone-obiekty.html#cb222-13"></a><span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span></span>
-<span id="cb222-14"><a href="zlozone-obiekty.html#cb222-14"></a><span class="kw">str</span>(lista6)</span>
-<span id="cb222-15"><a href="zlozone-obiekty.html#cb222-15"></a><span class="co">#&gt; List of 4</span></span>
-<span id="cb222-16"><a href="zlozone-obiekty.html#cb222-16"></a><span class="co">#&gt;  $ log: logi [1:2] TRUE FALSE</span></span>
-<span id="cb222-17"><a href="zlozone-obiekty.html#cb222-17"></a><span class="co">#&gt;  $ cal: int [1:2] 5 -7</span></span>
-<span id="cb222-18"><a href="zlozone-obiekty.html#cb222-18"></a><span class="co">#&gt;  $ zmi: num 5.3</span></span>
-<span id="cb222-19"><a href="zlozone-obiekty.html#cb222-19"></a><span class="co">#&gt;  $ zna: chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb222-1" title="1">lista6 =<span class="st"> </span>lista3[[<span class="dv">2</span>]]</a>
+<a class="sourceLine" id="cb222-2" title="2">lista6</a>
+<a class="sourceLine" id="cb222-3" title="3"><span class="co">#&gt; $log</span></a>
+<a class="sourceLine" id="cb222-4" title="4"><span class="co">#&gt; [1]  TRUE FALSE</span></a>
+<a class="sourceLine" id="cb222-5" title="5"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb222-6" title="6"><span class="co">#&gt; $cal</span></a>
+<a class="sourceLine" id="cb222-7" title="7"><span class="co">#&gt; [1]  5 -7</span></a>
+<a class="sourceLine" id="cb222-8" title="8"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb222-9" title="9"><span class="co">#&gt; $zmi</span></a>
+<a class="sourceLine" id="cb222-10" title="10"><span class="co">#&gt; [1] 5.3</span></a>
+<a class="sourceLine" id="cb222-11" title="11"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb222-12" title="12"><span class="co">#&gt; $zna</span></a>
+<a class="sourceLine" id="cb222-13" title="13"><span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span></a>
+<a class="sourceLine" id="cb222-14" title="14"><span class="kw">str</span>(lista6)</a>
+<a class="sourceLine" id="cb222-15" title="15"><span class="co">#&gt; List of 4</span></a>
+<a class="sourceLine" id="cb222-16" title="16"><span class="co">#&gt;  $ log: logi [1:2] TRUE FALSE</span></a>
+<a class="sourceLine" id="cb222-17" title="17"><span class="co">#&gt;  $ cal: int [1:2] 5 -7</span></a>
+<a class="sourceLine" id="cb222-18" title="18"><span class="co">#&gt;  $ zmi: num 5.3</span></a>
+<a class="sourceLine" id="cb222-19" title="19"><span class="co">#&gt;  $ zna: chr [1:3] &quot;kot&quot; &quot;pies&quot; &quot;nosorożec&quot;</span></a></code></pre></div>
 <p>Ostatni operator, <code>$</code>, wydziela wartości na podstawie ich nazw.</p>
-<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="zlozone-obiekty.html#cb223-1"></a>lista1<span class="op">$</span>zna</span>
-<span id="cb223-2"><a href="zlozone-obiekty.html#cb223-2"></a><span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb223-1" title="1">lista1<span class="op">$</span>zna</a>
+<a class="sourceLine" id="cb223-2" title="2"><span class="co">#&gt; [1] &quot;kot&quot;       &quot;pies&quot;      &quot;nosorożec&quot;</span></a></code></pre></div>
 </div>
 </div>
-<div id="zmiany-klas" class="section level2" number="7.4">
-<h2><span class="header-section-number">7.4</span> Zmiany klas</h2>
+<div id="zmiany-klas" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.4</span> Zmiany klas<a href="zlozone-obiekty.html#zmiany-klas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>R ma też szereg pomocniczych służących do zmian istniejących klas.
 Te funkcje rozpoczynają się od <code>as.</code> a następnie zawierają nazwę klasy do której chcemy przetworzyć wejściowy obiekt, np. <code>as.vector()</code>, <code>as.matrix()</code>, <code>as.data.frame()</code>, <code>as.list()</code>.</p>
 <p>Działanie tych funkcji jednak jest bardzo różne w zależności o klasy wejściowego obiektu.
 Zobaczmy to na przykładzie obiektu <code>macierz1</code>.</p>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="zlozone-obiekty.html#cb224-1"></a>macierz1</span>
-<span id="cb224-2"><a href="zlozone-obiekty.html#cb224-2"></a><span class="co">#&gt;      [,1] [,2] [,3]</span></span>
-<span id="cb224-3"><a href="zlozone-obiekty.html#cb224-3"></a><span class="co">#&gt; [1,]    1    5    9</span></span>
-<span id="cb224-4"><a href="zlozone-obiekty.html#cb224-4"></a><span class="co">#&gt; [2,]    2    6   10</span></span>
-<span id="cb224-5"><a href="zlozone-obiekty.html#cb224-5"></a><span class="co">#&gt; [3,]    3    7   11</span></span>
-<span id="cb224-6"><a href="zlozone-obiekty.html#cb224-6"></a><span class="co">#&gt; [4,]    4    8   12</span></span>
-<span id="cb224-7"><a href="zlozone-obiekty.html#cb224-7"></a><span class="kw">class</span>(macierz1)</span>
-<span id="cb224-8"><a href="zlozone-obiekty.html#cb224-8"></a><span class="co">#&gt; [1] &quot;matrix&quot; &quot;array&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb224-1" title="1">macierz1</a>
+<a class="sourceLine" id="cb224-2" title="2"><span class="co">#&gt;      [,1] [,2] [,3]</span></a>
+<a class="sourceLine" id="cb224-3" title="3"><span class="co">#&gt; [1,]    1    5    9</span></a>
+<a class="sourceLine" id="cb224-4" title="4"><span class="co">#&gt; [2,]    2    6   10</span></a>
+<a class="sourceLine" id="cb224-5" title="5"><span class="co">#&gt; [3,]    3    7   11</span></a>
+<a class="sourceLine" id="cb224-6" title="6"><span class="co">#&gt; [4,]    4    8   12</span></a>
+<a class="sourceLine" id="cb224-7" title="7"><span class="kw">class</span>(macierz1)</a>
+<a class="sourceLine" id="cb224-8" title="8"><span class="co">#&gt; [1] &quot;matrix&quot; &quot;array&quot;</span></a></code></pre></div>
 <p>Jego zamiana na ramkę danych odbywa się używając funkcji <code>as.data.frame()</code>.
 W efekcie nowy obiekt ma takie same wymiary (cztery wiersze i trzy kolumny) oraz te same wartości.
 Zauważalną zmianą jest jednak automatyczne dodane nazw wierszy (<code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>) i nazw kolumn (<code>V1</code>, <code>V2</code>, <code>V3</code>).</p>
-<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="zlozone-obiekty.html#cb225-1"></a>ramka_z_m1 =<span class="st"> </span><span class="kw">as.data.frame</span>(macierz1)</span>
-<span id="cb225-2"><a href="zlozone-obiekty.html#cb225-2"></a>ramka_z_m1</span>
-<span id="cb225-3"><a href="zlozone-obiekty.html#cb225-3"></a><span class="co">#&gt;   V1 V2 V3</span></span>
-<span id="cb225-4"><a href="zlozone-obiekty.html#cb225-4"></a><span class="co">#&gt; 1  1  5  9</span></span>
-<span id="cb225-5"><a href="zlozone-obiekty.html#cb225-5"></a><span class="co">#&gt; 2  2  6 10</span></span>
-<span id="cb225-6"><a href="zlozone-obiekty.html#cb225-6"></a><span class="co">#&gt; 3  3  7 11</span></span>
-<span id="cb225-7"><a href="zlozone-obiekty.html#cb225-7"></a><span class="co">#&gt; 4  4  8 12</span></span>
-<span id="cb225-8"><a href="zlozone-obiekty.html#cb225-8"></a><span class="kw">class</span>(ramka_z_m1)</span>
-<span id="cb225-9"><a href="zlozone-obiekty.html#cb225-9"></a><span class="co">#&gt; [1] &quot;data.frame&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb225-1" title="1">ramka_z_m1 =<span class="st"> </span><span class="kw">as.data.frame</span>(macierz1)</a>
+<a class="sourceLine" id="cb225-2" title="2">ramka_z_m1</a>
+<a class="sourceLine" id="cb225-3" title="3"><span class="co">#&gt;   V1 V2 V3</span></a>
+<a class="sourceLine" id="cb225-4" title="4"><span class="co">#&gt; 1  1  5  9</span></a>
+<a class="sourceLine" id="cb225-5" title="5"><span class="co">#&gt; 2  2  6 10</span></a>
+<a class="sourceLine" id="cb225-6" title="6"><span class="co">#&gt; 3  3  7 11</span></a>
+<a class="sourceLine" id="cb225-7" title="7"><span class="co">#&gt; 4  4  8 12</span></a>
+<a class="sourceLine" id="cb225-8" title="8"><span class="kw">class</span>(ramka_z_m1)</a>
+<a class="sourceLine" id="cb225-9" title="9"><span class="co">#&gt; [1] &quot;data.frame&quot;</span></a></code></pre></div>
 <p>Zupełnie inny efekt będzie miało natomiast zamienienie macierzy i ramki danych na listy.</p>
-<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="zlozone-obiekty.html#cb226-1"></a>lista_z_m1 =<span class="st"> </span><span class="kw">as.list</span>(macierz1)</span>
-<span id="cb226-2"><a href="zlozone-obiekty.html#cb226-2"></a>lista_z_r1 =<span class="st"> </span><span class="kw">as.list</span>(ramka_z_m1)</span></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb226-1" title="1">lista_z_m1 =<span class="st"> </span><span class="kw">as.list</span>(macierz1)</a>
+<a class="sourceLine" id="cb226-2" title="2">lista_z_r1 =<span class="st"> </span><span class="kw">as.list</span>(ramka_z_m1)</a></code></pre></div>
 <p>W pierwszym przypadku powstanie lista zawierająca dwanaście elementów.</p>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="zlozone-obiekty.html#cb227-1"></a><span class="kw">str</span>(lista_z_m1)</span>
-<span id="cb227-2"><a href="zlozone-obiekty.html#cb227-2"></a><span class="co">#&gt; List of 12</span></span>
-<span id="cb227-3"><a href="zlozone-obiekty.html#cb227-3"></a><span class="co">#&gt;  $ : int 1</span></span>
-<span id="cb227-4"><a href="zlozone-obiekty.html#cb227-4"></a><span class="co">#&gt;  $ : int 2</span></span>
-<span id="cb227-5"><a href="zlozone-obiekty.html#cb227-5"></a><span class="co">#&gt;  $ : int 3</span></span>
-<span id="cb227-6"><a href="zlozone-obiekty.html#cb227-6"></a><span class="co">#&gt;  $ : int 4</span></span>
-<span id="cb227-7"><a href="zlozone-obiekty.html#cb227-7"></a><span class="co">#&gt;  $ : int 5</span></span>
-<span id="cb227-8"><a href="zlozone-obiekty.html#cb227-8"></a><span class="co">#&gt;  $ : int 6</span></span>
-<span id="cb227-9"><a href="zlozone-obiekty.html#cb227-9"></a><span class="co">#&gt;  $ : int 7</span></span>
-<span id="cb227-10"><a href="zlozone-obiekty.html#cb227-10"></a><span class="co">#&gt;  $ : int 8</span></span>
-<span id="cb227-11"><a href="zlozone-obiekty.html#cb227-11"></a><span class="co">#&gt;  $ : int 9</span></span>
-<span id="cb227-12"><a href="zlozone-obiekty.html#cb227-12"></a><span class="co">#&gt;  $ : int 10</span></span>
-<span id="cb227-13"><a href="zlozone-obiekty.html#cb227-13"></a><span class="co">#&gt;  $ : int 11</span></span>
-<span id="cb227-14"><a href="zlozone-obiekty.html#cb227-14"></a><span class="co">#&gt;  $ : int 12</span></span></code></pre></div>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb227-1" title="1"><span class="kw">str</span>(lista_z_m1)</a>
+<a class="sourceLine" id="cb227-2" title="2"><span class="co">#&gt; List of 12</span></a>
+<a class="sourceLine" id="cb227-3" title="3"><span class="co">#&gt;  $ : int 1</span></a>
+<a class="sourceLine" id="cb227-4" title="4"><span class="co">#&gt;  $ : int 2</span></a>
+<a class="sourceLine" id="cb227-5" title="5"><span class="co">#&gt;  $ : int 3</span></a>
+<a class="sourceLine" id="cb227-6" title="6"><span class="co">#&gt;  $ : int 4</span></a>
+<a class="sourceLine" id="cb227-7" title="7"><span class="co">#&gt;  $ : int 5</span></a>
+<a class="sourceLine" id="cb227-8" title="8"><span class="co">#&gt;  $ : int 6</span></a>
+<a class="sourceLine" id="cb227-9" title="9"><span class="co">#&gt;  $ : int 7</span></a>
+<a class="sourceLine" id="cb227-10" title="10"><span class="co">#&gt;  $ : int 8</span></a>
+<a class="sourceLine" id="cb227-11" title="11"><span class="co">#&gt;  $ : int 9</span></a>
+<a class="sourceLine" id="cb227-12" title="12"><span class="co">#&gt;  $ : int 10</span></a>
+<a class="sourceLine" id="cb227-13" title="13"><span class="co">#&gt;  $ : int 11</span></a>
+<a class="sourceLine" id="cb227-14" title="14"><span class="co">#&gt;  $ : int 12</span></a></code></pre></div>
 <p>W drugim przypadku efektem będzie lista składająca się z trzech wektorów, które reprezentują kolejne kolumny z poprzedniej ramki danych.</p>
-<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="zlozone-obiekty.html#cb228-1"></a><span class="kw">str</span>(lista_z_r1)</span>
-<span id="cb228-2"><a href="zlozone-obiekty.html#cb228-2"></a><span class="co">#&gt; List of 3</span></span>
-<span id="cb228-3"><a href="zlozone-obiekty.html#cb228-3"></a><span class="co">#&gt;  $ V1: int [1:4] 1 2 3 4</span></span>
-<span id="cb228-4"><a href="zlozone-obiekty.html#cb228-4"></a><span class="co">#&gt;  $ V2: int [1:4] 5 6 7 8</span></span>
-<span id="cb228-5"><a href="zlozone-obiekty.html#cb228-5"></a><span class="co">#&gt;  $ V3: int [1:4] 9 10 11 12</span></span></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb228-1" title="1"><span class="kw">str</span>(lista_z_r1)</a>
+<a class="sourceLine" id="cb228-2" title="2"><span class="co">#&gt; List of 3</span></a>
+<a class="sourceLine" id="cb228-3" title="3"><span class="co">#&gt;  $ V1: int [1:4] 1 2 3 4</span></a>
+<a class="sourceLine" id="cb228-4" title="4"><span class="co">#&gt;  $ V2: int [1:4] 5 6 7 8</span></a>
+<a class="sourceLine" id="cb228-5" title="5"><span class="co">#&gt;  $ V3: int [1:4] 9 10 11 12</span></a></code></pre></div>
 </div>
-<div id="inne-klasy" class="section level2" number="7.5">
-<h2><span class="header-section-number">7.5</span> Inne klasy obiektów</h2>
-<p>W tym oraz <a href="proste-obiekty.html#proste-obiekty">5</a> rozdziale zostały wymienione i opisane cztery podstawowe klasy obiektów w R - wektory atomowe, macierze, natomiast listy i ramki danych.
+<div id="inne-klasy" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.5</span> Inne klasy obiektów<a href="zlozone-obiekty.html#inne-klasy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>W tym oraz <a href="proste-obiekty.html#proste-obiekty">5</a> rozdziale zostały wymienione i opisane cztery podstawowe klasy obiektów w R - wektory atomowe, macierze, listy i ramki danych.
 R zawiera jednak znacznie więcej klas obiektów, a co więcej - każda osoba może stworzyć swoją własną klasę obiektów (sekcja <a href="zlozone-funkcje.html#oop">10.3</a>).</p>
 <p>Poniżej zostały stworzone trzy nowe wektory - znakowy (<code>wek_tkt</code>), numeryczny (<code>wek_num</code>) i dat (<code>wek_dat</code>).</p>
-<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="zlozone-obiekty.html#cb229-1"></a>wek_tkt =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>, <span class="st">&quot;nosorożec&quot;</span>)</span>
-<span id="cb229-2"><a href="zlozone-obiekty.html#cb229-2"></a>wek_num =<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>)</span>
-<span id="cb229-3"><a href="zlozone-obiekty.html#cb229-3"></a>wek_dat =<span class="st"> </span><span class="kw">as.Date</span>(<span class="kw">c</span>(<span class="st">&quot;2019-04-10&quot;</span>, <span class="st">&quot;2019-04-12&quot;</span>, <span class="st">&quot;2019-04-14&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb229-1" title="1">wek_tkt =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;kot&quot;</span>, <span class="st">&quot;pies&quot;</span>, <span class="st">&quot;nosorożec&quot;)</span></a>
+<a class="sourceLine" id="cb229-2" title="2"><span class="st">wek_num = c(4, 6, 8)</span></a>
+<a class="sourceLine" id="cb229-3" title="3"><span class="st">wek_dat = as.Date(c(&quot;</span><span class="dv">2019-04-10</span><span class="st">&quot;, &quot;</span><span class="dv">2019-04-12</span><span class="st">&quot;, &quot;</span><span class="dv">2019-04-14</span><span class="st">&quot;))</span></a></code></pre></div>
 <p>Czy można na nich wyliczyć średnią w ten sam sposób?
 Raczej nie - wyliczenie średniej z tekstu nie jest jednoznacznie możliwe, wyliczenie średniej z wartości numerycznych powinno dać wartość numeryczną, a wyliczenie średniej z dat - również datę.</p>
-<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="zlozone-obiekty.html#cb230-1"></a><span class="kw">mean</span>(wek_tkt)</span>
-<span id="cb230-2"><a href="zlozone-obiekty.html#cb230-2"></a><span class="co">#&gt; Warning in mean.default(wek_tkt): argument is not</span></span>
-<span id="cb230-3"><a href="zlozone-obiekty.html#cb230-3"></a><span class="co">#&gt; numeric or logical: returning NA</span></span>
-<span id="cb230-4"><a href="zlozone-obiekty.html#cb230-4"></a><span class="co">#&gt; [1] NA</span></span>
-<span id="cb230-5"><a href="zlozone-obiekty.html#cb230-5"></a><span class="kw">mean</span>(wek_num)</span>
-<span id="cb230-6"><a href="zlozone-obiekty.html#cb230-6"></a><span class="co">#&gt; [1] 6</span></span>
-<span id="cb230-7"><a href="zlozone-obiekty.html#cb230-7"></a><span class="kw">mean</span>(wek_dat)</span>
-<span id="cb230-8"><a href="zlozone-obiekty.html#cb230-8"></a><span class="co">#&gt; [1] &quot;2019-04-12&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb230-1" title="1"><span class="kw">mean</span>(wek_tkt)</a>
+<a class="sourceLine" id="cb230-2" title="2"><span class="co">#&gt; Warning in mean.default(wek_tkt): argument is not</span></a>
+<a class="sourceLine" id="cb230-3" title="3"><span class="co">#&gt; numeric or logical: returning NA</span></a>
+<a class="sourceLine" id="cb230-4" title="4"><span class="co">#&gt; [1] NA</span></a>
+<a class="sourceLine" id="cb230-5" title="5"><span class="kw">mean</span>(wek_num)</a>
+<a class="sourceLine" id="cb230-6" title="6"><span class="co">#&gt; [1] 6</span></a>
+<a class="sourceLine" id="cb230-7" title="7"><span class="kw">mean</span>(wek_dat)</a>
+<a class="sourceLine" id="cb230-8" title="8"><span class="co">#&gt; [1] &quot;2019-04-12&quot;</span></a></code></pre></div>
 <p>Powyższe wyniki są poprawne, ale każdy z nich zwraca inny rodzaj wyniku.
 Jest to możliwe dzięki tzw. metodom (ang. <em>methods</em>).
 Metoda to sposób w jaki zachowuje się funkcja w zależności od tego jakiej klasy będzie obiekt wejściowy.</p>
-<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="zlozone-obiekty.html#cb231-1"></a><span class="kw">methods</span>(mean)</span>
-<span id="cb231-2"><a href="zlozone-obiekty.html#cb231-2"></a><span class="co">#&gt; [1] mean.Date     mean.default  mean.difftime</span></span>
-<span id="cb231-3"><a href="zlozone-obiekty.html#cb231-3"></a><span class="co">#&gt; [4] mean.POSIXct  mean.POSIXlt  mean.quosure*</span></span>
-<span id="cb231-4"><a href="zlozone-obiekty.html#cb231-4"></a><span class="co">#&gt; see &#39;?methods&#39; for accessing help and source code</span></span></code></pre></div>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb231-1" title="1"><span class="kw">methods</span>(mean)</a>
+<a class="sourceLine" id="cb231-2" title="2"><span class="co">#&gt; [1] mean.Date     mean.default  mean.difftime</span></a>
+<a class="sourceLine" id="cb231-3" title="3"><span class="co">#&gt; [4] mean.POSIXct  mean.POSIXlt  mean.quosure*</span></a>
+<a class="sourceLine" id="cb231-4" title="4"><span class="co">#&gt; see &#39;?methods&#39; for accessing help and source code</span></a></code></pre></div>
 <p>Przykładowo, funkcja <code>mean()</code> ma kilka metod:</p>
 <ul>
 <li><code>.Date</code> - obsługującą daty</li>
@@ -909,8 +883,8 @@ Metoda to sposób w jaki zachowuje się funkcja w zależności od tego jakiej kl
 Natomiast w sytuacji, gdy dla danej klasy obiektu nie ma istniejącej metody, używana jest domyślna metoda (<code>.default</code>).</p>
 <p>Jak widać w powyższym przykładzie, nowe klasy obiektów oraz nowe metody są tworzone, aby ułatwić pracę na innych niż domyślne strukturach danych.</p>
 </div>
-<div id="zad7" class="section level2" number="7.6">
-<h2><span class="header-section-number">7.6</span> Zadania</h2>
+<div id="zad7" class="section level2 hasAnchor">
+<h2><span class="header-section-number">7.6</span> Zadania<a href="zlozone-obiekty.html#zad7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <!-- dodaj zadania data science (aka dataset) -->
 <ol style="list-style-type: decimal">
 <li>Stwórz trzy nowe macierze - <code>ma1</code>, <code>ma2</code>, <code>ma3</code> - składające się z trzech wierszy i czterech kolumn.
@@ -939,8 +913,8 @@ Co jest efektem zamiany klasy?</li>
 
 </div>
 </div>
-<h3>Bibliografia</h3>
-<div id="refs" class="references hanging-indent">
+<h3>Bibliografia<a href="bibliografia.html#bibliografia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references">
 <div id="ref-wickham2014advanced">
 <p>Wickham, Hadley. 2014. <em>Advanced R</em>. Chapman and Hall/CRC.</p>
 </div>

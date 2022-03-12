@@ -32,7 +32,6 @@
   
 <link rel="prev" href="zlozone-obiekty.html"/>
 <link rel="next" href="io.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,34 +49,33 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -86,9 +84,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -138,236 +136,207 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Elementarz programisty</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#wymagania-wstępne"><i class="fa fa-check"></i>Wymagania wstępne</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#styl-książki"><i class="fa fa-check"></i>Styl książki</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#podziękowania"><i class="fa fa-check"></i>Podziękowania</a></li>
+<li><a href="index.html#o-książce">O książce<span></span></a><ul>
+<li><a href="index.html#wymagania-wstępne">Wymagania wstępne<span></span></a></li>
+<li><a href="index.html#styl-książki">Styl książki<span></span></a></li>
+<li><a href="index.html#podziękowania">Podziękowania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="wprowadzenie.html"><a href="wprowadzenie.html#mity-programistyczne"><i class="fa fa-check"></i><b>1.1</b> Mity programistyczne</a></li>
-<li class="chapter" data-level="1.2" data-path="wprowadzenie.html"><a href="wprowadzenie.html#jezyki-programowania"><i class="fa fa-check"></i><b>1.2</b> Języki programowania</a></li>
-<li class="chapter" data-level="1.3" data-path="wprowadzenie.html"><a href="wprowadzenie.html#r"><i class="fa fa-check"></i><b>1.3</b> R</a></li>
-<li class="chapter" data-level="1.4" data-path="wprowadzenie.html"><a href="wprowadzenie.html#zad1"><i class="fa fa-check"></i><b>1.4</b> Zadania</a></li>
+<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie<span></span></a><ul>
+<li class="chapter" data-level="1.1" data-path="wprowadzenie.html"><a href="wprowadzenie.html#mity-programistyczne"><i class="fa fa-check"></i><b>1.1</b> Mity programistyczne<span></span></a></li>
+<li class="chapter" data-level="1.2" data-path="wprowadzenie.html"><a href="wprowadzenie.html#jezyki-programowania"><i class="fa fa-check"></i><b>1.2</b> Języki programowania<span></span></a></li>
+<li class="chapter" data-level="1.3" data-path="wprowadzenie.html"><a href="wprowadzenie.html#r"><i class="fa fa-check"></i><b>1.3</b> R<span></span></a></li>
+<li class="chapter" data-level="1.4" data-path="wprowadzenie.html"><a href="wprowadzenie.html#zad1"><i class="fa fa-check"></i><b>1.4</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="part"><span><b>I Podstawy</b></span></li>
-<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrażenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia</a></li>
-<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a>
-<ul>
-<li class="chapter" data-level="2.2.1" data-path="ergosum.html"><a href="ergosum.html#operator-przypisania"><i class="fa fa-check"></i><b>2.2.1</b> Operator przypisania</a></li>
-<li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dzialania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach</a></li>
+<li class="part"><span><b>I Podstawy<span></span></b></span></li>
+<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R<span></span></a><ul>
+<li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrażenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia<span></span></a></li>
+<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty<span></span></a><ul>
+<li class="chapter" data-level="2.2.1" data-path="ergosum.html"><a href="ergosum.html#operator-przypisania"><i class="fa fa-check"></i><b>2.2.1</b> Operator przypisania<span></span></a></li>
+<li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dzialania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ergosum.html"><a href="ergosum.html#ide"><i class="fa fa-check"></i><b>2.3</b> IDE</a></li>
-<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a>
-<ul>
-<li class="chapter" data-level="2.4.1" data-path="ergosum.html"><a href="ergosum.html#nazwy-obiektow"><i class="fa fa-check"></i><b>2.4.1</b> Nazwy obiektów</a></li>
-<li class="chapter" data-level="2.4.2" data-path="ergosum.html"><a href="ergosum.html#odstępy"><i class="fa fa-check"></i><b>2.4.2</b> Odstępy</a></li>
-<li class="chapter" data-level="2.4.3" data-path="ergosum.html"><a href="ergosum.html#komentarze"><i class="fa fa-check"></i><b>2.4.3</b> Komentarze</a></li>
-<li class="chapter" data-level="2.4.4" data-path="ergosum.html"><a href="ergosum.html#nazwy-plików"><i class="fa fa-check"></i><b>2.4.4</b> Nazwy plików</a></li>
-<li class="chapter" data-level="2.4.5" data-path="ergosum.html"><a href="ergosum.html#daty"><i class="fa fa-check"></i><b>2.4.5</b> Daty</a></li>
+<li class="chapter" data-level="2.3" data-path="ergosum.html"><a href="ergosum.html#ide"><i class="fa fa-check"></i><b>2.3</b> IDE<span></span></a></li>
+<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl<span></span></a><ul>
+<li class="chapter" data-level="2.4.1" data-path="ergosum.html"><a href="ergosum.html#nazwy-obiektow"><i class="fa fa-check"></i><b>2.4.1</b> Nazwy obiektów<span></span></a></li>
+<li class="chapter" data-level="2.4.2" data-path="ergosum.html"><a href="ergosum.html#odstępy"><i class="fa fa-check"></i><b>2.4.2</b> Odstępy<span></span></a></li>
+<li class="chapter" data-level="2.4.3" data-path="ergosum.html"><a href="ergosum.html#komentarze"><i class="fa fa-check"></i><b>2.4.3</b> Komentarze<span></span></a></li>
+<li class="chapter" data-level="2.4.4" data-path="ergosum.html"><a href="ergosum.html#nazwy-plików"><i class="fa fa-check"></i><b>2.4.4</b> Nazwy plików<span></span></a></li>
+<li class="chapter" data-level="2.4.5" data-path="ergosum.html"><a href="ergosum.html#daty"><i class="fa fa-check"></i><b>2.4.5</b> Daty<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="ergosum.html"><a href="ergosum.html#resources"><i class="fa fa-check"></i><b>2.5</b> Dodatkowe materiały</a></li>
-<li class="chapter" data-level="2.6" data-path="ergosum.html"><a href="ergosum.html#zad2"><i class="fa fa-check"></i><b>2.6</b> Zadania</a></li>
+<li class="chapter" data-level="2.5" data-path="ergosum.html"><a href="ergosum.html#resources"><i class="fa fa-check"></i><b>2.5</b> Dodatkowe materiały<span></span></a></li>
+<li class="chapter" data-level="2.6" data-path="ergosum.html"><a href="ergosum.html#zad2"><i class="fa fa-check"></i><b>2.6</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="funkcje.html"><a href="funkcje.html#struktura-funkcji"><i class="fa fa-check"></i><b>3.1</b> Struktura funkcji</a></li>
-<li class="chapter" data-level="3.2" data-path="funkcje.html"><a href="funkcje.html#wbudowane-funkcje"><i class="fa fa-check"></i><b>3.2</b> Wbudowane funkcje</a></li>
-<li class="chapter" data-level="3.3" data-path="funkcje.html"><a href="funkcje.html#kolejnosc-funkcji"><i class="fa fa-check"></i><b>3.3</b> Kolejność wykonywania funkcji</a></li>
-<li class="chapter" data-level="3.4" data-path="funkcje.html"><a href="funkcje.html#dokumentacja-funkcji"><i class="fa fa-check"></i><b>3.4</b> Dokumentacja funkcji</a></li>
-<li class="chapter" data-level="3.5" data-path="funkcje.html"><a href="funkcje.html#pakiety"><i class="fa fa-check"></i><b>3.5</b> Pakiety</a></li>
-<li class="chapter" data-level="3.6" data-path="funkcje.html"><a href="funkcje.html#algorytmy"><i class="fa fa-check"></i><b>3.6</b> Algorytmy</a></li>
-<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptow"><i class="fa fa-check"></i><b>3.7</b> Tworzenie skryptów</a></li>
-<li class="chapter" data-level="3.8" data-path="funkcje.html"><a href="funkcje.html#budowanie-funkcji"><i class="fa fa-check"></i><b>3.8</b> Budowanie funkcji</a></li>
-<li class="chapter" data-level="3.9" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.9</b> Komunikaty</a></li>
-<li class="chapter" data-level="3.10" data-path="funkcje.html"><a href="funkcje.html#zad3"><i class="fa fa-check"></i><b>3.10</b> Zadania</a></li>
+<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje<span></span></a><ul>
+<li class="chapter" data-level="3.1" data-path="funkcje.html"><a href="funkcje.html#struktura-funkcji"><i class="fa fa-check"></i><b>3.1</b> Struktura funkcji<span></span></a></li>
+<li class="chapter" data-level="3.2" data-path="funkcje.html"><a href="funkcje.html#wbudowane-funkcje"><i class="fa fa-check"></i><b>3.2</b> Wbudowane funkcje<span></span></a></li>
+<li class="chapter" data-level="3.3" data-path="funkcje.html"><a href="funkcje.html#kolejnosc-funkcji"><i class="fa fa-check"></i><b>3.3</b> Kolejność wykonywania funkcji<span></span></a></li>
+<li class="chapter" data-level="3.4" data-path="funkcje.html"><a href="funkcje.html#dokumentacja-funkcji"><i class="fa fa-check"></i><b>3.4</b> Dokumentacja funkcji<span></span></a></li>
+<li class="chapter" data-level="3.5" data-path="funkcje.html"><a href="funkcje.html#pakiety"><i class="fa fa-check"></i><b>3.5</b> Pakiety<span></span></a></li>
+<li class="chapter" data-level="3.6" data-path="funkcje.html"><a href="funkcje.html#algorytmy"><i class="fa fa-check"></i><b>3.6</b> Algorytmy<span></span></a></li>
+<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptow"><i class="fa fa-check"></i><b>3.7</b> Tworzenie skryptów<span></span></a></li>
+<li class="chapter" data-level="3.8" data-path="funkcje.html"><a href="funkcje.html#budowanie-funkcji"><i class="fa fa-check"></i><b>3.8</b> Budowanie funkcji<span></span></a></li>
+<li class="chapter" data-level="3.9" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.9</b> Komunikaty<span></span></a></li>
+<li class="chapter" data-level="3.10" data-path="funkcje.html"><a href="funkcje.html#zad3"><i class="fa fa-check"></i><b>3.10</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
-<li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagnieżdżone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdżone</a></li>
-<li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porównania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
-<li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wwwf"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach</a></li>
-<li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zad4"><i class="fa fa-check"></i><b>4.5</b> Zadania</a></li>
+<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe<span></span></a><ul>
+<li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki<span></span></a></li>
+<li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagnieżdżone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdżone<span></span></a></li>
+<li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porównania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania<span></span></a></li>
+<li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wwwf"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach<span></span></a></li>
+<li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zad4"><i class="fa fa-check"></i><b>4.5</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wektory"><i class="fa fa-check"></i><b>5.1</b> Wektory</a></li>
-<li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#właściwości-wektorów"><i class="fa fa-check"></i><b>5.2</b> Właściwości wektorów</a></li>
-<li class="chapter" data-level="5.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#pf-vector"><i class="fa fa-check"></i><b>5.3</b> Podstawowe funkcje</a></li>
-<li class="chapter" data-level="5.4" data-path="proste-obiekty.html"><a href="proste-obiekty.html#dzialania-na-wektorach"><i class="fa fa-check"></i><b>5.4</b> Działania na wektorach</a></li>
-<li class="chapter" data-level="5.5" data-path="proste-obiekty.html"><a href="proste-obiekty.html#na"><i class="fa fa-check"></i><b>5.5</b> Brakujące wartości</a></li>
-<li class="chapter" data-level="5.6" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie"><i class="fa fa-check"></i><b>5.6</b> Wydzielanie</a></li>
-<li class="chapter" data-level="5.7" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wip-vector"><i class="fa fa-check"></i><b>5.7</b> Wydzielanie i przypisanie</a></li>
-<li class="chapter" data-level="5.8" data-path="proste-obiekty.html"><a href="proste-obiekty.html#mo-vector"><i class="fa fa-check"></i><b>5.8</b> Modyfikowanie obiektów</a></li>
-<li class="chapter" data-level="5.9" data-path="proste-obiekty.html"><a href="proste-obiekty.html#lpto-vector"><i class="fa fa-check"></i><b>5.9</b> Łączenie podstawowych typów obiektów</a></li>
-<li class="chapter" data-level="5.10" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zmiana-typów-obiektów"><i class="fa fa-check"></i><b>5.10</b> Zmiana typów obiektów</a></li>
-<li class="chapter" data-level="5.11" data-path="proste-obiekty.html"><a href="proste-obiekty.html#fac"><i class="fa fa-check"></i><b>5.11</b> Wektory czynnikowe</a></li>
-<li class="chapter" data-level="5.12" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ate"><i class="fa fa-check"></i><b>5.12</b> Wektory dat</a></li>
-<li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ime"><i class="fa fa-check"></i><b>5.13</b> Wektory czasu</a></li>
-<li class="chapter" data-level="5.14" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zad5"><i class="fa fa-check"></i><b>5.14</b> Zadania</a></li>
+<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty<span></span></a><ul>
+<li class="chapter" data-level="5.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wektory"><i class="fa fa-check"></i><b>5.1</b> Wektory<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#właściwości-wektorów"><i class="fa fa-check"></i><b>5.2</b> Właściwości wektorów<span></span></a></li>
+<li class="chapter" data-level="5.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#pf-vector"><i class="fa fa-check"></i><b>5.3</b> Podstawowe funkcje<span></span></a></li>
+<li class="chapter" data-level="5.4" data-path="proste-obiekty.html"><a href="proste-obiekty.html#dzialania-na-wektorach"><i class="fa fa-check"></i><b>5.4</b> Działania na wektorach<span></span></a></li>
+<li class="chapter" data-level="5.5" data-path="proste-obiekty.html"><a href="proste-obiekty.html#na"><i class="fa fa-check"></i><b>5.5</b> Brakujące wartości<span></span></a></li>
+<li class="chapter" data-level="5.6" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie"><i class="fa fa-check"></i><b>5.6</b> Wydzielanie<span></span></a></li>
+<li class="chapter" data-level="5.7" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wip-vector"><i class="fa fa-check"></i><b>5.7</b> Wydzielanie i przypisanie<span></span></a></li>
+<li class="chapter" data-level="5.8" data-path="proste-obiekty.html"><a href="proste-obiekty.html#mo-vector"><i class="fa fa-check"></i><b>5.8</b> Modyfikowanie obiektów<span></span></a></li>
+<li class="chapter" data-level="5.9" data-path="proste-obiekty.html"><a href="proste-obiekty.html#lpto-vector"><i class="fa fa-check"></i><b>5.9</b> Łączenie podstawowych typów obiektów<span></span></a></li>
+<li class="chapter" data-level="5.10" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zmiana-typów-obiektów"><i class="fa fa-check"></i><b>5.10</b> Zmiana typów obiektów<span></span></a></li>
+<li class="chapter" data-level="5.11" data-path="proste-obiekty.html"><a href="proste-obiekty.html#fac"><i class="fa fa-check"></i><b>5.11</b> Wektory czynnikowe<span></span></a></li>
+<li class="chapter" data-level="5.12" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ate"><i class="fa fa-check"></i><b>5.12</b> Wektory dat<span></span></a></li>
+<li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ime"><i class="fa fa-check"></i><b>5.13</b> Wektory czasu<span></span></a></li>
+<li class="chapter" data-level="5.14" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zad5"><i class="fa fa-check"></i><b>5.14</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#reprezentacja-tekstu"><i class="fa fa-check"></i><b>6.1</b> Reprezentacja tekstu</a></li>
-<li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekście"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście</a></li>
-<li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wt"><i class="fa fa-check"></i><b>6.3</b> Wydzielanie tekstu</a></li>
-<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wyrażenia-regularne"><i class="fa fa-check"></i><b>6.4</b> Wyrażenia regularne</a></li>
-<li class="chapter" data-level="6.5" data-path="tekst.html"><a href="tekst.html#wtregex"><i class="fa fa-check"></i><b>6.5</b> Wydzielanie tekstu - regex</a></li>
-<li class="chapter" data-level="6.6" data-path="tekst.html"><a href="tekst.html#zamiana-tekstu---regex"><i class="fa fa-check"></i><b>6.6</b> Zamiana tekstu - regex</a></li>
-<li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plików"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików</a></li>
-<li class="chapter" data-level="6.8" data-path="tekst.html"><a href="tekst.html#zad6"><i class="fa fa-check"></i><b>6.8</b> Zadania</a></li>
+<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst<span></span></a><ul>
+<li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#reprezentacja-tekstu"><i class="fa fa-check"></i><b>6.1</b> Reprezentacja tekstu<span></span></a></li>
+<li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekście"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście<span></span></a></li>
+<li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wt"><i class="fa fa-check"></i><b>6.3</b> Wydzielanie tekstu<span></span></a></li>
+<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wyrażenia-regularne"><i class="fa fa-check"></i><b>6.4</b> Wyrażenia regularne<span></span></a></li>
+<li class="chapter" data-level="6.5" data-path="tekst.html"><a href="tekst.html#wtregex"><i class="fa fa-check"></i><b>6.5</b> Wydzielanie tekstu - regex<span></span></a></li>
+<li class="chapter" data-level="6.6" data-path="tekst.html"><a href="tekst.html#zamiana-tekstu---regex"><i class="fa fa-check"></i><b>6.6</b> Zamiana tekstu - regex<span></span></a></li>
+<li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plików"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików<span></span></a></li>
+<li class="chapter" data-level="6.8" data-path="tekst.html"><a href="tekst.html#zad6"><i class="fa fa-check"></i><b>6.8</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a>
-<ul>
-<li class="chapter" data-level="7.1.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie"><i class="fa fa-check"></i><b>7.1.1</b> Tworzenie</a></li>
-<li class="chapter" data-level="7.1.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje"><i class="fa fa-check"></i><b>7.1.2</b> Podstawowe funkcje</a></li>
-<li class="chapter" data-level="7.1.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-1"><i class="fa fa-check"></i><b>7.1.3</b> Wydzielanie</a></li>
-<li class="chapter" data-level="7.1.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie"><i class="fa fa-check"></i><b>7.1.4</b> Łączenie</a></li>
+<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty<span></span></a><ul>
+<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze<span></span></a><ul>
+<li class="chapter" data-level="7.1.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie"><i class="fa fa-check"></i><b>7.1.1</b> Tworzenie<span></span></a></li>
+<li class="chapter" data-level="7.1.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje"><i class="fa fa-check"></i><b>7.1.2</b> Podstawowe funkcje<span></span></a></li>
+<li class="chapter" data-level="7.1.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-1"><i class="fa fa-check"></i><b>7.1.3</b> Wydzielanie<span></span></a></li>
+<li class="chapter" data-level="7.1.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie"><i class="fa fa-check"></i><b>7.1.4</b> Łączenie<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a>
-<ul>
-<li class="chapter" data-level="7.2.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-1"><i class="fa fa-check"></i><b>7.2.1</b> Tworzenie</a></li>
-<li class="chapter" data-level="7.2.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-1"><i class="fa fa-check"></i><b>7.2.2</b> Podstawowe funkcje</a></li>
-<li class="chapter" data-level="7.2.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-df"><i class="fa fa-check"></i><b>7.2.3</b> Wydzielanie</a></li>
-<li class="chapter" data-level="7.2.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-1"><i class="fa fa-check"></i><b>7.2.4</b> Łączenie</a></li>
+<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych<span></span></a><ul>
+<li class="chapter" data-level="7.2.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-1"><i class="fa fa-check"></i><b>7.2.1</b> Tworzenie<span></span></a></li>
+<li class="chapter" data-level="7.2.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-1"><i class="fa fa-check"></i><b>7.2.2</b> Podstawowe funkcje<span></span></a></li>
+<li class="chapter" data-level="7.2.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-df"><i class="fa fa-check"></i><b>7.2.3</b> Wydzielanie<span></span></a></li>
+<li class="chapter" data-level="7.2.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-1"><i class="fa fa-check"></i><b>7.2.4</b> Łączenie<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a>
-<ul>
-<li class="chapter" data-level="7.3.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-2"><i class="fa fa-check"></i><b>7.3.1</b> Tworzenie</a></li>
-<li class="chapter" data-level="7.3.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-2"><i class="fa fa-check"></i><b>7.3.2</b> Podstawowe funkcje</a></li>
-<li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie</a></li>
-<li class="chapter" data-level="7.3.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-list"><i class="fa fa-check"></i><b>7.3.4</b> Wydzielanie</a></li>
+<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy<span></span></a><ul>
+<li class="chapter" data-level="7.3.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-2"><i class="fa fa-check"></i><b>7.3.1</b> Tworzenie<span></span></a></li>
+<li class="chapter" data-level="7.3.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-2"><i class="fa fa-check"></i><b>7.3.2</b> Podstawowe funkcje<span></span></a></li>
+<li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie<span></span></a></li>
+<li class="chapter" data-level="7.3.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-list"><i class="fa fa-check"></i><b>7.3.4</b> Wydzielanie<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zmiany-klas"><i class="fa fa-check"></i><b>7.4</b> Zmiany klas</a></li>
-<li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#inne-klasy"><i class="fa fa-check"></i><b>7.5</b> Inne klasy obiektów</a></li>
-<li class="chapter" data-level="7.6" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zad7"><i class="fa fa-check"></i><b>7.6</b> Zadania</a></li>
+<li class="chapter" data-level="7.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zmiany-klas"><i class="fa fa-check"></i><b>7.4</b> Zmiany klas<span></span></a></li>
+<li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#inne-klasy"><i class="fa fa-check"></i><b>7.5</b> Inne klasy obiektów<span></span></a></li>
+<li class="chapter" data-level="7.6" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zad7"><i class="fa fa-check"></i><b>7.6</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a>
-<ul>
-<li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#składnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia</a></li>
-<li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#for-example"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
-<li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach</a></li>
+<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie<span></span></a><ul>
+<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for<span></span></a><ul>
+<li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#składnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia<span></span></a></li>
+<li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#for-example"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania<span></span></a></li>
+<li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="petle.html"><a href="petle.html#petla-while"><i class="fa fa-check"></i><b>8.2</b> Pętla while</a></li>
-<li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#prog-fun"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne</a></li>
-<li class="chapter" data-level="8.4" data-path="petle.html"><a href="petle.html#zad8"><i class="fa fa-check"></i><b>8.4</b> Zadania</a></li>
+<li class="chapter" data-level="8.2" data-path="petle.html"><a href="petle.html#petla-while"><i class="fa fa-check"></i><b>8.2</b> Pętla while<span></span></a></li>
+<li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#prog-fun"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne<span></span></a></li>
+<li class="chapter" data-level="8.4" data-path="petle.html"><a href="petle.html#zad8"><i class="fa fa-check"></i><b>8.4</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy</a></li>
-<li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#działania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.2</b> Działania na plikach i folderach</a></li>
-<li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#dane-internetowe"><i class="fa fa-check"></i><b>9.3</b> Dane internetowe</a></li>
-<li class="chapter" data-level="9.4" data-path="io.html"><a href="io.html#wczytywanie-plików-tekstowych"><i class="fa fa-check"></i><b>9.4</b> Wczytywanie plików tekstowych</a></li>
-<li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#zapisywanie-plików-tekstowych"><i class="fa fa-check"></i><b>9.5</b> Zapisywanie plików tekstowych</a></li>
-<li class="chapter" data-level="9.6" data-path="io.html"><a href="io.html#formaty-r"><i class="fa fa-check"></i><b>9.6</b> Formaty R</a></li>
-<li class="chapter" data-level="9.7" data-path="io.html"><a href="io.html#arkusze-kalkulacyjne"><i class="fa fa-check"></i><b>9.7</b> Arkusze kalkulacyjne</a></li>
-<li class="chapter" data-level="9.8" data-path="io.html"><a href="io.html#inne-formaty"><i class="fa fa-check"></i><b>9.8</b> Inne formaty</a></li>
-<li class="chapter" data-level="9.9" data-path="io.html"><a href="io.html#zad9"><i class="fa fa-check"></i><b>9.9</b> Zadania</a></li>
+<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików<span></span></a><ul>
+<li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy<span></span></a></li>
+<li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#działania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.2</b> Działania na plikach i folderach<span></span></a></li>
+<li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#dane-internetowe"><i class="fa fa-check"></i><b>9.3</b> Dane internetowe<span></span></a></li>
+<li class="chapter" data-level="9.4" data-path="io.html"><a href="io.html#wczytywanie-plików-tekstowych"><i class="fa fa-check"></i><b>9.4</b> Wczytywanie plików tekstowych<span></span></a></li>
+<li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#zapisywanie-plików-tekstowych"><i class="fa fa-check"></i><b>9.5</b> Zapisywanie plików tekstowych<span></span></a></li>
+<li class="chapter" data-level="9.6" data-path="io.html"><a href="io.html#formaty-r"><i class="fa fa-check"></i><b>9.6</b> Formaty R<span></span></a></li>
+<li class="chapter" data-level="9.7" data-path="io.html"><a href="io.html#arkusze-kalkulacyjne"><i class="fa fa-check"></i><b>9.7</b> Arkusze kalkulacyjne<span></span></a></li>
+<li class="chapter" data-level="9.8" data-path="io.html"><a href="io.html#inne-formaty"><i class="fa fa-check"></i><b>9.8</b> Inne formaty<span></span></a></li>
+<li class="chapter" data-level="9.9" data-path="io.html"><a href="io.html#zad9"><i class="fa fa-check"></i><b>9.9</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="part"><span><b>II Narzędzia</b></span></li>
-<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>10.1</b> API</a></li>
-<li class="chapter" data-level="10.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsluga-komunikatow"><i class="fa fa-check"></i><b>10.2</b> Obsługa komunikatów</a></li>
-<li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe</a>
-<ul>
-<li class="chapter" data-level="10.3.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#klasy"><i class="fa fa-check"></i><b>10.3.1</b> Klasy</a></li>
-<li class="chapter" data-level="10.3.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#metody"><i class="fa fa-check"></i><b>10.3.2</b> Metody</a></li>
-<li class="chapter" data-level="10.3.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#konstruktory"><i class="fa fa-check"></i><b>10.3.3</b> Konstruktory</a></li>
+<li class="part"><span><b>II Narzędzia<span></span></b></span></li>
+<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje<span></span></a><ul>
+<li class="chapter" data-level="10.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>10.1</b> API<span></span></a></li>
+<li class="chapter" data-level="10.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsluga-komunikatow"><i class="fa fa-check"></i><b>10.2</b> Obsługa komunikatów<span></span></a></li>
+<li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe<span></span></a><ul>
+<li class="chapter" data-level="10.3.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#klasy"><i class="fa fa-check"></i><b>10.3.1</b> Klasy<span></span></a></li>
+<li class="chapter" data-level="10.3.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#metody"><i class="fa fa-check"></i><b>10.3.2</b> Metody<span></span></a></li>
+<li class="chapter" data-level="10.3.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#konstruktory"><i class="fa fa-check"></i><b>10.3.3</b> Konstruktory<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zad11"><i class="fa fa-check"></i><b>10.4</b> Zadania</a></li>
+<li class="chapter" data-level="10.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zad11"><i class="fa fa-check"></i><b>10.4</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.1</b> Testy jednostkowe</a></li>
-<li class="chapter" data-level="11.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>11.2</b> Profiling</a></li>
-<li class="chapter" data-level="11.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>11.3</b> Benchmarking</a></li>
-<li class="chapter" data-level="11.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zad12"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
+<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu<span></span></a><ul>
+<li class="chapter" data-level="11.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.1</b> Testy jednostkowe<span></span></a></li>
+<li class="chapter" data-level="11.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>11.2</b> Profiling<span></span></a></li>
+<li class="chapter" data-level="11.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>11.3</b> Benchmarking<span></span></a></li>
+<li class="chapter" data-level="11.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zad12"><i class="fa fa-check"></i><b>11.4</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady</a>
-<ul>
-<li class="chapter" data-level="12.1.1" data-path="debugging.html"><a href="debugging.html#pakiet-reprex"><i class="fa fa-check"></i><b>12.1.1</b> Pakiet <strong>reprex</strong></a></li>
-<li class="chapter" data-level="12.1.2" data-path="debugging.html"><a href="debugging.html#tworzenie-powtarzalnego-przykładu"><i class="fa fa-check"></i><b>12.1.2</b> Tworzenie powtarzalnego przykładu</a></li>
+<li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie<span></span></a><ul>
+<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady<span></span></a><ul>
+<li class="chapter" data-level="12.1.1" data-path="debugging.html"><a href="debugging.html#pakiet-reprex"><i class="fa fa-check"></i><b>12.1.1</b> Pakiet <strong>reprex</strong><span></span></a></li>
+<li class="chapter" data-level="12.1.2" data-path="debugging.html"><a href="debugging.html#tworzenie-powtarzalnego-przykładu"><i class="fa fa-check"></i><b>12.1.2</b> Tworzenie powtarzalnego przykładu<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="debugging.html"><a href="debugging.html#proces-debugowania"><i class="fa fa-check"></i><b>12.2</b> Proces debugowania</a></li>
-<li class="chapter" data-level="12.3" data-path="debugging.html"><a href="debugging.html#debuging-print"><i class="fa fa-check"></i><b>12.3</b> Podstawowe podejście do debugowania</a></li>
-<li class="chapter" data-level="12.4" data-path="debugging.html"><a href="debugging.html#debugger"><i class="fa fa-check"></i><b>12.4</b> Debugger</a></li>
-<li class="chapter" data-level="12.5" data-path="debugging.html"><a href="debugging.html#zad13"><i class="fa fa-check"></i><b>12.5</b> Zadania</a></li>
+<li class="chapter" data-level="12.2" data-path="debugging.html"><a href="debugging.html#proces-debugowania"><i class="fa fa-check"></i><b>12.2</b> Proces debugowania<span></span></a></li>
+<li class="chapter" data-level="12.3" data-path="debugging.html"><a href="debugging.html#debuging-print"><i class="fa fa-check"></i><b>12.3</b> Podstawowe podejście do debugowania<span></span></a></li>
+<li class="chapter" data-level="12.4" data-path="debugging.html"><a href="debugging.html#debugger"><i class="fa fa-check"></i><b>12.4</b> Debugger<span></span></a></li>
+<li class="chapter" data-level="12.5" data-path="debugging.html"><a href="debugging.html#zad13"><i class="fa fa-check"></i><b>12.5</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik</a>
-<ul>
-<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++</a>
-<ul>
-<li class="chapter" data-level="13.1.1" data-path="lacznik.html"><a href="lacznik.html#cppFunction"><i class="fa fa-check"></i><b>13.1.1</b> Wywoływanie kodu C++ wewnątrz skryptu R</a></li>
-<li class="chapter" data-level="13.1.2" data-path="lacznik.html"><a href="lacznik.html#sourceCpp"><i class="fa fa-check"></i><b>13.1.2</b> Wywoływanie kodu z plików .cpp</a></li>
+<li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik<span></span></a><ul>
+<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++<span></span></a><ul>
+<li class="chapter" data-level="13.1.1" data-path="lacznik.html"><a href="lacznik.html#cppFunction"><i class="fa fa-check"></i><b>13.1.1</b> Wywoływanie kodu C++ wewnątrz skryptu R<span></span></a></li>
+<li class="chapter" data-level="13.1.2" data-path="lacznik.html"><a href="lacznik.html#sourceCpp"><i class="fa fa-check"></i><b>13.1.2</b> Wywoływanie kodu z plików .cpp<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="13.2" data-path="lacznik.html"><a href="lacznik.html#python"><i class="fa fa-check"></i><b>13.2</b> Python</a></li>
-<li class="chapter" data-level="13.3" data-path="lacznik.html"><a href="lacznik.html#powloka-systemowa"><i class="fa fa-check"></i><b>13.3</b> Powłoka systemowa</a></li>
-<li class="chapter" data-level="13.4" data-path="lacznik.html"><a href="lacznik.html#zad14"><i class="fa fa-check"></i><b>13.4</b> Zadania</a></li>
+<li class="chapter" data-level="13.2" data-path="lacznik.html"><a href="lacznik.html#python"><i class="fa fa-check"></i><b>13.2</b> Python<span></span></a></li>
+<li class="chapter" data-level="13.3" data-path="lacznik.html"><a href="lacznik.html#powloka-systemowa"><i class="fa fa-check"></i><b>13.3</b> Powłoka systemowa<span></span></a></li>
+<li class="chapter" data-level="13.4" data-path="lacznik.html"><a href="lacznik.html#zad14"><i class="fa fa-check"></i><b>13.4</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji</a>
-<ul>
-<li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git</a>
-<ul>
-<li class="chapter" data-level="14.1.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#konfiguracja-systemu-git"><i class="fa fa-check"></i><b>14.1.1</b> Konfiguracja systemu Git</a></li>
-<li class="chapter" data-level="14.1.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium"><i class="fa fa-check"></i><b>14.1.2</b> Repozytorium</a></li>
-<li class="chapter" data-level="14.1.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodawanie-zmian"><i class="fa fa-check"></i><b>14.1.3</b> Dodawanie zmian</a></li>
-<li class="chapter" data-level="14.1.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sprawdzanie-zmian"><i class="fa fa-check"></i><b>14.1.4</b> Sprawdzanie zmian</a></li>
-<li class="chapter" data-level="14.1.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zatwierdzanie-zmian"><i class="fa fa-check"></i><b>14.1.5</b> Zatwierdzanie zmian</a></li>
-<li class="chapter" data-level="14.1.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#branches"><i class="fa fa-check"></i><b>14.1.6</b> Rozgałęzienia</a></li>
-<li class="chapter" data-level="14.1.7" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-zdalne"><i class="fa fa-check"></i><b>14.1.7</b> Repozytorium zdalne</a></li>
-<li class="chapter" data-level="14.1.8" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#wysylanie-zmian"><i class="fa fa-check"></i><b>14.1.8</b> Wysyłanie zmian</a></li>
-<li class="chapter" data-level="14.1.9" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#aktualizowanie-zmian"><i class="fa fa-check"></i><b>14.1.9</b> Aktualizowanie zmian</a></li>
+<li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji<span></span></a><ul>
+<li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git<span></span></a><ul>
+<li class="chapter" data-level="14.1.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#konfiguracja-systemu-git"><i class="fa fa-check"></i><b>14.1.1</b> Konfiguracja systemu Git<span></span></a></li>
+<li class="chapter" data-level="14.1.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium"><i class="fa fa-check"></i><b>14.1.2</b> Repozytorium<span></span></a></li>
+<li class="chapter" data-level="14.1.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodawanie-zmian"><i class="fa fa-check"></i><b>14.1.3</b> Dodawanie zmian<span></span></a></li>
+<li class="chapter" data-level="14.1.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sprawdzanie-zmian"><i class="fa fa-check"></i><b>14.1.4</b> Sprawdzanie zmian<span></span></a></li>
+<li class="chapter" data-level="14.1.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zatwierdzanie-zmian"><i class="fa fa-check"></i><b>14.1.5</b> Zatwierdzanie zmian<span></span></a></li>
+<li class="chapter" data-level="14.1.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#branches"><i class="fa fa-check"></i><b>14.1.6</b> Rozgałęzienia<span></span></a></li>
+<li class="chapter" data-level="14.1.7" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-zdalne"><i class="fa fa-check"></i><b>14.1.7</b> Repozytorium zdalne<span></span></a></li>
+<li class="chapter" data-level="14.1.8" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#wysylanie-zmian"><i class="fa fa-check"></i><b>14.1.8</b> Wysyłanie zmian<span></span></a></li>
+<li class="chapter" data-level="14.1.9" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#aktualizowanie-zmian"><i class="fa fa-check"></i><b>14.1.9</b> Aktualizowanie zmian<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub</a>
-<ul>
-<li class="chapter" data-level="14.2.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#tworzenie-zdanego-repo"><i class="fa fa-check"></i><b>14.2.1</b> Tworzenie zdanego repo</a></li>
-<li class="chapter" data-level="14.2.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-github"><i class="fa fa-check"></i><b>14.2.2</b> Repozytorium GitHub</a></li>
-<li class="chapter" data-level="14.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-możliwości-github"><i class="fa fa-check"></i><b>14.2.3</b> Dodatkowe możliwości GitHub</a></li>
+<li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub<span></span></a><ul>
+<li class="chapter" data-level="14.2.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#tworzenie-zdanego-repo"><i class="fa fa-check"></i><b>14.2.1</b> Tworzenie zdanego repo<span></span></a></li>
+<li class="chapter" data-level="14.2.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-github"><i class="fa fa-check"></i><b>14.2.2</b> Repozytorium GitHub<span></span></a></li>
+<li class="chapter" data-level="14.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-możliwości-github"><i class="fa fa-check"></i><b>14.2.3</b> Dodatkowe możliwości GitHub<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="14.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rstudio-git"><i class="fa fa-check"></i><b>14.3</b> Kontrola wersji w RStudio</a></li>
-<li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git</a>
-<ul>
-<li class="chapter" data-level="14.4.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#nowy-projekt"><i class="fa fa-check"></i><b>14.4.1</b> Nowy projekt</a></li>
-<li class="chapter" data-level="14.4.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#istniejacy-projekt"><i class="fa fa-check"></i><b>14.4.2</b> Istniejący projekt</a></li>
+<li class="chapter" data-level="14.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rstudio-git"><i class="fa fa-check"></i><b>14.3</b> Kontrola wersji w RStudio<span></span></a></li>
+<li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git<span></span></a><ul>
+<li class="chapter" data-level="14.4.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#nowy-projekt"><i class="fa fa-check"></i><b>14.4.1</b> Nowy projekt<span></span></a></li>
+<li class="chapter" data-level="14.4.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#istniejacy-projekt"><i class="fa fa-check"></i><b>14.4.2</b> Istniejący projekt<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="14.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#problemy-z-kontrolą-wersji"><i class="fa fa-check"></i><b>14.5</b> Problemy z kontrolą wersji</a></li>
-<li class="chapter" data-level="14.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zad15"><i class="fa fa-check"></i><b>14.6</b> Zadania</a></li>
+<li class="chapter" data-level="14.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#problemy-z-kontrolą-wersji"><i class="fa fa-check"></i><b>14.5</b> Problemy z kontrolą wersji<span></span></a></li>
+<li class="chapter" data-level="14.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zad15"><i class="fa fa-check"></i><b>14.6</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a>
-<ul>
-<li class="chapter" data-level="15.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#nazwa-pakietu"><i class="fa fa-check"></i><b>15.1</b> Nazwa pakietu</a></li>
-<li class="chapter" data-level="15.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-szkieletu-pakietu"><i class="fa fa-check"></i><b>15.2</b> Tworzenie szkieletu pakietu</a></li>
-<li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>15.3</b> Opis pakietu</a></li>
-<li class="chapter" data-level="15.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>15.4</b> Rozwijanie pakietu</a></li>
-<li class="chapter" data-level="15.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-i-dokumentacja-funkcji"><i class="fa fa-check"></i><b>15.5</b> Tworzenie i dokumentacja funkcji</a></li>
-<li class="chapter" data-level="15.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zależności"><i class="fa fa-check"></i><b>15.6</b> Zależności</a></li>
-<li class="chapter" data-level="15.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#sprawdzanie-pakietu"><i class="fa fa-check"></i><b>15.7</b> Sprawdzanie pakietu</a></li>
-<li class="chapter" data-level="15.8" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#instalowanie-pakietu"><i class="fa fa-check"></i><b>15.8</b> Instalowanie pakietu</a></li>
-<li class="chapter" data-level="15.9" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-pakietu"><i class="fa fa-check"></i><b>15.9</b> Dokumentacja pakietu</a></li>
-<li class="chapter" data-level="15.10" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#wbudowane-testy"><i class="fa fa-check"></i><b>15.10</b> Wbudowane testy</a></li>
-<li class="chapter" data-level="15.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietów"><i class="fa fa-check"></i><b>15.11</b> Publikowanie pakietów</a></li>
-<li class="chapter" data-level="15.12" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zad16"><i class="fa fa-check"></i><b>15.12</b> Zadania</a></li>
+<li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety<span></span></a><ul>
+<li class="chapter" data-level="15.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#nazwa-pakietu"><i class="fa fa-check"></i><b>15.1</b> Nazwa pakietu<span></span></a></li>
+<li class="chapter" data-level="15.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-szkieletu-pakietu"><i class="fa fa-check"></i><b>15.2</b> Tworzenie szkieletu pakietu<span></span></a></li>
+<li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>15.3</b> Opis pakietu<span></span></a></li>
+<li class="chapter" data-level="15.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>15.4</b> Rozwijanie pakietu<span></span></a></li>
+<li class="chapter" data-level="15.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-i-dokumentacja-funkcji"><i class="fa fa-check"></i><b>15.5</b> Tworzenie i dokumentacja funkcji<span></span></a></li>
+<li class="chapter" data-level="15.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zależności"><i class="fa fa-check"></i><b>15.6</b> Zależności<span></span></a></li>
+<li class="chapter" data-level="15.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#sprawdzanie-pakietu"><i class="fa fa-check"></i><b>15.7</b> Sprawdzanie pakietu<span></span></a></li>
+<li class="chapter" data-level="15.8" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#instalowanie-pakietu"><i class="fa fa-check"></i><b>15.8</b> Instalowanie pakietu<span></span></a></li>
+<li class="chapter" data-level="15.9" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-pakietu"><i class="fa fa-check"></i><b>15.9</b> Dokumentacja pakietu<span></span></a></li>
+<li class="chapter" data-level="15.10" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#wbudowane-testy"><i class="fa fa-check"></i><b>15.10</b> Wbudowane testy<span></span></a></li>
+<li class="chapter" data-level="15.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietów"><i class="fa fa-check"></i><b>15.11</b> Publikowanie pakietów<span></span></a></li>
+<li class="chapter" data-level="15.12" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zad16"><i class="fa fa-check"></i><b>15.12</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie</a>
-<ul>
-<li class="chapter" data-level="16.1" data-path="podsumowanie.html"><a href="podsumowanie.html#grafika"><i class="fa fa-check"></i><b>16.1</b> Grafika</a></li>
-<li class="chapter" data-level="16.2" data-path="podsumowanie.html"><a href="podsumowanie.html#analiza-danych"><i class="fa fa-check"></i><b>16.2</b> Analiza danych</a></li>
-<li class="chapter" data-level="16.3" data-path="podsumowanie.html"><a href="podsumowanie.html#inne-zastosowania"><i class="fa fa-check"></i><b>16.3</b> Inne zastosowania</a></li>
-<li class="chapter" data-level="16.4" data-path="podsumowanie.html"><a href="podsumowanie.html#programowanie-w-r"><i class="fa fa-check"></i><b>16.4</b> Programowanie w R</a></li>
-<li class="chapter" data-level="16.5" data-path="podsumowanie.html"><a href="podsumowanie.html#co-dalej"><i class="fa fa-check"></i><b>16.5</b> Co dalej?</a></li>
+<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie<span></span></a><ul>
+<li class="chapter" data-level="16.1" data-path="podsumowanie.html"><a href="podsumowanie.html#grafika"><i class="fa fa-check"></i><b>16.1</b> Grafika<span></span></a></li>
+<li class="chapter" data-level="16.2" data-path="podsumowanie.html"><a href="podsumowanie.html#analiza-danych"><i class="fa fa-check"></i><b>16.2</b> Analiza danych<span></span></a></li>
+<li class="chapter" data-level="16.3" data-path="podsumowanie.html"><a href="podsumowanie.html#inne-zastosowania"><i class="fa fa-check"></i><b>16.3</b> Inne zastosowania<span></span></a></li>
+<li class="chapter" data-level="16.4" data-path="podsumowanie.html"><a href="podsumowanie.html#programowanie-w-r"><i class="fa fa-check"></i><b>16.4</b> Programowanie w R<span></span></a></li>
+<li class="chapter" data-level="16.5" data-path="podsumowanie.html"><a href="podsumowanie.html#co-dalej"><i class="fa fa-check"></i><b>16.5</b> Co dalej?<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
+<li><a href="bibliografia.html#bibliografia">Bibliografia<span></span></a></li>
 <li class="divider"></li>
 <li><a href="https://nowosad.github.io/">Jakub Nowosad</a></li>
 
@@ -388,54 +357,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="petle" class="section level1" number="8">
-<h1><span class="header-section-number">8</span> Powtarzanie</h1>
+<div id="petle" class="section level1 hasAnchor">
+<h1><span class="header-section-number">8</span> Powtarzanie<a href="petle.html#petle" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>W sekcji <a href="wprowadzenie.html#jezyki-programowania">1.2</a> zostały wspomniane różne istniejące paradygmaty programowania.
 Pętle <code>for</code> czy <code>while</code> (sekcje <a href="petle.html#petla-for">8.1</a> i <a href="petle.html#petla-while">8.2</a>) są przykładami programowania imperatywnego, gdzie program komputerowy postrzegany jest jako ciąg poleceń dla komputera.
 Alternatywą do tego sposobu działania jest programowanie funkcyjne, w którym rozwiązanie pewnego problemu jest oparte o użycie lub stworzenie odpowiedniej funkcji (sekcja <a href="petle.html#prog-fun">8.3</a>).
 Język R pozwala na stosowanie zarówno paradygmatu imperatywnego jak i paradygmatu funkcyjnego<a href="#fn37" class="footnote-ref" id="fnref37"><sup>37</sup></a>.</p>
 <!-- intro -->
 <!-- https://recology.info/2019/03/control-flow-exceptions/ -->
-<div id="petla-for" class="section level2" number="8.1">
-<h2><span class="header-section-number">8.1</span> Pętla for</h2>
+<div id="petla-for" class="section level2 hasAnchor">
+<h2><span class="header-section-number">8.1</span> Pętla for<a href="petle.html#petla-for" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Pętla <code>for</code> jest jednym z najczęściej używanych wyrażeń w językach programowania<a href="#fn38" class="footnote-ref" id="fnref38"><sup>38</sup></a>, którego celem jest powtórzenie pewnej operacji o znaną liczbę razy.</p>
-<div id="składnia" class="section level3" number="8.1.1">
-<h3><span class="header-section-number">8.1.1</span> Składnia</h3>
+<div id="składnia" class="section level3 hasAnchor">
+<h3><span class="header-section-number">8.1.1</span> Składnia<a href="petle.html#składnia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Pętla <code>for</code> jest zbudowana z dwóch elementów: nagłówka określającego powtórzenia, oraz ciała zawierającego obliczenia.</p>
-<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="petle.html#cb232-1"></a><span class="cf">for</span> (element <span class="cf">in</span> wektor) {</span>
-<span id="cb232-2"><a href="petle.html#cb232-2"></a>  przetwarzanie elementu</span>
-<span id="cb232-3"><a href="petle.html#cb232-3"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb232-1" title="1"><span class="cf">for</span> (element <span class="cf">in</span> wektor) {</a>
+<a class="sourceLine" id="cb232-2" title="2">  przetwarzanie elementu</a>
+<a class="sourceLine" id="cb232-3" title="3">}</a></code></pre></div>
 </div>
-<div id="for-example" class="section level3" number="8.1.2">
-<h3><span class="header-section-number">8.1.2</span> Przykład działania</h3>
+<div id="for-example" class="section level3 hasAnchor">
+<h3><span class="header-section-number">8.1.2</span> Przykład działania<a href="petle.html#for-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Zobaczmy jak działa pętla <code>for</code> na uproszczonym przykładzie zamiany wartości odległości z mil lądowych na kilometry.
 Nasze dane wejściowe to lista składająca się z trzech wartości - 142, 63, oraz 121.
 Wiemy też, że jedna mila lądowa to 1,609 kilometra.</p>
-<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="petle.html#cb233-1"></a>odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb233-1" title="1">odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</a></code></pre></div>
 <p>Pętla <code>for</code> może być użyta w tym przypadku na kilka sposobów.
 Na początku warto zastanowić się w jaki sposób można zamienić tylko jedną wartość z powyższej listy.
 Wiemy, że do wybrania jednego elementu z listy służy operator <code>[[]]</code> (sekcja <a href="zlozone-obiekty.html#wydzielanie-list">7.3.4</a>), więc przeliczenie i wyświetlenie tylko pierwszego elementu można wykonać poprzez:</p>
-<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="petle.html#cb234-1"></a><span class="kw">print</span>(odl_mile[[<span class="dv">1</span>]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)</span>
-<span id="cb234-2"><a href="petle.html#cb234-2"></a><span class="co">#&gt; [1] 228</span></span></code></pre></div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb234-1" title="1"><span class="kw">print</span>(odl_mile[[<span class="dv">1</span>]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)</a>
+<a class="sourceLine" id="cb234-2" title="2"><span class="co">#&gt; [1] 228</span></a></code></pre></div>
 <p>Teraz naszym celem jest potworzenie tej operacji dla każdego elementu.</p>
-<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="petle.html#cb235-1"></a><span class="kw">print</span>(odl_mile[[<span class="dv">1</span>]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)</span>
-<span id="cb235-2"><a href="petle.html#cb235-2"></a><span class="co">#&gt; [1] 228</span></span>
-<span id="cb235-3"><a href="petle.html#cb235-3"></a><span class="kw">print</span>(odl_mile[[<span class="dv">2</span>]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)</span>
-<span id="cb235-4"><a href="petle.html#cb235-4"></a><span class="co">#&gt; [1] 101</span></span>
-<span id="cb235-5"><a href="petle.html#cb235-5"></a><span class="kw">print</span>(odl_mile[[<span class="dv">3</span>]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)</span>
-<span id="cb235-6"><a href="petle.html#cb235-6"></a><span class="co">#&gt; [1] 195</span></span></code></pre></div>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb235-1" title="1"><span class="kw">print</span>(odl_mile[[<span class="dv">1</span>]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)</a>
+<a class="sourceLine" id="cb235-2" title="2"><span class="co">#&gt; [1] 228</span></a>
+<a class="sourceLine" id="cb235-3" title="3"><span class="kw">print</span>(odl_mile[[<span class="dv">2</span>]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)</a>
+<a class="sourceLine" id="cb235-4" title="4"><span class="co">#&gt; [1] 101</span></a>
+<a class="sourceLine" id="cb235-5" title="5"><span class="kw">print</span>(odl_mile[[<span class="dv">3</span>]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)</a>
+<a class="sourceLine" id="cb235-6" title="6"><span class="co">#&gt; [1] 195</span></a></code></pre></div>
 <p>W powyższym przypadku mamy tylko trzy elementy, ale jeżeli mielibyśmy takich elementów 1000 musielibyśmy powtórzyć niemal tą samą linię kodu tysiąc razy jedynie zamieniając numer elementu.</p>
 <p>Jednym z celów programowania jest ułatwienie szybkiej powtarzalności pewnych czynności.
 Dlatego w tym przypadku moglibyśmy uniknąć wielokrotnego pisania podobnego kodu używając pętli <code>for</code>.
 Ciałem tej pętli będzie sposób przeliczania i wyświetlania wartości na kilometry, ale zamiast wydzielać kolejne elementy listy (<code>[[1]]</code>, <code>[[2]]</code>, <code>[[3]]</code>), użyjemy nowego obiektu <code>i</code>.
 W efekcie nowe ciało pętli <code>for</code> będzie przedstawiać się jako <code>print(odl_mile[[i]] * 1.609)</code>.
 Kolejnym krokiem jest odpowiednie ustawienie jakie wartości będzie przyjmować <code>i</code> w kolejnych powtórzeniach.</p>
-<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="petle.html#cb236-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) {</span>
-<span id="cb236-2"><a href="petle.html#cb236-2"></a>  <span class="kw">print</span>(odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)</span>
-<span id="cb236-3"><a href="petle.html#cb236-3"></a>}</span>
-<span id="cb236-4"><a href="petle.html#cb236-4"></a><span class="co">#&gt; [1] 228</span></span>
-<span id="cb236-5"><a href="petle.html#cb236-5"></a><span class="co">#&gt; [1] 101</span></span>
-<span id="cb236-6"><a href="petle.html#cb236-6"></a><span class="co">#&gt; [1] 195</span></span></code></pre></div>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb236-1" title="1"><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) {</a>
+<a class="sourceLine" id="cb236-2" title="2">  <span class="kw">print</span>(odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)</a>
+<a class="sourceLine" id="cb236-3" title="3">}</a>
+<a class="sourceLine" id="cb236-4" title="4"><span class="co">#&gt; [1] 228</span></a>
+<a class="sourceLine" id="cb236-5" title="5"><span class="co">#&gt; [1] 101</span></a>
+<a class="sourceLine" id="cb236-6" title="6"><span class="co">#&gt; [1] 195</span></a></code></pre></div>
 <p>Powyższy nagłówek pętli <code>for</code>, <code>for (i in 1:3)</code>, określa, że nasz obiekt <code>i</code> przyjmie najpierw wartość 1, wykona obliczenie wewnątrz pętli, następnie <code>i</code> przyjmie wartość 2, znów wykona obliczenie, a na końcu <code>i</code> przyjmie wartość 3 i obliczenie zostanie wykonane po raz ostatni.</p>
 
 <div class="rmdinfo">
@@ -443,19 +412,20 @@ Tradycyjnie zmienna w pętli <code>for</code> nazywana jest <code>i</code>, a w 
 Nazywanie zmiennych w ten sposób nie jest jednak obowiązkowe.
 W powyższym przypadku możliwe byłoby nazwanie zmiennej, np. <code>pomiar</code>: <code>for (pomiar in odl_mile) {...}</code>.
 </div>
+
 <p>Użyty wyżej kod wykonuje nasz cel, ale wymaga od nas zawsze deklaracji dotyczącej tego jakie wartości ma przyjąć obiekt <code>i</code>.
 W przypadku, gdy obiekt wejściowy <code>odl_mile</code> będzie krótszy lub dłuższy niż trzy elementy, będziemy musieli ręcznie zmienić nagłówek pętli <code>for</code>.
 Aby tego uniknąć możemy automatycznie określić wszystkie pozycje elementów w liście <code>odl_mile</code> używając funkcji <code>seq_along()</code>.
 Ta funkcja zawsze wyświetli numery położenia kolejnych elementów danego wektora lub listy.</p>
-<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="petle.html#cb237-1"></a><span class="kw">seq_along</span>(odl_mile)</span>
-<span id="cb237-2"><a href="petle.html#cb237-2"></a><span class="co">#&gt; [1] 1 2 3</span></span></code></pre></div>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb237-1" title="1"><span class="kw">seq_along</span>(odl_mile)</a>
+<a class="sourceLine" id="cb237-2" title="2"><span class="co">#&gt; [1] 1 2 3</span></a></code></pre></div>
 <p>Poniższy kod nie wymaga już od nas ręcznego wprowadzania kolejnych położeń elementów wejściowej listy.</p>
-<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="petle.html#cb238-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {</span>
-<span id="cb238-2"><a href="petle.html#cb238-2"></a>  <span class="kw">print</span>(odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)</span>
-<span id="cb238-3"><a href="petle.html#cb238-3"></a>}</span>
-<span id="cb238-4"><a href="petle.html#cb238-4"></a><span class="co">#&gt; [1] 228</span></span>
-<span id="cb238-5"><a href="petle.html#cb238-5"></a><span class="co">#&gt; [1] 101</span></span>
-<span id="cb238-6"><a href="petle.html#cb238-6"></a><span class="co">#&gt; [1] 195</span></span></code></pre></div>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb238-1" title="1"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {</a>
+<a class="sourceLine" id="cb238-2" title="2">  <span class="kw">print</span>(odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)</a>
+<a class="sourceLine" id="cb238-3" title="3">}</a>
+<a class="sourceLine" id="cb238-4" title="4"><span class="co">#&gt; [1] 228</span></a>
+<a class="sourceLine" id="cb238-5" title="5"><span class="co">#&gt; [1] 101</span></a>
+<a class="sourceLine" id="cb238-6" title="6"><span class="co">#&gt; [1] 195</span></a></code></pre></div>
 
 <div class="rmdinfo">
 Często w takich sytuacjach używana jest konstrukcja <code>1:length()</code>, np. <code>1:length(old_mile)</code>.
@@ -464,95 +434,96 @@ Konstrukcja <code>1:length()</code> może wywołać problemy w kodzie, gdy wejś
 <code>for (i in 1:length(NULL)){...}</code> wykona pętlę <code>for</code> dwa razy, podczas gdy w rzeczywistości nie powinna ona zostać w ogóle wykonana.
 Funkcja <code>seq_along()</code> jest odporna na ten problem - <code>seq_along(NULL)</code> nie wykona pętli ani razu.
 </div>
+
 <p>Wcześniejsze przykłady wyświetlały przeliczone na kilometry kolejne elementy listy <code>odl_mile</code>.
 Możliwe było zobaczenie nowych wartości, ale nie zostawały one w pamięci komputera - w efekcie nie można było wykorzystać wyników działania pętli <code>for</code> w przyszłości.
 Co w takim razie należy zrobić, aby wynik dało się użyć dalej?
 Jednym z podejść jest modyfikacja istniejącej list <code>odl_mile</code>.
 Poniższa pętla <code>for</code> zastępuje kolejne wartości z obiektu <code>odl_mile</code> na kilometry.</p>
-<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="petle.html#cb239-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {</span>
-<span id="cb239-2"><a href="petle.html#cb239-2"></a>  odl_mile[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span></span>
-<span id="cb239-3"><a href="petle.html#cb239-3"></a>}</span>
-<span id="cb239-4"><a href="petle.html#cb239-4"></a>odl_mile</span>
-<span id="cb239-5"><a href="petle.html#cb239-5"></a><span class="co">#&gt; [[1]]</span></span>
-<span id="cb239-6"><a href="petle.html#cb239-6"></a><span class="co">#&gt; [1] 228</span></span>
-<span id="cb239-7"><a href="petle.html#cb239-7"></a><span class="co">#&gt; </span></span>
-<span id="cb239-8"><a href="petle.html#cb239-8"></a><span class="co">#&gt; [[2]]</span></span>
-<span id="cb239-9"><a href="petle.html#cb239-9"></a><span class="co">#&gt; [1] 101</span></span>
-<span id="cb239-10"><a href="petle.html#cb239-10"></a><span class="co">#&gt; </span></span>
-<span id="cb239-11"><a href="petle.html#cb239-11"></a><span class="co">#&gt; [[3]]</span></span>
-<span id="cb239-12"><a href="petle.html#cb239-12"></a><span class="co">#&gt; [1] 195</span></span></code></pre></div>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb239-1" title="1"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {</a>
+<a class="sourceLine" id="cb239-2" title="2">  odl_mile[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span></a>
+<a class="sourceLine" id="cb239-3" title="3">}</a>
+<a class="sourceLine" id="cb239-4" title="4">odl_mile</a>
+<a class="sourceLine" id="cb239-5" title="5"><span class="co">#&gt; [[1]]</span></a>
+<a class="sourceLine" id="cb239-6" title="6"><span class="co">#&gt; [1] 228</span></a>
+<a class="sourceLine" id="cb239-7" title="7"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb239-8" title="8"><span class="co">#&gt; [[2]]</span></a>
+<a class="sourceLine" id="cb239-9" title="9"><span class="co">#&gt; [1] 101</span></a>
+<a class="sourceLine" id="cb239-10" title="10"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb239-11" title="11"><span class="co">#&gt; [[3]]</span></a>
+<a class="sourceLine" id="cb239-12" title="12"><span class="co">#&gt; [1] 195</span></a></code></pre></div>
 <p>Niestety, w efekcie stracone zostały oryginalne wartości w milach lądowych.</p>
-<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="petle.html#cb240-1"></a>odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb240-1" title="1">odl_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">142</span>, <span class="dv">63</span>, <span class="dv">121</span>)</a></code></pre></div>
 <p>Aby zostawić oryginalne wartości w milach lądowych, ale też stworzyć nowy obiekt określony w kilometrach musimy stworzyć nowy, pusty obiekt, a następnie wypełnić go wartościami.
 Poniżej nazwany on został <code>odl_km</code> - jest to pusta lista.
 Następnie kolejne wykonania pętli <code>for</code> doklejają kolejne elementy do tej listy.</p>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="petle.html#cb241-1"></a>odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="dv">0</span>)</span>
-<span id="cb241-2"><a href="petle.html#cb241-2"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {</span>
-<span id="cb241-3"><a href="petle.html#cb241-3"></a>  odl_km =<span class="st"> </span><span class="kw">c</span>(odl_km, odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)</span>
-<span id="cb241-4"><a href="petle.html#cb241-4"></a>}</span>
-<span id="cb241-5"><a href="petle.html#cb241-5"></a>odl_km</span>
-<span id="cb241-6"><a href="petle.html#cb241-6"></a><span class="co">#&gt; [[1]]</span></span>
-<span id="cb241-7"><a href="petle.html#cb241-7"></a><span class="co">#&gt; [1] 228</span></span>
-<span id="cb241-8"><a href="petle.html#cb241-8"></a><span class="co">#&gt; </span></span>
-<span id="cb241-9"><a href="petle.html#cb241-9"></a><span class="co">#&gt; [[2]]</span></span>
-<span id="cb241-10"><a href="petle.html#cb241-10"></a><span class="co">#&gt; [1] 101</span></span>
-<span id="cb241-11"><a href="petle.html#cb241-11"></a><span class="co">#&gt; </span></span>
-<span id="cb241-12"><a href="petle.html#cb241-12"></a><span class="co">#&gt; [[3]]</span></span>
-<span id="cb241-13"><a href="petle.html#cb241-13"></a><span class="co">#&gt; [1] 195</span></span></code></pre></div>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb241-1" title="1">odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb241-2" title="2"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {</a>
+<a class="sourceLine" id="cb241-3" title="3">  odl_km =<span class="st"> </span><span class="kw">c</span>(odl_km, odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span>)</a>
+<a class="sourceLine" id="cb241-4" title="4">}</a>
+<a class="sourceLine" id="cb241-5" title="5">odl_km</a>
+<a class="sourceLine" id="cb241-6" title="6"><span class="co">#&gt; [[1]]</span></a>
+<a class="sourceLine" id="cb241-7" title="7"><span class="co">#&gt; [1] 228</span></a>
+<a class="sourceLine" id="cb241-8" title="8"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb241-9" title="9"><span class="co">#&gt; [[2]]</span></a>
+<a class="sourceLine" id="cb241-10" title="10"><span class="co">#&gt; [1] 101</span></a>
+<a class="sourceLine" id="cb241-11" title="11"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb241-12" title="12"><span class="co">#&gt; [[3]]</span></a>
+<a class="sourceLine" id="cb241-13" title="13"><span class="co">#&gt; [1] 195</span></a></code></pre></div>
 <p>Efektem jest poprawne rozwiązanie naszego problemu, ale niestety posiada ono istotną wadę - to rozwiązanie nie jest bardzo wydajne.
 Za każdym przejściem pętli następuje bowiem alokacja pamięci, co zabiera niepotrzebnie czas.
 Więcej informacji na ten temat można znaleźć w rozdziale <a href="analiza-kodu.html#analiza-kodu">11</a>.</p>
 <p>Lepszym rozwiązaniem w takiej sytuacji jest od razu stworzenie listy, o długości zgodnej z naszym oczekiwaniem.
 Następnie kolejne elementy stworzonej listy są zamieniane na oczekiwane przez nas wartości.</p>
-<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="petle.html#cb242-1"></a>odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))</span>
-<span id="cb242-2"><a href="petle.html#cb242-2"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {</span>
-<span id="cb242-3"><a href="petle.html#cb242-3"></a>  odl_km[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span></span>
-<span id="cb242-4"><a href="petle.html#cb242-4"></a>}</span>
-<span id="cb242-5"><a href="petle.html#cb242-5"></a>odl_km</span>
-<span id="cb242-6"><a href="petle.html#cb242-6"></a><span class="co">#&gt; [[1]]</span></span>
-<span id="cb242-7"><a href="petle.html#cb242-7"></a><span class="co">#&gt; [1] 228</span></span>
-<span id="cb242-8"><a href="petle.html#cb242-8"></a><span class="co">#&gt; </span></span>
-<span id="cb242-9"><a href="petle.html#cb242-9"></a><span class="co">#&gt; [[2]]</span></span>
-<span id="cb242-10"><a href="petle.html#cb242-10"></a><span class="co">#&gt; [1] 101</span></span>
-<span id="cb242-11"><a href="petle.html#cb242-11"></a><span class="co">#&gt; </span></span>
-<span id="cb242-12"><a href="petle.html#cb242-12"></a><span class="co">#&gt; [[3]]</span></span>
-<span id="cb242-13"><a href="petle.html#cb242-13"></a><span class="co">#&gt; [1] 195</span></span></code></pre></div>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb242-1" title="1">odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))</a>
+<a class="sourceLine" id="cb242-2" title="2"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {</a>
+<a class="sourceLine" id="cb242-3" title="3">  odl_km[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span></a>
+<a class="sourceLine" id="cb242-4" title="4">}</a>
+<a class="sourceLine" id="cb242-5" title="5">odl_km</a>
+<a class="sourceLine" id="cb242-6" title="6"><span class="co">#&gt; [[1]]</span></a>
+<a class="sourceLine" id="cb242-7" title="7"><span class="co">#&gt; [1] 228</span></a>
+<a class="sourceLine" id="cb242-8" title="8"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb242-9" title="9"><span class="co">#&gt; [[2]]</span></a>
+<a class="sourceLine" id="cb242-10" title="10"><span class="co">#&gt; [1] 101</span></a>
+<a class="sourceLine" id="cb242-11" title="11"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb242-12" title="12"><span class="co">#&gt; [[3]]</span></a>
+<a class="sourceLine" id="cb242-13" title="13"><span class="co">#&gt; [1] 195</span></a></code></pre></div>
 <!-- Wiele funkcji w R jest zwektoryzowanych, w efekcie powyższy przykład można by zastąpić kodem `odl_km = odl_mile * 1.609`.  -->
 <!-- Taka zamiana jest jednak możliwa w ten sposób, ponieważ mnożenie jest w niewidzialny sposób dla użytkownika rozpisane jako pętla for. -->
 </div>
-<div id="zastosowanie-w-funkcjach" class="section level3" number="8.1.3">
-<h3><span class="header-section-number">8.1.3</span> Zastosowanie w funkcjach</h3>
+<div id="zastosowanie-w-funkcjach" class="section level3 hasAnchor">
+<h3><span class="header-section-number">8.1.3</span> Zastosowanie w funkcjach<a href="petle.html#zastosowanie-w-funkcjach" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Pętle <code>for</code>, podobnie jak wyrażenia warunkowe (sekcja <a href="warunki.html#wwwf">4.4</a>), w naturalny sposób są stosowane w funkcjach.
 Przykładowo, możemy stworzyć nową funkcję <code>mile_na_km()</code>, która przyjmuje listę z wartościami w milach lądowych jako obiekt wejściowy, a później zwraca listę z wartościami w kilometrach.</p>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="petle.html#cb243-1"></a>mile_na_km =<span class="st"> </span><span class="cf">function</span>(odl_mile) {</span>
-<span id="cb243-2"><a href="petle.html#cb243-2"></a>  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))</span>
-<span id="cb243-3"><a href="petle.html#cb243-3"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {</span>
-<span id="cb243-4"><a href="petle.html#cb243-4"></a>    odl_km[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span></span>
-<span id="cb243-5"><a href="petle.html#cb243-5"></a>  }</span>
-<span id="cb243-6"><a href="petle.html#cb243-6"></a>  odl_km</span>
-<span id="cb243-7"><a href="petle.html#cb243-7"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb243-1" title="1">mile_na_km =<span class="st"> </span><span class="cf">function</span>(odl_mile) {</a>
+<a class="sourceLine" id="cb243-2" title="2">  odl_km =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;list&quot;</span>, <span class="dt">length =</span> <span class="kw">length</span>(odl_mile))</a>
+<a class="sourceLine" id="cb243-3" title="3">  <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq_along</span>(odl_mile)) {</a>
+<a class="sourceLine" id="cb243-4" title="4">    odl_km[[i]] =<span class="st"> </span>odl_mile[[i]] <span class="op">*</span><span class="st"> </span><span class="fl">1.609</span></a>
+<a class="sourceLine" id="cb243-5" title="5">  }</a>
+<a class="sourceLine" id="cb243-6" title="6">  odl_km</a>
+<a class="sourceLine" id="cb243-7" title="7">}</a></code></pre></div>
 <p>Sprawdźmy działanie funkcji na prostym przykładzie listy z pięcioma elementami.</p>
-<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="petle.html#cb244-1"></a>odleglosci_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">55</span>, <span class="dv">160</span>)</span>
-<span id="cb244-2"><a href="petle.html#cb244-2"></a><span class="kw">mile_na_km</span>(odleglosci_mile)</span>
-<span id="cb244-3"><a href="petle.html#cb244-3"></a><span class="co">#&gt; [[1]]</span></span>
-<span id="cb244-4"><a href="petle.html#cb244-4"></a><span class="co">#&gt; [1] 0</span></span>
-<span id="cb244-5"><a href="petle.html#cb244-5"></a><span class="co">#&gt; </span></span>
-<span id="cb244-6"><a href="petle.html#cb244-6"></a><span class="co">#&gt; [[2]]</span></span>
-<span id="cb244-7"><a href="petle.html#cb244-7"></a><span class="co">#&gt; [1] 1.61</span></span>
-<span id="cb244-8"><a href="petle.html#cb244-8"></a><span class="co">#&gt; </span></span>
-<span id="cb244-9"><a href="petle.html#cb244-9"></a><span class="co">#&gt; [[3]]</span></span>
-<span id="cb244-10"><a href="petle.html#cb244-10"></a><span class="co">#&gt; [1] 16.1</span></span>
-<span id="cb244-11"><a href="petle.html#cb244-11"></a><span class="co">#&gt; </span></span>
-<span id="cb244-12"><a href="petle.html#cb244-12"></a><span class="co">#&gt; [[4]]</span></span>
-<span id="cb244-13"><a href="petle.html#cb244-13"></a><span class="co">#&gt; [1] 88.5</span></span>
-<span id="cb244-14"><a href="petle.html#cb244-14"></a><span class="co">#&gt; </span></span>
-<span id="cb244-15"><a href="petle.html#cb244-15"></a><span class="co">#&gt; [[5]]</span></span>
-<span id="cb244-16"><a href="petle.html#cb244-16"></a><span class="co">#&gt; [1] 257</span></span></code></pre></div>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb244-1" title="1">odleglosci_mile =<span class="st"> </span><span class="kw">list</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">55</span>, <span class="dv">160</span>)</a>
+<a class="sourceLine" id="cb244-2" title="2"><span class="kw">mile_na_km</span>(odleglosci_mile)</a>
+<a class="sourceLine" id="cb244-3" title="3"><span class="co">#&gt; [[1]]</span></a>
+<a class="sourceLine" id="cb244-4" title="4"><span class="co">#&gt; [1] 0</span></a>
+<a class="sourceLine" id="cb244-5" title="5"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb244-6" title="6"><span class="co">#&gt; [[2]]</span></a>
+<a class="sourceLine" id="cb244-7" title="7"><span class="co">#&gt; [1] 1.61</span></a>
+<a class="sourceLine" id="cb244-8" title="8"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb244-9" title="9"><span class="co">#&gt; [[3]]</span></a>
+<a class="sourceLine" id="cb244-10" title="10"><span class="co">#&gt; [1] 16.1</span></a>
+<a class="sourceLine" id="cb244-11" title="11"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb244-12" title="12"><span class="co">#&gt; [[4]]</span></a>
+<a class="sourceLine" id="cb244-13" title="13"><span class="co">#&gt; [1] 88.5</span></a>
+<a class="sourceLine" id="cb244-14" title="14"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb244-15" title="15"><span class="co">#&gt; [[5]]</span></a>
+<a class="sourceLine" id="cb244-16" title="16"><span class="co">#&gt; [1] 257</span></a></code></pre></div>
 <p>Zgodnie z oczekiwaniami zero mil lądowych to również zero kilometrów, a jedna mila lądowa to 1,609 kilometra.</p>
 </div>
 </div>
-<div id="petla-while" class="section level2" number="8.2">
-<h2><span class="header-section-number">8.2</span> Pętla while</h2>
+<div id="petla-while" class="section level2 hasAnchor">
+<h2><span class="header-section-number">8.2</span> Pętla while<a href="petle.html#petla-while" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>W przypadku pętli <code>for</code> znana jest liczba powtórzeń przed rozpoczęciem jej działania.
 Inny rodzaj pętli, pętla <code>while</code>, jest natomiast stosowany gdy nie wiadomo ile potworzeń jest koniecznych.
 W efekcie pętla <code>while</code> jest bardziej elastyczna, co jest zarazem jej atutem i wadą.
@@ -562,26 +533,26 @@ Pętla <code>while</code> powinna być używana tylko gdy rozwiązanie z użycie
 <!--https://adv-r.hadley.nz/control-flow.html#loops -->
 <p>Pętla <code>while</code> składa się z nagłówka definiującego pewien warunek oraz ciała określającego operację do wykonania.
 Pętla ta będzie tak długo powtarzana jak długo warunek będzie spełniony - dlatego też w ciele pętli musi być jakiś mechanizm zmieniający wartość wpływającą na warunek.</p>
-<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="petle.html#cb245-1"></a><span class="cf">while</span> (warunek){</span>
-<span id="cb245-2"><a href="petle.html#cb245-2"></a>    wykonuj operację tak długo jak warunek jest spełniony</span>
-<span id="cb245-3"><a href="petle.html#cb245-3"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb245-1" title="1"><span class="cf">while</span> (warunek){</a>
+<a class="sourceLine" id="cb245-2" title="2">    wykonuj operację tak długo jak warunek jest spełniony</a>
+<a class="sourceLine" id="cb245-3" title="3">}</a></code></pre></div>
 <p>Wyobraźmy sobie poniższą sytuację.
 Mamy 1000 zł (obiekt <code>budzet</code>) i chcemy zainwestować te pieniądze na giełdzie w celu ich pomnożenia.
 Interesują nas tylko dwa scenariusze - jeden w którym tracimy całą kwotę, oraz drugi w którym udaje się nam podwoić tę kwotę.
 Wiemy też jedną dodatkową rzecz - losowe wahania na giełdzie mogą pozwolić nam na stratę maksymalnie 100 zł aż do zysku 100 zł każdego dnia.
 Poniższy kod wykonuje pętlę <code>while</code> tak długo jak obiekt <code>budzet</code> ma wartość większą od zera i mniejszą od 2000.</p>
-<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="petle.html#cb246-1"></a>budzet =<span class="st"> </span><span class="dv">1000</span></span>
-<span id="cb246-2"><a href="petle.html#cb246-2"></a>liczba_dni =<span class="st"> </span><span class="dv">0</span></span>
-<span id="cb246-3"><a href="petle.html#cb246-3"></a><span class="cf">while</span>(budzet <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;&amp;</span><span class="st"> </span>budzet <span class="op">&lt;</span><span class="st"> </span><span class="dv">2000</span>){</span>
-<span id="cb246-4"><a href="petle.html#cb246-4"></a>  budzet =<span class="st"> </span>budzet <span class="op">+</span><span class="st"> </span><span class="kw">sample</span>(<span class="op">-</span><span class="dv">100</span><span class="op">:</span><span class="dv">100</span>, <span class="dt">size =</span> <span class="dv">1</span>) <span class="co"># losowa strata lub zysk</span></span>
-<span id="cb246-5"><a href="petle.html#cb246-5"></a>  liczba_dni =<span class="st"> </span>liczba_dni <span class="op">+</span><span class="st"> </span><span class="dv">1</span></span>
-<span id="cb246-6"><a href="petle.html#cb246-6"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb246-1" title="1">budzet =<span class="st"> </span><span class="dv">1000</span></a>
+<a class="sourceLine" id="cb246-2" title="2">liczba_dni =<span class="st"> </span><span class="dv">0</span></a>
+<a class="sourceLine" id="cb246-3" title="3"><span class="cf">while</span>(budzet <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span> <span class="op">&amp;&amp;</span><span class="st"> </span>budzet <span class="op">&lt;</span><span class="st"> </span><span class="dv">2000</span>){</a>
+<a class="sourceLine" id="cb246-4" title="4">  budzet =<span class="st"> </span>budzet <span class="op">+</span><span class="st"> </span><span class="kw">sample</span>(<span class="op">-</span><span class="dv">100</span><span class="op">:</span><span class="dv">100</span>, <span class="dt">size =</span> <span class="dv">1</span>) <span class="co"># losowa strata lub zysk</span></a>
+<a class="sourceLine" id="cb246-5" title="5">  liczba_dni =<span class="st"> </span>liczba_dni <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb246-6" title="6">}</a></code></pre></div>
 <p>Po jego wykonaniu możemy dowiedzieć się czy udało się nam zarobić czy też stracić całe pieniądze.
 Dodatkowo możemy sprawdzić ile zajęło to dni.</p>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="petle.html#cb247-1"></a>budzet</span>
-<span id="cb247-2"><a href="petle.html#cb247-2"></a><span class="co">#&gt; [1] -33</span></span>
-<span id="cb247-3"><a href="petle.html#cb247-3"></a>liczba_dni</span>
-<span id="cb247-4"><a href="petle.html#cb247-4"></a><span class="co">#&gt; [1] 522</span></span></code></pre></div>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb247-1" title="1">budzet</a>
+<a class="sourceLine" id="cb247-2" title="2"><span class="co">#&gt; [1] -33</span></a>
+<a class="sourceLine" id="cb247-3" title="3">liczba_dni</a>
+<a class="sourceLine" id="cb247-4" title="4"><span class="co">#&gt; [1] 522</span></a></code></pre></div>
 
 <div class="rmdinfo">
 Inne istniejące rodzaje pętli to pętla <code>repeat</code> oraz pętla <code>do</code>.
@@ -590,32 +561,33 @@ Działanie pętli <code>do</code> natomiast wygląda w następujący sposób:
 <code>do {wykonuj operację} while (warunek)</code>.
 Pętla <code>do</code> nie występuje w R.
 </div>
-<p>Dodatkowe informacje na temat pętli for and while można znaleźć w sekcji <a href="https://adv-r.hadley.nz/control-flow.html#loops">Loops</a> książki Advanced R <span class="citation">(Wickham <a href="#ref-wickham2014advanced" role="doc-biblioref">2014</a>)</span></p>
+
+<p>Dodatkowe informacje na temat pętli for and while można znaleźć w sekcji <a href="https://adv-r.hadley.nz/control-flow.html#loops">Loops</a> książki Advanced R <span class="citation">(Wickham <a href="#ref-wickham2014advanced">2014</a>)</span></p>
 </div>
-<div id="prog-fun" class="section level2" number="8.3">
-<h2><span class="header-section-number">8.3</span> Programowanie funkcyjne</h2>
+<div id="prog-fun" class="section level2 hasAnchor">
+<h2><span class="header-section-number">8.3</span> Programowanie funkcyjne<a href="petle.html#prog-fun" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Sprawdźmy działanie programowania funkcyjnego na dwóch przykładach.
 W pierwszym posiadamy listę <code>pomiary_f_lista</code> składającą się z trzech elementów - każdy z nich to wektor z trzema pomiarami temperatury w stopniach Fahrenheita.</p>
-<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="petle.html#cb248-1"></a>pomiary_f_lista =<span class="st"> </span><span class="kw">list</span>(</span>
-<span id="cb248-2"><a href="petle.html#cb248-2"></a>  <span class="dt">miastoA =</span> <span class="kw">c</span>(<span class="dv">61</span>, <span class="dv">14</span>, <span class="dv">21</span>),</span>
-<span id="cb248-3"><a href="petle.html#cb248-3"></a>  <span class="dt">miastoB =</span> <span class="kw">c</span>(<span class="dv">43</span>, <span class="dv">52</span>, <span class="dv">30</span>),</span>
-<span id="cb248-4"><a href="petle.html#cb248-4"></a>  <span class="dt">miastoC =</span> <span class="kw">c</span>(<span class="dv">41</span>, <span class="dv">42</span>, <span class="dv">33</span>)</span>
-<span id="cb248-5"><a href="petle.html#cb248-5"></a>)</span>
-<span id="cb248-6"><a href="petle.html#cb248-6"></a>pomiary_f_lista</span>
-<span id="cb248-7"><a href="petle.html#cb248-7"></a><span class="co">#&gt; $miastoA</span></span>
-<span id="cb248-8"><a href="petle.html#cb248-8"></a><span class="co">#&gt; [1] 61 14 21</span></span>
-<span id="cb248-9"><a href="petle.html#cb248-9"></a><span class="co">#&gt; </span></span>
-<span id="cb248-10"><a href="petle.html#cb248-10"></a><span class="co">#&gt; $miastoB</span></span>
-<span id="cb248-11"><a href="petle.html#cb248-11"></a><span class="co">#&gt; [1] 43 52 30</span></span>
-<span id="cb248-12"><a href="petle.html#cb248-12"></a><span class="co">#&gt; </span></span>
-<span id="cb248-13"><a href="petle.html#cb248-13"></a><span class="co">#&gt; $miastoC</span></span>
-<span id="cb248-14"><a href="petle.html#cb248-14"></a><span class="co">#&gt; [1] 41 42 33</span></span></code></pre></div>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb248-1" title="1">pomiary_f_lista =<span class="st"> </span><span class="kw">list</span>(</a>
+<a class="sourceLine" id="cb248-2" title="2">  <span class="dt">miastoA =</span> <span class="kw">c</span>(<span class="dv">61</span>, <span class="dv">14</span>, <span class="dv">21</span>),</a>
+<a class="sourceLine" id="cb248-3" title="3">  <span class="dt">miastoB =</span> <span class="kw">c</span>(<span class="dv">43</span>, <span class="dv">52</span>, <span class="dv">30</span>),</a>
+<a class="sourceLine" id="cb248-4" title="4">  <span class="dt">miastoC =</span> <span class="kw">c</span>(<span class="dv">41</span>, <span class="dv">42</span>, <span class="dv">33</span>)</a>
+<a class="sourceLine" id="cb248-5" title="5">)</a>
+<a class="sourceLine" id="cb248-6" title="6">pomiary_f_lista</a>
+<a class="sourceLine" id="cb248-7" title="7"><span class="co">#&gt; $miastoA</span></a>
+<a class="sourceLine" id="cb248-8" title="8"><span class="co">#&gt; [1] 61 14 21</span></a>
+<a class="sourceLine" id="cb248-9" title="9"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb248-10" title="10"><span class="co">#&gt; $miastoB</span></a>
+<a class="sourceLine" id="cb248-11" title="11"><span class="co">#&gt; [1] 43 52 30</span></a>
+<a class="sourceLine" id="cb248-12" title="12"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb248-13" title="13"><span class="co">#&gt; $miastoC</span></a>
+<a class="sourceLine" id="cb248-14" title="14"><span class="co">#&gt; [1] 41 42 33</span></a></code></pre></div>
 <p>Naszym celem jest zamiana tych wartości na stopnie Celsjusza.
 Używając paradygmatu imperatywnego, moglibyśmy zastosować pętlę <code>for</code> i zastosować przeliczenie wartości dla kolejnych elementów listy.
 W paradygmacie funkcyjnym natomiast naszym pierwszym krokiem jest stworzenie funkcji wykonującej podstawową operację:</p>
-<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="petle.html#cb249-1"></a>konwersja_f_to_c =<span class="st"> </span><span class="cf">function</span>(temperatura_f){</span>
-<span id="cb249-2"><a href="petle.html#cb249-2"></a>    (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></span>
-<span id="cb249-3"><a href="petle.html#cb249-3"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb249-1" title="1">konwersja_f_to_c =<span class="st"> </span><span class="cf">function</span>(temperatura_f){</a>
+<a class="sourceLine" id="cb249-2" title="2">    (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></a>
+<a class="sourceLine" id="cb249-3" title="3">}</a></code></pre></div>
 
 <div class="rmdinfo">
 <p>Funkcje użyte w programowaniu funkcyjnym muszą spełniać dwa warunki:</p>
@@ -625,9 +597,10 @@ Taka funkcja nie może mieć w sobie, np. elementu losowego.</li>
 <li>Funkcja nie może mieć efektów ubocznych (ang. <em>side-effects</em>), czyli wykonywać jakiegoś działania w tle, jak np. wyświetlanie czy zapisywanie na dysk.</li>
 </ol>
 </div>
+
 <p>Powyższa funkcja <code>konwersja_f_to_c()</code> działa poprawnie na wektorach wartości, ale niestety nie jest w stanie zwrócić wyniku w przypadku listy, co obrazuje komunikat błędu.</p>
-<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="petle.html#cb250-1"></a><span class="kw">konwersja_f_to_c</span>(pomiary_f_lista)</span>
-<span id="cb250-2"><a href="petle.html#cb250-2"></a><span class="co">#&gt; Error in temperatura_f - 32: non-numeric argument to binary operator</span></span></code></pre></div>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb250-1" title="1"><span class="kw">konwersja_f_to_c</span>(pomiary_f_lista)</a>
+<a class="sourceLine" id="cb250-2" title="2"><span class="co">#&gt; Error in temperatura_f - 32: non-numeric argument to binary operator</span></a></code></pre></div>
 <p>Języki obsługujące programowanie funkcyjne posiadają jednak szereg narzędzi do przetwarzania funkcji, które zbiorczo są nazywane funkcjonałami (ang. <em>functional</em>).
 Funkcjonały to funkcje, które przyjmują inne funkcje jako argumenty.</p>
 
@@ -635,19 +608,20 @@ Funkcjonały to funkcje, które przyjmują inne funkcje jako argumenty.</p>
 W R istnieje cała rodzina funkcji poświęcona programowaniu funkcyjnemu.
 Oprócz najczęściej używanych, <code>lapply()</code> i <code>apply()</code>, istnieją również takie funkcje jak <code>sapply()</code>, <code>vapply()</code>, <code>tapply()</code>, <code>mapply()</code> i inne.
 </div>
+
 <p>Jednym z podstawowych funkcjonałów w R jest <code>lapply()</code>.
 Funkcjonał <code>lapply()</code> przyjmuje jako pierwszy argument wektor atomowy lub listę, a następnie przetwarza go używając funkcji podanej jako drugi argument <code>FUN</code>.</p>
 <p>Poniżej, <code>lapply()</code> wykonuje funkcję <code>konwersja_f_to_c()</code> na kolejnych elementach listy <code>pomiary_f_lista</code> i zwraca nową listę zawierającą wyniki</p>
-<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="petle.html#cb251-1"></a>pomiary_c_lista =<span class="st"> </span><span class="kw">lapply</span>(pomiary_f_lista, <span class="dt">FUN =</span> konwersja_f_to_c)</span>
-<span id="cb251-2"><a href="petle.html#cb251-2"></a>pomiary_c_lista</span>
-<span id="cb251-3"><a href="petle.html#cb251-3"></a><span class="co">#&gt; $miastoA</span></span>
-<span id="cb251-4"><a href="petle.html#cb251-4"></a><span class="co">#&gt; [1]  16.11 -10.00  -6.11</span></span>
-<span id="cb251-5"><a href="petle.html#cb251-5"></a><span class="co">#&gt; </span></span>
-<span id="cb251-6"><a href="petle.html#cb251-6"></a><span class="co">#&gt; $miastoB</span></span>
-<span id="cb251-7"><a href="petle.html#cb251-7"></a><span class="co">#&gt; [1]  6.11 11.11 -1.11</span></span>
-<span id="cb251-8"><a href="petle.html#cb251-8"></a><span class="co">#&gt; </span></span>
-<span id="cb251-9"><a href="petle.html#cb251-9"></a><span class="co">#&gt; $miastoC</span></span>
-<span id="cb251-10"><a href="petle.html#cb251-10"></a><span class="co">#&gt; [1] 5.000 5.556 0.556</span></span></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb251-1" title="1">pomiary_c_lista =<span class="st"> </span><span class="kw">lapply</span>(pomiary_f_lista, <span class="dt">FUN =</span> konwersja_f_to_c)</a>
+<a class="sourceLine" id="cb251-2" title="2">pomiary_c_lista</a>
+<a class="sourceLine" id="cb251-3" title="3"><span class="co">#&gt; $miastoA</span></a>
+<a class="sourceLine" id="cb251-4" title="4"><span class="co">#&gt; [1]  16.11 -10.00  -6.11</span></a>
+<a class="sourceLine" id="cb251-5" title="5"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb251-6" title="6"><span class="co">#&gt; $miastoB</span></a>
+<a class="sourceLine" id="cb251-7" title="7"><span class="co">#&gt; [1]  6.11 11.11 -1.11</span></a>
+<a class="sourceLine" id="cb251-8" title="8"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb251-9" title="9"><span class="co">#&gt; $miastoC</span></a>
+<a class="sourceLine" id="cb251-10" title="10"><span class="co">#&gt; [1] 5.000 5.556 0.556</span></a></code></pre></div>
 <!-- lapply -->
 <!-- \@ref(dzialania-na-wektorach) -->
 <!-- wektoryzacja-->
@@ -657,102 +631,103 @@ Funkcjonał <code>lapply()</code> przyjmuje jako pierwszy argument wektor atomow
 <p>Programowanie funkcyjne można też stosować do innych klas obiektów.
 Poniższa ramka danych <code>pomiary</code> zawiera trzy kolumny z pomiarami temperatury dla kolejnych miast.
 Dla każdego miasta wykonano jeden pomiar dziennie.</p>
-<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="petle.html#cb252-1"></a>pomiary =<span class="st"> </span><span class="kw">data.frame</span>(</span>
-<span id="cb252-2"><a href="petle.html#cb252-2"></a>  <span class="dt">miastoA =</span> <span class="kw">c</span>(<span class="fl">6.1</span>, <span class="fl">1.4</span>, <span class="fl">-2.1</span>),</span>
-<span id="cb252-3"><a href="petle.html#cb252-3"></a>  <span class="dt">miastoB =</span> <span class="kw">c</span>(<span class="fl">4.3</span>, <span class="fl">5.2</span>, <span class="fl">3.0</span>),</span>
-<span id="cb252-4"><a href="petle.html#cb252-4"></a>  <span class="dt">miastoC =</span> <span class="kw">c</span>(<span class="fl">4.1</span>, <span class="fl">4.2</span>, <span class="fl">3.3</span>)</span>
-<span id="cb252-5"><a href="petle.html#cb252-5"></a>)</span>
-<span id="cb252-6"><a href="petle.html#cb252-6"></a>pomiary</span>
-<span id="cb252-7"><a href="petle.html#cb252-7"></a><span class="co">#&gt;   miastoA miastoB miastoC</span></span>
-<span id="cb252-8"><a href="petle.html#cb252-8"></a><span class="co">#&gt; 1     6.1     4.3     4.1</span></span>
-<span id="cb252-9"><a href="petle.html#cb252-9"></a><span class="co">#&gt; 2     1.4     5.2     4.2</span></span>
-<span id="cb252-10"><a href="petle.html#cb252-10"></a><span class="co">#&gt; 3    -2.1     3.0     3.3</span></span></code></pre></div>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb252-1" title="1">pomiary =<span class="st"> </span><span class="kw">data.frame</span>(</a>
+<a class="sourceLine" id="cb252-2" title="2">  <span class="dt">miastoA =</span> <span class="kw">c</span>(<span class="fl">6.1</span>, <span class="fl">1.4</span>, <span class="fl">-2.1</span>),</a>
+<a class="sourceLine" id="cb252-3" title="3">  <span class="dt">miastoB =</span> <span class="kw">c</span>(<span class="fl">4.3</span>, <span class="fl">5.2</span>, <span class="fl">3.0</span>),</a>
+<a class="sourceLine" id="cb252-4" title="4">  <span class="dt">miastoC =</span> <span class="kw">c</span>(<span class="fl">4.1</span>, <span class="fl">4.2</span>, <span class="fl">3.3</span>)</a>
+<a class="sourceLine" id="cb252-5" title="5">)</a>
+<a class="sourceLine" id="cb252-6" title="6">pomiary</a>
+<a class="sourceLine" id="cb252-7" title="7"><span class="co">#&gt;   miastoA miastoB miastoC</span></a>
+<a class="sourceLine" id="cb252-8" title="8"><span class="co">#&gt; 1     6.1     4.3     4.1</span></a>
+<a class="sourceLine" id="cb252-9" title="9"><span class="co">#&gt; 2     1.4     5.2     4.2</span></a>
+<a class="sourceLine" id="cb252-10" title="10"><span class="co">#&gt; 3    -2.1     3.0     3.3</span></a></code></pre></div>
 <p>Naszym celem jest wyliczenie średnich - zarówno średniej wartości dla każdego miasta (kolumny) oraz średniej wartości dla każdego dnia (wiersze).
 Możemy to zrobić używając pętli <code>for</code>.
 Najpierw tworzymy pusty wektor <code>sr_miasto</code> o długości oczekiwanego wyniku, a następnie wyliczamy średnią dla kolejnych kolumn i dodajemy ją do tego wektora.</p>
-<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="petle.html#cb253-1"></a>sr_miasto =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="dt">length =</span> <span class="kw">ncol</span>(pomiary))</span>
-<span id="cb253-2"><a href="petle.html#cb253-2"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_len</span>(<span class="kw">ncol</span>(pomiary))){</span>
-<span id="cb253-3"><a href="petle.html#cb253-3"></a>  sr_miasto[i] =<span class="st"> </span><span class="kw">mean</span>(pomiary[, i])</span>
-<span id="cb253-4"><a href="petle.html#cb253-4"></a>}</span>
-<span id="cb253-5"><a href="petle.html#cb253-5"></a>sr_miasto</span>
-<span id="cb253-6"><a href="petle.html#cb253-6"></a><span class="co">#&gt; [1] 1.80 4.17 3.87</span></span></code></pre></div>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb253-1" title="1">sr_miasto =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="dt">length =</span> <span class="kw">ncol</span>(pomiary))</a>
+<a class="sourceLine" id="cb253-2" title="2"><span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_len</span>(<span class="kw">ncol</span>(pomiary))){</a>
+<a class="sourceLine" id="cb253-3" title="3">  sr_miasto[i] =<span class="st"> </span><span class="kw">mean</span>(pomiary[, i])</a>
+<a class="sourceLine" id="cb253-4" title="4">}</a>
+<a class="sourceLine" id="cb253-5" title="5">sr_miasto</a>
+<a class="sourceLine" id="cb253-6" title="6"><span class="co">#&gt; [1] 1.80 4.17 3.87</span></a></code></pre></div>
 <p>W kolejnym kroku tworzymy pusty wektor <code>sr_dzien</code> również o długości oczekiwanego wyniku, a następnie wyliczamy średnią dla kolejnych wierszy i dodajemy ją do tego wektora.</p>
-<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="petle.html#cb254-1"></a>sr_dzien =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="dt">length =</span> <span class="kw">nrow</span>(pomiary))</span>
-<span id="cb254-2"><a href="petle.html#cb254-2"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_len</span>(<span class="kw">nrow</span>(pomiary))){</span>
-<span id="cb254-3"><a href="petle.html#cb254-3"></a>  sr_dzien[i] =<span class="st"> </span><span class="kw">mean</span>(<span class="kw">unlist</span>(pomiary[i, ]))</span>
-<span id="cb254-4"><a href="petle.html#cb254-4"></a>}</span>
-<span id="cb254-5"><a href="petle.html#cb254-5"></a>sr_dzien</span>
-<span id="cb254-6"><a href="petle.html#cb254-6"></a><span class="co">#&gt; [1] 4.83 3.60 1.40</span></span></code></pre></div>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb254-1" title="1">sr_dzien =<span class="st"> </span><span class="kw">vector</span>(<span class="st">&quot;numeric&quot;</span>, <span class="dt">length =</span> <span class="kw">nrow</span>(pomiary))</a>
+<a class="sourceLine" id="cb254-2" title="2"><span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_len</span>(<span class="kw">nrow</span>(pomiary))){</a>
+<a class="sourceLine" id="cb254-3" title="3">  sr_dzien[i] =<span class="st"> </span><span class="kw">mean</span>(<span class="kw">unlist</span>(pomiary[i, ]))</a>
+<a class="sourceLine" id="cb254-4" title="4">}</a>
+<a class="sourceLine" id="cb254-5" title="5">sr_dzien</a>
+<a class="sourceLine" id="cb254-6" title="6"><span class="co">#&gt; [1] 4.83 3.60 1.40</span></a></code></pre></div>
 <p>Alternatywą w takich przypadkach jest użycie programowania funkcyjnego, a w szczególności funkcjonału <code>apply()</code>.
 Oczekuje on co najmniej trzech argumentów, <code>X</code> - obiektu wejściowego którym mogą być między innymi ramki danych czy macierze, <code>MARGIN</code> określającego czy wartości będą grupowane po wierszach czy kolumnach, oraz <code>FUN</code> zawierającego używaną funkcję.</p>
 <p>W poniższym przypadku obiektem wejściowym jest ramka danych <code>pomiary</code>, <code>MARGIN = 2</code> oznacza wyliczanie oddzielnie dla kolejnych kolumn przy użyciu zdefiniowanej funkcji <code>mean()</code>.</p>
-<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="petle.html#cb255-1"></a><span class="kw">apply</span>(pomiary, <span class="dt">MARGIN =</span> <span class="dv">2</span>, <span class="dt">FUN =</span> mean)</span>
-<span id="cb255-2"><a href="petle.html#cb255-2"></a><span class="co">#&gt; miastoA miastoB miastoC </span></span>
-<span id="cb255-3"><a href="petle.html#cb255-3"></a><span class="co">#&gt;    1.80    4.17    3.87</span></span></code></pre></div>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb255-1" title="1"><span class="kw">apply</span>(pomiary, <span class="dt">MARGIN =</span> <span class="dv">2</span>, <span class="dt">FUN =</span> mean)</a>
+<a class="sourceLine" id="cb255-2" title="2"><span class="co">#&gt; miastoA miastoB miastoC </span></a>
+<a class="sourceLine" id="cb255-3" title="3"><span class="co">#&gt;    1.80    4.17    3.87</span></a></code></pre></div>
 <p>Podobne obliczenie, ale dla kolejnych wierszy można uzyskać zamieniając argument <code>MARGIN</code> na <code>1</code>.</p>
-<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="petle.html#cb256-1"></a><span class="kw">apply</span>(pomiary, <span class="dt">MARGIN =</span> <span class="dv">1</span>, <span class="dt">FUN =</span> mean)</span>
-<span id="cb256-2"><a href="petle.html#cb256-2"></a><span class="co">#&gt; [1] 4.83 3.60 1.40</span></span></code></pre></div>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb256-1" title="1"><span class="kw">apply</span>(pomiary, <span class="dt">MARGIN =</span> <span class="dv">1</span>, <span class="dt">FUN =</span> mean)</a>
+<a class="sourceLine" id="cb256-2" title="2"><span class="co">#&gt; [1] 4.83 3.60 1.40</span></a></code></pre></div>
 
 <div class="rmdinfo">
-Pakiet <strong>purrr</strong> oferuje ulepszone i rozszerzone narzędzia do programowania funkcyjnego <span class="citation">(Henry and Wickham <a href="#ref-R-purrr" role="doc-biblioref">2019</a>)</span>.
+Pakiet <strong>purrr</strong> oferuje ulepszone i rozszerzone narzędzia do programowania funkcyjnego <span class="citation">(Henry and Wickham <a href="#ref-R-purrr">2019</a>)</span>.
 Przykładowo, odpowiednikiem funkcji <code>lapply()</code> w pakiecie <strong>purrr</strong> jest funkcja <code>map()</code>.
 Ma ona dodatkowo kilka kolejnych wariantów, np. <code>map_df()</code> - która przyjmuje jako wejście listy, ale zwraca ramki danych, czy <code>map_dbl()</code> - która również przyjmuje listy, ale zwraca wartości zmiennoprzecinkowe.
 </div>
+
 <!-- https://stackoverflow.com/questions/7142767/why-are-loops-slow-in-r -->
 <!-- https://adv-r.hadley.nz/functionals.html -->
 </div>
-<div id="zad8" class="section level2" number="8.4">
-<h2><span class="header-section-number">8.4</span> Zadania</h2>
+<div id="zad8" class="section level2 hasAnchor">
+<h2><span class="header-section-number">8.4</span> Zadania<a href="petle.html#zad8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <!-- peer instruction - https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1006023&type=printable -->
 <ol style="list-style-type: decimal">
 <li>Spójrz na poniższy kod, ale nie wykonuj go.
 Ile razy zostanie wyświetlony tekst <code>"Działa!"</code>?</li>
 </ol>
-<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="petle.html#cb257-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)){</span>
-<span id="cb257-2"><a href="petle.html#cb257-2"></a>    <span class="cf">if</span> (i <span class="op">&lt;</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span>i <span class="op">&gt;=</span><span class="st"> </span><span class="dv">5</span>)</span>
-<span id="cb257-3"><a href="petle.html#cb257-3"></a>      <span class="kw">print</span>(<span class="st">&quot;Działa!&quot;</span>)</span>
-<span id="cb257-4"><a href="petle.html#cb257-4"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb257-1" title="1"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)){</a>
+<a class="sourceLine" id="cb257-2" title="2">    <span class="cf">if</span> (i <span class="op">&lt;</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span>i <span class="op">&gt;=</span><span class="st"> </span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb257-3" title="3">      <span class="kw">print</span>(<span class="st">&quot;Działa!&quot;</span>)</a>
+<a class="sourceLine" id="cb257-4" title="4">}</a></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>Spójrz na poniższy kod, ale nie wykonuj go.
 Ile razy zostanie wyświetlony tekst <code>"Działa!"</code>?</li>
 </ol>
-<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="petle.html#cb258-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)){</span>
-<span id="cb258-2"><a href="petle.html#cb258-2"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">6</span><span class="op">:</span><span class="dv">3</span>){</span>
-<span id="cb258-3"><a href="petle.html#cb258-3"></a>    <span class="cf">if</span> (i <span class="op">&lt;</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span>i <span class="op">&gt;=</span><span class="st"> </span><span class="dv">5</span>)</span>
-<span id="cb258-4"><a href="petle.html#cb258-4"></a>      <span class="kw">print</span>(<span class="st">&quot;Działa!&quot;</span>)</span>
-<span id="cb258-5"><a href="petle.html#cb258-5"></a>  }</span>
-<span id="cb258-6"><a href="petle.html#cb258-6"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb258-1" title="1"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)){</a>
+<a class="sourceLine" id="cb258-2" title="2">  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">6</span><span class="op">:</span><span class="dv">3</span>){</a>
+<a class="sourceLine" id="cb258-3" title="3">    <span class="cf">if</span> (i <span class="op">&lt;</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span>i <span class="op">&gt;=</span><span class="st"> </span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb258-4" title="4">      <span class="kw">print</span>(<span class="st">&quot;Działa!&quot;</span>)</a>
+<a class="sourceLine" id="cb258-5" title="5">  }</a>
+<a class="sourceLine" id="cb258-6" title="6">}</a></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
 <li>Spójrz na poniższy kod, ale nie wykonuj go.
 Ile razy zostanie wyświetlony tekst <code>"Działa!"</code>?</li>
 </ol>
-<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="petle.html#cb259-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)){</span>
-<span id="cb259-2"><a href="petle.html#cb259-2"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">6</span><span class="op">:</span><span class="dv">3</span>){</span>
-<span id="cb259-3"><a href="petle.html#cb259-3"></a>    <span class="cf">if</span> (i <span class="op">&lt;</span><span class="st"> </span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span>j <span class="op">&gt;=</span><span class="st"> </span><span class="dv">5</span>)</span>
-<span id="cb259-4"><a href="petle.html#cb259-4"></a>      <span class="kw">print</span>(<span class="st">&quot;Działa!&quot;</span>)</span>
-<span id="cb259-5"><a href="petle.html#cb259-5"></a>  }</span>
-<span id="cb259-6"><a href="petle.html#cb259-6"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb259-1" title="1"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)){</a>
+<a class="sourceLine" id="cb259-2" title="2">  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">6</span><span class="op">:</span><span class="dv">3</span>){</a>
+<a class="sourceLine" id="cb259-3" title="3">    <span class="cf">if</span> (i <span class="op">&lt;</span><span class="st"> </span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span>j <span class="op">&gt;=</span><span class="st"> </span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb259-4" title="4">      <span class="kw">print</span>(<span class="st">&quot;Działa!&quot;</span>)</a>
+<a class="sourceLine" id="cb259-5" title="5">  }</a>
+<a class="sourceLine" id="cb259-6" title="6">}</a></code></pre></div>
 <ol start="4" style="list-style-type: decimal">
 <li>Spójrz na poniższy kod, ale nie wykonuj go.
 Ile razy zostanie wyświetlony tekst <code>"Działa!"</code>?</li>
 </ol>
-<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="petle.html#cb260-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)){</span>
-<span id="cb260-2"><a href="petle.html#cb260-2"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">6</span><span class="op">:</span><span class="dv">3</span>){</span>
-<span id="cb260-3"><a href="petle.html#cb260-3"></a>    <span class="cf">if</span> (i <span class="op">&lt;</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span>j <span class="op">&gt;=</span><span class="st"> </span><span class="dv">5</span>)</span>
-<span id="cb260-4"><a href="petle.html#cb260-4"></a>      <span class="kw">print</span>(<span class="st">&quot;Działa!&quot;</span>)</span>
-<span id="cb260-5"><a href="petle.html#cb260-5"></a>  }</span>
-<span id="cb260-6"><a href="petle.html#cb260-6"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb260-1" title="1"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)){</a>
+<a class="sourceLine" id="cb260-2" title="2">  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">6</span><span class="op">:</span><span class="dv">3</span>){</a>
+<a class="sourceLine" id="cb260-3" title="3">    <span class="cf">if</span> (i <span class="op">&lt;</span><span class="st"> </span><span class="dv">2</span> <span class="op">|</span><span class="st"> </span>j <span class="op">&gt;=</span><span class="st"> </span><span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb260-4" title="4">      <span class="kw">print</span>(<span class="st">&quot;Działa!&quot;</span>)</a>
+<a class="sourceLine" id="cb260-5" title="5">  }</a>
+<a class="sourceLine" id="cb260-6" title="6">}</a></code></pre></div>
 <ol start="5" style="list-style-type: decimal">
 <li>Spójrz na poniższy kod, ale nie wykonuj go.
 Ile razy zostanie wyświetlony tekst <code>"Działa!"</code>?</li>
 </ol>
-<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="petle.html#cb261-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)){</span>
-<span id="cb261-2"><a href="petle.html#cb261-2"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">6</span><span class="op">:</span><span class="dv">3</span>){</span>
-<span id="cb261-3"><a href="petle.html#cb261-3"></a>    i =<span class="st"> </span>i <span class="op">+</span><span class="st"> </span>j</span>
-<span id="cb261-4"><a href="petle.html#cb261-4"></a>    <span class="cf">if</span> (i <span class="op">&lt;</span><span class="st"> </span><span class="dv">4</span> <span class="op">|</span><span class="st"> </span>i <span class="op">&gt;=</span><span class="st"> </span><span class="dv">9</span>)</span>
-<span id="cb261-5"><a href="petle.html#cb261-5"></a>      <span class="kw">print</span>(<span class="st">&quot;Działa!&quot;</span>)</span>
-<span id="cb261-6"><a href="petle.html#cb261-6"></a>  }</span>
-<span id="cb261-7"><a href="petle.html#cb261-7"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb261-1" title="1"><span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)){</a>
+<a class="sourceLine" id="cb261-2" title="2">  <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">6</span><span class="op">:</span><span class="dv">3</span>){</a>
+<a class="sourceLine" id="cb261-3" title="3">    i =<span class="st"> </span>i <span class="op">+</span><span class="st"> </span>j</a>
+<a class="sourceLine" id="cb261-4" title="4">    <span class="cf">if</span> (i <span class="op">&lt;</span><span class="st"> </span><span class="dv">4</span> <span class="op">|</span><span class="st"> </span>i <span class="op">&gt;=</span><span class="st"> </span><span class="dv">9</span>)</a>
+<a class="sourceLine" id="cb261-5" title="5">      <span class="kw">print</span>(<span class="st">&quot;Działa!&quot;</span>)</a>
+<a class="sourceLine" id="cb261-6" title="6">  }</a>
+<a class="sourceLine" id="cb261-7" title="7">}</a></code></pre></div>
 <ol start="6" style="list-style-type: decimal">
 <li><p>Posiadasz listę zawierającą wartości temperatury w stopniach Fahrenheita, która została przedstawiona na początku sekcji <a href="petle.html#prog-fun">8.3</a>.
 Stwórz pętlę <code>for</code>, która zamieni te wartości na stopnie Celsjusza.</p></li>
@@ -765,13 +740,13 @@ Napisz dwie funkcje używając pętli <code>for</code> - jedna, która znajdzie 
 <li><p>Rozwiąż poprzednie zadanie korzystając z metod programowania funkcyjnego zamiast pętli <code>for</code>.</p></li>
 <li><p>Posiadasz macierz o wymiarach czterech wierszy na sześć kolumn składającą się z kolejnych liter alfabetu.</p></li>
 </ol>
-<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="petle.html#cb262-1"></a>m =<span class="st"> </span><span class="kw">matrix</span>(LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">24</span>], <span class="dt">ncol =</span> <span class="dv">6</span>, <span class="dt">nrow =</span> <span class="dv">4</span>)</span>
-<span id="cb262-2"><a href="petle.html#cb262-2"></a>m</span>
-<span id="cb262-3"><a href="petle.html#cb262-3"></a><span class="co">#&gt;      [,1] [,2] [,3] [,4] [,5] [,6]</span></span>
-<span id="cb262-4"><a href="petle.html#cb262-4"></a><span class="co">#&gt; [1,] &quot;A&quot;  &quot;E&quot;  &quot;I&quot;  &quot;M&quot;  &quot;Q&quot;  &quot;U&quot; </span></span>
-<span id="cb262-5"><a href="petle.html#cb262-5"></a><span class="co">#&gt; [2,] &quot;B&quot;  &quot;F&quot;  &quot;J&quot;  &quot;N&quot;  &quot;R&quot;  &quot;V&quot; </span></span>
-<span id="cb262-6"><a href="petle.html#cb262-6"></a><span class="co">#&gt; [3,] &quot;C&quot;  &quot;G&quot;  &quot;K&quot;  &quot;O&quot;  &quot;S&quot;  &quot;W&quot; </span></span>
-<span id="cb262-7"><a href="petle.html#cb262-7"></a><span class="co">#&gt; [4,] &quot;D&quot;  &quot;H&quot;  &quot;L&quot;  &quot;P&quot;  &quot;T&quot;  &quot;X&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb262-1" title="1">m =<span class="st"> </span><span class="kw">matrix</span>(LETTERS[<span class="dv">1</span><span class="op">:</span><span class="dv">24</span>], <span class="dt">ncol =</span> <span class="dv">6</span>, <span class="dt">nrow =</span> <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb262-2" title="2">m</a>
+<a class="sourceLine" id="cb262-3" title="3"><span class="co">#&gt;      [,1] [,2] [,3] [,4] [,5] [,6]</span></a>
+<a class="sourceLine" id="cb262-4" title="4"><span class="co">#&gt; [1,] &quot;A&quot;  &quot;E&quot;  &quot;I&quot;  &quot;M&quot;  &quot;Q&quot;  &quot;U&quot; </span></a>
+<a class="sourceLine" id="cb262-5" title="5"><span class="co">#&gt; [2,] &quot;B&quot;  &quot;F&quot;  &quot;J&quot;  &quot;N&quot;  &quot;R&quot;  &quot;V&quot; </span></a>
+<a class="sourceLine" id="cb262-6" title="6"><span class="co">#&gt; [3,] &quot;C&quot;  &quot;G&quot;  &quot;K&quot;  &quot;O&quot;  &quot;S&quot;  &quot;W&quot; </span></a>
+<a class="sourceLine" id="cb262-7" title="7"><span class="co">#&gt; [4,] &quot;D&quot;  &quot;H&quot;  &quot;L&quot;  &quot;P&quot;  &quot;T&quot;  &quot;X&quot;</span></a></code></pre></div>
 <p>Napisz funkcję wykorzystującą pętle <code>for</code> aby określić “sąsiadów” kolejnych liter wykorzystując sąsiedztwo oparte tylko o wspólną krawędź (ang. <em>4-neighborhood</em>).
 Przykładowo, sąsiadem litery “A” są litery “E” i “B”.</p>
 <ol start="12" style="list-style-type: decimal">
@@ -781,8 +756,8 @@ Przykładowo, sąsiadem litery “A” są litery “E”, “B” i “F”.</l
 
 </div>
 </div>
-<h3>Bibliografia</h3>
-<div id="refs" class="references hanging-indent">
+<h3>Bibliografia<a href="bibliografia.html#bibliografia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references">
 <div id="ref-R-purrr">
 <p>Henry, Lionel, and Hadley Wickham. 2019. <em>Purrr: Functional Programming Tools</em>. <a href="https://CRAN.R-project.org/package=purrr">https://CRAN.R-project.org/package=purrr</a>.</p>
 </div>
@@ -793,8 +768,8 @@ Przykładowo, sąsiadem litery “A” są litery “E”, “B” i “F”.</l
 <div class="footnotes">
 <hr />
 <ol start="37">
-<li id="fn37"><p>R również obsługuje paradygmat obiektowy.<a href="petle.html#fnref37" class="footnote-back">↩︎</a></p></li>
-<li id="fn38"><p><a href="https://en.wikipedia.org/wiki/For_loop" class="uri">https://en.wikipedia.org/wiki/For_loop</a><a href="petle.html#fnref38" class="footnote-back">↩︎</a></p></li>
+<li id="fn37"><p>R również obsługuje paradygmat obiektowy.<a href="petle.html#fnref37" class="footnote-back">↩</a></p></li>
+<li id="fn38"><p><a href="https://en.wikipedia.org/wiki/For_loop" class="uri">https://en.wikipedia.org/wiki/For_loop</a><a href="petle.html#fnref38" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

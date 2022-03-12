@@ -708,7 +708,7 @@ str(lista_z_r1)
 
 ## Inne klasy obiektów {#inne-klasy}
 
-W tym oraz \@ref(proste-obiekty) rozdziale zostały wymienione i opisane cztery podstawowe klasy obiektów w R - wektory atomowe, macierze, natomiast listy i ramki danych.
+W tym oraz \@ref(proste-obiekty) rozdziale zostały wymienione i opisane cztery podstawowe klasy obiektów w R - wektory atomowe, macierze, listy i ramki danych.
 R zawiera jednak znacznie więcej klas obiektów, a co więcej - każda osoba może stworzyć swoją własną klasę obiektów (sekcja \@ref(oop)).
 
 Poniżej zostały stworzone trzy nowe wektory - znakowy (`wek_tkt`), numeryczny (`wek_num`) i dat (`wek_dat`).

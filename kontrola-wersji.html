@@ -32,7 +32,6 @@
   
 <link rel="prev" href="lacznik.html"/>
 <link rel="next" href="tworzenie-pakietow.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,34 +49,33 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 <style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -86,9 +84,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -138,236 +136,207 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Elementarz programisty</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#wymagania-wstępne"><i class="fa fa-check"></i>Wymagania wstępne</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#styl-książki"><i class="fa fa-check"></i>Styl książki</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#podziękowania"><i class="fa fa-check"></i>Podziękowania</a></li>
+<li><a href="index.html#o-książce">O książce<span></span></a><ul>
+<li><a href="index.html#wymagania-wstępne">Wymagania wstępne<span></span></a></li>
+<li><a href="index.html#styl-książki">Styl książki<span></span></a></li>
+<li><a href="index.html#podziękowania">Podziękowania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="wprowadzenie.html"><a href="wprowadzenie.html#mity-programistyczne"><i class="fa fa-check"></i><b>1.1</b> Mity programistyczne</a></li>
-<li class="chapter" data-level="1.2" data-path="wprowadzenie.html"><a href="wprowadzenie.html#jezyki-programowania"><i class="fa fa-check"></i><b>1.2</b> Języki programowania</a></li>
-<li class="chapter" data-level="1.3" data-path="wprowadzenie.html"><a href="wprowadzenie.html#r"><i class="fa fa-check"></i><b>1.3</b> R</a></li>
-<li class="chapter" data-level="1.4" data-path="wprowadzenie.html"><a href="wprowadzenie.html#zad1"><i class="fa fa-check"></i><b>1.4</b> Zadania</a></li>
+<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie<span></span></a><ul>
+<li class="chapter" data-level="1.1" data-path="wprowadzenie.html"><a href="wprowadzenie.html#mity-programistyczne"><i class="fa fa-check"></i><b>1.1</b> Mity programistyczne<span></span></a></li>
+<li class="chapter" data-level="1.2" data-path="wprowadzenie.html"><a href="wprowadzenie.html#jezyki-programowania"><i class="fa fa-check"></i><b>1.2</b> Języki programowania<span></span></a></li>
+<li class="chapter" data-level="1.3" data-path="wprowadzenie.html"><a href="wprowadzenie.html#r"><i class="fa fa-check"></i><b>1.3</b> R<span></span></a></li>
+<li class="chapter" data-level="1.4" data-path="wprowadzenie.html"><a href="wprowadzenie.html#zad1"><i class="fa fa-check"></i><b>1.4</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="part"><span><b>I Podstawy</b></span></li>
-<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrażenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia</a></li>
-<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a>
-<ul>
-<li class="chapter" data-level="2.2.1" data-path="ergosum.html"><a href="ergosum.html#operator-przypisania"><i class="fa fa-check"></i><b>2.2.1</b> Operator przypisania</a></li>
-<li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dzialania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach</a></li>
+<li class="part"><span><b>I Podstawy<span></span></b></span></li>
+<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R<span></span></a><ul>
+<li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrażenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia<span></span></a></li>
+<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty<span></span></a><ul>
+<li class="chapter" data-level="2.2.1" data-path="ergosum.html"><a href="ergosum.html#operator-przypisania"><i class="fa fa-check"></i><b>2.2.1</b> Operator przypisania<span></span></a></li>
+<li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dzialania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ergosum.html"><a href="ergosum.html#ide"><i class="fa fa-check"></i><b>2.3</b> IDE</a></li>
-<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a>
-<ul>
-<li class="chapter" data-level="2.4.1" data-path="ergosum.html"><a href="ergosum.html#nazwy-obiektow"><i class="fa fa-check"></i><b>2.4.1</b> Nazwy obiektów</a></li>
-<li class="chapter" data-level="2.4.2" data-path="ergosum.html"><a href="ergosum.html#odstępy"><i class="fa fa-check"></i><b>2.4.2</b> Odstępy</a></li>
-<li class="chapter" data-level="2.4.3" data-path="ergosum.html"><a href="ergosum.html#komentarze"><i class="fa fa-check"></i><b>2.4.3</b> Komentarze</a></li>
-<li class="chapter" data-level="2.4.4" data-path="ergosum.html"><a href="ergosum.html#nazwy-plików"><i class="fa fa-check"></i><b>2.4.4</b> Nazwy plików</a></li>
-<li class="chapter" data-level="2.4.5" data-path="ergosum.html"><a href="ergosum.html#daty"><i class="fa fa-check"></i><b>2.4.5</b> Daty</a></li>
+<li class="chapter" data-level="2.3" data-path="ergosum.html"><a href="ergosum.html#ide"><i class="fa fa-check"></i><b>2.3</b> IDE<span></span></a></li>
+<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl<span></span></a><ul>
+<li class="chapter" data-level="2.4.1" data-path="ergosum.html"><a href="ergosum.html#nazwy-obiektow"><i class="fa fa-check"></i><b>2.4.1</b> Nazwy obiektów<span></span></a></li>
+<li class="chapter" data-level="2.4.2" data-path="ergosum.html"><a href="ergosum.html#odstępy"><i class="fa fa-check"></i><b>2.4.2</b> Odstępy<span></span></a></li>
+<li class="chapter" data-level="2.4.3" data-path="ergosum.html"><a href="ergosum.html#komentarze"><i class="fa fa-check"></i><b>2.4.3</b> Komentarze<span></span></a></li>
+<li class="chapter" data-level="2.4.4" data-path="ergosum.html"><a href="ergosum.html#nazwy-plików"><i class="fa fa-check"></i><b>2.4.4</b> Nazwy plików<span></span></a></li>
+<li class="chapter" data-level="2.4.5" data-path="ergosum.html"><a href="ergosum.html#daty"><i class="fa fa-check"></i><b>2.4.5</b> Daty<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="ergosum.html"><a href="ergosum.html#resources"><i class="fa fa-check"></i><b>2.5</b> Dodatkowe materiały</a></li>
-<li class="chapter" data-level="2.6" data-path="ergosum.html"><a href="ergosum.html#zad2"><i class="fa fa-check"></i><b>2.6</b> Zadania</a></li>
+<li class="chapter" data-level="2.5" data-path="ergosum.html"><a href="ergosum.html#resources"><i class="fa fa-check"></i><b>2.5</b> Dodatkowe materiały<span></span></a></li>
+<li class="chapter" data-level="2.6" data-path="ergosum.html"><a href="ergosum.html#zad2"><i class="fa fa-check"></i><b>2.6</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="funkcje.html"><a href="funkcje.html#struktura-funkcji"><i class="fa fa-check"></i><b>3.1</b> Struktura funkcji</a></li>
-<li class="chapter" data-level="3.2" data-path="funkcje.html"><a href="funkcje.html#wbudowane-funkcje"><i class="fa fa-check"></i><b>3.2</b> Wbudowane funkcje</a></li>
-<li class="chapter" data-level="3.3" data-path="funkcje.html"><a href="funkcje.html#kolejnosc-funkcji"><i class="fa fa-check"></i><b>3.3</b> Kolejność wykonywania funkcji</a></li>
-<li class="chapter" data-level="3.4" data-path="funkcje.html"><a href="funkcje.html#dokumentacja-funkcji"><i class="fa fa-check"></i><b>3.4</b> Dokumentacja funkcji</a></li>
-<li class="chapter" data-level="3.5" data-path="funkcje.html"><a href="funkcje.html#pakiety"><i class="fa fa-check"></i><b>3.5</b> Pakiety</a></li>
-<li class="chapter" data-level="3.6" data-path="funkcje.html"><a href="funkcje.html#algorytmy"><i class="fa fa-check"></i><b>3.6</b> Algorytmy</a></li>
-<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptow"><i class="fa fa-check"></i><b>3.7</b> Tworzenie skryptów</a></li>
-<li class="chapter" data-level="3.8" data-path="funkcje.html"><a href="funkcje.html#budowanie-funkcji"><i class="fa fa-check"></i><b>3.8</b> Budowanie funkcji</a></li>
-<li class="chapter" data-level="3.9" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.9</b> Komunikaty</a></li>
-<li class="chapter" data-level="3.10" data-path="funkcje.html"><a href="funkcje.html#zad3"><i class="fa fa-check"></i><b>3.10</b> Zadania</a></li>
+<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje<span></span></a><ul>
+<li class="chapter" data-level="3.1" data-path="funkcje.html"><a href="funkcje.html#struktura-funkcji"><i class="fa fa-check"></i><b>3.1</b> Struktura funkcji<span></span></a></li>
+<li class="chapter" data-level="3.2" data-path="funkcje.html"><a href="funkcje.html#wbudowane-funkcje"><i class="fa fa-check"></i><b>3.2</b> Wbudowane funkcje<span></span></a></li>
+<li class="chapter" data-level="3.3" data-path="funkcje.html"><a href="funkcje.html#kolejnosc-funkcji"><i class="fa fa-check"></i><b>3.3</b> Kolejność wykonywania funkcji<span></span></a></li>
+<li class="chapter" data-level="3.4" data-path="funkcje.html"><a href="funkcje.html#dokumentacja-funkcji"><i class="fa fa-check"></i><b>3.4</b> Dokumentacja funkcji<span></span></a></li>
+<li class="chapter" data-level="3.5" data-path="funkcje.html"><a href="funkcje.html#pakiety"><i class="fa fa-check"></i><b>3.5</b> Pakiety<span></span></a></li>
+<li class="chapter" data-level="3.6" data-path="funkcje.html"><a href="funkcje.html#algorytmy"><i class="fa fa-check"></i><b>3.6</b> Algorytmy<span></span></a></li>
+<li class="chapter" data-level="3.7" data-path="funkcje.html"><a href="funkcje.html#tworzenie-skryptow"><i class="fa fa-check"></i><b>3.7</b> Tworzenie skryptów<span></span></a></li>
+<li class="chapter" data-level="3.8" data-path="funkcje.html"><a href="funkcje.html#budowanie-funkcji"><i class="fa fa-check"></i><b>3.8</b> Budowanie funkcji<span></span></a></li>
+<li class="chapter" data-level="3.9" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.9</b> Komunikaty<span></span></a></li>
+<li class="chapter" data-level="3.10" data-path="funkcje.html"><a href="funkcje.html#zad3"><i class="fa fa-check"></i><b>3.10</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
-<li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagnieżdżone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdżone</a></li>
-<li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porównania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
-<li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wwwf"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach</a></li>
-<li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zad4"><i class="fa fa-check"></i><b>4.5</b> Zadania</a></li>
+<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe<span></span></a><ul>
+<li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki<span></span></a></li>
+<li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagnieżdżone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdżone<span></span></a></li>
+<li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porównania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania<span></span></a></li>
+<li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wwwf"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach<span></span></a></li>
+<li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zad4"><i class="fa fa-check"></i><b>4.5</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wektory"><i class="fa fa-check"></i><b>5.1</b> Wektory</a></li>
-<li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#właściwości-wektorów"><i class="fa fa-check"></i><b>5.2</b> Właściwości wektorów</a></li>
-<li class="chapter" data-level="5.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#pf-vector"><i class="fa fa-check"></i><b>5.3</b> Podstawowe funkcje</a></li>
-<li class="chapter" data-level="5.4" data-path="proste-obiekty.html"><a href="proste-obiekty.html#dzialania-na-wektorach"><i class="fa fa-check"></i><b>5.4</b> Działania na wektorach</a></li>
-<li class="chapter" data-level="5.5" data-path="proste-obiekty.html"><a href="proste-obiekty.html#na"><i class="fa fa-check"></i><b>5.5</b> Brakujące wartości</a></li>
-<li class="chapter" data-level="5.6" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie"><i class="fa fa-check"></i><b>5.6</b> Wydzielanie</a></li>
-<li class="chapter" data-level="5.7" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wip-vector"><i class="fa fa-check"></i><b>5.7</b> Wydzielanie i przypisanie</a></li>
-<li class="chapter" data-level="5.8" data-path="proste-obiekty.html"><a href="proste-obiekty.html#mo-vector"><i class="fa fa-check"></i><b>5.8</b> Modyfikowanie obiektów</a></li>
-<li class="chapter" data-level="5.9" data-path="proste-obiekty.html"><a href="proste-obiekty.html#lpto-vector"><i class="fa fa-check"></i><b>5.9</b> Łączenie podstawowych typów obiektów</a></li>
-<li class="chapter" data-level="5.10" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zmiana-typów-obiektów"><i class="fa fa-check"></i><b>5.10</b> Zmiana typów obiektów</a></li>
-<li class="chapter" data-level="5.11" data-path="proste-obiekty.html"><a href="proste-obiekty.html#fac"><i class="fa fa-check"></i><b>5.11</b> Wektory czynnikowe</a></li>
-<li class="chapter" data-level="5.12" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ate"><i class="fa fa-check"></i><b>5.12</b> Wektory dat</a></li>
-<li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ime"><i class="fa fa-check"></i><b>5.13</b> Wektory czasu</a></li>
-<li class="chapter" data-level="5.14" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zad5"><i class="fa fa-check"></i><b>5.14</b> Zadania</a></li>
+<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty<span></span></a><ul>
+<li class="chapter" data-level="5.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wektory"><i class="fa fa-check"></i><b>5.1</b> Wektory<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#właściwości-wektorów"><i class="fa fa-check"></i><b>5.2</b> Właściwości wektorów<span></span></a></li>
+<li class="chapter" data-level="5.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#pf-vector"><i class="fa fa-check"></i><b>5.3</b> Podstawowe funkcje<span></span></a></li>
+<li class="chapter" data-level="5.4" data-path="proste-obiekty.html"><a href="proste-obiekty.html#dzialania-na-wektorach"><i class="fa fa-check"></i><b>5.4</b> Działania na wektorach<span></span></a></li>
+<li class="chapter" data-level="5.5" data-path="proste-obiekty.html"><a href="proste-obiekty.html#na"><i class="fa fa-check"></i><b>5.5</b> Brakujące wartości<span></span></a></li>
+<li class="chapter" data-level="5.6" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wydzielanie"><i class="fa fa-check"></i><b>5.6</b> Wydzielanie<span></span></a></li>
+<li class="chapter" data-level="5.7" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wip-vector"><i class="fa fa-check"></i><b>5.7</b> Wydzielanie i przypisanie<span></span></a></li>
+<li class="chapter" data-level="5.8" data-path="proste-obiekty.html"><a href="proste-obiekty.html#mo-vector"><i class="fa fa-check"></i><b>5.8</b> Modyfikowanie obiektów<span></span></a></li>
+<li class="chapter" data-level="5.9" data-path="proste-obiekty.html"><a href="proste-obiekty.html#lpto-vector"><i class="fa fa-check"></i><b>5.9</b> Łączenie podstawowych typów obiektów<span></span></a></li>
+<li class="chapter" data-level="5.10" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zmiana-typów-obiektów"><i class="fa fa-check"></i><b>5.10</b> Zmiana typów obiektów<span></span></a></li>
+<li class="chapter" data-level="5.11" data-path="proste-obiekty.html"><a href="proste-obiekty.html#fac"><i class="fa fa-check"></i><b>5.11</b> Wektory czynnikowe<span></span></a></li>
+<li class="chapter" data-level="5.12" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ate"><i class="fa fa-check"></i><b>5.12</b> Wektory dat<span></span></a></li>
+<li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ime"><i class="fa fa-check"></i><b>5.13</b> Wektory czasu<span></span></a></li>
+<li class="chapter" data-level="5.14" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zad5"><i class="fa fa-check"></i><b>5.14</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#reprezentacja-tekstu"><i class="fa fa-check"></i><b>6.1</b> Reprezentacja tekstu</a></li>
-<li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekście"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście</a></li>
-<li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wt"><i class="fa fa-check"></i><b>6.3</b> Wydzielanie tekstu</a></li>
-<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wyrażenia-regularne"><i class="fa fa-check"></i><b>6.4</b> Wyrażenia regularne</a></li>
-<li class="chapter" data-level="6.5" data-path="tekst.html"><a href="tekst.html#wtregex"><i class="fa fa-check"></i><b>6.5</b> Wydzielanie tekstu - regex</a></li>
-<li class="chapter" data-level="6.6" data-path="tekst.html"><a href="tekst.html#zamiana-tekstu---regex"><i class="fa fa-check"></i><b>6.6</b> Zamiana tekstu - regex</a></li>
-<li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plików"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików</a></li>
-<li class="chapter" data-level="6.8" data-path="tekst.html"><a href="tekst.html#zad6"><i class="fa fa-check"></i><b>6.8</b> Zadania</a></li>
+<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst<span></span></a><ul>
+<li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#reprezentacja-tekstu"><i class="fa fa-check"></i><b>6.1</b> Reprezentacja tekstu<span></span></a></li>
+<li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekście"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście<span></span></a></li>
+<li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wt"><i class="fa fa-check"></i><b>6.3</b> Wydzielanie tekstu<span></span></a></li>
+<li class="chapter" data-level="6.4" data-path="tekst.html"><a href="tekst.html#wyrażenia-regularne"><i class="fa fa-check"></i><b>6.4</b> Wyrażenia regularne<span></span></a></li>
+<li class="chapter" data-level="6.5" data-path="tekst.html"><a href="tekst.html#wtregex"><i class="fa fa-check"></i><b>6.5</b> Wydzielanie tekstu - regex<span></span></a></li>
+<li class="chapter" data-level="6.6" data-path="tekst.html"><a href="tekst.html#zamiana-tekstu---regex"><i class="fa fa-check"></i><b>6.6</b> Zamiana tekstu - regex<span></span></a></li>
+<li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plików"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików<span></span></a></li>
+<li class="chapter" data-level="6.8" data-path="tekst.html"><a href="tekst.html#zad6"><i class="fa fa-check"></i><b>6.8</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a>
-<ul>
-<li class="chapter" data-level="7.1.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie"><i class="fa fa-check"></i><b>7.1.1</b> Tworzenie</a></li>
-<li class="chapter" data-level="7.1.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje"><i class="fa fa-check"></i><b>7.1.2</b> Podstawowe funkcje</a></li>
-<li class="chapter" data-level="7.1.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-1"><i class="fa fa-check"></i><b>7.1.3</b> Wydzielanie</a></li>
-<li class="chapter" data-level="7.1.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie"><i class="fa fa-check"></i><b>7.1.4</b> Łączenie</a></li>
+<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty<span></span></a><ul>
+<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze<span></span></a><ul>
+<li class="chapter" data-level="7.1.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie"><i class="fa fa-check"></i><b>7.1.1</b> Tworzenie<span></span></a></li>
+<li class="chapter" data-level="7.1.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje"><i class="fa fa-check"></i><b>7.1.2</b> Podstawowe funkcje<span></span></a></li>
+<li class="chapter" data-level="7.1.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-1"><i class="fa fa-check"></i><b>7.1.3</b> Wydzielanie<span></span></a></li>
+<li class="chapter" data-level="7.1.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie"><i class="fa fa-check"></i><b>7.1.4</b> Łączenie<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a>
-<ul>
-<li class="chapter" data-level="7.2.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-1"><i class="fa fa-check"></i><b>7.2.1</b> Tworzenie</a></li>
-<li class="chapter" data-level="7.2.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-1"><i class="fa fa-check"></i><b>7.2.2</b> Podstawowe funkcje</a></li>
-<li class="chapter" data-level="7.2.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-df"><i class="fa fa-check"></i><b>7.2.3</b> Wydzielanie</a></li>
-<li class="chapter" data-level="7.2.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-1"><i class="fa fa-check"></i><b>7.2.4</b> Łączenie</a></li>
+<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych<span></span></a><ul>
+<li class="chapter" data-level="7.2.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-1"><i class="fa fa-check"></i><b>7.2.1</b> Tworzenie<span></span></a></li>
+<li class="chapter" data-level="7.2.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-1"><i class="fa fa-check"></i><b>7.2.2</b> Podstawowe funkcje<span></span></a></li>
+<li class="chapter" data-level="7.2.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-df"><i class="fa fa-check"></i><b>7.2.3</b> Wydzielanie<span></span></a></li>
+<li class="chapter" data-level="7.2.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-1"><i class="fa fa-check"></i><b>7.2.4</b> Łączenie<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a>
-<ul>
-<li class="chapter" data-level="7.3.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-2"><i class="fa fa-check"></i><b>7.3.1</b> Tworzenie</a></li>
-<li class="chapter" data-level="7.3.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-2"><i class="fa fa-check"></i><b>7.3.2</b> Podstawowe funkcje</a></li>
-<li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie</a></li>
-<li class="chapter" data-level="7.3.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-list"><i class="fa fa-check"></i><b>7.3.4</b> Wydzielanie</a></li>
+<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy<span></span></a><ul>
+<li class="chapter" data-level="7.3.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-2"><i class="fa fa-check"></i><b>7.3.1</b> Tworzenie<span></span></a></li>
+<li class="chapter" data-level="7.3.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-2"><i class="fa fa-check"></i><b>7.3.2</b> Podstawowe funkcje<span></span></a></li>
+<li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie<span></span></a></li>
+<li class="chapter" data-level="7.3.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-list"><i class="fa fa-check"></i><b>7.3.4</b> Wydzielanie<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zmiany-klas"><i class="fa fa-check"></i><b>7.4</b> Zmiany klas</a></li>
-<li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#inne-klasy"><i class="fa fa-check"></i><b>7.5</b> Inne klasy obiektów</a></li>
-<li class="chapter" data-level="7.6" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zad7"><i class="fa fa-check"></i><b>7.6</b> Zadania</a></li>
+<li class="chapter" data-level="7.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zmiany-klas"><i class="fa fa-check"></i><b>7.4</b> Zmiany klas<span></span></a></li>
+<li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#inne-klasy"><i class="fa fa-check"></i><b>7.5</b> Inne klasy obiektów<span></span></a></li>
+<li class="chapter" data-level="7.6" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zad7"><i class="fa fa-check"></i><b>7.6</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a>
-<ul>
-<li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#składnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia</a></li>
-<li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#for-example"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
-<li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach</a></li>
+<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie<span></span></a><ul>
+<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for<span></span></a><ul>
+<li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#składnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia<span></span></a></li>
+<li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#for-example"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania<span></span></a></li>
+<li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="petle.html"><a href="petle.html#petla-while"><i class="fa fa-check"></i><b>8.2</b> Pętla while</a></li>
-<li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#prog-fun"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne</a></li>
-<li class="chapter" data-level="8.4" data-path="petle.html"><a href="petle.html#zad8"><i class="fa fa-check"></i><b>8.4</b> Zadania</a></li>
+<li class="chapter" data-level="8.2" data-path="petle.html"><a href="petle.html#petla-while"><i class="fa fa-check"></i><b>8.2</b> Pętla while<span></span></a></li>
+<li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#prog-fun"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne<span></span></a></li>
+<li class="chapter" data-level="8.4" data-path="petle.html"><a href="petle.html#zad8"><i class="fa fa-check"></i><b>8.4</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy</a></li>
-<li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#działania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.2</b> Działania na plikach i folderach</a></li>
-<li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#dane-internetowe"><i class="fa fa-check"></i><b>9.3</b> Dane internetowe</a></li>
-<li class="chapter" data-level="9.4" data-path="io.html"><a href="io.html#wczytywanie-plików-tekstowych"><i class="fa fa-check"></i><b>9.4</b> Wczytywanie plików tekstowych</a></li>
-<li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#zapisywanie-plików-tekstowych"><i class="fa fa-check"></i><b>9.5</b> Zapisywanie plików tekstowych</a></li>
-<li class="chapter" data-level="9.6" data-path="io.html"><a href="io.html#formaty-r"><i class="fa fa-check"></i><b>9.6</b> Formaty R</a></li>
-<li class="chapter" data-level="9.7" data-path="io.html"><a href="io.html#arkusze-kalkulacyjne"><i class="fa fa-check"></i><b>9.7</b> Arkusze kalkulacyjne</a></li>
-<li class="chapter" data-level="9.8" data-path="io.html"><a href="io.html#inne-formaty"><i class="fa fa-check"></i><b>9.8</b> Inne formaty</a></li>
-<li class="chapter" data-level="9.9" data-path="io.html"><a href="io.html#zad9"><i class="fa fa-check"></i><b>9.9</b> Zadania</a></li>
+<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików<span></span></a><ul>
+<li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy<span></span></a></li>
+<li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#działania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.2</b> Działania na plikach i folderach<span></span></a></li>
+<li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#dane-internetowe"><i class="fa fa-check"></i><b>9.3</b> Dane internetowe<span></span></a></li>
+<li class="chapter" data-level="9.4" data-path="io.html"><a href="io.html#wczytywanie-plików-tekstowych"><i class="fa fa-check"></i><b>9.4</b> Wczytywanie plików tekstowych<span></span></a></li>
+<li class="chapter" data-level="9.5" data-path="io.html"><a href="io.html#zapisywanie-plików-tekstowych"><i class="fa fa-check"></i><b>9.5</b> Zapisywanie plików tekstowych<span></span></a></li>
+<li class="chapter" data-level="9.6" data-path="io.html"><a href="io.html#formaty-r"><i class="fa fa-check"></i><b>9.6</b> Formaty R<span></span></a></li>
+<li class="chapter" data-level="9.7" data-path="io.html"><a href="io.html#arkusze-kalkulacyjne"><i class="fa fa-check"></i><b>9.7</b> Arkusze kalkulacyjne<span></span></a></li>
+<li class="chapter" data-level="9.8" data-path="io.html"><a href="io.html#inne-formaty"><i class="fa fa-check"></i><b>9.8</b> Inne formaty<span></span></a></li>
+<li class="chapter" data-level="9.9" data-path="io.html"><a href="io.html#zad9"><i class="fa fa-check"></i><b>9.9</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="part"><span><b>II Narzędzia</b></span></li>
-<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>10.1</b> API</a></li>
-<li class="chapter" data-level="10.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsluga-komunikatow"><i class="fa fa-check"></i><b>10.2</b> Obsługa komunikatów</a></li>
-<li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe</a>
-<ul>
-<li class="chapter" data-level="10.3.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#klasy"><i class="fa fa-check"></i><b>10.3.1</b> Klasy</a></li>
-<li class="chapter" data-level="10.3.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#metody"><i class="fa fa-check"></i><b>10.3.2</b> Metody</a></li>
-<li class="chapter" data-level="10.3.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#konstruktory"><i class="fa fa-check"></i><b>10.3.3</b> Konstruktory</a></li>
+<li class="part"><span><b>II Narzędzia<span></span></b></span></li>
+<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje<span></span></a><ul>
+<li class="chapter" data-level="10.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>10.1</b> API<span></span></a></li>
+<li class="chapter" data-level="10.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsluga-komunikatow"><i class="fa fa-check"></i><b>10.2</b> Obsługa komunikatów<span></span></a></li>
+<li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe<span></span></a><ul>
+<li class="chapter" data-level="10.3.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#klasy"><i class="fa fa-check"></i><b>10.3.1</b> Klasy<span></span></a></li>
+<li class="chapter" data-level="10.3.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#metody"><i class="fa fa-check"></i><b>10.3.2</b> Metody<span></span></a></li>
+<li class="chapter" data-level="10.3.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#konstruktory"><i class="fa fa-check"></i><b>10.3.3</b> Konstruktory<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zad11"><i class="fa fa-check"></i><b>10.4</b> Zadania</a></li>
+<li class="chapter" data-level="10.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zad11"><i class="fa fa-check"></i><b>10.4</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.1</b> Testy jednostkowe</a></li>
-<li class="chapter" data-level="11.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>11.2</b> Profiling</a></li>
-<li class="chapter" data-level="11.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>11.3</b> Benchmarking</a></li>
-<li class="chapter" data-level="11.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zad12"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
+<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu<span></span></a><ul>
+<li class="chapter" data-level="11.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.1</b> Testy jednostkowe<span></span></a></li>
+<li class="chapter" data-level="11.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>11.2</b> Profiling<span></span></a></li>
+<li class="chapter" data-level="11.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>11.3</b> Benchmarking<span></span></a></li>
+<li class="chapter" data-level="11.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zad12"><i class="fa fa-check"></i><b>11.4</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady</a>
-<ul>
-<li class="chapter" data-level="12.1.1" data-path="debugging.html"><a href="debugging.html#pakiet-reprex"><i class="fa fa-check"></i><b>12.1.1</b> Pakiet <strong>reprex</strong></a></li>
-<li class="chapter" data-level="12.1.2" data-path="debugging.html"><a href="debugging.html#tworzenie-powtarzalnego-przykładu"><i class="fa fa-check"></i><b>12.1.2</b> Tworzenie powtarzalnego przykładu</a></li>
+<li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie<span></span></a><ul>
+<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady<span></span></a><ul>
+<li class="chapter" data-level="12.1.1" data-path="debugging.html"><a href="debugging.html#pakiet-reprex"><i class="fa fa-check"></i><b>12.1.1</b> Pakiet <strong>reprex</strong><span></span></a></li>
+<li class="chapter" data-level="12.1.2" data-path="debugging.html"><a href="debugging.html#tworzenie-powtarzalnego-przykładu"><i class="fa fa-check"></i><b>12.1.2</b> Tworzenie powtarzalnego przykładu<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="debugging.html"><a href="debugging.html#proces-debugowania"><i class="fa fa-check"></i><b>12.2</b> Proces debugowania</a></li>
-<li class="chapter" data-level="12.3" data-path="debugging.html"><a href="debugging.html#debuging-print"><i class="fa fa-check"></i><b>12.3</b> Podstawowe podejście do debugowania</a></li>
-<li class="chapter" data-level="12.4" data-path="debugging.html"><a href="debugging.html#debugger"><i class="fa fa-check"></i><b>12.4</b> Debugger</a></li>
-<li class="chapter" data-level="12.5" data-path="debugging.html"><a href="debugging.html#zad13"><i class="fa fa-check"></i><b>12.5</b> Zadania</a></li>
+<li class="chapter" data-level="12.2" data-path="debugging.html"><a href="debugging.html#proces-debugowania"><i class="fa fa-check"></i><b>12.2</b> Proces debugowania<span></span></a></li>
+<li class="chapter" data-level="12.3" data-path="debugging.html"><a href="debugging.html#debuging-print"><i class="fa fa-check"></i><b>12.3</b> Podstawowe podejście do debugowania<span></span></a></li>
+<li class="chapter" data-level="12.4" data-path="debugging.html"><a href="debugging.html#debugger"><i class="fa fa-check"></i><b>12.4</b> Debugger<span></span></a></li>
+<li class="chapter" data-level="12.5" data-path="debugging.html"><a href="debugging.html#zad13"><i class="fa fa-check"></i><b>12.5</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik</a>
-<ul>
-<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++</a>
-<ul>
-<li class="chapter" data-level="13.1.1" data-path="lacznik.html"><a href="lacznik.html#cppFunction"><i class="fa fa-check"></i><b>13.1.1</b> Wywoływanie kodu C++ wewnątrz skryptu R</a></li>
-<li class="chapter" data-level="13.1.2" data-path="lacznik.html"><a href="lacznik.html#sourceCpp"><i class="fa fa-check"></i><b>13.1.2</b> Wywoływanie kodu z plików .cpp</a></li>
+<li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik<span></span></a><ul>
+<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++<span></span></a><ul>
+<li class="chapter" data-level="13.1.1" data-path="lacznik.html"><a href="lacznik.html#cppFunction"><i class="fa fa-check"></i><b>13.1.1</b> Wywoływanie kodu C++ wewnątrz skryptu R<span></span></a></li>
+<li class="chapter" data-level="13.1.2" data-path="lacznik.html"><a href="lacznik.html#sourceCpp"><i class="fa fa-check"></i><b>13.1.2</b> Wywoływanie kodu z plików .cpp<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="13.2" data-path="lacznik.html"><a href="lacznik.html#python"><i class="fa fa-check"></i><b>13.2</b> Python</a></li>
-<li class="chapter" data-level="13.3" data-path="lacznik.html"><a href="lacznik.html#powloka-systemowa"><i class="fa fa-check"></i><b>13.3</b> Powłoka systemowa</a></li>
-<li class="chapter" data-level="13.4" data-path="lacznik.html"><a href="lacznik.html#zad14"><i class="fa fa-check"></i><b>13.4</b> Zadania</a></li>
+<li class="chapter" data-level="13.2" data-path="lacznik.html"><a href="lacznik.html#python"><i class="fa fa-check"></i><b>13.2</b> Python<span></span></a></li>
+<li class="chapter" data-level="13.3" data-path="lacznik.html"><a href="lacznik.html#powloka-systemowa"><i class="fa fa-check"></i><b>13.3</b> Powłoka systemowa<span></span></a></li>
+<li class="chapter" data-level="13.4" data-path="lacznik.html"><a href="lacznik.html#zad14"><i class="fa fa-check"></i><b>13.4</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji</a>
-<ul>
-<li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git</a>
-<ul>
-<li class="chapter" data-level="14.1.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#konfiguracja-systemu-git"><i class="fa fa-check"></i><b>14.1.1</b> Konfiguracja systemu Git</a></li>
-<li class="chapter" data-level="14.1.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium"><i class="fa fa-check"></i><b>14.1.2</b> Repozytorium</a></li>
-<li class="chapter" data-level="14.1.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodawanie-zmian"><i class="fa fa-check"></i><b>14.1.3</b> Dodawanie zmian</a></li>
-<li class="chapter" data-level="14.1.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sprawdzanie-zmian"><i class="fa fa-check"></i><b>14.1.4</b> Sprawdzanie zmian</a></li>
-<li class="chapter" data-level="14.1.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zatwierdzanie-zmian"><i class="fa fa-check"></i><b>14.1.5</b> Zatwierdzanie zmian</a></li>
-<li class="chapter" data-level="14.1.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#branches"><i class="fa fa-check"></i><b>14.1.6</b> Rozgałęzienia</a></li>
-<li class="chapter" data-level="14.1.7" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-zdalne"><i class="fa fa-check"></i><b>14.1.7</b> Repozytorium zdalne</a></li>
-<li class="chapter" data-level="14.1.8" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#wysylanie-zmian"><i class="fa fa-check"></i><b>14.1.8</b> Wysyłanie zmian</a></li>
-<li class="chapter" data-level="14.1.9" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#aktualizowanie-zmian"><i class="fa fa-check"></i><b>14.1.9</b> Aktualizowanie zmian</a></li>
+<li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji<span></span></a><ul>
+<li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git<span></span></a><ul>
+<li class="chapter" data-level="14.1.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#konfiguracja-systemu-git"><i class="fa fa-check"></i><b>14.1.1</b> Konfiguracja systemu Git<span></span></a></li>
+<li class="chapter" data-level="14.1.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium"><i class="fa fa-check"></i><b>14.1.2</b> Repozytorium<span></span></a></li>
+<li class="chapter" data-level="14.1.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodawanie-zmian"><i class="fa fa-check"></i><b>14.1.3</b> Dodawanie zmian<span></span></a></li>
+<li class="chapter" data-level="14.1.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sprawdzanie-zmian"><i class="fa fa-check"></i><b>14.1.4</b> Sprawdzanie zmian<span></span></a></li>
+<li class="chapter" data-level="14.1.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zatwierdzanie-zmian"><i class="fa fa-check"></i><b>14.1.5</b> Zatwierdzanie zmian<span></span></a></li>
+<li class="chapter" data-level="14.1.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#branches"><i class="fa fa-check"></i><b>14.1.6</b> Rozgałęzienia<span></span></a></li>
+<li class="chapter" data-level="14.1.7" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-zdalne"><i class="fa fa-check"></i><b>14.1.7</b> Repozytorium zdalne<span></span></a></li>
+<li class="chapter" data-level="14.1.8" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#wysylanie-zmian"><i class="fa fa-check"></i><b>14.1.8</b> Wysyłanie zmian<span></span></a></li>
+<li class="chapter" data-level="14.1.9" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#aktualizowanie-zmian"><i class="fa fa-check"></i><b>14.1.9</b> Aktualizowanie zmian<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub</a>
-<ul>
-<li class="chapter" data-level="14.2.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#tworzenie-zdanego-repo"><i class="fa fa-check"></i><b>14.2.1</b> Tworzenie zdanego repo</a></li>
-<li class="chapter" data-level="14.2.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-github"><i class="fa fa-check"></i><b>14.2.2</b> Repozytorium GitHub</a></li>
-<li class="chapter" data-level="14.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-możliwości-github"><i class="fa fa-check"></i><b>14.2.3</b> Dodatkowe możliwości GitHub</a></li>
+<li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub<span></span></a><ul>
+<li class="chapter" data-level="14.2.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#tworzenie-zdanego-repo"><i class="fa fa-check"></i><b>14.2.1</b> Tworzenie zdanego repo<span></span></a></li>
+<li class="chapter" data-level="14.2.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-github"><i class="fa fa-check"></i><b>14.2.2</b> Repozytorium GitHub<span></span></a></li>
+<li class="chapter" data-level="14.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-możliwości-github"><i class="fa fa-check"></i><b>14.2.3</b> Dodatkowe możliwości GitHub<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="14.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rstudio-git"><i class="fa fa-check"></i><b>14.3</b> Kontrola wersji w RStudio</a></li>
-<li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git</a>
-<ul>
-<li class="chapter" data-level="14.4.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#nowy-projekt"><i class="fa fa-check"></i><b>14.4.1</b> Nowy projekt</a></li>
-<li class="chapter" data-level="14.4.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#istniejacy-projekt"><i class="fa fa-check"></i><b>14.4.2</b> Istniejący projekt</a></li>
+<li class="chapter" data-level="14.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rstudio-git"><i class="fa fa-check"></i><b>14.3</b> Kontrola wersji w RStudio<span></span></a></li>
+<li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git<span></span></a><ul>
+<li class="chapter" data-level="14.4.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#nowy-projekt"><i class="fa fa-check"></i><b>14.4.1</b> Nowy projekt<span></span></a></li>
+<li class="chapter" data-level="14.4.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#istniejacy-projekt"><i class="fa fa-check"></i><b>14.4.2</b> Istniejący projekt<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="14.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#problemy-z-kontrolą-wersji"><i class="fa fa-check"></i><b>14.5</b> Problemy z kontrolą wersji</a></li>
-<li class="chapter" data-level="14.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zad15"><i class="fa fa-check"></i><b>14.6</b> Zadania</a></li>
+<li class="chapter" data-level="14.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#problemy-z-kontrolą-wersji"><i class="fa fa-check"></i><b>14.5</b> Problemy z kontrolą wersji<span></span></a></li>
+<li class="chapter" data-level="14.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zad15"><i class="fa fa-check"></i><b>14.6</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a>
-<ul>
-<li class="chapter" data-level="15.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#nazwa-pakietu"><i class="fa fa-check"></i><b>15.1</b> Nazwa pakietu</a></li>
-<li class="chapter" data-level="15.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-szkieletu-pakietu"><i class="fa fa-check"></i><b>15.2</b> Tworzenie szkieletu pakietu</a></li>
-<li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>15.3</b> Opis pakietu</a></li>
-<li class="chapter" data-level="15.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>15.4</b> Rozwijanie pakietu</a></li>
-<li class="chapter" data-level="15.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-i-dokumentacja-funkcji"><i class="fa fa-check"></i><b>15.5</b> Tworzenie i dokumentacja funkcji</a></li>
-<li class="chapter" data-level="15.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zależności"><i class="fa fa-check"></i><b>15.6</b> Zależności</a></li>
-<li class="chapter" data-level="15.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#sprawdzanie-pakietu"><i class="fa fa-check"></i><b>15.7</b> Sprawdzanie pakietu</a></li>
-<li class="chapter" data-level="15.8" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#instalowanie-pakietu"><i class="fa fa-check"></i><b>15.8</b> Instalowanie pakietu</a></li>
-<li class="chapter" data-level="15.9" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-pakietu"><i class="fa fa-check"></i><b>15.9</b> Dokumentacja pakietu</a></li>
-<li class="chapter" data-level="15.10" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#wbudowane-testy"><i class="fa fa-check"></i><b>15.10</b> Wbudowane testy</a></li>
-<li class="chapter" data-level="15.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietów"><i class="fa fa-check"></i><b>15.11</b> Publikowanie pakietów</a></li>
-<li class="chapter" data-level="15.12" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zad16"><i class="fa fa-check"></i><b>15.12</b> Zadania</a></li>
+<li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety<span></span></a><ul>
+<li class="chapter" data-level="15.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#nazwa-pakietu"><i class="fa fa-check"></i><b>15.1</b> Nazwa pakietu<span></span></a></li>
+<li class="chapter" data-level="15.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-szkieletu-pakietu"><i class="fa fa-check"></i><b>15.2</b> Tworzenie szkieletu pakietu<span></span></a></li>
+<li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>15.3</b> Opis pakietu<span></span></a></li>
+<li class="chapter" data-level="15.4" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#rozwijanie-pakietu"><i class="fa fa-check"></i><b>15.4</b> Rozwijanie pakietu<span></span></a></li>
+<li class="chapter" data-level="15.5" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-i-dokumentacja-funkcji"><i class="fa fa-check"></i><b>15.5</b> Tworzenie i dokumentacja funkcji<span></span></a></li>
+<li class="chapter" data-level="15.6" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zależności"><i class="fa fa-check"></i><b>15.6</b> Zależności<span></span></a></li>
+<li class="chapter" data-level="15.7" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#sprawdzanie-pakietu"><i class="fa fa-check"></i><b>15.7</b> Sprawdzanie pakietu<span></span></a></li>
+<li class="chapter" data-level="15.8" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#instalowanie-pakietu"><i class="fa fa-check"></i><b>15.8</b> Instalowanie pakietu<span></span></a></li>
+<li class="chapter" data-level="15.9" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#dokumentacja-pakietu"><i class="fa fa-check"></i><b>15.9</b> Dokumentacja pakietu<span></span></a></li>
+<li class="chapter" data-level="15.10" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#wbudowane-testy"><i class="fa fa-check"></i><b>15.10</b> Wbudowane testy<span></span></a></li>
+<li class="chapter" data-level="15.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietów"><i class="fa fa-check"></i><b>15.11</b> Publikowanie pakietów<span></span></a></li>
+<li class="chapter" data-level="15.12" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zad16"><i class="fa fa-check"></i><b>15.12</b> Zadania<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie</a>
-<ul>
-<li class="chapter" data-level="16.1" data-path="podsumowanie.html"><a href="podsumowanie.html#grafika"><i class="fa fa-check"></i><b>16.1</b> Grafika</a></li>
-<li class="chapter" data-level="16.2" data-path="podsumowanie.html"><a href="podsumowanie.html#analiza-danych"><i class="fa fa-check"></i><b>16.2</b> Analiza danych</a></li>
-<li class="chapter" data-level="16.3" data-path="podsumowanie.html"><a href="podsumowanie.html#inne-zastosowania"><i class="fa fa-check"></i><b>16.3</b> Inne zastosowania</a></li>
-<li class="chapter" data-level="16.4" data-path="podsumowanie.html"><a href="podsumowanie.html#programowanie-w-r"><i class="fa fa-check"></i><b>16.4</b> Programowanie w R</a></li>
-<li class="chapter" data-level="16.5" data-path="podsumowanie.html"><a href="podsumowanie.html#co-dalej"><i class="fa fa-check"></i><b>16.5</b> Co dalej?</a></li>
+<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie<span></span></a><ul>
+<li class="chapter" data-level="16.1" data-path="podsumowanie.html"><a href="podsumowanie.html#grafika"><i class="fa fa-check"></i><b>16.1</b> Grafika<span></span></a></li>
+<li class="chapter" data-level="16.2" data-path="podsumowanie.html"><a href="podsumowanie.html#analiza-danych"><i class="fa fa-check"></i><b>16.2</b> Analiza danych<span></span></a></li>
+<li class="chapter" data-level="16.3" data-path="podsumowanie.html"><a href="podsumowanie.html#inne-zastosowania"><i class="fa fa-check"></i><b>16.3</b> Inne zastosowania<span></span></a></li>
+<li class="chapter" data-level="16.4" data-path="podsumowanie.html"><a href="podsumowanie.html#programowanie-w-r"><i class="fa fa-check"></i><b>16.4</b> Programowanie w R<span></span></a></li>
+<li class="chapter" data-level="16.5" data-path="podsumowanie.html"><a href="podsumowanie.html#co-dalej"><i class="fa fa-check"></i><b>16.5</b> Co dalej?<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i>Bibliografia</a></li>
+<li><a href="bibliografia.html#bibliografia">Bibliografia<span></span></a></li>
 <li class="divider"></li>
 <li><a href="https://nowosad.github.io/">Jakub Nowosad</a></li>
 
@@ -388,8 +357,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="kontrola-wersji" class="section level1" number="14">
-<h1><span class="header-section-number">14</span> Kontrola wersji</h1>
+<div id="kontrola-wersji" class="section level1 hasAnchor">
+<h1><span class="header-section-number">14</span> Kontrola wersji<a href="kontrola-wersji.html#kontrola-wersji" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Systemy kontroli wersji to narzędzia pozwalające na zapamiętywaniu zmian zachodzących w plikach.
 Dzięki nim możemy sprawdzić nie tylko kiedy zmieniliśmy dany plik i kto go zmienił, ale co najważniejsze - możemy linia po linii prześledzić zmiany wewnątrz tego pliku.
 Dodatkowo, mamy możliwość przywracania wersji pliku z wybranego czasu w całej historii jego zmian.</p>
@@ -399,8 +368,8 @@ Wynika to nie tylko z ich zalet wymienionych powyżej, ale również rozbudowany
 Współcześnie najbardziej popularnym systemem kontroli jest Git, któremu będzie poświęcona reszta tego rozdziału.
 Inne popularne systemy kontroli wersji to Concurrent Versions System (CVS), Mercurial czy Subversion (SVN).</p>
 <!-- gdzie wykorzystywaneC -->
-<div id="git" class="section level2" number="14.1">
-<h2><span class="header-section-number">14.1</span> Git</h2>
+<div id="git" class="section level2 hasAnchor">
+<h2><span class="header-section-number">14.1</span> Git<a href="kontrola-wersji.html#git" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>System Git jest niezależny od języka (lub języków) programowania, które używamy.
 Jego działanie oparte jest o system komend rozpoczynających się od słowa <code>git</code>, które należy wykonać w systemowym oknie konsoli.<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a>
 Zrozumienie działania systemu Git wymaga także poznania kilku nowych terminów.</p>
@@ -412,45 +381,45 @@ W ich przypadku niestety nie można liczyć na dokładne sprawdzanie miejsc zmia
 <p>Git składa się z kilkudziesięciu komend, których działanie jest dalej uzależnione od podanych argumentów.
 Tutaj przedstawiony zostanie tylko podzbiór najczęściej używanych.
 Pełniejszy opis komend systemu Git można znaleźć pod adresem <a href="https://education.github.com/git-cheat-sheet-education.pdf" class="uri">https://education.github.com/git-cheat-sheet-education.pdf</a> lub <a href="http://rogerdudler.github.io/git-guide/index.pl.html" class="uri">http://rogerdudler.github.io/git-guide/index.pl.html</a>.</p>
-<div id="konfiguracja-systemu-git" class="section level3" number="14.1.1">
-<h3><span class="header-section-number">14.1.1</span> Konfiguracja systemu Git</h3>
+<div id="konfiguracja-systemu-git" class="section level3 hasAnchor">
+<h3><span class="header-section-number">14.1.1</span> Konfiguracja systemu Git<a href="kontrola-wersji.html#konfiguracja-systemu-git" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Kolejnym krokiem po instalacji systemu Git<a href="#fn51" class="footnote-ref" id="fnref51"><sup>51</sup></a> jest jego konfiguracja.
 Można ją wykonać używając wbudowanego terminala (Mac OS i Linux) lub terminala dodanego podczas instalacji systemu Git (Windows).
 Polega ona na podaniu nazwy użytkownika (np. <code>"Imie Nazwisko"</code>) oraz jego adresu email (<code>"email@portal.com"</code>).</p>
-<div class="sourceCode" id="cb354"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb354-1"><a href="kontrola-wersji.html#cb354-1"></a><span class="fu">git</span> config --global user.name <span class="st">&quot;imie nazwisko&quot;</span></span>
-<span id="cb354-2"><a href="kontrola-wersji.html#cb354-2"></a><span class="fu">git</span> config --global user.email <span class="st">&quot;email&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb354"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb354-1" title="1"><span class="fu">git</span> config --global user.name <span class="st">&quot;imie nazwisko&quot;</span></a>
+<a class="sourceLine" id="cb354-2" title="2"><span class="fu">git</span> config --global user.email <span class="st">&quot;email&quot;</span></a></code></pre></div>
 </div>
-<div id="repozytorium" class="section level3" number="14.1.2">
-<h3><span class="header-section-number">14.1.2</span> Repozytorium</h3>
+<div id="repozytorium" class="section level3 hasAnchor">
+<h3><span class="header-section-number">14.1.2</span> Repozytorium<a href="kontrola-wersji.html#repozytorium" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Podstawowym z nich jest repozytorium (ang. <em>repository</em>, często określane skrótowo jako repo).
 Jest to folder, który przechowuje wszystkie pliki i foldery w ramach jednego projektu.<a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a>
 Dodatkowo wewnątrz repozytorium znajduje się ukryty folder <code>.git</code>, który zawiera informację o historii i zmianach każdego z naszych plików.
 Repozytorium może znajdować się na dysku naszego komputera (wtedy jest nazywane repozytorium lokalnym) lub też na serwerze w internecie (określane jako repozytorium zdalne (ang. <em>remote</em>)).
 Istnieje wiele serwisów internetowych pozwalających na tworzenie, przechowywanie i edycję repozytoriów zdalnych, między innymi <a href="https://github.com/">GitHub</a> (przybliżony w sekcji <a href="kontrola-wersji.html#github">14.2</a>), <a href="https://gitlab.com/">GitLab</a>, czy <a href="https://bitbucket.org/">BitBucket</a>.</p>
-<div class="sourceCode" id="cb355"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb355-1"><a href="kontrola-wersji.html#cb355-1"></a><span class="co"># określenie obecnego katalogu jako repozytorium Git</span></span>
-<span id="cb355-2"><a href="kontrola-wersji.html#cb355-2"></a><span class="fu">git</span> init                  </span></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb355-1" title="1"><span class="co"># określenie obecnego katalogu jako repozytorium Git</span></a>
+<a class="sourceLine" id="cb355-2" title="2"><span class="fu">git</span> init                  </a></code></pre></div>
 </div>
-<div id="dodawanie-zmian" class="section level3" number="14.1.3">
-<h3><span class="header-section-number">14.1.3</span> Dodawanie zmian</h3>
+<div id="dodawanie-zmian" class="section level3 hasAnchor">
+<h3><span class="header-section-number">14.1.3</span> Dodawanie zmian<a href="kontrola-wersji.html#dodawanie-zmian" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>W nowo utworzonym repozytorium możemy tworzyć nowe pliki oraz edytować już istniejące.
 Po pewnym czasie możemy stwierdzić, że dodaliśmy nową funkcjonalność do funkcji lub naprawiliśmy błąd w kodzie.
 Wtedy należy (po zapisaniu również pliku na dysku) dodać te zmiany do systemu Git.
 Po dodaniu zmian są one przechowywane w miejscu określanym jako <em>Index</em>.
 Działa ono jak poczekalnia - w tym momencie zmiany jeszcze nie są potwierdzone, ale możemy sprawdzić co zmieniło się od ostatniego zatwierdzenia zmian.</p>
-<div class="sourceCode" id="cb356"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb356-1"><a href="kontrola-wersji.html#cb356-1"></a><span class="co"># dodanie pojedynczego pliku</span></span>
-<span id="cb356-2"><a href="kontrola-wersji.html#cb356-2"></a><span class="fu">git</span> add sciezka_do_pliku  </span>
-<span id="cb356-3"><a href="kontrola-wersji.html#cb356-3"></a><span class="co"># dodanie wszystkich plików </span></span>
-<span id="cb356-4"><a href="kontrola-wersji.html#cb356-4"></a><span class="fu">git</span> add --all                    </span></code></pre></div>
+<div class="sourceCode" id="cb356"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb356-1" title="1"><span class="co"># dodanie pojedynczego pliku</span></a>
+<a class="sourceLine" id="cb356-2" title="2"><span class="fu">git</span> add sciezka_do_pliku  </a>
+<a class="sourceLine" id="cb356-3" title="3"><span class="co"># dodanie wszystkich plików </span></a>
+<a class="sourceLine" id="cb356-4" title="4"><span class="fu">git</span> add --all                    </a></code></pre></div>
 </div>
-<div id="sprawdzanie-zmian" class="section level3" number="14.1.4">
-<h3><span class="header-section-number">14.1.4</span> Sprawdzanie zmian</h3>
+<div id="sprawdzanie-zmian" class="section level3 hasAnchor">
+<h3><span class="header-section-number">14.1.4</span> Sprawdzanie zmian<a href="kontrola-wersji.html#sprawdzanie-zmian" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Zanim zatwierdzimy zmiany można je sprawdzić.
 W ten sposób dla każdej linii tekstu (kodu) otrzymuje się informacje co zostało dodane lub usunięte.</p>
-<div class="sourceCode" id="cb357"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb357-1"><a href="kontrola-wersji.html#cb357-1"></a><span class="co"># sprawdzenie dodanych zmian</span></span>
-<span id="cb357-2"><a href="kontrola-wersji.html#cb357-2"></a><span class="fu">git</span> diff                  </span></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb357-1" title="1"><span class="co"># sprawdzenie dodanych zmian</span></a>
+<a class="sourceLine" id="cb357-2" title="2"><span class="fu">git</span> diff                  </a></code></pre></div>
 </div>
-<div id="zatwierdzanie-zmian" class="section level3" number="14.1.5">
-<h3><span class="header-section-number">14.1.5</span> Zatwierdzanie zmian</h3>
+<div id="zatwierdzanie-zmian" class="section level3 hasAnchor">
+<h3><span class="header-section-number">14.1.5</span> Zatwierdzanie zmian<a href="kontrola-wersji.html#zatwierdzanie-zmian" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Zatwierdzanie zmian (ang. <strong>commit</strong>) powoduje ich zapisanie na stałe w systemie Git.
 Wymaga to dodania wiadomości, która opisuje wprowadzone zmiany.
 <!-- https://chris.beams.io/posts/git-commit/ -->
@@ -458,72 +427,72 @@ Wymaga to dodania wiadomości, która opisuje wprowadzone zmiany.
 <!-- https://github.com/erlang/otp/wiki/writing-good-commit-messages -->
 <!-- https://code.likeagirl.io/useful-tips-for-writing-better-git-commit-messages-808770609503 -->
 <!-- HEAD --></p>
-<div class="sourceCode" id="cb358"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb358-1"><a href="kontrola-wersji.html#cb358-1"></a><span class="co"># zatwierdzenie dodanych zmian</span></span>
-<span id="cb358-2"><a href="kontrola-wersji.html#cb358-2"></a><span class="fu">git</span> commit -m <span class="st">&quot;opis wprowadzonych zmian&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb358"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb358-1" title="1"><span class="co"># zatwierdzenie dodanych zmian</span></a>
+<a class="sourceLine" id="cb358-2" title="2"><span class="fu">git</span> commit -m <span class="st">&quot;opis wprowadzonych zmian&quot;</span></a></code></pre></div>
 </div>
-<div id="branches" class="section level3" number="14.1.6">
-<h3><span class="header-section-number">14.1.6</span> Rozgałęzienia</h3>
+<div id="branches" class="section level3 hasAnchor">
+<h3><span class="header-section-number">14.1.6</span> Rozgałęzienia<a href="kontrola-wersji.html#branches" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Częstą sytuacją jest posiadanie stabilnego, działającego kodu, ale co do którego mamy pomysły jak go ulepszyć, np. zwiększyć jego wydajność.
 Wtedy edycja poprawnego kodu może nie przynieść najlepszych wyników - co jeżeli nasz pomysł się jednak nie sprawdzi?
 Lepszą możliwością jest użycie rozgałęzień (ang. <em>branches</em>) w systemie Git.
 Domyślnie nowe repozytorium posiada już jedną gałąź nazwaną <code>master</code>.</p>
-<div class="sourceCode" id="cb359"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb359-1"><a href="kontrola-wersji.html#cb359-1"></a><span class="co"># wypisanie wszystkich rozgałęzień</span></span>
-<span id="cb359-2"><a href="kontrola-wersji.html#cb359-2"></a><span class="fu">git</span> branch</span></code></pre></div>
+<div class="sourceCode" id="cb359"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb359-1" title="1"><span class="co"># wypisanie wszystkich rozgałęzień</span></a>
+<a class="sourceLine" id="cb359-2" title="2"><span class="fu">git</span> branch</a></code></pre></div>
 <p>Kolejnym krokiem jest utworzenie nowego rozgałęzienia.
 W efekcie tego działania nowa gałąź staje się odniesieniem do istniejącego stanu obecnej gałęzi.</p>
-<div class="sourceCode" id="cb360"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb360-1"><a href="kontrola-wersji.html#cb360-1"></a><span class="co"># utworzenie nowego rozgałęzienia</span></span>
-<span id="cb360-2"><a href="kontrola-wersji.html#cb360-2"></a><span class="fu">git</span> branch nazwa_nowej_galezi</span></code></pre></div>
+<div class="sourceCode" id="cb360"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb360-1" title="1"><span class="co"># utworzenie nowego rozgałęzienia</span></a>
+<a class="sourceLine" id="cb360-2" title="2"><span class="fu">git</span> branch nazwa_nowej_galezi</a></code></pre></div>
 <p>Co ważne utworzenie nowego rozgałęzienia nie powoduje przejście do niego - należy to samodzielnie wykonać.</p>
-<div class="sourceCode" id="cb361"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb361-1"><a href="kontrola-wersji.html#cb361-1"></a><span class="co"># przejście do innego rozgałęzienia</span></span>
-<span id="cb361-2"><a href="kontrola-wersji.html#cb361-2"></a><span class="fu">git</span> checkout nazwa_nowej_galezi</span></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb361-1" title="1"><span class="co"># przejście do innego rozgałęzienia</span></a>
+<a class="sourceLine" id="cb361-2" title="2"><span class="fu">git</span> checkout nazwa_nowej_galezi</a></code></pre></div>
 <p>W tym momencie możliwe jest testowanie różnych możliwości ulepszenia istniejącego kodu bez obawy, że wpłynie to na jego działającą wersję.
 Po stwierdzeniu, że nasze zmiany są odpowiednie należy je dodać (sekcja <a href="kontrola-wersji.html#dodawanie-zmian">14.1.3</a>) i zatwierdzić (sekcja <a href="kontrola-wersji.html#zatwierdzanie-zmian">14.1.5</a>).
 Teraz można powrócić do głównej gałęzi (<code>master</code>) i dołączyć zmiany stworzone w innej gałęzi.</p>
-<div class="sourceCode" id="cb362"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb362-1"><a href="kontrola-wersji.html#cb362-1"></a><span class="co"># powrót do głównej gałęzi</span></span>
-<span id="cb362-2"><a href="kontrola-wersji.html#cb362-2"></a><span class="fu">git</span> checkout master</span>
-<span id="cb362-3"><a href="kontrola-wersji.html#cb362-3"></a><span class="co"># połączenie wybranego rozgałęzienia z obecnym</span></span>
-<span id="cb362-4"><a href="kontrola-wersji.html#cb362-4"></a><span class="fu">git</span> merge nazwa_nowej_galezi</span></code></pre></div>
+<div class="sourceCode" id="cb362"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb362-1" title="1"><span class="co"># powrót do głównej gałęzi</span></a>
+<a class="sourceLine" id="cb362-2" title="2"><span class="fu">git</span> checkout master</a>
+<a class="sourceLine" id="cb362-3" title="3"><span class="co"># połączenie wybranego rozgałęzienia z obecnym</span></a>
+<a class="sourceLine" id="cb362-4" title="4"><span class="fu">git</span> merge nazwa_nowej_galezi</a></code></pre></div>
 <!-- block merge conflicts -->
 </div>
-<div id="repozytorium-zdalne" class="section level3" number="14.1.7">
-<h3><span class="header-section-number">14.1.7</span> Repozytorium zdalne</h3>
+<div id="repozytorium-zdalne" class="section level3 hasAnchor">
+<h3><span class="header-section-number">14.1.7</span> Repozytorium zdalne<a href="kontrola-wersji.html#repozytorium-zdalne" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>System Git ma wiele zalet w przypadku samodzielnej pracy na własnym komputerze<!--np.-->, zyski z jego używania są jednak znacznie większe, gdy nasze repozytoria mają też zdalne odpowiedniki.</p>
 <p>Łączenie się ze zdalnymi repozytoriami może nastąpić na dwa sposoby.
 W pierwszym z nich repozytorium zdane już istnieje, a my chcemy się do niego podłączyć i je pobrać.</p>
-<div class="sourceCode" id="cb363"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb363-1"><a href="kontrola-wersji.html#cb363-1"></a><span class="co"># pobranie kopii istniejącego zdalnego repo</span></span>
-<span id="cb363-2"><a href="kontrola-wersji.html#cb363-2"></a><span class="fu">git</span> clone sciezka_do_zdalnego_repo</span></code></pre></div>
+<div class="sourceCode" id="cb363"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb363-1" title="1"><span class="co"># pobranie kopii istniejącego zdalnego repo</span></a>
+<a class="sourceLine" id="cb363-2" title="2"><span class="fu">git</span> clone sciezka_do_zdalnego_repo</a></code></pre></div>
 <p>Drugim sposobem jest posiadanie istniejącego, lokalnego repozytorium, a następnie dodanie do niego adresu zdalnego repozytorium.
 <!-- ssh vs https --></p>
-<div class="sourceCode" id="cb364"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb364-1"><a href="kontrola-wersji.html#cb364-1"></a><span class="co"># dodanie ścieżki do zdalnego repo</span></span>
-<span id="cb364-2"><a href="kontrola-wersji.html#cb364-2"></a><span class="fu">git</span> remote add origin sciezka_do_zdalnego_repo</span></code></pre></div>
+<div class="sourceCode" id="cb364"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb364-1" title="1"><span class="co"># dodanie ścieżki do zdalnego repo</span></a>
+<a class="sourceLine" id="cb364-2" title="2"><span class="fu">git</span> remote add origin sciezka_do_zdalnego_repo</a></code></pre></div>
 <!-- zmiana z git remote set-url origin git@github.com:User/UserRepo.git -->
 </div>
-<div id="wysylanie-zmian" class="section level3" number="14.1.8">
-<h3><span class="header-section-number">14.1.8</span> Wysyłanie zmian</h3>
+<div id="wysylanie-zmian" class="section level3 hasAnchor">
+<h3><span class="header-section-number">14.1.8</span> Wysyłanie zmian<a href="kontrola-wersji.html#wysylanie-zmian" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Obecne dodane i zatwierdzone zmiany znajdują się jedynie w repozytorium lokalnym.
 Konieczne jest ich wysłanie do zdalnego repozytorium.</p>
-<div class="sourceCode" id="cb365"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb365-1"><a href="kontrola-wersji.html#cb365-1"></a><span class="co"># wysyłanie zmian do zdalnego repo</span></span>
-<span id="cb365-2"><a href="kontrola-wersji.html#cb365-2"></a><span class="fu">git</span> push</span></code></pre></div>
+<div class="sourceCode" id="cb365"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb365-1" title="1"><span class="co"># wysyłanie zmian do zdalnego repo</span></a>
+<a class="sourceLine" id="cb365-2" title="2"><span class="fu">git</span> push</a></code></pre></div>
 <!--skrót od git push origin master -->
 </div>
-<div id="aktualizowanie-zmian" class="section level3" number="14.1.9">
-<h3><span class="header-section-number">14.1.9</span> Aktualizowanie zmian</h3>
+<div id="aktualizowanie-zmian" class="section level3 hasAnchor">
+<h3><span class="header-section-number">14.1.9</span> Aktualizowanie zmian<a href="kontrola-wersji.html#aktualizowanie-zmian" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Zdalne repozytoria mogą pozwalać na nadawanie różnych uprawnień użytkownikom.
 Możliwe jest określenie, że inne osoby mogą nanosić zmiany w zdalnych repozytoriach.
 Dodatkowo, jedna osoba może zmieniać zdalne repozytoria używając różnych komputerów.
 Konieczne jest więc aktualizowanie zmian, które zaszły w zdalnym repozytorium na lokalnym komputerze.</p>
-<div class="sourceCode" id="cb366"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb366-1"><a href="kontrola-wersji.html#cb366-1"></a><span class="co"># aktualizowanie zmian ze zdalnego repo</span></span>
-<span id="cb366-2"><a href="kontrola-wersji.html#cb366-2"></a><span class="fu">git</span> pull</span></code></pre></div>
+<div class="sourceCode" id="cb366"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb366-1" title="1"><span class="co"># aktualizowanie zmian ze zdalnego repo</span></a>
+<a class="sourceLine" id="cb366-2" title="2"><span class="fu">git</span> pull</a></code></pre></div>
 </div>
 </div>
-<div id="github" class="section level2" number="14.2">
-<h2><span class="header-section-number">14.2</span> GitHub</h2>
+<div id="github" class="section level2 hasAnchor">
+<h2><span class="header-section-number">14.2</span> GitHub<a href="kontrola-wersji.html#github" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>GitHub jest serwisem internetowym pozwalającym na przechowywanie i interakcję z repozytoriami w systemie kontroli wersji Git.
 Posiada on dwa rodzaje repozytoriów - publiczne (ang. <em>public</em>), które może każdy zobaczyć oraz prywatne (ang. <em>private</em>) dostępne tylko dla osób z odpowiednimi uprawnieniami.</p>
 <p>Repozytoria połączone są z kontami użytkowników (np. <a href="https://github.com/Nowosad" class="uri">https://github.com/Nowosad</a> to moje konto, gdzie “Nowosad” oznacza nazwę użytkownika) lub organizacjami (np. <a href="https://github.com/r-spatialecology" class="uri">https://github.com/r-spatialecology</a> to konto organizacji “r-spatialecology”).
 Pod adresem <a href="https://github.com/join" class="uri">https://github.com/join</a> można założyć nowe konto użytkownika.</p>
-<div id="tworzenie-zdanego-repo" class="section level3" number="14.2.1">
-<h3><span class="header-section-number">14.2.1</span> Tworzenie zdanego repo</h3>
+<div id="tworzenie-zdanego-repo" class="section level3 hasAnchor">
+<h3><span class="header-section-number">14.2.1</span> Tworzenie zdanego repo<a href="kontrola-wersji.html#tworzenie-zdanego-repo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Posiadanie konta użytkownika pozwala na, między innymi, tworzenie nowych repozytoriów i zarządzanie nimi.
 Stworzenie nowego repozytorium odbywa się poprzez naciśnięcie zielonej ikony (rycina <a href="kontrola-wersji.html#fig:gh-new-repo">14.1</a>).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:gh-new-repo"></span>
@@ -561,8 +530,8 @@ Tutaj następuje tylko (1) dodanie ścieżki do zdalnego repozytorium oraz (2) w
 <li>Import kodu z innego systemu kontroli wersji niż Git.</li>
 </ol>
 </div>
-<div id="repozytorium-github" class="section level3" number="14.2.2">
-<h3><span class="header-section-number">14.2.2</span> Repozytorium GitHub</h3>
+<div id="repozytorium-github" class="section level3 hasAnchor">
+<h3><span class="header-section-number">14.2.2</span> Repozytorium GitHub<a href="kontrola-wersji.html#repozytorium-github" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Wygląd okna repozytorium zmienia się po dodaniu pierwszej zawartości (rycina <a href="kontrola-wersji.html#fig:gh-new-repo4">14.4</a>).</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:gh-new-repo4"></span>
 <img src="images/gh-new-repo4.png" alt="Repozytorium GitHub po dodaniu zawartości." width="80%" />
@@ -573,8 +542,8 @@ Rycina 14.4: Repozytorium GitHub po dodaniu zawartości.
 <p>Teraz możliwe jest podejrzenie występujących tam plików (w tym momencie jedynie plik <code>README.md</code>), zmian jakie zaszły w repozytorium (klikając na <em>commit</em>), istniejących rozgałęzień (klikając na <em>branch</em>) oraz wiele innych.
 Pod zieloną ikoną <em>Clone or download</em> można dodatkowo znaleźć ścieżkę do tego zdalnego repozytorium.</p>
 </div>
-<div id="dodatkowe-możliwości-github" class="section level3" number="14.2.3">
-<h3><span class="header-section-number">14.2.3</span> Dodatkowe możliwości GitHub</h3>
+<div id="dodatkowe-możliwości-github" class="section level3 hasAnchor">
+<h3><span class="header-section-number">14.2.3</span> Dodatkowe możliwości GitHub<a href="kontrola-wersji.html#dodatkowe-możliwości-github" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>W prawym górnym rogu okna repozytorium (rycina <a href="kontrola-wersji.html#fig:gh-new-repo4">14.4</a>) znajdują się trzy ikony - <em>Watch</em>, <em>Star</em>, <em>Fork</em>.
 Pierwsza z nich pozwala na określenie czy chcemy dostawać powiadomienia na temat dyskusji prowadzonych wewnątrz danego repozytorium, takich jak utworzenie nowej sprawy.
 Druga ikona pozwala na oznaczanie interesujących repozytoriów i przez to ułatwiająca znajdowania podobnych projektów.
@@ -588,8 +557,8 @@ W takiej sytuacji często opiera się to o (1) stworzenie rozwidlenia (ang. <em
 <p>Możliwe jest również łączenie możliwości serwisu GitHub z innymi serwisami internetowymi, takimi jak <a href="https://travis-ci.org/">Travis CI</a>, <a href="https://codecov.io/">Codecov</a>, <a href="https://gitter.im/">Gitter</a> i <a href="https://github.com/marketplace">wiele innych</a>.</p>
 </div>
 </div>
-<div id="rstudio-git" class="section level2" number="14.3">
-<h2><span class="header-section-number">14.3</span> Kontrola wersji w RStudio</h2>
+<div id="rstudio-git" class="section level2 hasAnchor">
+<h2><span class="header-section-number">14.3</span> Kontrola wersji w RStudio<a href="kontrola-wersji.html#rstudio-git" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>RStudio posiada wbudowane, uproszczone graficzne wsparcie dla systemu Git.
 Istnieje też szereg programów, których głównym celem jest ułatwienie pracy z systemem Git.
 Nazwane są one klientami Git, wśród których można wymienić <a href="https://www.gitkraken.com/">GitKraken</a> i <a href="https://www.sourcetreeapp.com/">Sourcetree</a>.</p>
@@ -620,13 +589,13 @@ Ikona zegarka otwiera nowe okno, w którym można zobaczyć jakie zmiany zaszły
 Następne ikony pozwalają na określenie plików do ignorowania (ikona koła zębatego) oraz tworzenie nowych rozgałęzień.
 Przedostatni element tego okna to nazwa obecnie ustawionego rozgałęzienia, a po kliknięciu tej nazwy możliwa jest przejście do innego rozgałęzienia (sekcja <a href="kontrola-wersji.html#branches">14.1.6</a>).</p>
 </div>
-<div id="sposoby-pracy-z-systemem-git" class="section level2" number="14.4">
-<h2><span class="header-section-number">14.4</span> Sposoby pracy z systemem Git</h2>
+<div id="sposoby-pracy-z-systemem-git" class="section level2 hasAnchor">
+<h2><span class="header-section-number">14.4</span> Sposoby pracy z systemem Git<a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Istnieje wiele możliwych sposobów pracy z systemem Git.
 Zależą one od wielu czynników, takich jak planowany cel repozytorium czy wykorzystywana technologia.
 Dodatkowo znaczny wpływ na sposób pracy z systemem Git ma czynnik ludzki - przyzwyczajenia osób pracujących nad projektem i ich preferencje.</p>
-<div id="nowy-projekt" class="section level3" number="14.4.1">
-<h3><span class="header-section-number">14.4.1</span> Nowy projekt</h3>
+<div id="nowy-projekt" class="section level3 hasAnchor">
+<h3><span class="header-section-number">14.4.1</span> Nowy projekt<a href="kontrola-wersji.html#nowy-projekt" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Preferowanym sposobem rozpoczęcia pracy nad nowym zadaniem (projektem) w R jest stworzenie nowego, pustego repozytorium w serwisie GitHub, a następnie połączenie z nim nowego projektu RStudio.
 Taki sposób został opisany na początku sekcji <a href="kontrola-wersji.html#rstudio-git">14.3</a>.</p>
 <p>W momencie, gdy posiadamy ustawione zarówno lokalne jak i zdalne repozytorium możliwe jest rozpoczęcie pracy.
@@ -641,6 +610,7 @@ Zalecane jest, aby powyższą czynność wykonywać nawet wiele razy dziennie.</
 Często w folderze projektu możesz posiadać pliki, których nie chcesz dodawać do repozytorium.
 W takiej sytuacji dodaj ich nazwy do pliku <code>.gitignore</code> i staną się one niewidoczne dla systemu Git.
 </div>
+
 <p>Efektem powyższej operacji jest posiadanie zatwierdzonych zmian w lokalnym repozytorium, ale jeszcze ich brak w repozytorium zdalnym.
 Kolejnym krokiem jest przesłanie zmian na zdalne repozytorium.
 Tutaj zalecane jest najpierw kliknięcie ikony aktualizowania zmian (strzałka w dół), aby upewnić się, że posiadamy aktualną wersję repozytorium, a następnie kliknięcie ikony wysyłania zmian (strzałka w górę).
@@ -655,42 +625,42 @@ Tą czynność warto wykonywać rzadziej niż poprzednią, ale też regularnie.<
 <li>Wysyłania zmian na zdalne repozytorium.</li>
 </ol>
 </div>
-<div id="istniejacy-projekt" class="section level3" number="14.4.2">
-<h3><span class="header-section-number">14.4.2</span> Istniejący projekt</h3>
+<div id="istniejacy-projekt" class="section level3 hasAnchor">
+<h3><span class="header-section-number">14.4.2</span> Istniejący projekt<a href="kontrola-wersji.html#istniejacy-projekt" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Czasami posiadasz już jakiś istniejący projekt, ale chcesz do niego dodać możliwości kontroli wersji.
 W takich przypadkach najprostszy sposób to stworzenie nowego repozytorium w serwisie GitHub oraz pustego, połączonego z nim nowego projektu RStudio.
 Następnie należy przekopiować do tego projektu wszystkie już istniejące pliki, dodać je (pole <em>Staged</em>), zatwierdzić oraz przesłać na zdalne repozytorium.</p>
 <p>Kolejne etapy pracy wyglądają identycznie jak w poprzedniej sekcji.</p>
 </div>
 </div>
-<div id="problemy-z-kontrolą-wersji" class="section level2" number="14.5">
-<h2><span class="header-section-number">14.5</span> Problemy z kontrolą wersji</h2>
+<div id="problemy-z-kontrolą-wersji" class="section level2 hasAnchor">
+<h2><span class="header-section-number">14.5</span> Problemy z kontrolą wersji<a href="kontrola-wersji.html#problemy-z-kontrolą-wersji" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>W ramach jednego projektu często posiadamy wiele plików z długą historią zmian, do tego nanoszonych przez szereg różnych osób.
 Jest to sytuacja w której dość prosto o wystąpienie problemów czy nieoczekiwanych (przez użytkownika) zachowań systemu kontroli wersji Git.</p>
 <p>Jednym z najczęstszych problemów jest pojawienie się poniższego komunikatu podczas próby wysyłania zmian do zdalnego repozytorium.</p>
-<div class="sourceCode" id="cb367"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb367-1"><a href="kontrola-wersji.html#cb367-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="fu">git</span> push</span>
-<span id="cb367-2"><a href="kontrola-wersji.html#cb367-2"></a><span class="ex">To</span> https://github.com/YOU/REPO.git</span>
-<span id="cb367-3"><a href="kontrola-wersji.html#cb367-3"></a> ! [<span class="ex">rejected</span>]        master -<span class="op">&gt;</span> master (fetch first)</span>
-<span id="cb367-4"><a href="kontrola-wersji.html#cb367-4"></a><span class="ex">error</span>: failed to push some refs to <span class="st">&#39;https://github.com/YOU/REPO.git&#39;</span></span>
-<span id="cb367-5"><a href="kontrola-wersji.html#cb367-5"></a><span class="ex">hint</span>: Updates were rejected because the remote contains work that you do</span>
-<span id="cb367-6"><a href="kontrola-wersji.html#cb367-6"></a><span class="ex">hint</span>: not have locally. This is usually caused by another repository pushing</span>
-<span id="cb367-7"><a href="kontrola-wersji.html#cb367-7"></a><span class="ex">hint</span>: to the same ref. You may want to first integrate the remote changes</span>
-<span id="cb367-8"><a href="kontrola-wersji.html#cb367-8"></a><span class="ex">hint</span>: (e.g., <span class="st">&#39;git pull ...&#39;</span>) <span class="ex">before</span> pushing again.</span>
-<span id="cb367-9"><a href="kontrola-wersji.html#cb367-9"></a><span class="ex">hint</span>: See the <span class="st">&#39;Note about fast-forwards&#39;</span> in <span class="st">&#39;git push --help&#39;</span> for details.</span></code></pre></div>
+<div class="sourceCode" id="cb367"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb367-1" title="1"><span class="op">&gt;&gt;&gt;</span> <span class="fu">git</span> push</a>
+<a class="sourceLine" id="cb367-2" title="2"><span class="ex">To</span> https://github.com/YOU/REPO.git</a>
+<a class="sourceLine" id="cb367-3" title="3"> ! [<span class="ex">rejected</span>]        master -<span class="op">&gt;</span> master (fetch first)</a>
+<a class="sourceLine" id="cb367-4" title="4"><span class="ex">error</span>: failed to push some refs to <span class="st">&#39;https://github.com/YOU/REPO.git&#39;</span></a>
+<a class="sourceLine" id="cb367-5" title="5"><span class="ex">hint</span>: Updates were rejected because the remote contains work that you do</a>
+<a class="sourceLine" id="cb367-6" title="6"><span class="ex">hint</span>: not have locally. This is usually caused by another repository pushing</a>
+<a class="sourceLine" id="cb367-7" title="7"><span class="ex">hint</span>: to the same ref. You may want to first integrate the remote changes</a>
+<a class="sourceLine" id="cb367-8" title="8"><span class="ex">hint</span>: (e.g., <span class="st">&#39;git pull ...&#39;</span>) <span class="ex">before</span> pushing again.</a>
+<a class="sourceLine" id="cb367-9" title="9"><span class="ex">hint</span>: See the <span class="st">&#39;Note about fast-forwards&#39;</span> in <span class="st">&#39;git push --help&#39;</span> for details.</a></code></pre></div>
 <p>Oznacza on, że w repozytorium zdalnym są jakieś zmiany, których nie ma lokalnie.
 Prawdopodobnie wynikają one z kwestii, że inna osoba przesłała swoje zmiany do zdalnego repozytorium lub też pliki były zmienione i przesłane przez ciebie na innym komputerze.
 Najczęściej w takiej sytuacji wystarczy aktualizowanie zmian ze zdalnego repo (ikona strzałki w dół), a następnie ponowienie próby wysłania zmian.
 Czasem jednak mogły zajść zmiany w tym samym pliku edytowanym przez wiele osób.
 Wówczas konieczne jest ręczne poprawienie problematycznych plików, dodanie zmian i ich zatwierdzenie.</p>
 <p>Z racji popularności systemu Git istnieje ogromna liczba materiałów pomagających w jego nauce i zrozumieniu oraz wiele stron zawierających pytania i odpowiedzi dotyczące napotkanych problemów.
-W przypadku łączenia możliwości języka R z systemem Git warto poczytać materiały zawarte na stronie <a href="https://happygitwithr.com/" class="uri">https://happygitwithr.com/</a> <span class="citation">(Jenny Bryan, the STAT 545 TAs, and Hester <a href="#ref-bryanHappyGitGitHub2019" role="doc-biblioref">2019</a>)</span> oraz rozdział <a href="https://r-pkgs.org/git.html">Git and GitHub</a> książki R packages <span class="citation">(Wickham <a href="#ref-wickham2015r" role="doc-biblioref">2015</a>)</span>.
-Do ogólnego wprowadzenia do systemu Git może posłużyć darmowa książka online <a href="https://git-scm.com/book/pl/v2">Pro Git</a> <span class="citation">(Chacon <a href="#ref-chacon2014pro" role="doc-biblioref">2014</a>)</span>, której kilka pierwszych rozdziałów jest również dostępna w języku polskim.
+W przypadku łączenia możliwości języka R z systemem Git warto poczytać materiały zawarte na stronie <a href="https://happygitwithr.com/" class="uri">https://happygitwithr.com/</a> <span class="citation">(Jenny Bryan, the STAT 545 TAs, and Hester <a href="#ref-bryanHappyGitGitHub2019">2019</a>)</span> oraz rozdział <a href="https://r-pkgs.org/git.html">Git and GitHub</a> książki R packages <span class="citation">(Wickham <a href="#ref-wickham2015r">2015</a>)</span>.
+Do ogólnego wprowadzenia do systemu Git może posłużyć darmowa książka online <a href="https://git-scm.com/book/pl/v2">Pro Git</a> <span class="citation">(Chacon <a href="#ref-chacon2014pro">2014</a>)</span>, której kilka pierwszych rozdziałów jest również dostępna w języku polskim.
 Git jest również bardzo popularnym tematem na serwisie stackoverflow, gdzie można znaleźć <a href="https://stackoverflow.com/questions/tagged/git">pytania i odpowiedzi na różnorodne tematy z nim związane</a>.
 Więcej odnośników do materiałów związanych z sytemem Git i serwisem GitHub można znaleźć na stronach <a href="https://help.github.com/en/articles/git-and-github-learning-resources">pomocy GitHub</a>.
 <!-- może warto dodać jak się pojawią kolejne części - https://randomseed.pl/pub/git-system-kontroli-wersji/01-wprowadzenie/#Podstawoweterminy --></p>
 </div>
-<div id="zad15" class="section level2" number="14.6">
-<h2><span class="header-section-number">14.6</span> Zadania</h2>
+<div id="zad15" class="section level2 hasAnchor">
+<h2><span class="header-section-number">14.6</span> Zadania<a href="kontrola-wersji.html#zad15" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>Skonfiguruj system Git podając swoją nazwę użytkownika oraz adres email.
 Sprawdź czy nazwa została dodana używając komendy <code>git config --global user.name</code> oraz czy dodany został adres email używając <code>git config --global user.email</code>.</li>
@@ -735,8 +705,8 @@ Co się w nim zmieniło?
 
 </div>
 </div>
-<h3>Bibliografia</h3>
-<div id="refs" class="references hanging-indent">
+<h3>Bibliografia<a href="bibliografia.html#bibliografia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references">
 <div id="ref-bryanHappyGitGitHub2019">
 <p>Bryan, Jenny, the STAT 545 TAs, and Jim Hester. 2019. <em>Happy Git and GitHub for the useR</em>.</p>
 </div>
@@ -750,14 +720,14 @@ Co się w nim zmieniło?
 <div class="footnotes">
 <hr />
 <ol start="48">
-<li id="fn48"><p><a href="https://en.wikipedia.org/wiki/Comparison_of_version-control_software#History_and_adoption" class="uri">https://en.wikipedia.org/wiki/Comparison_of_version-control_software#History_and_adoption</a><a href="kontrola-wersji.html#fnref48" class="footnote-back">↩︎</a></p></li>
-<li id="fn49"><p>Nie w oknie konsoli R.<a href="kontrola-wersji.html#fnref49" class="footnote-back">↩︎</a></p></li>
+<li id="fn48"><p><a href="https://en.wikipedia.org/wiki/Comparison_of_version-control_software#History_and_adoption" class="uri">https://en.wikipedia.org/wiki/Comparison_of_version-control_software#History_and_adoption</a><a href="kontrola-wersji.html#fnref48" class="footnote-back">↩</a></p></li>
+<li id="fn49"><p>Nie w oknie konsoli R.<a href="kontrola-wersji.html#fnref49" class="footnote-back">↩</a></p></li>
 <li id="fn50"><p>Między innymi z tego powodu internetowe serwisy kontroli wersji posiadają ograniczenia dotyczące wielkości plików.
-Przykładowo, GitHub ogranicza wielkość pojedynczych plików do 100MB.<a href="kontrola-wersji.html#fnref50" class="footnote-back">↩︎</a></p></li>
-<li id="fn51"><p>Instrukcje dotyczące instalacji Gita znajdują się we wstępie książki.<a href="kontrola-wersji.html#fnref51" class="footnote-back">↩︎</a></p></li>
-<li id="fn52"><p>W kontekście R, warto o tym myśleć jako o projekcie RStudio.<a href="kontrola-wersji.html#fnref52" class="footnote-back">↩︎</a></p></li>
-<li id="fn53"><p>Może to być zarówno dodanie nowej możliwości, naprawienie błędu w kodzie, czy nawet poprawienie literówki w dokumentacji.<a href="kontrola-wersji.html#fnref53" class="footnote-back">↩︎</a></p></li>
-<li id="fn54"><p>Możliwe są też inne sytuacje, np. czerwona ikona z literą R sugerująca zmianę nazwy pliku.<a href="kontrola-wersji.html#fnref54" class="footnote-back">↩︎</a></p></li>
+Przykładowo, GitHub ogranicza wielkość pojedynczych plików do 100MB.<a href="kontrola-wersji.html#fnref50" class="footnote-back">↩</a></p></li>
+<li id="fn51"><p>Instrukcje dotyczące instalacji Gita znajdują się we wstępie książki.<a href="kontrola-wersji.html#fnref51" class="footnote-back">↩</a></p></li>
+<li id="fn52"><p>W kontekście R, warto o tym myśleć jako o projekcie RStudio.<a href="kontrola-wersji.html#fnref52" class="footnote-back">↩</a></p></li>
+<li id="fn53"><p>Może to być zarówno dodanie nowej możliwości, naprawienie błędu w kodzie, czy nawet poprawienie literówki w dokumentacji.<a href="kontrola-wersji.html#fnref53" class="footnote-back">↩</a></p></li>
+<li id="fn54"><p>Możliwe są też inne sytuacje, np. czerwona ikona z literą R sugerująca zmianę nazwy pliku.<a href="kontrola-wersji.html#fnref54" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

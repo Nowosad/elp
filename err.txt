@@ -1,3 +1,0 @@
-From https://github.com/Nowosad/elp
- * [new branch]      gh-pages   -> upstream/gh-pages
- * [new branch]      master     -> upstream/master
