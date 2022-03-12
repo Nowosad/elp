@@ -11,10 +11,6 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
         
-      - name: Prep all
-        run: |
-          chmod +x _build.sh _publish.sh
-
       - name: Setup R
         uses: r-lib/actions/setup-r@v1
 
