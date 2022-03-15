@@ -325,7 +325,7 @@ str_extract(tekst_pomiary, pattern = "[a-zA-Z]*")
 ```
 
 Podaliśmy jako wzorzec wszystkie litery od małego `a` do małego `z` oraz dużego `A` do dużego `Z`.
-Niestety w efekcie otrzymaliśmy tylko `r str_extract(tekst_pomiary, pattern = "[a-zA-Z]*")` - taka definicja wzorca obejmuje tylko litery z angielskiego alfabetu.
+Niestety w efekcie otrzymaliśmy tylko `r stringr::str_extract(tekst_pomiary, pattern = "[a-zA-Z]*")` - taka definicja wzorca obejmuje tylko litery z angielskiego alfabetu.
 
 Aby to naprawić możemy dodać do tego wzorca polskie litery.
 
