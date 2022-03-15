@@ -2,7 +2,7 @@
 title: "Elementarz programisty"
 subtitle: "Wstęp do programowania używając R"
 author: "Jakub Nowosad"
-# date: "2022-03-12"
+# date: "2022-03-15"
 description: "Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R."
 site: bookdown::bookdown_site
 output: bookdown::gitbook
@@ -52,7 +52,7 @@ Jeżeli używasz tej książki, zacytuj ją jako:
 
 Zachęcam również do zgłaszania wszelkich uwag, błędów, pomysłów oraz komentarzy na stronie https://github.com/nowosad/elp/issues.
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licencja Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />Ta książka jest dostępna na <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">licencji Creative Commons Uznanie autorstwa - Użycie niekomercyjne - Bez utworów zależnych 4.0 Międzynarodowe</a>.
+<a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Licencja Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Ta książka jest dostępna na <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">licencji Creative Commons Uznanie autorstwa 4.0 Międzynarodowe</a>.
 
 ## Wymagania wstępne {-}
 
