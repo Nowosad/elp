@@ -17,7 +17,7 @@ Inne popularne systemy kontroli wersji to Concurrent Versions System (CVS), Merc
 ## Git
 
 System Git jest niezależny od języka (lub języków) programowania, które używamy.
-Jego działanie oparte jest o system komend rozpoczynających się od słowa `git `, które należy wykonać w systemowym oknie konsoli.^[Nie w oknie konsoli R.]
+Jego działanie oparte jest o system komend rozpoczynających się od słowa `git`, które należy wykonać w systemowym oknie konsoli.^[Nie w oknie konsoli R.]
 Zrozumienie działania systemu Git wymaga także poznania kilku nowych terminów.
 
 System Git został zaprojektowany i jest używany głównie do kontroli wersji plików tekstowych.
