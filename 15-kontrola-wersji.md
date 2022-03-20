@@ -105,7 +105,7 @@ git commit -m "opis wprowadzonych zmian"
 Częstą sytuacją jest posiadanie stabilnego, działającego kodu, ale co do którego mamy pomysły jak go ulepszyć, np. zwiększyć jego wydajność.
 Wtedy edycja poprawnego kodu może nie przynieść najlepszych wyników - co jeżeli nasz pomysł się jednak nie sprawdzi?
 Lepszą możliwością jest użycie rozgałęzień (ang. *branches*) w systemie Git.
-Domyślnie nowe repozytorium posiada już jedną gałąź nazwaną `master`.
+Domyślnie nowe repozytorium posiada już jedną gałąź nazwaną `main`.
 
 
 ```bash
@@ -132,12 +132,12 @@ git checkout nazwa_nowej_galezi
 
 W tym momencie możliwe jest testowanie różnych możliwości ulepszenia istniejącego kodu bez obawy, że wpłynie to na jego działającą wersję. 
 Po stwierdzeniu, że nasze zmiany są odpowiednie należy je dodać (sekcja \@ref(dodawanie-zmian)) i zatwierdzić (sekcja \@ref(zatwierdzanie-zmian)).
-Teraz można powrócić do głównej gałęzi (`master`) i dołączyć zmiany stworzone w innej gałęzi.
+Teraz można powrócić do głównej gałęzi (`main`) i dołączyć zmiany stworzone w innej gałęzi.
 
 
 ```bash
 # powrót do głównej gałęzi
-git checkout master
+git checkout main
 # połączenie wybranego rozgałęzienia z obecnym
 git merge nazwa_nowej_galezi
 ```
@@ -178,7 +178,7 @@ Konieczne jest ich wysłanie do zdalnego repozytorium.
 # wysyłanie zmian do zdalnego repo
 git push
 ```
-<!--skrót od git push origin master -->
+<!--skrót od git push origin main -->
 
 ### Aktualizowanie zmian
 
@@ -356,7 +356,7 @@ Jednym z najczęstszych problemów jest pojawienie się poniższego komunikatu p
 ```bash
 >>> git push
 To https://github.com/YOU/REPO.git
- ! [rejected]        master -> master (fetch first)
+ ! [rejected]        main -> main (fetch first)
 error: failed to push some refs to 'https://github.com/YOU/REPO.git'
 hint: Updates were rejected because the remote contains work that you do
 hint: not have locally. This is usually caused by another repository pushing

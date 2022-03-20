@@ -7183,7 +7183,7 @@ Wymaga to dodania wiadomości, która opisuje wprowadzone zmiany.
 Częstą sytuacją jest posiadanie stabilnego, działającego kodu, ale co do którego mamy pomysły jak go ulepszyć, np. zwiększyć jego wydajność.
 Wtedy edycja poprawnego kodu może nie przynieść najlepszych wyników - co jeżeli nasz pomysł się jednak nie sprawdzi?
 Lepszą~możliwością jest użycie rozgałęzień (ang. \emph{branches}) w systemie Git.
-Domyślnie nowe repozytorium posiada już jedną gałąź nazwaną~\texttt{master}.
+Domyślnie nowe repozytorium posiada już jedną gałąź nazwaną~\texttt{main}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -7213,12 +7213,12 @@ Co ważne utworzenie nowego rozgałęzienia nie powoduje przejście do niego - n
 
 W tym momencie możliwe jest testowanie różnych możliwości ulepszenia istniejącego kodu bez obawy, że wpłynie to na jego działającą wersję.
 Po stwierdzeniu, że nasze zmiany są~odpowiednie należy je dodać (sekcja \ref{dodawanie-zmian}) i zatwierdzić (sekcja \ref{zatwierdzanie-zmian}).
-Teraz można powrócić do głównej gałęzi (\texttt{master}) i dołączyć zmiany stworzone w innej gałęzi.
+Teraz można powrócić do głównej gałęzi (\texttt{main}) i dołączyć zmiany stworzone w innej gałęzi.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# powrót do głównej gałęzi}
-\FunctionTok{git}\NormalTok{ checkout master}
+\FunctionTok{git}\NormalTok{ checkout main}
 \CommentTok{# połączenie wybranego rozgałęzienia z obecnym}
 \FunctionTok{git}\NormalTok{ merge nazwa_nowej_galezi}
 \end{Highlighting}
@@ -7495,7 +7495,7 @@ Jednym z najczęstszych problemów jest pojawienie się poniższego komunikatu p
 \begin{Highlighting}[]
 \OperatorTok{>>>} \FunctionTok{git}\NormalTok{ push}
 \ExtensionTok{To}\NormalTok{ https://github.com/YOU/REPO.git}
-\NormalTok{ ! [}\ExtensionTok{rejected}\NormalTok{]        master -}\OperatorTok{>}\NormalTok{ master (fetch first)}
+\NormalTok{ ! [}\ExtensionTok{rejected}\NormalTok{]        main -}\OperatorTok{>}\NormalTok{ main (fetch first)}
 \ExtensionTok{error}\NormalTok{: failed to push some refs to }\StringTok{'https://github.com/YOU/REPO.git'}
 \ExtensionTok{hint}\NormalTok{: Updates were rejected because the remote contains work that you do}
 \ExtensionTok{hint}\NormalTok{: not have locally. This is usually caused by another repository pushing}
