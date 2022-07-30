@@ -210,15 +210,16 @@ wynik = bench::mark(
 )
 wynik
 #> # A tibble: 2 × 6
-#>   expression                     min   median `itr/sec`
-#>   <bch:expr>                <bch:tm> <bch:tm>     <dbl>
-#> 1 mile_na_km(odl_mile2)       1.09ms   1.21ms      783.
-#> 2 mile_na_km_cpp(odl_mile2)  470.1µs  583.1µs     1635.
-#> # … with 2 more variables: mem_alloc <bch:byt>,
-#> #   `gc/sec` <dbl>
+#>   expression                  min median itr/s…¹ mem_a…²
+#>   <bch:expr>                <bch> <bch:>   <dbl> <bch:b>
+#> 1 mile_na_km(odl_mile2)     944µs  965µs   1000. 291.2KB
+#> 2 mile_na_km_cpp(odl_mile2) 450µs  458µs   2168.  84.8KB
+#> # … with 1 more variable: `gc/sec` <dbl>, and
+#> #   abbreviated variable names ¹​`itr/sec`, ²​mem_alloc
+#> # ℹ Use `colnames()` to see all variable names
 ```
 
-Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 2.08 raza mniejszy.
+Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 2.11 raza mniejszy.
 
 ### Wywoływanie kodu z plików .cpp {#sourceCpp}
 

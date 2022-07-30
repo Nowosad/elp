@@ -173,7 +173,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 ```r
 system.time(mean(1:100000000))
 #>    user  system elapsed 
-#>   0.566   0.000   0.567
+#>   0.598   0.000   0.597
 ```
 
 W efekcie dostajemy trzy wartości - `user`, `system` i `elapsed`. Pierwsza z nich określa czas obliczenia po stronie użytkownika (sesji R), druga opisuje czas obliczenia po stronie systemu operacyjnego (np. otwieranie plików), a trzecia to sumaryczny czas wykonywania operacji.
@@ -227,11 +227,13 @@ wynik_1 = mark(
 )
 wynik_1
 #> # A tibble: 2 × 6
-#>   expression              min median `itr/sec` mem_alloc
-#>   <bch:expr>          <bch:t> <bch:>     <dbl> <bch:byt>
-#> 1 mi_do_km1(odl_mile)   1.9µs  2.4µs   358845.    27.5KB
-#> 2 mi_do_km2(odl_mile)   1.5µs  1.8µs   444805.    27.8KB
-#> # … with 1 more variable: `gc/sec` <dbl>
+#>   expression               min   median itr/se…¹ mem_a…²
+#>   <bch:expr>          <bch:tm> <bch:tm>    <dbl> <bch:b>
+#> 1 mi_do_km1(odl_mile)    1.8µs    1.9µs  477487.  27.5KB
+#> 2 mi_do_km2(odl_mile)    1.3µs    1.5µs  654622.  27.8KB
+#> # … with 1 more variable: `gc/sec` <dbl>, and
+#> #   abbreviated variable names ¹​`itr/sec`, ²​mem_alloc
+#> # ℹ Use `colnames()` to see all variable names
 ```
 
 Efektem porównania jest ramka danych, w której każdy wiersz oznacza inną porównywaną funkcję.
@@ -260,16 +262,17 @@ wynik_2 = mark(
 #> so filtering is disabled.
 wynik_2
 #> # A tibble: 2 × 6
-#>   expression                min   median `itr/sec`
-#>   <bch:expr>           <bch:tm> <bch:tm>     <dbl>
-#> 1 mi_do_km1(odl_mile2) 678.12ms 678.12ms      1.47
-#> 2 mi_do_km2(odl_mile2)   1.03ms   1.24ms    706.  
-#> # … with 2 more variables: mem_alloc <bch:byt>,
-#> #   `gc/sec` <dbl>
+#>   expression                min   median itr/s…¹ mem_a…²
+#>   <bch:expr>           <bch:tm> <bch:tm>   <dbl> <bch:b>
+#> 1 mi_do_km1(odl_mile2)    469ms    470ms    2.13   382MB
+#> 2 mi_do_km2(odl_mile2)    932µs    955µs  928.    78.2KB
+#> # … with 1 more variable: `gc/sec` <dbl>, and
+#> #   abbreviated variable names ¹​`itr/sec`, ²​mem_alloc
+#> # ℹ Use `colnames()` to see all variable names
 ```
 
 W tym przypadku różnica pomiędzy `mi_do_km1` a `mi_do_km2` staje się dużo większa. 
-Funkcja `mi_do_km1` jest w stanie wykonać tylko 1.47 operacji na sekundę, przy aż 706 operacji na sekundę funkcji `mi_do_km2`.
+Funkcja `mi_do_km1` jest w stanie wykonać tylko 2.13 operacji na sekundę, przy aż 927.8 operacji na sekundę funkcji `mi_do_km2`.
 Dodatkowo, funkcja `mi_do_km1` potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż `mi_do_km2`.
 
 

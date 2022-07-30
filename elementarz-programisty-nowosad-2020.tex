@@ -194,6 +194,20 @@
 
 \let\oldmaketitle\maketitle
 \AtBeginDocument{\let\maketitle\relax}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
@@ -2709,7 +2723,7 @@ R ma wbudowaną reprezentację dat w postaci klasy \texttt{Date}.
 \begin{Highlighting}[]
 \NormalTok{dzis =}\StringTok{ }\KeywordTok{Sys.Date}\NormalTok{()}
 \NormalTok{dzis}
-\CommentTok{#> [1] "2022-04-01"}
+\CommentTok{#> [1] "2022-07-30"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2732,11 +2746,11 @@ Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji \texttt{unclass(
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{unclass}\NormalTok{(dzis)}
-\CommentTok{#> [1] 19083}
+\CommentTok{#> [1] 19203}
 \end{Highlighting}
 \end{Shaded}
 
-Wynik, 19083, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
+Wynik, 19203, oznacza liczbę dni od 1970-01-01.\footnote{\url{https://en.wikipedia.org/wiki/Unix_time}}
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
 
 \begin{Shaded}
@@ -5459,15 +5473,15 @@ Dodatkowe argumenty tej funkcji pozwalają, np. na zdefiniowanie arkusza do wczy
 \NormalTok{meteo_z_xl =}\StringTok{ }\KeywordTok{read_excel}\NormalTok{(}\StringTok{"pliki/dane_meteo.xlsx"}\NormalTok{)}
 \KeywordTok{head}\NormalTok{(meteo_z_xl)}
 \CommentTok{#> # A tibble: 6 x 7}
-\CommentTok{#>   kod_stacji nazwa_stacji   rok miesiac dzien  tavg}
-\CommentTok{#>        <dbl> <chr>        <dbl>   <dbl> <dbl> <dbl>}
-\CommentTok{#> 1  352160330 POZNAŃ        2017       1     1   1.4}
-\CommentTok{#> 2  352160330 POZNAŃ        2017       1     2   0.1}
-\CommentTok{#> 3  352160330 POZNAŃ        2017       1     3   0.5}
-\CommentTok{#> 4  352160330 POZNAŃ        2017       1     4   1.5}
-\CommentTok{#> 5  352160330 POZNAŃ        2017       1     5  -3.5}
-\CommentTok{#> 6  352160330 POZNAŃ        2017       1     6  -8.4}
-\CommentTok{#> # ... with 1 more variable: precip <dbl>}
+\CommentTok{#>   kod_stacji nazwa_st~1   rok miesiac dzien  tavg precip}
+\CommentTok{#>        <dbl> <chr>      <dbl>   <dbl> <dbl> <dbl>  <dbl>}
+\CommentTok{#> 1  352160330 POZNAŃ      2017       1     1   1.4    0  }
+\CommentTok{#> 2  352160330 POZNAŃ      2017       1     2   0.1    0  }
+\CommentTok{#> 3  352160330 POZNAŃ      2017       1     3   0.5    4.8}
+\CommentTok{#> 4  352160330 POZNAŃ      2017       1     4   1.5    2.3}
+\CommentTok{#> 5  352160330 POZNAŃ      2017       1     5  -3.5    0  }
+\CommentTok{#> 6  352160330 POZNAŃ      2017       1     6  -8.4    0  }
+\CommentTok{#> # ... with abbreviated variable name 1: nazwa_stacji}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6212,7 +6226,7 @@ Przykładowo, poniżej nastąpi sprawdzenie czasu jaki zajmie wyliczenie średni
 \begin{Highlighting}[]
 \KeywordTok{system.time}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{100000000}\NormalTok{))}
 \CommentTok{#>    user  system elapsed }
-\CommentTok{#>   0.570   0.004   0.574}
+\CommentTok{#>   0.596   0.000   0.597}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6269,11 +6283,14 @@ Poniżej nastąpi porównanie funkcji \texttt{mi\_do\_km1} i \texttt{mi\_do\_km2
 \NormalTok{)}
 \NormalTok{wynik_}\DecValTok{1}
 \CommentTok{#> # A tibble: 2 x 6}
-\CommentTok{#>   expression              min median `itr/sec` mem_alloc}
-\CommentTok{#>   <bch:expr>          <bch:t> <bch:>     <dbl> <bch:byt>}
-\CommentTok{#> 1 mi_do_km1(odl_mile)   2.1us  2.5us   359928.    27.5KB}
-\CommentTok{#> 2 mi_do_km2(odl_mile)   1.7us  1.9us   462339.    27.8KB}
-\CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>}
+\CommentTok{#>   expression               min   median itr/se~1 mem_a~2}
+\CommentTok{#>   <bch:expr>          <bch:tm> <bch:tm>    <dbl> <bch:b>}
+\CommentTok{#> 1 mi_do_km1(odl_mile)    1.8us      2us  456780.  27.5KB}
+\CommentTok{#> 2 mi_do_km2(odl_mile)    1.4us    1.5us  642224.  27.8KB}
+\CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>, and}
+\CommentTok{#> #   abbreviated variable names 1: `itr/sec`,}
+\CommentTok{#> #   2: mem_alloc}
+\CommentTok{#> # i Use `colnames()` to see all variable names}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6313,17 +6330,19 @@ Warto jest więc sprawdzić, jak będzie wyglądało nasze porównanie na więks
 \CommentTok{#> so filtering is disabled.}
 \NormalTok{wynik_}\DecValTok{2}
 \CommentTok{#> # A tibble: 2 x 6}
-\CommentTok{#>   expression                min   median `itr/sec`}
-\CommentTok{#>   <bch:expr>           <bch:tm> <bch:tm>     <dbl>}
-\CommentTok{#> 1 mi_do_km1(odl_mile2) 645.45ms 645.45ms      1.55}
-\CommentTok{#> 2 mi_do_km2(odl_mile2)   1.03ms   1.25ms    707.  }
-\CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
-\CommentTok{#> #   `gc/sec` <dbl>}
+\CommentTok{#>   expression                min   median itr/s~1 mem_a~2}
+\CommentTok{#>   <bch:expr>           <bch:tm> <bch:tm>   <dbl> <bch:b>}
+\CommentTok{#> 1 mi_do_km1(odl_mile2)    468ms    472ms    2.12   382MB}
+\CommentTok{#> 2 mi_do_km2(odl_mile2)    921us    942us  932.    78.2KB}
+\CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>, and}
+\CommentTok{#> #   abbreviated variable names 1: `itr/sec`,}
+\CommentTok{#> #   2: mem_alloc}
+\CommentTok{#> # i Use `colnames()` to see all variable names}
 \end{Highlighting}
 \end{Shaded}
 
 W tym przypadku różnica pomiędzy \texttt{mi\_do\_km1} a \texttt{mi\_do\_km2} staje się dużo większa.
-Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 1.55 operacji na sekundę, przy aż 707.01 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
+Funkcja \texttt{mi\_do\_km1} jest w stanie wykonać tylko 2.12 operacji na sekundę, przy aż 931.86 operacji na sekundę funkcji \texttt{mi\_do\_km2}.
 Dodatkowo, funkcja \texttt{mi\_do\_km1} potrzebowała aż kilka tysięcy (!) razy więcej pamięci operacyjnej niż \texttt{mi\_do\_km2}.
 
 \hypertarget{zad12}{%
@@ -6907,16 +6926,18 @@ Dodatkowo warto porównać prędkość rozwiązania w R z C++ używająć listy 
 \NormalTok{)}
 \NormalTok{wynik}
 \CommentTok{#> # A tibble: 2 x 6}
-\CommentTok{#>   expression                     min   median `itr/sec`}
-\CommentTok{#>   <bch:expr>                <bch:tm> <bch:tm>     <dbl>}
-\CommentTok{#> 1 mile_na_km(odl_mile2)       1.09ms   1.22ms      781.}
-\CommentTok{#> 2 mile_na_km_cpp(odl_mile2)  509.3us    557us     1716.}
-\CommentTok{#> # ... with 2 more variables: mem_alloc <bch:byt>,}
-\CommentTok{#> #   `gc/sec` <dbl>}
+\CommentTok{#>   expression                  min median itr/s~1 mem_a~2}
+\CommentTok{#>   <bch:expr>                <bch> <bch:>   <dbl> <bch:b>}
+\CommentTok{#> 1 mile_na_km(odl_mile2)     916us  934us   1036. 291.2KB}
+\CommentTok{#> 2 mile_na_km_cpp(odl_mile2) 450us  460us   2142.  84.8KB}
+\CommentTok{#> # ... with 1 more variable: `gc/sec` <dbl>, and}
+\CommentTok{#> #   abbreviated variable names 1: `itr/sec`,}
+\CommentTok{#> #   2: mem_alloc}
+\CommentTok{#> # i Use `colnames()` to see all variable names}
 \end{Highlighting}
 \end{Shaded}
 
-Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 2.18 raza mniejszy.
+Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 2.03 raza mniejszy.
 
 \hypertarget{sourceCpp}{%
 \subsection{Wywoływanie kodu z plików .cpp}\label{sourceCpp}}
