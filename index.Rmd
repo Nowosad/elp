@@ -28,6 +28,20 @@ googlebot: "index,follow,snippet,archive"
 is_html = knitr::is_html_output()
 ```
 
+```{r, echo = FALSE}
+# google scholar metadata
+library(metathis)
+if (is_html) {
+  meta() |> 
+    meta_google_scholar(
+      title = "Elementarz programisty: Wstęp do programowania używając R",
+      author = "Jakub Nowosad",
+      publication_date = "2020",
+      isbn = "978-83-953296-1-9"
+    ) 
+}
+```
+
 # O książce {-}
 
 <a href="http://nowosad.github.io/elp/"><img src="cover/cover_lr.png" width="250" height="375" alt="Cover image" align="right" style="margin: 0 1em 0 1em" /></a> 

@@ -40,7 +40,7 @@ jobs:
           R -e "install.packages('tinytex')"
           R -e "install.packages('bookdown')"
           R -e "tinytex::install_tinytex()"
-          R -e "install.packages(c('bslib', 'downlit', 'xml2'))"
+          R -e "install.packages(c('bslib', 'downlit', 'xml2', 'metathis'))"
           R -e "install.packages(c('tibble', 'stringr', 'kableExtra', 'readxl', 'bench', 'profvis', 'reticulate', 'ggplot2', 'testthat'))"
           R -e "install.packages('renv')"
           R -e "renv::restore()"
