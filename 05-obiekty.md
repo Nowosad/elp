@@ -224,8 +224,8 @@ W takiej sytuacji pojawi się też poniższy komunikat ostrzeżenia.
 a = c(1, 2, 3)
 d = c(3, 5)
 a * d
-#> Warning in a * d: longer object length is not a multiple
-#> of shorter object length
+#> Warning in a * d: longer object length is not a
+#> multiple of shorter object length
 #> [1]  3 10  9
 ```
 
@@ -564,7 +564,7 @@ R ma wbudowaną reprezentację dat w postaci klasy `Date`.
 ```r
 dzis = Sys.Date()
 dzis
-#> [1] "2022-07-30"
+#> [1] "2023-03-10"
 ```
 
 Pomimo tego, że powyżej data jest wyświetlona jako tekst (zwróć uwagę na cudzysłowy), wewnętrznie w R jest ona reprezentowana jako wartość zmiennoprzecinkowa.
@@ -585,10 +585,10 @@ Sprawdzenie tej wartości możliwe jest poprzez użycie funkcji `unclass()`.
 
 ```r
 unclass(dzis)
-#> [1] 19203
+#> [1] 19426
 ```
 
-Wynik, 19203, oznacza liczbę dni od 1970-01-01.^[https://en.wikipedia.org/wiki/Unix_time]
+Wynik, 19426, oznacza liczbę dni od 1970-01-01.^[https://en.wikipedia.org/wiki/Unix_time]
 W tej reprezentacji dni przed 1970-01-01 określane wewnętrznie są poprzez wartości ujemne.
 
 

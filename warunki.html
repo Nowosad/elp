@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Wyrażenia warunkowe | Elementarz programisty</title>
   <meta name="description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Wyrażenia warunkowe | Elementarz programisty" />
   <meta property="og:type" content="book" />
@@ -48,6 +48,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -60,25 +61,26 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -87,9 +89,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -139,26 +141,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Elementarz programisty</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#wymagania-wstępne"><i class="fa fa-check"></i>Wymagania wstępne</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#styl-książki"><i class="fa fa-check"></i>Styl książki</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#podziękowania"><i class="fa fa-check"></i>Podziękowania</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a><ul>
+<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="wprowadzenie.html"><a href="wprowadzenie.html#mity-programistyczne"><i class="fa fa-check"></i><b>1.1</b> Mity programistyczne</a></li>
 <li class="chapter" data-level="1.2" data-path="wprowadzenie.html"><a href="wprowadzenie.html#jezyki-programowania"><i class="fa fa-check"></i><b>1.2</b> Języki programowania</a></li>
 <li class="chapter" data-level="1.3" data-path="wprowadzenie.html"><a href="wprowadzenie.html#r"><i class="fa fa-check"></i><b>1.3</b> R</a></li>
 <li class="chapter" data-level="1.4" data-path="wprowadzenie.html"><a href="wprowadzenie.html#zad1"><i class="fa fa-check"></i><b>1.4</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>I Podstawy</b></span></li>
-<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a><ul>
+<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrażenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia</a></li>
-<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a><ul>
+<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="ergosum.html"><a href="ergosum.html#operator-przypisania"><i class="fa fa-check"></i><b>2.2.1</b> Operator przypisania</a></li>
 <li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dzialania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="ergosum.html"><a href="ergosum.html#ide"><i class="fa fa-check"></i><b>2.3</b> IDE</a></li>
-<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a><ul>
+<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="ergosum.html"><a href="ergosum.html#nazwy-obiektow"><i class="fa fa-check"></i><b>2.4.1</b> Nazwy obiektów</a></li>
 <li class="chapter" data-level="2.4.2" data-path="ergosum.html"><a href="ergosum.html#odstępy"><i class="fa fa-check"></i><b>2.4.2</b> Odstępy</a></li>
 <li class="chapter" data-level="2.4.3" data-path="ergosum.html"><a href="ergosum.html#komentarze"><i class="fa fa-check"></i><b>2.4.3</b> Komentarze</a></li>
@@ -168,7 +175,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5" data-path="ergosum.html"><a href="ergosum.html#resources"><i class="fa fa-check"></i><b>2.5</b> Dodatkowe materiały</a></li>
 <li class="chapter" data-level="2.6" data-path="ergosum.html"><a href="ergosum.html#zad2"><i class="fa fa-check"></i><b>2.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a><ul>
+<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="funkcje.html"><a href="funkcje.html#struktura-funkcji"><i class="fa fa-check"></i><b>3.1</b> Struktura funkcji</a></li>
 <li class="chapter" data-level="3.2" data-path="funkcje.html"><a href="funkcje.html#wbudowane-funkcje"><i class="fa fa-check"></i><b>3.2</b> Wbudowane funkcje</a></li>
 <li class="chapter" data-level="3.3" data-path="funkcje.html"><a href="funkcje.html#kolejnosc-funkcji"><i class="fa fa-check"></i><b>3.3</b> Kolejność wykonywania funkcji</a></li>
@@ -180,14 +188,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.9" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.9</b> Komunikaty</a></li>
 <li class="chapter" data-level="3.10" data-path="funkcje.html"><a href="funkcje.html#zad3"><i class="fa fa-check"></i><b>3.10</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a><ul>
+<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
 <li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagnieżdżone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdżone</a></li>
 <li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porównania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
 <li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wwwf"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach</a></li>
 <li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zad4"><i class="fa fa-check"></i><b>4.5</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a><ul>
+<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wektory"><i class="fa fa-check"></i><b>5.1</b> Wektory</a></li>
 <li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#właściwości-wektorów"><i class="fa fa-check"></i><b>5.2</b> Właściwości wektorów</a></li>
 <li class="chapter" data-level="5.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#pf-vector"><i class="fa fa-check"></i><b>5.3</b> Podstawowe funkcje</a></li>
@@ -203,7 +213,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ime"><i class="fa fa-check"></i><b>5.13</b> Wektory czasu</a></li>
 <li class="chapter" data-level="5.14" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zad5"><i class="fa fa-check"></i><b>5.14</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a><ul>
+<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#reprezentacja-tekstu"><i class="fa fa-check"></i><b>6.1</b> Reprezentacja tekstu</a></li>
 <li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekście"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście</a></li>
 <li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wt"><i class="fa fa-check"></i><b>6.3</b> Wydzielanie tekstu</a></li>
@@ -213,20 +224,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plików"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików</a></li>
 <li class="chapter" data-level="6.8" data-path="tekst.html"><a href="tekst.html#zad6"><i class="fa fa-check"></i><b>6.8</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a><ul>
-<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a><ul>
+<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie"><i class="fa fa-check"></i><b>7.1.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.1.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje"><i class="fa fa-check"></i><b>7.1.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.1.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-1"><i class="fa fa-check"></i><b>7.1.3</b> Wydzielanie</a></li>
 <li class="chapter" data-level="7.1.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie"><i class="fa fa-check"></i><b>7.1.4</b> Łączenie</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a><ul>
+<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-1"><i class="fa fa-check"></i><b>7.2.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.2.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-1"><i class="fa fa-check"></i><b>7.2.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.2.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-df"><i class="fa fa-check"></i><b>7.2.3</b> Wydzielanie</a></li>
 <li class="chapter" data-level="7.2.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-1"><i class="fa fa-check"></i><b>7.2.4</b> Łączenie</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a><ul>
+<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-2"><i class="fa fa-check"></i><b>7.3.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.3.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-2"><i class="fa fa-check"></i><b>7.3.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie</a></li>
@@ -236,8 +251,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#inne-klasy"><i class="fa fa-check"></i><b>7.5</b> Inne klasy obiektów</a></li>
 <li class="chapter" data-level="7.6" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zad7"><i class="fa fa-check"></i><b>7.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a><ul>
-<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a><ul>
+<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#składnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia</a></li>
 <li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#for-example"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
 <li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach</a></li>
@@ -246,7 +263,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#prog-fun"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne</a></li>
 <li class="chapter" data-level="8.4" data-path="petle.html"><a href="petle.html#zad8"><i class="fa fa-check"></i><b>8.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a><ul>
+<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy</a></li>
 <li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#działania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.2</b> Działania na plikach i folderach</a></li>
 <li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#dane-internetowe"><i class="fa fa-check"></i><b>9.3</b> Dane internetowe</a></li>
@@ -258,24 +276,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.9" data-path="io.html"><a href="io.html#zad9"><i class="fa fa-check"></i><b>9.9</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>II Narzędzia</b></span></li>
-<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a><ul>
+<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>10.1</b> API</a></li>
 <li class="chapter" data-level="10.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsluga-komunikatow"><i class="fa fa-check"></i><b>10.2</b> Obsługa komunikatów</a></li>
-<li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe</a><ul>
+<li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe</a>
+<ul>
 <li class="chapter" data-level="10.3.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#klasy"><i class="fa fa-check"></i><b>10.3.1</b> Klasy</a></li>
 <li class="chapter" data-level="10.3.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#metody"><i class="fa fa-check"></i><b>10.3.2</b> Metody</a></li>
 <li class="chapter" data-level="10.3.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#konstruktory"><i class="fa fa-check"></i><b>10.3.3</b> Konstruktory</a></li>
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zad11"><i class="fa fa-check"></i><b>10.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu</a><ul>
+<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.1</b> Testy jednostkowe</a></li>
 <li class="chapter" data-level="11.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>11.2</b> Profiling</a></li>
 <li class="chapter" data-level="11.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>11.3</b> Benchmarking</a></li>
 <li class="chapter" data-level="11.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zad12"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie</a><ul>
-<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady</a><ul>
+<li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady</a>
+<ul>
 <li class="chapter" data-level="12.1.1" data-path="debugging.html"><a href="debugging.html#pakiet-reprex"><i class="fa fa-check"></i><b>12.1.1</b> Pakiet <strong>reprex</strong></a></li>
 <li class="chapter" data-level="12.1.2" data-path="debugging.html"><a href="debugging.html#tworzenie-powtarzalnego-przykładu"><i class="fa fa-check"></i><b>12.1.2</b> Tworzenie powtarzalnego przykładu</a></li>
 </ul></li>
@@ -284,8 +307,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="debugging.html"><a href="debugging.html#debugger"><i class="fa fa-check"></i><b>12.4</b> Debugger</a></li>
 <li class="chapter" data-level="12.5" data-path="debugging.html"><a href="debugging.html#zad13"><i class="fa fa-check"></i><b>12.5</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik</a><ul>
-<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++</a><ul>
+<li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++</a>
+<ul>
 <li class="chapter" data-level="13.1.1" data-path="lacznik.html"><a href="lacznik.html#cppFunction"><i class="fa fa-check"></i><b>13.1.1</b> Wywoływanie kodu C++ wewnątrz skryptu R</a></li>
 <li class="chapter" data-level="13.1.2" data-path="lacznik.html"><a href="lacznik.html#sourceCpp"><i class="fa fa-check"></i><b>13.1.2</b> Wywoływanie kodu z plików .cpp</a></li>
 </ul></li>
@@ -293,8 +318,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.3" data-path="lacznik.html"><a href="lacznik.html#powloka-systemowa"><i class="fa fa-check"></i><b>13.3</b> Powłoka systemowa</a></li>
 <li class="chapter" data-level="13.4" data-path="lacznik.html"><a href="lacznik.html#zad14"><i class="fa fa-check"></i><b>13.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji</a><ul>
-<li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git</a><ul>
+<li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git</a>
+<ul>
 <li class="chapter" data-level="14.1.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#konfiguracja-systemu-git"><i class="fa fa-check"></i><b>14.1.1</b> Konfiguracja systemu Git</a></li>
 <li class="chapter" data-level="14.1.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium"><i class="fa fa-check"></i><b>14.1.2</b> Repozytorium</a></li>
 <li class="chapter" data-level="14.1.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodawanie-zmian"><i class="fa fa-check"></i><b>14.1.3</b> Dodawanie zmian</a></li>
@@ -305,20 +332,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.1.8" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#wysylanie-zmian"><i class="fa fa-check"></i><b>14.1.8</b> Wysyłanie zmian</a></li>
 <li class="chapter" data-level="14.1.9" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#aktualizowanie-zmian"><i class="fa fa-check"></i><b>14.1.9</b> Aktualizowanie zmian</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub</a><ul>
+<li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub</a>
+<ul>
 <li class="chapter" data-level="14.2.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#tworzenie-zdanego-repo"><i class="fa fa-check"></i><b>14.2.1</b> Tworzenie zdanego repo</a></li>
 <li class="chapter" data-level="14.2.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-github"><i class="fa fa-check"></i><b>14.2.2</b> Repozytorium GitHub</a></li>
 <li class="chapter" data-level="14.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-możliwości-github"><i class="fa fa-check"></i><b>14.2.3</b> Dodatkowe możliwości GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="14.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rstudio-git"><i class="fa fa-check"></i><b>14.3</b> Kontrola wersji w RStudio</a></li>
-<li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git</a><ul>
+<li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git</a>
+<ul>
 <li class="chapter" data-level="14.4.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#nowy-projekt"><i class="fa fa-check"></i><b>14.4.1</b> Nowy projekt</a></li>
 <li class="chapter" data-level="14.4.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#istniejacy-projekt"><i class="fa fa-check"></i><b>14.4.2</b> Istniejący projekt</a></li>
 </ul></li>
 <li class="chapter" data-level="14.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#problemy-z-kontrolą-wersji"><i class="fa fa-check"></i><b>14.5</b> Problemy z kontrolą wersji</a></li>
 <li class="chapter" data-level="14.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zad15"><i class="fa fa-check"></i><b>14.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a><ul>
+<li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a>
+<ul>
 <li class="chapter" data-level="15.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#nazwa-pakietu"><i class="fa fa-check"></i><b>15.1</b> Nazwa pakietu</a></li>
 <li class="chapter" data-level="15.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-szkieletu-pakietu"><i class="fa fa-check"></i><b>15.2</b> Tworzenie szkieletu pakietu</a></li>
 <li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>15.3</b> Opis pakietu</a></li>
@@ -332,7 +362,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietów"><i class="fa fa-check"></i><b>15.11</b> Publikowanie pakietów</a></li>
 <li class="chapter" data-level="15.12" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zad16"><i class="fa fa-check"></i><b>15.12</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie</a><ul>
+<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie</a>
+<ul>
 <li class="chapter" data-level="16.1" data-path="podsumowanie.html"><a href="podsumowanie.html#grafika"><i class="fa fa-check"></i><b>16.1</b> Grafika</a></li>
 <li class="chapter" data-level="16.2" data-path="podsumowanie.html"><a href="podsumowanie.html#analiza-danych"><i class="fa fa-check"></i><b>16.2</b> Analiza danych</a></li>
 <li class="chapter" data-level="16.3" data-path="podsumowanie.html"><a href="podsumowanie.html#inne-zastosowania"><i class="fa fa-check"></i><b>16.3</b> Inne zastosowania</a></li>
@@ -360,61 +391,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="warunki" class="section level1 hasAnchor">
+<div id="warunki" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">4</span> Wyrażenia warunkowe<a href="warunki.html#warunki" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Języki programowania opierają się o dwa podstawowe narzędzia pozwalające na sterowanie przepływem operacji.
 Są to wyrażenia warunkowe oraz pętle.
 Wyrażenia warunkowe są głównym tematem tego rozdziału, natomiast pętle oraz ich alternatywy są omówione w rozdziale <a href="petle.html#petle">8</a>.
 <!-- `switch` https://adv-r.hadley.nz/control-flow.html#loops -->
 Celem wyrażeń warunkowych jest wykonywanie różnego zadania w zależności od danych wejściowych.</p>
-<div id="warunki-1" class="section level2 hasAnchor">
+<div id="warunki-1" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Warunki<a href="warunki.html#warunki-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Wyrażenie <code>if</code> opiera się o spełnienie (lub niespełnienie) danego warunku.
 Jeżeli dany warunek jest spełniony, kod wewnątrz wyrażenia <code>if()</code> jest wykonywany.
 W przeciwnym razie cały blok kodu jest pomijany.</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" title="1"><span class="cf">if</span> (warunek){</a>
-<a class="sourceLine" id="cb59-2" title="2">  jeżeli warunek spełniony to wykonaj operację</a>
-<a class="sourceLine" id="cb59-3" title="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="warunki.html#cb59-1" aria-hidden="true"></a><span class="cf">if</span> (warunek){</span>
+<span id="cb59-2"><a href="warunki.html#cb59-2" aria-hidden="true"></a>  jeżeli warunek spełniony to wykonaj operację</span>
+<span id="cb59-3"><a href="warunki.html#cb59-3" aria-hidden="true"></a>}</span></code></pre></div>
 <p>Wyrażenie <code>if</code> oczekuje, że warunek jest wektorem logicznym o długości jeden, tj. takim który przyjmuje wartość <code>TRUE</code> lub <code>FALSE</code>.
 Istnieje szereg sposób uzyskania wektora logicznego w R, jednym z nich jest zastosowanie porównania wartości.</p>
 <p>W poniższym przykładzie wyrażenie <code>if()</code> sprawdza czy wartość obiektu <code>temperatura</code> jest wyższa niż 0.
 W przypadku, gdy ten warunek jest spełniony (czyli przyjmuje <code>TRUE</code>), wyświetlany jest tekst <code>"Dodatnia"</code>.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" title="1">temperatura =<span class="st"> </span><span class="fl">5.4</span></a>
-<a class="sourceLine" id="cb60-2" title="2"><span class="cf">if</span> (temperatura <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {</a>
-<a class="sourceLine" id="cb60-3" title="3">  <span class="st">&quot;Dodatnia&quot;</span></a>
-<a class="sourceLine" id="cb60-4" title="4">}</a>
-<a class="sourceLine" id="cb60-5" title="5"><span class="co">#&gt; [1] &quot;Dodatnia&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="warunki.html#cb60-1" aria-hidden="true"></a>temperatura =<span class="st"> </span><span class="fl">5.4</span></span>
+<span id="cb60-2"><a href="warunki.html#cb60-2" aria-hidden="true"></a><span class="cf">if</span> (temperatura <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {</span>
+<span id="cb60-3"><a href="warunki.html#cb60-3" aria-hidden="true"></a>  <span class="st">&quot;Dodatnia&quot;</span></span>
+<span id="cb60-4"><a href="warunki.html#cb60-4" aria-hidden="true"></a>}</span>
+<span id="cb60-5"><a href="warunki.html#cb60-5" aria-hidden="true"></a><span class="co">#&gt; [1] &quot;Dodatnia&quot;</span></span></code></pre></div>
 <p>W przeciwnym razie, gdy warunek nie jest spełniony (czyli ma wartość <code>FALSE</code>), kod wewnątrz warunku nie jest wykonywany.</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" title="1">temperatura =<span class="st"> </span><span class="dv">-11</span></a>
-<a class="sourceLine" id="cb61-2" title="2"><span class="cf">if</span> (temperatura <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {</a>
-<a class="sourceLine" id="cb61-3" title="3">  <span class="st">&quot;Dodatnia&quot;</span></a>
-<a class="sourceLine" id="cb61-4" title="4">}</a></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="warunki.html#cb61-1" aria-hidden="true"></a>temperatura =<span class="st"> </span><span class="dv">-11</span></span>
+<span id="cb61-2"><a href="warunki.html#cb61-2" aria-hidden="true"></a><span class="cf">if</span> (temperatura <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {</span>
+<span id="cb61-3"><a href="warunki.html#cb61-3" aria-hidden="true"></a>  <span class="st">&quot;Dodatnia&quot;</span></span>
+<span id="cb61-4"><a href="warunki.html#cb61-4" aria-hidden="true"></a>}</span></code></pre></div>
 
 <div class="rmdinfo">
 <p>Warunek <code>if</code> można też tworzyć w uproszczonej formie:</p>
 <code>if (warunek) spelniony else niespelniony</code>
 </div>
-
 </div>
-<div id="warunki-zagnieżdżone" class="section level2 hasAnchor">
+<div id="warunki-zagnieżdżone" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> Warunki zagnieżdżone<a href="warunki.html#warunki-zagnieżdżone" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Działanie wyrażenia <code>if</code> może być połączone z dodatkowymi wyrażeniami <code>else if</code> oraz <code>else</code>.
 Te dwa wyrażenia wymagają najpierw wywołania wyrażenia <code>if()</code>.
 Jeżeli warunek w wyrażeniu <code>if()</code> jest równy <code>TRUE</code> to wykonywany jest kod w nim zawarty, a następnie obliczenie jest kończone.
 W przypadku, gdy wyrażenie <code>if()</code> otrzyma wartość <code>FALSE</code>, to kod w nim zawarty nie jest wykonywany, a następuje przejście do kolejnego wyrażenia, np. <code>else if()</code> w poniższym przypadku.</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" title="1">temperatura =<span class="st"> </span><span class="fl">8.8</span></a>
-<a class="sourceLine" id="cb62-2" title="2"><span class="cf">if</span> (temperatura <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {</a>
-<a class="sourceLine" id="cb62-3" title="3">  <span class="st">&quot;Dodatnia&quot;</span></a>
-<a class="sourceLine" id="cb62-4" title="4">} <span class="cf">else</span> <span class="cf">if</span> (temperatura <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>) {</a>
-<a class="sourceLine" id="cb62-5" title="5">  <span class="st">&quot;Ujemna&quot;</span></a>
-<a class="sourceLine" id="cb62-6" title="6">} <span class="cf">else</span> {</a>
-<a class="sourceLine" id="cb62-7" title="7">  <span class="st">&quot;Zero&quot;</span></a>
-<a class="sourceLine" id="cb62-8" title="8">}</a>
-<a class="sourceLine" id="cb62-9" title="9"><span class="co">#&gt; [1] &quot;Dodatnia&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="warunki.html#cb62-1" aria-hidden="true"></a>temperatura =<span class="st"> </span><span class="fl">8.8</span></span>
+<span id="cb62-2"><a href="warunki.html#cb62-2" aria-hidden="true"></a><span class="cf">if</span> (temperatura <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) {</span>
+<span id="cb62-3"><a href="warunki.html#cb62-3" aria-hidden="true"></a>  <span class="st">&quot;Dodatnia&quot;</span></span>
+<span id="cb62-4"><a href="warunki.html#cb62-4" aria-hidden="true"></a>} <span class="cf">else</span> <span class="cf">if</span> (temperatura <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>) {</span>
+<span id="cb62-5"><a href="warunki.html#cb62-5" aria-hidden="true"></a>  <span class="st">&quot;Ujemna&quot;</span></span>
+<span id="cb62-6"><a href="warunki.html#cb62-6" aria-hidden="true"></a>} <span class="cf">else</span> {</span>
+<span id="cb62-7"><a href="warunki.html#cb62-7" aria-hidden="true"></a>  <span class="st">&quot;Zero&quot;</span></span>
+<span id="cb62-8"><a href="warunki.html#cb62-8" aria-hidden="true"></a>}</span>
+<span id="cb62-9"><a href="warunki.html#cb62-9" aria-hidden="true"></a><span class="co">#&gt; [1] &quot;Dodatnia&quot;</span></span></code></pre></div>
 <p>Wyrażenie <code>else if()</code> różni się od <code>else</code> tym, że wymaga ono określenia jaki warunek ma być spełniony.
 W przypadku <code>else</code> wyliczane są wszystkie przypadki, które nie spełniają wcześniejszych warunków.</p>
 </div>
-<div id="operatory-porównania" class="section level2 hasAnchor">
+<div id="operatory-porównania" class="section level2 hasAnchor" number="4.3">
 <h2><span class="header-section-number">4.3</span> Operatory porównania<a href="warunki.html#operatory-porównania" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>W tabeli <a href="warunki.html#tab:operators">4.1</a> można znaleźć listę podstawowych operatorów porównania.
 Ich celem jest sprawdzanie pewnego warunku i zwrócenie wartości <code>TRUE</code> lub <code>FALSE</code>.</p>
@@ -452,12 +482,12 @@ Ich celem jest sprawdzanie pewnego warunku i zwrócenie wartości <code>TRUE</co
 <p>Wyrażenie <code>if()</code> oczekuje wektora logicznego o długości jeden.
 Często jednak efektem porównania może być wektor o większej długości.
 Przykładowo, porównanie operatorem <code>==</code> daje w wyniku wektor o długości trzy, a porównanie z użyciem <code>%in%</code> skutkuje wektorem o długości jeden.</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" title="1">x =<span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb63-2" title="2">y =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb63-3" title="3">x <span class="op">==</span><span class="st"> </span>y</a>
-<a class="sourceLine" id="cb63-4" title="4"><span class="co">#&gt; [1]  TRUE FALSE FALSE</span></a>
-<a class="sourceLine" id="cb63-5" title="5">x <span class="op">%in%</span><span class="st"> </span>y</a>
-<a class="sourceLine" id="cb63-6" title="6"><span class="co">#&gt; [1] TRUE</span></a></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="warunki.html#cb63-1" aria-hidden="true"></a>x =<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb63-2"><a href="warunki.html#cb63-2" aria-hidden="true"></a>y =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb63-3"><a href="warunki.html#cb63-3" aria-hidden="true"></a>x <span class="op">==</span><span class="st"> </span>y</span>
+<span id="cb63-4"><a href="warunki.html#cb63-4" aria-hidden="true"></a><span class="co">#&gt; [1]  TRUE FALSE FALSE</span></span>
+<span id="cb63-5"><a href="warunki.html#cb63-5" aria-hidden="true"></a>x <span class="op">%in%</span><span class="st"> </span>y</span>
+<span id="cb63-6"><a href="warunki.html#cb63-6" aria-hidden="true"></a><span class="co">#&gt; [1] TRUE</span></span></code></pre></div>
 <p>Sterowanie tym, żeby uzyskany wynik miał oczekiwaną długość jeden może się odbywać też z pomocą operatorów logicznych i funkcji pomocniczych (tabela <a href="warunki.html#tab:operators2">4.2</a>).</p>
 <table>
 <caption><span id="tab:operators2">Tabela 4.2: </span>Operatory logiczne i funkcje pomocniczne.</caption>
@@ -491,18 +521,18 @@ Przykładowo, porównanie operatorem <code>==</code> daje w wyniku wektor o dłu
 </tbody>
 </table>
 <p>Pozwalają one na sprawdzenie czy wszystkie (<code>all()</code>) lub którykolwiek (<code>any()</code>) z elementów obiektu przyjmuje wartość <code>TRUE</code>.</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb64-1" title="1">x =<span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb64-2" title="2">y =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb64-3" title="3"><span class="kw">all</span>(x <span class="op">==</span><span class="st"> </span>y)</a>
-<a class="sourceLine" id="cb64-4" title="4"><span class="co">#&gt; [1] FALSE</span></a>
-<a class="sourceLine" id="cb64-5" title="5"><span class="kw">any</span>(x <span class="op">==</span><span class="st"> </span>y)</a>
-<a class="sourceLine" id="cb64-6" title="6"><span class="co">#&gt; [1] TRUE</span></a></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="warunki.html#cb64-1" aria-hidden="true"></a>x =<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb64-2"><a href="warunki.html#cb64-2" aria-hidden="true"></a>y =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb64-3"><a href="warunki.html#cb64-3" aria-hidden="true"></a><span class="kw">all</span>(x <span class="op">==</span><span class="st"> </span>y)</span>
+<span id="cb64-4"><a href="warunki.html#cb64-4" aria-hidden="true"></a><span class="co">#&gt; [1] FALSE</span></span>
+<span id="cb64-5"><a href="warunki.html#cb64-5" aria-hidden="true"></a><span class="kw">any</span>(x <span class="op">==</span><span class="st"> </span>y)</span>
+<span id="cb64-6"><a href="warunki.html#cb64-6" aria-hidden="true"></a><span class="co">#&gt; [1] TRUE</span></span></code></pre></div>
 <p>Możliwe jest też łączenie bardziej złożonych zapytań używając operatora “i” (<code>&amp;&amp;</code>) oraz operatora “lub” (<code>||</code>).</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" title="1">x =<span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb65-2" title="2">y =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb65-3" title="3">z =<span class="st"> </span><span class="dv">4</span></a>
-<a class="sourceLine" id="cb65-4" title="4">(x <span class="op">%in%</span><span class="st"> </span>y) <span class="op">||</span><span class="st"> </span><span class="op">!</span>(z <span class="op">%in%</span><span class="st"> </span>y)</a>
-<a class="sourceLine" id="cb65-5" title="5"><span class="co">#&gt; [1] TRUE</span></a></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="warunki.html#cb65-1" aria-hidden="true"></a>x =<span class="st"> </span><span class="dv">1</span></span>
+<span id="cb65-2"><a href="warunki.html#cb65-2" aria-hidden="true"></a>y =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb65-3"><a href="warunki.html#cb65-3" aria-hidden="true"></a>z =<span class="st"> </span><span class="dv">4</span></span>
+<span id="cb65-4"><a href="warunki.html#cb65-4" aria-hidden="true"></a>(x <span class="op">%in%</span><span class="st"> </span>y) <span class="op">||</span><span class="st"> </span><span class="op">!</span>(z <span class="op">%in%</span><span class="st"> </span>y)</span>
+<span id="cb65-5"><a href="warunki.html#cb65-5" aria-hidden="true"></a><span class="co">#&gt; [1] TRUE</span></span></code></pre></div>
 <p>Powyżej nastąpiło sprawdzenie czy element z obiektu <code>x</code> znajduje się w obiekcie <code>y</code>, a następnie czy element z obiektu <code>z</code> nie znajduje się w obiekcie <code>y</code>.
 Po wykonaniu ich sprawdzeń nastąpiło ich połączenie używając operatora <code>||</code>, który daje wartość <code>TRUE</code>, gdy chociaż jedno z zapytań jest prawdziwe.</p>
 
@@ -512,81 +542,80 @@ Pierwsze dwa porównują wszystkie elementy zadanych wektorów i ich wynikiem mo
 Operatory <code>&amp;&amp;</code> i <code>||</code> porównują tylko pierwszy element każdego wektora, a w efekcie zawsze zwracają tylko jedną wartość.
 Dodatkowo, to one są zazwyczaj używane w wyrażeniach warunkowych.
 </div>
-
 </div>
-<div id="wwwf" class="section level2 hasAnchor">
+<div id="wwwf" class="section level2 hasAnchor" number="4.4">
 <h2><span class="header-section-number">4.4</span> Wyrażenia warunkowe w funkcjach<a href="warunki.html#wwwf" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Wyrażenia warunkowe są często używanym elementem przy tworzeniu funkcji.
 Pozwalają one na nie tylko na określanie tego w jaki sposób dana funkcja zadziała, ale też pełnią rolę w sprawdzaniu czy do funkcji zostały wprowadzone poprawne argumenty.</p>
 <p>Celem poniższej funkcji <code>pogoda()</code> jest wyświetlenie pewnego tekstu w zależności od podanej wartości argumentu <code>temperatura</code>.
 Pierwszym warunkiem, który można sprawdzić jest określenie czy użytkownik wprowadził do funkcji w postaci argumentu oczekiwany typ danych (więcej o typach danych można dowiedzieć się w rozdziale <a href="proste-obiekty.html#proste-obiekty">5</a>).
 W tym przypadku typ numeryczny jest oczekiwany, co można sprawdzić używając funkcji <code>is.numeric()</code>, która zwraca <code>TRUE</code> dla danych numerycznych i <code>FALSE</code> dla każdych innych.</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" title="1">pogoda =<span class="st"> </span><span class="cf">function</span>(temperatura){</a>
-<a class="sourceLine" id="cb66-2" title="2">  <span class="cf">if</span> (<span class="kw">is.numeric</span>(temperatura)){</a>
-<a class="sourceLine" id="cb66-3" title="3">    <span class="kw">cat</span>(<span class="kw">paste</span>(<span class="st">&quot;Dzisiaj jest&quot;</span>, temperatura, <span class="st">&quot;stopni Celsjusza.&quot;</span>))</a>
-<a class="sourceLine" id="cb66-4" title="4">  }</a>
-<a class="sourceLine" id="cb66-5" title="5">}</a>
-<a class="sourceLine" id="cb66-6" title="6"><span class="kw">pogoda</span>(<span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb66-7" title="7"><span class="co">#&gt; Dzisiaj jest 10 stopni Celsjusza.</span></a>
-<a class="sourceLine" id="cb66-8" title="8"><span class="kw">pogoda</span>(<span class="op">-</span><span class="dv">20</span>)</a>
-<a class="sourceLine" id="cb66-9" title="9"><span class="co">#&gt; Dzisiaj jest -20 stopni Celsjusza.</span></a>
-<a class="sourceLine" id="cb66-10" title="10"><span class="kw">pogoda</span>(<span class="st">&quot;nie wiem&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="warunki.html#cb66-1" aria-hidden="true"></a>pogoda =<span class="st"> </span><span class="cf">function</span>(temperatura){</span>
+<span id="cb66-2"><a href="warunki.html#cb66-2" aria-hidden="true"></a>  <span class="cf">if</span> (<span class="kw">is.numeric</span>(temperatura)){</span>
+<span id="cb66-3"><a href="warunki.html#cb66-3" aria-hidden="true"></a>    <span class="kw">cat</span>(<span class="kw">paste</span>(<span class="st">&quot;Dzisiaj jest&quot;</span>, temperatura, <span class="st">&quot;stopni Celsjusza.&quot;</span>))</span>
+<span id="cb66-4"><a href="warunki.html#cb66-4" aria-hidden="true"></a>  }</span>
+<span id="cb66-5"><a href="warunki.html#cb66-5" aria-hidden="true"></a>}</span>
+<span id="cb66-6"><a href="warunki.html#cb66-6" aria-hidden="true"></a><span class="kw">pogoda</span>(<span class="dv">10</span>)</span>
+<span id="cb66-7"><a href="warunki.html#cb66-7" aria-hidden="true"></a><span class="co">#&gt; Dzisiaj jest 10 stopni Celsjusza.</span></span>
+<span id="cb66-8"><a href="warunki.html#cb66-8" aria-hidden="true"></a><span class="kw">pogoda</span>(<span class="op">-</span><span class="dv">20</span>)</span>
+<span id="cb66-9"><a href="warunki.html#cb66-9" aria-hidden="true"></a><span class="co">#&gt; Dzisiaj jest -20 stopni Celsjusza.</span></span>
+<span id="cb66-10"><a href="warunki.html#cb66-10" aria-hidden="true"></a><span class="kw">pogoda</span>(<span class="st">&quot;nie wiem&quot;</span>)</span></code></pre></div>
 <p>Efekt działania powyższej funkcji jest teraz zależy od wejściowego typu danych - jeżeli podana jest wartość numeryczna zwracany jest tekst, a jeżeli ten warunek nie jest spełniony to nic się nie dzieje.</p>
 <p>Warto, aby tworzona funkcja obsługiwała najczęściej potencjalnie używane rodzaje danych wejściowych.
 W tym przypadku, warto dodać wyrażenie <code>else</code>, którego efektem jest kolejny tekst sugerujący, że funkcja została wykonana, ale w inny sposób.</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" title="1">pogoda =<span class="st"> </span><span class="cf">function</span>(temperatura){</a>
-<a class="sourceLine" id="cb67-2" title="2">  <span class="cf">if</span> (<span class="kw">is.numeric</span>(temperatura)){</a>
-<a class="sourceLine" id="cb67-3" title="3">    <span class="kw">cat</span>(<span class="kw">paste</span>(<span class="st">&quot;Dzisiaj jest&quot;</span>, temperatura, <span class="st">&quot;stopni Celsjusza.&quot;</span>))</a>
-<a class="sourceLine" id="cb67-4" title="4">  } <span class="cf">else</span> {</a>
-<a class="sourceLine" id="cb67-5" title="5">    <span class="kw">cat</span>(<span class="st">&quot;Dzisiaj nie mamy pomiarów temperatury.&quot;</span>)</a>
-<a class="sourceLine" id="cb67-6" title="6">  }</a>
-<a class="sourceLine" id="cb67-7" title="7">}</a>
-<a class="sourceLine" id="cb67-8" title="8"><span class="kw">pogoda</span>(<span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb67-9" title="9"><span class="co">#&gt; Dzisiaj jest 10 stopni Celsjusza.</span></a>
-<a class="sourceLine" id="cb67-10" title="10"><span class="kw">pogoda</span>(<span class="op">-</span><span class="dv">20</span>)</a>
-<a class="sourceLine" id="cb67-11" title="11"><span class="co">#&gt; Dzisiaj jest -20 stopni Celsjusza.</span></a>
-<a class="sourceLine" id="cb67-12" title="12"><span class="kw">pogoda</span>(<span class="st">&quot;nie wiem&quot;</span>)</a>
-<a class="sourceLine" id="cb67-13" title="13"><span class="co">#&gt; Dzisiaj nie mamy pomiarów temperatury.</span></a></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="warunki.html#cb67-1" aria-hidden="true"></a>pogoda =<span class="st"> </span><span class="cf">function</span>(temperatura){</span>
+<span id="cb67-2"><a href="warunki.html#cb67-2" aria-hidden="true"></a>  <span class="cf">if</span> (<span class="kw">is.numeric</span>(temperatura)){</span>
+<span id="cb67-3"><a href="warunki.html#cb67-3" aria-hidden="true"></a>    <span class="kw">cat</span>(<span class="kw">paste</span>(<span class="st">&quot;Dzisiaj jest&quot;</span>, temperatura, <span class="st">&quot;stopni Celsjusza.&quot;</span>))</span>
+<span id="cb67-4"><a href="warunki.html#cb67-4" aria-hidden="true"></a>  } <span class="cf">else</span> {</span>
+<span id="cb67-5"><a href="warunki.html#cb67-5" aria-hidden="true"></a>    <span class="kw">cat</span>(<span class="st">&quot;Dzisiaj nie mamy pomiarów temperatury.&quot;</span>)</span>
+<span id="cb67-6"><a href="warunki.html#cb67-6" aria-hidden="true"></a>  }</span>
+<span id="cb67-7"><a href="warunki.html#cb67-7" aria-hidden="true"></a>}</span>
+<span id="cb67-8"><a href="warunki.html#cb67-8" aria-hidden="true"></a><span class="kw">pogoda</span>(<span class="dv">10</span>)</span>
+<span id="cb67-9"><a href="warunki.html#cb67-9" aria-hidden="true"></a><span class="co">#&gt; Dzisiaj jest 10 stopni Celsjusza.</span></span>
+<span id="cb67-10"><a href="warunki.html#cb67-10" aria-hidden="true"></a><span class="kw">pogoda</span>(<span class="op">-</span><span class="dv">20</span>)</span>
+<span id="cb67-11"><a href="warunki.html#cb67-11" aria-hidden="true"></a><span class="co">#&gt; Dzisiaj jest -20 stopni Celsjusza.</span></span>
+<span id="cb67-12"><a href="warunki.html#cb67-12" aria-hidden="true"></a><span class="kw">pogoda</span>(<span class="st">&quot;nie wiem&quot;</span>)</span>
+<span id="cb67-13"><a href="warunki.html#cb67-13" aria-hidden="true"></a><span class="co">#&gt; Dzisiaj nie mamy pomiarów temperatury.</span></span></code></pre></div>
 <p>Wyrażenia warunkowe można też wielokrotnie zagnieżdżać wewnątrz zdefiniowanej funkcji.</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" title="1">pogoda =<span class="st"> </span><span class="cf">function</span>(temperatura){</a>
-<a class="sourceLine" id="cb68-2" title="2">  <span class="cf">if</span> (<span class="kw">is.numeric</span>(temperatura)){</a>
-<a class="sourceLine" id="cb68-3" title="3">    <span class="kw">cat</span>(<span class="kw">paste</span>(<span class="st">&quot;Dzisiaj jest&quot;</span>, temperatura, <span class="st">&quot;stopni Celsjusza.</span><span class="ch">\n</span><span class="st">&quot;</span>))</a>
-<a class="sourceLine" id="cb68-4" title="4">    <span class="cf">if</span> (temperatura <span class="op">&lt;</span><span class="st"> </span><span class="dv">5</span>){</a>
-<a class="sourceLine" id="cb68-5" title="5">      <span class="kw">cat</span>(<span class="st">&quot;Ubierz się ciepło!&quot;</span>)</a>
-<a class="sourceLine" id="cb68-6" title="6">    }</a>
-<a class="sourceLine" id="cb68-7" title="7">  } <span class="cf">else</span> {</a>
-<a class="sourceLine" id="cb68-8" title="8">    <span class="kw">cat</span>(<span class="st">&quot;Dzisiaj nie mamy pomiarów temperatury.&quot;</span>)</a>
-<a class="sourceLine" id="cb68-9" title="9">  }</a>
-<a class="sourceLine" id="cb68-10" title="10">}</a>
-<a class="sourceLine" id="cb68-11" title="11"><span class="kw">pogoda</span>(<span class="dv">10</span>)</a>
-<a class="sourceLine" id="cb68-12" title="12"><span class="co">#&gt; Dzisiaj jest 10 stopni Celsjusza.</span></a>
-<a class="sourceLine" id="cb68-13" title="13"><span class="kw">pogoda</span>(<span class="op">-</span><span class="dv">20</span>)</a>
-<a class="sourceLine" id="cb68-14" title="14"><span class="co">#&gt; Dzisiaj jest -20 stopni Celsjusza.</span></a>
-<a class="sourceLine" id="cb68-15" title="15"><span class="co">#&gt; Ubierz się ciepło!</span></a>
-<a class="sourceLine" id="cb68-16" title="16"><span class="kw">pogoda</span>(<span class="st">&quot;nie wiem&quot;</span>)</a>
-<a class="sourceLine" id="cb68-17" title="17"><span class="co">#&gt; Dzisiaj nie mamy pomiarów temperatury.</span></a></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="warunki.html#cb68-1" aria-hidden="true"></a>pogoda =<span class="st"> </span><span class="cf">function</span>(temperatura){</span>
+<span id="cb68-2"><a href="warunki.html#cb68-2" aria-hidden="true"></a>  <span class="cf">if</span> (<span class="kw">is.numeric</span>(temperatura)){</span>
+<span id="cb68-3"><a href="warunki.html#cb68-3" aria-hidden="true"></a>    <span class="kw">cat</span>(<span class="kw">paste</span>(<span class="st">&quot;Dzisiaj jest&quot;</span>, temperatura, <span class="st">&quot;stopni Celsjusza.</span><span class="ch">\n</span><span class="st">&quot;</span>))</span>
+<span id="cb68-4"><a href="warunki.html#cb68-4" aria-hidden="true"></a>    <span class="cf">if</span> (temperatura <span class="op">&lt;</span><span class="st"> </span><span class="dv">5</span>){</span>
+<span id="cb68-5"><a href="warunki.html#cb68-5" aria-hidden="true"></a>      <span class="kw">cat</span>(<span class="st">&quot;Ubierz się ciepło!&quot;</span>)</span>
+<span id="cb68-6"><a href="warunki.html#cb68-6" aria-hidden="true"></a>    }</span>
+<span id="cb68-7"><a href="warunki.html#cb68-7" aria-hidden="true"></a>  } <span class="cf">else</span> {</span>
+<span id="cb68-8"><a href="warunki.html#cb68-8" aria-hidden="true"></a>    <span class="kw">cat</span>(<span class="st">&quot;Dzisiaj nie mamy pomiarów temperatury.&quot;</span>)</span>
+<span id="cb68-9"><a href="warunki.html#cb68-9" aria-hidden="true"></a>  }</span>
+<span id="cb68-10"><a href="warunki.html#cb68-10" aria-hidden="true"></a>}</span>
+<span id="cb68-11"><a href="warunki.html#cb68-11" aria-hidden="true"></a><span class="kw">pogoda</span>(<span class="dv">10</span>)</span>
+<span id="cb68-12"><a href="warunki.html#cb68-12" aria-hidden="true"></a><span class="co">#&gt; Dzisiaj jest 10 stopni Celsjusza.</span></span>
+<span id="cb68-13"><a href="warunki.html#cb68-13" aria-hidden="true"></a><span class="kw">pogoda</span>(<span class="op">-</span><span class="dv">20</span>)</span>
+<span id="cb68-14"><a href="warunki.html#cb68-14" aria-hidden="true"></a><span class="co">#&gt; Dzisiaj jest -20 stopni Celsjusza.</span></span>
+<span id="cb68-15"><a href="warunki.html#cb68-15" aria-hidden="true"></a><span class="co">#&gt; Ubierz się ciepło!</span></span>
+<span id="cb68-16"><a href="warunki.html#cb68-16" aria-hidden="true"></a><span class="kw">pogoda</span>(<span class="st">&quot;nie wiem&quot;</span>)</span>
+<span id="cb68-17"><a href="warunki.html#cb68-17" aria-hidden="true"></a><span class="co">#&gt; Dzisiaj nie mamy pomiarów temperatury.</span></span></code></pre></div>
 <p>Przykładowo, powyżej komunikat <code>"Ubierz się ciepło!"</code> jest wyświetlany w momencie, gdy spełnione zostaną dwa warunki - najpierw wejściowy obiekt <code>temperatura</code> musi być typu numerycznego, a następnie wartość tego obiektu musi być niższa niż 5.</p>
 </div>
-<div id="zad4" class="section level2 hasAnchor">
+<div id="zad4" class="section level2 hasAnchor" number="4.5">
 <h2><span class="header-section-number">4.5</span> Zadania<a href="warunki.html#zad4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>Spójrz na poniższe przykłady, ale ich nie wykonuj.
 Co będzie wynikiem działania każdego z tych przykładów?</li>
 </ol>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" title="1">liczby =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb69-2" title="2">liczby <span class="op">==</span><span class="st"> </span><span class="dv">1</span>          <span class="co">#1</span></a>
-<a class="sourceLine" id="cb69-3" title="3">liczby <span class="op">!=</span><span class="st"> </span><span class="dv">1</span>          <span class="co">#2</span></a>
-<a class="sourceLine" id="cb69-4" title="4">liczby <span class="op">%in%</span><span class="st"> </span><span class="dv">1</span>        <span class="co">#3</span></a>
-<a class="sourceLine" id="cb69-5" title="5"><span class="kw">all</span>(liczby <span class="op">%in%</span><span class="st"> </span><span class="dv">1</span>)   <span class="co">#4</span></a>
-<a class="sourceLine" id="cb69-6" title="6"><span class="kw">any</span>(liczby <span class="op">%in%</span><span class="st"> </span><span class="dv">1</span>)   <span class="co">#5</span></a></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="warunki.html#cb69-1" aria-hidden="true"></a>liczby =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb69-2"><a href="warunki.html#cb69-2" aria-hidden="true"></a>liczby <span class="op">==</span><span class="st"> </span><span class="dv">1</span>          <span class="co">#1</span></span>
+<span id="cb69-3"><a href="warunki.html#cb69-3" aria-hidden="true"></a>liczby <span class="op">!=</span><span class="st"> </span><span class="dv">1</span>          <span class="co">#2</span></span>
+<span id="cb69-4"><a href="warunki.html#cb69-4" aria-hidden="true"></a>liczby <span class="op">%in%</span><span class="st"> </span><span class="dv">1</span>        <span class="co">#3</span></span>
+<span id="cb69-5"><a href="warunki.html#cb69-5" aria-hidden="true"></a><span class="kw">all</span>(liczby <span class="op">%in%</span><span class="st"> </span><span class="dv">1</span>)   <span class="co">#4</span></span>
+<span id="cb69-6"><a href="warunki.html#cb69-6" aria-hidden="true"></a><span class="kw">any</span>(liczby <span class="op">%in%</span><span class="st"> </span><span class="dv">1</span>)   <span class="co">#5</span></span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>Spójrz na cztery poniższe przykłady, ale ich nie wykonuj.
 Co będzie wynikiem działania każdego z tych przykładów?</li>
 </ol>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" title="1">(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">&amp;</span><span class="st">  </span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="co">#1</span></a>
-<a class="sourceLine" id="cb70-2" title="2">(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">&amp;&amp;</span><span class="st"> </span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="co">#2</span></a>
-<a class="sourceLine" id="cb70-3" title="3">(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">|</span><span class="st">  </span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="co">#3</span></a>
-<a class="sourceLine" id="cb70-4" title="4">(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">||</span><span class="st"> </span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="co">#4</span></a></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="warunki.html#cb70-1" aria-hidden="true"></a>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">&amp;</span><span class="st">  </span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="co">#1</span></span>
+<span id="cb70-2"><a href="warunki.html#cb70-2" aria-hidden="true"></a>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">&amp;&amp;</span><span class="st"> </span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="co">#2</span></span>
+<span id="cb70-3"><a href="warunki.html#cb70-3" aria-hidden="true"></a>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">|</span><span class="st">  </span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="co">#3</span></span>
+<span id="cb70-4"><a href="warunki.html#cb70-4" aria-hidden="true"></a>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">||</span><span class="st"> </span>(<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">2</span>) <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="co">#4</span></span></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
 <li>Napisz funkcję, która przyjmuje dwie zmienne numeryczne <code>populacja</code> i <code>powierzchnia</code>.
 Jeżeli wartości gęstości zaludnienia (liczba osób na jednostkę powierzchni) jest wyższa niż 123 wyświetl tekst <code>"Wartość powyżej średniej dla Polski."</code>.</li>
@@ -667,7 +696,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

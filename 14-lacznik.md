@@ -108,7 +108,7 @@ W przypadku zadeklarowania dłuższego obiektu wejściowego otrzymamy błąd:
 
 ```r
 konwersja_temp_cpp(c(0, 75, 110))
-#> Error in konwersja_temp_cpp(c(0, 75, 110)): Expecting a single value: [extent=3].
+#> Error in eval(expr, envir, enclos): Expecting a single value: [extent=3].
 ```
 
 W sekcji \@ref(zastosowanie-w-funkcjach) stworzyliśmy funkcję `mile_na_km()`, która przyjmuje i zwraca obiekt o klasie lista i zamienia wartości elementów tej listy z mil lądowych na kilometry. 
@@ -212,14 +212,13 @@ wynik
 #> # A tibble: 2 × 6
 #>   expression                  min median itr/s…¹ mem_a…²
 #>   <bch:expr>                <bch> <bch:>   <dbl> <bch:b>
-#> 1 mile_na_km(odl_mile2)     944µs  965µs   1000. 291.2KB
-#> 2 mile_na_km_cpp(odl_mile2) 450µs  458µs   2168.  84.8KB
+#> 1 mile_na_km(odl_mile2)     888µs  905µs   1066. 291.2KB
+#> 2 mile_na_km_cpp(odl_mile2) 447µs  460µs   2149.  84.8KB
 #> # … with 1 more variable: `gc/sec` <dbl>, and
 #> #   abbreviated variable names ¹​`itr/sec`, ²​mem_alloc
-#> # ℹ Use `colnames()` to see all variable names
 ```
 
-Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 2.11 raza mniejszy.
+Mimo otrzymania tego samego wyniku, czas wykonania funkcji napisanej w C++ był około 1.97 raza mniejszy.
 
 ### Wywoływanie kodu z plików .cpp {#sourceCpp}
 

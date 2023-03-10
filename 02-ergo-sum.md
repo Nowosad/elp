@@ -512,8 +512,8 @@ Ile PLN musisz wydać?
 Wylicz to w R.
 3) Masz trapez o długości podstaw `a = 5` i `b = 6` oraz wysokości `h = 3`.
 Stwórz nowy obiekt `pole_trapezu`, który zawiera obliczone pole tego trapezu.
-4) Wraz z grupą znajomych planujesz zamówić pizzę z dostawą i macie na to przeznaczonych 50 PLN. 
-Pizza o średnicy 30 cm kosztuje 23,5 PLN, a pizza o średnicy 50 cm kosztuje 50 PLN.
+4) Wraz z grupą znajomych planujesz zamówić pizzę z dostawą i macie na to przeznaczonych 60 PLN. 
+Pizza o średnicy 30 cm kosztuje 28,5 PLN, a pizza o średnicy 50 cm kosztuje 60 PLN.
 Wylicz w R, czy bardziej opłaca się kupno dwóch małych pizz czy jednej dużej.
 <!--zadanie z poprawą stylu-->
 5) Przejrzyj linki zawarte w tym rozdziale, w szczególności R-bloggers i R Weekly.

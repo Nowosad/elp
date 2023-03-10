@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Funkcje | Elementarz programisty</title>
   <meta name="description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Funkcje | Elementarz programisty" />
   <meta property="og:type" content="book" />
@@ -48,6 +48,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -60,25 +61,26 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -87,9 +89,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -139,26 +141,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Elementarz programisty</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#wymagania-wstępne"><i class="fa fa-check"></i>Wymagania wstępne</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#styl-książki"><i class="fa fa-check"></i>Styl książki</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#podziękowania"><i class="fa fa-check"></i>Podziękowania</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a><ul>
+<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="wprowadzenie.html"><a href="wprowadzenie.html#mity-programistyczne"><i class="fa fa-check"></i><b>1.1</b> Mity programistyczne</a></li>
 <li class="chapter" data-level="1.2" data-path="wprowadzenie.html"><a href="wprowadzenie.html#jezyki-programowania"><i class="fa fa-check"></i><b>1.2</b> Języki programowania</a></li>
 <li class="chapter" data-level="1.3" data-path="wprowadzenie.html"><a href="wprowadzenie.html#r"><i class="fa fa-check"></i><b>1.3</b> R</a></li>
 <li class="chapter" data-level="1.4" data-path="wprowadzenie.html"><a href="wprowadzenie.html#zad1"><i class="fa fa-check"></i><b>1.4</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>I Podstawy</b></span></li>
-<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a><ul>
+<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrażenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia</a></li>
-<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a><ul>
+<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="ergosum.html"><a href="ergosum.html#operator-przypisania"><i class="fa fa-check"></i><b>2.2.1</b> Operator przypisania</a></li>
 <li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dzialania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="ergosum.html"><a href="ergosum.html#ide"><i class="fa fa-check"></i><b>2.3</b> IDE</a></li>
-<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a><ul>
+<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="ergosum.html"><a href="ergosum.html#nazwy-obiektow"><i class="fa fa-check"></i><b>2.4.1</b> Nazwy obiektów</a></li>
 <li class="chapter" data-level="2.4.2" data-path="ergosum.html"><a href="ergosum.html#odstępy"><i class="fa fa-check"></i><b>2.4.2</b> Odstępy</a></li>
 <li class="chapter" data-level="2.4.3" data-path="ergosum.html"><a href="ergosum.html#komentarze"><i class="fa fa-check"></i><b>2.4.3</b> Komentarze</a></li>
@@ -168,7 +175,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5" data-path="ergosum.html"><a href="ergosum.html#resources"><i class="fa fa-check"></i><b>2.5</b> Dodatkowe materiały</a></li>
 <li class="chapter" data-level="2.6" data-path="ergosum.html"><a href="ergosum.html#zad2"><i class="fa fa-check"></i><b>2.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a><ul>
+<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="funkcje.html"><a href="funkcje.html#struktura-funkcji"><i class="fa fa-check"></i><b>3.1</b> Struktura funkcji</a></li>
 <li class="chapter" data-level="3.2" data-path="funkcje.html"><a href="funkcje.html#wbudowane-funkcje"><i class="fa fa-check"></i><b>3.2</b> Wbudowane funkcje</a></li>
 <li class="chapter" data-level="3.3" data-path="funkcje.html"><a href="funkcje.html#kolejnosc-funkcji"><i class="fa fa-check"></i><b>3.3</b> Kolejność wykonywania funkcji</a></li>
@@ -180,14 +188,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.9" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.9</b> Komunikaty</a></li>
 <li class="chapter" data-level="3.10" data-path="funkcje.html"><a href="funkcje.html#zad3"><i class="fa fa-check"></i><b>3.10</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a><ul>
+<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
 <li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagnieżdżone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdżone</a></li>
 <li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porównania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
 <li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wwwf"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach</a></li>
 <li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zad4"><i class="fa fa-check"></i><b>4.5</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a><ul>
+<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wektory"><i class="fa fa-check"></i><b>5.1</b> Wektory</a></li>
 <li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#właściwości-wektorów"><i class="fa fa-check"></i><b>5.2</b> Właściwości wektorów</a></li>
 <li class="chapter" data-level="5.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#pf-vector"><i class="fa fa-check"></i><b>5.3</b> Podstawowe funkcje</a></li>
@@ -203,7 +213,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ime"><i class="fa fa-check"></i><b>5.13</b> Wektory czasu</a></li>
 <li class="chapter" data-level="5.14" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zad5"><i class="fa fa-check"></i><b>5.14</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a><ul>
+<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#reprezentacja-tekstu"><i class="fa fa-check"></i><b>6.1</b> Reprezentacja tekstu</a></li>
 <li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekście"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście</a></li>
 <li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wt"><i class="fa fa-check"></i><b>6.3</b> Wydzielanie tekstu</a></li>
@@ -213,20 +224,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plików"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików</a></li>
 <li class="chapter" data-level="6.8" data-path="tekst.html"><a href="tekst.html#zad6"><i class="fa fa-check"></i><b>6.8</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a><ul>
-<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a><ul>
+<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie"><i class="fa fa-check"></i><b>7.1.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.1.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje"><i class="fa fa-check"></i><b>7.1.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.1.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-1"><i class="fa fa-check"></i><b>7.1.3</b> Wydzielanie</a></li>
 <li class="chapter" data-level="7.1.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie"><i class="fa fa-check"></i><b>7.1.4</b> Łączenie</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a><ul>
+<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-1"><i class="fa fa-check"></i><b>7.2.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.2.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-1"><i class="fa fa-check"></i><b>7.2.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.2.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-df"><i class="fa fa-check"></i><b>7.2.3</b> Wydzielanie</a></li>
 <li class="chapter" data-level="7.2.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-1"><i class="fa fa-check"></i><b>7.2.4</b> Łączenie</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a><ul>
+<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-2"><i class="fa fa-check"></i><b>7.3.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.3.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-2"><i class="fa fa-check"></i><b>7.3.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie</a></li>
@@ -236,8 +251,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#inne-klasy"><i class="fa fa-check"></i><b>7.5</b> Inne klasy obiektów</a></li>
 <li class="chapter" data-level="7.6" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zad7"><i class="fa fa-check"></i><b>7.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a><ul>
-<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a><ul>
+<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#składnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia</a></li>
 <li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#for-example"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
 <li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach</a></li>
@@ -246,7 +263,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#prog-fun"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne</a></li>
 <li class="chapter" data-level="8.4" data-path="petle.html"><a href="petle.html#zad8"><i class="fa fa-check"></i><b>8.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a><ul>
+<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy</a></li>
 <li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#działania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.2</b> Działania na plikach i folderach</a></li>
 <li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#dane-internetowe"><i class="fa fa-check"></i><b>9.3</b> Dane internetowe</a></li>
@@ -258,24 +276,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.9" data-path="io.html"><a href="io.html#zad9"><i class="fa fa-check"></i><b>9.9</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>II Narzędzia</b></span></li>
-<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a><ul>
+<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>10.1</b> API</a></li>
 <li class="chapter" data-level="10.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsluga-komunikatow"><i class="fa fa-check"></i><b>10.2</b> Obsługa komunikatów</a></li>
-<li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe</a><ul>
+<li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe</a>
+<ul>
 <li class="chapter" data-level="10.3.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#klasy"><i class="fa fa-check"></i><b>10.3.1</b> Klasy</a></li>
 <li class="chapter" data-level="10.3.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#metody"><i class="fa fa-check"></i><b>10.3.2</b> Metody</a></li>
 <li class="chapter" data-level="10.3.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#konstruktory"><i class="fa fa-check"></i><b>10.3.3</b> Konstruktory</a></li>
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zad11"><i class="fa fa-check"></i><b>10.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu</a><ul>
+<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.1</b> Testy jednostkowe</a></li>
 <li class="chapter" data-level="11.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>11.2</b> Profiling</a></li>
 <li class="chapter" data-level="11.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>11.3</b> Benchmarking</a></li>
 <li class="chapter" data-level="11.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zad12"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie</a><ul>
-<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady</a><ul>
+<li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady</a>
+<ul>
 <li class="chapter" data-level="12.1.1" data-path="debugging.html"><a href="debugging.html#pakiet-reprex"><i class="fa fa-check"></i><b>12.1.1</b> Pakiet <strong>reprex</strong></a></li>
 <li class="chapter" data-level="12.1.2" data-path="debugging.html"><a href="debugging.html#tworzenie-powtarzalnego-przykładu"><i class="fa fa-check"></i><b>12.1.2</b> Tworzenie powtarzalnego przykładu</a></li>
 </ul></li>
@@ -284,8 +307,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="debugging.html"><a href="debugging.html#debugger"><i class="fa fa-check"></i><b>12.4</b> Debugger</a></li>
 <li class="chapter" data-level="12.5" data-path="debugging.html"><a href="debugging.html#zad13"><i class="fa fa-check"></i><b>12.5</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik</a><ul>
-<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++</a><ul>
+<li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++</a>
+<ul>
 <li class="chapter" data-level="13.1.1" data-path="lacznik.html"><a href="lacznik.html#cppFunction"><i class="fa fa-check"></i><b>13.1.1</b> Wywoływanie kodu C++ wewnątrz skryptu R</a></li>
 <li class="chapter" data-level="13.1.2" data-path="lacznik.html"><a href="lacznik.html#sourceCpp"><i class="fa fa-check"></i><b>13.1.2</b> Wywoływanie kodu z plików .cpp</a></li>
 </ul></li>
@@ -293,8 +318,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.3" data-path="lacznik.html"><a href="lacznik.html#powloka-systemowa"><i class="fa fa-check"></i><b>13.3</b> Powłoka systemowa</a></li>
 <li class="chapter" data-level="13.4" data-path="lacznik.html"><a href="lacznik.html#zad14"><i class="fa fa-check"></i><b>13.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji</a><ul>
-<li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git</a><ul>
+<li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git</a>
+<ul>
 <li class="chapter" data-level="14.1.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#konfiguracja-systemu-git"><i class="fa fa-check"></i><b>14.1.1</b> Konfiguracja systemu Git</a></li>
 <li class="chapter" data-level="14.1.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium"><i class="fa fa-check"></i><b>14.1.2</b> Repozytorium</a></li>
 <li class="chapter" data-level="14.1.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodawanie-zmian"><i class="fa fa-check"></i><b>14.1.3</b> Dodawanie zmian</a></li>
@@ -305,20 +332,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.1.8" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#wysylanie-zmian"><i class="fa fa-check"></i><b>14.1.8</b> Wysyłanie zmian</a></li>
 <li class="chapter" data-level="14.1.9" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#aktualizowanie-zmian"><i class="fa fa-check"></i><b>14.1.9</b> Aktualizowanie zmian</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub</a><ul>
+<li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub</a>
+<ul>
 <li class="chapter" data-level="14.2.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#tworzenie-zdanego-repo"><i class="fa fa-check"></i><b>14.2.1</b> Tworzenie zdanego repo</a></li>
 <li class="chapter" data-level="14.2.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-github"><i class="fa fa-check"></i><b>14.2.2</b> Repozytorium GitHub</a></li>
 <li class="chapter" data-level="14.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-możliwości-github"><i class="fa fa-check"></i><b>14.2.3</b> Dodatkowe możliwości GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="14.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rstudio-git"><i class="fa fa-check"></i><b>14.3</b> Kontrola wersji w RStudio</a></li>
-<li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git</a><ul>
+<li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git</a>
+<ul>
 <li class="chapter" data-level="14.4.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#nowy-projekt"><i class="fa fa-check"></i><b>14.4.1</b> Nowy projekt</a></li>
 <li class="chapter" data-level="14.4.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#istniejacy-projekt"><i class="fa fa-check"></i><b>14.4.2</b> Istniejący projekt</a></li>
 </ul></li>
 <li class="chapter" data-level="14.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#problemy-z-kontrolą-wersji"><i class="fa fa-check"></i><b>14.5</b> Problemy z kontrolą wersji</a></li>
 <li class="chapter" data-level="14.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zad15"><i class="fa fa-check"></i><b>14.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a><ul>
+<li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a>
+<ul>
 <li class="chapter" data-level="15.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#nazwa-pakietu"><i class="fa fa-check"></i><b>15.1</b> Nazwa pakietu</a></li>
 <li class="chapter" data-level="15.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-szkieletu-pakietu"><i class="fa fa-check"></i><b>15.2</b> Tworzenie szkieletu pakietu</a></li>
 <li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>15.3</b> Opis pakietu</a></li>
@@ -332,7 +362,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietów"><i class="fa fa-check"></i><b>15.11</b> Publikowanie pakietów</a></li>
 <li class="chapter" data-level="15.12" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zad16"><i class="fa fa-check"></i><b>15.12</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie</a><ul>
+<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie</a>
+<ul>
 <li class="chapter" data-level="16.1" data-path="podsumowanie.html"><a href="podsumowanie.html#grafika"><i class="fa fa-check"></i><b>16.1</b> Grafika</a></li>
 <li class="chapter" data-level="16.2" data-path="podsumowanie.html"><a href="podsumowanie.html#analiza-danych"><i class="fa fa-check"></i><b>16.2</b> Analiza danych</a></li>
 <li class="chapter" data-level="16.3" data-path="podsumowanie.html"><a href="podsumowanie.html#inne-zastosowania"><i class="fa fa-check"></i><b>16.3</b> Inne zastosowania</a></li>
@@ -360,14 +391,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="funkcje" class="section level1 hasAnchor">
+<div id="funkcje" class="section level1 hasAnchor" number="3">
 <h1><span class="header-section-number">3</span> Funkcje<a href="funkcje.html#funkcje" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Funkcje to programy, który przyjmują pewne argumenty, przetwarzają je i zwracają jakiś wynik.
 Są one zbudowane z dostępnych elementów języka programowania jak i też z innych dostępnych funkcji.
 Funkcje mogą służyć do wielu celów, od prostych odliczeń arytmetycznych, poprzez przetwarzanie tekstu, tworzenie wykresów i map, aż do bardziej złożonych i specjalistycznych procedur.
 Ich celem jest ułatwienie pracy programistycznej i zwiększenie czytelności kodu.
 Zamiast wielokrotnie powtarzać te same linie kodu, możliwe jest napisanie funkcji raz, a następnie użycie jej wiele razy.</p>
-<div id="struktura-funkcji" class="section level2 hasAnchor">
+<div id="struktura-funkcji" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> Struktura funkcji<a href="funkcje.html#struktura-funkcji" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Funkcje są reprezentowane w R jako specjalne obiekty, które można uruchomić poprzez dodanie do ich nazwy nawiasów okrągłych.
 Przykładowo, funkcja <code>mean()</code> wylicza średnią.
@@ -382,57 +413,57 @@ Rycina 3.1: Przykład struktury funkcji w R.
 </div>
 <p>W efekcie działania funkcji otrzymano wynik - <code>246348.9</code> - który jest średnią wartością w zadanym wektorze.</p>
 </div>
-<div id="wbudowane-funkcje" class="section level2 hasAnchor">
+<div id="wbudowane-funkcje" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Wbudowane funkcje<a href="funkcje.html#wbudowane-funkcje" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>R posiada wiele wbudowanych funkcji, które znacznie ułatwiają wykonywanie bardziej złożonych operacji.
 Pierwsze z funkcji, w tym <code>c()</code>, zostały już poznane w sekcji <a href="ergosum.html#dzialania-na-obiektach">2.2.2</a>.
 Ta funkcja pozwala na łączenie kolejnych obiektów rozdzielonych przecinkami.
 Poniższy obiekt, <code>x</code> jest w efekcie wektorem zawierającym trzy wartości <code>8.2</code>, <code>10.3</code> oraz <code>12.0</code>.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1">x =<span class="st"> </span><span class="kw">c</span>(<span class="fl">8.2</span>, <span class="fl">10.3</span>, <span class="fl">12.0</span>)</a>
-<a class="sourceLine" id="cb27-2" title="2">x</a>
-<a class="sourceLine" id="cb27-3" title="3"><span class="co">#&gt; [1]  8.2 10.3 12.0</span></a></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="funkcje.html#cb27-1" aria-hidden="true"></a>x =<span class="st"> </span><span class="kw">c</span>(<span class="fl">8.2</span>, <span class="fl">10.3</span>, <span class="fl">12.0</span>)</span>
+<span id="cb27-2"><a href="funkcje.html#cb27-2" aria-hidden="true"></a>x</span>
+<span id="cb27-3"><a href="funkcje.html#cb27-3" aria-hidden="true"></a><span class="co">#&gt; [1]  8.2 10.3 12.0</span></span></code></pre></div>
 <p>Wyliczenie średniej z tych trzech wartości wymaga ich zsumowania, a następnie podzielenia uzyskanej wartości przez liczbę wartości.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1">(<span class="fl">8.2</span> <span class="op">+</span><span class="st"> </span><span class="fl">10.3</span> <span class="op">+</span><span class="st"> </span><span class="fl">12.0</span>) <span class="op">/</span><span class="st"> </span><span class="dv">3</span></a>
-<a class="sourceLine" id="cb28-2" title="2"><span class="co">#&gt; [1] 10.2</span></a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="funkcje.html#cb28-1" aria-hidden="true"></a>(<span class="fl">8.2</span> <span class="op">+</span><span class="st"> </span><span class="fl">10.3</span> <span class="op">+</span><span class="st"> </span><span class="fl">12.0</span>) <span class="op">/</span><span class="st"> </span><span class="dv">3</span></span>
+<span id="cb28-2"><a href="funkcje.html#cb28-2" aria-hidden="true"></a><span class="co">#&gt; [1] 10.2</span></span></code></pre></div>
 <p>W przypadku jednak, gdy chcemy dodać czwartą, piątą, itd. wartość należy zmieniać kod w co najmniej dwóch miejscach.
 Konieczne jest dodanie nowej wartości do zsumowania, a następnie zmianę wartości określającej liczbę elementów.</p>
 <p>Zamiast tych dwóch operacji, można wykonać tylko jedną zmianę w obiekcie <code>x</code>, a następnie przetworzyć go używając funkcji wbudowanych w R - <code>sum()</code> oraz <code>length()</code>.
 Pierwsza z nich sumuje wartości z wektora, druga natomiast zwraca liczbę elementów w wektorze.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1"><span class="kw">sum</span>(x) <span class="op">/</span><span class="st"> </span><span class="kw">length</span>(x)</a>
-<a class="sourceLine" id="cb29-2" title="2"><span class="co">#&gt; [1] 10.2</span></a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="funkcje.html#cb29-1" aria-hidden="true"></a><span class="kw">sum</span>(x) <span class="op">/</span><span class="st"> </span><span class="kw">length</span>(x)</span>
+<span id="cb29-2"><a href="funkcje.html#cb29-2" aria-hidden="true"></a><span class="co">#&gt; [1] 10.2</span></span></code></pre></div>
 <p>Powyższy kod można też dalej uprościć, poprzez użycie wbudowanej w R funkcji do liczenia średniej - <code>mean()</code>.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1"><span class="kw">mean</span>(x)</a>
-<a class="sourceLine" id="cb30-2" title="2"><span class="co">#&gt; [1] 10.2</span></a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="funkcje.html#cb30-1" aria-hidden="true"></a><span class="kw">mean</span>(x)</span>
+<span id="cb30-2"><a href="funkcje.html#cb30-2" aria-hidden="true"></a><span class="co">#&gt; [1] 10.2</span></span></code></pre></div>
 <p>Jej użycie powoduje, że wystarczy wykonać tylko jedną zmianę w obiekcie <code>x</code>, aby uzyskać poprawny wynik, a dodatkowo napisanie tego obliczenia wymaga napisania znacznie krótszego kodu.</p>
 <p>Funkcje można używać w celu wyświetlenia oczekiwanego rezultatu, ale także, aby na podstawie wyniku funkcji tworzyć nowe obiekty, takie jak <code>y</code> poniżej.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1">y =<span class="st"> </span><span class="kw">mean</span>(x)</a>
-<a class="sourceLine" id="cb31-2" title="2">y</a>
-<a class="sourceLine" id="cb31-3" title="3"><span class="co">#&gt; [1] 10.2</span></a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="funkcje.html#cb31-1" aria-hidden="true"></a>y =<span class="st"> </span><span class="kw">mean</span>(x)</span>
+<span id="cb31-2"><a href="funkcje.html#cb31-2" aria-hidden="true"></a>y</span>
+<span id="cb31-3"><a href="funkcje.html#cb31-3" aria-hidden="true"></a><span class="co">#&gt; [1] 10.2</span></span></code></pre></div>
 </div>
-<div id="kolejnosc-funkcji" class="section level2 hasAnchor">
+<div id="kolejnosc-funkcji" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> Kolejność wykonywania funkcji<a href="funkcje.html#kolejnosc-funkcji" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Wykonywanie funkcji w R odbywa się linia po linii, od góry do dołu.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" title="1">a =<span class="st"> </span><span class="dv">4</span></a>
-<a class="sourceLine" id="cb32-2" title="2">b =<span class="st"> </span><span class="dv">5</span></a>
-<a class="sourceLine" id="cb32-3" title="3">a2 =<span class="st"> </span>a<span class="op">^</span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb32-4" title="4">b2 =<span class="st"> </span>b<span class="op">^</span><span class="dv">2</span></a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="funkcje.html#cb32-1" aria-hidden="true"></a>a =<span class="st"> </span><span class="dv">4</span></span>
+<span id="cb32-2"><a href="funkcje.html#cb32-2" aria-hidden="true"></a>b =<span class="st"> </span><span class="dv">5</span></span>
+<span id="cb32-3"><a href="funkcje.html#cb32-3" aria-hidden="true"></a>a2 =<span class="st"> </span>a<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb32-4"><a href="funkcje.html#cb32-4" aria-hidden="true"></a>b2 =<span class="st"> </span>b<span class="op">^</span><span class="dv">2</span></span></code></pre></div>
 <p>R pozwala na dwa podstawowe sposoby łączenia działania wielu funkcji<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>.
 Pierwszy z nich polega na tworzeniu pośrednich obiektów jako wyników działania pojedynczych funkcji.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1">suma_a2b2 =<span class="st"> </span><span class="kw">sum</span>(a2, b2)</a>
-<a class="sourceLine" id="cb33-2" title="2">przekatna =<span class="st"> </span><span class="kw">sqrt</span>(suma_a2b2)</a>
-<a class="sourceLine" id="cb33-3" title="3">przekatna</a>
-<a class="sourceLine" id="cb33-4" title="4"><span class="co">#&gt; [1] 6.4</span></a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="funkcje.html#cb33-1" aria-hidden="true"></a>suma_a2b2 =<span class="st"> </span><span class="kw">sum</span>(a2, b2)</span>
+<span id="cb33-2"><a href="funkcje.html#cb33-2" aria-hidden="true"></a>przekatna =<span class="st"> </span><span class="kw">sqrt</span>(suma_a2b2)</span>
+<span id="cb33-3"><a href="funkcje.html#cb33-3" aria-hidden="true"></a>przekatna</span>
+<span id="cb33-4"><a href="funkcje.html#cb33-4" aria-hidden="true"></a><span class="co">#&gt; [1] 6.4</span></span></code></pre></div>
 <p>Drugi sposób opiera się o zagnieżdżanie funkcji.
 W tej sytuacji najpierw wykonywana jest funkcja w środku, na następnie kolejne funkcje coraz bliżej brzegu.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb34-1" title="1">przekatna =<span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">sum</span>(a2, b2))</a>
-<a class="sourceLine" id="cb34-2" title="2">przekatna</a>
-<a class="sourceLine" id="cb34-3" title="3"><span class="co">#&gt; [1] 6.4</span></a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="funkcje.html#cb34-1" aria-hidden="true"></a>przekatna =<span class="st"> </span><span class="kw">sqrt</span>(<span class="kw">sum</span>(a2, b2))</span>
+<span id="cb34-2"><a href="funkcje.html#cb34-2" aria-hidden="true"></a>przekatna</span>
+<span id="cb34-3"><a href="funkcje.html#cb34-3" aria-hidden="true"></a><span class="co">#&gt; [1] 6.4</span></span></code></pre></div>
 </div>
-<div id="dokumentacja-funkcji" class="section level2 hasAnchor">
+<div id="dokumentacja-funkcji" class="section level2 hasAnchor" number="3.4">
 <h2><span class="header-section-number">3.4</span> Dokumentacja funkcji<a href="funkcje.html#dokumentacja-funkcji" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Każda wbudowana funkcja w R posiada swoją dokumentację<a href="#fn23" class="footnote-ref" id="fnref23"><sup>23</sup></a>.
 Można ją wyświetlić poprzez dodanie znaku zapytania przed nazwą funkcji, a następnie wykonanie tej linii kodu.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1">?mean</a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="funkcje.html#cb35-1" aria-hidden="true"></a>?mean</span></code></pre></div>
 <p>Alternatywnie, w RStudio możliwe jest użycie skrótu F1 gdy kursor znajduje się na nazwie funkcji.</p>
 <p>Dokumentacja każdej funkcji, zwana inaczej plikiem pomocy, ma zazwyczaj podobną strukturę.</p>
 <ul>
@@ -453,7 +484,7 @@ Jeżeli nie jesteśmy pewni jak dana funkcja działa warto zacząć od skopiowan
 <p>Czytanie dokumentacji wymaga pewnej wprawy i doświadczenia.
 Nie bój się używać innych źródeł pomocy (zobacz sekcję <a href="ergosum.html#resources">2.5</a>), jeżeli potrzebujesz zrozumieć działanie danej funkcji.</p>
 </div>
-<div id="pakiety" class="section level2 hasAnchor">
+<div id="pakiety" class="section level2 hasAnchor" number="3.5">
 <h2><span class="header-section-number">3.5</span> Pakiety<a href="funkcje.html#pakiety" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Pakiet to zorganizowany zbiór funkcji, który rozszerza możliwości R.
 <!-- przykłady -->
@@ -468,10 +499,10 @@ Pakiety oprócz kodu zawierają szereg dodatkowych istotnych elementów, takich 
 Istnieje jednak jedno centralne repozytorium (CRAN, ang. <em>the Comprehensive R Archive Network</em>), które zawiera oficjalne wersje pakietów R.
 Wersje deweloperskie (rozwojowe) często można znaleźć na platformie <a href="https://github.com/">GitHub</a>.</p>
 <p>Do instalacji pakietu w R z repozytorium CRAN służy wbudowana funkcja <code>install.packages()</code>, np:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;stringr&quot;</span>) <span class="co">#instalacja pakietu stringr</span></a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="funkcje.html#cb36-1" aria-hidden="true"></a><span class="kw">install.packages</span>(<span class="st">&quot;stringr&quot;</span>) <span class="co">#instalacja pakietu stringr</span></span></code></pre></div>
 <p>Zainstalowanie pakietu w R z platformy GitHub jest możliwe używając, np. funkcji <code>install_github()</code> z pakietu <strong>remotes</strong>.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1"><span class="co"># install.packages(&quot;remotes&quot;)</span></a>
-<a class="sourceLine" id="cb37-2" title="2">remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;tidyverse/stringr&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="funkcje.html#cb37-1" aria-hidden="true"></a><span class="co"># install.packages(&quot;remotes&quot;)</span></span>
+<span id="cb37-2"><a href="funkcje.html#cb37-2" aria-hidden="true"></a>remotes<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;tidyverse/stringr&quot;</span>)</span></code></pre></div>
 <p>W przypadku instalacji pakietu w R z platformy GitHub należy podać nazwę użytkownika lub organizacji, która tworzy ten pakiet (np. powyżej <code>tidyverse</code>) oraz nazwę pakietu (np. powyżej <code>stringr</code>) oddzielone znakiem <code>/</code>.</p>
 <p>Podobnie jak instalowanie programów na komputerze - zainstalowanie pakietu odbywa się tylko jeden raz.</p>
 
@@ -484,30 +515,28 @@ Postać binarna została już wcześniej skompilowana na zewnętrznym komputerze
 Jest ona dostępna dla systemów Windows i Mac OS.
 Niestety, nie wszystkie pakiety (lub ich wersje) posiadają postać binarną i wymagana jest ich kompilacja.
 </div>
-
 <p>Użycie wybranego pakietu wymaga dołączenia go do R za pomocą funkcji <code>library()</code>.
 Dołączenie wybranych pakietów do R robimy po każdym uruchomieniu R.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">library</span>(stringr)</a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="funkcje.html#cb38-1" aria-hidden="true"></a><span class="kw">library</span>(stringr)</span></code></pre></div>
 <p>W przypadku, gdy chcemy użyć zewnętrznej funkcji, ale nie dołączyliśmy odpowiedniego pakietu, pojawi się błąd o treści <code>could not find function "nazwa_funkcji"</code>.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" title="1"><span class="kw">str_sub</span>(<span class="st">&quot;chronologia&quot;</span>, <span class="dt">start =</span> <span class="dv">1</span>, <span class="dt">end =</span> <span class="dv">6</span>)</a>
-<a class="sourceLine" id="cb39-2" title="2"><span class="co">#&gt; Error in str_sub(&quot;chronologia&quot;, start = 1, end = 6) : </span></a>
-<a class="sourceLine" id="cb39-3" title="3"><span class="co">#&gt;  could not find function &quot;str_sub&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="funkcje.html#cb39-1" aria-hidden="true"></a><span class="kw">str_sub</span>(<span class="st">&quot;chronologia&quot;</span>, <span class="dt">start =</span> <span class="dv">1</span>, <span class="dt">end =</span> <span class="dv">6</span>)</span>
+<span id="cb39-2"><a href="funkcje.html#cb39-2" aria-hidden="true"></a><span class="co">#&gt; Error in str_sub(&quot;chronologia&quot;, start = 1, end = 6) : </span></span>
+<span id="cb39-3"><a href="funkcje.html#cb39-3" aria-hidden="true"></a><span class="co">#&gt;  could not find function &quot;str_sub&quot;</span></span></code></pre></div>
 <p>Istnieją dwa możliwe rozwiązania powyższego problemu.
 Po pierwsze możliwe jest dołączenie pakietu poprzez <code>library(stringr)</code>.
 Po drugie można bezpośrednio zdefiniować z jakiego pakietu pochodzi konkretna funkcja używając nazwy pakietu i operatora <code>::</code>.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" title="1">stringr<span class="op">::</span><span class="kw">str_sub</span>(<span class="st">&quot;chronologia&quot;</span>, <span class="dt">start =</span> <span class="dv">1</span>, <span class="dt">end =</span> <span class="dv">6</span>)</a>
-<a class="sourceLine" id="cb40-2" title="2"><span class="co">#&gt; [1] &quot;chrono&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="funkcje.html#cb40-1" aria-hidden="true"></a>stringr<span class="op">::</span><span class="kw">str_sub</span>(<span class="st">&quot;chronologia&quot;</span>, <span class="dt">start =</span> <span class="dv">1</span>, <span class="dt">end =</span> <span class="dv">6</span>)</span>
+<span id="cb40-2"><a href="funkcje.html#cb40-2" aria-hidden="true"></a><span class="co">#&gt; [1] &quot;chrono&quot;</span></span></code></pre></div>
 
 <div class="rmdinfo">
 Operator <code>::</code> może być też pomocny w przypadku, gdy kilka pakietów ma funkcję o tej samej nazwie.
 Wówczas, aby kod został poprawnie wykonany, warto podać nie tylko nazwę funkcji ale też nazwę pakietu z jakiego ona pochodzi.
 </div>
-
 <!-- block - inaczej biblioteki, moduły, etc -->
 <!-- overwhelmed by the number! -->
 <!-- https://juliasilge.com/blog/r-journal-navigating/ -->
 </div>
-<div id="algorytmy" class="section level2 hasAnchor">
+<div id="algorytmy" class="section level2 hasAnchor" number="3.6">
 <h2><span class="header-section-number">3.6</span> Algorytmy<a href="funkcje.html#algorytmy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Algorytm to zbiór kroków prowadzących do uzyskania określonego celu.
 Algorytmy można porównać do przepisu kucharskiego, w którym opisany jest szereg czynności aby uzyskać konkretną potrawę.
@@ -515,36 +544,36 @@ Podobnie jak w przepisie kucharskim, algorytmy wymagają posiadania odpowiednich
 <p>Tworzenie nowych algorytmów często zaczyna się od narysowania schematu procedury działania lub też pseudokodu.
 Kolejnym krokiem jest zapisanie tego algorytmu w wybranym języku lub językach programowania<!--^[Łączenie różnych języków programowania jest wyjaśnione w rozdziale \@ref(lacznik)]--> w formie skryptu (sekcja <a href="funkcje.html#tworzenie-skryptow">3.7</a>) lub funkcji (sekcja <a href="funkcje.html#budowanie-funkcji">3.8</a>).</p>
 </div>
-<div id="tworzenie-skryptow" class="section level2 hasAnchor">
+<div id="tworzenie-skryptow" class="section level2 hasAnchor" number="3.7">
 <h2><span class="header-section-number">3.7</span> Tworzenie skryptów<a href="funkcje.html#tworzenie-skryptow" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <!--kodowanie tekstu-->
 <p>Skrypt w R to plik testowy z rozszerzeniem <code>.R</code>, który zawiera szereg linii kodu w celu uzyskania konkretnego efektu.
 Może on zawierać zaledwie kilka jak i setki linii kodu w zależności od złożoności postawionego problemu.
 Zobaczmy jak wyglądają skrypty na prostym przykładzie - przeliczania wartości temperatury w stopniach ze skali Fahrenheita na skalę Celsjusza.
 Otrzymaliśmy informację, że w “mieście A” temperatura w stopniach Fahrenheita wynosi 75.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" title="1">miasto_a_f =<span class="st"> </span><span class="dv">75</span></a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="funkcje.html#cb41-1" aria-hidden="true"></a>miasto_a_f =<span class="st"> </span><span class="dv">75</span></span></code></pre></div>
 <p>Pierwszym naszym krokiem powinno być dowiedzenie się jaka jest relacja pomiędzy skalą Fahrenheita na skalą Celsjusza.</p>
 <p><span class="math display">\[T_{Celsjusz} = \frac{T_{Fahrenheit} - 32}{1.8}\]</span></p>
 <p>Następnie powyższy wzór można przepisać do postaci kodu w języku R oraz podstawić do niego wartość temperatury w stopniach Fahrenheita w mieście A.
 Ostatnim etapem jest wyświetlenie uzyskanego wyniku - temperatura w mieście A wynosi ok. 24 stopnie Celsjusza.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" title="1">miasto_a_c =<span class="st"> </span>(miasto_a_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></a>
-<a class="sourceLine" id="cb42-2" title="2">miasto_a_c</a>
-<a class="sourceLine" id="cb42-3" title="3"><span class="co">#&gt; [1] 23.9</span></a></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="funkcje.html#cb42-1" aria-hidden="true"></a>miasto_a_c =<span class="st"> </span>(miasto_a_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></span>
+<span id="cb42-2"><a href="funkcje.html#cb42-2" aria-hidden="true"></a>miasto_a_c</span>
+<span id="cb42-3"><a href="funkcje.html#cb42-3" aria-hidden="true"></a><span class="co">#&gt; [1] 23.9</span></span></code></pre></div>
 <p>Powyższe kroki można również zapisać do pliku tekstowego.</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" title="1"><span class="co"># plik przeliczanie-temp.R</span></a>
-<a class="sourceLine" id="cb43-2" title="2">miasto_a_f =<span class="st"> </span><span class="dv">75</span></a>
-<a class="sourceLine" id="cb43-3" title="3">miasto_a_c =<span class="st"> </span>(miasto_a_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></a>
-<a class="sourceLine" id="cb43-4" title="4">miasto_a_c</a></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="funkcje.html#cb43-1" aria-hidden="true"></a><span class="co"># plik przeliczanie-temp.R</span></span>
+<span id="cb43-2"><a href="funkcje.html#cb43-2" aria-hidden="true"></a>miasto_a_f =<span class="st"> </span><span class="dv">75</span></span>
+<span id="cb43-3"><a href="funkcje.html#cb43-3" aria-hidden="true"></a>miasto_a_c =<span class="st"> </span>(miasto_a_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></span>
+<span id="cb43-4"><a href="funkcje.html#cb43-4" aria-hidden="true"></a>miasto_a_c</span></code></pre></div>
 <p>Co można zrobić jeżeli mamy więcej podobnych pomiarów, które chcemy wykonać?
 Najprostszą opcją jest użycie kopiuj/wklej i powielenie tego samego kodu, a później naniesienie małych zmian, np. nazw obiektów.
 <!-- ^[o wekrtoryzacji] -->
 <!-- or use data.frame? --></p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" title="1">miasto_a_f =<span class="st"> </span><span class="dv">75</span></a>
-<a class="sourceLine" id="cb44-2" title="2">miasto_b_f =<span class="st"> </span><span class="dv">110</span></a>
-<a class="sourceLine" id="cb44-3" title="3">miasto_c_f =<span class="st"> </span><span class="dv">0</span></a>
-<a class="sourceLine" id="cb44-4" title="4">miasto_a_c =<span class="st"> </span>(miasto_a_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></a>
-<a class="sourceLine" id="cb44-5" title="5">miasto_b_c =<span class="st"> </span>(miasto_b_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></a>
-<a class="sourceLine" id="cb44-6" title="6">miasto_c_c =<span class="st"> </span>(miasto_c_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></a></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="funkcje.html#cb44-1" aria-hidden="true"></a>miasto_a_f =<span class="st"> </span><span class="dv">75</span></span>
+<span id="cb44-2"><a href="funkcje.html#cb44-2" aria-hidden="true"></a>miasto_b_f =<span class="st"> </span><span class="dv">110</span></span>
+<span id="cb44-3"><a href="funkcje.html#cb44-3" aria-hidden="true"></a>miasto_c_f =<span class="st"> </span><span class="dv">0</span></span>
+<span id="cb44-4"><a href="funkcje.html#cb44-4" aria-hidden="true"></a>miasto_a_c =<span class="st"> </span>(miasto_a_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></span>
+<span id="cb44-5"><a href="funkcje.html#cb44-5" aria-hidden="true"></a>miasto_b_c =<span class="st"> </span>(miasto_b_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></span>
+<span id="cb44-6"><a href="funkcje.html#cb44-6" aria-hidden="true"></a>miasto_c_c =<span class="st"> </span>(miasto_c_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></span></code></pre></div>
 <p>Powyższe podejście jest poprawne, ale ma ono kilka wad:</p>
 <ul>
 <li>Łatwo jest o popełnienie jakiegoś prostego błędu lub literówki podczas adaptacji kodu (np. można zapomnieć zmienić nazwę jakiejś zmiennej).</li>
@@ -554,55 +583,55 @@ Najprostszą opcją jest użycie kopiuj/wklej i powielenie tego samego kodu, a p
 <p>To podejście jest też niezgodne z jedną z najważniejszych reguł w programowaniu - regułą DRY (Nie powtarzaj się, ang. <em>Don’t Repeat Yourself</em>).
 Zamiast tworzenia skryptu w oparciu o kopiuj/wklej lepiej pomyśleć nad zbudowaniem odpowiedniej funkcji<a href="#fn24" class="footnote-ref" id="fnref24"><sup>24</sup></a>.</p>
 </div>
-<div id="budowanie-funkcji" class="section level2 hasAnchor">
+<div id="budowanie-funkcji" class="section level2 hasAnchor" number="3.8">
 <h2><span class="header-section-number">3.8</span> Budowanie funkcji<a href="funkcje.html#budowanie-funkcji" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Funkcje pozwalają na automatyzację często używanych obliczeń.
 Formalnie funkcje składają się z trzech elementów: listy argumentów (ang. <em>formals</em>), ciała funkcji (ang. <em>body</em>) oraz środowiska (ang. <em>environment</em>).
 Pierwsze dwa elementy ustala twórca funkcji, natomiast środowisko jest określane na podstawie tego, gdzie dana funkcja została zdefiniowana<!--^[footnote o environment]https://rstudio-education.github.io/hopr/environments.html-->.
 Dodatkowo każda funkcja ma swoją nazwę.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" title="1">moja_funkcja =<span class="st"> </span><span class="cf">function</span>(x, y, z){</a>
-<a class="sourceLine" id="cb45-2" title="2">  pod =<span class="st"> </span>y <span class="op">/</span><span class="st"> </span>z</a>
-<a class="sourceLine" id="cb45-3" title="3">  wynik =<span class="st"> </span>x <span class="op">*</span><span class="st"> </span>pod</a>
-<a class="sourceLine" id="cb45-4" title="4">  wynik</a>
-<a class="sourceLine" id="cb45-5" title="5">}</a></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="funkcje.html#cb45-1" aria-hidden="true"></a>moja_funkcja =<span class="st"> </span><span class="cf">function</span>(x, y, z){</span>
+<span id="cb45-2"><a href="funkcje.html#cb45-2" aria-hidden="true"></a>  pod =<span class="st"> </span>y <span class="op">/</span><span class="st"> </span>z</span>
+<span id="cb45-3"><a href="funkcje.html#cb45-3" aria-hidden="true"></a>  wynik =<span class="st"> </span>x <span class="op">*</span><span class="st"> </span>pod</span>
+<span id="cb45-4"><a href="funkcje.html#cb45-4" aria-hidden="true"></a>  wynik</span>
+<span id="cb45-5"><a href="funkcje.html#cb45-5" aria-hidden="true"></a>}</span></code></pre></div>
 <!-- wynik vs return(wynik) -->
 <p>Lista argumentów wymienia obiekty wejściowe funkcji.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">formals</span>(moja_funkcja)</a>
-<a class="sourceLine" id="cb46-2" title="2"><span class="co">#&gt; $x</span></a>
-<a class="sourceLine" id="cb46-3" title="3"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb46-4" title="4"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb46-5" title="5"><span class="co">#&gt; $y</span></a>
-<a class="sourceLine" id="cb46-6" title="6"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb46-7" title="7"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb46-8" title="8"><span class="co">#&gt; $z</span></a></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="funkcje.html#cb46-1" aria-hidden="true"></a><span class="kw">formals</span>(moja_funkcja)</span>
+<span id="cb46-2"><a href="funkcje.html#cb46-2" aria-hidden="true"></a><span class="co">#&gt; $x</span></span>
+<span id="cb46-3"><a href="funkcje.html#cb46-3" aria-hidden="true"></a><span class="co">#&gt; </span></span>
+<span id="cb46-4"><a href="funkcje.html#cb46-4" aria-hidden="true"></a><span class="co">#&gt; </span></span>
+<span id="cb46-5"><a href="funkcje.html#cb46-5" aria-hidden="true"></a><span class="co">#&gt; $y</span></span>
+<span id="cb46-6"><a href="funkcje.html#cb46-6" aria-hidden="true"></a><span class="co">#&gt; </span></span>
+<span id="cb46-7"><a href="funkcje.html#cb46-7" aria-hidden="true"></a><span class="co">#&gt; </span></span>
+<span id="cb46-8"><a href="funkcje.html#cb46-8" aria-hidden="true"></a><span class="co">#&gt; $z</span></span></code></pre></div>
 <p>Ciało zawiera kod danej funkcji.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" title="1"><span class="kw">body</span>(moja_funkcja)</a>
-<a class="sourceLine" id="cb47-2" title="2"><span class="co">#&gt; {</span></a>
-<a class="sourceLine" id="cb47-3" title="3"><span class="co">#&gt;     pod = y/z</span></a>
-<a class="sourceLine" id="cb47-4" title="4"><span class="co">#&gt;     wynik = x * pod</span></a>
-<a class="sourceLine" id="cb47-5" title="5"><span class="co">#&gt;     wynik</span></a>
-<a class="sourceLine" id="cb47-6" title="6"><span class="co">#&gt; }</span></a></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="funkcje.html#cb47-1" aria-hidden="true"></a><span class="kw">body</span>(moja_funkcja)</span>
+<span id="cb47-2"><a href="funkcje.html#cb47-2" aria-hidden="true"></a><span class="co">#&gt; {</span></span>
+<span id="cb47-3"><a href="funkcje.html#cb47-3" aria-hidden="true"></a><span class="co">#&gt;     pod = y/z</span></span>
+<span id="cb47-4"><a href="funkcje.html#cb47-4" aria-hidden="true"></a><span class="co">#&gt;     wynik = x * pod</span></span>
+<span id="cb47-5"><a href="funkcje.html#cb47-5" aria-hidden="true"></a><span class="co">#&gt;     wynik</span></span>
+<span id="cb47-6"><a href="funkcje.html#cb47-6" aria-hidden="true"></a><span class="co">#&gt; }</span></span></code></pre></div>
 <p>Środowisko określa, gdzie dana funkcja jest zlokalizowana.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" title="1"><span class="kw">environment</span>(moja_funkcja)</a>
-<a class="sourceLine" id="cb48-2" title="2"><span class="co">#&gt; &lt;environment: R_GlobalEnv&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="funkcje.html#cb48-1" aria-hidden="true"></a><span class="kw">environment</span>(moja_funkcja)</span>
+<span id="cb48-2"><a href="funkcje.html#cb48-2" aria-hidden="true"></a><span class="co">#&gt; &lt;environment: R_GlobalEnv&gt;</span></span></code></pre></div>
 <p>Przykładowa funkcja odpowiadająca problemowi z poprzedniej sekcji może wyglądać w poniższy sposób:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" title="1">konwersja_temp =<span class="st"> </span><span class="cf">function</span>(temperatura_f){</a>
-<a class="sourceLine" id="cb49-2" title="2">    (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></a>
-<a class="sourceLine" id="cb49-3" title="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="funkcje.html#cb49-1" aria-hidden="true"></a>konwersja_temp =<span class="st"> </span><span class="cf">function</span>(temperatura_f){</span>
+<span id="cb49-2"><a href="funkcje.html#cb49-2" aria-hidden="true"></a>    (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></span>
+<span id="cb49-3"><a href="funkcje.html#cb49-3" aria-hidden="true"></a>}</span></code></pre></div>
 <p>Nowa funkcja nazywa się <code>konwersja_temp()</code> oraz posiada tylko jeden argument <code>temperatura_f</code>.
 Ciało funkcji zawiera natomiast wzór potrzebny do obliczeń przepisany do R.
 Ważne jest to, że obiekt użyty wewnątrz funkcji (<code>temperatura_f</code>) jest taki sam jak wejściowy argument.</p>
 <p>Po stworzeniu funkcji warto sprawdzić czy jej działanie odpowiada naszym oczekiwaniom.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb50-1" title="1"><span class="kw">konwersja_temp</span>(<span class="dv">75</span>)</a>
-<a class="sourceLine" id="cb50-2" title="2"><span class="co">#&gt; [1] 23.9</span></a>
-<a class="sourceLine" id="cb50-3" title="3"><span class="kw">konwersja_temp</span>(<span class="dv">110</span>)</a>
-<a class="sourceLine" id="cb50-4" title="4"><span class="co">#&gt; [1] 43.3</span></a>
-<a class="sourceLine" id="cb50-5" title="5"><span class="kw">konwersja_temp</span>(<span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb50-6" title="6"><span class="co">#&gt; [1] -17.8</span></a>
-<a class="sourceLine" id="cb50-7" title="7"><span class="kw">konwersja_temp</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">75</span>, <span class="dv">110</span>))</a>
-<a class="sourceLine" id="cb50-8" title="8"><span class="co">#&gt; [1] -17.8  23.9  43.3</span></a></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="funkcje.html#cb50-1" aria-hidden="true"></a><span class="kw">konwersja_temp</span>(<span class="dv">75</span>)</span>
+<span id="cb50-2"><a href="funkcje.html#cb50-2" aria-hidden="true"></a><span class="co">#&gt; [1] 23.9</span></span>
+<span id="cb50-3"><a href="funkcje.html#cb50-3" aria-hidden="true"></a><span class="kw">konwersja_temp</span>(<span class="dv">110</span>)</span>
+<span id="cb50-4"><a href="funkcje.html#cb50-4" aria-hidden="true"></a><span class="co">#&gt; [1] 43.3</span></span>
+<span id="cb50-5"><a href="funkcje.html#cb50-5" aria-hidden="true"></a><span class="kw">konwersja_temp</span>(<span class="dv">0</span>)</span>
+<span id="cb50-6"><a href="funkcje.html#cb50-6" aria-hidden="true"></a><span class="co">#&gt; [1] -17.8</span></span>
+<span id="cb50-7"><a href="funkcje.html#cb50-7" aria-hidden="true"></a><span class="kw">konwersja_temp</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">75</span>, <span class="dv">110</span>))</span>
+<span id="cb50-8"><a href="funkcje.html#cb50-8" aria-hidden="true"></a><span class="co">#&gt; [1] -17.8  23.9  43.3</span></span></code></pre></div>
 </div>
-<div id="komunikaty" class="section level2 hasAnchor">
+<div id="komunikaty" class="section level2 hasAnchor" number="3.9">
 <h2><span class="header-section-number">3.9</span> Komunikaty<a href="funkcje.html#komunikaty" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Oprócz wyniku danej operacji R może wyświetlić kilka rodzajów komunikatów.
 Trzy podstawowe z nich to:</p>
@@ -614,23 +643,23 @@ Trzy podstawowe z nich to:</p>
 <p>Błędy oznaczają, że wykonanie danej funkcji nie może być kontynuowane i przerwane jest jej działanie.
 Przykładowo, w poniższym kodzie podjęta została próba wyliczenia logarytmu naturalnego z tekstu <code>"abecadło"</code>.
 Takie obliczenie nie jest możliwe, w efekcie pojawił się komunikat błędu a kod nie został wykonany.</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" title="1"><span class="kw">log</span>(<span class="st">&quot;abecadło&quot;</span>)</a>
-<a class="sourceLine" id="cb51-2" title="2"><span class="co">#&gt; Error in log(&quot;abecadło&quot;): non-numeric argument to mathematical function</span></a></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="funkcje.html#cb51-1" aria-hidden="true"></a><span class="kw">log</span>(<span class="st">&quot;abecadło&quot;</span>)</span>
+<span id="cb51-2"><a href="funkcje.html#cb51-2" aria-hidden="true"></a><span class="co">#&gt; Error in log(&quot;abecadło&quot;): non-numeric argument to mathematical function</span></span></code></pre></div>
 <p>Ostrzeżenia zazwyczaj występują kiedy nastąpił jakiś problem z wykonaniem funkcji, ale jej działanie mogło być dokończone.
 Często sugerują one użytkownikowi, aby dokładnie przyjrzał się wykonywanej funkcji i upewnił się czy na pewno ustala on odpowiednie wartości dla argumentów funkcji.
 Poniżej została podjęta próba wyliczenia logarytmu naturalnego dla wartości ujemnej.
 W efekcie pojawił się komunikat błędu, który mówi, że w wyniku zostały stworzone wartości <code>NaN</code> (ang. <em>Not a Number</em>).</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb52-1" title="1"><span class="kw">log</span>(<span class="op">-</span><span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb52-2" title="2"><span class="co">#&gt; Warning in log(-1): NaNs produced</span></a>
-<a class="sourceLine" id="cb52-3" title="3"><span class="co">#&gt; [1] NaN</span></a></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="funkcje.html#cb52-1" aria-hidden="true"></a><span class="kw">log</span>(<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb52-2"><a href="funkcje.html#cb52-2" aria-hidden="true"></a><span class="co">#&gt; Warning in log(-1): NaNs produced</span></span>
+<span id="cb52-3"><a href="funkcje.html#cb52-3" aria-hidden="true"></a><span class="co">#&gt; [1] NaN</span></span></code></pre></div>
 <p>Wiadomości pojawiają się, aby przekazać użytkownikowi jakąś informację.
 <!-- Może to dotyczyć np.  --></p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" title="1"><span class="kw">inna_funkcja</span>(<span class="dv">15</span>)</a>
-<a class="sourceLine" id="cb53-2" title="2"><span class="co">#&gt; Chcę ciebie o czymś poinformować.</span></a>
-<a class="sourceLine" id="cb53-3" title="3"><span class="co">#&gt; [1] 2.71</span></a></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="funkcje.html#cb53-1" aria-hidden="true"></a><span class="kw">inna_funkcja</span>(<span class="dv">15</span>)</span>
+<span id="cb53-2"><a href="funkcje.html#cb53-2" aria-hidden="true"></a><span class="co">#&gt; Chcę ciebie o czymś poinformować.</span></span>
+<span id="cb53-3"><a href="funkcje.html#cb53-3" aria-hidden="true"></a><span class="co">#&gt; [1] 2.71</span></span></code></pre></div>
 <p>Opis tworzenia komunikatów błędu, ostrzeżenia i wiadomości można znaleźć w rozdziale <a href="zlozone-funkcje.html#zlozone-funkcje">10</a>.</p>
 </div>
-<div id="zad3" class="section level2 hasAnchor">
+<div id="zad3" class="section level2 hasAnchor" number="3.10">
 <h2><span class="header-section-number">3.10</span> Zadania<a href="funkcje.html#zad3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>Zobacz jak wygląda plik pomocy funkcji <code>mean()</code>.
@@ -654,34 +683,34 @@ Jak nazwiesz taką funkcję?</li>
 <li>Wykonaj poniższy kod.
 Co oznacza uzyskany wynik?</li>
 </ol>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb54-1" title="1"><span class="kw">mean</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="funkcje.html#cb54-1" aria-hidden="true"></a><span class="kw">mean</span>()</span></code></pre></div>
 <ol start="10" style="list-style-type: decimal">
 <li>Wykonaj poniższy kod.
 Co oznacza uzyskany wynik?</li>
 </ol>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" title="1"><span class="kw">mean</span>(<span class="st">&quot;abecadło&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="funkcje.html#cb55-1" aria-hidden="true"></a><span class="kw">mean</span>(<span class="st">&quot;abecadło&quot;</span>)</span></code></pre></div>
 <ol start="11" style="list-style-type: decimal">
 <li>Wykonaj poniższy kod.
 Co oznacza uzyskany wynik?</li>
 </ol>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" title="1"><span class="kw">mean</span>(<span class="kw">sqrt</span>())</a></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="funkcje.html#cb56-1" aria-hidden="true"></a><span class="kw">mean</span>(<span class="kw">sqrt</span>())</span></code></pre></div>
 <ol start="12" style="list-style-type: decimal">
 <li>Wykonaj poniższy kod.
 Co oznacza uzyskany wynik?</li>
 </ol>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" title="1"><span class="kw">str_length</span>(<span class="st">&quot;abecadło&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="funkcje.html#cb57-1" aria-hidden="true"></a><span class="kw">str_length</span>(<span class="st">&quot;abecadło&quot;</span>)</span></code></pre></div>
 <ol start="13" style="list-style-type: decimal">
 <li>Wykonaj poniższy kod.
 Co oznacza uzyskany wynik?</li>
 </ol>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" title="1">u =<span class="st"> </span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb58-2" title="2">z =<span class="st"> </span><span class="dv">3</span> <span class="op">+</span><span class="st"> </span>v</a>
-<a class="sourceLine" id="cb58-3" title="3">v =<span class="st"> </span><span class="dv">7</span></a></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="funkcje.html#cb58-1" aria-hidden="true"></a>u =<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb58-2"><a href="funkcje.html#cb58-2" aria-hidden="true"></a>z =<span class="st"> </span><span class="dv">3</span> <span class="op">+</span><span class="st"> </span>v</span>
+<span id="cb58-3"><a href="funkcje.html#cb58-3" aria-hidden="true"></a>v =<span class="st"> </span><span class="dv">7</span></span></code></pre></div>
 
 </div>
 </div>
 <h3>Bibliografia<a href="bibliografia.html#bibliografia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references">
+<div id="refs" class="references hanging-indent">
 <div id="ref-R-magrittr">
 <p>Bache, Stefan Milton, and Hadley Wickham. 2014. <em>Magrittr: A Forward-Pipe Operator for R</em>. <a href="https://CRAN.R-project.org/package=magrittr">https://CRAN.R-project.org/package=magrittr</a>.</p>
 </div>
@@ -692,9 +721,9 @@ Co oznacza uzyskany wynik?</li>
 <div class="footnotes">
 <hr />
 <ol start="22">
-<li id="fn22"><p>Istnieje też szereg dodatkowych sposobów, wśród których najpopularniejszy polega na używaniu operatora <code>%&gt;%</code> z pakietu <strong>magrittr</strong> <span class="citation">(Bache and Wickham <a href="#ref-R-magrittr">2014</a>)</span>.<a href="funkcje.html#fnref22" class="footnote-back">↩</a></p></li>
-<li id="fn23"><p>Niektóre zbiory danych również posiadają swoje pliki pomocy.<a href="funkcje.html#fnref23" class="footnote-back">↩</a></p></li>
-<li id="fn24"><p><span class="citation">Wickham and Grolemund (<a href="#ref-wickham2016r">2016</a>)</span> radzą tworzyć nowe funkcje, gdy ten sam kod powtarza się co najmniej trzy razy.<a href="funkcje.html#fnref24" class="footnote-back">↩</a></p></li>
+<li id="fn22"><p>Istnieje też szereg dodatkowych sposobów, wśród których najpopularniejszy polega na używaniu operatora <code>%&gt;%</code> z pakietu <strong>magrittr</strong> <span class="citation">(Bache and Wickham <a href="#ref-R-magrittr" role="doc-biblioref">2014</a>)</span>.<a href="funkcje.html#fnref22" class="footnote-back">↩︎</a></p></li>
+<li id="fn23"><p>Niektóre zbiory danych również posiadają swoje pliki pomocy.<a href="funkcje.html#fnref23" class="footnote-back">↩︎</a></p></li>
+<li id="fn24"><p><span class="citation">Wickham and Grolemund (<a href="#ref-wickham2016r" role="doc-biblioref">2016</a>)</span> radzą tworzyć nowe funkcje, gdy ten sam kod powtarza się co najmniej trzy razy.<a href="funkcje.html#fnref24" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -766,7 +795,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

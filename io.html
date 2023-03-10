@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>9 Wczytywanie i zapisywanie plików | Elementarz programisty</title>
   <meta name="description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="9 Wczytywanie i zapisywanie plików | Elementarz programisty" />
   <meta property="og:type" content="book" />
@@ -48,6 +48,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -60,25 +61,26 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -87,9 +89,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -139,26 +141,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Elementarz programisty</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#wymagania-wstępne"><i class="fa fa-check"></i>Wymagania wstępne</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#styl-książki"><i class="fa fa-check"></i>Styl książki</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#podziękowania"><i class="fa fa-check"></i>Podziękowania</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a><ul>
+<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="wprowadzenie.html"><a href="wprowadzenie.html#mity-programistyczne"><i class="fa fa-check"></i><b>1.1</b> Mity programistyczne</a></li>
 <li class="chapter" data-level="1.2" data-path="wprowadzenie.html"><a href="wprowadzenie.html#jezyki-programowania"><i class="fa fa-check"></i><b>1.2</b> Języki programowania</a></li>
 <li class="chapter" data-level="1.3" data-path="wprowadzenie.html"><a href="wprowadzenie.html#r"><i class="fa fa-check"></i><b>1.3</b> R</a></li>
 <li class="chapter" data-level="1.4" data-path="wprowadzenie.html"><a href="wprowadzenie.html#zad1"><i class="fa fa-check"></i><b>1.4</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>I Podstawy</b></span></li>
-<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a><ul>
+<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrażenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia</a></li>
-<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a><ul>
+<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="ergosum.html"><a href="ergosum.html#operator-przypisania"><i class="fa fa-check"></i><b>2.2.1</b> Operator przypisania</a></li>
 <li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dzialania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="ergosum.html"><a href="ergosum.html#ide"><i class="fa fa-check"></i><b>2.3</b> IDE</a></li>
-<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a><ul>
+<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="ergosum.html"><a href="ergosum.html#nazwy-obiektow"><i class="fa fa-check"></i><b>2.4.1</b> Nazwy obiektów</a></li>
 <li class="chapter" data-level="2.4.2" data-path="ergosum.html"><a href="ergosum.html#odstępy"><i class="fa fa-check"></i><b>2.4.2</b> Odstępy</a></li>
 <li class="chapter" data-level="2.4.3" data-path="ergosum.html"><a href="ergosum.html#komentarze"><i class="fa fa-check"></i><b>2.4.3</b> Komentarze</a></li>
@@ -168,7 +175,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5" data-path="ergosum.html"><a href="ergosum.html#resources"><i class="fa fa-check"></i><b>2.5</b> Dodatkowe materiały</a></li>
 <li class="chapter" data-level="2.6" data-path="ergosum.html"><a href="ergosum.html#zad2"><i class="fa fa-check"></i><b>2.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a><ul>
+<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="funkcje.html"><a href="funkcje.html#struktura-funkcji"><i class="fa fa-check"></i><b>3.1</b> Struktura funkcji</a></li>
 <li class="chapter" data-level="3.2" data-path="funkcje.html"><a href="funkcje.html#wbudowane-funkcje"><i class="fa fa-check"></i><b>3.2</b> Wbudowane funkcje</a></li>
 <li class="chapter" data-level="3.3" data-path="funkcje.html"><a href="funkcje.html#kolejnosc-funkcji"><i class="fa fa-check"></i><b>3.3</b> Kolejność wykonywania funkcji</a></li>
@@ -180,14 +188,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.9" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.9</b> Komunikaty</a></li>
 <li class="chapter" data-level="3.10" data-path="funkcje.html"><a href="funkcje.html#zad3"><i class="fa fa-check"></i><b>3.10</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a><ul>
+<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
 <li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagnieżdżone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdżone</a></li>
 <li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porównania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
 <li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wwwf"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach</a></li>
 <li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zad4"><i class="fa fa-check"></i><b>4.5</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a><ul>
+<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wektory"><i class="fa fa-check"></i><b>5.1</b> Wektory</a></li>
 <li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#właściwości-wektorów"><i class="fa fa-check"></i><b>5.2</b> Właściwości wektorów</a></li>
 <li class="chapter" data-level="5.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#pf-vector"><i class="fa fa-check"></i><b>5.3</b> Podstawowe funkcje</a></li>
@@ -203,7 +213,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ime"><i class="fa fa-check"></i><b>5.13</b> Wektory czasu</a></li>
 <li class="chapter" data-level="5.14" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zad5"><i class="fa fa-check"></i><b>5.14</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a><ul>
+<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#reprezentacja-tekstu"><i class="fa fa-check"></i><b>6.1</b> Reprezentacja tekstu</a></li>
 <li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekście"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście</a></li>
 <li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wt"><i class="fa fa-check"></i><b>6.3</b> Wydzielanie tekstu</a></li>
@@ -213,20 +224,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plików"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików</a></li>
 <li class="chapter" data-level="6.8" data-path="tekst.html"><a href="tekst.html#zad6"><i class="fa fa-check"></i><b>6.8</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a><ul>
-<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a><ul>
+<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie"><i class="fa fa-check"></i><b>7.1.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.1.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje"><i class="fa fa-check"></i><b>7.1.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.1.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-1"><i class="fa fa-check"></i><b>7.1.3</b> Wydzielanie</a></li>
 <li class="chapter" data-level="7.1.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie"><i class="fa fa-check"></i><b>7.1.4</b> Łączenie</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a><ul>
+<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-1"><i class="fa fa-check"></i><b>7.2.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.2.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-1"><i class="fa fa-check"></i><b>7.2.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.2.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-df"><i class="fa fa-check"></i><b>7.2.3</b> Wydzielanie</a></li>
 <li class="chapter" data-level="7.2.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-1"><i class="fa fa-check"></i><b>7.2.4</b> Łączenie</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a><ul>
+<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-2"><i class="fa fa-check"></i><b>7.3.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.3.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-2"><i class="fa fa-check"></i><b>7.3.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie</a></li>
@@ -236,8 +251,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#inne-klasy"><i class="fa fa-check"></i><b>7.5</b> Inne klasy obiektów</a></li>
 <li class="chapter" data-level="7.6" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zad7"><i class="fa fa-check"></i><b>7.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a><ul>
-<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a><ul>
+<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#składnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia</a></li>
 <li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#for-example"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
 <li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach</a></li>
@@ -246,7 +263,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#prog-fun"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne</a></li>
 <li class="chapter" data-level="8.4" data-path="petle.html"><a href="petle.html#zad8"><i class="fa fa-check"></i><b>8.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a><ul>
+<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy</a></li>
 <li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#działania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.2</b> Działania na plikach i folderach</a></li>
 <li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#dane-internetowe"><i class="fa fa-check"></i><b>9.3</b> Dane internetowe</a></li>
@@ -258,24 +276,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.9" data-path="io.html"><a href="io.html#zad9"><i class="fa fa-check"></i><b>9.9</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>II Narzędzia</b></span></li>
-<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a><ul>
+<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>10.1</b> API</a></li>
 <li class="chapter" data-level="10.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsluga-komunikatow"><i class="fa fa-check"></i><b>10.2</b> Obsługa komunikatów</a></li>
-<li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe</a><ul>
+<li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe</a>
+<ul>
 <li class="chapter" data-level="10.3.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#klasy"><i class="fa fa-check"></i><b>10.3.1</b> Klasy</a></li>
 <li class="chapter" data-level="10.3.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#metody"><i class="fa fa-check"></i><b>10.3.2</b> Metody</a></li>
 <li class="chapter" data-level="10.3.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#konstruktory"><i class="fa fa-check"></i><b>10.3.3</b> Konstruktory</a></li>
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zad11"><i class="fa fa-check"></i><b>10.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu</a><ul>
+<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.1</b> Testy jednostkowe</a></li>
 <li class="chapter" data-level="11.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>11.2</b> Profiling</a></li>
 <li class="chapter" data-level="11.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>11.3</b> Benchmarking</a></li>
 <li class="chapter" data-level="11.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zad12"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie</a><ul>
-<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady</a><ul>
+<li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady</a>
+<ul>
 <li class="chapter" data-level="12.1.1" data-path="debugging.html"><a href="debugging.html#pakiet-reprex"><i class="fa fa-check"></i><b>12.1.1</b> Pakiet <strong>reprex</strong></a></li>
 <li class="chapter" data-level="12.1.2" data-path="debugging.html"><a href="debugging.html#tworzenie-powtarzalnego-przykładu"><i class="fa fa-check"></i><b>12.1.2</b> Tworzenie powtarzalnego przykładu</a></li>
 </ul></li>
@@ -284,8 +307,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="debugging.html"><a href="debugging.html#debugger"><i class="fa fa-check"></i><b>12.4</b> Debugger</a></li>
 <li class="chapter" data-level="12.5" data-path="debugging.html"><a href="debugging.html#zad13"><i class="fa fa-check"></i><b>12.5</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik</a><ul>
-<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++</a><ul>
+<li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++</a>
+<ul>
 <li class="chapter" data-level="13.1.1" data-path="lacznik.html"><a href="lacznik.html#cppFunction"><i class="fa fa-check"></i><b>13.1.1</b> Wywoływanie kodu C++ wewnątrz skryptu R</a></li>
 <li class="chapter" data-level="13.1.2" data-path="lacznik.html"><a href="lacznik.html#sourceCpp"><i class="fa fa-check"></i><b>13.1.2</b> Wywoływanie kodu z plików .cpp</a></li>
 </ul></li>
@@ -293,8 +318,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.3" data-path="lacznik.html"><a href="lacznik.html#powloka-systemowa"><i class="fa fa-check"></i><b>13.3</b> Powłoka systemowa</a></li>
 <li class="chapter" data-level="13.4" data-path="lacznik.html"><a href="lacznik.html#zad14"><i class="fa fa-check"></i><b>13.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji</a><ul>
-<li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git</a><ul>
+<li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git</a>
+<ul>
 <li class="chapter" data-level="14.1.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#konfiguracja-systemu-git"><i class="fa fa-check"></i><b>14.1.1</b> Konfiguracja systemu Git</a></li>
 <li class="chapter" data-level="14.1.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium"><i class="fa fa-check"></i><b>14.1.2</b> Repozytorium</a></li>
 <li class="chapter" data-level="14.1.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodawanie-zmian"><i class="fa fa-check"></i><b>14.1.3</b> Dodawanie zmian</a></li>
@@ -305,20 +332,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.1.8" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#wysylanie-zmian"><i class="fa fa-check"></i><b>14.1.8</b> Wysyłanie zmian</a></li>
 <li class="chapter" data-level="14.1.9" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#aktualizowanie-zmian"><i class="fa fa-check"></i><b>14.1.9</b> Aktualizowanie zmian</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub</a><ul>
+<li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub</a>
+<ul>
 <li class="chapter" data-level="14.2.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#tworzenie-zdanego-repo"><i class="fa fa-check"></i><b>14.2.1</b> Tworzenie zdanego repo</a></li>
 <li class="chapter" data-level="14.2.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-github"><i class="fa fa-check"></i><b>14.2.2</b> Repozytorium GitHub</a></li>
 <li class="chapter" data-level="14.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-możliwości-github"><i class="fa fa-check"></i><b>14.2.3</b> Dodatkowe możliwości GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="14.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rstudio-git"><i class="fa fa-check"></i><b>14.3</b> Kontrola wersji w RStudio</a></li>
-<li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git</a><ul>
+<li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git</a>
+<ul>
 <li class="chapter" data-level="14.4.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#nowy-projekt"><i class="fa fa-check"></i><b>14.4.1</b> Nowy projekt</a></li>
 <li class="chapter" data-level="14.4.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#istniejacy-projekt"><i class="fa fa-check"></i><b>14.4.2</b> Istniejący projekt</a></li>
 </ul></li>
 <li class="chapter" data-level="14.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#problemy-z-kontrolą-wersji"><i class="fa fa-check"></i><b>14.5</b> Problemy z kontrolą wersji</a></li>
 <li class="chapter" data-level="14.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zad15"><i class="fa fa-check"></i><b>14.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a><ul>
+<li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a>
+<ul>
 <li class="chapter" data-level="15.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#nazwa-pakietu"><i class="fa fa-check"></i><b>15.1</b> Nazwa pakietu</a></li>
 <li class="chapter" data-level="15.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-szkieletu-pakietu"><i class="fa fa-check"></i><b>15.2</b> Tworzenie szkieletu pakietu</a></li>
 <li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>15.3</b> Opis pakietu</a></li>
@@ -332,7 +362,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietów"><i class="fa fa-check"></i><b>15.11</b> Publikowanie pakietów</a></li>
 <li class="chapter" data-level="15.12" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zad16"><i class="fa fa-check"></i><b>15.12</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie</a><ul>
+<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie</a>
+<ul>
 <li class="chapter" data-level="16.1" data-path="podsumowanie.html"><a href="podsumowanie.html#grafika"><i class="fa fa-check"></i><b>16.1</b> Grafika</a></li>
 <li class="chapter" data-level="16.2" data-path="podsumowanie.html"><a href="podsumowanie.html#analiza-danych"><i class="fa fa-check"></i><b>16.2</b> Analiza danych</a></li>
 <li class="chapter" data-level="16.3" data-path="podsumowanie.html"><a href="podsumowanie.html#inne-zastosowania"><i class="fa fa-check"></i><b>16.3</b> Inne zastosowania</a></li>
@@ -360,28 +391,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="io" class="section level1 hasAnchor">
+<div id="io" class="section level1 hasAnchor" number="9">
 <h1><span class="header-section-number">9</span> Wczytywanie i zapisywanie plików<a href="io.html#io" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Języki programowania mają na celu wykonywanie wielu złożonych operacji w relatywnie krótkim czasie.
 Często te działania oparte są o dane zewnętrzne, np. stworzone przez człowieka, automatyczny sensor, czy jako efekt działania innego programu.
 Czasem też konieczne jest przekazanie lub udostępnienie wyników obliczeń dla innych osób.
 Celem tego rozdziału jest wprowadzenie do zagadnień związanych z określaniem położenia plików na dysku komputera, wykonywaniu działań na plikach i folderach oraz pobieraniu danych z internetu.
 Posiadając taką wiedzę możliwe jest wczytywanie i zapisywanie danych, takich jak dane tekstowe, dane w formatach R, czy dane z arkuszy kalkulacyjnych.</p>
-<div id="folder-roboczy" class="section level2 hasAnchor">
+<div id="folder-roboczy" class="section level2 hasAnchor" number="9.1">
 <h2><span class="header-section-number">9.1</span> Folder roboczy<a href="io.html#folder-roboczy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Folder roboczy (ang. <em>working directory</em>) to miejsce na dysku, w którym aktualnie pracujemy.
 Folder roboczy można sprawdzić korzystając z funkcji <code>getwd()</code>:</p>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb263-1" title="1"><span class="kw">getwd</span>()</a>
-<a class="sourceLine" id="cb263-2" title="2"><span class="co">#&gt; [1] &quot;/home/runner/work/elp/elp&quot;</span></a></code></pre></div>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="io.html#cb263-1" aria-hidden="true"></a><span class="kw">getwd</span>()</span>
+<span id="cb263-2"><a href="io.html#cb263-2" aria-hidden="true"></a><span class="co">#&gt; [1] &quot;/home/runner/work/elp/elp&quot;</span></span></code></pre></div>
 <p>Zmienić folder roboczy można za pomocą skrótu <em>Ctrl+Shift+H</em> w RStudio (inaczej <em>Session -&gt; Set Working Directory -&gt; Choose Directory..</em>) lub też funkcji <code>setwd()</code>:</p>
-<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb264-1" title="1"><span class="kw">setwd</span>(<span class="st">&quot;home/jakub/Documents/elp/&quot;</span>) <span class="co">#Linux</span></a>
-<a class="sourceLine" id="cb264-2" title="2"><span class="kw">setwd</span>(<span class="st">&quot;C:/Users/jakub/Documenty/elp/&quot;</span>) <span class="co">#Windows</span></a></code></pre></div>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="io.html#cb264-1" aria-hidden="true"></a><span class="kw">setwd</span>(<span class="st">&quot;home/jakub/Documents/elp/&quot;</span>) <span class="co">#Linux</span></span>
+<span id="cb264-2"><a href="io.html#cb264-2" aria-hidden="true"></a><span class="kw">setwd</span>(<span class="st">&quot;C:/Users/jakub/Documenty/elp/&quot;</span>) <span class="co">#Windows</span></span></code></pre></div>
 
 <div class="rmdinfo">
 Ustawienie folderu roboczego ma też miejsce przy tworzeniu nowego lub otwieraniu istniejącego projektu RStudio.
 Dlatego też, używanie projektów RStudio jest rekomendowane przy pracy z R.
 </div>
-
 <p>Folder roboczy jest ważny ponieważ pozwala na korzystanie z względnej ścieżki.
 Ścieżka względna oznacza określanie ścieżki pliku w odniesieniu do istniejącego folderu roboczego, podczas, gdy ścieżka bezwzględna opisuje pełne położenie pliku.
 Przykładowo, mamy plik <code>dane_meteo.csv</code>, którego pełna ścieżka to <code>home/jakub/Documents/elp/pliki/dane_meteo.csv</code>.
@@ -393,10 +423,9 @@ Używanie ścieżek względnych jest rekomendowane, ponieważ znacząco upraszcz
 Ścieżki folderów w systemach Windows są domyślnie rozdzielane ukośnikiem wstecznym (<code>\</code>, ang. <em>backslash</em>), jednak R pozwala także na użycie prawego ukośnika (<code>/</code>, ang. <em>slash</em>).
 Prawy ukośnik jest rekomendowany, ponieważ działa on zarówno na Windowsach, jak i komputerach z systemami MacOS czy Linux.
 </div>
-
 <!-- footnote with fs and here package -->
 </div>
-<div id="działania-na-plikach-i-folderach" class="section level2 hasAnchor">
+<div id="działania-na-plikach-i-folderach" class="section level2 hasAnchor" number="9.2">
 <h2><span class="header-section-number">9.2</span> Działania na plikach i folderach<a href="io.html#działania-na-plikach-i-folderach" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Z poziomu R możliwe jest również zarządzanie folderami i plikami na dysku.
 Do tworzenia nowych folderów służy funkcja <code>dir.create()</code>, np. <code>dir.create("dane")</code> stworzy nowy podfolder o nazwie <code>"dane"</code>.
@@ -408,17 +437,17 @@ Przykładowo, aby usunąć folder <code>"dane"</code> należy wpisać <code>unli
 Obie funkcje przyjmują jako wejście wektor znakowy zawierający nazwy plików do sprawdzenia czy usunięcia.</p>
 <p>W przypadkach, gdy konieczne jest stworzenie nowego archiwum ZIP lub rozpakowanie istniejącego pliku w tym formacie można użyć funkcji <code>zip()</code> oraz <code>unzip()</code><a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>.</p>
 </div>
-<div id="dane-internetowe" class="section level2 hasAnchor">
+<div id="dane-internetowe" class="section level2 hasAnchor" number="9.3">
 <h2><span class="header-section-number">9.3</span> Dane internetowe<a href="io.html#dane-internetowe" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Pliki, które chcemy otworzyć nie muszą od razu znajdować się na dysku naszego komputera.
 Możliwe jest, między innymi, pobranie ich z poziomu R za pomocą funkcji <code>download.file()</code><a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a>.
 Należy w niej podać adres URL pliku do pobrania, oraz nazwę pliku do zapisania.</p>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb265-1" title="1"><span class="kw">download.file</span>(<span class="st">&quot;https://raw.githubusercontent.com/Nowosad/elp/master/pliki/dane_meteo.csv&quot;</span>, </a>
-<a class="sourceLine" id="cb265-2" title="2">              <span class="dt">destfile =</span> <span class="st">&quot;pliki/dane_meteo_url.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="io.html#cb265-1" aria-hidden="true"></a><span class="kw">download.file</span>(<span class="st">&quot;https://raw.githubusercontent.com/Nowosad/elp/master/pliki/dane_meteo.csv&quot;</span>, </span>
+<span id="cb265-2"><a href="io.html#cb265-2" aria-hidden="true"></a>              <span class="dt">destfile =</span> <span class="st">&quot;pliki/dane_meteo_url.csv&quot;</span>)</span></code></pre></div>
 <p>W efekcie plik <code>dane_meteo_url.csv</code> zostanie zapisany w folderze <code>pliki</code>.
 Funkcja <code>download.file()</code> ma też szereg dodatkowych argumentów, między innymi <code>method</code> określającą metodę pobierania danych oraz <code>mode</code> określający sposób zapisu pliku.</p>
 </div>
-<div id="wczytywanie-plików-tekstowych" class="section level2 hasAnchor">
+<div id="wczytywanie-plików-tekstowych" class="section level2 hasAnchor" number="9.4">
 <h2><span class="header-section-number">9.4</span> Wczytywanie plików tekstowych<a href="io.html#wczytywanie-plików-tekstowych" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Podstawowymi sposobami przechowywania informacji są pliki tekstowe i binarne.
 Przykładowo, pliki tekstowe mogą przechowywać dane w postaci tabelarycznej, a jednym z najczęściej używanych formatów tekstowych jest CSV (ang. <em>comma-separated values</em>).</p>
@@ -432,44 +461,44 @@ Przykładowo, pliki tekstowe mogą przechowywać dane w postaci tabelarycznej, a
 Po otworzeniu tego pliku w edytorze tekstu widzimy, że pierwszy jego wiersz zawiera nazwy kolumn, a następne wiersze to kolejne obserwacje.
 Dodatkowo można zobaczyć, że kolumny rozdzielane są przecinkami (<code>,</code>), natomiast wartości zmiennoprzecinkowe kropkami (<code>.</code>).</p>
 <p>Do wczytania tego pliku możemy użyć wbudowanej w R funkcji <code>read.csv()</code>, podając w niej bezwzględną lub względną ścieżkę do pliku.</p>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb267-1" title="1">meteo =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;pliki/dane_meteo.csv&quot;</span>)</a>
-<a class="sourceLine" id="cb267-2" title="2"><span class="kw">str</span>(meteo)</a>
-<a class="sourceLine" id="cb267-3" title="3"><span class="co">#&gt; &#39;data.frame&#39;:    730 obs. of  7 variables:</span></a>
-<a class="sourceLine" id="cb267-4" title="4"><span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span></a>
-<a class="sourceLine" id="cb267-5" title="5"><span class="co">#&gt;  $ nazwa_stacji: chr  &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; ...</span></a>
-<a class="sourceLine" id="cb267-6" title="6"><span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span></a>
-<a class="sourceLine" id="cb267-7" title="7"><span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span></a>
-<a class="sourceLine" id="cb267-8" title="8"><span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span></a>
-<a class="sourceLine" id="cb267-9" title="9"><span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span></a>
-<a class="sourceLine" id="cb267-10" title="10"><span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span></a></code></pre></div>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="io.html#cb267-1" aria-hidden="true"></a>meteo =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;pliki/dane_meteo.csv&quot;</span>)</span>
+<span id="cb267-2"><a href="io.html#cb267-2" aria-hidden="true"></a><span class="kw">str</span>(meteo)</span>
+<span id="cb267-3"><a href="io.html#cb267-3" aria-hidden="true"></a><span class="co">#&gt; &#39;data.frame&#39;:    730 obs. of  7 variables:</span></span>
+<span id="cb267-4"><a href="io.html#cb267-4" aria-hidden="true"></a><span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span></span>
+<span id="cb267-5"><a href="io.html#cb267-5" aria-hidden="true"></a><span class="co">#&gt;  $ nazwa_stacji: chr  &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; ...</span></span>
+<span id="cb267-6"><a href="io.html#cb267-6" aria-hidden="true"></a><span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span></span>
+<span id="cb267-7"><a href="io.html#cb267-7" aria-hidden="true"></a><span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span></span>
+<span id="cb267-8"><a href="io.html#cb267-8" aria-hidden="true"></a><span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span></span>
+<span id="cb267-9"><a href="io.html#cb267-9" aria-hidden="true"></a><span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span></span>
+<span id="cb267-10"><a href="io.html#cb267-10" aria-hidden="true"></a><span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span></span></code></pre></div>
 <p>Oprócz funkcji <code>read.csv()</code> istnieje również funkcja o nazwie <code>read.csv2()</code>.
 Pierwsza z nich jest przystosowana do wczytania danych dla których separator kolumn to <code>,</code> a separator dziesiętny to <code>.</code>, druga natomiast jest używana gdy wejściowe dane mają <code>;</code> jak separator kolumn i <code>,</code> jako separator dziesiętny.</p>
 <p>Pliki tekstowe mogą zawierać tekst używając różnych standardów kodowania znaków o których była mowa w rozdziale <a href="ergosum.html#ergosum">2</a>.
 Czasem więc konieczne jest podane odpowiedniego kodowania używając argumentu <code>encoding</code>, co pozwoli na poprawne wczytanie pliku do R.</p>
-<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb268-1" title="1">meteo =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;pliki/dane_meteo.csv&quot;</span>, <span class="dt">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>)</a>
-<a class="sourceLine" id="cb268-2" title="2"><span class="kw">str</span>(meteo)</a>
-<a class="sourceLine" id="cb268-3" title="3"><span class="co">#&gt; &#39;data.frame&#39;:    730 obs. of  7 variables:</span></a>
-<a class="sourceLine" id="cb268-4" title="4"><span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span></a>
-<a class="sourceLine" id="cb268-5" title="5"><span class="co">#&gt;  $ nazwa_stacji: chr  &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; ...</span></a>
-<a class="sourceLine" id="cb268-6" title="6"><span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span></a>
-<a class="sourceLine" id="cb268-7" title="7"><span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span></a>
-<a class="sourceLine" id="cb268-8" title="8"><span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span></a>
-<a class="sourceLine" id="cb268-9" title="9"><span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span></a>
-<a class="sourceLine" id="cb268-10" title="10"><span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span></a></code></pre></div>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="io.html#cb268-1" aria-hidden="true"></a>meteo =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;pliki/dane_meteo.csv&quot;</span>, <span class="dt">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>)</span>
+<span id="cb268-2"><a href="io.html#cb268-2" aria-hidden="true"></a><span class="kw">str</span>(meteo)</span>
+<span id="cb268-3"><a href="io.html#cb268-3" aria-hidden="true"></a><span class="co">#&gt; &#39;data.frame&#39;:    730 obs. of  7 variables:</span></span>
+<span id="cb268-4"><a href="io.html#cb268-4" aria-hidden="true"></a><span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span></span>
+<span id="cb268-5"><a href="io.html#cb268-5" aria-hidden="true"></a><span class="co">#&gt;  $ nazwa_stacji: chr  &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; ...</span></span>
+<span id="cb268-6"><a href="io.html#cb268-6" aria-hidden="true"></a><span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span></span>
+<span id="cb268-7"><a href="io.html#cb268-7" aria-hidden="true"></a><span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span></span>
+<span id="cb268-8"><a href="io.html#cb268-8" aria-hidden="true"></a><span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span></span>
+<span id="cb268-9"><a href="io.html#cb268-9" aria-hidden="true"></a><span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span></span>
+<span id="cb268-10"><a href="io.html#cb268-10" aria-hidden="true"></a><span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span></span></code></pre></div>
 <p>Czasem dane tekstowe posiadają inne znaki służące jako separatory, czy też nie posiadają nazw kolumn.
 W takich sytuacjach można użyć funkcji <code>read.table()</code>, która zawiera cały szereg argumentów, które można dopasować, aby poprawnie wczytać dane tekstowe.</p>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb269-1" title="1">meteo =<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;pliki/dane_meteo.csv&quot;</span>, </a>
-<a class="sourceLine" id="cb269-2" title="2">                   <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>,</a>
-<a class="sourceLine" id="cb269-3" title="3">                   <span class="dt">header =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb269-4" title="4"><span class="kw">str</span>(meteo)</a>
-<a class="sourceLine" id="cb269-5" title="5"><span class="co">#&gt; &#39;data.frame&#39;:    730 obs. of  7 variables:</span></a>
-<a class="sourceLine" id="cb269-6" title="6"><span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span></a>
-<a class="sourceLine" id="cb269-7" title="7"><span class="co">#&gt;  $ nazwa_stacji: chr  &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; ...</span></a>
-<a class="sourceLine" id="cb269-8" title="8"><span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span></a>
-<a class="sourceLine" id="cb269-9" title="9"><span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span></a>
-<a class="sourceLine" id="cb269-10" title="10"><span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span></a>
-<a class="sourceLine" id="cb269-11" title="11"><span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span></a>
-<a class="sourceLine" id="cb269-12" title="12"><span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span></a></code></pre></div>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="io.html#cb269-1" aria-hidden="true"></a>meteo =<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;pliki/dane_meteo.csv&quot;</span>, </span>
+<span id="cb269-2"><a href="io.html#cb269-2" aria-hidden="true"></a>                   <span class="dt">sep =</span> <span class="st">&quot;,&quot;</span>,</span>
+<span id="cb269-3"><a href="io.html#cb269-3" aria-hidden="true"></a>                   <span class="dt">header =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb269-4"><a href="io.html#cb269-4" aria-hidden="true"></a><span class="kw">str</span>(meteo)</span>
+<span id="cb269-5"><a href="io.html#cb269-5" aria-hidden="true"></a><span class="co">#&gt; &#39;data.frame&#39;:    730 obs. of  7 variables:</span></span>
+<span id="cb269-6"><a href="io.html#cb269-6" aria-hidden="true"></a><span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span></span>
+<span id="cb269-7"><a href="io.html#cb269-7" aria-hidden="true"></a><span class="co">#&gt;  $ nazwa_stacji: chr  &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; ...</span></span>
+<span id="cb269-8"><a href="io.html#cb269-8" aria-hidden="true"></a><span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span></span>
+<span id="cb269-9"><a href="io.html#cb269-9" aria-hidden="true"></a><span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span></span>
+<span id="cb269-10"><a href="io.html#cb269-10" aria-hidden="true"></a><span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span></span>
+<span id="cb269-11"><a href="io.html#cb269-11" aria-hidden="true"></a><span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span></span>
+<span id="cb269-12"><a href="io.html#cb269-12" aria-hidden="true"></a><span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span></span></code></pre></div>
 
 <div class="rmdinfo">
 R posiada kilka dodatkowych funkcji pozwalających na odczytywanie plików tekstowych, tj. <code>read.delim()</code>, <code>read.delim2()</code>, <code>read.fwf()</code>, czy <code>readLines()</code>.
@@ -478,36 +507,34 @@ Funkcja <code>read.fwf()</code> służy do odczytywania danych o ustalonej dług
 Funkcja <code>readLines()</code> wczytuje kolejne linie z pliku tekstowego.
 Efektem jej działania w przeciwieństwie do poprzednich funkcji nie jest ramka danych, ale wektor tekstowy, gdzie każdy kolejny element wektora to tekst z kolejnych linii.
 </div>
-
 </div>
-<div id="zapisywanie-plików-tekstowych" class="section level2 hasAnchor">
+<div id="zapisywanie-plików-tekstowych" class="section level2 hasAnchor" number="9.5">
 <h2><span class="header-section-number">9.5</span> Zapisywanie plików tekstowych<a href="io.html#zapisywanie-plików-tekstowych" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Plik <code>pliki/dane_meteo.csv</code> zawiera pomiary ze stacji Poznań oraz Zakopane.
 W przypadku, gdy interesują nas tylko informacje dla Poznania możemy wydzielić odpowiednie wiersze używając funkcji <code>subset()</code> (sekcja <a href="zlozone-obiekty.html#wydzielanie-df">7.2.3</a>).</p>
-<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb270-1" title="1">meteo_pzn =<span class="st"> </span><span class="kw">subset</span>(meteo, nazwa_stacji <span class="op">==</span><span class="st"> &quot;POZNAŃ&quot;</span>)</a>
-<a class="sourceLine" id="cb270-2" title="2"><span class="kw">str</span>(meteo_pzn)</a>
-<a class="sourceLine" id="cb270-3" title="3"><span class="co">#&gt; &#39;data.frame&#39;:    365 obs. of  7 variables:</span></a>
-<a class="sourceLine" id="cb270-4" title="4"><span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span></a>
-<a class="sourceLine" id="cb270-5" title="5"><span class="co">#&gt;  $ nazwa_stacji: chr  &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; ...</span></a>
-<a class="sourceLine" id="cb270-6" title="6"><span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span></a>
-<a class="sourceLine" id="cb270-7" title="7"><span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span></a>
-<a class="sourceLine" id="cb270-8" title="8"><span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span></a>
-<a class="sourceLine" id="cb270-9" title="9"><span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span></a>
-<a class="sourceLine" id="cb270-10" title="10"><span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span></a></code></pre></div>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="io.html#cb270-1" aria-hidden="true"></a>meteo_pzn =<span class="st"> </span><span class="kw">subset</span>(meteo, nazwa_stacji <span class="op">==</span><span class="st"> &quot;POZNAŃ&quot;</span>)</span>
+<span id="cb270-2"><a href="io.html#cb270-2" aria-hidden="true"></a><span class="kw">str</span>(meteo_pzn)</span>
+<span id="cb270-3"><a href="io.html#cb270-3" aria-hidden="true"></a><span class="co">#&gt; &#39;data.frame&#39;:    365 obs. of  7 variables:</span></span>
+<span id="cb270-4"><a href="io.html#cb270-4" aria-hidden="true"></a><span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span></span>
+<span id="cb270-5"><a href="io.html#cb270-5" aria-hidden="true"></a><span class="co">#&gt;  $ nazwa_stacji: chr  &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; &quot;POZNAŃ&quot; ...</span></span>
+<span id="cb270-6"><a href="io.html#cb270-6" aria-hidden="true"></a><span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span></span>
+<span id="cb270-7"><a href="io.html#cb270-7" aria-hidden="true"></a><span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span></span>
+<span id="cb270-8"><a href="io.html#cb270-8" aria-hidden="true"></a><span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span></span>
+<span id="cb270-9"><a href="io.html#cb270-9" aria-hidden="true"></a><span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span></span>
+<span id="cb270-10"><a href="io.html#cb270-10" aria-hidden="true"></a><span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span></span></code></pre></div>
 <p>Następnie możemy zapisać obiekt <code>meteo_pzn</code> do nowego pliku używając funkcji <code>write.csv()</code><a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a>, poprzez podanie nazwy obiektu do zapisania oraz ścieżki zapisu wynikowego pliku.
 Dodatkowo możliwe jest pominięcie zapisania nazw wierszy (<code>row.names = FALSE</code>).</p>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb271-1" title="1"><span class="kw">write.csv</span>(meteo_pzn,</a>
-<a class="sourceLine" id="cb271-2" title="2">          <span class="dt">file =</span> <span class="st">&quot;pliki/dane_meteo_pzn.csv&quot;</span>,</a>
-<a class="sourceLine" id="cb271-3" title="3">          <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="io.html#cb271-1" aria-hidden="true"></a><span class="kw">write.csv</span>(meteo_pzn,</span>
+<span id="cb271-2"><a href="io.html#cb271-2" aria-hidden="true"></a>          <span class="dt">file =</span> <span class="st">&quot;pliki/dane_meteo_pzn.csv&quot;</span>,</span>
+<span id="cb271-3"><a href="io.html#cb271-3" aria-hidden="true"></a>          <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
 
 <div class="rmdinfo">
 Funkcje <code>read.csv()</code> czy <code>write.csv()</code> są domyślnie dostępne w języku R.
 Ich wydajność nie jest niestety najlepsza w przypadku plików tekstowych o dużej wielkości.
-W takich przypadkach warto użyć alternatywnych funkcji, np. <code>read_csv()</code> i <code>write_csv()</code> z pakietu <strong>readr</strong> <span class="citation">(Wickham, Hester, and Francois <a href="#ref-R-readr">2018</a>)</span> lub <code>fread()</code> i <code>fwrite()</code> z pakietu <strong>data.table</strong> <span class="citation">(Dowle and Srinivasan <a href="#ref-R-data.table">2019</a>)</span>.
+W takich przypadkach warto użyć alternatywnych funkcji, np. <code>read_csv()</code> i <code>write_csv()</code> z pakietu <strong>readr</strong> <span class="citation">(Wickham, Hester, and Francois <a href="#ref-R-readr" role="doc-biblioref">2018</a>)</span> lub <code>fread()</code> i <code>fwrite()</code> z pakietu <strong>data.table</strong> <span class="citation">(Dowle and Srinivasan <a href="#ref-R-data.table" role="doc-biblioref">2019</a>)</span>.
 </div>
-
 </div>
-<div id="formaty-r" class="section level2 hasAnchor">
+<div id="formaty-r" class="section level2 hasAnchor" number="9.6">
 <h2><span class="header-section-number">9.6</span> Formaty R<a href="io.html#formaty-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <!-- info about binary -->
 <p>Formaty tekstowe są bardzo uniwersalne pozwalając na odczyt, zapis czy przenoszenie danych pomiędzy różnymi komputerami, programami czy językami programowania.
@@ -515,56 +542,55 @@ Mają one jednak pewne ograniczenia.
 Wielkość pliku tekstowego rośnie bardzo szybko wraz z liczbą elementów, a plik tekstowy nie przechowuje dodatkowych informacji specyficznych dla języków programowania.
 Wczytanie czy zapis dużego pliku tekstowego zabiera też relatywnie dużo czasu.</p>
 <p>Przykładowo, chcemy aby kolumna <code>nazwa_stacji</code> była reprezentowana jako wektor czynnikowy.</p>
-<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb272-1" title="1">meteo<span class="op">$</span>nazwa_stacji =<span class="st"> </span><span class="kw">as.factor</span>(meteo<span class="op">$</span>nazwa_stacji)</a>
-<a class="sourceLine" id="cb272-2" title="2"><span class="kw">str</span>(meteo)</a>
-<a class="sourceLine" id="cb272-3" title="3"><span class="co">#&gt; &#39;data.frame&#39;:    730 obs. of  7 variables:</span></a>
-<a class="sourceLine" id="cb272-4" title="4"><span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span></a>
-<a class="sourceLine" id="cb272-5" title="5"><span class="co">#&gt;  $ nazwa_stacji: Factor w/ 2 levels &quot;POZNAŃ&quot;,&quot;ZAKOPANE&quot;: 1 1 1 1 1 1 1 1 1 1 ...</span></a>
-<a class="sourceLine" id="cb272-6" title="6"><span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span></a>
-<a class="sourceLine" id="cb272-7" title="7"><span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span></a>
-<a class="sourceLine" id="cb272-8" title="8"><span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span></a>
-<a class="sourceLine" id="cb272-9" title="9"><span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span></a>
-<a class="sourceLine" id="cb272-10" title="10"><span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span></a></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="io.html#cb272-1" aria-hidden="true"></a>meteo<span class="op">$</span>nazwa_stacji =<span class="st"> </span><span class="kw">as.factor</span>(meteo<span class="op">$</span>nazwa_stacji)</span>
+<span id="cb272-2"><a href="io.html#cb272-2" aria-hidden="true"></a><span class="kw">str</span>(meteo)</span>
+<span id="cb272-3"><a href="io.html#cb272-3" aria-hidden="true"></a><span class="co">#&gt; &#39;data.frame&#39;:    730 obs. of  7 variables:</span></span>
+<span id="cb272-4"><a href="io.html#cb272-4" aria-hidden="true"></a><span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span></span>
+<span id="cb272-5"><a href="io.html#cb272-5" aria-hidden="true"></a><span class="co">#&gt;  $ nazwa_stacji: Factor w/ 2 levels &quot;POZNAŃ&quot;,&quot;ZAKOPANE&quot;: 1 1 1 1 1 1 1 1 1 1 ...</span></span>
+<span id="cb272-6"><a href="io.html#cb272-6" aria-hidden="true"></a><span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span></span>
+<span id="cb272-7"><a href="io.html#cb272-7" aria-hidden="true"></a><span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span></span>
+<span id="cb272-8"><a href="io.html#cb272-8" aria-hidden="true"></a><span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span></span>
+<span id="cb272-9"><a href="io.html#cb272-9" aria-hidden="true"></a><span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span></span>
+<span id="cb272-10"><a href="io.html#cb272-10" aria-hidden="true"></a><span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span></span></code></pre></div>
 <p>W przypadku zapisania nowego obiektu do pliku tekstowego ta informacja zostanie utracona.
 Alternatywnie, jeżeli chcemy używać tych danych tylko w języku R możemy zapisać je do pliku w binarnym formacie RDS.
 Taki zapis można wykonać używając funkcji <code>saveRDS()</code> podając nazwę obiektu do zapisu oraz ścieżkę do nowego pliku.</p>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb273-1" title="1"><span class="kw">saveRDS</span>(meteo, <span class="dt">file =</span> <span class="st">&quot;pliki/dane_meteo.rds&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="io.html#cb273-1" aria-hidden="true"></a><span class="kw">saveRDS</span>(meteo, <span class="dt">file =</span> <span class="st">&quot;pliki/dane_meteo.rds&quot;</span>)</span></code></pre></div>
 <p>Taki plik będzie domyślnie mniejszy (nastąpi jego kompresja przy zapisie) niż tekstowy i będzie posiadał on wszelkie informacje o klasie tego obiektu.
 Ponowne wczytanie obiektu można wykonać używając funkcji <code>readRDS()</code>.</p>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb274-1" title="1">meteo_rds =<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;pliki/dane_meteo.rds&quot;</span>)</a>
-<a class="sourceLine" id="cb274-2" title="2"><span class="kw">str</span>(meteo_rds)</a>
-<a class="sourceLine" id="cb274-3" title="3"><span class="co">#&gt; &#39;data.frame&#39;:    730 obs. of  7 variables:</span></a>
-<a class="sourceLine" id="cb274-4" title="4"><span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span></a>
-<a class="sourceLine" id="cb274-5" title="5"><span class="co">#&gt;  $ nazwa_stacji: Factor w/ 2 levels &quot;POZNAŃ&quot;,&quot;ZAKOPANE&quot;: 1 1 1 1 1 1 1 1 1 1 ...</span></a>
-<a class="sourceLine" id="cb274-6" title="6"><span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span></a>
-<a class="sourceLine" id="cb274-7" title="7"><span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span></a>
-<a class="sourceLine" id="cb274-8" title="8"><span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span></a>
-<a class="sourceLine" id="cb274-9" title="9"><span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span></a>
-<a class="sourceLine" id="cb274-10" title="10"><span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span></a></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="io.html#cb274-1" aria-hidden="true"></a>meteo_rds =<span class="st"> </span><span class="kw">readRDS</span>(<span class="st">&quot;pliki/dane_meteo.rds&quot;</span>)</span>
+<span id="cb274-2"><a href="io.html#cb274-2" aria-hidden="true"></a><span class="kw">str</span>(meteo_rds)</span>
+<span id="cb274-3"><a href="io.html#cb274-3" aria-hidden="true"></a><span class="co">#&gt; &#39;data.frame&#39;:    730 obs. of  7 variables:</span></span>
+<span id="cb274-4"><a href="io.html#cb274-4" aria-hidden="true"></a><span class="co">#&gt;  $ kod_stacji  : int  352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 352160330 ...</span></span>
+<span id="cb274-5"><a href="io.html#cb274-5" aria-hidden="true"></a><span class="co">#&gt;  $ nazwa_stacji: Factor w/ 2 levels &quot;POZNAŃ&quot;,&quot;ZAKOPANE&quot;: 1 1 1 1 1 1 1 1 1 1 ...</span></span>
+<span id="cb274-6"><a href="io.html#cb274-6" aria-hidden="true"></a><span class="co">#&gt;  $ rok         : int  2017 2017 2017 2017 2017 2017 2017 2017 2017 2017 ...</span></span>
+<span id="cb274-7"><a href="io.html#cb274-7" aria-hidden="true"></a><span class="co">#&gt;  $ miesiac     : int  1 1 1 1 1 1 1 1 1 1 ...</span></span>
+<span id="cb274-8"><a href="io.html#cb274-8" aria-hidden="true"></a><span class="co">#&gt;  $ dzien       : int  1 2 3 4 5 6 7 8 9 10 ...</span></span>
+<span id="cb274-9"><a href="io.html#cb274-9" aria-hidden="true"></a><span class="co">#&gt;  $ tavg        : num  1.4 0.1 0.5 1.5 -3.5 -8.4 -7.9 -7.7 -5.8 -5 ...</span></span>
+<span id="cb274-10"><a href="io.html#cb274-10" aria-hidden="true"></a><span class="co">#&gt;  $ precip      : num  0 0 4.8 2.3 0 0 2.1 0 0 0 ...</span></span></code></pre></div>
 <p>Powyżej można zobaczyć, że została zachowana wcześniejsza zmiana - kolumna <code>nazwa_stacji</code> nadal jest reprezentowana poprzez wektor czynnikowy.</p>
 
 <div class="rmdinfo">
 Dodatkowo możliwe jest zapisywanie wielu obiektów do jednego pliku w formacie o rozszerzeniu <code>.rda</code> a następnie ich odczytanie używając wbudowanych funkcji <code>save()</code> i <code>load()</code>.
 </div>
-
 <p>Pakiety to zorganizowany zbiór funkcji rozszerzający możliwości R (sekcja <a href="funkcje.html#pakiety">3.5</a>).
 Istotnym elementem każdego pakietu jest jego dokumentacja, która ułatwia użytkownikom zrozumienie i wykorzystanie możliwości danego pakietu.
 Często, aby pokazać szczegółowo działanie danej funkcji wykorzystywane są przykładowe dane, które można dołączyć do pakietu.</p>
 <p>Przykładowo, wraz z R domyślnie instalowany jest pakiet o nazwie <strong>datasets</strong>.
 Aby wyświetlić listę zbiorów danych w tym pakiecie można użyć funkcji <code>data()</code> i podać w niej nazwę konkretnego pakietu.</p>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb275-1" title="1"><span class="kw">data</span>(<span class="dt">package =</span> <span class="st">&quot;datasets&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="io.html#cb275-1" aria-hidden="true"></a><span class="kw">data</span>(<span class="dt">package =</span> <span class="st">&quot;datasets&quot;</span>)</span></code></pre></div>
 <p>Wczytanie zbioru danych z wybranego pakietu odbywa się poprzez wybór nazwy zbioru (np. <code>"faithful"</code>) oraz nazwy pakietu <code>"datasets"</code>.</p>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb276-1" title="1"><span class="kw">data</span>(<span class="st">&quot;faithful&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;datasets&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="io.html#cb276-1" aria-hidden="true"></a><span class="kw">data</span>(<span class="st">&quot;faithful&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;datasets&quot;</span>)</span></code></pre></div>
 <p>Po wykonaniu tej funkcji zbiór danych jest dostępny z poziomu R.
 Zawiera on ramkę danych z dwoma kolumnami opisującymi gejzer Old Faithful (rycina <a href="io.html#fig:faithful">9.1</a>): <code>eruptions</code> - czas erupcji oraz <code>waiting</code> - czas oczekiwania na kolejną erupcję.</p>
-<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb277-1" title="1"><span class="kw">head</span>(faithful)</a>
-<a class="sourceLine" id="cb277-2" title="2"><span class="co">#&gt;   eruptions waiting</span></a>
-<a class="sourceLine" id="cb277-3" title="3"><span class="co">#&gt; 1      3.60      79</span></a>
-<a class="sourceLine" id="cb277-4" title="4"><span class="co">#&gt; 2      1.80      54</span></a>
-<a class="sourceLine" id="cb277-5" title="5"><span class="co">#&gt; 3      3.33      74</span></a>
-<a class="sourceLine" id="cb277-6" title="6"><span class="co">#&gt; 4      2.28      62</span></a>
-<a class="sourceLine" id="cb277-7" title="7"><span class="co">#&gt; 5      4.53      85</span></a>
-<a class="sourceLine" id="cb277-8" title="8"><span class="co">#&gt; 6      2.88      55</span></a></code></pre></div>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="io.html#cb277-1" aria-hidden="true"></a><span class="kw">head</span>(faithful)</span>
+<span id="cb277-2"><a href="io.html#cb277-2" aria-hidden="true"></a><span class="co">#&gt;   eruptions waiting</span></span>
+<span id="cb277-3"><a href="io.html#cb277-3" aria-hidden="true"></a><span class="co">#&gt; 1      3.60      79</span></span>
+<span id="cb277-4"><a href="io.html#cb277-4" aria-hidden="true"></a><span class="co">#&gt; 2      1.80      54</span></span>
+<span id="cb277-5"><a href="io.html#cb277-5" aria-hidden="true"></a><span class="co">#&gt; 3      3.33      74</span></span>
+<span id="cb277-6"><a href="io.html#cb277-6" aria-hidden="true"></a><span class="co">#&gt; 4      2.28      62</span></span>
+<span id="cb277-7"><a href="io.html#cb277-7" aria-hidden="true"></a><span class="co">#&gt; 5      4.53      85</span></span>
+<span id="cb277-8"><a href="io.html#cb277-8" aria-hidden="true"></a><span class="co">#&gt; 6      2.88      55</span></span></code></pre></div>
 
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:faithful"></span>
 <img src="images/old-faithful.jpg" alt="Obraz Alberta Bierstadta przedstawiający gejzer Old Faithful około roku 1881. Źródło: https://commons.wikimedia.org/wiki/File:Bierstadt_Albert_Old_Faithful.jpg" width="80%" />
@@ -573,39 +599,39 @@ Rycina 9.1: Obraz Alberta Bierstadta przedstawiający gejzer Old Faithful około
 </p>
 </div>
 </div>
-<div id="arkusze-kalkulacyjne" class="section level2 hasAnchor">
+<div id="arkusze-kalkulacyjne" class="section level2 hasAnchor" number="9.7">
 <h2><span class="header-section-number">9.7</span> Arkusze kalkulacyjne<a href="io.html#arkusze-kalkulacyjne" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Powszechnym sposobem przechowywania danych tabelarycznych są arkusze kalkulacyjne tworzone w programie Microsoft Excel.
-Tego typu dane można wczytać do R używając pakietu <strong>readxl</strong> <span class="citation">(Wickham and Bryan <a href="#ref-R-readxl">2019</a>)</span>.
+Tego typu dane można wczytać do R używając pakietu <strong>readxl</strong> <span class="citation">(Wickham and Bryan <a href="#ref-R-readxl" role="doc-biblioref">2019</a>)</span>.
 Główną funkcją tego pakietu jest <code>read_excel()</code>, przyjmująca ścieżkę pliku do wczytania.
 Dodatkowe argumenty tej funkcji pozwalają, np. na zdefiniowanie arkusza do wczytania (<code>sheet</code>) czy zasięgu komórek (<code>range</code>).</p>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb278-1" title="1"><span class="kw">library</span>(readxl)</a>
-<a class="sourceLine" id="cb278-2" title="2">meteo_z_xl =<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;pliki/dane_meteo.xlsx&quot;</span>)</a>
-<a class="sourceLine" id="cb278-3" title="3"><span class="kw">head</span>(meteo_z_xl)</a>
-<a class="sourceLine" id="cb278-4" title="4"><span class="co">#&gt; # A tibble: 6 × 7</span></a>
-<a class="sourceLine" id="cb278-5" title="5"><span class="co">#&gt;   kod_stacji nazwa_st…¹   rok miesiac dzien  tavg precip</span></a>
-<a class="sourceLine" id="cb278-6" title="6"><span class="co">#&gt;        &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb278-7" title="7"><span class="co">#&gt; 1  352160330 POZNAŃ      2017       1     1   1.4    0  </span></a>
-<a class="sourceLine" id="cb278-8" title="8"><span class="co">#&gt; 2  352160330 POZNAŃ      2017       1     2   0.1    0  </span></a>
-<a class="sourceLine" id="cb278-9" title="9"><span class="co">#&gt; 3  352160330 POZNAŃ      2017       1     3   0.5    4.8</span></a>
-<a class="sourceLine" id="cb278-10" title="10"><span class="co">#&gt; 4  352160330 POZNAŃ      2017       1     4   1.5    2.3</span></a>
-<a class="sourceLine" id="cb278-11" title="11"><span class="co">#&gt; 5  352160330 POZNAŃ      2017       1     5  -3.5    0  </span></a>
-<a class="sourceLine" id="cb278-12" title="12"><span class="co">#&gt; 6  352160330 POZNAŃ      2017       1     6  -8.4    0  </span></a>
-<a class="sourceLine" id="cb278-13" title="13"><span class="co">#&gt; # … with abbreviated variable name ¹​nazwa_stacji</span></a></code></pre></div>
-<p>Do zapisania ramki danych do formatu Excel można użyć funkcji <code>write_xlsx()</code> z pakietu <strong>writexl</strong> <span class="citation">(Ooms <a href="#ref-R-writexl">2019</a>)</span><a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>.</p>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="io.html#cb278-1" aria-hidden="true"></a><span class="kw">library</span>(readxl)</span>
+<span id="cb278-2"><a href="io.html#cb278-2" aria-hidden="true"></a>meteo_z_xl =<span class="st"> </span><span class="kw">read_excel</span>(<span class="st">&quot;pliki/dane_meteo.xlsx&quot;</span>)</span>
+<span id="cb278-3"><a href="io.html#cb278-3" aria-hidden="true"></a><span class="kw">head</span>(meteo_z_xl)</span>
+<span id="cb278-4"><a href="io.html#cb278-4" aria-hidden="true"></a><span class="co">#&gt; # A tibble: 6 × 7</span></span>
+<span id="cb278-5"><a href="io.html#cb278-5" aria-hidden="true"></a><span class="co">#&gt;   kod_stacji nazwa_st…¹   rok miesiac dzien  tavg precip</span></span>
+<span id="cb278-6"><a href="io.html#cb278-6" aria-hidden="true"></a><span class="co">#&gt;        &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;</span></span>
+<span id="cb278-7"><a href="io.html#cb278-7" aria-hidden="true"></a><span class="co">#&gt; 1  352160330 POZNAŃ      2017       1     1   1.4    0  </span></span>
+<span id="cb278-8"><a href="io.html#cb278-8" aria-hidden="true"></a><span class="co">#&gt; 2  352160330 POZNAŃ      2017       1     2   0.1    0  </span></span>
+<span id="cb278-9"><a href="io.html#cb278-9" aria-hidden="true"></a><span class="co">#&gt; 3  352160330 POZNAŃ      2017       1     3   0.5    4.8</span></span>
+<span id="cb278-10"><a href="io.html#cb278-10" aria-hidden="true"></a><span class="co">#&gt; 4  352160330 POZNAŃ      2017       1     4   1.5    2.3</span></span>
+<span id="cb278-11"><a href="io.html#cb278-11" aria-hidden="true"></a><span class="co">#&gt; 5  352160330 POZNAŃ      2017       1     5  -3.5    0  </span></span>
+<span id="cb278-12"><a href="io.html#cb278-12" aria-hidden="true"></a><span class="co">#&gt; 6  352160330 POZNAŃ      2017       1     6  -8.4    0  </span></span>
+<span id="cb278-13"><a href="io.html#cb278-13" aria-hidden="true"></a><span class="co">#&gt; # … with abbreviated variable name ¹​nazwa_stacji</span></span></code></pre></div>
+<p>Do zapisania ramki danych do formatu Excel można użyć funkcji <code>write_xlsx()</code> z pakietu <strong>writexl</strong> <span class="citation">(Ooms <a href="#ref-R-writexl" role="doc-biblioref">2019</a>)</span><a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>.</p>
 <!-- block problemy z excelem jak daty -->
 </div>
-<div id="inne-formaty" class="section level2 hasAnchor">
+<div id="inne-formaty" class="section level2 hasAnchor" number="9.8">
 <h2><span class="header-section-number">9.8</span> Inne formaty<a href="io.html#inne-formaty" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Powyżej można było zobaczyć jaki sposób można wczytać dane z różnorodnych plików tekstowych, R, czy arkuszy kalkulacyjnych.
 R pozwala jednocześnie na otworzenie wielu innych formatów plików używając dodatkowych pakietów.
-Przykładowo, hierarchiczne formaty danych można wczytać używając pakietu <strong>jsonlite</strong> (format <code>.json</code>) <span class="citation">(Ooms <a href="#ref-R-jsonlite">2020</a>)</span> czy <strong>xml2</strong> (format <code>.xml</code>) <span class="citation">(Wickham, Hester, and Ooms <a href="#ref-R-xml2">2020</a>)</span>, a formaty danych przestrzennych używając pakietu <strong>sf</strong> (dane wektorowe) <span class="citation">(Pebesma <a href="#ref-R-sf">2020</a>)</span> czy <strong>raster</strong> (dane rastrowe) <span class="citation">(Hijmans <a href="#ref-R-raster">2020</a>)</span>.
+Przykładowo, hierarchiczne formaty danych można wczytać używając pakietu <strong>jsonlite</strong> (format <code>.json</code>) <span class="citation">(Ooms <a href="#ref-R-jsonlite" role="doc-biblioref">2020</a>)</span> czy <strong>xml2</strong> (format <code>.xml</code>) <span class="citation">(Wickham, Hester, and Ooms <a href="#ref-R-xml2" role="doc-biblioref">2020</a>)</span>, a formaty danych przestrzennych używając pakietu <strong>sf</strong> (dane wektorowe) <span class="citation">(Pebesma <a href="#ref-R-sf" role="doc-biblioref">2020</a>)</span> czy <strong>raster</strong> (dane rastrowe) <span class="citation">(Hijmans <a href="#ref-R-raster" role="doc-biblioref">2020</a>)</span>.
 Zestawienie zawierające dodatkowe przykłady można znaleźć pod adresem <a href="https://github.com/leeper/rio" class="uri">https://github.com/leeper/rio</a>.</p>
 <p>Powszechną sytuacją jest przechowywanie danych w różnego rodzaju bazach danych.
 Ma to miejsce, kiedy dane są znacznej wielkości, mają złożone relacje, czy też muszą być jednocześnie dostępne dla wielu osób.
-Dostęp do baz danych w R możliwy jest używając pakietu <strong>DBI</strong> <span class="citation">(R Special Interest Group on Databases (R-SIG-DB), Wickham, and Müller <a href="#ref-R-DBI">2019</a>)</span> wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. <strong>RPostgreSQL</strong> dla baz PostgreSQL <span class="citation">(Conway et al. <a href="#ref-R-RPostgreSQL">2017</a>)</span> czy <strong>RSQLite</strong> dla baz SQLite <span class="citation">(Müller et al. <a href="#ref-R-RSQLite">2020</a>)</span>).<a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a></p>
+Dostęp do baz danych w R możliwy jest używając pakietu <strong>DBI</strong> <span class="citation">(R Special Interest Group on Databases (R-SIG-DB), Wickham, and Müller <a href="#ref-R-DBI" role="doc-biblioref">2019</a>)</span> wraz z dodatkowym pakietem dla konkretnego systemu bazodanowego (np. <strong>RPostgreSQL</strong> dla baz PostgreSQL <span class="citation">(Conway et al. <a href="#ref-R-RPostgreSQL" role="doc-biblioref">2017</a>)</span> czy <strong>RSQLite</strong> dla baz SQLite <span class="citation">(Müller et al. <a href="#ref-R-RSQLite" role="doc-biblioref">2020</a>)</span>).<a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a></p>
 </div>
-<div id="zad9" class="section level2 hasAnchor">
+<div id="zad9" class="section level2 hasAnchor" number="9.9">
 <h2><span class="header-section-number">9.9</span> Zadania<a href="io.html#zad9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li><p>Stwórz nowy projekt RStudio o nazwie “IO”.
@@ -637,7 +663,7 @@ Napisz funkcję, która odszyfruje tą wiadomość.</p></li>
 
 
 <h3>Bibliografia<a href="bibliografia.html#bibliografia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references">
+<div id="refs" class="references hanging-indent">
 <div id="ref-R-RPostgreSQL">
 <p>Conway, Joe, Dirk Eddelbuettel, Tomoaki Nishiyama, Sameer Kumar Prayaga, and Neil Tiffin. 2017. <em>RPostgreSQL: R Interface to the ’Postgresql’ Database System</em>. <a href="https://CRAN.R-project.org/package=RPostgreSQL">https://CRAN.R-project.org/package=RPostgreSQL</a>.</p>
 </div>
@@ -675,12 +701,12 @@ Napisz funkcję, która odszyfruje tą wiadomość.</p></li>
 <div class="footnotes">
 <hr />
 <ol start="39">
-<li id="fn39"><p>Jeżeli poprawnie ustawiliśmy folder roboczy.<a href="io.html#fnref39" class="footnote-back">↩</a></p></li>
-<li id="fn40"><p>Na komputerach z systemem Windows wymagane jest posiadanie zainstalowanego programu do rozpakowywania plików ZIP.<a href="io.html#fnref40" class="footnote-back">↩</a></p></li>
-<li id="fn41"><p>Funkcje takie jak <code>read.csv()</code> pozwalają na otworzenie pliku tekstowego bezpośrednio z adresu internetowego.<a href="io.html#fnref41" class="footnote-back">↩</a></p></li>
-<li id="fn42"><p>Istnieje również jej odpowiednik <code>write.csv2()</code>.<a href="io.html#fnref42" class="footnote-back">↩</a></p></li>
-<li id="fn43"><p>Po więcej informacji otwórz plik pomocy tej funkcji <code>?write_xlsx()</code>.<a href="io.html#fnref43" class="footnote-back">↩</a></p></li>
-<li id="fn44"><p>Więcej informacji o łączeniu się z bazami danych można znaleść na stronie <a href="https://db.rstudio.com/getting-started/connect-to-database" class="uri">https://db.rstudio.com/getting-started/connect-to-database</a>.<a href="io.html#fnref44" class="footnote-back">↩</a></p></li>
+<li id="fn39"><p>Jeżeli poprawnie ustawiliśmy folder roboczy.<a href="io.html#fnref39" class="footnote-back">↩︎</a></p></li>
+<li id="fn40"><p>Na komputerach z systemem Windows wymagane jest posiadanie zainstalowanego programu do rozpakowywania plików ZIP.<a href="io.html#fnref40" class="footnote-back">↩︎</a></p></li>
+<li id="fn41"><p>Funkcje takie jak <code>read.csv()</code> pozwalają na otworzenie pliku tekstowego bezpośrednio z adresu internetowego.<a href="io.html#fnref41" class="footnote-back">↩︎</a></p></li>
+<li id="fn42"><p>Istnieje również jej odpowiednik <code>write.csv2()</code>.<a href="io.html#fnref42" class="footnote-back">↩︎</a></p></li>
+<li id="fn43"><p>Po więcej informacji otwórz plik pomocy tej funkcji <code>?write_xlsx()</code>.<a href="io.html#fnref43" class="footnote-back">↩︎</a></p></li>
+<li id="fn44"><p>Więcej informacji o łączeniu się z bazami danych można znaleść na stronie <a href="https://db.rstudio.com/getting-started/connect-to-database" class="uri">https://db.rstudio.com/getting-started/connect-to-database</a>.<a href="io.html#fnref44" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -752,7 +778,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

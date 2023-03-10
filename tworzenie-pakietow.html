@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>15 Pakiety | Elementarz programisty</title>
   <meta name="description" content="Wstęp do programowania używając R. Książka przeznaczona zarówno dla osób nowicjuszy programowania, jak też dla osób, które znają inne języki programowania, ale są zainteresowane poznaniem języka R." />
-  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="15 Pakiety | Elementarz programisty" />
   <meta property="og:type" content="book" />
@@ -48,6 +48,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -60,25 +61,26 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -87,9 +89,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -139,26 +141,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Elementarz programisty</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>O książce</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#wymagania-wstępne"><i class="fa fa-check"></i>Wymagania wstępne</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#styl-książki"><i class="fa fa-check"></i>Styl książki</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#podziękowania"><i class="fa fa-check"></i>Podziękowania</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a><ul>
+<li class="chapter" data-level="1" data-path="wprowadzenie.html"><a href="wprowadzenie.html"><i class="fa fa-check"></i><b>1</b> Wprowadzenie</a>
+<ul>
 <li class="chapter" data-level="1.1" data-path="wprowadzenie.html"><a href="wprowadzenie.html#mity-programistyczne"><i class="fa fa-check"></i><b>1.1</b> Mity programistyczne</a></li>
 <li class="chapter" data-level="1.2" data-path="wprowadzenie.html"><a href="wprowadzenie.html#jezyki-programowania"><i class="fa fa-check"></i><b>1.2</b> Języki programowania</a></li>
 <li class="chapter" data-level="1.3" data-path="wprowadzenie.html"><a href="wprowadzenie.html#r"><i class="fa fa-check"></i><b>1.3</b> R</a></li>
 <li class="chapter" data-level="1.4" data-path="wprowadzenie.html"><a href="wprowadzenie.html#zad1"><i class="fa fa-check"></i><b>1.4</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>I Podstawy</b></span></li>
-<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a><ul>
+<li class="chapter" data-level="2" data-path="ergosum.html"><a href="ergosum.html"><i class="fa fa-check"></i><b>2</b> Start R</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="ergosum.html"><a href="ergosum.html#wyrażenia"><i class="fa fa-check"></i><b>2.1</b> Wyrażenia</a></li>
-<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a><ul>
+<li class="chapter" data-level="2.2" data-path="ergosum.html"><a href="ergosum.html#obiekty"><i class="fa fa-check"></i><b>2.2</b> Obiekty</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="ergosum.html"><a href="ergosum.html#operator-przypisania"><i class="fa fa-check"></i><b>2.2.1</b> Operator przypisania</a></li>
 <li class="chapter" data-level="2.2.2" data-path="ergosum.html"><a href="ergosum.html#dzialania-na-obiektach"><i class="fa fa-check"></i><b>2.2.2</b> Działania na obiektach</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="ergosum.html"><a href="ergosum.html#ide"><i class="fa fa-check"></i><b>2.3</b> IDE</a></li>
-<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a><ul>
+<li class="chapter" data-level="2.4" data-path="ergosum.html"><a href="ergosum.html#styl"><i class="fa fa-check"></i><b>2.4</b> Styl</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="ergosum.html"><a href="ergosum.html#nazwy-obiektow"><i class="fa fa-check"></i><b>2.4.1</b> Nazwy obiektów</a></li>
 <li class="chapter" data-level="2.4.2" data-path="ergosum.html"><a href="ergosum.html#odstępy"><i class="fa fa-check"></i><b>2.4.2</b> Odstępy</a></li>
 <li class="chapter" data-level="2.4.3" data-path="ergosum.html"><a href="ergosum.html#komentarze"><i class="fa fa-check"></i><b>2.4.3</b> Komentarze</a></li>
@@ -168,7 +175,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.5" data-path="ergosum.html"><a href="ergosum.html#resources"><i class="fa fa-check"></i><b>2.5</b> Dodatkowe materiały</a></li>
 <li class="chapter" data-level="2.6" data-path="ergosum.html"><a href="ergosum.html#zad2"><i class="fa fa-check"></i><b>2.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a><ul>
+<li class="chapter" data-level="3" data-path="funkcje.html"><a href="funkcje.html"><i class="fa fa-check"></i><b>3</b> Funkcje</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="funkcje.html"><a href="funkcje.html#struktura-funkcji"><i class="fa fa-check"></i><b>3.1</b> Struktura funkcji</a></li>
 <li class="chapter" data-level="3.2" data-path="funkcje.html"><a href="funkcje.html#wbudowane-funkcje"><i class="fa fa-check"></i><b>3.2</b> Wbudowane funkcje</a></li>
 <li class="chapter" data-level="3.3" data-path="funkcje.html"><a href="funkcje.html#kolejnosc-funkcji"><i class="fa fa-check"></i><b>3.3</b> Kolejność wykonywania funkcji</a></li>
@@ -180,14 +188,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.9" data-path="funkcje.html"><a href="funkcje.html#komunikaty"><i class="fa fa-check"></i><b>3.9</b> Komunikaty</a></li>
 <li class="chapter" data-level="3.10" data-path="funkcje.html"><a href="funkcje.html#zad3"><i class="fa fa-check"></i><b>3.10</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a><ul>
+<li class="chapter" data-level="4" data-path="warunki.html"><a href="warunki.html"><i class="fa fa-check"></i><b>4</b> Wyrażenia warunkowe</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="warunki.html"><a href="warunki.html#warunki-1"><i class="fa fa-check"></i><b>4.1</b> Warunki</a></li>
 <li class="chapter" data-level="4.2" data-path="warunki.html"><a href="warunki.html#warunki-zagnieżdżone"><i class="fa fa-check"></i><b>4.2</b> Warunki zagnieżdżone</a></li>
 <li class="chapter" data-level="4.3" data-path="warunki.html"><a href="warunki.html#operatory-porównania"><i class="fa fa-check"></i><b>4.3</b> Operatory porównania</a></li>
 <li class="chapter" data-level="4.4" data-path="warunki.html"><a href="warunki.html#wwwf"><i class="fa fa-check"></i><b>4.4</b> Wyrażenia warunkowe w funkcjach</a></li>
 <li class="chapter" data-level="4.5" data-path="warunki.html"><a href="warunki.html#zad4"><i class="fa fa-check"></i><b>4.5</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a><ul>
+<li class="chapter" data-level="5" data-path="proste-obiekty.html"><a href="proste-obiekty.html"><i class="fa fa-check"></i><b>5</b> Proste obiekty</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="proste-obiekty.html"><a href="proste-obiekty.html#wektory"><i class="fa fa-check"></i><b>5.1</b> Wektory</a></li>
 <li class="chapter" data-level="5.2" data-path="proste-obiekty.html"><a href="proste-obiekty.html#właściwości-wektorów"><i class="fa fa-check"></i><b>5.2</b> Właściwości wektorów</a></li>
 <li class="chapter" data-level="5.3" data-path="proste-obiekty.html"><a href="proste-obiekty.html#pf-vector"><i class="fa fa-check"></i><b>5.3</b> Podstawowe funkcje</a></li>
@@ -203,7 +213,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.13" data-path="proste-obiekty.html"><a href="proste-obiekty.html#ime"><i class="fa fa-check"></i><b>5.13</b> Wektory czasu</a></li>
 <li class="chapter" data-level="5.14" data-path="proste-obiekty.html"><a href="proste-obiekty.html#zad5"><i class="fa fa-check"></i><b>5.14</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a><ul>
+<li class="chapter" data-level="6" data-path="tekst.html"><a href="tekst.html"><i class="fa fa-check"></i><b>6</b> Tekst</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="tekst.html"><a href="tekst.html#reprezentacja-tekstu"><i class="fa fa-check"></i><b>6.1</b> Reprezentacja tekstu</a></li>
 <li class="chapter" data-level="6.2" data-path="tekst.html"><a href="tekst.html#podstawowe-operacje-na-tekście"><i class="fa fa-check"></i><b>6.2</b> Podstawowe operacje na tekście</a></li>
 <li class="chapter" data-level="6.3" data-path="tekst.html"><a href="tekst.html#wt"><i class="fa fa-check"></i><b>6.3</b> Wydzielanie tekstu</a></li>
@@ -213,20 +224,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.7" data-path="tekst.html"><a href="tekst.html#wyszukiwanie-plików"><i class="fa fa-check"></i><b>6.7</b> Wyszukiwanie plików</a></li>
 <li class="chapter" data-level="6.8" data-path="tekst.html"><a href="tekst.html#zad6"><i class="fa fa-check"></i><b>6.8</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a><ul>
-<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a><ul>
+<li class="chapter" data-level="7" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html"><i class="fa fa-check"></i><b>7</b> Złożone obiekty</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#macierze"><i class="fa fa-check"></i><b>7.1</b> Macierze</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie"><i class="fa fa-check"></i><b>7.1.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.1.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje"><i class="fa fa-check"></i><b>7.1.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.1.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-1"><i class="fa fa-check"></i><b>7.1.3</b> Wydzielanie</a></li>
 <li class="chapter" data-level="7.1.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie"><i class="fa fa-check"></i><b>7.1.4</b> Łączenie</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a><ul>
+<li class="chapter" data-level="7.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#df"><i class="fa fa-check"></i><b>7.2</b> Ramki danych</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-1"><i class="fa fa-check"></i><b>7.2.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.2.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-1"><i class="fa fa-check"></i><b>7.2.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.2.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#wydzielanie-df"><i class="fa fa-check"></i><b>7.2.3</b> Wydzielanie</a></li>
 <li class="chapter" data-level="7.2.4" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-1"><i class="fa fa-check"></i><b>7.2.4</b> Łączenie</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a><ul>
+<li class="chapter" data-level="7.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#listy"><i class="fa fa-check"></i><b>7.3</b> Listy</a>
+<ul>
 <li class="chapter" data-level="7.3.1" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#tworzenie-2"><i class="fa fa-check"></i><b>7.3.1</b> Tworzenie</a></li>
 <li class="chapter" data-level="7.3.2" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#podstawowe-funkcje-2"><i class="fa fa-check"></i><b>7.3.2</b> Podstawowe funkcje</a></li>
 <li class="chapter" data-level="7.3.3" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#łączenie-2"><i class="fa fa-check"></i><b>7.3.3</b> Łączenie</a></li>
@@ -236,8 +251,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.5" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#inne-klasy"><i class="fa fa-check"></i><b>7.5</b> Inne klasy obiektów</a></li>
 <li class="chapter" data-level="7.6" data-path="zlozone-obiekty.html"><a href="zlozone-obiekty.html#zad7"><i class="fa fa-check"></i><b>7.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a><ul>
-<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a><ul>
+<li class="chapter" data-level="8" data-path="petle.html"><a href="petle.html"><i class="fa fa-check"></i><b>8</b> Powtarzanie</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="petle.html"><a href="petle.html#petla-for"><i class="fa fa-check"></i><b>8.1</b> Pętla for</a>
+<ul>
 <li class="chapter" data-level="8.1.1" data-path="petle.html"><a href="petle.html#składnia"><i class="fa fa-check"></i><b>8.1.1</b> Składnia</a></li>
 <li class="chapter" data-level="8.1.2" data-path="petle.html"><a href="petle.html#for-example"><i class="fa fa-check"></i><b>8.1.2</b> Przykład działania</a></li>
 <li class="chapter" data-level="8.1.3" data-path="petle.html"><a href="petle.html#zastosowanie-w-funkcjach"><i class="fa fa-check"></i><b>8.1.3</b> Zastosowanie w funkcjach</a></li>
@@ -246,7 +263,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="petle.html"><a href="petle.html#prog-fun"><i class="fa fa-check"></i><b>8.3</b> Programowanie funkcyjne</a></li>
 <li class="chapter" data-level="8.4" data-path="petle.html"><a href="petle.html#zad8"><i class="fa fa-check"></i><b>8.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a><ul>
+<li class="chapter" data-level="9" data-path="io.html"><a href="io.html"><i class="fa fa-check"></i><b>9</b> Wczytywanie i zapisywanie plików</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="io.html"><a href="io.html#folder-roboczy"><i class="fa fa-check"></i><b>9.1</b> Folder roboczy</a></li>
 <li class="chapter" data-level="9.2" data-path="io.html"><a href="io.html#działania-na-plikach-i-folderach"><i class="fa fa-check"></i><b>9.2</b> Działania na plikach i folderach</a></li>
 <li class="chapter" data-level="9.3" data-path="io.html"><a href="io.html#dane-internetowe"><i class="fa fa-check"></i><b>9.3</b> Dane internetowe</a></li>
@@ -258,24 +276,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.9" data-path="io.html"><a href="io.html#zad9"><i class="fa fa-check"></i><b>9.9</b> Zadania</a></li>
 </ul></li>
 <li class="part"><span><b>II Narzędzia</b></span></li>
-<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a><ul>
+<li class="chapter" data-level="10" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html"><i class="fa fa-check"></i><b>10</b> Złożone funkcje</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#api"><i class="fa fa-check"></i><b>10.1</b> API</a></li>
 <li class="chapter" data-level="10.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#obsluga-komunikatow"><i class="fa fa-check"></i><b>10.2</b> Obsługa komunikatów</a></li>
-<li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe</a><ul>
+<li class="chapter" data-level="10.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#oop"><i class="fa fa-check"></i><b>10.3</b> Programowanie obiektowe</a>
+<ul>
 <li class="chapter" data-level="10.3.1" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#klasy"><i class="fa fa-check"></i><b>10.3.1</b> Klasy</a></li>
 <li class="chapter" data-level="10.3.2" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#metody"><i class="fa fa-check"></i><b>10.3.2</b> Metody</a></li>
 <li class="chapter" data-level="10.3.3" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#konstruktory"><i class="fa fa-check"></i><b>10.3.3</b> Konstruktory</a></li>
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="zlozone-funkcje.html"><a href="zlozone-funkcje.html#zad11"><i class="fa fa-check"></i><b>10.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu</a><ul>
+<li class="chapter" data-level="11" data-path="analiza-kodu.html"><a href="analiza-kodu.html"><i class="fa fa-check"></i><b>11</b> Analiza kodu</a>
+<ul>
 <li class="chapter" data-level="11.1" data-path="analiza-kodu.html"><a href="analiza-kodu.html#testy-jednostkowe"><i class="fa fa-check"></i><b>11.1</b> Testy jednostkowe</a></li>
 <li class="chapter" data-level="11.2" data-path="analiza-kodu.html"><a href="analiza-kodu.html#profiling"><i class="fa fa-check"></i><b>11.2</b> Profiling</a></li>
 <li class="chapter" data-level="11.3" data-path="analiza-kodu.html"><a href="analiza-kodu.html#benchmarking"><i class="fa fa-check"></i><b>11.3</b> Benchmarking</a></li>
 <li class="chapter" data-level="11.4" data-path="analiza-kodu.html"><a href="analiza-kodu.html#zad12"><i class="fa fa-check"></i><b>11.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie</a><ul>
-<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady</a><ul>
+<li class="chapter" data-level="12" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>12</b> Debugowanie</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="debugging.html"><a href="debugging.html#reprex"><i class="fa fa-check"></i><b>12.1</b> Powtarzalne przykłady</a>
+<ul>
 <li class="chapter" data-level="12.1.1" data-path="debugging.html"><a href="debugging.html#pakiet-reprex"><i class="fa fa-check"></i><b>12.1.1</b> Pakiet <strong>reprex</strong></a></li>
 <li class="chapter" data-level="12.1.2" data-path="debugging.html"><a href="debugging.html#tworzenie-powtarzalnego-przykładu"><i class="fa fa-check"></i><b>12.1.2</b> Tworzenie powtarzalnego przykładu</a></li>
 </ul></li>
@@ -284,8 +307,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="debugging.html"><a href="debugging.html#debugger"><i class="fa fa-check"></i><b>12.4</b> Debugger</a></li>
 <li class="chapter" data-level="12.5" data-path="debugging.html"><a href="debugging.html#zad13"><i class="fa fa-check"></i><b>12.5</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik</a><ul>
-<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++</a><ul>
+<li class="chapter" data-level="13" data-path="lacznik.html"><a href="lacznik.html"><i class="fa fa-check"></i><b>13</b> Łącznik</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="lacznik.html"><a href="lacznik.html#cpp"><i class="fa fa-check"></i><b>13.1</b> C++</a>
+<ul>
 <li class="chapter" data-level="13.1.1" data-path="lacznik.html"><a href="lacznik.html#cppFunction"><i class="fa fa-check"></i><b>13.1.1</b> Wywoływanie kodu C++ wewnątrz skryptu R</a></li>
 <li class="chapter" data-level="13.1.2" data-path="lacznik.html"><a href="lacznik.html#sourceCpp"><i class="fa fa-check"></i><b>13.1.2</b> Wywoływanie kodu z plików .cpp</a></li>
 </ul></li>
@@ -293,8 +318,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.3" data-path="lacznik.html"><a href="lacznik.html#powloka-systemowa"><i class="fa fa-check"></i><b>13.3</b> Powłoka systemowa</a></li>
 <li class="chapter" data-level="13.4" data-path="lacznik.html"><a href="lacznik.html#zad14"><i class="fa fa-check"></i><b>13.4</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji</a><ul>
-<li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git</a><ul>
+<li class="chapter" data-level="14" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html"><i class="fa fa-check"></i><b>14</b> Kontrola wersji</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#git"><i class="fa fa-check"></i><b>14.1</b> Git</a>
+<ul>
 <li class="chapter" data-level="14.1.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#konfiguracja-systemu-git"><i class="fa fa-check"></i><b>14.1.1</b> Konfiguracja systemu Git</a></li>
 <li class="chapter" data-level="14.1.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium"><i class="fa fa-check"></i><b>14.1.2</b> Repozytorium</a></li>
 <li class="chapter" data-level="14.1.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodawanie-zmian"><i class="fa fa-check"></i><b>14.1.3</b> Dodawanie zmian</a></li>
@@ -305,20 +332,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="14.1.8" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#wysylanie-zmian"><i class="fa fa-check"></i><b>14.1.8</b> Wysyłanie zmian</a></li>
 <li class="chapter" data-level="14.1.9" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#aktualizowanie-zmian"><i class="fa fa-check"></i><b>14.1.9</b> Aktualizowanie zmian</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub</a><ul>
+<li class="chapter" data-level="14.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#github"><i class="fa fa-check"></i><b>14.2</b> GitHub</a>
+<ul>
 <li class="chapter" data-level="14.2.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#tworzenie-zdanego-repo"><i class="fa fa-check"></i><b>14.2.1</b> Tworzenie zdanego repo</a></li>
 <li class="chapter" data-level="14.2.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#repozytorium-github"><i class="fa fa-check"></i><b>14.2.2</b> Repozytorium GitHub</a></li>
 <li class="chapter" data-level="14.2.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#dodatkowe-możliwości-github"><i class="fa fa-check"></i><b>14.2.3</b> Dodatkowe możliwości GitHub</a></li>
 </ul></li>
 <li class="chapter" data-level="14.3" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#rstudio-git"><i class="fa fa-check"></i><b>14.3</b> Kontrola wersji w RStudio</a></li>
-<li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git</a><ul>
+<li class="chapter" data-level="14.4" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#sposoby-pracy-z-systemem-git"><i class="fa fa-check"></i><b>14.4</b> Sposoby pracy z systemem Git</a>
+<ul>
 <li class="chapter" data-level="14.4.1" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#nowy-projekt"><i class="fa fa-check"></i><b>14.4.1</b> Nowy projekt</a></li>
 <li class="chapter" data-level="14.4.2" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#istniejacy-projekt"><i class="fa fa-check"></i><b>14.4.2</b> Istniejący projekt</a></li>
 </ul></li>
 <li class="chapter" data-level="14.5" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#problemy-z-kontrolą-wersji"><i class="fa fa-check"></i><b>14.5</b> Problemy z kontrolą wersji</a></li>
 <li class="chapter" data-level="14.6" data-path="kontrola-wersji.html"><a href="kontrola-wersji.html#zad15"><i class="fa fa-check"></i><b>14.6</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a><ul>
+<li class="chapter" data-level="15" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html"><i class="fa fa-check"></i><b>15</b> Pakiety</a>
+<ul>
 <li class="chapter" data-level="15.1" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#nazwa-pakietu"><i class="fa fa-check"></i><b>15.1</b> Nazwa pakietu</a></li>
 <li class="chapter" data-level="15.2" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#tworzenie-szkieletu-pakietu"><i class="fa fa-check"></i><b>15.2</b> Tworzenie szkieletu pakietu</a></li>
 <li class="chapter" data-level="15.3" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#opis-pakietu"><i class="fa fa-check"></i><b>15.3</b> Opis pakietu</a></li>
@@ -332,7 +362,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.11" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#publikowanie-pakietów"><i class="fa fa-check"></i><b>15.11</b> Publikowanie pakietów</a></li>
 <li class="chapter" data-level="15.12" data-path="tworzenie-pakietow.html"><a href="tworzenie-pakietow.html#zad16"><i class="fa fa-check"></i><b>15.12</b> Zadania</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie</a><ul>
+<li class="chapter" data-level="16" data-path="podsumowanie.html"><a href="podsumowanie.html"><i class="fa fa-check"></i><b>16</b> Podsumowanie</a>
+<ul>
 <li class="chapter" data-level="16.1" data-path="podsumowanie.html"><a href="podsumowanie.html#grafika"><i class="fa fa-check"></i><b>16.1</b> Grafika</a></li>
 <li class="chapter" data-level="16.2" data-path="podsumowanie.html"><a href="podsumowanie.html#analiza-danych"><i class="fa fa-check"></i><b>16.2</b> Analiza danych</a></li>
 <li class="chapter" data-level="16.3" data-path="podsumowanie.html"><a href="podsumowanie.html#inne-zastosowania"><i class="fa fa-check"></i><b>16.3</b> Inne zastosowania</a></li>
@@ -360,7 +391,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tworzenie-pakietow" class="section level1 hasAnchor">
+<div id="tworzenie-pakietow" class="section level1 hasAnchor" number="15">
 <h1><span class="header-section-number">15</span> Pakiety<a href="tworzenie-pakietow.html#tworzenie-pakietow" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <!-- https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1006561&type=printable -->
 <!-- https://github.com/ropensci/dev_guide -->
@@ -372,23 +403,23 @@ Funkcje w pakietach posiadają też swoją dokumentację (jej struktura została
 Pakiety, oprócz swojej unikalnej nazwy, posiadają również informacje o swojej wersji, autorach, zależnościach i licencji.</p>
 <p>Informacje w tym rozdziale powinny pozwolić na stworzenie podstawowego pakietu R.
 Istnieje jednak wiele dodatkowych aspektów i kwestii w tym temacie, które zostały tutaj wspomniane pobieżnie lub pominięte.
-W celu poznania i zrozumienia złożonych aspektów tworzenia pakietów R cennymi źródłami wiedzy może być książki <a href="https://r-pkgs.org">R packages</a> <span class="citation">(Wickham <a href="#ref-wickham2015r">2015</a>)</span> oraz <a href="https://ropensci.github.io/dev_guide/">rOpenSci Packages: Development, Maintenance, and Peer Review</a> <span class="citation">(rOpenSci et al. <a href="#ref-ropensci_2019_2554759">2019</a>)</span>.
-Dodatkowo, w niektórych przypadkach pomocna może być oficjalna dokumentacja <a href="https://cran.r-project.org/doc/manuals/R-exts.html#Creating-R-packages">Writing R Extensions</a> <span class="citation">(R Core Team <a href="#ref-team1999writing">2019</a>)</span>.</p>
-<div id="nazwa-pakietu" class="section level2 hasAnchor">
+W celu poznania i zrozumienia złożonych aspektów tworzenia pakietów R cennymi źródłami wiedzy może być książki <a href="https://r-pkgs.org">R packages</a> <span class="citation">(Wickham <a href="#ref-wickham2015r" role="doc-biblioref">2015</a>)</span> oraz <a href="https://ropensci.github.io/dev_guide/">rOpenSci Packages: Development, Maintenance, and Peer Review</a> <span class="citation">(rOpenSci et al. <a href="#ref-ropensci_2019_2554759" role="doc-biblioref">2019</a>)</span>.
+Dodatkowo, w niektórych przypadkach pomocna może być oficjalna dokumentacja <a href="https://cran.r-project.org/doc/manuals/R-exts.html#Creating-R-packages">Writing R Extensions</a> <span class="citation">(R Core Team <a href="#ref-team1999writing" role="doc-biblioref">2019</a>)</span>.</p>
+<div id="nazwa-pakietu" class="section level2 hasAnchor" number="15.1">
 <h2><span class="header-section-number">15.1</span> Nazwa pakietu<a href="tworzenie-pakietow.html#nazwa-pakietu" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Nazwa nowego pakietu musi spełniać kilka wymagań: składać się tylko ze znaków <a href="https://en.wikipedia.org/wiki/ASCII">ASCII</a>, cyfr i kropek, mieć co najmniej dwa znaki oraz zaczynać się od litery i nie kończyć się kropką <span class="citation">(R Core Team <a href="#ref-team1999writing">2019</a>)</span>.
+<p>Nazwa nowego pakietu musi spełniać kilka wymagań: składać się tylko ze znaków <a href="https://en.wikipedia.org/wiki/ASCII">ASCII</a>, cyfr i kropek, mieć co najmniej dwa znaki oraz zaczynać się od litery i nie kończyć się kropką <span class="citation">(R Core Team <a href="#ref-team1999writing" role="doc-biblioref">2019</a>)</span>.
 Ważne jest również myślenie o nazwie pakietu tak jak o nazwach funkcji (sekcja <a href="ergosum.html#styl">2.4</a>) - nazwy pakietów powinny ułatwiać zrozumienie ich zawartości.
 Dodatkowo, z uwagi na istnienie wielu pakietów warto najpierw sprawdzić czy pakiet o wymyślonej przez nas nazwie już nie istnieje.
-Można to przykładowo zrobić używając pakietu <strong>available</strong> <span class="citation">(Ganz et al. <a href="#ref-R-available">2019</a>)</span>, który sprawdza przy wybrana nazwa nie jest już zajęta oraz czy nie ma ona jakiegoś niepożądanego przez nas znaczenia.</p>
+Można to przykładowo zrobić używając pakietu <strong>available</strong> <span class="citation">(Ganz et al. <a href="#ref-R-available" role="doc-biblioref">2019</a>)</span>, który sprawdza przy wybrana nazwa nie jest już zajęta oraz czy nie ma ona jakiegoś niepożądanego przez nas znaczenia.</p>
 </div>
-<div id="tworzenie-szkieletu-pakietu" class="section level2 hasAnchor">
+<div id="tworzenie-szkieletu-pakietu" class="section level2 hasAnchor" number="15.2">
 <h2><span class="header-section-number">15.2</span> Tworzenie szkieletu pakietu<a href="tworzenie-pakietow.html#tworzenie-szkieletu-pakietu" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Kolejnym krokiem jest stworzenie szkieletu pakietu, czyli zorganizowanego zbioru plików i folderów, do których później należy dodać odpowiednie informacje i funkcje.
-Znacznie w tym może pomóc pakiet <strong>usethis</strong> <span class="citation">(Wickham and Bryan <a href="#ref-R-usethis">2020</a>)</span>, który zawiera szereg funkcji ułatwiających budowanie pakietów R.</p>
-<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb370-1" title="1"><span class="kw">library</span>(usethis)</a></code></pre></div>
+Znacznie w tym może pomóc pakiet <strong>usethis</strong> <span class="citation">(Wickham and Bryan <a href="#ref-R-usethis" role="doc-biblioref">2020</a>)</span>, który zawiera szereg funkcji ułatwiających budowanie pakietów R.</p>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="tworzenie-pakietow.html#cb370-1" aria-hidden="true"></a><span class="kw">library</span>(usethis)</span></code></pre></div>
 <p>Do stworzenia szkieletu pakietu służy funkcja <code>create_packages()</code>, w której należy podać ścieżkę do nowego pakietu.<!-- package.skeleton()  Never use this! -->
 W tej ścieżce ostatnia nazwa folderu określa również nazwę pakietu.<a href="#fn55" class="footnote-ref" id="fnref55"><sup>55</sup></a></p>
-<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb371-1" title="1">usethis<span class="op">::</span><span class="kw">create_package</span>(<span class="st">&quot;~/Documents/mojpakiet&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="tworzenie-pakietow.html#cb371-1" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">create_package</span>(<span class="st">&quot;~/Documents/mojpakiet&quot;</span>)</span></code></pre></div>
 <p>W efekcie działania powyższej funkcji stworzony zostanie nowy folder <code>mojpakiet</code> zawierający kilka plików oraz otwarty zostanie nowy projekt RStudio zawierający ten pakiet.
 Najważniejsze nowe pliki to:</p>
 <ol style="list-style-type: decimal">
@@ -400,23 +431,23 @@ Ten plik i jego zawartość jest tworzona automatycznie</li>
 </ol>
 <p>Dodatkowo w prawym górnym panelu RStudio pojawi się nowy panel “Build”.</p>
 </div>
-<div id="opis-pakietu" class="section level2 hasAnchor">
+<div id="opis-pakietu" class="section level2 hasAnchor" number="15.3">
 <h2><span class="header-section-number">15.3</span> Opis pakietu<a href="tworzenie-pakietow.html#opis-pakietu" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Plik <code>DESCRIPTION</code> zawiera opis (metadane) pakietu, w tym jego nazwę, tytuł, wersję, autorów, opis, czy licencję.</p>
-<div class="sourceCode" id="cb372"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb372-1" title="1"><span class="fu">Package:</span><span class="at"> mojpakiet</span></a>
-<a class="sourceLine" id="cb372-2" title="2"><span class="fu">Title:</span><span class="at"> Moje Funkcje Robiace Wszystko</span></a>
-<a class="sourceLine" id="cb372-3" title="3"><span class="fu">Version:</span><span class="at"> </span><span class="fl">0.0.1</span></a>
-<a class="sourceLine" id="cb372-4" title="4"><span class="fu">Authors@R:</span><span class="at"> </span></a>
-<a class="sourceLine" id="cb372-5" title="5">    person(given = <span class="st">&quot;Imie&quot;</span>,</a>
-<a class="sourceLine" id="cb372-6" title="6">           family = <span class="st">&quot;Nazwisko&quot;</span>,</a>
-<a class="sourceLine" id="cb372-7" title="7">           role = c(<span class="st">&quot;cre&quot;</span>, <span class="st">&quot;aut&quot;</span>),</a>
-<a class="sourceLine" id="cb372-8" title="8">           email = <span class="st">&quot;imie.nazwisko@example.com&quot;</span>)</a>
-<a class="sourceLine" id="cb372-9" title="9"><span class="fu">Description:</span><span class="at"> Tworzenie, przeliczanie i wyliczanie wszystkiego. </span></a>
-<a class="sourceLine" id="cb372-10" title="10">    Czasami nawet więcej.</a>
-<a class="sourceLine" id="cb372-11" title="11"><span class="fu">License:</span><span class="at"> CC0</span></a>
-<a class="sourceLine" id="cb372-12" title="12"><span class="fu">Encoding:</span><span class="at"> UTF-8</span></a>
-<a class="sourceLine" id="cb372-13" title="13"><span class="fu">LazyData:</span><span class="at"> </span><span class="ch">true</span></a>
-<a class="sourceLine" id="cb372-14" title="14"><span class="fu">RoxygenNote:</span><span class="at"> </span><span class="fl">6.1.1</span></a></code></pre></div>
+<div class="sourceCode" id="cb372"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb372-1"><a href="tworzenie-pakietow.html#cb372-1" aria-hidden="true"></a><span class="fu">Package</span><span class="kw">:</span><span class="at"> mojpakiet</span></span>
+<span id="cb372-2"><a href="tworzenie-pakietow.html#cb372-2" aria-hidden="true"></a><span class="fu">Title</span><span class="kw">:</span><span class="at"> Moje Funkcje Robiace Wszystko</span></span>
+<span id="cb372-3"><a href="tworzenie-pakietow.html#cb372-3" aria-hidden="true"></a><span class="fu">Version</span><span class="kw">:</span><span class="at"> </span><span class="fl">0.0.1</span></span>
+<span id="cb372-4"><a href="tworzenie-pakietow.html#cb372-4" aria-hidden="true"></a><span class="fu">Authors@R</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb372-5"><a href="tworzenie-pakietow.html#cb372-5" aria-hidden="true"></a><span class="at">    person(given = &quot;Imie&quot;,</span></span>
+<span id="cb372-6"><a href="tworzenie-pakietow.html#cb372-6" aria-hidden="true"></a><span class="at">           family = &quot;Nazwisko&quot;,</span></span>
+<span id="cb372-7"><a href="tworzenie-pakietow.html#cb372-7" aria-hidden="true"></a><span class="at">           role = c(&quot;cre&quot;, &quot;aut&quot;),</span></span>
+<span id="cb372-8"><a href="tworzenie-pakietow.html#cb372-8" aria-hidden="true"></a><span class="at">           email = &quot;imie.nazwisko@example.com&quot;)</span></span>
+<span id="cb372-9"><a href="tworzenie-pakietow.html#cb372-9" aria-hidden="true"></a><span class="fu">Description</span><span class="kw">:</span><span class="at"> Tworzenie, przeliczanie i wyliczanie wszystkiego. </span></span>
+<span id="cb372-10"><a href="tworzenie-pakietow.html#cb372-10" aria-hidden="true"></a><span class="at">    Czasami nawet więcej.</span></span>
+<span id="cb372-11"><a href="tworzenie-pakietow.html#cb372-11" aria-hidden="true"></a><span class="fu">License</span><span class="kw">:</span><span class="at"> CC0</span></span>
+<span id="cb372-12"><a href="tworzenie-pakietow.html#cb372-12" aria-hidden="true"></a><span class="fu">Encoding</span><span class="kw">:</span><span class="at"> UTF-8</span></span>
+<span id="cb372-13"><a href="tworzenie-pakietow.html#cb372-13" aria-hidden="true"></a><span class="fu">LazyData</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb372-14"><a href="tworzenie-pakietow.html#cb372-14" aria-hidden="true"></a><span class="fu">RoxygenNote</span><span class="kw">:</span><span class="at"> </span><span class="fl">6.1.1</span></span></code></pre></div>
 <p>Tytuł pakietu (<code>Title:</code>) w jednym krótkim zdaniu (sloganie) określa do czego służy ten pakiet.<a href="#fn56" class="footnote-ref" id="fnref56"><sup>56</sup></a>
 Składa się on ze słów rozpoczynających się z dużej litery.</p>
 <p>Wersja pakietu (<code>Version:</code>) pozwala jego użytkownikom na zobaczenie, czy korzystają z aktualnej wersji pakietu.
@@ -435,10 +466,10 @@ Ona jest odpowiedzialna za pracę pakietu.
 Druga rola, <code>"aut"</code>, jest nadawana osom, które wniosły bardzo duży wkład w kod zawarty w pakiecie.
 Inne często używane role to <code>"ctb"</code> określająca osoby, które wniosły mniejszy wkład w kod (np. drobne zmiany) oraz <code>"cph"</code> określająca osoby czy instytucje będące posiadaczami praw autorskich (np. firma zatrudniająca autora kodu albo autor biblioteki, która została wewnętrznie użyta).<a href="#fn57" class="footnote-ref" id="fnref57"><sup>57</sup></a>
 Dodanie kolejnych osób odbywa się poprzez łączenie ich funkcją <code>c()</code>.</p>
-<div class="sourceCode" id="cb373"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb373-1" title="1"><span class="fu">Authors@R:</span><span class="at"> c(</span></a>
-<a class="sourceLine" id="cb373-2" title="2">    person(<span class="st">&quot;Imie&quot;</span>, <span class="st">&quot;Nazwisko&quot;</span>, role = c(<span class="st">&quot;cre&quot;</span>, <span class="st">&quot;aut&quot;</span>), email = <span class="st">&quot;email1@example.com&quot;</span>),</a>
-<a class="sourceLine" id="cb373-3" title="3">    person(<span class="st">&quot;Imie2&quot;</span>, <span class="st">&quot;Nazwisko2&quot;</span>, role = <span class="st">&quot;aut&quot;</span>, email = <span class="st">&quot;email2@example.com&quot;</span>)</a>
-<a class="sourceLine" id="cb373-4" title="4">)</a></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb373-1"><a href="tworzenie-pakietow.html#cb373-1" aria-hidden="true"></a><span class="fu">Authors@R</span><span class="kw">:</span><span class="at"> c(</span></span>
+<span id="cb373-2"><a href="tworzenie-pakietow.html#cb373-2" aria-hidden="true"></a><span class="at">    person(&quot;Imie&quot;, &quot;Nazwisko&quot;, role = c(&quot;cre&quot;, &quot;aut&quot;), email = &quot;email1@example.com&quot;),</span></span>
+<span id="cb373-3"><a href="tworzenie-pakietow.html#cb373-3" aria-hidden="true"></a><span class="at">    person(&quot;Imie2&quot;, &quot;Nazwisko2&quot;, role = &quot;aut&quot;, email = &quot;email2@example.com&quot;)</span></span>
+<span id="cb373-4"><a href="tworzenie-pakietow.html#cb373-4" aria-hidden="true"></a><span class="at">)</span></span></code></pre></div>
 <p>Licencja (<code>License:</code>) określa warunki korzystania z pakietu przez inne osoby.
 W bardzo dużym skrócie licencje oprogramowania można podzielić na licencje otwarte (<em>open-source</em>) oraz zamknięte (<em>proprietary</em>).
 Najpopularniejsze licencje otwarte używane w pakietach R to licencja <code>CC0</code>, <code>MIT</code> oraz <code>GPL</code>.
@@ -450,9 +481,9 @@ Trzecia z licencji otwartych, <code>GPL</code> (ang. <em>GNU General Public Lice
 Ważną cechą tej licencji jest wymaganie, że wszelkie prace oparte o kod w licencji <code>GPL</code> również muszą mieć licencję <code>GPL</code>
 Oprogramowanie zamknięte może również przyjmować wiele form (np. freeware czy też oprogramowanie komercyjne).
 Określenie pakietu jako oprogramowania zamkniętego odbywa się poprzez dodanie informacji, że licencja znajduje się w pliku <code>LICENSE</code> (<code>License: file LICENSE</code>), a następnie stworzenie pliku tekstowego o tej nazwie zawierającego odpowiednią modyfikację poniższego tekstu:</p>
-<div class="sourceCode" id="cb374"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb374-1" title="1">Proprietary </a>
-<a class="sourceLine" id="cb374-2" title="2"></a>
-<a class="sourceLine" id="cb374-3" title="3">Do not distribute outside of NAZWA MOJEJ FIRMY.</a></code></pre></div>
+<div class="sourceCode" id="cb374"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb374-1"><a href="tworzenie-pakietow.html#cb374-1" aria-hidden="true"></a><span class="at">Proprietary </span></span>
+<span id="cb374-2"><a href="tworzenie-pakietow.html#cb374-2" aria-hidden="true"></a></span>
+<span id="cb374-3"><a href="tworzenie-pakietow.html#cb374-3" aria-hidden="true"></a><span class="at">Do not distribute outside of NAZWA MOJEJ FIRMY.</span></span></code></pre></div>
 <!-- linki do licencji -->
 <!-- http://choosealicense.com/licenses/ -->
 <!-- https://tldrlegal.com/ -->
@@ -460,7 +491,7 @@ Określenie pakietu jako oprogramowania zamkniętego odbywa się poprzez dodanie
 <!-- inne opcje -->
 <p>Plik <code>DESCRIPTION</code> należy regularnie uaktualniać, np. zmieniać numer wersji po naniesionych zmianach w kodzie, czy dodawać nowych autorów, jeżeli tacy się pojawili.</p>
 </div>
-<div id="rozwijanie-pakietu" class="section level2 hasAnchor">
+<div id="rozwijanie-pakietu" class="section level2 hasAnchor" number="15.4">
 <h2><span class="header-section-number">15.4</span> Rozwijanie pakietu<a href="tworzenie-pakietow.html#rozwijanie-pakietu" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Rozwój pakietu R może opierać się na kilku poniższych krokach:</p>
 <ol style="list-style-type: decimal">
@@ -476,35 +507,35 @@ Określenie pakietu jako oprogramowania zamkniętego odbywa się poprzez dodanie
 </ol>
 <!--inne jak news, check, etc.-->
 </div>
-<div id="tworzenie-i-dokumentacja-funkcji" class="section level2 hasAnchor">
+<div id="tworzenie-i-dokumentacja-funkcji" class="section level2 hasAnchor" number="15.5">
 <h2><span class="header-section-number">15.5</span> Tworzenie i dokumentacja funkcji<a href="tworzenie-pakietow.html#tworzenie-i-dokumentacja-funkcji" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>W sekcji <a href="funkcje.html#budowanie-funkcji">3.8</a> stworzyliśmy nową funkcję <code>konwersja_temp()</code> przeliczającą temperaturę ze stopni Fahrenheita na stopnie Celsjusza.</p>
-<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb375-1" title="1">konwersja_temp =<span class="st"> </span><span class="cf">function</span>(temperatura_f){</a>
-<a class="sourceLine" id="cb375-2" title="2">    (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></a>
-<a class="sourceLine" id="cb375-3" title="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="tworzenie-pakietow.html#cb375-1" aria-hidden="true"></a>konwersja_temp =<span class="st"> </span><span class="cf">function</span>(temperatura_f){</span>
+<span id="cb375-2"><a href="tworzenie-pakietow.html#cb375-2" aria-hidden="true"></a>    (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></span>
+<span id="cb375-3"><a href="tworzenie-pakietow.html#cb375-3" aria-hidden="true"></a>}</span></code></pre></div>
 <p>Umieszczenie tej funkcji w nowym pakiecie R odbywa się poprzez zapisanie tego kodu jako skrypt R (np. <code>konwersja_temp.R</code>) w folderze <code>R/</code>.</p>
 <p>Funkcje zawarte w pakietach muszą także posiadać odpowiednią dokumentację, zawierającą, między innymi, tytuł funkcji, opis jej działania, wyjaśnienie kolejnych argumentów funkcji, oraz przykłady jej działania.
 Linie obejmujące dokumentację funkcji rozpoczynają się od znaków <code>#'</code>, a tworzenie dokumentacji funkcji odbywa się poprzez wypełnianie treści dla kolejnych znaczników (np. <code>@example</code> określa występowanie przykładu).</p>
 <p>Przykładowy plik <code>R/konwersja_temp.R</code> może wyglądać następująco:</p>
-<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb376-1" title="1"><span class="co">#&#39; Konwersja temperatur</span></a>
-<a class="sourceLine" id="cb376-2" title="2"><span class="co">#&#39;</span></a>
-<a class="sourceLine" id="cb376-3" title="3"><span class="co">#&#39; @description Funkcja sluzaca do konwersji temperatury </span></a>
-<a class="sourceLine" id="cb376-4" title="4"><span class="co">#&#39;   ze stopni Fahrenheita do stopni Celsjusza.</span></a>
-<a class="sourceLine" id="cb376-5" title="5"><span class="co">#&#39;</span></a>
-<a class="sourceLine" id="cb376-6" title="6"><span class="co">#&#39; @param temperatura_f wektor zawierajacy wartosci temperatury </span></a>
-<a class="sourceLine" id="cb376-7" title="7"><span class="co">#&#39;   w stopniach Fahrenheita</span></a>
-<a class="sourceLine" id="cb376-8" title="8"><span class="co">#&#39;</span></a>
-<a class="sourceLine" id="cb376-9" title="9"><span class="co">#&#39; @return wektor numeryczny</span></a>
-<a class="sourceLine" id="cb376-10" title="10"><span class="co">#&#39; @export</span></a>
-<a class="sourceLine" id="cb376-11" title="11"><span class="co">#&#39;</span></a>
-<a class="sourceLine" id="cb376-12" title="12"><span class="co">#&#39; @examples</span></a>
-<a class="sourceLine" id="cb376-13" title="13"><span class="co">#&#39; konwersja_temp(75)</span></a>
-<a class="sourceLine" id="cb376-14" title="14"><span class="co">#&#39; konwersja_temp(110)</span></a>
-<a class="sourceLine" id="cb376-15" title="15"><span class="co">#&#39; konwersja_temp(0)</span></a>
-<a class="sourceLine" id="cb376-16" title="16"><span class="co">#&#39; konwersja_temp(c(0, 75, 110))</span></a>
-<a class="sourceLine" id="cb376-17" title="17">konwersja_temp =<span class="st"> </span><span class="cf">function</span>(temperatura_f){</a>
-<a class="sourceLine" id="cb376-18" title="18">  (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></a>
-<a class="sourceLine" id="cb376-19" title="19">}</a></code></pre></div>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="tworzenie-pakietow.html#cb376-1" aria-hidden="true"></a><span class="co">#&#39; Konwersja temperatur</span></span>
+<span id="cb376-2"><a href="tworzenie-pakietow.html#cb376-2" aria-hidden="true"></a><span class="co">#&#39;</span></span>
+<span id="cb376-3"><a href="tworzenie-pakietow.html#cb376-3" aria-hidden="true"></a><span class="co">#&#39; @description Funkcja sluzaca do konwersji temperatury </span></span>
+<span id="cb376-4"><a href="tworzenie-pakietow.html#cb376-4" aria-hidden="true"></a><span class="co">#&#39;   ze stopni Fahrenheita do stopni Celsjusza.</span></span>
+<span id="cb376-5"><a href="tworzenie-pakietow.html#cb376-5" aria-hidden="true"></a><span class="co">#&#39;</span></span>
+<span id="cb376-6"><a href="tworzenie-pakietow.html#cb376-6" aria-hidden="true"></a><span class="co">#&#39; @param temperatura_f wektor zawierajacy wartosci temperatury </span></span>
+<span id="cb376-7"><a href="tworzenie-pakietow.html#cb376-7" aria-hidden="true"></a><span class="co">#&#39;   w stopniach Fahrenheita</span></span>
+<span id="cb376-8"><a href="tworzenie-pakietow.html#cb376-8" aria-hidden="true"></a><span class="co">#&#39;</span></span>
+<span id="cb376-9"><a href="tworzenie-pakietow.html#cb376-9" aria-hidden="true"></a><span class="co">#&#39; @return wektor numeryczny</span></span>
+<span id="cb376-10"><a href="tworzenie-pakietow.html#cb376-10" aria-hidden="true"></a><span class="co">#&#39; @export</span></span>
+<span id="cb376-11"><a href="tworzenie-pakietow.html#cb376-11" aria-hidden="true"></a><span class="co">#&#39;</span></span>
+<span id="cb376-12"><a href="tworzenie-pakietow.html#cb376-12" aria-hidden="true"></a><span class="co">#&#39; @examples</span></span>
+<span id="cb376-13"><a href="tworzenie-pakietow.html#cb376-13" aria-hidden="true"></a><span class="co">#&#39; konwersja_temp(75)</span></span>
+<span id="cb376-14"><a href="tworzenie-pakietow.html#cb376-14" aria-hidden="true"></a><span class="co">#&#39; konwersja_temp(110)</span></span>
+<span id="cb376-15"><a href="tworzenie-pakietow.html#cb376-15" aria-hidden="true"></a><span class="co">#&#39; konwersja_temp(0)</span></span>
+<span id="cb376-16"><a href="tworzenie-pakietow.html#cb376-16" aria-hidden="true"></a><span class="co">#&#39; konwersja_temp(c(0, 75, 110))</span></span>
+<span id="cb376-17"><a href="tworzenie-pakietow.html#cb376-17" aria-hidden="true"></a>konwersja_temp =<span class="st"> </span><span class="cf">function</span>(temperatura_f){</span>
+<span id="cb376-18"><a href="tworzenie-pakietow.html#cb376-18" aria-hidden="true"></a>  (temperatura_f <span class="op">-</span><span class="st"> </span><span class="dv">32</span>) <span class="op">/</span><span class="st"> </span><span class="fl">1.8</span></span>
+<span id="cb376-19"><a href="tworzenie-pakietow.html#cb376-19" aria-hidden="true"></a>}</span></code></pre></div>
 <p>Pierwsza linia w tym pliku określa tytuł danej funkcji.
 Kolejny element rozpoczynający się od znacznika <code>@description</code> zawiera krótki opis tego, co funkcja robi.
 Następnie zazwyczaj wypisane są wszystkie argumenty danej funkcji używając kolejnych znaczników <code>@param</code>.
@@ -517,29 +548,29 @@ Ostatni znacznik, <code>@examples</code>, wypisuje kolejne przykłady działania
 <p>Wybór <code>More -&gt; Document</code> w panelu “Build” (inaczej wywołanie funkcji <code>devtools::document()</code> lub użycie skrótu CTRL+SHIFT+D) spowoduje zbudowanie pliku dokumentacji w folderze <code>man</code>, np. <code>man/konwersja_temp.Rd</code>.
 Pliki dokumentacji będą zawsze tworzone w ten sposób - nie należy ich modyfikować ręcznie.
 Zbudowanie pliku dokumentacji pozwala teraz na jej podejrzenie poprzez wywołanie pliku pomocy naszej funkcji:</p>
-<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb377-1" title="1">?konwersja_temp</a></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="tworzenie-pakietow.html#cb377-1" aria-hidden="true"></a>?konwersja_temp</span></code></pre></div>
 <!-- printscreen -->
 <!-- roxygen2 -->
 <!-- https://r-pkgs.org/data.html#documenting-data -->
 </div>
-<div id="zależności" class="section level2 hasAnchor">
+<div id="zależności" class="section level2 hasAnchor" number="15.6">
 <h2><span class="header-section-number">15.6</span> Zależności<a href="tworzenie-pakietow.html#zależności" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Istnieje jedna ważna różnica pomiędzy tworzeniem funkcji w skryptach a tworzeniem jej wewnątrz pakietu - w pakietach nie można używać dołączania pakietów za pomocą funkcji <code>library()</code>.
 Zamiast tego możliwe jest definiowanie każdej zewnętrznej funkcji używając operatora <code>::</code>.<a href="#fn58" class="footnote-ref" id="fnref58"><sup>58</sup></a></p>
 <!-- przykład -->
 <p>Dodatkowo każda zależność z zewnętrznym pakietem musi być określona w pliku <code>DESCRIPTION</code>.
 Jest to możliwe używając wpisów <code>Imports:</code> oraz <code>Suggests:</code>, przykładowo:<a href="#fn59" class="footnote-ref" id="fnref59"><sup>59</sup></a></p>
-<div class="sourceCode" id="cb378"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb378-1" title="1"><span class="fu">Imports:</span></a>
-<a class="sourceLine" id="cb378-2" title="2">  stringr,</a>
-<a class="sourceLine" id="cb378-3" title="3">  readr</a>
-<a class="sourceLine" id="cb378-4" title="4"><span class="fu">Suggests:</span></a>
-<a class="sourceLine" id="cb378-5" title="5">  readxl</a></code></pre></div>
+<div class="sourceCode" id="cb378"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb378-1"><a href="tworzenie-pakietow.html#cb378-1" aria-hidden="true"></a><span class="fu">Imports</span><span class="kw">:</span></span>
+<span id="cb378-2"><a href="tworzenie-pakietow.html#cb378-2" aria-hidden="true"></a><span class="at">  stringr,</span></span>
+<span id="cb378-3"><a href="tworzenie-pakietow.html#cb378-3" aria-hidden="true"></a><span class="at">  readr</span></span>
+<span id="cb378-4"><a href="tworzenie-pakietow.html#cb378-4" aria-hidden="true"></a><span class="fu">Suggests</span><span class="kw">:</span></span>
+<span id="cb378-5"><a href="tworzenie-pakietow.html#cb378-5" aria-hidden="true"></a><span class="at">  readxl</span></span></code></pre></div>
 <p><code>Imports:</code> określa pakiety, które muszą być zainstalowane, aby tworzony pakiet mógł zadziałać.
 Jeżeli wymienione tutaj pakiety nie będą znajdować się na komputerze użytkownika to zostaną one automatycznie doinstalowane podczas instalacji naszego pakietu.
 <code>Suggests:</code> wymienia pakiety, które pomagają w użytkowaniu naszego pakietu, np. takie które zawierają testowe dane.
 Wymienione tutaj pakiety nie będą automatycznie doinstalowane podczas instalacji naszego pakietu.</p>
 </div>
-<div id="sprawdzanie-pakietu" class="section level2 hasAnchor">
+<div id="sprawdzanie-pakietu" class="section level2 hasAnchor" number="15.7">
 <h2><span class="header-section-number">15.7</span> Sprawdzanie pakietu<a href="tworzenie-pakietow.html#sprawdzanie-pakietu" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>W momencie, gdy pakiet posiada już swoje podstawowe elementy, tj. pierwsze udokumentowane funkcje oraz uzupełniony opis wraz z zależnościami warto sprawdzić czy te wszystkie elementy pakietu dobrze współgrają ze sobą.
 Można to zrobić używając funkcji <code>devtools::check()</code> (inaczej wybór <code>Check</code> w panelu “Build” RStudio lub skrót CTRL+SHIFT+E).
@@ -548,12 +579,12 @@ Na końcu zwrócone zostanie wypisanie liczby błędów (<em>error</em>), ostrze
 Błędy oznaczają, że z jakiegoś powodu pakietu nie można zbudować, ostrzeżenia natomiast sugerują sytuację w której jakieś ważne elementy funkcji mogą wymagać poprawy.
 Notatki natomiast wskazują na kwestie, które użytkownik może, ale nie musi poprawić.</p>
 </div>
-<div id="instalowanie-pakietu" class="section level2 hasAnchor">
+<div id="instalowanie-pakietu" class="section level2 hasAnchor" number="15.8">
 <h2><span class="header-section-number">15.8</span> Instalowanie pakietu<a href="tworzenie-pakietow.html#instalowanie-pakietu" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Sprawdzony pakiet, który nie zwraca błędów można zainstalować na własnym komputerze używając funkcji <code>devtools::install()</code> (inaczej wybór <code>Install and restart</code> w panelu “Build” RStudio lub skrót CTRL+SHIFT+B).
-W przypadku, gdy kod źródłowy tego pakietu znajduje się na platformie GitHub, inni użytkownicy mogą go zainstalować za pomocą funkcji <code>remotes::install_github("nazwa_uzytkownika_github/nazwa_pakietu")</code> <span class="citation">(Hester et al. <a href="#ref-R-remotes">2020</a>)</span>.</p>
+W przypadku, gdy kod źródłowy tego pakietu znajduje się na platformie GitHub, inni użytkownicy mogą go zainstalować za pomocą funkcji <code>remotes::install_github("nazwa_uzytkownika_github/nazwa_pakietu")</code> <span class="citation">(Hester et al. <a href="#ref-R-remotes" role="doc-biblioref">2020</a>)</span>.</p>
 </div>
-<div id="dokumentacja-pakietu" class="section level2 hasAnchor">
+<div id="dokumentacja-pakietu" class="section level2 hasAnchor" number="15.9">
 <h2><span class="header-section-number">15.9</span> Dokumentacja pakietu<a href="tworzenie-pakietow.html#dokumentacja-pakietu" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Po wykonaniu poprzednich kroków posiadamy działający pakiet, którego funkcje posiadają odpowiednią dokumentację.
 Teraz konieczne jest stworzenie dokumentacji pakietu - ma ona na celu poinformować potencjalnych użytkowników do czego pakiet służy, jak go zainstalować, czy też pokazać przykłady jego użycia.
@@ -594,34 +625,34 @@ W pakietach R może mieć to miejsce używając pliku <code>NEWS.md</code> tworz
 Taki plik może zawierać informacje o nowych funkcjach, zmianach istniejących funkcji, naprawionych błędach, itd.
 Przykład szablonu pliku <code>NEWS.md</code> można znaleźć pod adresem <a href="https://ropensci.github.io/dev_guide/newstemplate.html" class="uri">https://ropensci.github.io/dev_guide/newstemplate.html</a>.</p>
 </div>
-<div id="wbudowane-testy" class="section level2 hasAnchor">
+<div id="wbudowane-testy" class="section level2 hasAnchor" number="15.10">
 <h2><span class="header-section-number">15.10</span> Wbudowane testy<a href="tworzenie-pakietow.html#wbudowane-testy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Sekcja <a href="analiza-kodu.html#testy-jednostkowe">11.1</a> pokazywała w jaki sposób tworzyć testy jednostkowe dla funkcji, w celu sprawdzenia czy ich działanie jest zgodne z naszymi oczekiwaniami.
 Takie testy można również wbudować wewnątrz pakietu - w efekcie, gdy naniesiemy w nim jakieś zmiany możemy sprawdzić czy otrzymujemy takie same wyniki.</p>
 <p>Pierwszym krokiem do używania wbudowanych testów jest ustawienie odpowiedniej infrastruktury używając funkcji <code>use_testthat()</code>.
 Powoduje ona dodanie pakietu <strong>testthat</strong> do wpisu <code>Suggests:</code>, stworzenie folderów <code>tests/</code> i <code>tests/testthat/</code> oraz pliku <code>tests/testthat.R</code>.</p>
-<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb380-1" title="1"><span class="kw">use_testthat</span>()</a>
-<a class="sourceLine" id="cb380-2" title="2"><span class="co">#&gt; ✔ Adding &#39;testthat&#39; to Suggests field in DESCRIPTION</span></a>
-<a class="sourceLine" id="cb380-3" title="3"><span class="co">#&gt; ✔ Creating &#39;tests/testthat/&#39;</span></a>
-<a class="sourceLine" id="cb380-4" title="4"><span class="co">#&gt; ✔ Writing &#39;tests/testthat.R&#39;</span></a></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="tworzenie-pakietow.html#cb380-1" aria-hidden="true"></a><span class="kw">use_testthat</span>()</span>
+<span id="cb380-2"><a href="tworzenie-pakietow.html#cb380-2" aria-hidden="true"></a><span class="co">#&gt; ✔ Adding &#39;testthat&#39; to Suggests field in DESCRIPTION</span></span>
+<span id="cb380-3"><a href="tworzenie-pakietow.html#cb380-3" aria-hidden="true"></a><span class="co">#&gt; ✔ Creating &#39;tests/testthat/&#39;</span></span>
+<span id="cb380-4"><a href="tworzenie-pakietow.html#cb380-4" aria-hidden="true"></a><span class="co">#&gt; ✔ Writing &#39;tests/testthat.R&#39;</span></span></code></pre></div>
 <p>Teraz możliwe jest napisanie testów jednostkowych.
 Zazwyczaj polega to na stworzeniu oddzielnego pliku dla każdej funkcji z naszego pakietu.
 Przykładowo, nasz pakiet zawiera funkcję <code>powierzchnia()</code>, dlatego też do jego testowania możemy stworzyć nowy plik <code>tests/testthat/test-powierzchnia.R</code>.
 Wewnątrz tego pliku należy sprawdzać kolejne aspekty działania kodu używając funkcji <code>test_that()</code>, gdzie należy podać (1) opis tego co jest sprawdzane i (2) testy wewnątrz nawiasów klamrowych (zobacz sekcję <a href="analiza-kodu.html#testy-jednostkowe">11.1</a>).
 Przykładowy plik <code>tests/testthat/test-powierzchnia.R</code> może wyglądać w ten sposób:</p>
-<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb381-1" title="1">nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">5</span>)</a>
-<a class="sourceLine" id="cb381-2" title="2"></a>
-<a class="sourceLine" id="cb381-3" title="3"><span class="kw">test_that</span>(<span class="st">&quot;struktura wyniku jest poprawna&quot;</span>, {</a>
-<a class="sourceLine" id="cb381-4" title="4">  <span class="kw">expect_length</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb381-5" title="5">})</a>
-<a class="sourceLine" id="cb381-6" title="6"></a>
-<a class="sourceLine" id="cb381-7" title="7"><span class="kw">test_that</span>(<span class="st">&quot;wartosc wyniku jest poprawna&quot;</span>, {</a>
-<a class="sourceLine" id="cb381-8" title="8">  <span class="kw">expect_equal</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">30</span>)</a>
-<a class="sourceLine" id="cb381-9" title="9">})</a>
-<a class="sourceLine" id="cb381-10" title="10"></a>
-<a class="sourceLine" id="cb381-11" title="11"><span class="kw">test_that</span>(<span class="st">&quot;wystepuja odpowiednie bledy&quot;</span>, {</a>
-<a class="sourceLine" id="cb381-12" title="12">  <span class="kw">expect_error</span>(<span class="kw">nowy_prostokat</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="st">&quot;a&quot;</span>))</a>
-<a class="sourceLine" id="cb381-13" title="13">})</a></code></pre></div>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="tworzenie-pakietow.html#cb381-1" aria-hidden="true"></a>nowy_p =<span class="st"> </span><span class="kw">nowy_prostokat</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">5</span>)</span>
+<span id="cb381-2"><a href="tworzenie-pakietow.html#cb381-2" aria-hidden="true"></a></span>
+<span id="cb381-3"><a href="tworzenie-pakietow.html#cb381-3" aria-hidden="true"></a><span class="kw">test_that</span>(<span class="st">&quot;struktura wyniku jest poprawna&quot;</span>, {</span>
+<span id="cb381-4"><a href="tworzenie-pakietow.html#cb381-4" aria-hidden="true"></a>  <span class="kw">expect_length</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">1</span>)</span>
+<span id="cb381-5"><a href="tworzenie-pakietow.html#cb381-5" aria-hidden="true"></a>})</span>
+<span id="cb381-6"><a href="tworzenie-pakietow.html#cb381-6" aria-hidden="true"></a></span>
+<span id="cb381-7"><a href="tworzenie-pakietow.html#cb381-7" aria-hidden="true"></a><span class="kw">test_that</span>(<span class="st">&quot;wartosc wyniku jest poprawna&quot;</span>, {</span>
+<span id="cb381-8"><a href="tworzenie-pakietow.html#cb381-8" aria-hidden="true"></a>  <span class="kw">expect_equal</span>(<span class="kw">powierzchnia</span>(nowy_p), <span class="dv">30</span>)</span>
+<span id="cb381-9"><a href="tworzenie-pakietow.html#cb381-9" aria-hidden="true"></a>})</span>
+<span id="cb381-10"><a href="tworzenie-pakietow.html#cb381-10" aria-hidden="true"></a></span>
+<span id="cb381-11"><a href="tworzenie-pakietow.html#cb381-11" aria-hidden="true"></a><span class="kw">test_that</span>(<span class="st">&quot;wystepuja odpowiednie bledy&quot;</span>, {</span>
+<span id="cb381-12"><a href="tworzenie-pakietow.html#cb381-12" aria-hidden="true"></a>  <span class="kw">expect_error</span>(<span class="kw">nowy_prostokat</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="st">&quot;a&quot;</span>))</span>
+<span id="cb381-13"><a href="tworzenie-pakietow.html#cb381-13" aria-hidden="true"></a>})</span></code></pre></div>
 <p>Po napisaniu testów można sprawdzić czy wszystkie z nich dają odpowiedni wynik używając <code>devtools::test()</code><a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>.
 W efekcie wyświetlone zostaną wszystkie testy i zostanie wskazane, które z nich się nie powiodły i należy je poprawić.</p>
 <!-- why? -->
@@ -629,7 +660,7 @@ W efekcie wyświetlone zostaną wszystkie testy i zostanie wskazane, które z ni
 <!-- Automated testing with Travis CI + codecov -->
 <!-- devtools::test_coverage() -->
 </div>
-<div id="publikowanie-pakietów" class="section level2 hasAnchor">
+<div id="publikowanie-pakietów" class="section level2 hasAnchor" number="15.11">
 <h2><span class="header-section-number">15.11</span> Publikowanie pakietów<a href="tworzenie-pakietow.html#publikowanie-pakietów" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Nowo utworzony pakiet w R można od razu umieścić na wybranym serwisie internetowym wspierającym kontrolę wersji takim jak GitHub, GitLab, czy BitBucket (rozdział <a href="kontrola-wersji.html#kontrola-wersji">14</a>), gdzie nazwa repozytorium będzie identyczna jak nazwa pakietu.
 Można to zrobić poprzez zainicjowanie repozytorium Git używając <code>usethis::use_git()</code>, a następnie wysłanie pakietu do repozytorium GitHub poprzez <code>usethis::use_github()</code><a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a>.
@@ -639,14 +670,14 @@ Teraz konieczna jest promocja tego pakietu w sytuacji, gdy chcemy zainteresować
 Taka promocja może odbywać się poprzez ogłoszenie stworzenia tego pakietu na Twitterze używając hasztagu <code>#rstats</code>, czy też napisaniu wpisu na blogu opisującego ten pakiet.
 <!-- https://ropensci.github.io/dev_guide/marketing.html -->
 <!-- block2 Continuous Integration --></p>
-<p>Dodatkowo w R istnieje możliwość prostego stworzenia stron internetowych dla wybranego pakietu używając pakietu <strong>pkgdown</strong> <span class="citation">(Wickham and Hesselberth <a href="#ref-R-pkgdown">2020</a>)</span>.
+<p>Dodatkowo w R istnieje możliwość prostego stworzenia stron internetowych dla wybranego pakietu używając pakietu <strong>pkgdown</strong> <span class="citation">(Wickham and Hesselberth <a href="#ref-R-pkgdown" role="doc-biblioref">2020</a>)</span>.
 Przykład takiej strony można zobaczyć pod adresem <a href="https://pkgdown.r-lib.org/index.html" class="uri">https://pkgdown.r-lib.org/index.html</a>.
 Stworzenie strony pakietu wymaga jedynie wywołania funkcji <code>pkgdown::build_site()</code> wewnątrz pakietu R.
 W efekcie zostanie utworzony folder <code>docs/</code> zawierający stronę internetową reprezentującą pakiet i jego dokumentację.
 W przypadku, gdy pakiet znajduje się na GitHubie możliwe jest wyświetlenie tej strony pod adresem <code>https://&lt;nazwauzytkownika&gt;.github.io/&lt;nazwapakietu&gt;/</code>.
 Aby ta strona była dostępna w internecie należy na platformie GitHub wejść w zakładkę settings, następnie znaleźć część określoną jako GitHub Pages, i określić Source jako “master branch /docs folder”.</p>
 </div>
-<div id="zad16" class="section level2 hasAnchor">
+<div id="zad16" class="section level2 hasAnchor" number="15.12">
 <h2><span class="header-section-number">15.12</span> Zadania<a href="tworzenie-pakietow.html#zad16" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li><p>Stwórz szkielet nowego pakietu R nazywającego się <strong>konwerter</strong>.</p></li>
@@ -716,7 +747,7 @@ Dodaj do niej krótki opis tego co robi ten pakiet, a następnie przedstaw przyk
 </div>
 </div>
 <h3>Bibliografia<a href="bibliografia.html#bibliografia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references">
+<div id="refs" class="references hanging-indent">
 <div id="ref-R-available">
 <p>Ganz, Carl, Gábor Csárdi, Jim Hester, Molly Lewis, and Rachael Tatman. 2019. <em>Available: Check If the Title of a Package Is Available, Appropriate and Interesting</em>. <a href="https://CRAN.R-project.org/package=available">https://CRAN.R-project.org/package=available</a>.</p>
 </div>
@@ -742,14 +773,14 @@ Dodaj do niej krótki opis tego co robi ten pakiet, a następnie przedstaw przyk
 <div class="footnotes">
 <hr />
 <ol start="55">
-<li id="fn55"><p>Funkcja również <code>create_packages()</code> sama tworzy nowy folder, jeżeli on wcześniej nie istniał.<a href="tworzenie-pakietow.html#fnref55" class="footnote-back">↩</a></p></li>
-<li id="fn56"><p>Tytuły pakietów można znaleźć, np. w panelu “Packages” w RStudio.<a href="tworzenie-pakietow.html#fnref56" class="footnote-back">↩</a></p></li>
-<li id="fn57"><p>Pełną listę dostępnych ról można znaleźć pod adresem <a href="http://www.loc.gov/marc/relators/relaterm.html" class="uri">http://www.loc.gov/marc/relators/relaterm.html</a>.<a href="tworzenie-pakietow.html#fnref57" class="footnote-back">↩</a></p></li>
-<li id="fn58"><p>Istnieją również inne możliwości, np. użycie znaczników <code>@import</code> lub <code>@importFrom</code>.<a href="tworzenie-pakietow.html#fnref58" class="footnote-back">↩</a></p></li>
-<li id="fn59"><p>Istnieją również inne wpisy, takie jak <code>Depends:</code>, <code>LinkingTo:</code>, czy <code>Enhances:</code>.<a href="tworzenie-pakietow.html#fnref59" class="footnote-back">↩</a></p></li>
-<li id="fn60"><p>Dodatkowe elementy to oznaki (ang. <em>badges</em>) pokazujące, np. status pakietu, liczbę jego pobrań i wiele innych.<a href="tworzenie-pakietow.html#fnref60" class="footnote-back">↩</a></p></li>
-<li id="fn61"><p>Testy są też automatycznie uruchamiane podczas sprawdzania pakietu (<a href="tworzenie-pakietow.html#sprawdzanie-pakietu">15.7</a>)<a href="tworzenie-pakietow.html#fnref61" class="footnote-back">↩</a></p></li>
-<li id="fn62"><p>Wymaga to jednak wygenerowania tokena - opis jak to zrobić można znaleźć pod adresem <a href="https://debruine.github.io/tutorials/packages.html#github-access-token" class="uri">https://debruine.github.io/tutorials/packages.html#github-access-token</a><a href="tworzenie-pakietow.html#fnref62" class="footnote-back">↩</a></p></li>
+<li id="fn55"><p>Funkcja również <code>create_packages()</code> sama tworzy nowy folder, jeżeli on wcześniej nie istniał.<a href="tworzenie-pakietow.html#fnref55" class="footnote-back">↩︎</a></p></li>
+<li id="fn56"><p>Tytuły pakietów można znaleźć, np. w panelu “Packages” w RStudio.<a href="tworzenie-pakietow.html#fnref56" class="footnote-back">↩︎</a></p></li>
+<li id="fn57"><p>Pełną listę dostępnych ról można znaleźć pod adresem <a href="http://www.loc.gov/marc/relators/relaterm.html" class="uri">http://www.loc.gov/marc/relators/relaterm.html</a>.<a href="tworzenie-pakietow.html#fnref57" class="footnote-back">↩︎</a></p></li>
+<li id="fn58"><p>Istnieją również inne możliwości, np. użycie znaczników <code>@import</code> lub <code>@importFrom</code>.<a href="tworzenie-pakietow.html#fnref58" class="footnote-back">↩︎</a></p></li>
+<li id="fn59"><p>Istnieją również inne wpisy, takie jak <code>Depends:</code>, <code>LinkingTo:</code>, czy <code>Enhances:</code>.<a href="tworzenie-pakietow.html#fnref59" class="footnote-back">↩︎</a></p></li>
+<li id="fn60"><p>Dodatkowe elementy to oznaki (ang. <em>badges</em>) pokazujące, np. status pakietu, liczbę jego pobrań i wiele innych.<a href="tworzenie-pakietow.html#fnref60" class="footnote-back">↩︎</a></p></li>
+<li id="fn61"><p>Testy są też automatycznie uruchamiane podczas sprawdzania pakietu (<a href="tworzenie-pakietow.html#sprawdzanie-pakietu">15.7</a>)<a href="tworzenie-pakietow.html#fnref61" class="footnote-back">↩︎</a></p></li>
+<li id="fn62"><p>Wymaga to jednak wygenerowania tokena - opis jak to zrobić można znaleźć pod adresem <a href="https://debruine.github.io/tutorials/packages.html#github-access-token" class="uri">https://debruine.github.io/tutorials/packages.html#github-access-token</a><a href="tworzenie-pakietow.html#fnref62" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -821,7 +852,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
